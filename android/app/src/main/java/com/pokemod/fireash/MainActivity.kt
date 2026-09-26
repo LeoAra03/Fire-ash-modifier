@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     private fun childOf(dir: DocumentFile, name: String, wantDir: Boolean? = null): DocumentFile? {
         dir.findFile(name)?.let { if (wantDir == null || it.isDirectory == wantDir) return it }
         for (f in dir.listFiles()) {
-            if (f.name != null && f.name.equals(name, ignoreCase = true)) {
+            if (f.name?.equals(name, ignoreCase = true) == true) {
                 if (wantDir == null || f.isDirectory == wantDir) return f
             }
         }
