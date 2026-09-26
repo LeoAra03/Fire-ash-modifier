@@ -39,11 +39,13 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
-      - uses: android-actions/setup-android@v3
-      - name: Instalar SDK Android 34
+      - name: SDK Android (el runner ya lo trae; verificar)
         run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+          ls "$ANDROID_HOME" || ls "$ANDROID_SDK_ROOT"
           yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager "platforms;android-34" "build-tools;34.0.0"
+          sdkmanager "platforms;android-34" "build-tools;34.0.0" || echo "SDK ya presente, sigo"
       - name: Compilar con Gradle
         uses: gradle/gradle-build-action@v3
         with:
