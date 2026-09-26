@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PokeMod" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#7c5cff</item>
+        <item name="android:windowBackground">#141a33</item>
+        <item name="android:statusBarColor">#1b2340</item>
+    </style>
+</resources>

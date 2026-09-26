@@ -1,0 +1,1 @@
+# PokeMod tools: solo biblioteca estándar de Python 3.9+. Nada que instalar.
