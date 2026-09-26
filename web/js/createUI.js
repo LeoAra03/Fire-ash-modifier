@@ -3,21 +3,23 @@
 // ============================================================================
 import {
   S, loadMap, loadPBS, saveMap, savePBS, saveMapInfos,
-  markMapDirty, scanAllMaps, log,
+  markMapDirty, scanAllMaps, log, backupNow,
 } from "./app.js";
 import { FS } from "./fs.js";
 import { marshalDump, marshalLoad } from "./marshal.js";
 import { cmdOf, parseMap, TRIGGERS, humanizeCommand, rstr } from "./rmxp.js";
 import { parsePBS, pbsToText, pbsSections } from "./pbs.js";
-import { esc, pad3 } from "./util.js";
-import { toast, showProgress, mapPickerModal, spritePickerModal } from "./helpers.js";
+import { esc, pad3, downloadText } from "./util.js";
+import { toast, showProgress, mapPickerModal, spritePickerModal, confirmDialog } from "./helpers.js";
 import {
   TEMPLATES, buildTemplate, insertEvent, buildMap, buildMapInfo,
-  getSectionBody, setSectionBody, getTownRegions, setTownPoints,
+  getSectionBody, setSectionBody, removeSectionBody, getTownRegions, setTownPoints,
   ENCOUNTER_TYPES, parseEncountersBody, formatEncountersBody, normalizeChances,
   formatTrainerEntry, parseTrainerHeader, trainerKey,
   formatMetadataSection, formatConnection, auditPBS, auditMapEvents,
 } from "./create.js";
+import { extractMapReport, buildGameIndex, indexToJSON } from "./analyze.js";
+import { validatePack, planPack, findFreeTownCoord } from "./packs.js";
 
 const dirty = () => document.dispatchEvent(new CustomEvent("pokemod-dirty"));
 
@@ -91,12 +93,22 @@ export async function renderCreateTab(view, { goTab }) {
       <summary><b>5. Auditoría</b> <span class="muted">— revisa que todo encaje como en el juego base</span></summary>
       <div id="ce-audit"></div>
     </details>
+    <details class="card">
+      <summary><b>6. An\u00e1lisis total del juego</b> <span class="muted">\u2014 todo: flags, di\u00e1logos, islas</span></summary>
+      <div id="ce-analyze"></div>
+    </details>
+    <details class="card">
+      <summary><b>7. Packs de contenido nuevo</b> <span class="muted">\u2014 jefes e islas, 100% aditivos</span></summary>
+      <div id="ce-packs"></div>
+    </details>
   </div>`;
   renderEventCreator(view.querySelector("#ce-event"), { goTab });
   renderMapCreator(view.querySelector("#ce-map"), { goTab });
   renderPbsCreator(view.querySelector("#ce-pbs"), { goTab });
   renderRegionEditor(view.querySelector("#ce-region"));
   renderAudit(view.querySelector("#ce-audit"), { goTab });
+  renderAnalysis(view.querySelector("#ce-analyze"), { goTab });
+  renderPacks(view.querySelector("#ce-packs"), { goTab });
 }
 
 // ============================================================================
@@ -1015,4 +1027,442 @@ function renderAudit(el, { goTab }) {
       show([...issues, ...found]);
     } catch (e) { prog.close(); out.innerHTML = `<div class="logrow error">${esc(e.message)}</div>`; }
   };
+}
+
+// ============================================================================
+// 6. Análisis total del juego
+// ============================================================================
+let lastAnalysis = null;
+
+function renderAnalysis(el, { goTab }) {
+  el.innerHTML = `
+    <p class="muted small">Escanea todos los mapas y PBS: diálogos, NPCs, flags, objetos, especies, entrenadores, salidas, colisiones e islas. No modifica nada.</p>
+    <div class="row">
+      <button class="btn primary" id="an-run">Analizar juego</button>
+      <button class="btn" id="an-exp" disabled>Exportar JSON</button>
+    </div>
+    <div id="an-out" style="margin-top:8px"><p class="muted">Sin analizar.</p></div>`;
+  const out = el.querySelector("#an-out");
+  el.querySelector("#an-run").onclick = async () => {
+    const prog = showProgress("Analizando juego…");
+    try {
+      const [metadata, townmap] = await Promise.all([
+        pbsTextOr(findPBS(["PBS/metadata.txt", "metadata.txt"])),
+        pbsTextOr(findPBS(["PBS/townmap.txt", "PBS/town_map.txt", "townmap.txt", "town_map.txt"])),
+      ]);
+      const reports = await scanAllMaps(
+        (id, parsed) => {
+          const info = S.mapList.find((m) => m.id === id);
+          const ts = S.tilesets.get(parsed.tilesetId) || null;
+          return [extractMapReport(parsed, id, info || null, ts)];
+        },
+        (i, total) => prog.update(i, total, `Mapa ${i}/${total}`),
+      );
+      prog.close();
+      lastAnalysis = buildGameIndex(reports, { metadata, townmap });
+      el.querySelector("#an-exp").disabled = false;
+      log(`Análisis: ${reports.length} mapas escaneados.`);
+      drawDashboard(out, lastAnalysis, goTab);
+    } catch (e) { prog.close(); out.innerHTML = `<div class="logrow error">${esc(e.message)}</div>`; }
+  };
+  el.querySelector("#an-exp").onclick = () => {
+    if (!lastAnalysis) return;
+    downloadText(JSON.stringify(indexToJSON(lastAnalysis)), "pokemod-analisis.json", "application/json");
+    toast("Análisis exportado.");
+  };
+}
+
+function drawDashboard(out, idx, goTab) {
+  const T = idx.totals;
+  const cell = (v, l) => `<div><b>${v}</b><span>${l}</span></div>`;
+  out.innerHTML = `
+    <div class="stats">
+      ${cell(T.maps, "mapas")}${cell(T.events, "eventos")}${cell(T.npcs, "NPCs")}
+      ${cell(T.texts, "textos")}${cell(T.switchesUsed, "switches")}${cell(T.varsUsed, "variables")}
+      ${cell(T.itemsRef, "objetos")}${cell(T.speciesRef, "especies")}
+      ${cell(T.trainerBattles, "batallas")}${cell(T.transfers, "salidas")}
+    </div>
+    <div class="row wrap" style="margin-top:8px">
+      <label>Ver <select id="an-view" class="inp">
+        <option value="dialogos">Diálogos</option>
+        <option value="npcs">NPCs</option>
+        <option value="flags">Flags</option>
+        <option value="refs">Objetos / Especies / Entrenadores</option>
+        <option value="mapas">Mapas y colisiones</option>
+        <option value="islas">Islas y regiones</option>
+      </select></label>
+      <input id="an-q" class="inp" placeholder="Filtrar…" style="flex:1;min-width:140px" />
+    </div>
+    <div id="an-list" style="margin-top:8px"></div>`;
+  const viewSel = out.querySelector("#an-view");
+  const q = out.querySelector("#an-q");
+  const list = out.querySelector("#an-list");
+  const paint = () => paintAnalysisList(list, idx, viewSel.value, q.value, goTab);
+  viewSel.onchange = paint;
+  q.oninput = paint;
+  paint();
+}
+
+function anJump(goTab, mapId, evId, page) {
+  S.currentMap = mapId;
+  if (evId) { S.currentEvent = evId; S.currentPage = page || 0; goTab("events"); }
+  else goTab("maps");
+}
+
+function paintAnalysisList(list, idx, view, q, goTab) {
+  const needle = String(q || "").toLowerCase();
+  const hit = (...ss) => !needle || ss.some((s) => String(s ?? "").toLowerCase().includes(needle));
+  const CAP = 500;
+  const jbtn = (label, mapId, evId, page) => `<button class="linkbtn" data-j="${mapId}:${evId || ""}:${page || 0}">${esc(label)}</button>`;
+  let html = "";
+  const more = (n) => (n > CAP ? `<p class="muted small">…y ${n - CAP} más (usa el filtro).</p>` : "");
+  if (view === "dialogos") {
+    const rows = idx.dialogues.filter((d) => hit(d.text, d.mapName, d.evName, d.kind));
+    html = rows.slice(0, CAP).map((d) => `<div class="logrow">${jbtn(`${d.mapId} · ${d.evName}#${d.page + 1}`, d.mapId, d.evId, d.page)}
+      <span class="muted">[${esc(d.kind)}]</span> ${esc(String(d.text).replace(/\n/g, " / ").slice(0, 160))}</div>`).join("");
+    html += more(rows.length);
+  } else if (view === "npcs") {
+    const rows = idx.npcs.filter((d) => hit(d.name, d.mapName, d.sprite));
+    html = rows.slice(0, CAP).map((d) => `<div class="logrow">${jbtn(`${d.mapId} · ev ${d.evId}`, d.mapId, d.evId, 0)}
+      <b>${esc(d.name)}</b> <span class="muted">${esc(d.sprite)} @(${d.x},${d.y}) · ${esc(d.mapName)}</span></div>`).join("");
+    html += more(rows.length);
+  } else if (view === "flags") {
+    const rows = [...idx.flagUses.entries()]
+      .map(([flag, uses]) => ({ flag, uses }))
+      .filter((r) => hit(r.flag, ...r.uses.map((u) => u.mapName)))
+      .sort((a, b) => {
+        const [ak, ai] = a.flag.split(":"); const [bk, bi] = b.flag.split(":");
+        return ak === bk ? Number(ai) - Number(bi) : (ak < bk ? -1 : 1);
+      });
+    html = rows.slice(0, CAP).map((r) => {
+      const [kind, id] = r.flag.split(":");
+      const label = kind === "sw" ? `Switch ${id}` : `Variable ${id}`;
+      const maps = [...new Set(r.uses.map((u) => u.mapId))];
+      return `<div class="logrow"><b>${esc(label)}</b> <span class="muted">${r.uses.length} usos · mapas ${maps.slice(0, 6).join(", ")}${maps.length > 6 ? "…" : ""}</span>
+        ${jbtn("ir", maps[0])}</div>`;
+    }).join("");
+    html += more(rows.length);
+  } else if (view === "refs") {
+    const sp = [...idx.speciesUses.entries()].filter(([k, v]) => hit(k, ...v.map((u) => u.mapName)));
+    const it = [...idx.itemUses.entries()].filter(([k, v]) => hit(k, ...v.map((u) => u.mapName)));
+    const tr = idx.trainerBattles.filter((t) => hit(t.type, t.name, t.mapName));
+    html = `<h4>Especies (${sp.length})</h4>` + sp.slice(0, CAP).map(([k, v]) => {
+      const maps = [...new Set(v.map((u) => u.mapId))];
+      return `<div class="logrow"><b>${esc(k)}</b> <span class="muted">${v.length} usos · mapas ${maps.slice(0, 6).join(", ")}${maps.length > 6 ? "…" : ""}</span> ${jbtn("ir", maps[0])}</div>`;
+    }).join("") + more(sp.length);
+    html += `<h4>Objetos (${it.length})</h4>` + it.slice(0, CAP).map(([k, v]) => {
+      const maps = [...new Set(v.map((u) => u.mapId))];
+      return `<div class="logrow"><b>${esc(k)}</b> <span class="muted">${v.length} usos · mapas ${maps.slice(0, 6).join(", ")}${maps.length > 6 ? "…" : ""}</span> ${jbtn("ir", maps[0])}</div>`;
+    }).join("") + more(it.length);
+    html += `<h4>Batallas de entrenador (${tr.length})</h4>` + tr.slice(0, CAP).map((t) => `<div class="logrow">${jbtn(`${t.mapId} · ev ${t.evId}`, t.mapId, t.evId, t.page)}
+      <b>${esc(t.type)} ${esc(t.name)}</b> <span class="muted">v${t.version} · ${esc(t.mapName)}</span></div>`).join("") + more(tr.length);
+  } else if (view === "mapas") {
+    const rows = idx.collisions.filter((c) => hit(c.mapName, c.mapId, c.tilesetName));
+    html = `<h4>Colisiones (${rows.length})</h4>` + rows.slice(0, CAP).map((c) => {
+      const p = c.total ? Math.round((c.blocked / c.total) * 100) : 0;
+      return `<div class="logrow">${jbtn(`${c.mapId} · ${c.mapName}`, c.mapId)}
+        <span class="muted">${c.w}x${c.h} · ${esc(c.tilesetName || "?")} · bloqueado ${p}% (${c.blocked}/${c.total}) · parcial ${c.partial}${c.terrainTags?.length ? ` · terreno ${c.terrainTags.join(",")}` : ""}</span></div>`;
+    }).join("") + more(rows.length);
+    const trs = idx.transfers.filter((t) => hit(t.mapName, t.mapId, t.map));
+    html += `<h4>Salidas (${trs.length})</h4>` + trs.slice(0, CAP).map((t) => `<div class="logrow">${jbtn(`${t.mapId} · ev ${t.evId}`, t.mapId, t.evId, t.page)}
+      <span class="muted">${esc(t.mapName)} → ${t.dynamic ? "dinámica (variables)" : `mapa ${t.map} (${t.x},${t.y})`}</span></div>`).join("") + more(trs.length);
+  } else if (view === "islas") {
+    const regs = idx.islands.regions.filter((r) => !needle || hit(r.name, r.region, ...r.maps.map((m) => m.name)));
+    html = regs.map((r) => `<div class="logrow"><b>Región ${esc(String(r.region))}${r.name ? ` · ${esc(r.name)}` : ""}</b>
+      <span class="muted">${r.maps.length} mapas · ${r.points} puntos${r.filename ? ` · ${esc(r.filename)}` : ""}</span><br/>` +
+      r.maps.slice(0, 60).map((m) => jbtn(`${m.id} ${m.name} @${m.x},${m.y}`, m.id)).join(" ") +
+      (r.maps.length > 60 ? `<span class="muted"> …${r.maps.length - 60} más</span>` : "") + `</div>`).join("");
+    if (idx.islands.unplaced.length) {
+      html += `<h4>Sin posición en el mapamundi (${idx.islands.unplaced.length})</h4>` +
+        idx.islands.unplaced.slice(0, CAP).map((m) => `<div class="logrow">${jbtn(`${m.id} · ${m.name}`, m.id)} <span class="muted">${m.events} eventos</span></div>`).join("");
+    }
+  }
+  list.innerHTML = html || `<p class="muted">Sin resultados.</p>`;
+  list.querySelectorAll("[data-j]").forEach((b) => {
+    b.onclick = () => {
+      const [mid, eid, pg] = b.dataset.j.split(":");
+      anJump(goTab, Number(mid), eid ? Number(eid) : 0, Number(pg) || 0);
+    };
+  });
+}
+
+// ============================================================================
+// 7. Packs de contenido nuevo
+// ============================================================================
+const PACK_TOWN_CANDS = ["PBS/townmap.txt", "PBS/town_map.txt", "townmap.txt", "town_map.txt"];
+
+function renderPacks(el, { goTab }) {
+  el.innerHTML = `
+    <p class="muted small">Instala jefes e islas 100% aditivos: mapa hub nuevo + 1 puerta + secciones PBS nuevas. Cada instalación hace backup automático y guarda un manifiesto para desinstalar.</p>
+    <div id="pk-list"></div>
+    <div class="row" style="margin-top:8px">
+      <button class="btn" id="pk-import">Importar pack (JSON)…</button>
+      <input type="file" id="pk-file" accept=".json,application/json" hidden />
+    </div>
+    <div id="pk-work" style="margin-top:8px"></div>
+    <h4 style="margin-top:12px">Instalados</h4>
+    <div id="pk-installed"><p class="muted">Ninguno.</p></div>`;
+  const list = el.querySelector("#pk-list");
+  const work = el.querySelector("#pk-work");
+  const done = () => refreshInstalled(el);
+  fetch("./packs/isla_espejo.json").then((r) => {
+    if (!r.ok) throw new Error("http " + r.status);
+    return r.json();
+  }).then((pack) => {
+    list.innerHTML = packCard(pack);
+    list.querySelector("#pk-open").onclick = () => reviewPack(pack, work, goTab, done);
+  }).catch(() => { list.innerHTML = `<p class="muted">Pack incluido no disponible (¿caché vieja?).</p>`; });
+  el.querySelector("#pk-import").onclick = () => el.querySelector("#pk-file").click();
+  el.querySelector("#pk-file").onchange = async (e) => {
+    const f = e.target.files[0];
+    e.target.value = "";
+    if (!f) return;
+    try {
+      const pack = JSON.parse(await f.text());
+      reviewPack(pack, work, goTab, done);
+    } catch { work.innerHTML = `<div class="logrow error">El archivo no es un JSON válido.</div>`; }
+  };
+  refreshInstalled(el);
+}
+
+function packCard(pack) {
+  const n = (pack.bosses || []).length;
+  const m = (pack.extras || []).length;
+  return `<div class="card"><div class="card-body">
+    <b>${esc(pack.title || pack.pack || "Pack")}</b>
+    <p class="muted small">${esc(pack.description || "")}</p>
+    <p class="small">${n} jefes · ${m} extras · hub "${esc(pack.hub?.name || "?")}" ${esc(String(pack.hub?.width ?? "?"))}x${esc(String(pack.hub?.height ?? "?"))}</p>
+    <button class="btn primary" id="pk-open">Revisar e instalar</button>
+  </div></div>`;
+}
+
+async function reviewPack(pack, work, goTab, onDone) {
+  work.innerHTML = `<p class="muted">Validando pack…</p>`;
+  try {
+    const [species, items, ttypes] = await Promise.all([
+      sectionIds("pokemon.txt"), sectionIds("items.txt"), sectionIds("trainertypes.txt"),
+    ]);
+    const issues = validatePack(pack, { species, items });
+    const errs = issues.filter((i) => i.level === "error");
+    const townRel = findPBS(PACK_TOWN_CANDS);
+    const townText = await pbsTextOr(townRel);
+    const regions = getTownRegions(townText);
+    const hubId = S.mapList.length ? Math.max(...S.mapList.map((m) => m.id)) + 1 : 1;
+    const charSet = new Set(S.characters.map((n) => n.replace(/\.[^.]+$/, "").toLowerCase()));
+    const lvl = (b) => {
+      const ls = (b.team || []).map((m) => Number(m.level)).filter(Number.isInteger);
+      return ls.length ? `Nv ${Math.min(...ls)}–${Math.max(...ls)}` : "";
+    };
+    const typeSel = (b) => {
+      const sug = String(b.suggestedType || "").toUpperCase();
+      const match = ttypes.find((t) => t.toUpperCase() === sug) || ttypes.find((t) => t.toUpperCase() === "CAMPER") || ttypes[0] || "";
+      return ttypes.map((t) => `<option value="${esc(t)}"${t === match ? " selected" : ""}>${esc(t)}</option>`).join("");
+    };
+    const spr = (b) => String(b.suggestedSprite ?? "");
+    const sprMissing = (b) => spr(b) && !charSet.has(spr(b).toLowerCase());
+    const tsOpts = [...S.tilesets.entries()].map(([id, t]) => `<option value="${id}">${id}: ${esc(t.name || t.tilesetName || "?")}</option>`).join("");
+    const mapOpts = S.mapList.map((m) => `<option value="${m.id}"${m.id === S.currentMap ? " selected" : ""}>${m.id}: ${esc(m.name || "")}</option>`).join("");
+    const regOpts = regions.map((r) => `<option value="${esc(String(r.region))}">${esc(String(r.region))}${r.name ? `: ${esc(r.name)}` : ""} (${r.points.length} puntos)</option>`).join("");
+    const defReg = regions.find((r) => String(r.region) === "0") || regions[0];
+    const free = defReg ? findFreeTownCoord(defReg.points, pack.hub?.townPrefer || { x: 1, y: 1 }) : { x: 1, y: 1 };
+    work.innerHTML = `
+      <h4>${esc(pack.title || "Pack")}</h4>
+      ${issues.length ? issues.map((i) => `<div class="logrow ${i.level === "info" ? "" : i.level}"><b>${esc(i.where)}</b> — ${esc(i.msg)}</div>`).join("") : `<div class="logrow ok">Sin problemas.</div>`}
+      <p class="small">Hub "${esc(pack.hub?.name || "?")}" ${esc(String(pack.hub?.width ?? "?"))}x${esc(String(pack.hub?.height ?? "?"))} → será el mapa <b>${hubId}</b>.</p>
+      ${(pack.bosses || []).map((b) => `
+        <div class="card"><div class="card-body">
+          <b>${esc(b.name || b.id)}</b> <span class="muted small">(${(b.x ?? "?")},${(b.y ?? "?")}) · ${(b.team || []).length} Pokémon · ${lvl(b)}</span>
+          <div class="row wrap" style="margin-top:4px">
+            <label>Tipo <select id="pk-type-${esc(b.id)}" class="inp">${typeSel(b)}</select></label>
+            <label>Sprite <input id="pk-spr-${esc(b.id)}" class="inp" value="${esc(spr(b))}" size="14" /></label>
+            <button class="btn small" id="pk-pick-${esc(b.id)}">Elegir…</button>
+          </div>
+          ${sprMissing(b) ? `<p class="muted small">El sprite sugerido "${esc(spr(b))}" no está en tu proyecto: elige uno parecido.</p>` : ""}
+          <p class="muted small">El tipo define el sprite de batalla y la música: usa uno que exista en tu juego.</p>
+        </div></div>`).join("")}
+      <div class="row wrap">
+        <label>Tileset del hub <select id="pk-ts" class="inp">${tsOpts}</select></label>
+      </div>
+      <div class="row wrap">
+        <label>Puerta en <select id="pk-doormap" class="inp">${mapOpts}</select></label>
+        <label>X <input id="pk-doorx" class="inp" type="number" value="5" min="0" style="width:64px" /></label>
+        <label>Y <input id="pk-doory" class="inp" type="number" value="5" min="0" style="width:64px" /></label>
+      </div>
+      ${regions.length ? `<div class="row wrap">
+        <label>Región <select id="pk-region" class="inp">${regOpts}</select></label>
+        <label>Mapa X <input id="pk-townx" class="inp" type="number" value="${free.x}" min="0" max="29" style="width:64px" /></label>
+        <label>Mapa Y <input id="pk-towny" class="inp" type="number" value="${free.y}" min="0" max="19" style="width:64px" /></label>
+      </div>` : `<p class="muted small">Sin townmap.txt: el hub no tendrá punto en el mapamundi.</p>`}
+      <div class="row" style="margin-top:6px">
+        <button class="btn primary" id="pk-apply"${errs.length ? " disabled" : ""}>Instalar pack</button>
+      </div>
+      ${errs.length ? `<p class="muted small">Corrige los errores del pack antes de instalar (edita el JSON e impórtalo de nuevo).</p>` : `<p class="muted small">Se hará backup automático antes de escribir.</p>`}
+      <div id="pk-applyout" style="margin-top:6px"></div>`;
+    if (defReg) work.querySelector("#pk-region").value = String(defReg.region);
+    const regSel = work.querySelector("#pk-region");
+    if (regSel) regSel.onchange = () => {
+      const r = regions.find((x) => String(x.region) === regSel.value);
+      if (!r) return;
+      const f = findFreeTownCoord(r.points, pack.hub?.townPrefer || { x: 1, y: 1 });
+      work.querySelector("#pk-townx").value = f.x;
+      work.querySelector("#pk-towny").value = f.y;
+    };
+    for (const b of pack.bosses || []) {
+      const inp = work.querySelector(`#pk-spr-${CSS.escape(b.id)}`);
+      work.querySelector(`#pk-pick-${CSS.escape(b.id)}`).onclick = () => {
+        spritePickerModal("Sprite de " + (b.name || b.id), inp.value, (name) => { inp.value = name; });
+      };
+    }
+    const applyBtn = work.querySelector("#pk-apply");
+    if (applyBtn && !errs.length) applyBtn.onclick = () => applyPack(pack, work, goTab, onDone);
+  } catch (e) { work.innerHTML = `<div class="logrow error">${esc(e.message)}</div>`; }
+}
+
+async function applyPack(pack, work, goTab, onDone) {
+  const out = work.querySelector("#pk-applyout");
+  const typeMap = {}, spriteMap = {};
+  for (const b of pack.bosses || []) {
+    typeMap[b.id] = work.querySelector(`#pk-type-${CSS.escape(b.id)}`).value;
+    spriteMap[b.id] = work.querySelector(`#pk-spr-${CSS.escape(b.id)}`).value.trim();
+  }
+  const doorMap = Number(work.querySelector("#pk-doormap").value);
+  const doorX = Number(work.querySelector("#pk-doorx").value);
+  const doorY = Number(work.querySelector("#pk-doory").value);
+  const tilesetId = Number(work.querySelector("#pk-ts").value);
+  const regSel = work.querySelector("#pk-region");
+  const region = regSel ? regSel.value : "0";
+  const townX = regSel ? Number(work.querySelector("#pk-townx").value) : 1;
+  const townY = regSel ? Number(work.querySelector("#pk-towny").value) : 1;
+  out.innerHTML = `<p class="muted">Instalando…</p>`;
+  const prog = showProgress("Instalando pack…");
+  try {
+    const hubId = S.mapList.length ? Math.max(...S.mapList.map((m) => m.id)) + 1 : 1;
+    const drec = await loadMap(doorMap);
+    if (![doorX, doorY].every(Number.isInteger) || doorX < 0 || doorY < 0 || doorX >= drec.parsed.width || doorY >= drec.parsed.height) {
+      throw new Error("La puerta está fuera del mapa elegido.");
+    }
+    if (doorY + 1 >= drec.parsed.height) throw new Error("La casilla al sur de la puerta está fuera del mapa: el regreso necesita ese hueco.");
+    const plan = planPack(pack, { typeMap, spriteMap, tilesetId, doorMap, doorX, doorY, region, townX, townY, hubId });
+    prog.update(1, 8, "Backup…");
+    await backupNow(`pack-${pack.pack || "nuevo"}`);
+    prog.update(2, 8, "Creando hub…");
+    const obj = buildMap({ tilesetId: plan.tilesetId, width: plan.W, height: plan.H, fill: Number(pack.hub?.fill || 0) });
+    const parsed = parseMap(obj);
+    for (const e of plan.events) insertEvent(parsed, e.name, e.x, e.y, e.pages);
+    const order = S.mapList.filter((x) => x.parent === 0).length + 1;
+    S.mapInfosObj.pairs.push([hubId, buildMapInfo(plan.hubName, 0, order)]);
+    S.maps.set(hubId, { info: null, parsed, dirty: true });
+    await saveMap(hubId);
+    await saveMapInfos();
+    const rec = S.maps.get(hubId);
+    if (rec) rec.info = S.mapList.find((x) => x.id === hubId);
+    prog.update(3, 8, "Colocando puerta…");
+    const busy = drec.parsed.events.filter((e) => e.obj && Number(e.obj.getIvar("@x")) === doorX && Number(e.obj.getIvar("@y")) === doorY).length;
+    const doorEvId = insertEvent(drec.parsed, plan.door.name, doorX, doorY, plan.door.pages);
+    await saveMap(doorMap);
+    const trRel = findPBS(["PBS/trainers.txt", "trainers.txt"]);
+    if (!trRel) throw new Error("No se encontró trainers.txt.");
+    prog.update(4, 8, "PBS entrenadores…");
+    let trText = await pbsTextOr(trRel);
+    for (const e of plan.trainerEntries) trText = setSectionBody(trText, e.header.slice(1, -1), e.body);
+    await savePBSText(trRel, trText);
+    prog.update(5, 8, "PBS metadatos…");
+    const mdRel = findPBS(["PBS/metadata.txt", "metadata.txt"]);
+    if (mdRel) {
+      const md = setSectionBody(await pbsTextOr(mdRel), pad3(hubId), plan.metadataBody);
+      await savePBSText(mdRel, md);
+    }
+    prog.update(6, 8, "Mapamundi…");
+    const townRel = findPBS(PACK_TOWN_CANDS);
+    if (townRel && regSel) {
+      const tt = await pbsTextOr(townRel);
+      const regs = getTownRegions(tt);
+      const r = regs.find((x) => String(x.region) === String(region));
+      if (r) await savePBSText(townRel, setTownPoints(tt, r.region, [...r.points, plan.townPoint]));
+    }
+    prog.update(7, 8, "Manifiesto…");
+    plan.manifest.doorEventId = doorEvId;
+    await FS.writeBytes(`PokeModBackups/packs/${pack.pack || "pack"}_${Date.now()}.json`,
+      new TextEncoder().encode(JSON.stringify(plan.manifest, null, 2)), { internal: true });
+    prog.update(8, 8, "Listo");
+    prog.close();
+    S.currentMap = hubId;
+    out.innerHTML = `<div class="logrow ok">Pack instalado: hub "${esc(plan.hubName)}" = mapa ${hubId}, puerta en mapa ${doorMap} (${doorX},${doorY}), ${plan.trainerEntries.length} entrenadores.</div>
+      ${busy ? `<div class="logrow warn">Aviso: ya había ${busy} evento(s) en la casilla de la puerta.</div>` : ""}
+      <div class="row" style="margin-top:6px"><button class="btn small" id="pk-jump">Ver hub</button></div>`;
+    out.querySelector("#pk-jump").onclick = () => goTab("maps");
+    toast("Pack instalado.");
+    log(`Pack instalado: ${pack.title || pack.pack} (hub ${hubId}).`);
+    onDone();
+  } catch (e) { prog.close(); out.innerHTML = `<div class="logrow error">${esc(e.message)}</div>`; }
+}
+
+async function refreshInstalled(el) {
+  const box = el.querySelector("#pk-installed");
+  let files = [];
+  try { files = (await FS.walk("PokeModBackups/packs", 500)).filter((f) => f.endsWith(".json")); }
+  catch { files = []; }
+  const rows = [];
+  for (const f of files) {
+    try { rows.push({ f, m: JSON.parse(new TextDecoder().decode(await FS.readBytes(f))) }); }
+    catch { /* manifiesto corrupto, se omite */ }
+  }
+  if (!rows.length) { box.innerHTML = `<p class="muted">Ninguno.</p>`; return; }
+  box.innerHTML = rows.map(({ m }, i) => `<div class="logrow"><b>${esc(m.title || m.pack || "?")}</b>
+    <span class="muted">hub ${m.hubId} · puerta mapa ${m.doorMap} · ${esc(m.ts || "")}</span>
+    <button class="btn small" data-un="${i}">Desinstalar</button></div>`).join("");
+  box.querySelectorAll("[data-un]").forEach((b) => {
+    b.onclick = () => uninstallPack(rows[Number(b.dataset.un)], () => refreshInstalled(el));
+  });
+}
+
+async function uninstallPack({ f, m }, done) {
+  const ok = await confirmDialog("Desinstalar pack",
+    `Se eliminará "${m.title || m.pack}": el mapa hub ${m.hubId}, su puerta (mapa ${m.doorMap}, evento ${m.doorEventId}), ${(m.trainerHeaders || []).length} entrenadores, sus metadatos y su punto del mapamundi. Se hace backup antes. Si tu partida guardada está dentro del hub, sal de él primero.`,
+    "Desinstalar");
+  if (!ok) return;
+  const prog = showProgress("Desinstalando…");
+  try {
+    prog.update(1, 6, "Backup…");
+    await backupNow(`pre-quitar-${m.pack || "pack"}`);
+    prog.update(2, 6, "PBS entrenadores…");
+    const trRel = findPBS(["PBS/trainers.txt", "trainers.txt"]);
+    if (trRel) {
+      let t = await pbsTextOr(trRel);
+      for (const h of m.trainerHeaders || []) t = removeSectionBody(t, String(h).replace(/^\[|\]$/g, ""));
+      await savePBSText(trRel, t);
+    }
+    prog.update(3, 6, "Metadatos y mapamundi…");
+    const mdRel = findPBS(["PBS/metadata.txt", "metadata.txt"]);
+    if (mdRel) {
+      let t = await pbsTextOr(mdRel);
+      t = removeSectionBody(t, String(m.hubId).padStart(3, "0"));
+      t = removeSectionBody(t, String(m.hubId));
+      await savePBSText(mdRel, t);
+    }
+    const townRel = findPBS(PACK_TOWN_CANDS);
+    if (townRel) {
+      const tt = await pbsTextOr(townRel);
+      const r = getTownRegions(tt).find((x) => String(x.region) === String(m.region));
+      if (r) await savePBSText(townRel, setTownPoints(tt, r.region, r.points.filter((p) => !(p.x === m.townX && p.y === m.townY))));
+    }
+    prog.update(4, 6, "Puerta…");
+    const drec = await loadMap(m.doorMap);
+    const hash = drec.parsed.obj.getIvar("events");
+    if (hash && Array.isArray(hash.pairs)) hash.pairs = hash.pairs.filter(([eid]) => eid !== m.doorEventId);
+    drec.parsed.events = drec.parsed.events.filter((e) => e.id !== m.doorEventId);
+    await saveMap(m.doorMap);
+    prog.update(5, 6, "Hub…");
+    S.mapInfosObj.pairs = S.mapInfosObj.pairs.filter(([mid]) => mid !== m.hubId);
+    S.maps.delete(m.hubId);
+    if (S.currentMap === m.hubId) S.currentMap = S.tree[0]?.id ?? null;
+    await saveMapInfos();
+    try { await FS.deleteFile(`Data/Map${pad3(m.hubId)}.rxdata`); } catch { /* ya no estaba */ }
+    try { await FS.deleteFile(f); } catch { /* noop */ }
+    prog.update(6, 6, "Listo");
+    prog.close();
+    toast("Pack desinstalado.");
+    log(`Pack desinstalado: ${m.title || m.pack}.`);
+    done();
+  } catch (e) { prog.close(); toast(`Error: ${e.message}`, "error"); }
 }

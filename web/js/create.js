@@ -110,6 +110,7 @@ export function buildNpc(p = {}) {
 
 export function buildTrainer(p = {}) {
   const ver = Number(p.version || 0), dbl = !!p.double;
+  const boss = p.mode === "boss";
   const ttype = (p.ttype || "CAMPER").toUpperCase();
   const tname = p.tname || "Dave";
   const call = (ver === 0 && !dbl)
@@ -123,16 +124,16 @@ export function buildTrainer(p = {}) {
     ]));
   }
   list.push(...scriptCmds([`pbTrainerIntro(:${ttype})`]));
-  list.push(...scriptCmds(["pbNoticePlayer(get_self)"]));
+  if (!boss) list.push(...scriptCmds(["pbNoticePlayer(get_self)"]));
   list.push(...textCmds(p.intro || ["¡A luchar!"]));
   list.push(...condScript(call, [selfSwitchOn("A", 1)]));
   list.push(...scriptCmds(["pbTrainerEnd"]));
   list.push(END());
   const gfx = () => evGraphic(p.sprite || "", 0, p.dir || 2, 1);
   return {
-    name: `Trainer(${p.sight || 3})`,
+    name: boss ? (p.displayName || tname) : `Trainer(${p.sight || 3})`,
     pages: [
-      evPage({ gfx: gfx(), trigger: 2, list }),
+      evPage({ gfx: gfx(), trigger: boss ? 0 : 2, list }),
       evPage({ cond: evCondition({ self: "A" }), gfx: gfx(), list: [...textCmds(p.after || ["..."]), END()] }),
     ],
   };
@@ -334,6 +335,20 @@ export function setSectionBody(text, header, body) {
 }
 
 // --- Mapamundi (townmap.txt v19) --------------------------------------------
+export function removeSectionBody(text, header) {
+  const t = text || "";
+  const m = SEC_START(header).exec(t);
+  if (!m) return t;
+  const rest = t.slice(m.index + m[0].length);
+  const next = ANY_SEC.exec(rest);
+  const bodyEnd = next ? m.index + m[0].length + next.index : t.length;
+  let head = t.slice(0, m.index).replace(/#-------------------------------\s*$/, "").replace(/\s+$/, "");
+  const tail = next ? t.slice(bodyEnd).replace(/^\s+/, "") : "";
+  if (!head) return tail;
+  if (!tail) return head + "\n";
+  return head + "\n#-------------------------------\n" + tail;
+}
+
 export function parseTownPointLine(line) {
   const m = String(line || "").trim().match(/^Point\s*=\s*(.+)$/i);
   if (!m) return null;

@@ -1,0 +1,184 @@
+{
+  "pack": "isla_espejo",
+  "title": "Isla Espejo: jefes del multiverso",
+  "version": 1,
+  "author": "PokeMod Studio",
+  "description": "Una isla post-juego al estilo Frente de Batalla: 8 jefes de otras líneas temporales (manga, spin-offs y errores del código) te esperan para combates amistosos. 100% aditivo: no toca mapas, eventos ni PBS existentes.",
+  "hub": {
+    "name": "Isla Espejo",
+    "width": 30,
+    "height": 22,
+    "fill": 0,
+    "poi": "Torre del Desafío",
+    "spawn": { "x": 15, "y": 19 },
+    "exitName": "Volver"
+  },
+  "door": {
+    "name": "Espejo extraño",
+    "text": "Un espejo flotante refleja un archipiélago imposible... ¡Es la Isla Espejo!"
+  },
+  "bosses": [
+    {
+      "id": "miror_b",
+      "name": "Miror B.",
+      "suggestedType": "MIRORB",
+      "suggestedSprite": "MirorB",
+      "x": 5, "y": 5, "dir": 2,
+      "loseText": "¡Mi baile... se detiene...!",
+      "intro": ["¡Oh yeah! ¡Miror B. entra en escena!", "¡Mis Ludicolo llevan el ritmo... y tú llevarás la derrota!"],
+      "after": ["¡Increíble! ¡Tienes ritmo, chaval!", "Vuelve cuando quieras otra ronda de baile."],
+      "team": [
+        { "species": "LUDICOLO", "level": 60 },
+        { "species": "LUDICOLO", "level": 60 },
+        { "species": "LUDICOLO", "level": 62 },
+        { "species": "LUDICOLO", "level": 62 },
+        { "species": "ELECTRODE", "level": 58 },
+        { "species": "SUDOWOODO", "level": 58 }
+      ]
+    },
+    {
+      "id": "azul_rocket",
+      "name": "Azul",
+      "suggestedType": "ROCKETBOSS",
+      "suggestedSprite": "AzulRocket",
+      "x": 12, "y": 4, "dir": 2,
+      "loseText": "No... El jefe no tolera el fracaso.",
+      "intro": ["Giovanni me ofreció el mundo... y lo acepté.", "Demuéstrame que el Team Rocket se equivocó contigo."],
+      "after": ["Ni con el poder del Team Rocket pude ganarte...", "Quizá elegí el bando equivocado."],
+      "team": [
+        { "species": "CHARIZARD", "level": 70 },
+        { "species": "GOLBAT", "level": 62 },
+        { "species": "SCYTHER", "level": 64 },
+        { "species": "MACHAMP", "level": 64 },
+        { "species": "PORYGON", "level": 62 },
+        { "species": "NINETALES", "level": 64 }
+      ]
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "suggestedType": "YELLOW",
+      "suggestedSprite": "Yellow",
+      "x": 19, "y": 4, "dir": 2,
+      "loseText": "Mis amigos lo dieron todo...",
+      "intro": ["Mis Pokémon y yo nos entendemos sin palabras.", "¿Me enseñas tu vínculo con los tuyos?"],
+      "after": ["Se nota que tus Pokémon te quieren de verdad.", "Cuídalos siempre, ¿vale?"],
+      "team": [
+        { "species": "PIKACHU", "level": 65, "nick": "Chuchu" },
+        { "species": "RATICATE", "level": 60, "nick": "Ratty" },
+        { "species": "DODRIO", "level": 62, "nick": "Dody" },
+        { "species": "GOLEM", "level": 63, "nick": "Gravvy" },
+        { "species": "OMASTAR", "level": 61, "nick": "Omny" },
+        { "species": "BUTTERFREE", "level": 60, "nick": "Kitty" }
+      ]
+    },
+    {
+      "id": "gonzap",
+      "name": "Gonzap",
+      "suggestedType": "SNAGEM",
+      "suggestedSprite": "Gonzap",
+      "x": 24, "y": 6, "dir": 4,
+      "loseText": "¡Mi Snag Machine...!",
+      "intro": ["¡Soy Gonzap, líder del Equipo Cepo!", "¡Te voy a arrebatar hasta las ganas de luchar!"],
+      "after": ["¡Bah! ¡Hoy no es mi día para robar victorias!", "Lárgate antes de que cambie de opinión."],
+      "team": [
+        { "species": "SKARMORY", "level": 66 },
+        { "species": "SHIFTRY", "level": 64 },
+        { "species": "CRAWDAUNT", "level": 64 },
+        { "species": "PINSIR", "level": 62 },
+        { "species": "HARIYAMA", "level": 65 },
+        { "species": "MACHAMP", "level": 66 }
+      ]
+    },
+    {
+      "id": "cintia_anc",
+      "name": "Cintia",
+      "suggestedType": "CYNTHIA",
+      "suggestedSprite": "Cintia",
+      "x": 5, "y": 12, "dir": 2,
+      "loseText": "Los mitos... se equivocaban.",
+      "intro": ["Porto la armadura de los ancestros de Sinnoh.", "Muéstrame si tu equipo está a la altura de la leyenda."],
+      "after": ["Un combate digno de los mitos.", "Garchomp y yo te estaremos esperando."],
+      "team": [
+        { "species": "GARCHOMP", "level": 75 },
+        { "species": "SPIRITOMB", "level": 70 },
+        { "species": "TOGEKISS", "level": 71 },
+        { "species": "LUCARIO", "level": 72 },
+        { "species": "MILOTIC", "level": 71 },
+        { "species": "ROSERADE", "level": 70 }
+      ]
+    },
+    {
+      "id": "rojo_manga",
+      "name": "Rojo",
+      "suggestedType": "RED",
+      "suggestedSprite": "Rojo",
+      "x": 12, "y": 13, "dir": 2,
+      "loseText": "...Buen combate.",
+      "intro": ["El Monte Silver casi acaba conmigo. Casi.", "Si quieres ser el mejor, tendrás que pasar sobre mí."],
+      "after": ["...", "Eres fuerte. Sigue así."],
+      "team": [
+        { "species": "PIKACHU", "level": 75, "nick": "Pika" },
+        { "species": "VENUSAUR", "level": 73, "nick": "Saur" },
+        { "species": "POLIWRATH", "level": 72, "nick": "Poli" },
+        { "species": "AERODACTYL", "level": 72, "nick": "Aero" },
+        { "species": "SNORLAX", "level": 74, "nick": "Snor" },
+        { "species": "GYARADOS", "level": 73, "nick": "Gyara" }
+      ]
+    },
+    {
+      "id": "shiny_hunter",
+      "name": "Coleccionista",
+      "suggestedType": "COLLECTOR",
+      "suggestedSprite": "Coleccionista",
+      "x": 19, "y": 13, "dir": 2,
+      "loseText": "¡Mi colección... opacada!",
+      "intro": ["¿Ves mi equipo? ¡Todo variocolor, todo perfecto!", "¡Ni se te ocurra tocarlos con tus sucias Poké Balls!"],
+      "after": ["¡Brillante! ¡Literalmente brillante!", "Tu victoria también tiene su brillo, lo admito."],
+      "team": [
+        { "species": "GYARADOS", "level": 65, "shiny": true },
+        { "species": "HAXORUS", "level": 66, "shiny": true },
+        { "species": "METAGROSS", "level": 67, "shiny": true },
+        { "species": "CHARIZARD", "level": 66, "shiny": true },
+        { "species": "RAYQUAZA", "level": 70, "shiny": true },
+        { "species": "UMBREON", "level": 64, "shiny": true }
+      ]
+    },
+    {
+      "id": "game_over",
+      "name": "El Fin del Juego",
+      "suggestedType": "GAMEOVER",
+      "suggestedSprite": "GameOver",
+      "x": 24, "y": 15, "dir": 4,
+      "loseText": "NO DATA... CONTINUAR...",
+      "intro": ["NO DATA. NO DATA.", "Soy lo último que verás antes del fundido a negro."],
+      "after": ["CONTINUAR... 9... 8...", "Has ganado tiempo. Solo tiempo."],
+      "team": [
+        { "species": "YVELTAL", "level": 78 },
+        { "species": "DARKRAI", "level": 76 },
+        { "species": "SPIRITOMB", "level": 74 },
+        { "species": "GENGAR", "level": 74 },
+        { "species": "DUSCLOPS", "level": 73 },
+        { "species": "ABSOL", "level": 74 }
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "kind": "healer", "x": 8, "y": 9,
+      "name": "Enfermera Espejo",
+      "greet": ["Vaya, vaya... otro retador que sale magullado.", "¿Quieres que cure a tus Pokémon?"],
+      "healed": ["Listo. Tus Pokémon reflejan salud."],
+      "no": ["Como quieras... el espejo duele más sin curar."]
+    },
+    {
+      "kind": "sign", "x": 14, "y": 18,
+      "name": "Placa",
+      "lines": ["ISLA ESPEJO", "Aquí se reflejan batallas de otros mundos.", "Habla con cada jefe para retarlo."]
+    },
+    {
+      "kind": "item", "x": 22, "y": 9,
+      "item": "FULLRESTORE", "qty": 2
+    }
+  ]
+}
