@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
 
         @JavascriptInterface
         fun pmList(rel: String): String {
-            val dir = if (rel.isEmpty()) root() else resolve(rel)
+            val dir = (if (rel.isEmpty()) root() else resolve(rel))
                 ?: throw IllegalArgumentException("No existe: $rel")
             val arr = JSONArray()
             for (f in dir.listFiles()) {
