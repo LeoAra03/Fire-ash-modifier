@@ -25,7 +25,7 @@ export function openModal({ title, body, actions = [], wide = false }) {
   ov.id = "modal-ov";
   ov.className = "modal-ov";
   ov.innerHTML = `<div class="modal${wide ? " wide" : ""}" role="dialog">
-    <div class="modal-h"><b>${esc(title)}</b><button class="iconbtn" data-x>✕</button></div>
+    <div class="modal-h"><b>${esc(title)}</b><button class="iconbtn" data-x>X</button></div>
     <div class="modal-b"></div>
     <div class="modal-f"></div>
   </div>`;
@@ -88,7 +88,7 @@ export function showProgress(title) {
 // --- Selector de mapa (modal con buscador + árbol) ---------------------------------------------
 export function mapPickerModal(title, onPick) {
   const wrap = document.createElement("div");
-  wrap.innerHTML = `<input class="inp" placeholder="🔍 Buscar mapa por nombre o ID…" />
+  wrap.innerHTML = `<input class="inp" placeholder="Buscar mapa por nombre o ID…" />
     <div class="picklist"></div>`;
   const inp = wrap.querySelector("input");
   const list = wrap.querySelector(".picklist");
@@ -115,7 +115,7 @@ export function mapPickerModal(title, onPick) {
 // --- Selector de sprite de personaje --------------------------------------------------------------
 export async function spritePickerModal(title, current, onPick) {
   const wrap = document.createElement("div");
-  wrap.innerHTML = `<input class="inp" placeholder="🔍 Buscar sprite…" /><div class="spritegrid"></div>`;
+  wrap.innerHTML = `<input class="inp" placeholder="Buscar sprite…" /><div class="spritegrid"></div>`;
   const grid = wrap.querySelector(".spritegrid");
   const inp = wrap.querySelector("input");
   const draw = async (filter = "") => {

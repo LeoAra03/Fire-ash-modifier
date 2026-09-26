@@ -293,7 +293,7 @@ export const FS = {
   async writeBytes(rel, u8, opts = {}) {
     const n = normalizeRel(rel);
     const internal = !!opts.internal;
-    if (!internal && isProtected(n)) throw new Error("⛔ Protegido (partida o backup): no se puede escribir " + n);
+    if (!internal && isProtected(n)) throw new Error("[X] Protegido (partida o backup): no se puede escribir " + n);
     if (this.onBeforeWrite && this.mode !== "demo" && !internal && !opts.skipBackup) {
       await this.onBeforeWrite(n, u8);
     }
@@ -336,7 +336,7 @@ export const FS = {
 
   async deleteFile(rel) {
     const n = normalizeRel(rel);
-    if (isProtected(n)) throw new Error("⛔ Protegido: no se puede borrar " + n);
+    if (isProtected(n)) throw new Error("[X] Protegido: no se puede borrar " + n);
     const real = this.resolve(n);
     if (this.mode === "android") {
       await this._bridge("pmDelete", real);

@@ -11,15 +11,17 @@ import { renderMap } from "./render.js";
 import { esc, fmtBytes, pad3 } from "./util.js";
 import { toast, openModal, closeModal, showProgress, mapPickerModal, debounce } from "./helpers.js";
 import { renderEventsTab, renderFlagsTab, renderNpcsTab, renderPbsTab, renderModsTab } from "./editors.js";
+import { renderCreateTab } from "./createUI.js";
 
 const TABS = [
-  ["home", "🏠", "Inicio"],
-  ["maps", "🗺", "Mapas"],
-  ["events", "🎭", "Eventos"],
-  ["flags", "🚩", "Flags"],
-  ["npcs", "🧍", "NPCs"],
-  ["pbs", "🔮", "Pokémon"],
-  ["mods", "🧩", "Mods"],
+  ["home", "⌂", "Inicio"],
+  ["maps", "▦", "Mapas"],
+  ["events", "≡", "Eventos"],
+  ["flags", "►", "Flags"],
+  ["npcs", "●", "NPCs"],
+  ["pbs", "◉", "Pokémon"],
+  ["create", "+", "Crear"],
+  ["mods", "◆", "Mods"],
 ];
 let currentTab = "";
 
@@ -27,11 +29,11 @@ export function boot() {
   const app = document.getElementById("app");
   app.innerHTML = `
     <header class="top">
-      <div class="brand">🎮 <b>PokeMod Studio</b> <span class="tag">Fire Ash Edition</span></div>
+      <div class="brand"><b>PokeMod Studio</b> <span class="tag">Fire Ash Edition</span></div>
       <div class="top-r">
         <span id="proj" class="proj">sin proyecto</span>
         <span id="dirty" class="dirty hidden" title="Hay cambios sin guardar">●</span>
-        <button id="btn-save" class="btn small primary hidden">💾 Guardar</button>
+        <button id="btn-save" class="btn small primary hidden">Guardar</button>
       </div>
     </header>
     <main id="view"></main>
@@ -44,7 +46,7 @@ export function boot() {
     b.onclick = () => goTab(b.dataset.tab);
   });
   document.getElementById("btn-save").onclick = async () => {
-    try { await saveAll(); toast("Guardado ✔ (partidas intactas)"); refreshDirty(); if (currentTab === "home") goTab("home", true); }
+    try { await saveAll(); toast("Guardado [OK] (partidas intactas)"); refreshDirty(); if (currentTab === "home") goTab("home", true); }
     catch (e) { toast("Error al guardar: " + e.message, "error"); }
   };
   document.getElementById("fallbackInput").addEventListener("change", async (e) => {
@@ -69,13 +71,14 @@ export function goTab(name, force = false) {
   view.scrollTop = 0;
   if (name === "home") renderHome(view);
   else if (!S.connected) {
-    view.innerHTML = `<div class="empty">Primero abre un proyecto en <b>🏠 Inicio</b>.</div>`;
+    view.innerHTML = `<div class="empty">Primero abre un proyecto en <b>Inicio</b>.</div>`;
   }
   else if (name === "maps") renderMapsTab(view);
   else if (name === "events") renderEventsTab(view, { goTab });
   else if (name === "flags") renderFlagsTab(view, { goTab });
   else if (name === "npcs") renderNpcsTab(view, { goTab });
   else if (name === "pbs") renderPbsTab(view, { goTab });
+  else if (name === "create") renderCreateTab(view, { goTab });
   else if (name === "mods") renderModsTab(view, { goTab });
 }
 
@@ -87,12 +90,12 @@ export function refreshDirty() {
 function afterConnect() {
   document.getElementById("proj").textContent = S.projectName;
   document.getElementById("btn-save").classList.toggle("hidden", !FS.canWrite && FS.mode !== "fallback");
-  toast(`Proyecto listo: ${S.mapList.length} mapas ✔`);
+  toast(`Proyecto listo: ${S.mapList.length} mapas [OK]`);
   goTab("maps", true);
 }
 
 // ============================================================================
-// 🏠 INICIO
+// INICIO
 // ============================================================================
 function renderHome(view) {
   if (!S.connected) {
@@ -100,26 +103,26 @@ function renderHome(view) {
     view.innerHTML = `
     <div class="wrap">
       <div class="hero">
-        <div class="hero-t">🎮 PokeMod Studio <span class="tag">Fire Ash Edition</span></div>
+        <div class="hero-t">PokeMod Studio <span class="tag">Fire Ash Edition</span></div>
         <p>Editor estilo RPG Maker para <b>Pokémon Fire Ash</b>: mapas, eventos, diálogos, flags, NPCs y Pokémon — en tu celular o PC. Compatible con <b>Kirin</b> y <b>nunca toca tus partidas</b>.</p>
       </div>
       <div class="card">
-        <h3>1️⃣ Abre tu juego</h3>
-        ${inApk ? `<button class="btn primary big" id="c-apk">🤖 Abrir carpeta de Fire Ash</button>
+        <h3>1. Abre tu juego</h3>
+        ${inApk ? `<button class="btn primary big" id="c-apk">Abrir carpeta de Fire Ash</button>
         <p class="muted">Elige la carpeta donde tienes Fire Ash (la misma que usa Kirin). Se guarda el permiso.</p>` : ""}
-        <button class="btn primary big" id="c-pc">📁 Abrir carpeta (PC · Chrome/Edge)</button>
-        <button class="btn big" id="c-ro">📂 Abrir en modo lectura (cualquier navegador)</button>
-        <button class="btn big" id="c-demo">🎮 Probar con proyecto demo</button>
+        <button class="btn primary big" id="c-pc">Abrir carpeta (PC · Chrome/Edge)</button>
+        <button class="btn big" id="c-ro">Abrir en modo lectura (cualquier navegador)</button>
+        <button class="btn big" id="c-demo">Probar con proyecto demo</button>
         <p class="muted">Modo lectura: editas y exportas un ZIP con los cambios para copiarlos a mano.</p>
       </div>
       <div class="card">
-        <h3>2️⃣ ¿No tienes el juego?</h3>
+        <h3>2. ¿No tienes el juego?</h3>
         <p>Descarga Fire Ash 3.7.1 para Windows y extráelo ( ZIP → carpeta). En Android esa misma carpeta la abren Kirin o JoiPlay.</p>
         <p class="muted">En PC también puedes usar <span class="mono">tools/download_game.py</span> de este repo (descarga + verifica + aplica parche).</p>
       </div>
       <div class="grid2">
-        <div class="card"><h3>🛡 Partidas a salvo</h3><p class="muted">PokeMod <b>jamás escribe ni borra</b> <span class="mono">Save*.rxdata</span>. Además respalda automáticamente cada archivo antes de tocarlo.</p></div>
-        <div class="card"><h3>🤖 Kirin ready</h3><p class="muted">Incluye chequeo de compatibilidad (extraídos, audio, caja de archivos) y la <b>Sala PokeMod</b> para viajar a todos los mapas.</p></div>
+        <div class="card"><h3>Partidas a salvo</h3><p class="muted">PokeMod <b>jamás escribe ni borra</b> <span class="mono">Save*.rxdata</span>. Además respalda automáticamente cada archivo antes de tocarlo.</p></div>
+        <div class="card"><h3>Kirin ready</h3><p class="muted">Incluye chequeo de compatibilidad (extraídos, audio, caja de archivos) y la <b>Sala PokeMod</b> para viajar a todos los mapas.</p></div>
       </div>
     </div>`;
     document.getElementById("c-pc").onclick = async () => {
@@ -141,31 +144,31 @@ function renderHome(view) {
   view.innerHTML = `
   <div class="wrap">
     <div class="card">
-      <h3>📦 ${esc(S.projectName)}</h3>
+      <h3>${esc(S.projectName)}</h3>
       <div class="stats">
         <div><b>${S.mapList.length}</b><span>mapas</span></div>
         <div><b>${S.tilesets.size}</b><span>tilesets</span></div>
         <div><b>${S.pbsFiles.length}</b><span>PBS</span></div>
         <div><b>${S.characters.length}</b><span>sprites</span></div>
       </div>
-      <p class="muted">Modo: <b>${FS.mode}</b> ${FS.canWrite ? "(edición directa ✔)" : "(solo lectura → exporta ZIP)"} · Sin guardar: ${dirtyMaps} mapas, ${dirtyPbs} PBS</p>
+      <p class="muted">Modo: <b>${FS.mode}</b> ${FS.canWrite ? "(edición directa)" : "(solo lectura → exporta ZIP)"} · Sin guardar: ${dirtyMaps} mapas, ${dirtyPbs} PBS</p>
       <div class="row">
-        <button class="btn primary" id="h-save">💾 Guardar todo</button>
-        <button class="btn" id="h-go-maps">🗺 Ver mapas</button>
-        <button class="btn" id="h-go-mods">🧩 Mods y Kirin</button>
+        <button class="btn primary" id="h-save">Guardar todo</button>
+        <button class="btn" id="h-go-maps">Ver mapas</button>
+        <button class="btn" id="h-go-mods">Mods y Kirin</button>
       </div>
     </div>
     <div class="card">
-      <h3>📝 Registro</h3>
+      <h3>Registro</h3>
       <div class="log">${S.log.map((l) => `<div class="logrow ${l.kind}"><span class="muted mono">${l.t.toLocaleTimeString()}</span> ${esc(l.msg)}</div>`).join("") || "<p class=muted>Vacío.</p>"}</div>
     </div>
     <div class="card danger-zone">
-      <h3>⚙ Sesión</h3>
+      <h3>Sesión</h3>
       <button class="btn" id="h-disc">Desconectar proyecto</button>
     </div>
   </div>`;
   document.getElementById("h-save").onclick = async () => {
-    try { await saveAll(); toast("Guardado ✔"); refreshDirty(); renderHome(view); } catch (e) { toast(e.message, "error"); }
+    try { await saveAll(); toast("Guardado [OK]"); refreshDirty(); renderHome(view); } catch (e) { toast(e.message, "error"); }
   };
   document.getElementById("h-go-maps").onclick = () => goTab("maps");
   document.getElementById("h-go-mods").onclick = () => goTab("mods");
@@ -173,7 +176,7 @@ function renderHome(view) {
 }
 
 // ============================================================================
-// 🗺 MAPAS
+// MAPAS
 // ============================================================================
 const mapUI = { zoom: 1, showEvents: true, ghost: true, passage: false, renderToken: 0 };
 
@@ -182,20 +185,20 @@ async function renderMapsTab(view) {
   view.innerHTML = `
   <div class="mapslayout">
     <div class="maplist-pane">
-      <input id="map-search" class="inp" placeholder="🔍 Buscar mapa…" />
+      <input id="map-search" class="inp" placeholder="Buscar mapa…" />
       <div id="map-list" class="maplist"></div>
     </div>
     <div class="mapview-pane">
       <div class="mapbar">
-        <button class="btn small" id="map-pick">📑 <span id="map-name">…</span></button>
+        <button class="btn small" id="map-pick"><span id="map-name">…</span></button>
         <div class="maptools">
-          <button class="iconbtn" id="z-out" title="Reducir">➖</button>
+          <button class="iconbtn" id="z-out" title="Reducir">-</button>
           <span id="z-label" class="mono">100%</span>
-          <button class="iconbtn" id="z-in" title="Ampliar">➕</button>
-          <button class="iconbtn" id="t-ev" title="Eventos">🧍</button>
-          <button class="iconbtn" id="t-ghost" title="Eventos invisibles">👻</button>
-          <button class="iconbtn" id="t-pass" title="Pasajes bloqueados">🚧</button>
-          <button class="iconbtn" id="map-save" title="Guardar mapa">💾</button>
+          <button class="iconbtn" id="z-in" title="Ampliar">+</button>
+          <button class="iconbtn" id="t-ev" title="Eventos">●</button>
+          <button class="iconbtn" id="t-ghost" title="Eventos invisibles">○</button>
+          <button class="iconbtn" id="t-pass" title="Pasajes bloqueados">▨</button>
+          <button class="iconbtn" id="map-save" title="Guardar mapa">▼</button>
         </div>
       </div>
       <div id="map-scroll" class="mapscroll"><div id="map-stage" class="mapstage"><p class="muted">Cargando…</p></div></div>
@@ -232,7 +235,7 @@ async function renderMapsTab(view) {
   };
   tgl("#t-ev", "showEvents"); tgl("#t-ghost", "ghost"); tgl("#t-pass", "passage");
   view.querySelector("#map-save").onclick = async () => {
-    try { await saveMap(S.currentMap); toast("Mapa guardado ✔"); refreshDirty(); }
+    try { await saveMap(S.currentMap); toast("Mapa guardado [OK]"); refreshDirty(); }
     catch (e) { toast(e.message, "error"); }
   };
   drawMapView(view);
@@ -296,7 +299,7 @@ async function drawMapView(view) {
       const hit = rec.parsed.events.find(({ obj }) => Number(obj.getIvar("x")) === tx && Number(obj.getIvar("y")) === ty);
       if (hit) {
         S.currentEvent = hit.id; S.currentPage = 0;
-        toast(`Evento ${hit.id} @(${tx},${ty}) → pestaña 🎭`);
+        toast(`Evento ${hit.id} @(${tx},${ty}) → pestaña Eventos`);
         goTab("events");
       } else {
         toast(`Casilla (${tx},${ty}) — sin evento`);

@@ -24,7 +24,7 @@ import {
 const dirty = () => document.dispatchEvent(new CustomEvent("pokemod-dirty"));
 
 // ============================================================================
-// 🎭 EVENTOS
+// EVENTOS
 // ============================================================================
 export async function renderEventsTab(view) {
   if (!S.currentMap) S.currentMap = S.tree[0]?.id;
@@ -32,8 +32,8 @@ export async function renderEventsTab(view) {
   const rec = await loadMap(S.currentMap);
   if (!rec.parsed.events.length) {
     view.innerHTML = `<div class="wrap"><div class="card">
-      <h3>🎭 Mapa ${S.currentMap} sin eventos</h3>
-      <button class="btn" id="ev-pickmap">📑 Cambiar de mapa</button></div></div>`;
+      <h3>Mapa ${S.currentMap} sin eventos</h3>
+      <button class="btn" id="ev-pickmap">Cambiar de mapa</button></div></div>`;
     view.querySelector("#ev-pickmap").onclick = () => mapPickerModal("Mapa", (id) => { S.currentMap = id; S.currentEvent = null; renderEventsTab(view); });
     return;
   }
@@ -50,9 +50,9 @@ export async function renderEventsTab(view) {
   <div class="wrap">
     <div class="card">
       <div class="row wrap">
-        <button class="btn small" id="ev-map">🗺 Mapa ${S.currentMap}</button>
-        <button class="btn small" id="ev-ev">🎭 Ev.${ev.id}: ${esc(ev.name)} @(${ev.x},${ev.y})</button>
-        <button class="btn small primary" id="ev-save">💾 Guardar mapa</button>
+        <button class="btn small" id="ev-map">Mapa ${S.currentMap}</button>
+        <button class="btn small" id="ev-ev">Ev.${ev.id}: ${esc(ev.name)} @(${ev.x},${ev.y})</button>
+        <button class="btn small primary" id="ev-save">Guardar mapa</button>
       </div>
       <div class="row wrap" style="margin-top:8px">
         <label>Nombre <input id="f-name" class="inp" value="${esc(ev.name)}" /></label>
@@ -62,7 +62,7 @@ export async function renderEventsTab(view) {
       <div class="pagetabs">${ev.pages.map((p, i) => `<button class="chip${i === S.currentPage ? " sel" : ""}" data-pg="${i}">Pág ${i + 1}</button>`).join("")}</div>
     </div>
     <div class="card">
-      <h3>📄 Página ${S.currentPage + 1} — condiciones y aspecto</h3>
+      <h3>Página ${S.currentPage + 1} — condiciones y aspecto</h3>
       <div class="formgrid">
         <label class="check"><input type="checkbox" id="c-sw1v" ${pg.condition?.switch1 ? "checked" : ""} /> Switch 1</label>
         <input id="c-sw1" class="inp num" type="number" min="1" value="${pg.condition?.switch1 || 1}" />
@@ -90,15 +90,15 @@ export async function renderEventsTab(view) {
         <canvas id="spr-prev" width="64" height="64" class="sprprev"></canvas>
         <div>
           <div class="muted small">Gráfico: <b id="spr-name">${esc(pg.graphic?.charName || "(ninguno)")}</b></div>
-          <button class="btn small" id="f-spr">🧍 Cambiar sprite</button>
+          <button class="btn small" id="f-spr">Cambiar sprite</button>
         </div>
         <label>Dir. <select id="f-dir" class="inp">${[[2, "↓"], [4, "←"], [6, "→"], [8, "↑"]].map(([v, l]) => `<option value="${v}"${pg.graphic?.direction === v ? " selected" : ""}>${l}</option>`).join("")}</select></label>
         <label>Paso <select id="f-pat" class="inp">${[0, 1, 2, 3].map((v) => `<option${pg.graphic?.pattern === v ? " selected" : ""}>${v}</option>`).join("")}</select></label>
       </div>
     </div>
     <div class="card">
-      <div class="row" style="justify-content:space-between"><h3>🧾 Comandos</h3>
-        <span><button class="btn small" id="cmd-add">＋ Añadir</button></span></div>
+      <div class="row" style="justify-content:space-between"><h3>Comandos</h3>
+        <span><button class="btn small" id="cmd-add">+ Añadir</button></span></div>
       <div id="cmdlist"></div>
     </div>
   </div>`;
@@ -157,7 +157,7 @@ export async function renderEventsTab(view) {
       pg.graphic.obj.setIvar("pattern", Number(view.querySelector("#f-pat").value));
     }
     markMapDirty(S.currentMap); dirty();
-    try { await saveMap(S.currentMap); toast("Evento guardado ✔"); }
+    try { await saveMap(S.currentMap); toast("Evento guardado [OK]"); }
     catch (e) { toast(e.message, "error"); }
   };
   view.querySelector("#ev-save").onclick = applyAndSave;
@@ -202,29 +202,29 @@ function openInsertMenu(view, rec, pg, redraw) {
   const T = (label, make) => `<button class="pickrow" data-t="${label}">${label}</button>`;
   const wrap = document.createElement("div");
   wrap.innerHTML = `<div class="picklist">
-    ${T("💬 Texto", 0)}${T("🔀 Opciones (Sí/No)", 0)}${T("💻 Script", 0)}${T("💭 Comentario", 0)}
-    ${T("🚩 Control switch", 0)}${T("🔢 Control variable", 0)}${T("🌀 Teletransportar", 0)}
-    ${T("❓ Condición (switch)", 0)}${T("🔊 Sonido SE", 0)}${T("🏪 Tienda", 0)}
+    ${T("Texto", 0)}${T("Opciones (Sí/No)", 0)}${T("Script", 0)}${T("Comentario", 0)}
+    ${T("Control switch", 0)}${T("Control variable", 0)}${T("Teletransportar", 0)}
+    ${T("Condición (switch)", 0)}${T("Sonido SE", 0)}${T("Tienda", 0)}
   </div><p class="muted small">Se inserta al final (antes del Fin).</p>`;
   wrap.querySelectorAll("[data-t]").forEach((b) => {
     b.onclick = () => {
       const cmds = [];
       const t = b.dataset.t;
-      if (t.startsWith("💬")) cmds.push(newCmd(101, [RString.fromText(""), 0, 0, 2]), newCmd(401, [RString.fromText("Nuevo diálogo…")]));
-      else if (t.startsWith("🔀")) {
+      if (t.startsWith("Texto")) cmds.push(newCmd(101, [RString.fromText(""), 0, 0, 2]), newCmd(401, [RString.fromText("Nuevo diálogo…")]));
+      else if (t.startsWith("Opciones")) {
         cmds.push(newCmd(102, [[RString.fromText("Sí"), RString.fromText("No")], 4]));
         cmds.push(newCmd(402, [0, RString.fromText("Sí")], 1), newCmd(401, [RString.fromText("Elegiste SÍ")], 2), newCmd(404, [], 1));
         cmds.push(newCmd(402, [1, RString.fromText("No")], 1), newCmd(401, [RString.fromText("Elegiste NO")], 2), newCmd(404, [], 1));
         cmds.push(newCmd(404, []));
       }
-      else if (t.startsWith("💻")) cmds.push(newCmd(355, [RString.fromText("pbMessage(\"Hola\")")]));
-      else if (t.startsWith("💭")) cmds.push(newCmd(108, [RString.fromText("Nota…")]));
-      else if (t.startsWith("🚩")) cmds.push(newCmd(121, [1, 1, 1]));
-      else if (t.startsWith("🔢")) cmds.push(newCmd(122, [1, 1, 0, 0, 0]));
-      else if (t.startsWith("🌀")) cmds.push(newCmd(201, [0, S.currentMap, 0, 0, 2, 0]));
-      else if (t.startsWith("❓")) cmds.push(newCmd(111, [0, 1, 1]), newCmd(412, []));
-      else if (t.startsWith("🔊")) cmds.push(newCmd(247, [new RObject("RPG::AudioFile", [["@name", RString.fromText("")], ["@volume", 80], ["@pitch", 100]])]));
-      else if (t.startsWith("🏪")) cmds.push(newCmd(302, [[]]));
+      else if (t.startsWith("Script")) cmds.push(newCmd(355, [RString.fromText("pbMessage(\"Hola\")")]));
+      else if (t.startsWith("Comentario")) cmds.push(newCmd(108, [RString.fromText("Nota…")]));
+      else if (t.startsWith("Control switch")) cmds.push(newCmd(121, [1, 1, 1]));
+      else if (t.startsWith("Control variable")) cmds.push(newCmd(122, [1, 1, 0, 0, 0]));
+      else if (t.startsWith("Teletransportar")) cmds.push(newCmd(201, [0, S.currentMap, 0, 0, 2, 0]));
+      else if (t.startsWith("Condición")) cmds.push(newCmd(111, [0, 1, 1]), newCmd(412, []));
+      else if (t.startsWith("Sonido")) cmds.push(newCmd(247, [new RObject("RPG::AudioFile", [["@name", RString.fromText("")], ["@volume", 80], ["@pitch", 100]])]));
+      else if (t.startsWith("Tienda")) cmds.push(newCmd(302, [[]]));
       let at = pg.list.length;
       if (at > 0 && Number(pg.list[at - 1].getIvar("code")) === 0) at--;
       pg.list.splice(at, 0, ...cmds);
@@ -247,14 +247,14 @@ function openCommandEditor(view, rec, pg, index, redraw) {
       strings.map((s, k) => `<textarea class="inp mono" rows="${code === 355 || code === 655 ? 4 : 2}" data-k="${k}">${esc(s.rs.text)}</textarea>`).join("");
   } else {
     body = document.createElement("div");
-    body.innerHTML = `<p class="muted">#${code} · <b>${esc(h.title)}</b> ${esc(h.detail)}<br/>Edición avanzada (JSON). Los textos van como <span class="mono">{"$str":"…"}</span>. Si lo rompes, restaura desde 🧩 Mods → Backups.</p>
+    body.innerHTML = `<p class="muted">#${code} · <b>${esc(h.title)}</b> ${esc(h.detail)}<br/>Edición avanzada (JSON). Los textos van como <span class="mono">{"$str":"…"}</span>. Si lo rompes, restaura desde Mods → Backups.</p>
       <textarea class="inp mono" rows="8" id="cmd-json">${esc(JSON.stringify(paramsToJson(params), null, 1))}</textarea>`;
   }
   openModal({
     title: `Comando #${code}: ${h.title}`,
     body, wide: true,
     actions: [
-      { label: "🗑 Eliminar", cls: "danger", onClick: async (close) => {
+      { label: "Eliminar", cls: "danger", onClick: async (close) => {
         if (pg.list.length <= 1) { toast("No puedes borrar el único comando.", "error"); return; }
         if (await confirmDialog("Eliminar comando", "¿Borrar este comando? (se guarda con el mapa)")) {
           pg.list.splice(index, 1);
@@ -272,7 +272,7 @@ function openCommandEditor(view, rec, pg, index, redraw) {
             o.setIvar("parameters", jsonToParams(j));
           }
           markMapDirty(S.currentMap); dirty(); close(); redraw();
-          toast("Comando actualizado (guarda el mapa 💾).");
+          toast("Comando actualizado (guarda el mapa).");
         } catch (e) { toast("JSON inválido: " + e.message, "error"); }
       } },
     ],
@@ -307,7 +307,7 @@ function jsonToParams(j) {
 }
 
 // ============================================================================
-// 🚩 FLAGS (interruptores y variables)
+// FLAGS (interruptores y variables)
 // ============================================================================
 let flagKind = "sw";
 export function renderFlagsTab(view, { goTab }) {
@@ -316,11 +316,11 @@ export function renderFlagsTab(view, { goTab }) {
   <div class="wrap">
     <div class="card">
       <div class="row">
-        <button class="chip${flagKind === "sw" ? " sel" : ""}" id="fk-sw">🚩 Interruptores</button>
-        <button class="chip${flagKind === "var" ? " sel" : ""}" id="fk-var">🔢 Variables</button>
+        <button class="chip${flagKind === "sw" ? " sel" : ""}" id="fk-sw">Interruptores</button>
+        <button class="chip${flagKind === "var" ? " sel" : ""}" id="fk-var">Variables</button>
       </div>
       <p class="muted small">Los <b>nombres</b> viven en el juego (editables). Los <b>valores ON/OFF</b> viven en tu partida (PokeMod no toca partidas).</p>
-      <input id="flag-search" class="inp" placeholder="🔍 Buscar por nombre o número…" />
+      <input id="flag-search" class="inp" placeholder="Buscar por nombre o número…" />
       <div id="flag-list"></div>
     </div>
   </div>`;
@@ -337,14 +337,14 @@ export function renderFlagsTab(view, { goTab }) {
       rows.push(`<div class="flagrow">
         <span class="mono muted">${i}</span>
         <input class="inp" data-id="${i}" value="${esc(n)}" placeholder="(sin nombre)" />
-        <button class="btn small" data-uses="${i}">🔎 Usos</button>
+        <button class="btn small" data-uses="${i}">Usos</button>
       </div>`);
     }
     listEl.innerHTML = rows.join("") || `<p class="muted">Sin resultados.</p>`;
     listEl.querySelectorAll("input[data-id]").forEach((inp) => {
       inp.onchange = async () => {
         setSystemName(S.systemObj, flagKind, Number(inp.dataset.id), inp.value);
-        try { await saveSystem(); S.names = flagKind === "sw" || true ? S.names : S.names; toast("Nombre guardado ✔"); }
+        try { await saveSystem(); S.names = flagKind === "sw" || true ? S.names : S.names; toast("Nombre guardado [OK]"); }
         catch (e) { toast(e.message, "error"); }
       };
     });
@@ -381,16 +381,16 @@ async function showFlagUses(id, goTab) {
 }
 
 // ============================================================================
-// 🧍 NPCs
+// NPCS
 // ============================================================================
 let npcCache = [];
 export function renderNpcsTab(view, { goTab }) {
   view.innerHTML = `
   <div class="wrap"><div class="card">
-    <h3>🧍 Todos los NPCs del juego</h3>
+    <h3>Todos los NPCs del juego</h3>
     <p class="muted small">Escanea todos los mapas y lista cada evento con gráfico. Toca uno para moverlo o cambiar su sprite.</p>
-    <div class="row"><button class="btn primary" id="npc-scan">🔍 Escanear mapas</button>
-    <input id="npc-search" class="inp" placeholder="🔍 Filtrar…" style="flex:1" /></div>
+    <div class="row"><button class="btn primary" id="npc-scan">Escanear mapas</button>
+    <input id="npc-search" class="inp" placeholder="Filtrar…" style="flex:1" /></div>
     <div id="npc-list"></div>
   </div></div>`;
   const listEl = view.querySelector("#npc-list");
@@ -433,7 +433,7 @@ export function renderNpcsTab(view, { goTab }) {
       return out;
     }, (i, total, m) => prog.update(i, total, `Mapa ${i}/${total}`));
     prog.close();
-    toast(`${npcCache.length} NPCs encontrados ✔`);
+    toast(`${npcCache.length} NPCs encontrados [OK]`);
     draw(view.querySelector("#npc-search").value);
   };
   draw();
@@ -449,7 +449,7 @@ async function openNpcEditor(n, goTab) {
   wrap.innerHTML = `
     <div class="row"><canvas id="npc-prev" width="72" height="72" class="sprprev"></canvas>
     <div><b>${esc(n.name)}</b><div class="muted small">Mapa ${n.mapId} · Ev.${n.evId}</div>
-    <button class="btn small" id="npc-spr">🧍 Cambiar sprite</button></div></div>
+    <button class="btn small" id="npc-spr">Cambiar sprite</button></div></div>
     <div class="row wrap" style="margin-top:8px">
       <label>Nombre <input id="npc-name" class="inp" value="${esc(ev.name)}" /></label>
       <label>X <input id="npc-x" class="inp num" type="number" value="${ev.x}" /></label>
@@ -472,14 +472,14 @@ async function openNpcEditor(n, goTab) {
   openModal({
     title: "Editar NPC", body: wrap,
     actions: [
-      { label: "Ir al evento 🎭", onClick: (close) => { S.currentMap = n.mapId; S.currentEvent = n.evId; S.currentPage = 0; close(); goTab("events"); } },
+      { label: "Ir al evento", onClick: (close) => { S.currentMap = n.mapId; S.currentEvent = n.evId; S.currentPage = 0; close(); goTab("events"); } },
       { label: "Guardar", cls: "primary", onClick: async (close) => {
         evObj.setIvar("name", RString.fromText(wrap.querySelector("#npc-name").value));
         evObj.setIvar("x", Number(wrap.querySelector("#npc-x").value));
         evObj.setIvar("y", Number(wrap.querySelector("#npc-y").value));
         pg.graphic.obj.setIvar("direction", Number(wrap.querySelector("#npc-dir").value));
         markMapDirty(n.mapId); dirty();
-        try { await saveMap(n.mapId); toast("NPC guardado ✔"); } catch (e) { toast(e.message, "error"); }
+        try { await saveMap(n.mapId); toast("NPC guardado [OK]"); } catch (e) { toast(e.message, "error"); }
         close();
         n.name = ev.name; n.x = ev.x; n.y = ev.y;
       } },
@@ -488,12 +488,12 @@ async function openNpcEditor(n, goTab) {
 }
 
 // ============================================================================
-// 🔮 POKÉMON (PBS)
+// POKEMON (PBS)
 // ============================================================================
 let pbsCurrent = "";
 export async function renderPbsTab(view) {
   if (!S.pbsFiles.length) {
-    view.innerHTML = `<div class="wrap"><div class="card"><h3>🔮 Sin PBS</h3><p class="muted">No se encontró carpeta PBS/ en este proyecto.</p></div></div>`;
+    view.innerHTML = `<div class="wrap"><div class="card"><h3>Sin PBS</h3><p class="muted">No se encontró carpeta PBS/ en este proyecto.</p></div></div>`;
     return;
   }
   if (!pbsCurrent || !S.pbsFiles.includes(pbsCurrent)) {
@@ -504,19 +504,19 @@ export async function renderPbsTab(view) {
   const sections = pbsSections(rec.lines);
   view.innerHTML = `
   <div class="wrap"><div class="card">
-    <h3>🔮 ${esc(schema?.label || "PBS")}</h3>
+    <h3>${esc(schema?.label || "PBS")}</h3>
     <div class="row wrap">
       <select id="pbs-file" class="inp">${S.pbsFiles.map((f) => `<option${f === pbsCurrent ? " selected" : ""}>${f}</option>`).join("")}</select>
-      <button class="btn small primary" id="pbs-save">💾 Guardar</button>
+      <button class="btn small primary" id="pbs-save">Guardar</button>
     </div>
     ${schema?.rawHint ? `<p class="muted small">${esc(schema.rawHint)}</p>` : ""}
-    <input id="pbs-search" class="inp" placeholder="🔍 Buscar sección…" />
+    <input id="pbs-search" class="inp" placeholder="Buscar sección…" />
     <div id="pbs-list"></div>
   </div></div>`;
   view.querySelector("#pbs-file").onchange = (e) => { pbsCurrent = e.target.value; renderPbsTab(view); };
   view.querySelector("#pbs-save").onclick = async () => {
     collectPbsForm(view, rec);
-    try { await savePBS(pbsCurrent); toast("PBS guardado ✔"); dirty(); } catch (e) { toast(e.message, "error"); }
+    try { await savePBS(pbsCurrent); toast("PBS guardado [OK]"); dirty(); } catch (e) { toast(e.message, "error"); }
   };
   const listEl = view.querySelector("#pbs-list");
   const draw = (filter = "") => {
@@ -551,7 +551,7 @@ export async function renderPbsTab(view) {
   if (issues.length) {
     const d = document.createElement("div");
     d.className = "card";
-    d.innerHTML = `<h3>⚠ Revisión</h3>${issues.slice(0, 30).map((i) => `<div class="logrow ${i.level}">${esc(i.msg)}</div>`).join("")}`;
+    d.innerHTML = `<h3>[!] Revisión</h3>${issues.slice(0, 30).map((i) => `<div class="logrow ${i.level}">${esc(i.msg)}</div>`).join("")}`;
     view.querySelector(".wrap").appendChild(d);
   }
 }
@@ -582,49 +582,49 @@ function collectPbsForm(view, rec) {
 }
 
 // ============================================================================
-// 🧩 MODS (backups, Kirin, Sala, Scripts, exportar)
+// MODS (backups, Kirin, Sala, Scripts, exportar)
 // ============================================================================
 export function renderModsTab(view, { goTab }) {
   view.innerHTML = `
   <div class="wrap">
     <div class="card">
-      <h3>🤖 Compatibilidad Kirin / Android</h3>
+      <h3>Compatibilidad Kirin / Android</h3>
       <p class="muted small">Revisa estructura, cifrado, audio, caja de archivos y partidas.</p>
-      <div class="row"><button class="btn primary" id="m-kirin">✔ Chequeo rápido</button>
-      <button class="btn" id="m-kirin-deep">🔬 Análisis profundo (tarda)</button></div>
+      <div class="row"><button class="btn primary" id="m-kirin">Chequeo rápido</button>
+      <button class="btn" id="m-kirin-deep">Análisis profundo (tarda)</button></div>
       <div id="kirin-out"></div>
     </div>
     <div class="card">
-      <h3>🚪 Sala PokeMod — acceso total a mapas</h3>
+      <h3>Sala PokeMod — acceso total a mapas</h3>
       <p class="muted small">Crea un mapa extra con una casilla por cada mapa del juego + una puerta en el mapa que elijas. <b>100% datos</b> (sin scripts), funciona en Kirin y es <b>reversible</b>. No toca partidas.</p>
       <div id="sala-status" class="muted small"></div>
       <div class="row wrap">
-        <button class="btn small" id="sala-map">🗺 Mapa puerta: <b id="sala-mapn">${S.currentMap || S.tree[0]?.id}</b></button>
+        <button class="btn small" id="sala-map">Mapa puerta: <b id="sala-mapn">${S.currentMap || S.tree[0]?.id}</b></button>
         <label>X <input id="sala-x" class="inp num" type="number" value="5" /></label>
         <label>Y <input id="sala-y" class="inp num" type="number" value="5" /></label>
-        <button class="btn small" id="sala-spr">🧍 Sprite puerta</button>
+        <button class="btn small" id="sala-spr">Sprite puerta</button>
       </div>
-      <div class="row" style="margin-top:8px"><button class="btn primary" id="sala-build">🚪 Crear Sala PokeMod</button>
+      <div class="row" style="margin-top:8px"><button class="btn primary" id="sala-build">Crear Sala PokeMod</button>
       <button class="btn danger" id="sala-un">Desinstalar</button></div>
       <div id="sala-out"></div>
     </div>
     <div class="card">
-      <h3>🧷 Copias de seguridad</h3>
+      <h3>Copias de seguridad</h3>
       <p class="muted small">PokeMod respalda automáticamente cada archivo antes de modificarlo. Aquí puedes respaldar o restaurar.</p>
-      <div class="row"><button class="btn" id="bk-now">🧷 Backup ahora</button>
-      <button class="btn" id="bk-list">📂 Ver backups</button></div>
+      <div class="row"><button class="btn" id="bk-now">Backup ahora</button>
+      <button class="btn" id="bk-list">Ver backups</button></div>
       <div id="bk-out"></div>
     </div>
     <div class="card">
-      <h3>📜 Scripts (avanzado)</h3>
+      <h3>Scripts (avanzado)</h3>
       <p class="muted small">Ver/exportar/importar secciones de <span class="mono">Scripts.rxdata</span>. Solo para usuarios avanzados (siempre con backup).</p>
-      <div class="row"><button class="btn" id="sc-load">📜 Cargar scripts</button></div>
+      <div class="row"><button class="btn" id="sc-load">Cargar scripts</button></div>
       <div id="sc-out"></div>
     </div>
     <div class="card">
-      <h3>📦 Exportar cambios</h3>
+      <h3>Exportar cambios</h3>
       <p class="muted small">Descarga un ZIP con los archivos modificados (para modo lectura o compartir).</p>
-      <button class="btn" id="m-exp">📦 Exportar ZIP</button>
+      <button class="btn" id="m-exp">Exportar ZIP</button>
     </div>
   </div>`;
 
@@ -636,7 +636,7 @@ export function renderModsTab(view, { goTab }) {
     try {
       const res = await kirinCheck(deep, prog ? (i, t, m) => prog.update(i, t, `Mapa ${i}/${t}`) : null);
       if (prog) prog.close();
-      kOut.innerHTML = res.map((r) => `<div class="logrow ${r.level}">${r.level === "ok" ? "✔" : r.level === "error" ? "✘" : r.level === "warn" ? "⚠" : "ℹ"} ${esc(r.msg)}</div>`).join("");
+      kOut.innerHTML = res.map((r) => `<div class="logrow ${r.level}">${r.level === "ok" ? "[OK]" : r.level === "error" ? "[X]" : r.level === "warn" ? "[!]" : "[i]"} ${esc(r.msg)}</div>`).join("");
     } catch (e) { if (prog) prog.close(); kOut.innerHTML = `<p class="error">${esc(e.message)}</p>`; }
   };
   view.querySelector("#m-kirin").onclick = () => runKirin(false);
@@ -647,13 +647,13 @@ export function renderModsTab(view, { goTab }) {
   let salaSpr = "";
   FS.readText("PokeModBackups/sala_meta.json").then((t) => {
     const m = JSON.parse(t);
-    view.querySelector("#sala-status").innerHTML = `✅ Instalada: mapa <b>${m.newId}</b> con ${m.targets} destinos (puerta en mapa ${m.entryId}).`;
+    view.querySelector("#sala-status").innerHTML = `[OK] Instalada: mapa <b>${m.newId}</b> con ${m.targets} destinos (puerta en mapa ${m.entryId}).`;
   }).catch(() => { view.querySelector("#sala-status").textContent = "No instalada."; });
   view.querySelector("#sala-map").onclick = () => mapPickerModal("Mapa de la puerta", (id) => {
     salaEntry = id; view.querySelector("#sala-mapn").textContent = id;
   });
   view.querySelector("#sala-spr").onclick = () => spritePickerModal("Sprite de la puerta", salaSpr, (n) => {
-    salaSpr = n; view.querySelector("#sala-spr").innerHTML = `🧍 ${esc(n || "(invisible)")}`;
+    salaSpr = n; view.querySelector("#sala-spr").innerHTML = `${esc(n || "(invisible)")}`;
   });
   view.querySelector("#sala-build").onclick = async () => {
     const out = view.querySelector("#sala-out");
@@ -667,26 +667,26 @@ export function renderModsTab(view, { goTab }) {
         onProgress: (i, t) => prog.update(i, t, `Buscando destinos ${i}/${t}`),
       });
       prog.close();
-      out.innerHTML = `<p>✅ Sala creada: mapa <b>${meta.newId}</b> (${meta.targets} destinos, ${meta.omitted.length} omitidos).</p>`;
-      toast("Sala PokeMod lista 🚪");
+      out.innerHTML = `<p>[OK] Sala creada: mapa <b>${meta.newId}</b> (${meta.targets} destinos, ${meta.omitted.length} omitidos).</p>`;
+      toast("Sala PokeMod lista");
     } catch (e) { prog.close(); out.innerHTML = `<p class="error">${esc(e.message)}</p>`; }
   };
   view.querySelector("#sala-un").onclick = async () => {
     if (!await confirmDialog("Desinstalar Sala", "¿Quitar la puerta y borrar el mapa de la Sala PokeMod?")) return;
-    try { await uninstallSalaMod(); toast("Sala desinstalada ✔"); renderModsTab(view, { goTab }); }
+    try { await uninstallSalaMod(); toast("Sala desinstalada [OK]"); renderModsTab(view, { goTab }); }
     catch (e) { toast(e.message, "error"); }
   };
 
   // --- Backups
   view.querySelector("#bk-now").onclick = async () => {
-    try { const f = await backupNow(); toast("Backup en " + f + " ✔"); } catch (e) { toast(e.message, "error"); }
+    try { const f = await backupNow(); toast("Backup en " + f + " [OK]"); } catch (e) { toast(e.message, "error"); }
   };
   view.querySelector("#bk-list").onclick = async () => {
     const out = view.querySelector("#bk-out");
     const folders = await listBackups();
     if (!folders.length) { out.innerHTML = `<p class="muted">Aún no hay backups.</p>`; return; }
     out.innerHTML = folders.map((f) => `<div class="flagrow"><span class="mono">${esc(f)}</span>
-      <button class="btn small" data-bk="${esc(f)}">📂 Ver / restaurar</button></div>`).join("");
+      <button class="btn small" data-bk="${esc(f)}">Ver / restaurar</button></div>`).join("");
     out.querySelectorAll("[data-bk]").forEach((b) => (b.onclick = () => openBackupFolder(b.dataset.bk)));
   };
 
@@ -708,7 +708,7 @@ async function openBackupFolder(folder) {
   }).join("") || "<p class=muted>Vacío.</p>"}</div>`;
   wrap.querySelectorAll("[data-r]").forEach((b) => {
     b.onclick = async () => {
-      try { await restoreBackup(folder, b.dataset.r); toast("Restaurado ✔"); }
+      try { await restoreBackup(folder, b.dataset.r); toast("Restaurado [OK]"); }
       catch (e) { toast(e.message, "error"); }
     };
   });
@@ -719,7 +719,7 @@ async function openBackupFolder(folder) {
       for (const f of files) {
         try { await restoreBackup(folder, f.replace(`PokeModBackups/${folder}/`, "")); } catch (e) { toast(e.message, "error"); }
       }
-      close(); toast("Backup restaurado ✔");
+      close(); toast("Backup restaurado [OK]");
     } }],
   });
 }
@@ -733,15 +733,15 @@ async function openScripts(view) {
       const raw = marshalLoad(await FS.readBytes("Data/Scripts.rxdata"));
       scriptsCache = raw.map((s) => ({ id: s[0], name: s[1]?.text ?? "?", code: s[2], obj: s, dirty: false }));
     }
-    out.innerHTML = `<input id="sc-search" class="inp" placeholder="🔍 Buscar sección…" /><div id="sc-list" class="picklist" style="max-height:300px"></div>
-      <div class="row" style="margin-top:8px"><button class="btn small primary" id="sc-save">💾 Guardar Scripts.rxdata</button></div>`;
+    out.innerHTML = `<input id="sc-search" class="inp" placeholder="Buscar sección…" /><div id="sc-list" class="picklist" style="max-height:300px"></div>
+      <div class="row" style="margin-top:8px"><button class="btn small primary" id="sc-save">Guardar Scripts.rxdata</button></div>`;
     const list = out.querySelector("#sc-list");
     const draw = (f = "") => {
       const fl = f.trim().toLowerCase();
       const items = scriptsCache.filter((s) => !fl || s.name.toLowerCase().includes(fl) || String(s.id) === fl).slice(0, 200);
       list.innerHTML = items.map((s) => `<div class="flagrow"><span class="mono muted">${s.id}</span><span>${esc(s.name)}</span>
         <span class="muted small">${fmtBytes(s.code.bytes.length)}</span>
-        <button class="btn small" data-v="${s.id}">👁</button><button class="btn small" data-e="${s.id}">⬇</button><button class="btn small" data-i="${s.id}">⬆</button></div>`).join("");
+        <button class="btn small" data-v="${s.id}">Ver</button><button class="btn small" data-e="${s.id}">↓</button><button class="btn small" data-i="${s.id}">↑</button></div>`).join("");
       list.querySelectorAll("[data-v]").forEach((b) => (b.onclick = () => viewScript(Number(b.dataset.v))));
       list.querySelectorAll("[data-e]").forEach((b) => (b.onclick = () => exportScript(Number(b.dataset.e))));
       list.querySelectorAll("[data-i]").forEach((b) => (b.onclick = () => importScript(Number(b.dataset.i))));
@@ -751,7 +751,7 @@ async function openScripts(view) {
     out.querySelector("#sc-save").onclick = async () => {
       const arr = scriptsCache.map((s) => s.obj);
       await FS.writeBytes("Data/Scripts.rxdata", marshalDump(arr));
-      toast("Scripts guardados ✔ (con backup)");
+      toast("Scripts guardados [OK] (con backup)");
     };
   } catch (e) { out.innerHTML = `<p class="error">${esc(e.message)}</p>`; }
 }
@@ -761,7 +761,7 @@ async function viewScript(id) {
   try {
     const code = new TextDecoder().decode(await zlibInflate(s.code.bytes));
     const wrap = document.createElement("div");
-    wrap.innerHTML = `<p class="muted">${code.split("\n").length} líneas · solo lectura (usa ⬇/⬆ para editar fuera)</p>
+    wrap.innerHTML = `<p class="muted">${code.split("\n").length} líneas · solo lectura (usa ↓/↑ para editar fuera)</p>
       <textarea class="inp mono" rows="16" readonly>${esc(code.slice(0, 60000))}</textarea>`;
     openModal({ title: `#${s.id} ${s.name}`, body: wrap, wide: true });
   } catch (e) { toast(e.message, "error"); }
@@ -791,7 +791,7 @@ function importScript(id) {
       const text = await f.text();
       s.code.bytes = await zlibDeflate(new TextEncoder().encode(text));
       s.dirty = true;
-      toast("Sección importada (pulsa Guardar Scripts) ✔");
+      toast("Sección importada (pulsa Guardar Scripts) [OK]");
     } catch (e) { toast(e.message, "error"); }
   };
   inp.click();

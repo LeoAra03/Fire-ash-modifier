@@ -33,7 +33,7 @@ const tick = (ms = 50) => new Promise((r) => setTimeout(r, ms));
 console.log("— boot —");
 boot();
 await tick();
-ok(document.querySelectorAll("#tabs .tab").length === 7, "7 pestañas");
+ok(document.querySelectorAll("#tabs .tab").length === 8, "8 pestañas");
 ok(document.getElementById("c-demo"), "botón demo visible");
 
 console.log("— demo + mapas —");
@@ -67,6 +67,18 @@ console.log("— pbs —");
 goTab("pbs", true);
 await tick(300);
 ok(document.querySelectorAll(".pbssec").length >= 2, "secciones PBS");
+
+console.log("— crear —");
+goTab("create", true);
+await tick(400);
+ok(document.getElementById("ce-event"), "creador de eventos");
+ok(document.querySelectorAll("#view details.card").length === 5, "5 secciones de Crear");
+document.getElementById("ce-create").click();
+await tick(400);
+ok(document.querySelector("#ce-out .logrow.ok"), "crear evento desde la UI");
+document.getElementById("au-pbs").click();
+await tick(600);
+ok(document.querySelector("#au-out .flagrow, #au-out .logrow"), "auditoría PBS muestra resultados");
 
 console.log("— mods —");
 goTab("mods", true);

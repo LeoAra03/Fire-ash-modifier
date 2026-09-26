@@ -40,7 +40,7 @@ def main():
                 if top in INCLUDE_DIRS or (os.sep not in rel and (f in INCLUDE_FILES or is_save(f))):
                     z.write(full, rel)
                     n += 1
-    print(f"🧷 {n} archivos → {dest}")
+    print(f"Backup: {n} archivos → {dest}")
 
 
 if __name__ == "__main__":

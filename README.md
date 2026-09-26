@@ -1,4 +1,4 @@
-# 🎮 PokeMod Studio — Fire Ash Edition
+# PokeMod Studio — Fire Ash Edition
 
 **Editor estilo RPG Maker para Pokémon Fire Ash, en tu celular o PC.**
 Mapas, eventos, diálogos, flags, NPCs y Pokémon — compatible con **Kirin** y con
@@ -6,22 +6,23 @@ Mapas, eventos, diálogos, flags, NPCs y Pokémon — compatible con **Kirin** y
 
 ![PokeMod](web/icon.svg)
 
-## ✨ Qué incluye
+## Qué incluye
 
 | Pestaña | Qué hace |
 |---|---|
-| 🗺 **Mapas** | Árbol de todos los mapas, visor con zoom (render idéntico al juego), eventos clicables |
-| 🎭 **Eventos** | Diálogos, opciones, scripts, condiciones, añadir/mover/borrar comandos, sprite con vista previa |
-| 🚩 **Flags** | Renombrar interruptores/variables + **buscar usos** en todos los mapas |
-| 🧍 **NPCs** | Todos los NPCs del juego: moverlos, cambiar sprite, editar |
-| 🔮 **Pokémon** | Editor PBS (`pokemon.txt`, `encounters.txt`, `trainers.txt`, `map_metadata.txt`, …) |
-| 🧩 **Mods** | Chequeo Kirin, **Sala PokeMod** (viajar a todos los mapas), backups, scripts, exportar ZIP |
+| Mapas | Árbol de todos los mapas, visor con zoom (render idéntico al juego), eventos clicables |
+| Eventos | Diálogos, opciones, scripts, condiciones, añadir/mover/borrar comandos, sprite con vista previa |
+| Flags | Renombrar interruptores/variables + **buscar usos** en todos los mapas |
+| NPCs | Todos los NPCs del juego: moverlos, cambiar sprite, editar |
+| Pokémon | Editor PBS (`pokemon.txt`, `encounters.txt`, `trainers.txt`, `metadata.txt`, …) |
+| Crear | **Contenido nuevo estilo juego base**: 10 plantillas de evento, mapas, PBS, mapamundi visual y auditoría |
+| Mods | Chequeo Kirin, **Sala PokeMod** (viajar a todos los mapas), backups, scripts, exportar ZIP |
 
-- 🛡 **Partidas a salvo**: `Save*.rxdata`/`Game.rxdata` bloqueados contra escritura + backup automático de cada archivo antes de tocarlo.
-- 🤖 **Kirin ready**: chequeo de estructura, `.rgssad`, audio y mayúsculas (lo que en PC funciona y en Android falla).
-- 📴 **Offline**: PWA + APK sin internet ni servidores; tus archivos no salen del dispositivo.
+- **Partidas a salvo**: `Save*.rxdata`/`Game.rxdata` bloqueados contra escritura + backup automático de cada archivo antes de tocarlo.
+- **Kirin ready**: chequeo de estructura, `.rgssad`, audio y mayúsculas (lo que en PC funciona y en Android falla).
+- **Offline**: PWA + APK sin internet ni servidores; tus archivos no salen del dispositivo.
 
-## 🚀 Uso rápido
+## Uso rápido
 
 ### Opción A — APK en Android (recomendado)
 
@@ -55,24 +56,25 @@ python tools/kirin_check.py game            # chequeo de compatibilidad
 python tools/backup.py game                 # backup a ZIP
 ```
 
-## 📁 Estructura
+## Estructura
 
 ```
 web/            PWA (la APK la empaqueta tal cual)
-  js/marshal.js   Ruby Marshal 4.8 ida/vuelta (51 tests ✔)
+  js/marshal.js   Ruby Marshal 4.8 ida/vuelta (51 tests OK)
   js/rmxp.js      Modelos RPG::Map/Event/Tileset + comandos en español
   js/render.js    Render de mapas (autotiles exactos de mkxp)
   js/pbs.js       Parser PBS que preserva formato
   js/fs.js        Acceso a archivos (APK SAF / navegador / lectura / demo)
   js/demo.js      Proyecto procedural para probar sin el juego
   js/app.js       Núcleo: proyecto, backups, Kirin, Sala PokeMod
-  js/ui.js + editors.js + helpers.js   Interfaz (7 pestañas)
+  js/create.js    Plantillas de evento/mapa/PBS + auditoría (verificado v19.1)
+  js/ui.js + editors.js + createUI.js + helpers.js   Interfaz (8 pestañas)
 android/        APK WebView + puente SAF (Kotlin, minSdk 24)
 tools/          CLI Python (descarga, backup, chequeo) — solo stdlib
-docs/           GUIA_KIRIN · GUIA_MODS · FORMATO_RXDATA
+docs/           GUIA_KIRIN · GUIA_MODS · GUIA_CREAR · FORMATO_RXDATA
 ```
 
-## 🔨 Compilar la APK
+## Compilar la APK
 
 Automático: cada push a esta rama ejecuta **Actions → PokeMod — Tests + APK**
 (tests JS + `assembleDebug`) y publica el APK como artefacto.
@@ -82,21 +84,22 @@ En local necesitas JDK 17 + Android SDK:
 cd android && gradle assembleDebug   # sale en app/build/outputs/apk/debug/
 ```
 
-## ✅ Tests
+## Tests
 
 ```bash
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
-node web/js/integration.test.mjs   # núcleo: demo, sala, kirin, PBS, protección
+node web/js/integration.test.mjs   # 89 pruebas: demo, sala, kirin, PBS, crear, auditoría
 # UI (requiere jsdom): copia web/js/ui.test.mjs junto a node_modules y ejecútalo
 ```
 
-## 🗺 Roadmap
+## Roadmap
 
 - Pintar tiles en mapas (capas 1-3) · Deshacer/rehacer · Duplicar páginas/eventos
+- Más plantillas (PC, gimnasio, concurso) · Editor de tiendas con precios
 - Vista previa de animaciones de autotiles · Importar/exportar mapas sueltos
 - Traducción EN/PT
 
-## ⚖ Aviso
+## Aviso
 
 Proyecto de fans, sin afiliación con Nintendo, Game Freak, Pokémon Company,
 Enterbrain ni los autores de Fire Ash/Kirin. **No incluye el juego ni sus

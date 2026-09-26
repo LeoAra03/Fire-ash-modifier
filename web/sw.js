@@ -1,9 +1,10 @@
 // Service worker: PokeMod funciona 100% offline (ideal en el celular).
-const CACHE = "pokemod-v1";
+const CACHE = "pokemod-v2";
 const ASSETS = [
   "./", "./index.html", "./manifest.json", "./icon.svg", "./css/style.css",
   "./js/ui.js", "./js/editors.js", "./js/helpers.js", "./js/app.js", "./js/fs.js",
   "./js/marshal.js", "./js/rmxp.js", "./js/render.js", "./js/pbs.js",
+  "./js/create.js", "./js/createUI.js",
   "./js/demo.js", "./js/util.js",
 ];
 self.addEventListener("install", (e) => {

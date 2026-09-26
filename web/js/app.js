@@ -197,7 +197,7 @@ export async function savePBS(rel) {
 export async function saveAll() {
   for (const [id, rec] of S.maps) if (rec.dirty) await saveMap(id);
   for (const [rel, rec] of S.pbs) if (rec.dirty) await savePBS(rel);
-  log("Todo guardado. Las partidas no se tocaron. ✔");
+  log("Todo guardado. Las partidas no se tocaron.");
 }
 
 export function markMapDirty(id) {
@@ -313,30 +313,30 @@ export async function kirinCheck(deep = false, onProgress = null) {
     try {
       const ini = await FS.readText("Game.ini");
       const title = (ini.match(/Title\s*=\s*(.+)/i) || [])[1];
-      push("ok", `Game.ini ✔ Título: ${(title || "?").trim()}`);
+      push("ok", `Game.ini [OK] Título: ${(title || "?").trim()}`);
     } catch { push("warn", "Game.ini ilegible"); }
   }
   for (const f of ["Data/MapInfos.rxdata", "Data/Tilesets.rxdata", "Data/System.rxdata", "Data/Scripts.rxdata"]) {
-    push((await has(f)) ? "ok" : "error", `${(await has(f)) ? "✔" : "✘"} ${f}`);
+    push((await has(f)) ? "ok" : "error", `${(await has(f)) ? "[OK]" : "[X]"} ${f}`);
   }
   if (!(await has("Game.exe"))) push("warn", "No se ve Game.exe (Kirin lo usa como referencia; revisa que sea la carpeta completa)");
-  else push("ok", "✔ Game.exe presente");
+  else push("ok", "[OK] Game.exe presente");
   // 2. Archivos cifrados (Kirin necesita archivos EXTRAÍDOS)
   const all = await FS.walk("", 30000).catch(() => []);
   const enc = all.filter((p) => /\.(rgssad|rgss2a|rgss3a)$/i.test(p));
   if (enc.length) push("error", `Hay ${enc.length} archivo(s) cifrados (.rgssad): Kirin NO los lee. Extrae el juego en PC primero. Ej: ${enc[0]}`);
-  else push("ok", "✔ Sin .rgssad (archivos extraídos, como Kirin quiere)");
+  else push("ok", "[OK] Sin .rgssad (archivos extraídos, como Kirin quiere)");
   // 3. Audio
   const audio = all.filter((p) => /^audio\//i.test(p));
   const mid = audio.filter((p) => /\.mid$/i.test(p));
-  push("ok", `✔ Audio: ${audio.length} archivos`);
+  push("ok", `[OK] Audio: ${audio.length} archivos`);
   if (mid.length) push("warn", `${mid.length} MIDIs (.mid): en Android pueden sonar distinto o no sonar. No bloquea el juego.`);
   // 4. PBS (Essentials)
   const pbsCount = all.filter((p) => /^pbs\/.*\.txt$/i.test(p)).length;
-  push(pbsCount ? "ok" : "warn", pbsCount ? `✔ PBS de Essentials: ${pbsCount} archivos` : "Sin carpeta PBS (¿juego incompleto?)");
+  push(pbsCount ? "ok" : "warn", pbsCount ? `[OK] PBS de Essentials: ${pbsCount} archivos` : "Sin carpeta PBS (¿juego incompleto?)");
   // 5. Partidas
   const saves = await findSaves();
-  if (saves.length) push("ok", `✔ Partidas detectadas y PROTEGIDAS: ${saves.map((s) => `${s.path} (${fmtBytes(s.size)})`).join(", ")}`);
+  if (saves.length) push("ok", `[OK] Partidas detectadas y PROTEGIDAS: ${saves.map((s) => `${s.path} (${fmtBytes(s.size)})`).join(", ")}`);
   else push("info", "Sin partidas todavía (se crean al jugar; PokeMod nunca las borra).");
   // 6. Análisis profundo: caja de archivos (Windows la perdona, Android NO)
   if (deep) {
@@ -360,7 +360,7 @@ export async function kirinCheck(deep = false, onProgress = null) {
     const mm = FS.caseMismatches([...wanted]);
     const missing = mm.filter((m) => !m.found);
     const wrongCase = mm.filter((m) => m.found);
-    if (!missing.length && !wrongCase.length) push("ok", `✔ Caja de archivos perfecta (${wanted.size} referencias revisadas)`);
+    if (!missing.length && !wrongCase.length) push("ok", `[OK] Caja de archivos perfecta (${wanted.size} referencias revisadas)`);
     for (const m of wrongCase.slice(0, 20)) push("warn", `Caja distinta: el juego pide "${m.wanted}" pero el archivo es "${m.found}" (en PC funciona, en Kirin puede fallar)`);
     for (const m of missing.slice(0, 20)) push("error", `Falta gráfico: "${m.wanted}"`);
     if (wrongCase.length > 20) push("warn", `…y ${wrongCase.length - 20} diferencias de caja más`);
@@ -500,7 +500,7 @@ export async function buildSalaMod({ entryMapId, doorX, doorY, doorGraphic, onPr
   // 3. Guardar sala + MapInfos (+ backup automático)
   await FS.writeBytes(`Data/Map${pad3(newId)}.rxdata`, marshalDump(salaMap), {});
   const info = new RObject("RPG::MapInfo", [
-    ["@name", RString.fromText("🚪 Sala PokeMod")], ["@parent_id", 0], ["@order", 9999],
+    ["@name", RString.fromText("Sala PokeMod")], ["@parent_id", 0], ["@order", 9999],
     ["@expanded", true], ["@scroll_x", 0], ["@scroll_y", 0],
   ]);
   S.mapInfosObj.pairs.push([newId, info]);
@@ -508,7 +508,7 @@ export async function buildSalaMod({ entryMapId, doorX, doorY, doorGraphic, onPr
 
   // 4. Puerta en el mapa de entrada
   const doorId = Math.max(0, ...entry.parsed.events.map((e) => e.id)) + 1;
-  const door = salaEvent(doorId, "🚪 Sala PokeMod", doorX, doorY, [
+  const door = salaEvent(doorId, "Sala PokeMod", doorX, doorY, [
     evCmd(201, [0, newId, 0, 0, 2, 0]), evCmd(0),
   ], doorGraphic, 0);
   const evHashEntry = entry.parsed.obj.getIvar("events");

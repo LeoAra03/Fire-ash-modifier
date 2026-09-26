@@ -29,14 +29,14 @@ def is_save(name: str) -> bool:
 
 
 def download(url: str, dest: str, expect_size: int):
-    print(f"⬇ {url}\n   → {dest} ({expect_size/1e6:.0f} MB)")
+    print(f">> {url}\n   → {dest} ({expect_size/1e6:.0f} MB)")
     req = urllib.request.Request(url, headers={"User-Agent": "PokeModStudio/1.0"})
     have = os.path.getsize(dest) if os.path.exists(dest) else 0
     if have and have < expect_size:  # reanudar
         req.add_header("Range", f"bytes={have}-")
         print(f"   …reanudo desde {have/1e6:.1f} MB")
     elif have == expect_size:
-        print("   ✔ ya descargado")
+        print("   [OK] ya descargado")
         return
     with urllib.request.urlopen(req, timeout=60) as r, open(dest, "ab" if have else "wb") as f:
         total = have + int(r.headers.get("Content-Length", 0) or 0)
@@ -50,7 +50,7 @@ def download(url: str, dest: str, expect_size: int):
             done += len(chunk)
             el = max(time.time() - t0, 0.01)
             print(f"\r   {done/1e6:.1f}/{total/1e6:.1f} MB · {done/el/1e6:.1f} MB/s", end="", flush=True)
-    print("\n   ✔ descarga completa")
+    print("\n   [OK] descarga completa")
 
 
 def sha1_of(path: str) -> str:
@@ -70,11 +70,11 @@ def backup_saves(game_dir: str):
     os.makedirs(dest, exist_ok=True)
     for s in saves:
         shutil.copy2(os.path.join(game_dir, s), os.path.join(dest, s))
-    print(f"🧷 Partidas respaldadas en {dest}: {', '.join(saves)}")
+    print(f"Partidas respaldadas en {dest}: {', '.join(saves)}")
 
 
 def extract(zip_path: str, game_dir: str):
-    print(f"📦 Extrayendo {os.path.basename(zip_path)} → {game_dir}")
+    print(f"Extrayendo {os.path.basename(zip_path)} → {game_dir}")
     with zipfile.ZipFile(zip_path) as z:
         members = [m for m in z.infolist() if not m.is_dir()]
         # Si el ZIP trae una sola carpeta raíz, extraer su CONTENIDO (evita doble carpeta).
@@ -99,7 +99,7 @@ def extract(zip_path: str, game_dir: str):
             n += 1
             if n % 2000 == 0:
                 print(f"   …{n}/{len(members)}", flush=True)
-    print(f"   ✔ {n} archivos")
+    print(f"   [OK] {n} archivos")
 
 
 def main():
@@ -127,19 +127,19 @@ def main():
         url = f"{BASE}/{fname_enc}"
         dest = os.path.join("downloads", urllib.request.unquote(fname_enc))
         download(url, dest, size)
-        print("🔍 Verificando SHA-1…", end=" ", flush=True)
+        print("Verificando SHA-1…", end=" ", flush=True)
         got = sha1_of(dest)
         if got != sha1:
-            print(f"\n❌ CORRUPTO: esperaba {sha1}, llegó {got}\nBorra {dest} y reintenta.")
+            print(f"\n[X] CORRUPTO: esperaba {sha1}, llegó {got}\nBorra {dest} y reintenta.")
             sys.exit(2)
-        print("✔")
+        print("[OK]")
         extract(dest, args.dir)
         if not args.keep_zip:
             os.remove(dest)
 
-    print("\n✅ Listo. Carpeta:", os.path.abspath(args.dir))
+    print("\nListo [OK]. Carpeta:", os.path.abspath(args.dir))
     print("   En Android: copia esa carpeta al almacenamiento interno y ábrela con Kirin (o edítala con la APK PokeMod).")
-    print("   Tus partidas (si había) siguen intactas. 🛡")
+    print("   Tus partidas (si había) siguen intactas.")
 
 
 if __name__ == "__main__":

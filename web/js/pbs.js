@@ -180,6 +180,8 @@ export const PBS_SCHEMAS = {
 
 export function schemaFor(filename) {
   const base = filename.split("/").pop().toLowerCase();
+  // v19.1 guarda los metadatos de mapa en metadata.txt; v20+ en map_metadata.txt
+  if (base === "metadata.txt") return PBS_SCHEMAS["map_metadata.txt"];
   return PBS_SCHEMAS[base] || null;
 }
 

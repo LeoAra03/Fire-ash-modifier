@@ -1,4 +1,4 @@
-# 🤖 Guía Kirin + PokeMod Studio
+# Guía Kirin + PokeMod Studio
 
 **Kirin** es el emulador nuevo para jugar RPG Maker XP (y fangames Pokémon con
 Essentials, como Fire Ash) en Android **sin plugins**. PokeMod Studio es el
@@ -40,7 +40,7 @@ Fire Ash sin romperla y **sin tocar tus partidas**.
 
 1. **Juega con Kirin**, guarda tu partida normalmente (queda en la carpeta).
 2. **Cierra Kirin** antes de editar (evita que pise archivos mientras editas).
-3. **Edita con PokeMod**: diálogos, NPCs, PBS, o crea la 🚪 **Sala PokeMod**
+3. **Edita con PokeMod**: diálogos, NPCs, PBS, o crea la **Sala PokeMod**
    (pestaña Mods) para viajar a todos los mapas.
 4. PokeMod respalda cada archivo en `PokeModBackups/<fecha>/` antes de tocarlo.
 5. **Vuelve a Kirin** y sigue jugando: tu partida sigue intacta.

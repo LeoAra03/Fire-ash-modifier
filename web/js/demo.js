@@ -299,7 +299,7 @@ export async function buildDemoProject() {
   ]);
   putRx("Data/Map003.rxdata", m3);
 
-  // -- PBS
+  // -- PBS (formato Essentials v19.1)
   putTxt("PBS/pokemon.txt", `# Demo — formato Essentials v19
 [PIKACHU]
 Name = Pikachu
@@ -339,34 +339,104 @@ Color = Red
 Shape = BipedalTall
 Kind = Llama
 Pokedex = Escupe fuego capaz de fundir rocas.
+
+[RATTATA]
+Name = Rattata
+Types = NORMAL
+BaseStats = 30,56,35,72,25,35
+GenderRate = Female50Percent
+GrowthRate = Medium
+BaseExp = 51
+Rareness = 255
+Happiness = 70
+Abilities = RUNAWAY,GUTS
+Moves = 1,TACKLE,1,TAILWHIP
+Evolutions = RATICATE,Level,20
+Height = 0.3
+Weight = 3.5
+Color = Purple
+Shape = Quadruped
+Kind = Ratón
+Pokedex = Muerde todo lo que ve con sus afilados colmillos.
+
+[MAGIKARP]
+Name = Magikarp
+Types = WATER
+BaseStats = 20,10,55,80,15,20
+GenderRate = Female50Percent
+GrowthRate = Slow
+BaseExp = 40
+Rareness = 255
+Happiness = 70
+Abilities = SWIFTSWIM
+Moves = 1,SPLASH,15,TACKLE
+Evolutions = GYARADOS,Level,20
+Height = 0.9
+Weight = 10.0
+Color = Red
+Shape = Fish
+Kind = Pez
+Pokedex = Un Pokémon patético e inútil. Solo salpica.
 `);
-  putTxt("PBS/map_metadata.txt", `[001]
+  putTxt("PBS/metadata.txt", `# Demo — metadatos globales [000] y por mapa (Essentials v19)
+[000]
+Home = 1,5,5,2
+PlayerA = RED,boy_walk,boy_bike,boy_surf,boy_run
+WildBattleBGM = Battle wild.ogg
+TrainerBattleBGM = Battle trainer.ogg
+#-------------------------------
+[001]
 Name = Pueblo Demo
 Outdoor = true
 ShowArea = true
-Bicycle = true
+MapPosition = 0,13,12
 HealingSpot = 1,5,5
-
+#-------------------------------
 [002]
 Name = Ruta 1
 Outdoor = true
+ShowArea = true
+MapPosition = 0,13,11
 Bicycle = true
-Weather = 1,30,0
 `);
-  putTxt("PBS/encounters.txt", `# Demo
+  putTxt("PBS/encounters.txt", `# Demo — formato v19: Tipo,densidad + probabilidad,ESPECIE,min,max
 [002]
-Land,25
-PIKACHU,5,8
-PIKACHU,10,12
-Water,10
-MAGIKARP,5,10
+Land,21
+    40,PIKACHU,5,8
+    35,PIKACHU,9,11
+    20,RATTATA,5,8
+    5,RATTATA,12,14
+Water,2
+    70,MAGIKARP,5,10
+    30,MAGIKARP,11,14
 `);
   putTxt("PBS/trainers.txt", `# Demo
 [YOUNGSTER,Joey]
-Name = Joey
+LoseText = ¡Rayos! ¡Perdí!
 Pokemon = RATTATA,8
-  Moves = TACKLE,TAILWHIP
+    Moves = TACKLE,TAILWHIP
 Pokemon = RATTATA,10
+`);
+  putTxt("PBS/townmap.txt", `# Demo — mapamundi (Essentials v19)
+[0]
+Name = Demo
+Filename = DemoRegion.png
+Point = 13,12,Pueblo Demo,,1,5,5,
+Point = 13,11,Ruta 1,,,,,
+`);
+  putTxt("PBS/connections.txt", `# Demo — conexiones entre mapas (vacío: ningún borde conectado)
+`);
+  putTxt("PBS/items.txt", `# Demo
+[POTION]
+Name = Poción
+Price = 300
+Description = Recupera 20 PS de un Pokémon.
+`);
+  putTxt("PBS/trainertypes.txt", `# Demo
+[YOUNGSTER]
+Name = Jovencito
+Gender = Male
+BaseMoney = 16
 `);
 
   putTxt("Game.ini", `[Game]

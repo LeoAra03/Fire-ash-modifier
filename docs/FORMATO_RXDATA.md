@@ -1,4 +1,4 @@
-# 📄 Formato rxdata (notas técnicas)
+# Formato rxdata (notas técnicas)
 
 Referencia de lo que implementa PokeMod (`web/js/marshal.js`, `rmxp.js`,
 `render.js`). Verificado contra **mkxp** (motor abierto compatible con RGSS,

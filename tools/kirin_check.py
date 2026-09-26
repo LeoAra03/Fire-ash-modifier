@@ -12,14 +12,14 @@ CORE = ["Game.ini", "Game.exe", "Data/MapInfos.rxdata", "Data/Tilesets.rxdata",
 
 def main():
     game = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else "game")
-    print("🤖 Chequeo Kirin:", game)
+    print("Chequeo Kirin:", game)
     errors, warns = 0, 0
 
-    def ok(m): print("  ✔", m)
+    def ok(m): print("  [OK]", m)
     def warn(m):
-        global warns; warns += 1; print("  ⚠", m)
+        global warns; warns += 1; print("  [!]", m)
     def err(m):
-        global errors; errors += 1; print("  ✘", m)
+        global errors; errors += 1; print("  [X]", m)
 
     if not os.path.isdir(game):
         err("la carpeta no existe"); sys.exit(1)
@@ -35,7 +35,7 @@ def main():
     if enc:
         err(f"{len(enc)} archivo(s) cifrados (.rgssad): Kirin necesita archivos EXTRAÍDOS")
     else:
-        ok("sin .rgssad (extraído ✔)")
+        ok("sin .rgssad (extraído)")
 
     audio = [f for f in all_files if f.lower().startswith("audio")]
     mid = [f for f in audio if f.lower().endswith(".mid")]
