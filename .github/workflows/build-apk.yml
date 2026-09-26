@@ -61,19 +61,14 @@ jobs:
           exit "$GRADLE_EXIT"
       - name: Publicar log si falla (diagnóstico)
         if: failure()
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          tail -c 60000 /tmp/gradle.log > /tmp/tail.txt || echo "(sin log)" > /tmp/tail.txt
-          gh api "repos/${{ github.repository }}/commits/${{ github.sha }}/comments" \
-            -f body="## 🔴 Fallo de Gradle (diagnóstico automático)
-
-          <details><summary>Últimas líneas del log</summary>
-
-          \`\`\`
-          $(cat /tmp/tail.txt)
-          \`\`\`
-          </details>" || true
+          tail -c 48000 /tmp/gradle.log > /tmp/tail.txt || echo "(sin log)" > /tmp/tail.txt
+          python3 - <<'PYEOF'
+          data = open('/tmp/tail.txt', 'rb').read().decode('utf-8', 'replace')
+          data = data.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+          for i in range(0, len(data), 8000):
+              print(f"::error title=gradle-log-{i // 8000}::{data[i:i+8000]}")
+          PYEOF
       - name: Renombrar APK
         run: |
           ls android/app/build/outputs/apk/debug/
