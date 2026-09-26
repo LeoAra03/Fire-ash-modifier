@@ -56,7 +56,7 @@ jobs:
         run: |
           cd android
           gradle assembleDebug --stacktrace > /tmp/gradle.log 2>&1
-          echo "GRADLE_EXIT=$?" >> $GITHUB_ENV
+          GRADLE_EXIT=$?
           tail -n 40 /tmp/gradle.log
           exit "$GRADLE_EXIT"
       - name: Publicar log si falla (diagnóstico)
