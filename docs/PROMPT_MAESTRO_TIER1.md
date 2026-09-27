@@ -17,6 +17,9 @@ ENTRADA OBLIGATORIA
 - nuevo nombre narrativo: {{NARRATIVE_NAME}}
 - sector: {{SECTOR_ID}} / {{SECTOR_NAME}}
 - bioma y tileset disponible: {{BIOME}}
+- contexto geográfico validado de Region Builder: {{REGION_BUILDER_CONTEXT}}
+- registro neutral inspirado en Pokémon Studio: {{STUDIO_RECORD}}
+- métricas del mapa base real de Fire Ash: {{STYLE_BASELINE}}
 - geometría heredada de: {{SOURCE_MAP}}
 - importancia global: {{GLOBAL_IMPORTANCE}}
 - misterio central: {{CORE_MYSTERY}}

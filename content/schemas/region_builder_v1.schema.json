@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fire-ash-modifier.local/schemas/region-builder-v1.schema.json",
+  "title": "Pokémon Region Builder .pkregion v1",
+  "description": "Contrato de interoperabilidad de diseño. Las restricciones relacionales de tamaño y referencias se validan además en region_builder_adapter.mjs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "name",
+    "mapData",
+    "pokedex",
+    "customPokemon",
+    "customMoves",
+    "customAbilities"
+  ],
+  "properties": {
+    "version": { "const": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "mapData": { "$ref": "#/$defs/mapData" },
+    "pokedex": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pokedexEntry" }
+    },
+    "customPokemon": { "type": "array", "items": { "type": "object" } },
+    "customMoves": { "type": "array", "items": { "type": "object" } },
+    "customAbilities": { "type": "array", "items": { "type": "object" } }
+  },
+  "$defs": {
+    "mapCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["water", "terrain", "path", "landmarkId"],
+      "properties": {
+        "water": { "type": "boolean" },
+        "terrain": { "type": "integer", "minimum": -1, "maximum": 4 },
+        "path": { "type": "boolean" },
+        "landmarkId": { "type": ["string", "null"] }
+      }
+    },
+    "landmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "x", "y", "width", "height", "type", "name", "description", "pokemon"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "x": { "type": "integer", "minimum": 0 },
+        "y": { "type": "integer", "minimum": 0 },
+        "width": { "enum": [1, 2] },
+        "height": { "enum": [1, 2] },
+        "type": { "enum": ["city", "town", "route", "cave", "special"] },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "pokemon": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "mapData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["style", "width", "height", "background", "backgroundTransform", "cells", "landmarks", "terrainGrid"],
+      "properties": {
+        "style": { "enum": ["rs", "dp"] },
+        "width": { "type": "integer", "minimum": 1, "maximum": 256 },
+        "height": { "type": "integer", "minimum": 1, "maximum": 256 },
+        "background": { "type": ["string", "null"] },
+        "backgroundTransform": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["offsetX", "offsetY", "scale", "rotation"],
+          "properties": {
+            "offsetX": { "type": "number" },
+            "offsetY": { "type": "number" },
+            "scale": { "type": "number", "exclusiveMinimum": 0 },
+            "rotation": { "type": "number" }
+          }
+        },
+        "cells": {
+          "type": "array",
+          "items": { "type": "array", "items": { "$ref": "#/$defs/mapCell" } }
+        },
+        "landmarks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/landmark" }
+        },
+        "terrainGrid": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "array",
+              "items": { "type": "integer", "minimum": -1, "maximum": 4 }
+            }
+          ]
+        }
+      }
+    },
+    "pokedexEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dexNumber", "pokemonId", "isCustom", "isRegional", "baseFormId"],
+      "properties": {
+        "dexNumber": { "type": "integer", "minimum": 1 },
+        "pokemonId": { "type": ["integer", "string"] },
+        "isCustom": { "type": "boolean" },
+        "isRegional": { "type": "boolean" },
+        "baseFormId": { "type": ["integer", "string", "null"] },
+        "types": {
+          "type": "array",
+          "items": {
+            "enum": ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"]
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

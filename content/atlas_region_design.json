@@ -1,0 +1,3583 @@
+{
+  "version": 1,
+  "source": {
+    "format": "pkregion",
+    "formatVersion": 1,
+    "authoringTool": "Pokémon Region Builder",
+    "sha256": "dec9e26eed03d7554275a4f1ae9d529e74be0dee3caa05bc0084af905544a8a5",
+    "policy": "Entrada de diseño neutral; no es un mapa RMXP jugable."
+  },
+  "region": {
+    "name": "Atlas Mil",
+    "style": "rs",
+    "width": 80,
+    "height": 60,
+    "layers": {
+      "backgroundReference": false,
+      "waterCells": 544,
+      "pathCells": 395,
+      "terrainHistogram": {
+        "0": 852,
+        "1": 848,
+        "2": 848,
+        "3": 852,
+        "4": 856,
+        "-1": 544
+      }
+    }
+  },
+  "landmarks": [
+    {
+      "id": "atlas-sector-01",
+      "sectorId": 1,
+      "sectorName": "Meridiano Ámbar",
+      "faction": "Vigías Ámbar",
+      "anchorMapId": 1021,
+      "tier2Maps": [
+        1026,
+        1033,
+        1040
+      ],
+      "mapRange": [
+        1021,
+        1045
+      ],
+      "name": "Meridiano Ámbar",
+      "description": "Sector 01 · Vigías Ámbar. Episodio aprobado: Santuario de la Última Campana. una emisión que conoce recuerdos que nadie contó",
+      "type": "special",
+      "position": {
+        "x": 3,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "358",
+          "essentialsSpecies": "CHIMECHO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "715",
+          "essentialsSpecies": "NOIVERN",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "429",
+          "essentialsSpecies": "MISMAGIUS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "359",
+          "essentialsSpecies": "ABSOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "478",
+          "essentialsSpecies": "FROSLASS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "442",
+          "essentialsSpecies": "SPIRITOMB",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "Santuario de la Última Campana",
+        "switchId": 708
+      }
+    },
+    {
+      "id": "atlas-sector-02",
+      "sectorId": 2,
+      "sectorName": "Cuenca Celeste",
+      "faction": "Navegantes Celestes",
+      "anchorMapId": 1046,
+      "tier2Maps": [
+        1051,
+        1058,
+        1065
+      ],
+      "mapRange": [
+        1046,
+        1070
+      ],
+      "name": "Cuenca Celeste",
+      "description": "Sector 02 · Navegantes Celestes. Episodio aprobado: La Copa del Huevo Vacío. un torneo escolar cuyo premio quiere renunciar",
+      "type": "special",
+      "position": {
+        "x": 13,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "172",
+          "essentialsSpecies": "PICHU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "239",
+          "essentialsSpecies": "ELEKID",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "240",
+          "essentialsSpecies": "MAGBY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "447",
+          "essentialsSpecies": "RIOLU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "176",
+          "essentialsSpecies": "TOGETIC",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "26",
+          "essentialsSpecies": "RAICHU",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Copa del Huevo Vacío",
+        "switchId": 709
+      }
+    },
+    {
+      "id": "atlas-sector-03",
+      "sectorId": 3,
+      "sectorName": "Frontera Carmesí",
+      "faction": "Custodios Carmesí",
+      "anchorMapId": 1071,
+      "tier2Maps": [
+        1076,
+        1083,
+        1090
+      ],
+      "mapRange": [
+        1071,
+        1095
+      ],
+      "name": "Frontera Carmesí",
+      "description": "Sector 03 · Custodios Carmesí. Episodio aprobado: El Campeón de Fecha Imposible. un expediente de Liga fechado antes de su fundación",
+      "type": "cave",
+      "position": {
+        "x": 23,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "59",
+          "essentialsSpecies": "ARCANINE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "131",
+          "essentialsSpecies": "LAPRAS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "103",
+          "essentialsSpecies": "EXEGGUTOR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "68",
+          "essentialsSpecies": "MACHAMP",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "65",
+          "essentialsSpecies": "ALAKAZAM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "149",
+          "essentialsSpecies": "DRAGONITE",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Campeón de Fecha Imposible",
+        "switchId": 710
+      }
+    },
+    {
+      "id": "atlas-sector-04",
+      "sectorId": 4,
+      "sectorName": "Distrito Cuarzo",
+      "faction": "Canteros Cuarzo",
+      "anchorMapId": 1096,
+      "tier2Maps": [
+        1101,
+        1108,
+        1115
+      ],
+      "mapRange": [
+        1096,
+        1120
+      ],
+      "name": "Distrito Cuarzo",
+      "description": "Sector 04 · Canteros Cuarzo. Episodio aprobado: El Gremio de la Camilla Vacía. un gremio recibe encargos de exploradores desaparecidos",
+      "type": "town",
+      "position": {
+        "x": 33,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "279",
+          "essentialsSpecies": "PELIPPER",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "531",
+          "essentialsSpecies": "AUDINO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "530",
+          "essentialsSpecies": "EXCADRILL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "609",
+          "essentialsSpecies": "CHANDELURE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "448",
+          "essentialsSpecies": "LUCARIO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "330",
+          "essentialsSpecies": "FLYGON",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Gremio de la Camilla Vacía",
+        "switchId": 711
+      }
+    },
+    {
+      "id": "atlas-sector-05",
+      "sectorId": 5,
+      "sectorName": "Órbita Esmeralda",
+      "faction": "Botánicos Esmeralda",
+      "anchorMapId": 1121,
+      "tier2Maps": [
+        1126,
+        1133,
+        1140
+      ],
+      "mapRange": [
+        1121,
+        1145
+      ],
+      "name": "Órbita Esmeralda",
+      "description": "Sector 05 · Botánicos Esmeralda. Episodio aprobado: Operación Rescate Demasiado Perfecto. la fauna huye de un rescate aparentemente perfecto",
+      "type": "special",
+      "position": {
+        "x": 43,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "357",
+          "essentialsSpecies": "TROPIUS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "586",
+          "essentialsSpecies": "SAWSBUCK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "168",
+          "essentialsSpecies": "ARIADOS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "419",
+          "essentialsSpecies": "FLOATZEL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "663",
+          "essentialsSpecies": "TALONFLAME",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "571",
+          "essentialsSpecies": "ZOROARK",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "Operación Rescate Demasiado Perfecto",
+        "switchId": 712
+      }
+    },
+    {
+      "id": "atlas-sector-06",
+      "sectorId": 6,
+      "sectorName": "Paso Boreal",
+      "faction": "Patrulla Boreal",
+      "anchorMapId": 1146,
+      "tier2Maps": [
+        1151,
+        1158,
+        1165
+      ],
+      "mapRange": [
+        1146,
+        1170
+      ],
+      "name": "Paso Boreal",
+      "description": "Sector 06 · Patrulla Boreal. Episodio aprobado: La Sombra que Eligió Quedarse. los Pokémon oscuros protegen a quien debía purificarlos",
+      "type": "cave",
+      "position": {
+        "x": 53,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "359",
+          "essentialsSpecies": "ABSOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "229",
+          "essentialsSpecies": "HOUNDOOM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "169",
+          "essentialsSpecies": "CROBAT",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "217",
+          "essentialsSpecies": "URSARING",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "376",
+          "essentialsSpecies": "METAGROSS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "248",
+          "essentialsSpecies": "TYRANITAR",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Sombra que Eligió Quedarse",
+        "switchId": 713
+      }
+    },
+    {
+      "id": "atlas-sector-07",
+      "sectorId": 7,
+      "sectorName": "Jardín Índigo",
+      "faction": "Tejedores Índigo",
+      "anchorMapId": 1171,
+      "tier2Maps": [
+        1176,
+        1183,
+        1190
+      ],
+      "mapRange": [
+        1171,
+        1195
+      ],
+      "name": "Jardín Índigo",
+      "description": "Sector 07 · Tejedores Índigo. Episodio aprobado: El Jardín de los Dos Juramentos. dos clanes recuerdan versiones incompatibles del mismo juramento",
+      "type": "special",
+      "position": {
+        "x": 63,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "503",
+          "essentialsSpecies": "SAMUROTT",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "497",
+          "essentialsSpecies": "SERPERIOR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "500",
+          "essentialsSpecies": "EMBOAR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "628",
+          "essentialsSpecies": "BRAVIARY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "625",
+          "essentialsSpecies": "BISHARP",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "681",
+          "essentialsSpecies": "AEGISLASH",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Jardín de los Dos Juramentos",
+        "switchId": 714
+      }
+    },
+    {
+      "id": "atlas-sector-08",
+      "sectorId": 8,
+      "sectorName": "Costa Prisma",
+      "faction": "Ópticos Prisma",
+      "anchorMapId": 1196,
+      "tier2Maps": [
+        1201,
+        1208,
+        1215
+      ],
+      "mapRange": [
+        1196,
+        1220
+      ],
+      "name": "Costa Prisma",
+      "description": "Sector 08 · Ópticos Prisma. Episodio aprobado: La Persona Fuera del Encuadre. una fotografía muestra un NPC que nunca estuvo allí",
+      "type": "town",
+      "position": {
+        "x": 73,
+        "y": 4,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "235",
+          "essentialsSpecies": "SMEARGLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "352",
+          "essentialsSpecies": "KECLEON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "479",
+          "essentialsSpecies": "ROTOM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "233",
+          "essentialsSpecies": "PORYGON2",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "571",
+          "essentialsSpecies": "ZOROARK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "561",
+          "essentialsSpecies": "SIGILYPH",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Persona Fuera del Encuadre",
+        "switchId": 715
+      }
+    },
+    {
+      "id": "atlas-sector-09",
+      "sectorId": 9,
+      "sectorName": "Dominio Solar",
+      "faction": "Heraldos Solares",
+      "anchorMapId": 1221,
+      "tier2Maps": [
+        1226,
+        1233,
+        1240
+      ],
+      "mapRange": [
+        1221,
+        1245
+      ],
+      "name": "Dominio Solar",
+      "description": "Sector 09 · Heraldos Solares. Episodio aprobado: El Festival que Olvidó su Motivo. un festival continúa después de que todos olvidaron su motivo",
+      "type": "cave",
+      "position": {
+        "x": 73,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "272",
+          "essentialsSpecies": "LUDICOLO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "225",
+          "essentialsSpecies": "DELIBIRD",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "424",
+          "essentialsSpecies": "AMBIPOM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "122",
+          "essentialsSpecies": "MRMIME",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "468",
+          "essentialsSpecies": "TOGEKISS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "143",
+          "essentialsSpecies": "SNORLAX",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Festival que Olvidó su Motivo",
+        "switchId": 716
+      }
+    },
+    {
+      "id": "atlas-sector-10",
+      "sectorId": 10,
+      "sectorName": "Velo Lunar",
+      "faction": "Cartógrafos Lunares",
+      "anchorMapId": 1246,
+      "tier2Maps": [
+        1251,
+        1258,
+        1265
+      ],
+      "mapRange": [
+        1246,
+        1270
+      ],
+      "name": "Velo Lunar",
+      "description": "Sector 10 · Cartógrafos Lunares. Episodio aprobado: La Carta que Recuerda a su Jugador. una carta cambia su ilustración según quién la sostenga",
+      "type": "city",
+      "position": {
+        "x": 63,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "3",
+          "essentialsSpecies": "VENUSAUR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "6",
+          "essentialsSpecies": "CHARIZARD",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "9",
+          "essentialsSpecies": "BLASTOISE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "25",
+          "essentialsSpecies": "PIKACHU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "150",
+          "essentialsSpecies": "MEWTWO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "151",
+          "essentialsSpecies": "MEW",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Carta que Recuerda a su Jugador",
+        "switchId": 717
+      }
+    },
+    {
+      "id": "atlas-sector-11",
+      "sectorId": 11,
+      "sectorName": "Nexo Onírico",
+      "faction": "Médicos del Sueño",
+      "anchorMapId": 1271,
+      "tier2Maps": [
+        1276,
+        1283,
+        1290
+      ],
+      "mapRange": [
+        1271,
+        1295
+      ],
+      "name": "Nexo Onírico",
+      "description": "Sector 11 · Médicos del Sueño. Episodio aprobado: El Compañero del Minuto Cero. una pareja compi se formó en una línea temporal descartada",
+      "type": "special",
+      "position": {
+        "x": 53,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "178",
+          "essentialsSpecies": "XATU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "196",
+          "essentialsSpecies": "ESPEON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "197",
+          "essentialsSpecies": "UMBREON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "475",
+          "essentialsSpecies": "GALLADE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "282",
+          "essentialsSpecies": "GARDEVOIR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "251",
+          "essentialsSpecies": "CELEBI",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Compañero del Minuto Cero",
+        "switchId": 718
+      }
+    },
+    {
+      "id": "atlas-sector-12",
+      "sectorId": 12,
+      "sectorName": "Valle Magnético",
+      "faction": "Ingenieros Magnéticos",
+      "anchorMapId": 1296,
+      "tier2Maps": [
+        1301,
+        1308,
+        1315
+      ],
+      "mapRange": [
+        1296,
+        1320
+      ],
+      "name": "Valle Magnético",
+      "description": "Sector 12 · Ingenieros Magnéticos. Episodio aprobado: El Punto que Nadie Quiso Marcar. el marcador premia a quien evita anotar",
+      "type": "town",
+      "position": {
+        "x": 43,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "815",
+          "essentialsSpecies": "CINDERACE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "663",
+          "essentialsSpecies": "TALONFLAME",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "558",
+          "essentialsSpecies": "CRUSTLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "820",
+          "essentialsSpecies": "GREEDENT",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "242",
+          "essentialsSpecies": "BLISSEY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "448",
+          "essentialsSpecies": "LUCARIO",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Punto que Nadie Quiso Marcar",
+        "switchId": 719
+      }
+    },
+    {
+      "id": "atlas-sector-13",
+      "sectorId": 13,
+      "sectorName": "Arco Fósil",
+      "faction": "Paleontólogos Libres",
+      "anchorMapId": 1321,
+      "tier2Maps": [
+        1326,
+        1333,
+        1340
+      ],
+      "mapRange": [
+        1321,
+        1345
+      ],
+      "name": "Arco Fósil",
+      "description": "Sector 13 · Paleontólogos Libres. Episodio aprobado: La Señal Hecha de Ausencias. miles de señales señalan una Poképarada inexistente",
+      "type": "special",
+      "position": {
+        "x": 33,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "181",
+          "essentialsSpecies": "AMPHAROS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "164",
+          "essentialsSpecies": "NOCTOWL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "508",
+          "essentialsSpecies": "STOUTLAND",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "358",
+          "essentialsSpecies": "CHIMECHO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "462",
+          "essentialsSpecies": "MAGNEZONE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "718",
+          "essentialsSpecies": "ZYGARDE",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Señal Hecha de Ausencias",
+        "switchId": 720
+      }
+    },
+    {
+      "id": "atlas-sector-14",
+      "sectorId": 14,
+      "sectorName": "Mar de Nubes",
+      "faction": "Pilotos de Nube",
+      "anchorMapId": 1346,
+      "tier2Maps": [
+        1351,
+        1358,
+        1365
+      ],
+      "mapRange": [
+        1346,
+        1370
+      ],
+      "name": "Mar de Nubes",
+      "description": "Sector 14 · Pilotos de Nube. Episodio aprobado: La Ciudad a la que Dieron Cuerda. los juguetes temen convertirse en sus entrenadores",
+      "type": "special",
+      "position": {
+        "x": 23,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "354",
+          "essentialsSpecies": "BANETTE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "424",
+          "essentialsSpecies": "AMBIPOM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "760",
+          "essentialsSpecies": "BEWEAR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "601",
+          "essentialsSpecies": "KLINKLANG",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "479",
+          "essentialsSpecies": "ROTOM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "801",
+          "essentialsSpecies": "MAGEARNA",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Ciudad a la que Dieron Cuerda",
+        "switchId": 721
+      }
+    },
+    {
+      "id": "atlas-sector-15",
+      "sectorId": 15,
+      "sectorName": "Bosque de Hierro",
+      "faction": "Forjadores Verdes",
+      "anchorMapId": 1371,
+      "tier2Maps": [
+        1376,
+        1383,
+        1390
+      ],
+      "mapRange": [
+        1371,
+        1395
+      ],
+      "name": "Bosque de Hierro",
+      "description": "Sector 15 · Forjadores Verdes. Episodio aprobado: El Mosaico de los Nombres Imposibles. un mosaico resuelve nombres borrados del mapa",
+      "type": "cave",
+      "position": {
+        "x": 13,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "235",
+          "essentialsSpecies": "SMEARGLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "558",
+          "essentialsSpecies": "CRUSTLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "561",
+          "essentialsSpecies": "SIGILYPH",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "474",
+          "essentialsSpecies": "PORYGONZ",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "376",
+          "essentialsSpecies": "METAGROSS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "681",
+          "essentialsSpecies": "AEGISLASH",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Mosaico de los Nombres Imposibles",
+        "switchId": 722
+      }
+    },
+    {
+      "id": "atlas-sector-16",
+      "sectorId": 16,
+      "sectorName": "Canal Estelar",
+      "faction": "Astrónomos del Canal",
+      "anchorMapId": 1396,
+      "tier2Maps": [
+        1401,
+        1408,
+        1415
+      ],
+      "mapRange": [
+        1396,
+        1420
+      ],
+      "name": "Canal Estelar",
+      "description": "Sector 16 · Astrónomos del Canal. Episodio aprobado: La Receta que Lloraba por Otros. una receta reproduce emociones ajenas",
+      "type": "town",
+      "position": {
+        "x": 3,
+        "y": 15,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "869",
+          "essentialsSpecies": "ALCREMIE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "855",
+          "essentialsSpecies": "POLTEAGEIST",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "842",
+          "essentialsSpecies": "APPLETUN",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "685",
+          "essentialsSpecies": "SLURPUFF",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "876",
+          "essentialsSpecies": "INDEEDEE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "242",
+          "essentialsSpecies": "BLISSEY",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Receta que Lloraba por Otros",
+        "switchId": 723
+      }
+    },
+    {
+      "id": "atlas-sector-17",
+      "sectorId": 17,
+      "sectorName": "Páramo Sonoro",
+      "faction": "Músicos del Páramo",
+      "anchorMapId": 1421,
+      "tier2Maps": [
+        1426,
+        1433,
+        1440
+      ],
+      "mapRange": [
+        1421,
+        1445
+      ],
+      "name": "Páramo Sonoro",
+      "description": "Sector 17 · Músicos del Páramo. Episodio aprobado: El Caso de las Cuatro Mediasnoches. todos los testigos dicen la verdad y aun así se contradicen",
+      "type": "special",
+      "position": {
+        "x": 3,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "132",
+          "essentialsSpecies": "DITTO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "352",
+          "essentialsSpecies": "KECLEON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "164",
+          "essentialsSpecies": "NOCTOWL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "571",
+          "essentialsSpecies": "ZOROARK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "358",
+          "essentialsSpecies": "CHIMECHO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "233",
+          "essentialsSpecies": "PORYGON2",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Caso de las Cuatro Mediasnoches",
+        "switchId": 724
+      }
+    },
+    {
+      "id": "atlas-sector-18",
+      "sectorId": 18,
+      "sectorName": "Islas del Viento",
+      "faction": "Mensajeros del Viento",
+      "anchorMapId": 1446,
+      "tier2Maps": [
+        1451,
+        1458,
+        1465
+      ],
+      "mapRange": [
+        1446,
+        1470
+      ],
+      "name": "Islas del Viento",
+      "description": "Sector 18 · Mensajeros del Viento. Episodio aprobado: El Museo de lo Todavía No Perdido. una distorsión devuelve objetos antes de perderse",
+      "type": "cave",
+      "position": {
+        "x": 13,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "344",
+          "essentialsSpecies": "CLAYDOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "351",
+          "essentialsSpecies": "CASTFORM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "437",
+          "essentialsSpecies": "BRONZONG",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "474",
+          "essentialsSpecies": "PORYGONZ",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "178",
+          "essentialsSpecies": "XATU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "483",
+          "essentialsSpecies": "DIALGA",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Museo de lo Todavía No Perdido",
+        "switchId": 725
+      }
+    },
+    {
+      "id": "atlas-sector-19",
+      "sectorId": 19,
+      "sectorName": "Anillo Abisal",
+      "faction": "Buzos Abisales",
+      "anchorMapId": 1471,
+      "tier2Maps": [
+        1476,
+        1483,
+        1490
+      ],
+      "mapRange": [
+        1471,
+        1495
+      ],
+      "name": "Anillo Abisal",
+      "description": "Sector 19 · Buzos Abisales. Episodio aprobado: El Arrecife que Llegó Después. una especie paradoja está reparando el ecosistema",
+      "type": "special",
+      "position": {
+        "x": 23,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "222",
+          "essentialsSpecies": "CORSOLA",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "864",
+          "essentialsSpecies": "CURSOLA",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "139",
+          "essentialsSpecies": "OMASTAR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "346",
+          "essentialsSpecies": "CRADILY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "131",
+          "essentialsSpecies": "LAPRAS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "245",
+          "essentialsSpecies": "SUICUNE",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Arrecife que Llegó Después",
+        "switchId": 726
+      }
+    },
+    {
+      "id": "atlas-sector-20",
+      "sectorId": 20,
+      "sectorName": "Ruta del Cometa",
+      "faction": "Rastreadores Cometa",
+      "anchorMapId": 1496,
+      "tier2Maps": [
+        1501,
+        1508,
+        1515
+      ],
+      "mapRange": [
+        1496,
+        1520
+      ],
+      "name": "Ruta del Cometa",
+      "description": "Sector 20 · Rastreadores Cometa. Episodio aprobado: Los Dos Nombres del Cometa. una fusión quiere conservar dos nombres",
+      "type": "city",
+      "position": {
+        "x": 33,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "311",
+          "essentialsSpecies": "PLUSLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "312",
+          "essentialsSpecies": "MINUN",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "196",
+          "essentialsSpecies": "ESPEON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "197",
+          "essentialsSpecies": "UMBREON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "233",
+          "essentialsSpecies": "PORYGON2",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "474",
+          "essentialsSpecies": "PORYGONZ",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "Los Dos Nombres del Cometa",
+        "switchId": 727
+      }
+    },
+    {
+      "id": "atlas-sector-21",
+      "sectorId": 21,
+      "sectorName": "Territorio Origami",
+      "faction": "Plegadores del Territorio",
+      "anchorMapId": 1521,
+      "tier2Maps": [
+        1526,
+        1533,
+        1540
+      ],
+      "mapRange": [
+        1521,
+        1545
+      ],
+      "name": "Territorio Origami",
+      "description": "Sector 21 · Plegadores del Territorio. Episodio aprobado: La Central de las Cenizas Vivas. una central limpia oculta residuos que parecen vivos",
+      "type": "cave",
+      "position": {
+        "x": 43,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "88",
+          "essentialsSpecies": "GRIMER",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "110",
+          "essentialsSpecies": "WEEZING",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "569",
+          "essentialsSpecies": "GARBODOR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "89",
+          "essentialsSpecies": "MUK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "462",
+          "essentialsSpecies": "MAGNEZONE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "718",
+          "essentialsSpecies": "ZYGARDE",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Central de las Cenizas Vivas",
+        "switchId": 728
+      }
+    },
+    {
+      "id": "atlas-sector-22",
+      "sectorId": 22,
+      "sectorName": "Delta de Cristal",
+      "faction": "Mineros Delta",
+      "anchorMapId": 1546,
+      "tier2Maps": [
+        1551,
+        1558,
+        1565
+      ],
+      "mapRange": [
+        1546,
+        1570
+      ],
+      "name": "Delta de Cristal",
+      "description": "Sector 22 · Mineros Delta. Episodio aprobado: La Profecía Escrita Después. una facción fabrica profecías para reclutar",
+      "type": "special",
+      "position": {
+        "x": 53,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "359",
+          "essentialsSpecies": "ABSOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "178",
+          "essentialsSpecies": "XATU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "687",
+          "essentialsSpecies": "MALAMAR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "576",
+          "essentialsSpecies": "GOTHITELLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "765",
+          "essentialsSpecies": "ORANGURU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "151",
+          "essentialsSpecies": "MEW",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Profecía Escrita Después",
+        "switchId": 729
+      }
+    },
+    {
+      "id": "atlas-sector-23",
+      "sectorId": 23,
+      "sectorName": "Llanura Meteoro",
+      "faction": "Meteorólogos Errantes",
+      "anchorMapId": 1571,
+      "tier2Maps": [
+        1576,
+        1583,
+        1590
+      ],
+      "mapRange": [
+        1571,
+        1595
+      ],
+      "name": "Llanura Meteoro",
+      "description": "Sector 23 · Meteorólogos Errantes. Episodio aprobado: La Ciudad que Pagaba con Recuerdos. la ciudad mejora mientras sus habitantes pierden recuerdos",
+      "type": "special",
+      "position": {
+        "x": 63,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "534",
+          "essentialsSpecies": "CONKELDURR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "558",
+          "essentialsSpecies": "CRUSTLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "601",
+          "essentialsSpecies": "KLINKLANG",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "235",
+          "essentialsSpecies": "SMEARGLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "233",
+          "essentialsSpecies": "PORYGON2",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "376",
+          "essentialsSpecies": "METAGROSS",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Ciudad que Pagaba con Recuerdos",
+        "switchId": 730
+      }
+    },
+    {
+      "id": "atlas-sector-24",
+      "sectorId": 24,
+      "sectorName": "Cordillera Coral",
+      "faction": "Biólogos Coral",
+      "anchorMapId": 1596,
+      "tier2Maps": [
+        1601,
+        1608,
+        1615
+      ],
+      "mapRange": [
+        1596,
+        1620
+      ],
+      "name": "Cordillera Coral",
+      "description": "Sector 24 · Biólogos Coral. Episodio aprobado: Las Cartas de una Familia Incompatible. una familia recibe cartas de sus futuros incompatibles",
+      "type": "town",
+      "position": {
+        "x": 73,
+        "y": 26,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "133",
+          "essentialsSpecies": "EEVEE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "196",
+          "essentialsSpecies": "ESPEON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "197",
+          "essentialsSpecies": "UMBREON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "700",
+          "essentialsSpecies": "SYLVEON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "225",
+          "essentialsSpecies": "DELIBIRD",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "251",
+          "essentialsSpecies": "CELEBI",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "Las Cartas de una Familia Incompatible",
+        "switchId": 731
+      }
+    },
+    {
+      "id": "atlas-sector-25",
+      "sectorId": 25,
+      "sectorName": "Ciudad del Eclipse",
+      "faction": "Cronistas Eclipse",
+      "anchorMapId": 1621,
+      "tier2Maps": [
+        1626,
+        1633,
+        1640
+      ],
+      "mapRange": [
+        1621,
+        1645
+      ],
+      "name": "Ciudad del Eclipse",
+      "description": "Sector 25 · Cronistas Eclipse. Episodio aprobado: El Mercado de los Umbrales Pequeños. portales pequeños sostienen una economía clandestina",
+      "type": "special",
+      "position": {
+        "x": 73,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "63",
+          "essentialsSpecies": "ABRA",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "178",
+          "essentialsSpecies": "XATU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "477",
+          "essentialsSpecies": "DUSKNOIR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "437",
+          "essentialsSpecies": "BRONZONG",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "233",
+          "essentialsSpecies": "PORYGON2",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "720",
+          "essentialsSpecies": "HOOPA",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Mercado de los Umbrales Pequeños",
+        "switchId": 732
+      }
+    },
+    {
+      "id": "atlas-sector-26",
+      "sectorId": 26,
+      "sectorName": "Archipiélago Vapor",
+      "faction": "Mecánicos Vapor",
+      "anchorMapId": 1646,
+      "tier2Maps": [
+        1651,
+        1658,
+        1665
+      ],
+      "mapRange": [
+        1646,
+        1670
+      ],
+      "name": "Archipiélago Vapor",
+      "description": "Sector 26 · Mecánicos Vapor. Episodio aprobado: La Estatua que Ensayaba Ciudades. una estatua registra civilizaciones que aún no existen",
+      "type": "special",
+      "position": {
+        "x": 63,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "561",
+          "essentialsSpecies": "SIGILYPH",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "867",
+          "essentialsSpecies": "RUNERIGUS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "344",
+          "essentialsSpecies": "CLAYDOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "623",
+          "essentialsSpecies": "GOLURK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "437",
+          "essentialsSpecies": "BRONZONG",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "251",
+          "essentialsSpecies": "CELEBI",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Estatua que Ensayaba Ciudades",
+        "switchId": 733
+      }
+    },
+    {
+      "id": "atlas-sector-27",
+      "sectorId": 27,
+      "sectorName": "Santuario de Polen",
+      "faction": "Guardianes de Polen",
+      "anchorMapId": 1671,
+      "tier2Maps": [
+        1676,
+        1683,
+        1690
+      ],
+      "mapRange": [
+        1671,
+        1695
+      ],
+      "name": "Santuario de Polen",
+      "description": "Sector 27 · Guardianes de Polen. Episodio aprobado: La Mina de las Decisiones Sólidas. la mina produce minerales formados por decisiones",
+      "type": "cave",
+      "position": {
+        "x": 53,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "302",
+          "essentialsSpecies": "SABLEYE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "703",
+          "essentialsSpecies": "CARBINK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "526",
+          "essentialsSpecies": "GIGALITH",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "346",
+          "essentialsSpecies": "CRADILY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "376",
+          "essentialsSpecies": "METAGROSS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "719",
+          "essentialsSpecies": "DIANCIE",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Mina de las Decisiones Sólidas",
+        "switchId": 734
+      }
+    },
+    {
+      "id": "atlas-sector-28",
+      "sectorId": 28,
+      "sectorName": "Cañón Espejo",
+      "faction": "Reflejo Nómada",
+      "anchorMapId": 1696,
+      "tier2Maps": [
+        1701,
+        1708,
+        1715
+      ],
+      "mapRange": [
+        1696,
+        1720
+      ],
+      "name": "Cañón Espejo",
+      "description": "Sector 28 · Reflejo Nómada. Episodio aprobado: El Peaje de los Sueños Prestados. los sueños están pagando peaje entre dimensiones",
+      "type": "town",
+      "position": {
+        "x": 43,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "97",
+          "essentialsSpecies": "HYPNO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "518",
+          "essentialsSpecies": "MUSHARNA",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "775",
+          "essentialsSpecies": "KOMALA",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "576",
+          "essentialsSpecies": "GOTHITELLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "491",
+          "essentialsSpecies": "DARKRAI",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "488",
+          "essentialsSpecies": "CRESSELIA",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Peaje de los Sueños Prestados",
+        "switchId": 735
+      }
+    },
+    {
+      "id": "atlas-sector-29",
+      "sectorId": 29,
+      "sectorName": "Bahía Relámpago",
+      "faction": "Técnicos Relámpago",
+      "anchorMapId": 1721,
+      "tier2Maps": [
+        1726,
+        1733,
+        1740
+      ],
+      "mapRange": [
+        1721,
+        1745
+      ],
+      "name": "Bahía Relámpago",
+      "description": "Sector 29 · Técnicos Relámpago. Episodio aprobado: El Campeón de las Dos Banderas. dos ligas reclaman al mismo campeón sin querer combatir",
+      "type": "special",
+      "position": {
+        "x": 33,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "628",
+          "essentialsSpecies": "BRAVIARY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "350",
+          "essentialsSpecies": "MILOTIC",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "448",
+          "essentialsSpecies": "LUCARIO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "681",
+          "essentialsSpecies": "AEGISLASH",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "887",
+          "essentialsSpecies": "DRAGAPULT",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "6",
+          "essentialsSpecies": "CHARIZARD",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "El Campeón de las Dos Banderas",
+        "switchId": 736
+      }
+    },
+    {
+      "id": "atlas-sector-30",
+      "sectorId": 30,
+      "sectorName": "Meseta de Tinta",
+      "faction": "Ilustradores de Tinta",
+      "anchorMapId": 1746,
+      "tier2Maps": [
+        1751,
+        1758,
+        1765
+      ],
+      "mapRange": [
+        1746,
+        1770
+      ],
+      "name": "Meseta de Tinta",
+      "description": "Sector 30 · Ilustradores de Tinta. Episodio aprobado: La Academia del Error Permitido. una academia confunde dificultad con crueldad",
+      "type": "city",
+      "position": {
+        "x": 23,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [
+        {
+          "regionBuilderId": "227",
+          "essentialsSpecies": "SKARMORY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "479",
+          "essentialsSpecies": "ROTOM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "423",
+          "essentialsSpecies": "GASTRODON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "461",
+          "essentialsSpecies": "WEAVILE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "637",
+          "essentialsSpecies": "VOLCARONA",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "445",
+          "essentialsSpecies": "GARCHOMP",
+          "compatible": true,
+          "reason": null
+        }
+      ],
+      "episode": {
+        "status": "approved",
+        "title": "La Academia del Error Permitido",
+        "switchId": 737
+      }
+    },
+    {
+      "id": "atlas-sector-31",
+      "sectorId": 31,
+      "sectorName": "Reserva de Engranajes",
+      "faction": "Relojeros de Reserva",
+      "anchorMapId": 1771,
+      "tier2Maps": [
+        1776,
+        1783,
+        1790
+      ],
+      "mapRange": [
+        1771,
+        1795
+      ],
+      "name": "Reserva de Engranajes",
+      "description": "Sector 31 · Relojeros de Reserva. Ancla 31 pendiente de diseño artesanal. una melodía solo existe cuando el jugador decide escucharla",
+      "type": "special",
+      "position": {
+        "x": 13,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-32",
+      "sectorId": 32,
+      "sectorName": "Círculo de Ceniza",
+      "faction": "Bomberos de Ceniza",
+      "anchorMapId": 1796,
+      "tier2Maps": [
+        1801,
+        1808,
+        1815
+      ],
+      "mapRange": [
+        1796,
+        1820
+      ],
+      "name": "Círculo de Ceniza",
+      "description": "Sector 32 · Bomberos de Ceniza. Ancla 32 pendiente de diseño artesanal. un héroe olvidado pide que no reconstruyan su leyenda",
+      "type": "town",
+      "position": {
+        "x": 3,
+        "y": 37,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-33",
+      "sectorId": 33,
+      "sectorName": "Labertino Boreal",
+      "faction": "Guías Boreales",
+      "anchorMapId": 1821,
+      "tier2Maps": [
+        1826,
+        1833,
+        1840
+      ],
+      "mapRange": [
+        1821,
+        1845
+      ],
+      "name": "Labertino Boreal",
+      "description": "Sector 33 · Guías Boreales. Ancla 33 pendiente de diseño artesanal. un fantasma concede victorias que nadie quiere aceptar",
+      "type": "cave",
+      "position": {
+        "x": 3,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-34",
+      "sectorId": 34,
+      "sectorName": "República de Musgo",
+      "faction": "Consejo de Musgo",
+      "anchorMapId": 1846,
+      "tier2Maps": [
+        1851,
+        1858,
+        1865
+      ],
+      "mapRange": [
+        1846,
+        1870
+      ],
+      "name": "República de Musgo",
+      "description": "Sector 34 · Consejo de Musgo. Ancla 34 pendiente de diseño artesanal. una excavación construyó deliberadamente su propio monstruo",
+      "type": "special",
+      "position": {
+        "x": 13,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-35",
+      "sectorId": 35,
+      "sectorName": "Cinturón Aurora",
+      "faction": "Pintores Aurora",
+      "anchorMapId": 1871,
+      "tier2Maps": [
+        1876,
+        1883,
+        1890
+      ],
+      "mapRange": [
+        1871,
+        1895
+      ],
+      "name": "Cinturón Aurora",
+      "description": "Sector 35 · Pintores Aurora. Ancla 35 pendiente de diseño artesanal. un equipo aislado sigue enviando reportes desde la nieve",
+      "type": "special",
+      "position": {
+        "x": 23,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-36",
+      "sectorId": 36,
+      "sectorName": "Trinchera de Luz",
+      "faction": "Fareros de Luz",
+      "anchorMapId": 1896,
+      "tier2Maps": [
+        1901,
+        1908,
+        1915
+      ],
+      "mapRange": [
+        1896,
+        1920
+      ],
+      "name": "Trinchera de Luz",
+      "description": "Sector 36 · Fareros de Luz. Ancla 36 pendiente de diseño artesanal. los datos corruptos intentan clasificar al jugador",
+      "type": "town",
+      "position": {
+        "x": 33,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-37",
+      "sectorId": 37,
+      "sectorName": "Provincia del Eco",
+      "faction": "Oyentes del Eco",
+      "anchorMapId": 1921,
+      "tier2Maps": [
+        1926,
+        1933,
+        1940
+      ],
+      "mapRange": [
+        1921,
+        1945
+      ],
+      "name": "Provincia del Eco",
+      "description": "Sector 37 · Oyentes del Eco. Ancla 37 pendiente de diseño artesanal. un acertijo imposible fue manipulado para parecer profundo",
+      "type": "special",
+      "position": {
+        "x": 43,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-38",
+      "sectorId": 38,
+      "sectorName": "Horizonte Fractal",
+      "faction": "Geómetras Fractales",
+      "anchorMapId": 1946,
+      "tier2Maps": [
+        1951,
+        1958,
+        1965
+      ],
+      "mapRange": [
+        1946,
+        1970
+      ],
+      "name": "Horizonte Fractal",
+      "description": "Sector 38 · Geómetras Fractales. Ancla 38 pendiente de diseño artesanal. la venganza era un recuerdo implantado",
+      "type": "special",
+      "position": {
+        "x": 53,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-39",
+      "sectorId": 39,
+      "sectorName": "Corona de Bruma",
+      "faction": "Pastores de Bruma",
+      "anchorMapId": 1971,
+      "tier2Maps": [
+        1976,
+        1983,
+        1990
+      ],
+      "mapRange": [
+        1971,
+        1995
+      ],
+      "name": "Corona de Bruma",
+      "description": "Sector 39 · Pastores de Bruma. Ancla 39 pendiente de diseño artesanal. el último guardado no es una partida sino una persona",
+      "type": "cave",
+      "position": {
+        "x": 63,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "atlas-sector-40",
+      "sectorId": 40,
+      "sectorName": "Umbral Mil",
+      "faction": "Archiveros del Mil",
+      "anchorMapId": 1996,
+      "tier2Maps": [
+        2001,
+        2008,
+        2015
+      ],
+      "mapRange": [
+        1996,
+        2020
+      ],
+      "name": "Umbral Mil",
+      "description": "Sector 40 · Archiveros del Mil. Ancla 40 pendiente de diseño artesanal. cuarenta historias compiten por decidir qué final merece Atlas",
+      "type": "city",
+      "position": {
+        "x": 73,
+        "y": 48,
+        "width": 2,
+        "height": 2
+      },
+      "encounters": [],
+      "episode": {
+        "status": "pending"
+      }
+    }
+  ],
+  "regionalDex": [
+    {
+      "dexNumber": 1,
+      "regionBuilderId": "3",
+      "essentialsSpecies": "VENUSAUR",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 2,
+      "regionBuilderId": "6",
+      "essentialsSpecies": "CHARIZARD",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 3,
+      "regionBuilderId": "9",
+      "essentialsSpecies": "BLASTOISE",
+      "types": [
+        "water"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 4,
+      "regionBuilderId": "25",
+      "essentialsSpecies": "PIKACHU",
+      "types": [
+        "electric"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 5,
+      "regionBuilderId": "26",
+      "essentialsSpecies": "RAICHU",
+      "types": [
+        "electric"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 6,
+      "regionBuilderId": "59",
+      "essentialsSpecies": "ARCANINE",
+      "types": [
+        "fire"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 7,
+      "regionBuilderId": "63",
+      "essentialsSpecies": "ABRA",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 8,
+      "regionBuilderId": "65",
+      "essentialsSpecies": "ALAKAZAM",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 9,
+      "regionBuilderId": "68",
+      "essentialsSpecies": "MACHAMP",
+      "types": [
+        "fighting"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 10,
+      "regionBuilderId": "88",
+      "essentialsSpecies": "GRIMER",
+      "types": [
+        "poison"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 11,
+      "regionBuilderId": "89",
+      "essentialsSpecies": "MUK",
+      "types": [
+        "poison"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 12,
+      "regionBuilderId": "97",
+      "essentialsSpecies": "HYPNO",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 13,
+      "regionBuilderId": "103",
+      "essentialsSpecies": "EXEGGUTOR",
+      "types": [
+        "grass",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 14,
+      "regionBuilderId": "110",
+      "essentialsSpecies": "WEEZING",
+      "types": [
+        "poison"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 15,
+      "regionBuilderId": "122",
+      "essentialsSpecies": "MRMIME",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 16,
+      "regionBuilderId": "131",
+      "essentialsSpecies": "LAPRAS",
+      "types": [
+        "water",
+        "ice"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 17,
+      "regionBuilderId": "132",
+      "essentialsSpecies": "DITTO",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 18,
+      "regionBuilderId": "133",
+      "essentialsSpecies": "EEVEE",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 19,
+      "regionBuilderId": "139",
+      "essentialsSpecies": "OMASTAR",
+      "types": [
+        "rock",
+        "water"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 20,
+      "regionBuilderId": "143",
+      "essentialsSpecies": "SNORLAX",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 21,
+      "regionBuilderId": "149",
+      "essentialsSpecies": "DRAGONITE",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 22,
+      "regionBuilderId": "150",
+      "essentialsSpecies": "MEWTWO",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 23,
+      "regionBuilderId": "151",
+      "essentialsSpecies": "MEW",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 24,
+      "regionBuilderId": "164",
+      "essentialsSpecies": "NOCTOWL",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 25,
+      "regionBuilderId": "168",
+      "essentialsSpecies": "ARIADOS",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 26,
+      "regionBuilderId": "169",
+      "essentialsSpecies": "CROBAT",
+      "types": [
+        "poison",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 27,
+      "regionBuilderId": "172",
+      "essentialsSpecies": "PICHU",
+      "types": [
+        "electric"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 28,
+      "regionBuilderId": "176",
+      "essentialsSpecies": "TOGETIC",
+      "types": [
+        "fairy",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 29,
+      "regionBuilderId": "178",
+      "essentialsSpecies": "XATU",
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 30,
+      "regionBuilderId": "181",
+      "essentialsSpecies": "AMPHAROS",
+      "types": [
+        "electric"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 31,
+      "regionBuilderId": "196",
+      "essentialsSpecies": "ESPEON",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 32,
+      "regionBuilderId": "197",
+      "essentialsSpecies": "UMBREON",
+      "types": [
+        "dark"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 33,
+      "regionBuilderId": "217",
+      "essentialsSpecies": "URSARING",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 34,
+      "regionBuilderId": "222",
+      "essentialsSpecies": "CORSOLA",
+      "types": [
+        "water",
+        "rock"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 35,
+      "regionBuilderId": "225",
+      "essentialsSpecies": "DELIBIRD",
+      "types": [
+        "ice",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 36,
+      "regionBuilderId": "227",
+      "essentialsSpecies": "SKARMORY",
+      "types": [
+        "steel",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 37,
+      "regionBuilderId": "229",
+      "essentialsSpecies": "HOUNDOOM",
+      "types": [
+        "dark",
+        "fire"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 38,
+      "regionBuilderId": "233",
+      "essentialsSpecies": "PORYGON2",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 39,
+      "regionBuilderId": "235",
+      "essentialsSpecies": "SMEARGLE",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 40,
+      "regionBuilderId": "239",
+      "essentialsSpecies": "ELEKID",
+      "types": [
+        "electric"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 41,
+      "regionBuilderId": "240",
+      "essentialsSpecies": "MAGBY",
+      "types": [
+        "fire"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 42,
+      "regionBuilderId": "242",
+      "essentialsSpecies": "BLISSEY",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 43,
+      "regionBuilderId": "245",
+      "essentialsSpecies": "SUICUNE",
+      "types": [
+        "water"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 44,
+      "regionBuilderId": "248",
+      "essentialsSpecies": "TYRANITAR",
+      "types": [
+        "rock",
+        "dark"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 45,
+      "regionBuilderId": "251",
+      "essentialsSpecies": "CELEBI",
+      "types": [
+        "psychic",
+        "grass"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 46,
+      "regionBuilderId": "272",
+      "essentialsSpecies": "LUDICOLO",
+      "types": [
+        "water",
+        "grass"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 47,
+      "regionBuilderId": "279",
+      "essentialsSpecies": "PELIPPER",
+      "types": [
+        "water",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 48,
+      "regionBuilderId": "282",
+      "essentialsSpecies": "GARDEVOIR",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 49,
+      "regionBuilderId": "302",
+      "essentialsSpecies": "SABLEYE",
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 50,
+      "regionBuilderId": "311",
+      "essentialsSpecies": "PLUSLE",
+      "types": [
+        "electric"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 51,
+      "regionBuilderId": "312",
+      "essentialsSpecies": "MINUN",
+      "types": [
+        "electric"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 52,
+      "regionBuilderId": "330",
+      "essentialsSpecies": "FLYGON",
+      "types": [
+        "ground",
+        "dragon"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 53,
+      "regionBuilderId": "344",
+      "essentialsSpecies": "CLAYDOL",
+      "types": [
+        "ground",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 54,
+      "regionBuilderId": "346",
+      "essentialsSpecies": "CRADILY",
+      "types": [
+        "rock",
+        "grass"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 55,
+      "regionBuilderId": "350",
+      "essentialsSpecies": "MILOTIC",
+      "types": [
+        "water"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 56,
+      "regionBuilderId": "351",
+      "essentialsSpecies": "CASTFORM",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 57,
+      "regionBuilderId": "352",
+      "essentialsSpecies": "KECLEON",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 58,
+      "regionBuilderId": "354",
+      "essentialsSpecies": "BANETTE",
+      "types": [
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 59,
+      "regionBuilderId": "357",
+      "essentialsSpecies": "TROPIUS",
+      "types": [
+        "grass",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 60,
+      "regionBuilderId": "358",
+      "essentialsSpecies": "CHIMECHO",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 61,
+      "regionBuilderId": "359",
+      "essentialsSpecies": "ABSOL",
+      "types": [
+        "dark"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 62,
+      "regionBuilderId": "376",
+      "essentialsSpecies": "METAGROSS",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 63,
+      "regionBuilderId": "419",
+      "essentialsSpecies": "FLOATZEL",
+      "types": [
+        "water"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 64,
+      "regionBuilderId": "423",
+      "essentialsSpecies": "GASTRODON",
+      "types": [
+        "water",
+        "ground"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 65,
+      "regionBuilderId": "424",
+      "essentialsSpecies": "AMBIPOM",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 66,
+      "regionBuilderId": "429",
+      "essentialsSpecies": "MISMAGIUS",
+      "types": [
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 67,
+      "regionBuilderId": "437",
+      "essentialsSpecies": "BRONZONG",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 68,
+      "regionBuilderId": "442",
+      "essentialsSpecies": "SPIRITOMB",
+      "types": [
+        "ghost",
+        "dark"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 69,
+      "regionBuilderId": "445",
+      "essentialsSpecies": "GARCHOMP",
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 70,
+      "regionBuilderId": "447",
+      "essentialsSpecies": "RIOLU",
+      "types": [
+        "fighting"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 71,
+      "regionBuilderId": "448",
+      "essentialsSpecies": "LUCARIO",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 72,
+      "regionBuilderId": "461",
+      "essentialsSpecies": "WEAVILE",
+      "types": [
+        "dark",
+        "ice"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 73,
+      "regionBuilderId": "462",
+      "essentialsSpecies": "MAGNEZONE",
+      "types": [
+        "electric",
+        "steel"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 74,
+      "regionBuilderId": "468",
+      "essentialsSpecies": "TOGEKISS",
+      "types": [
+        "fairy",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 75,
+      "regionBuilderId": "474",
+      "essentialsSpecies": "PORYGONZ",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 76,
+      "regionBuilderId": "475",
+      "essentialsSpecies": "GALLADE",
+      "types": [
+        "psychic",
+        "fighting"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 77,
+      "regionBuilderId": "477",
+      "essentialsSpecies": "DUSKNOIR",
+      "types": [
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 78,
+      "regionBuilderId": "478",
+      "essentialsSpecies": "FROSLASS",
+      "types": [
+        "ice",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 79,
+      "regionBuilderId": "479",
+      "essentialsSpecies": "ROTOM",
+      "types": [
+        "electric",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 80,
+      "regionBuilderId": "483",
+      "essentialsSpecies": "DIALGA",
+      "types": [
+        "steel",
+        "dragon"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 81,
+      "regionBuilderId": "488",
+      "essentialsSpecies": "CRESSELIA",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 82,
+      "regionBuilderId": "491",
+      "essentialsSpecies": "DARKRAI",
+      "types": [
+        "dark"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 83,
+      "regionBuilderId": "497",
+      "essentialsSpecies": "SERPERIOR",
+      "types": [
+        "grass"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 84,
+      "regionBuilderId": "500",
+      "essentialsSpecies": "EMBOAR",
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 85,
+      "regionBuilderId": "503",
+      "essentialsSpecies": "SAMUROTT",
+      "types": [
+        "water"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 86,
+      "regionBuilderId": "508",
+      "essentialsSpecies": "STOUTLAND",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 87,
+      "regionBuilderId": "518",
+      "essentialsSpecies": "MUSHARNA",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 88,
+      "regionBuilderId": "526",
+      "essentialsSpecies": "GIGALITH",
+      "types": [
+        "rock"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 89,
+      "regionBuilderId": "530",
+      "essentialsSpecies": "EXCADRILL",
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 90,
+      "regionBuilderId": "531",
+      "essentialsSpecies": "AUDINO",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 91,
+      "regionBuilderId": "534",
+      "essentialsSpecies": "CONKELDURR",
+      "types": [
+        "fighting"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 92,
+      "regionBuilderId": "558",
+      "essentialsSpecies": "CRUSTLE",
+      "types": [
+        "bug",
+        "rock"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 93,
+      "regionBuilderId": "561",
+      "essentialsSpecies": "SIGILYPH",
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 94,
+      "regionBuilderId": "569",
+      "essentialsSpecies": "GARBODOR",
+      "types": [
+        "poison"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 95,
+      "regionBuilderId": "571",
+      "essentialsSpecies": "ZOROARK",
+      "types": [
+        "dark"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 96,
+      "regionBuilderId": "576",
+      "essentialsSpecies": "GOTHITELLE",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 97,
+      "regionBuilderId": "586",
+      "essentialsSpecies": "SAWSBUCK",
+      "types": [
+        "normal",
+        "grass"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 98,
+      "regionBuilderId": "601",
+      "essentialsSpecies": "KLINKLANG",
+      "types": [
+        "steel"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 99,
+      "regionBuilderId": "609",
+      "essentialsSpecies": "CHANDELURE",
+      "types": [
+        "ghost",
+        "fire"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 100,
+      "regionBuilderId": "623",
+      "essentialsSpecies": "GOLURK",
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 101,
+      "regionBuilderId": "625",
+      "essentialsSpecies": "BISHARP",
+      "types": [
+        "dark",
+        "steel"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 102,
+      "regionBuilderId": "628",
+      "essentialsSpecies": "BRAVIARY",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 103,
+      "regionBuilderId": "637",
+      "essentialsSpecies": "VOLCARONA",
+      "types": [
+        "bug",
+        "fire"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 104,
+      "regionBuilderId": "663",
+      "essentialsSpecies": "TALONFLAME",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 105,
+      "regionBuilderId": "681",
+      "essentialsSpecies": "AEGISLASH",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 106,
+      "regionBuilderId": "685",
+      "essentialsSpecies": "SLURPUFF",
+      "types": [
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 107,
+      "regionBuilderId": "687",
+      "essentialsSpecies": "MALAMAR",
+      "types": [
+        "dark",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 108,
+      "regionBuilderId": "700",
+      "essentialsSpecies": "SYLVEON",
+      "types": [
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 109,
+      "regionBuilderId": "703",
+      "essentialsSpecies": "CARBINK",
+      "types": [
+        "rock",
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 110,
+      "regionBuilderId": "715",
+      "essentialsSpecies": "NOIVERN",
+      "types": [
+        "flying",
+        "dragon"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 111,
+      "regionBuilderId": "718",
+      "essentialsSpecies": "ZYGARDE",
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 112,
+      "regionBuilderId": "719",
+      "essentialsSpecies": "DIANCIE",
+      "types": [
+        "rock",
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 113,
+      "regionBuilderId": "720",
+      "essentialsSpecies": "HOOPA",
+      "types": [
+        "psychic",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 114,
+      "regionBuilderId": "760",
+      "essentialsSpecies": "BEWEAR",
+      "types": [
+        "normal",
+        "fighting"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 115,
+      "regionBuilderId": "765",
+      "essentialsSpecies": "ORANGURU",
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 116,
+      "regionBuilderId": "775",
+      "essentialsSpecies": "KOMALA",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 117,
+      "regionBuilderId": "801",
+      "essentialsSpecies": "MAGEARNA",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 118,
+      "regionBuilderId": "815",
+      "essentialsSpecies": "CINDERACE",
+      "types": [
+        "fire"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 119,
+      "regionBuilderId": "820",
+      "essentialsSpecies": "GREEDENT",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 120,
+      "regionBuilderId": "842",
+      "essentialsSpecies": "APPLETUN",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 121,
+      "regionBuilderId": "855",
+      "essentialsSpecies": "POLTEAGEIST",
+      "types": [
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 122,
+      "regionBuilderId": "864",
+      "essentialsSpecies": "CURSOLA",
+      "types": [
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 123,
+      "regionBuilderId": "867",
+      "essentialsSpecies": "RUNERIGUS",
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 124,
+      "regionBuilderId": "869",
+      "essentialsSpecies": "ALCREMIE",
+      "types": [
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 125,
+      "regionBuilderId": "876",
+      "essentialsSpecies": "INDEEDEE",
+      "types": [
+        "psychic",
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 126,
+      "regionBuilderId": "887",
+      "essentialsSpecies": "DRAGAPULT",
+      "types": [
+        "dragon",
+        "ghost"
+      ],
+      "compatible": true
+    }
+  ],
+  "compatibility": {
+    "target": "Pokémon Essentials/RGSS de Fire Ash",
+    "directPsdkWrite": false,
+    "customAssetsBlocked": 0,
+    "unknownPokemon": 0,
+    "errors": [],
+    "warnings": [
+      "atlas-sector-31 aún no tiene encuentros aprobados.",
+      "atlas-sector-32 aún no tiene encuentros aprobados.",
+      "atlas-sector-33 aún no tiene encuentros aprobados.",
+      "atlas-sector-34 aún no tiene encuentros aprobados.",
+      "atlas-sector-35 aún no tiene encuentros aprobados.",
+      "atlas-sector-36 aún no tiene encuentros aprobados.",
+      "atlas-sector-37 aún no tiene encuentros aprobados.",
+      "atlas-sector-38 aún no tiene encuentros aprobados.",
+      "atlas-sector-39 aún no tiene encuentros aprobados.",
+      "atlas-sector-40 aún no tiene encuentros aprobados."
+    ],
+    "readyForNarrativePipeline": true,
+    "readyForRmxpCompilation": false,
+    "requiredNextGate": "Blueprint aprobado + style gate + compilador RMXP con backup."
+  }
+}

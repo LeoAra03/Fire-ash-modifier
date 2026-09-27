@@ -1,0 +1,3756 @@
+{
+  "version": 1,
+  "format": "fire-ash-neutral-authoring-manifest",
+  "inspiredBy": {
+    "tool": "Pokémon Studio",
+    "version": "2.11.0",
+    "concepts": [
+      "dbSymbol estable",
+      "colecciones separadas",
+      "integridad referencial",
+      "datos textuales revisables"
+    ],
+    "containsPokemonStudioCode": false,
+    "isPsdkProject": false
+  },
+  "target": {
+    "engine": "Pokémon Essentials/RGSS",
+    "game": "Pokémon Fire Ash",
+    "maximumLevel": 150
+  },
+  "registries": {
+    "species": 1295,
+    "moves": 1069,
+    "items": 979,
+    "trainerTypes": 556,
+    "characterSprites": 2209
+  },
+  "records": [
+    {
+      "id": 1,
+      "dbSymbol": "atlas_anchor_01",
+      "mapId": 1021,
+      "title": "Santuario de la Última Campana",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_01_trainer",
+        "trainerType": "PSYCHIC_M",
+        "name": "Custodio del Silencio",
+        "sprite": "trchar028",
+        "party": [
+          {
+            "slot": 1,
+            "species": "CHIMECHO",
+            "level": 90,
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "DAZZLINGGLEAM",
+              "PROTECT"
+            ],
+            "item": "SOOTHEBELL",
+            "narrativeRole": "la primera voz prestada"
+          },
+          {
+            "slot": 2,
+            "species": "NOIVERN",
+            "level": 91,
+            "moves": [
+              "BOOMBURST",
+              "DRAGONPULSE",
+              "AIRSLASH",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "la señal amplificada"
+          },
+          {
+            "slot": 3,
+            "species": "MISMAGIUS",
+            "level": 92,
+            "moves": [
+              "MOONBLAST",
+              "MYSTICALFIRE",
+              "SHADOWBALL",
+              "THUNDERBOLT"
+            ],
+            "item": "CHOICESPECS",
+            "narrativeRole": "la superstición de los visitantes"
+          },
+          {
+            "slot": 4,
+            "species": "ABSOL",
+            "level": 93,
+            "moves": [
+              "NIGHTSLASH",
+              "SUCKERPUNCH",
+              "PLAYROUGH",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "la advertencia malinterpretada"
+          },
+          {
+            "slot": 5,
+            "species": "FROSLASS",
+            "level": 94,
+            "moves": [
+              "ICEBEAM",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "DESTINYBOND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "el recuerdo congelado"
+          },
+          {
+            "slot": 6,
+            "species": "SPIRITOMB",
+            "level": 96,
+            "moves": [
+              "DARKPULSE",
+              "SHADOWBALL",
+              "REST",
+              "SLEEPTALK"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "el archivo de voces acumuladas"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_01_npc_1",
+          "name": "Mara Bell",
+          "role": "archivera de señales",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_01_npc_2",
+          "name": "Nilo",
+          "role": "niño que oye los sonidos ausentes",
+          "sprite": "NPC 04"
+        },
+        {
+          "dbSymbol": "atlas_anchor_01_npc_3",
+          "name": "Ivo Sorda",
+          "role": "técnico y antiguo operador",
+          "sprite": "trchar009"
+        }
+      ],
+      "progression": {
+        "switchId": 708,
+        "sealCounterVariable": 103,
+        "decisionVariable": 104,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 2,
+      "dbSymbol": "atlas_anchor_02",
+      "mapId": 1046,
+      "title": "La Copa del Huevo Vacío",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_02_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Prefecta Centella",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "PICHU",
+            "level": 88,
+            "moves": [
+              "THUNDERBOLT",
+              "CHARM",
+              "GRASSKNOT",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "la promesa todavía pequeña"
+          },
+          {
+            "slot": 2,
+            "species": "ELEKID",
+            "level": 89,
+            "moves": [
+              "THUNDERPUNCH",
+              "FIREPUNCH",
+              "ICEPUNCH",
+              "QUICKATTACK"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la energía sin dirección"
+          },
+          {
+            "slot": 3,
+            "species": "MAGBY",
+            "level": 90,
+            "moves": [
+              "FLAMETHROWER",
+              "PSYCHIC",
+              "FOCUSBLAST",
+              "CONFUSERAY"
+            ],
+            "item": "CHOICESPECS",
+            "narrativeRole": "la rabia ante el público"
+          },
+          {
+            "slot": 4,
+            "species": "RIOLU",
+            "level": 91,
+            "moves": [
+              "AURASPHERE",
+              "METEORMASH",
+              "EXTREMESPEED",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "la confianza aprendida"
+          },
+          {
+            "slot": 5,
+            "species": "TOGETIC",
+            "level": 92,
+            "moves": [
+              "AIRSLASH",
+              "DAZZLINGGLEAM",
+              "ANCIENTPOWER",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "el cuidado compartido"
+          },
+          {
+            "slot": 6,
+            "species": "RAICHU",
+            "level": 94,
+            "moves": [
+              "VOLTTACKLE",
+              "IRONTAIL",
+              "BRICKBREAK",
+              "NASTYPLOT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la elección adulta"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_02_npc_1",
+          "name": "Yara Volt",
+          "role": "campeona escolar",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_02_npc_2",
+          "name": "Milo Mic",
+          "role": "locutor estudiantil",
+          "sprite": "trchar007"
+        },
+        {
+          "dbSymbol": "atlas_anchor_02_npc_3",
+          "name": "Pía Nido",
+          "role": "ayudante de guardería",
+          "sprite": "NPC 05"
+        }
+      ],
+      "progression": {
+        "switchId": 709,
+        "sealCounterVariable": 103,
+        "decisionVariable": 105,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 3,
+      "dbSymbol": "atlas_anchor_03",
+      "mapId": 1071,
+      "title": "El Campeón de Fecha Imposible",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_03_trainer",
+        "trainerType": "COOLTRAINER_M",
+        "name": "Campeón Cero",
+        "sprite": "trchar007",
+        "party": [
+          {
+            "slot": 1,
+            "species": "ARCANINE",
+            "level": 91,
+            "moves": [
+              "FLAREBLITZ",
+              "CRUNCH",
+              "WILLOWISP",
+              "MORNINGSUN"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "valor atribuido al héroe"
+          },
+          {
+            "slot": 2,
+            "species": "LAPRAS",
+            "level": 92,
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "SING",
+              "PERISHSONG"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "la ruta entre regiones"
+          },
+          {
+            "slot": 3,
+            "species": "EXEGGUTOR",
+            "level": 93,
+            "moves": [
+              "PSYCHIC",
+              "GIGADRAIN",
+              "SLEEPPOWDER",
+              "LEECHSEED"
+            ],
+            "item": "CHOICESPECS",
+            "narrativeRole": "las voces de varios líderes"
+          },
+          {
+            "slot": 4,
+            "species": "MACHAMP",
+            "level": 94,
+            "moves": [
+              "CLOSECOMBAT",
+              "STONEEDGE",
+              "BULLETPUNCH",
+              "KNOCKOFF"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la fuerza pública del mito"
+          },
+          {
+            "slot": 5,
+            "species": "ALAKAZAM",
+            "level": 95,
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "FOCUSBLAST",
+              "RECOVER"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "el plan secreto"
+          },
+          {
+            "slot": 6,
+            "species": "DRAGONITE",
+            "level": 97,
+            "moves": [
+              "DRAGONPULSE",
+              "HURRICANE",
+              "EARTHQUAKE",
+              "DRAGONDANCE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "el símbolo final adoptado"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_03_npc_1",
+          "name": "Vera Quill",
+          "role": "archivera de Liga",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_03_npc_2",
+          "name": "Tomás Rojo",
+          "role": "árbitro retirado",
+          "sprite": "trchar069"
+        },
+        {
+          "dbSymbol": "atlas_anchor_03_npc_3",
+          "name": "K-0",
+          "role": "auxiliar de archivo",
+          "sprite": "NPC 02"
+        }
+      ],
+      "progression": {
+        "switchId": 710,
+        "sealCounterVariable": 103,
+        "decisionVariable": 106,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 4,
+      "dbSymbol": "atlas_anchor_04",
+      "mapId": 1096,
+      "title": "El Gremio de la Camilla Vacía",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_04_trainer",
+        "trainerType": "POKEMONRANGER_M",
+        "name": "Equipo Retorno",
+        "sprite": "trchar009",
+        "party": [
+          {
+            "slot": 1,
+            "species": "PELIPPER",
+            "level": 89,
+            "moves": [
+              "SURF",
+              "HURRICANE",
+              "RAINDANCE",
+              "TAILWIND"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "mensajero meteorológico"
+          },
+          {
+            "slot": 2,
+            "species": "AUDINO",
+            "level": 90,
+            "moves": [
+              "WISH",
+              "PROTECT",
+              "HEALBELL",
+              "HYPERVOICE"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "médica de campo"
+          },
+          {
+            "slot": 3,
+            "species": "EXCADRILL",
+            "level": 91,
+            "moves": [
+              "EARTHQUAKE",
+              "IRONHEAD",
+              "RAPIDSPIN",
+              "STEALTHROCK"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "excavador que debe detenerse"
+          },
+          {
+            "slot": 4,
+            "species": "CHANDELURE",
+            "level": 92,
+            "moves": [
+              "SHADOWBALL",
+              "FLAMETHROWER",
+              "ENERGYBALL",
+              "TRICKROOM"
+            ],
+            "item": "CHOICESPECS",
+            "narrativeRole": "baliza del túnel"
+          },
+          {
+            "slot": 5,
+            "species": "LUCARIO",
+            "level": 93,
+            "moves": [
+              "AURASPHERE",
+              "FLASHCANNON",
+              "DARKPULSE",
+              "EXTREMESPEED"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "disciplina del gremio"
+          },
+          {
+            "slot": 6,
+            "species": "FLYGON",
+            "level": 95,
+            "moves": [
+              "EARTHQUAKE",
+              "DRAGONPULSE",
+              "ROCKSLIDE",
+              "UTURN"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "guía de regreso"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_04_npc_1",
+          "name": "Bruna Posta",
+          "role": "jefa de encargos",
+          "sprite": "trchar016"
+        },
+        {
+          "dbSymbol": "atlas_anchor_04_npc_2",
+          "name": "Tilo Brinco",
+          "role": "explorador novato",
+          "sprite": "NPC 05"
+        },
+        {
+          "dbSymbol": "atlas_anchor_04_npc_3",
+          "name": "Doctora Senda",
+          "role": "médica de expedición",
+          "sprite": "NPC 16"
+        }
+      ],
+      "progression": {
+        "switchId": 711,
+        "sealCounterVariable": 103,
+        "decisionVariable": 107,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 5,
+      "dbSymbol": "atlas_anchor_05",
+      "mapId": 1121,
+      "title": "Operación Rescate Demasiado Perfecto",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_05_trainer",
+        "trainerType": "POKEMONRANGER_F",
+        "name": "Guardiana del Pulso",
+        "sprite": "trchar016",
+        "party": [
+          {
+            "slot": 1,
+            "species": "TROPIUS",
+            "level": 90,
+            "moves": [
+              "LEAFSTORM",
+              "AIRSLASH",
+              "SUNNYDAY",
+              "SYNTHESIS"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "dosel que intenta regresar"
+          },
+          {
+            "slot": 2,
+            "species": "SAWSBUCK",
+            "level": 91,
+            "moves": [
+              "HORNLEECH",
+              "JUMPKICK",
+              "MEGAHORN",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "migración interrumpida"
+          },
+          {
+            "slot": 3,
+            "species": "ARIADOS",
+            "level": 92,
+            "moves": [
+              "TOXIC",
+              "MEGAHORN",
+              "SUCKERPUNCH",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "red confundida con protección"
+          },
+          {
+            "slot": 4,
+            "species": "FLOATZEL",
+            "level": 93,
+            "moves": [
+              "AQUAJET",
+              "WATERFALL",
+              "ICEPUNCH",
+              "TAUNT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "corredor fluvial"
+          },
+          {
+            "slot": 5,
+            "species": "TALONFLAME",
+            "level": 94,
+            "moves": [
+              "BRAVEBIRD",
+              "FLAREBLITZ",
+              "ROOST",
+              "UTURN"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "primer regreso aéreo"
+          },
+          {
+            "slot": 6,
+            "species": "ZOROARK",
+            "level": 96,
+            "moves": [
+              "DARKPULSE",
+              "FLAMETHROWER",
+              "FOCUSBLAST",
+              "NASTYPLOT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "fauna que aprendió a engañar sensores"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_05_npc_1",
+          "name": "Cora Pulso",
+          "role": "capitana Ranger",
+          "sprite": "trchar016"
+        },
+        {
+          "dbSymbol": "atlas_anchor_05_npc_2",
+          "name": "Eli Rastro",
+          "role": "ecólogo de campo",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_05_npc_3",
+          "name": "Jo Cifra",
+          "role": "operador de balizas",
+          "sprite": "NPC 01"
+        }
+      ],
+      "progression": {
+        "switchId": 712,
+        "sealCounterVariable": 103,
+        "decisionVariable": 108,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 6,
+      "dbSymbol": "atlas_anchor_06",
+      "mapId": 1146,
+      "title": "La Sombra que Eligió Quedarse",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_06_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Custodio Umbrío",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "ABSOL",
+            "level": 91,
+            "moves": [
+              "NIGHTSLASH",
+              "SUCKERPUNCH",
+              "PLAYROUGH",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "advertencia ignorada"
+          },
+          {
+            "slot": 2,
+            "species": "HOUNDOOM",
+            "level": 92,
+            "moves": [
+              "DARKPULSE",
+              "FLAMETHROWER",
+              "SLUDGEBOMB",
+              "NASTYPLOT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "rabia que conservó lealtad"
+          },
+          {
+            "slot": 3,
+            "species": "CROBAT",
+            "level": 93,
+            "moves": [
+              "BRAVEBIRD",
+              "SLUDGEBOMB",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "libertad comprobada"
+          },
+          {
+            "slot": 4,
+            "species": "URSARING",
+            "level": 94,
+            "moves": [
+              "GIGAIMPACT",
+              "CLOSECOMBAT",
+              "CRUNCH",
+              "PROTECT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "dolor visible"
+          },
+          {
+            "slot": 5,
+            "species": "METAGROSS",
+            "level": 95,
+            "moves": [
+              "METEORMASH",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "memoria clasificada"
+          },
+          {
+            "slot": 6,
+            "species": "TYRANITAR",
+            "level": 97,
+            "moves": [
+              "STONEEDGE",
+              "CRUNCH",
+              "EARTHQUAKE",
+              "DRAGONDANCE"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "fuerza que decidió no huir"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_06_npc_1",
+          "name": "Rhea Umbral",
+          "role": "antigua purificadora",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_06_npc_2",
+          "name": "Dax Remache",
+          "role": "ingeniero de la cámara",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_06_npc_3",
+          "name": "Sol Ceniza",
+          "role": "cuidador joven",
+          "sprite": "NPC 05"
+        }
+      ],
+      "progression": {
+        "switchId": 713,
+        "sealCounterVariable": 103,
+        "decisionVariable": 109,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 7,
+      "dbSymbol": "atlas_anchor_07",
+      "mapId": 1171,
+      "title": "El Jardín de los Dos Juramentos",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_07_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Regente Índigo",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SAMUROTT",
+            "level": 90,
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "AQUAJET",
+              "MEGAHORN"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la decisión afilada"
+          },
+          {
+            "slot": 2,
+            "species": "SERPERIOR",
+            "level": 91,
+            "moves": [
+              "LEAFSTORM",
+              "DRAGONPULSE",
+              "GIGADRAIN",
+              "GLARE"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "la continuidad flexible"
+          },
+          {
+            "slot": 3,
+            "species": "EMBOAR",
+            "level": 92,
+            "moves": [
+              "FLAREBLITZ",
+              "CLOSECOMBAT",
+              "WILDCHARGE",
+              "SUCKERPUNCH"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la urgencia del valle"
+          },
+          {
+            "slot": 4,
+            "species": "BRAVIARY",
+            "level": 93,
+            "moves": [
+              "BRAVEBIRD",
+              "CLOSECOMBAT",
+              "ROOST",
+              "UTURN"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "el testigo sobre fronteras"
+          },
+          {
+            "slot": 5,
+            "species": "BISHARP",
+            "level": 94,
+            "moves": [
+              "NIGHTSLASH",
+              "IRONHEAD",
+              "SUCKERPUNCH",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "el plan que puede detenerse"
+          },
+          {
+            "slot": 6,
+            "species": "AEGISLASH",
+            "level": 96,
+            "moves": [
+              "KINGSSHIELD",
+              "SHADOWBALL",
+              "FLASHCANNON",
+              "SACREDSWORD"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "las dos mitades del juramento"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_07_npc_1",
+          "name": "Sayo Laurel",
+          "role": "heredera del clan Laurel",
+          "sprite": "trchar069"
+        },
+        {
+          "dbSymbol": "atlas_anchor_07_npc_2",
+          "name": "Ren Acero",
+          "role": "capitán del clan Acero",
+          "sprite": "trchar011"
+        },
+        {
+          "dbSymbol": "atlas_anchor_07_npc_3",
+          "name": "Omi Costura",
+          "role": "monje y restaurador de estandartes",
+          "sprite": "NPC 02"
+        }
+      ],
+      "progression": {
+        "switchId": 714,
+        "sealCounterVariable": 103,
+        "decisionVariable": 110,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 8,
+      "dbSymbol": "atlas_anchor_08",
+      "mapId": 1196,
+      "title": "La Persona Fuera del Encuadre",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_08_trainer",
+        "trainerType": "SCIENTIST",
+        "name": "Revelador Prisma",
+        "sprite": "trchar246",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SMEARGLE",
+            "level": 90,
+            "moves": [
+              "SPORE",
+              "STEALTHROCK",
+              "BATONPASS",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "la imagen que aprende"
+          },
+          {
+            "slot": 2,
+            "species": "KECLEON",
+            "level": 91,
+            "moves": [
+              "SHADOWSNEAK",
+              "SUCKERPUNCH",
+              "DRAINPUNCH",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "el sujeto que decide verse"
+          },
+          {
+            "slot": 3,
+            "species": "ROTOM",
+            "level": 92,
+            "moves": [
+              "THUNDERBOLT",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "VOLTSWITCH"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la cámara consciente"
+          },
+          {
+            "slot": 4,
+            "species": "PORYGON2",
+            "level": 93,
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "RECOVER",
+              "THUNDERBOLT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "el archivo que corrige"
+          },
+          {
+            "slot": 5,
+            "species": "ZOROARK",
+            "level": 94,
+            "moves": [
+              "DARKPULSE",
+              "FLAMETHROWER",
+              "FOCUSBLAST",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "la identidad construida"
+          },
+          {
+            "slot": 6,
+            "species": "SIGILYPH",
+            "level": 96,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "ENERGYBALL",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "el observador del límite"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_08_npc_1",
+          "name": "Alba Diafragma",
+          "role": "fotógrafa de conducta",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_08_npc_2",
+          "name": "Mono Rastro",
+          "role": "ranger de observación",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_08_npc_3",
+          "name": "Nemi Borde",
+          "role": "guía nacida del archivo",
+          "sprite": "NPC 04"
+        }
+      ],
+      "progression": {
+        "switchId": 715,
+        "sealCounterVariable": 103,
+        "decisionVariable": 111,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 9,
+      "dbSymbol": "atlas_anchor_09",
+      "mapId": 1221,
+      "title": "El Festival que Olvidó su Motivo",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_09_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Maestra de Juegos",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "LUDICOLO",
+            "level": 89,
+            "moves": [
+              "SURF",
+              "GIGADRAIN",
+              "ICEBEAM",
+              "RAINDANCE"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "baile de bienvenida"
+          },
+          {
+            "slot": 2,
+            "species": "DELIBIRD",
+            "level": 90,
+            "moves": [
+              "ICEBEAM",
+              "BRAVEBIRD",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "regalo sin destinatario"
+          },
+          {
+            "slot": 3,
+            "species": "AMBIPOM",
+            "level": 91,
+            "moves": [
+              "DOUBLEHIT",
+              "UTURN",
+              "BRICKBREAK",
+              "THUNDERPUNCH"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "juego de puntería"
+          },
+          {
+            "slot": 4,
+            "species": "MRMIME",
+            "level": 92,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "THUNDERBOLT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "escenario invisible"
+          },
+          {
+            "slot": 5,
+            "species": "TOGEKISS",
+            "level": 93,
+            "moves": [
+              "AIRSLASH",
+              "AURASPHERE",
+              "ROOST",
+              "THUNDERWAVE"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "fanfarria serena"
+          },
+          {
+            "slot": 6,
+            "species": "SNORLAX",
+            "level": 95,
+            "moves": [
+              "BODYSLAM",
+              "CRUNCH",
+              "EARTHQUAKE",
+              "REST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "el asiento que por fin descansa"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_09_npc_1",
+          "name": "Fen Confeti",
+          "role": "maestro de ceremonias",
+          "sprite": "trchar007"
+        },
+        {
+          "dbSymbol": "atlas_anchor_09_npc_2",
+          "name": "Tessa Ficha",
+          "role": "encargada de premios",
+          "sprite": "NPC 05"
+        },
+        {
+          "dbSymbol": "atlas_anchor_09_npc_3",
+          "name": "Roco Banco",
+          "role": "cuidador del asiento vacío",
+          "sprite": "NPC 02"
+        }
+      ],
+      "progression": {
+        "switchId": 716,
+        "sealCounterVariable": 103,
+        "decisionVariable": 112,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 10,
+      "dbSymbol": "atlas_anchor_10",
+      "mapId": 1246,
+      "title": "La Carta que Recuerda a su Jugador",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_10_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Barajadora Lunar",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "VENUSAUR",
+            "level": 92,
+            "moves": [
+              "GIGADRAIN",
+              "SLUDGEBOMB",
+              "SLEEPPOWDER",
+              "SYNTHESIS"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "cuidado que siguió creciendo"
+          },
+          {
+            "slot": 2,
+            "species": "CHARIZARD",
+            "level": 93,
+            "moves": [
+              "FLAMETHROWER",
+              "AIRSLASH",
+              "DRAGONPULSE",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "orgullo después de la despedida"
+          },
+          {
+            "slot": 3,
+            "species": "BLASTOISE",
+            "level": 94,
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "FLASHCANNON",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "protección confundida con distancia"
+          },
+          {
+            "slot": 4,
+            "species": "PIKACHU",
+            "level": 95,
+            "moves": [
+              "THUNDERBOLT",
+              "GRASSKNOT",
+              "BRICKBREAK",
+              "QUICKATTACK"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "el recuerdo más inmediato"
+          },
+          {
+            "slot": 5,
+            "species": "MEWTWO",
+            "level": 97,
+            "moves": [
+              "PSYCHIC",
+              "AURASPHERE",
+              "SHADOWBALL",
+              "RECOVER"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la imagen creada por expectativas ajenas"
+          },
+          {
+            "slot": 6,
+            "species": "MEW",
+            "level": 98,
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "la respuesta que conserva posibilidades"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_10_npc_1",
+          "name": "Ciro Reverso",
+          "role": "mercader de cartas",
+          "sprite": "trchar007"
+        },
+        {
+          "dbSymbol": "atlas_anchor_10_npc_2",
+          "name": "Luma Trazo",
+          "role": "ilustradora y restauradora",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_10_npc_3",
+          "name": "Var Regla",
+          "role": "juez del duelo ritual",
+          "sprite": "trchar028"
+        }
+      ],
+      "progression": {
+        "switchId": 717,
+        "sealCounterVariable": 103,
+        "decisionVariable": 113,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 11,
+      "dbSymbol": "atlas_anchor_11",
+      "mapId": 1271,
+      "title": "El Compañero del Minuto Cero",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_11_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Testigo Sincrónico",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "XATU",
+            "level": 91,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "el futuro observado"
+          },
+          {
+            "slot": 2,
+            "species": "ESPEON",
+            "level": 92,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "el pulso adelantado"
+          },
+          {
+            "slot": 3,
+            "species": "UMBREON",
+            "level": 93,
+            "moves": [
+              "DARKPULSE",
+              "TOXIC",
+              "MOONLIGHT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "el minuto no registrado"
+          },
+          {
+            "slot": 4,
+            "species": "GALLADE",
+            "level": 94,
+            "moves": [
+              "PSYCHOCUT",
+              "CLOSECOMBAT",
+              "LEAFBLADE",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "la decisión de Lio"
+          },
+          {
+            "slot": 5,
+            "species": "GARDEVOIR",
+            "level": 95,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "THUNDERBOLT",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "la memoria de Nara"
+          },
+          {
+            "slot": 6,
+            "species": "CELEBI",
+            "level": 97,
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "la posibilidad sin deuda"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_11_npc_1",
+          "name": "Lio Contratiempo",
+          "role": "integrante humano de la pareja",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_11_npc_2",
+          "name": "Ada Pulso",
+          "role": "investigadora de sincronía",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_11_npc_3",
+          "name": "Nara Minuto",
+          "role": "eco sincronizado",
+          "sprite": "NPC 04"
+        }
+      ],
+      "progression": {
+        "switchId": 718,
+        "sealCounterVariable": 103,
+        "decisionVariable": 114,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 12,
+      "dbSymbol": "atlas_anchor_12",
+      "mapId": 1296,
+      "title": "El Punto que Nadie Quiso Marcar",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_12_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Directora de Zona",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "CINDERACE",
+            "level": 90,
+            "moves": [
+              "PYROBALL",
+              "HIGHJUMPKICK",
+              "UTURN",
+              "QUICKATTACK"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "anotador impaciente"
+          },
+          {
+            "slot": 2,
+            "species": "TALONFLAME",
+            "level": 91,
+            "moves": [
+              "BRAVEBIRD",
+              "FLAREBLITZ",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "relevo veloz"
+          },
+          {
+            "slot": 3,
+            "species": "CRUSTLE",
+            "level": 92,
+            "moves": [
+              "STONEEDGE",
+              "XSCISSOR",
+              "EARTHQUAKE",
+              "SHELLSMASH"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "defensa de zona"
+          },
+          {
+            "slot": 4,
+            "species": "GREEDENT",
+            "level": 93,
+            "moves": [
+              "BODYSLAM",
+              "CRUNCH",
+              "EARTHQUAKE",
+              "REST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "control del recurso"
+          },
+          {
+            "slot": 5,
+            "species": "BLISSEY",
+            "level": 94,
+            "moves": [
+              "SEISMICTOSS",
+              "SOFTBOILED",
+              "THUNDERWAVE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "asistencia no puntuada"
+          },
+          {
+            "slot": 6,
+            "species": "LUCARIO",
+            "level": 96,
+            "moves": [
+              "AURASPHERE",
+              "FLASHCANNON",
+              "EXTREMESPEED",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "capitán que escucha"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_12_npc_1",
+          "name": "Vela Relevo",
+          "role": "capitana de apoyo",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_12_npc_2",
+          "name": "Bran Marcador",
+          "role": "delantero rival",
+          "sprite": "trchar011"
+        },
+        {
+          "dbSymbol": "atlas_anchor_12_npc_3",
+          "name": "Sima Línea",
+          "role": "árbitra y diseñadora del campo",
+          "sprite": "trchar028"
+        }
+      ],
+      "progression": {
+        "switchId": 719,
+        "sealCounterVariable": 103,
+        "decisionVariable": 115,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 13,
+      "dbSymbol": "atlas_anchor_13",
+      "mapId": 1321,
+      "title": "La Señal Hecha de Ausencias",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_13_trainer",
+        "trainerType": "POKEMONRANGER_F",
+        "name": "Guardián de Frecuencia",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "AMPHAROS",
+            "level": 89,
+            "moves": [
+              "THUNDERBOLT",
+              "DRAGONPULSE",
+              "SIGNALBEAM",
+              "THUNDERWAVE"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "faro solitario"
+          },
+          {
+            "slot": 2,
+            "species": "NOCTOWL",
+            "level": 90,
+            "moves": [
+              "AIRSLASH",
+              "PSYCHIC",
+              "SHADOWBALL",
+              "ROOST"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "mensajero nocturno"
+          },
+          {
+            "slot": 3,
+            "species": "STOUTLAND",
+            "level": 91,
+            "moves": [
+              "BODYSLAM",
+              "CRUNCH",
+              "PLAYROUGH",
+              "SUPERPOWER"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "rastreador humano"
+          },
+          {
+            "slot": 4,
+            "species": "CHIMECHO",
+            "level": 92,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "ENERGYBALL",
+              "HEALBELL"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "intervalo audible"
+          },
+          {
+            "slot": 5,
+            "species": "MAGNEZONE",
+            "level": 93,
+            "moves": [
+              "THUNDERBOLT",
+              "FLASHCANNON",
+              "VOLTSWITCH",
+              "TRIATTACK"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "red verificada"
+          },
+          {
+            "slot": 6,
+            "species": "ZYGARDE",
+            "level": 95,
+            "moves": [
+              "EARTHQUAKE",
+              "DRAGONPULSE",
+              "CRUNCH",
+              "COIL"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "rutas que se recomponen"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_13_npc_1",
+          "name": "Tala Convoca",
+          "role": "coordinadora de campo",
+          "sprite": "NPC 05"
+        },
+        {
+          "dbSymbol": "atlas_anchor_13_npc_2",
+          "name": "Yun Intervalo",
+          "role": "lector de señales",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_13_npc_3",
+          "name": "Iria Baliza",
+          "role": "rescatista de comunicaciones",
+          "sprite": "trchar008"
+        }
+      ],
+      "progression": {
+        "switchId": 720,
+        "sealCounterVariable": 103,
+        "decisionVariable": 116,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 14,
+      "dbSymbol": "atlas_anchor_14",
+      "mapId": 1346,
+      "title": "La Ciudad a la que Dieron Cuerda",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_14_trainer",
+        "trainerType": "POKEMANIAC",
+        "name": "Maestra de la Caja",
+        "sprite": "trchar028",
+        "party": [
+          {
+            "slot": 1,
+            "species": "BANETTE",
+            "level": 91,
+            "moves": [
+              "SHADOWBALL",
+              "SUCKERPUNCH",
+              "WILLOWISP",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "muñeco abandonado"
+          },
+          {
+            "slot": 2,
+            "species": "AMBIPOM",
+            "level": 92,
+            "moves": [
+              "DOUBLEHIT",
+              "UTURN",
+              "BRICKBREAK",
+              "THUNDERPUNCH"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "manos imitadoras"
+          },
+          {
+            "slot": 3,
+            "species": "BEWEAR",
+            "level": 93,
+            "moves": [
+              "BODYSLAM",
+              "SUPERPOWER",
+              "SHADOWCLAW",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "abrazo programado"
+          },
+          {
+            "slot": 4,
+            "species": "KLINKLANG",
+            "level": 94,
+            "moves": [
+              "GEARGRIND",
+              "WILDCHARGE",
+              "SHIFTGEAR",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "cuerda comunitaria"
+          },
+          {
+            "slot": 5,
+            "species": "ROTOM",
+            "level": 95,
+            "moves": [
+              "THUNDERBOLT",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "VOLTSWITCH"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "rutina reescrita"
+          },
+          {
+            "slot": 6,
+            "species": "MAGEARNA",
+            "level": 97,
+            "moves": [
+              "FLASHCANNON",
+              "DAZZLINGGLEAM",
+              "AURASPHERE",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "corazón construido"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_14_npc_1",
+          "name": "Mina Resorte",
+          "role": "reparadora mayor",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_14_npc_2",
+          "name": "Tilo Cartón",
+          "role": "niño constructor",
+          "sprite": "NPC 02"
+        },
+        {
+          "dbSymbol": "atlas_anchor_14_npc_3",
+          "name": "Cora Tictac",
+          "role": "portavoz de los juguetes",
+          "sprite": "NPC 04"
+        }
+      ],
+      "progression": {
+        "switchId": 721,
+        "sealCounterVariable": 103,
+        "decisionVariable": 117,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 15,
+      "dbSymbol": "atlas_anchor_15",
+      "mapId": 1371,
+      "title": "El Mosaico de los Nombres Imposibles",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_15_trainer",
+        "trainerType": "SCIENTIST",
+        "name": "Geómetra de Hierro",
+        "sprite": "trchar246",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SMEARGLE",
+            "level": 90,
+            "moves": [
+              "SPORE",
+              "STEALTHROCK",
+              "BATONPASS",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "trazo inicial"
+          },
+          {
+            "slot": 2,
+            "species": "CRUSTLE",
+            "level": 91,
+            "moves": [
+              "STONEEDGE",
+              "XSCISSOR",
+              "EARTHQUAKE",
+              "SHELLSMASH"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "bloque de casillas"
+          },
+          {
+            "slot": 3,
+            "species": "SIGILYPH",
+            "level": 92,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "ENERGYBALL",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "glifo recuperado"
+          },
+          {
+            "slot": 4,
+            "species": "PORYGONZ",
+            "level": 93,
+            "moves": [
+              "TRIATTACK",
+              "THUNDERBOLT",
+              "ICEBEAM",
+              "DARKPULSE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "capa calculada"
+          },
+          {
+            "slot": 5,
+            "species": "METAGROSS",
+            "level": 94,
+            "moves": [
+              "METEORMASH",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "cuadrícula completa"
+          },
+          {
+            "slot": 6,
+            "species": "AEGISLASH",
+            "level": 96,
+            "moves": [
+              "KINGSSHIELD",
+              "SHADOWBALL",
+              "FLASHCANNON",
+              "SACREDSWORD"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "escudo de acceso"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_15_npc_1",
+          "name": "Pia Tesela",
+          "role": "constructora de puzzles",
+          "sprite": "NPC 04"
+        },
+        {
+          "dbSymbol": "atlas_anchor_15_npc_2",
+          "name": "Orun Abasto",
+          "role": "coordinador de suministros",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_15_npc_3",
+          "name": "Sela Carbón",
+          "role": "guardiana de rutas",
+          "sprite": "trchar028"
+        }
+      ],
+      "progression": {
+        "switchId": 722,
+        "sealCounterVariable": 103,
+        "decisionVariable": 118,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 16,
+      "dbSymbol": "atlas_anchor_16",
+      "mapId": 1396,
+      "title": "La Receta que Lloraba por Otros",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_16_trainer",
+        "trainerType": "POKEMONBREEDER",
+        "name": "Chef de la Sobremesa",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "ALCREMIE",
+            "level": 89,
+            "moves": [
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "ENERGYBALL",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "dulzura prescrita"
+          },
+          {
+            "slot": 2,
+            "species": "POLTEAGEIST",
+            "level": 90,
+            "moves": [
+              "SHADOWBALL",
+              "PSYCHIC",
+              "GIGADRAIN",
+              "SHELLSMASH"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "memoria en la taza"
+          },
+          {
+            "slot": 3,
+            "species": "APPLETUN",
+            "level": 91,
+            "moves": [
+              "ENERGYBALL",
+              "DRAGONPULSE",
+              "BODYSLAM",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "receta heredada"
+          },
+          {
+            "slot": 4,
+            "species": "SLURPUFF",
+            "level": 92,
+            "moves": [
+              "DAZZLINGGLEAM",
+              "FLAMETHROWER",
+              "ENERGYBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "porciones idénticas"
+          },
+          {
+            "slot": 5,
+            "species": "INDEEDEE",
+            "level": 93,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "servicio que escucha"
+          },
+          {
+            "slot": 6,
+            "species": "BLISSEY",
+            "level": 95,
+            "moves": [
+              "SEISMICTOSS",
+              "SOFTBOILED",
+              "HEALBELL",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "cuidado sin apropiación"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_16_npc_1",
+          "name": "Mara Sobremesa",
+          "role": "encargada del café",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_16_npc_2",
+          "name": "Berto Ración",
+          "role": "cocinero de emergencia",
+          "sprite": "NPC 05"
+        },
+        {
+          "dbSymbol": "atlas_anchor_16_npc_3",
+          "name": "Sali Paladar",
+          "role": "catadora y mediadora",
+          "sprite": "NPC 04"
+        }
+      ],
+      "progression": {
+        "switchId": 723,
+        "sealCounterVariable": 103,
+        "decisionVariable": 119,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 17,
+      "dbSymbol": "atlas_anchor_17",
+      "mapId": 1421,
+      "title": "El Caso de las Cuatro Mediasnoches",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_17_trainer",
+        "trainerType": "SCIENTIST",
+        "name": "Inspector de Medianoche",
+        "sprite": "trchar246",
+        "party": [
+          {
+            "slot": 1,
+            "species": "DITTO",
+            "level": 90,
+            "moves": [
+              "TRANSFORM",
+              "PROTECT",
+              "REST",
+              "SLEEPTALK"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "coartada duplicada"
+          },
+          {
+            "slot": 2,
+            "species": "KECLEON",
+            "level": 91,
+            "moves": [
+              "SHADOWSNEAK",
+              "SUCKERPUNCH",
+              "DRAINPUNCH",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "sombra cambiante"
+          },
+          {
+            "slot": 3,
+            "species": "NOCTOWL",
+            "level": 92,
+            "moves": [
+              "AIRSLASH",
+              "PSYCHIC",
+              "SHADOWBALL",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "testigo auditivo"
+          },
+          {
+            "slot": 4,
+            "species": "ZOROARK",
+            "level": 93,
+            "moves": [
+              "DARKPULSE",
+              "FLAMETHROWER",
+              "FOCUSBLAST",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "sospechoso conveniente"
+          },
+          {
+            "slot": 5,
+            "species": "CHIMECHO",
+            "level": 94,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "ENERGYBALL",
+              "HEALBELL"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "evidencia sonora"
+          },
+          {
+            "slot": 6,
+            "species": "PORYGON2",
+            "level": 96,
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "archivo de cuatro capas"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_17_npc_1",
+          "name": "Lena Contraluz",
+          "role": "detective del centro",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_17_npc_2",
+          "name": "Rul Tabaco",
+          "role": "portero nocturno",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_17_npc_3",
+          "name": "Cima Oído",
+          "role": "telefonista y testigo",
+          "sprite": "NPC 05"
+        }
+      ],
+      "progression": {
+        "switchId": 724,
+        "sealCounterVariable": 103,
+        "decisionVariable": 120,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 18,
+      "dbSymbol": "atlas_anchor_18",
+      "mapId": 1446,
+      "title": "El Museo de lo Todavía No Perdido",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_18_trainer",
+        "trainerType": "SCIENTIST",
+        "name": "Custodio de Isobaras",
+        "sprite": "trchar246",
+        "party": [
+          {
+            "slot": 1,
+            "species": "CLAYDOL",
+            "level": 90,
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "STEALTHROCK"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "brújula antigua"
+          },
+          {
+            "slot": 2,
+            "species": "CASTFORM",
+            "level": 91,
+            "moves": [
+              "WEATHERBALL",
+              "THUNDERBOLT",
+              "ICEBEAM",
+              "SUNNYDAY"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "clima del presente"
+          },
+          {
+            "slot": 3,
+            "species": "BRONZONG",
+            "level": 92,
+            "moves": [
+              "PSYCHIC",
+              "FLASHCANNON",
+              "EARTHQUAKE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "vitrina sellada"
+          },
+          {
+            "slot": 4,
+            "species": "PORYGONZ",
+            "level": 93,
+            "moves": [
+              "TRIATTACK",
+              "THUNDERBOLT",
+              "ICEBEAM",
+              "DARKPULSE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "diario incompleto"
+          },
+          {
+            "slot": 5,
+            "species": "XATU",
+            "level": 94,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "posibilidad observada"
+          },
+          {
+            "slot": 6,
+            "species": "DIALGA",
+            "level": 96,
+            "moves": [
+              "DRAGONPULSE",
+              "FLASHCANNON",
+              "AURASPHERE",
+              "THUNDERBOLT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "fecha sin mandato"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_18_npc_1",
+          "name": "Ena Bitácora",
+          "role": "jefa de expedición",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_18_npc_2",
+          "name": "Daro Margen",
+          "role": "cronista de campo",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_18_npc_3",
+          "name": "Vesna Isobara",
+          "role": "analista de distorsiones",
+          "sprite": "trchar028"
+        }
+      ],
+      "progression": {
+        "switchId": 725,
+        "sealCounterVariable": 103,
+        "decisionVariable": 121,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 19,
+      "dbSymbol": "atlas_anchor_19",
+      "mapId": 1471,
+      "title": "El Arrecife que Llegó Después",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_19_trainer",
+        "trainerType": "POKEMONRANGER_F",
+        "name": "Custodia del Arrecife",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "CORSOLA",
+            "level": 90,
+            "moves": [
+              "POWERGEM",
+              "SCALD",
+              "RECOVER",
+              "STEALTHROCK"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "hábitat presente"
+          },
+          {
+            "slot": 2,
+            "species": "CURSOLA",
+            "level": 91,
+            "moves": [
+              "SHADOWBALL",
+              "POWERGEM",
+              "ENERGYBALL",
+              "WILLOWISP"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "arrecife perdido"
+          },
+          {
+            "slot": 3,
+            "species": "OMASTAR",
+            "level": 92,
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "POWERGEM",
+              "SHELLSMASH"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "memoria fósil"
+          },
+          {
+            "slot": 4,
+            "species": "CRADILY",
+            "level": 93,
+            "moves": [
+              "GIGADRAIN",
+              "POWERGEM",
+              "EARTHPOWER",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "parcela estable"
+          },
+          {
+            "slot": 5,
+            "species": "LAPRAS",
+            "level": 94,
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "PSYCHIC"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "corredor migratorio"
+          },
+          {
+            "slot": 6,
+            "species": "SUICUNE",
+            "level": 96,
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "EXTRASENSORY",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "agua entre tiempos"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_19_npc_1",
+          "name": "Neris Bajamar",
+          "role": "bióloga del vivero",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_19_npc_2",
+          "name": "Olan Carbono",
+          "role": "químico del agua",
+          "sprite": "trchar246"
+        },
+        {
+          "dbSymbol": "atlas_anchor_19_npc_3",
+          "name": "Maia Red",
+          "role": "recolectora del arrecife",
+          "sprite": "NPC 05"
+        }
+      ],
+      "progression": {
+        "switchId": 726,
+        "sealCounterVariable": 103,
+        "decisionVariable": 122,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 20,
+      "dbSymbol": "atlas_anchor_20",
+      "mapId": 1496,
+      "title": "Los Dos Nombres del Cometa",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_20_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Mediadora del Cometa",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "PLUSLE",
+            "level": 91,
+            "moves": [
+              "THUNDERBOLT",
+              "GRASSKNOT",
+              "DAZZLINGGLEAM",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "voz afirmativa"
+          },
+          {
+            "slot": 2,
+            "species": "MINUN",
+            "level": 91,
+            "moves": [
+              "THUNDERBOLT",
+              "GRASSKNOT",
+              "DAZZLINGGLEAM",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "voz complementaria"
+          },
+          {
+            "slot": 3,
+            "species": "ESPEON",
+            "level": 93,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "recuerdo luminoso"
+          },
+          {
+            "slot": 4,
+            "species": "UMBREON",
+            "level": 93,
+            "moves": [
+              "DARKPULSE",
+              "TOXIC",
+              "MOONLIGHT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "recuerdo reservado"
+          },
+          {
+            "slot": 5,
+            "species": "PORYGON2",
+            "level": 95,
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "registro enlazado"
+          },
+          {
+            "slot": 6,
+            "species": "PORYGONZ",
+            "level": 97,
+            "moves": [
+              "TRIATTACK",
+              "DARKPULSE",
+              "ICEBEAM",
+              "THUNDERBOLT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "nombre no normalizado"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_20_npc_1",
+          "name": "Nilo y Vera",
+          "role": "persona fusionada",
+          "sprite": "NPC 04"
+        },
+        {
+          "dbSymbol": "atlas_anchor_20_npc_2",
+          "name": "Elia Bifase",
+          "role": "médica de convergencia",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_20_npc_3",
+          "name": "Paz Conjunción",
+          "role": "defensora de pacientes",
+          "sprite": "trchar028"
+        }
+      ],
+      "progression": {
+        "switchId": 727,
+        "sealCounterVariable": 103,
+        "decisionVariable": 123,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 21,
+      "dbSymbol": "atlas_anchor_21",
+      "mapId": 1521,
+      "title": "La Central de las Cenizas Vivas",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_21_trainer",
+        "trainerType": "SCIENTIST",
+        "name": "Custodia de Decantación",
+        "sprite": "trchar246",
+        "party": [
+          {
+            "slot": 1,
+            "species": "GRIMER",
+            "level": 90,
+            "moves": [
+              "SLUDGEBOMB",
+              "SHADOWSNEAK",
+              "GIGADRAIN",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "residuo oculto"
+          },
+          {
+            "slot": 2,
+            "species": "WEEZING",
+            "level": 91,
+            "moves": [
+              "SLUDGEBOMB",
+              "FLAMETHROWER",
+              "THUNDERBOLT",
+              "WILLOWISP"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "filtro incompleto"
+          },
+          {
+            "slot": 3,
+            "species": "GARBODOR",
+            "level": 92,
+            "moves": [
+              "GUNKSHOT",
+              "DRAINPUNCH",
+              "SEEDBOMB",
+              "ROCKBLAST"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "depósito acumulado"
+          },
+          {
+            "slot": 4,
+            "species": "MUK",
+            "level": 93,
+            "moves": [
+              "GUNKSHOT",
+              "CRUNCH",
+              "BRICKBREAK",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "conducta colectiva"
+          },
+          {
+            "slot": 5,
+            "species": "MAGNEZONE",
+            "level": 94,
+            "moves": [
+              "THUNDERBOLT",
+              "FLASHCANNON",
+              "VOLTSWITCH",
+              "TRIATTACK"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "red energética"
+          },
+          {
+            "slot": 6,
+            "species": "ZYGARDE",
+            "level": 96,
+            "moves": [
+              "EARTHQUAKE",
+              "DRAGONPULSE",
+              "CRUNCH",
+              "COIL"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "equilibrio del humedal"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_21_npc_1",
+          "name": "Leda Balance",
+          "role": "directora de la central",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_21_npc_2",
+          "name": "Taro Guante",
+          "role": "operario de mantenimiento",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_21_npc_3",
+          "name": "Muri Decanta",
+          "role": "intérprete del humedal",
+          "sprite": "NPC 04"
+        }
+      ],
+      "progression": {
+        "switchId": 728,
+        "sealCounterVariable": 103,
+        "decisionVariable": 124,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 22,
+      "dbSymbol": "atlas_anchor_22",
+      "mapId": 1546,
+      "title": "La Profecía Escrita Después",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_22_trainer",
+        "trainerType": "PSYCHIC_M",
+        "name": "Oráculo de Imprenta",
+        "sprite": "trchar028",
+        "party": [
+          {
+            "slot": 1,
+            "species": "ABSOL",
+            "level": 90,
+            "moves": [
+              "NIGHTSLASH",
+              "SUCKERPUNCH",
+              "PLAYROUGH",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "presagio interpretado"
+          },
+          {
+            "slot": 2,
+            "species": "XATU",
+            "level": 91,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "futuro observado"
+          },
+          {
+            "slot": 3,
+            "species": "MALAMAR",
+            "level": 92,
+            "moves": [
+              "PSYCHOCUT",
+              "NIGHTSLASH",
+              "SUPERPOWER",
+              "HYPNOSIS"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "persuasión invertida"
+          },
+          {
+            "slot": 4,
+            "species": "GOTHITELLE",
+            "level": 93,
+            "moves": [
+              "PSYCHIC",
+              "THUNDERBOLT",
+              "DARKPULSE",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "plantilla personal"
+          },
+          {
+            "slot": 5,
+            "species": "ORANGURU",
+            "level": 94,
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "SHADOWBALL",
+              "NASTYPLOT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "doctrina aprendida"
+          },
+          {
+            "slot": 6,
+            "species": "MEW",
+            "level": 96,
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "PROTECT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "posibilidad abierta"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_22_npc_1",
+          "name": "Iven Renglón",
+          "role": "recluta reciente",
+          "sprite": "NPC 02"
+        },
+        {
+          "dbSymbol": "atlas_anchor_22_npc_2",
+          "name": "Nadia Margen",
+          "role": "tipógrafa desertora",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_22_npc_3",
+          "name": "Elian Prisma",
+          "role": "redactor de augurios",
+          "sprite": "trchar028"
+        }
+      ],
+      "progression": {
+        "switchId": 729,
+        "sealCounterVariable": 103,
+        "decisionVariable": 125,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 23,
+      "dbSymbol": "atlas_anchor_23",
+      "mapId": 1571,
+      "title": "La Ciudad que Pagaba con Recuerdos",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_23_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Maestra del Plano Vivo",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "CONKELDURR",
+            "level": 90,
+            "moves": [
+              "CLOSECOMBAT",
+              "STONEEDGE",
+              "EARTHQUAKE",
+              "BULKUP"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "trabajo visible"
+          },
+          {
+            "slot": 2,
+            "species": "CRUSTLE",
+            "level": 91,
+            "moves": [
+              "STONEEDGE",
+              "XSCISSOR",
+              "EARTHQUAKE",
+              "SHELLSMASH"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "fachada exacta"
+          },
+          {
+            "slot": 3,
+            "species": "KLINKLANG",
+            "level": 92,
+            "moves": [
+              "GEARGRIND",
+              "WILDCHARGE",
+              "SHIFTGEAR",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "máquina reconstructora"
+          },
+          {
+            "slot": 4,
+            "species": "SMEARGLE",
+            "level": 93,
+            "moves": [
+              "SPORE",
+              "STEALTHROCK",
+              "BATONPASS",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "plano de memoria"
+          },
+          {
+            "slot": 5,
+            "species": "PORYGON2",
+            "level": 94,
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "banco revocable"
+          },
+          {
+            "slot": 6,
+            "species": "METAGROSS",
+            "level": 96,
+            "moves": [
+              "METEORMASH",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "ciudad que aprende"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_23_npc_1",
+          "name": "Jano Andamio",
+          "role": "arquitecto de reconstrucción",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_23_npc_2",
+          "name": "Rema Harina",
+          "role": "panadera y vecina",
+          "sprite": "NPC 05"
+        },
+        {
+          "dbSymbol": "atlas_anchor_23_npc_3",
+          "name": "Lua Solar",
+          "role": "organizadora vecinal",
+          "sprite": "trchar008"
+        }
+      ],
+      "progression": {
+        "switchId": 730,
+        "sealCounterVariable": 103,
+        "decisionVariable": 126,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 24,
+      "dbSymbol": "atlas_anchor_24",
+      "mapId": 1596,
+      "title": "Las Cartas de una Familia Incompatible",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_24_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Cartera de las Ramas",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "EEVEE",
+            "level": 90,
+            "moves": [
+              "BODYSLAM",
+              "SHADOWBALL",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "posibilidad común"
+          },
+          {
+            "slot": 2,
+            "species": "ESPEON",
+            "level": 91,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "carta esperanzada"
+          },
+          {
+            "slot": 3,
+            "species": "UMBREON",
+            "level": 92,
+            "moves": [
+              "DARKPULSE",
+              "TOXIC",
+              "MOONLIGHT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "carta de advertencia"
+          },
+          {
+            "slot": 4,
+            "species": "SYLVEON",
+            "level": 93,
+            "moves": [
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "afecto posible"
+          },
+          {
+            "slot": 5,
+            "species": "DELIBIRD",
+            "level": 94,
+            "moves": [
+              "ICEBEAM",
+              "BRAVEBIRD",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "mensajero impropio"
+          },
+          {
+            "slot": 6,
+            "species": "CELEBI",
+            "level": 96,
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "árbol sin ganador"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_24_npc_1",
+          "name": "Sira Coral",
+          "role": "madre y destinataria",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_24_npc_2",
+          "name": "Teo Coral",
+          "role": "padre y destinatario",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_24_npc_3",
+          "name": "Uma Coral",
+          "role": "hija menor",
+          "sprite": "NPC 02"
+        }
+      ],
+      "progression": {
+        "switchId": 731,
+        "sealCounterVariable": 103,
+        "decisionVariable": 127,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 25,
+      "dbSymbol": "atlas_anchor_25",
+      "mapId": 1621,
+      "title": "El Mercado de los Umbrales Pequeños",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_25_trainer",
+        "trainerType": "POKEMONRANGER_F",
+        "name": "Guardiana del Contrapeaje",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "ABRA",
+            "level": 90,
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "ENERGYBALL",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "paquete instantáneo"
+          },
+          {
+            "slot": 2,
+            "species": "XATU",
+            "level": 91,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "aduana remota"
+          },
+          {
+            "slot": 3,
+            "species": "DUSKNOIR",
+            "level": 92,
+            "moves": [
+              "SHADOWPUNCH",
+              "EARTHQUAKE",
+              "ICEPUNCH",
+              "WILLOWISP"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "cobrador invisible"
+          },
+          {
+            "slot": 4,
+            "species": "BRONZONG",
+            "level": 93,
+            "moves": [
+              "PSYCHIC",
+              "FLASHCANNON",
+              "EARTHQUAKE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "marco regulado"
+          },
+          {
+            "slot": 5,
+            "species": "PORYGON2",
+            "level": 94,
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "registro bilateral"
+          },
+          {
+            "slot": 6,
+            "species": "HOOPA",
+            "level": 96,
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "DARKPULSE",
+              "ENERGYBALL"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "umbral con voluntad"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_25_npc_1",
+          "name": "Varda Marco",
+          "role": "administradora del mercado",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_25_npc_2",
+          "name": "Río Botiquín",
+          "role": "mensajero sanitario",
+          "sprite": "NPC 05"
+        },
+        {
+          "dbSymbol": "atlas_anchor_25_npc_3",
+          "name": "Suna Contrapeaje",
+          "role": "auditora del otro lado",
+          "sprite": "trchar008"
+        }
+      ],
+      "progression": {
+        "switchId": 732,
+        "sealCounterVariable": 103,
+        "decisionVariable": 128,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 26,
+      "dbSymbol": "atlas_anchor_26",
+      "mapId": 1646,
+      "title": "La Estatua que Ensayaba Ciudades",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_26_trainer",
+        "trainerType": "RUINMANIAC",
+        "name": "Custodio del Relieve",
+        "sprite": "trchar028",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SIGILYPH",
+            "level": 100,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "ENERGYBALL",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "inscripción observada"
+          },
+          {
+            "slot": 2,
+            "species": "RUNERIGUS",
+            "level": 101,
+            "moves": [
+              "SHADOWBALL",
+              "EARTHQUAKE",
+              "WILLOWISP",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "rostros borrados"
+          },
+          {
+            "slot": 3,
+            "species": "CLAYDOL",
+            "level": 102,
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "STEALTHROCK"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "maqueta urbana"
+          },
+          {
+            "slot": 4,
+            "species": "GOLURK",
+            "level": 103,
+            "moves": [
+              "SHADOWPUNCH",
+              "EARTHQUAKE",
+              "ICEPUNCH",
+              "DRAINPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "trabajo monumental"
+          },
+          {
+            "slot": 5,
+            "species": "BRONZONG",
+            "level": 104,
+            "moves": [
+              "PSYCHIC",
+              "FLASHCANNON",
+              "EARTHQUAKE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "estratos incompatibles"
+          },
+          {
+            "slot": 6,
+            "species": "CELEBI",
+            "level": 106,
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "RECOVER"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "futuro como propuesta"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_26_npc_1",
+          "name": "Alda Estrato",
+          "role": "arqueóloga responsable",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_26_npc_2",
+          "name": "Nuno Argamasa",
+          "role": "cantero local",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_26_npc_3",
+          "name": "Iria Índice",
+          "role": "archivista joven",
+          "sprite": "NPC 04"
+        }
+      ],
+      "progression": {
+        "switchId": 733,
+        "sealCounterVariable": 103,
+        "decisionVariable": 129,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 27,
+      "dbSymbol": "atlas_anchor_27",
+      "mapId": 1671,
+      "title": "La Mina de las Decisiones Sólidas",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_27_trainer",
+        "trainerType": "HIKER",
+        "name": "Regente de las Vetas",
+        "sprite": "trchar009",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SABLEYE",
+            "level": 101,
+            "moves": [
+              "DARKPULSE",
+              "SHADOWBALL",
+              "POWERGEM",
+              "WILLOWISP"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "valor oculto"
+          },
+          {
+            "slot": 2,
+            "species": "CARBINK",
+            "level": 102,
+            "moves": [
+              "POWERGEM",
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "STEALTHROCK"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "decisión cristalizada"
+          },
+          {
+            "slot": 3,
+            "species": "GIGALITH",
+            "level": 103,
+            "moves": [
+              "STONEEDGE",
+              "EARTHQUAKE",
+              "SUPERPOWER",
+              "HEAVYSLAM"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "producción pesada"
+          },
+          {
+            "slot": 4,
+            "species": "CRADILY",
+            "level": 104,
+            "moves": [
+              "GIGADRAIN",
+              "POWERGEM",
+              "EARTHPOWER",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "túnel restaurado"
+          },
+          {
+            "slot": 5,
+            "species": "METAGROSS",
+            "level": 105,
+            "moves": [
+              "METEORMASH",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "contrato rígido"
+          },
+          {
+            "slot": 6,
+            "species": "DIANCIE",
+            "level": 107,
+            "moves": [
+              "POWERGEM",
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "posibilidad liberada"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_27_npc_1",
+          "name": "Dara Veta",
+          "role": "administradora cooperativa",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_27_npc_2",
+          "name": "Bren Cuña",
+          "role": "capataz del turno nocturno",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_27_npc_3",
+          "name": "Ona Presión",
+          "role": "geóloga de seguridad",
+          "sprite": "NPC 05"
+        }
+      ],
+      "progression": {
+        "switchId": 734,
+        "sealCounterVariable": 103,
+        "decisionVariable": 130,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 28,
+      "dbSymbol": "atlas_anchor_28",
+      "mapId": 1696,
+      "title": "El Peaje de los Sueños Prestados",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_28_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Revisora del Umbral",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "HYPNO",
+            "level": 102,
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "FOCUSBLAST",
+              "HYPNOSIS"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "cobrador de imágenes"
+          },
+          {
+            "slot": 2,
+            "species": "MUSHARNA",
+            "level": 103,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "ENERGYBALL",
+              "MOONLIGHT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "depósito onírico"
+          },
+          {
+            "slot": 3,
+            "species": "KOMALA",
+            "level": 104,
+            "moves": [
+              "BODYSLAM",
+              "EARTHQUAKE",
+              "SUCKERPUNCH",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "descanso inaccesible"
+          },
+          {
+            "slot": 4,
+            "species": "GOTHITELLE",
+            "level": 105,
+            "moves": [
+              "PSYCHIC",
+              "THUNDERBOLT",
+              "DARKPULSE",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "estación intermedia"
+          },
+          {
+            "slot": 5,
+            "species": "DARKRAI",
+            "level": 106,
+            "moves": [
+              "DARKPULSE",
+              "SHADOWBALL",
+              "SLUDGEBOMB",
+              "NASTYPLOT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "deuda de vigilia"
+          },
+          {
+            "slot": 6,
+            "species": "CRESSELIA",
+            "level": 108,
+            "moves": [
+              "PSYCHIC",
+              "ICEBEAM",
+              "MOONLIGHT",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "ruta reparadora"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_28_npc_1",
+          "name": "Soren Andén",
+          "role": "administrador onírico",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_28_npc_2",
+          "name": "Mela Vigilia",
+          "role": "viajera frecuente",
+          "sprite": "NPC 04"
+        },
+        {
+          "dbSymbol": "atlas_anchor_28_npc_3",
+          "name": "Yara Hipnagoga",
+          "role": "investigadora del umbral",
+          "sprite": "trchar008"
+        }
+      ],
+      "progression": {
+        "switchId": 735,
+        "sealCounterVariable": 103,
+        "decisionVariable": 131,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 29,
+      "dbSymbol": "atlas_anchor_29",
+      "mapId": 1721,
+      "title": "El Campeón de las Dos Banderas",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_29_trainer",
+        "trainerType": "CHAMPION",
+        "name": "Árbitra de Dos Ligas",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "BRAVIARY",
+            "level": 104,
+            "moves": [
+              "BRAVEBIRD",
+              "CLOSECOMBAT",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "estandarte oriental"
+          },
+          {
+            "slot": 2,
+            "species": "MILOTIC",
+            "level": 105,
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "DRAGONPULSE",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "diplomacia paciente"
+          },
+          {
+            "slot": 3,
+            "species": "LUCARIO",
+            "level": 106,
+            "moves": [
+              "AURASPHERE",
+              "FLASHCANNON",
+              "EXTREMESPEED",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "mandato personal"
+          },
+          {
+            "slot": 4,
+            "species": "AEGISLASH",
+            "level": 107,
+            "moves": [
+              "KINGSSHIELD",
+              "SHADOWBALL",
+              "FLASHCANNON",
+              "SACREDSWORD"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "título y defensa"
+          },
+          {
+            "slot": 5,
+            "species": "DRAGAPULT",
+            "level": 108,
+            "moves": [
+              "DRAGONPULSE",
+              "SHADOWBALL",
+              "FLAMETHROWER",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "circuito móvil"
+          },
+          {
+            "slot": 6,
+            "species": "CHARIZARD",
+            "level": 110,
+            "moves": [
+              "FLAMETHROWER",
+              "AIRSLASH",
+              "DRAGONPULSE",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "campeón por elección"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_29_npc_1",
+          "name": "Mira Sinpodio",
+          "role": "campeona disputada",
+          "sprite": "trchar069"
+        },
+        {
+          "dbSymbol": "atlas_anchor_29_npc_2",
+          "name": "Darel Cláusula",
+          "role": "delegado de la liga oriental",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_29_npc_3",
+          "name": "Suma Estandarte",
+          "role": "diplomática de la liga occidental",
+          "sprite": "trchar008"
+        }
+      ],
+      "progression": {
+        "switchId": 736,
+        "sealCounterVariable": 103,
+        "decisionVariable": 132,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 30,
+      "dbSymbol": "atlas_anchor_30",
+      "mapId": 1746,
+      "title": "La Academia del Error Permitido",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_30_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Examinadora Transparente",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SKARMORY",
+            "level": 106,
+            "moves": [
+              "STEALTHROCK",
+              "BRAVEBIRD",
+              "ROOST",
+              "WHIRLWIND"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "apertura de hazards"
+          },
+          {
+            "slot": 2,
+            "species": "ROTOM",
+            "level": 107,
+            "moves": [
+              "THUNDERBOLT",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "VOLTSWITCH"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "pivote anunciado"
+          },
+          {
+            "slot": 3,
+            "species": "GASTRODON",
+            "level": 108,
+            "moves": [
+              "SURF",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "respuesta defensiva"
+          },
+          {
+            "slot": 4,
+            "species": "WEAVILE",
+            "level": 109,
+            "moves": [
+              "ICICLECRASH",
+              "NIGHTSLASH",
+              "ICESHARD",
+              "BRICKBREAK"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "presión y prioridad"
+          },
+          {
+            "slot": 5,
+            "species": "VOLCARONA",
+            "level": 110,
+            "moves": [
+              "FIERYDANCE",
+              "BUGBUZZ",
+              "GIGADRAIN",
+              "QUIVERDANCE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "condición de victoria"
+          },
+          {
+            "slot": 6,
+            "species": "GARCHOMP",
+            "level": 112,
+            "moves": [
+              "DRAGONCLAW",
+              "EARTHQUAKE",
+              "STONEEDGE",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "examen adaptable"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_30_npc_1",
+          "name": "Kade Umbral",
+          "role": "rector táctico",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_30_npc_2",
+          "name": "Lina Reintento",
+          "role": "alumna de máximo rango",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_30_npc_3",
+          "name": "Boro Muestra",
+          "role": "analista educativo",
+          "sprite": "trchar246"
+        }
+      ],
+      "progression": {
+        "switchId": 737,
+        "sealCounterVariable": 103,
+        "decisionVariable": 133,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 31,
+      "dbSymbol": "atlas_anchor_31",
+      "mapId": 1771,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 738,
+        "sealCounterVariable": 103,
+        "decisionVariable": 134,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 32,
+      "dbSymbol": "atlas_anchor_32",
+      "mapId": 1796,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 739,
+        "sealCounterVariable": 103,
+        "decisionVariable": 135,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 33,
+      "dbSymbol": "atlas_anchor_33",
+      "mapId": 1821,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 740,
+        "sealCounterVariable": 103,
+        "decisionVariable": 136,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 34,
+      "dbSymbol": "atlas_anchor_34",
+      "mapId": 1846,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 741,
+        "sealCounterVariable": 103,
+        "decisionVariable": 137,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 35,
+      "dbSymbol": "atlas_anchor_35",
+      "mapId": 1871,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 742,
+        "sealCounterVariable": 103,
+        "decisionVariable": 138,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 36,
+      "dbSymbol": "atlas_anchor_36",
+      "mapId": 1896,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 743,
+        "sealCounterVariable": 103,
+        "decisionVariable": 139,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 37,
+      "dbSymbol": "atlas_anchor_37",
+      "mapId": 1921,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 744,
+        "sealCounterVariable": 103,
+        "decisionVariable": 140,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 38,
+      "dbSymbol": "atlas_anchor_38",
+      "mapId": 1946,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 745,
+        "sealCounterVariable": 103,
+        "decisionVariable": 141,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 39,
+      "dbSymbol": "atlas_anchor_39",
+      "mapId": 1971,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 746,
+        "sealCounterVariable": 103,
+        "decisionVariable": 142,
+        "freeReturnMapId": 1001
+      }
+    },
+    {
+      "id": 40,
+      "dbSymbol": "atlas_anchor_40",
+      "mapId": 1996,
+      "title": null,
+      "state": "planned",
+      "trainer": null,
+      "cast": [],
+      "progression": {
+        "switchId": 747,
+        "sealCounterVariable": 103,
+        "decisionVariable": 143,
+        "freeReturnMapId": 1001
+      }
+    }
+  ],
+  "integrity": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "invariant": "Este manifiesto nunca reemplaza Data/*.rxdata; el compilador Essentials sigue siendo la única salida jugable."
+  }
+}

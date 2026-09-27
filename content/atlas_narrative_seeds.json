@@ -7,7 +7,44 @@
       "narrativeName": "Meridiano Ámbar: Ancla 01",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "biome": "reinterpretación segura de Lappet Town",
+      "biome": "special en (3,4) del plano Region Builder; reinterpretación segura de Lappet Town con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-01",
+        "description": "Sector 01 · Vigías Ámbar. Episodio aprobado: Santuario de la Última Campana. una emisión que conoce recuerdos que nadie contó",
+        "position": {
+          "x": 3,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "CHIMECHO",
+          "NOIVERN",
+          "MISMAGIUS",
+          "ABSOL",
+          "FROSLASS",
+          "SPIRITOMB"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 2,
+        "tilesetId": 1,
+        "dimensions": [
+          32,
+          21
+        ],
+        "passabilityRatio": 0.4375,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_01",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 1/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una emisión que conoce recuerdos que nadie contó",
       "inspirations": [
@@ -58,7 +95,44 @@
       "narrativeName": "Cuenca Celeste: Ancla 02",
       "sector": 2,
       "sectorName": "Cuenca Celeste",
-      "biome": "reinterpretación segura de Pokémon Day Care",
+      "biome": "special en (13,4) del plano Region Builder; reinterpretación segura de Pokémon Day Care con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-02",
+        "description": "Sector 02 · Navegantes Celestes. Episodio aprobado: La Copa del Huevo Vacío. un torneo escolar cuyo premio quiere renunciar",
+        "position": {
+          "x": 13,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "PICHU",
+          "ELEKID",
+          "MAGBY",
+          "RIOLU",
+          "TOGETIC",
+          "RAICHU"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 27,
+        "tilesetId": 3,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.1867,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_02",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 2/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un torneo escolar cuyo premio quiere renunciar",
       "inspirations": [
@@ -109,7 +183,44 @@
       "narrativeName": "Frontera Carmesí: Ancla 03",
       "sector": 3,
       "sectorName": "Frontera Carmesí",
-      "biome": "reinterpretación segura de Battle Frontier Poké Center",
+      "biome": "cave en (23,4) del plano Region Builder; reinterpretación segura de Battle Frontier Poké Center con tileset Poke Centre interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-03",
+        "description": "Sector 03 · Custodios Carmesí. Episodio aprobado: El Campeón de Fecha Imposible. un expediente de Liga fechado antes de su fundación",
+        "position": {
+          "x": 23,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "ARCANINE",
+          "LAPRAS",
+          "EXEGGUTOR",
+          "MACHAMP",
+          "ALAKAZAM",
+          "DRAGONITE"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 53,
+        "tilesetId": 4,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.2733,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_03",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 3/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un expediente de Liga fechado antes de su fundación",
       "inspirations": [
@@ -160,7 +271,44 @@
       "narrativeName": "Distrito Cuarzo: Ancla 04",
       "sector": 4,
       "sectorName": "Distrito Cuarzo",
-      "biome": "reinterpretación segura de Viridian Pokémon Center",
+      "biome": "town en (33,4) del plano Region Builder; reinterpretación segura de Viridian Pokémon Center con tileset Poke Centre interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-04",
+        "description": "Sector 04 · Canteros Cuarzo. Episodio aprobado: El Gremio de la Camilla Vacía. un gremio recibe encargos de exploradores desaparecidos",
+        "position": {
+          "x": 33,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "PELIPPER",
+          "AUDINO",
+          "EXCADRILL",
+          "CHANDELURE",
+          "LUCARIO",
+          "FLYGON"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 78,
+        "tilesetId": 4,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.2733,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_04",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 4/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un gremio recibe encargos de exploradores desaparecidos",
       "inspirations": [
@@ -211,7 +359,44 @@
       "narrativeName": "Órbita Esmeralda: Ancla 05",
       "sector": 5,
       "sectorName": "Órbita Esmeralda",
-      "biome": "reinterpretación segura de Route 24 Pokémon Center",
+      "biome": "special en (43,4) del plano Region Builder; reinterpretación segura de Route 24 Pokémon Center con tileset Poke Centre interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-05",
+        "description": "Sector 05 · Botánicos Esmeralda. Episodio aprobado: Operación Rescate Demasiado Perfecto. la fauna huye de un rescate aparentemente perfecto",
+        "position": {
+          "x": 43,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "TROPIUS",
+          "SAWSBUCK",
+          "ARIADOS",
+          "FLOATZEL",
+          "TALONFLAME",
+          "ZOROARK"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 103,
+        "tilesetId": 4,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.2733,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_05",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 5/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "la fauna huye de un rescate aparentemente perfecto",
       "inspirations": [
@@ -262,7 +447,44 @@
       "narrativeName": "Paso Boreal: Ancla 06",
       "sector": 6,
       "sectorName": "Paso Boreal",
-      "biome": "reinterpretación segura de Route 8",
+      "biome": "cave en (53,4) del plano Region Builder; reinterpretación segura de Route 8 con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-06",
+        "description": "Sector 06 · Patrulla Boreal. Episodio aprobado: La Sombra que Eligió Quedarse. los Pokémon oscuros protegen a quien debía purificarlos",
+        "position": {
+          "x": 53,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "ABSOL",
+          "HOUNDOOM",
+          "CROBAT",
+          "URSARING",
+          "METAGROSS",
+          "TYRANITAR"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 128,
+        "tilesetId": 1,
+        "dimensions": [
+          86,
+          41
+        ],
+        "passabilityRatio": 0.8599,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_06",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 6/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "los Pokémon oscuros protegen a quien debía purificarlos",
       "inspirations": [
@@ -313,7 +535,44 @@
       "narrativeName": "Jardín Índigo: Ancla 07",
       "sector": 7,
       "sectorName": "Jardín Índigo",
-      "biome": "reinterpretación segura de Celadon House",
+      "biome": "special en (63,4) del plano Region Builder; reinterpretación segura de Celadon House con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-07",
+        "description": "Sector 07 · Tejedores Índigo. Episodio aprobado: El Jardín de los Dos Juramentos. dos clanes recuerdan versiones incompatibles del mismo juramento",
+        "position": {
+          "x": 63,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "SAMUROTT",
+          "SERPERIOR",
+          "EMBOAR",
+          "BRAVIARY",
+          "BISHARP",
+          "AEGISLASH"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 153,
+        "tilesetId": 3,
+        "dimensions": [
+          40,
+          40
+        ],
+        "passabilityRatio": 0.1819,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_07",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 7/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "dos clanes recuerdan versiones incompatibles del mismo juramento",
       "inspirations": [
@@ -364,7 +623,44 @@
       "narrativeName": "Costa Prisma: Ancla 08",
       "sector": 8,
       "sectorName": "Costa Prisma",
-      "biome": "reinterpretación segura de Fuchsia Gym",
+      "biome": "town en (73,4) del plano Region Builder; reinterpretación segura de Fuchsia Gym con tileset Gyms interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-08",
+        "description": "Sector 08 · Ópticos Prisma. Episodio aprobado: La Persona Fuera del Encuadre. una fotografía muestra un NPC que nunca estuvo allí",
+        "position": {
+          "x": 73,
+          "y": 4,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "SMEARGLE",
+          "KECLEON",
+          "ROTOM",
+          "PORYGON2",
+          "ZOROARK",
+          "SIGILYPH"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 178,
+        "tilesetId": 14,
+        "dimensions": [
+          20,
+          35
+        ],
+        "passabilityRatio": 0.4286,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_08",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 8/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una fotografía muestra un NPC que nunca estuvo allí",
       "inspirations": [
@@ -415,7 +711,44 @@
       "narrativeName": "Dominio Solar: Ancla 09",
       "sector": 9,
       "sectorName": "Dominio Solar",
-      "biome": "reinterpretación segura de Indigo Stadium",
+      "biome": "cave en (73,15) del plano Region Builder; reinterpretación segura de Indigo Stadium con tileset Gyms interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-09",
+        "description": "Sector 09 · Heraldos Solares. Episodio aprobado: El Festival que Olvidó su Motivo. un festival continúa después de que todos olvidaron su motivo",
+        "position": {
+          "x": 73,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "LUDICOLO",
+          "DELIBIRD",
+          "AMBIPOM",
+          "MRMIME",
+          "TOGEKISS",
+          "SNORLAX"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 203,
+        "tilesetId": 14,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.3533,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_09",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 9/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un festival continúa después de que todos olvidaron su motivo",
       "inspirations": [
@@ -466,7 +799,44 @@
       "narrativeName": "Velo Lunar: Ancla 10",
       "sector": 10,
       "sectorName": "Velo Lunar",
-      "biome": "reinterpretación segura de Seven Grapefruit Islands",
+      "biome": "city en (63,15) del plano Region Builder; reinterpretación segura de Seven Grapefruit Islands con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-10",
+        "description": "Sector 10 · Cartógrafos Lunares. Episodio aprobado: La Carta que Recuerda a su Jugador. una carta cambia su ilustración según quién la sostenga",
+        "position": {
+          "x": 63,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "VENUSAUR",
+          "CHARIZARD",
+          "BLASTOISE",
+          "PIKACHU",
+          "MEWTWO",
+          "MEW"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 228,
+        "tilesetId": 1,
+        "dimensions": [
+          135,
+          110
+        ],
+        "passabilityRatio": 0.0977,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_10",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 10/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una carta cambia su ilustración según quién la sostenga",
       "inspirations": [
@@ -517,7 +887,44 @@
       "narrativeName": "Nexo Onírico: Ancla 11",
       "sector": 11,
       "sectorName": "Nexo Onírico",
-      "biome": "reinterpretación segura de Professor Elm's Lab",
+      "biome": "special en (53,15) del plano Region Builder; reinterpretación segura de Professor Elm's Lab con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-11",
+        "description": "Sector 11 · Médicos del Sueño. Episodio aprobado: El Compañero del Minuto Cero. una pareja compi se formó en una línea temporal descartada",
+        "position": {
+          "x": 53,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "XATU",
+          "ESPEON",
+          "UMBREON",
+          "GALLADE",
+          "GARDEVOIR",
+          "CELEBI"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 253,
+        "tilesetId": 3,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.3667,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_11",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 11/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una pareja compi se formó en una línea temporal descartada",
       "inspirations": [
@@ -568,7 +975,44 @@
       "narrativeName": "Valle Magnético: Ancla 12",
       "sector": 12,
       "sectorName": "Valle Magnético",
-      "biome": "reinterpretación segura de Pokémon Swap Meet",
+      "biome": "town en (43,15) del plano Region Builder; reinterpretación segura de Pokémon Swap Meet con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-12",
+        "description": "Sector 12 · Ingenieros Magnéticos. Episodio aprobado: El Punto que Nadie Quiso Marcar. el marcador premia a quien evita anotar",
+        "position": {
+          "x": 43,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "CINDERACE",
+          "TALONFLAME",
+          "CRUSTLE",
+          "GREEDENT",
+          "BLISSEY",
+          "LUCARIO"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 278,
+        "tilesetId": 1,
+        "dimensions": [
+          55,
+          52
+        ],
+        "passabilityRatio": 0.3566,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_12",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 12/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "el marcador premia a quien evita anotar",
       "inspirations": [
@@ -619,7 +1063,44 @@
       "narrativeName": "Arco Fósil: Ancla 13",
       "sector": 13,
       "sectorName": "Arco Fósil",
-      "biome": "reinterpretación segura de Burned Tower",
+      "biome": "special en (33,15) del plano Region Builder; reinterpretación segura de Burned Tower con tileset Gyms interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-13",
+        "description": "Sector 13 · Paleontólogos Libres. Episodio aprobado: La Señal Hecha de Ausencias. miles de señales señalan una Poképarada inexistente",
+        "position": {
+          "x": 33,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "AMPHAROS",
+          "NOCTOWL",
+          "STOUTLAND",
+          "CHIMECHO",
+          "MAGNEZONE",
+          "ZYGARDE"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 303,
+        "tilesetId": 14,
+        "dimensions": [
+          30,
+          25
+        ],
+        "passabilityRatio": 0.1893,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_13",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 13/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "miles de señales señalan una Poképarada inexistente",
       "inspirations": [
@@ -670,7 +1151,44 @@
       "narrativeName": "Mar de Nubes: Ancla 14",
       "sector": 14,
       "sectorName": "Mar de Nubes",
-      "biome": "reinterpretación segura de Olivine Gym",
+      "biome": "special en (23,15) del plano Region Builder; reinterpretación segura de Olivine Gym con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-14",
+        "description": "Sector 14 · Pilotos de Nube. Episodio aprobado: La Ciudad a la que Dieron Cuerda. los juguetes temen convertirse en sus entrenadores",
+        "position": {
+          "x": 23,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "BANETTE",
+          "AMBIPOM",
+          "BEWEAR",
+          "KLINKLANG",
+          "ROTOM",
+          "MAGEARNA"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 330,
+        "tilesetId": 1,
+        "dimensions": [
+          20,
+          25
+        ],
+        "passabilityRatio": 0.214,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_14",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 14/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "los juguetes temen convertirse en sus entrenadores",
       "inspirations": [
@@ -721,7 +1239,44 @@
       "narrativeName": "Bosque de Hierro: Ancla 15",
       "sector": 15,
       "sectorName": "Bosque de Hierro",
-      "biome": "reinterpretación segura de Hoenn",
+      "biome": "cave en (13,15) del plano Region Builder; reinterpretación segura de Hoenn con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-15",
+        "description": "Sector 15 · Forjadores Verdes. Episodio aprobado: El Mosaico de los Nombres Imposibles. un mosaico resuelve nombres borrados del mapa",
+        "position": {
+          "x": 13,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "SMEARGLE",
+          "CRUSTLE",
+          "SIGILYPH",
+          "PORYGONZ",
+          "METAGROSS",
+          "AEGISLASH"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 355,
+        "tilesetId": 1,
+        "dimensions": [
+          27,
+          15
+        ],
+        "passabilityRatio": 0.8494,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_15",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 15/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un mosaico resuelve nombres borrados del mapa",
       "inspirations": [
@@ -772,7 +1327,44 @@
       "narrativeName": "Canal Estelar: Ancla 16",
       "sector": 16,
       "sectorName": "Canal Estelar",
-      "biome": "reinterpretación segura de Dewford House",
+      "biome": "town en (3,15) del plano Region Builder; reinterpretación segura de Dewford House con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-16",
+        "description": "Sector 16 · Astrónomos del Canal. Episodio aprobado: La Receta que Lloraba por Otros. una receta reproduce emociones ajenas",
+        "position": {
+          "x": 3,
+          "y": 15,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "ALCREMIE",
+          "POLTEAGEIST",
+          "APPLETUN",
+          "SLURPUFF",
+          "INDEEDEE",
+          "BLISSEY"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 380,
+        "tilesetId": 3,
+        "dimensions": [
+          40,
+          30
+        ],
+        "passabilityRatio": 0.16,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_16",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 16/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una receta reproduce emociones ajenas",
       "inspirations": [
@@ -823,7 +1415,44 @@
       "narrativeName": "Páramo Sonoro: Ancla 17",
       "sector": 17,
       "sectorName": "Páramo Sonoro",
-      "biome": "reinterpretación segura de Fallarbor Pokémon Center",
+      "biome": "special en (3,26) del plano Region Builder; reinterpretación segura de Fallarbor Pokémon Center con tileset Poke Centre interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-17",
+        "description": "Sector 17 · Músicos del Páramo. Episodio aprobado: El Caso de las Cuatro Mediasnoches. todos los testigos dicen la verdad y aun así se contradicen",
+        "position": {
+          "x": 3,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "DITTO",
+          "KECLEON",
+          "NOCTOWL",
+          "ZOROARK",
+          "CHIMECHO",
+          "PORYGON2"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 405,
+        "tilesetId": 4,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.2733,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_17",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 17/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "todos los testigos dicen la verdad y aun así se contradicen",
       "inspirations": [
@@ -874,7 +1503,44 @@
       "narrativeName": "Islas del Viento: Ancla 18",
       "sector": 18,
       "sectorName": "Islas del Viento",
-      "biome": "reinterpretación segura de Weather Institute",
+      "biome": "cave en (13,26) del plano Region Builder; reinterpretación segura de Weather Institute con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-18",
+        "description": "Sector 18 · Mensajeros del Viento. Episodio aprobado: El Museo de lo Todavía No Perdido. una distorsión devuelve objetos antes de perderse",
+        "position": {
+          "x": 13,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "CLAYDOL",
+          "CASTFORM",
+          "BRONZONG",
+          "PORYGONZ",
+          "XATU",
+          "DIALGA"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 430,
+        "tilesetId": 3,
+        "dimensions": [
+          30,
+          35
+        ],
+        "passabilityRatio": 0.16,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_18",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 18/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una distorsión devuelve objetos antes de perderse",
       "inspirations": [
@@ -925,7 +1591,44 @@
       "narrativeName": "Anillo Abisal: Ancla 19",
       "sector": 19,
       "sectorName": "Anillo Abisal",
-      "biome": "reinterpretación segura de Sootopolis House",
+      "biome": "special en (23,26) del plano Region Builder; reinterpretación segura de Sootopolis House con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-19",
+        "description": "Sector 19 · Buzos Abisales. Episodio aprobado: El Arrecife que Llegó Después. una especie paradoja está reparando el ecosistema",
+        "position": {
+          "x": 23,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "CORSOLA",
+          "CURSOLA",
+          "OMASTAR",
+          "CRADILY",
+          "LAPRAS",
+          "SUICUNE"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 455,
+        "tilesetId": 3,
+        "dimensions": [
+          40,
+          30
+        ],
+        "passabilityRatio": 0.2133,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_19",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 19/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una especie paradoja está reparando el ecosistema",
       "inspirations": [
@@ -976,7 +1679,44 @@
       "narrativeName": "Ruta del Cometa: Ancla 20",
       "sector": 20,
       "sectorName": "Ruta del Cometa",
-      "biome": "reinterpretación segura de Route 12 Breeding Center",
+      "biome": "city en (33,26) del plano Region Builder; reinterpretación segura de Route 12 Breeding Center con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-20",
+        "description": "Sector 20 · Rastreadores Cometa. Episodio aprobado: Los Dos Nombres del Cometa. una fusión quiere conservar dos nombres",
+        "position": {
+          "x": 33,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "PLUSLE",
+          "MINUN",
+          "ESPEON",
+          "UMBREON",
+          "PORYGON2",
+          "PORYGONZ"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 481,
+        "tilesetId": 3,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.1833,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_20",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 20/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una fusión quiere conservar dos nombres",
       "inspirations": [
@@ -1027,7 +1767,44 @@
       "narrativeName": "Territorio Origami: Ancla 21",
       "sector": 21,
       "sectorName": "Territorio Origami",
-      "biome": "reinterpretación segura de Route 202",
+      "biome": "cave en (43,26) del plano Region Builder; reinterpretación segura de Route 202 con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-21",
+        "description": "Sector 21 · Plegadores del Territorio. Episodio aprobado: La Central de las Cenizas Vivas. una central limpia oculta residuos que parecen vivos",
+        "position": {
+          "x": 43,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "GRIMER",
+          "WEEZING",
+          "GARBODOR",
+          "MUK",
+          "MAGNEZONE",
+          "ZYGARDE"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 506,
+        "tilesetId": 1,
+        "dimensions": [
+          55,
+          35
+        ],
+        "passabilityRatio": 0.4151,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_21",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 21/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una central limpia oculta residuos que parecen vivos",
       "inspirations": [
@@ -1078,7 +1855,44 @@
       "narrativeName": "Delta de Cristal: Ancla 22",
       "sector": 22,
       "sectorName": "Delta de Cristal",
-      "biome": "reinterpretación segura de Ravaged Path",
+      "biome": "special en (53,26) del plano Region Builder; reinterpretación segura de Ravaged Path con tileset Caves",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-22",
+        "description": "Sector 22 · Mineros Delta. Episodio aprobado: La Profecía Escrita Después. una facción fabrica profecías para reclutar",
+        "position": {
+          "x": 53,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "ABSOL",
+          "XATU",
+          "MALAMAR",
+          "GOTHITELLE",
+          "ORANGURU",
+          "MEW"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 531,
+        "tilesetId": 6,
+        "dimensions": [
+          40,
+          40
+        ],
+        "passabilityRatio": 0.1313,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_22",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 22/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una facción fabrica profecías para reclutar",
       "inspirations": [
@@ -1129,7 +1943,44 @@
       "narrativeName": "Llanura Meteoro: Ancla 23",
       "sector": 23,
       "sectorName": "Llanura Meteoro",
-      "biome": "reinterpretación segura de Hearthome Contest",
+      "biome": "special en (63,26) del plano Region Builder; reinterpretación segura de Hearthome Contest con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-23",
+        "description": "Sector 23 · Meteorólogos Errantes. Episodio aprobado: La Ciudad que Pagaba con Recuerdos. la ciudad mejora mientras sus habitantes pierden recuerdos",
+        "position": {
+          "x": 63,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "CONKELDURR",
+          "CRUSTLE",
+          "KLINKLANG",
+          "SMEARGLE",
+          "PORYGON2",
+          "METAGROSS"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 556,
+        "tilesetId": 3,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.32,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_23",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 23/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "la ciudad mejora mientras sus habitantes pierden recuerdos",
       "inspirations": [
@@ -1180,7 +2031,44 @@
       "narrativeName": "Cordillera Coral: Ancla 24",
       "sector": 24,
       "sectorName": "Cordillera Coral",
-      "biome": "reinterpretación segura de Veilstone Dept. 5F",
+      "biome": "town en (73,26) del plano Region Builder; reinterpretación segura de Veilstone Dept. 5F con tileset Department store interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-24",
+        "description": "Sector 24 · Biólogos Coral. Episodio aprobado: Las Cartas de una Familia Incompatible. una familia recibe cartas de sus futuros incompatibles",
+        "position": {
+          "x": 73,
+          "y": 26,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "EEVEE",
+          "ESPEON",
+          "UMBREON",
+          "SYLVEON",
+          "DELIBIRD",
+          "CELEBI"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 581,
+        "tilesetId": 10,
+        "dimensions": [
+          20,
+          18
+        ],
+        "passabilityRatio": 0.3139,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_24",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 24/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una familia recibe cartas de sus futuros incompatibles",
       "inspirations": [
@@ -1231,7 +2119,44 @@
       "narrativeName": "Ciudad del Eclipse: Ancla 25",
       "sector": 25,
       "sectorName": "Ciudad del Eclipse",
-      "biome": "reinterpretación segura de Route 210",
+      "biome": "special en (73,37) del plano Region Builder; reinterpretación segura de Route 210 con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-25",
+        "description": "Sector 25 · Cronistas Eclipse. Episodio aprobado: El Mercado de los Umbrales Pequeños. portales pequeños sostienen una economía clandestina",
+        "position": {
+          "x": 73,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "ABRA",
+          "XATU",
+          "DUSKNOIR",
+          "BRONZONG",
+          "PORYGON2",
+          "HOOPA"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 606,
+        "tilesetId": 2,
+        "dimensions": [
+          112,
+          119
+        ],
+        "passabilityRatio": 0.6685,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_25",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 25/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "portales pequeños sostienen una economía clandestina",
       "inspirations": [
@@ -1282,7 +2207,44 @@
       "narrativeName": "Archipiélago Vapor: Ancla 26",
       "sector": 26,
       "sectorName": "Archipiélago Vapor",
-      "biome": "reinterpretación segura de Route 222 House",
+      "biome": "special en (63,37) del plano Region Builder; reinterpretación segura de Route 222 House con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-26",
+        "description": "Sector 26 · Mecánicos Vapor. Episodio aprobado: La Estatua que Ensayaba Ciudades. una estatua registra civilizaciones que aún no existen",
+        "position": {
+          "x": 63,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "SIGILYPH",
+          "RUNERIGUS",
+          "CLAYDOL",
+          "GOLURK",
+          "BRONZONG",
+          "CELEBI"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 631,
+        "tilesetId": 3,
+        "dimensions": [
+          80,
+          30
+        ],
+        "passabilityRatio": 0.2362,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_26",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 26/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una estatua registra civilizaciones que aún no existen",
       "inspirations": [
@@ -1333,7 +2295,44 @@
       "narrativeName": "Santuario de Polen: Ancla 27",
       "sector": 27,
       "sectorName": "Santuario de Polen",
-      "biome": "reinterpretación segura de Accumula House",
+      "biome": "cave en (53,37) del plano Region Builder; reinterpretación segura de Accumula House con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-27",
+        "description": "Sector 27 · Guardianes de Polen. Episodio aprobado: La Mina de las Decisiones Sólidas. la mina produce minerales formados por decisiones",
+        "position": {
+          "x": 53,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "SABLEYE",
+          "CARBINK",
+          "GIGALITH",
+          "CRADILY",
+          "METAGROSS",
+          "DIANCIE"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 656,
+        "tilesetId": 3,
+        "dimensions": [
+          40,
+          30
+        ],
+        "passabilityRatio": 0.16,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_27",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 27/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "la mina produce minerales formados por decisiones",
       "inspirations": [
@@ -1384,7 +2383,44 @@
       "narrativeName": "Cañón Espejo: Ancla 28",
       "sector": 28,
       "sectorName": "Cañón Espejo",
-      "biome": "reinterpretación segura de Castelia Gym",
+      "biome": "town en (43,37) del plano Region Builder; reinterpretación segura de Castelia Gym con tileset Gyms interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-28",
+        "description": "Sector 28 · Reflejo Nómada. Episodio aprobado: El Peaje de los Sueños Prestados. los sueños están pagando peaje entre dimensiones",
+        "position": {
+          "x": 43,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "HYPNO",
+          "MUSHARNA",
+          "KOMALA",
+          "GOTHITELLE",
+          "DARKRAI",
+          "CRESSELIA"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 681,
+        "tilesetId": 14,
+        "dimensions": [
+          40,
+          65
+        ],
+        "passabilityRatio": 0.2177,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_28",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 28/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "los sueños están pagando peaje entre dimensiones",
       "inspirations": [
@@ -1435,7 +2471,44 @@
       "narrativeName": "Bahía Relámpago: Ancla 29",
       "sector": 29,
       "sectorName": "Bahía Relámpago",
-      "biome": "reinterpretación segura de Chargestone Cave B2F",
+      "biome": "special en (33,37) del plano Region Builder; reinterpretación segura de Chargestone Cave B2F con tileset Caves",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-29",
+        "description": "Sector 29 · Técnicos Relámpago. Episodio aprobado: El Campeón de las Dos Banderas. dos ligas reclaman al mismo campeón sin querer combatir",
+        "position": {
+          "x": 33,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "BRAVIARY",
+          "MILOTIC",
+          "LUCARIO",
+          "AEGISLASH",
+          "DRAGAPULT",
+          "CHARIZARD"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 706,
+        "tilesetId": 6,
+        "dimensions": [
+          70,
+          70
+        ],
+        "passabilityRatio": 0.8918,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_29",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 29/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "dos ligas reclaman al mismo campeón sin querer combatir",
       "inspirations": [
@@ -1486,7 +2559,44 @@
       "narrativeName": "Meseta de Tinta: Ancla 30",
       "sector": 30,
       "sectorName": "Meseta de Tinta",
-      "biome": "reinterpretación segura de Route 9",
+      "biome": "city en (23,37) del plano Region Builder; reinterpretación segura de Route 9 con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-30",
+        "description": "Sector 30 · Ilustradores de Tinta. Episodio aprobado: La Academia del Error Permitido. una academia confunde dificultad con crueldad",
+        "position": {
+          "x": 23,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": [
+          "SKARMORY",
+          "ROTOM",
+          "GASTRODON",
+          "WEAVILE",
+          "VOLCARONA",
+          "GARCHOMP"
+        ]
+      },
+      "styleReference": {
+        "sourceMapId": 731,
+        "tilesetId": 1,
+        "dimensions": [
+          55,
+          40
+        ],
+        "passabilityRatio": 0.2841,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_30",
+        "studioState": "approved-and-compiled",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 30/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una academia confunde dificultad con crueldad",
       "inspirations": [
@@ -1537,7 +2647,37 @@
       "narrativeName": "Reserva de Engranajes: Ancla 31",
       "sector": 31,
       "sectorName": "Reserva de Engranajes",
-      "biome": "reinterpretación segura de Opelucid Pokémon Center",
+      "biome": "special en (13,37) del plano Region Builder; reinterpretación segura de Opelucid Pokémon Center con tileset Poke Centre interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-31",
+        "description": "Sector 31 · Relojeros de Reserva. Ancla 31 pendiente de diseño artesanal. una melodía solo existe cuando el jugador decide escucharla",
+        "position": {
+          "x": 13,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 756,
+        "tilesetId": 4,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.27,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_31",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 31/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una melodía solo existe cuando el jugador decide escucharla",
       "inspirations": [
@@ -1588,7 +2728,37 @@
       "narrativeName": "Círculo de Ceniza: Ancla 32",
       "sector": 32,
       "sectorName": "Círculo de Ceniza",
-      "biome": "reinterpretación segura de Littleroot Town-Sapphire",
+      "biome": "town en (3,37) del plano Region Builder; reinterpretación segura de Littleroot Town-Sapphire con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-32",
+        "description": "Sector 32 · Bomberos de Ceniza. Ancla 32 pendiente de diseño artesanal. un héroe olvidado pide que no reconstruyan su leyenda",
+        "position": {
+          "x": 3,
+          "y": 37,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 781,
+        "tilesetId": 1,
+        "dimensions": [
+          40,
+          35
+        ],
+        "passabilityRatio": 0.2036,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_32",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 32/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un héroe olvidado pide que no reconstruyan su leyenda",
       "inspirations": [
@@ -1639,7 +2809,37 @@
       "narrativeName": "Labertino Boreal: Ancla 33",
       "sector": 33,
       "sectorName": "Labertino Boreal",
-      "biome": "reinterpretación segura de Camphrier Pokémon Center",
+      "biome": "cave en (3,48) del plano Region Builder; reinterpretación segura de Camphrier Pokémon Center con tileset Poke Centre interior",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-33",
+        "description": "Sector 33 · Guías Boreales. Ancla 33 pendiente de diseño artesanal. un fantasma concede victorias que nadie quiere aceptar",
+        "position": {
+          "x": 3,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 806,
+        "tilesetId": 4,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.27,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_33",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 33/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un fantasma concede victorias que nadie quiere aceptar",
       "inspirations": [
@@ -1690,7 +2890,37 @@
       "narrativeName": "República de Musgo: Ancla 34",
       "sector": 34,
       "sectorName": "República de Musgo",
-      "biome": "reinterpretación segura de Coumarine Gym",
+      "biome": "special en (13,48) del plano Region Builder; reinterpretación segura de Coumarine Gym con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-34",
+        "description": "Sector 34 · Consejo de Musgo. Ancla 34 pendiente de diseño artesanal. una excavación construyó deliberadamente su propio monstruo",
+        "position": {
+          "x": 13,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 831,
+        "tilesetId": 1,
+        "dimensions": [
+          50,
+          40
+        ],
+        "passabilityRatio": 0.851,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_34",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 34/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "una excavación construyó deliberadamente su propio monstruo",
       "inspirations": [
@@ -1741,7 +2971,37 @@
       "narrativeName": "Cinturón Aurora: Ancla 35",
       "sector": 35,
       "sectorName": "Cinturón Aurora",
-      "biome": "reinterpretación segura de Couriway Town",
+      "biome": "special en (23,48) del plano Region Builder; reinterpretación segura de Couriway Town con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-35",
+        "description": "Sector 35 · Pintores Aurora. Ancla 35 pendiente de diseño artesanal. un equipo aislado sigue enviando reportes desde la nieve",
+        "position": {
+          "x": 23,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 856,
+        "tilesetId": 2,
+        "dimensions": [
+          60,
+          64
+        ],
+        "passabilityRatio": 0.2669,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_35",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 35/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un equipo aislado sigue enviando reportes desde la nieve",
       "inspirations": [
@@ -1792,7 +3052,37 @@
       "narrativeName": "Trinchera de Luz: Ancla 36",
       "sector": 36,
       "sectorName": "Trinchera de Luz",
-      "biome": "reinterpretación segura de Driftveil Battle House",
+      "biome": "town en (33,48) del plano Region Builder; reinterpretación segura de Driftveil Battle House con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-36",
+        "description": "Sector 36 · Fareros de Luz. Ancla 36 pendiente de diseño artesanal. los datos corruptos intentan clasificar al jugador",
+        "position": {
+          "x": 33,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 881,
+        "tilesetId": 3,
+        "dimensions": [
+          60,
+          70
+        ],
+        "passabilityRatio": 0.2333,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_36",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 36/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "los datos corruptos intentan clasificar al jugador",
       "inspirations": [
@@ -1843,7 +3133,37 @@
       "narrativeName": "Provincia del Eco: Ancla 37",
       "sector": 37,
       "sectorName": "Provincia del Eco",
-      "biome": "reinterpretación segura de Paniola Town",
+      "biome": "special en (43,48) del plano Region Builder; reinterpretación segura de Paniola Town con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-37",
+        "description": "Sector 37 · Oyentes del Eco. Ancla 37 pendiente de diseño artesanal. un acertijo imposible fue manipulado para parecer profundo",
+        "position": {
+          "x": 43,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 906,
+        "tilesetId": 1,
+        "dimensions": [
+          48,
+          44
+        ],
+        "passabilityRatio": 0.3239,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_37",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 37/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "un acertijo imposible fue manipulado para parecer profundo",
       "inspirations": [
@@ -1894,7 +3214,37 @@
       "narrativeName": "Horizonte Fractal: Ancla 38",
       "sector": 38,
       "sectorName": "Horizonte Fractal",
-      "biome": "reinterpretación segura de Battle Royal Dome",
+      "biome": "special en (53,48) del plano Region Builder; reinterpretación segura de Battle Royal Dome con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-38",
+        "description": "Sector 38 · Geómetras Fractales. Ancla 38 pendiente de diseño artesanal. la venganza era un recuerdo implantado",
+        "position": {
+          "x": 53,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 931,
+        "tilesetId": 3,
+        "dimensions": [
+          20,
+          15
+        ],
+        "passabilityRatio": 0.0433,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_38",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 38/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "la venganza era un recuerdo implantado",
       "inspirations": [
@@ -1945,7 +3295,37 @@
       "narrativeName": "Corona de Bruma: Ancla 39",
       "sector": 39,
       "sectorName": "Corona de Bruma",
-      "biome": "reinterpretación segura de Manalo Stadium",
+      "biome": "cave en (63,48) del plano Region Builder; reinterpretación segura de Manalo Stadium con tileset Outside",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-39",
+        "description": "Sector 39 · Pastores de Bruma. Ancla 39 pendiente de diseño artesanal. el último guardado no es una partida sino una persona",
+        "position": {
+          "x": 63,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 957,
+        "tilesetId": 1,
+        "dimensions": [
+          65,
+          40
+        ],
+        "passabilityRatio": 0.1719,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_39",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 39/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "el último guardado no es una partida sino una persona",
       "inspirations": [
@@ -1996,7 +3376,37 @@
       "narrativeName": "Umbral Mil: Ancla 40",
       "sector": 40,
       "sectorName": "Umbral Mil",
-      "biome": "reinterpretación segura de Freezington House",
+      "biome": "city en (73,48) del plano Region Builder; reinterpretación segura de Freezington House con tileset Interior general",
+      "regionalDesign": {
+        "landmarkId": "atlas-sector-40",
+        "description": "Sector 40 · Archiveros del Mil. Ancla 40 pendiente de diseño artesanal. cuarenta historias compiten por decidir qué final merece Atlas",
+        "position": {
+          "x": 73,
+          "y": 48,
+          "width": 2,
+          "height": 2
+        },
+        "encounterPool": []
+      },
+      "styleReference": {
+        "sourceMapId": 982,
+        "tilesetId": 3,
+        "dimensions": [
+          60,
+          30
+        ],
+        "passabilityRatio": 0.1239,
+        "technicalStatus": "passed",
+        "artDirectionStatus": "review-required-inherited-geometry"
+      },
+      "authoringGates": {
+        "regionBuilder": true,
+        "pokemonStudioModel": true,
+        "studioDbSymbol": "atlas_anchor_40",
+        "studioState": "planned",
+        "fireAshStyleBaseline": true,
+        "requiresInGamePreview": true
+      },
       "globalImportance": "Entrega el sello 40/40 y revela una pieza del origen de Atlas.",
       "coreMystery": "cuarenta historias compiten por decidir qué final merece Atlas",
       "inspirations": [

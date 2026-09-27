@@ -13,6 +13,15 @@ import { marshalLoad,RSymbol } from "../web/js/marshal.js";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const DATA=path.join(ROOT,"pokemon_fire_ash","Data");
 const catalog=JSON.parse(fs.readFileSync(path.join(ROOT,"content","atlas_mil_500.json"),"utf8"));
+const regionDesign=JSON.parse(fs.readFileSync(path.join(ROOT,"content","atlas_region_design.json"),"utf8"));
+const studioReference=JSON.parse(fs.readFileSync(path.join(ROOT,"content","atlas_studio_reference.json"),"utf8"));
+const styleBaseline=JSON.parse(fs.readFileSync(path.join(ROOT,"content","atlas_style_baseline.json"),"utf8"));
+if(regionDesign.landmarks?.length!==40||regionDesign.compatibility?.readyForNarrativePipeline!==true)throw new Error("El diseño importado de Region Builder no superó la compuerta de compatibilidad.");
+if(studioReference.integrity?.ok!==true)throw new Error("El manifiesto de autoría inspirado en Pokémon Studio tiene referencias inválidas.");
+if(styleBaseline.integrity?.ok!==true||styleBaseline.summary?.technicalPassed!==40)throw new Error("La comparación de estilo con Fire Ash no superó la compuerta técnica.");
+const regionLandmarks=new Map(regionDesign.landmarks.map((landmark)=>[Number(landmark.sectorId),landmark]));
+const studioRecords=new Map(studioReference.records.map((record)=>[Number(record.mapId),record]));
+const styleAnchors=new Map(styleBaseline.anchors.map((anchor)=>[Number(anchor.mapId),anchor]));
 const masterPrompt=fs.readFileSync(path.join(ROOT,"docs","PROMPT_MAESTRO_TIER1.md"),"utf8");
 const read=(f)=>marshalLoad(fs.readFileSync(path.join(DATA,f)));
 const sym=(v)=>v instanceof RSymbol?v.name:String(v??"");
@@ -68,18 +77,29 @@ function symbols(file){const d=read(file),s=[];for(const[k]of d.pairs)if(k insta
 const moveCategory=new Map(read("moves.dat").pairs.filter(([k])=>k instanceof RSymbol).map(([k,v])=>[k.name,Number(v?.getIvar?.("category"))]));
 const valid={species:new Set(symbols("species.dat")),items:new Set(symbols("items.dat")),moves:new Set(symbols("moves.dat")),trainerTypes:new Set(symbols("trainer_types.dat")),characters};
 const tier1=hierarchy.filter((x)=>x.tier===1);
-const seeds=tier1.map((map,i)=>({
-  mapId:map.mapId,currentName:map.mapName,narrativeName:`${catalog.sectors[i].name}: Ancla ${String(i+1).padStart(2,"0")}`,
-  sector:map.sector,sectorName:map.sectorName,biome:`reinterpretación segura de ${map.sourceName}`,
-  globalImportance:`Entrega el sello ${i+1}/40 y revela una pieza del origen de Atlas.`,coreMystery:mysteries[i],
-  inspirations:crossovers[i],voiceProfile:{tone:tones[i],lexicon:[lexiconRoots[i],map.sectorName,"ancla","retorno","testigo","decisión"],sentenceRule:i%3===0?"frases breves con silencios":i%3===1?"frases concretas con una imagen sensorial":"frases medidas que terminan en pregunta",forbiddenPhrases:["Soy un entrenador","Qué gran combate","Este Pokémon es muy fuerte","Según la Pokédex","Debes derrotarme"]},
-  safety:{bagAllowed:true,canLose:true,freeReturn:true,maxLevel:150,maxTeam:6,creepypastaOptIn:i>=30&&i<=37,noSaveDamage:true},
-  flagBudget:{reservedGlobalSwitch:708+i,counterVariable:103,selfSwitches:["A","B"]},
-}));
+const seeds=tier1.map((map,i)=>{
+  const landmark=regionLandmarks.get(map.sector),studio=studioRecords.get(map.mapId),style=styleAnchors.get(map.mapId);
+  if(!landmark||!studio||!style)throw new Error(`Falta contexto externo validado para el mapa ${map.mapId}.`);
+  return{
+    mapId:map.mapId,currentName:map.mapName,narrativeName:`${landmark.name}: Ancla ${String(i+1).padStart(2,"0")}`,
+    sector:map.sector,sectorName:landmark.name,
+    biome:`${landmark.type} en (${landmark.position.x},${landmark.position.y}) del plano Region Builder; reinterpretación segura de ${map.sourceName} con tileset ${style.assets.tileset}`,
+    regionalDesign:{landmarkId:landmark.id,description:landmark.description,position:landmark.position,encounterPool:landmark.encounters.map((entry)=>entry.essentialsSpecies).filter(Boolean)},
+    styleReference:{sourceMapId:style.sourceMapId,tilesetId:style.current.tilesetId,dimensions:[style.current.width,style.current.height],passabilityRatio:style.source.passabilityRatio,technicalStatus:style.technicalStatus,artDirectionStatus:style.artDirectionStatus},
+    authoringGates:{regionBuilder:true,pokemonStudioModel:true,studioDbSymbol:studio.dbSymbol,studioState:studio.state,fireAshStyleBaseline:true,requiresInGamePreview:true},
+    globalImportance:`Entrega el sello ${i+1}/40 y revela una pieza del origen de Atlas.`,coreMystery:mysteries[i],
+    inspirations:crossovers[i],voiceProfile:{tone:tones[i],lexicon:[lexiconRoots[i],landmark.name,"ancla","retorno","testigo","decisión"],sentenceRule:i%3===0?"frases breves con silencios":i%3===1?"frases concretas con una imagen sensorial":"frases medidas que terminan en pregunta",forbiddenPhrases:["Soy un entrenador","Qué gran combate","Este Pokémon es muy fuerte","Según la Pokédex","Debes derrotarme"]},
+    safety:{bagAllowed:true,canLose:true,freeReturn:true,maxLevel:150,maxTeam:6,creepypastaOptIn:i>=30&&i<=37,noSaveDamage:true},
+    flagBudget:{reservedGlobalSwitch:708+i,counterVariable:103,selfSwitches:["A","B"]},
+  };
+});
 const promptTemplate=masterPrompt.match(/```text\n([\s\S]*?)\n```/)?.[1]||masterPrompt;
 const prompts=seeds.map((seed)=>({mapId:seed.mapId,iteration:1,prompt:promptTemplate
   .replaceAll("{{MAP_ID}}",String(seed.mapId)).replaceAll("{{CURRENT_NAME}}",seed.currentName).replaceAll("{{NARRATIVE_NAME}}",seed.narrativeName)
   .replaceAll("{{SECTOR_ID}}",String(seed.sector)).replaceAll("{{SECTOR_NAME}}",seed.sectorName).replaceAll("{{BIOME}}",seed.biome)
+  .replaceAll("{{REGION_BUILDER_CONTEXT}}",JSON.stringify(seed.regionalDesign))
+  .replaceAll("{{STUDIO_RECORD}}",JSON.stringify(studioRecords.get(seed.mapId)))
+  .replaceAll("{{STYLE_BASELINE}}",JSON.stringify(seed.styleReference))
   .replaceAll("{{SOURCE_MAP}}",hierarchy.find((x)=>x.mapId===seed.mapId).sourceName).replaceAll("{{GLOBAL_IMPORTANCE}}",seed.globalImportance)
   .replaceAll("{{CORE_MYSTERY}}",seed.coreMystery).replaceAll("{{INSPIRATIONS}}",seed.inspirations.join(" + "))
   .replaceAll("{{VOICE_PROFILE}}",seed.voiceProfile.tone+"; "+seed.voiceProfile.sentenceRule).replaceAll("{{LEXICON}}",seed.voiceProfile.lexicon.join(", "))
@@ -107,3 +127,4 @@ const qaIndex=process.argv.indexOf("--qa");
 if(qaIndex>=0){const file=path.resolve(process.argv[qaIndex+1]);const data=JSON.parse(fs.readFileSync(file,"utf8"));const report=qaBlueprints(Array.isArray(data)?data:(data.blueprints||[]));fs.writeFileSync(path.join(outDir,"atlas_narrative_qa.json"),JSON.stringify(report,null,2));console.log(JSON.stringify(report.summary,null,2));if(report.summary.failed)process.exitCode=1;}
 console.log(`Jerarquía: Tier 1=${counts[1]}, Tier 2=${counts[2]}, Tier 3=${counts[3]}.`);
 console.log(`Seeds/prompts Tier 1: ${seeds.length}.`);
+console.log(`Compuertas externas: Region Builder=${regionDesign.landmarks.length}/40, Studio=${studioReference.records.length} registros íntegros, estilo Fire Ash=${styleBaseline.summary.technicalPassed}/40.`);

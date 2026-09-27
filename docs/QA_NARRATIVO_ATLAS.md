@@ -6,6 +6,10 @@
 - Linter anti-procedural y de compatibilidad de combate: **operativo**.
 - Blueprints Tier 1: **30 aprobados / 0 rechazados**.
 - Compilación RMXP: **30 episodios instalados**.
+- Region Builder: **40/40 sectores válidos**, 126 especies compatibles y 10 anclas futuras señaladas.
+- Modelo de autoría inspirado en Pokémon Studio 2.11.0: **40/40 registros íntegros**.
+- Compuerta técnica de estilo Fire Ash: **40/40 mapas aprobados**.
+- Revisión artística: **40/40 pendientes**, porque conservan geometría heredada y requieren una pasada visual humana.
 - Prueba visual en `Game.exe`: pendiente por ausencia de Wine.
 
 ## Jerarquía
@@ -123,6 +127,7 @@ El análisis global mantiene exactamente las 45 incidencias heredadas del juego 
 ```text
 marshal.js: 51 OK, 0 fallos
 integración: 114 OK, 0 fallos
+UI con jsdom: 22 OK, 0 fallos
 ```
 
 La idempotencia por hashes fue confirmada para las fases A, B y C después de normalizar `trainers.dat` al nuevo formato de actualización.
@@ -163,4 +168,24 @@ Mapas **1896, 1921, 1946, 1971 y 1996**: datos corruptos, acertijos manipulados,
 
 La referencia conceptual criticable de la Ancla 26 está en `docs/referencia_visual_atlas_ancla26.png`; su alcance y limitaciones están documentados en `docs/REFERENCIA_VISUAL_ANCLA26.md`.
 
-Antes de certificar los episodios como finales sigue siendo necesaria una prueba visual dentro de `Game.exe`.
+### Herramientas externas de autoría
+
+```text
+content/atlas_mil_region.pkregion
+content/atlas_region_design.json
+content/atlas_studio_reference.json
+content/atlas_style_baseline.json
+docs/referencia_region_atlas_mil.png
+tools/region_builder_adapter.mjs
+tools/pokemon_studio_adapter.mjs
+tools/setup_pokemon_studio.mjs
+tools/atlas_style_gate.mjs
+tools/render_region_builder_reference.mjs
+tools/external_authoring.test.mjs
+```
+
+El pipeline narrativo ahora consume obligatoriamente el plano importado de Region Builder, un registro estable por ancla inspirado en Pokémon Studio y las métricas del mapa fuente real. Ninguno de esos formatos escribe directamente sobre `Data/*.rxdata`.
+
+La nueva suite de autoría externa pasa **25/25** pruebas. La compuerta confirma recursos, pasabilidad, dimensiones, eventos artesanales y retorno, pero también informa que las 40 anclas usan aún geometría fuente exacta. Esto impide presentarlas como arte visual definitivo.
+
+Antes de certificar los episodios como finales sigue siendo necesaria una pasada artesanal de mapa y una prueba visual dentro de `Game.exe`.
