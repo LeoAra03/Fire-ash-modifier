@@ -1,15 +1,15 @@
 # Auditoría total de flags de Fire Ash
 
-Generada: 2026-09-27T17:30:31.313Z
+Generada: 2026-09-27T17:52:15.206Z
 
 ## Cobertura
 
 - 2020 mapas.
 - 50 eventos comunes.
 - 402 secciones de script.
-- 737 slots de switch (675 con nombre).
-- 133 slots de variable (124 con nombre).
-- 5704 claves de self-switch observadas.
+- 747 slots de switch (685 con nombre).
+- 143 slots de variable (134 con nombre).
+- 5714 claves de self-switch observadas.
 - 73 expresiones dinámicas distintas.
 
 La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby puede calcular índices en ejecución. Por eso las expresiones dinámicas se conservan en el JSON completo.
@@ -55,10 +55,20 @@ La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby 
 | 735 | POKEMOD ATLAS SEAL 28 | used |
 | 736 | POKEMOD ATLAS SEAL 29 | used |
 | 737 | POKEMOD ATLAS SEAL 30 | used |
+| 738 | POKEMOD ATLAS SEAL 31 | used |
+| 739 | POKEMOD ATLAS SEAL 32 | used |
+| 740 | POKEMOD ATLAS SEAL 33 | used |
+| 741 | POKEMOD ATLAS SEAL 34 | used |
+| 742 | POKEMOD ATLAS SEAL 35 | used |
+| 743 | POKEMOD ATLAS SEAL 36 | used |
+| 744 | POKEMOD ATLAS SEAL 37 | used |
+| 745 | POKEMOD ATLAS SEAL 38 | used |
+| 746 | POKEMOD ATLAS SEAL 39 | used |
+| 747 | POKEMOD ATLAS SEAL 40 | used |
 
 Conflictos de reserva: **0**.
 
-## Switches 1–737
+## Switches 1–747
 
 | ID | Nombre | Lecturas | ON | OFF | Script | Estado |
 |---:|---|---:|---:|---:|---:|---|
@@ -799,8 +809,18 @@ Conflictos de reserva: **0**.
 | 735 | POKEMOD ATLAS SEAL 28 | 4 | 1 | 0 | 0 | used |
 | 736 | POKEMOD ATLAS SEAL 29 | 4 | 1 | 0 | 0 | used |
 | 737 | POKEMOD ATLAS SEAL 30 | 4 | 1 | 0 | 0 | used |
+| 738 | POKEMOD ATLAS SEAL 31 | 4 | 1 | 0 | 0 | used |
+| 739 | POKEMOD ATLAS SEAL 32 | 4 | 1 | 0 | 0 | used |
+| 740 | POKEMOD ATLAS SEAL 33 | 4 | 1 | 0 | 0 | used |
+| 741 | POKEMOD ATLAS SEAL 34 | 4 | 1 | 0 | 0 | used |
+| 742 | POKEMOD ATLAS SEAL 35 | 4 | 1 | 0 | 0 | used |
+| 743 | POKEMOD ATLAS SEAL 36 | 4 | 1 | 0 | 0 | used |
+| 744 | POKEMOD ATLAS SEAL 37 | 4 | 1 | 0 | 0 | used |
+| 745 | POKEMOD ATLAS SEAL 38 | 4 | 1 | 0 | 0 | used |
+| 746 | POKEMOD ATLAS SEAL 39 | 4 | 1 | 0 | 0 | used |
+| 747 | POKEMOD ATLAS SEAL 40 | 4 | 1 | 0 | 0 | used |
 
-## Variables 1–133
+## Variables 1–143
 
 | ID | Nombre | Lecturas | Escrituras | Script | Estado |
 |---:|---|---:|---:|---:|---|
@@ -906,7 +926,7 @@ Conflictos de reserva: **0**.
 | 100 | RANDOMIZER | 1342 | 17 | 0 | used |
 | 101 | POKEMOD HORIZONS COMPLETED | 0 | 500 | 1000 | used |
 | 102 | POKEMOD ATLAS MIL COMPLETED | 0 | 500 | 1000 | used |
-| 103 | POKEMOD ATLAS NARRATIVE SEALS | 0 | 30 | 0 | write only/static |
+| 103 | POKEMOD ATLAS NARRATIVE SEALS | 1 | 40 | 0 | used |
 | 104 | POKEMOD ATLAS DECISION 01 | 0 | 2 | 0 | write only/static |
 | 105 | POKEMOD ATLAS DECISION 02 | 0 | 2 | 0 | write only/static |
 | 106 | POKEMOD ATLAS DECISION 03 | 0 | 2 | 0 | write only/static |
@@ -937,6 +957,16 @@ Conflictos de reserva: **0**.
 | 131 | POKEMOD ATLAS DECISION 28 | 0 | 2 | 0 | write only/static |
 | 132 | POKEMOD ATLAS DECISION 29 | 0 | 2 | 0 | write only/static |
 | 133 | POKEMOD ATLAS DECISION 30 | 0 | 2 | 0 | write only/static |
+| 134 | POKEMOD ATLAS DECISION 31 | 0 | 2 | 0 | write only/static |
+| 135 | POKEMOD ATLAS DECISION 32 | 0 | 2 | 0 | write only/static |
+| 136 | POKEMOD ATLAS DECISION 33 | 0 | 2 | 0 | write only/static |
+| 137 | POKEMOD ATLAS DECISION 34 | 0 | 2 | 0 | write only/static |
+| 138 | POKEMOD ATLAS DECISION 35 | 0 | 2 | 0 | write only/static |
+| 139 | POKEMOD ATLAS DECISION 36 | 0 | 2 | 0 | write only/static |
+| 140 | POKEMOD ATLAS DECISION 37 | 0 | 2 | 0 | write only/static |
+| 141 | POKEMOD ATLAS DECISION 38 | 0 | 2 | 0 | write only/static |
+| 142 | POKEMOD ATLAS DECISION 39 | 0 | 2 | 0 | write only/static |
+| 143 | POKEMOD ATLAS DECISION 40 | 0 | 2 | 0 | write only/static |
 
 ## Switches críticos revisados
 
@@ -944,9 +974,9 @@ Conflictos de reserva: **0**.
 - **674 – NO ITEM INBATT:** los eventos originales pueden seguir activándolo, pero `pbItemMenu` ya no lo consulta en combates internos.
 - **675 – NO ITEM OUTBATT:** no fue modificado.
 - **701–707:** misión de Hypno, Horizontes y Atlas Mil.
-- **708–737:** 30 sellos narrativos Tier 1 aprobados, verificados sin colisión.
+- **708–747:** 40 sellos narrativos Tier 1 aprobados, verificados sin colisión.
 - **Variables 101–103:** contadores separados de Horizontes, Atlas Mil y sellos narrativos.
-- **Variables 104–133:** decisiones persistentes de los 30 episodios Tier 1.
+- **Variables 104–143:** decisiones persistentes de los 40 episodios Tier 1.
 
 ## Indicadores que requieren cautela
 

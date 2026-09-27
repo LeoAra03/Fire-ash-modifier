@@ -3600,10 +3600,114 @@
       "id": 31,
       "dbSymbol": "atlas_anchor_31",
       "mapId": 1771,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "La Frecuencia que Pide Permiso",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_31_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Custodia de la Frecuencia",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "CHIMECHO",
+            "level": 108,
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "HEALBELL",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "señal que separa capas"
+          },
+          {
+            "slot": 2,
+            "species": "KRICKETUNE",
+            "level": 109,
+            "moves": [
+              "BUGBUZZ",
+              "SLASH",
+              "SING",
+              "STICKYWEB"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "partitura incompleta"
+          },
+          {
+            "slot": 3,
+            "species": "NOIVERN",
+            "level": 110,
+            "moves": [
+              "AIRSLASH",
+              "DRAGONPULSE",
+              "BOOMBURST",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "amplificación accidental"
+          },
+          {
+            "slot": 4,
+            "species": "EXPLOUD",
+            "level": 111,
+            "moves": [
+              "HYPERVOICE",
+              "FLAMETHROWER",
+              "ICEBEAM",
+              "FOCUSBLAST"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "archivo sin límite"
+          },
+          {
+            "slot": 5,
+            "species": "MISMAGIUS",
+            "level": 112,
+            "moves": [
+              "SHADOWBALL",
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "PERISHSONG"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "voz atribuida"
+          },
+          {
+            "slot": 6,
+            "species": "MELOETTA",
+            "level": 114,
+            "moves": [
+              "RELICSONG",
+              "PSYCHIC",
+              "SHADOWBALL",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "melodía consentida"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_31_npc_1",
+          "name": "Ada Umbral",
+          "role": "restauradora acústica",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_31_npc_2",
+          "name": "Bruno Coda",
+          "role": "visitante en duelo",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_31_npc_3",
+          "name": "Cira Tapón",
+          "role": "técnica de accesibilidad",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 738,
         "sealCounterVariable": 103,
@@ -3615,10 +3719,114 @@
       "id": 32,
       "dbSymbol": "atlas_anchor_32",
       "mapId": 1796,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "El Héroe que Pidió un Nombre Pequeño",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_32_trainer",
+        "trainerType": "RUINMANIAC",
+        "name": "Guardián del Nombre Menor",
+        "sprite": "trchar028",
+        "party": [
+          {
+            "slot": 1,
+            "species": "UNOWN",
+            "level": 110,
+            "moves": [
+              "HIDDENPOWER",
+              "PSYCHIC",
+              "ANCIENTPOWER",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "letra sin frase única"
+          },
+          {
+            "slot": 2,
+            "species": "SNEASEL",
+            "level": 111,
+            "moves": [
+              "ICICLECRASH",
+              "NIGHTSLASH",
+              "ICEPUNCH",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "rastro en el margen"
+          },
+          {
+            "slot": 3,
+            "species": "AMPHAROS",
+            "level": 112,
+            "moves": [
+              "THUNDERBOLT",
+              "DRAGONPULSE",
+              "POWERGEM",
+              "LIGHTSCREEN"
+            ],
+            "item": "LIGHTCLAY",
+            "narrativeRole": "faro comunitario"
+          },
+          {
+            "slot": 4,
+            "species": "MAROWAK",
+            "level": 113,
+            "moves": [
+              "BONEMERANG",
+              "SHADOWBONE",
+              "BRICKBREAK",
+              "STEALTHROCK"
+            ],
+            "item": "THICKCLUB",
+            "narrativeRole": "reliquia familiar"
+          },
+          {
+            "slot": 5,
+            "species": "TYPHLOSION",
+            "level": 114,
+            "moves": [
+              "ERUPTION",
+              "FLAMETHROWER",
+              "FOCUSBLAST",
+              "FLAMECHARGE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "brasa del barrio"
+          },
+          {
+            "slot": 6,
+            "species": "HOOH",
+            "level": 116,
+            "moves": [
+              "SACREDFIRE",
+              "BRAVEBIRD",
+              "EARTHQUAKE",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "renacimiento sin estatua"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_32_npc_1",
+          "name": "Elia Placa",
+          "role": "curadora del memorial",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_32_npc_2",
+          "name": "Simón Brasa",
+          "role": "descendiente del supuesto héroe",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_32_npc_3",
+          "name": "Osa Margen",
+          "role": "archivista de fuentes menores",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 739,
         "sealCounterVariable": 103,
@@ -3630,10 +3838,114 @@
       "id": 33,
       "dbSymbol": "atlas_anchor_33",
       "mapId": 1821,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "La Victoria que Nadie Ganó",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_33_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Árbitra del Marcador Vacío",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "BANETTE",
+            "level": 112,
+            "moves": [
+              "SHADOWBALL",
+              "WILLOWISP",
+              "DESTINYBOND",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "acta adherida"
+          },
+          {
+            "slot": 2,
+            "species": "GENGAR",
+            "level": 113,
+            "moves": [
+              "SHADOWBALL",
+              "SLUDGEBOMB",
+              "FOCUSBLAST",
+              "THUNDERBOLT"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "ovación sin cuerpo"
+          },
+          {
+            "slot": 3,
+            "species": "MIMIKYU",
+            "level": 114,
+            "moves": [
+              "PLAYROUGH",
+              "SHADOWSNEAK",
+              "SWORDSDANCE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "mérito imitado"
+          },
+          {
+            "slot": 4,
+            "species": "ZOROARK",
+            "level": 115,
+            "moves": [
+              "NIGHTDAZE",
+              "FLAMETHROWER",
+              "SHADOWBALL",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "marcador aparente"
+          },
+          {
+            "slot": 5,
+            "species": "SPIRITOMB",
+            "level": 116,
+            "moves": [
+              "DARKPULSE",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "SUCKERPUNCH"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "firmas acumuladas"
+          },
+          {
+            "slot": 6,
+            "species": "MARSHADOW",
+            "level": 118,
+            "moves": [
+              "SPECTRALTHIEF",
+              "CLOSECOMBAT",
+              "ICEPUNCH",
+              "SHADOWSNEAK"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "fuerza aprendida en sombra"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_33_npc_1",
+          "name": "Vela Acta",
+          "role": "oficial de resultados",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_33_npc_2",
+          "name": "Roque Cero",
+          "role": "competidor beneficiado",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_33_npc_3",
+          "name": "Mina Reverso",
+          "role": "auditora de memoria competitiva",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 740,
         "sealCounterVariable": 103,
@@ -3645,10 +3957,114 @@
       "id": 34,
       "dbSymbol": "atlas_anchor_34",
       "mapId": 1846,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "La Excavación que Fabricó su Pasado",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_34_trainer",
+        "trainerType": "RUINMANIAC",
+        "name": "Custodio del Estrato Fabricado",
+        "sprite": "trchar028",
+        "party": [
+          {
+            "slot": 1,
+            "species": "YAMASK",
+            "level": 114,
+            "moves": [
+              "SHADOWBALL",
+              "WILLOWISP",
+              "PSYCHIC",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "relato adherido"
+          },
+          {
+            "slot": 2,
+            "species": "CLAYDOL",
+            "level": 115,
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "TRICKROOM"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "molde estratigráfico"
+          },
+          {
+            "slot": 3,
+            "species": "ARCTOZOLT",
+            "level": 116,
+            "moves": [
+              "ICICLECRASH",
+              "THUNDERBOLT",
+              "STONEEDGE",
+              "FREEZEDRY"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "ensamble incompatible"
+          },
+          {
+            "slot": 4,
+            "species": "DRACOVISH",
+            "level": 117,
+            "moves": [
+              "FISHIOUSREND",
+              "DRAGONPULSE",
+              "CRUNCH",
+              "ICEBEAM"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "titular fósil"
+          },
+          {
+            "slot": 5,
+            "species": "GOLURK",
+            "level": 118,
+            "moves": [
+              "SHADOWPUNCH",
+              "EARTHQUAKE",
+              "HEAVYSLAM",
+              "DRAINPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "armazón que despierta"
+          },
+          {
+            "slot": 6,
+            "species": "REGIGIGAS",
+            "level": 120,
+            "moves": [
+              "BODYSLAM",
+              "EARTHQUAKE",
+              "ICEPUNCH",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "vida ensamblada"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_34_npc_1",
+          "name": "Gala Portada",
+          "role": "directora de excavación",
+          "sprite": "trchar028"
+        },
+        {
+          "dbSymbol": "atlas_anchor_34_npc_2",
+          "name": "Timo Molde",
+          "role": "constructor de utilería",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_34_npc_3",
+          "name": "Vera Polen",
+          "role": "bióloga de restauración",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 741,
         "sealCounterVariable": 103,
@@ -3660,10 +4076,114 @@
       "id": 35,
       "dbSymbol": "atlas_anchor_35",
       "mapId": 1871,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "El Refugio que Contestaba Solo",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_35_trainer",
+        "trainerType": "POKEMONRANGER_F",
+        "name": "Guardiana del Parte Invernal",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "DELIBIRD",
+            "level": 116,
+            "moves": [
+              "ICEBEAM",
+              "BRAVEBIRD",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "reporte repetido"
+          },
+          {
+            "slot": 2,
+            "species": "ABOMASNOW",
+            "level": 117,
+            "moves": [
+              "BLIZZARD",
+              "GIGADRAIN",
+              "EARTHPOWER",
+              "AURORAVEIL"
+            ],
+            "item": "LIGHTCLAY",
+            "narrativeRole": "tormenta medida"
+          },
+          {
+            "slot": 3,
+            "species": "MAMOSWINE",
+            "level": 118,
+            "moves": [
+              "ICICLECRASH",
+              "EARTHQUAKE",
+              "ICESHARD",
+              "ROCKSLIDE"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "ruta física"
+          },
+          {
+            "slot": 4,
+            "species": "FROSLASS",
+            "level": 119,
+            "moves": [
+              "ICEBEAM",
+              "SHADOWBALL",
+              "DESTINYBOND",
+              "THUNDERBOLT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "voz en la ventisca"
+          },
+          {
+            "slot": 5,
+            "species": "AVALUGG",
+            "level": 120,
+            "moves": [
+              "ICEHAMMER",
+              "BODYPRESS",
+              "RECOVER",
+              "RAPIDSPIN"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "refugio secundario"
+          },
+          {
+            "slot": 6,
+            "species": "ARTICUNO",
+            "level": 122,
+            "moves": [
+              "FREEZEDRY",
+              "HURRICANE",
+              "ICEBEAM",
+              "ROOST"
+            ],
+            "item": "NEVERMELTICE",
+            "narrativeRole": "pronóstico con límites"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_35_npc_1",
+          "name": "Lía Base",
+          "role": "coordinadora de rescate",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_35_npc_2",
+          "name": "Oren Eco",
+          "role": "operador de comunicaciones",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_35_npc_3",
+          "name": "Nara Banderín",
+          "role": "guía del equipo aislado",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 742,
         "sealCounterVariable": 103,
@@ -3675,10 +4195,114 @@
       "id": 36,
       "dbSymbol": "atlas_anchor_36",
       "mapId": 1896,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "El Registro que No Pudo Clasificarte",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_36_trainer",
+        "trainerType": "PSYCHIC_M",
+        "name": "Custodio del Checksum Abierto",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "PORYGON",
+            "level": 118,
+            "moves": [
+              "TRIATTACK",
+              "PSYCHIC",
+              "ICEBEAM",
+              "RECOVER"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "fila original"
+          },
+          {
+            "slot": 2,
+            "species": "DITTO",
+            "level": 119,
+            "moves": [
+              "TRANSFORM",
+              "PROTECT",
+              "SUBSTITUTE",
+              "MIMIC"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "perfil copiado"
+          },
+          {
+            "slot": 3,
+            "species": "ROTOM",
+            "level": 120,
+            "moves": [
+              "THUNDERBOLT",
+              "SHADOWBALL",
+              "VOLTSWITCH",
+              "DARKPULSE"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "campo que migra"
+          },
+          {
+            "slot": 4,
+            "species": "KECLEON",
+            "level": 121,
+            "moves": [
+              "KNOCKOFF",
+              "SUCKERPUNCH",
+              "AERIALACE",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "categoría reactiva"
+          },
+          {
+            "slot": 5,
+            "species": "TYPENULL",
+            "level": 122,
+            "moves": [
+              "RETURN",
+              "IRONHEAD",
+              "XSCISSOR",
+              "AERIALACE"
+            ],
+            "item": "EVIOLITE",
+            "narrativeRole": "identidad contenida"
+          },
+          {
+            "slot": 6,
+            "species": "PORYGONZ",
+            "level": 124,
+            "moves": [
+              "TRIATTACK",
+              "DARKPULSE",
+              "THUNDERBOLT",
+              "ICEBEAM"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "contradicción preservada"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_36_npc_1",
+          "name": "Nela Paridad",
+          "role": "auditora del registro",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_36_npc_2",
+          "name": "Taro Casilla",
+          "role": "operador de acceso",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_36_npc_3",
+          "name": "Iris Nulo",
+          "role": "técnica de recuperación",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 743,
         "sealCounterVariable": 103,
@@ -3690,10 +4314,114 @@
       "id": 37,
       "dbSymbol": "atlas_anchor_37",
       "mapId": 1921,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "El Acertijo que Cambiaba la Pregunta",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_37_trainer",
+        "trainerType": "COOLTRAINER_F",
+        "name": "Jueza de la Regla Fija",
+        "sprite": "trchar008",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SIGILYPH",
+            "level": 120,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "ENERGYBALL",
+              "ROOST"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "signo inicial"
+          },
+          {
+            "slot": 2,
+            "species": "XATU",
+            "level": 121,
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "FUTURESIGHT",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "coordenada anticipada"
+          },
+          {
+            "slot": 3,
+            "species": "KLEFKI",
+            "level": 122,
+            "moves": [
+              "FLASHCANNON",
+              "PLAYROUGH",
+              "REFLECT",
+              "LIGHTSCREEN"
+            ],
+            "item": "LIGHTCLAY",
+            "narrativeRole": "llave de reglas"
+          },
+          {
+            "slot": 4,
+            "species": "MALAMAR",
+            "level": 123,
+            "moves": [
+              "PSYCHOCUT",
+              "NIGHTSLASH",
+              "SUPERPOWER",
+              "AERIALACE"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "pregunta invertida"
+          },
+          {
+            "slot": 5,
+            "species": "BEHEEYEM",
+            "level": 124,
+            "moves": [
+              "PSYCHIC",
+              "DARKPULSE",
+              "SIGNALBEAM",
+              "TRICKROOM"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "autor del ajuste"
+          },
+          {
+            "slot": 6,
+            "species": "UXIE",
+            "level": 126,
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "THUNDERBOLT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "conocimiento ofrecido"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_37_npc_1",
+          "name": "Sira Coordenada",
+          "role": "guardiana del circuito",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_37_npc_2",
+          "name": "Melo Tres",
+          "role": "solucionador persistente",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_37_npc_3",
+          "name": "Vico Pista",
+          "role": "revisor de accesibilidad",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 744,
         "sealCounterVariable": 103,
@@ -3705,10 +4433,114 @@
       "id": 38,
       "dbSymbol": "atlas_anchor_38",
       "mapId": 1946,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "El Enemigo que Alguien Recordó por Ti",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_38_trainer",
+        "trainerType": "PSYCHIC_F",
+        "name": "Mediadora del Recuerdo Prestado",
+        "sprite": "trchar069",
+        "party": [
+          {
+            "slot": 1,
+            "species": "HYPNO",
+            "level": 122,
+            "moves": [
+              "PSYCHIC",
+              "DREAMEATER",
+              "HYPNOSIS",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "puerta de implantación"
+          },
+          {
+            "slot": 2,
+            "species": "MUSHARNA",
+            "level": 123,
+            "moves": [
+              "PSYCHIC",
+              "MOONBLAST",
+              "ENERGYBALL",
+              "MOONLIGHT"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "sensación persistente"
+          },
+          {
+            "slot": 3,
+            "species": "ZOROARK",
+            "level": 124,
+            "moves": [
+              "NIGHTDAZE",
+              "FLAMETHROWER",
+              "SHADOWBALL",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "rostro asignado"
+          },
+          {
+            "slot": 4,
+            "species": "ABSOL",
+            "level": 125,
+            "moves": [
+              "NIGHTSLASH",
+              "PLAYROUGH",
+              "PSYCHOCUT",
+              "SUCKERPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "presagio interpretado"
+          },
+          {
+            "slot": 5,
+            "species": "LUCARIO",
+            "level": 126,
+            "moves": [
+              "AURASPHERE",
+              "FLASHCANNON",
+              "EXTREMESPEED",
+              "DARKPULSE"
+            ],
+            "item": "EXPERTBELT",
+            "narrativeRole": "vínculo presente"
+          },
+          {
+            "slot": 6,
+            "species": "CRESSELIA",
+            "level": 128,
+            "moves": [
+              "PSYCHIC",
+              "ICEBEAM",
+              "MOONBLAST",
+              "LUNARDANCE"
+            ],
+            "item": "MENTALHERB",
+            "narrativeRole": "descanso sin borrado"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_38_npc_1",
+          "name": "Rian Prisma",
+          "role": "portador del recuerdo",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_38_npc_2",
+          "name": "Noa Límite",
+          "role": "persona acusada",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_38_npc_3",
+          "name": "Uma Pulso",
+          "role": "terapeuta de memoria",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 745,
         "sealCounterVariable": 103,
@@ -3720,10 +4552,114 @@
       "id": 39,
       "dbSymbol": "atlas_anchor_39",
       "mapId": 1971,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "La Copia que Aprendió a Despertar",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_39_trainer",
+        "trainerType": "RUINMANIAC",
+        "name": "Garante de la Continuidad Viva",
+        "sprite": "trchar028",
+        "party": [
+          {
+            "slot": 1,
+            "species": "BALTOY",
+            "level": 124,
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "STEALTHROCK"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "primer soporte"
+          },
+          {
+            "slot": 2,
+            "species": "CLAYDOL",
+            "level": 125,
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "TRICKROOM"
+            ],
+            "item": "LEFTOVERS",
+            "narrativeRole": "réplica desarrollada"
+          },
+          {
+            "slot": 3,
+            "species": "BRONZONG",
+            "level": 126,
+            "moves": [
+              "GYROBALL",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "REFLECT"
+            ],
+            "item": "LIGHTCLAY",
+            "narrativeRole": "cámara de custodia"
+          },
+          {
+            "slot": 4,
+            "species": "METAGROSS",
+            "level": 127,
+            "moves": [
+              "METEORMASH",
+              "ZENHEADBUTT",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "índice de versiones"
+          },
+          {
+            "slot": 5,
+            "species": "SILVALLY",
+            "level": 128,
+            "moves": [
+              "MULTIATTACK",
+              "CRUNCH",
+              "FLAMETHROWER",
+              "ICEBEAM"
+            ],
+            "item": "EXPERTBELT",
+            "narrativeRole": "identidad elegida"
+          },
+          {
+            "slot": 6,
+            "species": "MEW",
+            "level": 130,
+            "moves": [
+              "PSYCHIC",
+              "AURASPHERE",
+              "ICEBEAM",
+              "ROOST"
+            ],
+            "item": "SOULDEW",
+            "narrativeRole": "origen sin propiedad"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_39_npc_1",
+          "name": "Iria Presente",
+          "role": "persona archivada",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_39_npc_2",
+          "name": "Mara Vela",
+          "role": "persona fuente",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_39_npc_3",
+          "name": "Daro Índice",
+          "role": "archivero de continuidad",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 746,
         "sealCounterVariable": 103,
@@ -3735,10 +4671,114 @@
       "id": 40,
       "dbSymbol": "atlas_anchor_40",
       "mapId": 1996,
-      "title": null,
-      "state": "planned",
-      "trainer": null,
-      "cast": [],
+      "title": "El Final que Dejó Cuarenta Puertas Abiertas",
+      "state": "approved-and-compiled",
+      "trainer": {
+        "dbSymbol": "atlas_anchor_40_trainer",
+        "trainerType": "COOLTRAINER_M",
+        "name": "Testigo de las Cuarenta Puertas",
+        "sprite": "trchar009",
+        "party": [
+          {
+            "slot": 1,
+            "species": "SMEARGLE",
+            "level": 130,
+            "moves": [
+              "SPIKES",
+              "NUZZLE",
+              "UTURN",
+              "EXTREMESPEED"
+            ],
+            "item": "FOCUSSASH",
+            "narrativeRole": "testimonio dibujado"
+          },
+          {
+            "slot": 2,
+            "species": "GARDEVOIR",
+            "level": 131,
+            "moves": [
+              "PSYCHIC",
+              "MOONBLAST",
+              "THUNDERBOLT",
+              "REFLECT"
+            ],
+            "item": "LIGHTCLAY",
+            "narrativeRole": "consecuencia escuchada"
+          },
+          {
+            "slot": 3,
+            "species": "ZOROARK",
+            "level": 132,
+            "moves": [
+              "NIGHTDAZE",
+              "FLAMETHROWER",
+              "SHADOWBALL",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "narrativeRole": "relato discutido"
+          },
+          {
+            "slot": 4,
+            "species": "ABSOL",
+            "level": 133,
+            "moves": [
+              "NIGHTSLASH",
+              "PLAYROUGH",
+              "PSYCHOCUT",
+              "SUCKERPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "narrativeRole": "aviso conservado"
+          },
+          {
+            "slot": 5,
+            "species": "SILVALLY",
+            "level": 134,
+            "moves": [
+              "MULTIATTACK",
+              "CRUNCH",
+              "FLAMETHROWER",
+              "ICEBEAM"
+            ],
+            "item": "EXPERTBELT",
+            "narrativeRole": "vínculo elegido"
+          },
+          {
+            "slot": 6,
+            "species": "ARCEUS",
+            "level": 136,
+            "moves": [
+              "JUDGMENT",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "RECOVER"
+            ],
+            "item": "LEGENDPLATE",
+            "narrativeRole": "constelación sin corona"
+          }
+        ]
+      },
+      "cast": [
+        {
+          "dbSymbol": "atlas_anchor_40_npc_1",
+          "name": "Alba Mil",
+          "role": "archivera de convergencia",
+          "sprite": "trchar008"
+        },
+        {
+          "dbSymbol": "atlas_anchor_40_npc_2",
+          "name": "Ciro Testigo",
+          "role": "mensajero de los sectores",
+          "sprite": "trchar009"
+        },
+        {
+          "dbSymbol": "atlas_anchor_40_npc_3",
+          "name": "Numa Umbral",
+          "role": "cuidadora del pedestal",
+          "sprite": "NPC 04"
+        }
+      ],
       "progression": {
         "switchId": 747,
         "sealCounterVariable": 103,

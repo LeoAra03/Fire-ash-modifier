@@ -14,11 +14,14 @@ function check(condition, message) {
   else { failed++; console.error(`FALLA: ${message}`); }
 }
 
+const approvedBlueprints = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_tier1_blueprints_approved.json"), "utf8")).blueprints;
+const expectedApproved = approvedBlueprints.length;
+const expectedDexSpecies = new Set(approvedBlueprints.flatMap((blueprint) => blueprint.battle.team.map((pokemon) => pokemon.species))).size;
 const region = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_mil_region.pkregion"), "utf8"));
 const regionValidation = validatePkregion(region);
 check(regionValidation.ok, "el .pkregion de Atlas cumple el formato v1");
 check(regionValidation.stats.landmarks === 40, "Region Builder contiene los 40 sectores");
-check(regionValidation.stats.pokedexEntries === 126, "la Pokédex regional contiene las 126 especies aprobadas");
+check(regionValidation.stats.pokedexEntries === expectedDexSpecies, `la Pokédex regional contiene las ${expectedDexSpecies} especies aprobadas`);
 check(regionValidation.stats.waterCells > 0 && regionValidation.stats.pathCells > 0, "las capas de agua y caminos tienen contenido");
 const corrupt = structuredClone(region);
 corrupt.version = 2;
@@ -30,14 +33,14 @@ check(!validatePkregion(dangling).ok, "el adaptador rechaza referencias a landma
 const neutral = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_region_design.json"), "utf8"));
 check(neutral.compatibility.readyForNarrativePipeline, "el diseño neutral supera la compuerta narrativa");
 check(neutral.compatibility.readyForRmxpCompilation === false, "un .pkregion nunca se declara compilable directamente");
-check(neutral.landmarks.filter((entry) => entry.episode.status === "approved").length === 30, "el plano distingue 30 episodios aprobados");
-check(neutral.landmarks.filter((entry) => entry.episode.status === "pending").length === 10, "el plano mantiene 10 anclas pendientes");
+check(neutral.landmarks.filter((entry) => entry.episode.status === "approved").length === expectedApproved, `el plano distingue ${expectedApproved} episodios aprobados`);
+check(neutral.landmarks.filter((entry) => entry.episode.status === "pending").length === 40 - expectedApproved, `el plano mantiene ${40 - expectedApproved} anclas pendientes`);
 
 const studioReference = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_studio_reference.json"), "utf8"));
 check(studioReference.integrity.ok, "el manifiesto de autoría estilo Studio tiene integridad referencial");
 check(studioReference.records.length === 40, "Studio reference indexa las 40 anclas");
-check(studioReference.records.filter((entry) => entry.state === "approved-and-compiled").length === 30, "Studio reference separa 30 episodios compilados");
-check(studioReference.records.filter((entry) => entry.state === "planned").length === 10, "Studio reference reserva 10 registros futuros");
+check(studioReference.records.filter((entry) => entry.state === "approved-and-compiled").length === expectedApproved, `Studio reference separa ${expectedApproved} episodios compilados`);
+check(studioReference.records.filter((entry) => entry.state === "planned").length === 40 - expectedApproved, `Studio reference reserva ${40 - expectedApproved} registros futuros`);
 check(studioReference.inspiredBy.containsPokemonStudioCode === false, "el manifiesto no copia código de Pokémon Studio");
 check(studioReference.inspiredBy.isPsdkProject === false, "el manifiesto no se presenta como proyecto PSDK");
 check(studioReference.records.every((entry) => entry.progression.freeReturnMapId === 1001), "todos los registros conservan retorno libre");

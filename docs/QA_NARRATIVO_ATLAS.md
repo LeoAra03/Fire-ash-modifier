@@ -4,9 +4,9 @@
 
 - Clasificación y schema: **completados**.
 - Linter anti-procedural y de compatibilidad de combate: **operativo**.
-- Blueprints Tier 1: **30 aprobados / 0 rechazados**.
-- Compilación RMXP: **30 episodios instalados**.
-- Region Builder: **40/40 sectores válidos**, 126 especies compatibles y 10 anclas futuras señaladas.
+- Blueprints Tier 1: **40 aprobados / 0 rechazados**.
+- Compilación RMXP: **40 episodios instalados**.
+- Region Builder: **40/40 sectores válidos**, 153 especies compatibles y 0 anclas futuras señaladas.
 - Modelo de autoría inspirado en Pokémon Studio 2.11.0: **40/40 registros íntegros**.
 - Compuerta técnica de estilo Fire Ash: **40/40 mapas aprobados**.
 - Revisión artística: **40/40 pendientes**, porque conservan geometría heredada y requieren una pasada visual humana.
@@ -70,36 +70,53 @@
 29. **El Campeón de las Dos Banderas** — mapa 1721. Diplomacia entre ligas sin apropiarse de una persona.
 30. **La Academia del Error Permitido** — mapa 1746. Dificultad transparente, pistas opcionales y contrajuego justo.
 
+### Fase D — Sellos 31–35
+
+31. **La Frecuencia que Pide Permiso** — mapa 1771. Un horror sonoro opcional convierte escuchar en una decisión revocable.
+32. **El Héroe que Pidió un Nombre Pequeño** — mapa 1796. Una leyenda rechaza que la reconstruyan como monumento sin consentimiento.
+33. **La Victoria que Nadie Ganó** — mapa 1821. Un estadio reconoce triunfos fantasma y permite reparar el registro sin fabricar un vencedor.
+34. **La Excavación que Fabricó su Pasado** — mapa 1846. Una expedición enfrenta la evidencia de que inventó la ruina que pretendía descubrir.
+35. **El Refugio que Contestaba Solo** — mapa 1871. Un rescate en la nieve distingue reportes automáticos de voces humanas aisladas.
+
+### Fase E — Sellos 36–40
+
+36. **El Registro que No Pudo Clasificarte** — mapa 1896. Procedencia verificable y derecho a permanecer desconocido frente a perfiles forzados.
+37. **El Acertijo que Cambiaba la Pregunta** — mapa 1921. Reglas fijas, pistas opcionales y reparación de una dificultad manipulada.
+38. **El Enemigo que Alguien Recordó por Ti** — mapa 1946. Un recuerdo implantado deja emociones reales sin convertir a una persona inocente en culpable.
+39. **La Copia que Aprendió a Despertar** — mapa 1971. Una conciencia archivada obtiene identidad, límites y continuidad propia.
+40. **El Final que Dejó Cuarenta Puertas Abiertas** — mapa 1996. Convergencia coral, gobierno revisable y retorno libre fuera de toda votación.
+
 ## Contenido acumulado
 
-- 90 NPCs con páginas anteriores y posteriores.
-- 30 conductores de escena.
-- 30 decisiones persistentes.
-- 30 jefes de seis Pokémon.
-- 30 equipos con función narrativa por integrante.
-- 30 puntos de curación.
-- 30 recompensas narrativas de una sola obtención.
+- 120 NPCs con páginas anteriores y posteriores.
+- 40 conductores de escena.
+- 40 decisiones persistentes.
+- 40 jefes de seis Pokémon.
+- 40 equipos con función narrativa por integrante.
+- 40 puntos de curación.
+- 40 recompensas narrativas de una sola obtención.
 - Revanchas sin premios duplicados.
+- La convergencia del mapa 1996 requiere 39 sellos previos y conserva una salida abierta mientras espera.
 - Mochila habilitada y `canLose=true`.
 - Retorno a Puerto Horizonte preservado.
 
 ## Flags
 
 ```text
-708–737 = Sellos narrativos 01–30
+708–747 = Sellos narrativos 01–40
 Variable 103 = Total de sellos narrativos
-Variables 104–133 = Decisiones de los episodios 01–30
+Variables 104–143 = Decisiones de los episodios 01–40
 ```
 
 Auditoría actual:
 
 ```text
-737 slots de switch
-675 switches con nombre
-662 switches con uso literal
-133 variables
-124 variables con nombre
-94 variables con uso literal
+747 slots de switch
+685 switches con nombre
+672 switches con uso literal
+143 variables
+134 variables con nombre
+104 variables con uso literal
 0 conflictos PokeMod
 ```
 
@@ -108,21 +125,21 @@ El auditor obtiene ahora los sellos esperados directamente del catálogo acumula
 ## QA automático
 
 ```text
-Blueprints evaluados: 30
-Aprobados: 30
+Blueprints evaluados: 40
+Aprobados: 40
 Rechazados: 0
 
 Verificación RMXP:
-30 episodios Tier 1
-90 NPCs
-30 jefes narrativos
+40 episodios Tier 1
+120 NPCs
+40 jefes narrativos
 decisiones persistentes
 retorno libre
 ```
 
-El compilador genérico ahora actualiza entrenadores ya existentes durante una revisión y verifica especie, nivel, movimientos y objeto de cada integrante. El linter también rechaza Assault Vest combinado con movimientos de estado. Este ciclo corrigió tres incompatibilidades detectadas durante el pulido.
+El compilador genérico actualiza entrenadores ya existentes durante una revisión y verifica especie, nivel, movimientos y objeto de cada integrante. El linter también rechaza Assault Vest combinado con movimientos de estado; las incompatibilidades detectadas se corrigieron antes de compilar.
 
-El análisis global mantiene exactamente las 45 incidencias heredadas del juego base: 7 errores y 38 warnings. No apareció ninguna incidencia nueva.
+El análisis global mantiene exactamente las 45 incidencias heredadas del juego base: 7 errores y 38 warnings. No apareció ninguna incidencia nueva. El estado compilado contiene 2.020 mapas, 20.214 eventos y 3.904 entrenadores.
 
 ```text
 marshal.js: 51 OK, 0 fallos
@@ -130,19 +147,23 @@ integración: 114 OK, 0 fallos
 UI con jsdom: 22 OK, 0 fallos
 ```
 
-La idempotencia por hashes fue confirmada para las fases A, B y C después de normalizar `trainers.dat` al nuevo formato de actualización.
+La idempotencia por hashes fue confirmada para las fases A, B, C, D y E. El compilador ahora canoniza también la clave compuesta del entrenador al actualizarlo, por lo que una segunda ejecución conserva inmediatamente los hashes de `trainers.dat` y de los mapas.
 
-El límite global es ahora **150**. La fase C inaugura la progresión extendida con jefes de nivel 100–112; las seis curvas de experiencia fueron verificadas como enteras y estrictamente crecientes.
+El límite global es **150**. Las fases C–E usan la progresión extendida hasta nivel 136; las seis curvas de experiencia fueron verificadas como enteras y estrictamente crecientes.
 
-## Archivos de esta fase
+## Archivos de las fases C–E
 
 ```text
 content/atlas_tier1_blueprints_batch05.json
 content/atlas_tier1_blueprints_batch06.json
 content/atlas_tier1_blueprints_batch07.json
+content/atlas_tier1_blueprints_batch08.json
+content/atlas_tier1_blueprints_batch09.json
 tools/create_tier1_batch05.mjs
 tools/create_tier1_batch06.mjs
 tools/create_tier1_batch07.mjs
+tools/create_tier1_batch08.mjs
+tools/create_tier1_batch09.mjs
 tools/apply_extended_level_cap.mjs
 tools/tier1_blueprint_helpers.mjs
 ```
@@ -153,18 +174,14 @@ Backups:
 pokemon_fire_ash/PokeModBackups/tier1_batch05_originals/
 pokemon_fire_ash/PokeModBackups/tier1_batch06_originals/
 pokemon_fire_ash/PokeModBackups/tier1_batch07_originals/
+pokemon_fire_ash/PokeModBackups/tier1_batch08_originals/
+pokemon_fire_ash/PokeModBackups/tier1_batch09_originals/
 pokemon_fire_ash/PokeModBackups/extended_level_cap_originals/
 ```
 
-## Próximas fases
+## Siguiente ciclo — pulido por capas
 
-### Fase D — Sellos 31–35
-
-Mapas **1771, 1796, 1821, 1846 y 1871**: horror sonoro opcional, leyendas que piden no ser reconstruidas, victorias fantasma, arqueología falsa y rescate en la nieve.
-
-### Fase E — Sellos 36–40 y convergencia
-
-Mapas **1896, 1921, 1946, 1971 y 1996**: datos corruptos, acertijos manipulados, recuerdos implantados, memoria segura y final coral de los cuarenta sellos.
+Tier 1 narrativo está completo. El trabajo pendiente se separa ahora en 40 pasadas visuales de anclas, 120 rutas Tier 2 con autoría dedicada y 420 Ecos Tier 3 que todavía necesitan una regla local breve. El inventario reproducible y los lotes recomendados están en `docs/ESTADO_CONTENIDO_Y_PROMPTS.md`.
 
 La referencia conceptual criticable de la Ancla 26 está en `docs/referencia_visual_atlas_ancla26.png`; su alcance y limitaciones están documentados en `docs/REFERENCIA_VISUAL_ANCLA26.md`.
 

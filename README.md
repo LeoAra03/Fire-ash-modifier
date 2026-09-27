@@ -97,6 +97,12 @@ node tools/external_authoring.test.mjs
 
 El flujo completo, sus límites y los comandos de instalación desde el repositorio oficial están en [`docs/AUTORIA_REGION_BUILDER_STUDIO.md`](docs/AUTORIA_REGION_BUILDER_STUDIO.md).
 
+El estado instalado, la diferencia entre infraestructura y autoría artesanal, y el número reproducible de lotes pendientes están en [`docs/ESTADO_CONTENIDO_Y_PROMPTS.md`](docs/ESTADO_CONTENIDO_Y_PROMPTS.md). Se regenera con:
+
+```bash
+node tools/audit_content_progress.mjs
+```
+
 ## Tests
 
 ```bash

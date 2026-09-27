@@ -29483,8 +29483,15 @@
         "height": 2,
         "type": "special",
         "name": "Reserva de Engranajes",
-        "description": "Sector 31 · Relojeros de Reserva. Ancla 31 pendiente de diseño artesanal. una melodía solo existe cuando el jugador decide escucharla",
-        "pokemon": []
+        "description": "Sector 31 · Relojeros de Reserva. Episodio aprobado: La Frecuencia que Pide Permiso. una melodía solo existe cuando el jugador decide escucharla",
+        "pokemon": [
+          "358",
+          "402",
+          "715",
+          "295",
+          "429",
+          "648"
+        ]
       },
       {
         "id": "atlas-sector-32",
@@ -29494,8 +29501,15 @@
         "height": 2,
         "type": "town",
         "name": "Círculo de Ceniza",
-        "description": "Sector 32 · Bomberos de Ceniza. Ancla 32 pendiente de diseño artesanal. un héroe olvidado pide que no reconstruyan su leyenda",
-        "pokemon": []
+        "description": "Sector 32 · Bomberos de Ceniza. Episodio aprobado: El Héroe que Pidió un Nombre Pequeño. un héroe olvidado pide que no reconstruyan su leyenda",
+        "pokemon": [
+          "201",
+          "215",
+          "181",
+          "105",
+          "157",
+          "250"
+        ]
       },
       {
         "id": "atlas-sector-33",
@@ -29505,8 +29519,15 @@
         "height": 2,
         "type": "cave",
         "name": "Labertino Boreal",
-        "description": "Sector 33 · Guías Boreales. Ancla 33 pendiente de diseño artesanal. un fantasma concede victorias que nadie quiere aceptar",
-        "pokemon": []
+        "description": "Sector 33 · Guías Boreales. Episodio aprobado: La Victoria que Nadie Ganó. un fantasma concede victorias que nadie quiere aceptar",
+        "pokemon": [
+          "354",
+          "94",
+          "778",
+          "571",
+          "442",
+          "802"
+        ]
       },
       {
         "id": "atlas-sector-34",
@@ -29516,8 +29537,15 @@
         "height": 2,
         "type": "special",
         "name": "República de Musgo",
-        "description": "Sector 34 · Consejo de Musgo. Ancla 34 pendiente de diseño artesanal. una excavación construyó deliberadamente su propio monstruo",
-        "pokemon": []
+        "description": "Sector 34 · Consejo de Musgo. Episodio aprobado: La Excavación que Fabricó su Pasado. una excavación construyó deliberadamente su propio monstruo",
+        "pokemon": [
+          "562",
+          "344",
+          "881",
+          "882",
+          "623",
+          "486"
+        ]
       },
       {
         "id": "atlas-sector-35",
@@ -29527,8 +29555,15 @@
         "height": 2,
         "type": "special",
         "name": "Cinturón Aurora",
-        "description": "Sector 35 · Pintores Aurora. Ancla 35 pendiente de diseño artesanal. un equipo aislado sigue enviando reportes desde la nieve",
-        "pokemon": []
+        "description": "Sector 35 · Pintores Aurora. Episodio aprobado: El Refugio que Contestaba Solo. un equipo aislado sigue enviando reportes desde la nieve",
+        "pokemon": [
+          "225",
+          "460",
+          "473",
+          "478",
+          "713",
+          "144"
+        ]
       },
       {
         "id": "atlas-sector-36",
@@ -29538,8 +29573,15 @@
         "height": 2,
         "type": "town",
         "name": "Trinchera de Luz",
-        "description": "Sector 36 · Fareros de Luz. Ancla 36 pendiente de diseño artesanal. los datos corruptos intentan clasificar al jugador",
-        "pokemon": []
+        "description": "Sector 36 · Fareros de Luz. Episodio aprobado: El Registro que No Pudo Clasificarte. los datos corruptos intentan clasificar al jugador",
+        "pokemon": [
+          "137",
+          "132",
+          "479",
+          "352",
+          "772",
+          "474"
+        ]
       },
       {
         "id": "atlas-sector-37",
@@ -29549,8 +29591,15 @@
         "height": 2,
         "type": "special",
         "name": "Provincia del Eco",
-        "description": "Sector 37 · Oyentes del Eco. Ancla 37 pendiente de diseño artesanal. un acertijo imposible fue manipulado para parecer profundo",
-        "pokemon": []
+        "description": "Sector 37 · Oyentes del Eco. Episodio aprobado: El Acertijo que Cambiaba la Pregunta. un acertijo imposible fue manipulado para parecer profundo",
+        "pokemon": [
+          "561",
+          "178",
+          "707",
+          "687",
+          "606",
+          "480"
+        ]
       },
       {
         "id": "atlas-sector-38",
@@ -29560,8 +29609,15 @@
         "height": 2,
         "type": "special",
         "name": "Horizonte Fractal",
-        "description": "Sector 38 · Geómetras Fractales. Ancla 38 pendiente de diseño artesanal. la venganza era un recuerdo implantado",
-        "pokemon": []
+        "description": "Sector 38 · Geómetras Fractales. Episodio aprobado: El Enemigo que Alguien Recordó por Ti. la venganza era un recuerdo implantado",
+        "pokemon": [
+          "97",
+          "518",
+          "571",
+          "359",
+          "448",
+          "488"
+        ]
       },
       {
         "id": "atlas-sector-39",
@@ -29571,8 +29627,15 @@
         "height": 2,
         "type": "cave",
         "name": "Corona de Bruma",
-        "description": "Sector 39 · Pastores de Bruma. Ancla 39 pendiente de diseño artesanal. el último guardado no es una partida sino una persona",
-        "pokemon": []
+        "description": "Sector 39 · Pastores de Bruma. Episodio aprobado: La Copia que Aprendió a Despertar. el último guardado no es una partida sino una persona",
+        "pokemon": [
+          "343",
+          "344",
+          "437",
+          "376",
+          "773",
+          "151"
+        ]
       },
       {
         "id": "atlas-sector-40",
@@ -29582,8 +29645,15 @@
         "height": 2,
         "type": "city",
         "name": "Umbral Mil",
-        "description": "Sector 40 · Archiveros del Mil. Ancla 40 pendiente de diseño artesanal. cuarenta historias compiten por decidir qué final merece Atlas",
-        "pokemon": []
+        "description": "Sector 40 · Archiveros del Mil. Episodio aprobado: El Final que Dejó Cuarenta Puertas Abiertas. cuarenta historias compiten por decidir qué final merece Atlas",
+        "pokemon": [
+          "235",
+          "282",
+          "571",
+          "359",
+          "773",
+          "493"
+        ]
       }
     ],
     "terrainGrid": null
@@ -29703,6 +29773,17 @@
     },
     {
       "dexNumber": 12,
+      "pokemonId": 94,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ghost",
+        "poison"
+      ]
+    },
+    {
+      "dexNumber": 13,
       "pokemonId": 97,
       "isCustom": false,
       "isRegional": false,
@@ -29712,7 +29793,7 @@
       ]
     },
     {
-      "dexNumber": 13,
+      "dexNumber": 14,
       "pokemonId": 103,
       "isCustom": false,
       "isRegional": false,
@@ -29723,7 +29804,17 @@
       ]
     },
     {
-      "dexNumber": 14,
+      "dexNumber": 15,
+      "pokemonId": 105,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ground"
+      ]
+    },
+    {
+      "dexNumber": 16,
       "pokemonId": 110,
       "isCustom": false,
       "isRegional": false,
@@ -29733,7 +29824,7 @@
       ]
     },
     {
-      "dexNumber": 15,
+      "dexNumber": 17,
       "pokemonId": 122,
       "isCustom": false,
       "isRegional": false,
@@ -29744,7 +29835,7 @@
       ]
     },
     {
-      "dexNumber": 16,
+      "dexNumber": 18,
       "pokemonId": 131,
       "isCustom": false,
       "isRegional": false,
@@ -29755,7 +29846,7 @@
       ]
     },
     {
-      "dexNumber": 17,
+      "dexNumber": 19,
       "pokemonId": 132,
       "isCustom": false,
       "isRegional": false,
@@ -29765,7 +29856,7 @@
       ]
     },
     {
-      "dexNumber": 18,
+      "dexNumber": 20,
       "pokemonId": 133,
       "isCustom": false,
       "isRegional": false,
@@ -29775,7 +29866,17 @@
       ]
     },
     {
-      "dexNumber": 19,
+      "dexNumber": 21,
+      "pokemonId": 137,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "normal"
+      ]
+    },
+    {
+      "dexNumber": 22,
       "pokemonId": 139,
       "isCustom": false,
       "isRegional": false,
@@ -29786,7 +29887,7 @@
       ]
     },
     {
-      "dexNumber": 20,
+      "dexNumber": 23,
       "pokemonId": 143,
       "isCustom": false,
       "isRegional": false,
@@ -29796,7 +29897,18 @@
       ]
     },
     {
-      "dexNumber": 21,
+      "dexNumber": 24,
+      "pokemonId": 144,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ice",
+        "flying"
+      ]
+    },
+    {
+      "dexNumber": 25,
       "pokemonId": 149,
       "isCustom": false,
       "isRegional": false,
@@ -29807,7 +29919,7 @@
       ]
     },
     {
-      "dexNumber": 22,
+      "dexNumber": 26,
       "pokemonId": 150,
       "isCustom": false,
       "isRegional": false,
@@ -29817,7 +29929,7 @@
       ]
     },
     {
-      "dexNumber": 23,
+      "dexNumber": 27,
       "pokemonId": 151,
       "isCustom": false,
       "isRegional": false,
@@ -29827,7 +29939,17 @@
       ]
     },
     {
-      "dexNumber": 24,
+      "dexNumber": 28,
+      "pokemonId": 157,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "fire"
+      ]
+    },
+    {
+      "dexNumber": 29,
       "pokemonId": 164,
       "isCustom": false,
       "isRegional": false,
@@ -29838,7 +29960,7 @@
       ]
     },
     {
-      "dexNumber": 25,
+      "dexNumber": 30,
       "pokemonId": 168,
       "isCustom": false,
       "isRegional": false,
@@ -29849,7 +29971,7 @@
       ]
     },
     {
-      "dexNumber": 26,
+      "dexNumber": 31,
       "pokemonId": 169,
       "isCustom": false,
       "isRegional": false,
@@ -29860,7 +29982,7 @@
       ]
     },
     {
-      "dexNumber": 27,
+      "dexNumber": 32,
       "pokemonId": 172,
       "isCustom": false,
       "isRegional": false,
@@ -29870,7 +29992,7 @@
       ]
     },
     {
-      "dexNumber": 28,
+      "dexNumber": 33,
       "pokemonId": 176,
       "isCustom": false,
       "isRegional": false,
@@ -29881,7 +30003,7 @@
       ]
     },
     {
-      "dexNumber": 29,
+      "dexNumber": 34,
       "pokemonId": 178,
       "isCustom": false,
       "isRegional": false,
@@ -29892,7 +30014,7 @@
       ]
     },
     {
-      "dexNumber": 30,
+      "dexNumber": 35,
       "pokemonId": 181,
       "isCustom": false,
       "isRegional": false,
@@ -29902,7 +30024,7 @@
       ]
     },
     {
-      "dexNumber": 31,
+      "dexNumber": 36,
       "pokemonId": 196,
       "isCustom": false,
       "isRegional": false,
@@ -29912,7 +30034,7 @@
       ]
     },
     {
-      "dexNumber": 32,
+      "dexNumber": 37,
       "pokemonId": 197,
       "isCustom": false,
       "isRegional": false,
@@ -29922,7 +30044,28 @@
       ]
     },
     {
-      "dexNumber": 33,
+      "dexNumber": 38,
+      "pokemonId": 201,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "psychic"
+      ]
+    },
+    {
+      "dexNumber": 39,
+      "pokemonId": 215,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "dark",
+        "ice"
+      ]
+    },
+    {
+      "dexNumber": 40,
       "pokemonId": 217,
       "isCustom": false,
       "isRegional": false,
@@ -29932,7 +30075,7 @@
       ]
     },
     {
-      "dexNumber": 34,
+      "dexNumber": 41,
       "pokemonId": 222,
       "isCustom": false,
       "isRegional": false,
@@ -29943,7 +30086,7 @@
       ]
     },
     {
-      "dexNumber": 35,
+      "dexNumber": 42,
       "pokemonId": 225,
       "isCustom": false,
       "isRegional": false,
@@ -29954,7 +30097,7 @@
       ]
     },
     {
-      "dexNumber": 36,
+      "dexNumber": 43,
       "pokemonId": 227,
       "isCustom": false,
       "isRegional": false,
@@ -29965,7 +30108,7 @@
       ]
     },
     {
-      "dexNumber": 37,
+      "dexNumber": 44,
       "pokemonId": 229,
       "isCustom": false,
       "isRegional": false,
@@ -29976,7 +30119,7 @@
       ]
     },
     {
-      "dexNumber": 38,
+      "dexNumber": 45,
       "pokemonId": 233,
       "isCustom": false,
       "isRegional": false,
@@ -29986,7 +30129,7 @@
       ]
     },
     {
-      "dexNumber": 39,
+      "dexNumber": 46,
       "pokemonId": 235,
       "isCustom": false,
       "isRegional": false,
@@ -29996,7 +30139,7 @@
       ]
     },
     {
-      "dexNumber": 40,
+      "dexNumber": 47,
       "pokemonId": 239,
       "isCustom": false,
       "isRegional": false,
@@ -30006,7 +30149,7 @@
       ]
     },
     {
-      "dexNumber": 41,
+      "dexNumber": 48,
       "pokemonId": 240,
       "isCustom": false,
       "isRegional": false,
@@ -30016,7 +30159,7 @@
       ]
     },
     {
-      "dexNumber": 42,
+      "dexNumber": 49,
       "pokemonId": 242,
       "isCustom": false,
       "isRegional": false,
@@ -30026,7 +30169,7 @@
       ]
     },
     {
-      "dexNumber": 43,
+      "dexNumber": 50,
       "pokemonId": 245,
       "isCustom": false,
       "isRegional": false,
@@ -30036,7 +30179,7 @@
       ]
     },
     {
-      "dexNumber": 44,
+      "dexNumber": 51,
       "pokemonId": 248,
       "isCustom": false,
       "isRegional": false,
@@ -30047,7 +30190,18 @@
       ]
     },
     {
-      "dexNumber": 45,
+      "dexNumber": 52,
+      "pokemonId": 250,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "fire",
+        "flying"
+      ]
+    },
+    {
+      "dexNumber": 53,
       "pokemonId": 251,
       "isCustom": false,
       "isRegional": false,
@@ -30058,7 +30212,7 @@
       ]
     },
     {
-      "dexNumber": 46,
+      "dexNumber": 54,
       "pokemonId": 272,
       "isCustom": false,
       "isRegional": false,
@@ -30069,7 +30223,7 @@
       ]
     },
     {
-      "dexNumber": 47,
+      "dexNumber": 55,
       "pokemonId": 279,
       "isCustom": false,
       "isRegional": false,
@@ -30080,7 +30234,7 @@
       ]
     },
     {
-      "dexNumber": 48,
+      "dexNumber": 56,
       "pokemonId": 282,
       "isCustom": false,
       "isRegional": false,
@@ -30091,7 +30245,17 @@
       ]
     },
     {
-      "dexNumber": 49,
+      "dexNumber": 57,
+      "pokemonId": 295,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "normal"
+      ]
+    },
+    {
+      "dexNumber": 58,
       "pokemonId": 302,
       "isCustom": false,
       "isRegional": false,
@@ -30102,7 +30266,7 @@
       ]
     },
     {
-      "dexNumber": 50,
+      "dexNumber": 59,
       "pokemonId": 311,
       "isCustom": false,
       "isRegional": false,
@@ -30112,7 +30276,7 @@
       ]
     },
     {
-      "dexNumber": 51,
+      "dexNumber": 60,
       "pokemonId": 312,
       "isCustom": false,
       "isRegional": false,
@@ -30122,7 +30286,7 @@
       ]
     },
     {
-      "dexNumber": 52,
+      "dexNumber": 61,
       "pokemonId": 330,
       "isCustom": false,
       "isRegional": false,
@@ -30133,7 +30297,18 @@
       ]
     },
     {
-      "dexNumber": 53,
+      "dexNumber": 62,
+      "pokemonId": 343,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ground",
+        "psychic"
+      ]
+    },
+    {
+      "dexNumber": 63,
       "pokemonId": 344,
       "isCustom": false,
       "isRegional": false,
@@ -30144,7 +30319,7 @@
       ]
     },
     {
-      "dexNumber": 54,
+      "dexNumber": 64,
       "pokemonId": 346,
       "isCustom": false,
       "isRegional": false,
@@ -30155,7 +30330,7 @@
       ]
     },
     {
-      "dexNumber": 55,
+      "dexNumber": 65,
       "pokemonId": 350,
       "isCustom": false,
       "isRegional": false,
@@ -30165,7 +30340,7 @@
       ]
     },
     {
-      "dexNumber": 56,
+      "dexNumber": 66,
       "pokemonId": 351,
       "isCustom": false,
       "isRegional": false,
@@ -30175,7 +30350,7 @@
       ]
     },
     {
-      "dexNumber": 57,
+      "dexNumber": 67,
       "pokemonId": 352,
       "isCustom": false,
       "isRegional": false,
@@ -30185,7 +30360,7 @@
       ]
     },
     {
-      "dexNumber": 58,
+      "dexNumber": 68,
       "pokemonId": 354,
       "isCustom": false,
       "isRegional": false,
@@ -30195,7 +30370,7 @@
       ]
     },
     {
-      "dexNumber": 59,
+      "dexNumber": 69,
       "pokemonId": 357,
       "isCustom": false,
       "isRegional": false,
@@ -30206,7 +30381,7 @@
       ]
     },
     {
-      "dexNumber": 60,
+      "dexNumber": 70,
       "pokemonId": 358,
       "isCustom": false,
       "isRegional": false,
@@ -30216,7 +30391,7 @@
       ]
     },
     {
-      "dexNumber": 61,
+      "dexNumber": 71,
       "pokemonId": 359,
       "isCustom": false,
       "isRegional": false,
@@ -30226,7 +30401,7 @@
       ]
     },
     {
-      "dexNumber": 62,
+      "dexNumber": 72,
       "pokemonId": 376,
       "isCustom": false,
       "isRegional": false,
@@ -30237,7 +30412,17 @@
       ]
     },
     {
-      "dexNumber": 63,
+      "dexNumber": 73,
+      "pokemonId": 402,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "bug"
+      ]
+    },
+    {
+      "dexNumber": 74,
       "pokemonId": 419,
       "isCustom": false,
       "isRegional": false,
@@ -30247,7 +30432,7 @@
       ]
     },
     {
-      "dexNumber": 64,
+      "dexNumber": 75,
       "pokemonId": 423,
       "isCustom": false,
       "isRegional": false,
@@ -30258,7 +30443,7 @@
       ]
     },
     {
-      "dexNumber": 65,
+      "dexNumber": 76,
       "pokemonId": 424,
       "isCustom": false,
       "isRegional": false,
@@ -30268,7 +30453,7 @@
       ]
     },
     {
-      "dexNumber": 66,
+      "dexNumber": 77,
       "pokemonId": 429,
       "isCustom": false,
       "isRegional": false,
@@ -30278,7 +30463,7 @@
       ]
     },
     {
-      "dexNumber": 67,
+      "dexNumber": 78,
       "pokemonId": 437,
       "isCustom": false,
       "isRegional": false,
@@ -30289,7 +30474,7 @@
       ]
     },
     {
-      "dexNumber": 68,
+      "dexNumber": 79,
       "pokemonId": 442,
       "isCustom": false,
       "isRegional": false,
@@ -30300,7 +30485,7 @@
       ]
     },
     {
-      "dexNumber": 69,
+      "dexNumber": 80,
       "pokemonId": 445,
       "isCustom": false,
       "isRegional": false,
@@ -30311,7 +30496,7 @@
       ]
     },
     {
-      "dexNumber": 70,
+      "dexNumber": 81,
       "pokemonId": 447,
       "isCustom": false,
       "isRegional": false,
@@ -30321,7 +30506,7 @@
       ]
     },
     {
-      "dexNumber": 71,
+      "dexNumber": 82,
       "pokemonId": 448,
       "isCustom": false,
       "isRegional": false,
@@ -30332,7 +30517,18 @@
       ]
     },
     {
-      "dexNumber": 72,
+      "dexNumber": 83,
+      "pokemonId": 460,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "grass",
+        "ice"
+      ]
+    },
+    {
+      "dexNumber": 84,
       "pokemonId": 461,
       "isCustom": false,
       "isRegional": false,
@@ -30343,7 +30539,7 @@
       ]
     },
     {
-      "dexNumber": 73,
+      "dexNumber": 85,
       "pokemonId": 462,
       "isCustom": false,
       "isRegional": false,
@@ -30354,7 +30550,7 @@
       ]
     },
     {
-      "dexNumber": 74,
+      "dexNumber": 86,
       "pokemonId": 468,
       "isCustom": false,
       "isRegional": false,
@@ -30365,7 +30561,18 @@
       ]
     },
     {
-      "dexNumber": 75,
+      "dexNumber": 87,
+      "pokemonId": 473,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ice",
+        "ground"
+      ]
+    },
+    {
+      "dexNumber": 88,
       "pokemonId": 474,
       "isCustom": false,
       "isRegional": false,
@@ -30375,7 +30582,7 @@
       ]
     },
     {
-      "dexNumber": 76,
+      "dexNumber": 89,
       "pokemonId": 475,
       "isCustom": false,
       "isRegional": false,
@@ -30386,7 +30593,7 @@
       ]
     },
     {
-      "dexNumber": 77,
+      "dexNumber": 90,
       "pokemonId": 477,
       "isCustom": false,
       "isRegional": false,
@@ -30396,7 +30603,7 @@
       ]
     },
     {
-      "dexNumber": 78,
+      "dexNumber": 91,
       "pokemonId": 478,
       "isCustom": false,
       "isRegional": false,
@@ -30407,7 +30614,7 @@
       ]
     },
     {
-      "dexNumber": 79,
+      "dexNumber": 92,
       "pokemonId": 479,
       "isCustom": false,
       "isRegional": false,
@@ -30418,7 +30625,17 @@
       ]
     },
     {
-      "dexNumber": 80,
+      "dexNumber": 93,
+      "pokemonId": 480,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "psychic"
+      ]
+    },
+    {
+      "dexNumber": 94,
       "pokemonId": 483,
       "isCustom": false,
       "isRegional": false,
@@ -30429,7 +30646,17 @@
       ]
     },
     {
-      "dexNumber": 81,
+      "dexNumber": 95,
+      "pokemonId": 486,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "normal"
+      ]
+    },
+    {
+      "dexNumber": 96,
       "pokemonId": 488,
       "isCustom": false,
       "isRegional": false,
@@ -30439,7 +30666,7 @@
       ]
     },
     {
-      "dexNumber": 82,
+      "dexNumber": 97,
       "pokemonId": 491,
       "isCustom": false,
       "isRegional": false,
@@ -30449,7 +30676,17 @@
       ]
     },
     {
-      "dexNumber": 83,
+      "dexNumber": 98,
+      "pokemonId": 493,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "normal"
+      ]
+    },
+    {
+      "dexNumber": 99,
       "pokemonId": 497,
       "isCustom": false,
       "isRegional": false,
@@ -30459,7 +30696,7 @@
       ]
     },
     {
-      "dexNumber": 84,
+      "dexNumber": 100,
       "pokemonId": 500,
       "isCustom": false,
       "isRegional": false,
@@ -30470,7 +30707,7 @@
       ]
     },
     {
-      "dexNumber": 85,
+      "dexNumber": 101,
       "pokemonId": 503,
       "isCustom": false,
       "isRegional": false,
@@ -30480,7 +30717,7 @@
       ]
     },
     {
-      "dexNumber": 86,
+      "dexNumber": 102,
       "pokemonId": 508,
       "isCustom": false,
       "isRegional": false,
@@ -30490,7 +30727,7 @@
       ]
     },
     {
-      "dexNumber": 87,
+      "dexNumber": 103,
       "pokemonId": 518,
       "isCustom": false,
       "isRegional": false,
@@ -30500,7 +30737,7 @@
       ]
     },
     {
-      "dexNumber": 88,
+      "dexNumber": 104,
       "pokemonId": 526,
       "isCustom": false,
       "isRegional": false,
@@ -30510,7 +30747,7 @@
       ]
     },
     {
-      "dexNumber": 89,
+      "dexNumber": 105,
       "pokemonId": 530,
       "isCustom": false,
       "isRegional": false,
@@ -30521,7 +30758,7 @@
       ]
     },
     {
-      "dexNumber": 90,
+      "dexNumber": 106,
       "pokemonId": 531,
       "isCustom": false,
       "isRegional": false,
@@ -30531,7 +30768,7 @@
       ]
     },
     {
-      "dexNumber": 91,
+      "dexNumber": 107,
       "pokemonId": 534,
       "isCustom": false,
       "isRegional": false,
@@ -30541,7 +30778,7 @@
       ]
     },
     {
-      "dexNumber": 92,
+      "dexNumber": 108,
       "pokemonId": 558,
       "isCustom": false,
       "isRegional": false,
@@ -30552,7 +30789,7 @@
       ]
     },
     {
-      "dexNumber": 93,
+      "dexNumber": 109,
       "pokemonId": 561,
       "isCustom": false,
       "isRegional": false,
@@ -30563,7 +30800,17 @@
       ]
     },
     {
-      "dexNumber": 94,
+      "dexNumber": 110,
+      "pokemonId": 562,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ghost"
+      ]
+    },
+    {
+      "dexNumber": 111,
       "pokemonId": 569,
       "isCustom": false,
       "isRegional": false,
@@ -30573,7 +30820,7 @@
       ]
     },
     {
-      "dexNumber": 95,
+      "dexNumber": 112,
       "pokemonId": 571,
       "isCustom": false,
       "isRegional": false,
@@ -30583,7 +30830,7 @@
       ]
     },
     {
-      "dexNumber": 96,
+      "dexNumber": 113,
       "pokemonId": 576,
       "isCustom": false,
       "isRegional": false,
@@ -30593,7 +30840,7 @@
       ]
     },
     {
-      "dexNumber": 97,
+      "dexNumber": 114,
       "pokemonId": 586,
       "isCustom": false,
       "isRegional": false,
@@ -30604,7 +30851,7 @@
       ]
     },
     {
-      "dexNumber": 98,
+      "dexNumber": 115,
       "pokemonId": 601,
       "isCustom": false,
       "isRegional": false,
@@ -30614,7 +30861,17 @@
       ]
     },
     {
-      "dexNumber": 99,
+      "dexNumber": 116,
+      "pokemonId": 606,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "psychic"
+      ]
+    },
+    {
+      "dexNumber": 117,
       "pokemonId": 609,
       "isCustom": false,
       "isRegional": false,
@@ -30625,7 +30882,7 @@
       ]
     },
     {
-      "dexNumber": 100,
+      "dexNumber": 118,
       "pokemonId": 623,
       "isCustom": false,
       "isRegional": false,
@@ -30636,7 +30893,7 @@
       ]
     },
     {
-      "dexNumber": 101,
+      "dexNumber": 119,
       "pokemonId": 625,
       "isCustom": false,
       "isRegional": false,
@@ -30647,7 +30904,7 @@
       ]
     },
     {
-      "dexNumber": 102,
+      "dexNumber": 120,
       "pokemonId": 628,
       "isCustom": false,
       "isRegional": false,
@@ -30658,7 +30915,7 @@
       ]
     },
     {
-      "dexNumber": 103,
+      "dexNumber": 121,
       "pokemonId": 637,
       "isCustom": false,
       "isRegional": false,
@@ -30669,7 +30926,18 @@
       ]
     },
     {
-      "dexNumber": 104,
+      "dexNumber": 122,
+      "pokemonId": 648,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "normal",
+        "psychic"
+      ]
+    },
+    {
+      "dexNumber": 123,
       "pokemonId": 663,
       "isCustom": false,
       "isRegional": false,
@@ -30680,7 +30948,7 @@
       ]
     },
     {
-      "dexNumber": 105,
+      "dexNumber": 124,
       "pokemonId": 681,
       "isCustom": false,
       "isRegional": false,
@@ -30691,7 +30959,7 @@
       ]
     },
     {
-      "dexNumber": 106,
+      "dexNumber": 125,
       "pokemonId": 685,
       "isCustom": false,
       "isRegional": false,
@@ -30701,7 +30969,7 @@
       ]
     },
     {
-      "dexNumber": 107,
+      "dexNumber": 126,
       "pokemonId": 687,
       "isCustom": false,
       "isRegional": false,
@@ -30712,7 +30980,7 @@
       ]
     },
     {
-      "dexNumber": 108,
+      "dexNumber": 127,
       "pokemonId": 700,
       "isCustom": false,
       "isRegional": false,
@@ -30722,7 +30990,7 @@
       ]
     },
     {
-      "dexNumber": 109,
+      "dexNumber": 128,
       "pokemonId": 703,
       "isCustom": false,
       "isRegional": false,
@@ -30733,7 +31001,28 @@
       ]
     },
     {
-      "dexNumber": 110,
+      "dexNumber": 129,
+      "pokemonId": 707,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "steel",
+        "fairy"
+      ]
+    },
+    {
+      "dexNumber": 130,
+      "pokemonId": 713,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ice"
+      ]
+    },
+    {
+      "dexNumber": 131,
       "pokemonId": 715,
       "isCustom": false,
       "isRegional": false,
@@ -30744,7 +31033,7 @@
       ]
     },
     {
-      "dexNumber": 111,
+      "dexNumber": 132,
       "pokemonId": 718,
       "isCustom": false,
       "isRegional": false,
@@ -30755,7 +31044,7 @@
       ]
     },
     {
-      "dexNumber": 112,
+      "dexNumber": 133,
       "pokemonId": 719,
       "isCustom": false,
       "isRegional": false,
@@ -30766,7 +31055,7 @@
       ]
     },
     {
-      "dexNumber": 113,
+      "dexNumber": 134,
       "pokemonId": 720,
       "isCustom": false,
       "isRegional": false,
@@ -30777,7 +31066,7 @@
       ]
     },
     {
-      "dexNumber": 114,
+      "dexNumber": 135,
       "pokemonId": 760,
       "isCustom": false,
       "isRegional": false,
@@ -30788,7 +31077,7 @@
       ]
     },
     {
-      "dexNumber": 115,
+      "dexNumber": 136,
       "pokemonId": 765,
       "isCustom": false,
       "isRegional": false,
@@ -30799,7 +31088,27 @@
       ]
     },
     {
-      "dexNumber": 116,
+      "dexNumber": 137,
+      "pokemonId": 772,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "normal"
+      ]
+    },
+    {
+      "dexNumber": 138,
+      "pokemonId": 773,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "normal"
+      ]
+    },
+    {
+      "dexNumber": 139,
       "pokemonId": 775,
       "isCustom": false,
       "isRegional": false,
@@ -30809,7 +31118,18 @@
       ]
     },
     {
-      "dexNumber": 117,
+      "dexNumber": 140,
+      "pokemonId": 778,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "ghost",
+        "fairy"
+      ]
+    },
+    {
+      "dexNumber": 141,
       "pokemonId": 801,
       "isCustom": false,
       "isRegional": false,
@@ -30820,7 +31140,18 @@
       ]
     },
     {
-      "dexNumber": 118,
+      "dexNumber": 142,
+      "pokemonId": 802,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "fighting",
+        "ghost"
+      ]
+    },
+    {
+      "dexNumber": 143,
       "pokemonId": 815,
       "isCustom": false,
       "isRegional": false,
@@ -30830,7 +31161,7 @@
       ]
     },
     {
-      "dexNumber": 119,
+      "dexNumber": 144,
       "pokemonId": 820,
       "isCustom": false,
       "isRegional": false,
@@ -30840,7 +31171,7 @@
       ]
     },
     {
-      "dexNumber": 120,
+      "dexNumber": 145,
       "pokemonId": 842,
       "isCustom": false,
       "isRegional": false,
@@ -30851,7 +31182,7 @@
       ]
     },
     {
-      "dexNumber": 121,
+      "dexNumber": 146,
       "pokemonId": 855,
       "isCustom": false,
       "isRegional": false,
@@ -30861,7 +31192,7 @@
       ]
     },
     {
-      "dexNumber": 122,
+      "dexNumber": 147,
       "pokemonId": 864,
       "isCustom": false,
       "isRegional": false,
@@ -30871,7 +31202,7 @@
       ]
     },
     {
-      "dexNumber": 123,
+      "dexNumber": 148,
       "pokemonId": 867,
       "isCustom": false,
       "isRegional": false,
@@ -30882,7 +31213,7 @@
       ]
     },
     {
-      "dexNumber": 124,
+      "dexNumber": 149,
       "pokemonId": 869,
       "isCustom": false,
       "isRegional": false,
@@ -30892,7 +31223,7 @@
       ]
     },
     {
-      "dexNumber": 125,
+      "dexNumber": 150,
       "pokemonId": 876,
       "isCustom": false,
       "isRegional": false,
@@ -30903,7 +31234,29 @@
       ]
     },
     {
-      "dexNumber": 126,
+      "dexNumber": 151,
+      "pokemonId": 881,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "electric",
+        "ice"
+      ]
+    },
+    {
+      "dexNumber": 152,
+      "pokemonId": 882,
+      "isCustom": false,
+      "isRegional": false,
+      "baseFormId": null,
+      "types": [
+        "water",
+        "dragon"
+      ]
+    },
+    {
+      "dexNumber": 153,
       "pokemonId": 887,
       "isCustom": false,
       "isRegional": false,

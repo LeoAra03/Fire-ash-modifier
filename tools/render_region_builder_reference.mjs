@@ -12,6 +12,8 @@ const input = path.resolve(inputAt >= 0 ? process.argv[inputAt + 1] : path.join(
 const output = path.resolve(outputAt >= 0 ? process.argv[outputAt + 1] : path.join(ROOT, "docs", "referencia_region_atlas_mil.png"));
 const region = JSON.parse(fs.readFileSync(input, "utf8"));
 const map = region.mapData;
+const approvedCount = map.landmarks.filter((landmark) => landmark.pokemon.length > 0).length;
+const plannedCount = map.landmarks.length - approvedCount;
 const cell = 12;
 const mapX = 34;
 const mapY = 108;
@@ -75,9 +77,9 @@ for (const [index, landmark] of map.landmarks.entries()) {
 const legendY = mapY + 642;
 draw.push(`fill '#f1ead7' font-weight 700 font-size 14 text ${panelX + 18},${legendY} 'Estado de contenido'`);
 draw.push(`fill '#69b578' roundrectangle ${panelX + 18},${legendY + 15} ${panelX + 32},${legendY + 29} 3,3`);
-draw.push(`fill '#c8d2da' font-weight 400 font-size 11 text ${panelX + 40},${legendY + 27} '30 episodios aprobados'`);
+draw.push(`fill '#c8d2da' font-weight 400 font-size 11 text ${panelX + 40},${legendY + 27} '${approvedCount} episodios aprobados'`);
 draw.push(`fill '#65707d' roundrectangle ${panelX + 18},${legendY + 39} ${panelX + 32},${legendY + 53} 3,3`);
-draw.push(`fill '#c8d2da' font-size 11 text ${panelX + 40},${legendY + 51} '10 anclas planificadas'`);
+draw.push(`fill '#c8d2da' font-size 11 text ${panelX + 40},${legendY + 51} '${plannedCount} anclas planificadas'`);
 draw.push("fill '#e2ba6d' font-size 13 text 34,862 'Uso: crítica de geografía, rutas, landmarks, encuentros y Pokédex. La salida final sigue el pipeline Essentials/RMXP con backup.'");
 fs.mkdirSync(path.dirname(output), { recursive: true });
 const result = spawnSync("/usr/bin/convert", ["-size", `${canvasWidth}x${canvasHeight}`, "xc:#10161e", "-draw", draw.join("\n"), output], { encoding: "utf8" });

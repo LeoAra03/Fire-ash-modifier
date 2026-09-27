@@ -3,7 +3,7 @@
   "purpose": "Comparación de fidelidad visual/técnica contra mapas reales de Fire Ash.",
   "scope": {
     "anchors": 40,
-    "approvedEpisodes": 30,
+    "approvedEpisodes": 40,
     "engine": "RPG Maker XP / Pokémon Essentials",
     "finalGamePreviewStillRequired": true
   },
@@ -47,7 +47,17 @@
       "1671: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
       "1696: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
       "1721: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1746: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal."
+      "1746: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1771: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1796: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1821: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1846: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1871: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1896: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1921: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1946: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1971: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
+      "1996: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal."
     ]
   },
   "anchors": [
@@ -2396,7 +2406,7 @@
       "sourceMapId": 756,
       "sector": 31,
       "sectorName": "Reserva de Engranajes",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 20,
         "height": 15,
@@ -2421,7 +2431,7 @@
           }
         ],
         "passabilityRatio": 0.27,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 20,
@@ -2453,7 +2463,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -6
+        "eventDelta": -1
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -2462,7 +2472,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -2474,7 +2484,7 @@
       "sourceMapId": 781,
       "sector": 32,
       "sectorName": "Círculo de Ceniza",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 40,
         "height": 35,
@@ -2499,7 +2509,7 @@
           }
         ],
         "passabilityRatio": 0.2036,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 40,
@@ -2531,7 +2541,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -6
+        "eventDelta": -1
       },
       "assets": {
         "tileset": "Outside",
@@ -2540,7 +2550,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -2552,7 +2562,7 @@
       "sourceMapId": 806,
       "sector": 33,
       "sectorName": "Labertino Boreal",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 20,
         "height": 15,
@@ -2577,7 +2587,7 @@
           }
         ],
         "passabilityRatio": 0.27,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 20,
@@ -2609,7 +2619,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -8
+        "eventDelta": -3
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -2618,7 +2628,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -2630,7 +2640,7 @@
       "sourceMapId": 831,
       "sector": 34,
       "sectorName": "República de Musgo",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 50,
         "height": 40,
@@ -2655,7 +2665,7 @@
           }
         ],
         "passabilityRatio": 0.851,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 50,
@@ -2687,7 +2697,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -3
+        "eventDelta": 2
       },
       "assets": {
         "tileset": "Outside",
@@ -2696,7 +2706,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -2708,7 +2718,7 @@
       "sourceMapId": 856,
       "sector": 35,
       "sectorName": "Cinturón Aurora",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 60,
         "height": 64,
@@ -2733,7 +2743,7 @@
           }
         ],
         "passabilityRatio": 0.2669,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 60,
@@ -2765,7 +2775,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -23
+        "eventDelta": -18
       },
       "assets": {
         "tileset": "Outside",
@@ -2774,7 +2784,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -2786,7 +2796,7 @@
       "sourceMapId": 881,
       "sector": 36,
       "sectorName": "Trinchera de Luz",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 60,
         "height": 70,
@@ -2811,7 +2821,7 @@
           }
         ],
         "passabilityRatio": 0.2333,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 60,
@@ -2843,7 +2853,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -102
+        "eventDelta": -97
       },
       "assets": {
         "tileset": "Interior general",
@@ -2852,7 +2862,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -2864,7 +2874,7 @@
       "sourceMapId": 906,
       "sector": 37,
       "sectorName": "Provincia del Eco",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 48,
         "height": 44,
@@ -2889,7 +2899,7 @@
           }
         ],
         "passabilityRatio": 0.3239,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 48,
@@ -2921,7 +2931,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -13
+        "eventDelta": -8
       },
       "assets": {
         "tileset": "Outside",
@@ -2930,7 +2940,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -2942,7 +2952,7 @@
       "sourceMapId": 931,
       "sector": 38,
       "sectorName": "Horizonte Fractal",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 20,
         "height": 15,
@@ -2967,7 +2977,7 @@
           }
         ],
         "passabilityRatio": 0.0433,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 20,
@@ -2999,7 +3009,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": 2
+        "eventDelta": 7
       },
       "assets": {
         "tileset": "Interior general",
@@ -3008,7 +3018,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -3020,7 +3030,7 @@
       "sourceMapId": 957,
       "sector": 39,
       "sectorName": "Corona de Bruma",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 65,
         "height": 40,
@@ -3045,7 +3055,7 @@
           }
         ],
         "passabilityRatio": 0.1719,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 65,
@@ -3077,7 +3087,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -57
+        "eventDelta": -52
       },
       "assets": {
         "tileset": "Outside",
@@ -3086,7 +3096,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },
@@ -3098,7 +3108,7 @@
       "sourceMapId": 982,
       "sector": 40,
       "sectorName": "Umbral Mil",
-      "approvedEpisode": false,
+      "approvedEpisode": true,
       "current": {
         "width": 60,
         "height": 30,
@@ -3123,7 +3133,7 @@
           }
         ],
         "passabilityRatio": 0.1239,
-        "eventCount": 4
+        "eventCount": 9
       },
       "source": {
         "width": 60,
@@ -3155,7 +3165,7 @@
         "tileSimilarity": 1,
         "exactInheritedGeometry": true,
         "passabilityDelta": 0,
-        "eventDelta": -12
+        "eventDelta": -7
       },
       "assets": {
         "tileset": "Interior general",
@@ -3164,7 +3174,7 @@
         "missingSprites": []
       },
       "events": {
-        "pokeModEvents": 0,
+        "pokeModEvents": 5,
         "hasFreeReturn": true,
         "outOfBounds": []
       },

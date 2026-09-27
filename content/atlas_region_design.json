@@ -4,7 +4,7 @@
     "format": "pkregion",
     "formatVersion": 1,
     "authoringTool": "Pokémon Region Builder",
-    "sha256": "dec9e26eed03d7554275a4f1ae9d529e74be0dee3caa05bc0084af905544a8a5",
+    "sha256": "1c730e46c3755f99474932f18cd732c2697f408b4941c54080cb5bdabd26770a",
     "policy": "Entrada de diseño neutral; no es un mapa RMXP jugable."
   },
   "region": {
@@ -2083,7 +2083,7 @@
         1795
       ],
       "name": "Reserva de Engranajes",
-      "description": "Sector 31 · Relojeros de Reserva. Ancla 31 pendiente de diseño artesanal. una melodía solo existe cuando el jugador decide escucharla",
+      "description": "Sector 31 · Relojeros de Reserva. Episodio aprobado: La Frecuencia que Pide Permiso. una melodía solo existe cuando el jugador decide escucharla",
       "type": "special",
       "position": {
         "x": 13,
@@ -2091,9 +2091,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "358",
+          "essentialsSpecies": "CHIMECHO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "402",
+          "essentialsSpecies": "KRICKETUNE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "715",
+          "essentialsSpecies": "NOIVERN",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "295",
+          "essentialsSpecies": "EXPLOUD",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "429",
+          "essentialsSpecies": "MISMAGIUS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "648",
+          "essentialsSpecies": "MELOETTA",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "La Frecuencia que Pide Permiso",
+        "switchId": 738
       }
     },
     {
@@ -2112,7 +2151,7 @@
         1820
       ],
       "name": "Círculo de Ceniza",
-      "description": "Sector 32 · Bomberos de Ceniza. Ancla 32 pendiente de diseño artesanal. un héroe olvidado pide que no reconstruyan su leyenda",
+      "description": "Sector 32 · Bomberos de Ceniza. Episodio aprobado: El Héroe que Pidió un Nombre Pequeño. un héroe olvidado pide que no reconstruyan su leyenda",
       "type": "town",
       "position": {
         "x": 3,
@@ -2120,9 +2159,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "201",
+          "essentialsSpecies": "UNOWN",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "215",
+          "essentialsSpecies": "SNEASEL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "181",
+          "essentialsSpecies": "AMPHAROS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "105",
+          "essentialsSpecies": "MAROWAK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "157",
+          "essentialsSpecies": "TYPHLOSION",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "250",
+          "essentialsSpecies": "HOOH",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "El Héroe que Pidió un Nombre Pequeño",
+        "switchId": 739
       }
     },
     {
@@ -2141,7 +2219,7 @@
         1845
       ],
       "name": "Labertino Boreal",
-      "description": "Sector 33 · Guías Boreales. Ancla 33 pendiente de diseño artesanal. un fantasma concede victorias que nadie quiere aceptar",
+      "description": "Sector 33 · Guías Boreales. Episodio aprobado: La Victoria que Nadie Ganó. un fantasma concede victorias que nadie quiere aceptar",
       "type": "cave",
       "position": {
         "x": 3,
@@ -2149,9 +2227,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "354",
+          "essentialsSpecies": "BANETTE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "94",
+          "essentialsSpecies": "GENGAR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "778",
+          "essentialsSpecies": "MIMIKYU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "571",
+          "essentialsSpecies": "ZOROARK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "442",
+          "essentialsSpecies": "SPIRITOMB",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "802",
+          "essentialsSpecies": "MARSHADOW",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "La Victoria que Nadie Ganó",
+        "switchId": 740
       }
     },
     {
@@ -2170,7 +2287,7 @@
         1870
       ],
       "name": "República de Musgo",
-      "description": "Sector 34 · Consejo de Musgo. Ancla 34 pendiente de diseño artesanal. una excavación construyó deliberadamente su propio monstruo",
+      "description": "Sector 34 · Consejo de Musgo. Episodio aprobado: La Excavación que Fabricó su Pasado. una excavación construyó deliberadamente su propio monstruo",
       "type": "special",
       "position": {
         "x": 13,
@@ -2178,9 +2295,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "562",
+          "essentialsSpecies": "YAMASK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "344",
+          "essentialsSpecies": "CLAYDOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "881",
+          "essentialsSpecies": "ARCTOZOLT",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "882",
+          "essentialsSpecies": "DRACOVISH",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "623",
+          "essentialsSpecies": "GOLURK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "486",
+          "essentialsSpecies": "REGIGIGAS",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "La Excavación que Fabricó su Pasado",
+        "switchId": 741
       }
     },
     {
@@ -2199,7 +2355,7 @@
         1895
       ],
       "name": "Cinturón Aurora",
-      "description": "Sector 35 · Pintores Aurora. Ancla 35 pendiente de diseño artesanal. un equipo aislado sigue enviando reportes desde la nieve",
+      "description": "Sector 35 · Pintores Aurora. Episodio aprobado: El Refugio que Contestaba Solo. un equipo aislado sigue enviando reportes desde la nieve",
       "type": "special",
       "position": {
         "x": 23,
@@ -2207,9 +2363,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "225",
+          "essentialsSpecies": "DELIBIRD",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "460",
+          "essentialsSpecies": "ABOMASNOW",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "473",
+          "essentialsSpecies": "MAMOSWINE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "478",
+          "essentialsSpecies": "FROSLASS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "713",
+          "essentialsSpecies": "AVALUGG",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "144",
+          "essentialsSpecies": "ARTICUNO",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "El Refugio que Contestaba Solo",
+        "switchId": 742
       }
     },
     {
@@ -2228,7 +2423,7 @@
         1920
       ],
       "name": "Trinchera de Luz",
-      "description": "Sector 36 · Fareros de Luz. Ancla 36 pendiente de diseño artesanal. los datos corruptos intentan clasificar al jugador",
+      "description": "Sector 36 · Fareros de Luz. Episodio aprobado: El Registro que No Pudo Clasificarte. los datos corruptos intentan clasificar al jugador",
       "type": "town",
       "position": {
         "x": 33,
@@ -2236,9 +2431,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "137",
+          "essentialsSpecies": "PORYGON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "132",
+          "essentialsSpecies": "DITTO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "479",
+          "essentialsSpecies": "ROTOM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "352",
+          "essentialsSpecies": "KECLEON",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "772",
+          "essentialsSpecies": "TYPENULL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "474",
+          "essentialsSpecies": "PORYGONZ",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "El Registro que No Pudo Clasificarte",
+        "switchId": 743
       }
     },
     {
@@ -2257,7 +2491,7 @@
         1945
       ],
       "name": "Provincia del Eco",
-      "description": "Sector 37 · Oyentes del Eco. Ancla 37 pendiente de diseño artesanal. un acertijo imposible fue manipulado para parecer profundo",
+      "description": "Sector 37 · Oyentes del Eco. Episodio aprobado: El Acertijo que Cambiaba la Pregunta. un acertijo imposible fue manipulado para parecer profundo",
       "type": "special",
       "position": {
         "x": 43,
@@ -2265,9 +2499,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "561",
+          "essentialsSpecies": "SIGILYPH",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "178",
+          "essentialsSpecies": "XATU",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "707",
+          "essentialsSpecies": "KLEFKI",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "687",
+          "essentialsSpecies": "MALAMAR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "606",
+          "essentialsSpecies": "BEHEEYEM",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "480",
+          "essentialsSpecies": "UXIE",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "El Acertijo que Cambiaba la Pregunta",
+        "switchId": 744
       }
     },
     {
@@ -2286,7 +2559,7 @@
         1970
       ],
       "name": "Horizonte Fractal",
-      "description": "Sector 38 · Geómetras Fractales. Ancla 38 pendiente de diseño artesanal. la venganza era un recuerdo implantado",
+      "description": "Sector 38 · Geómetras Fractales. Episodio aprobado: El Enemigo que Alguien Recordó por Ti. la venganza era un recuerdo implantado",
       "type": "special",
       "position": {
         "x": 53,
@@ -2294,9 +2567,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "97",
+          "essentialsSpecies": "HYPNO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "518",
+          "essentialsSpecies": "MUSHARNA",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "571",
+          "essentialsSpecies": "ZOROARK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "359",
+          "essentialsSpecies": "ABSOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "448",
+          "essentialsSpecies": "LUCARIO",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "488",
+          "essentialsSpecies": "CRESSELIA",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "El Enemigo que Alguien Recordó por Ti",
+        "switchId": 745
       }
     },
     {
@@ -2315,7 +2627,7 @@
         1995
       ],
       "name": "Corona de Bruma",
-      "description": "Sector 39 · Pastores de Bruma. Ancla 39 pendiente de diseño artesanal. el último guardado no es una partida sino una persona",
+      "description": "Sector 39 · Pastores de Bruma. Episodio aprobado: La Copia que Aprendió a Despertar. el último guardado no es una partida sino una persona",
       "type": "cave",
       "position": {
         "x": 63,
@@ -2323,9 +2635,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "343",
+          "essentialsSpecies": "BALTOY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "344",
+          "essentialsSpecies": "CLAYDOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "437",
+          "essentialsSpecies": "BRONZONG",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "376",
+          "essentialsSpecies": "METAGROSS",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "773",
+          "essentialsSpecies": "SILVALLY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "151",
+          "essentialsSpecies": "MEW",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "La Copia que Aprendió a Despertar",
+        "switchId": 746
       }
     },
     {
@@ -2344,7 +2695,7 @@
         2020
       ],
       "name": "Umbral Mil",
-      "description": "Sector 40 · Archiveros del Mil. Ancla 40 pendiente de diseño artesanal. cuarenta historias compiten por decidir qué final merece Atlas",
+      "description": "Sector 40 · Archiveros del Mil. Episodio aprobado: El Final que Dejó Cuarenta Puertas Abiertas. cuarenta historias compiten por decidir qué final merece Atlas",
       "type": "city",
       "position": {
         "x": 73,
@@ -2352,9 +2703,48 @@
         "width": 2,
         "height": 2
       },
-      "encounters": [],
+      "encounters": [
+        {
+          "regionBuilderId": "235",
+          "essentialsSpecies": "SMEARGLE",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "282",
+          "essentialsSpecies": "GARDEVOIR",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "571",
+          "essentialsSpecies": "ZOROARK",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "359",
+          "essentialsSpecies": "ABSOL",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "773",
+          "essentialsSpecies": "SILVALLY",
+          "compatible": true,
+          "reason": null
+        },
+        {
+          "regionBuilderId": "493",
+          "essentialsSpecies": "ARCEUS",
+          "compatible": true,
+          "reason": null
+        }
+      ],
       "episode": {
-        "status": "pending"
+        "status": "approved",
+        "title": "El Final que Dejó Cuarenta Puertas Abiertas",
+        "switchId": 747
       }
     }
   ],
@@ -2462,6 +2852,16 @@
     },
     {
       "dexNumber": 12,
+      "regionBuilderId": "94",
+      "essentialsSpecies": "GENGAR",
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 13,
       "regionBuilderId": "97",
       "essentialsSpecies": "HYPNO",
       "types": [
@@ -2470,7 +2870,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 13,
+      "dexNumber": 14,
       "regionBuilderId": "103",
       "essentialsSpecies": "EXEGGUTOR",
       "types": [
@@ -2480,7 +2880,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 14,
+      "dexNumber": 15,
+      "regionBuilderId": "105",
+      "essentialsSpecies": "MAROWAK",
+      "types": [
+        "ground"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 16,
       "regionBuilderId": "110",
       "essentialsSpecies": "WEEZING",
       "types": [
@@ -2489,7 +2898,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 15,
+      "dexNumber": 17,
       "regionBuilderId": "122",
       "essentialsSpecies": "MRMIME",
       "types": [
@@ -2499,7 +2908,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 16,
+      "dexNumber": 18,
       "regionBuilderId": "131",
       "essentialsSpecies": "LAPRAS",
       "types": [
@@ -2509,7 +2918,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 17,
+      "dexNumber": 19,
       "regionBuilderId": "132",
       "essentialsSpecies": "DITTO",
       "types": [
@@ -2518,7 +2927,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 18,
+      "dexNumber": 20,
       "regionBuilderId": "133",
       "essentialsSpecies": "EEVEE",
       "types": [
@@ -2527,7 +2936,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 19,
+      "dexNumber": 21,
+      "regionBuilderId": "137",
+      "essentialsSpecies": "PORYGON",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 22,
       "regionBuilderId": "139",
       "essentialsSpecies": "OMASTAR",
       "types": [
@@ -2537,7 +2955,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 20,
+      "dexNumber": 23,
       "regionBuilderId": "143",
       "essentialsSpecies": "SNORLAX",
       "types": [
@@ -2546,7 +2964,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 21,
+      "dexNumber": 24,
+      "regionBuilderId": "144",
+      "essentialsSpecies": "ARTICUNO",
+      "types": [
+        "ice",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 25,
       "regionBuilderId": "149",
       "essentialsSpecies": "DRAGONITE",
       "types": [
@@ -2556,7 +2984,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 22,
+      "dexNumber": 26,
       "regionBuilderId": "150",
       "essentialsSpecies": "MEWTWO",
       "types": [
@@ -2565,7 +2993,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 23,
+      "dexNumber": 27,
       "regionBuilderId": "151",
       "essentialsSpecies": "MEW",
       "types": [
@@ -2574,7 +3002,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 24,
+      "dexNumber": 28,
+      "regionBuilderId": "157",
+      "essentialsSpecies": "TYPHLOSION",
+      "types": [
+        "fire"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 29,
       "regionBuilderId": "164",
       "essentialsSpecies": "NOCTOWL",
       "types": [
@@ -2584,7 +3021,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 25,
+      "dexNumber": 30,
       "regionBuilderId": "168",
       "essentialsSpecies": "ARIADOS",
       "types": [
@@ -2594,7 +3031,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 26,
+      "dexNumber": 31,
       "regionBuilderId": "169",
       "essentialsSpecies": "CROBAT",
       "types": [
@@ -2604,7 +3041,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 27,
+      "dexNumber": 32,
       "regionBuilderId": "172",
       "essentialsSpecies": "PICHU",
       "types": [
@@ -2613,7 +3050,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 28,
+      "dexNumber": 33,
       "regionBuilderId": "176",
       "essentialsSpecies": "TOGETIC",
       "types": [
@@ -2623,7 +3060,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 29,
+      "dexNumber": 34,
       "regionBuilderId": "178",
       "essentialsSpecies": "XATU",
       "types": [
@@ -2633,7 +3070,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 30,
+      "dexNumber": 35,
       "regionBuilderId": "181",
       "essentialsSpecies": "AMPHAROS",
       "types": [
@@ -2642,7 +3079,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 31,
+      "dexNumber": 36,
       "regionBuilderId": "196",
       "essentialsSpecies": "ESPEON",
       "types": [
@@ -2651,7 +3088,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 32,
+      "dexNumber": 37,
       "regionBuilderId": "197",
       "essentialsSpecies": "UMBREON",
       "types": [
@@ -2660,7 +3097,26 @@
       "compatible": true
     },
     {
-      "dexNumber": 33,
+      "dexNumber": 38,
+      "regionBuilderId": "201",
+      "essentialsSpecies": "UNOWN",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 39,
+      "regionBuilderId": "215",
+      "essentialsSpecies": "SNEASEL",
+      "types": [
+        "dark",
+        "ice"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 40,
       "regionBuilderId": "217",
       "essentialsSpecies": "URSARING",
       "types": [
@@ -2669,7 +3125,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 34,
+      "dexNumber": 41,
       "regionBuilderId": "222",
       "essentialsSpecies": "CORSOLA",
       "types": [
@@ -2679,7 +3135,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 35,
+      "dexNumber": 42,
       "regionBuilderId": "225",
       "essentialsSpecies": "DELIBIRD",
       "types": [
@@ -2689,7 +3145,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 36,
+      "dexNumber": 43,
       "regionBuilderId": "227",
       "essentialsSpecies": "SKARMORY",
       "types": [
@@ -2699,7 +3155,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 37,
+      "dexNumber": 44,
       "regionBuilderId": "229",
       "essentialsSpecies": "HOUNDOOM",
       "types": [
@@ -2709,7 +3165,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 38,
+      "dexNumber": 45,
       "regionBuilderId": "233",
       "essentialsSpecies": "PORYGON2",
       "types": [
@@ -2718,7 +3174,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 39,
+      "dexNumber": 46,
       "regionBuilderId": "235",
       "essentialsSpecies": "SMEARGLE",
       "types": [
@@ -2727,7 +3183,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 40,
+      "dexNumber": 47,
       "regionBuilderId": "239",
       "essentialsSpecies": "ELEKID",
       "types": [
@@ -2736,7 +3192,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 41,
+      "dexNumber": 48,
       "regionBuilderId": "240",
       "essentialsSpecies": "MAGBY",
       "types": [
@@ -2745,7 +3201,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 42,
+      "dexNumber": 49,
       "regionBuilderId": "242",
       "essentialsSpecies": "BLISSEY",
       "types": [
@@ -2754,7 +3210,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 43,
+      "dexNumber": 50,
       "regionBuilderId": "245",
       "essentialsSpecies": "SUICUNE",
       "types": [
@@ -2763,7 +3219,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 44,
+      "dexNumber": 51,
       "regionBuilderId": "248",
       "essentialsSpecies": "TYRANITAR",
       "types": [
@@ -2773,7 +3229,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 45,
+      "dexNumber": 52,
+      "regionBuilderId": "250",
+      "essentialsSpecies": "HOOH",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 53,
       "regionBuilderId": "251",
       "essentialsSpecies": "CELEBI",
       "types": [
@@ -2783,7 +3249,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 46,
+      "dexNumber": 54,
       "regionBuilderId": "272",
       "essentialsSpecies": "LUDICOLO",
       "types": [
@@ -2793,7 +3259,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 47,
+      "dexNumber": 55,
       "regionBuilderId": "279",
       "essentialsSpecies": "PELIPPER",
       "types": [
@@ -2803,7 +3269,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 48,
+      "dexNumber": 56,
       "regionBuilderId": "282",
       "essentialsSpecies": "GARDEVOIR",
       "types": [
@@ -2813,7 +3279,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 49,
+      "dexNumber": 57,
+      "regionBuilderId": "295",
+      "essentialsSpecies": "EXPLOUD",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 58,
       "regionBuilderId": "302",
       "essentialsSpecies": "SABLEYE",
       "types": [
@@ -2823,7 +3298,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 50,
+      "dexNumber": 59,
       "regionBuilderId": "311",
       "essentialsSpecies": "PLUSLE",
       "types": [
@@ -2832,7 +3307,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 51,
+      "dexNumber": 60,
       "regionBuilderId": "312",
       "essentialsSpecies": "MINUN",
       "types": [
@@ -2841,7 +3316,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 52,
+      "dexNumber": 61,
       "regionBuilderId": "330",
       "essentialsSpecies": "FLYGON",
       "types": [
@@ -2851,7 +3326,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 53,
+      "dexNumber": 62,
+      "regionBuilderId": "343",
+      "essentialsSpecies": "BALTOY",
+      "types": [
+        "ground",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 63,
       "regionBuilderId": "344",
       "essentialsSpecies": "CLAYDOL",
       "types": [
@@ -2861,7 +3346,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 54,
+      "dexNumber": 64,
       "regionBuilderId": "346",
       "essentialsSpecies": "CRADILY",
       "types": [
@@ -2871,7 +3356,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 55,
+      "dexNumber": 65,
       "regionBuilderId": "350",
       "essentialsSpecies": "MILOTIC",
       "types": [
@@ -2880,7 +3365,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 56,
+      "dexNumber": 66,
       "regionBuilderId": "351",
       "essentialsSpecies": "CASTFORM",
       "types": [
@@ -2889,7 +3374,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 57,
+      "dexNumber": 67,
       "regionBuilderId": "352",
       "essentialsSpecies": "KECLEON",
       "types": [
@@ -2898,7 +3383,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 58,
+      "dexNumber": 68,
       "regionBuilderId": "354",
       "essentialsSpecies": "BANETTE",
       "types": [
@@ -2907,7 +3392,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 59,
+      "dexNumber": 69,
       "regionBuilderId": "357",
       "essentialsSpecies": "TROPIUS",
       "types": [
@@ -2917,7 +3402,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 60,
+      "dexNumber": 70,
       "regionBuilderId": "358",
       "essentialsSpecies": "CHIMECHO",
       "types": [
@@ -2926,7 +3411,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 61,
+      "dexNumber": 71,
       "regionBuilderId": "359",
       "essentialsSpecies": "ABSOL",
       "types": [
@@ -2935,7 +3420,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 62,
+      "dexNumber": 72,
       "regionBuilderId": "376",
       "essentialsSpecies": "METAGROSS",
       "types": [
@@ -2945,7 +3430,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 63,
+      "dexNumber": 73,
+      "regionBuilderId": "402",
+      "essentialsSpecies": "KRICKETUNE",
+      "types": [
+        "bug"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 74,
       "regionBuilderId": "419",
       "essentialsSpecies": "FLOATZEL",
       "types": [
@@ -2954,7 +3448,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 64,
+      "dexNumber": 75,
       "regionBuilderId": "423",
       "essentialsSpecies": "GASTRODON",
       "types": [
@@ -2964,7 +3458,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 65,
+      "dexNumber": 76,
       "regionBuilderId": "424",
       "essentialsSpecies": "AMBIPOM",
       "types": [
@@ -2973,7 +3467,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 66,
+      "dexNumber": 77,
       "regionBuilderId": "429",
       "essentialsSpecies": "MISMAGIUS",
       "types": [
@@ -2982,7 +3476,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 67,
+      "dexNumber": 78,
       "regionBuilderId": "437",
       "essentialsSpecies": "BRONZONG",
       "types": [
@@ -2992,7 +3486,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 68,
+      "dexNumber": 79,
       "regionBuilderId": "442",
       "essentialsSpecies": "SPIRITOMB",
       "types": [
@@ -3002,7 +3496,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 69,
+      "dexNumber": 80,
       "regionBuilderId": "445",
       "essentialsSpecies": "GARCHOMP",
       "types": [
@@ -3012,7 +3506,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 70,
+      "dexNumber": 81,
       "regionBuilderId": "447",
       "essentialsSpecies": "RIOLU",
       "types": [
@@ -3021,7 +3515,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 71,
+      "dexNumber": 82,
       "regionBuilderId": "448",
       "essentialsSpecies": "LUCARIO",
       "types": [
@@ -3031,7 +3525,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 72,
+      "dexNumber": 83,
+      "regionBuilderId": "460",
+      "essentialsSpecies": "ABOMASNOW",
+      "types": [
+        "grass",
+        "ice"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 84,
       "regionBuilderId": "461",
       "essentialsSpecies": "WEAVILE",
       "types": [
@@ -3041,7 +3545,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 73,
+      "dexNumber": 85,
       "regionBuilderId": "462",
       "essentialsSpecies": "MAGNEZONE",
       "types": [
@@ -3051,7 +3555,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 74,
+      "dexNumber": 86,
       "regionBuilderId": "468",
       "essentialsSpecies": "TOGEKISS",
       "types": [
@@ -3061,7 +3565,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 75,
+      "dexNumber": 87,
+      "regionBuilderId": "473",
+      "essentialsSpecies": "MAMOSWINE",
+      "types": [
+        "ice",
+        "ground"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 88,
       "regionBuilderId": "474",
       "essentialsSpecies": "PORYGONZ",
       "types": [
@@ -3070,7 +3584,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 76,
+      "dexNumber": 89,
       "regionBuilderId": "475",
       "essentialsSpecies": "GALLADE",
       "types": [
@@ -3080,7 +3594,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 77,
+      "dexNumber": 90,
       "regionBuilderId": "477",
       "essentialsSpecies": "DUSKNOIR",
       "types": [
@@ -3089,7 +3603,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 78,
+      "dexNumber": 91,
       "regionBuilderId": "478",
       "essentialsSpecies": "FROSLASS",
       "types": [
@@ -3099,7 +3613,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 79,
+      "dexNumber": 92,
       "regionBuilderId": "479",
       "essentialsSpecies": "ROTOM",
       "types": [
@@ -3109,7 +3623,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 80,
+      "dexNumber": 93,
+      "regionBuilderId": "480",
+      "essentialsSpecies": "UXIE",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 94,
       "regionBuilderId": "483",
       "essentialsSpecies": "DIALGA",
       "types": [
@@ -3119,7 +3642,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 81,
+      "dexNumber": 95,
+      "regionBuilderId": "486",
+      "essentialsSpecies": "REGIGIGAS",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 96,
       "regionBuilderId": "488",
       "essentialsSpecies": "CRESSELIA",
       "types": [
@@ -3128,7 +3660,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 82,
+      "dexNumber": 97,
       "regionBuilderId": "491",
       "essentialsSpecies": "DARKRAI",
       "types": [
@@ -3137,7 +3669,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 83,
+      "dexNumber": 98,
+      "regionBuilderId": "493",
+      "essentialsSpecies": "ARCEUS",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 99,
       "regionBuilderId": "497",
       "essentialsSpecies": "SERPERIOR",
       "types": [
@@ -3146,7 +3687,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 84,
+      "dexNumber": 100,
       "regionBuilderId": "500",
       "essentialsSpecies": "EMBOAR",
       "types": [
@@ -3156,7 +3697,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 85,
+      "dexNumber": 101,
       "regionBuilderId": "503",
       "essentialsSpecies": "SAMUROTT",
       "types": [
@@ -3165,7 +3706,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 86,
+      "dexNumber": 102,
       "regionBuilderId": "508",
       "essentialsSpecies": "STOUTLAND",
       "types": [
@@ -3174,7 +3715,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 87,
+      "dexNumber": 103,
       "regionBuilderId": "518",
       "essentialsSpecies": "MUSHARNA",
       "types": [
@@ -3183,7 +3724,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 88,
+      "dexNumber": 104,
       "regionBuilderId": "526",
       "essentialsSpecies": "GIGALITH",
       "types": [
@@ -3192,7 +3733,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 89,
+      "dexNumber": 105,
       "regionBuilderId": "530",
       "essentialsSpecies": "EXCADRILL",
       "types": [
@@ -3202,7 +3743,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 90,
+      "dexNumber": 106,
       "regionBuilderId": "531",
       "essentialsSpecies": "AUDINO",
       "types": [
@@ -3211,7 +3752,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 91,
+      "dexNumber": 107,
       "regionBuilderId": "534",
       "essentialsSpecies": "CONKELDURR",
       "types": [
@@ -3220,7 +3761,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 92,
+      "dexNumber": 108,
       "regionBuilderId": "558",
       "essentialsSpecies": "CRUSTLE",
       "types": [
@@ -3230,7 +3771,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 93,
+      "dexNumber": 109,
       "regionBuilderId": "561",
       "essentialsSpecies": "SIGILYPH",
       "types": [
@@ -3240,7 +3781,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 94,
+      "dexNumber": 110,
+      "regionBuilderId": "562",
+      "essentialsSpecies": "YAMASK",
+      "types": [
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 111,
       "regionBuilderId": "569",
       "essentialsSpecies": "GARBODOR",
       "types": [
@@ -3249,7 +3799,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 95,
+      "dexNumber": 112,
       "regionBuilderId": "571",
       "essentialsSpecies": "ZOROARK",
       "types": [
@@ -3258,7 +3808,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 96,
+      "dexNumber": 113,
       "regionBuilderId": "576",
       "essentialsSpecies": "GOTHITELLE",
       "types": [
@@ -3267,7 +3817,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 97,
+      "dexNumber": 114,
       "regionBuilderId": "586",
       "essentialsSpecies": "SAWSBUCK",
       "types": [
@@ -3277,7 +3827,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 98,
+      "dexNumber": 115,
       "regionBuilderId": "601",
       "essentialsSpecies": "KLINKLANG",
       "types": [
@@ -3286,7 +3836,16 @@
       "compatible": true
     },
     {
-      "dexNumber": 99,
+      "dexNumber": 116,
+      "regionBuilderId": "606",
+      "essentialsSpecies": "BEHEEYEM",
+      "types": [
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 117,
       "regionBuilderId": "609",
       "essentialsSpecies": "CHANDELURE",
       "types": [
@@ -3296,7 +3855,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 100,
+      "dexNumber": 118,
       "regionBuilderId": "623",
       "essentialsSpecies": "GOLURK",
       "types": [
@@ -3306,7 +3865,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 101,
+      "dexNumber": 119,
       "regionBuilderId": "625",
       "essentialsSpecies": "BISHARP",
       "types": [
@@ -3316,7 +3875,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 102,
+      "dexNumber": 120,
       "regionBuilderId": "628",
       "essentialsSpecies": "BRAVIARY",
       "types": [
@@ -3326,7 +3885,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 103,
+      "dexNumber": 121,
       "regionBuilderId": "637",
       "essentialsSpecies": "VOLCARONA",
       "types": [
@@ -3336,7 +3895,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 104,
+      "dexNumber": 122,
+      "regionBuilderId": "648",
+      "essentialsSpecies": "MELOETTA",
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 123,
       "regionBuilderId": "663",
       "essentialsSpecies": "TALONFLAME",
       "types": [
@@ -3346,7 +3915,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 105,
+      "dexNumber": 124,
       "regionBuilderId": "681",
       "essentialsSpecies": "AEGISLASH",
       "types": [
@@ -3356,7 +3925,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 106,
+      "dexNumber": 125,
       "regionBuilderId": "685",
       "essentialsSpecies": "SLURPUFF",
       "types": [
@@ -3365,7 +3934,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 107,
+      "dexNumber": 126,
       "regionBuilderId": "687",
       "essentialsSpecies": "MALAMAR",
       "types": [
@@ -3375,7 +3944,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 108,
+      "dexNumber": 127,
       "regionBuilderId": "700",
       "essentialsSpecies": "SYLVEON",
       "types": [
@@ -3384,7 +3953,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 109,
+      "dexNumber": 128,
       "regionBuilderId": "703",
       "essentialsSpecies": "CARBINK",
       "types": [
@@ -3394,7 +3963,26 @@
       "compatible": true
     },
     {
-      "dexNumber": 110,
+      "dexNumber": 129,
+      "regionBuilderId": "707",
+      "essentialsSpecies": "KLEFKI",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 130,
+      "regionBuilderId": "713",
+      "essentialsSpecies": "AVALUGG",
+      "types": [
+        "ice"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 131,
       "regionBuilderId": "715",
       "essentialsSpecies": "NOIVERN",
       "types": [
@@ -3404,7 +3992,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 111,
+      "dexNumber": 132,
       "regionBuilderId": "718",
       "essentialsSpecies": "ZYGARDE",
       "types": [
@@ -3414,7 +4002,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 112,
+      "dexNumber": 133,
       "regionBuilderId": "719",
       "essentialsSpecies": "DIANCIE",
       "types": [
@@ -3424,7 +4012,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 113,
+      "dexNumber": 134,
       "regionBuilderId": "720",
       "essentialsSpecies": "HOOPA",
       "types": [
@@ -3434,7 +4022,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 114,
+      "dexNumber": 135,
       "regionBuilderId": "760",
       "essentialsSpecies": "BEWEAR",
       "types": [
@@ -3444,7 +4032,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 115,
+      "dexNumber": 136,
       "regionBuilderId": "765",
       "essentialsSpecies": "ORANGURU",
       "types": [
@@ -3454,7 +4042,25 @@
       "compatible": true
     },
     {
-      "dexNumber": 116,
+      "dexNumber": 137,
+      "regionBuilderId": "772",
+      "essentialsSpecies": "TYPENULL",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 138,
+      "regionBuilderId": "773",
+      "essentialsSpecies": "SILVALLY",
+      "types": [
+        "normal"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 139,
       "regionBuilderId": "775",
       "essentialsSpecies": "KOMALA",
       "types": [
@@ -3463,7 +4069,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 117,
+      "dexNumber": 140,
+      "regionBuilderId": "778",
+      "essentialsSpecies": "MIMIKYU",
+      "types": [
+        "ghost",
+        "fairy"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 141,
       "regionBuilderId": "801",
       "essentialsSpecies": "MAGEARNA",
       "types": [
@@ -3473,7 +4089,17 @@
       "compatible": true
     },
     {
-      "dexNumber": 118,
+      "dexNumber": 142,
+      "regionBuilderId": "802",
+      "essentialsSpecies": "MARSHADOW",
+      "types": [
+        "fighting",
+        "ghost"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 143,
       "regionBuilderId": "815",
       "essentialsSpecies": "CINDERACE",
       "types": [
@@ -3482,7 +4108,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 119,
+      "dexNumber": 144,
       "regionBuilderId": "820",
       "essentialsSpecies": "GREEDENT",
       "types": [
@@ -3491,7 +4117,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 120,
+      "dexNumber": 145,
       "regionBuilderId": "842",
       "essentialsSpecies": "APPLETUN",
       "types": [
@@ -3501,7 +4127,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 121,
+      "dexNumber": 146,
       "regionBuilderId": "855",
       "essentialsSpecies": "POLTEAGEIST",
       "types": [
@@ -3510,7 +4136,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 122,
+      "dexNumber": 147,
       "regionBuilderId": "864",
       "essentialsSpecies": "CURSOLA",
       "types": [
@@ -3519,7 +4145,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 123,
+      "dexNumber": 148,
       "regionBuilderId": "867",
       "essentialsSpecies": "RUNERIGUS",
       "types": [
@@ -3529,7 +4155,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 124,
+      "dexNumber": 149,
       "regionBuilderId": "869",
       "essentialsSpecies": "ALCREMIE",
       "types": [
@@ -3538,7 +4164,7 @@
       "compatible": true
     },
     {
-      "dexNumber": 125,
+      "dexNumber": 150,
       "regionBuilderId": "876",
       "essentialsSpecies": "INDEEDEE",
       "types": [
@@ -3548,7 +4174,27 @@
       "compatible": true
     },
     {
-      "dexNumber": 126,
+      "dexNumber": 151,
+      "regionBuilderId": "881",
+      "essentialsSpecies": "ARCTOZOLT",
+      "types": [
+        "electric",
+        "ice"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 152,
+      "regionBuilderId": "882",
+      "essentialsSpecies": "DRACOVISH",
+      "types": [
+        "water",
+        "dragon"
+      ],
+      "compatible": true
+    },
+    {
+      "dexNumber": 153,
       "regionBuilderId": "887",
       "essentialsSpecies": "DRAGAPULT",
       "types": [
@@ -3564,18 +4210,7 @@
     "customAssetsBlocked": 0,
     "unknownPokemon": 0,
     "errors": [],
-    "warnings": [
-      "atlas-sector-31 aún no tiene encuentros aprobados.",
-      "atlas-sector-32 aún no tiene encuentros aprobados.",
-      "atlas-sector-33 aún no tiene encuentros aprobados.",
-      "atlas-sector-34 aún no tiene encuentros aprobados.",
-      "atlas-sector-35 aún no tiene encuentros aprobados.",
-      "atlas-sector-36 aún no tiene encuentros aprobados.",
-      "atlas-sector-37 aún no tiene encuentros aprobados.",
-      "atlas-sector-38 aún no tiene encuentros aprobados.",
-      "atlas-sector-39 aún no tiene encuentros aprobados.",
-      "atlas-sector-40 aún no tiene encuentros aprobados."
-    ],
+    "warnings": [],
     "readyForNarrativePipeline": true,
     "readyForRmxpCompilation": false,
     "requiredNextGate": "Blueprint aprobado + style gate + compilador RMXP con backup."

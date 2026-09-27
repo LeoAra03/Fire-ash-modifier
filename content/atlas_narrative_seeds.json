@@ -2650,14 +2650,21 @@
       "biome": "special en (13,37) del plano Region Builder; reinterpretación segura de Opelucid Pokémon Center con tileset Poke Centre interior",
       "regionalDesign": {
         "landmarkId": "atlas-sector-31",
-        "description": "Sector 31 · Relojeros de Reserva. Ancla 31 pendiente de diseño artesanal. una melodía solo existe cuando el jugador decide escucharla",
+        "description": "Sector 31 · Relojeros de Reserva. Episodio aprobado: La Frecuencia que Pide Permiso. una melodía solo existe cuando el jugador decide escucharla",
         "position": {
           "x": 13,
           "y": 37,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "CHIMECHO",
+          "KRICKETUNE",
+          "NOIVERN",
+          "EXPLOUD",
+          "MISMAGIUS",
+          "MELOETTA"
+        ]
       },
       "styleReference": {
         "sourceMapId": 756,
@@ -2674,7 +2681,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_31",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -2731,14 +2738,21 @@
       "biome": "town en (3,37) del plano Region Builder; reinterpretación segura de Littleroot Town-Sapphire con tileset Outside",
       "regionalDesign": {
         "landmarkId": "atlas-sector-32",
-        "description": "Sector 32 · Bomberos de Ceniza. Ancla 32 pendiente de diseño artesanal. un héroe olvidado pide que no reconstruyan su leyenda",
+        "description": "Sector 32 · Bomberos de Ceniza. Episodio aprobado: El Héroe que Pidió un Nombre Pequeño. un héroe olvidado pide que no reconstruyan su leyenda",
         "position": {
           "x": 3,
           "y": 37,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "UNOWN",
+          "SNEASEL",
+          "AMPHAROS",
+          "MAROWAK",
+          "TYPHLOSION",
+          "HOOH"
+        ]
       },
       "styleReference": {
         "sourceMapId": 781,
@@ -2755,7 +2769,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_32",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -2812,14 +2826,21 @@
       "biome": "cave en (3,48) del plano Region Builder; reinterpretación segura de Camphrier Pokémon Center con tileset Poke Centre interior",
       "regionalDesign": {
         "landmarkId": "atlas-sector-33",
-        "description": "Sector 33 · Guías Boreales. Ancla 33 pendiente de diseño artesanal. un fantasma concede victorias que nadie quiere aceptar",
+        "description": "Sector 33 · Guías Boreales. Episodio aprobado: La Victoria que Nadie Ganó. un fantasma concede victorias que nadie quiere aceptar",
         "position": {
           "x": 3,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "BANETTE",
+          "GENGAR",
+          "MIMIKYU",
+          "ZOROARK",
+          "SPIRITOMB",
+          "MARSHADOW"
+        ]
       },
       "styleReference": {
         "sourceMapId": 806,
@@ -2836,7 +2857,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_33",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -2893,14 +2914,21 @@
       "biome": "special en (13,48) del plano Region Builder; reinterpretación segura de Coumarine Gym con tileset Outside",
       "regionalDesign": {
         "landmarkId": "atlas-sector-34",
-        "description": "Sector 34 · Consejo de Musgo. Ancla 34 pendiente de diseño artesanal. una excavación construyó deliberadamente su propio monstruo",
+        "description": "Sector 34 · Consejo de Musgo. Episodio aprobado: La Excavación que Fabricó su Pasado. una excavación construyó deliberadamente su propio monstruo",
         "position": {
           "x": 13,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "YAMASK",
+          "CLAYDOL",
+          "ARCTOZOLT",
+          "DRACOVISH",
+          "GOLURK",
+          "REGIGIGAS"
+        ]
       },
       "styleReference": {
         "sourceMapId": 831,
@@ -2917,7 +2945,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_34",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -2974,14 +3002,21 @@
       "biome": "special en (23,48) del plano Region Builder; reinterpretación segura de Couriway Town con tileset Outside",
       "regionalDesign": {
         "landmarkId": "atlas-sector-35",
-        "description": "Sector 35 · Pintores Aurora. Ancla 35 pendiente de diseño artesanal. un equipo aislado sigue enviando reportes desde la nieve",
+        "description": "Sector 35 · Pintores Aurora. Episodio aprobado: El Refugio que Contestaba Solo. un equipo aislado sigue enviando reportes desde la nieve",
         "position": {
           "x": 23,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "DELIBIRD",
+          "ABOMASNOW",
+          "MAMOSWINE",
+          "FROSLASS",
+          "AVALUGG",
+          "ARTICUNO"
+        ]
       },
       "styleReference": {
         "sourceMapId": 856,
@@ -2998,7 +3033,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_35",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -3055,14 +3090,21 @@
       "biome": "town en (33,48) del plano Region Builder; reinterpretación segura de Driftveil Battle House con tileset Interior general",
       "regionalDesign": {
         "landmarkId": "atlas-sector-36",
-        "description": "Sector 36 · Fareros de Luz. Ancla 36 pendiente de diseño artesanal. los datos corruptos intentan clasificar al jugador",
+        "description": "Sector 36 · Fareros de Luz. Episodio aprobado: El Registro que No Pudo Clasificarte. los datos corruptos intentan clasificar al jugador",
         "position": {
           "x": 33,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "PORYGON",
+          "DITTO",
+          "ROTOM",
+          "KECLEON",
+          "TYPENULL",
+          "PORYGONZ"
+        ]
       },
       "styleReference": {
         "sourceMapId": 881,
@@ -3079,7 +3121,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_36",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -3136,14 +3178,21 @@
       "biome": "special en (43,48) del plano Region Builder; reinterpretación segura de Paniola Town con tileset Outside",
       "regionalDesign": {
         "landmarkId": "atlas-sector-37",
-        "description": "Sector 37 · Oyentes del Eco. Ancla 37 pendiente de diseño artesanal. un acertijo imposible fue manipulado para parecer profundo",
+        "description": "Sector 37 · Oyentes del Eco. Episodio aprobado: El Acertijo que Cambiaba la Pregunta. un acertijo imposible fue manipulado para parecer profundo",
         "position": {
           "x": 43,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "SIGILYPH",
+          "XATU",
+          "KLEFKI",
+          "MALAMAR",
+          "BEHEEYEM",
+          "UXIE"
+        ]
       },
       "styleReference": {
         "sourceMapId": 906,
@@ -3160,7 +3209,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_37",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -3217,14 +3266,21 @@
       "biome": "special en (53,48) del plano Region Builder; reinterpretación segura de Battle Royal Dome con tileset Interior general",
       "regionalDesign": {
         "landmarkId": "atlas-sector-38",
-        "description": "Sector 38 · Geómetras Fractales. Ancla 38 pendiente de diseño artesanal. la venganza era un recuerdo implantado",
+        "description": "Sector 38 · Geómetras Fractales. Episodio aprobado: El Enemigo que Alguien Recordó por Ti. la venganza era un recuerdo implantado",
         "position": {
           "x": 53,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "HYPNO",
+          "MUSHARNA",
+          "ZOROARK",
+          "ABSOL",
+          "LUCARIO",
+          "CRESSELIA"
+        ]
       },
       "styleReference": {
         "sourceMapId": 931,
@@ -3241,7 +3297,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_38",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -3298,14 +3354,21 @@
       "biome": "cave en (63,48) del plano Region Builder; reinterpretación segura de Manalo Stadium con tileset Outside",
       "regionalDesign": {
         "landmarkId": "atlas-sector-39",
-        "description": "Sector 39 · Pastores de Bruma. Ancla 39 pendiente de diseño artesanal. el último guardado no es una partida sino una persona",
+        "description": "Sector 39 · Pastores de Bruma. Episodio aprobado: La Copia que Aprendió a Despertar. el último guardado no es una partida sino una persona",
         "position": {
           "x": 63,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "BALTOY",
+          "CLAYDOL",
+          "BRONZONG",
+          "METAGROSS",
+          "SILVALLY",
+          "MEW"
+        ]
       },
       "styleReference": {
         "sourceMapId": 957,
@@ -3322,7 +3385,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_39",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },
@@ -3379,14 +3442,21 @@
       "biome": "city en (73,48) del plano Region Builder; reinterpretación segura de Freezington House con tileset Interior general",
       "regionalDesign": {
         "landmarkId": "atlas-sector-40",
-        "description": "Sector 40 · Archiveros del Mil. Ancla 40 pendiente de diseño artesanal. cuarenta historias compiten por decidir qué final merece Atlas",
+        "description": "Sector 40 · Archiveros del Mil. Episodio aprobado: El Final que Dejó Cuarenta Puertas Abiertas. cuarenta historias compiten por decidir qué final merece Atlas",
         "position": {
           "x": 73,
           "y": 48,
           "width": 2,
           "height": 2
         },
-        "encounterPool": []
+        "encounterPool": [
+          "SMEARGLE",
+          "GARDEVOIR",
+          "ZOROARK",
+          "ABSOL",
+          "SILVALLY",
+          "ARCEUS"
+        ]
       },
       "styleReference": {
         "sourceMapId": 982,
@@ -3403,7 +3473,7 @@
         "regionBuilder": true,
         "pokemonStudioModel": true,
         "studioDbSymbol": "atlas_anchor_40",
-        "studioState": "planned",
+        "studioState": "approved-and-compiled",
         "fireAshStyleBaseline": true,
         "requiresInGamePreview": true
       },

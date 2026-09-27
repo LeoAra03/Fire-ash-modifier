@@ -28,7 +28,7 @@ Créditos de herramienta: Pokémon Studio es desarrollado por Pokémon Workshop 
 |---|---|---|
 | `content/atlas_mil_region.pkregion` | Plano editable de Atlas Mil con capas, 40 landmarks y Pokédex regional | No |
 | `content/atlas_region_design.json` | Importación neutral validada del plano regional | No |
-| `content/atlas_studio_reference.json` | Índice con `dbSymbol` para 40 anclas: 30 compiladas y 10 planificadas | No |
+| `content/atlas_studio_reference.json` | Índice con `dbSymbol` para 40 anclas: 40 compiladas y 0 planificadas | No |
 | `content/atlas_style_baseline.json` | Comparación de las 40 anclas contra mapas reales de Fire Ash | No |
 | `docs/referencia_region_atlas_mil.png` | PNG criticable del plano regional y su estado | No |
 | `content/atlas_tier1_blueprints_approved.json` | Contrato narrativo aprobado | Todavía no por sí solo |
@@ -50,9 +50,9 @@ La exportación actual contiene:
 - capa de terreno con cinco categorías;
 - red de caminos;
 - 40 landmarks, uno por sector;
-- 126 especies presentes en equipos narrativos ya aprobados;
-- 30 landmarks con episodio aprobado;
-- 10 landmarks marcados como pendientes.
+- 153 especies presentes en equipos narrativos ya aprobados;
+- 40 landmarks con episodio aprobado;
+- 0 landmarks marcados como pendientes.
 
 Regenerar el PNG criticable sin convertirlo en asset jugable:
 
@@ -172,7 +172,7 @@ Estado actual:
 - 0 recursos visuales faltantes detectados;
 - 40/40 conservan exactamente la geometría heredada;
 - 40/40 requieren revisión artística antes de certificarse visualmente;
-- los 30 episodios aprobados conservan sus cinco eventos Tier 1.
+- los 40 episodios aprobados conservan sus cinco eventos Tier 1.
 
 La geometría heredada es segura y coherente con el juego base, pero no equivale a diseño visual final. El informe evita presentar estos mapas como terminados y mantiene obligatoria una prueba dentro de `Game.exe`.
 

@@ -11,6 +11,7 @@ export const P=(species,level,narrativeRole,moves,item,whyItBelongs)=>({species,
 
 export function build(d){
   return {mapId:d.id,tier:1,title:d.title,oneSentencePromise:d.promise,
+    ...(Number.isInteger(d.prerequisiteSeals)?{prerequisiteSeals:d.prerequisiteSeals}:{}),
     biome:{identity:d.identity,visualStorytelling:d.visual,ambientChanges:d.ambient,assetManifest:[...new Map(d.npcs.map(n=>[n.sprite,{type:"character",id:n.sprite,exists:true}])).values()]},
     narrative:d.narrative,voiceProfile:{...d.voice,forbiddenPhrases:banned},npcs:d.npcs,battle:d.battle,
     cutscene:{trigger:d.steps[0],steps:d.steps.map((action,i)=>({order:i+1,eventCommand:i===3?"Show Choices":i===5?"Trainer Battle canLose":"RMXP event command",actor:i===3?"Jugador":i===5?d.battle.trainerName:"Escena",action,stateChange:i===6?`switch${d.flag}=true`:i===7?"map_state=resolved":null})),decision:d.decision,failurePath:"La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",reentryPath:"La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."},
