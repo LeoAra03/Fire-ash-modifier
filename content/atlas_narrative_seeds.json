@@ -1,0 +1,2045 @@
+{
+  "version": 1,
+  "seeds": [
+    {
+      "mapId": 1021,
+      "currentName": "Atlas 0001 - Lappet Town",
+      "narrativeName": "Meridiano Ámbar: Ancla 01",
+      "sector": 1,
+      "sectorName": "Meridiano Ámbar",
+      "biome": "reinterpretación segura de Lappet Town",
+      "globalImportance": "Entrega el sello 1/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una emisión que conoce recuerdos que nadie contó",
+      "inspirations": [
+        "Pokémon Adventures",
+        "TCG",
+        "radio de Pueblo Lavanda"
+      ],
+      "voiceProfile": {
+        "tone": "íntimo y supersticioso",
+        "lexicon": [
+          "campana",
+          "Meridiano Ámbar",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 708,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1046,
+      "currentName": "Atlas 0026 - Pokémon Day Care",
+      "narrativeName": "Cuenca Celeste: Ancla 02",
+      "sector": 2,
+      "sectorName": "Cuenca Celeste",
+      "biome": "reinterpretación segura de Pokémon Day Care",
+      "globalImportance": "Entrega el sello 2/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un torneo escolar cuyo premio quiere renunciar",
+      "inspirations": [
+        "The Electric Tale of Pikachu",
+        "anime clásico",
+        "torneos escolares"
+      ],
+      "voiceProfile": {
+        "tone": "rápido y bromista",
+        "lexicon": [
+          "chispa",
+          "Cuenca Celeste",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 709,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1071,
+      "currentName": "Atlas 0051 - Battle Frontier Poké Center",
+      "narrativeName": "Frontera Carmesí: Ancla 03",
+      "sector": 3,
+      "sectorName": "Frontera Carmesí",
+      "biome": "reinterpretación segura de Battle Frontier Poké Center",
+      "globalImportance": "Entrega el sello 3/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un expediente de Liga fechado antes de su fundación",
+      "inspirations": [
+        "Pokémon Origins",
+        "archivos de Oak",
+        "Liga prototipo"
+      ],
+      "voiceProfile": {
+        "tone": "documental y contenido",
+        "lexicon": [
+          "expediente",
+          "Frontera Carmesí",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 710,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1096,
+      "currentName": "Atlas 0076 - Viridian Pokémon Center",
+      "narrativeName": "Distrito Cuarzo: Ancla 04",
+      "sector": 4,
+      "sectorName": "Distrito Cuarzo",
+      "biome": "reinterpretación segura de Viridian Pokémon Center",
+      "globalImportance": "Entrega el sello 4/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un gremio recibe encargos de exploradores desaparecidos",
+      "inspirations": [
+        "Mystery Dungeon",
+        "gremios",
+        "expediciones"
+      ],
+      "voiceProfile": {
+        "tone": "cálido y gremial",
+        "lexicon": [
+          "encargo",
+          "Distrito Cuarzo",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 711,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1121,
+      "currentName": "Atlas 0101 - Route 24 Pokémon Center",
+      "narrativeName": "Órbita Esmeralda: Ancla 05",
+      "sector": 5,
+      "sectorName": "Órbita Esmeralda",
+      "biome": "reinterpretación segura de Route 24 Pokémon Center",
+      "globalImportance": "Entrega el sello 5/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "la fauna huye de un rescate aparentemente perfecto",
+      "inspirations": [
+        "Pokémon Ranger",
+        "rescate",
+        "ecología"
+      ],
+      "voiceProfile": {
+        "tone": "operativo y compasivo",
+        "lexicon": [
+          "pulso",
+          "Órbita Esmeralda",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 712,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1146,
+      "currentName": "Atlas 0126 - Route 8",
+      "narrativeName": "Paso Boreal: Ancla 06",
+      "sector": 6,
+      "sectorName": "Paso Boreal",
+      "biome": "reinterpretación segura de Route 8",
+      "globalImportance": "Entrega el sello 6/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "los Pokémon oscuros protegen a quien debía purificarlos",
+      "inspirations": [
+        "Colosseum/XD",
+        "Orre",
+        "rehabilitación oscura"
+      ],
+      "voiceProfile": {
+        "tone": "seco y redentor",
+        "lexicon": [
+          "sombra",
+          "Paso Boreal",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 713,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1171,
+      "currentName": "Atlas 0151 - Celadon House",
+      "narrativeName": "Jardín Índigo: Ancla 07",
+      "sector": 7,
+      "sectorName": "Jardín Índigo",
+      "biome": "reinterpretación segura de Celadon House",
+      "globalImportance": "Entrega el sello 7/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "dos clanes recuerdan versiones incompatibles del mismo juramento",
+      "inspirations": [
+        "Pokémon Conquest",
+        "clanes",
+        "táctica"
+      ],
+      "voiceProfile": {
+        "tone": "ceremonial y táctico",
+        "lexicon": [
+          "estandarte",
+          "Jardín Índigo",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 714,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1196,
+      "currentName": "Atlas 0176 - Fuchsia Gym",
+      "narrativeName": "Costa Prisma: Ancla 08",
+      "sector": 8,
+      "sectorName": "Costa Prisma",
+      "biome": "reinterpretación segura de Fuchsia Gym",
+      "globalImportance": "Entrega el sello 8/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una fotografía muestra un NPC que nunca estuvo allí",
+      "inspirations": [
+        "Pokémon Snap",
+        "fotografía",
+        "conducta natural"
+      ],
+      "voiceProfile": {
+        "tone": "observador y paciente",
+        "lexicon": [
+          "encuadre",
+          "Costa Prisma",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 715,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1221,
+      "currentName": "Atlas 0201 - Indigo Stadium",
+      "narrativeName": "Dominio Solar: Ancla 09",
+      "sector": 9,
+      "sectorName": "Dominio Solar",
+      "biome": "reinterpretación segura de Indigo Stadium",
+      "globalImportance": "Entrega el sello 9/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un festival continúa después de que todos olvidaron su motivo",
+      "inspirations": [
+        "PokéPark",
+        "festival",
+        "pruebas amistosas"
+      ],
+      "voiceProfile": {
+        "tone": "festivo con melancolía",
+        "lexicon": [
+          "feria",
+          "Dominio Solar",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 716,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1246,
+      "currentName": "Atlas 0226 - Seven Grapefruit Islands",
+      "narrativeName": "Velo Lunar: Ancla 10",
+      "sector": 10,
+      "sectorName": "Velo Lunar",
+      "biome": "reinterpretación segura de Seven Grapefruit Islands",
+      "globalImportance": "Entrega el sello 10/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una carta cambia su ilustración según quién la sostenga",
+      "inspirations": [
+        "Pokémon TCG",
+        "cartas memoria",
+        "duelo ritual"
+      ],
+      "voiceProfile": {
+        "tone": "ritual y preciso",
+        "lexicon": [
+          "baraja",
+          "Velo Lunar",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 717,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1271,
+      "currentName": "Atlas 0251 - Professor Elm's Lab",
+      "narrativeName": "Nexo Onírico: Ancla 11",
+      "sector": 11,
+      "sectorName": "Nexo Onírico",
+      "biome": "reinterpretación segura de Professor Elm's Lab",
+      "globalImportance": "Entrega el sello 11/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una pareja compi se formó en una línea temporal descartada",
+      "inspirations": [
+        "Pokémon Masters EX",
+        "parejas compi",
+        "what-if"
+      ],
+      "voiceProfile": {
+        "tone": "carismático y competitivo",
+        "lexicon": [
+          "compás",
+          "Nexo Onírico",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 718,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1296,
+      "currentName": "Atlas 0276 - Pokémon Swap Meet",
+      "narrativeName": "Valle Magnético: Ancla 12",
+      "sector": 12,
+      "sectorName": "Valle Magnético",
+      "biome": "reinterpretación segura de Pokémon Swap Meet",
+      "globalImportance": "Entrega el sello 12/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "el marcador premia a quien evita anotar",
+      "inspirations": [
+        "Pokémon Unite",
+        "deporte",
+        "objetivos"
+      ],
+      "voiceProfile": {
+        "tone": "deportivo y conciso",
+        "lexicon": [
+          "zona",
+          "Valle Magnético",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 719,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1321,
+      "currentName": "Atlas 0301 - Burned Tower",
+      "narrativeName": "Arco Fósil: Ancla 13",
+      "sector": 13,
+      "sectorName": "Arco Fósil",
+      "biome": "reinterpretación segura de Burned Tower",
+      "globalImportance": "Entrega el sello 13/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "miles de señales señalan una Poképarada inexistente",
+      "inspirations": [
+        "Pokémon GO",
+        "investigación comunitaria",
+        "señales remotas"
+      ],
+      "voiceProfile": {
+        "tone": "comunitario y curioso",
+        "lexicon": [
+          "señal",
+          "Arco Fósil",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 720,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1346,
+      "currentName": "Atlas 0326 - Olivine Gym",
+      "narrativeName": "Mar de Nubes: Ancla 14",
+      "sector": 14,
+      "sectorName": "Mar de Nubes",
+      "biome": "reinterpretación segura de Olivine Gym",
+      "globalImportance": "Entrega el sello 14/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "los juguetes temen convertirse en sus entrenadores",
+      "inspirations": [
+        "Pokémon Rumble",
+        "juguetes",
+        "identidad"
+      ],
+      "voiceProfile": {
+        "tone": "metaficcional e inocente",
+        "lexicon": [
+          "cuerda",
+          "Mar de Nubes",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 721,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1371,
+      "currentName": "Atlas 0351 - Hoenn",
+      "narrativeName": "Bosque de Hierro: Ancla 15",
+      "sector": 15,
+      "sectorName": "Bosque de Hierro",
+      "biome": "reinterpretación segura de Hoenn",
+      "globalImportance": "Entrega el sello 15/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un mosaico resuelve nombres borrados del mapa",
+      "inspirations": [
+        "Trozei/Picross",
+        "lógica visual",
+        "cifrado"
+      ],
+      "voiceProfile": {
+        "tone": "lógico y juguetón",
+        "lexicon": [
+          "patrón",
+          "Bosque de Hierro",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 722,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1396,
+      "currentName": "Atlas 0376 - Dewford House",
+      "narrativeName": "Canal Estelar: Ancla 16",
+      "sector": 16,
+      "sectorName": "Canal Estelar",
+      "biome": "reinterpretación segura de Dewford House",
+      "globalImportance": "Entrega el sello 16/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una receta reproduce emociones ajenas",
+      "inspirations": [
+        "Café Remix",
+        "comunidad",
+        "conflicto cotidiano"
+      ],
+      "voiceProfile": {
+        "tone": "cotidiano y humano",
+        "lexicon": [
+          "receta",
+          "Canal Estelar",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 723,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1421,
+      "currentName": "Atlas 0401 - Fallarbor Pokémon Center",
+      "narrativeName": "Páramo Sonoro: Ancla 17",
+      "sector": 17,
+      "sectorName": "Páramo Sonoro",
+      "biome": "reinterpretación segura de Fallarbor Pokémon Center",
+      "globalImportance": "Entrega el sello 17/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "todos los testigos dicen la verdad y aun así se contradicen",
+      "inspirations": [
+        "Detective Pikachu",
+        "misterio",
+        "testigos"
+      ],
+      "voiceProfile": {
+        "tone": "noir ligero",
+        "lexicon": [
+          "coartada",
+          "Páramo Sonoro",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 724,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1446,
+      "currentName": "Atlas 0426 - Weather Institute",
+      "narrativeName": "Islas del Viento: Ancla 18",
+      "sector": 18,
+      "sectorName": "Islas del Viento",
+      "biome": "reinterpretación segura de Weather Institute",
+      "globalImportance": "Entrega el sello 18/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una distorsión devuelve objetos antes de perderse",
+      "inspirations": [
+        "Legends: Arceus",
+        "distorsión",
+        "expedición histórica"
+      ],
+      "voiceProfile": {
+        "tone": "histórico y asombrado",
+        "lexicon": [
+          "vestigio",
+          "Islas del Viento",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 725,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1471,
+      "currentName": "Atlas 0451 - Sootopolis House",
+      "narrativeName": "Anillo Abisal: Ancla 19",
+      "sector": 19,
+      "sectorName": "Anillo Abisal",
+      "biome": "reinterpretación segura de Sootopolis House",
+      "globalImportance": "Entrega el sello 19/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una especie paradoja está reparando el ecosistema",
+      "inspirations": [
+        "Scarlet/Violet",
+        "paradojas",
+        "ecología"
+      ],
+      "voiceProfile": {
+        "tone": "científico y urgente",
+        "lexicon": [
+          "hábitat",
+          "Anillo Abisal",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 726,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1496,
+      "currentName": "Atlas 0476 - Route 12 Breeding Center",
+      "narrativeName": "Ruta del Cometa: Ancla 20",
+      "sector": 20,
+      "sectorName": "Ruta del Cometa",
+      "biome": "reinterpretación segura de Route 12 Breeding Center",
+      "globalImportance": "Entrega el sello 20/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una fusión quiere conservar dos nombres",
+      "inspirations": [
+        "Infinite Fusion",
+        "identidad fusionada",
+        "ética"
+      ],
+      "voiceProfile": {
+        "tone": "ético y reflexivo",
+        "lexicon": [
+          "nombre",
+          "Ruta del Cometa",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 727,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1521,
+      "currentName": "Atlas 0501 - Route 202",
+      "narrativeName": "Territorio Origami: Ancla 21",
+      "sector": 21,
+      "sectorName": "Territorio Origami",
+      "biome": "reinterpretación segura de Route 202",
+      "globalImportance": "Entrega el sello 21/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una central limpia oculta residuos que parecen vivos",
+      "inspirations": [
+        "Uranium (homenaje)",
+        "energía peligrosa",
+        "restauración"
+      ],
+      "voiceProfile": {
+        "tone": "ecológico y grave",
+        "lexicon": [
+          "residuo",
+          "Territorio Origami",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 728,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1546,
+      "currentName": "Atlas 0526 - Ravaged Path",
+      "narrativeName": "Delta de Cristal: Ancla 22",
+      "sector": 22,
+      "sectorName": "Delta de Cristal",
+      "biome": "reinterpretación segura de Ravaged Path",
+      "globalImportance": "Entrega el sello 22/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una facción fabrica profecías para reclutar",
+      "inspirations": [
+        "Insurgence (homenaje)",
+        "propaganda",
+        "libre elección"
+      ],
+      "voiceProfile": {
+        "tone": "persuasivo e inquietante",
+        "lexicon": [
+          "consigna",
+          "Delta de Cristal",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 729,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1571,
+      "currentName": "Atlas 0551 - Hearthome Contest",
+      "narrativeName": "Llanura Meteoro: Ancla 23",
+      "sector": 23,
+      "sectorName": "Llanura Meteoro",
+      "biome": "reinterpretación segura de Hearthome Contest",
+      "globalImportance": "Entrega el sello 23/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "la ciudad mejora mientras sus habitantes pierden recuerdos",
+      "inspirations": [
+        "Reborn (homenaje)",
+        "reconstrucción urbana",
+        "consecuencia social"
+      ],
+      "voiceProfile": {
+        "tone": "urbano y resistente",
+        "lexicon": [
+          "barrio",
+          "Llanura Meteoro",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 730,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1596,
+      "currentName": "Atlas 0576 - Veilstone Dept. 5F",
+      "narrativeName": "Cordillera Coral: Ancla 24",
+      "sector": 24,
+      "sectorName": "Cordillera Coral",
+      "biome": "reinterpretación segura de Veilstone Dept. 5F",
+      "globalImportance": "Entrega el sello 24/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una familia recibe cartas de sus futuros incompatibles",
+      "inspirations": [
+        "Rejuvenation (homenaje)",
+        "memoria temporal",
+        "familia"
+      ],
+      "voiceProfile": {
+        "tone": "emocional y fragmentado",
+        "lexicon": [
+          "recuerdo",
+          "Cordillera Coral",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 731,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1621,
+      "currentName": "Atlas 0601 - Route 210",
+      "narrativeName": "Ciudad del Eclipse: Ancla 25",
+      "sector": 25,
+      "sectorName": "Ciudad del Eclipse",
+      "biome": "reinterpretación segura de Route 210",
+      "globalImportance": "Entrega el sello 25/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "portales pequeños sostienen una economía clandestina",
+      "inspirations": [
+        "Unbound (homenaje)",
+        "portales",
+        "contrabando"
+      ],
+      "voiceProfile": {
+        "tone": "fronterizo y desconfiado",
+        "lexicon": [
+          "umbral",
+          "Ciudad del Eclipse",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 732,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1646,
+      "currentName": "Atlas 0626 - Route 222 House",
+      "narrativeName": "Archipiélago Vapor: Ancla 26",
+      "sector": 26,
+      "sectorName": "Archipiélago Vapor",
+      "biome": "reinterpretación segura de Route 222 House",
+      "globalImportance": "Entrega el sello 26/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una estatua registra civilizaciones que aún no existen",
+      "inspirations": [
+        "Gaia (homenaje)",
+        "arqueología",
+        "civilización"
+      ],
+      "voiceProfile": {
+        "tone": "arqueológico y reverente",
+        "lexicon": [
+          "estrato",
+          "Archipiélago Vapor",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 733,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1671,
+      "currentName": "Atlas 0651 - Accumula House",
+      "narrativeName": "Santuario de Polen: Ancla 27",
+      "sector": 27,
+      "sectorName": "Santuario de Polen",
+      "biome": "reinterpretación segura de Accumula House",
+      "globalImportance": "Entrega el sello 27/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "la mina produce minerales formados por decisiones",
+      "inspirations": [
+        "Prism (homenaje)",
+        "minería",
+        "responsabilidad"
+      ],
+      "voiceProfile": {
+        "tone": "obrero y directo",
+        "lexicon": [
+          "veta",
+          "Santuario de Polen",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 734,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1696,
+      "currentName": "Atlas 0676 - Castelia Gym",
+      "narrativeName": "Cañón Espejo: Ancla 28",
+      "sector": 28,
+      "sectorName": "Cañón Espejo",
+      "biome": "reinterpretación segura de Castelia Gym",
+      "globalImportance": "Entrega el sello 28/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "los sueños están pagando peaje entre dimensiones",
+      "inspirations": [
+        "Glazed (homenaje)",
+        "sueño",
+        "dimensiones"
+      ],
+      "voiceProfile": {
+        "tone": "onírico y lírico",
+        "lexicon": [
+          "sueño",
+          "Cañón Espejo",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 735,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1721,
+      "currentName": "Atlas 0701 - Chargestone Cave B2F",
+      "narrativeName": "Bahía Relámpago: Ancla 29",
+      "sector": 29,
+      "sectorName": "Bahía Relámpago",
+      "biome": "reinterpretación segura de Chargestone Cave B2F",
+      "globalImportance": "Entrega el sello 29/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "dos ligas reclaman al mismo campeón sin querer combatir",
+      "inspirations": [
+        "Light Platinum (homenaje)",
+        "ligas",
+        "diplomacia"
+      ],
+      "voiceProfile": {
+        "tone": "diplomático y ambicioso",
+        "lexicon": [
+          "delegación",
+          "Bahía Relámpago",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 736,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1746,
+      "currentName": "Atlas 0726 - Route 9",
+      "narrativeName": "Meseta de Tinta: Ancla 30",
+      "sector": 30,
+      "sectorName": "Meseta de Tinta",
+      "biome": "reinterpretación segura de Route 9",
+      "globalImportance": "Entrega el sello 30/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una academia confunde dificultad con crueldad",
+      "inspirations": [
+        "Radical Red (homenaje)",
+        "estrategia",
+        "contrajuego"
+      ],
+      "voiceProfile": {
+        "tone": "analítico y deportivo",
+        "lexicon": [
+          "apertura",
+          "Meseta de Tinta",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 737,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1771,
+      "currentName": "Atlas 0751 - Opelucid Pokémon Center",
+      "narrativeName": "Reserva de Engranajes: Ancla 31",
+      "sector": 31,
+      "sectorName": "Reserva de Engranajes",
+      "biome": "reinterpretación segura de Opelucid Pokémon Center",
+      "globalImportance": "Entrega el sello 31/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una melodía solo existe cuando el jugador decide escucharla",
+      "inspirations": [
+        "mito de Lavender",
+        "horror sonoro",
+        "duelo"
+      ],
+      "voiceProfile": {
+        "tone": "susurrado y opcional",
+        "lexicon": [
+          "susurro",
+          "Reserva de Engranajes",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 738,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1796,
+      "currentName": "Atlas 0776 - Littleroot Town-Sapphire",
+      "narrativeName": "Círculo de Ceniza: Ancla 32",
+      "sector": 32,
+      "sectorName": "Círculo de Ceniza",
+      "biome": "reinterpretación segura de Littleroot Town-Sapphire",
+      "globalImportance": "Entrega el sello 32/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un héroe olvidado pide que no reconstruyan su leyenda",
+      "inspirations": [
+        "Lost Silver (homenaje no gráfico)",
+        "memoria",
+        "identidad"
+      ],
+      "voiceProfile": {
+        "tone": "elegíaco sin gore",
+        "lexicon": [
+          "eco",
+          "Círculo de Ceniza",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 739,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1821,
+      "currentName": "Atlas 0801 - Camphrier Pokémon Center",
+      "narrativeName": "Labertino Boreal: Ancla 33",
+      "sector": 33,
+      "sectorName": "Labertino Boreal",
+      "biome": "reinterpretación segura de Camphrier Pokémon Center",
+      "globalImportance": "Entrega el sello 33/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un fantasma concede victorias que nadie quiere aceptar",
+      "inspirations": [
+        "cartucho negro",
+        "fantasma",
+        "decisión"
+      ],
+      "voiceProfile": {
+        "tone": "sobrio y moral",
+        "lexicon": [
+          "deuda",
+          "Labertino Boreal",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 740,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1846,
+      "currentName": "Atlas 0826 - Coumarine Gym",
+      "narrativeName": "República de Musgo: Ancla 34",
+      "sector": 34,
+      "sectorName": "República de Musgo",
+      "biome": "reinterpretación segura de Coumarine Gym",
+      "globalImportance": "Entrega el sello 34/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "una excavación construyó deliberadamente su propio monstruo",
+      "inspirations": [
+        "Buried Alive (mito)",
+        "arqueología falsa",
+        "explicación Pokémon"
+      ],
+      "voiceProfile": {
+        "tone": "macabro sugerido",
+        "lexicon": [
+          "fosa",
+          "República de Musgo",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 741,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1871,
+      "currentName": "Atlas 0851 - Couriway Town",
+      "narrativeName": "Cinturón Aurora: Ancla 35",
+      "sector": 35,
+      "sectorName": "Cinturón Aurora",
+      "biome": "reinterpretación segura de Couriway Town",
+      "globalImportance": "Entrega el sello 35/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un equipo aislado sigue enviando reportes desde la nieve",
+      "inspirations": [
+        "nieve de Mt. Silver",
+        "aislamiento",
+        "rescate"
+      ],
+      "voiceProfile": {
+        "tone": "aislado pero esperanzador",
+        "lexicon": [
+          "refugio",
+          "Cinturón Aurora",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 742,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1896,
+      "currentName": "Atlas 0876 - Driftveil Battle House",
+      "narrativeName": "Trinchera de Luz: Ancla 36",
+      "sector": 36,
+      "sectorName": "Trinchera de Luz",
+      "biome": "reinterpretación segura de Driftveil Battle House",
+      "globalImportance": "Entrega el sello 36/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "los datos corruptos intentan clasificar al jugador",
+      "inspirations": [
+        "MissingNo.",
+        "datos rotos",
+        "estabilización"
+      ],
+      "voiceProfile": {
+        "tone": "glitch y técnico",
+        "lexicon": [
+          "checksum",
+          "Trinchera de Luz",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 743,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1921,
+      "currentName": "Atlas 0901 - Paniola Town",
+      "narrativeName": "Provincia del Eco: Ancla 37",
+      "sector": 37,
+      "sectorName": "Provincia del Eco",
+      "biome": "reinterpretación segura de Paniola Town",
+      "globalImportance": "Entrega el sello 37/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "un acertijo imposible fue manipulado para parecer profundo",
+      "inspirations": [
+        "Pale Luna",
+        "acertijo",
+        "contrajuego justo"
+      ],
+      "voiceProfile": {
+        "tone": "enigmático pero justo",
+        "lexicon": [
+          "coordenada",
+          "Provincia del Eco",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 744,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1946,
+      "currentName": "Atlas 0926 - Battle Royal Dome",
+      "narrativeName": "Horizonte Fractal: Ancla 38",
+      "sector": 38,
+      "sectorName": "Horizonte Fractal",
+      "biome": "reinterpretación segura de Battle Royal Dome",
+      "globalImportance": "Entrega el sello 38/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "la venganza era un recuerdo implantado",
+      "inspirations": [
+        "Strangled Red (reinterpretación)",
+        "culpa",
+        "reconciliación"
+      ],
+      "voiceProfile": {
+        "tone": "culpable y reparador",
+        "lexicon": [
+          "culpa",
+          "Horizonte Fractal",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases concretas con una imagen sensorial",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": true,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 745,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1971,
+      "currentName": "Atlas 0951 - Manalo Stadium",
+      "narrativeName": "Corona de Bruma: Ancla 39",
+      "sector": 39,
+      "sectorName": "Corona de Bruma",
+      "biome": "reinterpretación segura de Manalo Stadium",
+      "globalImportance": "Entrega el sello 39/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "el último guardado no es una partida sino una persona",
+      "inspirations": [
+        "Archiveros del Último Guardado",
+        "facción original",
+        "memoria segura"
+      ],
+      "voiceProfile": {
+        "tone": "archivístico y protector",
+        "lexicon": [
+          "copia",
+          "Corona de Bruma",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases medidas que terminan en pregunta",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 746,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "mapId": 1996,
+      "currentName": "Atlas 0976 - Freezington House",
+      "narrativeName": "Umbral Mil: Ancla 40",
+      "sector": 40,
+      "sectorName": "Umbral Mil",
+      "biome": "reinterpretación segura de Freezington House",
+      "globalImportance": "Entrega el sello 40/40 y revela una pieza del origen de Atlas.",
+      "coreMystery": "cuarenta historias compiten por decidir qué final merece Atlas",
+      "inspirations": [
+        "convergencia all-star",
+        "campeones",
+        "Pokégods"
+      ],
+      "voiceProfile": {
+        "tone": "épico y coral",
+        "lexicon": [
+          "convergencia",
+          "Umbral Mil",
+          "ancla",
+          "retorno",
+          "testigo",
+          "decisión"
+        ],
+        "sentenceRule": "frases breves con silencios",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "safety": {
+        "bagAllowed": true,
+        "canLose": true,
+        "freeReturn": true,
+        "maxLevel": 150,
+        "maxTeam": 6,
+        "creepypastaOptIn": false,
+        "noSaveDamage": true
+      },
+      "flagBudget": {
+        "reservedGlobalSwitch": 747,
+        "counterVariable": 103,
+        "selfSwitches": [
+          "A",
+          "B"
+        ]
+      }
+    }
+  ]
+}

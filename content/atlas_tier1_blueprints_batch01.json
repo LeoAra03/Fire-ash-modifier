@@ -1,0 +1,207 @@
+{
+  "batch": 1,
+  "iteration": 1,
+  "blueprints": [
+    {
+      "mapId": 1021,
+      "tier": 1,
+      "title": "Santuario de la Última Campana",
+      "oneSentencePromise": "Una emisión imposible obliga al jugador a decidir si un recuerdo doloroso merece conservarse aunque nadie pueda volver a escucharlo.",
+      "biome": {
+        "identity": "Santuario de radio abandonado construido alrededor de una campana que absorbe sonidos",
+        "visualStorytelling": [
+          "Tres atriles vacíos apuntan hacia una campana central.",
+          "Las flores cercanas están inclinadas en dirección contraria a los altavoces.",
+          "Un cable nuevo cruza ruinas mucho más antiguas.",
+          "La salida conserva una luz cálida incluso durante la escena de silencio."
+        ],
+        "ambientChanges": [
+          "La música se detiene voluntariamente al aceptar escuchar la cinta.",
+          "Tras la decisión final regresa un arreglo más sereno y la campana cambia de estado."
+        ],
+        "assetManifest": [
+          { "type": "character", "id": "trchar028", "exists": true },
+          { "type": "character", "id": "NPC 04", "exists": true },
+          { "type": "character", "id": "trchar009", "exists": true }
+        ]
+      },
+      "narrative": {
+        "premise": "La Archivera Mara recibió una emisión con la voz de su hermano años después de que él desapareciera.",
+        "centralQuestion": "¿Conservar una copia imperfecta honra a una persona o impide despedirse de ella?",
+        "setup": "La campana reproduce recuerdos cuando alguien intenta grabar silencio absoluto.",
+        "escalation": "Cada reproducción borra un sonido real del santuario y Nilo empieza a olvidar la voz de su madre.",
+        "reversal": "El supuesto mensaje del hermano fue ensamblado por Chimecho usando recuerdos de todos los visitantes.",
+        "resolution": "El jugador puede preservar la cinta como documento incompleto o desmontarla para devolver las voces prestadas.",
+        "globalConnection": "La campana contiene el primer sello y demuestra que Atlas fabrica lugares a partir de recuerdos compartidos, no de copias exactas."
+      },
+      "voiceProfile": {
+        "tone": "íntimo, supersticioso y contenido",
+        "lexicon": ["campana", "cinta", "pulso", "silencio", "copia", "eco", "testigo", "despedida"],
+        "sentenceRule": "Mara termina afirmaciones; Nilo pregunta; Ivo evita nombrar aquello que teme.",
+        "forbiddenPhrases": ["Soy un entrenador", "Qué gran combate", "Este Pokémon es muy fuerte", "Según la Pokédex", "Debes derrotarme"]
+      },
+      "npcs": [
+        {
+          "name": "Mara Bell",
+          "sprite": "trchar028",
+          "role": "archivera de señales",
+          "reasonForBeingHere": "Clasifica la última emisión recibida por el santuario.",
+          "personalConflict": "Sabe que la voz de su hermano es una reconstrucción, pero teme perderlo por segunda vez.",
+          "want": "Conservar una copia honesta y etiquetarla como incompleta.",
+          "fear": "Que la verdad convierta su duelo en una vergüenza pública.",
+          "verbalTic": "Fecha cada recuerdo antes de describirlo.",
+          "dialogue": {
+            "before": [
+              "Día 4.612. La cinta volvió a pronunciar mi nombre sin que nadie encendiera el transmisor.",
+              "No necesito que me digas si es él. Necesito saber qué parte de nosotros está usando para parecerlo.",
+              "Si decides escuchar, no prometas nada mientras la campana esté quieta."
+            ],
+            "during": [
+              "Ese silencio no está vacío; está esperando una respuesta.",
+              "No mires el altavoz. Chimecho está observando nuestras manos."
+            ],
+            "after": [
+              "Día 4.613. Hoy archivamos una despedida, no una resurrección.",
+              "La voz sigue siendo falsa. Lo que hicimos con ella no lo fue.",
+              "Dejaré una copia marcada. Nadie debería confundir consuelo con evidencia."
+            ],
+            "optional": [
+              "Mi hermano odiaba las campanas. Decía que todas celebraban llegar tarde.",
+              "No pienso borrar la cinta; también los errores merecen una fecha."
+            ]
+          }
+        },
+        {
+          "name": "Nilo",
+          "sprite": "NPC 04",
+          "role": "niño que oye los sonidos ausentes",
+          "reasonForBeingHere": "Siguió una canción que solo se escucha cuando el santuario queda mudo.",
+          "personalConflict": "Cada mensaje recuperado reemplaza uno de sus recuerdos familiares.",
+          "want": "Recordar cómo se reía su madre sin abandonar a Chimecho.",
+          "fear": "Que los adultos apaguen la campana antes de preguntarle qué oyó.",
+          "verbalTic": "Convierte observaciones en preguntas concretas.",
+          "dialogue": {
+            "before": [
+              "¿Por qué la campana se mueve si aquí no corre viento?",
+              "Ayer recordaba una canción completa. Hoy solo sé dónde respiraba mamá.",
+              "¿Puedes escuchar algo sin llevártelo contigo?"
+            ],
+            "during": [
+              "La voz de la cinta acaba de usar mi pausa.",
+              "¿Chimecho está asustado de nosotros o por nosotros?"
+            ],
+            "after": [
+              "La risa volvió antes que la canción. Creo que ese era el orden correcto.",
+              "No estoy enfadado con Chimecho. Coleccionó voces porque nadie escuchaba la suya.",
+              "¿Volverás cuando el santuario tenga un sonido nuevo?"
+            ],
+            "optional": [
+              "Ivo silba cuando miente, pero aquí no puede silbar.",
+              "Guardé una pausa para ti. No pesa nada."
+            ]
+          }
+        },
+        {
+          "name": "Ivo Sorda",
+          "sprite": "trchar009",
+          "role": "técnico y antiguo operador",
+          "reasonForBeingHere": "Mantiene una salida analógica que la campana no puede alterar.",
+          "personalConflict": "Ocultó que él conectó recuerdos humanos al transmisor para salvar el archivo.",
+          "want": "Reparar el daño sin admitir que tomó la decisión inicial.",
+          "fear": "Que Mara descubra que la primera voz falsa fue una prueba suya.",
+          "verbalTic": "Describe emociones como averías mecánicas.",
+          "dialogue": {
+            "before": [
+              "El transmisor no está embrujado. Está... mal calibrado para personas.",
+              "Si una voz tiembla, reviso el cable. Si una mano tiembla, reviso otro cable.",
+              "La salida del sur es analógica. Ni la campana puede discutir con una bisagra."
+            ],
+            "during": [
+              "La cinta está tomando señal de nosotros. Desconecta tus promesas.",
+              "Ese pulso es mío. Yo fabriqué el adaptador."
+            ],
+            "after": [
+              "No fue una avería. Fui yo intentando fabricar una respuesta.",
+              "Mara conservará el esquema junto con la cinta. Mi nombre también debe quedar archivado.",
+              "He retirado el adaptador. Las voces futuras tendrán que llegar por su cuenta."
+            ],
+            "optional": [
+              "Una máquina honesta falla delante de ti.",
+              "La campana nunca mintió; nosotros le hicimos una pregunta tramposa."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodio del Silencio",
+        "trainerType": "PSYCHIC_M",
+        "sprite": "trchar028",
+        "storyToldByTeam": "El orden va de sonidos prestados a criaturas que viven entre silencio, culpa y recuerdos atrapados.",
+        "counterplayHint": "Mara advierte que el equipo alterna ataques Psíquico, Fantasma, Hielo y Siniestro; movimientos de estado y objetos curativos siguen disponibles.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          { "species": "CHIMECHO", "level": 90, "narrativeRole": "la primera voz prestada", "moves": ["PSYCHIC", "SHADOWBALL", "DAZZLINGGLEAM", "PROTECT"], "item": "SOOTHEBELL", "whyItBelongs": "Es el origen compasivo y equivocado de la emisión." },
+          { "species": "NOIVERN", "level": 91, "narrativeRole": "la señal amplificada", "moves": ["BOOMBURST", "DRAGONPULSE", "AIRSLASH", "ROOST"], "item": "LEFTOVERS", "whyItBelongs": "Convierte pequeños recuerdos sonoros en una transmisión imposible de ignorar." },
+          { "species": "MISMAGIUS", "level": 92, "narrativeRole": "la superstición de los visitantes", "moves": ["MOONBLAST", "MYSTICALFIRE", "SHADOWBALL", "THUNDERBOLT"], "item": "CHOICESPECS", "whyItBelongs": "Representa las explicaciones sobrenaturales que ocultaron la responsabilidad humana." },
+          { "species": "ABSOL", "level": 93, "narrativeRole": "la advertencia malinterpretada", "moves": ["NIGHTSLASH", "SUCKERPUNCH", "PLAYROUGH", "SWORDSDANCE"], "item": "FOCUSSASH", "whyItBelongs": "Fue culpado de una catástrofe que intentaba anunciar." },
+          { "species": "FROSLASS", "level": 94, "narrativeRole": "el recuerdo congelado", "moves": ["ICEBEAM", "SHADOWBALL", "WILLOWISP", "DESTINYBOND"], "item": "LIFEORB", "whyItBelongs": "Conserva una voz perfecta precisamente porque nunca puede cambiar." },
+          { "species": "SPIRITOMB", "level": 96, "narrativeRole": "el archivo de voces acumuladas", "moves": ["DARKPULSE", "SHADOWBALL", "REST", "SLEEPTALK"], "item": "LEFTOVERS", "whyItBelongs": "Cierra la historia como muchas identidades encerradas en un único registro." }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Aceptar escuchar la cinta junto a la campana central.",
+        "steps": [
+          { "order": 1, "eventCommand": "Show Choices", "actor": "Mara", "action": "Pregunta si el jugador acepta una reproducción voluntaria.", "stateChange": null },
+          { "order": 2, "eventCommand": "BGM Fade + Wait", "actor": "Santuario", "action": "La música se apaga y queda el pulso de la cinta.", "stateChange": "ambient_silence=true" },
+          { "order": 3, "eventCommand": "Set Move Route", "actor": "Nilo", "action": "Se aparta del altavoz y ocupa la ruta hacia la salida.", "stateChange": "nilo_position=exit" },
+          { "order": 4, "eventCommand": "Show Text", "actor": "Ivo", "action": "Confiesa haber construido el adaptador de recuerdos.", "stateChange": "ivo_confessed=true" },
+          { "order": 5, "eventCommand": "Show Choices", "actor": "Jugador", "action": "Elige preservar una copia etiquetada o desmontar la emisión activa.", "stateChange": "archive_decision=preserve_or_release" },
+          { "order": 6, "eventCommand": "Trainer Battle canLose", "actor": "Custodio del Silencio", "action": "La campana materializa su archivo defensivo.", "stateChange": "battle_attempted=true" },
+          { "order": 7, "eventCommand": "Control Switches + Self Switch", "actor": "Mara", "action": "Registra la decisión y retira el adaptador tras la victoria.", "stateChange": "switch708=true; selfA=true" },
+          { "order": 8, "eventCommand": "BGM Play + Show Text", "actor": "Nilo", "action": "Recupera la risa de su madre y abre nuevamente la salida.", "stateChange": "ambient_silence=false" }
+        ],
+        "decision": {
+          "question": "¿Conservar una copia claramente marcada o liberar todas las voces prestadas?",
+          "options": ["Conservar una copia", "Liberar las voces"],
+          "immediateDifferences": ["Mara archiva la cinta con una advertencia.", "La cinta queda muda y Nilo recupera primero la canción."],
+          "laterDifferences": ["El Archivo Final cita la copia como evidencia imperfecta.", "El Archivo Final conserva un espacio vacío como testimonio de la decisión."]
+        },
+        "failurePath": "La derrota devuelve al jugador junto a Ivo, con curación disponible y sin alterar la decisión ni cerrar la salida.",
+        "reentryPath": "La campana permite repetir el combate; los NPCs recuerdan que ya se escuchó la confesión y omiten la introducción larga."
+      },
+      "reward": {
+        "item": "SOOTHEBELL",
+        "narrativeToken": "Sello de la Campana",
+        "globalEffect": "Activa el switch 708 y suma un sello al contador narrativo de Atlas.",
+        "futurePayoff": "El mapa final usa la decisión de archivo para decidir si reproduce una voz o respeta un silencio.",
+        "whyMeaningful": "La Campana Alivio deja de representar una voz atrapada y pasa a simbolizar escuchar sin apropiarse del recuerdo."
+      },
+      "flags": {
+        "globalSwitches": [
+          { "id": 708, "name": "POKEMOD ATLAS SEAL 01 BELL", "setWhen": "Tras vencer y registrar la decisión.", "readWhen": "Archivo Final y diálogos posteriores de Mara." }
+        ],
+        "variables": [
+          { "id": 103, "name": "POKEMOD ATLAS NARRATIVE SEALS", "operation": "Incrementar una vez, protegido por self-switch A." }
+        ],
+        "selfSwitches": [
+          { "event": "Campana central", "letter": "A", "purpose": "Evitar repetir recompensa y escena completa." },
+          { "event": "Mara Bell", "letter": "B", "purpose": "Mostrar diálogo posterior a la decisión." }
+        ]
+      },
+      "exits": [
+        { "destination": 1001, "condition": "always", "purpose": "Regreso incondicional a Puerto Horizonte." }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    }
+  ]
+}

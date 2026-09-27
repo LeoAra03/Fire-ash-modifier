@@ -137,6 +137,8 @@ ok(allText(tr.pages).includes('pbTrainerBattle(:CAMPER,"Dave")'), "entrenador: b
 ok(allText(tr.pages).includes("pbTrainerEnd"), "entrenador: fin");
 const hi = C.buildTemplate("hidden", { item: "NUGGET" });
 ok(hi.name === "HiddenItem:NUGGET" && !!hi.pages[0].getIvar("through"), "oculto: nombre+through");
+const hiSelf = hi.pages[0].getIvar("list").map(Rmxp.cmdOf).find((c) => c.code === 123);
+ok(hiSelf?.params[1] === 0, "self-switch ON usa operación 0 de RPG Maker XP");
 const heal = C.buildTemplate("heal", {});
 ok(allText(heal.pages).includes("pbSetPokemonCenter"), "curandera: punto de retorno");
 ok(codesOf(heal.pages).includes(314), "curandera: Recuperar todo");
@@ -217,6 +219,7 @@ const { pbsToText } = await import("./pbs.js");
 const rep1 = AN.extractMapReport(m1c.parsed, 1, App.S.mapList.find((m) => m.id === 1) || null, App.S.tilesets.get(m1c.parsed.tilesetId) || null);
 ok(rep1.events.length === 5, "reporte mapa 1: 5 eventos");
 ok(rep1.texts.length >= 1, `reporte trae diálogos (${rep1.texts.length})`);
+ok(rep1.texts.some((t) => /Bienvenido|Hola|Pradera/i.test(t.text)), "análisis conserva la primera línea del comando 101");
 ok(rep1.collisions && rep1.collisions.total === 12 * 10, "reporte trae colisiones 12x10");
 const mdT = pbsToText((await App.loadPBS("PBS/metadata.txt")).lines);
 const tmT = pbsToText((await App.loadPBS("PBS/townmap.txt")).lines);

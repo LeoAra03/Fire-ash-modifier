@@ -84,7 +84,11 @@ export function extractMapReport(parsed, mapId, info, tileset) {
         const P = c.params;
         pgOut.commands.push(c.code);
         if (c.code === 101) {
+          // En RMXP la primera línea está en el propio comando 101; los 401
+          // son continuaciones. Algunas plantillas modernas dejan 101 vacío.
           const lines = [];
+          const first = rstr(P[0]);
+          if (first) lines.push(first);
           i++;
           while (i < list.length) {
             const n = cmdOf(list[i]);

@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2026-09-27T17:02:03.804Z",
+  "summary": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0
+  },
+  "results": [
+    {
+      "mapId": 1021,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1046,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1071,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1096,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1121,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1146,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1171,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1196,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1221,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1246,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1271,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1296,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1321,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1346,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1371,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1396,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1421,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1446,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1471,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1496,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1521,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1546,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1571,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1596,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1621,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1646,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1671,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1696,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1721,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    },
+    {
+      "mapId": 1746,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "revisionPrompt": ""
+    }
+  ]
+}

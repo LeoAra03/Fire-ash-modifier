@@ -54,7 +54,7 @@ export function validatePack(pack, ctx = {}) {
       if (!sp) err(where, `equipo[${j}]: falta especie`);
       else if (species && !species.has(sp)) err(where, `especie inexistente en tu juego: ${sp}`);
       const lv = Number(m.level);
-      if (!Number.isInteger(lv) || lv < 1 || lv > 100) err(where, `nivel inválido en ${sp || "?"}: ${m.level}`);
+      if (!Number.isInteger(lv) || lv < 1 || lv > 150) err(where, `nivel inválido en ${sp || "?"}: ${m.level}`);
       if (m.item && items && !items.has(String(m.item).toUpperCase())) warn(where, `objeto inexistente en tu juego: ${m.item}`);
     });
     if (b.version !== undefined && (!Number.isInteger(b.version) || b.version < 0)) err(where, "versión inválida");

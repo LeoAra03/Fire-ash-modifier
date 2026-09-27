@@ -92,7 +92,8 @@ export function condScript(script, thenCmds, elseCmds = null, indent = 0) {
   return out;
 }
 
-export const selfSwitchOn = (ch = "A", indent = 0) => evCmd(123, [S_(ch), 1], indent);
+// RPG Maker XP: operación 0 = ON, 1 = OFF (al contrario que el booleano interno).
+export const selfSwitchOn = (ch = "A", indent = 0) => evCmd(123, [S_(ch), 0], indent);
 const END = () => evCmd(0);
 
 // --- Plantillas ------------------------------------------------------------
@@ -616,7 +617,7 @@ export function auditPBS(texts = {}, mapIds = []) {
           sum += r.ch;
           if (species && !has(species, r.species)) issues.push({ level: "warn", where, msg: `${b.type}: especie inexistente ${r.species}` });
           if (r.min > r.max) issues.push({ level: "error", where, msg: `${b.type}: nivel min>max en ${r.species}` });
-          if (r.min < 1 || r.max > 100) issues.push({ level: "warn", where, msg: `${b.type}: nivel fuera de 1-100 en ${r.species}` });
+          if (r.min < 1 || r.max > 150) issues.push({ level: "warn", where, msg: `${b.type}: nivel fuera de 1-150 en ${r.species}` });
         }
         if (b.rows.some((r) => r.species) && sum !== 100) {
           issues.push({ level: "warn", where, msg: `${b.type}: las probabilidades suman ${sum} (deberían sumar 100)` });
@@ -645,7 +646,7 @@ export function auditPBS(texts = {}, mapIds = []) {
         if (!m) { issues.push({ level: "error", where, msg: `línea Pokémon inválida: ${l.value}` }); continue; }
         if (species && !has(species, m[1].toUpperCase())) issues.push({ level: "warn", where, msg: `especie inexistente: ${m[1]}` });
         const lv = Number(m[2]);
-        if (lv < 1 || lv > 100) issues.push({ level: "warn", where, msg: `nivel fuera de 1-100: ${m[1]},${lv}` });
+        if (lv < 1 || lv > 150) issues.push({ level: "warn", where, msg: `nivel fuera de 1-150: ${m[1]},${lv}` });
       }
       if (!count) issues.push({ level: "error", where, msg: "entrenador sin Pokémon" });
       if (count > 6) issues.push({ level: "error", where, msg: `tiene ${count} Pokémon (máximo 6)` });

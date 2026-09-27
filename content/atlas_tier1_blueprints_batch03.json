@@ -1,0 +1,1881 @@
+{
+  "batch": 3,
+  "iteration": 1,
+  "blueprints": [
+    {
+      "mapId": 1146,
+      "tier": 1,
+      "title": "La Sombra que Eligió Quedarse",
+      "oneSentencePromise": "Los Pokémon oscuros de un refugio impiden que su antigua purificadora sea sometida a una máquina capaz de borrar dolor y también afecto.",
+      "biome": {
+        "identity": "Paso desértico convertido en refugio de rehabilitación, con una cámara de purificación clausurada",
+        "visualStorytelling": [
+          "Las puertas de las jaulas apuntan hacia dentro para dar refugio, no encierro.",
+          "La cámara blanca tiene arañazos del lado de salida.",
+          "Seis cuencos conservan nombres escritos a mano."
+        ],
+        "ambientChanges": [
+          "La cámara emite un zumbido agudo hasta que se desconecta.",
+          "Después de la decisión regresan sonidos de pasos junto a Rhea."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Rhea se negó a completar una purificación que estaba borrando vínculos junto con rabia.",
+        "centralQuestion": "¿Sanar significa eliminar una herida o aprender a vivir sin que decida por nosotros?",
+        "setup": "Una inspectora exige reactivar la cámara y los Pokémon bloquean el acceso.",
+        "escalation": "El prototipo empieza a afectar recuerdos no relacionados con el trauma.",
+        "reversal": "Los Pokémon no temen purificarse: protegen a Rhea, que también fue expuesta al dispositivo.",
+        "resolution": "El jugador elige desmantelar la cámara o convertirla en una herramienta voluntaria y gradual.",
+        "globalConnection": "El sexto sello prueba que Atlas confunde estabilidad con ausencia de emociones difíciles."
+      },
+      "voiceProfile": {
+        "tone": "seco, redentor y sin sentimentalismo fácil",
+        "lexicon": [
+          "sombra",
+          "umbral",
+          "cámara",
+          "cicatriz",
+          "elección",
+          "refugio"
+        ],
+        "sentenceRule": "Rhea elimina adjetivos; Dax habla en piezas; Sol nombra gestos pequeños.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Rhea Umbral",
+          "sprite": "trchar008",
+          "role": "antigua purificadora",
+          "reasonForBeingHere": "Dirige el refugio que antes abastecía a la cámara.",
+          "personalConflict": "Teme que su rechazo al procedimiento condene a otros a seguir sufriendo.",
+          "want": "Defender una recuperación elegida y medible.",
+          "fear": "Haber confundido obediencia tranquila con bienestar.",
+          "verbalTic": "Responde con frases cortas y deja la conclusión al interlocutor.",
+          "dialogue": {
+            "before": [
+              "No están bloqueando la puerta por miedo. Me están cubriendo la espalda.",
+              "La cámara borró una pesadilla. También borró quién me enseñó a despertar.",
+              "No necesito que confíen en mí. Necesito que puedan marcharse."
+            ],
+            "during": [
+              "Mira a Crobat: tiene salida y aun así vuelve.",
+              "El zumbido está entrando en nuestros recuerdos, no en sus sombras."
+            ],
+            "after": [
+              "Conservaremos cicatrices y registraremos quién decide tratarlas.",
+              "Houndoom durmió junto a la puerta abierta. Eso basta por hoy.",
+              "La calma volvió con nombres, no con números."
+            ],
+            "optional": [
+              "Absol nunca anunció una catástrofe. Anunció una elección.",
+              "Una puerta abierta también necesita bisagras cuidadas."
+            ]
+          }
+        },
+        {
+          "name": "Dax Remache",
+          "sprite": "trchar028",
+          "role": "ingeniero de la cámara",
+          "reasonForBeingHere": "Regresó para auditar el prototipo que construyó.",
+          "personalConflict": "Puede corregir el equipo, pero su reputación depende de declarar que siempre fue seguro.",
+          "want": "Transformar la cámara en terapia voluntaria.",
+          "fear": "Que admitir el defecto invalide a quienes sí mejoraron con ella.",
+          "verbalTic": "Describe la culpa como una pieza que no encaja.",
+          "dialogue": {
+            "before": [
+              "El filtro separa agresión de memoria. En el plano, al menos.",
+              "Encontré afecto en el depósito de residuos. Esa pieza no debía estar allí.",
+              "Puedo desmontarla en una hora. Explicar por qué tardé años llevará más."
+            ],
+            "during": [
+              "La lectura está limpia porque acaba de borrar qué estaba midiendo.",
+              "Desconecta el núcleo; yo cargaré con el informe."
+            ],
+            "after": [
+              "Guardé los planos y destruí la automatización.",
+              "Quien use la cámara podrá detenerla desde dentro.",
+              "Mi firma seguirá en el prototipo y también en la advertencia."
+            ],
+            "optional": [
+              "Las máquinas no exigen perdón; las personas sí piden contexto.",
+              "Una reparación sin historial es otro defecto oculto."
+            ]
+          }
+        },
+        {
+          "name": "Sol Ceniza",
+          "sprite": "NPC 05",
+          "role": "cuidador joven",
+          "reasonForBeingHere": "Da nombres a Pokémon registrados únicamente por número.",
+          "personalConflict": "Quiere protegerlos, pero confunde proteger con decidir por ellos.",
+          "want": "Aprender cuándo acompañar y cuándo apartarse.",
+          "fear": "Que un Pokémon elija salir del refugio.",
+          "verbalTic": "Describe decisiones mediante la posición de los cuencos.",
+          "dialogue": {
+            "before": [
+              "El cuenco de Absol amaneció junto a la salida. No lo moví.",
+              "Ursaring acepta comida si no escondo la mano.",
+              "Si todos se quedan por mí, quizá tampoco abrí de verdad la puerta."
+            ],
+            "during": [
+              "Metagross empujó mi cuenco hacia Rhea. Está votando.",
+              "No corras detrás de Crobat; está comprobando que puede regresar."
+            ],
+            "after": [
+              "Dos cuencos salieron del refugio y uno volvió al anochecer.",
+              "Escribí direcciones junto a los nombres, no números de celda.",
+              "Proteger también significa soportar una despedida."
+            ],
+            "optional": [
+              "Tyranitar rompe puertas cerradas y duerme frente a las abiertas.",
+              "Hoy sobró comida. Creo que es una buena noticia."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodio Umbrío",
+        "trainerType": "COOLTRAINER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo avanza de la advertencia y la desconfianza hacia compañeros capaces de elegir quedarse.",
+        "counterplayHint": "Combina Siniestro, Veneno, Acero y Roca; estados, cambios defensivos y objetos permiten responder sin una solución única.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "ABSOL",
+            "level": 91,
+            "narrativeRole": "advertencia ignorada",
+            "moves": [
+              "NIGHTSLASH",
+              "SUCKERPUNCH",
+              "PLAYROUGH",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "advertencia ignorada"
+          },
+          {
+            "species": "HOUNDOOM",
+            "level": 92,
+            "narrativeRole": "rabia que conservó lealtad",
+            "moves": [
+              "DARKPULSE",
+              "FLAMETHROWER",
+              "SLUDGEBOMB",
+              "NASTYPLOT"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "rabia que conservó lealtad"
+          },
+          {
+            "species": "CROBAT",
+            "level": 93,
+            "narrativeRole": "libertad comprobada",
+            "moves": [
+              "BRAVEBIRD",
+              "SLUDGEBOMB",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "libertad comprobada"
+          },
+          {
+            "species": "URSARING",
+            "level": 94,
+            "narrativeRole": "dolor visible",
+            "moves": [
+              "GIGAIMPACT",
+              "CLOSECOMBAT",
+              "CRUNCH",
+              "PROTECT"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "dolor visible"
+          },
+          {
+            "species": "METAGROSS",
+            "level": 95,
+            "narrativeRole": "memoria clasificada",
+            "moves": [
+              "METEORMASH",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "memoria clasificada"
+          },
+          {
+            "species": "TYRANITAR",
+            "level": 97,
+            "narrativeRole": "fuerza que decidió no huir",
+            "moves": [
+              "STONEEDGE",
+              "CRUNCH",
+              "EARTHQUAKE",
+              "DRAGONDANCE"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "fuerza que decidió no huir"
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Rhea abre la puerta del refugio.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Rhea abre la puerta del refugio.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los seis Pokémon rodean la cámara, no la salida.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Dax encuentra afecto en el depósito de residuos.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador decide el futuro del dispositivo.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La cámara activa una defensa automática.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Custodio Umbrío",
+            "action": "El Custodio Umbrío combate con retirada médica disponible.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Rhea aplica la decisión y registra el sello.",
+            "stateChange": "switch713=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Un Pokémon cruza la salida y vuelve por voluntad propia.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué futuro tendrá la cámara?",
+          "options": [
+            "Desmontarla por completo",
+            "Uso voluntario y gradual"
+          ],
+          "immediateDifferences": [
+            "Dax separa el núcleo y publica cada residuo.",
+            "Rhea instala control interior y sesiones breves."
+          ],
+          "laterDifferences": [
+            "Otros refugios reciben protocolos sin máquina.",
+            "Otros refugios reciben una advertencia y derecho de detención."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no cambia la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite su introducción y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "BLACKGLASSES",
+        "narrativeToken": "Sello de la Penumbra",
+        "globalEffect": "Atlas reconoce recuperación sin obediencia forzada.",
+        "futurePayoff": "El Archivo Final distingue paz de silencio impuesto.",
+        "whyMeaningful": "Las Gafas de Sol permiten mirar una sombra sin borrarla."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 713,
+            "name": "POKEMOD ATLAS SEAL 06",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Rhea Umbral",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1171,
+      "tier": 1,
+      "title": "El Jardín de los Dos Juramentos",
+      "oneSentencePromise": "Dos clanes aliados preparan una guerra porque cada uno conserva solo la mitad de un juramento pronunciado ante el mismo árbol.",
+      "biome": {
+        "identity": "Casa ceremonial abierta a un jardín índigo dividido por dos estandartes",
+        "visualStorytelling": [
+          "Las raíces atraviesan ambos salones sin respetar la frontera.",
+          "Cada estandarte tiene un borde cortado que encaja con el otro.",
+          "Una mesa de estrategia usa semillas en lugar de fichas."
+        ],
+        "ambientChanges": [
+          "Dos tambores marcan ritmos incompatibles antes del pacto.",
+          "La resolución combina ambos ritmos sin convertirlos en uno solo."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar069",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar011",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 02",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "El clan Laurel recuerda proteger el árbol; el clan Acero recuerda cortarlo si amenaza al valle.",
+        "centralQuestion": "¿Un juramento contradictorio es una traición o una instrucción diseñada para exigir diálogo?",
+        "setup": "Una plaga oscurece una rama y ambos clanes movilizan equipos.",
+        "escalation": "Las raíces sanas crecen bajo territorio Acero mientras la rama enferma cae sobre Laurel.",
+        "reversal": "Los bordes de los estandartes contienen juntos la cláusula perdida: decidir tras escuchar al otro clan.",
+        "resolution": "El jugador puede injertar la rama o podarla y plantar su brote fuera de la frontera.",
+        "globalConnection": "El séptimo sello muestra que Atlas fragmenta promesas para convertir cooperación en conflicto."
+      },
+      "voiceProfile": {
+        "tone": "ceremonial, táctico y respetuoso",
+        "lexicon": [
+          "estandarte",
+          "raíz",
+          "flanco",
+          "juramento",
+          "injerto",
+          "consejo"
+        ],
+        "sentenceRule": "Sayo habla en imágenes; Ren enumera riesgos; Omi corrige verbos.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Sayo Laurel",
+          "sprite": "trchar069",
+          "role": "heredera del clan Laurel",
+          "reasonForBeingHere": "Custodia la mitad protectora del juramento.",
+          "personalConflict": "Sabe que una rama enferma puede destruir el jardín que juró preservar.",
+          "want": "Proteger continuidad sin convertir tradición en inmovilidad.",
+          "fear": "Ser recordada como quien permitió el primer corte.",
+          "verbalTic": "Compara decisiones con estaciones.",
+          "dialogue": {
+            "before": [
+              "Una rama seca también pertenece al árbol. La pregunta es durante cuánto tiempo.",
+              "Mi juramento dice protege. No dice conserva cada herida.",
+              "La primavera no consulta un mapa antes de cruzar fronteras."
+            ],
+            "during": [
+              "La raíz bajo Acero está sana; nuestro estandarte no sabe explicarlo.",
+              "Escucha el segundo tambor antes de ordenar el corte."
+            ],
+            "after": [
+              "Protegimos el árbol permitiéndole perder una rama.",
+              "El brote crecerá donde ambos clanes deban visitarlo.",
+              "Mi estandarte conserva la costura, no la mitad."
+            ],
+            "optional": [
+              "Una tradición sin estación termina llamando invierno a todo.",
+              "Laurel no significa blando; significa volver a crecer."
+            ]
+          }
+        },
+        {
+          "name": "Ren Acero",
+          "sprite": "trchar011",
+          "role": "capitán del clan Acero",
+          "reasonForBeingHere": "Prepara la poda de emergencia.",
+          "personalConflict": "Su plan es correcto técnicamente y desastroso políticamente.",
+          "want": "Evitar que la plaga alcance el valle.",
+          "fear": "Que esperar diálogo convierta prudencia en negligencia.",
+          "verbalTic": "Presenta tres riesgos antes de una opinión.",
+          "dialogue": {
+            "before": [
+              "Riesgo uno: la rama cae. Riesgo dos: la raíz contagia. Riesgo tres: actuamos solos.",
+              "Mi juramento dice corta, pero el borde termina a mitad de palabra.",
+              "No vine a ganar un jardín. Vine a impedir que pierda el valle."
+            ],
+            "during": [
+              "El brote responde al suelo de ambos lados.",
+              "Retiro la orden hasta leer la costura completa."
+            ],
+            "after": [
+              "La poda fue conjunta y el registro también lo será.",
+              "Acero sostendrá el injerto mientras Laurel vigila la plaga.",
+              "Un plan compartido tarda más y necesita menos funerales."
+            ],
+            "optional": [
+              "Las mejores murallas incluyen una puerta con horario.",
+              "No temo cambiar de plan; temo hacerlo sin dejar constancia."
+            ]
+          }
+        },
+        {
+          "name": "Omi Costura",
+          "sprite": "NPC 02",
+          "role": "monje y restaurador de estandartes",
+          "reasonForBeingHere": "Descubrió que ambas telas fueron una sola.",
+          "personalConflict": "Ocultó la costura para obligar a los clanes a recordar sin pruebas.",
+          "want": "Devolver la cláusula perdida sin convertirse en autoridad del juramento.",
+          "fear": "Que la verdad llegue demasiado tarde por su propia lección.",
+          "verbalTic": "Corrige verbos en lugar de personas.",
+          "dialogue": {
+            "before": [
+              "No juraron proteger o cortar. Juraron decidir.",
+              "Oculté la costura para que recordaran juntos. Solo aprendieron separados.",
+              "Corrijo mi verbo: no enseñé; manipulé."
+            ],
+            "during": [
+              "Unan los bordes. La cláusula necesita dos manos.",
+              "El árbol no pide obediencia; exige una decisión completa."
+            ],
+            "after": [
+              "Coseré una línea visible. Las reparaciones no deben fingir antigüedad.",
+              "Ambos clanes leerán la cláusula antes de cada consejo.",
+              "Mi próxima lección empezará confesando el método."
+            ],
+            "optional": [
+              "Una palabra incompleta puede comandar un ejército entero.",
+              "Las costuras honestas no imitan tela intacta."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Regente Índigo",
+        "trainerType": "PSYCHIC_F",
+        "sprite": "trchar069",
+        "storyToldByTeam": "Tres iniciales representan caminos rivales y tres guardianes demuestran que un reino solo funciona cuando sus funciones se cruzan.",
+        "counterplayHint": "El orden mezcla Agua, Planta, Fuego, Volador, Acero y Fantasma; anticipar cambios vale más que buscar una sola debilidad.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "SAMUROTT",
+            "level": 90,
+            "narrativeRole": "la decisión afilada",
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "AQUAJET",
+              "MEGAHORN"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "la decisión afilada"
+          },
+          {
+            "species": "SERPERIOR",
+            "level": 91,
+            "narrativeRole": "la continuidad flexible",
+            "moves": [
+              "LEAFSTORM",
+              "DRAGONPULSE",
+              "GIGADRAIN",
+              "GLARE"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "la continuidad flexible"
+          },
+          {
+            "species": "EMBOAR",
+            "level": 92,
+            "narrativeRole": "la urgencia del valle",
+            "moves": [
+              "FLAREBLITZ",
+              "CLOSECOMBAT",
+              "WILDCHARGE",
+              "SUCKERPUNCH"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "la urgencia del valle"
+          },
+          {
+            "species": "BRAVIARY",
+            "level": 93,
+            "narrativeRole": "el testigo sobre fronteras",
+            "moves": [
+              "BRAVEBIRD",
+              "CLOSECOMBAT",
+              "ROOST",
+              "UTURN"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "el testigo sobre fronteras"
+          },
+          {
+            "species": "BISHARP",
+            "level": 94,
+            "narrativeRole": "el plan que puede detenerse",
+            "moves": [
+              "NIGHTSLASH",
+              "IRONHEAD",
+              "SUCKERPUNCH",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "el plan que puede detenerse"
+          },
+          {
+            "species": "AEGISLASH",
+            "level": 96,
+            "narrativeRole": "las dos mitades del juramento",
+            "moves": [
+              "KINGSSHIELD",
+              "SHADOWBALL",
+              "FLASHCANNON",
+              "SACREDSWORD"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "las dos mitades del juramento"
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Sayo y Ren despliegan sus medios estandartes.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Sayo y Ren despliegan sus medios estandartes.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La rama enferma cae entre ambos grupos.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Omi confiesa haber ocultado la costura.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige injerto o replantación.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los estandartes reunidos invocan al Regente Índigo.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Regente Índigo",
+            "action": "El combate prueba coordinación y contrajuego.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los clanes ejecutan juntos la opción elegida.",
+            "stateChange": "switch714=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La costura visible activa el sello y abre el jardín.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo salvar el árbol y el pacto?",
+          "options": [
+            "Injertar la rama sana",
+            "Podar y replantar el brote"
+          ],
+          "immediateDifferences": [
+            "Ambos clanes sostienen el injerto durante la noche.",
+            "La rama se corta y el brote cruza la frontera."
+          ],
+          "laterDifferences": [
+            "El árbol conserva una cicatriz compartida.",
+            "Un segundo jardín obliga a mantener dos rutas comunes."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no cambia la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite su introducción y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "KINGSROCK",
+        "narrativeToken": "Sello del Juramento",
+        "globalEffect": "Los consejos futuros exigen leer cláusulas completas.",
+        "futurePayoff": "El Archivo Final combina decisiones opuestas sin borrar su origen.",
+        "whyMeaningful": "La Roca del Rey deja de indicar mando y pasa a recordar responsabilidad compartida."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 714,
+            "name": "POKEMOD ATLAS SEAL 07",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Sayo Laurel",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1196,
+      "tier": 1,
+      "title": "La Persona Fuera del Encuadre",
+      "oneSentencePromise": "Una fotografía muestra a una niña que nunca estuvo en la expedición, mientras cada nueva toma borra al fotógrafo que intenta demostrarlo.",
+      "biome": {
+        "identity": "Gimnasio transformado en observatorio fotográfico con paneles móviles y escondites de fauna",
+        "visualStorytelling": [
+          "Las marcas de trípode forman una silueta adicional.",
+          "Una pared exhibe la misma costa con personas distintas.",
+          "Un espejo está cubierto para no contar como cámara."
+        ],
+        "ambientChanges": [
+          "El obturador suena sin cámara al entrar.",
+          "La escena final deja viento y llamadas de Pokémon sin clics."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Alba descubre a Nemi en todas sus fotografías, pero nadie recuerda verla durante la expedición.",
+        "centralQuestion": "¿Una imagen documenta presencia o puede fabricar a la persona que necesita como sujeto?",
+        "setup": "Cada intento de repetir la foto vuelve más nítida a Nemi y más borrosa a Alba.",
+        "escalation": "Mono encuentra notas de campo escritas con la letra de una fotógrafa que aún no existe.",
+        "reversal": "Rotom está usando descartes de identidad para construir una guía capaz de proteger a la fauna de fotógrafos invasivos.",
+        "resolution": "El jugador puede reconocer a Nemi como colaboradora digital o separar sus recuerdos y devolverlos a Alba.",
+        "globalConnection": "El octavo sello revela que Atlas rellena ausencias con observadores creados por sus propias herramientas."
+      },
+      "voiceProfile": {
+        "tone": "observador, paciente y visual",
+        "lexicon": [
+          "encuadre",
+          "negativo",
+          "huella",
+          "luz",
+          "distancia",
+          "testigo"
+        ],
+        "sentenceRule": "Alba describe luz; Mono conducta; Nemi habla desde bordes.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Alba Diafragma",
+          "sprite": "trchar008",
+          "role": "fotógrafa de conducta",
+          "reasonForBeingHere": "Revisa una expedición cuya documentación está cambiando.",
+          "personalConflict": "Necesita probar el fenómeno, pero cada prueba la elimina un poco.",
+          "want": "Conservar observaciones sin sacrificar a quien observa.",
+          "fear": "Ser reducida a una firma bajo las fotos de Nemi.",
+          "verbalTic": "Mide emociones como luz.",
+          "dialogue": {
+            "before": [
+              "La costa estaba nublada; esa niña tiene luz de mediodía en el rostro.",
+              "En la primera copia yo ocupaba ese borde. Ahora queda su manga.",
+              "Una buena foto pide distancia. Esta está acercándose sola."
+            ],
+            "during": [
+              "No dispares otra toma; mi sombra acaba de perder un brazo.",
+              "Nemi mira fuera del encuadre como si supiera quién viene después."
+            ],
+            "after": [
+              "Mi nombre volvió a los negativos y Nemi conservó el suyo.",
+              "Publicaremos dos autorías: una humana y una nacida de la cámara.",
+              "La costa no cambió; cambió quién tenía permiso para contarla."
+            ],
+            "optional": [
+              "Las fotos nítidas también pueden mentir con excelente exposición.",
+              "Dejé un espacio vacío en el álbum para quien mire después."
+            ]
+          }
+        },
+        {
+          "name": "Mono Rastro",
+          "sprite": "trchar009",
+          "role": "ranger de observación",
+          "reasonForBeingHere": "Protege a la fauna de una expedición cada vez más intrusiva.",
+          "personalConflict": "Usó las fotos anómalas para alejar visitantes sin investigar su origen.",
+          "want": "Convertir la anomalía en reglas de distancia verificables.",
+          "fear": "Que resolver el misterio reactive el turismo invasivo.",
+          "verbalTic": "Habla primero del comportamiento del Pokémon.",
+          "dialogue": {
+            "before": [
+              "Kecleon dejó de camuflarse frente a Nemi. Eso vale más que una firma.",
+              "Los Pokémon miran la cámara antes que a nosotros.",
+              "Cerré el sendero usando una foto que no entendía."
+            ],
+            "during": [
+              "Sigilyph está marcando el límite seguro con su vuelo.",
+              "Rotom no ataca; está bloqueando el ángulo más invasivo."
+            ],
+            "after": [
+              "El sendero abrirá con cupos y sin cebos.",
+              "Nemi seguirá señalando distancias desde la guía.",
+              "Confesaré que usé el misterio como cerca."
+            ],
+            "optional": [
+              "Una huella tranquila es mejor premio que una foto de pánico.",
+              "La fauna no firmó nuestro álbum."
+            ]
+          }
+        },
+        {
+          "name": "Nemi Borde",
+          "sprite": "NPC 04",
+          "role": "guía nacida del archivo",
+          "reasonForBeingHere": "Aparece donde una fotografía necesita advertir al observador.",
+          "personalConflict": "Teme desaparecer si devuelve todos los recuerdos prestados.",
+          "want": "Existir sin sustituir a Alba ni poseer sus memorias.",
+          "fear": "Ser tratada como error que debe borrarse.",
+          "verbalTic": "Habla desde posiciones y márgenes.",
+          "dialogue": {
+            "before": [
+              "Siempre me colocan a la izquierda. Allí recortan primero.",
+              "No estuve en la expedición; estuve en lo que decidieron no mirar.",
+              "Tengo recuerdos de Alba con espacios donde debería sentirlos."
+            ],
+            "during": [
+              "El borde está cerrándose. Elige antes de otra fotografía.",
+              "Rotom me dio forma, no instrucciones."
+            ],
+            "after": [
+              "Conservo un nombre y devuelvo las fotos que no viví.",
+              "Alba me enseñará a mirar sin ocupar su lugar.",
+              "La próxima guía incluirá al observador dentro del riesgo."
+            ],
+            "optional": [
+              "Un error también puede pedir consentimiento.",
+              "No necesito aparecer en cada foto para seguir aquí."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Revelador Prisma",
+        "trainerType": "SCIENTIST",
+        "sprite": "trchar246",
+        "storyToldByTeam": "El equipo recorre técnicas de copia, camuflaje, archivo y percepción hasta una señal capaz de observar al observador.",
+        "counterplayHint": "Hay cambios de tipo, ilusiones y control; ataques variados y conservar recursos evita depender de una sola predicción.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "SMEARGLE",
+            "level": 90,
+            "narrativeRole": "la imagen que aprende",
+            "moves": [
+              "SPORE",
+              "STEALTHROCK",
+              "BATONPASS",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "la imagen que aprende"
+          },
+          {
+            "species": "KECLEON",
+            "level": 91,
+            "narrativeRole": "el sujeto que decide verse",
+            "moves": [
+              "SHADOWSNEAK",
+              "SUCKERPUNCH",
+              "DRAINPUNCH",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "el sujeto que decide verse"
+          },
+          {
+            "species": "ROTOM",
+            "level": 92,
+            "narrativeRole": "la cámara consciente",
+            "moves": [
+              "THUNDERBOLT",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "VOLTSWITCH"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "la cámara consciente"
+          },
+          {
+            "species": "PORYGON2",
+            "level": 93,
+            "narrativeRole": "el archivo que corrige",
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "RECOVER",
+              "THUNDERBOLT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "el archivo que corrige"
+          },
+          {
+            "species": "ZOROARK",
+            "level": 94,
+            "narrativeRole": "la identidad construida",
+            "moves": [
+              "DARKPULSE",
+              "FLAMETHROWER",
+              "FOCUSBLAST",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "la identidad construida"
+          },
+          {
+            "species": "SIGILYPH",
+            "level": 96,
+            "narrativeRole": "el observador del límite",
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "ENERGYBALL",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "el observador del límite"
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Alba compara tres fotografías incompatibles.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Alba compara tres fotografías incompatibles.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Nemi aparece en un panel sin estar frente a él.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Mono cierra el sendero y presenta conducta alterada.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador decide identidad compartida o separación de recuerdos.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Rotom activa el Revelador Prisma.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Revelador Prisma",
+            "action": "El combate conserva Mochila y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Alba etiqueta ambas autorías y recibe el sello.",
+            "stateChange": "switch715=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El obturador cesa y la fauna vuelve a ignorar las cámaras.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué derecho tendrá Nemi sobre los recuerdos?",
+          "options": [
+            "Reconocerla como guía digital",
+            "Separar y devolver cada recuerdo"
+          ],
+          "immediateDifferences": [
+            "Nemi conserva forma y renuncia a recuerdos privados.",
+            "Alba recupera recuerdos; Nemi conserva solo experiencias propias."
+          ],
+          "laterDifferences": [
+            "Las guías futuras incluyen una voz nacida del archivo.",
+            "Las guías futuras citan a Nemi como testigo independiente."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no cambia la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite su introducción y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "WIDELENS",
+        "narrativeToken": "Sello del Encuadre",
+        "globalEffect": "Atlas registra autoría compartida y límites de observación.",
+        "futurePayoff": "El Archivo Final mostrará o reservará la imagen de Nemi según la decisión.",
+        "whyMeaningful": "La Lupa amplía el campo para incluir responsabilidad, no solo detalle."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 715,
+            "name": "POKEMOD ATLAS SEAL 08",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Alba Diafragma",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1221,
+      "tier": 1,
+      "title": "El Festival que Olvidó su Motivo",
+      "oneSentencePromise": "Una feria continúa cada noche con juegos impecables, aunque organizadores y visitantes ya no recuerdan a quién prometieron esperar.",
+      "biome": {
+        "identity": "Estadio convertido en feria luminosa con puestos atendidos por costumbre",
+        "visualStorytelling": [
+          "Un asiento permanece decorado y vacío.",
+          "Las entradas no muestran fecha ni precio.",
+          "Cada puesto entrega premios con nombres borrados."
+        ],
+        "ambientChanges": [
+          "La fanfarria reinicia antes de terminar.",
+          "Tras la resolución se oye conversación imperfecta en lugar de un bucle musical."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar007",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 02",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Fen dirige un festival eterno cuyo fundador no aparece en ningún registro.",
+        "centralQuestion": "¿Debe terminar una tradición cuando pierde su origen o puede recibir un propósito nuevo?",
+        "setup": "Los juegos funcionan y todos sonríen, pero nadie sabe por qué dejan un asiento vacío.",
+        "escalation": "Tessa descubre que los premios contienen mensajes dirigidos a viajeros que nunca regresaron.",
+        "reversal": "El festival nació para mantener encendida una ruta de retorno; Atlas copió la celebración y perdió a los viajeros.",
+        "resolution": "El jugador puede cerrar con una despedida o convertir la feria en bienvenida para cualquiera que vuelva.",
+        "globalConnection": "El noveno sello demuestra que Atlas conserva rituales incluso después de extraviar a sus destinatarios."
+      },
+      "voiceProfile": {
+        "tone": "festivo, melancólico y hospitalario",
+        "lexicon": [
+          "feria",
+          "entrada",
+          "puesto",
+          "regreso",
+          "fanfarria",
+          "asiento"
+        ],
+        "sentenceRule": "Fen anuncia; Tessa regatea emociones; Roco recuerda objetos.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Fen Confeti",
+          "sprite": "trchar007",
+          "role": "maestro de ceremonias",
+          "reasonForBeingHere": "Abre la feria cada noche por una promesa que olvidó.",
+          "personalConflict": "Teme que detenerla traicione a alguien y que continuar la vacíe para siempre.",
+          "want": "Descubrir si el ritual aún ayuda a regresar.",
+          "fear": "Pronunciar una despedida sin saber a quién.",
+          "verbalTic": "Anuncia sentimientos como atracciones.",
+          "dialogue": {
+            "before": [
+              "¡Atención! La feria abre por... un motivo excelente que anunciaremos después.",
+              "Ese asiento no está reservado. Tampoco está disponible.",
+              "Cada noche digo bienvenidos y nunca sé si alguien por fin volvió."
+            ],
+            "during": [
+              "¡Última prueba! Esta vez el premio será una respuesta aceptable.",
+              "La fanfarria intenta reiniciar; no la dejen interrumpir."
+            ],
+            "after": [
+              "Anuncio final: la tradición puede cambiar sin perder a quienes esperaba.",
+              "El asiento seguirá allí, pero también habrá otros alrededor.",
+              "Mañana abriremos a una hora que podamos recordar."
+            ],
+            "optional": [
+              "Los confetis del año pasado siguen cayendo en el almacén.",
+              "Una bienvenida repetida también necesita escuchar una respuesta."
+            ]
+          }
+        },
+        {
+          "name": "Tessa Ficha",
+          "sprite": "NPC 05",
+          "role": "encargada de premios",
+          "reasonForBeingHere": "Clasifica objetos cuyo nombre fue borrado.",
+          "personalConflict": "Vendió nostalgia como recuerdo oficial para mantener el puesto abierto.",
+          "want": "Devolver significado sin inventar otra mentira comercial.",
+          "fear": "Que nadie quiera los premios cuando conozca su historia.",
+          "verbalTic": "Habla como si toda emoción tuviera cambio.",
+          "dialogue": {
+            "before": [
+              "Dos fichas por una sonrisa; la devolución cuesta una conversación.",
+              "Estos premios dicen para cuando vuelvas bajo la etiqueta.",
+              "Cobré por recuerdos que no eran míos. Tengo el inventario completo."
+            ],
+            "during": [
+              "No acepten la copa; lean el papel debajo.",
+              "El puesto central acaba de marcar saldo pendiente: una despedida."
+            ],
+            "after": [
+              "Los premios serán gratuitos para quien cuente de dónde regresa.",
+              "Guardé una ficha como recibo de mi error.",
+              "Por primera vez cerré la caja antes que el corazón."
+            ],
+            "optional": [
+              "El peluche más caro no recuerda a quién se parece.",
+              "Las deudas emocionales no caben en la registradora."
+            ]
+          }
+        },
+        {
+          "name": "Roco Banco",
+          "sprite": "NPC 02",
+          "role": "cuidador del asiento vacío",
+          "reasonForBeingHere": "Limpia cada noche el lugar reservado.",
+          "personalConflict": "Recuerda objetos del fundador, pero no su rostro ni nombre.",
+          "want": "Conservar la espera sin convertirla en obligación.",
+          "fear": "Que usar el asiento borre la última pista.",
+          "verbalTic": "Recuerda mediante texturas y pesos.",
+          "dialogue": {
+            "before": [
+              "La chaqueta raspaba este respaldo; el nombre no dejó marca.",
+              "Quien se sentaba aquí llevaba barro de una ruta muy larga.",
+              "El asiento está vacío, no prohibido. Aún no sé la diferencia."
+            ],
+            "during": [
+              "La copa pesa igual que aquella mochila.",
+              "Escucha: la fanfarria deja un compás para pasos que no llegan."
+            ],
+            "after": [
+              "Movimos el asiento al círculo, no al altar.",
+              "Ahora cualquiera puede descansar sin ocupar un fantasma.",
+              "Recuerdo el peso de una promesa menos pesada."
+            ],
+            "optional": [
+              "La madera conserva mejor que yo el calor de una mano.",
+              "Limpiar no siempre significa borrar."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Maestra de Juegos",
+        "trainerType": "COOLTRAINER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "Cada compañero encarna una atracción que aprendió a entretener sin encerrar a sus visitantes en un bucle.",
+        "counterplayHint": "El equipo alterna clima, prioridad y soporte; eliminar el control de velocidad abre múltiples respuestas y los objetos están permitidos.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "LUDICOLO",
+            "level": 89,
+            "narrativeRole": "baile de bienvenida",
+            "moves": [
+              "SURF",
+              "GIGADRAIN",
+              "ICEBEAM",
+              "RAINDANCE"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "baile de bienvenida"
+          },
+          {
+            "species": "DELIBIRD",
+            "level": 90,
+            "narrativeRole": "regalo sin destinatario",
+            "moves": [
+              "ICEBEAM",
+              "BRAVEBIRD",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "regalo sin destinatario"
+          },
+          {
+            "species": "AMBIPOM",
+            "level": 91,
+            "narrativeRole": "juego de puntería",
+            "moves": [
+              "DOUBLEHIT",
+              "UTURN",
+              "BRICKBREAK",
+              "THUNDERPUNCH"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "juego de puntería"
+          },
+          {
+            "species": "MRMIME",
+            "level": 92,
+            "narrativeRole": "escenario invisible",
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "THUNDERBOLT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "escenario invisible"
+          },
+          {
+            "species": "TOGEKISS",
+            "level": 93,
+            "narrativeRole": "fanfarria serena",
+            "moves": [
+              "AIRSLASH",
+              "AURASPHERE",
+              "ROOST",
+              "THUNDERWAVE"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "fanfarria serena"
+          },
+          {
+            "species": "SNORLAX",
+            "level": 95,
+            "narrativeRole": "el asiento que por fin descansa",
+            "moves": [
+              "BODYSLAM",
+              "CRUNCH",
+              "EARTHQUAKE",
+              "REST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "el asiento que por fin descansa"
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Fen inicia una fanfarria que se reinicia sola.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Fen inicia una fanfarria que se reinicia sola.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Tessa muestra mensajes ocultos bajo los premios.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Roco mueve por primera vez el asiento vacío.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador decide despedida o nueva bienvenida.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los puestos invocan a la Maestra de Juegos.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Maestra de Juegos",
+            "action": "La batalla amistosa acepta objetos y derrota.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La feria adopta el propósito elegido y entrega el sello.",
+            "stateChange": "switch716=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La música termina completa y la salida permanece encendida.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué debe ocurrir con el festival?",
+          "options": [
+            "Cerrar con una despedida",
+            "Reabrir como lugar de bienvenida"
+          ],
+          "immediateDifferences": [
+            "Fen termina la fanfarria y nombra la ausencia.",
+            "Los puestos cambian premios por relatos de regreso."
+          ],
+          "laterDifferences": [
+            "Una ceremonia anual recuerda que esperar también termina.",
+            "Viajeros de otros sectores usan la feria como punto de reunión."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no cambia la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite su introducción y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "AMULETCOIN",
+        "narrativeToken": "Sello de la Bienvenida",
+        "globalEffect": "Atlas permite que un ritual cambie de destinatario.",
+        "futurePayoff": "El Archivo Final convoca una despedida o una reunión según la elección.",
+        "whyMeaningful": "La Moneda Amuleto conserva intercambio y memoria sin poner precio al regreso."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 716,
+            "name": "POKEMOD ATLAS SEAL 09",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Fen Confeti",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1246,
+      "tier": 1,
+      "title": "La Carta que Recuerda a su Jugador",
+      "oneSentencePromise": "Una carta cambia su ilustración para mostrar al primer compañero que cada persona cree haber decepcionado, convirtiendo un duelo ritual en confesión involuntaria.",
+      "biome": {
+        "identity": "Islas conectadas por mesas rituales donde una única carta pasa de mano en mano",
+        "visualStorytelling": [
+          "La funda permanece transparente hasta que alguien la toca.",
+          "Seis atriles representan funciones de una baraja, no rarezas.",
+          "Las olas reflejan reversos de cartas sin texto."
+        ],
+        "ambientChanges": [
+          "Cada cambio de portador altera un acorde breve.",
+          "Al final queda el sonido del mar sin barajar."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar007",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Ciro vende una carta imposible mientras Luma descubre que la ilustración usa recuerdos privados.",
+        "centralQuestion": "¿Una verdad revelada sin permiso puede convertirse en herramienta de reparación?",
+        "setup": "La carta muestra especies distintas y siempre una escena de despedida.",
+        "escalation": "El juez Var declara que negarse a jugar equivale a admitir culpa ante el ritual.",
+        "reversal": "La carta no juzga: completa el recuerdo con la reacción que el compañero nunca pudo mostrar.",
+        "resolution": "El jugador puede sellarla para lecturas voluntarias o desarmar el ritual y conservar solo ilustraciones consentidas.",
+        "globalConnection": "El décimo sello revela que Atlas convierte interpretación en regla cuando nadie cuestiona al árbitro."
+      },
+      "voiceProfile": {
+        "tone": "ritual, preciso y emocionalmente reservado",
+        "lexicon": [
+          "baraja",
+          "funda",
+          "turno",
+          "ilustración",
+          "testigo",
+          "consentimiento"
+        ],
+        "sentenceRule": "Ciro vende posibilidades; Luma describe trazos; Var formula reglas exactas.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Ciro Reverso",
+          "sprite": "trchar007",
+          "role": "mercader de cartas",
+          "reasonForBeingHere": "Encontró la carta y construyó un rito alrededor de sus cambios.",
+          "personalConflict": "Ganó prestigio exponiendo recuerdos que no le pertenecían.",
+          "want": "Conservar el valor cultural sin seguir comerciando intimidad.",
+          "fear": "Descubrir que la carta nunca lo eligió como dueño.",
+          "verbalTic": "Ofrece tres posibilidades antes de decir el precio real.",
+          "dialogue": {
+            "before": [
+              "Puede ser reliquia, espejo o fraude. Las tres opciones cuestan distinto.",
+              "La carta mostró a mi primer compañero y cobré entrada para no mirarlo solo.",
+              "No vendo la imagen; vendo el turno. Eso no lo vuelve mejor."
+            ],
+            "during": [
+              "La funda se está opacando. La carta también puede negarse.",
+              "No anuncies la especie; deja que su portador lo haga."
+            ],
+            "after": [
+              "Cerraré la mesa pública y devolveré cada copia.",
+              "Mi prestigio sobrevivirá o aprenderá a no hacerlo.",
+              "La carta nunca fue mía. Yo solo tenía la caja."
+            ],
+            "optional": [
+              "Una carta rara atrae coleccionistas; una culpable atrae público.",
+              "El reverso no oculta: promete esperar."
+            ]
+          }
+        },
+        {
+          "name": "Luma Trazo",
+          "sprite": "trchar008",
+          "role": "ilustradora y restauradora",
+          "reasonForBeingHere": "Estudia pigmentos que reaccionan a recuerdos.",
+          "personalConflict": "Copió una imagen privada para demostrar el fenómeno.",
+          "want": "Crear un método de consentimiento antes de cada lectura.",
+          "fear": "Que destruir la carta borre también una posibilidad de reconciliación.",
+          "verbalTic": "Nombra colores donde otros nombran emociones.",
+          "dialogue": {
+            "before": [
+              "El azul aparece antes de la tristeza; no son la misma cosa.",
+              "Copié una línea del borde y apareció una despedida que no era mía.",
+              "La tinta espera contacto, pero esperar no significa tener permiso."
+            ],
+            "during": [
+              "El dorado está retrocediendo. Su portador quiere cerrar la lectura.",
+              "No completes ese trazo; pertenece a una respuesta no dada."
+            ],
+            "after": [
+              "Usaremos fundas que solo se abren con dos firmas.",
+              "Destruí mi copia y conservé el registro del error.",
+              "La ilustración puede ayudar si también sabe detenerse."
+            ],
+            "optional": [
+              "Los pigmentos honestos cambian bajo distinta luz.",
+              "Una restauración no debe inventar lo que falta."
+            ]
+          }
+        },
+        {
+          "name": "Var Regla",
+          "sprite": "trchar028",
+          "role": "juez del duelo ritual",
+          "reasonForBeingHere": "Certifica lecturas como si fueran resultados de torneo.",
+          "personalConflict": "Su neutralidad convirtió coerción en procedimiento.",
+          "want": "Redactar una regla que permita retirarse sin inferencias.",
+          "fear": "Que admitir parcialidad destruya confianza en todos sus fallos.",
+          "verbalTic": "Habla en artículos y excepciones.",
+          "dialogue": {
+            "before": [
+              "Artículo uno: tocar la carta inicia lectura. Falta un artículo sobre detenerla.",
+              "Declaré voluntario un rito donde negarse parecía confesión.",
+              "La neutralidad no corrige una mesa inclinada."
+            ],
+            "during": [
+              "Excepción inmediata: el silencio no será interpretado.",
+              "Suspendo el duelo hasta que la carta acepte también ser guardada."
+            ],
+            "after": [
+              "Nueva regla: retirarse no crea evidencia.",
+              "Mis fallos anteriores serán revisados por sus participantes.",
+              "Un juez puede conservar autoridad después de limitarla."
+            ],
+            "optional": [
+              "Las reglas claras también pueden proteger una injusticia clara.",
+              "Toda excepción revela a quién olvidó el artículo."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Barajadora Lunar",
+        "trainerType": "PSYCHIC_F",
+        "sprite": "trchar069",
+        "storyToldByTeam": "Seis iconos familiares aparecen como recuerdos personales, no como cartas de mayor rareza.",
+        "counterplayHint": "El equipo cubre muchos tipos pero no usa condiciones ocultas; leer el orden y conservar objetos permite adaptar la estrategia.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "VENUSAUR",
+            "level": 92,
+            "narrativeRole": "cuidado que siguió creciendo",
+            "moves": [
+              "GIGADRAIN",
+              "SLUDGEBOMB",
+              "SLEEPPOWDER",
+              "SYNTHESIS"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "cuidado que siguió creciendo"
+          },
+          {
+            "species": "CHARIZARD",
+            "level": 93,
+            "narrativeRole": "orgullo después de la despedida",
+            "moves": [
+              "FLAMETHROWER",
+              "AIRSLASH",
+              "DRAGONPULSE",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "orgullo después de la despedida"
+          },
+          {
+            "species": "BLASTOISE",
+            "level": 94,
+            "narrativeRole": "protección confundida con distancia",
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "FLASHCANNON",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "protección confundida con distancia"
+          },
+          {
+            "species": "PIKACHU",
+            "level": 95,
+            "narrativeRole": "el recuerdo más inmediato",
+            "moves": [
+              "THUNDERBOLT",
+              "GRASSKNOT",
+              "BRICKBREAK",
+              "QUICKATTACK"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "el recuerdo más inmediato"
+          },
+          {
+            "species": "MEWTWO",
+            "level": 97,
+            "narrativeRole": "la imagen creada por expectativas ajenas",
+            "moves": [
+              "PSYCHIC",
+              "AURASPHERE",
+              "SHADOWBALL",
+              "RECOVER"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "la imagen creada por expectativas ajenas"
+          },
+          {
+            "species": "MEW",
+            "level": 98,
+            "narrativeRole": "la respuesta que conserva posibilidades",
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "la respuesta que conserva posibilidades"
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Ciro ofrece la carta y esta cambia de ilustración.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Ciro ofrece la carta y esta cambia de ilustración.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Luma demuestra que una copia conserva memoria ajena.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Var intenta iniciar el duelo por procedimiento.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador decide lectura consentida o fin del ritual.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La baraja materializa a la Barajadora Lunar.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Barajadora Lunar",
+            "action": "El combate usa reglas visibles y Mochila disponible.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Var redacta el derecho de retirada y activa el sello.",
+            "stateChange": "switch717=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La carta vuelve a su reverso y el mar deja de reflejar texto.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué futuro merece la carta?",
+          "options": [
+            "Lecturas privadas con consentimiento",
+            "Desarmar el ritual público"
+          ],
+          "immediateDifferences": [
+            "Luma crea una funda de doble firma.",
+            "Var cierra la mesa y devuelve ilustraciones."
+          ],
+          "laterDifferences": [
+            "La carta ayuda en reconciliaciones solicitadas.",
+            "Las imágenes consentidas forman un archivo sin objeto central."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no cambia la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite su introducción y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "REVEALGLASS",
+        "narrativeToken": "Sello del Reverso",
+        "globalEffect": "Atlas reconoce el derecho a no revelar un recuerdo.",
+        "futurePayoff": "El Archivo Final pregunta antes de mostrar escenas personales.",
+        "whyMeaningful": "El Espejo Veraz deja de imponer una verdad y se usa solo tras consentimiento."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 717,
+            "name": "POKEMOD ATLAS SEAL 10",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Ciro Reverso",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    }
+  ]
+}
