@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="theme-color" content="#1b2340" />
+<meta name="description" content="PokeMod Studio Fire Ash Edition — editor de mapas, eventos, flags, NPCs y Pokémon para Fire Ash, compatible con Kirin." />
+<title>PokeMod Studio — Fire Ash Edition</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app"><p style="padding:2rem;text-align:center">Cargando PokeMod Studio…</p></div>
+<script type="module">
+import { boot } from "./js/ui.js";
+boot();
+if ("serviceWorker" in navigator && location.protocol.startsWith("http") && !location.hostname.endsWith(".e2b.app")) {
+  navigator.serviceWorker.register("sw.js").catch(() => {});
+}
+</script>
+</body>
+</html>

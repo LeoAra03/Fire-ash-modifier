@@ -1,0 +1,42 @@
+# === PokeMod Studio - Fire Ash Edition ===
+# Nunca commitear el juego, sus assets, saves ni backups.
+
+# Juego descargado (el usuario lo pone aquí, el downloader también)
+game/
+*.zip
+*.7z
+*.rar
+
+# Saves y backups (protegidos, locales)
+Save*.rxdata
+Game.rxdata
+*.sav
+*.bak
+PokeModBackups/
+backups/
+
+# Build outputs
+android/.gradle/
+android/build/
+android/app/build/
+android/app/src/main/assets/web/
+android/local.properties
+*.apk
+*.aab
+*.keystore
+
+# Web dev
+web/demo-out/
+node_modules/
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+tools/.cache/
+
+# Editor
+.vscode/
+.idea/
+*.swp
