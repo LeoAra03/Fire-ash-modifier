@@ -9,8 +9,8 @@
 - Region Builder: **40/40 sectores válidos**, 153 especies compatibles y 0 anclas futuras señaladas.
 - Modelo de autoría inspirado en Pokémon Studio 2.11.0: **40/40 registros íntegros**.
 - Compuerta técnica de estilo Fire Ash: **40/40 mapas aprobados**.
-- Revisión artística: **40/40 pendientes**, porque conservan geometría heredada y requieren una pasada visual humana.
-- Prueba visual en `Game.exe`: pendiente por ausencia de Wine.
+- Composición visual estática: **25/40 intervenidas**, con 249 celdas narrativas y equivalencia estricta de colisión; 15 conservan geometría fuente exacta.
+- Revisión artística dentro de `Game.exe`: **40/40 pendientes** por ausencia de Wine.
 
 ## Jerarquía
 
@@ -177,11 +177,22 @@ pokemon_fire_ash/PokeModBackups/tier1_batch07_originals/
 pokemon_fire_ash/PokeModBackups/tier1_batch08_originals/
 pokemon_fire_ash/PokeModBackups/tier1_batch09_originals/
 pokemon_fire_ash/PokeModBackups/extended_level_cap_originals/
+pokemon_fire_ash/PokeModBackups/atlas_visual_macro01_originals/
+```
+
+Macrociclo visual 01:
+
+```text
+content/atlas_visual_polish_macro01.json
+tools/apply_atlas_visual_macro01.mjs
+docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md
+docs/referencia_visual_atlas_macro01_antes.png
+docs/referencia_visual_atlas_macro01_despues.png
 ```
 
 ## Siguiente ciclo — pulido por capas
 
-Tier 1 narrativo está completo. El trabajo pendiente se separa ahora en 40 pasadas visuales de anclas, 120 rutas Tier 2 con autoría dedicada y 420 Ecos Tier 3 que todavía necesitan una regla local breve. El inventario reproducible y los lotes recomendados están en `docs/ESTADO_CONTENIDO_Y_PROMPTS.md`.
+Tier 1 narrativo está completo. El macrociclo visual 01 terminó cinco lotes y dejó 25/40 anclas con composición de piso propia. Quedan 15 pasadas visuales, 120 rutas Tier 2 con autoría dedicada y 420 Ecos Tier 3 que todavía necesitan una regla local breve. El inventario reproducible y los lotes recomendados están en `docs/ESTADO_CONTENIDO_Y_PROMPTS.md`.
 
 La referencia conceptual criticable de la Ancla 26 está en `docs/referencia_visual_atlas_ancla26.png`; su alcance y limitaciones están documentados en `docs/REFERENCIA_VISUAL_ANCLA26.md`.
 
@@ -203,6 +214,6 @@ tools/external_authoring.test.mjs
 
 El pipeline narrativo ahora consume obligatoriamente el plano importado de Region Builder, un registro estable por ancla inspirado en Pokémon Studio y las métricas del mapa fuente real. Ninguno de esos formatos escribe directamente sobre `Data/*.rxdata`.
 
-La nueva suite de autoría externa pasa **25/25** pruebas. La compuerta confirma recursos, pasabilidad, dimensiones, eventos artesanales y retorno, pero también informa que las 40 anclas usan aún geometría fuente exacta. Esto impide presentarlas como arte visual definitivo.
+La suite de autoría externa pasa **28/28** pruebas. La compuerta confirma recursos, pasabilidad, dimensiones, eventos artesanales y retorno; reconoce 25 composiciones propias y mantiene 15 anclas con geometría fuente exacta. Ninguno de esos estados permite presentar todavía los mapas como arte visual certificado.
 
-Antes de certificar los episodios como finales sigue siendo necesaria una pasada artesanal de mapa y una prueba visual dentro de `Game.exe`.
+Antes de certificar los episodios como finales todavía faltan la composición estática de 15 anclas y la prueba visual de las 40 dentro de `Game.exe`.

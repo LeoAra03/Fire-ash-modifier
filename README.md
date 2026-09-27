@@ -103,12 +103,14 @@ El estado instalado, la diferencia entre infraestructura y autoría artesanal, y
 node tools/audit_content_progress.mjs
 ```
 
+El primer macrociclo visual cubre cinco lotes y 25 anclas. La comparación criticable antes/después, marcada explícitamente como referencia no certificada, está documentada en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md).
+
 ## Tests
 
 ```bash
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
 node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
-node tools/external_authoring.test.mjs  # 25 pruebas de interoperabilidad y estilo
+node tools/external_authoring.test.mjs  # 28 pruebas de interoperabilidad, estilo y backlog visual
 node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom
 ```
 

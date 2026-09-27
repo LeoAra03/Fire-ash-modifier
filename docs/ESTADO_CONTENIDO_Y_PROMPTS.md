@@ -10,7 +10,9 @@
 - Prompts Tier 1 ya escritos: **40/40**; faltan ejecutar **0**.
 - Infraestructura Atlas con baliza y retorno: **1000/1000** mapas.
 - Convergencia final: requiere **39 sellos previos**; no bloquea la ruta de retorno.
-- Anclas con geometría visual propia: **0/40**; revisión visual pendiente: **40/40**.
+- Anclas con composición visual propia: **25/40**; composición estática pendiente: **15/40**.
+- Lotes completados: **14/62** (9 narrativos + 5 visuales).
+- Quedan **48 lotes pequeños**, agrupables en **10 prompts** de hasta 5 lotes.
 
 ## Contenido instalado
 
@@ -24,13 +26,14 @@
 
 ## Qué falta
 
-| Frente | Unidades | Tamaño de lote | Ejecuciones de prompt recomendadas |
+| Frente | Unidades | Unidades por lote | Lotes pequeños restantes |
 |---|---:|---:|---:|
 | Tier 1 narrativo | 0 | 5 | 0 |
-| Pulido visual de anclas | 40 | 5 | 8 |
+| Pulido visual de anclas | 15 | 5 | 3 |
 | Tier 2 artesanal | 120 | 5 | 24 |
 | Reglas faltantes Tier 3 | 420 | 20 | 21 |
-| **Pulido completo por capas** | **580** | — | **53** |
+| **Pulido completo por capas** | **555** | — | **48** |
+| **Prompts agrupando cinco lotes** | — | 5 lotes por prompt | **10** |
 
 ## Tier 1 narrativo completo
 
@@ -39,14 +42,14 @@ Los 40 prompts Tier 1 fueron ejecutados, aprobados y compilados. No queda autor�
 ## Tres respuestas posibles a “cuántos prompts faltan”
 
 1. **Para terminar solo las 40 historias Tier 1:** no queda ningún prompt narrativo pendiente.
-2. **Para dejar las 40 anclas como candidatas estáticas, incluida composición visual:** **8 ejecuciones por lotes**.
-3. **Para pulir las tres capas de los 1.000 mapas:** **53 ejecuciones por lotes**, equivalentes a 580 unidades de trabajo.
+2. **Para dejar las 40 anclas como candidatas estáticas, incluida composición visual:** **3 ejecuciones por lotes**.
+3. **Para pulir las tres capas de los 1.000 mapas:** quedan **48 lotes pequeños**, equivalentes a 555 unidades de trabajo y agrupables en **10 prompts** de hasta cinco lotes.
 
 Además siguen pendientes 40 pruebas manuales en `Game.exe`. No se cuentan como prompts.
 
 ## Criterio de honestidad
 
-- Los 1.000 mapas Atlas existen y son transitables, pero usan geometría heredada.
+- Los 1.000 mapas Atlas existen y son transitables. 25 anclas tienen ya una composición de piso propia; los demás mapas conservan geometría heredada en distintos grados.
 - Los 500 desafíos Atlas y las 500 aventuras de Horizontes están instalados, pero no equivalen a 1.000 episodios artesanales.
 - Tier 1 sí dispone de blueprint, reparto, decisión, jefe narrativo, curación y retorno.
 - Tier 2 y la mitad de Tier 3 aún requieren autoría dedicada para alcanzar la meta de pulido por capas.

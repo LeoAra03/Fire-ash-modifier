@@ -17,6 +17,8 @@ function check(condition, message) {
 const approvedBlueprints = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_tier1_blueprints_approved.json"), "utf8")).blueprints;
 const expectedApproved = approvedBlueprints.length;
 const expectedDexSpecies = new Set(approvedBlueprints.flatMap((blueprint) => blueprint.battle.team.map((pokemon) => pokemon.species))).size;
+const visualManifestFiles = fs.readdirSync(path.join(ROOT, "content")).filter((file) => /^atlas_visual_polish_macro\d+\.json$/.test(file));
+const expectedCustomMaps = new Set(visualManifestFiles.flatMap((file) => JSON.parse(fs.readFileSync(path.join(ROOT, "content", file), "utf8")).maps.map((entry) => Number(entry.mapId)))).size;
 const region = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_mil_region.pkregion"), "utf8"));
 const regionValidation = validatePkregion(region);
 check(regionValidation.ok, "el .pkregion de Atlas cumple el formato v1");
@@ -70,8 +72,11 @@ try {
 const style = buildAtlasStyleReport();
 check(style.integrity.ok, "los 40 mapas superan compatibilidad técnica de estilo");
 check(style.summary.technicalPassed === 40, "style gate aprobó 40/40 anclas");
-check(style.summary.exactInheritedGeometry === 40, "style gate detecta honestamente geometría heredada en 40/40");
-check(style.summary.artReviewRequired === 40, "ningún mapa heredado se certifica visualmente sin revisión humana");
+check(style.summary.customGeometry === expectedCustomMaps, `style gate reconoce ${expectedCustomMaps}/40 anclas con composición propia`);
+check(style.summary.exactInheritedGeometry === 40 - expectedCustomMaps, `style gate conserva ${40 - expectedCustomMaps}/40 anclas con geometría totalmente heredada`);
+check(style.summary.staticCompositionPending === 40 - expectedCustomMaps, "el backlog visual está derivado de la geometría real");
+check(style.summary.artReviewRequired === 40, "ningún mapa se certifica visualmente sin revisión humana");
+check(style.summary.gamePreviewRequired === 40, "las 40 anclas siguen requiriendo Game.exe");
 check(style.scope.finalGamePreviewStillRequired === true, "la prueba dentro de Game.exe sigue siendo obligatoria");
 
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);

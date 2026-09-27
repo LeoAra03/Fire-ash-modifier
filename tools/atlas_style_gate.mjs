@@ -131,6 +131,7 @@ export function buildAtlasStyleReport() {
 
     const artDirectionStatus = similarity === 1 ? "review-required-inherited-geometry" : "customized-needs-game-preview";
     if (approvedIds.has(entry.mapId) && similarity === 1) warnings.push(`${entry.mapId}: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.`);
+    if (approvedIds.has(entry.mapId) && similarity !== 1) warnings.push(`${entry.mapId}: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.`);
     return {
       mapId: entry.mapId,
       sourceMapId: entry.sourceId,
@@ -166,7 +167,9 @@ export function buildAtlasStyleReport() {
       technicalFailed: anchors.filter((entry) => entry.technicalStatus === "failed").length,
       exactInheritedGeometry: anchors.filter((entry) => entry.comparison?.exactInheritedGeometry).length,
       customGeometry: anchors.filter((entry) => entry.comparison && !entry.comparison.exactInheritedGeometry).length,
-      artReviewRequired: anchors.filter((entry) => entry.artDirectionStatus?.startsWith("review-required")).length,
+      staticCompositionPending: anchors.filter((entry) => entry.comparison?.exactInheritedGeometry).length,
+      artReviewRequired: anchors.filter((entry) => entry.approvedEpisode && entry.artDirectionStatus !== "certified").length,
+      gamePreviewRequired: anchors.filter((entry) => entry.approvedEpisode).length,
     },
     integrity: { ok: errors.length === 0, errors, warnings },
     anchors,

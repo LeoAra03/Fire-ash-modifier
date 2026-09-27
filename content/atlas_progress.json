@@ -69,8 +69,11 @@
         "compatibleRegionalDexSpecies": 153,
         "studioRecords": 40,
         "styleTechnicalPassed": 40,
-        "exactInheritedAnchorGeometry": 40,
-        "customAnchorGeometry": 0,
+        "exactInheritedAnchorGeometry": 15,
+        "customAnchorGeometry": 25,
+        "narrativeBatchesCompleted": 9,
+        "visualBatchesCompleted": 5,
+        "visualMacroCyclesCompleted": 1,
         "approvedTeamSpecies": 153
       }
     },
@@ -82,6 +85,15 @@
       "backupsPerBatch": true
     }
   },
+  "workLedger": {
+    "narrativeBatchesCompleted": 9,
+    "visualBatchesCompleted": 5,
+    "totalBatchesCompleted": 14,
+    "smallBatchesRemaining": 48,
+    "totalTrackedBatches": 62,
+    "batchesPerMacroPrompt": 5,
+    "macroPromptsRemaining": 10
+  },
   "remaining": {
     "tier1NarrativeEpisodes": {
       "units": 0,
@@ -92,36 +104,11 @@
       "maps": []
     },
     "anchorVisualPolish": {
-      "units": 40,
-      "reason": "Las 40 anclas conservan geometría fuente exacta; son compatibles, pero todavía no tienen composición visual artesanal propia.",
+      "units": 15,
+      "reason": "25/40 anclas ya tienen una composición de piso propia; 15/40 todavía conservan geometría fuente exacta. Todas requieren Game.exe antes de certificarse.",
       "recommendedBatchSize": 5,
-      "recommendedPromptRuns": 8,
+      "recommendedPromptRuns": 3,
       "maps": [
-        1021,
-        1046,
-        1071,
-        1096,
-        1121,
-        1146,
-        1171,
-        1196,
-        1221,
-        1246,
-        1271,
-        1296,
-        1321,
-        1346,
-        1371,
-        1396,
-        1421,
-        1446,
-        1471,
-        1496,
-        1521,
-        1546,
-        1571,
-        1596,
-        1621,
         1646,
         1671,
         1696,
@@ -707,16 +694,18 @@
         "recommendedBatchRuns": 0
       },
       "staticAnchorCandidate": {
-        "contentUnits": 40,
-        "recommendedBatchRuns": 8,
+        "contentUnits": 15,
+        "recommendedBatchRuns": 3,
         "excludesManualGameExeTesting": true
       },
       "fullLayeredAtlasPolish": {
-        "contentUnits": 580,
-        "recommendedBatchRuns": 53,
+        "contentUnits": 555,
+        "recommendedBatchRuns": 48,
+        "batchesPerMacroPrompt": 5,
+        "recommendedMacroPrompts": 10,
         "batchPlan": {
           "tier1": "0 lote de 5",
-          "anchorVisuals": "8 lotes de 5",
+          "anchorVisuals": "3 lotes de 5",
           "tier2": "24 lotes de 5",
           "tier3": "21 lotes de 20"
         }
