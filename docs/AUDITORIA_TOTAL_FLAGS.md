@@ -1,14 +1,14 @@
 # Auditoría total de flags de Fire Ash
 
-Generada: 2026-09-27T19:31:15.124Z
+Generada: 2026-09-27T22:25:03.995Z
 
 ## Cobertura
 
 - 2020 mapas.
 - 50 eventos comunes.
 - 402 secciones de script.
-- 747 slots de switch (685 con nombre).
-- 143 slots de variable (134 con nombre).
+- 757 slots de switch (695 con nombre).
+- 153 slots de variable (144 con nombre).
 - 5714 claves de self-switch observadas.
 - 73 expresiones dinámicas distintas.
 
@@ -65,10 +65,35 @@ La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby 
 | 745 | POKEMOD ATLAS SEAL 38 | used |
 | 746 | POKEMOD ATLAS SEAL 39 | used |
 | 747 | POKEMOD ATLAS SEAL 40 | used |
+| 748 | POKEMOD ATLAS T2 ROUTE 01 | used |
+| 749 | POKEMOD ATLAS T2 ROUTE 02 | used |
+| 750 | POKEMOD ATLAS T2 ROUTE 03 | used |
+| 751 | POKEMOD ATLAS T2 ROUTE 04 | used |
+| 752 | POKEMOD ATLAS T2 ROUTE 05 | used |
+| 753 | POKEMOD ATLAS T2 ROUTE 06 | used |
+| 754 | POKEMOD ATLAS T2 ROUTE 07 | used |
+| 755 | POKEMOD ATLAS T2 ROUTE 08 | used |
+| 756 | POKEMOD ATLAS T2 ROUTE 09 | used |
+| 757 | POKEMOD ATLAS T2 ROUTE 10 | used |
+
+## Variables PokeMod Tier 2 reservadas
+
+| ID | Nombre | Estado |
+|---:|---|---|
+| 144 | POKEMOD ATLAS T2 DECISION 01 | write only/static |
+| 145 | POKEMOD ATLAS T2 DECISION 02 | write only/static |
+| 146 | POKEMOD ATLAS T2 DECISION 03 | write only/static |
+| 147 | POKEMOD ATLAS T2 DECISION 04 | write only/static |
+| 148 | POKEMOD ATLAS T2 DECISION 05 | write only/static |
+| 149 | POKEMOD ATLAS T2 DECISION 06 | write only/static |
+| 150 | POKEMOD ATLAS T2 DECISION 07 | write only/static |
+| 151 | POKEMOD ATLAS T2 DECISION 08 | write only/static |
+| 152 | POKEMOD ATLAS T2 DECISION 09 | write only/static |
+| 153 | POKEMOD ATLAS T2 DECISION 10 | write only/static |
 
 Conflictos de reserva: **0**.
 
-## Switches 1–747
+## Switches 1–757
 
 | ID | Nombre | Lecturas | ON | OFF | Script | Estado |
 |---:|---|---:|---:|---:|---:|---|
@@ -819,8 +844,18 @@ Conflictos de reserva: **0**.
 | 745 | POKEMOD ATLAS SEAL 38 | 4 | 1 | 0 | 0 | used |
 | 746 | POKEMOD ATLAS SEAL 39 | 4 | 1 | 0 | 0 | used |
 | 747 | POKEMOD ATLAS SEAL 40 | 4 | 1 | 0 | 0 | used |
+| 748 | POKEMOD ATLAS T2 ROUTE 01 | 2 | 1 | 0 | 0 | used |
+| 749 | POKEMOD ATLAS T2 ROUTE 02 | 2 | 1 | 0 | 0 | used |
+| 750 | POKEMOD ATLAS T2 ROUTE 03 | 2 | 1 | 0 | 0 | used |
+| 751 | POKEMOD ATLAS T2 ROUTE 04 | 2 | 1 | 0 | 0 | used |
+| 752 | POKEMOD ATLAS T2 ROUTE 05 | 2 | 1 | 0 | 0 | used |
+| 753 | POKEMOD ATLAS T2 ROUTE 06 | 2 | 1 | 0 | 0 | used |
+| 754 | POKEMOD ATLAS T2 ROUTE 07 | 2 | 1 | 0 | 0 | used |
+| 755 | POKEMOD ATLAS T2 ROUTE 08 | 2 | 1 | 0 | 0 | used |
+| 756 | POKEMOD ATLAS T2 ROUTE 09 | 2 | 1 | 0 | 0 | used |
+| 757 | POKEMOD ATLAS T2 ROUTE 10 | 2 | 1 | 0 | 0 | used |
 
-## Variables 1–143
+## Variables 1–153
 
 | ID | Nombre | Lecturas | Escrituras | Script | Estado |
 |---:|---|---:|---:|---:|---|
@@ -967,6 +1002,16 @@ Conflictos de reserva: **0**.
 | 141 | POKEMOD ATLAS DECISION 38 | 0 | 2 | 0 | write only/static |
 | 142 | POKEMOD ATLAS DECISION 39 | 0 | 2 | 0 | write only/static |
 | 143 | POKEMOD ATLAS DECISION 40 | 0 | 2 | 0 | write only/static |
+| 144 | POKEMOD ATLAS T2 DECISION 01 | 0 | 2 | 0 | write only/static |
+| 145 | POKEMOD ATLAS T2 DECISION 02 | 0 | 2 | 0 | write only/static |
+| 146 | POKEMOD ATLAS T2 DECISION 03 | 0 | 2 | 0 | write only/static |
+| 147 | POKEMOD ATLAS T2 DECISION 04 | 0 | 2 | 0 | write only/static |
+| 148 | POKEMOD ATLAS T2 DECISION 05 | 0 | 2 | 0 | write only/static |
+| 149 | POKEMOD ATLAS T2 DECISION 06 | 0 | 2 | 0 | write only/static |
+| 150 | POKEMOD ATLAS T2 DECISION 07 | 0 | 2 | 0 | write only/static |
+| 151 | POKEMOD ATLAS T2 DECISION 08 | 0 | 2 | 0 | write only/static |
+| 152 | POKEMOD ATLAS T2 DECISION 09 | 0 | 2 | 0 | write only/static |
+| 153 | POKEMOD ATLAS T2 DECISION 10 | 0 | 2 | 0 | write only/static |
 
 ## Switches críticos revisados
 
@@ -977,6 +1022,7 @@ Conflictos de reserva: **0**.
 - **708–747:** 40 sellos narrativos Tier 1 aprobados, verificados sin colisión.
 - **Variables 101–103:** contadores separados de Horizontes, Atlas Mil y sellos narrativos.
 - **Variables 104–143:** decisiones persistentes de los 40 episodios Tier 1.
+- **Switches 748–757 y variables 144–153:** progreso y decisiones persistentes de las primeras 10 rutas Tier 2.
 
 ## Indicadores que requieren cautela
 

@@ -40,7 +40,7 @@ Estas imágenes son referencias criticables, no una certificación visual final.
 - legibilidad bajo todas las páginas de evento;
 - comportamiento exacto dentro de `Game.exe`.
 
-Los 25 mapas superan las comprobaciones estáticas, pero siguen marcados como `customized-needs-game-preview`. Los otros 15 mapas Tier 1 conservan todavía geometría fuente exacta y forman los tres lotes visuales pendientes.
+Los 25 mapas superaron las comprobaciones estáticas, pero siguen marcados como `customized-needs-game-preview`. Al cierre de este primer macrociclo quedaban 15 mapas con geometría fuente exacta; el macrociclo 02 ya los intervino y está documentado en `docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`.
 
 ## Reversión
 

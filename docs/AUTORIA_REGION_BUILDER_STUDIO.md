@@ -170,12 +170,13 @@ Estado actual:
 
 - 40/40 anclas técnicamente compatibles;
 - 0 recursos visuales faltantes detectados;
-- 25/40 incorporan composición de piso narrativa propia;
-- 15/40 conservan exactamente la geometría heredada;
+- 40/40 incorporan composición de piso narrativa propia;
+- 0/40 conservan exactamente la geometría heredada;
+- los dos macrociclos visuales modificaron 397 celdas con equivalencia estricta de propiedades;
 - 40/40 requieren revisión dentro de `Game.exe` antes de certificarse visualmente;
 - los 40 episodios aprobados conservan sus cinco eventos Tier 1.
 
-La geometría heredada sigue siendo segura y coherente con el juego base. Las 25 composiciones propias preservan pasabilidad, prioridad y terrain tag, pero tampoco equivalen a certificación visual final. El informe mantiene obligatoria una prueba dentro de `Game.exe`.
+Las 40 composiciones propias preservan pasabilidad, prioridad y terrain tag, pero no equivalen a certificación visual final. El informe mantiene obligatoria una prueba dentro de `Game.exe`.
 
 ## Pipeline obligatorio
 

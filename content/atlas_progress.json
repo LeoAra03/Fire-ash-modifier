@@ -20,8 +20,9 @@
       "horizonsAdventures": 500,
       "atlasGenericEventsAndBattles": 500,
       "atlasHandcraftedAnchorEpisodes": 40,
-      "total": 1057,
-      "note": "Los episodios artesanales Tier 1 se superponen a mapas Atlas, pero son eventos narrativos adicionales y no sustituyen el catálogo genérico."
+      "atlasAuthoredTier2Routes": 10,
+      "total": 1067,
+      "note": "Los episodios Tier 1 y las rutas Tier 2 se superponen a mapas Atlas, pero son eventos narrativos adicionales y no sustituyen el catálogo genérico."
     },
     "battlesAndActors": {
       "mirrorIslandBosses": 16,
@@ -31,6 +32,8 @@
       "atlasHandcraftedBosses": 40,
       "atlasNamedHandcraftedNpcs": 120,
       "atlasHandcraftedMapEvents": 200,
+      "atlasNamedTier2Npcs": 20,
+      "atlasTier2AuthoredMapEvents": 20,
       "specialWildOrCapturableEncounters": 201,
       "compiledTrainerRecordsAdded": 436
     },
@@ -56,7 +59,10 @@
         "total": 120,
         "infrastructureComplete": 120,
         "withGenericChallenge": 60,
-        "dedicatedAuthoredRoutes": 0
+        "dedicatedAuthoredRoutes": 10,
+        "namedNpcs": 20,
+        "persistentDecisions": 10,
+        "uniqueRewards": 10
       },
       "tier3": {
         "total": 840,
@@ -69,11 +75,13 @@
         "compatibleRegionalDexSpecies": 153,
         "studioRecords": 40,
         "styleTechnicalPassed": 40,
-        "exactInheritedAnchorGeometry": 15,
-        "customAnchorGeometry": 25,
+        "exactInheritedAnchorGeometry": 0,
+        "customAnchorGeometry": 40,
         "narrativeBatchesCompleted": 9,
-        "visualBatchesCompleted": 5,
-        "visualMacroCyclesCompleted": 1,
+        "visualBatchesCompleted": 8,
+        "visualMacroCyclesCompleted": 2,
+        "tier2BatchesCompleted": 2,
+        "tier2MacroCyclesCompleted": 1,
         "approvedTeamSpecies": 153
       }
     },
@@ -87,12 +95,13 @@
   },
   "workLedger": {
     "narrativeBatchesCompleted": 9,
-    "visualBatchesCompleted": 5,
-    "totalBatchesCompleted": 14,
-    "smallBatchesRemaining": 48,
+    "visualBatchesCompleted": 8,
+    "tier2BatchesCompleted": 2,
+    "totalBatchesCompleted": 19,
+    "smallBatchesRemaining": 43,
     "totalTrackedBatches": 62,
     "batchesPerMacroPrompt": 5,
-    "macroPromptsRemaining": 10
+    "macroPromptsRemaining": 9
   },
   "remaining": {
     "tier1NarrativeEpisodes": {
@@ -104,44 +113,19 @@
       "maps": []
     },
     "anchorVisualPolish": {
-      "units": 15,
-      "reason": "25/40 anclas ya tienen una composición de piso propia; 15/40 todavía conservan geometría fuente exacta. Todas requieren Game.exe antes de certificarse.",
+      "units": 0,
+      "reason": "40/40 anclas ya tienen una composición de piso propia; 0/40 todavía conservan geometría fuente exacta. Todas requieren Game.exe antes de certificarse.",
       "recommendedBatchSize": 5,
-      "recommendedPromptRuns": 3,
-      "maps": [
-        1646,
-        1671,
-        1696,
-        1721,
-        1746,
-        1771,
-        1796,
-        1821,
-        1846,
-        1871,
-        1896,
-        1921,
-        1946,
-        1971,
-        1996
-      ]
+      "recommendedPromptRuns": 0,
+      "maps": []
     },
     "tier2AuthoredRoutes": {
-      "units": 120,
-      "reason": "La infraestructura existe, pero faltan blueprints dedicados con 1–2 NPCs, objetivo, mecánica, estado y recompensa por ruta.",
+      "units": 110,
+      "completedUnits": 10,
+      "reason": "10/120 rutas ya tienen dos NPCs, objetivo, mecánica, decisión persistente y recompensa única; faltan 110.",
       "recommendedBatchSize": 5,
-      "recommendedPromptRuns": 24,
+      "recommendedPromptRuns": 22,
       "maps": [
-        1026,
-        1033,
-        1040,
-        1051,
-        1058,
-        1065,
-        1076,
-        1083,
-        1090,
-        1101,
         1108,
         1115,
         1126,
@@ -694,19 +678,19 @@
         "recommendedBatchRuns": 0
       },
       "staticAnchorCandidate": {
-        "contentUnits": 15,
-        "recommendedBatchRuns": 3,
+        "contentUnits": 0,
+        "recommendedBatchRuns": 0,
         "excludesManualGameExeTesting": true
       },
       "fullLayeredAtlasPolish": {
-        "contentUnits": 555,
-        "recommendedBatchRuns": 48,
+        "contentUnits": 530,
+        "recommendedBatchRuns": 43,
         "batchesPerMacroPrompt": 5,
-        "recommendedMacroPrompts": 10,
+        "recommendedMacroPrompts": 9,
         "batchPlan": {
           "tier1": "0 lote de 5",
-          "anchorVisuals": "3 lotes de 5",
-          "tier2": "24 lotes de 5",
+          "anchorVisuals": "0 lotes de 5",
+          "tier2": "22 lotes de 5",
           "tier3": "21 lotes de 20"
         }
       }

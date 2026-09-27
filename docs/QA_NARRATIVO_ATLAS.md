@@ -9,7 +9,8 @@
 - Region Builder: **40/40 sectores válidos**, 153 especies compatibles y 0 anclas futuras señaladas.
 - Modelo de autoría inspirado en Pokémon Studio 2.11.0: **40/40 registros íntegros**.
 - Compuerta técnica de estilo Fire Ash: **40/40 mapas aprobados**.
-- Composición visual estática: **25/40 intervenidas**, con 249 celdas narrativas y equivalencia estricta de colisión; 15 conservan geometría fuente exacta.
+- Composición visual estática: **40/40 intervenidas**, con 397 celdas narrativas y equivalencia estricta de pasabilidad, prioridad y terrain tag.
+- Tier 2 artesanal: **10/120 rutas compiladas**, con 20 NPCs, 10 decisiones persistentes y 10 recompensas únicas.
 - Revisión artística dentro de `Game.exe`: **40/40 pendientes** por ausencia de Wine.
 
 ## Jerarquía
@@ -104,19 +105,21 @@
 
 ```text
 708–747 = Sellos narrativos 01–40
+748–757 = Primeras diez rutas Tier 2
 Variable 103 = Total de sellos narrativos
 Variables 104–143 = Decisiones de los episodios 01–40
+Variables 144–153 = Decisiones de las primeras diez rutas Tier 2
 ```
 
 Auditoría actual:
 
 ```text
-747 slots de switch
-685 switches con nombre
-672 switches con uso literal
-143 variables
-134 variables con nombre
-104 variables con uso literal
+757 slots de switch
+695 switches con nombre
+682 switches con uso literal
+153 variables
+144 variables con nombre
+114 variables con uso literal
 0 conflictos PokeMod
 ```
 
@@ -137,9 +140,24 @@ decisiones persistentes
 retorno libre
 ```
 
-El compilador genérico actualiza entrenadores ya existentes durante una revisión y verifica especie, nivel, movimientos y objeto de cada integrante. El linter también rechaza Assault Vest combinado con movimientos de estado; las incompatibilidades detectadas se corrigieron antes de compilar.
+### Primeras rutas Tier 2
 
-El análisis global mantiene exactamente las 45 incidencias heredadas del juego base: 7 errores y 38 warnings. No apareció ninguna incidencia nueva. El estado compilado contiene 2.020 mapas, 20.214 eventos y 3.904 entrenadores.
+1. Mapa 1026 — **El Semáforo de las Promesas Tardías**.
+2. Mapa 1033 — **La Devolución que Conservó su Historia**.
+3. Mapa 1040 — **Las Huellas que Caminaban al Revés**.
+4. Mapa 1051 — **El Puente que Esperaba Dos Pesos**.
+5. Mapa 1058 — **El Manantial de las Botellas Vacías**.
+6. Mapa 1065 — **La Bicicleta que No Quería Ser Premio**.
+7. Mapa 1076 — **El Palacio que Anunciaba la Jugada**.
+8. Mapa 1083 — **El Pasillo de los Equipos Prestados**.
+9. Mapa 1090 — **La Playa de la Bandera Neutral**.
+10. Mapa 1101 — **La Habitación que Reservó una Ausencia**.
+
+Cada ruta conserva su desafío Atlas genérico, añade dos NPCs con motivación y conflicto, instala una decisión persistente, entrega una recompensa única una sola vez y mantiene el retorno libre. El progreso solo se activa si `pbReceiveItem` confirma la entrega; con la Mochila llena se puede hacer espacio, regresar y cobrarla. No introduce combate forzado ni desactiva la Mochila. Usa switches 748–757 y variables 144–153, previamente comprobados como libres.
+
+El compilador genérico Tier 1 actualiza entrenadores ya existentes durante una revisión y verifica especie, nivel, movimientos y objeto de cada integrante. El linter también rechaza Assault Vest combinado con movimientos de estado; las incompatibilidades detectadas se corrigieron antes de compilar.
+
+El análisis global mantiene exactamente las 45 incidencias heredadas del juego base: 7 errores y 38 warnings. No apareció ninguna incidencia nueva. El estado compilado contiene 2.020 mapas, 20.234 eventos y 3.904 entrenadores. El aumento de 20 eventos corresponde exactamente a los dos NPCs instalados en cada una de las diez rutas Tier 2.
 
 ```text
 marshal.js: 51 OK, 0 fallos
@@ -147,7 +165,7 @@ integración: 114 OK, 0 fallos
 UI con jsdom: 22 OK, 0 fallos
 ```
 
-La idempotencia por hashes fue confirmada para las fases A, B, C, D y E. El compilador ahora canoniza también la clave compuesta del entrenador al actualizarlo, por lo que una segunda ejecución conserva inmediatamente los hashes de `trainers.dat` y de los mapas.
+La idempotencia por hashes fue confirmada para las fases A, B, C, D y E, los dos macrociclos visuales y las primeras diez rutas Tier 2. La comparación contra backups del macrociclo 02 confirmó exactamente 148 cambios de celda visual, 20 eventos Tier 2 nuevos y ningún cambio ajeno en geometría, eventos originales, `MapInfos.rxdata` o `System.rxdata`. El compilador Tier 1 canoniza también la clave compuesta del entrenador al actualizarlo, por lo que una segunda ejecución conserva inmediatamente los hashes de `trainers.dat` y de los mapas.
 
 El límite global es **150**. Las fases C–E usan la progresión extendida hasta nivel 136; las seis curvas de experiencia fueron verificadas como enteras y estrictamente crecientes.
 
@@ -178,21 +196,38 @@ pokemon_fire_ash/PokeModBackups/tier1_batch08_originals/
 pokemon_fire_ash/PokeModBackups/tier1_batch09_originals/
 pokemon_fire_ash/PokeModBackups/extended_level_cap_originals/
 pokemon_fire_ash/PokeModBackups/atlas_visual_macro01_originals/
+pokemon_fire_ash/PokeModBackups/atlas_visual_macro02_originals/
+pokemon_fire_ash/PokeModBackups/atlas_tier2_macro02_originals/
 ```
 
-Macrociclo visual 01:
+Macrociclos visuales 01–02:
 
 ```text
 content/atlas_visual_polish_macro01.json
+content/atlas_visual_polish_macro02.json
 tools/apply_atlas_visual_macro01.mjs
+tools/apply_atlas_visual_macro02.mjs
+tools/render_atlas_visual_reference.mjs
 docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md
+docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md
 docs/referencia_visual_atlas_macro01_antes.png
 docs/referencia_visual_atlas_macro01_despues.png
+docs/referencia_visual_atlas_macro02_antes.png
+docs/referencia_visual_atlas_macro02_despues.png
+```
+
+Tier 2, macrociclo 02:
+
+```text
+content/atlas_tier2_blueprints_macro02.json
+content/atlas_tier2_qa.json
+tools/create_tier2_macro02.mjs
+tools/apply_tier2_routes.mjs
 ```
 
 ## Siguiente ciclo — pulido por capas
 
-Tier 1 narrativo está completo. El macrociclo visual 01 terminó cinco lotes y dejó 25/40 anclas con composición de piso propia. Quedan 15 pasadas visuales, 120 rutas Tier 2 con autoría dedicada y 420 Ecos Tier 3 que todavía necesitan una regla local breve. El inventario reproducible y los lotes recomendados están en `docs/ESTADO_CONTENIDO_Y_PROMPTS.md`.
+Tier 1 narrativo y la composición estática de sus 40 anclas están completos. Los dos macrociclos visuales suman ocho lotes y 397 celdas. Las primeras 10/120 rutas Tier 2 están compiladas; quedan 110 rutas Tier 2 y 420 Ecos Tier 3 que necesitan una regla local breve. El inventario reproducible registra 19/62 lotes completados, 43 pendientes y 9 macroprompts restantes.
 
 La referencia conceptual criticable de la Ancla 26 está en `docs/referencia_visual_atlas_ancla26.png`; su alcance y limitaciones están documentados en `docs/REFERENCIA_VISUAL_ANCLA26.md`.
 
@@ -214,6 +249,6 @@ tools/external_authoring.test.mjs
 
 El pipeline narrativo ahora consume obligatoriamente el plano importado de Region Builder, un registro estable por ancla inspirado en Pokémon Studio y las métricas del mapa fuente real. Ninguno de esos formatos escribe directamente sobre `Data/*.rxdata`.
 
-La suite de autoría externa pasa **28/28** pruebas. La compuerta confirma recursos, pasabilidad, dimensiones, eventos artesanales y retorno; reconoce 25 composiciones propias y mantiene 15 anclas con geometría fuente exacta. Ninguno de esos estados permite presentar todavía los mapas como arte visual certificado.
+La suite de autoría externa pasa **36/36** pruebas. La compuerta confirma recursos, pasabilidad, dimensiones, eventos artesanales y retorno; reconoce 40 composiciones propias. También valida el catálogo, flags, variables, recompensas, seguridad y presencia compilada de las diez rutas Tier 2. Ninguno de esos estados permite presentar todavía los mapas como arte visual certificado.
 
-Antes de certificar los episodios como finales todavía faltan la composición estática de 15 anclas y la prueba visual de las 40 dentro de `Game.exe`.
+Antes de certificar los episodios como finales todavía falta la prueba visual de las 40 anclas dentro de `Game.exe`.

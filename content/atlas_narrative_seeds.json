@@ -2235,7 +2235,7 @@
         ],
         "passabilityRatio": 0.2362,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2323,7 +2323,7 @@
         ],
         "passabilityRatio": 0.16,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2411,7 +2411,7 @@
         ],
         "passabilityRatio": 0.2177,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2499,7 +2499,7 @@
         ],
         "passabilityRatio": 0.8918,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2587,7 +2587,7 @@
         ],
         "passabilityRatio": 0.2841,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2675,7 +2675,7 @@
         ],
         "passabilityRatio": 0.27,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2763,7 +2763,7 @@
         ],
         "passabilityRatio": 0.2036,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2851,7 +2851,7 @@
         ],
         "passabilityRatio": 0.27,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -2939,7 +2939,7 @@
         ],
         "passabilityRatio": 0.851,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -3027,7 +3027,7 @@
         ],
         "passabilityRatio": 0.2669,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -3115,7 +3115,7 @@
         ],
         "passabilityRatio": 0.2333,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -3203,7 +3203,7 @@
         ],
         "passabilityRatio": 0.3239,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -3291,7 +3291,7 @@
         ],
         "passabilityRatio": 0.0433,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -3379,7 +3379,7 @@
         ],
         "passabilityRatio": 0.1719,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,
@@ -3467,7 +3467,7 @@
         ],
         "passabilityRatio": 0.1239,
         "technicalStatus": "passed",
-        "artDirectionStatus": "review-required-inherited-geometry"
+        "artDirectionStatus": "customized-needs-game-preview"
       },
       "authoringGates": {
         "regionBuilder": true,

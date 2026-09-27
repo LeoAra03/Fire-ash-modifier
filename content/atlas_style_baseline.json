@@ -10,9 +10,9 @@
   "summary": {
     "technicalPassed": 40,
     "technicalFailed": 0,
-    "exactInheritedGeometry": 15,
-    "customGeometry": 25,
-    "staticCompositionPending": 15,
+    "exactInheritedGeometry": 0,
+    "customGeometry": 40,
+    "staticCompositionPending": 0,
     "artReviewRequired": 40,
     "gamePreviewRequired": 40
   },
@@ -45,21 +45,21 @@
       "1571: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
       "1596: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
       "1621: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
-      "1646: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1671: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1696: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1721: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1746: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1771: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1796: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1821: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1846: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1871: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1896: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1921: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1946: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1971: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal.",
-      "1996: conserva exactamente la geometría fuente; es compatible, pero no debe certificarse como mapa visual final sin una pasada artesanal."
+      "1646: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1671: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1696: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1721: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1746: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1771: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1796: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1821: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1846: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1871: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1896: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1921: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1946: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1971: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1996: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe."
     ]
   },
   "anchors": [
@@ -2023,7 +2023,7 @@
         "width": 80,
         "height": 30,
         "tilesetId": 3,
-        "tileHash": "b991a1d0bc04c90cd9d5728a513269751820ad3f142f579c7de8166f43a1966d",
+        "tileHash": "dc1f35205c2d131dd7634ef4a7fbe5eaa3e674c78d9a90006e49fc62bb4f0295",
         "uniqueTiles": 114,
         "layerOccupancy": [
           {
@@ -2072,8 +2072,8 @@
         "eventCount": 18
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9982,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -9
       },
@@ -2089,7 +2089,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1671,
@@ -2101,7 +2101,7 @@
         "width": 40,
         "height": 30,
         "tilesetId": 3,
-        "tileHash": "54d65e3eccaa1c7569d1cd116af64f5cdc67056239c62454940d5c33696f9e74",
+        "tileHash": "6be35bfe1ea4c817bf977b5ad403613e380386d848fea650db288302dc5e76b3",
         "uniqueTiles": 50,
         "layerOccupancy": [
           {
@@ -2150,8 +2150,8 @@
         "eventCount": 7
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9972,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": 2
       },
@@ -2167,7 +2167,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1696,
@@ -2179,7 +2179,7 @@
         "width": 40,
         "height": 65,
         "tilesetId": 14,
-        "tileHash": "6a969878af050db321b3b88255fbb15de8e66fb80578e1ea5257a64c8fec3348",
+        "tileHash": "d29cd786602b0868da24ff090511e890c09fd515c0b5065d2d50f56a8cbd296c",
         "uniqueTiles": 29,
         "layerOccupancy": [
           {
@@ -2228,8 +2228,8 @@
         "eventCount": 7
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9982,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": 2
       },
@@ -2245,7 +2245,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1721,
@@ -2257,7 +2257,7 @@
         "width": 70,
         "height": 70,
         "tilesetId": 6,
-        "tileHash": "28aadf4e5647f28dc8885919b271564a3c8834b52e9869a65251b2b6bd969e1d",
+        "tileHash": "d998c3bca84c61c6eb1459058a4bc6c540019a15afb35a69fd6ddb208485494f",
         "uniqueTiles": 19,
         "layerOccupancy": [
           {
@@ -2306,8 +2306,8 @@
         "eventCount": 18
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9993,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -9
       },
@@ -2323,7 +2323,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1746,
@@ -2335,8 +2335,8 @@
         "width": 55,
         "height": 40,
         "tilesetId": 1,
-        "tileHash": "bdc12ea8a2ec6ced115ecd04f481297d3cddaec836b35134a2614f89339b2ebd",
-        "uniqueTiles": 115,
+        "tileHash": "c34c448b0c23ac2b1d9e9caf437cc3459a9187a08039c279f0cb38c1d5209d7e",
+        "uniqueTiles": 117,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -2384,8 +2384,8 @@
         "eventCount": 19
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9988,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -10
       },
@@ -2401,7 +2401,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1771,
@@ -2413,7 +2413,7 @@
         "width": 20,
         "height": 15,
         "tilesetId": 4,
-        "tileHash": "e23b34ee44b7935c9e7450406ae395ea9011c2a729c87cc41700c5c5979353fd",
+        "tileHash": "7953e9df38642f46640cc5fe5b220f389d676e947b7e6707242b385929072837",
         "uniqueTiles": 74,
         "layerOccupancy": [
           {
@@ -2462,8 +2462,8 @@
         "eventCount": 10
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9844,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -1
       },
@@ -2479,7 +2479,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1796,
@@ -2491,8 +2491,8 @@
         "width": 40,
         "height": 35,
         "tilesetId": 1,
-        "tileHash": "361e887aabafa8e05265cdbb2054a2acd3625433440ebd181da652f2b28f4eaa",
-        "uniqueTiles": 131,
+        "tileHash": "905b07ba8aacc4b62866cdef636ccbd42c9d7cd0f290363b5717c780386a5fd4",
+        "uniqueTiles": 133,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -2540,8 +2540,8 @@
         "eventCount": 10
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9981,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -1
       },
@@ -2557,7 +2557,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1821,
@@ -2569,7 +2569,7 @@
         "width": 20,
         "height": 15,
         "tilesetId": 4,
-        "tileHash": "e23b34ee44b7935c9e7450406ae395ea9011c2a729c87cc41700c5c5979353fd",
+        "tileHash": "b9d49ed5a20cbe7410cf3c0d57a7d38598944ed79a8eba5e71804aa21cb9c305",
         "uniqueTiles": 74,
         "layerOccupancy": [
           {
@@ -2618,8 +2618,8 @@
         "eventCount": 12
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9889,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -3
       },
@@ -2635,7 +2635,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1846,
@@ -2647,8 +2647,8 @@
         "width": 50,
         "height": 40,
         "tilesetId": 1,
-        "tileHash": "5285572651f651d4769c3292478fbabc476ee36bcc0db0440081fceb1c89420c",
-        "uniqueTiles": 19,
+        "tileHash": "3cf2a2dabb24fceb6133aad00492686b0b6c033e2a5384fc31721edba16b1008",
+        "uniqueTiles": 21,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -2696,8 +2696,8 @@
         "eventCount": 7
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9978,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": 2
       },
@@ -2713,7 +2713,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1871,
@@ -2725,8 +2725,8 @@
         "width": 60,
         "height": 64,
         "tilesetId": 2,
-        "tileHash": "8c6e1c6c9b2e6ea53ea044659d3b6bcca542883e9dec55af6edd44dca0b8367b",
-        "uniqueTiles": 153,
+        "tileHash": "fc71dd514c2b82a0b9e4fbf596500d8de2f98435698bad91d1e5cc6da51a3d68",
+        "uniqueTiles": 155,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -2774,8 +2774,8 @@
         "eventCount": 27
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9992,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -18
       },
@@ -2791,7 +2791,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1896,
@@ -2803,8 +2803,8 @@
         "width": 60,
         "height": 70,
         "tilesetId": 3,
-        "tileHash": "e6ed2a037c1a563fad2a0eceff673cac059cf060933eaecf5eb60052ed7d447c",
-        "uniqueTiles": 42,
+        "tileHash": "18064f31d93b6ae48bc7e7caa29f25a05d18a6eba7b4797d229a97c73c524041",
+        "uniqueTiles": 43,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -2852,8 +2852,8 @@
         "eventCount": 106
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9994,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -97
       },
@@ -2869,7 +2869,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1921,
@@ -2881,8 +2881,8 @@
         "width": 48,
         "height": 44,
         "tilesetId": 1,
-        "tileHash": "f1381477c14648d128decf6fccefa9edc4ae97218de7cf40ec4536e0ef58b585",
-        "uniqueTiles": 124,
+        "tileHash": "fff2723a5d3e0fdd45b417c68d8dace1864992728bc9b49b52ebc089ae5d237f",
+        "uniqueTiles": 126,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -2930,8 +2930,8 @@
         "eventCount": 17
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9987,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -8
       },
@@ -2947,7 +2947,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1946,
@@ -2959,8 +2959,8 @@
         "width": 20,
         "height": 15,
         "tilesetId": 3,
-        "tileHash": "382fe9f883fcff231153cd264664730dbcc3fb65f4afb7f283c319ce73564ee8",
-        "uniqueTiles": 22,
+        "tileHash": "afa6cb594e2d76323ee35ddac102b928915d146fe366b5d6e99c11a3ed913591",
+        "uniqueTiles": 23,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -3008,8 +3008,8 @@
         "eventCount": 2
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9989,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": 7
       },
@@ -3025,7 +3025,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1971,
@@ -3037,8 +3037,8 @@
         "width": 65,
         "height": 40,
         "tilesetId": 1,
-        "tileHash": "fbdc1f7f3de3f4d3b253224af78438c2edddd9beee467fcace581ca1f355a527",
-        "uniqueTiles": 119,
+        "tileHash": "60102263b1742d55a5865d8ff58c2326c98c9414c494595396738c02bfa015f1",
+        "uniqueTiles": 121,
         "layerOccupancy": [
           {
             "layer": 0,
@@ -3086,8 +3086,8 @@
         "eventCount": 61
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9987,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -52
       },
@@ -3103,7 +3103,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     },
     {
       "mapId": 1996,
@@ -3115,7 +3115,7 @@
         "width": 60,
         "height": 30,
         "tilesetId": 3,
-        "tileHash": "ee293c84c106114b3cf49bb3364207a0b98f08d4308cf58b744979b4c3dc4a8d",
+        "tileHash": "0b90b023cb1e1aae7bfd6cf47ac80ee209b231b5d3e8f128194d831f019177de",
         "uniqueTiles": 81,
         "layerOccupancy": [
           {
@@ -3164,8 +3164,8 @@
         "eventCount": 16
       },
       "comparison": {
-        "tileSimilarity": 1,
-        "exactInheritedGeometry": true,
+        "tileSimilarity": 0.9978,
+        "exactInheritedGeometry": false,
         "passabilityDelta": 0,
         "eventDelta": -7
       },
@@ -3181,7 +3181,7 @@
         "outOfBounds": []
       },
       "technicalStatus": "passed",
-      "artDirectionStatus": "review-required-inherited-geometry"
+      "artDirectionStatus": "customized-needs-game-preview"
     }
   ]
 }

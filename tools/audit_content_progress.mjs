@@ -22,6 +22,9 @@ const narrativeBatchFiles = fs.readdirSync(content).filter((file) => /^atlas_tie
 const visualManifestFiles = fs.readdirSync(content).filter((file) => /^atlas_visual_polish_macro\d+\.json$/.test(file));
 const visualManifests = visualManifestFiles.map((file) => readJson(`content/${file}`));
 const completedVisualBatches = visualManifests.reduce((sum, manifest) => sum + Number(manifest.summary?.visualBatches ?? 0), 0);
+const tier2ManifestFiles = fs.readdirSync(content).filter((file) => /^atlas_tier2_blueprints_macro\d+\.json$/.test(file));
+const tier2Manifests = tier2ManifestFiles.map((file) => readJson(`content/${file}`));
+const completedTier2Batches = tier2Manifests.reduce((sum, manifest) => sum + Number(manifest.tier2Batches ?? 0), 0);
 const approvedByMap = new Map(approved.map((entry) => [Number(entry.mapId), entry]));
 const promptByMap = new Map(prompts.map((entry) => [Number(entry.mapId), entry]));
 const studioByMap = new Map(studio.records.map((entry) => [Number(entry.mapId), entry]));
@@ -38,6 +41,7 @@ const atlasMaps = hierarchy.maps.map((entry) => {
     hasBeacon: names.some((name) => name === `Atlas Tier ${entry.tier} Beacon ${entry.mapId}`),
     hasGenericChallenge: names.some((name) => name.startsWith("Atlas desafío")),
     handcraftedEvents: names.filter((name) => name.startsWith("PokeMod Tier1:")).length,
+    authoredTier2Events: names.filter((name) => name.startsWith("PokeMod Tier2:")).length,
   };
 });
 
@@ -45,6 +49,8 @@ const tier = (number) => atlasMaps.filter((entry) => entry.tier === number);
 const tier1 = tier(1);
 const tier2 = tier(2);
 const tier3 = tier(3);
+const authoredTier2 = tier2.filter((entry) => entry.authoredTier2Events === 2);
+const pendingTier2 = tier2.filter((entry) => entry.authoredTier2Events !== 2);
 const compiledTier1 = tier1.filter((entry) => approvedByMap.has(entry.mapId) && entry.handcraftedEvents === 5);
 const pendingTier1 = tier1.filter((entry) => !approvedByMap.has(entry.mapId)).map((entry) => {
   const prompt = promptByMap.get(entry.mapId);
@@ -63,7 +69,7 @@ const tier3MissingRule = tier3.filter((entry) => !entry.hasGenericChallenge).map
 const visualPending = style.anchors.filter((entry) => entry.comparison?.exactInheritedGeometry).map((entry) => entry.mapId);
 const uniqueApprovedSpecies = new Set(approved.flatMap((blueprint) => blueprint.battle.team.map((pokemon) => pokemon.species))).size;
 const batches = (units, size) => Math.ceil(units / size);
-const remainingSmallBatchRuns = batches(pendingTier1.length, 5) + batches(visualPending.length, 5) + batches(tier2.length, 5) + batches(tier3MissingRule.length, 20);
+const remainingSmallBatchRuns = batches(pendingTier1.length, 5) + batches(visualPending.length, 5) + batches(pendingTier2.length, 5) + batches(tier3MissingRule.length, 20);
 const macroPromptCapacity = 5;
 const remainingMacroPrompts = batches(remainingSmallBatchRuns, macroPromptCapacity);
 
@@ -89,8 +95,9 @@ const report = {
       horizonsAdventures: horizons.adventures.filter((entry) => entry.implemented).length,
       atlasGenericEventsAndBattles: atlasCatalog.suggestions.filter((entry) => entry.implemented).length,
       atlasHandcraftedAnchorEpisodes: compiledTier1.length,
-      total: 16 + 1 + horizons.adventures.filter((entry) => entry.implemented).length + atlasCatalog.suggestions.filter((entry) => entry.implemented).length + compiledTier1.length,
-      note: "Los episodios artesanales Tier 1 se superponen a mapas Atlas, pero son eventos narrativos adicionales y no sustituyen el catálogo genérico."
+      atlasAuthoredTier2Routes: authoredTier2.length,
+      total: 16 + 1 + horizons.adventures.filter((entry) => entry.implemented).length + atlasCatalog.suggestions.filter((entry) => entry.implemented).length + compiledTier1.length + authoredTier2.length,
+      note: "Los episodios Tier 1 y las rutas Tier 2 se superponen a mapas Atlas, pero son eventos narrativos adicionales y no sustituyen el catálogo genérico."
     },
     battlesAndActors: {
       mirrorIslandBosses: 16,
@@ -100,6 +107,8 @@ const report = {
       atlasHandcraftedBosses: compiledTier1.length,
       atlasNamedHandcraftedNpcs: compiledTier1.length * 3,
       atlasHandcraftedMapEvents: compiledTier1.reduce((sum, entry) => sum + entry.handcraftedEvents, 0),
+      atlasNamedTier2Npcs: authoredTier2.length * 2,
+      atlasTier2AuthoredMapEvents: authoredTier2.reduce((sum, entry) => sum + entry.authoredTier2Events, 0),
       specialWildOrCapturableEncounters: 201,
       compiledTrainerRecordsAdded: 16 + 100 + 280 + compiledTier1.length,
     },
@@ -125,7 +134,10 @@ const report = {
         total: tier2.length,
         infrastructureComplete: tier2.filter((entry) => entry.hasReturn && entry.hasBeacon).length,
         withGenericChallenge: tier2.filter((entry) => entry.hasGenericChallenge).length,
-        dedicatedAuthoredRoutes: 0,
+        dedicatedAuthoredRoutes: authoredTier2.length,
+        namedNpcs: authoredTier2.length * 2,
+        persistentDecisions: authoredTier2.length,
+        uniqueRewards: authoredTier2.length,
       },
       tier3: {
         total: tier3.length,
@@ -143,6 +155,8 @@ const report = {
         narrativeBatchesCompleted: narrativeBatchFiles.length,
         visualBatchesCompleted: completedVisualBatches,
         visualMacroCyclesCompleted: visualManifests.length,
+        tier2BatchesCompleted: completedTier2Batches,
+        tier2MacroCyclesCompleted: tier2Manifests.length,
         approvedTeamSpecies: uniqueApprovedSpecies,
       },
     },
@@ -157,9 +171,10 @@ const report = {
   workLedger: {
     narrativeBatchesCompleted: narrativeBatchFiles.length,
     visualBatchesCompleted: completedVisualBatches,
-    totalBatchesCompleted: narrativeBatchFiles.length + completedVisualBatches,
+    tier2BatchesCompleted: completedTier2Batches,
+    totalBatchesCompleted: narrativeBatchFiles.length + completedVisualBatches + completedTier2Batches,
     smallBatchesRemaining: remainingSmallBatchRuns,
-    totalTrackedBatches: narrativeBatchFiles.length + completedVisualBatches + remainingSmallBatchRuns,
+    totalTrackedBatches: narrativeBatchFiles.length + completedVisualBatches + completedTier2Batches + remainingSmallBatchRuns,
     batchesPerMacroPrompt: macroPromptCapacity,
     macroPromptsRemaining: remainingMacroPrompts,
   },
@@ -180,11 +195,12 @@ const report = {
       maps: visualPending,
     },
     tier2AuthoredRoutes: {
-      units: tier2.length,
-      reason: "La infraestructura existe, pero faltan blueprints dedicados con 1–2 NPCs, objetivo, mecánica, estado y recompensa por ruta.",
+      units: pendingTier2.length,
+      completedUnits: authoredTier2.length,
+      reason: `${authoredTier2.length}/120 rutas ya tienen dos NPCs, objetivo, mecánica, decisión persistente y recompensa única; faltan ${pendingTier2.length}.`,
       recommendedBatchSize: 5,
-      recommendedPromptRuns: batches(tier2.length, 5),
-      maps: tier2.map((entry) => entry.mapId),
+      recommendedPromptRuns: batches(pendingTier2.length, 5),
+      maps: pendingTier2.map((entry) => entry.mapId),
     },
     tier3MissingLocalRules: {
       units: tier3MissingRule.length,
@@ -210,14 +226,14 @@ const report = {
         excludesManualGameExeTesting: true,
       },
       fullLayeredAtlasPolish: {
-        contentUnits: pendingTier1.length + visualPending.length + tier2.length + tier3MissingRule.length,
+        contentUnits: pendingTier1.length + visualPending.length + pendingTier2.length + tier3MissingRule.length,
         recommendedBatchRuns: remainingSmallBatchRuns,
         batchesPerMacroPrompt: macroPromptCapacity,
         recommendedMacroPrompts: remainingMacroPrompts,
         batchPlan: {
           tier1: `${batches(pendingTier1.length, 5)} lote de 5`,
           anchorVisuals: `${batches(visualPending.length, 5)} lotes de 5`,
-          tier2: `${batches(tier2.length, 5)} lotes de 5`,
+          tier2: `${batches(pendingTier2.length, 5)} lotes de 5`,
           tier3: `${batches(tier3MissingRule.length, 20)} lotes de 20`,
         },
       },
@@ -236,10 +252,11 @@ const md = [
   `- Unidades diferenciadas instaladas: **${report.installed.differentiatedContentUnits.total}**.`,
   `- Atlas Tier 1 artesanal: **${compiledTier1.length}/40 (${report.installed.atlas.tier1.completionPercent}%)**.`,
   `- Prompts Tier 1 ya escritos: **${report.installed.atlas.tier1.generatedPrompts}/40**; faltan ejecutar **${pendingTier1.length}**.`,
+  `- Atlas Tier 2 artesanal: **${authoredTier2.length}/120** rutas; faltan **${pendingTier2.length}**.`,
   `- Infraestructura Atlas con baliza y retorno: **${report.installed.atlas.mapsWithTierBeacon}/${atlasMaps.length}** mapas.`,
   `- Convergencia final: requiere **${report.installed.atlas.tier1.finalConvergencePrerequisiteSeals} sellos previos**; no bloquea la ruta de retorno.`,
   `- Anclas con composición visual propia: **${style.summary.customGeometry}/40**; composición estática pendiente: **${visualPending.length}/40**.`,
-  `- Lotes completados: **${report.workLedger.totalBatchesCompleted}/${report.workLedger.totalTrackedBatches}** (${report.workLedger.narrativeBatchesCompleted} narrativos + ${report.workLedger.visualBatchesCompleted} visuales).`,
+  `- Lotes completados: **${report.workLedger.totalBatchesCompleted}/${report.workLedger.totalTrackedBatches}** (${report.workLedger.narrativeBatchesCompleted} narrativos + ${report.workLedger.visualBatchesCompleted} visuales + ${report.workLedger.tier2BatchesCompleted} Tier 2).`,
   `- Quedan **${report.workLedger.smallBatchesRemaining} lotes pequeños**, agrupables en **${report.workLedger.macroPromptsRemaining} prompts** de hasta ${report.workLedger.batchesPerMacroPrompt} lotes.`,
   "",
   "## Contenido instalado",
@@ -250,6 +267,7 @@ const md = [
   `| Bosque Susurrante + Horizontes | 21 mapas, misión Hypno y ${report.installed.differentiatedContentUnits.horizonsAdventures} aventuras | Instalado |`,
   `| Atlas base | ${atlasMaps.length} mapas, ${report.installed.differentiatedContentUnits.atlasGenericEventsAndBattles} eventos/peleas y 40 sectores | Instalado |`,
   `| Atlas Tier 1 artesanal | ${compiledTier1.length} episodios, ${compiledTier1.length * 3} NPCs, ${compiledTier1.length} jefes y ${compiledTier1.length} decisiones | Instalado |`,
+  `| Atlas Tier 2 artesanal | ${authoredTier2.length} rutas, ${authoredTier2.length * 2} NPCs, ${authoredTier2.length} decisiones y ${authoredTier2.length} recompensas únicas | Instalado |`,
   `| Total de unidades diferenciadas | ${report.installed.differentiatedContentUnits.total} | No confundir con mapas |`,
   "",
   "## Qué falta",
@@ -258,7 +276,7 @@ const md = [
   "|---|---:|---:|---:|",
   `| Tier 1 narrativo | ${pendingTier1.length} | 5 | ${report.remaining.tier1NarrativeEpisodes.recommendedPromptRuns} |`,
   `| Pulido visual de anclas | ${visualPending.length} | 5 | ${report.remaining.anchorVisualPolish.recommendedPromptRuns} |`,
-  `| Tier 2 artesanal | ${tier2.length} | 5 | ${report.remaining.tier2AuthoredRoutes.recommendedPromptRuns} |`,
+  `| Tier 2 artesanal | ${pendingTier2.length} | 5 | ${report.remaining.tier2AuthoredRoutes.recommendedPromptRuns} |`,
   `| Reglas faltantes Tier 3 | ${tier3MissingRule.length} | 20 | ${report.remaining.tier3MissingLocalRules.recommendedPromptRuns} |`,
   `| **Pulido completo por capas** | **${report.remaining.promptScenarios.fullLayeredAtlasPolish.contentUnits}** | — | **${report.remaining.promptScenarios.fullLayeredAtlasPolish.recommendedBatchRuns}** |`,
   `| **Prompts agrupando cinco lotes** | — | 5 lotes por prompt | **${report.remaining.promptScenarios.fullLayeredAtlasPolish.recommendedMacroPrompts}** |`,
@@ -268,7 +286,7 @@ const md = [
   ...pendingTier1.map((entry, index) => `${index + 1}. Mapa **${entry.mapId}**, sector ${entry.sector} — **${entry.sectorName}**; \`${entry.studioDbSymbol}\`; switch ${entry.reservedSwitch}; variable ${entry.reservedDecisionVariable}.`),
   pendingTier1.length
     ? `Los ${pendingTier1.length} textos de prompt ya existen en \`content/atlas_tier1_prompts.json\`. Lo pendiente es ejecutarlos, revisar sus blueprints, compilarlos y probarlos.`
-    : "Los 40 prompts Tier 1 fueron ejecutados, aprobados y compilados. No queda autoría narrativa Tier 1 pendiente; sí quedan pulido visual y pruebas manuales.",
+    : "Los 40 prompts Tier 1 fueron ejecutados, aprobados y compilados. No queda autoría narrativa ni composición visual estática Tier 1 pendiente; siguen siendo obligatorias las pruebas manuales.",
   "",
   "## Tres respuestas posibles a “cuántos prompts faltan”",
   "",
@@ -285,7 +303,7 @@ const md = [
   `- Los 1.000 mapas Atlas existen y son transitables. ${style.summary.customGeometry} anclas tienen ya una composición de piso propia; los demás mapas conservan geometría heredada en distintos grados.`,
   "- Los 500 desafíos Atlas y las 500 aventuras de Horizontes están instalados, pero no equivalen a 1.000 episodios artesanales.",
   "- Tier 1 sí dispone de blueprint, reparto, decisión, jefe narrativo, curación y retorno.",
-  "- Tier 2 y la mitad de Tier 3 aún requieren autoría dedicada para alcanzar la meta de pulido por capas.",
+  `- Tier 2 tiene ${authoredTier2.length}/120 rutas de autoría dedicada; las ${pendingTier2.length} restantes y la mitad de Tier 3 aún requieren autoría para alcanzar la meta de pulido por capas.`,
   "- La certificación final requiere `Game.exe`; ningún linter puede validar ritmo, clipping o sensación de juego.",
   "",
 ];
