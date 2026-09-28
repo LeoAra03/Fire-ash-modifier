@@ -103,7 +103,7 @@ El estado instalado, la diferencia entre infraestructura y autoría artesanal, y
 node tools/audit_content_progress.mjs
 ```
 
-Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). El segundo macrociclo instala además las primeras diez rutas Tier 2.
+Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–03 han instalado además 35 rutas Tier 2 en siete lotes; el último bloque y su referencia de NPCs están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md).
 
 ## Tests
 
@@ -111,7 +111,7 @@ Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narra
 npm ci                              # dependencias del render PNG y de la prueba UI
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
 node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
-node tools/external_authoring.test.mjs  # 36 pruebas de interoperabilidad, estilo, backlog visual y Tier 2
+node tools/external_authoring.test.mjs  # 39 pruebas de interoperabilidad, estilo, backlog visual y Tier 2
 node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom
 ```
 

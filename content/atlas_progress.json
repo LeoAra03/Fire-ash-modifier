@@ -20,8 +20,8 @@
       "horizonsAdventures": 500,
       "atlasGenericEventsAndBattles": 500,
       "atlasHandcraftedAnchorEpisodes": 40,
-      "atlasAuthoredTier2Routes": 10,
-      "total": 1067,
+      "atlasAuthoredTier2Routes": 35,
+      "total": 1092,
       "note": "Los episodios Tier 1 y las rutas Tier 2 se superponen a mapas Atlas, pero son eventos narrativos adicionales y no sustituyen el catálogo genérico."
     },
     "battlesAndActors": {
@@ -32,8 +32,8 @@
       "atlasHandcraftedBosses": 40,
       "atlasNamedHandcraftedNpcs": 120,
       "atlasHandcraftedMapEvents": 200,
-      "atlasNamedTier2Npcs": 20,
-      "atlasTier2AuthoredMapEvents": 20,
+      "atlasNamedTier2Npcs": 70,
+      "atlasTier2AuthoredMapEvents": 70,
       "specialWildOrCapturableEncounters": 201,
       "compiledTrainerRecordsAdded": 436
     },
@@ -59,10 +59,10 @@
         "total": 120,
         "infrastructureComplete": 120,
         "withGenericChallenge": 60,
-        "dedicatedAuthoredRoutes": 10,
-        "namedNpcs": 20,
-        "persistentDecisions": 10,
-        "uniqueRewards": 10
+        "dedicatedAuthoredRoutes": 35,
+        "namedNpcs": 70,
+        "persistentDecisions": 35,
+        "uniqueRewards": 35
       },
       "tier3": {
         "total": 840,
@@ -80,8 +80,8 @@
         "narrativeBatchesCompleted": 9,
         "visualBatchesCompleted": 8,
         "visualMacroCyclesCompleted": 2,
-        "tier2BatchesCompleted": 2,
-        "tier2MacroCyclesCompleted": 1,
+        "tier2BatchesCompleted": 7,
+        "tier2MacroCyclesCompleted": 2,
         "approvedTeamSpecies": 153
       }
     },
@@ -96,12 +96,12 @@
   "workLedger": {
     "narrativeBatchesCompleted": 9,
     "visualBatchesCompleted": 8,
-    "tier2BatchesCompleted": 2,
-    "totalBatchesCompleted": 19,
-    "smallBatchesRemaining": 43,
+    "tier2BatchesCompleted": 7,
+    "totalBatchesCompleted": 24,
+    "smallBatchesRemaining": 38,
     "totalTrackedBatches": 62,
     "batchesPerMacroPrompt": 5,
-    "macroPromptsRemaining": 9
+    "macroPromptsRemaining": 8
   },
   "remaining": {
     "tier1NarrativeEpisodes": {
@@ -120,37 +120,12 @@
       "maps": []
     },
     "tier2AuthoredRoutes": {
-      "units": 110,
-      "completedUnits": 10,
-      "reason": "10/120 rutas ya tienen dos NPCs, objetivo, mecánica, decisión persistente y recompensa única; faltan 110.",
+      "units": 85,
+      "completedUnits": 35,
+      "reason": "35/120 rutas ya tienen dos NPCs, objetivo, mecánica, decisión persistente y recompensa única; faltan 85.",
       "recommendedBatchSize": 5,
-      "recommendedPromptRuns": 22,
+      "recommendedPromptRuns": 17,
       "maps": [
-        1108,
-        1115,
-        1126,
-        1133,
-        1140,
-        1151,
-        1158,
-        1165,
-        1176,
-        1183,
-        1190,
-        1201,
-        1208,
-        1215,
-        1226,
-        1233,
-        1240,
-        1251,
-        1258,
-        1265,
-        1276,
-        1283,
-        1290,
-        1301,
-        1308,
         1315,
         1326,
         1333,
@@ -683,14 +658,14 @@
         "excludesManualGameExeTesting": true
       },
       "fullLayeredAtlasPolish": {
-        "contentUnits": 530,
-        "recommendedBatchRuns": 43,
+        "contentUnits": 505,
+        "recommendedBatchRuns": 38,
         "batchesPerMacroPrompt": 5,
-        "recommendedMacroPrompts": 9,
+        "recommendedMacroPrompts": 8,
         "batchPlan": {
           "tier1": "0 lote de 5",
           "anchorVisuals": "0 lotes de 5",
-          "tier2": "22 lotes de 5",
+          "tier2": "17 lotes de 5",
           "tier3": "21 lotes de 20"
         }
       }

@@ -7,7 +7,8 @@
   "scripts": {
     "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs",
     "test:ui": "node --experimental-vm-modules web/js/ui.test.mjs",
-    "render:atlas:macro02": "node tools/render_atlas_visual_reference.mjs --macro 02"
+    "render:atlas:macro02": "node tools/render_atlas_visual_reference.mjs --macro 02",
+    "render:tier2:macro03": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro03.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro03_originals --before docs/referencia_tier2_macro03_antes.png --after docs/referencia_tier2_macro03_despues.png"
   },
   "dependencies": {
     "@napi-rs/canvas": "0.1.81"

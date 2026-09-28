@@ -10,7 +10,7 @@
 - Modelo de autoría inspirado en Pokémon Studio 2.11.0: **40/40 registros íntegros**.
 - Compuerta técnica de estilo Fire Ash: **40/40 mapas aprobados**.
 - Composición visual estática: **40/40 intervenidas**, con 397 celdas narrativas y equivalencia estricta de pasabilidad, prioridad y terrain tag.
-- Tier 2 artesanal: **10/120 rutas compiladas**, con 20 NPCs, 10 decisiones persistentes y 10 recompensas únicas.
+- Tier 2 artesanal: **35/120 rutas compiladas**, con 70 NPCs, 35 decisiones persistentes y 35 recompensas únicas.
 - Revisión artística dentro de `Game.exe`: **40/40 pendientes** por ausencia de Wine.
 
 ## Jerarquía
@@ -105,21 +105,21 @@
 
 ```text
 708–747 = Sellos narrativos 01–40
-748–757 = Primeras diez rutas Tier 2
+748–782 = Primeras treinta y cinco rutas Tier 2
 Variable 103 = Total de sellos narrativos
 Variables 104–143 = Decisiones de los episodios 01–40
-Variables 144–153 = Decisiones de las primeras diez rutas Tier 2
+Variables 144–178 = Decisiones de las primeras treinta y cinco rutas Tier 2
 ```
 
 Auditoría actual:
 
 ```text
-757 slots de switch
-695 switches con nombre
-682 switches con uso literal
-153 variables
-144 variables con nombre
-114 variables con uso literal
+782 slots de switch
+720 switches con nombre
+707 switches con uso literal
+178 variables
+169 variables con nombre
+139 variables con uso literal
 0 conflictos PokeMod
 ```
 
@@ -140,7 +140,7 @@ decisiones persistentes
 retorno libre
 ```
 
-### Primeras rutas Tier 2
+### Rutas Tier 2 compiladas (35/120)
 
 1. Mapa 1026 — **El Semáforo de las Promesas Tardías**.
 2. Mapa 1033 — **La Devolución que Conservó su Historia**.
@@ -152,12 +152,37 @@ retorno libre
 8. Mapa 1083 — **El Pasillo de los Equipos Prestados**.
 9. Mapa 1090 — **La Playa de la Bandera Neutral**.
 10. Mapa 1101 — **La Habitación que Reservó una Ausencia**.
+11. Mapa 1108 — **La Veta que Firmaba con Luz**.
+12. Mapa 1115 — **El Sendero de las Flechas Prestadas**.
+13. Mapa 1126 — **La Ciudad que Adelantaba el Mediodía**.
+14. Mapa 1133 — **El Camarote de las Maletas Huérfanas**.
+15. Mapa 1140 — **El Simulacro que Zarpó sin Aviso**.
+16. Mapa 1151 — **El Club de los Abrigos Invencibles**.
+17. Mapa 1158 — **La Sala de Espera de las Mantas Azules**.
+18. Mapa 1165 — **La Campana que Recordaba Demasiado**.
+19. Mapa 1176 — **El Piso de las Semillas sin Precio**.
+20. Mapa 1183 — **El Ring de la Campana Honesta**.
+21. Mapa 1190 — **La Azotea que Cultivaba Pronósticos**.
+22. Mapa 1201 — **La Lluvia de los Siete Colores**.
+23. Mapa 1208 — **La Mansión de los Espejos de Salida**.
+24. Mapa 1215 — **La Meseta de los Aplausos Diferidos**.
+25. Mapa 1226 — **El Dirigible que Cargaba Sombras**.
+26. Mapa 1233 — **El Faro que Pintaba el Sol**.
+27. Mapa 1240 — **La Sombra que Llegaba Primero**.
+28. Mapa 1251 — **La Casa del Calendario Mojado**.
+29. Mapa 1258 — **El Jardín que Encendía la Noche**.
+30. Mapa 1265 — **El Estadio de la Segunda Luna**.
+31. Mapa 1276 — **La Sala de los Sueños en Fila**.
+32. Mapa 1283 — **La Isla de las Cartas sin Destino**.
+33. Mapa 1290 — **La Casa que Despertaba por Turnos**.
+34. Mapa 1301 — **La Cocina que Atraía los Cubiertos**.
+35. Mapa 1308 — **El Almacén de las Garantías Eléctricas**.
 
-Cada ruta conserva su desafío Atlas genérico, añade dos NPCs con motivación y conflicto, instala una decisión persistente, entrega una recompensa única una sola vez y mantiene el retorno libre. El progreso solo se activa si `pbReceiveItem` confirma la entrega; con la Mochila llena se puede hacer espacio, regresar y cobrarla. No introduce combate forzado ni desactiva la Mochila. Usa switches 748–757 y variables 144–153, previamente comprobados como libres.
+Cada ruta conserva su desafío Atlas genérico, añade dos NPCs con nombre, motivación y conflicto, instala una decisión persistente, entrega una recompensa única una sola vez y mantiene el retorno libre. El progreso solo se activa si `pbReceiveItem` confirma la entrega; con la Mochila llena se puede hacer espacio, regresar y cobrarla. No introduce combate forzado ni desactiva la Mochila. El catálogo acumulado usa switches 748–782 y variables 144–178, sin huecos ni conflictos.
 
 El compilador genérico Tier 1 actualiza entrenadores ya existentes durante una revisión y verifica especie, nivel, movimientos y objeto de cada integrante. El linter también rechaza Assault Vest combinado con movimientos de estado; las incompatibilidades detectadas se corrigieron antes de compilar.
 
-El análisis global mantiene exactamente las 45 incidencias heredadas del juego base: 7 errores y 38 warnings. No apareció ninguna incidencia nueva. El estado compilado contiene 2.020 mapas, 20.234 eventos y 3.904 entrenadores. El aumento de 20 eventos corresponde exactamente a los dos NPCs instalados en cada una de las diez rutas Tier 2.
+El análisis global mantiene exactamente las 45 incidencias heredadas del juego base: 7 errores y 38 warnings. No apareció ninguna incidencia nueva. El estado compilado contiene 2.020 mapas, 20.284 eventos y 3.904 entrenadores. Los 70 eventos Tier 2 añadidos corresponden exactamente a los dos NPCs instalados en cada una de las 35 rutas.
 
 ```text
 marshal.js: 51 OK, 0 fallos
@@ -165,7 +190,7 @@ integración: 114 OK, 0 fallos
 UI con jsdom: 22 OK, 0 fallos
 ```
 
-La idempotencia por hashes fue confirmada para las fases A, B, C, D y E, los dos macrociclos visuales y las primeras diez rutas Tier 2. La comparación contra backups del macrociclo 02 confirmó exactamente 148 cambios de celda visual, 20 eventos Tier 2 nuevos y ningún cambio ajeno en geometría, eventos originales, `MapInfos.rxdata` o `System.rxdata`. El compilador Tier 1 canoniza también la clave compuesta del entrenador al actualizarlo, por lo que una segunda ejecución conserva inmediatamente los hashes de `trainers.dat` y de los mapas.
+La idempotencia por hashes fue confirmada para las fases A, B, C, D y E, los dos macrociclos visuales y las 35 rutas Tier 2. La comparación contra backups del macrociclo 02 confirmó exactamente 148 cambios de celda visual y 20 eventos Tier 2 nuevos. La del macrociclo 03 confirmó 25 geometrías y todos los eventos originales intactos, 50 eventos Tier 2 nuevos y ningún cambio ajeno en `MapInfos.rxdata` o `System.rxdata`. El compilador Tier 1 canoniza también la clave compuesta del entrenador al actualizarlo, por lo que una segunda ejecución conserva inmediatamente los hashes de `trainers.dat` y de los mapas.
 
 El límite global es **150**. Las fases C–E usan la progresión extendida hasta nivel 136; las seis curvas de experiencia fueron verificadas como enteras y estrictamente crecientes.
 
@@ -198,6 +223,7 @@ pokemon_fire_ash/PokeModBackups/extended_level_cap_originals/
 pokemon_fire_ash/PokeModBackups/atlas_visual_macro01_originals/
 pokemon_fire_ash/PokeModBackups/atlas_visual_macro02_originals/
 pokemon_fire_ash/PokeModBackups/atlas_tier2_macro02_originals/
+pokemon_fire_ash/PokeModBackups/atlas_tier2_macro03_originals/
 ```
 
 Macrociclos visuales 01–02:
@@ -216,18 +242,24 @@ docs/referencia_visual_atlas_macro02_antes.png
 docs/referencia_visual_atlas_macro02_despues.png
 ```
 
-Tier 2, macrociclo 02:
+Tier 2, macrociclos 02–03:
 
 ```text
 content/atlas_tier2_blueprints_macro02.json
+content/atlas_tier2_blueprints_macro03.json
 content/atlas_tier2_qa.json
+content/atlas_tier2_qa_macro03.json
 tools/create_tier2_macro02.mjs
+tools/create_tier2_macro03.mjs
 tools/apply_tier2_routes.mjs
+docs/ATLAS_TIER2_MACRO03.md
+docs/referencia_tier2_macro03_antes.png
+docs/referencia_tier2_macro03_despues.png
 ```
 
 ## Siguiente ciclo — pulido por capas
 
-Tier 1 narrativo y la composición estática de sus 40 anclas están completos. Los dos macrociclos visuales suman ocho lotes y 397 celdas. Las primeras 10/120 rutas Tier 2 están compiladas; quedan 110 rutas Tier 2 y 420 Ecos Tier 3 que necesitan una regla local breve. El inventario reproducible registra 19/62 lotes completados, 43 pendientes y 9 macroprompts restantes.
+Tier 1 narrativo y la composición estática de sus 40 anclas están completos. Los dos macrociclos visuales suman ocho lotes y 397 celdas. Las primeras 35/120 rutas Tier 2 están compiladas; quedan 85 rutas Tier 2 y 420 Ecos Tier 3 que necesitan una regla local breve. El inventario reproducible registra 24/62 lotes completados, 38 pendientes y 8 macroprompts restantes.
 
 La referencia conceptual criticable de la Ancla 26 está en `docs/referencia_visual_atlas_ancla26.png`; su alcance y limitaciones están documentados en `docs/REFERENCIA_VISUAL_ANCLA26.md`.
 
@@ -249,6 +281,6 @@ tools/external_authoring.test.mjs
 
 El pipeline narrativo ahora consume obligatoriamente el plano importado de Region Builder, un registro estable por ancla inspirado en Pokémon Studio y las métricas del mapa fuente real. Ninguno de esos formatos escribe directamente sobre `Data/*.rxdata`.
 
-La suite de autoría externa pasa **36/36** pruebas. La compuerta confirma recursos, pasabilidad, dimensiones, eventos artesanales y retorno; reconoce 40 composiciones propias. También valida el catálogo, flags, variables, recompensas, seguridad y presencia compilada de las diez rutas Tier 2. Ninguno de esos estados permite presentar todavía los mapas como arte visual certificado.
+La suite de autoría externa pasa **39/39** pruebas. La compuerta confirma recursos, pasabilidad, dimensiones, eventos artesanales y retorno; reconoce 40 composiciones propias. También valida catálogo, flags continuas, variables, recompensas, seguridad, nombres únicos, 420 líneas de diálogo sin repeticiones y presencia compilada de las 35 rutas Tier 2. Ninguno de esos estados permite presentar todavía los mapas como arte visual certificado.
 
 Antes de certificar los episodios como finales todavía falta la prueba visual de las 40 anclas dentro de `Game.exe`.

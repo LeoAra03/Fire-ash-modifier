@@ -22,7 +22,10 @@ const visualManifestFiles = fs.readdirSync(path.join(ROOT, "content")).filter((f
 const expectedCustomMaps = new Set(visualManifestFiles.flatMap((file) => JSON.parse(fs.readFileSync(path.join(ROOT, "content", file), "utf8")).maps.map((entry) => Number(entry.mapId)))).size;
 const tier2ManifestFiles = fs.readdirSync(path.join(ROOT, "content")).filter((file) => /^atlas_tier2_blueprints_macro\d+\.json$/.test(file));
 const tier2Blueprints = tier2ManifestFiles.flatMap((file) => JSON.parse(fs.readFileSync(path.join(ROOT, "content", file), "utf8")).blueprints);
-const tier2Qa = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_tier2_qa.json"), "utf8"));
+const tier2QaFiles = fs.readdirSync(path.join(ROOT, "content")).filter((file) => /^atlas_tier2_qa(?:_macro\d+)?\.json$/.test(file));
+const tier2QaReports = tier2QaFiles.map((file) => JSON.parse(fs.readFileSync(path.join(ROOT, "content", file), "utf8")));
+const tier2NpcNames = tier2Blueprints.flatMap((entry) => entry.npcs.map((npc) => npc.name));
+const tier2DialogueLines = tier2Blueprints.flatMap((entry) => entry.npcs.flatMap((npc) => [...npc.dialogue.before, ...npc.dialogue.after]));
 const region = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_mil_region.pkregion"), "utf8"));
 const regionValidation = validatePkregion(region);
 check(regionValidation.ok, "el .pkregion de Atlas cumple el formato v1");
@@ -83,19 +86,23 @@ check(style.summary.artReviewRequired === 40, "ningún mapa se certifica visualm
 check(style.summary.gamePreviewRequired === 40, "las 40 anclas siguen requiriendo Game.exe");
 check(style.scope.finalGamePreviewStillRequired === true, "la prueba dentro de Game.exe sigue siendo obligatoria");
 
-check(tier2Blueprints.length === 10, "el macrociclo 02 define diez rutas Tier 2");
-check(tier2Qa.summary.passed === tier2Blueprints.length && tier2Qa.summary.failed === 0, "las diez rutas Tier 2 superan su QA dedicado");
+check(tier2Blueprints.length > 0 && tier2Blueprints.length % 5 === 0, `los manifiestos definen ${tier2Blueprints.length} rutas Tier 2 en lotes completos`);
+check(tier2QaReports.reduce((sum, report) => sum + report.summary.passed, 0) === tier2Blueprints.length && tier2QaReports.every((report) => report.summary.failed === 0), `las ${tier2Blueprints.length} rutas Tier 2 superan su QA dedicado`);
 check(new Set(tier2Blueprints.map((entry) => entry.mapId)).size === tier2Blueprints.length, "los mapas Tier 2 de autoría son únicos");
 check(new Set(tier2Blueprints.map((entry) => entry.flag)).size === tier2Blueprints.length, "los switches Tier 2 reservados son únicos");
 check(new Set(tier2Blueprints.map((entry) => entry.variable)).size === tier2Blueprints.length, "las variables de decisión Tier 2 son únicas");
-check(new Set(tier2Blueprints.map((entry) => entry.reward.item)).size === tier2Blueprints.length, "las recompensas Tier 2 son únicas en el macrociclo");
+check(new Set(tier2Blueprints.map((entry) => entry.reward.item)).size === tier2Blueprints.length, "las recompensas Tier 2 son únicas en el catálogo acumulado");
+check(new Set(tier2NpcNames).size === tier2NpcNames.length, "los NPCs Tier 2 tienen nombres únicos");
+check(new Set(tier2DialogueLines).size === tier2DialogueLines.length, "el catálogo Tier 2 no repite líneas de diálogo");
+const sortedTier2Flags = tier2Blueprints.map((entry) => entry.flag).sort((left, right) => left - right);
+check(sortedTier2Flags[0] === 748 && sortedTier2Flags.every((flag, index) => index === 0 || flag === sortedTier2Flags[index - 1] + 1), "los switches Tier 2 forman una reserva continua sin huecos");
 check(tier2Blueprints.every((entry) => entry.npcs.length === 2 && entry.decision.options.length === 2 && entry.progression.switchId === entry.flag && entry.progression.decisionVariable === entry.variable && entry.safety.bagAlwaysAvailable && entry.safety.noForcedBattle && entry.safety.existingChallengePreserved && entry.safety.freeReturn && entry.safety.rewardOnce), "cada ruta Tier 2 conserva dos NPCs, decisión persistente y garantías de seguridad");
 check(tier2Blueprints.every((entry) => {
   const events = parseMap(readMarshalData(`Map${entry.mapId}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
   return events.filter((event) => event.name.startsWith("PokeMod Tier2:")).length === 2
     && events.some((event) => event.name.startsWith("Atlas desafío"))
     && events.some((event) => event.name === "Return to Puerto Horizonte");
-}), "las diez rutas compiladas conservan desafío Atlas, dos NPCs y retorno libre");
+}), `las ${tier2Blueprints.length} rutas compiladas conservan desafío Atlas, dos NPCs y retorno libre`);
 
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);
 if (failed) process.exitCode = 1;

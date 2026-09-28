@@ -12,10 +12,14 @@ const INPUT = path.resolve(inputAt >= 0 ? process.argv[inputAt + 1] : path.join(
 const BACKUP_NAME = backupAt >= 0 ? process.argv[backupAt + 1] : "atlas_tier2_routes_originals";
 const BACKUP = path.join(GAME, "PokeModBackups", BACKUP_NAME);
 const VERIFY_ONLY = process.argv.includes("--verify");
-const QA_FILE = path.join(ROOT, "content", "atlas_tier2_qa.json");
-const MARKER = "PokeMod Tier2:";
 const data = JSON.parse(fs.readFileSync(INPUT, "utf8"));
+const MACRO_CYCLE = Number(data.macroCycle ?? 0);
+const QA_FILE = path.join(ROOT, "content", MACRO_CYCLE === 2 ? "atlas_tier2_qa.json" : `atlas_tier2_qa_macro${String(MACRO_CYCLE).padStart(2, "0")}.json`);
+const MARKER = "PokeMod Tier2:";
 const BLUEPRINTS = data.blueprints ?? [];
+const routeNumber = (blueprint) => Number(blueprint.progression.switchId) - 747;
+const switchName = (blueprint) => `POKEMOD ATLAS T2 ROUTE ${String(routeNumber(blueprint)).padStart(2, "0")}`;
+const variableName = (blueprint) => `POKEMOD ATLAS T2 DECISION ${String(routeNumber(blueprint)).padStart(2, "0")}`;
 const S = (value) => RString.fromText(String(value));
 const iv = (object, name) => object?.getIvar?.(name);
 const txt = (value) => value instanceof RString ? value.text : String(value ?? "");
@@ -54,14 +58,17 @@ function validateBlueprints() {
     if (blueprint.decision?.options?.length !== 2 || blueprint.decision?.immediate?.length !== 2 || blueprint.decision?.later?.length !== 2) errors.push(`${blueprint.mapId}: decisión incompleta`);
     if (!items.has(blueprint.reward?.item) || !blueprint.reward?.meaning || seenRewards.has(blueprint.reward?.item)) errors.push(`${blueprint.mapId}: recompensa inválida o repetida`); seenRewards.add(blueprint.reward?.item);
     const flag = Number(blueprint.progression?.switchId), variable = Number(blueprint.progression?.decisionVariable);
-    if (flag < 748 || flag > 757 || seenFlags.has(flag) || Number(blueprint.flag) !== flag) errors.push(`${blueprint.mapId}: switch inválido/repetido ${flag}`); seenFlags.add(flag);
-    if (variable < 144 || variable > 153 || seenVariables.has(variable) || Number(blueprint.variable) !== variable) errors.push(`${blueprint.mapId}: variable inválida/repetida ${variable}`); seenVariables.add(variable);
+    if (flag < 748 || seenFlags.has(flag) || Number(blueprint.flag) !== flag) errors.push(`${blueprint.mapId}: switch inválido/repetido ${flag}`); seenFlags.add(flag);
+    if (variable < 144 || variable !== flag - 604 || seenVariables.has(variable) || Number(blueprint.variable) !== variable) errors.push(`${blueprint.mapId}: variable inválida/repetida ${variable}`); seenVariables.add(variable);
     if (blueprint.progression?.freeReturnMapId !== 1001 || blueprint.safety?.bagAlwaysAvailable !== true || blueprint.safety?.noForcedBattle !== true || blueprint.safety?.freeReturn !== true || blueprint.safety?.rewardOnce !== true || blueprint.safety?.existingChallengePreserved !== true) errors.push(`${blueprint.mapId}: garantías de seguridad incompletas`);
     const existing = parseMap(read(`Map${pad(blueprint.mapId)}.rxdata`)).events;
     if (existing.some(({ id, obj }) => [200,201].includes(id) && !parseEvent(obj).name.startsWith(MARKER))) errors.push(`${blueprint.mapId}: IDs 200–201 ya pertenecen a eventos originales`);
   }
-  if (BLUEPRINTS.length !== 10) errors.push(`se esperaban 10 rutas y llegaron ${BLUEPRINTS.length}`);
-  const report = { version: 1, scope: "Tier 2 macrociclo 02", summary: { total: BLUEPRINTS.length, passed: errors.length ? 0 : BLUEPRINTS.length, failed: errors.length ? BLUEPRINTS.length : 0 }, errors };
+  const expectedRoutes = Number(data.tier2Batches ?? 0) * 5;
+  if (!Number.isInteger(expectedRoutes) || expectedRoutes <= 0 || BLUEPRINTS.length !== expectedRoutes) errors.push(`se esperaban ${expectedRoutes} rutas y llegaron ${BLUEPRINTS.length}`);
+  const sortedFlags = [...seenFlags].sort((left, right) => left - right);
+  if (sortedFlags.some((flag, index) => index > 0 && flag !== sortedFlags[index - 1] + 1)) errors.push("los switches del macrociclo no son consecutivos");
+  const report = { version: 1, macroCycle: MACRO_CYCLE, scope: `Tier 2 macrociclo ${String(MACRO_CYCLE).padStart(2, "0")}`, summary: { total: BLUEPRINTS.length, passed: errors.length ? 0 : BLUEPRINTS.length, failed: errors.length ? BLUEPRINTS.length : 0 }, errors };
   fs.writeFileSync(QA_FILE, `${JSON.stringify(report, null, 2)}\n`);
   if (errors.length) throw new Error(`Blueprints Tier 2 inválidos (${errors.length}):\n- ${errors.join("\n- ")}`);
   return report;
@@ -129,11 +136,11 @@ function supportEvent(blueprint, position) {
 function backup() {
   fs.mkdirSync(BACKUP, { recursive: true });
   for (const file of ["System.rxdata", "MapInfos.rxdata", ...BLUEPRINTS.map((blueprint) => `Map${pad(blueprint.mapId)}.rxdata`)]) { const source = path.join(DATA, file), target = path.join(BACKUP, file); if (!fs.existsSync(target)) fs.copyFileSync(source, target); }
-  fs.writeFileSync(path.join(BACKUP, "LEEME.txt"), `Originales anteriores a compilar ${path.basename(INPUT)}. Restaura estos archivos para revertir los dos lotes Tier 2.\n`);
+  fs.writeFileSync(path.join(BACKUP, "LEEME.txt"), `Originales anteriores a compilar ${path.basename(INPUT)}. Restaura estos archivos para revertir ${data.tier2Batches} lotes Tier 2 del macrociclo ${MACRO_CYCLE}.\n`);
 }
 function installSystem() {
   const system = read("System.rxdata"), switches = iv(system, "switches") ?? [], variables = iv(system, "variables") ?? [];
-  for (let index = 0; index < BLUEPRINTS.length; index++) { const blueprint = BLUEPRINTS[index], flag = blueprint.progression.switchId, variable = blueprint.progression.decisionVariable, expectedSwitch = `POKEMOD ATLAS T2 ROUTE ${String(index + 1).padStart(2, "0")}`, expectedVariable = `POKEMOD ATLAS T2 DECISION ${String(index + 1).padStart(2, "0")}`; if (switches[flag] && txt(switches[flag]) !== expectedSwitch) throw new Error(`Switch ${flag} ocupado por ${txt(switches[flag])}`); if (variables[variable] && txt(variables[variable]) !== expectedVariable) throw new Error(`Variable ${variable} ocupada por ${txt(variables[variable])}`); switches[flag] = S(expectedSwitch); variables[variable] = S(expectedVariable); }
+  for (const blueprint of BLUEPRINTS) { const flag = blueprint.progression.switchId, variable = blueprint.progression.decisionVariable, expectedSwitch = switchName(blueprint), expectedVariable = variableName(blueprint); if (switches[flag] && txt(switches[flag]) !== expectedSwitch) throw new Error(`Switch ${flag} ocupado por ${txt(switches[flag])}`); if (variables[variable] && txt(variables[variable]) !== expectedVariable) throw new Error(`Variable ${variable} ocupada por ${txt(variables[variable])}`); switches[flag] = S(expectedSwitch); variables[variable] = S(expectedVariable); }
   system.setIvar("switches", switches); system.setIvar("variables", variables); write("System.rxdata", system);
 }
 function installMapInfos() { const infos = read("MapInfos.rxdata"); for (const blueprint of BLUEPRINTS) { const info = infos.pairs.find(([key]) => Number(key) === blueprint.mapId)?.[1]; if (!info) throw new Error(`MapInfos sin ${blueprint.mapId}`); info.setIvar("name", S(blueprint.title)); } write("MapInfos.rxdata", infos); }
@@ -146,8 +153,8 @@ function verify() {
   const system = read("System.rxdata"), switches = iv(system, "switches"), variables = iv(system, "variables"), infos = read("MapInfos.rxdata");
   for (let index = 0; index < BLUEPRINTS.length; index++) {
     const blueprint = BLUEPRINTS[index], flag = blueprint.progression.switchId, variable = blueprint.progression.decisionVariable;
-    ok(txt(switches[flag]) === `POKEMOD ATLAS T2 ROUTE ${String(index + 1).padStart(2, "0")}`, `${blueprint.mapId}: switch incorrecto`);
-    ok(txt(variables[variable]) === `POKEMOD ATLAS T2 DECISION ${String(index + 1).padStart(2, "0")}`, `${blueprint.mapId}: variable incorrecta`);
+    ok(txt(switches[flag]) === switchName(blueprint), `${blueprint.mapId}: switch incorrecto`);
+    ok(txt(variables[variable]) === variableName(blueprint), `${blueprint.mapId}: variable incorrecta`);
     ok(txt(infos.pairs.find(([key]) => Number(key) === blueprint.mapId)?.[1]?.getIvar("name")) === blueprint.title, `${blueprint.mapId}: nombre de mapa incorrecto`);
     const parsed = parseMap(read(`Map${pad(blueprint.mapId)}.rxdata`)), events = parsed.events.map(({ obj }) => parseEvent(obj)), added = parsed.events.map(({ obj }) => obj).filter((object) => txt(iv(object, "name")).startsWith(MARKER));
     ok(added.length === 2, `${blueprint.mapId}: ${added.length}/2 eventos Tier 2`);

@@ -16,11 +16,23 @@ const valueAfter = (flag, fallback) => {
 };
 const macro = valueAfter("--macro", "02").padStart(2, "0");
 const manifestPath = path.resolve(ROOT, valueAfter("--manifest", `content/atlas_visual_polish_macro${macro}.json`));
+const tier2Input = valueAfter("--tier2", null);
 const backupDir = path.resolve(ROOT, valueAfter("--backup", `pokemon_fire_ash/PokeModBackups/atlas_visual_macro${macro}_originals`));
 const beforeOutput = path.resolve(ROOT, valueAfter("--before", `docs/referencia_visual_atlas_macro${macro}_antes.png`));
 const afterOutput = path.resolve(ROOT, valueAfter("--after", `docs/referencia_visual_atlas_macro${macro}_despues.png`));
-const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-const entries = manifest.maps;
+let entries;
+if (tier2Input) {
+  const blueprints = JSON.parse(fs.readFileSync(path.resolve(ROOT, tier2Input), "utf8")).blueprints ?? [];
+  entries = blueprints.map((blueprint) => {
+    const file = path.join(DATA, `Map${String(blueprint.mapId).padStart(3, "0")}.rxdata`);
+    const parsed = parseMap(marshalLoad(fs.readFileSync(file)));
+    const events = parsed.events.map(({ obj }) => parseEvent(obj)).filter((event) => event.name.startsWith("PokeMod Tier2:"));
+    if (events.length !== 2) throw new Error(`${blueprint.mapId}: se esperaban dos NPCs Tier 2 compilados.`);
+    return { mapId: blueprint.mapId, label: "2 NPCs Tier 2", changes: events.map((event) => ({ x: event.x, y: event.y })) };
+  });
+} else {
+  entries = JSON.parse(fs.readFileSync(manifestPath, "utf8")).maps;
+}
 if (!Array.isArray(entries) || !entries.length) throw new Error("El manifiesto no contiene mapas.");
 
 const autotileParts = [
@@ -173,7 +185,7 @@ async function renderSheet(source, output) {
     ctx.fillStyle = "#e3c47c";
     ctx.font = "bold 17px serif";
     ctx.textBaseline = "middle";
-    ctx.fillText(`${index + 1} · ${entry.mapId} · ${entry.motif}`, x + 7, y + titleHeight / 2);
+    ctx.fillText(`${index + 1} · ${entry.mapId} · ${entry.label ?? entry.motif}`, x + 7, y + titleHeight / 2);
     const availableWidth = cardWidth - margin * 2;
     const availableHeight = cardHeight - titleHeight - margin * 2;
     const scale = Math.min(availableWidth / (view.width * 32), availableHeight / (view.height * 32));
