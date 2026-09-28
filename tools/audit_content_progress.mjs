@@ -40,6 +40,7 @@ const atlasMaps = hierarchy.maps.map((entry) => {
     hasReturn: names.includes("Return to Puerto Horizonte"),
     hasBeacon: names.some((name) => name === `Atlas Tier ${entry.tier} Beacon ${entry.mapId}`),
     hasGenericChallenge: names.some((name) => name.startsWith("Atlas desafío")),
+    hasTier3Rule: names.some((name) => name.startsWith("PokeMod Tier3:")),
     handcraftedEvents: names.filter((name) => name.startsWith("PokeMod Tier1:")).length,
     authoredTier2Events: names.filter((name) => name.startsWith("PokeMod Tier2:")).length,
   };
@@ -65,7 +66,7 @@ const pendingTier1 = tier1.filter((entry) => !approvedByMap.has(entry.mapId)).ma
     reservedDecisionVariable: studioRecord?.progression?.decisionVariable ?? null,
   };
 });
-const tier3MissingRule = tier3.filter((entry) => !entry.hasGenericChallenge).map((entry) => entry.mapId);
+const tier3MissingRule = tier3.filter((entry) => !(entry.hasGenericChallenge || entry.hasTier3Rule)).map((entry) => entry.mapId);
 const visualPending = style.anchors.filter((entry) => entry.comparison?.exactInheritedGeometry).map((entry) => entry.mapId);
 const uniqueApprovedSpecies = new Set(approved.flatMap((blueprint) => blueprint.battle.team.map((pokemon) => pokemon.species))).size;
 const batches = (units, size) => Math.ceil(units / size);
@@ -142,7 +143,9 @@ const report = {
       tier3: {
         total: tier3.length,
         infrastructureComplete: tier3.filter((entry) => entry.hasReturn && entry.hasBeacon).length,
-        withLocalGenericRuleOrChallenge: tier3.filter((entry) => entry.hasGenericChallenge).length,
+        withLocalGenericRuleOrChallenge: tier3.filter((entry) => entry.hasGenericChallenge || entry.hasTier3Rule).length,
+        withGenericChallenge: tier3.filter((entry) => entry.hasGenericChallenge).length,
+        withReversibleLocalRule: tier3.filter((entry) => entry.hasTier3Rule).length,
         missingLocalRule: tier3MissingRule.length,
       },
       authoring: {
@@ -204,7 +207,7 @@ const report = {
     },
     tier3MissingLocalRules: {
       units: tier3MissingRule.length,
-      reason: "420 Ecos ya tienen desafío genérico; los otros 420 conservan baliza y retorno, pero aún necesitan una regla local breve.",
+      reason: `${tier3.filter((entry) => entry.hasGenericChallenge).length} Ecos tienen desafío Atlas y ${tier3.filter((entry) => entry.hasTier3Rule).length} tienen regla local reversible; faltan ${tier3MissingRule.length}.`,
       recommendedBatchSize: 20,
       recommendedPromptRuns: batches(tier3MissingRule.length, 20),
       maps: tier3MissingRule,
@@ -303,7 +306,8 @@ const md = [
   `- Los 1.000 mapas Atlas existen y son transitables. ${style.summary.customGeometry} anclas tienen ya una composición de piso propia; los demás mapas conservan geometría heredada en distintos grados.`,
   "- Los 500 desafíos Atlas y las 500 aventuras de Horizontes están instalados, pero no equivalen a 1.000 episodios artesanales.",
   "- Tier 1 sí dispone de blueprint, reparto, decisión, jefe narrativo, curación y retorno.",
-  `- Tier 2 tiene ${authoredTier2.length}/120 rutas de autoría dedicada; las ${pendingTier2.length} restantes y la mitad de Tier 3 aún requieren autoría para alcanzar la meta de pulido por capas.`,
+  `- Tier 2 tiene ${authoredTier2.length}/120 rutas de autoría dedicada; faltan ${pendingTier2.length}.`,
+  `- Tier 3 cubre ${tier3.filter((entry) => entry.hasGenericChallenge || entry.hasTier3Rule).length}/840 Ecos con regla local (${tier3.filter((entry) => entry.hasGenericChallenge).length} desafíos Atlas + ${tier3.filter((entry) => entry.hasTier3Rule).length} reglas reversibles de \`content/atlas_tier3_rules.json\`); faltan ${tier3MissingRule.length}.`,
   "- La certificación final requiere `Game.exe`; ningún linter puede validar ritmo, clipping o sensación de juego.",
   "",
 ];

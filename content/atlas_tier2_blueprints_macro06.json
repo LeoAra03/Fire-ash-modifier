@@ -1,0 +1,2332 @@
+{
+  "version": 1,
+  "macroCycle": 6,
+  "tier2Batches": 5,
+  "blueprints": [
+    {
+      "tier": 2,
+      "routeBatch": 18,
+      "mapId": 1733,
+      "flag": 833,
+      "variable": 229,
+      "title": "La Antena que Negociaba el Viento",
+      "promise": "Dos gremios de mensajería se disputan la antena de la torre y la venta privada de la franja de calma retrasa a quien no puede pagarla.",
+      "objective": "Publicar ventanas de vuelo medibles y repartir la franja de calma sin privilegios secretos.",
+      "mechanic": {
+        "name": "Turnos de ráfaga",
+        "rules": [
+          "Medir el viento antes de fijar el turno.",
+          "Anunciar cada ventana en la torre y en el puerto.",
+          "Devolver la franja de calma al reparto común si sobra."
+        ],
+        "failureSafe": "Las antenas de emergencia y el regreso al puerto nunca se alquilan."
+      },
+      "npcs": [
+        {
+          "name": "Zalo Viento",
+          "sprite": "trchar008",
+          "role": "coordinador de aerovías",
+          "partnerPokemon": "UNFEZANT",
+          "motivation": "Quiere ordenar el cielo con horarios que cualquiera pueda leer.",
+          "conflict": "Su error anterior fue que vendió la franja de calma a un gremio y llamó al resto retraso.",
+          "dialogue": {
+            "before": [
+              "La torre solo anuncia las ventanas que pagan los gremios grandes.",
+              "me apresuré: vendí la franja de calma y taché los retrasos del cartel.",
+              "redactaré un cuadro público con viento, ventana y espera estimada."
+            ],
+            "after": [
+              "las ventanas cuelgan del cartel y ningún gremio compra la hora tranquila.",
+              "Unfezant patrulla la franja sin pedir el sello de nadie.",
+              "el cuadro se revisará cada tormenta, no cada contrato."
+            ]
+          }
+        },
+        {
+          "name": "Yessa Mesa",
+          "sprite": "NPC 04",
+          "role": "embajadora de dos ligas",
+          "partnerPokemon": "SWANNA",
+          "motivation": "Quiere firmar un tratado de vuelo que las dos ligas respeten sin elegir campeón.",
+          "conflict": "Su error anterior fue que redactó tratados tan ambiciosos que ninguna liga quiso firmarlos.",
+          "dialogue": {
+            "before": [
+              "Cada liga me devuelve el borrador con una exigencia imposible.",
+              "tardé en reconocer que pedía juramentos donde bastaban ventanas.",
+              "propondré tres artículos cortos y dejaré el resto para el próximo consejo."
+            ],
+            "after": [
+              "el tratado quedó en una página y firmaron las dos ligas.",
+              "Swanna traslada los pliegos sin elegir bando.",
+              "cuando cambie el viento, el tratado admite un anexo breve."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Quién publicará las ventanas de vuelo?",
+        "options": [
+          "Autoridad portuaria única",
+          "Consejo rotatorio de gremios"
+        ],
+        "immediate": [
+          "el cuarto de la antena pasa a manos del puerto.",
+          "cada gremio rotará la custodia del cartel."
+        ],
+        "later": [
+          "el cuadro se revisará cada tormenta, no cada contrato.",
+          "cuando cambie el viento, el tratado admite un anexo breve."
+        ]
+      },
+      "reward": {
+        "item": "STICKYBARB",
+        "meaning": "Fija la ventana de viento acordada para que ningún gremio la capture en secreto."
+      },
+      "progression": {
+        "switchId": 833,
+        "decisionVariable": 229,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 18,
+      "mapId": 1740,
+      "flag": 834,
+      "variable": 230,
+      "title": "El Consejo que Compartía un Campeón",
+      "promise": "Dos ligas reclaman al mismo campeón sin querer combatir y las biografías oficiales se corrigen entre sí cada semana.",
+      "objective": "Conservar una biografía original intacta y repartir copias selladas que ninguna liga pueda reescribir.",
+      "mechanic": {
+        "name": "Registro doble",
+        "rules": [
+          "Fotografiar el original antes de repartir copias.",
+          "Nunca editar las palabras del propio campeón.",
+          "Publicar quién custodia el original cada temporada."
+        ],
+        "failureSafe": "La caja pública del ayuntamiento permanece cerrada con dos llaves."
+      },
+      "npcs": [
+        {
+          "name": "Emba Sellado",
+          "sprite": "trchar009",
+          "role": "archivista de ligas",
+          "partnerPokemon": "MANDIBUZZ",
+          "motivation": "Quiere custodiar una biografía que ninguna liga pueda editar.",
+          "conflict": "Su error anterior fue que permitió que cada liga corrigiera la misma página.",
+          "dialogue": {
+            "before": [
+              "Mi archivo guarda tres versiones del mismo discurso de victoria.",
+              "me apresuré: abrí la página común y cada liga la corrigió a su gusto.",
+              "separaré original, copia sellada y errata pública."
+            ],
+            "after": [
+              "el original descansa en la caja y las copias llevan fecha.",
+              "Mandibuzz vigila el fondo de la caja sin leer los sellos.",
+              "cada errata pedirá firmas de las dos ligas."
+            ]
+          }
+        },
+        {
+          "name": "Tico Sigilo",
+          "sprite": "NPC 04",
+          "role": "diplomático de pasillos",
+          "partnerPokemon": "LIEPARD",
+          "motivation": "Quiere resolver la disputa sin que el campeón deba elegir bandera.",
+          "conflict": "Su error anterior fue que convenció al campeón de leer un bando delante del otro.",
+          "dialogue": {
+            "before": [
+              "El campeón me pidió no volver a elegir entre sus maestros.",
+              "tardé en reconocer que convertí su silencio en una declaración.",
+              "preguntaré antes y hablaré después, en ese orden."
+            ],
+            "after": [
+              "el campeón no firmó ninguna bandera y el consejo lo respeta.",
+              "Liepard entra y sale por la puerta que nadie custodia.",
+              "las próximas visitas tendrán preguntas enviadas por escrito."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Dónde vivirá la biografía del campeón?",
+        "options": [
+          "Original en caja pública",
+          "Copias selladas en cada liga"
+        ],
+        "immediate": [
+          "la caja pública recibe el original y sus llaves quedan separadas.",
+          "las ligas custodian copias y el original viaja cada invierno."
+        ],
+        "later": [
+          "cada errata pedirá firmas de las dos ligas.",
+          "las próximas visitas tendrán preguntas enviadas por escrito."
+        ]
+      },
+      "reward": {
+        "item": "RAZORFANG",
+        "meaning": "Corta de raíz una reclamación que intenta comerse la historia de su protagonista."
+      },
+      "progression": {
+        "switchId": 834,
+        "decisionVariable": 230,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 18,
+      "mapId": 1751,
+      "flag": 835,
+      "variable": 231,
+      "title": "La Academia que Vendía Dificultad",
+      "promise": "Una academia del centro comercial vende crueldad disfrazada de reto y expulsa a quien pregunta por la contrajugada.",
+      "objective": "Publicar la contrajugada de cada ejercicio antes de venderlo como dificultad.",
+      "mechanic": {
+        "name": "Evaluación de contrajuego",
+        "rules": [
+          "Cada ejercicio declara su contrajugada.",
+          "La dificultad se publica con mapa y tiempos.",
+          "El alumno puede detener el ejercicio sin sanción."
+        ],
+        "failureSafe": "El área de descanso nunca forma parte del programa de reto."
+      },
+      "npcs": [
+        {
+          "name": "Nive Redoble",
+          "sprite": "trchar008",
+          "role": "entrenadora jefa",
+          "partnerPokemon": "GRAPPLOCT",
+          "motivation": "Quiere vender entrenamiento exigente sin aplastar al alumno.",
+          "conflict": "Su error anterior fue que etiquetó como nivel experto un ejercicio sin salida posible.",
+          "dialogue": {
+            "before": [
+              "Los carteles dicen nivel experto y nadie explica cómo salir.",
+              "me precipité: vendí dificultad sin revisar si el alumno podía rendirse.",
+              "colocaré la contrajugada junto al precio de cada programa."
+            ],
+            "after": [
+              "cada programa cuelga su contrajugada y su tiempos de salida.",
+              "Grapploct se retira cuando el alumno levanta la mano.",
+              "las versiones difíciles tendrán también su mapa de retirada."
+            ]
+          }
+        },
+        {
+          "name": "Coto Marcador",
+          "sprite": "NPC 04",
+          "role": "analista deportivo",
+          "partnerPokemon": "PANGORO",
+          "motivation": "Quiere medir progreso real en vez de sufrimiento acumulado.",
+          "conflict": "Su error anterior fue que contó como progreso cada sesión abandonada a gritos.",
+          "dialogue": {
+            "before": [
+              "Mis gráficas suben cuando alguien se retira destrozado.",
+              "tardé en reconocer que medía aguante y no aprendizaje.",
+              "separaré rendimiento, descanso y curva de error."
+            ],
+            "after": [
+              "los informes distinguen descanso de retroceso.",
+              "Pangoro marca cada pausa sin penalizarla.",
+              "el seguimiento incluirá preguntas, no solo cronómetros."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué se publicará en el cartel del centro?",
+        "options": [
+          "Mapa de contrajugadas",
+          "Solo el nivel de exigencia"
+        ],
+        "immediate": [
+          "el centro comercial exhibe la lista completa de contrajugadas.",
+          "los alumnos exigen anexos antes de cada nuevo programa."
+        ],
+        "later": [
+          "las versiones difíciles tendrán también su mapa de retirada.",
+          "el seguimiento incluirá preguntas, no solo cronómetros."
+        ]
+      },
+      "reward": {
+        "item": "SOFTSAND",
+        "meaning": "Da peso a un entrenamiento exigente que no necesita hundir a nadie para demostrarlo."
+      },
+      "progression": {
+        "switchId": 835,
+        "decisionVariable": 231,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 18,
+      "mapId": 1758,
+      "flag": 836,
+      "variable": 232,
+      "title": "El Análisis que Fichaba a los Jugadores",
+      "promise": "Los exploradores de la costa reducen jugadores a estadísticas y venden predicciones de carácter que condicionan a los equipos.",
+      "objective": "Separar el análisis deportivo del carácter y permitir que cada jugador lea su propio expediente.",
+      "mechanic": {
+        "name": "Hoja de lectura doble",
+        "rules": [
+          "La hoja de datos no viaja junto a la de carácter.",
+          "El jugador puede leer y anotar su expediente.",
+          "Toda predicción caduca al terminar la temporada."
+        ],
+        "failureSafe": "El cuarto de análisis cierra sin expedientes a la vista."
+      },
+      "npcs": [
+        {
+          "name": "Sera Gráfica",
+          "sprite": "trchar009",
+          "role": "scout de costa",
+          "partnerPokemon": "PERSIAN",
+          "motivation": "Quiere descubrir talento sin vender retratos de personalidad.",
+          "conflict": "Su error anterior fue que comerció con notas de carácter que los equipos usaron para presionar.",
+          "dialogue": {
+            "before": [
+              "Un club me pidió la hoja de carácter antes que las de datos.",
+              "me apresuré: vendí mis notas y las llamé lectura de juego.",
+              "devolveré cada nota de carácter a su protagonista."
+            ],
+            "after": [
+              "los expedientes de carácter vuelven firmados por sus dueños.",
+              "Persian se sienta sobre las carpetas cerradas.",
+              "las predicciones se archivarán con fecha de caducidad."
+            ]
+          }
+        },
+        {
+          "name": "Ciro Promedio",
+          "sprite": "NPC 04",
+          "role": "consejero del instituto",
+          "partnerPokemon": "LUMINEON",
+          "motivation": "Quiere que los jóvenes jueguen sin un rótulo pegado a la espalda.",
+          "conflict": "Su error anterior fue que dejó que el boletín deportivo publicara apodos de diagnóstico.",
+          "dialogue": {
+            "before": [
+              "Los apodos del boletín llegaron antes que los diplomas.",
+              "tardé en reconocer que un apodo explica menos de lo que marca.",
+              "publicaré logros concretos y retiraré diagnósticos."
+            ],
+            "after": [
+              "el boletín cita jugadas, no etiquetas.",
+              "Lumineon acompaña a los alumnos a leer sus datos.",
+              "cada temporada los apodos caducan con las predicciones."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se guardará el análisis?",
+        "options": [
+          "Datos y carácter separados",
+          "Un solo expediente completo"
+        ],
+        "immediate": [
+          "el cuarto de análisis abre dos archivadores con llaves distintas.",
+          "los clubes firman un acuerdo de lectura con caducidad."
+        ],
+        "later": [
+          "las predicciones se archivarán con fecha de caducidad.",
+          "cada temporada los apodos caducan con las predicciones."
+        ]
+      },
+      "reward": {
+        "item": "SHARPBEAK",
+        "meaning": "Apunta a la jugada que ningún número de la hoja había anunciado."
+      },
+      "progression": {
+        "switchId": 836,
+        "decisionVariable": 232,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 18,
+      "mapId": 1765,
+      "flag": 837,
+      "variable": 233,
+      "title": "El Mapa de Tinta que Explicaba Atajos",
+      "promise": "Un mapa de tinta traza atajos que arruinan la primera visita de quien llega nuevo y los veteranos borran los desvíos amables.",
+      "objective": "Dibujar la línea novata y la línea experta sin que ninguna oculte a la otra.",
+      "mechanic": {
+        "name": "Doble lectura del mapa",
+        "rules": [
+          "Marcar requisitos junto a cada atajo.",
+          "Mantener el desvío amable dibujado.",
+          "Permitir corregir con tinta lavable."
+        ],
+        "failureSafe": "La boca de la cueva conserva un mapa completo en lámina rígida."
+      },
+      "npcs": [
+        {
+          "name": "Brisa Cuaderno",
+          "sprite": "trchar008",
+          "role": "cartógrafa de cueva",
+          "partnerPokemon": "WOOBAT",
+          "motivation": "Quiere mapas que sirvan también a quien llega temeroso.",
+          "conflict": "Su error anterior fue que redibujó los atajos encima de los desvíos lentos.",
+          "dialogue": {
+            "before": [
+              "Los novatos entran por el atajo y salen rendidos.",
+              "me apresuré: taché los desvíos lentos para limpiar el plano.",
+              "dibujaré la cueva en dos lecturas y separaré la tinta."
+            ],
+            "after": [
+              "el plano muestra línea novata y línea experta en capas.",
+              "Woobat ecolocaliza los bordes que la tinta lavable respeta.",
+              "las correcciones llevarán fecha y autor."
+            ]
+          }
+        },
+        {
+          "name": "Rulo Atajo",
+          "sprite": "NPC 04",
+          "role": "guía de escalada",
+          "partnerPokemon": "GOLURK",
+          "motivation": "Quiere mostrar atajos sin convertirlos en trampa.",
+          "conflict": "Su error anterior fue que ocultó los requisitos de un atajo para que pareciera corto.",
+          "dialogue": {
+            "before": [
+              "Mi atajo favorito exige fuerza que no todos llevan encima.",
+              "tardé en reconocer que un atajo mudo es una trampa.",
+              "escribiré requisitos y tiempos en la misma curva."
+            ],
+            "after": [
+              "cada atajo declara qué pide antes de prometer nada.",
+              "Golurk sostiene la lámina mientras los novatos dibujan.",
+              "la ruta larga seguirá señalizada como alternativa digna."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué línea abrirá el mapa?",
+        "options": [
+          "Línea novata por defecto",
+          "Línea experta por defecto"
+        ],
+        "immediate": [
+          "el mapa abre en la lectura lenta y permite cambiar de capa.",
+          "los veteranos reciben su propia lámina sin tachar la otra."
+        ],
+        "later": [
+          "las correcciones llevarán fecha y autor.",
+          "la ruta larga seguirá señalizada como alternativa digna."
+        ]
+      },
+      "reward": {
+        "item": "POISONBARB",
+        "meaning": "Señala con picor el atajo que estorbó a quien llegó por primera vez."
+      },
+      "progression": {
+        "switchId": 837,
+        "decisionVariable": 233,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 19,
+      "mapId": 1776,
+      "flag": 838,
+      "variable": 234,
+      "title": "La Caja que Guardaba un Latido",
+      "promise": "Una caja de relojería guarda una melodía que solo suena cuando alguien decide escucharla y los turistas la graban sin permiso.",
+      "objective": "Que la caja solo suene con escucha voluntaria y conserve siempre un botón de silencio.",
+      "mechanic": {
+        "name": "Escucha voluntaria",
+        "rules": [
+          "La caja nunca arranca sola.",
+          "El volumen tiene techo y el silencio botón propio.",
+          "Las grabaciones requieren permiso firmado."
+        ],
+        "failureSafe": "La reserva de engranajes funciona en silencio y la salida no toca la caja."
+      },
+      "npcs": [
+        {
+          "name": "Ori Relicario",
+          "sprite": "trchar009",
+          "role": "relojero de reserva",
+          "partnerPokemon": "CHIMECHO",
+          "motivation": "Quiere mantener la caja viva sin imponer su canción.",
+          "conflict": "Su error anterior fue que programó la melodía para sonar a la hora en punto.",
+          "dialogue": {
+            "before": [
+              "La caja arrancaba sola y la gente huía del taller.",
+              "me apresuré: quise que la caja fuera oída y la hice inevitable.",
+              "la melodía quedará detrás de un gesto, no de un reloj."
+            ],
+            "after": [
+              "la caja suena solo cuando alguien coloca la mano.",
+              "Chimecho imita el pulso sin levantar el volumen.",
+              "el botón de silencio quedará siempre a la vista."
+            ]
+          }
+        },
+        {
+          "name": "Nao Latido",
+          "sprite": "NPC 04",
+          "role": "visitante recurrente",
+          "partnerPokemon": "MISDREAVUS",
+          "motivation": "Quiere escuchar la melodía sin convertirla en espectáculo.",
+          "conflict": "Su error anterior fue que grabó la canción y la regaló como tono de llamada.",
+          "dialogue": {
+            "before": [
+              "La canción sonaba en veinte bolsillos al mismo tiempo.",
+              "tardé en reconocer que había vendido una intimidad prestada.",
+              "borraré las copias y pediré escuchar de nuevo."
+            ],
+            "after": [
+              "las copias se apagaron y la caja recuperó su sitio.",
+              "Misdreavus se queda quieta cuando el volumen baja.",
+              "vendré sin grabadora y con las manos libres."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se abrirá la caja?",
+        "options": [
+          "Solo con gesto de escucha",
+          "Con función de visita programada"
+        ],
+        "immediate": [
+          "el taller impone escucha voluntaria y guarda un registro de permisos.",
+          "la reserva publica su regla de silencio en la entrada."
+        ],
+        "later": [
+          "el botón de silencio quedará siempre a la vista.",
+          "vendré sin grabadora y con las manos libres."
+        ]
+      },
+      "reward": {
+        "item": "SPELLTAG",
+        "meaning": "Recuerda una voz sin obligar a nadie a volver a oírla."
+      },
+      "progression": {
+        "switchId": 838,
+        "decisionVariable": 234,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 19,
+      "mapId": 1783,
+      "flag": 839,
+      "variable": 235,
+      "title": "La Casa que Repetía la Canción",
+      "promise": "La caja musical de una casa repite la melodía de su antigua dueña y los vecinos quieren grabarla para venderla como tono de llamada.",
+      "objective": "Que la caja conserve su melodía sin convertirla en producto y pueda descansar en silencio.",
+      "mechanic": {
+        "name": "Permiso de grabación",
+        "rules": [
+          "Pedir permiso antes de grabar.",
+          "Limitar los bucles diarios de la caja.",
+          "Respetar las temporadas de silencio acordadas."
+        ],
+        "failureSafe": "La ventana de la casa y el camino de regreso quedan fuera del negocio."
+      },
+      "npcs": [
+        {
+          "name": "Cleo Caja",
+          "sprite": "trchar008",
+          "role": "guardiana de la melodía",
+          "partnerPokemon": "KRICKETUNE",
+          "motivation": "Quiere conservar la canción sin vender la voz de su amiga.",
+          "conflict": "Su error anterior fue que ensayó la melodía en bucles hasta romper el muelle.",
+          "dialogue": {
+            "before": [
+              "La casa repite y repite hasta que la madera se queja.",
+              "me apresuré: forcé el bucle para que nadie se perdiera una nota.",
+              "pondré turnos de escucha y dejaré el muelle descansar."
+            ],
+            "after": [
+              "la caja canta en horarios y guarda silencio las tardes.",
+              "Kricketune acompaña la melodía sin competir con ella.",
+              "los permisos se firman con nombre y fecha."
+            ]
+          }
+        },
+        {
+          "name": "Rin Melodía",
+          "sprite": "NPC 04",
+          "role": "compositora del pueblo",
+          "partnerPokemon": "JIGGLYPUFF",
+          "motivation": "Quiere aprender la melodía sin copiarla para el mercado.",
+          "conflict": "Su error anterior fue que compuso un arreglo y lo registró a su nombre.",
+          "dialogue": {
+            "before": [
+              "Mi arreglo de la canción ya figura en tres tiendas.",
+              "tardé en reconocer que había puesto mi firma sobre una herencia.",
+              "devolveré los registros y citaré la fuente."
+            ],
+            "after": [
+              "las tiendas retiraron el registro y la casa quedó tranquila.",
+              "Jigglypuff tararea la melodía solo cuando se lo piden.",
+              "cada arreglo nuevo citará a la casa y a su guardiana."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué hará el pueblo con la canción?",
+        "options": [
+          "Archivo comunitario citando la fuente",
+          "Producto musical con regalías"
+        ],
+        "immediate": [
+          "el archivo del pueblo custodia la melodía con su historia.",
+          "las regalías se fijan por escrito y nadie hereda la voz."
+        ],
+        "later": [
+          "los permisos se firman con nombre y fecha.",
+          "cada arreglo nuevo citará a la casa y a su guardiana."
+        ]
+      },
+      "reward": {
+        "item": "TWISTEDSPOON",
+        "meaning": "Gira una melodía prestada hacia quien decidió escucharla y no hacia quien quiso venderla."
+      },
+      "progression": {
+        "switchId": 839,
+        "decisionVariable": 235,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 19,
+      "mapId": 1790,
+      "flag": 840,
+      "variable": 236,
+      "title": "La Última Campana del Silencio",
+      "promise": "Una campana de la meseta solo suena cuando la zona elige callar y los veteranos de duelo exigen horarios que nadie publicó.",
+      "objective": "Fijar un horario de silencio por escrito y dejar la campana atada al acuerdo, no al ánimo.",
+      "mechanic": {
+        "name": "Horario de silencio",
+        "rules": [
+          "Publicar el horario con días y motivos.",
+          "Permitir pedir campana apagada por escrito.",
+          "Notificar a los veteranos antes de cada cambio."
+        ],
+        "failureSafe": "El camino de la meseta y el retorno permanecen transitables aunque la campana calle."
+      },
+      "npcs": [
+        {
+          "name": "Vera Silencio",
+          "sprite": "trchar009",
+          "role": "guardiana de la campana",
+          "partnerPokemon": "ZANGOOSE",
+          "motivation": "Quiere que el silencio de la meseta tenga calendario.",
+          "conflict": "Su error anterior fue que decidió los toques según su propio cansancio.",
+          "dialogue": {
+            "before": [
+              "La campana suena cuando yo puedo más, no cuando toca.",
+              "me apresuré: convertí mi agenda en el calendario del pueblo.",
+              "colgaré el horario en la puerta y lo firmarán los vecinos."
+            ],
+            "after": [
+              "el horario cuelga firmado y la campana obedece al papel.",
+              "Zangoose vela el reloj sin moverse del pie de la torre.",
+              "cada cambio se avisará con tres días de antelación."
+            ]
+          }
+        },
+        {
+          "name": "Hugo Badajo",
+          "sprite": "NPC 04",
+          "role": "veterano de duelos",
+          "partnerPokemon": "SEVIPER",
+          "motivation": "Quiere recibir el aviso del silencio antes que la campana.",
+          "conflict": "Su error anterior fue que organizó duelos nocturnos cuando el pueblo pedía calma.",
+          "dialogue": {
+            "before": [
+              "Mis duelos terminaban justo cuando la gente cerraba ventanas.",
+              "tardé en reconocer que el horario importaba más que la costumbre.",
+              "mis duelos tendrán permiso y hora cerrada."
+            ],
+            "after": [
+              "los duelos se anuncian y terminan antes del toque.",
+              "Seviper se retira con el primer aviso, sin discusión.",
+              "el calendario del veterano quedará junto al de la campana."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Quién firmará el horario de silencio?",
+        "options": [
+          "Asamblea de la meseta",
+          "Guardiana con revisión trimestral"
+        ],
+        "immediate": [
+          "la asamblea firma el calendario y lo reparte en las casas.",
+          "la guardiana publica actas de cada revisión."
+        ],
+        "later": [
+          "cada cambio se avisará con tres días de antelación.",
+          "el calendario del veterano quedará junto al de la campana."
+        ]
+      },
+      "reward": {
+        "item": "HARDSTONE",
+        "meaning": "Ancla la campana a un horario escrito en vez de al ánimo de quien toca."
+      },
+      "progression": {
+        "switchId": 840,
+        "decisionVariable": 236,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 19,
+      "mapId": 1801,
+      "flag": 841,
+      "variable": 237,
+      "title": "El Retrato que Pedía No Rehacerse",
+      "promise": "El retrato de un héroe caído pide no reconstruirse en leyenda y el comité de memoria quiere repintarlo para el aniversario.",
+      "objective": "Restaurar sin reescribir: mantener las pinceladas originales y añadir contexto en lugar de épica.",
+      "mechanic": {
+        "name": "Restauración con límites",
+        "rules": [
+          "Conservar el trazo original.",
+          "Añadir cartela de contexto, no nueva épica.",
+          "La familia ejerce veto sobre cualquier cambio."
+        ],
+        "failureSafe": "La sala del retrato conserva una copia fotográfica de control."
+      },
+      "npcs": [
+        {
+          "name": "Iris Retrato",
+          "sprite": "trchar008",
+          "role": "restauradora de memoria",
+          "partnerPokemon": "TREVENANT",
+          "motivation": "Quiere cuidar el retrato sin convertir al retratado en estatua.",
+          "conflict": "Su error anterior fue que repintó la sonrisa para que la cara luciera heroica.",
+          "dialogue": {
+            "before": [
+              "El comité me pidió un héroe más luminoso que el original.",
+              "me precipité: repinté una sonrisa que el retrato no tenía.",
+              "mediré cada capa y devolveré el trazo primero."
+            ],
+            "after": [
+              "el retrato recuperó su gesto y la cartela explica el resto.",
+              "Trevenant señala las capas nuevas bajo la luz rasante.",
+              "la familia revisará la restauración antes de colgarla."
+            ]
+          }
+        },
+        {
+          "name": "Osco Placa",
+          "sprite": "NPC 04",
+          "role": "presidente del comité",
+          "partnerPokemon": "DUSKULL",
+          "motivation": "Quiere honrar sin fabricar un héroe cómodo.",
+          "conflict": "Su error anterior fue que encargó un discurso que borraba las dudas del retratado.",
+          "dialogue": {
+            "before": [
+              "Mi discurso describía a un héroe que nadie conoció.",
+              "tardé en reconocer que limpié su memoria para el público.",
+              "leeré sus propias cartas y dejaré las dudas en pie."
+            ],
+            "after": [
+              "el aniversario cita cartas reales y silencios reales.",
+              "Duskull apaga el foco cuando el discurso se alarga.",
+              "el próximo discurso lo redacta la familia con el archivo."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se verá el retrato en el aniversario?",
+        "options": [
+          "Restauración mínima con cartela",
+          "Repintado luminoso de gala"
+        ],
+        "immediate": [
+          "la sala inaugura la cartela y prohíbe repintar el lienzo.",
+          "el comité aprueba un reglamento de restauración con límites."
+        ],
+        "later": [
+          "la familia revisará la restauración antes de colgarla.",
+          "el próximo discurso lo redacta la familia con el archivo."
+        ]
+      },
+      "reward": {
+        "item": "MIRACLESEED",
+        "meaning": "Hace crecer la memoria real, no la versión decorativa que se sembró sobre ella."
+      },
+      "progression": {
+        "switchId": 841,
+        "decisionVariable": 237,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 19,
+      "mapId": 1808,
+      "flag": 842,
+      "variable": 238,
+      "title": "La Avenida que Contaba los Ausentes",
+      "promise": "Las placas de una avenida recuerdan a entrenadores desaparecidos y el ayuntamiento quiere cambiar el nombre por celebridades vivas.",
+      "objective": "Conservar las placas con su fecha y mover cualquier retiro al archivo, nunca a la basura.",
+      "mechanic": {
+        "name": "Placa con fecha",
+        "rules": [
+          "Las placas siguen un orden cronológico.",
+          "Cada alta requiere prueba o familiar.",
+          "Los retires pasan al archivo con acta."
+        ],
+        "failureSafe": "La calle de servicio y el regreso al centro permanecen sin placas para no interferir."
+      },
+      "npcs": [
+        {
+          "name": "Vito Placa",
+          "sprite": "trchar009",
+          "role": "encargado de placas",
+          "partnerPokemon": "MEOWSTIC",
+          "motivation": "Quiere mantener el calendario de los ausentes legible.",
+          "conflict": "Su error anterior fue que aceptó placas de encargo sin comprobar su historia.",
+          "dialogue": {
+            "before": [
+              "Tres placas nuevas cuentan historias que nadie puede confirmar.",
+              "me apresuré: acepté encargos bonitos y olvidé las fechas.",
+              "pediré prueba y devolveré cada placa sin fecha."
+            ],
+            "after": [
+              "las placas vuelven ordenadas y las dudosas esperan en el archivo.",
+              "Meowstic vigila el expediente de cada nombre.",
+              "las nuevas altas citarán quién las solicitó."
+            ]
+          }
+        },
+        {
+          "name": "Ada Ausente",
+          "sprite": "NPC 04",
+          "role": "familiar de un desaparecido",
+          "partnerPokemon": "PYROAR",
+          "motivation": "Quiere que la placa de su hermano no cambie de calle por un concurso.",
+          "conflict": "Su error anterior fue que cedió ante la oferta de una placa más grande a cambio de olvidar la vieja.",
+          "dialogue": {
+            "before": [
+              "El ayuntamiento ofrecía brillo a cambio de retirar la placa pequeña.",
+              "tardé en reconocer que vendía un nombre por un foco.",
+              "la placa se queda donde está, con su fecha."
+            ],
+            "after": [
+              "la avenida conserva su calendario y el nombre de su hermano.",
+              "Pyroar descansa junto a la placa sin escolta.",
+              "los familiares firmarán juntos las próximas altas."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué vivirá en la avenida?",
+        "options": [
+          "Placas cronológicas de ausentes",
+          "Paseo de celebridades vivas"
+        ],
+        "immediate": [
+          "la avenida recupera su calendario y abre un libro de visitas.",
+          "el ayuntamiento publica el acta de retirada como documento de archivo."
+        ],
+        "later": [
+          "las nuevas altas citarán quién las solicitó.",
+          "los familiares firmarán juntos las próximas altas."
+        ]
+      },
+      "reward": {
+        "item": "REAPERCLOTH",
+        "meaning": "Cubre un recuerdo sin sofocarlo: retira el foco, no el nombre."
+      },
+      "progression": {
+        "switchId": 842,
+        "decisionVariable": 238,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 20,
+      "mapId": 1815,
+      "flag": 843,
+      "variable": 239,
+      "title": "El Jardín de los Nombres Cortados",
+      "promise": "Las flores plantadas por cada entrenador ausente se podan en figuras decorativas y las familias quieren que crezcan con su propia forma.",
+      "objective": "Dejar crecer las plantas sin podarlas en siluetas ajenas y registrar quién eligió cada especie.",
+      "mechanic": {
+        "name": "Crecimiento registrado",
+        "rules": [
+          "Medir sin podar en figuras.",
+          "Registrar la especie elegida por cada familia.",
+          "Permitir que una planta se marchite con dignidad."
+        ],
+        "failureSafe": "El sendero del jardín y la salida permanecen abiertos en toda estación."
+      },
+      "npcs": [
+        {
+          "name": "Hera Jardín",
+          "sprite": "trchar008",
+          "role": "jardinera del recuerdo",
+          "partnerPokemon": "FLOETTE",
+          "motivation": "Quiere cuidar un jardín que no finge formas ajenas.",
+          "conflict": "Su error anterior fue que recortó las flores en siluetas de medallas.",
+          "dialogue": {
+            "before": [
+              "El jardín parecía una vitrina de premios y no un recuerdo.",
+              "me apresuré: podé formas bonitas y borré el crecimiento real.",
+              "registraré especie, fecha y manos que plantaron."
+            ],
+            "after": [
+              "las plantas crecen a su manera y el cuaderno guarda la historia.",
+              "Floette riega sin tijeras y cambia de maceta con permiso.",
+              "las familias elegirán especie y momento de poda."
+            ]
+          }
+        },
+        {
+          "name": "Milo Corteza",
+          "sprite": "NPC 04",
+          "role": "familiar jardinero",
+          "partnerPokemon": "MIGHTYENA",
+          "motivation": "Quiere que la planta de su padre parezca suya y no un trofeo.",
+          "conflict": "Su error anterior fue que pidió una poda en forma de medalla para impresionar a los jueces.",
+          "dialogue": {
+            "before": [
+              "La medalla de hojas gustó más que la planta de mi padre.",
+              "tardé en reconocer que cambié su memoria por un concurso.",
+              "volveré a la especie que él llevaba en la mochila."
+            ],
+            "after": [
+              "la planta recupera su forma y el jardín deja de competir.",
+              "Mightyena protege el cuaderno de la lluvia.",
+              "el jardín celebrará siembras, no concursos."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se exhibirá el jardín?",
+        "options": [
+          "Crecimiento libre con cuaderno",
+          "Concurso anual de figuras"
+        ],
+        "immediate": [
+          "el jardín abre el cuaderno de siembras y retira las tijeras del concurso.",
+          "el pueblo acuerda cuidar las plantas sin clasificarlas."
+        ],
+        "later": [
+          "las familias elegirán especie y momento de poda.",
+          "el jardín celebrará siembras, no concursos."
+        ]
+      },
+      "reward": {
+        "item": "KEEBERRY",
+        "meaning": "Aporta firmeza a un jardín que aprendió a no fingir formas que nadie plantó."
+      },
+      "progression": {
+        "switchId": 843,
+        "decisionVariable": 239,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 20,
+      "mapId": 1826,
+      "flag": 844,
+      "variable": 240,
+      "title": "La Ofrenda que Ganaba por Nosotros",
+      "promise": "Una ofrenda del día cuida concede victorias que nadie quiere aceptar y el marcador de la guardería acumula triunfos sin dueño.",
+      "objective": "Marcar con asterisco toda victoria ayudada y permitir renunciar a ella sin castigo.",
+      "mechanic": {
+        "name": "Marcador honesto",
+        "rules": [
+          "Marcar con asterisco la ayuda desconocida.",
+          "Permitir renunciar a una victoria registrada.",
+          "No iniciar otro partido sin resolver el anterior."
+        ],
+        "failureSafe": "La sala de cuidados y la curación nunca dependen del marcador."
+      },
+      "npcs": [
+        {
+          "name": "Clara Marcador",
+          "sprite": "trchar009",
+          "role": "encargada de la guardería",
+          "partnerPokemon": "BLISSEY",
+          "motivation": "Quiere un marcador que nadie tenga que avergonzarse de leer.",
+          "conflict": "Su error anterior fue que celebró triunfos que aparecían sin explicación.",
+          "dialogue": {
+            "before": [
+              "Los triunfos subían y los entrenadores bajaban la mirada.",
+              "me apresuré: conté victorias que nadie había ganado.",
+              "pondré asteriscos y abriré una columna de renuncias."
+            ],
+            "after": [
+              "el marcador distingue victoria propia y victoria asistida.",
+              "Blissey guarda las renuncias junto a las curaciones.",
+              "ningún partido nuevo empieza con un asterisco abierto."
+            ]
+          }
+        },
+        {
+          "name": "Basto Ofrenda",
+          "sprite": "NPC 04",
+          "role": "cuidador de la ofrenda",
+          "partnerPokemon": "SPIRITOMB",
+          "motivation": "Quiere que la ofrenda descanse sin comprar victorias.",
+          "conflict": "Su error anterior fue que dejó la ofrenda encendida toda la noche por costumbre.",
+          "dialogue": {
+            "before": [
+              "La ofrenda arde desde hace noches sin que nadie la apague.",
+              "tardé en reconocer que la costumbre costaba victorias ajenas.",
+              "la ofrenda tendrá horario y su apagado será solemne."
+            ],
+            "after": [
+              "la ofrenda se enciende con permiso y se apaga con gratitud.",
+              "Spiritomb se aquieta cuando el marcador se corrige.",
+              "las renuncias se leen en voz alta, sin nombres si se pide."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué hará la guardería con las victorias ayudadas?",
+        "options": [
+          "Renunciar públicamente a ellas",
+          "Contarlas como récord de la casa"
+        ],
+        "immediate": [
+          "la guardería vacía la columna de récords y abre un libro de renuncias.",
+          "la ofrenda se mantiene solo en fechas acordadas."
+        ],
+        "later": [
+          "ningún partido nuevo empieza con un asterisco abierto.",
+          "las renuncias se leen en voz alta, sin nombres si se pide."
+        ]
+      },
+      "reward": {
+        "item": "ROWAPBERRY",
+        "meaning": "Devuelve sin ruido un regalo que nadie quiso aceptar."
+      },
+      "progression": {
+        "switchId": 844,
+        "decisionVariable": 240,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 20,
+      "mapId": 1833,
+      "flag": 845,
+      "variable": 241,
+      "title": "El Cartucho que Ofrecía Victoria Fácil",
+      "promise": "Un cartucho negro regala victorias fáciles a cambio de nada y el pueblo debate si sellarlo o convertirlo en atracción.",
+      "objective": "Que todo reto del cartucho permita perder y registre sus victorias como asistidas.",
+      "mechanic": {
+        "name": "Prueba con derrota posible",
+        "rules": [
+          "Todo reto admite derrota y retirada.",
+          "Las victorias del cartucho se registran como asistidas.",
+          "El sellado requiere votación pública."
+        ],
+        "failureSafe": "El centro Pokémon y la salida del pueblo quedan fuera del reto."
+      },
+      "npcs": [
+        {
+          "name": "Tuno Cartucho",
+          "sprite": "trchar008",
+          "role": "coleccionista de juegos",
+          "partnerPokemon": "SCRAFTY",
+          "motivation": "Quiere conservar el cartucho como historia, no como máquina de trofeos.",
+          "conflict": "Su error anterior fue que organizó un torneo con victorias garantizadas.",
+          "dialogue": {
+            "before": [
+              "El torneo repartió coronas y nadie perdió ni un partido.",
+              "me precipité: prometí victorias para llenar la sala.",
+              "cada reto del cartucho tendrá retirada libre y marcador con asterisco."
+            ],
+            "after": [
+              "el cartucho juega sin prometer triunfos y la sala sigue llena.",
+              "Scrafty guarda el cartucho cuando el público se agota.",
+              "el registro de asistidas se lee antes de cada partida."
+            ]
+          }
+        },
+        {
+          "name": "Eli Victoria",
+          "sprite": "NPC 04",
+          "role": "alcaldesa del barrio",
+          "partnerPokemon": "KROOKODILE",
+          "motivation": "Quiere decidir el futuro del cartucho sin prohibir la memoria.",
+          "conflict": "Su error anterior fue que ordenó ocultar el cartucho para no asustar a las familias.",
+          "dialogue": {
+            "before": [
+              "El cartucho desapareció del estante y el rumor creció.",
+              "tardé en reconocer que esconderlo parecía miedo.",
+              "convocaré votación y explicaré los riesgos reales."
+            ],
+            "after": [
+              "la votación quedó citada y el cartucho vuelve al estante.",
+              "Krookodile vigila la urna sin intervenir.",
+              "sea cual sea el resultado, el pueblo conocerá su historia."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué hará el pueblo con el cartucho?",
+        "options": [
+          "Sellarlo tras votación pública",
+          "Conservarlo como atracción regulada"
+        ],
+        "immediate": [
+          "el pueblo fija la votación y sus condiciones por escrito.",
+          "el centro Pokémon ofrece marcadores honestos para el torneo."
+        ],
+        "later": [
+          "el registro de asistidas se lee antes de cada partida.",
+          "sea cual sea el resultado, el pueblo conocerá su historia."
+        ]
+      },
+      "reward": {
+        "item": "EJECTPACK",
+        "meaning": "Abandona con dignidad una partida que nunca quiso jugarse de verdad."
+      },
+      "progression": {
+        "switchId": 845,
+        "decisionVariable": 241,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 20,
+      "mapId": 1840,
+      "flag": 846,
+      "variable": 242,
+      "title": "La Curación que Cobraba una Victoria",
+      "promise": "Un programa de curación de la costa cobra victorias futuras como deuda y los entrenadores combaten enfermos para saldarla.",
+      "objective": "Que ninguna curación dependa de una victoria y que la deuda deje de ser pelea.",
+      "mechanic": {
+        "name": "Deuda sin pelea",
+        "rules": [
+          "La curación nunca exige combates.",
+          "Las donaciones son voluntarias y públicas.",
+          "El libro de cuentas se muestra a quien lo pide."
+        ],
+        "failureSafe": "La enfermería de emergencia cura antes de preguntar nada."
+      },
+      "npcs": [
+        {
+          "name": "Lina Deuda",
+          "sprite": "trchar009",
+          "role": "coordinadora del programa",
+          "partnerPokemon": "WIGGLYTUFF",
+          "motivation": "Quiere curar sin atar la recuperación a un resultado.",
+          "conflict": "Su error anterior fue que firmó contratos de victorias futuras para financiar la enfermería.",
+          "dialogue": {
+            "before": [
+              "Los contratos de curación acumulan victorias sin dueño feliz.",
+              "me apresuré: financié la enfermería con triunfos ajenos.",
+              "separaré donación, curación y cualquier gratitud."
+            ],
+            "after": [
+              "la enfermería cura y el libro de donaciones queda abierto.",
+              "Wigglytuff cobra sonriendo cero victorias.",
+              "los contratos viejos se archivarán como lección."
+            ]
+          }
+        },
+        {
+          "name": "Roque Historial",
+          "sprite": "NPC 04",
+          "role": "entrenador endeudado",
+          "partnerPokemon": "LUVDISC",
+          "motivation": "Quiere combatir sano sin pelear por una deuda.",
+          "conflict": "Su error anterior fue que ocultó una lesión para cumplir su cuota de victorias.",
+          "dialogue": {
+            "before": [
+              "Mi equipo jugaba enfermo para no deber más partidas.",
+              "tardé en reconocer que la deuda me quitó el criterio.",
+              "renunciaré a la cuota y pediré curación sin promesas."
+            ],
+            "after": [
+              "la renuncia quedó firmada y mi equipo volvió al agua.",
+              "Luvdisc nada sin reloj ni cuota detrás.",
+              "contaré mi caso a quien firme el próximo contrato."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se financiará la enfermería?",
+        "options": [
+          "Donaciones voluntarias públicas",
+          "Contratos de victorias futuras"
+        ],
+        "immediate": [
+          "la enfermería abre su libro de donaciones y quita los contratos.",
+          "el pueblo acuerda que ninguna curación se cobra en victorias."
+        ],
+        "later": [
+          "los contratos viejos se archivarán como lección.",
+          "contaré mi caso a quien firme el próximo contrato."
+        ]
+      },
+      "reward": {
+        "item": "SITRUSBERRY",
+        "meaning": "Restaura poco a poco, sin pedir a nadie una victoria a cambio."
+      },
+      "progression": {
+        "switchId": 846,
+        "decisionVariable": 242,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 20,
+      "mapId": 1851,
+      "flag": 847,
+      "variable": 243,
+      "title": "La Excavación que Ensamblaba un Monstruo",
+      "promise": "Una excavación mezcló huesos de especies distintas para montar un monstruo de museo y los visitantes creen que la criatura existió.",
+      "objective": "Etiquetar procedencia de cada fragmento y exhibir los montajes como réplicas, nunca como hallazgos.",
+      "mechanic": {
+        "name": "Cartela de procedencia",
+        "rules": [
+          "Etiquetar origen antes de montar.",
+          "Exhibir mezclas como réplicas declaradas.",
+          "Ningún entierro escenificado se presenta como real."
+        ],
+        "failureSafe": "La sala de familias y la salida no participan de la exhibición."
+      },
+      "npcs": [
+        {
+          "name": "Yelmo Osario",
+          "sprite": "trchar008",
+          "role": "director de excavación",
+          "partnerPokemon": "MAROWAK",
+          "motivation": "Quiere reconstruir ambientes sin fabricar criaturas.",
+          "conflict": "Su error anterior fue que unió cuernos de tres sitios y presentó la pieza como especie nueva.",
+          "dialogue": {
+            "before": [
+              "El cartel del museo presenta una especie que nunca existió.",
+              "me precipité: ensamblé tres sitios en un solo esqueleto.",
+              "desmontaré la pieza y etiquetaré cada fragmento."
+            ],
+            "after": [
+              "las vitrinas distinguen fósil, réplica y conjetura.",
+              "Marowak toca cada etiqueta antes de que se cierre la vitrina.",
+              "el montaje volverá a exhibirse solo como advertencia."
+            ]
+          }
+        },
+        {
+          "name": "Pía Estrato",
+          "sprite": "NPC 04",
+          "role": "geóloga de campo",
+          "partnerPokemon": "YAMASK",
+          "motivation": "Quiere explicar la tierra sin escenificar entierros.",
+          "conflict": "Su error anterior fue que autorizó una recreación de entierro para atraer público.",
+          "dialogue": {
+            "before": [
+              "La recreación del entierro llenó el calendario de visitas.",
+              "tardé en reconocer que había puesto duelo ajeno en escena.",
+              "la recreación se retirará y la tierra explicará sola."
+            ],
+            "after": [
+              "la sala vuelve a la estratigrafía y el público aprende igual.",
+              "Yamask acompaña las visitas sin escenificar nada.",
+              "las familias podrán preguntar sin guiñarle el ojo al cartel."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se mostrará la excavación?",
+        "options": [
+          "Piezas con cartela de procedencia",
+          "Montajes espectaculares de época"
+        ],
+        "immediate": [
+          "el museo aprueba el reglamento de cartelas y retira el entierro escenificado.",
+          "la excavación publica su diario con los errores incluidos."
+        ],
+        "later": [
+          "el montaje volverá a exhibirse solo como advertencia.",
+          "las familias podrán preguntar sin guiñarle el ojo al cartel."
+        ]
+      },
+      "reward": {
+        "item": "DUBIOUSDISC",
+        "meaning": "Guarda la duda sobre un hallazgo fabricado hasta que su procedencia quede clara."
+      },
+      "progression": {
+        "switchId": 847,
+        "decisionVariable": 243,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 21,
+      "mapId": 1858,
+      "flag": 848,
+      "variable": 244,
+      "title": "El Retrato del Esqueleto Inexistente",
+      "promise": "Un museo exhibe retratos de un esqueleto que nunca se encontró y las guías infantiles convierten la conjetura en monstruo de cuento.",
+      "objective": "Separar ilustración e hallazgo real y devolver los cuentos al horario de historias, no a la sala de fósiles.",
+      "mechanic": {
+        "name": "Retrato con fuente",
+        "rules": [
+          "Ilustrar solo hallazgos reales en la sala de fósiles.",
+          "Marcar la ficción con el sello de hora de cuentos.",
+          "Publicar guías infantiles separadas del material científico."
+        ],
+        "failureSafe": "El patio infantil y la salida quedan fuera del recorrido de terror."
+      },
+      "npcs": [
+        {
+          "name": "Lupa Cartela",
+          "sprite": "trchar009",
+          "role": "ilustradora científica",
+          "partnerPokemon": "PUMPKABOO",
+          "motivation": "Quiere dibujar lo encontrado sin convertir la duda en bestia.",
+          "conflict": "Su error anterior fue que rellenó vacíos del esqueleto con rasgos de criaturas inventadas.",
+          "dialogue": {
+            "before": [
+              "La sala muestra mandíbulas que ningún hallazgo respalda.",
+              "me apresuré: dibujé conjeturas con luz de monstruo.",
+              "devolveré la mandíbula al cuaderno y marcaré la duda."
+            ],
+            "after": [
+              "la ilustración enseña huesos reales y preguntas abiertas.",
+              "Pumpkaboo ilumina los huecos sin rellenarlos.",
+              "la conjetura vivirá en papel aparte, con su sello."
+            ]
+          }
+        },
+        {
+          "name": "Ren Pincel",
+          "sprite": "NPC 04",
+          "role": "guía de familias",
+          "partnerPokemon": "HOUNDOOM",
+          "motivation": "Quiere contar historias sin asustar a quien viene a aprender.",
+          "conflict": "Su error anterior fue que leyó la leyenda del esqueleto con efectos de sonido.",
+          "dialogue": {
+            "before": [
+              "Los cuentos con truenos terminaban en llanto y en visitas cortas.",
+              "tardé en reconocer que el susto no explicaba nada.",
+              "separaré hora de cuentos y hora de fósiles."
+            ],
+            "after": [
+              "las familias eligen el recorrido y nadie sale asustado por error.",
+              "Houndoom se queda en silencio durante la hora de cuentos.",
+              "las guías infantiles tendrán su propio mapa."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Dónde vivirán los retratos del esqueleto?",
+        "options": [
+          "Sala de fósiles solo con fuentes",
+          "Exhibición mixta de hallazgo y leyenda"
+        ],
+        "immediate": [
+          "el museo separa las salas y sella la ficción con su sello.",
+          "las guías infantiles se reimprimen con el mapa nuevo."
+        ],
+        "later": [
+          "la conjetura vivirá en papel aparte, con su sello.",
+          "las guías infantiles tendrán su propio mapa."
+        ]
+      },
+      "reward": {
+        "item": "MICLEBERRY",
+        "meaning": "Aporta exactitud a una descripción que se había atrevido a imaginar demasiado."
+      },
+      "progression": {
+        "switchId": 848,
+        "decisionVariable": 244,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 21,
+      "mapId": 1865,
+      "flag": 849,
+      "variable": 245,
+      "title": "La Piedra que Simulaba un Entierro",
+      "promise": "Una instalación de cristal recrea un rito funerario para turistas y las familias del pueblo piden que deje de ser espectáculo.",
+      "objective": "Que los ritos vuelvan a ser privados y el cristal se venda como decoración, no como reliquia.",
+      "mechanic": {
+        "name": "Ritual sin público",
+        "rules": [
+          "Los ritos se realizan sin cámara ni entrada.",
+          "El cristal se vende como decoración declarada.",
+          "Toda ceremonia requiere permiso de la familia."
+        ],
+        "failureSafe": "La plaza y el regreso permanecen abiertos durante cualquier ceremonia."
+      },
+      "npcs": [
+        {
+          "name": "Crista Ritual",
+          "sprite": "trchar008",
+          "role": "artista de instalaciones",
+          "partnerPokemon": "WHIMSICOTT",
+          "motivation": "Quiere crear belleza sin alquilar el duelo de nadie.",
+          "conflict": "Su error anterior fue que vendió entradas para una ceremonia que no era suya.",
+          "dialogue": {
+            "before": [
+              "La ceremonia de cristal tenía butacas numeradas.",
+              "me precipité: convertí un rito en función de tarde.",
+              "la instalación volverá al arte y el rito a su familia."
+            ],
+            "after": [
+              "la obra brilla sin público sentado y las ceremonias son privadas.",
+              "Whimsicott apaga los cristales cuando llega la familia.",
+              "las entradas se sustituyen por visitas de día."
+            ]
+          }
+        },
+        {
+          "name": "Maura Lápida",
+          "sprite": "NPC 04",
+          "role": "portavoz de las familias",
+          "partnerPokemon": "PURUGLY",
+          "motivation": "Quiere proteger la intimidad sin prohibir el arte.",
+          "conflict": "Su error anterior fue que organizó un boicot que ahuyentó a todo el pueblo.",
+          "dialogue": {
+            "before": [
+              "Mi boicot vació la plaza y endureció a los artistas.",
+              "tardé en reconocer que cerrar la puerta no abrió diálogo.",
+              "pediré permiso, horario y una condición por escrito."
+            ],
+            "after": [
+              "familias y artista firmaron el acuerdo de ceremonias.",
+              "Purugly se sienta en la puerta sin impedir el paso.",
+              "el arte del cristal tendrá su temporada sin rito."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué se venderá en la tienda de la instalación?",
+        "options": [
+          "Cristal decorativo declarado",
+          "Réplicas de reliquia del rito"
+        ],
+        "immediate": [
+          "la tienda retira las reliquias y expone el cristal como decoración.",
+          "las familias guardan un ejemplar del acuerdo firmado."
+        ],
+        "later": [
+          "las entradas se sustituyen por visitas de día.",
+          "el arte del cristal tendrá su temporada sin rito."
+        ]
+      },
+      "reward": {
+        "item": "ENIGMABERRY",
+        "meaning": "Absorbe la curiosidad que lastima cuando se exhibe como producto."
+      },
+      "progression": {
+        "switchId": 849,
+        "decisionVariable": 245,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 21,
+      "mapId": 1876,
+      "flag": 850,
+      "variable": 246,
+      "title": "El Reporte que Cruzaba la Nieve",
+      "promise": "Un equipo aislado sigue enviando reportes desde la nieve y los rescatistas discuten quién debe partir primero.",
+      "objective": "Ordenar el rescate por necesidad real y no por fama, repitiendo posición y suministros en cada reporte.",
+      "mechanic": {
+        "name": "Cadena de reporte",
+        "rules": [
+          "Cada reporte repite posición y suministros.",
+          "El relevo confirma recepción con acuse.",
+          "El orden de rescate se fija por necesidad, no por nombre."
+        ],
+        "failureSafe": "La cueva mantiene un refugio cálido sin depender de la cola de rescate."
+      },
+      "npcs": [
+        {
+          "name": "Neve Reporte",
+          "sprite": "trchar009",
+          "role": "radiooperadora de montaña",
+          "partnerPokemon": "ABOMASNOW",
+          "motivation": "Quiere mantener la cadena de reportes viva sin gritar.",
+          "conflict": "Su error anterior fue que transmitió sin pedir acuse y dio la señal por recibida.",
+          "dialogue": {
+            "before": [
+              "Los reportes salen y nadie confirma si llegan.",
+              "me apresuré: di por enviado cada parte sin esperar acuse.",
+              "pediré confirmación y repetiré posición y suministros."
+            ],
+            "after": [
+              "cada transmisión cierra con acuse y número de parte.",
+              "Abomasnow marca la ruta del relevo sobre la nieve.",
+              "el cuaderno de suministros viajará con el primer rescate."
+            ]
+          }
+        },
+        {
+          "name": "Tor Rescate",
+          "sprite": "NPC 04",
+          "role": "jefe de relevo",
+          "partnerPokemon": "AVALUGG",
+          "motivation": "Quiere rescatar por orden de necesidad aunque la prensa pida nombres.",
+          "conflict": "Su error anterior fue que adelantó a un equipo famoso dejando atrás un caso urgente.",
+          "dialogue": {
+            "before": [
+              "El equipo famoso llegó primero y el urgente esperó dos días.",
+              "tardé en reconocer que la fama pesó más que el parte médico.",
+              "el orden saldrá de los partes, no de las cámaras."
+            ],
+            "after": [
+              "la cola de rescate obedece a la necesidad declarada.",
+              "Avalugg abre la pista sin preguntar quién es quién.",
+              "la prensa recibirá los partes con retraso deliberado."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se ordenará la cola de rescate?",
+        "options": [
+          "Por necesidad médica declarada",
+          "Por antigüedad del reporte"
+        ],
+        "immediate": [
+          "el relevo publica su criterio de orden en la entrada.",
+          "la cueva abre su refugio cálido a todo orden de la cola."
+        ],
+        "later": [
+          "el cuaderno de suministros viajará con el primer rescate.",
+          "la prensa recibirá los partes con retraso deliberado."
+        ]
+      },
+      "reward": {
+        "item": "NEVERMELTICE",
+        "meaning": "Conserva un reporte helado hasta que alguien por fin lo encuentre."
+      },
+      "progression": {
+        "switchId": 850,
+        "decisionVariable": 246,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 21,
+      "mapId": 1883,
+      "flag": 851,
+      "variable": 247,
+      "title": "El Equipo que No Pedía Rescate",
+      "promise": "El equipo aislado rechaza el rescate por orgullo y los guías insisten con cámaras encendidas.",
+      "objective": "Ofrecer ayuda sin presión: suministros primero, puertas de salida documentadas, cámaras apagadas.",
+      "mechanic": {
+        "name": "Permiso de ayuda",
+        "rules": [
+          "Ofrecer sin presionar.",
+          "Enviar suministros antes que entrevistas.",
+          "Documentar rutas de salida sin exigir declaración."
+        ],
+        "failureSafe": "La ruta de retirada del equipo permanece marcada y expedita."
+      },
+      "npcs": [
+        {
+          "name": "Nida Ayuda",
+          "sprite": "trchar008",
+          "role": "guía de relevo",
+          "partnerPokemon": "PILOSWINE",
+          "motivation": "Quiere ayudar sin arrancar una declaración.",
+          "conflict": "Su error anterior fue que llegó con el micrófono puesto y la ayuda en la mochila cerrada.",
+          "dialogue": {
+            "before": [
+              "Mi primera oferta sonó a noticia y la puerta se cerró.",
+              "me precipité: enseñé la cámara antes que los suministros.",
+              "dejaré el equipo a la puerta y preguntaré desde lejos."
+            ],
+            "after": [
+              "los suministros entraron y las cámaras siguen guardadas.",
+              "Piloswine carga sin exigir nombre para el parte.",
+              "el equipo decidirá cuándo se habla y cuándo no."
+            ]
+          }
+        },
+        {
+          "name": "Risco Orgullo",
+          "sprite": "NPC 04",
+          "role": "capitán del equipo aislado",
+          "partnerPokemon": "URSARING",
+          "motivation": "Quiere mantener a su equipo unido sin convertirlo en fortaleza.",
+          "conflict": "Su error anterior fue que rechazó ayuda tres veces para no parecer débil.",
+          "dialogue": {
+            "before": [
+              "Mi equipo comía raciones cortas mientras yo firmaba orgullo.",
+              "tardé en reconocer que confundí coherencia con testarudez.",
+              "aceptaré suministros y reservaré la retirada para cuando toque."
+            ],
+            "after": [
+              "el equipo acepta suministros y conserva su ruta de salida.",
+              "Ursaring camina junto al relevo sin escolta obligatoria.",
+              "cuando hablemos, será con las manos vacías y sin micrófonos."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo ofrecerá el relevo su ayuda?",
+        "options": [
+          "Suministros primero y sin cámaras",
+          "Operación con cobertura mediática"
+        ],
+        "immediate": [
+          "el relevo adopta el protocolo de suministros primero.",
+          "el equipo aislado recibe un mapa de retirada actualizado."
+        ],
+        "later": [
+          "el equipo decidirá cuándo se habla y cuándo no.",
+          "cuando hablemos, será con las manos vacías y sin micrófonos."
+        ]
+      },
+      "reward": {
+        "item": "SALACBERRY",
+        "meaning": "Da impulso a una ayuda que se ofreció sin esperar a la bandera correcta."
+      },
+      "progression": {
+        "switchId": 851,
+        "decisionVariable": 247,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 21,
+      "mapId": 1890,
+      "flag": 852,
+      "variable": 248,
+      "title": "La Pintura que Esperaba a los Ausentes",
+      "promise": "Un mural inacabado espera el regreso de un equipo y la galería quiere terminarlo con sustitutos para la inauguración.",
+      "objective": "Que el mural conserve su parte sin terminar y toda homenaje sustituto se muestre como obra aparte.",
+      "mechanic": {
+        "name": "Obra abierta",
+        "rules": [
+          "Lo inacabado se inaugura sin completar.",
+          "Los homenajes sustitutos se exponen como obras propias.",
+          "Los artistas ausentes conservan el pincel de su sección."
+        ],
+        "failureSafe": "La salida de la galería y la cafetería quedan fuera del recorrido del mural."
+      },
+      "npcs": [
+        {
+          "name": "Sora Pincel",
+          "sprite": "trchar009",
+          "role": "coordinadora de la galería",
+          "partnerPokemon": "SPRITZEE",
+          "motivation": "Quiere inaugurar sin cerrar una historia ajena.",
+          "conflict": "Su error anterior fue que encargó a otros pintores terminar la sección del equipo ausente.",
+          "dialogue": {
+            "before": [
+              "Los sustitutos pintaron una sección que no les pertenecía.",
+              "me precipité: quise una inauguración completa y toqué lo ajeno.",
+              "colgaré los homenajes al lado, con nombre propio."
+            ],
+            "after": [
+              "el mural luce su hueco y los homenajes cuelgan firmados.",
+              "Spritzee vuela por el borde sin rozar la pintura.",
+              "la sección del equipo guarda sus pinceles hasta su regreso."
+            ]
+          }
+        },
+        {
+          "name": "Tilo Ausente",
+          "sprite": "NPC 04",
+          "role": "familiar del equipo",
+          "partnerPokemon": "DEDENNE",
+          "motivation": "Quiere que el mural espere sin convertirse en rehén.",
+          "conflict": "Su error anterior fue que presionó para cerrar el mural antes de tiempo por hastío.",
+          "dialogue": {
+            "before": [
+              "Yo mismo quise pintar encima y acabar de una vez.",
+              "tardé en reconocer que el cansancio me hacía traicionar la espera.",
+              "el mural espera y nosotros esperamos con él."
+            ],
+            "after": [
+              "la inauguración aceptó el hueco y el público entendió.",
+              "Dedenne se posa en el marco cada tarde de visita.",
+              "cuando vuelvan, elegirán ellos el pincel."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué verá el público en la inauguración?",
+        "options": [
+          "Mural inacabado con sus huecos",
+          "Versión completada por sustitutos"
+        ],
+        "immediate": [
+          "la galería inaugura el mural tal cual y abre el libro de visitas.",
+          "los homenajes se exponen en la sala contigua con sus firmas."
+        ],
+        "later": [
+          "la sección del equipo guarda sus pinceles hasta su regreso.",
+          "cuando vuelvan, elegirán ellos el pincel."
+        ]
+      },
+      "reward": {
+        "item": "SILVERPOWDER",
+        "meaning": "Añade brillo a lo terminado sin rellenar lo que todavía espera."
+      },
+      "progression": {
+        "switchId": 852,
+        "decisionVariable": 248,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 22,
+      "mapId": 1901,
+      "flag": 853,
+      "variable": 249,
+      "title": "El Dato que Intentaba Clasificar al Jugador",
+      "promise": "Datos corruptos de la cueva intentan clasificar al jugador en categorías fijas y las etiquetas se pegan a los entrenadores.",
+      "objective": "Convertir toda etiqueta en consejo reversible y poner en cuarentena las filas corruptas sin borrarlas.",
+      "mechanic": {
+        "name": "Etiqueta reversible",
+        "rules": [
+          "Las categorías son consejos, nunca sentencias.",
+          "El jugador puede cambiar su etiqueta cuando quiera.",
+          "Las filas corruptas se aíslan sin eliminarse."
+        ],
+        "failureSafe": "El faro de la trinchera mantiene su señal y el retorno intactos ante cualquier error de datos."
+      },
+      "npcs": [
+        {
+          "name": "Bit Etiqueta",
+          "sprite": "trchar008",
+          "role": "tecnófarera de datos",
+          "partnerPokemon": "PORYGONZ",
+          "motivation": "Quiere clasificar sin encasillar a nadie.",
+          "conflict": "Su error anterior fue que convirtió una etiqueta provisional en registro permanente.",
+          "dialogue": {
+            "before": [
+              "La cueva clasifica y el registro no se borra nunca.",
+              "me apresuré: guardé etiquetas provisionales como si fueran diagnóstico.",
+              "pondré fecha de caducidad y botón de cambio."
+            ],
+            "after": [
+              "las etiquetas caducan y el jugador corrige su fila.",
+              "Porygon-Z copia la fila nueva sin arrastrar la corrupta.",
+              "la cuarentena conserva los datos originales bajo llave."
+            ]
+          }
+        },
+        {
+          "name": "Zeta Cuarentena",
+          "sprite": "NPC 04",
+          "role": "conservadora de archivos",
+          "partnerPokemon": "ELECTRODE",
+          "motivation": "Quiere preservar los datos rotos hasta entenderlos.",
+          "conflict": "Su error anterior fue que ordenó purgar la carpeta corrupta con un clic.",
+          "dialogue": {
+            "before": [
+              "La carpeta corrupta se borró dos veces esta temporada.",
+              "tardé en reconocer que purgar no es reparar.",
+              "aíslo, copio y espero a que alguien entienda."
+            ],
+            "after": [
+              "la cuarentena guarda copias fechadas de cada fila rota.",
+              "Electrode rueda lento para no tirar los cajones.",
+              "las purgas exigirán acta y dos lectores."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué hará la cueva con las filas corruptas?",
+        "options": [
+          "Cuarentena con copias fechadas",
+          "Purga inmediata del archivo"
+        ],
+        "immediate": [
+          "la cueva abre la sala de cuarentena y publica su reglamento.",
+          "los entrenadores reciben sus etiquetas con botón de cambio."
+        ],
+        "later": [
+          "la cuarentena conserva los datos originales bajo llave.",
+          "las purgas exigirán acta y dos lectores."
+        ]
+      },
+      "reward": {
+        "item": "METALCOAT",
+        "meaning": "Recubre un dato frágil sin ocultar del todo sus bordes dañados."
+      },
+      "progression": {
+        "switchId": 853,
+        "decisionVariable": 249,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 22,
+      "mapId": 1908,
+      "flag": 854,
+      "variable": 250,
+      "title": "La Luz que Purgaba Archivos Rotos",
+      "promise": "Un haz de luz de la isla elimina por completo los archivos corruptos y los conservadores reclaman copias antes de reparar.",
+      "objective": "Que la luz aísle en vez de borrar y que toda reparación empiece por una copia de respaldo.",
+      "mechanic": {
+        "name": "Cámara de cuarentena",
+        "rules": [
+          "La luz aísla; nunca borra sin revisión.",
+          "Toda reparación parte de una copia.",
+          "Las reparaciones se anuncian con su fecha."
+        ],
+        "failureSafe": "La senda del bosque y el retorno siguen iluminados aunque el archivo esté en cuarentena."
+      },
+      "npcs": [
+        {
+          "name": "Fax Purga",
+          "sprite": "trchar009",
+          "role": "farera de archivos",
+          "partnerPokemon": "JOLTEON",
+          "motivation": "Quiere dirigir la luz sin destruir la historia.",
+          "conflict": "Su error anterior fue que ordenó encender el haz a máxima potencia sobre la carpeta completa.",
+          "dialogue": {
+            "before": [
+              "La carpeta entera se apagó con la luz al máximo.",
+              "me precipité: quise limpiar rápido y borré contexto.",
+              "bajaré el haz y separaré brillo de destrucción."
+            ],
+            "after": [
+              "la luz solo aísla y la carpeta vuelve con su contexto.",
+              "Jolteon marca el umbral con una descarga corta.",
+              "cada reparación se anuncia antes y después."
+            ]
+          }
+        },
+        {
+          "name": "Mora Archivo",
+          "sprite": "NPC 04",
+          "role": "archivera de respaldos",
+          "partnerPokemon": "GALVANTULA",
+          "motivation": "Quiere tejer respaldos que nadie tenga que recordar pedir.",
+          "conflict": "Su error anterior fue que confió en la luz y dejó de hacer copias semanales.",
+          "dialogue": {
+            "before": [
+              "Mis respaldos se adelgazaron mientras la luz brillaba.",
+              "tardé en reconocer que la confianza no es un plan.",
+              "tejeré copias nuevas aunque la luz prometa limpieza."
+            ],
+            "after": [
+              "la red de respaldos sostiene cada carpeta con dos copias.",
+              "Galvantula revisa los hilos cuando cambia el viento.",
+              "el calendario de copias cuelga junto al del haz."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo actuará el haz de luz?",
+        "options": [
+          "Aislar y notificar antes de reparar",
+          "Borrar todo archivo marcado como roto"
+        ],
+        "immediate": [
+          "el bosque fija el protocolo de aislamiento y sus avisos.",
+          "los respaldos semanales vuelven a ser obligatorios."
+        ],
+        "later": [
+          "cada reparación se anuncia antes y después.",
+          "el calendario de copias cuelga junto al del haz."
+        ]
+      },
+      "reward": {
+        "item": "PRISMSCALE",
+        "meaning": "Devuelve color a un archivo que la luz había vuelto plano del todo."
+      },
+      "progression": {
+        "switchId": 854,
+        "decisionVariable": 250,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 22,
+      "mapId": 1915,
+      "flag": 855,
+      "variable": 251,
+      "title": "La Torre de Datos con Dos Versiones",
+      "promise": "Una torre guarda dos versiones de la misma ruta y los fallos intercambian sus etiquetas hasta confundir a los viajeros.",
+      "objective": "Conservar ambas versiones con fecha y registrar cada intercambio de etiqueta.",
+      "mechanic": {
+        "name": "Doble versión con fecha",
+        "rules": [
+          "Ambas versiones se conservan.",
+          "Las etiquetas se sellan con resumen fijo.",
+          "Todo intercambio queda registrado con hora."
+        ],
+        "failureSafe": "La torre mantiene su señal de retorno visible desde cualquiera de las dos versiones."
+      },
+      "npcs": [
+        {
+          "name": "Nix Versión",
+          "sprite": "trchar008",
+          "role": "administradora de la torre",
+          "partnerPokemon": "MORPEKO",
+          "motivation": "Quiere sostener dos historias sin convertirlas en trampa.",
+          "conflict": "Su error anterior fue que dejó las etiquetas colgadas de un gancho común.",
+          "dialogue": {
+            "before": [
+              "Las etiquetas cuelgan juntas y el viajero elige a ciegas.",
+              "me apresuré: ahorré anclajes y mezclé los destinos.",
+              "fijaré cada etiqueta a su versión y sellaré el resumen."
+            ],
+            "after": [
+              "las etiquetas quedan ancladas y el registro anota los cruces.",
+              "Morpeko no cambia de gancho sin firmar el registro.",
+              "las dos versiones tendrán su propia entrada."
+            ]
+          }
+        },
+        {
+          "name": "Raya Cambio",
+          "sprite": "NPC 04",
+          "role": "técnico de intercambios",
+          "partnerPokemon": "BOLTUND",
+          "motivation": "Quiere reparar etiquetas sin esconder los errores.",
+          "conflict": "Su error anterior fue que recolocó etiquetas de noche y no anotó nada.",
+          "dialogue": {
+            "before": [
+              "Mi recolocación nocturna explicó el caos de la mañana.",
+              "tardé en reconocer que el silencio multiplicaba el daño.",
+              "cada cambio llevará hora, firma y motivo."
+            ],
+            "after": [
+              "el registro delata mis manos y por fin ayuda.",
+              "Boltund trae el sello antes de que se mueva nada.",
+              "los viajeros leerán el registro junto al mapa."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué hará la torre con sus dos versiones?",
+        "options": [
+          "Dos entradas fechadas y firmadas",
+          "Una versión principal y la otra oculta"
+        ],
+        "immediate": [
+          "la torre abre doble entrada y publica el registro de cambios.",
+          "los viajeros reciben el mapa con sus dos lecturas."
+        ],
+        "later": [
+          "las dos versiones tendrán su propia entrada.",
+          "los viajeros leerán el registro junto al mapa."
+        ]
+      },
+      "reward": {
+        "item": "ELECTIRIZER",
+        "meaning": "Da impulso a la revisión cada vez que las etiquetas vuelven a intercambiarse."
+      },
+      "progression": {
+        "switchId": 855,
+        "decisionVariable": 251,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 22,
+      "mapId": 1926,
+      "flag": 856,
+      "variable": 252,
+      "title": "El Acertijo que Fingía Profundidad",
+      "promise": "Un acertijo imposible de la provincia escondía sus respuestas para parecer profundo y el club de acertijos quiere reglas justas.",
+      "objective": "Que todo acertijo salga con su pista de resolución y su hoja de respuestas a la vista del organizador.",
+      "mechanic": {
+        "name": "Acertijo con pista",
+        "rules": [
+          "Todo acertijo declara su pista de resolución.",
+          "Ningún acertijo se publica sin hoja de respuestas.",
+          "La dificultad se anuncia antes de participar."
+        ],
+        "failureSafe": "El camino de la provincia y el regreso permanecen fuera del acertijo."
+      },
+      "npcs": [
+        {
+          "name": "Rima Acertijo",
+          "sprite": "trchar009",
+          "role": "maestra de acertijos",
+          "partnerPokemon": "NATU",
+          "motivation": "Quiere diseñar enigmas difíciles pero honestos.",
+          "conflict": "Su error anterior fue que ocultó las pistas para que el acertijo pareciera imposible.",
+          "dialogue": {
+            "before": [
+              "El acertijo era famoso por irresoluble y era solo escondido.",
+              "me precipité: quise admiración y saqué las pistas del juego.",
+              "diseñaré dificultad con camino de salida."
+            ],
+            "after": [
+              "el acertijo conserva su misterio y enseña su pista.",
+              "Natu señala el primer paso sin decir la respuesta.",
+              "cada enigma nuevo saldrá con hoja de respuestas firmada."
+            ]
+          }
+        },
+        {
+          "name": "Vero Pista",
+          "sprite": "NPC 04",
+          "role": "jugadora del club",
+          "partnerPokemon": "MUNNA",
+          "motivation": "Quiere aprender sin sentirse burlada por un truco.",
+          "conflict": "Su error anterior fue que se sintió tonta cuando descubrió las respuestas escondidas.",
+          "dialogue": {
+            "before": [
+              "Creí no servir para los enigmas hasta ver el truco.",
+              "tardé en reconocer que la burla era diseño, no dificultad.",
+              "pediré pistas sin avergonzarme y avisaré a otros."
+            ],
+            "after": [
+              "el club publica las pistas y las dudas dejan de ser secreto.",
+              "Munna acompaña a quien se atasca sin resolver por él.",
+              "las hojas de respuestas se archivan a la vista."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se publicarán los acertijos?",
+        "options": [
+          "Con pista y hoja de respuestas",
+          "Como pruebas cerradas sin revelar nada"
+        ],
+        "immediate": [
+          "el club redacta su reglamento de enigmas justos.",
+          "la provincia recibe el primer acertijo con pista visible."
+        ],
+        "later": [
+          "cada enigma nuevo saldrá con hoja de respuestas firmada.",
+          "las hojas de respuestas se archivan a la vista."
+        ]
+      },
+      "reward": {
+        "item": "STARFBERRY",
+        "meaning": "Premia a quien desmonta un acertijo sin necesidad de público."
+      },
+      "progression": {
+        "switchId": 856,
+        "decisionVariable": 252,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 22,
+      "mapId": 1933,
+      "flag": 857,
+      "variable": 253,
+      "title": "La Prueba que Ocultaba sus Reglas",
+      "promise": "Una prueba de acceso esconde sus reglas para parecer élite y los candidatos suspenden por sorpresas de última hora.",
+      "objective": "Publicar las reglas antes de entrar, con ejemplo resuelto y política de repitición.",
+      "mechanic": {
+        "name": "Reglas primero",
+        "rules": [
+          "Las reglas se publican antes de la inscripción.",
+          "Cada prueba incluye un ejemplo resuelto.",
+          "La política de repitición se explica en la puerta."
+        ],
+        "failureSafe": "La zona de espera y la salida del complejo quedan fuera del examen."
+      },
+      "npcs": [
+        {
+          "name": "Nao Reglas",
+          "sprite": "trchar008",
+          "role": "directora de exámenes",
+          "partnerPokemon": "SLOWKING",
+          "motivation": "Quiere elegir estudiantes sin fabricar fracasos evitables.",
+          "conflict": "Su error anterior fue que cambió el baremo al segundo día de pruebas.",
+          "dialogue": {
+            "before": [
+              "El baremo cambió dos veces durante la misma convocatoria.",
+              "me precipité: ajusté las reglas en caliente y rompí la igualdad.",
+              "congelaré el baremo antes de abrir la inscripción."
+            ],
+            "after": [
+              "las reglas están firmadas y la convocatoria avanza sin cambios.",
+              "Slowking lee el reglamento en voz alta el primer día.",
+              "el ejemplo resuelto se reparte con la inscripción."
+            ]
+          }
+        },
+        {
+          "name": "Llano Muestra",
+          "sprite": "NPC 04",
+          "role": "candidato repetidor",
+          "partnerPokemon": "KADABRA",
+          "motivation": "Quiere acceder a una prueba cuyas reglas conoce de antemano.",
+          "conflict": "Su error anterior fue que intentó colarse en el examen para copiar las reglas ocultas.",
+          "dialogue": {
+            "before": [
+              "Esperaba la lista de reglas como quien espera un fallo ajeno.",
+              "tardé en reconocer que el secreto me volvió tramposo.",
+              "estudiaré del ejemplo resuelto y repetiré con calma."
+            ],
+            "after": [
+              "la convocatoria publicó su reglamento y mi repetición es legal.",
+              "Kadabra aparta los apuntes que nadie pidió copiar.",
+              "cada candidato podrá leer las reglas en la puerta."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué verá el candidato antes de inscribirse?",
+        "options": [
+          "Reglamento completo con ejemplo",
+          "Solo las fechas y el temario"
+        ],
+        "immediate": [
+          "el complejo publica el reglamento y congela el baremo.",
+          "la zona de espera enseña el ejemplo resuelto a todo el mundo."
+        ],
+        "later": [
+          "el ejemplo resuelto se reparte con la inscripción.",
+          "cada candidato podrá leer las reglas en la puerta."
+        ]
+      },
+      "reward": {
+        "item": "APICOTBERRY",
+        "meaning": "Eleva la resistencia de quien enfrenta reglas que llegaron tarde."
+      },
+      "progression": {
+        "switchId": 857,
+        "decisionVariable": 253,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    }
+  ]
+}

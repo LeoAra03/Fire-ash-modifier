@@ -18,6 +18,8 @@ Se mantuvo únicamente `!@internalBattle`, que no es la flag 674 y protege modal
 
 La sección compilada contiene cero referencias a `$game_switches[674]` dentro de `pbItemMenu`.
 
+Actualización posterior: abrir la Mochila no bastaba; `pbCanUseItemOnPokemon?` (Battle_Action_UseItem) seguía rechazando objetos con el switch 674 activo. El parche definitivo retira esa comprobación y está documentado en [`INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md`](INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md); `npm run verify:grandeur:bag` certifica que ninguna sección de script consulta ya el switch 674.
+
 ## 2. Misión: los niños del Bosque Susurrante
 
 ### Inicio

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import os from "node:os";
+import zlib from "node:zlib";
 import path from "node:path";
 import { validatePkregion } from "./region_builder_adapter.mjs";
 import { inspectStudioProject, STUDIO_COLLECTIONS, STUDIO_VERSION } from "./pokemon_studio_adapter.mjs";
@@ -103,6 +104,104 @@ check(tier2Blueprints.every((entry) => {
     && (entry.safety.baseChallengeExpected === false || events.some((event) => event.name.startsWith("Atlas desafío")))
     && events.some((event) => event.name === "Return to Puerto Horizonte");
 }), `las ${tier2Blueprints.length} rutas compiladas conservan el desafío base cuando existe, dos NPCs y retorno libre`);
+
+// --- Tier 3: reglas locales de los Ecos ---------------------------------------
+const tier3Catalog = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_tier3_rules.json"), "utf8"));
+const tier3Entries = tier3Catalog.entries ?? [];
+const hierarchy = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_content_hierarchy.json"), "utf8"));
+const atlasCatalog = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_mil_500.json"), "utf8"));
+const challengeMaps = new Set(atlasCatalog.suggestions.map((entry) => Number(entry.mapId)));
+const tier3WithoutChallenge = hierarchy.maps.filter((entry) => entry.tier === 3 && !challengeMaps.has(entry.mapId)).map((entry) => entry.mapId).sort((a, b) => a - b);
+check(tier3Entries.length === 420, `el catálogo Tier 3 define ${tier3Entries.length}/420 reglas locales`);
+check(tier3Catalog.guarantees?.bagAlwaysAvailable && tier3Catalog.guarantees?.noForcedBattle && tier3Catalog.guarantees?.freeReturn && tier3Catalog.guarantees?.reversibleDecision && tier3Catalog.guarantees?.usesGlobalSwitches === false && tier3Catalog.guarantees?.usesGlobalVariables === false, "el catálogo Tier 3 declara Mochila libre, sin combates, retorno libre y 0 flags globales");
+check(new Set(tier3Entries.map((entry) => entry.mapId)).size === 420 && tier3Entries.map((entry) => entry.mapId).sort((a, b) => a - b).join() === tier3WithoutChallenge.join(), "las reglas cubren exactamente los Ecos sin desafío Atlas");
+check(tier3Entries.every((entry) => entry.echoId === entry.mapId - 1020 && entry.tier === 3 && entry.anomaly && entry.rule?.name && entry.rule?.rules?.length === 3 && entry.rule?.outcome && entry.flavor?.includes("Eco")), "cada regla Tier 3 identifica su eco, su anomalía y tres reglas de contrajuego");
+check(new Set(tier3Catalog.families).size === 14 && tier3Entries.every((entry) => tier3Catalog.families.includes(entry.family)), "las 420 reglas pertenecen a las 14 familias de anomalía declaradas");
+check(tier3Entries.every((entry) => !/\b67[45]\b/.test([entry.anomaly, entry.flavor, entry.rule.name, entry.rule.outcome, ...entry.rule.rules].join(" "))), "ningún texto Tier 3 menciona los switches 674/675");
+const tier3Compiled = tier3Entries.every((entry) => {
+  const events = parseMap(readMarshalData(`Map${String(entry.mapId).padStart(3, "0")}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
+  const rules = events.filter((event) => event.name.startsWith("PokeMod Tier3:"));
+  const commands = rules.flatMap((event) => event.pages.flatMap((page) => page.list));
+  return rules.length === 1
+    && events.some((event) => event.name === "Return to Puerto Horizonte")
+    && events.some((event) => event.name === `Atlas Tier 3 Beacon ${entry.mapId}`)
+    && commands.some((command) => command.getIvar("code") === 102)
+    && commands.some((command) => command.getIvar("code") === 123 && Number(command.getIvar("parameters")?.[1]) === 0);
+});
+check(tier3Compiled, "las 420 reglas compiladas conservan baliza, retorno, microdecisión y self-switch A");
+
+// --- Mochila libre en el Grandeur Club ---------------------------------------
+const scriptsRow = (name) => {
+  for (const entry of readMarshalData("Scripts.rxdata")) {
+    const label = entry.getIvar ? entry.getIvar("name") : entry[1];
+    const text = label?.text ?? String(label ?? "");
+    if (text === name) return entry;
+  }
+  return null;
+};
+const inflateSection = (name) => {
+  const row = scriptsRow(name);
+  const bytes = row?.getIvar ? row.getIvar("script")?.bytes ?? row.getIvar("script") : row?.[2]?.bytes;
+  return zlib.inflateSync(Buffer.from(bytes)).toString("utf8");
+};
+const useItemCode = inflateSection("Battle_Action_UseItem");
+check(useItemCode.includes("switch 674 (NO ITEM INBATT) no longer blocks"), "Battle_Action_UseItem aplica el parche de Mochila libre");
+check(!/\$game_switches\s*\[\s*674\s*\]/.test(useItemCode), "pbCanUseItemOnPokemon? ya no consulta el switch 674");
+check(useItemCode.includes("PBEffects::Embargo") && useItemCode.includes("itemsRemaining == 0"), "pbCanUseItemOnPokemon? conserva Embargo y el límite de objetos por combate");
+const phaseCommandCode = inflateSection("Battle_Phase_Command");
+check(phaseCommandCode.includes("switch 674 no longer disables") && !/\$game_switches\s*\[\s*674\s*\]/.test(phaseCommandCode) && phaseCommandCode.includes("if !@internalBattle"), "pbItemMenu conserva Mochila libre y la regla de combates externos");
+
+// --- Torre del Grandeur Club e hub del laboratorio de Oak ---------------------
+const towerLocks = [141, 151, 214].flatMap((mapId) => parseMap(readMarshalData(`Map${mapId}.rxdata`)).events)
+  .flatMap(({ obj }) => parseEvent(obj)).flatMap((event) => event.pages.flatMap((page) => page.list))
+  .filter((command) => command.getIvar("code") === 121 && Number(command.getIvar("parameters")?.[2]) === 0 && Number(command.getIvar("parameters")?.[0]) <= 674 && Number(command.getIvar("parameters")?.[1]) >= 674);
+check(towerLocks.length === 8, `la torre conserva sus 8 activaciones originales del switch 674 (${towerLocks.length})`);
+const oakLab = parseMap(readMarshalData("Map048.rxdata")).events.map(({ obj }) => parseEvent(obj));
+const hubEvents = oakLab.filter((event) => event.name.startsWith("PokeMod Hub:"));
+check(hubEvents.length === 5, `el laboratorio de Oak tiene ${hubEvents.length}/5 eventos del hub postgame`);
+check(hubEvents.every((event) => event.pages.length === 2 && event.pages[1].condition?.switch1 === 429), "todo el hub del laboratorio depende del switch 429 de postgame");
+const hubPod = hubEvents.find((event) => event.name.endsWith("Transportador"));
+const hubTransfers = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 201).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
+check(hubTransfers.join() === "997,1000,1001,1021,2021", `la cápsula nueva enlaza Isla Espejo, Bosque, Horizontes, Atlas y Monte Silver (${hubTransfers.join()})`);
+const hubGates = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 111 && Number(command.getIvar("parameters")?.[0]) === 0).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
+check([701, 704, 706].every((flag) => hubGates.includes(flag)), "las señales del hub se calibran con los switches 701/704/706 de la progresión real");
+const originalDoors = oakLab.filter((event) => [15, 16].includes(event.id));
+check(originalDoors.length === 2 && originalDoors.every((event) => event.pages[1]?.condition?.switch1 === 429 && event.pages[1].list.some((command) => command.getIvar("code") === 201)), "los transportadores originales siguen intactos y condicionados por el postgame");
+const towerDoor = originalDoors.find((event) => event.id === 16);
+check(Boolean(towerDoor) && towerDoor.pages[1].list.some((command) => command.getIvar("code") === 201 && Number(command.getIvar("parameters")?.[1]) === 141), "la puerta de la torre sigue llevando al mapa 141 (SECRET PEAK)");
+
+// --- Monte Silver: Emisiones Prohibidas (multiverso creepypasta) -------------
+const multiverse = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "multiverse_creepypasta.json"), "utf8"));
+check(multiverse.maps.length === 9 && multiverse.bosses.length === 7 && multiverse.champion.mapId === 2022, "el catálogo del multiverso define 9 mapas, 7 emisiones y al Campeón Silencioso");
+check(multiverse.guarantees.reinterpretedHomagesOnly && multiverse.guarantees.existingAssetsOnly && multiverse.guarantees.canLoseEveryBattle && multiverse.guarantees.permanentDefeat && multiverse.guarantees.optionalRematchByMenu && multiverse.guarantees.freeReturn, "el multiverso declara homenajes reinterpretados, canLose, derrota permanente, revancha por menú y retorno libre");
+const multiverseRoster = [...multiverse.bosses, multiverse.champion];
+check(new Set(multiverseRoster.map((entry) => entry.reward)).size === multiverseRoster.length, "las recompensas del multiverso son únicas");
+check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 150)), "los equipos del multiverso respetan 6 Pokémon y nivel 150");
+check(multiverseRoster.every((entry) => {
+  const events = parseMap(readMarshalData(`Map${entry.mapId}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
+  const battle = events.find((event) => event.name.includes(entry.name));
+  return Boolean(battle) && battle.pages.length === 2 && battle.pages[1].condition.selfSwitch === "A"
+    && battle.pages[0].list.some((command) => command.getIvar("code") === 111 && /pbTrainerBattle/.test(String(command.getIvar("parameters")[1])))
+    && battle.pages[1].list.some((command) => command.getIvar("code") === 102);
+}), "los 8 jefes del multiverso quedan derrotados para siempre y solo revanchan por menú");
+
+// --- Zonas salvajes -----------------------------------------------------------
+const wild = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "wild_zones.json"), "utf8"));
+check(wild.zones.length === 13, `el catálogo define ${wild.zones.length}/13 zonas salvajes`);
+check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 150))), "las tablas salvajes respetan niveles 1-150");
+check(wild.zones.some((zone) => zone.mapId === 2021) && wild.zones.some((zone) => zone.mapId === 1000) && wild.zones.some((zone) => zone.types.Water), "hay Monte Silver, Bosque Susurrante y encuentros de agua (surf)");
+{
+  const species = new Set();
+  for (const [key] of readMarshalData("species.dat").pairs) if (key.name) species.add(key.name);
+  check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, sp]) => species.has(sp)))), "todas las especies salvajes existen en Fire Ash");
+}
+{
+  const encounters = readMarshalData("encounters.dat").pairs;
+  check(wild.zones.every((zone) => {
+    const entry = encounters.find(([key]) => (key.name ?? String(key)) === `${zone.mapId}_0`)?.[1];
+    return Boolean(entry) && Object.keys(zone.types).every((type) => (entry.getIvar("@types").pairs.some(([key]) => key.name === type)));
+  }), "las 13 tablas están instaladas en encounters.dat");
+}
 
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);
 if (failed) process.exitCode = 1;
