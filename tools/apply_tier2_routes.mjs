@@ -159,7 +159,7 @@ function verify() {
     const parsed = parseMap(read(`Map${pad(blueprint.mapId)}.rxdata`)), events = parsed.events.map(({ obj }) => parseEvent(obj)), added = parsed.events.map(({ obj }) => obj).filter((object) => txt(iv(object, "name")).startsWith(MARKER));
     ok(added.length === 2, `${blueprint.mapId}: ${added.length}/2 eventos Tier 2`);
     ok(events.some((entry) => entry.name === "Return to Puerto Horizonte"), `${blueprint.mapId}: retorno ausente`);
-    ok(events.some((entry) => entry.name.startsWith("Atlas desafío")), `${blueprint.mapId}: desafío Atlas base ausente`);
+    if (blueprint.safety.baseChallengeExpected !== false) ok(events.some((entry) => entry.name.startsWith("Atlas desafío")), `${blueprint.mapId}: desafío Atlas base ausente`);
     const conductor = added.find((object) => txt(iv(object, "name")).includes("Conductor")), commands = conductor ? commandsOf(conductor) : [], ruby = commands.filter((command) => [111,355,655].includes(Number(iv(command, "code")))).map((command) => txt(iv(command, "parameters")?.[Number(iv(command, "code")) === 111 ? 1 : 0])).join("\n");
     ok(commands.some((command) => Number(iv(command, "code")) === 102), `${blueprint.mapId}: decisión ausente`);
     ok(commands.some((command) => Number(iv(command, "code")) === 111 && txt(iv(command, "parameters")?.[1]) === `pbReceiveItem(:${blueprint.reward.item})`), `${blueprint.mapId}: recompensa no protegida contra Mochila llena`);
@@ -167,7 +167,7 @@ function verify() {
     ok(!/674|675|NO ITEM|disable.*bag/i.test(ruby), `${blueprint.mapId}: intento de bloquear Mochila`);
   }
   if (errors.length) throw new Error(`Tier 2 compilado inválido (${errors.length}):\n- ${errors.join("\n- ")}`);
-  console.log(`Verificación OK: ${BLUEPRINTS.length} rutas Tier 2, ${BLUEPRINTS.length * 2} NPCs, decisiones persistentes, recompensas únicas, desafío base y retorno libre.`);
+  console.log(`Verificación OK: ${BLUEPRINTS.length} rutas Tier 2, ${BLUEPRINTS.length * 2} NPCs, decisiones persistentes, recompensas únicas, desafío base preservado cuando existe y retorno libre.`);
 }
 
 validateBlueprints();

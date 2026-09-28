@@ -100,9 +100,9 @@ check(tier2Blueprints.every((entry) => entry.npcs.length === 2 && entry.decision
 check(tier2Blueprints.every((entry) => {
   const events = parseMap(readMarshalData(`Map${entry.mapId}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
   return events.filter((event) => event.name.startsWith("PokeMod Tier2:")).length === 2
-    && events.some((event) => event.name.startsWith("Atlas desafío"))
+    && (entry.safety.baseChallengeExpected === false || events.some((event) => event.name.startsWith("Atlas desafío")))
     && events.some((event) => event.name === "Return to Puerto Horizonte");
-}), `las ${tier2Blueprints.length} rutas compiladas conservan desafío Atlas, dos NPCs y retorno libre`);
+}), `las ${tier2Blueprints.length} rutas compiladas conservan el desafío base cuando existe, dos NPCs y retorno libre`);
 
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);
 if (failed) process.exitCode = 1;
