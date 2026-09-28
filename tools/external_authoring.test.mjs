@@ -162,13 +162,28 @@ check(hubEvents.length === 5, `el laboratorio de Oak tiene ${hubEvents.length}/5
 check(hubEvents.every((event) => event.pages.length === 2 && event.pages[1].condition?.switch1 === 429), "todo el hub del laboratorio depende del switch 429 de postgame");
 const hubPod = hubEvents.find((event) => event.name.endsWith("Transportador"));
 const hubTransfers = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 201).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
-check(hubTransfers.join() === "997,1000,1001,1021", `la cápsula nueva enlaza Isla Espejo, Bosque, Horizontes y Atlas (${hubTransfers.join()})`);
+check(hubTransfers.join() === "997,1000,1001,1021,2021", `la cápsula nueva enlaza Isla Espejo, Bosque, Horizontes, Atlas y Monte Silver (${hubTransfers.join()})`);
 const hubGates = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 111 && Number(command.getIvar("parameters")?.[0]) === 0).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
 check([701, 704, 706].every((flag) => hubGates.includes(flag)), "las señales del hub se calibran con los switches 701/704/706 de la progresión real");
 const originalDoors = oakLab.filter((event) => [15, 16].includes(event.id));
 check(originalDoors.length === 2 && originalDoors.every((event) => event.pages[1]?.condition?.switch1 === 429 && event.pages[1].list.some((command) => command.getIvar("code") === 201)), "los transportadores originales siguen intactos y condicionados por el postgame");
 const towerDoor = originalDoors.find((event) => event.id === 16);
 check(Boolean(towerDoor) && towerDoor.pages[1].list.some((command) => command.getIvar("code") === 201 && Number(command.getIvar("parameters")?.[1]) === 141), "la puerta de la torre sigue llevando al mapa 141 (SECRET PEAK)");
+
+// --- Monte Silver: Emisiones Prohibidas (multiverso creepypasta) -------------
+const multiverse = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "multiverse_creepypasta.json"), "utf8"));
+check(multiverse.maps.length === 9 && multiverse.bosses.length === 7 && multiverse.champion.mapId === 2022, "el catálogo del multiverso define 9 mapas, 7 emisiones y al Campeón Silencioso");
+check(multiverse.guarantees.reinterpretedHomagesOnly && multiverse.guarantees.existingAssetsOnly && multiverse.guarantees.canLoseEveryBattle && multiverse.guarantees.permanentDefeat && multiverse.guarantees.optionalRematchByMenu && multiverse.guarantees.freeReturn, "el multiverso declara homenajes reinterpretados, canLose, derrota permanente, revancha por menú y retorno libre");
+const multiverseRoster = [...multiverse.bosses, multiverse.champion];
+check(new Set(multiverseRoster.map((entry) => entry.reward)).size === multiverseRoster.length, "las recompensas del multiverso son únicas");
+check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 150)), "los equipos del multiverso respetan 6 Pokémon y nivel 150");
+check(multiverseRoster.every((entry) => {
+  const events = parseMap(readMarshalData(`Map${entry.mapId}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
+  const battle = events.find((event) => event.name.includes(entry.name));
+  return Boolean(battle) && battle.pages.length === 2 && battle.pages[1].condition.selfSwitch === "A"
+    && battle.pages[0].list.some((command) => command.getIvar("code") === 111 && /pbTrainerBattle/.test(String(command.getIvar("parameters")[1])))
+    && battle.pages[1].list.some((command) => command.getIvar("code") === 102);
+}), "los 8 jefes del multiverso quedan derrotados para siempre y solo revanchan por menú");
 
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);
 if (failed) process.exitCode = 1;

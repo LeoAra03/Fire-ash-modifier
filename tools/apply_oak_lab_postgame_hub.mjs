@@ -43,11 +43,16 @@ const CHOICE_VARIABLE = 1; // La misma variable temporal que usan las cápsulas 
 const POD = { left: [7, 15], pad: [8, 15], right: [9, 15], top: [9, 14] };
 const AIDE = [11, 17];
 const AIDE_SPRITE = "trchar029";
+const MULTIVERSE = fs.existsSync(path.join(ROOT, "content", "multiverse_creepypasta.json"))
+  ? JSON.parse(fs.readFileSync(path.join(ROOT, "content", "multiverse_creepypasta.json"), "utf8"))
+  : null;
+const SILVER_ARRIVAL = MULTIVERSE?.maps?.find((entry) => entry.mapId === 2021)?.arrival ?? [17, 14];
 const DESTINATIONS = [
   { label: "Isla Espejo", map: 997, x: 14, y: 10, dir: 2, arrival: "Este lugar... parece la Isla Espejo." },
   { label: "Bosque Susurrante", map: 1000, x: 35, y: 45, dir: 8, gate: HYPNO_STARTED, arrival: "Este lugar... parece un bosque que no figura en ningún mapa.", locked: "El guardabosques de Ciudad Verde conoce la canción que abre ese bosque. Acepta su misión y la señal quedará calibrada." },
   { label: "Puerto Horizonte", map: 1001, x: 34, y: 23, dir: 2, gate: HORIZONS_OPEN, arrival: "Este lugar... parece Puerto Horizonte.", locked: "Horizontes se abre cuando los niños del Bosque Susurrante vuelven a casa. Habla con el guardabosques después de calmar a Hypno." },
   { label: "Atlas Mil", map: 1021, x: 22, y: 9, dir: 2, gate: ATLAS_OPEN, arrival: "Este lugar... parece el primer eco del Atlas Mil.", locked: "El Cronista de Puerto Horizonte debe abrir el Atlas Mil antes de que esta cápsula pueda seguir su señal." },
+  { label: "Monte Silver", map: 2021, x: SILVER_ARRIVAL[0], y: SILVER_ARRIVAL[1], dir: 2, arrival: "Este lugar... parece la falda del Monte Silver." },
 ];
 
 const S = (value) => RString.fromText(String(value));
@@ -104,7 +109,7 @@ function podCommands() {
 }
 function aideCommands() {
   return [
-    ...texts(["\\bAyudante: El profesor Oak me pidió calibrar un tercer transportador. Capta señales de lugares que no figuran en ningún mapa: Isla Espejo, el Bosque Susurrante, Puerto Horizonte y el Atlas Mil."]),
+    ...texts(["\\bAyudante: El profesor Oak me pidió calibrar un tercer transportador. Capta señales de lugares que no figuran en ningún mapa: Isla Espejo, el Bosque Susurrante, Puerto Horizonte, el Atlas Mil y el Monte Silver."]),
     ...texts(["\\bAlgunas señales solo se estabilizan después de ciertos sucesos. Si la cápsula indica que falta calibración, sigue la pista que te dé."]),
     ...texts(["\\bAh, y la Mochila responde con normalidad en todos esos destinos... también dentro de la torre del Grandeur Club. Hitsukid todavía no lo sabe."]),
     cmd(0),

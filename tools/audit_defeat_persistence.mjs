@@ -114,6 +114,7 @@ const zones = [
   { name: "Isla Espejo (997-999)", maps: [997, 998, 999] },
   { name: "Bosque/Hypno + Horizontes (1000-1020)", maps: Array.from({ length: 21 }, (_, i) => 1000 + i) },
   { name: "Atlas Mil (1021-2020)", maps: Array.from({ length: 1000 }, (_, i) => 1021 + i) },
+  { name: "Monte Silver — Emisiones (2021-2029)", maps: Array.from({ length: 9 }, (_, i) => 2021 + i) },
 ];
 
 let totalBattles = 0;

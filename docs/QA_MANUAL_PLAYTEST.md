@@ -103,18 +103,34 @@ Cada regla: identificación del eco legible, las tres reglas de contrajuego se e
 | 13 | 1536 | 0516 | mapas | Mapa de capas | [ ] |
 | 14 | 1537 | 0517 | nombres | Etiqueta atada | [ ] |
 
-## E. Regresión general (5 comprobaciones)
+## E. Monte Silver — Emisiones Prohibidas (10 comprobaciones)
 
-- [ ] E1. Ninguna batalla interna del juego perdió la Mochila (probar al menos un gimnasio, la Liga y un combate del Grandeur Club).
-- [ ] E2. `Save*.rxdata` intactas: guardar/cargar antes y después de recorrer la expansión.
-- [ ] E3. Kirin/Android: recorrer la ruta crítica en el dispositivo y confirmar que los mapas nuevos aparecen con nombre.
-- [ ] E4. Los textos de los mapas nuevos se ven completos (sin cortes de línea raros) a resolución de la pantalla del dispositivo.
-- [ ] E5. Ninguna puerta de salida quedó bloqueada por los NPCs nuevos en el laboratorio de Oak ni en los hub.
-- [ ] E6. Derrotar a un jefe de Atlas/Isla Espejo/Horizontes, salir y volver: sigue derrotado (página de registro, sin volver a atacar).
-- [ ] E7. Perder a propósito contra otro jefe y confirmar que se puede reintentar con la Mochila disponible.
-- [ ] E8. Tras derrotar a un jefe de Isla Espejo, hablar con él: ofrece revancha amistosa por menú (elegir «Later» no desata ningún combate).
+| # | Zona | Jefe | Esencia del homenaje | Hecho |
+|---:|---|---|---|---|
+| 1 | La Torre que Escuchaba | LA LOCUTORA | Lavender Town Syndrome | [ ] |
+| 2 | La Partida Perdida | PLATA PERDIDA | Lost Silver | [ ] |
+| 3 | La Fosa del Enterrado | EL ENTERRADO | Buried Alive | [ ] |
+| 4 | La Cinta Carmesí | EL NIÑO DE LA CINTA | Strangled Red | [ ] |
+| 5 | Ciudad Glitch | EL FALLO CERO | Glitch City | [ ] |
+| 6 | El Eco que Jugó Contigo | EL ECO AHOGADO | el eco de una partida que se niega a desaparecer | [ ] |
+| 7 | La Consola de 1996 | EL JUGADOR DE 1996 | la cartucho embrujada | [ ] |
+| 8 | El Campeón Silencioso | RED | el campeón que aguarda en la cumbre | [ ] |
+
+- [ ] E9. El Archivero Prohibido de la falda explica las emisiones y menciona los reintentos.
+- [ ] E10. Desde el hub del laboratorio de Oak, la 5.ª opción (Monte Silver) lleva a la falda y el regreso es libre.
+
+## F. Regresión general (5 comprobaciones)
+
+- [ ] F1. Ninguna batalla interna del juego perdió la Mochila (probar al menos un gimnasio, la Liga y un combate del Grandeur Club).
+- [ ] F2. `Save*.rxdata` intactas: guardar/cargar antes y después de recorrer la expansión.
+- [ ] F3. Kirin/Android: recorrer la ruta crítica en el dispositivo y confirmar que los mapas nuevos aparecen con nombre.
+- [ ] F4. Los textos de los mapas nuevos se ven completos (sin cortes de línea raros) a resolución de la pantalla del dispositivo.
+- [ ] F5. Ninguna puerta de salida quedó bloqueada por los NPCs nuevos en el laboratorio de Oak ni en los hub.
+- [ ] F6. Derrotar a un jefe de Atlas/Isla Espejo/Horizontes, salir y volver: sigue derrotado (página de registro, sin volver a atacar).
+- [ ] F7. Perder a propósito contra otro jefe y confirmar que se puede reintentar con la Mochila disponible.
+- [ ] F8. Tras derrotar a un jefe de Isla Espejo, hablar con él: ofrece revancha amistosa por menú (elegir «Later» no desata ningún combate).
 
 ## Total
 
-**84 comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 8 regresión). Marca este archivo o una copia local; no hace falta commitearlo.
+**94 comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 10 Monte Silver + 8 regresión). Marca este archivo o una copia local; no hace falta commitearlo.
 

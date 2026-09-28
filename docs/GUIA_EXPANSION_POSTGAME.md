@@ -20,6 +20,7 @@ Baja las escaleras del laboratorio. Verás dos cápsulas originales y una **terc
 | | Bosque Susurrante | Misión del guardabosques aceptada (habla con él en Ciudad Verde) |
 | | Puerto Horizonte | Rescatados los niños del Bosque Susurrante |
 | | Atlas Mil | Que el Cronista de Puerto Horizonte lo haya abierto |
+| | **Monte Silver** | Siempre |
 | Original derecha | **Torre del Grandeur Club** (mapa 141) | Postgame |
 
 Si una señal todavía no está calibrada, la cápsula te dice qué te falta en vez de teletransportarte a ciegas.
@@ -55,6 +56,12 @@ El Cronista de Puerto Horizonte abre el Atlas: **1.000 mapas en 40 sectores**, c
 - **Tier 2 — 120 rutas estables**: dos NPCs, mecánica clara con contrajuego, decisión persistente y recompensa única (switches 748–867). Sin combates forzados.
 - **Tier 3 — 840 Ecos dimensionales**: baliza, navegación anterior/siguiente, retorno libre y una **regla local breve** reversible (420 con desafío Atlas y 420 con reglas de anomalía: geografía que respira, gravedad prestada, sombras dobles, coordenadas que mienten…).
 
+## 6. Monte Silver — Emisiones Prohibidas (2021–2029)
+
+«Fire Ash: A Través del Multiverso»: la montaña de las historias sin testigos. El **Archivero Prohibido** (en la falda) custodia siete **emisiones** —dimensiones creepypasta reinterpretadas con voz propia—: La Torre que Escuchaba, La Partida Perdida, La Fosa del Enterrado, La Cinta Carmesí, Ciudad Glitch, El Eco que Jugó Contigo y La Consola de 1996. En la cumbre, entre las siete puertas de niebla, te espera **Red, el Campeón Silencioso**.
+
+Todas las batallas permiten perder, quedan **derrotadas para siempre** al ganar (con revancha amistosa solo por menú) y tienen curación, recompensa única y salida libre. Detalles en [`MULTIVERSO_CREEPYPASTA.md`](MULTIVERSO_CREEPYPASTA.md).
+
 ## Reglas de oro de la expansión
 
 1. **La Mochila siempre funciona** en las batallas internas — también en la torre.
@@ -67,15 +74,16 @@ El Cronista de Puerto Horizonte abre el Atlas: **1.000 mapas en 40 sectores**, c
 ## Verificación antes de publicar tu mod
 
 ```bash
-npm test                      # 51 + 114 + 57 pruebas
+npm test                      # 51 + 114 + 62 pruebas
 npm run verify:atlas          # Tier 2 y Tier 3 compilados y seguros
 npm run verify:grandeur:bag   # Mochila libre en la torre
 npm run verify:oak:hub        # transportador postgame de Oak
 npm run verify:defeats        # derrotas permanentes + revanchas solo por menú
+npm run verify:multiverse     # Monte Silver y las 7 emisiones
 python tools/kirin_check.py pokemon_fire_ash
 ```
 
-La checklist de prueba manual (84 comprobaciones) está en [`QA_MANUAL_PLAYTEST.md`](QA_MANUAL_PLAYTEST.md).
+La checklist de prueba manual (94 comprobaciones) está en [`QA_MANUAL_PLAYTEST.md`](QA_MANUAL_PLAYTEST.md).
 
 ## Entrenar hasta nivel 150
 

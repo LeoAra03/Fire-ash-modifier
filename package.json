@@ -21,7 +21,9 @@
     "render:tier2:macro03": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro03.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro03_originals --before docs/referencia_tier2_macro03_antes.png --after docs/referencia_tier2_macro03_despues.png",
     "render:tier2:macro04": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro04.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro04_originals --before docs/referencia_tier2_macro04_antes.png --after docs/referencia_tier2_macro04_despues.png",
     "render:tier2:macro05": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro05.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro05_originals --before docs/referencia_tier2_macro05_antes.png --after docs/referencia_tier2_macro05_despues.png",
-    "verify:defeats": "node tools/audit_defeat_persistence.mjs"
+    "verify:defeats": "node tools/audit_defeat_persistence.mjs",
+    "verify:multiverse": "node tools/apply_multiverse_creepypasta.mjs --verify",
+    "create:multiverse": "node tools/create_multiverse_creepypasta.mjs"
   },
   "dependencies": {
     "@napi-rs/canvas": "0.1.81"
