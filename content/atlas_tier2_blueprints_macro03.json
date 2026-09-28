@@ -1,0 +1,2307 @@
+{
+  "version": 1,
+  "macroCycle": 3,
+  "tier2Batches": 5,
+  "blueprints": [
+    {
+      "tier": 2,
+      "routeBatch": 3,
+      "mapId": 1108,
+      "flag": 758,
+      "variable": 154,
+      "title": "La Veta que Firmaba con Luz",
+      "promise": "En una galería de cuarzo, las marcas luminosas que guían a los mineros resultan ser señales de descanso de una colonia de Sableye.",
+      "objective": "Comparar tres pulsos minerales y abrir un paso que no atraviese la cámara de alimentación.",
+      "mechanic": {
+        "name": "Cartografía de destellos",
+        "rules": [
+          "Esperar un ciclo completo antes de marcar.",
+          "Distinguir reflejo de señal repetida.",
+          "Dejar una franja sin linternas para la colonia."
+        ],
+        "failureSafe": "La cuerda de salida permanece visible durante toda la observación."
+      },
+      "npcs": [
+        {
+          "name": "Petra Lumbre",
+          "sprite": "trchar008",
+          "role": "geóloga de turno",
+          "partnerPokemon": "SABLEYE",
+          "motivation": "Quiere mantener abierta la mina sin expulsar a la colonia.",
+          "conflict": "Confundió cada brillo con mineral inerte y trazó el túnel sobre su comedor.",
+          "dialogue": {
+            "before": [
+              "Mi tiza señala roca; Sableye responde desde dentro.",
+              "Un destello aislado puede ser mi lámpara, tres iguales ya son conversación.",
+              "La veta vale menos si deja la galería vacía."
+            ],
+            "after": [
+              "El plano reserva una cámara oscura junto al nuevo paso.",
+              "Las marcas de Sableye figuran como señal viva, no como mena.",
+              "Mañana mediremos sin encender todas las lámparas."
+            ]
+          }
+        },
+        {
+          "name": "Ciro Faceta",
+          "sprite": "NPC 04",
+          "role": "tallador de cuarzo",
+          "partnerPokemon": "CARBINK",
+          "motivation": "Busca enseñar cortes seguros usando fragmentos ya desprendidos.",
+          "conflict": "Sus muestras premiaban el brillo más raro y alentaban excavaciones apresuradas.",
+          "dialogue": {
+            "before": [
+              "Carbink trae piezas caídas; ninguna necesita cincel.",
+              "Una faceta hermosa también puede indicar dónde no tocar.",
+              "Voy a cerrar la vitrina de trofeos hasta corregir las etiquetas."
+            ],
+            "after": [
+              "La exposición explica origen, caída y permiso de cada muestra.",
+              "Los aprendices practican con vidrio antes de entrar a la galería.",
+              "La pieza más brillante quedó donde la colonia la usa."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo quedará señalada la nueva ruta?",
+        "options": [
+          "Mapa de pulsos compartido",
+          "Corredor oscuro protegido"
+        ],
+        "immediate": [
+          "Petra publica horarios y patrones sin marcar nidos.",
+          "Ciro instala balizas bajas fuera de la cámara de alimentación."
+        ],
+        "later": [
+          "Otras cuadrillas podrán reconocer señales vivas.",
+          "La colonia conservará una zona sin observadores."
+        ]
+      },
+      "reward": {
+        "item": "FOCUSSASH",
+        "meaning": "Recuerda que retirarse a tiempo puede proteger una expedición entera."
+      },
+      "progression": {
+        "switchId": 758,
+        "decisionVariable": 154,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 3,
+      "mapId": 1115,
+      "flag": 759,
+      "variable": 155,
+      "title": "El Sendero de las Flechas Prestadas",
+      "promise": "Los postes de una ruta cambian de dirección cuando pasa una multitud y terminan enviando a los viajeros solos hacia el barro.",
+      "objective": "Recorrer dos desvíos y fijar señales que indiquen destino, distancia y estado del suelo.",
+      "mechanic": {
+        "name": "Prueba de orientación",
+        "rules": [
+          "Leer el destino antes del color de la flecha.",
+          "Comparar la huella de Mudsdale con la profundidad del barro.",
+          "Confirmar el regreso desde ambos sentidos."
+        ],
+        "failureSafe": "Los postes viejos siguen apuntando al puerto hasta terminar la prueba."
+      },
+      "npcs": [
+        {
+          "name": "Vera Mojón",
+          "sprite": "trchar009",
+          "role": "cartógrafa de caminos",
+          "partnerPokemon": "LYCANROC",
+          "motivation": "Quiere que una persona pueda orientarse sin seguir a la mayoría.",
+          "conflict": "Diseñó flechas que rotaban hacia el flujo más grande y borraban rutas pequeñas.",
+          "dialogue": {
+            "before": [
+              "Lycanroc huele el norte aunque cien botas giren al sur.",
+              "Una flecha sin destino solo imita a la última persona.",
+              "Este desvío merece nombre, distancia y regreso."
+            ],
+            "after": [
+              "Cada cara del poste explica adónde conduce.",
+              "La senda menor ya no desaparece cuando llega un grupo.",
+              "Añadí una marca táctil para la niebla."
+            ]
+          }
+        },
+        {
+          "name": "Nelo Surco",
+          "sprite": "NPC 04",
+          "role": "arriero de suministros",
+          "partnerPokemon": "MUDSDALE",
+          "motivation": "Necesita evitar barro profundo sin cerrar el camino a pie.",
+          "conflict": "Sus huellas pesadas parecían confirmar una ruta que solo servía a su carreta.",
+          "dialogue": {
+            "before": [
+              "Mudsdale pisa hondo incluso donde el suelo está firme.",
+              "Mi surco no debe convertirse en una orden.",
+              "Puedo dejar una regla de carga en vez de una prohibición."
+            ],
+            "after": [
+              "El cartel separa paso peatonal y límite de peso.",
+              "La carreta usa el terreno seco sin ocupar todo el sendero.",
+              "Ahora registro lluvia antes de dibujar un desvío."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué información encabezará los postes?",
+        "options": [
+          "Destino y distancia verificables",
+          "Estado del suelo por tipo de paso"
+        ],
+        "immediate": [
+          "Vera fija nombres legibles desde las dos direcciones.",
+          "Nelo publica carga, lluvia y una revisión diaria."
+        ],
+        "later": [
+          "Los caminos pequeños conservarán identidad propia.",
+          "Las rutas podrán cambiar sin ocultar por qué."
+        ]
+      },
+      "reward": {
+        "item": "LIGHTCLAY",
+        "meaning": "Da forma a una guía visible sin volver rígido el camino."
+      },
+      "progression": {
+        "switchId": 759,
+        "decisionVariable": 155,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 3,
+      "mapId": 1126,
+      "flag": 760,
+      "variable": 156,
+      "title": "La Ciudad que Adelantaba el Mediodía",
+      "promise": "Un reloj orbital adelanta las tareas de la ciudad cada vez que Rotom detecta una nube, hasta mezclar desayunos, turnos y descansos.",
+      "objective": "Sincronizar tres relojes públicos con señales observables y devolver a cada barrio su margen local.",
+      "mechanic": {
+        "name": "Ronda de sincronía",
+        "rules": [
+          "Comparar campana, sombra y reloj doméstico.",
+          "Registrar la nube sin tratarla como cambio de hora.",
+          "Mantener una señal manual de corrección."
+        ],
+        "failureSafe": "El centro de descanso no modifica su horario durante la calibración."
+      },
+      "npcs": [
+        {
+          "name": "Ada Meridiana",
+          "sprite": "trchar008",
+          "role": "relojera municipal",
+          "partnerPokemon": "ORBEETLE",
+          "motivation": "Quiere una hora común que no borre ritmos de barrio.",
+          "conflict": "Ató demasiadas tareas al pronóstico automático de Orbeetle.",
+          "dialogue": {
+            "before": [
+              "La sombra llega puntual; nuestra alarma es la que se impacienta.",
+              "Orbeetle predice nubes, no almuerzos.",
+              "Un reloj público debe admitir cuándo fue corregido."
+            ],
+            "after": [
+              "Las tres esferas muestran hora y última calibración.",
+              "Cada barrio conserva diez minutos de margen anunciado.",
+              "La campana ya no persigue al cielo."
+            ]
+          }
+        },
+        {
+          "name": "Romo Chispa",
+          "sprite": "NPC 04",
+          "role": "electricista de plaza",
+          "partnerPokemon": "ROTOM",
+          "motivation": "Busca estabilizar la red sin encerrar a Rotom en un único aparato.",
+          "conflict": "Reiniciaba todos los relojes juntos y convertía una falla local en caos general.",
+          "dialogue": {
+            "before": [
+              "Rotom salta de esfera porque una sola carcasa se calienta.",
+              "Puedo aislar un reloj sin apagar la ciudad.",
+              "El botón rojo debe corregir, no castigar el retraso."
+            ],
+            "after": [
+              "Cada esfera tiene un circuito independiente.",
+              "Rotom elige dónde ayudar y deja registro del cambio.",
+              "La plaza recuperó un mediodía que dura lo necesario."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se corregirá una diferencia futura?",
+        "options": [
+          "Campana con confirmación vecinal",
+          "Panel público de calibración"
+        ],
+        "immediate": [
+          "Ada convoca dos lecturas antes de mover las agujas.",
+          "Romo muestra fuente, cambio y opción de deshacer."
+        ],
+        "later": [
+          "Los turnos conservarán un margen humano.",
+          "Ninguna nube volverá a reescribir toda la jornada."
+        ]
+      },
+      "reward": {
+        "item": "DAMPROCK",
+        "meaning": "Convierte el clima en información útil sin permitirle gobernar el reloj."
+      },
+      "progression": {
+        "switchId": 760,
+        "decisionVariable": 156,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 3,
+      "mapId": 1133,
+      "flag": 761,
+      "variable": 157,
+      "title": "El Camarote de las Maletas Huérfanas",
+      "promise": "En un barco orbital, las maletas sin etiqueta son asignadas al pasajero más cercano y una Lapras mensajera empieza a devolverlas al muelle.",
+      "objective": "Clasificar equipaje por contenido autorizado, trayecto y punto de reclamo sin abrir recuerdos privados.",
+      "mechanic": {
+        "name": "Mesa de equipaje",
+        "rules": [
+          "Leer ruta y material exterior antes de abrir.",
+          "Separar medicina urgente de objeto personal.",
+          "Crear un reclamo que no exija describir el contenido en público."
+        ],
+        "failureSafe": "El desembarco queda disponible durante toda la clasificación."
+      },
+      "npcs": [
+        {
+          "name": "Iria Bodega",
+          "sprite": "trchar009",
+          "role": "sobrecargo de equipaje",
+          "partnerPokemon": "LAPRAS",
+          "motivation": "Quiere reunir cada maleta con su viaje verdadero.",
+          "conflict": "Usó proximidad como prueba de propiedad y acumuló entregas equivocadas.",
+          "dialogue": {
+            "before": [
+              "Esta valija comparte pasillo, no necesariamente dueño.",
+              "Lapras reconoce el muelle por la sal pegada a la rueda.",
+              "Puedo preguntar por el trayecto sin pedir que narren su intimidad."
+            ],
+            "after": [
+              "La ficha muestra cubierta, escala y señal exterior.",
+              "Las medicinas viajan por un canal urgente y discreto.",
+              "Nadie debe abrir una carta para recuperar su abrigo."
+            ]
+          }
+        },
+        {
+          "name": "Paz Cubierta",
+          "sprite": "NPC 04",
+          "role": "enlace del muelle",
+          "partnerPokemon": "PELIPPER",
+          "motivation": "Busca coordinar reclamos entre barco y costa.",
+          "conflict": "Sus formularios obligaban a enumerar cada objeto ante toda la fila.",
+          "dialogue": {
+            "before": [
+              "Pelipper trae números de recibo, no listas de pertenencias.",
+              "Una marca lateral basta si ambas estaciones la conocen.",
+              "Voy a mover el reclamo detrás del biombo."
+            ],
+            "after": [
+              "El muelle acepta una clave de trayecto y una descripción exterior.",
+              "Los paquetes urgentes llegan sin anunciar su contenido.",
+              "La fila dejó de escuchar historias ajenas."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Dónde quedará el registro de equipaje?",
+        "options": [
+          "Cadena barco–muelle cifrada",
+          "Fichas separadas por escala"
+        ],
+        "immediate": [
+          "Iria conserva solo identificadores de tránsito.",
+          "Paz divide el recorrido para limitar quién consulta cada tramo."
+        ],
+        "later": [
+          "Los siguientes barcos podrán devolver sin exponer.",
+          "Una pérdida local no abrirá todo el historial del viaje."
+        ]
+      },
+      "reward": {
+        "item": "HEATROCK",
+        "meaning": "Mantiene a salvo lo necesario durante el viaje sin revelar qué guarda cada maleta."
+      },
+      "progression": {
+        "switchId": 761,
+        "decisionVariable": 157,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 3,
+      "mapId": 1140,
+      "flag": 762,
+      "variable": 158,
+      "title": "El Simulacro que Zarpó sin Aviso",
+      "promise": "Una alarma de evacuación mueve los botes durante un ensayo y deja a quienes estaban aprendiendo a bordo de una cubierta equivocada.",
+      "objective": "Reconstruir la secuencia de alarma y diseñar un simulacro reconocible antes, durante y después.",
+      "mechanic": {
+        "name": "Ensayo de cubierta",
+        "rules": [
+          "Identificar tono de práctica y tono real.",
+          "Contar personas antes de mover un bote.",
+          "Cerrar el ejercicio con una señal inequívoca."
+        ],
+        "failureSafe": "Un bote permanece amarrado como salida segura en todo momento."
+      },
+      "npcs": [
+        {
+          "name": "Berta Sirena",
+          "sprite": "trchar008",
+          "role": "oficial de seguridad",
+          "partnerPokemon": "MAGNEZONE",
+          "motivation": "Quiere que cada viajero pueda reconocer una emergencia real.",
+          "conflict": "Probó una alarma idéntica a la real y Magnezone liberó los seguros previstos.",
+          "dialogue": {
+            "before": [
+              "La alarma funcionó exactamente como la programé; ese es el problema.",
+              "Magnezone no distingue ensayo si yo escondo la diferencia.",
+              "Un simulacro sorpresa no debe convertirse en una emergencia."
+            ],
+            "after": [
+              "El tono de práctica comienza con anuncio y luz azul.",
+              "Los seguros permanecen manuales hasta completar el conteo.",
+              "La señal final devuelve cada cubierta a su estado normal."
+            ]
+          }
+        },
+        {
+          "name": "Daro Lastre",
+          "sprite": "NPC 04",
+          "role": "técnico de botes",
+          "partnerPokemon": "DRIFBLIM",
+          "motivation": "Necesita probar flotación sin transportar personas involuntariamente.",
+          "conflict": "Celebraba movimientos rápidos y omitía confirmar quién seguía a bordo.",
+          "dialogue": {
+            "before": [
+              "Drifblim puede elevar un bote vacío para revisar el cable.",
+              "Mi cronómetro no cuenta a quien quedó detrás.",
+              "Primero lista, luego seguro, al final velocidad."
+            ],
+            "after": [
+              "La prueba de cable se realiza sin pasajeros.",
+              "Cada bote exhibe su lista antes de soltar amarras.",
+              "El mejor tiempo ahora incluye volver y confirmar."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se anunciarán los próximos simulacros?",
+        "options": [
+          "Calendario y roles visibles",
+          "Ensayo breve con consentimiento en cubierta"
+        ],
+        "immediate": [
+          "Berta publica horario, objetivo y señal de cierre.",
+          "Daro pregunta quién participa antes de tocar un seguro."
+        ],
+        "later": [
+          "La tripulación podrá practicar sin fabricar pánico.",
+          "Los viajeros conservarán una salida ajena al ejercicio."
+        ]
+      },
+      "reward": {
+        "item": "SMOOTHROCK",
+        "meaning": "Aporta estabilidad a una práctica que antes se movía demasiado pronto."
+      },
+      "progression": {
+        "switchId": 762,
+        "decisionVariable": 158,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 4,
+      "mapId": 1151,
+      "flag": 763,
+      "variable": 159,
+      "title": "El Club de los Abrigos Invencibles",
+      "promise": "Un club boreal presta abrigos con rangos de resistencia exagerados y sus socios ocultan que siguen teniendo frío para no perder puntos.",
+      "objective": "Probar tres capas en condiciones distintas y reemplazar el rango único por indicaciones concretas.",
+      "mechanic": {
+        "name": "Prueba de capas",
+        "rules": [
+          "Medir viento y humedad por separado.",
+          "Permitir cambiar de abrigo sin penalización.",
+          "Registrar comodidad además de temperatura."
+        ],
+        "failureSafe": "La sala calefaccionada permanece abierta entre pruebas."
+      },
+      "npcs": [
+        {
+          "name": "Lena Dobladillo",
+          "sprite": "trchar009",
+          "role": "modista térmica",
+          "partnerPokemon": "FROSLASS",
+          "motivation": "Quiere confeccionar capas ajustables para cuerpos y climas distintos.",
+          "conflict": "Bordó rangos de prestigio que hicieron difícil admitir incomodidad.",
+          "dialogue": {
+            "before": [
+              "El hilo azul indica viento, no valentía.",
+              "Froslass no necesita este forro; una persona quizá sí.",
+              "Un abrigo puede fallar sin que falle quien lo lleva."
+            ],
+            "after": [
+              "Las etiquetas hablan de humedad, viento y movilidad.",
+              "Cambiar una capa ya no resta puntos del club.",
+              "Dejé bolsillos para calentadores y decisiones tardías."
+            ]
+          }
+        },
+        {
+          "name": "Talo Entrega",
+          "sprite": "NPC 04",
+          "role": "encargado de préstamo",
+          "partnerPokemon": "DELIBIRD",
+          "motivation": "Busca repartir equipo antes de cada salida sin convertirlo en premio.",
+          "conflict": "Guardaba las mejores prendas para socios con más insignias.",
+          "dialogue": {
+            "before": [
+              "Delibird entrega primero a quien sale primero, no a quien presume más.",
+              "Tengo tallas útiles guardadas detrás de una vitrina absurda.",
+              "El frío no consulta el historial del club."
+            ],
+            "after": [
+              "El préstamo sigue ruta, duración y talla solicitada.",
+              "Las prendas de exhibición volvieron al perchero de uso.",
+              "Una devolución mojada recibe secado, no reproche."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo organizará el club su equipo térmico?",
+        "options": [
+          "Biblioteca de capas combinables",
+          "Kits por clima con cambios libres"
+        ],
+        "immediate": [
+          "Lena separa piezas y publica compatibilidades.",
+          "Talo prepara kits revisables antes de partir."
+        ],
+        "later": [
+          "Otros refugios podrán compartir patrones abiertos.",
+          "Nadie tendrá que soportar frío para conservar rango."
+        ]
+      },
+      "reward": {
+        "item": "ICYROCK",
+        "meaning": "Representa preparación para el frío, no una prueba de dureza."
+      },
+      "progression": {
+        "switchId": 763,
+        "decisionVariable": 159,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 4,
+      "mapId": 1158,
+      "flag": 764,
+      "variable": 160,
+      "title": "La Sala de Espera de las Mantas Azules",
+      "promise": "Un Centro Pokémon asigna mantas según la gravedad visible y deja sin abrigo a pacientes cuyo cansancio no se nota.",
+      "objective": "Reordenar la entrega de mantas usando solicitud, temperatura y disponibilidad en vez de apariencia.",
+      "mechanic": {
+        "name": "Ronda de confort",
+        "rules": [
+          "Preguntar antes de interpretar una postura.",
+          "Reservar mantas clínicas sin bloquear las de descanso.",
+          "Revisar necesidades después de cada curación."
+        ],
+        "failureSafe": "La máquina de curación y la salida funcionan con normalidad."
+      },
+      "npcs": [
+        {
+          "name": "Mina Turno",
+          "sprite": "trchar008",
+          "role": "auxiliar del Centro",
+          "partnerPokemon": "AUDINO",
+          "motivation": "Quiere atender malestar invisible sin retrasar urgencias.",
+          "conflict": "Usaba una escala visual demasiado rápida para repartir recursos.",
+          "dialogue": {
+            "before": [
+              "Audino oye una respiración corta que mi ficha no muestra.",
+              "Pedir una manta no compite con pedir una cura.",
+              "Voy a separar necesidad clínica y comodidad disponible."
+            ],
+            "after": [
+              "La recepción pregunta temperatura y preferencia.",
+              "Las mantas clínicas tienen reserva, las demás no exigen diagnóstico.",
+              "Revisamos el confort después de cada tratamiento."
+            ]
+          }
+        },
+        {
+          "name": "Siro Nube",
+          "sprite": "NPC 04",
+          "role": "lavandero nocturno",
+          "partnerPokemon": "ALTARIA",
+          "motivation": "Necesita rotar mantas limpias sin reducirlas a un color de prioridad.",
+          "conflict": "El tinte azul terminó funcionando como una etiqueta pública de gravedad.",
+          "dialogue": {
+            "before": [
+              "Altaria seca dos tandas si no mezclo tamaños imposibles.",
+              "El color debería indicar lavado, no lo que alguien padece.",
+              "Puedo coser códigos por dentro de la tela."
+            ],
+            "after": [
+              "Los códigos de limpieza quedaron ocultos en el dobladillo.",
+              "La estantería muestra tamaño y calor, no diagnóstico.",
+              "La rotación nocturna mantiene un lote siempre disponible."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se ofrecerán las mantas?",
+        "options": [
+          "Estantería de acceso guiado",
+          "Entrega durante la ronda de curación"
+        ],
+        "immediate": [
+          "Mina deja opciones visibles y ayuda a quien lo pida.",
+          "Siro prepara carros con varios tamaños y niveles de abrigo."
+        ],
+        "later": [
+          "Otros centros distinguirán cuidado y clasificación médica.",
+          "La comodidad podrá solicitarse sin explicar una historia privada."
+        ]
+      },
+      "reward": {
+        "item": "TERRAINEXTENDER",
+        "meaning": "Amplía un espacio de cuidado sin convertirlo en una frontera rígida."
+      },
+      "progression": {
+        "switchId": 764,
+        "decisionVariable": 160,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 4,
+      "mapId": 1165,
+      "flag": 765,
+      "variable": 161,
+      "title": "La Campana que Recordaba Demasiado",
+      "promise": "En una torre memorial, una campana repite todos los nombres grabados cada noche, incluso aquellos que sus familias pidieron guardar en silencio.",
+      "objective": "Separar homenaje público, recuerdo familiar y señal de orientación para los Pokémon de la torre.",
+      "mechanic": {
+        "name": "Afinación memorial",
+        "rules": [
+          "Escuchar qué ecos atraen a Chandelure.",
+          "Marcar inscripciones con permiso vigente.",
+          "Conservar una campanada de orientación sin recitar nombres."
+        ],
+        "failureSafe": "La escalera y el punto de descanso permanecen accesibles."
+      },
+      "npcs": [
+        {
+          "name": "Ema Bronce",
+          "sprite": "trchar009",
+          "role": "guardiana de campanas",
+          "partnerPokemon": "CHANDELURE",
+          "motivation": "Quiere mantener un ritual común sin apropiarse de cada recuerdo.",
+          "conflict": "Programó la campana para leer todo el archivo como si visibilidad significara homenaje.",
+          "dialogue": {
+            "before": [
+              "Chandelure sigue el tono, no necesita escuchar cada nombre.",
+              "Una inscripción puede existir sin convertirse en anuncio.",
+              "Esta campana debe reunir, no reclamar."
+            ],
+            "after": [
+              "La campanada común ya no recita el archivo.",
+              "Cada familia elige si su placa participa del ritual público.",
+              "El tono bajo sigue guiando a quienes cruzan la torre."
+            ]
+          }
+        },
+        {
+          "name": "Nico Umbral",
+          "sprite": "NPC 04",
+          "role": "archivero de despedidas",
+          "partnerPokemon": "DUSKNOIR",
+          "motivation": "Busca preservar cartas sin decidir por sus autores cuándo leerlas.",
+          "conflict": "Clasificó silencio como documento incompleto y abrió sobres reservados.",
+          "dialogue": {
+            "before": [
+              "Dusknoir carga cajas cerradas sin preguntar qué contienen.",
+              "Un sobre sellado también comunica una decisión.",
+              "Mi índice debe registrar permiso, no curiosidad."
+            ],
+            "after": [
+              "El archivo distingue público, familiar y cerrado.",
+              "Las cartas reservadas conservan solo fecha de custodia.",
+              "Ningún silencio vuelve a figurar como error."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué forma tendrá el rito nocturno?",
+        "options": [
+          "Campanada común sin nombres",
+          "Lecturas voluntarias en salas separadas"
+        ],
+        "immediate": [
+          "Ema afina un tono que orienta y reúne.",
+          "Nico prepara espacios donde cada familia controla su lectura."
+        ],
+        "later": [
+          "La torre conservará memoria sin exposición automática.",
+          "Los futuros homenajes incluirán permiso revisable."
+        ]
+      },
+      "reward": {
+        "item": "ROOMSERVICE",
+        "meaning": "Simboliza cuidado discreto que llega sin convertir una habitación en escenario."
+      },
+      "progression": {
+        "switchId": 765,
+        "decisionVariable": 161,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 4,
+      "mapId": 1176,
+      "flag": 766,
+      "variable": 162,
+      "title": "El Piso de las Semillas sin Precio",
+      "promise": "Una tienda etiqueta semillas comunitarias con valores de rareza y las variedades útiles dejan de circular porque nadie quiere abrir el paquete más caro.",
+      "objective": "Reclasificar semillas por clima, cuidado y fecha de siembra antes de la próxima feria.",
+      "mechanic": {
+        "name": "Mesa de germinación",
+        "rules": [
+          "Separar rareza comercial de adaptación local.",
+          "Abrir una muestra con consentimiento del donante.",
+          "Registrar cómo devolver semillas después de la cosecha."
+        ],
+        "failureSafe": "El ascensor y la salida de la planta permanecen libres."
+      },
+      "npcs": [
+        {
+          "name": "Rina Brote",
+          "sprite": "trchar008",
+          "role": "encargada de semillas",
+          "partnerPokemon": "LILLIGANT",
+          "motivation": "Quiere que cada variedad llegue al jardín donde puede prosperar.",
+          "conflict": "Aceptó etiquetas de lujo que transformaron intercambio en exhibición.",
+          "dialogue": {
+            "before": [
+              "Lilligant prefiere esta semilla común porque conoce nuestra lluvia.",
+              "El precio dice escasez en tienda, no utilidad en tierra.",
+              "Voy a poner calendario donde antes había estrellas doradas."
+            ],
+            "after": [
+              "Cada sobre indica estación, agua y espacio necesario.",
+              "La rareza quedó como dato opcional, no jerarquía.",
+              "La devolución de semillas tiene una bandeja propia."
+            ]
+          }
+        },
+        {
+          "name": "Ona Guirnalda",
+          "sprite": "NPC 04",
+          "role": "cuidadora de jardines",
+          "partnerPokemon": "COMFEY",
+          "motivation": "Busca compartir esquejes sin perder el rastro de cuidados importantes.",
+          "conflict": "Entregaba plantas como adornos y omitía advertir qué flores requerían sombra.",
+          "dialogue": {
+            "before": [
+              "Comfey trenza una flor; no promete que viva en cualquier ventana.",
+              "Una tarjeta bonita no reemplaza saber cuánta luz recibe.",
+              "Puedo contar el cuidado sin convertirlo en secreto de experto."
+            ],
+            "after": [
+              "Los esquejes viajan con una ficha de cuidados corregible.",
+              "La mesa separa adorno temporal y planta para cultivar.",
+              "Quien devuelve una observación mejora el registro común."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo circularán las semillas del piso?",
+        "options": [
+          "Biblioteca con devolución de cosecha",
+          "Feria estacional de cuidados"
+        ],
+        "immediate": [
+          "Rina abre sobres y registra préstamos por variedad.",
+          "Ona organiza mesas según sol, sombra y agua."
+        ],
+        "later": [
+          "Los jardines compartirán adaptación real.",
+          "La tienda dejará de fabricar tesoros que nadie siembra."
+        ]
+      },
+      "reward": {
+        "item": "UTILITYUMBRELLA",
+        "meaning": "Protege una planta del clima equivocado sin ocultar qué condiciones necesita."
+      },
+      "progression": {
+        "switchId": 766,
+        "decisionVariable": 162,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 4,
+      "mapId": 1183,
+      "flag": 767,
+      "variable": 163,
+      "title": "El Ring de la Campana Honesta",
+      "promise": "Un torneo de exhibición usa una campana casi inaudible y los luchadores continúan después de pedir pausa porque el público cree que es parte del espectáculo.",
+      "objective": "Probar señales visuales, sonoras y gestuales que detengan el combate desde cualquier esquina.",
+      "mechanic": {
+        "name": "Ensayo de detención",
+        "rules": [
+          "Comprobar la campana con ruido de público.",
+          "Asignar una señal manual a cada esquina.",
+          "Reanudar solo después de confirmar a ambos equipos."
+        ],
+        "failureSafe": "La práctica no incluye golpes y puede abandonarse en cualquier momento."
+      },
+      "npcs": [
+        {
+          "name": "Tessa Campana",
+          "sprite": "trchar009",
+          "role": "árbitra del torneo",
+          "partnerPokemon": "HAWLUCHA",
+          "motivation": "Quiere que una pausa sea más importante que la continuidad del show.",
+          "conflict": "Confió en un único sonido que desaparecía bajo los aplausos.",
+          "dialogue": {
+            "before": [
+              "Hawlucha vio mi mano antes de oír la campana.",
+              "Si una señal falla con público, no funciona en el ring.",
+              "La pausa no necesita parecer dramática para ser válida."
+            ],
+            "after": [
+              "Cada esquina tiene luz, gesto y campana propia.",
+              "La reanudación exige dos confirmaciones visibles.",
+              "El público recibió una explicación antes de la exhibición."
+            ]
+          }
+        },
+        {
+          "name": "Bran Giro",
+          "sprite": "NPC 04",
+          "role": "entrenador de equilibrio",
+          "partnerPokemon": "HITMONTOP",
+          "motivation": "Busca enseñar caídas seguras sin premiar a quien ignora mareos.",
+          "conflict": "Usaba terminar la secuencia como medida de disciplina.",
+          "dialogue": {
+            "before": [
+              "Hitmontop se detiene cuando pierde un punto de referencia.",
+              "Completar un giro mareado no demuestra control.",
+              "Voy a evaluar cómo se corta una rutina, no solo cómo empieza."
+            ],
+            "after": [
+              "Las prácticas incluyen una salida ensayada.",
+              "Informar mareo abre descanso y no reduce puntuación.",
+              "La técnica termina cuando ambos recuperan orientación."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Quién podrá detener una exhibición?",
+        "options": [
+          "Cualquier esquina con señal triple",
+          "Árbitra y participantes por igual"
+        ],
+        "immediate": [
+          "Tessa conecta luces y campanas independientes.",
+          "Bran incorpora gestos de pausa al entrenamiento."
+        ],
+        "later": [
+          "Otros torneos reconocerán una detención inequívoca.",
+          "El espectáculo no podrá convertir el silencio en consentimiento."
+        ]
+      },
+      "reward": {
+        "item": "HEAVYDUTYBOOTS",
+        "meaning": "Permite entrar y salir del terreno sin quedar atrapado por el espectáculo."
+      },
+      "progression": {
+        "switchId": 767,
+        "decisionVariable": 163,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 5,
+      "mapId": 1190,
+      "flag": 768,
+      "variable": 164,
+      "title": "La Azotea que Cultivaba Pronósticos",
+      "promise": "Un jardín doméstico cambia todas sus plantas según un pronóstico semanal y termina arrancando brotes que ya se habían adaptado al tejado.",
+      "objective": "Comparar predicción, humedad real y respuesta de tres bancales antes de reorganizar la azotea.",
+      "mechanic": {
+        "name": "Diario de bancales",
+        "rules": [
+          "Tocar la tierra antes de regar.",
+          "Anotar predicción y observación en columnas distintas.",
+          "Mover macetas antes que arrancar plantas adaptadas."
+        ],
+        "failureSafe": "La escalera interior y una franja de paso quedan despejadas."
+      },
+      "npcs": [
+        {
+          "name": "Fara Maceta",
+          "sprite": "trchar008",
+          "role": "hortelana de azotea",
+          "partnerPokemon": "APPLETUN",
+          "motivation": "Quiere que cada brote tenga tiempo para responder al lugar real.",
+          "conflict": "Obedecía el pronóstico como orden y reiniciaba el jardín cada semana.",
+          "dialogue": {
+            "before": [
+              "Appletun encontró humedad bajo una tierra que parecía seca.",
+              "La nube dibujada no ha tocado este tejado todavía.",
+              "Puedo mover una maceta sin declarar perdida la temporada."
+            ],
+            "after": [
+              "El diario separa lo previsto de lo observado.",
+              "Los brotes adaptados conservaron su bancal.",
+              "Cada traslado incluye una semana de revisión."
+            ]
+          }
+        },
+        {
+          "name": "Galo Brisa",
+          "sprite": "NPC 04",
+          "role": "constructor de cortavientos",
+          "partnerPokemon": "ELDEGOSS",
+          "motivation": "Busca reducir ráfagas sin encerrar polinizadores.",
+          "conflict": "Levantó paneles continuos que protegían hojas y bloqueaban rutas de vuelo.",
+          "dialogue": {
+            "before": [
+              "Eldegoss atraviesa huecos que mi primer muro no tenía.",
+              "Quitar todo el viento también quita visitas útiles.",
+              "Probaré paneles bajos con separaciones medibles."
+            ],
+            "after": [
+              "Los cortavientos dejan corredores para polinizadores.",
+              "Cada panel puede retirarse sin desmontar el jardín.",
+              "La azotea registra ráfagas en vez de temer cualquier brisa."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué guiará los cambios del jardín?",
+        "options": [
+          "Diario local de siete días",
+          "Bancales móviles con revisión"
+        ],
+        "immediate": [
+          "Fara espera observaciones suficientes antes de cambiar.",
+          "Galo instala soportes que permiten probar y revertir."
+        ],
+        "later": [
+          "Los hogares podrán comparar microclimas reales.",
+          "Una predicción dejará de borrar adaptaciones presentes."
+        ]
+      },
+      "reward": {
+        "item": "SAFETYGOGGLES",
+        "meaning": "Ayuda a observar viento y polvo sin apartar la mirada del jardín real."
+      },
+      "progression": {
+        "switchId": 768,
+        "decisionVariable": 164,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 5,
+      "mapId": 1201,
+      "flag": 769,
+      "variable": 165,
+      "title": "La Lluvia de los Siete Colores",
+      "promise": "En una llanura prismática, Castform cambia de clima al cruzar reflejos de vidrio abandonado y las señales confunden color con tormenta real.",
+      "objective": "Retirar tres reflejos falsos y construir una guía que combine color, viento y humedad.",
+      "mechanic": {
+        "name": "Lectura prismática",
+        "rules": [
+          "Observar el color desde dos ángulos.",
+          "Confirmar humedad antes de anunciar lluvia.",
+          "Marcar vidrio retirado para evitar otro reflejo."
+        ],
+        "failureSafe": "Los refugios y el camino de regreso permanecen señalizados."
+      },
+      "npcs": [
+        {
+          "name": "Ivo Espectro",
+          "sprite": "trchar009",
+          "role": "observador meteorológico",
+          "partnerPokemon": "CASTFORM",
+          "motivation": "Quiere distinguir un fenómeno local de un reflejo sin apagar la curiosidad.",
+          "conflict": "Publicaba alertas al primer cambio de color de Castform.",
+          "dialogue": {
+            "before": [
+              "Castform responde al calor del vidrio, no a una nube invisible.",
+              "El violeta solo no prueba tormenta.",
+              "Necesito dos señales físicas antes de mover a toda la llanura."
+            ],
+            "after": [
+              "La guía combina humedad, viento y color observado.",
+              "Cada alerta cita qué señales la activaron.",
+              "Los reflejos retirados quedaron registrados como causa local."
+            ]
+          }
+        },
+        {
+          "name": "Cala Muda",
+          "sprite": "NPC 04",
+          "role": "recolectora de vidrio",
+          "partnerPokemon": "KECLEON",
+          "motivation": "Busca limpiar fragmentos sin borrar marcas útiles del terreno.",
+          "conflict": "Retiraba todo brillo y también desaparecían balizas antiguas.",
+          "dialogue": {
+            "before": [
+              "Kecleon se esconde junto a vidrio nuevo, no junto a estas piedras pintadas.",
+              "Un reflejo cortante y una señal histórica no son lo mismo.",
+              "Puedo fotografiar la baliza antes de despejar el fragmento."
+            ],
+            "after": [
+              "Las balizas antiguas conservan su lugar y descripción.",
+              "El vidrio peligroso viaja en cajas opacas.",
+              "La llanura mantiene memoria sin fabricar clima."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se publicarán las alertas prismáticas?",
+        "options": [
+          "Dos señales antes de alertar",
+          "Mapa de causas locales conocidas"
+        ],
+        "immediate": [
+          "Ivo exige humedad o viento además del color.",
+          "Cala registra reflejos, balizas y zonas ya limpiadas."
+        ],
+        "later": [
+          "Los viajeros recibirán avisos menos espectaculares y más fiables.",
+          "Un nuevo color podrá investigarse sin cerrar toda la ruta."
+        ]
+      },
+      "reward": {
+        "item": "ROCKYHELMET",
+        "meaning": "Recuerda que una superficie brillante puede proteger y también exigir distancia."
+      },
+      "progression": {
+        "switchId": 769,
+        "decisionVariable": 165,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 5,
+      "mapId": 1208,
+      "flag": 770,
+      "variable": 166,
+      "title": "La Mansión de los Espejos de Salida",
+      "promise": "Los espejos de una mansión muestran antiguas rutas de evacuación y los visitantes siguen reflejos que terminan en puertas tapiadas.",
+      "objective": "Comparar el plano actual con tres reflejos y dejar visible qué salida existe, cuál fue histórica y cuál es ilusión.",
+      "mechanic": {
+        "name": "Contraplano de espejos",
+        "rules": [
+          "Comprobar la puerta antes de copiar la flecha.",
+          "Marcar reflejos históricos sin borrarlos.",
+          "Ensayar una salida real con luz baja."
+        ],
+        "failureSafe": "La entrada principal permanece abierta e iluminada."
+      },
+      "npcs": [
+        {
+          "name": "Selma Azogue",
+          "sprite": "trchar008",
+          "role": "restauradora de espejos",
+          "partnerPokemon": "ESPEON",
+          "motivation": "Quiere conservar capas históricas sin convertirlas en instrucciones actuales.",
+          "conflict": "Pulió flechas antiguas hasta hacerlas más legibles que el plano vigente.",
+          "dialogue": {
+            "before": [
+              "Espeon ve una puerta donde el espejo todavía la recuerda.",
+              "Restaurar una marca no la vuelve verdadera hoy.",
+              "Puedo conservar la capa y cambiar su función."
+            ],
+            "after": [
+              "Los reflejos históricos llevan marco ámbar y fecha.",
+              "Las salidas vigentes usan luz continua fuera del espejo.",
+              "El plano explica qué muro cambió y por qué."
+            ]
+          }
+        },
+        {
+          "name": "Tomás Prisma",
+          "sprite": "NPC 04",
+          "role": "inspector de evacuación",
+          "partnerPokemon": "STARMIE",
+          "motivation": "Busca comprobar rutas en oscuridad y con orientación limitada.",
+          "conflict": "Daba por válida una flecha si coincidía con el plano, sin caminarla.",
+          "dialogue": {
+            "before": [
+              "Starmie ilumina el pasillo; la puerta sigue sin abrir.",
+              "Una ruta se verifica con pasos, no con líneas idénticas.",
+              "Haré el recorrido desde el suelo, no desde mi escritorio."
+            ],
+            "after": [
+              "Cada salida fue recorrida y cronometrada sin público.",
+              "Las puertas cerradas llevan una señal no reflectante.",
+              "El ensayo incluye volver a la entrada si una ruta falla."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo convivirán plano actual y memoria?",
+        "options": [
+          "Marcos fechados para rutas históricas",
+          "Galería separada de reflejos antiguos"
+        ],
+        "immediate": [
+          "Selma conserva cada capa con contexto visible.",
+          "Tomás traslada los espejos ambiguos fuera del circuito de salida."
+        ],
+        "later": [
+          "La mansión podrá enseñar sus cambios sin confundir una emergencia.",
+          "Ningún reflejo volverá a sustituir una puerta comprobada."
+        ]
+      },
+      "reward": {
+        "item": "REDCARD",
+        "meaning": "Señala con claridad cuándo una ruta debe detenerse y reconsiderarse."
+      },
+      "progression": {
+        "switchId": 770,
+        "decisionVariable": 166,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 5,
+      "mapId": 1215,
+      "flag": 771,
+      "variable": 167,
+      "title": "La Meseta de los Aplausos Diferidos",
+      "promise": "En la entrada de la Liga, una grabación reproduce aplausos antes de cada resultado y convierte toda derrota en una escena que nadie eligió.",
+      "objective": "Reordenar las señales del vestíbulo para que anuncio, resultado y celebración no se adelanten entre sí.",
+      "mechanic": {
+        "name": "Secuencia de ceremonia",
+        "rules": [
+          "Esperar confirmación oficial antes del audio.",
+          "Ofrecer una salida silenciosa a ambos equipos.",
+          "Separar reconocimiento de resultado competitivo."
+        ],
+        "failureSafe": "El corredor hacia Puerto Horizonte nunca forma parte de la ceremonia."
+      },
+      "npcs": [
+        {
+          "name": "Dalia Fanfarria",
+          "sprite": "trchar009",
+          "role": "directora de ceremonias",
+          "partnerPokemon": "AEGISLASH",
+          "motivation": "Quiere celebrar esfuerzo sin escribir el resultado por adelantado.",
+          "conflict": "Automatizó aplausos para evitar silencios y terminó imponiendo una emoción.",
+          "dialogue": {
+            "before": [
+              "Aegislash baja el estandarte cuando la sala aún no sabe qué ocurrió.",
+              "El silencio puede ser cuidado, no un error técnico.",
+              "La música debe esperar a quienes acaban de combatir."
+            ],
+            "after": [
+              "El audio se activa solo después de una confirmación humana.",
+              "Cada equipo puede elegir corredor silencioso.",
+              "El reconocimiento ya no nombra vencedor antes del acta."
+            ]
+          }
+        },
+        {
+          "name": "Ruy Galería",
+          "sprite": "NPC 04",
+          "role": "encargado de espectadores",
+          "partnerPokemon": "BRAVIARY",
+          "motivation": "Busca ordenar salidas sin convertir la tribuna en jurado permanente.",
+          "conflict": "Abría primero el corredor más ruidoso porque parecía el más entusiasta.",
+          "dialogue": {
+            "before": [
+              "Braviary ve dos pasillos libres; yo siempre elegía el de las banderas.",
+              "Una multitud no debería decidir por dónde descansa alguien.",
+              "Puedo abrir ambos corredores y anunciar sus condiciones."
+            ],
+            "after": [
+              "La galería muestra ruta tranquila y ruta pública.",
+              "Los espectadores esperan la señal oficial antes de levantarse.",
+              "Ningún equipo cruza una celebración ajena por obligación."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo terminará cada encuentro?",
+        "options": [
+          "Resultado, pausa y celebración opcional",
+          "Dos salidas con niveles de exposición"
+        ],
+        "immediate": [
+          "Dalia incorpora un intervalo sin música.",
+          "Ruy abre corredores equivalentes y claramente descritos."
+        ],
+        "later": [
+          "La Liga podrá reconocer sin imponer espectáculo.",
+          "Los resultados conservarán precisión y una salida digna."
+        ]
+      },
+      "reward": {
+        "item": "SHEDSHELL",
+        "meaning": "Representa el derecho a abandonar una escena sin quedar atrapado en su papel."
+      },
+      "progression": {
+        "switchId": 771,
+        "decisionVariable": 167,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 5,
+      "mapId": 1226,
+      "flag": 772,
+      "variable": 168,
+      "title": "El Dirigible que Cargaba Sombras",
+      "promise": "Un dirigible solar calcula su lastre por la sombra de cada pasajero y pierde equilibrio cuando el sol cambia de ángulo.",
+      "objective": "Comparar peso real, posición y sombra en tres momentos antes de autorizar el despegue.",
+      "mechanic": {
+        "name": "Mesa de lastre solar",
+        "rules": [
+          "Medir carga sin inferirla del tamaño de la sombra.",
+          "Registrar el ángulo del sol por separado.",
+          "Dejar un margen para movimiento durante el vuelo."
+        ],
+        "failureSafe": "La pasarela de desembarque permanece conectada hasta la autorización final."
+      },
+      "npcs": [
+        {
+          "name": "Sol Vareda",
+          "sprite": "trchar008",
+          "role": "navegante de altura",
+          "partnerPokemon": "SOLROCK",
+          "motivation": "Quiere usar el sol como referencia sin convertirlo en báscula.",
+          "conflict": "Confundió una correlación de mediodía con una regla universal.",
+          "dialogue": {
+            "before": [
+              "Solrock marca el ángulo; no pesa la maleta.",
+              "Una sombra larga puede pertenecer a una carga ligera.",
+              "Necesito números que sigan aquí cuando cambie la tarde."
+            ],
+            "after": [
+              "La carta separa masa, posición y ángulo solar.",
+              "El cálculo incluye movimiento y reserva de combustible.",
+              "Las sombras volvieron a ser brújula, no juicio."
+            ]
+          }
+        },
+        {
+          "name": "Aro Quemador",
+          "sprite": "NPC 04",
+          "role": "técnico de envolvente",
+          "partnerPokemon": "TALONFLAME",
+          "motivation": "Busca aprovechar calor sin debilitar la tela del dirigible.",
+          "conflict": "Aumentaba temperatura para compensar cálculos de lastre equivocados.",
+          "dialogue": {
+            "before": [
+              "Talonflame detectó una costura caliente antes que mi sensor.",
+              "Más calor no corrige una cifra inventada.",
+              "Voy a bajar la llama y revisar la distribución."
+            ],
+            "after": [
+              "Los quemadores responden a temperatura y altura reales.",
+              "Cada costura tiene un límite visible en la consola.",
+              "El dirigible despega estable sin forzar la envolvente."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué método autorizará el despegue?",
+        "options": [
+          "Pesaje y distribución manual",
+          "Sensores dobles con revisión humana"
+        ],
+        "immediate": [
+          "Sol dirige una mesa de carga comprobable.",
+          "Aro cruza masa, temperatura y posición antes de liberar amarras."
+        ],
+        "later": [
+          "Las rutas solares conservarán precisión al cambiar la luz.",
+          "Ningún pasajero volverá a ser estimado por su sombra."
+        ]
+      },
+      "reward": {
+        "item": "AIRBALLOON",
+        "meaning": "Celebra un vuelo ligero sostenido por medidas reales y margen de seguridad."
+      },
+      "progression": {
+        "switchId": 772,
+        "decisionVariable": 168,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 6,
+      "mapId": 1233,
+      "flag": 773,
+      "variable": 169,
+      "title": "El Faro que Pintaba el Sol",
+      "promise": "Un faro insular pinta franjas amarillas sobre las rocas para anunciar sol seguro, pero la marea borra unas antes que otras y crea rutas falsas.",
+      "objective": "Revisar tres marcas con marea alta y diseñar señales que no dependan de una pintura temporal.",
+      "mechanic": {
+        "name": "Lectura de costa",
+        "rules": [
+          "Comparar marca, altura y hora de marea.",
+          "Usar textura además de color.",
+          "Mantener visible la ruta de retirada."
+        ],
+        "failureSafe": "El embarcadero queda abierto durante toda la inspección."
+      },
+      "npcs": [
+        {
+          "name": "Helia Brocha",
+          "sprite": "trchar009",
+          "role": "pintora del faro",
+          "partnerPokemon": "HELIOLISK",
+          "motivation": "Quiere que sus marcas orienten sin prometer un mar inmóvil.",
+          "conflict": "Usó el mismo amarillo para sol, roca seca y paso recomendado.",
+          "dialogue": {
+            "before": [
+              "Heliolisk toma sol donde la roca sigue mojada.",
+              "Mi amarillo dice tres cosas y ninguna con suficiente precisión.",
+              "La próxima señal debe poder leerse después de perder color."
+            ],
+            "after": [
+              "Las marcas combinan relieve, símbolo y hora de referencia.",
+              "El amarillo quedó reservado para orientación, no seguridad absoluta.",
+              "Cada ruta muestra hasta qué marea es transitable."
+            ]
+          }
+        },
+        {
+          "name": "Tano Caldera",
+          "sprite": "NPC 04",
+          "role": "cuidador del faro",
+          "partnerPokemon": "TORKOAL",
+          "motivation": "Busca mantener la lente seca sin calentar nidos de la cornisa.",
+          "conflict": "Dirigía vapor hacia afuera y cambiaba la temperatura de las rocas cercanas.",
+          "dialogue": {
+            "before": [
+              "Torkoal seca la lente; el conducto calienta más allá de la ventana.",
+              "Los huevos no aparecen en mi plano de mantenimiento.",
+              "Puedo girar la salida y conservar el faro limpio."
+            ],
+            "after": [
+              "El vapor sale hacia una chimenea interior.",
+              "La cornisa tiene una franja térmica protegida.",
+              "La lente funciona sin convertir el nido en radiador."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se marcarán los pasos costeros?",
+        "options": [
+          "Relieves con tabla de mareas",
+          "Balizas móviles revisadas cada día"
+        ],
+        "immediate": [
+          "Helia talla símbolos que sobreviven a la pintura.",
+          "Tano coloca balizas fuera de nidos y registra cada traslado."
+        ],
+        "later": [
+          "Los visitantes distinguirán orientación y garantía.",
+          "El faro podrá adaptarse sin dejar rastros engañosos."
+        ]
+      },
+      "reward": {
+        "item": "ABSORBBULB",
+        "meaning": "Convierte el contacto con el agua en una señal útil, no en una promesa de suelo seco."
+      },
+      "progression": {
+        "switchId": 773,
+        "decisionVariable": 169,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 6,
+      "mapId": 1240,
+      "flag": 774,
+      "variable": 170,
+      "title": "La Sombra que Llegaba Primero",
+      "promise": "En una reserva solar, los refugios móviles persiguen automáticamente a quien proyecta la sombra más corta y dejan atrás a Pokémon lentos.",
+      "objective": "Observar tres desplazamientos y programar refugios que prioricen temperatura y acceso, no velocidad aparente.",
+      "mechanic": {
+        "name": "Ronda de sombra",
+        "rules": [
+          "Medir suelo y cuerpo antes de mover el techo.",
+          "Reservar espacio para especies de paso lento.",
+          "Anunciar cada traslado con una ruta alternativa."
+        ],
+        "failureSafe": "Un refugio fijo permanece junto al retorno."
+      },
+      "npcs": [
+        {
+          "name": "Mara Alero",
+          "sprite": "trchar008",
+          "role": "guardabosques solar",
+          "partnerPokemon": "MARACTUS",
+          "motivation": "Quiere repartir sombra donde reduce daño real.",
+          "conflict": "Programó los techos con siluetas rápidas y confundió movimiento con urgencia.",
+          "dialogue": {
+            "before": [
+              "Maractus soporta este sol; ese Sandshrew no debería demostrar nada.",
+              "La sombra corta solo dice dónde está el sol.",
+              "Moveré el techo cuando suba la temperatura, no cuando alguien corra."
+            ],
+            "after": [
+              "Los sensores leen suelo, aire y solicitud manual.",
+              "Cada refugio reserva un borde de acceso lento.",
+              "El traslado se anuncia antes de cerrar la sombra anterior."
+            ]
+          }
+        },
+        {
+          "name": "Felo Corriente",
+          "sprite": "NPC 04",
+          "role": "guía de dunas",
+          "partnerPokemon": "FLYGON",
+          "motivation": "Busca usar corrientes frescas sin levantar arena sobre los bebederos.",
+          "conflict": "Abría corredores de viento que ayudaban a viajeros y cubrían fuentes pequeñas.",
+          "dialogue": {
+            "before": [
+              "Flygon encuentra aire fresco dos metros más arriba.",
+              "Mi corredor funciona para mí y llena de arena el bebedero.",
+              "Puedo desviar la corriente con paneles bajos."
+            ],
+            "after": [
+              "Los paneles protegen agua y dejan pasar aire alto.",
+              "La ruta fresca incluye pausas bajo refugio fijo.",
+              "Cada ráfaga se prueba antes de abrir el sendero."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo decidirán los refugios cuándo moverse?",
+        "options": [
+          "Temperatura y solicitud manual",
+          "Circuito fijo con reservas lentas"
+        ],
+        "immediate": [
+          "Mara combina sensores con un control accesible.",
+          "Felo diseña horarios que nunca dejan toda la ruta sin sombra."
+        ],
+        "later": [
+          "La reserva cuidará necesidad, no apariencia de resistencia.",
+          "Los movimientos futuros conservarán un refugio estable."
+        ]
+      },
+      "reward": {
+        "item": "CELLBATTERY",
+        "meaning": "Guarda energía para mover protección cuando haga falta, no cuando una silueta lo ordene."
+      },
+      "progression": {
+        "switchId": 774,
+        "decisionVariable": 170,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 6,
+      "mapId": 1251,
+      "flag": 775,
+      "variable": 171,
+      "title": "La Casa del Calendario Mojado",
+      "promise": "Una casa costera adelanta cada tarea cuando la luna llena aparece en el calendario, aunque la marea real llegue horas después.",
+      "objective": "Comparar calendario, marca del muelle y humedad del sótano para separar previsión y momento de actuar.",
+      "mechanic": {
+        "name": "Reloj de mareas",
+        "rules": [
+          "Leer la tabla como intervalo, no como campana exacta.",
+          "Confirmar agua en la marca exterior.",
+          "Mantener pertenencias elevadas sin evacuar antes de tiempo."
+        ],
+        "failureSafe": "La puerta alta hacia el retorno permanece despejada."
+      },
+      "npcs": [
+        {
+          "name": "Luna Estela",
+          "sprite": "trchar009",
+          "role": "lectora de mareas",
+          "partnerPokemon": "LUNATONE",
+          "motivation": "Quiere anticipar el agua sin convertir la luna en una orden doméstica.",
+          "conflict": "Anunciaba una hora exacta y hacía repetir falsas alarmas.",
+          "dialogue": {
+            "before": [
+              "Lunatone señala un ciclo, no el minuto de la primera gota.",
+              "La tabla ofrece una ventana; yo la convertí en campana.",
+              "Podemos prepararnos sin abandonar la casa demasiado pronto."
+            ],
+            "after": [
+              "El calendario muestra intervalo y nivel esperado.",
+              "La marca del muelle confirma cuándo actuar.",
+              "Cada alerta explica qué observación falta."
+            ]
+          }
+        },
+        {
+          "name": "Nora Viga",
+          "sprite": "NPC 04",
+          "role": "carpintera de litoral",
+          "partnerPokemon": "NOCTOWL",
+          "motivation": "Busca elevar objetos vulnerables sin bloquear ventanas y salidas.",
+          "conflict": "Construyó estantes permanentes que hicieron segura la marea y difícil la vida diaria.",
+          "dialogue": {
+            "before": [
+              "Noctowl cabe bajo la viga; una persona cargando cajas no.",
+              "Proteger del agua no debería cerrar la ventana.",
+              "Haré soportes plegables y dejaré libre el pasillo."
+            ],
+            "after": [
+              "Los estantes bajan cuando termina la ventana de marea.",
+              "La salida alta conserva ancho para transportar equipo.",
+              "Cada soporte muestra su carga máxima."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo activará la casa su preparación?",
+        "options": [
+          "Ventana prevista más marca real",
+          "Preparación gradual por niveles"
+        ],
+        "immediate": [
+          "Luna combina calendario y lectura del muelle.",
+          "Nora eleva primero lo vulnerable y conserva el uso cotidiano."
+        ],
+        "later": [
+          "Otras casas podrán prepararse sin vivir en alarma.",
+          "La luna volverá a orientar sin dictar una hora falsa."
+        ]
+      },
+      "reward": {
+        "item": "LUMINOUSMOSS",
+        "meaning": "Conserva una señal suave de humedad sin convertirla en alarma absoluta."
+      },
+      "progression": {
+        "switchId": 775,
+        "decisionVariable": 171,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 6,
+      "mapId": 1258,
+      "flag": 776,
+      "variable": 172,
+      "title": "El Jardín que Encendía la Noche",
+      "promise": "Un jardín lunar ilumina todas sus flores para atraer visitantes y desorienta a los polinizadores que solo trabajan en oscuridad.",
+      "objective": "Identificar tres rutas de polinización y repartir luz, penumbra y oscuridad sin cerrar el paseo.",
+      "mechanic": {
+        "name": "Mapa de vuelo nocturno",
+        "rules": [
+          "Observar antes de encender una lámpara.",
+          "Distinguir ruta de visitantes y ruta de polinizadores.",
+          "Reducir luz de forma gradual y reversible."
+        ],
+        "failureSafe": "El sendero principal conserva balizas bajas de regreso."
+      },
+      "npcs": [
+        {
+          "name": "Meli Penumbra",
+          "sprite": "trchar008",
+          "role": "botánica nocturna",
+          "partnerPokemon": "MORELULL",
+          "motivation": "Quiere que las flores mantengan ciclos propios y sigan siendo visitables.",
+          "conflict": "Aceptó iluminación continua para la feria y perdió las rutas de esporas.",
+          "dialogue": {
+            "before": [
+              "Morelull brilla lo suficiente para encontrarse entre sí.",
+              "Una flor visible para nosotros puede quedar invisible para su polinizador.",
+              "Apagaré por franjas y observaré qué vuelve."
+            ],
+            "after": [
+              "El jardín alterna zonas oscuras durante toda la noche.",
+              "Las balizas humanas apuntan al suelo y no a las flores.",
+              "Cada cambio tiene registro de vuelo y floración."
+            ]
+          }
+        },
+        {
+          "name": "Vito Farol",
+          "sprite": "NPC 04",
+          "role": "técnico de iluminación",
+          "partnerPokemon": "VOLBEAT",
+          "motivation": "Busca guiar visitantes sin competir con señales naturales.",
+          "conflict": "Sincronizó faroles con Volbeat y multiplicó destellos hasta borrar sus patrones.",
+          "dialogue": {
+            "before": [
+              "Volbeat repite tres luces; mis faroles responden con treinta.",
+              "Una guía útil no necesita imitar a quien vive aquí.",
+              "Puedo usar luz fija, baja y fuera de la copa."
+            ],
+            "after": [
+              "Los faroles dejaron de parpadear.",
+              "La ruta pública usa tonos que no imitan llamadas.",
+              "Volbeat recuperó una señal legible sobre el estanque."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo funcionará el jardín durante la feria?",
+        "options": [
+          "Franjas oscuras permanentes",
+          "Visitas por turnos de luz baja"
+        ],
+        "immediate": [
+          "Meli protege corredores de polinización toda la noche.",
+          "Vito reduce aforo y enciende solo la ruta activa."
+        ],
+        "later": [
+          "El jardín podrá recibir personas sin perder su noche.",
+          "Las futuras ferias medirán también el regreso de polinizadores."
+        ]
+      },
+      "reward": {
+        "item": "SNOWBALL",
+        "meaning": "Una esfera clara que invita a usar la luz con mesura y dirección."
+      },
+      "progression": {
+        "switchId": 776,
+        "decisionVariable": 172,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 6,
+      "mapId": 1265,
+      "flag": 777,
+      "variable": 173,
+      "title": "El Estadio de la Segunda Luna",
+      "promise": "Los focos de un estadio proyectan una luna artificial que altera horarios de Pokémon nocturnos y hace comenzar combates antes de que ambos equipos estén listos.",
+      "objective": "Probar tres escenas de iluminación y fijar una señal de inicio independiente del cielo artificial.",
+      "mechanic": {
+        "name": "Ensayo de focos",
+        "rules": [
+          "Separar ambientación y orden de inicio.",
+          "Confirmar preparación de ambos equipos.",
+          "Apagar la luna artificial entre sesiones."
+        ],
+        "failureSafe": "Las puertas laterales permanecen abiertas fuera de cada prueba."
+      },
+      "npcs": [
+        {
+          "name": "Uma Reflector",
+          "sprite": "trchar009",
+          "role": "diseñadora de luces",
+          "partnerPokemon": "UMBREON",
+          "motivation": "Quiere crear una noche escénica que no invada el ritmo de los Pokémon.",
+          "conflict": "Mantuvo la luna artificial encendida durante descansos y ensayos.",
+          "dialogue": {
+            "before": [
+              "Umbreon busca sombra cuando mi luna debería ser decoración.",
+              "El estadio no necesita fingir medianoche durante seis horas.",
+              "La escena empieza después del acuerdo, no con el interruptor."
+            ],
+            "after": [
+              "La luna artificial se apaga entre sesiones.",
+              "La orden de inicio usa paneles independientes.",
+              "Cada equipo puede pedir adaptación gradual de luz."
+            ]
+          }
+        },
+        {
+          "name": "Miro Palco",
+          "sprite": "NPC 04",
+          "role": "coordinador deportivo",
+          "partnerPokemon": "MISMAGIUS",
+          "motivation": "Busca entradas memorables sin convertir un efecto en regla.",
+          "conflict": "Usaba la aparición de Mismagius como señal automática y adelantaba la apertura.",
+          "dialogue": {
+            "before": [
+              "Mismagius ensaya una entrada; no está llamando a combatir.",
+              "Un efecto teatral no debería tener autoridad deportiva.",
+              "Voy a esperar dos confirmaciones antes de abrir el campo."
+            ],
+            "after": [
+              "El palco recibe confirmación de ambas zonas técnicas.",
+              "Las entradas pueden repetirse sin iniciar marcador.",
+              "El público conoce la señal oficial y deja de adivinar."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué separará espectáculo e inicio?",
+        "options": [
+          "Panel doble de confirmación",
+          "Campana oficial sin efectos"
+        ],
+        "immediate": [
+          "Uma instala controles ajenos a los focos.",
+          "Miro reserva una señal sencilla para el reglamento."
+        ],
+        "later": [
+          "Otros estadios podrán usar ambientación sin confundir preparación.",
+          "Los Pokémon nocturnos recuperarán pausas oscuras reales."
+        ]
+      },
+      "reward": {
+        "item": "ZOOMLENS",
+        "meaning": "Ayuda a enfocar la señal correcta entre muchos efectos brillantes."
+      },
+      "progression": {
+        "switchId": 777,
+        "decisionVariable": 173,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 7,
+      "mapId": 1276,
+      "flag": 778,
+      "variable": 174,
+      "title": "La Sala de los Sueños en Fila",
+      "promise": "Un Centro Pokémon ordena el descanso según sueños contados al despertar y quienes no recuerdan ninguno pierden su turno de cama.",
+      "objective": "Rediseñar la lista de descanso usando llegada, necesidad y preferencia sin exigir relatos privados.",
+      "mechanic": {
+        "name": "Turno de reposo",
+        "rules": [
+          "Registrar llegada sin interpretar sueños.",
+          "Reservar camas clínicas por necesidad observable.",
+          "Ofrecer espacios de descanso sin obligación de dormir."
+        ],
+        "failureSafe": "La curación y la salida permanecen disponibles para todos."
+      },
+      "npcs": [
+        {
+          "name": "Sena Almohada",
+          "sprite": "trchar008",
+          "role": "coordinadora de descanso",
+          "partnerPokemon": "MUSHARNA",
+          "motivation": "Quiere cuidar el sueño sin convertirlo en entrada al servicio.",
+          "conflict": "Usaba las nubes de Musharna para decidir quién había descansado de verdad.",
+          "dialogue": {
+            "before": [
+              "Musharna ve imágenes; no mide cuánto pesa un párpado.",
+              "No recordar un sueño no borra el cansancio.",
+              "La cama debe responder a necesidad, no a una historia interesante."
+            ],
+            "after": [
+              "La lista usa llegada, solicitud y prioridad clínica separada.",
+              "Contar un sueño es opcional y no cambia el turno.",
+              "También hay sillones para quien prefiere no dormir."
+            ]
+          }
+        },
+        {
+          "name": "Polo Siesta",
+          "sprite": "NPC 04",
+          "role": "cuidador de sala",
+          "partnerPokemon": "KOMALA",
+          "motivation": "Busca mantener silencio sin imponer el mismo horario a todos.",
+          "conflict": "Apagaba luces a una hora fija y dejaba desorientados a viajeros recién llegados.",
+          "dialogue": {
+            "before": [
+              "Komala descansa con luz tenue; otra persona puede necesitar verla.",
+              "Silencio y oscuridad no son la misma opción.",
+              "Pondré cortinas individuales en vez de apagar la sala."
+            ],
+            "after": [
+              "Cada cama controla luz y cortina por separado.",
+              "La zona de paso conserva una guía visible.",
+              "Los avisos se entregan sin despertar toda la sala."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se organizará el descanso?",
+        "options": [
+          "Turnos visibles sin relatos",
+          "Zonas flexibles de sueño y vigilia"
+        ],
+        "immediate": [
+          "Sena publica criterios y protege privacidad.",
+          "Polo divide iluminación y ruido por espacios."
+        ],
+        "later": [
+          "Los centros podrán cuidar cansancio sin clasificar sueños.",
+          "Una noche difícil no tendrá que convertirse en explicación pública."
+        ]
+      },
+      "reward": {
+        "item": "SCOPELENS",
+        "meaning": "Invita a observar la necesidad concreta sin invadir el contenido de un sueño."
+      },
+      "progression": {
+        "switchId": 778,
+        "decisionVariable": 174,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 7,
+      "mapId": 1283,
+      "flag": 779,
+      "variable": 175,
+      "title": "La Isla de las Cartas sin Destino",
+      "promise": "Dragonite transporta cartas cuyo destino dice solo «donde haga falta» y termina acumulándolas porque nadie se atreve a decidir por sus autores.",
+      "objective": "Clasificar mensajes por alcance, urgencia y permiso de reenvío sin inventar un destinatario.",
+      "mechanic": {
+        "name": "Mesa de correspondencia",
+        "rules": [
+          "Distinguir mensaje abierto y carta personal.",
+          "Confirmar si existe permiso de reenvío.",
+          "Crear un archivo local para lo que no debe viajar."
+        ],
+        "failureSafe": "El muelle de regreso queda fuera de la ruta postal."
+      },
+      "npcs": [
+        {
+          "name": "Dina Franqueo",
+          "sprite": "trchar009",
+          "role": "encargada postal",
+          "partnerPokemon": "DRAGONITE",
+          "motivation": "Quiere que cada mensaje llegue sin adjudicarle un dueño ficticio.",
+          "conflict": "Interpretaba frases vagas como autorización universal para reenviar.",
+          "dialogue": {
+            "before": [
+              "Dragonite puede cruzar el mar; eso no decide quién debe abrir el sobre.",
+              "Donde haga falta puede significar aquí, en un tablón público.",
+              "Necesito separar alcance y deseo de viajar."
+            ],
+            "after": [
+              "Las cartas personales exigen destino confirmado.",
+              "Los mensajes abiertos tienen tablón y fecha de retiro.",
+              "Lo no enviado conserva una nota clara, no una derrota."
+            ]
+          }
+        },
+        {
+          "name": "Salo Corriente",
+          "sprite": "NPC 04",
+          "role": "vigía de rutas aéreas",
+          "partnerPokemon": "SALAMENCE",
+          "motivation": "Busca evitar vuelos innecesarios durante tormentas.",
+          "conflict": "Priorizaba cualquier sobre marcado urgente aunque la palabra viniera de una plantilla.",
+          "dialogue": {
+            "before": [
+              "Salamence olió lluvia antes de que yo leyera el sello rojo.",
+              "Urgente impreso no explica qué ocurre si espera.",
+              "Pediré plazo y consecuencia, no dramatismo."
+            ],
+            "after": [
+              "Cada envío declara plazo real y alternativa local.",
+              "Las tormentas suspenden rutas sin perder el turno postal.",
+              "El sello rojo requiere una revisión humana."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué ocurrirá con las cartas sin destino?",
+        "options": [
+          "Archivo local con revisión periódica",
+          "Tablón abierto solo con permiso"
+        ],
+        "immediate": [
+          "Dina conserva sobres cerrados y consulta a remitentes cuando sea posible.",
+          "Salo publica únicamente mensajes declarados abiertos."
+        ],
+        "later": [
+          "La isla respetará tanto el viaje como la decisión de no enviarlo.",
+          "Las rutas aéreas llevarán menos urgencias fabricadas."
+        ]
+      },
+      "reward": {
+        "item": "RAZORCLAW",
+        "meaning": "Simboliza precisión al abrir una ruta, nunca un sobre sin permiso."
+      },
+      "progression": {
+        "switchId": 779,
+        "decisionVariable": 175,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 7,
+      "mapId": 1290,
+      "flag": 780,
+      "variable": 176,
+      "title": "La Casa que Despertaba por Turnos",
+      "promise": "Un hogar conectado despierta una habitación cada vez que Hypno detecta movimiento y termina repartiendo el insomnio por toda la casa.",
+      "objective": "Separar señales de seguridad, rutinas personales y movimientos normales antes de reprogramar las alarmas.",
+      "mechanic": {
+        "name": "Ronda de despertar",
+        "rules": [
+          "Identificar qué movimiento requiere aviso.",
+          "Probar alarmas dentro de una sola habitación.",
+          "Mantener un control manual junto a cada cama."
+        ],
+        "failureSafe": "La puerta de salida no depende del sistema doméstico."
+      },
+      "npcs": [
+        {
+          "name": "Elo Ronda",
+          "sprite": "trchar008",
+          "role": "cuidador nocturno",
+          "partnerPokemon": "HYPNO",
+          "motivation": "Quiere detectar riesgos sin convertir cada paso en alarma.",
+          "conflict": "Conectó los pulsos de Hypno a todas las luces de la casa.",
+          "dialogue": {
+            "before": [
+              "Hypno nota que alguien gira en la cama; no significa que necesite ayuda.",
+              "Una señal útil debe llegar a la habitación correcta.",
+              "Voy a dejar de despertar a todos para demostrar que vigilo."
+            ],
+            "after": [
+              "Las alertas se limitan por habitación y tipo de riesgo.",
+              "Cada persona controla luz y sonido junto a su cama.",
+              "El registro guarda incidentes, no movimientos cotidianos."
+            ]
+          }
+        },
+        {
+          "name": "Lía Felpa",
+          "sprite": "NPC 04",
+          "role": "diseñadora de rutinas",
+          "partnerPokemon": "DELCATTY",
+          "motivation": "Busca crear avisos suaves para quien sí los solicita.",
+          "conflict": "Usaba la misma melodía para levantarse, medicina y emergencia.",
+          "dialogue": {
+            "before": [
+              "Delcatty ignora la canción porque ya no significa nada preciso.",
+              "Tres avisos distintos merecen tres sonidos distintos.",
+              "También necesito una forma clara de posponer sin cancelar."
+            ],
+            "after": [
+              "Las melodías distinguen rutina, cuidado y emergencia.",
+              "Posponer una alarma no desactiva las demás.",
+              "Cada horario se revisa con quien duerme en la habitación."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se repartirán las alertas nocturnas?",
+        "options": [
+          "Circuitos privados por habitación",
+          "Avisos graduados por tipo de riesgo"
+        ],
+        "immediate": [
+          "Elo instala límites físicos y controles locales.",
+          "Lía asigna sonidos y niveles acordados."
+        ],
+        "later": [
+          "La casa podrá cuidar sin sincronizar el insomnio.",
+          "Los sistemas futuros tratarán movimiento y peligro como datos distintos."
+        ]
+      },
+      "reward": {
+        "item": "QUICKCLAW",
+        "meaning": "Permite responder con rapidez cuando corresponde, no ante cada movimiento nocturno."
+      },
+      "progression": {
+        "switchId": 780,
+        "decisionVariable": 176,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 7,
+      "mapId": 1301,
+      "flag": 781,
+      "variable": 177,
+      "title": "La Cocina que Atraía los Cubiertos",
+      "promise": "Una casa del valle magnético concentra los cubiertos sobre una pared y culpa a Magnemite, aunque el verdadero origen es una batería instalada bajo la mesa.",
+      "objective": "Rastrear tres campos magnéticos y reorganizar la cocina sin expulsar a los Pokémon que viven en el tejado.",
+      "mechanic": {
+        "name": "Rastreo de polaridad",
+        "rules": [
+          "Probar un objeto a la vez.",
+          "Apagar cada circuito antes de culpar a una fuente externa.",
+          "Mantener una ruta sin metal hacia la salida."
+        ],
+        "failureSafe": "La puerta y el interruptor general quedan siempre accesibles."
+      },
+      "npcs": [
+        {
+          "name": "Mina Polo",
+          "sprite": "trchar009",
+          "role": "electricista doméstica",
+          "partnerPokemon": "MAGNEMITE",
+          "motivation": "Quiere localizar la fuente real antes de mover a la colonia del tejado.",
+          "conflict": "Asumió que el Pokémon más visible causaba cualquier anomalía magnética.",
+          "dialogue": {
+            "before": [
+              "Magnemite duerme arriba; el tenedor apunta hacia abajo.",
+              "La dirección del tirón ya contradice mi primera historia.",
+              "Apagaré circuitos antes de buscar un culpable cómodo."
+            ],
+            "after": [
+              "La batería bajo la mesa tiene blindaje y corte independiente.",
+              "La colonia conserva su nido lejos del cableado.",
+              "El plano muestra intensidad y dirección de cada campo."
+            ]
+          }
+        },
+        {
+          "name": "Boro Nivel",
+          "sprite": "NPC 04",
+          "role": "constructor de mobiliario",
+          "partnerPokemon": "PROBOPASS",
+          "motivation": "Busca fijar armarios sin convertir la cocina en una jaula metálica.",
+          "conflict": "Añadió placas de acero para resistir el tirón y amplificó el problema.",
+          "dialogue": {
+            "before": [
+              "Probopass señala la pared porque mis placas repiten el campo.",
+              "Más metal no siempre significa más estabilidad.",
+              "Puedo usar madera, distancia y anclajes pequeños."
+            ],
+            "after": [
+              "Los armarios usan refuerzos no magnéticos.",
+              "Los utensilios tienen un cajón fuera del campo residual.",
+              "La ruta de salida quedó libre de objetos atraídos."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se aislará la cocina?",
+        "options": [
+          "Blindaje localizado en la batería",
+          "Redistribución con materiales no magnéticos"
+        ],
+        "immediate": [
+          "Mina encierra la fuente y conserva acceso al corte.",
+          "Boro reemplaza placas y separa almacenamiento."
+        ],
+        "later": [
+          "Las casas del valle rastrearán dirección antes de culpar a un Pokémon.",
+          "Las reparaciones futuras podrán revertirse sin rehacer la vivienda."
+        ]
+      },
+      "reward": {
+        "item": "LAGGINGTAIL",
+        "meaning": "Recuerda desacelerar el diagnóstico antes de seguir la primera atracción."
+      },
+      "progression": {
+        "switchId": 781,
+        "decisionVariable": 177,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 7,
+      "mapId": 1308,
+      "flag": 782,
+      "variable": 178,
+      "title": "El Almacén de las Garantías Eléctricas",
+      "promise": "Una tienda rechaza aparatos devueltos si el comprador no puede reproducir la chispa frente al mostrador, aunque la falla solo aparece durante tormentas magnéticas.",
+      "objective": "Diseñar una prueba segura que acepte fallas intermitentes y conserve evidencia sin provocar otra descarga.",
+      "mechanic": {
+        "name": "Banco de diagnóstico",
+        "rules": [
+          "Registrar condiciones sin recrear peligro.",
+          "Separar daño visible y falla intermitente.",
+          "Ofrecer reemplazo temporal durante la revisión."
+        ],
+        "failureSafe": "El ascensor y el corte general permanecen fuera del banco de prueba."
+      },
+      "npcs": [
+        {
+          "name": "Tera Bobina",
+          "sprite": "trchar008",
+          "role": "técnica de garantías",
+          "partnerPokemon": "ELECTIVIRE",
+          "motivation": "Quiere comprobar fallas sin exigir una descarga como espectáculo.",
+          "conflict": "Aplicaba una prueba de mostrador diseñada para averías constantes.",
+          "dialogue": {
+            "before": [
+              "Electivire detecta residuo; no necesitamos fabricar otra chispa.",
+              "Que hoy funcione no borra lo ocurrido durante la tormenta.",
+              "La garantía debe investigar condiciones, no desconfiar por defecto."
+            ],
+            "after": [
+              "El banco registra residuo, relato técnico y fecha magnética.",
+              "Las pruebas peligrosas se simulan con carga limitada.",
+              "Cada revisión entrega un aparato temporal compatible."
+            ]
+          }
+        },
+        {
+          "name": "Gus Etiqueta",
+          "sprite": "NPC 04",
+          "role": "encargado de inventario",
+          "partnerPokemon": "TOGEDEMARU",
+          "motivation": "Busca rastrear lotes defectuosos sin publicar datos de compradores.",
+          "conflict": "Pegaba nombres personales en cada aparato para seguir devoluciones.",
+          "dialogue": {
+            "before": [
+              "Togedemaru reconoce el lote por tornillo y serie, no por apellido.",
+              "Puedo encontrar un patrón sin convertir clientes en etiquetas.",
+              "La ficha necesita modelo, fecha y síntoma; nada más."
+            ],
+            "after": [
+              "Las devoluciones usan códigos de lote anónimos.",
+              "El tablero muestra patrones técnicos sin nombres.",
+              "Un lote sospechoso puede retirarse antes de otra falla."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué bastará para aceptar una falla intermitente?",
+        "options": [
+          "Evidencia técnica y condiciones registradas",
+          "Patrón de lote más relato del síntoma"
+        ],
+        "immediate": [
+          "Tera abre diagnóstico sin exigir repetición peligrosa.",
+          "Gus cruza series anónimas y retira lotes coincidentes."
+        ],
+        "later": [
+          "Las tiendas del valle reconocerán fallas que no actúan a pedido.",
+          "La seguridad pesará más que una demostración inmediata."
+        ]
+      },
+      "reward": {
+        "item": "RINGTARGET",
+        "meaning": "Convierte un problema difícil de reproducir en un objetivo de revisión concreto."
+      },
+      "progression": {
+        "switchId": 782,
+        "decisionVariable": 178,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    }
+  ]
+}

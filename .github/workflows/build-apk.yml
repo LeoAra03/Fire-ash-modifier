@@ -2,8 +2,11 @@ name: PokeMod — Tests + APK
 
 on:
   push:
-    branches: ["arena/01a0de4c-fire-ash-modifier"]
-    paths: ["web/**", "android/**", "tools/**", ".github/workflows/build-apk.yml"]
+    branches: ["arena/01a0e109-fire-ash-modifier"]
+    paths: ["web/**", "android/**", "tools/**", "content/**", "docs/**", ".github/workflows/build-apk.yml"]
+  pull_request:
+    branches: ["main"]
+    paths: ["web/**", "android/**", "tools/**", "content/**", "docs/**", ".github/workflows/build-apk.yml"]
   workflow_dispatch: {}
   release:
     types: [created]
@@ -21,9 +24,17 @@ jobs:
         run: node web/js/marshal.test.mjs
       - name: Integración del núcleo
         run: node web/js/integration.test.mjs
+      - name: Interfaz con DOM simulado
+        run: |
+          npm install --no-save --no-package-lock jsdom@27
+          node web/js/ui.test.mjs
+      - name: Autoría externa y fidelidad a Fire Ash
+        run: node tools/external_authoring.test.mjs
+      - name: Pipeline narrativo con compuertas externas
+        run: node tools/atlas_narrative_pipeline.mjs --qa content/atlas_tier1_blueprints_approved.json
       - name: Sintaxis de todos los módulos
         run: |
-          for f in web/js/*.js; do
+          for f in web/js/*.js tools/*.mjs tools/lib/*.mjs; do
             case "$f" in *.test.mjs) continue;; esac
             node --check "$f" || exit 1
           done

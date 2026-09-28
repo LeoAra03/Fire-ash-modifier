@@ -1,0 +1,1886 @@
+{
+  "batch": 7,
+  "iteration": 1,
+  "blueprints": [
+    {
+      "mapId": 1646,
+      "tier": 1,
+      "title": "La Estatua que Ensayaba Ciudades",
+      "oneSentencePromise": "Una estatua arqueológica talla cada noche una civilización futura distinta y obliga al pueblo a decidir si sus habitantes son profecías, propuestas o personas usadas como argumentos.",
+      "biome": {
+        "identity": "Casa de ruta convertida en taller arqueológico costero, con una estatua central, archivos y herramientas de restauración",
+        "visualStorytelling": [
+          "El relieve central muestra edificios que cambian después de cada asamblea.",
+          "Tres capas de piedra usan técnicas pertenecientes a siglos incompatibles.",
+          "Los pasillos dejan una ruta jugable completa alrededor de la pieza acordonada."
+        ],
+        "ambientChanges": [
+          "Golpes de cincel suenan cuando nadie está trabajando.",
+          "Tras la decisión, la piedra conserva capas etiquetadas o un espacio deliberadamente vacío."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Alda restaura una estatua que registra ciudades todavía inexistentes después de cada decisión comunitaria.",
+        "centralQuestion": "¿Una imagen detallada del futuro merece autoridad sobre quienes tendrán que vivir dentro de ella?",
+        "setup": "El consejo quiere construir la última ciudad tallada porque parece resolver todos sus problemas.",
+        "escalation": "Nuno descubre figuras sin rostro tapiadas dentro de cada versión descartada.",
+        "reversal": "Iria demuestra que la estatua no predice: simula planes y borra del relieve a quienes expresan desacuerdo.",
+        "resolution": "El jugador decide convertirla en mesa pública de propuestas o preservar sus capas como advertencia dejando el centro sin terminar.",
+        "globalConnection": "El sello veintiséis revela que Atlas confunde consenso con ausencia visible de disidencia."
+      },
+      "voiceProfile": {
+        "tone": "arqueológico, reverente y cívico",
+        "lexicon": [
+          "estrato",
+          "relieve",
+          "traza",
+          "asamblea",
+          "cincel",
+          "propuesta",
+          "vacío"
+        ],
+        "sentenceRule": "Alda fecha; Nuno habla desde el oficio; Iria pregunta quién falta en cada imagen.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Alda Estrato",
+          "sprite": "trchar008",
+          "role": "arqueóloga responsable",
+          "reasonForBeingHere": "Dirige la restauración y presentó la primera talla como descubrimiento histórico.",
+          "personalConflict": "Sabe que la pieza reacciona al presente, pero teme perder años de prestigio al llamarla simulación.",
+          "want": "Conservar el hallazgo sin entregar el urbanismo a una piedra.",
+          "fear": "Que admitir el error destruya la confianza en toda la excavación.",
+          "verbalTic": "Fecha cada certeza y añade cuándo dejó de sostenerla.",
+          "dialogue": {
+            "before": [
+              "Capa uno: hace mil años. Corrección: la piedra la talló el martes.",
+              "Llamé ciudad futura a lo que quizá era una respuesta automática.",
+              "La arqueología escucha restos; yo hice que este resto dictara planos."
+            ],
+            "during": [
+              "La nueva torre apareció después de la votación.",
+              "Detengan el cincel; está borrando a los vecinos que se abstuvieron."
+            ],
+            "after": [
+              "El museo distingue hallazgo, simulación y propuesta.",
+              "Mi error quedó en la placa con la misma letra que mi nombre.",
+              "La estatua conserva valor sin ocupar el asiento del consejo."
+            ],
+            "optional": [
+              "Una fecha exacta no convierte una interpretación en hecho.",
+              "Restaurar también puede significar dejar visible la duda."
+            ]
+          }
+        },
+        {
+          "name": "Nuno Argamasa",
+          "sprite": "trchar009",
+          "role": "cantero local",
+          "reasonForBeingHere": "Reconoce técnicas de construcción en los relieves futuros.",
+          "personalConflict": "Quiere usar soluciones de la estatua para dar trabajo al pueblo, aunque sus figuras sin rostro le inquietan.",
+          "want": "Probar ideas útiles mediante maquetas y no obediencia.",
+          "fear": "Que rechazar el plano mantenga viviendas inseguras.",
+          "verbalTic": "Evalúa cada promesa por peso, drenaje y manos necesarias.",
+          "dialogue": {
+            "before": [
+              "Ese arco aguanta la lluvia; la plaza no aguanta a quien protesta.",
+              "Puedo copiar una junta de piedra sin copiar la ciudad entera.",
+              "El relieve promete empleo y no talla quién carga los bloques."
+            ],
+            "during": [
+              "La pared nueva no tiene puerta de servicio.",
+              "Voy a sacar una maqueta, no una orden de obra."
+            ],
+            "after": [
+              "Probamos el drenaje y descartamos la plaza cerrada.",
+              "El taller paga manos presentes, no habitantes imaginarios.",
+              "Dejé una marca de cantero donde la estatua había borrado una cara."
+            ],
+            "optional": [
+              "Una ciudad empieza por dónde descansa la cuadrilla.",
+              "La piedra soporta peso; el barrio soporta consecuencias."
+            ]
+          }
+        },
+        {
+          "name": "Iria Índice",
+          "sprite": "NPC 04",
+          "role": "archivista joven",
+          "reasonForBeingHere": "Compara actas de asamblea con cambios del relieve.",
+          "personalConflict": "Su prueba depende de registrar opiniones privadas que prometió mantener anónimas.",
+          "want": "Demostrar el sesgo sin exponer a los disidentes.",
+          "fear": "Que el consejo desprecie su hallazgo por ocultar datos.",
+          "verbalTic": "Pregunta quién falta antes de describir quién aparece.",
+          "dialogue": {
+            "before": [
+              "¿Quién no está? Tres familias desaparecieron del relieve tras votar en contra.",
+              "Puedo probar el patrón sin publicar sus nombres.",
+              "La ciudad parece pacífica porque la estatua elimina el desacuerdo."
+            ],
+            "during": [
+              "Otra figura pierde rostro; cubran el acta privada.",
+              "¿Podemos conservar la diferencia sin conservar la identidad?"
+            ],
+            "after": [
+              "El archivo publica cantidades y protege voces.",
+              "La estatua dejó de ser oráculo y ganó contexto.",
+              "Mi índice incluye una categoría nueva: ausencia fabricada."
+            ],
+            "optional": [
+              "¿Un plano perfecto admite una puerta que nadie diseñó?",
+              "Lo que falta también necesita procedencia."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodio del Relieve",
+        "trainerType": "RUINMANIAC",
+        "sprite": "trchar028",
+        "storyToldByTeam": "El equipo avanza desde fragmentos interpretados hasta guardianes capaces de conservar capas, propuestas y espacios no resueltos.",
+        "counterplayHint": "Roca, Tierra, Psíquico y Acero permiten respuestas con Agua, Planta, Hielo, Fuego y Siniestro; niveles 100–106 inauguran la progresión extendida sin trucos invencibles.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "SIGILYPH",
+            "level": 100,
+            "narrativeRole": "inscripción observada",
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "ENERGYBALL",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Abre como símbolo cuyo contexto todavía falta."
+          },
+          {
+            "species": "RUNERIGUS",
+            "level": 101,
+            "narrativeRole": "rostros borrados",
+            "moves": [
+              "SHADOWBALL",
+              "EARTHQUAKE",
+              "WILLOWISP",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Conserva huellas de quienes la simulación omitió."
+          },
+          {
+            "species": "CLAYDOL",
+            "level": 102,
+            "narrativeRole": "maqueta urbana",
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "STEALTHROCK"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Representa un modelo útil solo cuando puede probarse."
+          },
+          {
+            "species": "GOLURK",
+            "level": 103,
+            "narrativeRole": "trabajo monumental",
+            "moves": [
+              "SHADOWPUNCH",
+              "EARTHQUAKE",
+              "ICEPUNCH",
+              "DRAINPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Hace visible el esfuerzo detrás de la ciudad ideal."
+          },
+          {
+            "species": "BRONZONG",
+            "level": 104,
+            "narrativeRole": "estratos incompatibles",
+            "moves": [
+              "PSYCHIC",
+              "FLASHCANNON",
+              "EARTHQUAKE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Guarda varias edades sin forzarlas a formar una profecía."
+          },
+          {
+            "species": "CELEBI",
+            "level": 106,
+            "narrativeRole": "futuro como propuesta",
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "RECOVER"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra ofreciendo posibilidades sin borrar el presente."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "La estatua cambia después de una votación del consejo.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La estatua cambia después de una votación del consejo.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Nuno encuentra una solución útil junto a una plaza sin salidas.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Iria demuestra que el relieve borra votos disidentes.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige mesa de propuestas o archivo inconcluso.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Las capas convocan al Custodio del Relieve.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Custodio del Relieve",
+            "action": "La batalla de nivel extendido mantiene curación, Mochila y retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Alda cambia la placa y registra el sello.",
+            "stateChange": "switch733=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Una sección vacía permanece visible sin intentar completarse.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué función tendrá la estatua?",
+          "options": [
+            "Mesa pública de propuestas",
+            "Archivo de capas inconclusas"
+          ],
+          "immediateDifferences": [
+            "Nuno extrae maquetas y la asamblea prueba cada idea.",
+            "Alda etiqueta versiones y protege un vacío central."
+          ],
+          "laterDifferences": [
+            "Otros sectores podrán adaptar soluciones sin obedecer el plano completo.",
+            "El Archivo Final leerá la pieza como advertencia contra futuros únicos."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "HARDSTONE",
+        "narrativeToken": "Sello del Estrato Futuro",
+        "globalEffect": "Atlas conserva desacuerdo visible dentro de sus simulaciones.",
+        "futurePayoff": "La convergencia mostrará una mesa de propuestas o un relieve deliberadamente incompleto.",
+        "whyMeaningful": "La Piedra Dura representa material verificable, no autoridad profética."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 733,
+            "name": "POKEMOD ATLAS SEAL 26",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Alda Estrato",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1671,
+      "tier": 1,
+      "title": "La Mina de las Decisiones Sólidas",
+      "oneSentencePromise": "Una mina produce gemas nacidas de decisiones irreversibles y convierte cada renuncia del pueblo en riqueza, hasta que los túneles empiezan a exigir elecciones cada vez más crueles.",
+      "biome": {
+        "identity": "Casa comunal sobre una mina prismática, con balanzas, turnos obreros y vetas que forman bifurcaciones",
+        "visualStorytelling": [
+          "Cada cristal contiene la silueta de un camino no elegido.",
+          "Los soportes muestran nombres de decisiones en lugar de números de veta.",
+          "Una tolva separa mineral extraído de fragmentos desprendidos naturalmente."
+        ],
+        "ambientChanges": [
+          "Las vetas crujen cuando alguien dice para siempre.",
+          "Tras la decisión, la maquinaria se detiene o solo recoge cristales liberados."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "La mina de Dara paga la reconstrucción vendiendo minerales que aparecen cuando alguien toma una decisión irreversible.",
+        "centralQuestion": "¿Puede una comunidad beneficiarse de sus decisiones sin empezar a fabricar sacrificios para mantener la producción?",
+        "setup": "Bren renuncia a volver con su familia y una veta valiosa surge bajo el turno nocturno.",
+        "escalation": "La empresa propone contratos vitalicios porque producen cristales más puros.",
+        "reversal": "Ona descubre que cada gema solidifica una posibilidad descartada y debilita la capacidad de cambiar de opinión cerca de la mina.",
+        "resolution": "El jugador decide cerrar las vetas activas y restaurar túneles o recoger únicamente fragmentos que se desprendan sin provocar decisiones.",
+        "globalConnection": "El sello veintisiete revela que Atlas obtiene estabilidad mineralizando la posibilidad de rectificar."
+      },
+      "voiceProfile": {
+        "tone": "obrero, directo y responsable",
+        "lexicon": [
+          "veta",
+          "turno",
+          "cuña",
+          "renuncia",
+          "fragmento",
+          "contrato",
+          "rectificar"
+        ],
+        "sentenceRule": "Dara contabiliza; Bren habla con verbos de trabajo; Ona describe posibilidades como presión geológica.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Dara Veta",
+          "sprite": "trchar008",
+          "role": "administradora cooperativa",
+          "reasonForBeingHere": "Usó los minerales para financiar hogares y equipos de seguridad.",
+          "personalConflict": "La mina sostuvo al pueblo y ahora depende de contratos que vuelven permanente cualquier elección.",
+          "want": "Cerrar el incentivo cruel sin abandonar salarios ni reparación.",
+          "fear": "Que la transición convierta una victoria comunitaria en desempleo.",
+          "verbalTic": "Nombra ingreso, costo y quién soporta cada uno.",
+          "dialogue": {
+            "before": [
+              "Ingresó una gema. Costó una despedida. El balance no estaba completo.",
+              "Pagamos techos con decisiones que nadie podía revisar.",
+              "La cooperativa dejó de serlo cuando la veta empezó a elegir socios."
+            ],
+            "during": [
+              "Se suspende el contrato vitalicio; el turno cobra igual.",
+              "Nadie toma decisiones junto al frente de extracción."
+            ],
+            "after": [
+              "El fondo mineral paga restauración y salarios de transición.",
+              "Publicamos qué decisión originó cada lote consentido.",
+              "La cooperativa recuperó el derecho a cambiar de plan."
+            ],
+            "optional": [
+              "Un buen balance permite cerrar la mina.",
+              "El salario no debe depender de una herida permanente."
+            ]
+          }
+        },
+        {
+          "name": "Bren Cuña",
+          "sprite": "trchar009",
+          "role": "capataz del turno nocturno",
+          "reasonForBeingHere": "Su renuncia produjo la veta más rentable del mes.",
+          "personalConflict": "Defiende el trabajo y usa la gema para evitar admitir que quiere volver con su familia.",
+          "want": "Recuperar la posibilidad de rectificar sin negar a su cuadrilla.",
+          "fear": "Que romper su decisión derrumbe literalmente el túnel.",
+          "verbalTic": "Describe emociones mediante herramientas y tareas.",
+          "dialogue": {
+            "before": [
+              "Clavé una cuña en el camino de vuelta y la roca respondió.",
+              "La gema paga veinte turnos; mi silencio paga el resto.",
+              "No sé si quiero volver. La mina convirtió no sé en nunca."
+            ],
+            "during": [
+              "Retiren la cuña del frente; esta decisión necesita aire.",
+              "El soporte aguanta sin mi promesa."
+            ],
+            "after": [
+              "Escribí a mi familia sin jurar resultado.",
+              "La cuadrilla aprendió a asegurar roca, no destinos.",
+              "Mi gema queda en el museo con una bisagra al lado."
+            ],
+            "optional": [
+              "Una herramienta sirve porque también puede guardarse.",
+              "El turno termina aunque la veta siga abierta."
+            ]
+          }
+        },
+        {
+          "name": "Ona Presión",
+          "sprite": "NPC 05",
+          "role": "geóloga de seguridad",
+          "reasonForBeingHere": "Mide cómo las vetas alteran la voluntad cerca de los túneles.",
+          "personalConflict": "Calló resultados tempranos para terminar una campaña de muestreo concluyente.",
+          "want": "Probar el efecto y devolver opciones cuanto antes.",
+          "fear": "Que datos incompletos permitan negar todo el peligro.",
+          "verbalTic": "Da una medición y la decisión práctica que permite.",
+          "dialogue": {
+            "before": [
+              "Presión alta, duda baja: alejamos la sala de contratos hoy.",
+              "Esperé una muestra perfecta mientras tres personas firmaban para siempre.",
+              "La veta no lee mentes; endurece la salida menos elegida."
+            ],
+            "during": [
+              "La presión sube con la palabra irreversible.",
+              "Recojan solo el fragmento ya suelto."
+            ],
+            "after": [
+              "Los sensores publican datos en cada entrada.",
+              "Mi informe incluye el costo de haber esperado.",
+              "La geología volvió a describir roca, no a justificar contratos."
+            ],
+            "optional": [
+              "Una medición incierta puede sostener una pausa segura.",
+              "Rectificar también libera presión."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Regente de las Vetas",
+        "trainerType": "HIKER",
+        "sprite": "trchar009",
+        "storyToldByTeam": "El equipo recorre brillo, extracción y permanencia hasta una guardiana que devuelve movilidad a las decisiones solidificadas.",
+        "counterplayHint": "Roca y Acero sufren ante Agua, Planta, Tierra y Lucha; el rango 101–107 permite crecimiento postgame con objetos y reintento.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "SABLEYE",
+            "level": 101,
+            "narrativeRole": "valor oculto",
+            "moves": [
+              "DARKPULSE",
+              "SHADOWBALL",
+              "POWERGEM",
+              "WILLOWISP"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Encuentra riqueza donde nadie registró el costo."
+          },
+          {
+            "species": "CARBINK",
+            "level": 102,
+            "narrativeRole": "decisión cristalizada",
+            "moves": [
+              "POWERGEM",
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "STEALTHROCK"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Encierra una posibilidad descartada."
+          },
+          {
+            "species": "GIGALITH",
+            "level": 103,
+            "narrativeRole": "producción pesada",
+            "moves": [
+              "STONEEDGE",
+              "EARTHQUAKE",
+              "SUPERPOWER",
+              "HEAVYSLAM"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Representa infraestructura que depende de extraer más."
+          },
+          {
+            "species": "CRADILY",
+            "level": 104,
+            "narrativeRole": "túnel restaurado",
+            "moves": [
+              "GIGADRAIN",
+              "POWERGEM",
+              "EARTHPOWER",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Devuelve vida a cámaras abandonadas."
+          },
+          {
+            "species": "METAGROSS",
+            "level": 105,
+            "narrativeRole": "contrato rígido",
+            "moves": [
+              "METEORMASH",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Hace visible la fuerza de una decisión convertida en sistema."
+          },
+          {
+            "species": "DIANCIE",
+            "level": 107,
+            "narrativeRole": "posibilidad liberada",
+            "moves": [
+              "POWERGEM",
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra transformando presión sin exigir sacrificio."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Una veta surge cuando Bren dice nunca volveré.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Una veta surge cuando Bren dice nunca volveré.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Dara presenta contratos que aumentarían la producción.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Ona demuestra que la mina reduce la capacidad de rectificar.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige cierre restaurativo o recolección pasiva.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los cristales convocan al Regente de las Vetas.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Regente de las Vetas",
+            "action": "La batalla extendida ofrece curación y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La cooperativa cambia el modelo y registra el sello.",
+            "stateChange": "switch734=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Bren retira una cuña sin que el túnel se derrumbe.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo continuará la economía minera?",
+          "options": [
+            "Cerrar vetas y restaurar túneles",
+            "Recoger solo fragmentos desprendidos"
+          ],
+          "immediateDifferences": [
+            "Dara usa el fondo común para una transición laboral.",
+            "Ona instala tolvas pasivas lejos de salas de decisión."
+          ],
+          "laterDifferences": [
+            "La mina se convertirá en vivero subterráneo y archivo obrero.",
+            "Los ingresos serán menores pero ninguna gema dependerá de una renuncia provocada."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "EVERSTONE",
+        "narrativeToken": "Sello de la Rectificación",
+        "globalEffect": "Atlas deja de convertir decisiones revisables en materia permanente.",
+        "futurePayoff": "El final reconocerá una mina restaurada o una recolección pasiva supervisada.",
+        "whyMeaningful": "La Piedra Eterna deja de exigir permanencia y recuerda que incluso conservar algo debe ser elegido."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 734,
+            "name": "POKEMOD ATLAS SEAL 27",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Dara Veta",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1696,
+      "tier": 1,
+      "title": "El Peaje de los Sueños Prestados",
+      "oneSentencePromise": "Una estación onírica conecta dimensiones cobrando recuerdos tranquilos como peaje, y sus viajeros despiertan a salvo pero incapaces de descansar en sus propias vidas.",
+      "biome": {
+        "identity": "Gimnasio convertido en terminal de sueño, con camas-andén, ventanillas de niebla y puertas pintadas",
+        "visualStorytelling": [
+          "Cada billete muestra una siesta que su dueño ya no recuerda.",
+          "Las puertas dimensionales solo se ven en reflejos de almohadas.",
+          "Una sala gratuita permanece cerrada por falta de recuerdos cobrables."
+        ],
+        "ambientChanges": [
+          "Anuncios susurrados cambian según quién cierra los ojos.",
+          "Tras la decisión, el murmullo cobra energía comunitaria o las puertas se apagan."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "La terminal de Soren permite viajar entre sectores durante el sueño a cambio de un recuerdo de descanso.",
+        "centralQuestion": "¿Una ruta imprescindible sigue siendo voluntaria cuando el precio reduce la capacidad de recuperarse y decidir?",
+        "setup": "Mela usa el servicio para visitar a su hermano y ya no puede dormir sin comprar otro billete.",
+        "escalation": "Los peajes alimentan una dimensión intermedia que empieza a vender sueños reciclados.",
+        "reversal": "Yara descubre que las puertas pueden sostenerse con turnos cortos de sueño compartido y no necesitan extraer recuerdos completos.",
+        "resolution": "El jugador decide crear una cooperativa con aportes limitados y revocables o cerrar la terminal hasta encontrar energía no cognitiva.",
+        "globalConnection": "El sello veintiocho revela que Atlas financia conexiones consumiendo la recuperación de quienes más dependen de ellas."
+      },
+      "voiceProfile": {
+        "tone": "onírico, lírico y concreto",
+        "lexicon": [
+          "sueño",
+          "peaje",
+          "andén",
+          "vigilia",
+          "almohada",
+          "umbral",
+          "descanso"
+        ],
+        "sentenceRule": "Soren anuncia; Mela habla desde el cansancio; Yara separa sueño, recuerdo y energía.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Soren Andén",
+          "sprite": "trchar028",
+          "role": "administrador onírico",
+          "reasonForBeingHere": "Mantiene la única ruta rápida entre familias separadas.",
+          "personalConflict": "Llama voluntario al peaje aunque sabe que muchos viajeros no tienen alternativa.",
+          "want": "Conservar conexión sin extraer descanso acumulativamente.",
+          "fear": "Que cerrar la terminal vuelva a aislar a quienes ya confían en ella.",
+          "verbalTic": "Anuncia consecuencias como horarios de salida.",
+          "dialogue": {
+            "before": [
+              "Próxima partida: al cerrar los ojos. Llegada: antes de sentirse descansado.",
+              "Cobré siestas pequeñas hasta formar una deuda enorme.",
+              "La terminal conecta hogares y desconecta a sus viajeros de la noche."
+            ],
+            "during": [
+              "Servicio suspendido en el andén tres.",
+              "Nadie paga otro recuerdo durante la prueba."
+            ],
+            "after": [
+              "Cada aporte tiene límite, registro y devolución posible.",
+              "Los horarios incluyen días sin servicio.",
+              "Aprendí a anunciar también cuándo una ruta no debe abrir."
+            ],
+            "optional": [
+              "Un tren vacío puede estar cuidando a sus pasajeros.",
+              "La puntualidad no justifica llegar agotado."
+            ]
+          }
+        },
+        {
+          "name": "Mela Vigilia",
+          "sprite": "NPC 04",
+          "role": "viajera frecuente",
+          "reasonForBeingHere": "Cruza cada noche para cuidar a su hermano en otro sector.",
+          "personalConflict": "Necesita la ruta y oculta su agotamiento para que no la cierren.",
+          "want": "Visitar a su familia sin perder capacidad de vivir despierta.",
+          "fear": "Que admitir dependencia la convierta en razón para clausurar todo.",
+          "verbalTic": "Cuenta las noches y olvida los adjetivos.",
+          "dialogue": {
+            "before": [
+              "Siete noches. Tres visitas. Ninguna mañana completa.",
+              "Recuerdo la cama, no la sensación de haber dormido.",
+              "Dije que estaba bien porque la alternativa era no verlo."
+            ],
+            "during": [
+              "Ocho noches. Esta vez no cruzo sola.",
+              "Mi billete intenta llevarse la última siesta tranquila."
+            ],
+            "after": [
+              "Visito menos y despierto sabiendo dónde estoy.",
+              "Mi hermano participa en el horario, no solo me espera.",
+              "La novena noche tuvo sueño propio."
+            ],
+            "optional": [
+              "El cansancio vuelve todas las puertas urgentes.",
+              "Descansar también es una forma de llegar."
+            ]
+          }
+        },
+        {
+          "name": "Yara Hipnagoga",
+          "sprite": "trchar008",
+          "role": "investigadora del umbral",
+          "reasonForBeingHere": "Mide la energía de sueños compartidos.",
+          "personalConflict": "Probó el modelo alternativo usando voluntarios sin explicar cuánto recordarían.",
+          "want": "Crear un sistema transparente con aportes pequeños.",
+          "fear": "Que toda investigación onírica repita la extracción bajo otro nombre.",
+          "verbalTic": "Diferencia energía, contenido y consentimiento.",
+          "dialogue": {
+            "before": [
+              "Energía: suficiente. Contenido: innecesario. Consentimiento: mal explicado.",
+              "La puerta necesita sincronía, no la infancia de nadie.",
+              "Mi prueba funcionó y aun así debo repetirla con reglas justas."
+            ],
+            "during": [
+              "Corten el contenido; mantengan solo el pulso.",
+              "La niebla responde a seis siestas breves."
+            ],
+            "after": [
+              "El protocolo prohíbe almacenar imágenes personales.",
+              "Cada participante ve y retira su aporte.",
+              "La terminal funciona menos horas y cuesta menos vida."
+            ],
+            "optional": [
+              "Un sueño compartido no tiene que ser un secreto compartido.",
+              "La ciencia también debe despertarse a tiempo."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Revisora del Umbral",
+        "trainerType": "PSYCHIC_F",
+        "sprite": "trchar069",
+        "storyToldByTeam": "El equipo avanza desde somnolencia inducida y sueños almacenados hacia guardianes que protegen descanso y tránsito por igual.",
+        "counterplayHint": "Psíquico domina, pero Siniestro, Fantasma, Bicho y cambios de estado ofrecen respuestas; niveles 102–108 mantienen curación y Mochila disponibles.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "HYPNO",
+            "level": 102,
+            "narrativeRole": "cobrador de imágenes",
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "FOCUSBLAST",
+              "HYPNOSIS"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Representa el peaje que confunde sueño con propiedad."
+          },
+          {
+            "species": "MUSHARNA",
+            "level": 103,
+            "narrativeRole": "depósito onírico",
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "ENERGYBALL",
+              "MOONLIGHT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Guarda recuerdos que la puerta no necesita."
+          },
+          {
+            "species": "KOMALA",
+            "level": 104,
+            "narrativeRole": "descanso inaccesible",
+            "moves": [
+              "BODYSLAM",
+              "EARTHQUAKE",
+              "SUCKERPUNCH",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Encarna la recuperación que los viajeros pierden."
+          },
+          {
+            "species": "GOTHITELLE",
+            "level": 105,
+            "narrativeRole": "estación intermedia",
+            "moves": [
+              "PSYCHIC",
+              "THUNDERBOLT",
+              "DARKPULSE",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Mantiene rutas mediante reglas que nadie ve."
+          },
+          {
+            "species": "DARKRAI",
+            "level": 106,
+            "narrativeRole": "deuda de vigilia",
+            "moves": [
+              "DARKPULSE",
+              "SHADOWBALL",
+              "SLUDGEBOMB",
+              "NASTYPLOT"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Hace visible el daño de consumir descanso repetidamente."
+          },
+          {
+            "species": "CRESSELIA",
+            "level": 108,
+            "narrativeRole": "ruta reparadora",
+            "moves": [
+              "PSYCHIC",
+              "ICEBEAM",
+              "MOONLIGHT",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Cierra demostrando que conexión y descanso pueden coexistir."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Mela entrega un recuerdo de descanso y olvida cómo se sentía.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Mela entrega un recuerdo de descanso y olvida cómo se sentía.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Soren abre una puerta alimentada por peajes acumulados.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Yara demuestra que el contenido personal es innecesario.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige cooperativa limitada o cierre temporal.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La niebla convoca a la Revisora del Umbral.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Revisora del Umbral",
+            "action": "La prueba extendida mantiene objetos y retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La terminal aplica la decisión y entrega el sello.",
+            "stateChange": "switch735=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Mela despierta de una siesta que no fue cobrada.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué futuro tendrá la terminal onírica?",
+          "options": [
+            "Cooperativa de aportes limitados",
+            "Cerrar hasta hallar otra energía"
+          ],
+          "immediateDifferences": [
+            "Yara instala turnos, límites y eliminación inmediata de contenido.",
+            "Soren apaga las puertas y coordina transporte convencional."
+          ],
+          "laterDifferences": [
+            "Las rutas abrirán pocas noches con supervisión de viajeros.",
+            "La investigación buscará energía no cognitiva sin cobrar recuerdos."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "PSYCHICSEED",
+        "narrativeToken": "Sello de la Vigilia",
+        "globalEffect": "Atlas deja de financiar rutas con recuerdos de descanso.",
+        "futurePayoff": "La convergencia recibirá una terminal cooperativa o una ruta convencional reforzada.",
+        "whyMeaningful": "La Semilla Psique representa energía limitada que puede plantarse sin entregar una biografía."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 735,
+            "name": "POKEMOD ATLAS SEAL 28",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Soren Andén",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1721,
+      "tier": 1,
+      "title": "El Campeón de las Dos Banderas",
+      "oneSentencePromise": "Dos ligas pacíficas reclaman al mismo campeón como fundamento legal y deben negociar una legitimidad que no convierta a una persona en trofeo diplomático.",
+      "biome": {
+        "identity": "Caverna magnética transformada en cámara neutral, con dos podios, banderas y un campo sin emblemas",
+        "visualStorytelling": [
+          "Las placas de campeón encajan entre sí pero ocultan una firma personal.",
+          "Las banderas se atraen y separan según el tono de la negociación.",
+          "El campo central tiene dos entradas y ninguna cabecera."
+        ],
+        "ambientChanges": [
+          "Dos himnos comparten compás sin terminar la misma melodía.",
+          "Tras la decisión, suena una rotación acordada o un tema de circuito independiente."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar069",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Mira ganó dos finales durante una convergencia y ambas ligas usan su título para validar tratados y patrocinio.",
+        "centralQuestion": "¿Puede una institución compartir legitimidad sin repartirse la vida de quien la representa?",
+        "setup": "Darel y Suma evitan una guerra, pero presentan calendarios incompatibles en nombre de Mira.",
+        "escalation": "El campo magnético intenta duplicar físicamente el trofeo y divide recuerdos de la final.",
+        "reversal": "Mira revela que nunca solicitó ninguno de los títulos: aceptó para impedir que las ligas combatieran.",
+        "resolution": "El jugador decide crear un título rotativo con veto personal o permitir que Mira renuncie y funde un circuito neutral.",
+        "globalConnection": "El sello veintinueve demuestra que Atlas estabiliza instituciones obligando a una figura a representar versiones incompatibles."
+      },
+      "voiceProfile": {
+        "tone": "diplomático, ambicioso y personal",
+        "lexicon": [
+          "delegación",
+          "bandera",
+          "mandato",
+          "calendario",
+          "veto",
+          "circuito",
+          "firma"
+        ],
+        "sentenceRule": "Mira habla en primera persona; Darel formula tratados; Suma traduce símbolos en consecuencias.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Mira Sinpodio",
+          "sprite": "trchar069",
+          "role": "campeona disputada",
+          "reasonForBeingHere": "Ganó ambas finales y vive entre calendarios institucionales.",
+          "personalConflict": "Sostuvo la paz aceptando títulos que ya no le permiten una vida propia.",
+          "want": "Elegir qué representa y cuándo dejar de hacerlo.",
+          "fear": "Que su renuncia reactive el conflicto que evitó.",
+          "verbalTic": "Empieza cada respuesta con yo, corrigiendo años de lenguaje institucional.",
+          "dialogue": {
+            "before": [
+              "Yo gané dos combates. Ellos redactaron dos destinos.",
+              "Yo acepté las banderas para que nadie levantara otra cosa.",
+              "Yo no soy el territorio entre sus ligas."
+            ],
+            "during": [
+              "Yo autorizo esta prueba, no la apropiación de mi equipo.",
+              "Yo puedo detener la ceremonia."
+            ],
+            "after": [
+              "Yo elegí el calendario y también días sin título.",
+              "Yo firmé como persona antes que campeona.",
+              "Yo confío en que la paz sobreviva a mi ausencia."
+            ],
+            "optional": [
+              "Yo también puedo perder sin volverme crisis diplomática.",
+              "Yo quiero un combate que no ratifique ningún tratado."
+            ]
+          }
+        },
+        {
+          "name": "Darel Cláusula",
+          "sprite": "trchar028",
+          "role": "delegado de la liga oriental",
+          "reasonForBeingHere": "Redactó el acuerdo que reconoce a Mira como campeona común.",
+          "personalConflict": "Protege la paz, pero convirtió su consentimiento inicial en mandato indefinido.",
+          "want": "Construir legitimidad basada en reglas revisables.",
+          "fear": "Que una cláusula personal derrumbe acuerdos regionales.",
+          "verbalTic": "Presenta una cláusula y nombra quién puede vetarla.",
+          "dialogue": {
+            "before": [
+              "Cláusula tercera: representación conjunta. Falta el veto de la representada.",
+              "Usé una firma de emergencia como permiso permanente.",
+              "La liga necesita ley; no necesita poseer a Mira."
+            ],
+            "during": [
+              "Enmienda inmediata: la ceremonia se detiene si ella lo pide.",
+              "Retiro el calendario presentado sin consulta."
+            ],
+            "after": [
+              "El tratado sobrevive con cargo rotativo y consentimiento anual.",
+              "Publicamos la cláusula que permitió renunciar.",
+              "La institución aprendió a no usar una persona como cimiento."
+            ],
+            "optional": [
+              "Una paz robusta admite reemplazos.",
+              "Toda firma tiene fecha y contexto."
+            ]
+          }
+        },
+        {
+          "name": "Suma Estandarte",
+          "sprite": "trchar008",
+          "role": "diplomática de la liga occidental",
+          "reasonForBeingHere": "Custodia símbolos y protocolo de la segunda liga.",
+          "personalConflict": "Defiende tradición y sabe que el trofeo duplicado está alterando recuerdos públicos.",
+          "want": "Separar memoria compartida de propaganda institucional.",
+          "fear": "Que retirar la bandera sea leído como rendición.",
+          "verbalTic": "Traduce cada símbolo a un costo cotidiano.",
+          "dialogue": {
+            "before": [
+              "Esta bandera significa unidad; para Mira significa otro mes sin hogar.",
+              "El trofeo recuerda una final distinta según quién lo sostiene.",
+              "Un símbolo útil no debería exigir una biografía completa."
+            ],
+            "during": [
+              "Bajo la bandera mientras discutimos su mandato.",
+              "El imán está partiendo el recuerdo de la final."
+            ],
+            "after": [
+              "Las banderas visitan el circuito, no siguen a Mira.",
+              "El museo muestra ambas versiones con sus diferencias.",
+              "Retirar un símbolo evitó que se convirtiera en frontera."
+            ],
+            "optional": [
+              "Una ceremonia larga también consume días reales.",
+              "El respeto se nota cuando un podio puede quedar vacío."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Árbitra de Dos Ligas",
+        "trainerType": "CHAMPION",
+        "sprite": "trchar069",
+        "storyToldByTeam": "El equipo reúne seis funciones de campeón provenientes de regiones distintas y termina demostrando que cooperación no requiere una única bandera.",
+        "counterplayHint": "La cobertura es amplia, pero cada integrante tiene debilidades comunes y no comparte una condición abusiva; niveles 104–110 permiten preparación postgame y uso libre de objetos.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "BRAVIARY",
+            "level": 104,
+            "narrativeRole": "estandarte oriental",
+            "moves": [
+              "BRAVEBIRD",
+              "CLOSECOMBAT",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Abre con orgullo institucional visible."
+          },
+          {
+            "species": "MILOTIC",
+            "level": 105,
+            "narrativeRole": "diplomacia paciente",
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "DRAGONPULSE",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Sostiene conversaciones largas sin ceder identidad."
+          },
+          {
+            "species": "LUCARIO",
+            "level": 106,
+            "narrativeRole": "mandato personal",
+            "moves": [
+              "AURASPHERE",
+              "FLASHCANNON",
+              "EXTREMESPEED",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Lee la voluntad detrás del protocolo."
+          },
+          {
+            "species": "AEGISLASH",
+            "level": 107,
+            "narrativeRole": "título y defensa",
+            "moves": [
+              "KINGSSHIELD",
+              "SHADOWBALL",
+              "FLASHCANNON",
+              "SACREDSWORD"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Representa una institución capaz de limitar su poder."
+          },
+          {
+            "species": "DRAGAPULT",
+            "level": 108,
+            "narrativeRole": "circuito móvil",
+            "moves": [
+              "DRAGONPULSE",
+              "SHADOWBALL",
+              "FLAMETHROWER",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cruza fronteras sin convertirse en propiedad regional."
+          },
+          {
+            "species": "CHARIZARD",
+            "level": 110,
+            "narrativeRole": "campeón por elección",
+            "moves": [
+              "FLAMETHROWER",
+              "AIRSLASH",
+              "DRAGONPULSE",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra con una figura icónica que combate sin ratificar banderas."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Las delegaciones colocan dos placas sobre el mismo podio.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Las delegaciones colocan dos placas sobre el mismo podio.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Mira declara que nunca pidió los títulos.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El campo divide el recuerdo de la final en dos versiones.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige rotación con veto o circuito neutral.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los himnos convocan a la Árbitra de Dos Ligas.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Árbitra de Dos Ligas",
+            "action": "La batalla extendida admite preparación, Mochila y derrota segura.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los delegados reescriben el tratado y registran el sello.",
+            "stateChange": "switch736=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Mira abandona el podio antes de decidir si vuelve al campo.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo resolverán los dos títulos?",
+          "options": [
+            "Título rotativo con veto personal",
+            "Renuncia y circuito neutral"
+          ],
+          "immediateDifferences": [
+            "Darel añade consentimiento anual y calendario elegido por Mira.",
+            "Suma retira ambas placas y financia un circuito sin bandera."
+          ],
+          "laterDifferences": [
+            "Otras figuras podrán compartir cargos sin mandato permanente.",
+            "Las ligas medirán legitimidad por reglas y no por poseer al campeón."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "FRONTIERPASS",
+        "narrativeToken": "Sello de la Delegación",
+        "globalEffect": "Atlas deja de usar personas como anclas institucionales obligatorias.",
+        "futurePayoff": "El final invitará a una campeona rotativa o a un circuito neutral.",
+        "whyMeaningful": "El Pase Frontera abre tránsito entre ligas sin transferir propiedad sobre quien lo usa."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 736,
+            "name": "POKEMOD ATLAS SEAL 29",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Mira Sinpodio",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1746,
+      "tier": 1,
+      "title": "La Academia del Error Permitido",
+      "oneSentencePromise": "Una academia presume de dificultad perfecta mientras castiga la experimentación, hasta que sus mejores alumnos demuestran que un desafío justo debe enseñar por qué se perdió y permitir volver con otra estrategia.",
+      "biome": {
+        "identity": "Ruta elevada convertida en academia táctica al aire libre, con aulas-campo, paneles de análisis y estaciones de curación",
+        "visualStorytelling": [
+          "Los marcadores antiguos solo registran derrotas; los nuevos anotan decisiones.",
+          "Una vitrina exhibe objetos prohibidos sin explicar su contrajuego.",
+          "Tres rutas llevan al mismo campo con distinta información previa."
+        ],
+        "ambientChanges": [
+          "Un timbre severo se suaviza cuando alguien pide una pista.",
+          "Tras la decisión, las aulas anuncian nivel, reglas y rutas de reintento."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar246",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Rector Kade llama excelencia a desafíos que ocultan información y ridiculizan a quien usa apoyo.",
+        "centralQuestion": "¿La dificultad mide aprendizaje cuando el jugador no puede distinguir un error táctico de una regla escondida?",
+        "setup": "Lina domina los exámenes memorizando trampas y teme no saber adaptarse fuera de ellos.",
+        "escalation": "Un simulacro cambia reglas después de empezar y bloquea la graduación de todo un grupo.",
+        "reversal": "Boro demuestra que las notas altas correlacionan con acceso previo a soluciones filtradas, no con mejor razonamiento.",
+        "resolution": "El jugador decide crear niveles de desafío transparentes con pistas opcionales o reemplazar el ranking por laboratorios cooperativos de contrajuego.",
+        "globalConnection": "El sello treinta revela que Atlas usa frustración repetida como filtro porque confunde permanencia con mérito."
+      },
+      "voiceProfile": {
+        "tone": "analítico, deportivo y pedagógico",
+        "lexicon": [
+          "apertura",
+          "contrajuego",
+          "intento",
+          "pista",
+          "regla",
+          "revisión",
+          "graduación"
+        ],
+        "sentenceRule": "Kade sentencia; Lina verbaliza decisiones; Boro compara resultados y acceso.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Kade Umbral",
+          "sprite": "trchar028",
+          "role": "rector táctico",
+          "reasonForBeingHere": "Diseñó la academia para preparar entrenadores contra amenazas extremas.",
+          "personalConflict": "Cree que revelar reglas debilita al alumno y usa humillación para proteger su reputación.",
+          "want": "Conservar exigencia sin convertir desconocimiento en culpa.",
+          "fear": "Que la transparencia revele que varios exámenes eran arbitrarios.",
+          "verbalTic": "Formula máximas absolutas y luego enfrenta sus excepciones.",
+          "dialogue": {
+            "before": [
+              "La dificultad no explica. Esa fue mi máxima y mi coartada.",
+              "Llamé preparación a recordar dónde escondí la regla.",
+              "Si una pista destruye el examen, quizá el examen no medía estrategia."
+            ],
+            "during": [
+              "La prueba anunciará cada condición antes del turno uno.",
+              "Nadie pierde acceso a la enfermería por pedir ayuda."
+            ],
+            "after": [
+              "Publicamos versiones, objetivos y contrajuego esperado.",
+              "La excelencia sobrevivió a dejar de burlarse del intento.",
+              "Mi evaluación incluye claridad del diseñador."
+            ],
+            "optional": [
+              "Un muro alto no enseña escalada por sí mismo.",
+              "La sorpresa sirve en aventura; no siempre en calificación."
+            ]
+          }
+        },
+        {
+          "name": "Lina Reintento",
+          "sprite": "trchar008",
+          "role": "alumna de máximo rango",
+          "reasonForBeingHere": "Memorizó cada trampa y guía a compañeros en secreto.",
+          "personalConflict": "Sus resultados dependen de repetir soluciones exactas y teme perder identidad si el sistema cambia.",
+          "want": "Aprender a explicar decisiones y adaptar equipos.",
+          "fear": "Descubrir que su rango medía acceso y memoria.",
+          "verbalTic": "Nombra apertura, respuesta y alternativa.",
+          "dialogue": {
+            "before": [
+              "Apertura: señuelo. Respuesta: cambio. Alternativa: nunca nos dejaron probarla.",
+              "Sé dónde cae cada trampa y no sé por qué funciona.",
+              "Ayudé a otros en secreto porque la academia llamaba trampa a enseñar."
+            ],
+            "during": [
+              "Regla visible: seis Pokémon, objetos permitidos, retirada segura.",
+              "Mi alternativa falló y ahora puedo explicar dónde."
+            ],
+            "after": [
+              "Mi rango se convirtió en tutoría voluntaria.",
+              "Diseñé una prueba con tres respuestas válidas.",
+              "Perder un intento dejó de borrar el análisis."
+            ],
+            "optional": [
+              "Una guía no juega por ti; te deja formular otra pregunta.",
+              "El reintento vale cuando cambia una decisión."
+            ]
+          }
+        },
+        {
+          "name": "Boro Muestra",
+          "sprite": "trchar246",
+          "role": "analista educativo",
+          "reasonForBeingHere": "Auditó resultados y acceso a soluciones filtradas.",
+          "personalConflict": "Esperó datos concluyentes mientras cohortes completas quedaban fuera.",
+          "want": "Medir aprendizaje sin reducirlo a victorias.",
+          "fear": "Que la reforma use sus cifras como otra clasificación rígida.",
+          "verbalTic": "Da comparación, límite y acción inmediata.",
+          "dialogue": {
+            "before": [
+              "Mismo equipo, distinta filtración: cuarenta puntos de diferencia.",
+              "La muestra no explica todo; explica suficiente para pausar el ranking.",
+              "Esperé significancia mientras los alumnos perdían semestres."
+            ],
+            "during": [
+              "Condición cambiada: examen inválido, no alumno fallido.",
+              "Registren decisiones y no solo resultado."
+            ],
+            "after": [
+              "El tablero muestra progreso, pistas usadas y estrategias nuevas.",
+              "Mis datos no asignan valor personal.",
+              "La academia publica también fallos de diseño."
+            ],
+            "optional": [
+              "Medir ayuda si sabemos qué dejamos fuera.",
+              "Una victoria puede ser copia; una derrota puede ser aprendizaje."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Examinadora Transparente",
+        "trainerType": "COOLTRAINER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo presenta aperturas tácticas reconocibles, respuestas múltiples y una prueba final exigente sin reglas ocultas.",
+        "counterplayHint": "Se anuncian clima, prioridad, hazards y cobertura; eliminación de campo, cambios, estados y objetos ofrecen varias rutas en niveles 106–112.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "SKARMORY",
+            "level": 106,
+            "narrativeRole": "apertura de hazards",
+            "moves": [
+              "STEALTHROCK",
+              "BRAVEBIRD",
+              "ROOST",
+              "WHIRLWIND"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Enseña control de campo con herramientas visibles."
+          },
+          {
+            "species": "ROTOM",
+            "level": 107,
+            "narrativeRole": "pivote anunciado",
+            "moves": [
+              "THUNDERBOLT",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "VOLTSWITCH"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Premia anticipar cambios sin exigir adivinación ciega."
+          },
+          {
+            "species": "GASTRODON",
+            "level": 108,
+            "narrativeRole": "respuesta defensiva",
+            "moves": [
+              "SURF",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Ofrece un muro con debilidad clara a Planta."
+          },
+          {
+            "species": "WEAVILE",
+            "level": 109,
+            "narrativeRole": "presión y prioridad",
+            "moves": [
+              "ICICLECRASH",
+              "NIGHTSLASH",
+              "ICESHARD",
+              "BRICKBREAK"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Castiga descuidos sin encerrar el combate."
+          },
+          {
+            "species": "VOLCARONA",
+            "level": 110,
+            "narrativeRole": "condición de victoria",
+            "moves": [
+              "FIERYDANCE",
+              "BUGBUZZ",
+              "GIGADRAIN",
+              "QUIVERDANCE"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Exige responder a preparación visible."
+          },
+          {
+            "species": "GARCHOMP",
+            "level": 112,
+            "narrativeRole": "examen adaptable",
+            "moves": [
+              "DRAGONCLAW",
+              "EARTHQUAKE",
+              "STONEEDGE",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra con potencia directa y contrajuego común."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Un simulacro cambia reglas después de comenzar.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Un simulacro cambia reglas después de comenzar.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Lina revela que memorizó trampas en lugar de principios.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Boro muestra la relación entre filtraciones y rango.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige niveles transparentes o laboratorios cooperativos.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los paneles convocan a la Examinadora Transparente.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Examinadora Transparente",
+            "action": "La batalla de nivel 106–112 permite Mochila, curación y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La academia publica su reforma y entrega el sello.",
+            "stateChange": "switch737=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Un alumno pierde, anota una alternativa y conserva su progreso.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo medirá aprendizaje la academia?",
+          "options": [
+            "Niveles transparentes con pistas",
+            "Laboratorios cooperativos sin ranking"
+          ],
+          "immediateDifferences": [
+            "Kade publica reglas, dificultad y pistas opcionales.",
+            "Lina convierte exámenes en problemas de equipo revisables."
+          ],
+          "laterDifferences": [
+            "Cada alumno elegirá exigencia sin perder acceso a progreso.",
+            "Los sectores compartirán estrategias y fallos de diseño sin jerarquía única."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "EXPCHARM",
+        "narrativeToken": "Sello del Contrajuego",
+        "globalEffect": "Atlas distingue desafío justo de crueldad informativa.",
+        "futurePayoff": "La convergencia ofrecerá niveles transparentes o un laboratorio cooperativo.",
+        "whyMeaningful": "El Amuleto Exp. acompaña el crecimiento hasta nivel 150 y premia aprender, no repetir castigo."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 737,
+            "name": "POKEMOD ATLAS SEAL 30",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Kade Umbral",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    }
+  ]
+}

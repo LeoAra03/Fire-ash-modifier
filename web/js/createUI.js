@@ -180,7 +180,7 @@ function renderEventCreator(el, { goTab }) {
     } else if (T === "gift") {
       f.innerHTML = `<div class="row wrap"><label>Nombre <input id="cf-name" class="inp" value="Regalo Pokémon" /></label>${dirSel()}</div>${sprRow()}
         <div class="row wrap"><label>Especie <input id="cf-species" class="inp mono" list="dl-species" value="MEW" /></label>
-        <label>Nivel <input id="cf-level" class="inp num" type="number" value="20" min="1" max="100" /></label></div>
+        <label>Nivel <input id="cf-level" class="inp num" type="number" value="20" min="1" max="150" /></label></div>
         <label>Antes<textarea id="cf-before" class="inp" rows="2">Toma, este Pokémon es para ti.</textarea></label>
         <label>Después<textarea id="cf-after" class="inp" rows="2">¡Cuídalo bien!</textarea></label>
         <label>Si el equipo está lleno<textarea id="cf-full" class="inp" rows="1">Tu equipo está lleno.</textarea></label>`;
@@ -216,7 +216,7 @@ Población: tú y 3 NPCs.</textarea></label>`;
       f.innerHTML = `<div class="row wrap"><label>Nombre <input id="cf-name" class="inp" value="Salvaje" /></label>
         <label>Disparador <select id="cf-trig" class="inp"><option value="0">Acción (tecla)</option><option value="1">Tocar jugador</option></select></label></div>${sprRow()}
         <div class="row wrap"><label>Especie <input id="cf-species" class="inp mono" list="dl-species" value="PIKACHU" /></label>
-        <label>Nivel <input id="cf-level" class="inp num" type="number" value="10" min="1" max="100" /></label>
+        <label>Nivel <input id="cf-level" class="inp num" type="number" value="10" min="1" max="150" /></label>
         <label>Variable resultado <input id="cf-var" class="inp num" type="number" value="1" min="0" /></label>
         <label class="check"><input type="checkbox" id="cf-run" checked /> Puede huir</label>
         <label class="check"><input type="checkbox" id="cf-lose" /> Seguir si pierdes</label></div>
@@ -346,7 +346,7 @@ function drawTeamEditor(box, team) {
     box.innerHTML = `<p class="muted small">Equipo (${team.length}/6):</p>` + team.map((m, i) => `
       <div class="flagrow"><span class="mono muted">${i + 1}</span>
         <input class="inp mono" data-i="${i}" data-k="species" list="dl-species" value="${esc(m.species)}" placeholder="ESPECIE" style="max-width:130px" />
-        <input class="inp num" data-i="${i}" data-k="level" type="number" value="${m.level}" min="1" max="100" title="Nivel" />
+        <input class="inp num" data-i="${i}" data-k="level" type="number" value="${m.level}" min="1" max="150" title="Nivel" />
         <input class="inp" data-i="${i}" data-k="moves" value="${esc(m.moves)}" placeholder="Movs. (coma)" />
         <input class="inp mono" data-i="${i}" data-k="item" list="dl-items" value="${esc(m.item)}" placeholder="Objeto" style="max-width:110px" />
         <button class="btn small" data-del="${i}" title="Quitar">X</button>

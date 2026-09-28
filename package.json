@@ -1,0 +1,24 @@
+{
+  "name": "fire-ash-modifier-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
+  "scripts": {
+    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs",
+    "test:ui": "node --experimental-vm-modules web/js/ui.test.mjs",
+    "verify:tier2:macro04": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro04.json --backup atlas_tier2_macro04_originals --verify",
+    "verify:tier2:macro05": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro05.json --backup atlas_tier2_macro05_originals --verify",
+    "verify:tier2:macro04-05": "npm run verify:tier2:macro04 && npm run verify:tier2:macro05",
+    "render:atlas:macro02": "node tools/render_atlas_visual_reference.mjs --macro 02",
+    "render:tier2:macro03": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro03.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro03_originals --before docs/referencia_tier2_macro03_antes.png --after docs/referencia_tier2_macro03_despues.png",
+    "render:tier2:macro04": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro04.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro04_originals --before docs/referencia_tier2_macro04_antes.png --after docs/referencia_tier2_macro04_despues.png",
+    "render:tier2:macro05": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro05.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro05_originals --before docs/referencia_tier2_macro05_antes.png --after docs/referencia_tier2_macro05_despues.png"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.81"
+  },
+  "devDependencies": {
+    "jsdom": "27.0.0"
+  }
+}

@@ -84,12 +84,36 @@ En local necesitas JDK 17 + Android SDK:
 cd android && gradle assembleDebug   # sale en app/build/outputs/apk/debug/
 ```
 
+## Autoría regional y validación externa
+
+Atlas Mil dispone de una capa segura de interoperabilidad con Pokémon Region Builder y Pokémon Studio 2.11.0. Ambos se usan para planificar e inspeccionar; la salida jugable continúa compilándose exclusivamente para Essentials/RMXP.
+
+```bash
+node tools/region_builder_adapter.mjs validate --input content/atlas_mil_region.pkregion
+node tools/pokemon_studio_adapter.mjs fire-ash-reference
+node tools/atlas_style_gate.mjs --check
+node tools/external_authoring.test.mjs
+```
+
+El flujo completo, sus límites y los comandos de instalación desde el repositorio oficial están en [`docs/AUTORIA_REGION_BUILDER_STUDIO.md`](docs/AUTORIA_REGION_BUILDER_STUDIO.md).
+
+El estado instalado, la diferencia entre infraestructura y autoría artesanal, y el número reproducible de lotes pendientes están en [`docs/ESTADO_CONTENIDO_Y_PROMPTS.md`](docs/ESTADO_CONTENIDO_Y_PROMPTS.md). Se regenera con:
+
+```bash
+node tools/audit_content_progress.mjs
+```
+
+Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–05 han instalado además 85 rutas Tier 2 en 17 lotes; los bloques recientes están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md) y [`docs/ATLAS_TIER2_MACRO04_05.md`](docs/ATLAS_TIER2_MACRO04_05.md).
+
 ## Tests
 
 ```bash
+npm ci                              # dependencias del render PNG y de la prueba UI
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
-node web/js/integration.test.mjs   # 89 pruebas: demo, sala, kirin, PBS, crear, auditoría
-# UI (requiere jsdom): copia web/js/ui.test.mjs junto a node_modules y ejecútalo
+node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
+node tools/external_authoring.test.mjs  # 39 pruebas de interoperabilidad, estilo, backlog visual y Tier 2
+npm run verify:tier2:macro04-05    # 50 rutas recientes compiladas y seguras
+node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom
 ```
 
 ## Roadmap

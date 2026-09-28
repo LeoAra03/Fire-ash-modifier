@@ -1,0 +1,1886 @@
+{
+  "batch": 5,
+  "iteration": 1,
+  "blueprints": [
+    {
+      "mapId": 1396,
+      "tier": 1,
+      "title": "La Receta que Lloraba por Otros",
+      "oneSentencePromise": "Un café sirve una receta capaz de reproducir el consuelo de una cocinera ausente, hasta que el barrio descubre que también está heredando un duelo que nunca eligió.",
+      "biome": {
+        "identity": "Casa costera convertida en café comunitario, con cocina abierta y mesas unidas por canales de vapor",
+        "visualStorytelling": [
+          "Cada taza deja una constelación distinta sobre el mantel.",
+          "Una receta tiene cantidades precisas y un margen escrito solo como cuando duela.",
+          "La silla de la cocinera ausente sirve de estante, no de altar."
+        ],
+        "ambientChanges": [
+          "Las cucharas vibran cuando alguien recuerda una despedida ajena.",
+          "Tras la decisión, las voces del local sustituyen o acompañan el antiguo aroma."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "El café de Mara calma cualquier pena con la última receta de Oria, aunque nadie puede recordar si conoció a la autora.",
+        "centralQuestion": "¿Puede compartirse una emoción como cuidado sin convertir la intimidad de otra persona en ingrediente?",
+        "setup": "Berto multiplica la receta para sostener al barrio después de una tormenta.",
+        "escalation": "Los clientes empiezan a llorar recuerdos de Oria y dejan de reconocer cuáles pérdidas son propias.",
+        "reversal": "Sali descubre que la emoción no está en los ingredientes: Atlas conservó en el vapor la despedida que Oria nunca pudo decir.",
+        "resolution": "El jugador decide publicar una base sin memoria para que cada mesa la adapte o retirar el vapor y conservar la historia mediante relatos voluntarios.",
+        "globalConnection": "El sello dieciséis demuestra que Atlas confunde preservar una emoción con asignársela a todos."
+      },
+      "voiceProfile": {
+        "tone": "cotidiano, cálido y humano",
+        "lexicon": [
+          "receta",
+          "mesa",
+          "vapor",
+          "porción",
+          "sobremesa",
+          "duelo",
+          "barrio"
+        ],
+        "sentenceRule": "Mara mide silencios; Berto habla en porciones; Sali distingue sabor propio y prestado.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Mara Sobremesa",
+          "sprite": "trchar008",
+          "role": "encargada del café",
+          "reasonForBeingHere": "Heredó el cuaderno de Oria y mantiene abierta la cocina.",
+          "personalConflict": "La receta ayudó al barrio, pero Mara la sirve para evitar hablar de su propia despedida.",
+          "want": "Convertir el local en un lugar de escucha y no en una máquina de consuelo.",
+          "fear": "Que sin el vapor nadie quiera quedarse a conversar.",
+          "verbalTic": "Cuenta hasta tres antes de nombrar una pérdida.",
+          "dialogue": {
+            "before": [
+              "Una taza. Dos manos. Tres segundos antes de fingir que basta.",
+              "La receta consuela, pero esta pena sabe a una casa donde nunca viví.",
+              "Serví el vapor para no contar que Oria se fue sin despedirse."
+            ],
+            "during": [
+              "No respiren hondo; primero nombren qué recuerdo les pertenece.",
+              "La cocina está repitiendo la última tarde de Oria."
+            ],
+            "after": [
+              "La gente sigue viniendo aunque la taza ya no responde por nosotros.",
+              "Conté mi despedida sin medirla en cucharadas.",
+              "La silla de Oria ahora sostiene libros de recetas nuevas."
+            ],
+            "optional": [
+              "Una sobremesa útil no necesita tener respuesta.",
+              "El silencio cambia de sabor cuando alguien decide compartirlo."
+            ]
+          }
+        },
+        {
+          "name": "Berto Ración",
+          "sprite": "NPC 05",
+          "role": "cocinero de emergencia",
+          "reasonForBeingHere": "Multiplicó la receta durante la tormenta para atender a todo el barrio.",
+          "personalConflict": "Está orgulloso de haber ayudado y teme admitir que convirtió un recuerdo privado en suministro.",
+          "want": "Mantener el cuidado colectivo sin fabricar emociones idénticas.",
+          "fear": "Que reducir la producción deje a alguien solo en el próximo desastre.",
+          "verbalTic": "Calcula afectos como raciones y luego corrige la cuenta.",
+          "dialogue": {
+            "before": [
+              "Preparé cien porciones y pregunté cero permisos. La cuenta salió mal.",
+              "En una emergencia repartes lo que tienes; después respondes por lo repartido.",
+              "Cada cliente lloró a la misma hora. Eso no era comunidad, era lote."
+            ],
+            "during": [
+              "Cierro la válvula tres; el consuelo no debe salir a presión.",
+              "Quedan ingredientes para todos y recuerdos para quien los cuente."
+            ],
+            "after": [
+              "La receta base alimenta; cada mesa decide qué añade.",
+              "Anoté procedencia junto a cantidad.",
+              "La próxima reserva incluirá tiempo para escuchar."
+            ],
+            "optional": [
+              "Media taza puede acompañar una noche entera.",
+              "No todo lo compartido necesita mezclarse."
+            ]
+          }
+        },
+        {
+          "name": "Sali Paladar",
+          "sprite": "NPC 04",
+          "role": "catadora y mediadora",
+          "reasonForBeingHere": "Identifica emociones prestadas mediante sabor y temperatura.",
+          "personalConflict": "Usó su sensibilidad para hablar por clientes que podían describirse solos.",
+          "want": "Enseñar a reconocer un recuerdo ajeno sin dictar su significado.",
+          "fear": "Perder utilidad cuando todos recuperen su propia voz.",
+          "verbalTic": "Nombra una textura antes de ofrecer una interpretación.",
+          "dialogue": {
+            "before": [
+              "Es tibio, salado y llega antes que tu recuerdo. Por eso no parece tuyo.",
+              "La tristeza de Oria deja canela; la tuya puede no tener sabor.",
+              "Dije a todos qué sentían. Era otra forma de servir sin preguntar."
+            ],
+            "during": [
+              "El vapor se espesa junto al cuaderno, no junto a los ingredientes.",
+              "Prueba agua limpia; tu memoria necesita espacio."
+            ],
+            "after": [
+              "Ahora pregunto antes de interpretar un temblor.",
+              "El barrio conservó la receta y devolvió la emoción a su historia.",
+              "Ser testigo ocupa menos mesa que ser dueña del relato."
+            ],
+            "optional": [
+              "Un sabor conocido no siempre es un recuerdo propio.",
+              "La lengua también puede decir no sé."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Chef de la Sobremesa",
+        "trainerType": "POKEMONBREEDER",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo empieza como una receta impecable y termina como una mesa donde cada compañero aporta cuidado sin absorber la pena ajena.",
+        "counterplayHint": "Hada, Fantasma, Planta y Normal dejan respuestas con Acero, Veneno, Siniestro y Lucha; los objetos permiten sostener combates largos.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "ALCREMIE",
+            "level": 89,
+            "narrativeRole": "dulzura prescrita",
+            "moves": [
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "ENERGYBALL",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Abre con el consuelo que parecía funcionar para todos."
+          },
+          {
+            "species": "POLTEAGEIST",
+            "level": 90,
+            "narrativeRole": "memoria en la taza",
+            "moves": [
+              "SHADOWBALL",
+              "PSYCHIC",
+              "GIGADRAIN",
+              "SHELLSMASH"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Revela que el recipiente conserva una voz."
+          },
+          {
+            "species": "APPLETUN",
+            "level": 91,
+            "narrativeRole": "receta heredada",
+            "moves": [
+              "ENERGYBALL",
+              "DRAGONPULSE",
+              "BODYSLAM",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Representa el cuaderno transmitido sin contexto."
+          },
+          {
+            "species": "SLURPUFF",
+            "level": 92,
+            "narrativeRole": "porciones idénticas",
+            "moves": [
+              "DAZZLINGGLEAM",
+              "FLAMETHROWER",
+              "ENERGYBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Encierra el riesgo de producir una emoción por lotes."
+          },
+          {
+            "species": "INDEEDEE",
+            "level": 93,
+            "narrativeRole": "servicio que escucha",
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Aprende a acompañar sin anticipar lo que otro necesita."
+          },
+          {
+            "species": "BLISSEY",
+            "level": 95,
+            "narrativeRole": "cuidado sin apropiación",
+            "moves": [
+              "SEISMICTOSS",
+              "SOFTBOILED",
+              "HEALBELL",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Cierra cuidando el dolor sin reclamarlo como propio."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Mara sirve tres tazas que provocan el mismo recuerdo.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Mara sirve tres tazas que provocan el mismo recuerdo.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Berto abre la válvula y el vapor ocupa todas las mesas.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Sali identifica la despedida de Oria en el aroma.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige receta abierta o archivo oral.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los utensilios forman al Chef de la Sobremesa.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Chef de la Sobremesa",
+            "action": "La batalla admite curación, Mochila y derrota segura.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El café aplica la decisión y entrega el sello.",
+            "stateChange": "switch723=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Una nueva taza queda sin aroma hasta que alguien elige hablar.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo conservarán la receta de Oria?",
+          "options": [
+            "Publicar una base sin memoria",
+            "Retirar el vapor y contar su historia"
+          ],
+          "immediateDifferences": [
+            "Mara separa ingredientes de recuerdos y abre el cuaderno a variaciones.",
+            "Berto desmonta la válvula y la sobremesa sustituye el efecto."
+          ],
+          "laterDifferences": [
+            "Otros sectores reciben una receta adaptable con advertencia de origen.",
+            "El café se vuelve archivo oral donde participar siempre es voluntario."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "SWEETHEART",
+        "narrativeToken": "Sello de la Sobremesa",
+        "globalEffect": "Atlas deja de distribuir emociones conservadas como si fueran recursos neutrales.",
+        "futurePayoff": "La mesa final ofrecerá una receta adaptable o una ronda de relatos.",
+        "whyMeaningful": "El Corazón Dulce vale por la conversación asociada y no por imponer un sentimiento."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 723,
+            "name": "POKEMOD ATLAS SEAL 16",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Mara Sobremesa",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1421,
+      "tier": 1,
+      "title": "El Caso de las Cuatro Mediasnoches",
+      "oneSentencePromise": "Tres testigos describen con precisión el robo de una campana, aunque cada uno lo vio a una hora distinta porque el centro está atrapado en cuatro versiones verdaderas de la misma noche.",
+      "biome": {
+        "identity": "Centro de descanso convertido en oficina detectivesca, con relojes acústicos y una campana ausente",
+        "visualStorytelling": [
+          "Cuatro sombras de la campana apuntan en direcciones incompatibles.",
+          "Las declaraciones están clavadas según sonido y no según hora.",
+          "Una taza fría aparece caliente en el reflejo de la ventana."
+        ],
+        "ambientChanges": [
+          "La campana suena desde una sala distinta cada vez.",
+          "Tras la resolución queda un solo ritmo o cuatro campanadas identificadas."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Lena investiga una campana desaparecida mientras todos los testimonios sinceros se excluyen entre sí.",
+        "centralQuestion": "¿Una investigación debe producir una única historia o puede proteger verdades que ocurrieron en capas distintas?",
+        "setup": "Rul afirma que el objeto salió por la puerta; Cima oyó que nunca abandonó la sala.",
+        "escalation": "Cada intento de ordenar los hechos crea otra medianoche y duplica una evidencia.",
+        "reversal": "Teco descubre que la campana no fue robada: Atlas superpuso cuatro evacuaciones posibles para conservar a todos los testigos.",
+        "resolution": "El jugador decide estabilizar una cronología acordada o archivar las cuatro capas con sus límites y consecuencias.",
+        "globalConnection": "El sello diecisiete revela que Atlas sostiene lugares enteros cuando no logra escoger entre testimonios verdaderos."
+      },
+      "voiceProfile": {
+        "tone": "noir ligero, sonoro y preciso",
+        "lexicon": [
+          "coartada",
+          "campanada",
+          "rastro",
+          "medianoche",
+          "capa",
+          "declaración",
+          "sombra"
+        ],
+        "sentenceRule": "Lena resume; Rul describe olores; Cima cuenta sonidos y Teco cuestiona los relojes.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Lena Contraluz",
+          "sprite": "trchar008",
+          "role": "detective del centro",
+          "reasonForBeingHere": "Fue llamada para resolver el supuesto robo antes de otra duplicación.",
+          "personalConflict": "Necesita una conclusión clara para reabrir el centro, pero sabe que simplificar acusará a un inocente.",
+          "want": "Cerrar el caso sin cerrar la voz de los testigos.",
+          "fear": "Ser recordada por un expediente que termina en no lo sé.",
+          "verbalTic": "Resume cada pista en una frase seca y deja una pregunta.",
+          "dialogue": {
+            "before": [
+              "Campana ausente. Tres verdades. Ningún ladrón. Mal comienzo.",
+              "Un buen expediente soporta dudas; este edificio no.",
+              "Si elijo una medianoche, ¿a quién convierto en mentiroso?"
+            ],
+            "during": [
+              "La sombra cambió, no la declaración.",
+              "Detengan los relojes; escuchemos primero a las personas."
+            ],
+            "after": [
+              "Cerré el robo y abrí un caso de superposición.",
+              "Nadie fue acusado para que el informe pareciera elegante.",
+              "Mi conclusión ocupa cuatro páginas y una duda honesta."
+            ],
+            "optional": [
+              "La lluvia limpia huellas y también revela goteras.",
+              "Una coartada perfecta merece una segunda lámpara."
+            ]
+          }
+        },
+        {
+          "name": "Rul Tabaco",
+          "sprite": "trchar028",
+          "role": "portero nocturno",
+          "reasonForBeingHere": "Vio salir la campana envuelta en un abrigo mojado.",
+          "personalConflict": "Reconoció su propio abrigo y calló por temor a parecer culpable.",
+          "want": "Demostrar que su recuerdo es real sin exigir que sea el único.",
+          "fear": "Que otra versión de sí mismo haya causado la evacuación.",
+          "verbalTic": "Describe primero olor, humedad y peso.",
+          "dialogue": {
+            "before": [
+              "Olía a lana mojada y aceite de bisagra. El bulto pesaba como la campana.",
+              "El abrigo era mío. Yo seguía llevándolo puesto.",
+              "La puerta se abrió hacia una calle que esa noche no existía."
+            ],
+            "during": [
+              "Ahora huele a ozono; la cuarta capa está entrando.",
+              "No persigan al bulto. Miren quién toca la campana dentro."
+            ],
+            "after": [
+              "Mi declaración conserva el olor y perdió la acusación.",
+              "Doné el abrigo al archivo con las cuatro etiquetas.",
+              "Puedo haber visto una salida sin que nadie huyera."
+            ],
+            "optional": [
+              "Las mentiras suelen oler a prisa; esto olía a tormenta.",
+              "Una puerta recuerda el peso aunque olvide la cara."
+            ]
+          }
+        },
+        {
+          "name": "Cima Oído",
+          "sprite": "NPC 05",
+          "role": "telefonista y testigo",
+          "reasonForBeingHere": "Permaneció junto a la campana durante toda su medianoche.",
+          "personalConflict": "Grabó el sonido para probarse, pero la cinta contiene una voz futura pidiendo evacuar.",
+          "want": "Conservar la advertencia sin obedecer un futuro no revisado.",
+          "fear": "Que silenciar la grabación repita el desastre que intentaba prevenir.",
+          "verbalTic": "Cuenta campanadas antes de nombrar emociones.",
+          "dialogue": {
+            "before": [
+              "Una, dos, tres, cuatro: la campana nunca salió de mi sala.",
+              "En la quinta grabación mi voz dice evacuen. Yo aún no lo había dicho.",
+              "Oí pasos por cuatro pasillos y solo tenemos tres."
+            ],
+            "during": [
+              "Dos campanadas: una capa pide entrar.",
+              "La cinta no predice; recuerda una opción."
+            ],
+            "after": [
+              "Cada grabación lleva fecha, capa y grado de certeza.",
+              "La advertencia sigue disponible, ya no manda por sí sola.",
+              "Aprendí a escuchar sin convertir eco en orden."
+            ],
+            "optional": [
+              "El silencio también tiene duración.",
+              "Un reloj puede atrasarse; una campanada puede pertenecer a otro cuarto."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Inspector de Medianoche",
+        "trainerType": "SCIENTIST",
+        "sprite": "trchar246",
+        "storyToldByTeam": "Seis pistas pasan de imitación y ocultamiento a memoria, sonido y una conclusión que acepta varias capas.",
+        "counterplayHint": "Normal, Fantasma, Psíquico y Siniestro alternan inmunidades; Lucha, Hada, Acero y ataques variados evitan depender de una predicción.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "DITTO",
+            "level": 90,
+            "narrativeRole": "coartada duplicada",
+            "moves": [
+              "TRANSFORM",
+              "PROTECT",
+              "REST",
+              "SLEEPTALK"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Representa versiones iguales que ocuparon lugares distintos."
+          },
+          {
+            "species": "KECLEON",
+            "level": 91,
+            "narrativeRole": "sombra cambiante",
+            "moves": [
+              "SHADOWSNEAK",
+              "SUCKERPUNCH",
+              "DRAINPUNCH",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Conserva una forma diferente bajo cada luz."
+          },
+          {
+            "species": "NOCTOWL",
+            "level": 92,
+            "narrativeRole": "testigo auditivo",
+            "moves": [
+              "AIRSLASH",
+              "PSYCHIC",
+              "SHADOWBALL",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Escucha campanadas entre capas."
+          },
+          {
+            "species": "ZOROARK",
+            "level": 93,
+            "narrativeRole": "sospechoso conveniente",
+            "moves": [
+              "DARKPULSE",
+              "FLAMETHROWER",
+              "FOCUSBLAST",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Muestra el peligro de resolver acusando una ilusión."
+          },
+          {
+            "species": "CHIMECHO",
+            "level": 94,
+            "narrativeRole": "evidencia sonora",
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "ENERGYBALL",
+              "HEALBELL"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Lleva la campana en el sonido y no en el lugar."
+          },
+          {
+            "species": "PORYGON2",
+            "level": 96,
+            "narrativeRole": "archivo de cuatro capas",
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Ordena testimonios sin eliminar contradicciones."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Lena coloca tres declaraciones bajo relojes distintos.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Lena coloca tres declaraciones bajo relojes distintos.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Rul reconoce su abrigo en una salida imposible.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Cima reproduce una advertencia grabada antes de pronunciarse.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige cronología acordada o archivo por capas.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Las sombras convocan al Inspector de Medianoche.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Inspector de Medianoche",
+            "action": "La prueba mantiene objetos y ruta de retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Lena cierra el robo y registra la anomalía con el sello.",
+            "stateChange": "switch724=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La campana reaparece sin borrar ninguna declaración.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo cerrará Lena el caso?",
+          "options": [
+            "Acordar una cronología estable",
+            "Archivar las cuatro medianoches"
+          ],
+          "immediateDifferences": [
+            "Los testigos escogen una secuencia común para reabrir el centro.",
+            "Teco etiqueta cada capa y prohíbe mezclarlas como acusación."
+          ],
+          "laterDifferences": [
+            "La versión acordada se revisará si aparece evidencia nueva.",
+            "Investigadores futuros podrán consultar diferencias y consecuencias."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "SOOTHEBELL",
+        "narrativeToken": "Sello de la Coartada",
+        "globalEffect": "Atlas aprende que una contradicción no implica necesariamente una mentira.",
+        "futurePayoff": "El Archivo Final presentará una cronología revisable o cuatro testimonios paralelos.",
+        "whyMeaningful": "La Campana Alivio conserva el sonido del caso sin convertirlo en veredicto."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 724,
+            "name": "POKEMOD ATLAS SEAL 17",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Lena Contraluz",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1446,
+      "tier": 1,
+      "title": "El Museo de lo Todavía No Perdido",
+      "oneSentencePromise": "Una distorsión devuelve brújulas, diarios y emblemas días antes de que sus dueños los extravíen, empujando a una expedición a representar pérdidas que quizá nunca debieron ocurrir.",
+      "biome": {
+        "identity": "Instituto meteorológico convertido en museo provisional de objetos prematuros",
+        "visualStorytelling": [
+          "Cada vitrina muestra una fecha de hallazgo posterior al día actual.",
+          "Las etiquetas cambian de dueño cuando alguien toca su objeto.",
+          "Una manga de viento apunta hacia el almacén cerrado."
+        ],
+        "ambientChanges": [
+          "Ráfagas breves traen olor a papel viejo desde el futuro.",
+          "Tras la resolución, las vitrinas se abren por custodia o quedan selladas como advertencia."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "La expedición de Ena recibe objetos futuros y empieza a imitar las circunstancias en que supuestamente se perderán.",
+        "centralQuestion": "¿Recuperar algo antes de perderlo evita un daño o puede obligarnos a producir la historia que explica su regreso?",
+        "setup": "Daro encuentra su diario mojado y planea cruzar el río para completar sus páginas vacías.",
+        "escalation": "La distorsión devuelve una placa de rescate con el nombre de Ena y fecha del día siguiente.",
+        "reversal": "Vesna comprueba que los objetos proceden de futuros posibles descartados, no de un destino único.",
+        "resolution": "El jugador decide devolver cada objeto a su dueño con contexto o sellar el lote y estudiar únicamente sus condiciones de aparición.",
+        "globalConnection": "El sello dieciocho demuestra que Atlas confunde evidencia de una posibilidad con obligación histórica."
+      },
+      "voiceProfile": {
+        "tone": "histórico, asombrado y prudente",
+        "lexicon": [
+          "vestigio",
+          "vitrina",
+          "expedición",
+          "fecha",
+          "custodia",
+          "distorsión",
+          "posibilidad"
+        ],
+        "sentenceRule": "Ena registra; Daro pregunta; Vesna separa hallazgo, procedencia y destino.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Ena Bitácora",
+          "sprite": "trchar008",
+          "role": "jefa de expedición",
+          "reasonForBeingHere": "Cataloga los objetos devueltos y organiza la próxima salida.",
+          "personalConflict": "Su placa futura la impulsa a repetir una ruta peligrosa para justificar a quien parece haber rescatado.",
+          "want": "Proteger al equipo sin tratar el futuro como orden.",
+          "fear": "Que evitar la ruta borre a una persona salvada en otra posibilidad.",
+          "verbalTic": "Fecha cada afirmación y corrige el tiempo verbal.",
+          "dialogue": {
+            "before": [
+              "Hoy, a las nueve, recibí una placa fechada mañana. Corrijo: podría recibirla.",
+              "Planifiqué un rescate para encontrar a quien el objeto supone perdido.",
+              "Una bitácora registra decisiones; no debería escribirlas antes de tomarlas."
+            ],
+            "during": [
+              "La ráfaga trae otra vitrina. Nadie toca su etiqueta.",
+              "Cancelo la ruta del río hasta revisar riesgos presentes."
+            ],
+            "after": [
+              "El informe usa futuro condicional en cada procedencia.",
+              "Mi placa conserva dos fechas y ninguna obligación.",
+              "La expedición eligió una ruta por el clima de hoy."
+            ],
+            "optional": [
+              "Los archivos aman una línea recta; la historia rara vez coopera.",
+              "Una fecha exacta también puede pertenecer a una posibilidad."
+            ]
+          }
+        },
+        {
+          "name": "Daro Margen",
+          "sprite": "trchar009",
+          "role": "cronista de campo",
+          "reasonForBeingHere": "Encontró su diario futuro con páginas dañadas y anotaciones sin escribir.",
+          "personalConflict": "Desea recuperar la experiencia perdida y está provocando escenas para llenar los huecos.",
+          "want": "Escribir una crónica que no persiga su propia copia.",
+          "fear": "Que su mejor obra sea la que nunca vivirá.",
+          "verbalTic": "Termina preguntas señalando una página concreta.",
+          "dialogue": {
+            "before": [
+              "Mi letra dice crucé el río, pero esta página está vacía, ¿debo obedecerla?",
+              "Ensucié mis botas para que coincidieran con la cubierta, ¿ves el margen?",
+              "El diario volvió antes que mi curiosidad y ahora intenta dirigirla."
+            ],
+            "during": [
+              "La tinta aparece cuando decido repetir la ruta, ¿no es sospechoso?",
+              "Arrancaré la página del plan, no la del recuerdo."
+            ],
+            "after": [
+              "Empecé un cuaderno nuevo sin numerar el final.",
+              "El diario futuro queda como fuente, no como borrador obligatorio.",
+              "Escribí que cambiamos de idea y la tinta no desapareció."
+            ],
+            "optional": [
+              "Una página vacía puede estar protegiendo una tarde.",
+              "¿Qué clase de testigo exige que ocurra su evidencia?"
+            ]
+          }
+        },
+        {
+          "name": "Vesna Isobara",
+          "sprite": "trchar028",
+          "role": "analista de distorsiones",
+          "reasonForBeingHere": "Mide presión y procedencia temporal de cada objeto.",
+          "personalConflict": "Ocultó que había futuros incompatibles para evitar que el museo perdiera financiación.",
+          "want": "Publicar incertidumbre sin cerrar la investigación.",
+          "fear": "Que la comunidad llame fraude a los objetos auténticos.",
+          "verbalTic": "Enumera hallazgo, procedencia y certeza por separado.",
+          "dialogue": {
+            "before": [
+              "Hallazgo: brújula. Procedencia: posible. Certeza: insuficiente.",
+              "Dos placas de Ena llegaron con fechas iguales y rescates distintos.",
+              "Borré la palabra posible de una etiqueta. La vitrina parecía más valiosa."
+            ],
+            "during": [
+              "Presión inversa. La próxima pieza no pertenece a nuestra secuencia.",
+              "Sellen el almacén; observar no requiere representar la pérdida."
+            ],
+            "after": [
+              "Cada etiqueta muestra futuros alternativos y responsable de custodia.",
+              "Perdimos una exhibición espectacular y ganamos un estudio honesto.",
+              "La financiación sobrevivió a mi confesión; mi orgullo está en revisión."
+            ],
+            "optional": [
+              "Un vestigio puede ser antiguo respecto a un mañana.",
+              "La certeza también necesita unidad de medida."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodio de Isobaras",
+        "trainerType": "SCIENTIST",
+        "sprite": "trchar246",
+        "storyToldByTeam": "El equipo recorre orientación, clima, archivo y tiempo hasta negar que un objeto futuro deba controlar el presente.",
+        "counterplayHint": "Acero y Psíquico sostienen el centro, pero Fuego, Tierra, Siniestro y Lucha ofrecen contrajuego; no hay condición irreversible.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "CLAYDOL",
+            "level": 90,
+            "narrativeRole": "brújula antigua",
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "STEALTHROCK"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Orienta hacia una ruta que pudo existir."
+          },
+          {
+            "species": "CASTFORM",
+            "level": 91,
+            "narrativeRole": "clima del presente",
+            "moves": [
+              "WEATHERBALL",
+              "THUNDERBOLT",
+              "ICEBEAM",
+              "SUNNYDAY"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Recuerda que las condiciones actuales importan más que la etiqueta."
+          },
+          {
+            "species": "BRONZONG",
+            "level": 92,
+            "narrativeRole": "vitrina sellada",
+            "moves": [
+              "PSYCHIC",
+              "FLASHCANNON",
+              "EARTHQUAKE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Custodia el lote sin declarar destino."
+          },
+          {
+            "species": "PORYGONZ",
+            "level": 93,
+            "narrativeRole": "diario incompleto",
+            "moves": [
+              "TRIATTACK",
+              "THUNDERBOLT",
+              "ICEBEAM",
+              "DARKPULSE"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Intenta completar datos futuros como si fueran instrucciones."
+          },
+          {
+            "species": "XATU",
+            "level": 94,
+            "narrativeRole": "posibilidad observada",
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Mira varios desenlaces sin elegir por el equipo."
+          },
+          {
+            "species": "DIALGA",
+            "level": 96,
+            "narrativeRole": "fecha sin mandato",
+            "moves": [
+              "DRAGONPULSE",
+              "FLASHCANNON",
+              "AURASPHERE",
+              "THUNDERBOLT"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra separando control temporal de autoridad moral."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Una ráfaga deposita el diario futuro de Daro.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Una ráfaga deposita el diario futuro de Daro.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Ena encuentra una placa de rescate fechada mañana.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Vesna revela dos futuros incompatibles en la misma vitrina.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige devolución contextual o custodia sellada.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La presión inversa convoca al Custodio de Isobaras.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Custodio de Isobaras",
+            "action": "La batalla permite curación, objetos y retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La expedición corrige sus protocolos y recibe el sello.",
+            "stateChange": "switch725=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La manga de viento vuelve a señalar el clima presente.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué ocurrirá con los objetos prematuros?",
+          "options": [
+            "Devolverlos con contexto",
+            "Sellar el lote para estudio"
+          ],
+          "immediateDifferences": [
+            "Cada dueño recibe su objeto y un registro de futuros incompatibles.",
+            "Vesna clausura vitrinas y publica mediciones sin nombres personales."
+          ],
+          "laterDifferences": [
+            "Los objetos podrán usarse sin representar su pérdida prevista.",
+            "La investigación comparará posibilidades sin alterar las expediciones."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "TIMERBALL",
+        "narrativeToken": "Sello del Vestigio",
+        "globalEffect": "Atlas deja de convertir objetos futuros en órdenes para el presente.",
+        "futurePayoff": "El final devolverá hallazgos contextualizados o abrirá un archivo sellado.",
+        "whyMeaningful": "La Acopio Ball mide tiempo transcurrido sin afirmar que todo desenlace está fijado."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 725,
+            "name": "POKEMOD ATLAS SEAL 18",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Ena Bitácora",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1471,
+      "tier": 1,
+      "title": "El Arrecife que Llegó Después",
+      "oneSentencePromise": "Una criatura procedente de un océano futuro reconstruye un arrecife muerto con especies que todavía no existen, mientras los habitantes deciden si una cura imposible puede convertirse en nueva invasión.",
+      "biome": {
+        "identity": "Casa lacustre abierta a un vivero abisal con piscinas concéntricas y coral de colores temporales",
+        "visualStorytelling": [
+          "Corales vivos crecen sobre etiquetas que los declaraban extintos.",
+          "Las huellas de la criatura aparecen horas antes de sus aletas.",
+          "Dos acuarios muestran el mismo pólipo en edades incompatibles."
+        ],
+        "ambientChanges": [
+          "Burbujas profundas suenan bajo suelos secos.",
+          "Tras la decisión, el vivero mantiene compuertas o corredores de migración."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar246",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Neris protege a Aleta Tardía, una criatura paradójica que está devolviendo oxígeno al Anillo Abisal.",
+        "centralQuestion": "¿Debe controlarse una restauración que funciona cuando sus consecuencias pertenecen a un ecosistema que aún no conocemos?",
+        "setup": "El coral revive, pero desplaza algas y refugios usados por especies actuales.",
+        "escalation": "Aleta Tardía empieza a sembrar larvas futuras fuera del vivero.",
+        "reversal": "Olan descubre que la criatura no invade: prepara el arrecife para una acidificación que Atlas acelera desde otro sector.",
+        "resolution": "El jugador decide contener la restauración en parcelas revisables o abrir corredores vigilados con derecho a cerrarse.",
+        "globalConnection": "El sello diecinueve revela que los sectores de Atlas filtran futuros entre sí y convierten prevención en paradoja."
+      },
+      "voiceProfile": {
+        "tone": "científico, urgente y ecológico",
+        "lexicon": [
+          "hábitat",
+          "parcela",
+          "oxígeno",
+          "corredor",
+          "larva",
+          "marea",
+          "umbral"
+        ],
+        "sentenceRule": "Neris protege; Olan cuantifica; Maia habla desde usos cotidianos del arrecife.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Neris Bajamar",
+          "sprite": "trchar008",
+          "role": "bióloga del vivero",
+          "reasonForBeingHere": "Encontró a Aleta Tardía y documentó la recuperación del coral.",
+          "personalConflict": "Defiende a la criatura con tanta fuerza que minimiza el desplazamiento de especies actuales.",
+          "want": "Salvar el arrecife sin convertir el éxito en permiso ilimitado.",
+          "fear": "Que contener a la criatura repita la extinción que vino a evitar.",
+          "verbalTic": "Habla en pulsos breves separados por observaciones.",
+          "dialogue": {
+            "before": [
+              "Oxígeno arriba. Algas abajo. Un éxito puede tener dos columnas.",
+              "Aleta Tardía salvó esta poza y ocupó el refugio de seis Corsola.",
+              "La llamé cura antes de medir la dosis."
+            ],
+            "during": [
+              "Compuerta dos. Ciérrenla. Las larvas cruzaron antes que el informe.",
+              "No la ataquen; respondemos al corredor, no a su existencia."
+            ],
+            "after": [
+              "Cada parcela tiene límite, revisión y salida.",
+              "Aleta Tardía conserva espacio sin recibir todo el mar.",
+              "El coral volvió y también volvió nuestra obligación de observar."
+            ],
+            "optional": [
+              "Una marea sana no necesita obedecer a su bióloga.",
+              "La urgencia acelera manos; no debería borrar preguntas."
+            ]
+          }
+        },
+        {
+          "name": "Olan Carbono",
+          "sprite": "trchar246",
+          "role": "químico del agua",
+          "reasonForBeingHere": "Compara la composición futura con la acidificación de Atlas.",
+          "personalConflict": "Ocultó proyecciones graves para impedir pánico y dejó a Neris sin contexto.",
+          "want": "Hacer visible el riesgo sin presentar un futuro como inevitable.",
+          "fear": "Que publicar los datos convierta a la criatura en arma o salvadora absoluta.",
+          "verbalTic": "Da una cifra, su margen y una consecuencia humana.",
+          "dialogue": {
+            "before": [
+              "El pH cayó dos décimas, con margen amplio; bastó para vaciar tres nidos.",
+              "La química futura coincide, pero no prueba un destino.",
+              "Callé la proyección y Neris tuvo que defender sola lo que yo entendía."
+            ],
+            "during": [
+              "La parcela norte cambia demasiado rápido; el margen ya no cubre la duda.",
+              "El corredor puede cerrarse sin cerrar la investigación."
+            ],
+            "after": [
+              "Los datos públicos incluyen incertidumbre y responsable.",
+              "Nadie llamará inevitable a una curva sin escuchar a Maia.",
+              "Aleta Tardía es evidencia viva, no una orden."
+            ],
+            "optional": [
+              "Una cifra sin hábitat cabe demasiado bien en un informe.",
+              "Medir el mar no concede propiedad sobre su respuesta."
+            ]
+          }
+        },
+        {
+          "name": "Maia Red",
+          "sprite": "NPC 05",
+          "role": "recolectora del arrecife",
+          "reasonForBeingHere": "Su comunidad depende de algas que la restauración desplaza.",
+          "personalConflict": "Quiere proteger su sustento y teme parecer enemiga del coral recuperado.",
+          "want": "Participar en las decisiones ecológicas y adaptar la recolección.",
+          "fear": "Que el vivero valore especies futuras más que familias presentes.",
+          "verbalTic": "Nombra cada especie por el uso compartido, no por taxonomía.",
+          "dialogue": {
+            "before": [
+              "Esa alga es techo para los peces y cena para cuatro casas.",
+              "Me alegra ver coral vivo. También necesito decir dónde creció encima.",
+              "Nos llamaron resistencia cuando pedimos una compuerta."
+            ],
+            "during": [
+              "La larva cruzó la red de crianza; abrimos paso al oeste.",
+              "No quiero expulsarla. Quiero que el mapa incluya nuestras mesas."
+            ],
+            "after": [
+              "Las parcelas reservan refugios y rutas de recolección.",
+              "Aprendimos a cultivar el alga sin raspar coral joven.",
+              "El futuro entró al consejo sin ocupar todas las sillas."
+            ],
+            "optional": [
+              "Un arrecife no se restaura solo para verse bonito.",
+              "La red más útil deja pasar lo que acordamos juntos."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodia del Arrecife",
+        "trainerType": "POKEMONRANGER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo enfrenta pérdida, fósil y recuperación hasta una guardiana que conecta épocas sin declarar vencedora a ninguna.",
+        "counterplayHint": "Agua y Roca predominan, pero Planta, Eléctrico, Lucha y Hielo abren rutas; el clima no bloquea el uso de objetos.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "CORSOLA",
+            "level": 90,
+            "narrativeRole": "hábitat presente",
+            "moves": [
+              "POWERGEM",
+              "SCALD",
+              "RECOVER",
+              "STEALTHROCK"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Representa refugios actuales que no deben sacrificarse en silencio."
+          },
+          {
+            "species": "CURSOLA",
+            "level": 91,
+            "narrativeRole": "arrecife perdido",
+            "moves": [
+              "SHADOWBALL",
+              "POWERGEM",
+              "ENERGYBALL",
+              "WILLOWISP"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Hace visible el costo de esperar demasiado."
+          },
+          {
+            "species": "OMASTAR",
+            "level": 92,
+            "narrativeRole": "memoria fósil",
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "POWERGEM",
+              "SHELLSMASH"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Recuerda restauraciones basadas en vidas antiguas."
+          },
+          {
+            "species": "CRADILY",
+            "level": 93,
+            "narrativeRole": "parcela estable",
+            "moves": [
+              "GIGADRAIN",
+              "POWERGEM",
+              "EARTHPOWER",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Ancla larvas futuras en límites revisables."
+          },
+          {
+            "species": "LAPRAS",
+            "level": 94,
+            "narrativeRole": "corredor migratorio",
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "PSYCHIC"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Transporta especies sin imponer residencia."
+          },
+          {
+            "species": "SUICUNE",
+            "level": 96,
+            "narrativeRole": "agua entre tiempos",
+            "moves": [
+              "SURF",
+              "ICEBEAM",
+              "EXTRASENSORY",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Cierra purificando sin borrar la historia química del arrecife."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Aleta Tardía hace florecer coral sobre una poza vacía.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Aleta Tardía hace florecer coral sobre una poza vacía.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Maia muestra refugios actuales desplazados por las larvas.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Olan revela la acidificación procedente de otro sector.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige parcelas o corredores reversibles.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Las piscinas forman a la Custodia del Arrecife.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Custodia del Arrecife",
+            "action": "La prueba permite objetos, curación y retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El consejo adopta límites y recibe el sello.",
+            "stateChange": "switch726=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Una larva cruza únicamente por la ruta acordada.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo continuará la restauración paradójica?",
+          "options": [
+            "Parcelas contenidas y revisables",
+            "Corredores vigilados y reversibles"
+          ],
+          "immediateDifferences": [
+            "Neris limita larvas a viveros con evaluación comunitaria.",
+            "Maia abre dos rutas y conserva compuertas de emergencia."
+          ],
+          "laterDifferences": [
+            "Cada expansión necesitará demostrar beneficio y bajo desplazamiento.",
+            "Las migraciones se seguirán entre sectores y podrán detenerse."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "SHOALSHELL",
+        "narrativeToken": "Sello del Arrecife Tardío",
+        "globalEffect": "Atlas conecta restauración futura con consentimiento ecológico presente.",
+        "futurePayoff": "La convergencia mostrará parcelas recuperadas o corredores intersectoriales.",
+        "whyMeaningful": "La Concha Nácar guarda capas de mareas distintas sin convertir una en reemplazo de la otra."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 726,
+            "name": "POKEMOD ATLAS SEAL 19",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Neris Bajamar",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1496,
+      "tier": 1,
+      "title": "Los Dos Nombres del Cometa",
+      "oneSentencePromise": "Una fusión estable pide conservar los dos nombres de quienes la formaron, mientras el centro de crianza insiste en registrarla como una criatura nueva o como un accidente que debe revertirse.",
+      "biome": {
+        "identity": "Centro de crianza transformado en clínica de convergencia, con dos habitaciones unidas por una franja de luz",
+        "visualStorytelling": [
+          "Dos placas con nombres proyectan una sola sombra de borde doble.",
+          "Los historiales usan pronombres corregidos a mano.",
+          "Una incubadora vacía conserva dos ritmos cardíacos."
+        ],
+        "ambientChanges": [
+          "Dos tonos responden desde una misma posición.",
+          "Tras la decisión, la megafonía pronuncia ambos nombres juntos o alternados."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Nilo y Vera quedaron fusionados durante el paso de un cometa y rechazan el nombre clínico Orbe.",
+        "centralQuestion": "¿Una identidad combinada debe elegir entre ser una persona nueva y conservar a quienes continúan dentro de ella?",
+        "setup": "La doctora Elia necesita un registro para tratarlos y propone un único nombre operativo.",
+        "escalation": "El procedimiento de separación empieza a borrar recuerdos que Nilo y Vera construyeron juntos después de fusionarse.",
+        "reversal": "Paz demuestra que la fusión cambia de voz sin dividir conciencia: ambos nombres son relaciones activas, no restos médicos.",
+        "resolution": "El jugador decide crear un registro conjunto con dos nombres o mantener expedientes enlazados para una posible separación voluntaria.",
+        "globalConnection": "El sello veinte revela que Atlas reduce identidades complejas a una etiqueta porque sus puertas solo leen un campo."
+      },
+      "voiceProfile": {
+        "tone": "ético, reflexivo y luminoso",
+        "lexicon": [
+          "nombre",
+          "registro",
+          "vínculo",
+          "pulso",
+          "consentimiento",
+          "separación",
+          "continuidad"
+        ],
+        "sentenceRule": "Nilo/Vera alterna imágenes; Elia define procedimientos; Paz pregunta quién gana y quién pierde con cada término.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Nilo y Vera",
+          "sprite": "NPC 04",
+          "role": "persona fusionada",
+          "reasonForBeingHere": "Vive en la clínica mientras el sistema rechaza su doble registro.",
+          "personalConflict": "Desea ambos nombres y también teme que esa decisión obligue a permanecer fusionada para siempre.",
+          "want": "Acceder a tratamiento sin renunciar a continuidad ni opción futura.",
+          "fear": "Que cada cambio de voz sea usado como prueba de inestabilidad.",
+          "verbalTic": "Alterna una imagen cálida y otra fría antes de responder juntos.",
+          "dialogue": {
+            "before": [
+              "Nilo recuerda sol en las manos; Vera, nieve en la nuca. Los dos decimos presente.",
+              "Orbe cabe en la puerta, pero ninguno reconoce ese llamado.",
+              "Queremos dos nombres, no dos jaulas ni una fusión obligatoria."
+            ],
+            "during": [
+              "La luz tira hacia ambos lados; nosotros elegimos quedarnos quietos.",
+              "No borren el recuerdo del cometa solo porque pertenece a los dos."
+            ],
+            "after": [
+              "La puerta pronuncia Nilo y Vera sin decidir quién va primero.",
+              "Conservamos una cita de separación como opción, no amenaza.",
+              "Nuestro primer documento conjunto tiene espacio para cambios."
+            ],
+            "optional": [
+              "Compartir pulso no reparte la voz en mitades.",
+              "A veces respondemos juntos; a veces uno escucha."
+            ]
+          }
+        },
+        {
+          "name": "Elia Bifase",
+          "sprite": "trchar008",
+          "role": "médica de convergencia",
+          "reasonForBeingHere": "Desarrolló el tratamiento que mantiene estable la fusión.",
+          "personalConflict": "Su protocolo salva cuerpos, pero exige categorías que invalidan lo que no puede medir.",
+          "want": "Dar cuidado continuo con registros flexibles.",
+          "fear": "Ser responsable si una identidad cambia después de aceptar el tratamiento.",
+          "verbalTic": "Define un término y luego pregunta si todavía sirve.",
+          "dialogue": {
+            "before": [
+              "Paciente único: término útil para dosis. Término insuficiente para historia.",
+              "Escribí Orbe porque el formulario no aceptó una conjunción.",
+              "La estabilidad clínica no demuestra una identidad simple."
+            ],
+            "during": [
+              "Separación: procedimiento disponible. No resultado obligatorio.",
+              "Detengo el borrado; el consentimiento cambió."
+            ],
+            "after": [
+              "El historial admite dos nombres, una dosis y decisiones futuras.",
+              "Revisé otros expedientes que llamamos errores.",
+              "La clínica aprendió a tratar sin resolver a la persona."
+            ],
+            "optional": [
+              "Una categoría puede sostener una jeringa y aun así fallar como nombre.",
+              "El protocolo debe adaptarse antes que el paciente."
+            ]
+          }
+        },
+        {
+          "name": "Paz Conjunción",
+          "sprite": "trchar028",
+          "role": "defensora de pacientes",
+          "reasonForBeingHere": "Impugna el registro único y entrevista a ambas voces.",
+          "personalConflict": "Habla con firmeza por Nilo y Vera y corre el riesgo de sustituir su propia respuesta.",
+          "want": "Crear un precedente sin convertir a esta persona en símbolo permanente.",
+          "fear": "Que aceptar expedientes enlazados debilite derechos presentes.",
+          "verbalTic": "Pregunta quién obtiene facilidad con cada etiqueta.",
+          "dialogue": {
+            "before": [
+              "Si usamos Orbe, ¿quién gana comodidad y quién pierde respuesta?",
+              "Dos nombres complican el archivo, no el pulso.",
+              "Preparé un discurso brillante y olvidé preguntar si querían pronunciarlo."
+            ],
+            "during": [
+              "La clínica ofrece dos caminos; Nilo y Vera deben marcar el ritmo.",
+              "¿Quién pierde memoria si aceleramos esta luz?"
+            ],
+            "after": [
+              "El precedente incluye derecho a cambiar de formato.",
+              "Nilo y Vera hablaron ante el consejo; yo tomé notas.",
+              "Defender también significa apartarse del micrófono."
+            ],
+            "optional": [
+              "Cuando un formulario dice imposible, suele describir al formulario.",
+              "Una conjunción no fusiona derechos; los conecta."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Mediadora del Cometa",
+        "trainerType": "PSYCHIC_F",
+        "sprite": "trchar069",
+        "storyToldByTeam": "Tres pares narran unión y diferencia hasta dos formas digitales que comparten origen sin perder sus nombres.",
+        "counterplayHint": "El equipo cubre varios tipos, pero Siniestro, Tierra, Lucha y estados permiten responder; ninguna fase exige una condición oculta.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "PLUSLE",
+            "level": 91,
+            "narrativeRole": "voz afirmativa",
+            "moves": [
+              "THUNDERBOLT",
+              "GRASSKNOT",
+              "DAZZLINGGLEAM",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Representa a Nilo sin separarlo del vínculo."
+          },
+          {
+            "species": "MINUN",
+            "level": 91,
+            "narrativeRole": "voz complementaria",
+            "moves": [
+              "THUNDERBOLT",
+              "GRASSKNOT",
+              "DAZZLINGGLEAM",
+              "NASTYPLOT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Representa a Vera sin reducirla a una mitad."
+          },
+          {
+            "species": "ESPEON",
+            "level": 93,
+            "narrativeRole": "recuerdo luminoso",
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Conserva memorias anteriores a la convergencia."
+          },
+          {
+            "species": "UMBREON",
+            "level": 93,
+            "narrativeRole": "recuerdo reservado",
+            "moves": [
+              "DARKPULSE",
+              "TOXIC",
+              "MOONLIGHT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Protege experiencias que no deben compartirse automáticamente."
+          },
+          {
+            "species": "PORYGON2",
+            "level": 95,
+            "narrativeRole": "registro enlazado",
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Mantiene expedientes compatibles sin cerrar evolución."
+          },
+          {
+            "species": "PORYGONZ",
+            "level": 97,
+            "narrativeRole": "nombre no normalizado",
+            "moves": [
+              "TRIATTACK",
+              "DARKPULSE",
+              "ICEBEAM",
+              "THUNDERBOLT"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra demostrando que desviarse del formato no invalida existencia."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "La puerta clínica rechaza la conjunción de nombres.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La puerta clínica rechaza la conjunción de nombres.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Elia muestra recuerdos compartidos que el procedimiento está borrando.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Paz devuelve el micrófono a Nilo y Vera.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige registro conjunto o expedientes enlazados.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La luz del cometa convoca a la Mediadora.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Mediadora del Cometa",
+            "action": "La batalla conserva Mochila, curación y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La clínica actualiza el sistema y registra el sello.",
+            "stateChange": "switch727=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La megafonía pronuncia ambos nombres y espera respuesta.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo registrará la clínica a Nilo y Vera?",
+          "options": [
+            "Un registro conjunto con dos nombres",
+            "Dos expedientes enlazados y reversibles"
+          ],
+          "immediateDifferences": [
+            "Elia modifica el sistema para aceptar la conjunción.",
+            "Paz enlaza historiales sin programar una separación obligatoria."
+          ],
+          "laterDifferences": [
+            "Otras fusiones podrán mantener múltiples nombres en una identidad actual.",
+            "Cada continuidad conservará derechos y una decisión futura sobre separación."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "DESTINYKNOT",
+        "narrativeToken": "Sello de la Conjunción",
+        "globalEffect": "Las puertas de Atlas aceptan identidades con más de un nombre autorizado.",
+        "futurePayoff": "El Archivo Final llamará conjuntamente o consultará expedientes enlazados.",
+        "whyMeaningful": "El Lazo Destino simboliza vínculo sin declarar que la unión sea irreversible."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 727,
+            "name": "POKEMOD ATLAS SEAL 20",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Nilo y Vera",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    }
+  ]
+}

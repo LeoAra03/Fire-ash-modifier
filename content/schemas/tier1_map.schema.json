@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pokemod.local/schemas/tier1_map.schema.json",
+  "title": "Atlas Mil Tier 1 Map Blueprint",
+  "type": "object",
+  "required": ["mapId", "tier", "title", "oneSentencePromise", "biome", "narrative", "voiceProfile", "npcs", "battle", "cutscene", "reward", "flags", "exits", "qaClaims"],
+  "properties": {
+    "mapId": { "type": "integer", "minimum": 1021, "maximum": 2020 },
+    "tier": { "const": 1 },
+    "title": { "type": "string", "minLength": 6 },
+    "oneSentencePromise": { "type": "string", "minLength": 20 },
+    "biome": {
+      "type": "object",
+      "required": ["identity", "visualStorytelling", "ambientChanges", "assetManifest"],
+      "properties": {
+        "identity": { "type": "string" },
+        "visualStorytelling": { "type": "array", "minItems": 3, "maxItems": 6, "items": { "type": "string" } },
+        "ambientChanges": { "type": "array", "minItems": 2, "maxItems": 4, "items": { "type": "string" } },
+        "assetManifest": { "type": "array", "items": { "type": "object", "required": ["type", "id", "exists"] } }
+      }
+    },
+    "narrative": {
+      "type": "object",
+      "required": ["premise", "centralQuestion", "setup", "escalation", "reversal", "resolution", "globalConnection"]
+    },
+    "voiceProfile": {
+      "type": "object",
+      "required": ["tone", "lexicon", "sentenceRule", "forbiddenPhrases"]
+    },
+    "npcs": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["name", "sprite", "role", "reasonForBeingHere", "personalConflict", "want", "fear", "verbalTic", "dialogue"],
+        "properties": {
+          "dialogue": {
+            "type": "object",
+            "required": ["before", "during", "after", "optional"],
+            "properties": {
+              "before": { "type": "array", "minItems": 3, "maxItems": 5, "items": { "type": "string" } },
+              "during": { "type": "array", "minItems": 2, "maxItems": 4, "items": { "type": "string" } },
+              "after": { "type": "array", "minItems": 3, "maxItems": 5, "items": { "type": "string" } },
+              "optional": { "type": "array", "minItems": 2, "maxItems": 4, "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "battle": {
+      "type": "object",
+      "required": ["trainerName", "trainerType", "sprite", "storyToldByTeam", "counterplayHint", "canLose", "bagAllowed", "doubleBattle", "team"],
+      "properties": {
+        "canLose": { "const": true },
+        "bagAllowed": { "const": true },
+        "team": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["species", "level", "narrativeRole", "moves", "item", "whyItBelongs"],
+            "properties": {
+              "level": { "type": "integer", "minimum": 1, "maximum": 150 },
+              "moves": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "cutscene": {
+      "type": "object",
+      "required": ["trigger", "steps", "decision", "failurePath", "reentryPath"],
+      "properties": {
+        "steps": { "type": "array", "minItems": 7 },
+        "decision": { "type": "object", "required": ["question", "options", "immediateDifferences", "laterDifferences"] }
+      }
+    },
+    "reward": { "type": "object", "required": ["item", "narrativeToken", "globalEffect", "futurePayoff", "whyMeaningful"] },
+    "flags": { "type": "object", "required": ["globalSwitches", "variables", "selfSwitches"] },
+    "exits": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["destination", "condition", "purpose"] } },
+    "qaClaims": {
+      "type": "object",
+      "required": ["noBagLock", "noImpossibleBattle", "freeReturn", "allAssetsExist", "allDataIdsExist", "notSimilarToPreviousContent", "creepypastaIsOptInAndNonDestructive"],
+      "additionalProperties": { "const": true }
+    }
+  }
+}

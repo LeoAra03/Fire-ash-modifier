@@ -1,0 +1,927 @@
+{
+  "version": 1,
+  "macroCycle": 2,
+  "tier2Batches": 2,
+  "blueprints": [
+    {
+      "tier": 2,
+      "routeBatch": 1,
+      "mapId": 1026,
+      "flag": 748,
+      "variable": 144,
+      "title": "El Semáforo de las Promesas Tardías",
+      "promise": "Un cruce cambia de prioridad cada vez que alguien promete volver pronto, hasta que dos trabajadores separan urgencia real de cortesía automática.",
+      "objective": "Revisar tres ciclos de faroles y abrir un cruce que no premie la promesa más insistente.",
+      "mechanic": {
+        "name": "Secuencia de faroles",
+        "rules": [
+          "Observar quién espera y desde cuándo.",
+          "Distinguir emergencia de prisa declarada.",
+          "Elegir un criterio que pueda revisarse."
+        ],
+        "failureSafe": "Cualquier elección mantiene abierta la acera de retorno."
+      },
+      "npcs": [
+        {
+          "name": "Mara Ámbar",
+          "sprite": "trchar008",
+          "role": "técnica de señales",
+          "partnerPokemon": "AMPHAROS",
+          "motivation": "Quiere que la luz responda a necesidades observables.",
+          "conflict": "Programó prioridad para quien dijera vuelvo pronto y creó una fila permanente.",
+          "dialogue": {
+            "before": [
+              "El farol no mide apuro; mide quién repite la frase correcta.",
+              "Ampharos puede iluminar el cruce, no decidir quién importa más.",
+              "Tres ciclos bastan para demostrar que la promesa no es un reloj."
+            ],
+            "after": [
+              "La señal muestra tiempo de espera y permite revisión.",
+              "Nadie necesita inventar una emergencia para cruzar.",
+              "Dejé una fase libre para quien no puede usar el pulsador."
+            ]
+          }
+        },
+        {
+          "name": "Timo Giro",
+          "sprite": "trchar009",
+          "role": "mensajero vecinal",
+          "partnerPokemon": "DODRIO",
+          "motivation": "Necesita cumplir rutas sin convertir velocidad en privilegio.",
+          "conflict": "Usó la prioridad automática hasta descubrir que retrasaba ambulancias y peatones lentos.",
+          "dialogue": {
+            "before": [
+              "Llegué primero porque Dodrio corre; eso no explica quién debe cruzar primero.",
+              "Mis entregas dicen urgente incluso cuando llevan pan frío.",
+              "Puedo esperar un ciclo si el criterio está escrito."
+            ],
+            "after": [
+              "Mi hoja separa entrega crítica y horario cómodo.",
+              "El cruce dejó de tratar mis ruedas como argumento.",
+              "Ahora aviso una demora sin prometer lo imposible."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué criterio gobernará el cruce?",
+        "options": [
+          "Turnos visibles por espera",
+          "Pulsador de necesidad revisable"
+        ],
+        "immediate": [
+          "Mara publica el orden y reserva una fase accesible.",
+          "Timo prueba un pulsador que declara necesidad sin exigir explicación pública."
+        ],
+        "later": [
+          "Otros cruces mostrarán sus reglas.",
+          "Las señales podrán revisarse sin registrar perfiles personales."
+        ]
+      },
+      "reward": {
+        "item": "EJECTBUTTON",
+        "meaning": "Permite retirarse a tiempo; no obliga a ganar prioridad mediante una promesa."
+      },
+      "progression": {
+        "switchId": 748,
+        "decisionVariable": 144,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 1,
+      "mapId": 1033,
+      "flag": 749,
+      "variable": 145,
+      "title": "La Devolución que Conservó su Historia",
+      "promise": "Un almacén borra toda procedencia de los objetos devueltos para venderlos otra vez, aunque algunas etiquetas contienen despedidas y permisos que sus dueños no querían perder.",
+      "objective": "Clasificar recibos, etiquetas privadas y objetos reutilizables sin convertir la devolución en exposición.",
+      "mechanic": {
+        "name": "Mesa de procedencias",
+        "rules": [
+          "Separar dato de venta y recuerdo personal.",
+          "Marcar qué etiqueta puede retirarse.",
+          "Conservar una ruta clara hacia el mostrador de salida."
+        ],
+        "failureSafe": "Las categorías pueden corregirse antes de cerrar el registro."
+      },
+      "npcs": [
+        {
+          "name": "Lía Recibo",
+          "sprite": "trchar008",
+          "role": "encargada de devoluciones",
+          "partnerPokemon": "KLEFKI",
+          "motivation": "Quiere que cada objeto encuentre uso sin perder derechos de origen.",
+          "conflict": "Destruía etiquetas para proteger privacidad y borró también permisos de reparación.",
+          "dialogue": {
+            "before": [
+              "Este recibo prueba compra; esta nota no me autoriza a leerla.",
+              "Klefki separó llaves de nombres antes de que llegáramos.",
+              "Devolver no significa renunciar a toda historia."
+            ],
+            "after": [
+              "La ficha conserva material, reparación y permiso vigente.",
+              "Las notas privadas regresaron en sobres cerrados.",
+              "El mostrador acepta corregir una categoría después de la entrega."
+            ]
+          }
+        },
+        {
+          "name": "Kade Estante",
+          "sprite": "NPC 04",
+          "role": "restaurador de segunda mano",
+          "partnerPokemon": "MUNCHLAX",
+          "motivation": "Busca reparar objetos con piezas recuperadas.",
+          "conflict": "Confundía señales de uso con defectos que debía ocultar.",
+          "dialogue": {
+            "before": [
+              "La marca de una taza puede explicar cómo reforzarla sin decir quién la usó.",
+              "Munchlax encontró una fiambrera y no la convierte en inventario hasta revisar la etiqueta.",
+              "Un objeto usado no necesita parecer recién nacido."
+            ],
+            "after": [
+              "Cada reparación deja visible qué pieza fue reemplazada.",
+              "El estante comunitario no muestra nombres personales.",
+              "Conservar una cicatriz puede ser parte de devolver bien."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo circularán las devoluciones reparadas?",
+        "options": [
+          "Cadena de retorno documentada",
+          "Archivo comunitario anónimo"
+        ],
+        "immediate": [
+          "Lía registra procedencia técnica y devuelve recuerdos privados.",
+          "Kade abre fichas anónimas de reparación y uso."
+        ],
+        "later": [
+          "Los sectores podrán rastrear fallos sin rastrear personas.",
+          "Las técnicas de reparación quedarán disponibles para otros talleres."
+        ]
+      },
+      "reward": {
+        "item": "SOOTHEBELL",
+        "meaning": "Conserva el vínculo elegido sin transformar el recuerdo en una etiqueta de venta."
+      },
+      "progression": {
+        "switchId": 749,
+        "decisionVariable": 145,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 1,
+      "mapId": 1040,
+      "flag": 750,
+      "variable": 146,
+      "title": "Las Huellas que Caminaban al Revés",
+      "promise": "Un sendero interpreta huellas invertidas como una invasión, pero una rastreadora descubre que los Pokémon retroceden para evitar una zona de ruido que el mapa oficial no registra.",
+      "objective": "Comparar tres rastros y señalar una ruta migratoria sin perseguir a la manada.",
+      "mechanic": {
+        "name": "Lectura de rastros",
+        "rules": [
+          "Comparar profundidad antes que dirección aparente.",
+          "Escuchar el ruido fuera del sendero.",
+          "Marcar refugio y no ubicación exacta de la manada."
+        ],
+        "failureSafe": "El jugador puede retirarse sin cerrar ninguna salida natural."
+      },
+      "npcs": [
+        {
+          "name": "Nara Rastro",
+          "sprite": "trchar008",
+          "role": "rastreadora de migraciones",
+          "partnerPokemon": "STANTLER",
+          "motivation": "Quiere proteger rutas estacionales sin publicar guaridas.",
+          "conflict": "Dibujó flechas demasiado precisas y atrajo curiosos hacia los nidos.",
+          "dialogue": {
+            "before": [
+              "La pezuña apunta al norte; el peso quedó al sur.",
+              "Stantler retrocede cuando el zumbido sube, no cuando ve intrusos.",
+              "Una ruta segura puede ser deliberadamente imprecisa."
+            ],
+            "after": [
+              "El mapa señala temporada y ruido, no coordenadas de descanso.",
+              "Las flechas ahora distinguen observación e hipótesis.",
+              "La manada volvió sin encontrar espectadores en el refugio."
+            ]
+          }
+        },
+        {
+          "name": "Oren Flecha",
+          "sprite": "trchar009",
+          "role": "mantenedor del sendero",
+          "partnerPokemon": "FURRET",
+          "motivation": "Necesita guiar viajeros sin convertir cada desvío en sospecha.",
+          "conflict": "Puso barreras siguiendo un mapa que nunca midió el ruido.",
+          "dialogue": {
+            "before": [
+              "Cerré el camino donde las huellas giraban y las obligué a girar otra vez.",
+              "Furret encontró metal vibrando bajo el cartel.",
+              "Una barrera fácil de ver puede ocultar un problema más ruidoso."
+            ],
+            "after": [
+              "Retiré la placa suelta y dejé un desvío silencioso.",
+              "El cartel explica por qué una ruta cambia por temporada.",
+              "Nadie llama invasión a una maniobra de cuidado."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se marcará la migración?",
+        "options": [
+          "Corredor estacional amplio",
+          "Circuito silencioso señalizado"
+        ],
+        "immediate": [
+          "Nara dibuja una franja sin revelar nidos.",
+          "Oren retira metal vibrante y marca límites de ruido."
+        ],
+        "later": [
+          "Los mapas futuros protegerán incertidumbre ecológica.",
+          "Los senderos incluirán impacto acústico además de distancia."
+        ]
+      },
+      "reward": {
+        "item": "WIDELENS",
+        "meaning": "Premia observar mejor sin convertir precisión en derecho a localizarlo todo."
+      },
+      "progression": {
+        "switchId": 750,
+        "decisionVariable": 146,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 1,
+      "mapId": 1051,
+      "flag": 751,
+      "variable": 147,
+      "title": "El Puente que Esperaba Dos Pesos",
+      "promise": "Un puente móvil solo se abre con dos cargas idénticas y deja aislados a viajeros pequeños, hasta que sus cuidadores entienden que equilibrio no significa igualdad de peso.",
+      "objective": "Distribuir tres cargas y conservar un paso seguro para personas y Pokémon de tamaños distintos.",
+      "mechanic": {
+        "name": "Balanza de paso",
+        "rules": [
+          "Medir fuerza sobre el puente, no valor del viajero.",
+          "Usar contrapesos retirables.",
+          "Mantener un carril de regreso abierto."
+        ],
+        "failureSafe": "Los contrapesos pueden reiniciarse sin caída ni bloqueo."
+      },
+      "npcs": [
+        {
+          "name": "Sena Cauce",
+          "sprite": "trchar008",
+          "role": "inspectora del puente",
+          "partnerPokemon": "AZUMARILL",
+          "motivation": "Quiere un cruce estable para cargas y caminantes.",
+          "conflict": "Confundió simetría mecánica con trato justo.",
+          "dialogue": {
+            "before": [
+              "Dos pesos iguales estabilizan la tabla, pero no llegan en parejas.",
+              "Azumarill cruza con fuerza distinta a la que su tamaño sugiere.",
+              "El puente debe adaptarse al viaje, no seleccionar viajeros."
+            ],
+            "after": [
+              "Los contrapesos indican rango, no categoría de cuerpo.",
+              "El carril lateral permanece abierto durante cada ajuste.",
+              "La inspección incluye una prueba con carga desigual."
+            ]
+          }
+        },
+        {
+          "name": "Boro Carga",
+          "sprite": "trchar009",
+          "role": "transportista de suministros",
+          "partnerPokemon": "MACHOKE",
+          "motivation": "Necesita mover cajas sin monopolizar la estructura.",
+          "conflict": "Llenaba ambos lados para activarla y cerraba el paso a los demás.",
+          "dialogue": {
+            "before": [
+              "Mis cajas equilibran la tabla y desequilibran todo el horario.",
+              "Machoke puede sostener una carga, no justificar prioridad eterna.",
+              "Separaré medicinas de mercancía aplazable."
+            ],
+            "after": [
+              "Los suministros críticos tienen turno publicado.",
+              "Dejo contrapesos disponibles después de cruzar.",
+              "La carga ya no ocupa el segundo carril como si fuera suyo."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se adaptará el puente?",
+        "options": [
+          "Contrapesos públicos",
+          "Plataformas de apoyo gradual"
+        ],
+        "immediate": [
+          "Sena instala pesos retirables con instrucciones visibles.",
+          "Boro coloca apoyos que distribuyen la fuerza durante el cruce."
+        ],
+        "later": [
+          "Otros puentes admitirán cargas desiguales.",
+          "Las rutas podrán ajustarse sin clasificar cuerpos ni equipos."
+        ]
+      },
+      "reward": {
+        "item": "FLOATSTONE",
+        "meaning": "Aligera una carga concreta sin afirmar que todos deban pesar lo mismo."
+      },
+      "progression": {
+        "switchId": 751,
+        "decisionVariable": 147,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 1,
+      "mapId": 1058,
+      "flag": 752,
+      "variable": 148,
+      "title": "El Manantial de las Botellas Vacías",
+      "promise": "Una ruta presume agua ilimitada mientras acumula recipientes desechados río abajo, y dos guardianes deben decidir si reparar el hábito o rediseñar por completo el abastecimiento.",
+      "objective": "Rastrear tres puntos de consumo y detener residuos sin restringir el acceso al agua.",
+      "mechanic": {
+        "name": "Ciclo de recipientes",
+        "rules": [
+          "Contar envases sin culpar a quien necesita agua.",
+          "Separar relleno, lavado y retorno.",
+          "Mantener hidratación gratuita durante la transición."
+        ],
+        "failureSafe": "El manantial nunca se cierra como castigo."
+      },
+      "npcs": [
+        {
+          "name": "Cira Vaso",
+          "sprite": "trchar008",
+          "role": "guardiana del manantial",
+          "partnerPokemon": "VAPOREON",
+          "motivation": "Quiere agua limpia y accesible en toda la ruta.",
+          "conflict": "Entregaba botellas nuevas para resolver cada emergencia y creó otra corriente de residuos.",
+          "dialogue": {
+            "before": [
+              "El agua vuelve; el plástico también, pero por otra orilla.",
+              "Vaporeon limpia el cauce y no puede decidir qué envase necesita cada viajero.",
+              "Cerrar la fuente castigaría primero a quien no trajo reserva."
+            ],
+            "after": [
+              "La estación separa beber, rellenar y lavar.",
+              "Nadie paga por agua ni por devolver un recipiente.",
+              "El cauce conserva un contador público de residuos recuperados."
+            ]
+          }
+        },
+        {
+          "name": "Melo Filtro",
+          "sprite": "NPC 04",
+          "role": "técnico de recuperación",
+          "partnerPokemon": "TRUBBISH",
+          "motivation": "Busca convertir residuos en material útil sin ocultar cuánto se produce.",
+          "conflict": "Celebraba cada tonelada reciclada y dejó de preguntar por qué crecía.",
+          "dialogue": {
+            "before": [
+              "Trubbish clasifica tapas; mi informe debe clasificar causas.",
+              "Reciclar cien botellas no vuelve necesaria la botella ciento uno.",
+              "El filtro sirve después de reducir, no en lugar de reducir."
+            ],
+            "after": [
+              "Publicamos entradas, retornos y pérdidas por separado.",
+              "Los recipientes prestados llevan una marca reparable.",
+              "Mi meta bajó de reciclar más a desperdiciar menos."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué sistema reemplazará las botellas desechables?",
+        "options": [
+          "Estaciones de relleno",
+          "Depósito comunitario retornable"
+        ],
+        "immediate": [
+          "Cira instala surtidores y lavaderos abiertos.",
+          "Melo entrega recipientes prestados con depósito recuperable."
+        ],
+        "later": [
+          "Las rutas medirán acceso y residuos juntos.",
+          "Los sectores compartirán recipientes reparables en vez de marcas incompatibles."
+        ]
+      },
+      "reward": {
+        "item": "MYSTICWATER",
+        "meaning": "Representa agua valiosa por su cuidado y disponibilidad, no por el envase."
+      },
+      "progression": {
+        "switchId": 752,
+        "decisionVariable": 148,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 2,
+      "mapId": 1065,
+      "flag": 753,
+      "variable": 149,
+      "title": "La Bicicleta que No Quería Ser Premio",
+      "promise": "Una puerta conserva bicicletas sin dueño como trofeos de velocidad, aunque las propias máquinas Rotom prefieren volver a circular y ser reparadas.",
+      "objective": "Revisar tres bicicletas, separar recuerdo deportivo de transporte y abrir un préstamo seguro.",
+      "mechanic": {
+        "name": "Banco de bicicletas",
+        "rules": [
+          "Comprobar frenos antes que récords.",
+          "Registrar préstamo sin perfilar al viajero.",
+          "Reservar una salida peatonal permanente."
+        ],
+        "failureSafe": "Nadie necesita montar para atravesar la puerta."
+      },
+      "npcs": [
+        {
+          "name": "Tana Rueda",
+          "sprite": "trchar008",
+          "role": "mecánica de la puerta",
+          "partnerPokemon": "ROTOM",
+          "motivation": "Quiere devolver bicicletas reparadas a la ruta.",
+          "conflict": "Conservó modelos famosos inmóviles para atraer visitantes.",
+          "dialogue": {
+            "before": [
+              "Esta bicicleta ganó una carrera y perdió diez años colgada.",
+              "Rotom enciende la luz cuando oye una rueda fuera.",
+              "Un trofeo puede documentarse sin inmovilizar la herramienta."
+            ],
+            "after": [
+              "Cada préstamo incluye frenos, talla y ruta de devolución.",
+              "La bicicleta histórica conserva una placa, no una cadena.",
+              "La puerta peatonal nunca depende del banco de ruedas."
+            ]
+          }
+        },
+        {
+          "name": "Ivo Candado",
+          "sprite": "trchar009",
+          "role": "administrador de préstamos",
+          "partnerPokemon": "KLINK",
+          "motivation": "Necesita prevenir pérdidas sin vigilar trayectos completos.",
+          "conflict": "Instaló rastreo continuo porque confundía custodia con propiedad.",
+          "dialogue": {
+            "before": [
+              "Puedo registrar que volvió sin registrar por dónde pasó.",
+              "Klink reconoce un candado; no necesita reconocer a la persona.",
+              "La garantía debe cubrir reparación, no comprar obediencia."
+            ],
+            "after": [
+              "El préstamo guarda hora y estado, no recorrido.",
+              "Los candados se abren también con asistencia manual.",
+              "Una devolución tardía ofrece reparación antes que sanción."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo volverán a circular las bicicletas?",
+        "options": [
+          "Biblioteca de préstamo",
+          "Cooperativa de reparación"
+        ],
+        "immediate": [
+          "Ivo abre turnos anónimos con revisión de seguridad.",
+          "Tana enseña reparación y entrega custodia rotativa."
+        ],
+        "later": [
+          "Otros accesos tendrán transporte compartido.",
+          "Las piezas y conocimientos circularán junto a las bicicletas."
+        ]
+      },
+      "reward": {
+        "item": "METRONOME",
+        "meaning": "Marca un ritmo sostenible sin convertir la velocidad máxima en requisito."
+      },
+      "progression": {
+        "switchId": 753,
+        "decisionVariable": 149,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 2,
+      "mapId": 1076,
+      "flag": 754,
+      "variable": 150,
+      "title": "El Palacio que Anunciaba la Jugada",
+      "promise": "Un palacio táctico llama intuición a reglas que solo conocen sus jueces, hasta que dos estrategas convierten el misterio en lectura, elección y contrajuego.",
+      "objective": "Revisar tres órdenes tácticas y publicar suficiente información para responder sin resolver el combate de antemano.",
+      "mechanic": {
+        "name": "Tablero de intención",
+        "rules": [
+          "Anunciar categoría de jugada, no movimiento exacto.",
+          "Ofrecer una pista opcional.",
+          "Permitir retirarse y preparar otro equipo."
+        ],
+        "failureSafe": "El desafío genérico local conserva Mochila y derrota segura."
+      },
+      "npcs": [
+        {
+          "name": "Vale Aviso",
+          "sprite": "trchar008",
+          "role": "jueza táctica",
+          "partnerPokemon": "GALLADE",
+          "motivation": "Quiere pruebas exigentes que midan adaptación.",
+          "conflict": "Ocultaba reglas para proteger sorpresa y terminaba midiendo conocimiento previo.",
+          "dialogue": {
+            "before": [
+              "Gallade muestra postura ofensiva; no necesita decir el movimiento.",
+              "Una pista útil abre decisiones, no entrega una victoria.",
+              "Si la regla aparece después del fallo, nunca fue una prueba justa."
+            ],
+            "after": [
+              "El tablero anuncia presión, defensa o cambio.",
+              "La pista opcional no reduce recompensa.",
+              "Cada revisión queda fechada junto al desafío."
+            ]
+          }
+        },
+        {
+          "name": "Uri Turno",
+          "sprite": "trchar009",
+          "role": "analista de contrajuego",
+          "partnerPokemon": "ORANGURU",
+          "motivation": "Busca que cada estrategia tenga al menos dos respuestas comunes.",
+          "conflict": "Explicaba soluciones completas y anulaba la experimentación.",
+          "dialogue": {
+            "before": [
+              "Dos respuestas bastan para empezar; veinte instrucciones terminan el juego.",
+              "Oranguru señala el turno crítico y deja que el equipo decida.",
+              "Contrajuego visible no significa combate fácil."
+            ],
+            "after": [
+              "Las ayudas aparecen por capas y pueden ignorarse.",
+              "El registro separa derrota, pista usada y adaptación posterior.",
+              "Todavía hay sorpresas dentro de reglas estables."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se comunicará la dificultad?",
+        "options": [
+          "Tablero público de intención",
+          "Pistas opcionales por turno"
+        ],
+        "immediate": [
+          "Vale publica categorías y ventanas de respuesta.",
+          "Uri activa ayudas graduadas que no alteran la recompensa."
+        ],
+        "later": [
+          "Las arenas distinguirán sorpresa de información oculta.",
+          "Los jugadores podrán elegir cuánto apoyo táctico consultar."
+        ]
+      },
+      "reward": {
+        "item": "EXPERTBELT",
+        "meaning": "Premia reconocer ventajas y respuestas, no memorizar una trampa secreta."
+      },
+      "progression": {
+        "switchId": 754,
+        "decisionVariable": 150,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 2,
+      "mapId": 1083,
+      "flag": 755,
+      "variable": 151,
+      "title": "El Pasillo de los Equipos Prestados",
+      "promise": "Una fábrica intercambia Pokémon para probar adaptabilidad, pero sus fichas tratan vínculos y límites como piezas reemplazables del inventario.",
+      "objective": "Preparar un préstamo de equipo que registre cuidado, preferencia y derecho a retirarse.",
+      "mechanic": {
+        "name": "Ficha de préstamo vivo",
+        "rules": [
+          "Registrar rutinas y señales de estrés.",
+          "Permitir rechazo sin penalización.",
+          "Devolver al mismo cuidador después de la prueba."
+        ],
+        "failureSafe": "El desafío puede omitirse y todas las transferencias permanecen abiertas."
+      },
+      "npcs": [
+        {
+          "name": "Luma Ficha",
+          "sprite": "trchar008",
+          "role": "coordinadora de equipos",
+          "partnerPokemon": "DITTO",
+          "motivation": "Quiere enseñar adaptación sin reducir compañeros a estadísticas.",
+          "conflict": "Diseñó fichas perfectas para movimientos y vacías para preferencias.",
+          "dialogue": {
+            "before": [
+              "La ficha dice cuatro ataques y nada sobre cómo pide descanso.",
+              "Ditto puede copiar una forma; no copia consentimiento.",
+              "Un préstamo empieza con la posibilidad real de decir no."
+            ],
+            "after": [
+              "Cada ficha incluye cuidador, rutina y señal de retirada.",
+              "Los equipos vuelven a la misma persona después de la prueba.",
+              "Una negativa ya no baja la puntuación táctica."
+            ]
+          }
+        },
+        {
+          "name": "Roque Turno",
+          "sprite": "NPC 04",
+          "role": "cuidador de rotaciones",
+          "partnerPokemon": "PORYGON2",
+          "motivation": "Busca que los cambios de equipo no rompan tratamientos ni vínculos.",
+          "conflict": "Priorizó rotación rápida y perdió información entre turnos.",
+          "dialogue": {
+            "before": [
+              "Porygon2 conserva datos; yo debo conservar contexto.",
+              "Cambiar de equipo no reinicia una medicación.",
+              "La fábrica medía tiempo de entrega y no tiempo de adaptación."
+            ],
+            "after": [
+              "Cada relevo incluye una conversación entre cuidadores.",
+              "La rotación se detiene si aparece una señal de estrés.",
+              "El cronómetro empieza después de la adaptación, no antes."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué modelo usará la fábrica?",
+        "options": [
+          "Préstamo con cuidador estable",
+          "Rotación voluntaria y pausada"
+        ],
+        "immediate": [
+          "Luma vincula cada ficha a un cuidador disponible.",
+          "Roque abre pausas y permite rechazar cada relevo."
+        ],
+        "later": [
+          "Los formatos prestados conservarán continuidad de cuidado.",
+          "Las pruebas medirán adaptación sin forzar participación."
+        ]
+      },
+      "reward": {
+        "item": "DESTINYKNOT",
+        "meaning": "Representa un vínculo que acompaña la prueba sin convertirlo en propiedad intercambiable."
+      },
+      "progression": {
+        "switchId": 755,
+        "decisionVariable": 151,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 2,
+      "mapId": 1090,
+      "flag": 756,
+      "variable": 152,
+      "title": "La Playa de la Bandera Neutral",
+      "promise": "Dos ligas plantan banderas en una playa usada para descansar, y sus guardianes deben crear una zona neutral que no se convierta en una tercera reclamación permanente.",
+      "objective": "Retirar marcas competitivas, proteger nidos costeros y establecer una neutralidad revisable.",
+      "mechanic": {
+        "name": "Límite sin conquista",
+        "rules": [
+          "Distinguir orientación de posesión.",
+          "Dejar nidos fuera de ceremonias.",
+          "Revisar la señal al cambiar la temporada."
+        ],
+        "failureSafe": "Ninguna opción bloquea costa, navegación ni retorno."
+      },
+      "npcs": [
+        {
+          "name": "Alba Orilla",
+          "sprite": "trchar008",
+          "role": "guardiana costera",
+          "partnerPokemon": "LAPRAS",
+          "motivation": "Quiere una playa segura para descanso y desembarco.",
+          "conflict": "Aceptó dos banderas para evitar pelea y duplicó la presión sobre el lugar.",
+          "dialogue": {
+            "before": [
+              "Dos banderas no hacen neutral una playa; hacen dos reclamaciones.",
+              "Lapras llega por la marea, no por una liga.",
+              "La señal debe orientar sin quedarse con la costa."
+            ],
+            "after": [
+              "Los nidos quedan fuera de cualquier ceremonia.",
+              "La marca neutral tiene fecha de revisión.",
+              "Desembarcar no exige declarar una afiliación."
+            ]
+          }
+        },
+        {
+          "name": "Ciro Poste",
+          "sprite": "trchar009",
+          "role": "enlace entre ligas",
+          "partnerPokemon": "PELIPPER",
+          "motivation": "Necesita informar acuerdos sin inventar una autoridad nueva.",
+          "conflict": "Convirtió cada aviso temporal en un poste permanente.",
+          "dialogue": {
+            "before": [
+              "Pelipper trae mensajes y no clava fronteras.",
+              "Un acuerdo de hoy no necesita una estatua mañana.",
+              "Puedo registrar responsables sin registrar dueños."
+            ],
+            "after": [
+              "El acta distingue uso, cuidado y propiedad inexistente.",
+              "Los postes estacionales se retiran después de la marea alta.",
+              "Las ligas responden juntas por daños sin gobernar la playa."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se señalará la zona neutral?",
+        "options": [
+          "Bandera rotativa y temporal",
+          "Límite natural sin bandera"
+        ],
+        "immediate": [
+          "Ciro alterna una señal fechada y sin emblemas de liga.",
+          "Alba marca mareas y vegetación sin instalar una tercera bandera."
+        ],
+        "later": [
+          "Las ligas revisarán la neutralidad por temporada.",
+          "Los acuerdos podrán existir sin símbolo territorial permanente."
+        ]
+      },
+      "reward": {
+        "item": "CLEANSETAG",
+        "meaning": "Permite atravesar la zona sin atraer una confrontación que nadie fue a buscar."
+      },
+      "progression": {
+        "switchId": 756,
+        "decisionVariable": 152,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 2,
+      "mapId": 1101,
+      "flag": 757,
+      "variable": 153,
+      "title": "La Habitación que Reservó una Ausencia",
+      "promise": "Una casa mantiene una sala médica vacía para una emergencia profetizada, mientras necesidades presentes esperan afuera y nadie se atreve a cambiar el plan.",
+      "objective": "Revisar suministros y abrir la habitación al presente sin eliminar su capacidad de responder a una emergencia.",
+      "mechanic": {
+        "name": "Reserva flexible",
+        "rules": [
+          "Separar equipo móvil y espacio fijo.",
+          "Definir tiempo máximo sin uso.",
+          "Mantener salida y privacidad para cada visitante."
+        ],
+        "failureSafe": "La habitación puede volver a configuración médica sin expulsar a nadie durante una crisis."
+      },
+      "npcs": [
+        {
+          "name": "Mara Reserva",
+          "sprite": "trchar008",
+          "role": "encargada de cuidados",
+          "partnerPokemon": "AUDINO",
+          "motivation": "Quiere responder a una emergencia sin abandonar necesidades cotidianas.",
+          "conflict": "Protegió una predicción durante años y convirtió la prevención en habitación intocable.",
+          "dialogue": {
+            "before": [
+              "El botiquín está listo; la persona anunciada nunca llegó.",
+              "Audino escucha a quienes esperan hoy, no a una fecha escrita.",
+              "Reservar capacidad no exige reservar cada silla."
+            ],
+            "after": [
+              "El equipo crítico cabe en carros sellados y revisados.",
+              "La sala tiene horario de uso y protocolo de reconversión.",
+              "Nadie pierde privacidad cuando cambia la función del espacio."
+            ]
+          }
+        },
+        {
+          "name": "Teo Plano",
+          "sprite": "NPC 04",
+          "role": "diseñador de espacios",
+          "partnerPokemon": "CHANSEY",
+          "motivation": "Busca que la casa cambie sin improvisar durante una crisis.",
+          "conflict": "Trataba cada pared como garantía de seguridad.",
+          "dialogue": {
+            "before": [
+              "Una pared fija no es un plan de emergencia.",
+              "Chansey puede mover suministros sin mover a una persona descansando.",
+              "Dibujaré primero las rutas de salida y después los muebles."
+            ],
+            "after": [
+              "El plano muestra configuración diaria y médica.",
+              "La reconversión se ensayó sin pacientes dentro.",
+              "La ausencia dejó de ocupar más espacio que el cuidado presente."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué uso tendrá la habitación mientras espera?",
+        "options": [
+          "Consulta comunitaria flexible",
+          "Sala tranquila con equipo móvil"
+        ],
+        "immediate": [
+          "Mara abre turnos breves y conserva carros médicos sellados.",
+          "Teo crea un espacio de descanso que puede reconvertirse sin ruido."
+        ],
+        "later": [
+          "Las reservas de Atlas tendrán plazo y revisión.",
+          "Los refugios separarán capacidad de emergencia y espacio inmovilizado."
+        ]
+      },
+      "reward": {
+        "item": "FULLRESTORE",
+        "meaning": "Representa capacidad real de cuidado disponible ahora, no una promesa guardada para siempre."
+      },
+      "progression": {
+        "switchId": 757,
+        "decisionVariable": 153,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    }
+  ]
+}

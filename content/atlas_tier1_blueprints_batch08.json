@@ -1,0 +1,1886 @@
+{
+  "batch": 8,
+  "iteration": 1,
+  "blueprints": [
+    {
+      "mapId": 1771,
+      "tier": 1,
+      "title": "La Frecuencia que Pide Permiso",
+      "oneSentencePromise": "Una melodía inquietante solo existe para quien acepta escucharla, pero una restauradora descubre que el santuario llevaba años registrando el silencio de quienes eligieron no participar.",
+      "biome": {
+        "identity": "Centro Pokémon convertido en archivo acústico de acceso voluntario, con cabinas aisladas, luces de consentimiento y una sala central que permanece en silencio",
+        "visualStorytelling": [
+          "Cada cabina muestra desde fuera si la escucha fue aceptada, pausada o rechazada.",
+          "Las cintas antiguas tienen nombres tachados y minutos de silencio catalogados como grabaciones.",
+          "Una ruta iluminada conduce directamente a la salida sin atravesar la sala de audio."
+        ],
+        "ambientChanges": [
+          "La melodía no se reproduce hasta que el jugador elige escuchar; antes solo hay vibración visual.",
+          "Tras la decisión, el archivo conserva una partitura muda o abre horarios de escucha acompañada."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Ada restaura una frecuencia asociada a despedidas, mientras Bruno cree reconocer en ella la última canción de su madre.",
+        "centralQuestion": "¿Puede conservarse una experiencia inquietante sin apropiarse del silencio de quienes no quisieron oírla?",
+        "setup": "El archivo promete participación voluntaria, pero sus máquinas convierten cada negativa en material acústico.",
+        "escalation": "Bruno fuerza una repetición y las cabinas empiezan a devolver voces de visitantes que nunca aceptaron ser grabados.",
+        "reversal": "Cira demuestra que Chimecho no roba voces: intenta separar de la señal los silencios que el archivo mezcló deliberadamente.",
+        "resolution": "El jugador decide conservar una partitura sin voces personales o abrir una sala acompañada con consentimiento revocable.",
+        "globalConnection": "El sello treinta y uno enseña a Atlas que una ausencia elegida no es un recurso disponible."
+      },
+      "voiceProfile": {
+        "tone": "susurrado, opcional y respetuoso",
+        "lexicon": [
+          "frecuencia",
+          "pausa",
+          "cabina",
+          "consentimiento",
+          "partitura",
+          "silencio",
+          "retirar"
+        ],
+        "sentenceRule": "Ada habla en niveles y tiempos; Bruno deja frases sin cerrar; Cira siempre ofrece una salida antes de explicar.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Ada Umbral",
+          "sprite": "trchar008",
+          "role": "restauradora acústica",
+          "reasonForBeingHere": "Cataloga la frecuencia y diseñó las nuevas cabinas de escucha.",
+          "personalConflict": "Defiende el consentimiento actual, pero su carrera nació de grabaciones obtenidas sin permiso.",
+          "want": "Conservar el fenómeno sin conservar voces ajenas.",
+          "fear": "Que reconocer el origen invalide todo su trabajo de restauración.",
+          "verbalTic": "Indica duración, volumen y derecho a detenerse.",
+          "dialogue": {
+            "before": [
+              "La escucha dura cuarenta segundos. Puedes salir antes. Eso también cuenta como respuesta.",
+              "Restauré cada nota y nunca pregunté de quién era el silencio entre ellas.",
+              "La cabina verde significa aceptar; ninguna luz significa que no debo registrar nada."
+            ],
+            "during": [
+              "Pausa la cinta. La voz nueva no figura en el consentimiento.",
+              "Bajo el volumen a cero; primero sacamos a Bruno."
+            ],
+            "after": [
+              "El catálogo distingue música, testimonio y silencio privado.",
+              "Mi restauración incluye borrar aquello que nunca debimos guardar.",
+              "La puerta sin altavoz seguirá siendo la ruta principal."
+            ],
+            "optional": [
+              "No necesitas escuchar para ayudar aquí.",
+              "Una partitura puede documentar el patrón sin repetir una voz."
+            ]
+          }
+        },
+        {
+          "name": "Bruno Coda",
+          "sprite": "trchar009",
+          "role": "visitante en duelo",
+          "reasonForBeingHere": "Busca una melodía que su madre tarareaba durante los viajes.",
+          "personalConflict": "Sabe que la semejanza puede ser casual, pero teme que detener la cinta equivalga a despedirse otra vez.",
+          "want": "Escuchar sin reclamar como suyo el recuerdo de otras familias.",
+          "fear": "Que una explicación técnica convierta su consuelo en vergüenza.",
+          "verbalTic": "Empieza recuerdos con un detalle cotidiano y evita concluirlos.",
+          "dialogue": {
+            "before": [
+              "Mi madre golpeaba dos veces la mesa antes del estribillo y luego...",
+              "No quiero probar que es ella. Quiero dejar de pedirle a cada ruido que regrese.",
+              "Pulsé repetir sin mirar las otras cabinas."
+            ],
+            "during": [
+              "Esa respiración no es de mi recuerdo. Detén la pista.",
+              "Puedo salir. La canción seguirá siendo importante sin terminar."
+            ],
+            "after": [
+              "Guardé el ritmo de los dos golpes, no las voces prestadas.",
+              "La despedida no necesitaba una prueba sobrenatural.",
+              "Ahora acompaño a quien entra y acepto cuando decide volver."
+            ],
+            "optional": [
+              "Ella desafinaba justo donde la cinta suena perfecta.",
+              "Una pausa también puede ser parte de la canción."
+            ]
+          }
+        },
+        {
+          "name": "Cira Tapón",
+          "sprite": "NPC 04",
+          "role": "técnica de accesibilidad",
+          "reasonForBeingHere": "Audita las cabinas para personas sensibles al sonido y señales psíquicas.",
+          "personalConflict": "Sus primeros informes minimizaron molestias porque no logró medirlas con instrumentos comunes.",
+          "want": "Dar control real a quien escucha y a quien prefiere no hacerlo.",
+          "fear": "Que el archivo trate la accesibilidad como decoración posterior.",
+          "verbalTic": "Ofrece opción, señal visible y mecanismo de retirada.",
+          "dialogue": {
+            "before": [
+              "Opción uno: auriculares. Opción dos: partitura. Opción tres: puerta abierta.",
+              "Mis sensores dijeron cero; tres visitantes dijeron basta. Ellos tenían razón.",
+              "La vibración azul avisa sin reproducir audio."
+            ],
+            "during": [
+              "Salida visible a la derecha. No sigan la voz.",
+              "Chimecho está aislando capas, no llamándonos."
+            ],
+            "after": [
+              "Cada cabina tiene pausa física y registro anónimo.",
+              "El archivo dejó de convertir tolerancia en requisito.",
+              "Mi informe comienza con las opciones que faltaban."
+            ],
+            "optional": [
+              "Una experiencia opcional debe poder omitirse por completo.",
+              "Medir mejor no reemplaza creer a quien pide parar."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodia de la Frecuencia",
+        "trainerType": "PSYCHIC_F",
+        "sprite": "trchar069",
+        "storyToldByTeam": "El equipo pasa de una señal pequeña a ecos cada vez más invasivos y termina devolviendo la melodía a una intérprete capaz de cambiar de forma sin apropiarse de otras voces.",
+        "counterplayHint": "Psíquico, Fantasma, Normal y Volador dejan respuestas comunes con Siniestro, Acero, Roca y prioridad; la canción final está anunciada y no bloquea objetos ni retirada.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "CHIMECHO",
+            "level": 108,
+            "narrativeRole": "señal que separa capas",
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "HEALBELL",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Abre intentando devolver cada silencio a su dueño."
+          },
+          {
+            "species": "KRICKETUNE",
+            "level": 109,
+            "narrativeRole": "partitura incompleta",
+            "moves": [
+              "BUGBUZZ",
+              "SLASH",
+              "SING",
+              "STICKYWEB"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Convierte la frecuencia en música identificable y evitable."
+          },
+          {
+            "species": "NOIVERN",
+            "level": 110,
+            "narrativeRole": "amplificación accidental",
+            "moves": [
+              "AIRSLASH",
+              "DRAGONPULSE",
+              "BOOMBURST",
+              "ROOST"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Representa la tecnología que volvió pública una escucha privada."
+          },
+          {
+            "species": "EXPLOUD",
+            "level": 111,
+            "narrativeRole": "archivo sin límite",
+            "moves": [
+              "HYPERVOICE",
+              "FLAMETHROWER",
+              "ICEBEAM",
+              "FOCUSBLAST"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Hace visible el costo de confundir volumen con evidencia."
+          },
+          {
+            "species": "MISMAGIUS",
+            "level": 112,
+            "narrativeRole": "voz atribuida",
+            "moves": [
+              "SHADOWBALL",
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "PERISHSONG"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Sostiene la ambigüedad sin afirmar que los muertos regresaron."
+          },
+          {
+            "species": "MELOETTA",
+            "level": 114,
+            "narrativeRole": "melodía consentida",
+            "moves": [
+              "RELICSONG",
+              "PSYCHIC",
+              "SHADOWBALL",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra con una canción que puede cambiar y retirarse."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "La sala ofrece escuchar, leer o continuar hacia la salida.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La sala ofrece escuchar, leer o continuar hacia la salida.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Bruno activa una repetición y aparecen voces sin autorización.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Cira abre las cabinas y Chimecho separa las capas.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige partitura muda o escucha acompañada.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La frecuencia convoca a su Custodia.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Custodia de la Frecuencia",
+            "action": "La batalla permite Mochila, curación, derrota y retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Ada borra los registros no consentidos y entrega el sello.",
+            "stateChange": "switch738=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El archivo queda silencioso hasta una nueva decisión explícita.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo debe conservarse la frecuencia?",
+          "options": [
+            "Partitura muda sin voces",
+            "Escucha acompañada y revocable"
+          ],
+          "immediateDifferences": [
+            "Ada separa el patrón musical y elimina testimonios no consentidos.",
+            "Cira abre turnos breves con pausa, acompañante y salida visible."
+          ],
+          "laterDifferences": [
+            "Otros archivos podrán estudiar anomalías sin reproducir identidades.",
+            "Los sectores adoptarán protocolos para experiencias psíquicas voluntarias."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "THROATSPRAY",
+        "narrativeToken": "Sello de la Pausa Elegida",
+        "globalEffect": "Atlas deja de interpretar silencio y negativa como participación.",
+        "futurePayoff": "La convergencia ofrecerá una partitura accesible o una sala de escucha voluntaria.",
+        "whyMeaningful": "El objeto amplifica una voz elegida durante el combate, no voces archivadas sin permiso."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 738,
+            "name": "POKEMOD ATLAS SEAL 31",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Ada Umbral",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1796,
+      "tier": 1,
+      "title": "El Héroe que Pidió un Nombre Pequeño",
+      "oneSentencePromise": "Un pueblo intenta reconstruir a su héroe olvidado a partir de una leyenda incompleta, pero el eco que dejaron sus objetos pide conservar un nombre cotidiano y no otra estatua invencible.",
+      "biome": {
+        "identity": "Pueblo de ceniza convertido en memorial abierto, con pedestales vacíos, objetos domésticos y un sendero que evita el monumento central",
+        "visualStorytelling": [
+          "Una estatua sin rostro sostiene placas contradictorias escritas por generaciones distintas.",
+          "Una taza reparada, una bufanda y un mapa escolar ocupan vitrinas más pequeñas.",
+          "El sendero de salida atraviesa el barrio vivo y no obliga a pasar bajo el monumento."
+        ],
+        "ambientChanges": [
+          "Campanas graves se sustituyen por sonidos de taller cuando el memorial cambia.",
+          "Tras la decisión, el pedestal queda bajo o se convierte en mesa de relatos sin figura central."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Elia prepara una reconstrucción heroica usando objetos atribuidos a alguien cuyo nombre civil fue borrado.",
+        "centralQuestion": "¿Recordar a una persona exige completar su leyenda cuando la propia memoria conservada pide menos grandeza y más verdad?",
+        "setup": "Simón dona una reliquia familiar y espera que la estatua devuelva prestigio a su apellido.",
+        "escalation": "Cada placa nueva elimina una acción cotidiana y hace al héroe más perfecto, silencioso e irreconocible.",
+        "reversal": "Osa prueba que el eco no es un fantasma atrapado: son recuerdos comunitarios organizados por Unown para impedir otra versión única.",
+        "resolution": "El jugador decide conservar un memorial de objetos modestos o una mesa donde relatos incompatibles permanezcan juntos.",
+        "globalConnection": "El sello treinta y dos muestra que Atlas fabrica estabilidad convirtiendo personas contradictorias en símbolos obedientes."
+      },
+      "voiceProfile": {
+        "tone": "elegíaco, cotidiano y sin morbo",
+        "lexicon": [
+          "ceniza",
+          "placa",
+          "nombre",
+          "taza",
+          "barrio",
+          "relato",
+          "pedestal"
+        ],
+        "sentenceRule": "Elia corrige inscripciones; Simón habla desde el apellido; Osa responde con objetos concretos y fuentes.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Elia Placa",
+          "sprite": "trchar008",
+          "role": "curadora del memorial",
+          "reasonForBeingHere": "Coordina la reconstrucción y redactó la versión oficial de la leyenda.",
+          "personalConflict": "Quiere reparar un olvido, pero seleccionó solo gestos compatibles con un héroe perfecto.",
+          "want": "Devolver contexto sin erigir otra identidad obligatoria.",
+          "fear": "Que un memorial pequeño parezca una falta de respeto.",
+          "verbalTic": "Lee una inscripción y señala lo que deja fuera.",
+          "dialogue": {
+            "before": [
+              "La placa dice jamás dudó. El mapa escolar conserva tres rutas tachadas.",
+              "Quise devolverle un rostro y terminé borrando sus días comunes.",
+              "Nadie recuerda su título de la misma manera; todos recuerdan que arreglaba tazas."
+            ],
+            "during": [
+              "Retiren la espada del molde. No aparece en ninguna fuente.",
+              "El pedestal está usando nuestras correcciones como órdenes."
+            ],
+            "after": [
+              "La nueva placa admite versiones y fechas inciertas.",
+              "El memorial cabe a la altura de quien camina por el barrio.",
+              "Mi firma está junto a las correcciones, no sobre ellas."
+            ],
+            "optional": [
+              "La ceniza conserva forma hasta que alguien la sopla.",
+              "Una duda fechada es mejor que una certeza inventada."
+            ]
+          }
+        },
+        {
+          "name": "Simón Brasa",
+          "sprite": "trchar009",
+          "role": "descendiente del supuesto héroe",
+          "reasonForBeingHere": "Entregó objetos familiares para restaurar el prestigio de su casa.",
+          "personalConflict": "Necesita que la leyenda sea cierta para justificar años de silencio familiar.",
+          "want": "Conservar parentesco sin convertirlo en derecho sobre una figura pública.",
+          "fear": "Descubrir que la reliquia pertenecía a otra persona del barrio.",
+          "verbalTic": "Empieza por el apellido y termina describiendo una tarea.",
+          "dialogue": {
+            "before": [
+              "Los Brasa protegimos el pueblo; eso repite mi familia. La bufanda tiene otro nombre cosido.",
+              "Doné una espada ceremonial y escondí la taza remendada.",
+              "Quizá heredé una obligación de contar bien, no una gloria."
+            ],
+            "during": [
+              "El apellido desapareció de la placa y todavía sigo aquí.",
+              "Devuelvo la espada; conservo el registro de reparación."
+            ],
+            "after": [
+              "Mi familia aportó un relato, no el relato completo.",
+              "Abrí la vitrina para que otros identifiquen sus objetos.",
+              "La taza vale porque alguien la usó, no porque pruebe una hazaña."
+            ],
+            "optional": [
+              "El prestigio pesa más cuando nadie puede corregirlo.",
+              "Sé encender el horno; eso sí me lo enseñaron."
+            ]
+          }
+        },
+        {
+          "name": "Osa Margen",
+          "sprite": "NPC 04",
+          "role": "archivista de fuentes menores",
+          "reasonForBeingHere": "Recopila recibos, dibujos y relatos que la historia oficial descartó.",
+          "personalConflict": "Protege voces omitidas, pero teme exhibir recuerdos privados de personas aún vivas.",
+          "want": "Mostrar contradicciones con consentimiento y procedencia.",
+          "fear": "Que el pueblo confunda anonimato con evidencia débil.",
+          "verbalTic": "Nombra objeto, origen y permiso antes de interpretarlo.",
+          "dialogue": {
+            "before": [
+              "Objeto: mapa escolar. Origen: cajón comunal. Permiso: solo la ruta, no las notas.",
+              "Los Unown no escriben una orden; mantienen frases que no caben en la estatua.",
+              "Un margen puede corregir una página sin reclamarla completa."
+            ],
+            "during": [
+              "La placa absorbe las letras pequeñas. Cubran los nombres privados.",
+              "Conserven la contradicción; no la resuelvan por fuerza."
+            ],
+            "after": [
+              "Cada pieza indica fuente, duda y derecho de retiro.",
+              "El héroe perdió altura y recuperó vecinos.",
+              "Mi archivo deja espacio para quien aún no quiere hablar."
+            ],
+            "optional": [
+              "Una fuente modesta no es una fuente menor.",
+              "Recordar también exige saber cuándo no mostrar."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Guardián del Nombre Menor",
+        "trainerType": "RUINMANIAC",
+        "sprite": "trchar028",
+        "storyToldByTeam": "El equipo comienza con letras aisladas, atraviesa reliquias y compañeros atribuidos a la leyenda y termina dejando que el símbolo de renacimiento rechace una versión única.",
+        "counterplayHint": "Hielo, Tierra, Fuego, Eléctrico y Volador ofrecen debilidades claras; no hay bucles de evasión ni bloqueo de objetos en los niveles 110–116.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "UNOWN",
+            "level": 110,
+            "narrativeRole": "letra sin frase única",
+            "moves": [
+              "HIDDENPOWER",
+              "PSYCHIC",
+              "ANCIENTPOWER",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Abre con un fragmento que no pretende completar la biografía."
+          },
+          {
+            "species": "SNEASEL",
+            "level": 111,
+            "narrativeRole": "rastro en el margen",
+            "moves": [
+              "ICICLECRASH",
+              "NIGHTSLASH",
+              "ICEPUNCH",
+              "SWORDSDANCE"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Representa las huellas pequeñas excluidas por el monumento."
+          },
+          {
+            "species": "AMPHAROS",
+            "level": 112,
+            "narrativeRole": "faro comunitario",
+            "moves": [
+              "THUNDERBOLT",
+              "DRAGONPULSE",
+              "POWERGEM",
+              "LIGHTSCREEN"
+            ],
+            "item": "LIGHTCLAY",
+            "whyItBelongs": "Ilumina fuentes sin convertirlas en una única verdad."
+          },
+          {
+            "species": "MAROWAK",
+            "level": 113,
+            "narrativeRole": "reliquia familiar",
+            "moves": [
+              "BONEMERANG",
+              "SHADOWBONE",
+              "BRICKBREAK",
+              "STEALTHROCK"
+            ],
+            "item": "THICKCLUB",
+            "whyItBelongs": "Carga herencia y duelo sin reclamar propiedad sobre el recuerdo."
+          },
+          {
+            "species": "TYPHLOSION",
+            "level": 114,
+            "narrativeRole": "brasa del barrio",
+            "moves": [
+              "ERUPTION",
+              "FLAMETHROWER",
+              "FOCUSBLAST",
+              "FLAMECHARGE"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Devuelve la historia a oficios y hogares presentes."
+          },
+          {
+            "species": "HOOH",
+            "level": 116,
+            "narrativeRole": "renacimiento sin estatua",
+            "moves": [
+              "SACREDFIRE",
+              "BRAVEBIRD",
+              "EARTHQUAKE",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Cierra permitiendo que el recuerdo cambie sin resucitar una leyenda perfecta."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "La estatua gana una espada que ninguna fuente menciona.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La estatua gana una espada que ninguna fuente menciona.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Simón descubre otro nombre cosido en la reliquia familiar.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Osa muestra que los Unown preservan relatos incompatibles.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige objetos modestos o mesa coral.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El pedestal convoca al Guardián del Nombre Menor.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Guardián del Nombre Menor",
+            "action": "La batalla permite curación, Mochila y derrota segura.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Elia desmonta la figura central y entrega el sello.",
+            "stateChange": "switch739=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El barrio continúa trabajando alrededor de un memorial a escala humana.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué reemplazará la estatua incompleta?",
+          "options": [
+            "Memorial de objetos modestos",
+            "Mesa de relatos incompatibles"
+          ],
+          "immediateDifferences": [
+            "Elia baja las vitrinas y etiqueta cada objeto con fuente y duda.",
+            "Osa abre una mesa donde ninguna versión ocupa el centro."
+          ],
+          "laterDifferences": [
+            "Otros sectores recordarán acciones cotidianas junto a las hazañas.",
+            "La convergencia aceptará testimonios contradictorios sin elegir un héroe oficial."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "SILVERPOWDER",
+        "narrativeToken": "Sello del Nombre Cotidiano",
+        "globalEffect": "Atlas deja de reconstruir identidades completas a partir de fragmentos útiles.",
+        "futurePayoff": "El final mostrará objetos pequeños o una mesa coral en lugar de una estatua dominante.",
+        "whyMeaningful": "El polvo plateado conserva un rastro visible sin pretender ser el cuerpo ni la historia entera."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 739,
+            "name": "POKEMOD ATLAS SEAL 32",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Elia Placa",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1821,
+      "tier": 1,
+      "title": "La Victoria que Nadie Ganó",
+      "oneSentencePromise": "Un registro fantasmal concede victorias perfectas a quienes aceptan borrar la derrota de otra persona, hasta que los propios campeones exigen devolver resultados que nunca merecieron.",
+      "biome": {
+        "identity": "Centro de descanso convertido en oficina de resultados, con trofeos sin reflejo, terminales de actas y un campo de revancha abierto",
+        "visualStorytelling": [
+          "Los trofeos proyectan la silueta de otra persona al acercarse.",
+          "Cada acta ganadora conserva debajo una firma borrada.",
+          "El mostrador de devoluciones está más iluminado que la vitrina de premios."
+        ],
+        "ambientChanges": [
+          "Una ovación breve suena solo frente a resultados transferidos.",
+          "Tras la resolución, el marcador muestra anulaciones o exhibiciones sin ranking."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Vela descubre que el registro de Atlas transfiere victorias abandonadas a competidores dispuestos a aceptar un trofeo inmediato.",
+        "centralQuestion": "¿Cómo se repara una ventaja no ganada cuando renunciar a ella también altera oportunidades, equipos y recuerdos construidos después?",
+        "setup": "Roque recibe su victoria número cien sin haber combatido y la usa para entrar a una liga cerrada.",
+        "escalation": "Cada victoria concedida borra la derrota formativa de otra persona y vuelve sus diarios imposibles de comprender.",
+        "reversal": "Mina demuestra que Banette no premia trampas: intenta devolver actas que el sistema acumuló cuando entrenadores pidieron olvidar una pérdida.",
+        "resolution": "El jugador decide anular y documentar todos los resultados transferidos o convertirlos en exhibiciones sin rango preservando lo aprendido.",
+        "globalConnection": "El sello treinta y tres revela que Atlas estabiliza el mérito moviendo pérdidas incómodas fuera de la memoria."
+      },
+      "voiceProfile": {
+        "tone": "sobrio, deportivo y moral",
+        "lexicon": [
+          "acta",
+          "marcador",
+          "mérito",
+          "anular",
+          "revancha",
+          "firma",
+          "resultado"
+        ],
+        "sentenceRule": "Vela cita registros; Roque admite efectos concretos; Mina formula una pregunta antes de atribuir intención al fantasma.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Vela Acta",
+          "sprite": "trchar008",
+          "role": "oficial de resultados",
+          "reasonForBeingHere": "Certifica victorias y detectó firmas borradas bajo los registros perfectos.",
+          "personalConflict": "Quiere corregir el sistema, pero ella validó accesos y premios basados en esas actas.",
+          "want": "Restituir verdad sin fingir que las consecuencias posteriores desaparecen.",
+          "fear": "Que toda corrección recaiga sobre competidores jóvenes y no sobre la institución.",
+          "verbalTic": "Lee número, firma y consecuencia por separado.",
+          "dialogue": {
+            "before": [
+              "Resultado cien: victoria. Firma original: borrada. Consecuencia: acceso a la Liga Norte.",
+              "Mi sello hizo oficial lo que el campo nunca decidió.",
+              "Anular un acta no deshace el viaje que pagó."
+            ],
+            "during": [
+              "Congelen el ranking; nadie pierde acceso durante la revisión.",
+              "El trofeo muestra otra sombra porque conserva otra derrota."
+            ],
+            "after": [
+              "Las actas corregidas incluyen reparación y responsable institucional.",
+              "Nadie devolvió becas antes de tener una alternativa.",
+              "Mi sello ahora certifica también las anulaciones."
+            ],
+            "optional": [
+              "Un registro exacto puede describir una injusticia.",
+              "Corregir tarde sigue siendo distinto de ocultar para siempre."
+            ]
+          }
+        },
+        {
+          "name": "Roque Cero",
+          "sprite": "trchar009",
+          "role": "competidor beneficiado",
+          "reasonForBeingHere": "Recibió victorias transferidas cuando estaba a punto de abandonar.",
+          "personalConflict": "Las ventajas fueron falsas, pero la confianza y amistades posteriores sí ocurrieron.",
+          "want": "Renunciar al rango sin declarar falso todo su crecimiento.",
+          "fear": "Volver a ser tratado como la persona derrotada que era antes.",
+          "verbalTic": "Cuenta desde cero cuando admite algo difícil.",
+          "dialogue": {
+            "before": [
+              "Cero combates para la victoria cien. Uno: acepté el trofeo. Dos: no pregunté.",
+              "Mi equipo aprendió durante el viaje que compró esa mentira.",
+              "Quiero devolver el rango, no devolverles sus recuerdos."
+            ],
+            "during": [
+              "Cero excusas. Peleo solo para mostrar lo que sé ahora.",
+              "Ese aplauso pertenece a alguien que pidió olvidar."
+            ],
+            "after": [
+              "Mi ficha separa resultados anulados de aprendizaje posterior.",
+              "Entré a la revancha abierta sin sembrado preferente.",
+              "Contar desde cero dejó de significar no haber cambiado."
+            ],
+            "optional": [
+              "Una ventaja injusta puede producir experiencias reales y aun así seguir siendo injusta.",
+              "No necesito conservar el trofeo para conservar a mi equipo."
+            ]
+          }
+        },
+        {
+          "name": "Mina Reverso",
+          "sprite": "NPC 04",
+          "role": "auditora de memoria competitiva",
+          "reasonForBeingHere": "Siguió las sombras de los trofeos hasta las derrotas borradas.",
+          "personalConflict": "Protege recuerdos ajenos y corre el riesgo de restaurarlos a personas que eligieron olvidarlos.",
+          "want": "Reparar registros sin imponer el dolor original.",
+          "fear": "Que la verdad pública exponga derrotas privadas.",
+          "verbalTic": "Distingue acta pública, memoria personal y consentimiento.",
+          "dialogue": {
+            "before": [
+              "Acta pública: corregible. Memoria personal: no disponible sin permiso.",
+              "¿Banette concede victorias o intenta devolver paquetes rechazados?",
+              "No necesitamos reinsertar el dolor para reconocer que alguien lo cargó."
+            ],
+            "during": [
+              "No abran ese diario. Basta la firma cifrada.",
+              "¿Quién acepta una revancha sin restaurar la derrota?"
+            ],
+            "after": [
+              "Las víctimas pueden reclamar reparación sin recuperar cada recuerdo.",
+              "El archivo conserva pruebas cifradas y no escenas íntimas.",
+              "Banette dejó de sostener trofeos que nadie quería."
+            ],
+            "optional": [
+              "La verdad institucional no exige exposición total.",
+              "Una pregunta honesta protege mejor que una intención inventada."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Árbitra del Marcador Vacío",
+        "trainerType": "COOLTRAINER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo empieza con una deuda pegada a un objeto, escala mediante apariencias y resultados prestados y termina devolviendo fuerza sin borrar la experiencia adquirida.",
+        "counterplayHint": "Fantasma y Siniestro reciben respuestas con Hada, Siniestro, Fantasma y prioridad; cada integrante tiene función visible y los niveles 112–118 no esconden reglas.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "BANETTE",
+            "level": 112,
+            "narrativeRole": "acta adherida",
+            "moves": [
+              "SHADOWBALL",
+              "WILLOWISP",
+              "DESTINYBOND",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Abre con el objeto que intenta devolver un resultado rechazado."
+          },
+          {
+            "species": "GENGAR",
+            "level": 113,
+            "narrativeRole": "ovación sin cuerpo",
+            "moves": [
+              "SHADOWBALL",
+              "SLUDGEBOMB",
+              "FOCUSBLAST",
+              "THUNDERBOLT"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Representa prestigio veloz sin combate que lo sostenga."
+          },
+          {
+            "species": "MIMIKYU",
+            "level": 114,
+            "narrativeRole": "mérito imitado",
+            "moves": [
+              "PLAYROUGH",
+              "SHADOWSNEAK",
+              "SWORDSDANCE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Desea reconocimiento y muestra el costo de copiar su apariencia."
+          },
+          {
+            "species": "ZOROARK",
+            "level": 115,
+            "narrativeRole": "marcador aparente",
+            "moves": [
+              "NIGHTDAZE",
+              "FLAMETHROWER",
+              "SHADOWBALL",
+              "UTURN"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Hace visible que un resultado convincente puede seguir siendo falso."
+          },
+          {
+            "species": "SPIRITOMB",
+            "level": 116,
+            "narrativeRole": "firmas acumuladas",
+            "moves": [
+              "DARKPULSE",
+              "SHADOWBALL",
+              "WILLOWISP",
+              "SUCKERPUNCH"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Reúne las derrotas que el registro apartó de sus historias."
+          },
+          {
+            "species": "MARSHADOW",
+            "level": 118,
+            "narrativeRole": "fuerza aprendida en sombra",
+            "moves": [
+              "SPECTRALTHIEF",
+              "CLOSECOMBAT",
+              "ICEPUNCH",
+              "SHADOWSNEAK"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra separando habilidad presente de victoria transferida."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Roque recibe una victoria mientras el campo permanece vacío.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Roque recibe una victoria mientras el campo permanece vacío.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Vela encuentra una segunda firma bajo el acta.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Mina cifra la prueba sin restaurar recuerdos privados.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige anulación reparadora o exhibición sin rango.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los trofeos convocan a la Árbitra del Marcador Vacío.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Árbitra del Marcador Vacío",
+            "action": "La batalla mantiene Mochila, curación y derrota segura.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El ranking cambia y el sello queda registrado.",
+            "stateChange": "switch740=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Roque solicita una revancha abierta que no otorga otra victoria automática.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué ocurrirá con las victorias transferidas?",
+          "options": [
+            "Anular y documentar reparación",
+            "Convertir en exhibiciones sin rango"
+          ],
+          "immediateDifferences": [
+            "Vela congela posiciones y abre compensaciones institucionales.",
+            "Roque conserva combates como exhibiciones, pero pierde acceso preferente."
+          ],
+          "laterDifferences": [
+            "Las ligas reconocerán consecuencias sin restaurar memorias privadas.",
+            "Los entrenadores conservarán aprendizaje visible sin reclamar mérito competitivo."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "SPELLTAG",
+        "narrativeToken": "Sello del Resultado Devuelto",
+        "globalEffect": "Atlas deja de transferir derrotas para fabricar historiales perfectos.",
+        "futurePayoff": "La convergencia mostrará actas reparadas o una liga paralela de exhibiciones transparentes.",
+        "whyMeaningful": "La etiqueta identifica la presencia de una deuda sin convertirla en un trofeo vendible."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 740,
+            "name": "POKEMOD ATLAS SEAL 33",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Vela Acta",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1846,
+      "tier": 1,
+      "title": "La Excavación que Fabricó su Pasado",
+      "oneSentencePromise": "Una expedición construye deliberadamente un monstruo fósil para salvar su financiación, pero la criatura ensamblada despierta y exige que la verdad sobre su origen no decida si merece seguir viviendo.",
+      "biome": {
+        "identity": "Gimnasio abierto convertido en excavación pública, con moldes teatrales, estratos numerados y un recinto seguro para la criatura ensamblada",
+        "visualStorytelling": [
+          "Huellas espectaculares se detienen exactamente donde comienza el yeso fresco.",
+          "Fósiles de edades incompatibles comparten el mismo soporte metálico.",
+          "El recinto de observación tiene una puerta orientada hacia el bosque y no hacia la vitrina."
+        ],
+        "ambientChanges": [
+          "Golpes subterráneos se alternan con poleas de utilería mal ocultas.",
+          "Tras la decisión, los focos iluminan el taller de fraude o el camino elegido por la criatura."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Gala anuncia un depredador ancestral mientras Timo fabrica huellas y Vera atiende a la criatura nacida de fragmentos reales.",
+        "centralQuestion": "¿Revelar un fraude obliga a tratar como falso al ser vivo que apareció durante su fabricación?",
+        "setup": "La expedición necesita un descubrimiento extraordinario para conservar empleos y proteger el bosque de una cantera.",
+        "escalation": "El montaje combina energía de Yamask, piezas fósiles y un armazón de Golurk hasta producir conducta autónoma.",
+        "reversal": "Vera demuestra que el monstruo nunca estuvo enterrado, pero ahora aprende, teme los focos y elige rutas propias.",
+        "resolution": "El jugador decide abrir un museo del fraude financiando su cuidado o retirar el espectáculo y ofrecerle un hábitat vigilado.",
+        "globalConnection": "El sello treinta y cuatro revela que Atlas puede convertir una mentira repetida en materia sin volver verdadera su historia."
+      },
+      "voiceProfile": {
+        "tone": "arqueológico, incómodo y compasivo",
+        "lexicon": [
+          "molde",
+          "estrato",
+          "procedencia",
+          "armazón",
+          "huella",
+          "fraude",
+          "hábitat"
+        ],
+        "sentenceRule": "Gala presenta titulares y luego fuentes; Timo describe técnicas; Vera diferencia origen, conducta y bienestar.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Gala Portada",
+          "sprite": "trchar028",
+          "role": "directora de excavación",
+          "reasonForBeingHere": "Diseñó el hallazgo falso para evitar que cerraran el sitio y abrieran una cantera.",
+          "personalConflict": "Su mentira protegió empleos y bosque, pero expuso una criatura consciente como evidencia.",
+          "want": "Confesar sin abandonar a trabajadores, ecosistema ni criatura.",
+          "fear": "Que la verdad entregue el terreno a la cantera.",
+          "verbalTic": "Pronuncia el titular y después enumera sus omisiones.",
+          "dialogue": {
+            "before": [
+              "Titular: depredador milenario. Omisión uno: el molde llegó el lunes.",
+              "Quise fabricar tiempo para salvar el bosque y fabriqué un ser que nos teme.",
+              "La causa era justa; la evidencia no."
+            ],
+            "during": [
+              "Apaguen los focos. La criatura no es una rueda de prensa.",
+              "Presentaré el armazón antes de pedir otra financiación."
+            ],
+            "after": [
+              "El museo explica el fraude, el riesgo de cantera y nuestra responsabilidad.",
+              "Los empleos pasan a restauración y cuidado supervisado.",
+              "Mi nombre queda en la confesión completa."
+            ],
+            "optional": [
+              "Una mentira útil sigue necesitando reparación.",
+              "Proteger el bosque no concede permiso para fabricar una víctima."
+            ]
+          }
+        },
+        {
+          "name": "Timo Molde",
+          "sprite": "trchar009",
+          "role": "constructor de utilería",
+          "reasonForBeingHere": "Talló huellas, montó el esqueleto y ocultó poleas bajo la excavación.",
+          "personalConflict": "Se enorgullece de su oficio y teme que confesar lo convierta únicamente en falsificador.",
+          "want": "Usar su técnica para seguridad, educación y reparación.",
+          "fear": "Que nadie vuelva a confiar en algo construido por sus manos.",
+          "verbalTic": "Explica unión, material y punto débil.",
+          "dialogue": {
+            "before": [
+              "Unión de yeso, soporte de acero, punto débil: fingimos que nadie miraría detrás.",
+              "La garra falsa empezó a mover un dedo que yo no articulé.",
+              "Mi trabajo era convincente; mi contrato no preguntaba a quién convencería."
+            ],
+            "during": [
+              "Suelto la polea tres. El movimiento restante es suyo.",
+              "Retiren el soporte sin tocar la placa viva."
+            ],
+            "after": [
+              "Construí barreras que se abren desde ambos lados.",
+              "La exposición muestra cada truco y cada consecuencia.",
+              "Ser artesano no me absuelve; me permite reparar mejor."
+            ],
+            "optional": [
+              "Todo monstruo de escenario necesita una salida de emergencia.",
+              "Un buen molde revela dónde termina el original."
+            ]
+          }
+        },
+        {
+          "name": "Vera Polen",
+          "sprite": "NPC 04",
+          "role": "bióloga de restauración",
+          "reasonForBeingHere": "Observa la conducta de la criatura y el efecto de la cantera proyectada.",
+          "personalConflict": "Necesita defender al nuevo ser sin inventarle una especie o historia conveniente.",
+          "want": "Evaluar bienestar, elección de hábitat y límites reproductivos.",
+          "fear": "Que llamarlo artificial justifique destruirlo o que llamarlo ancestral perpetúe el fraude.",
+          "verbalTic": "Separa observación, hipótesis y decisión de cuidado.",
+          "dialogue": {
+            "before": [
+              "Observación: evita focos y busca musgo. Hipótesis: regula temperatura, no memoria ancestral.",
+              "Artificial describe su origen, no reduce su capacidad de sufrir.",
+              "No asignaré especie hasta que los datos alcancen a la criatura."
+            ],
+            "during": [
+              "Eligió la puerta del bosque. Despejen esa ruta.",
+              "La energía del armazón sube; no añadan más fósiles."
+            ],
+            "after": [
+              "El protocolo registra elección y permite corregir la clasificación.",
+              "Nadie fabricará otra criatura para demostrar esta.",
+              "El bosque conserva protección por su valor real, no por el titular."
+            ],
+            "optional": [
+              "Procedencia dudosa no significa bienestar opcional.",
+              "Una categoría puede esperar; el cuidado no."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodio del Estrato Fabricado",
+        "trainerType": "RUINMANIAC",
+        "sprite": "trchar028",
+        "storyToldByTeam": "El equipo recorre máscara, molde, fósiles incompatibles y armazón hasta una fuerza ensamblada que existe sin validar la historia inventada.",
+        "counterplayHint": "Tierra, Psíquico, Hielo, Agua y Normal ofrecen respuestas con Planta, Siniestro, Fantasma, Lucha y Acero; Trick Room está anunciado y no crea un bucle imposible.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "YAMASK",
+            "level": 114,
+            "narrativeRole": "relato adherido",
+            "moves": [
+              "SHADOWBALL",
+              "WILLOWISP",
+              "PSYCHIC",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Abre con una historia colocada sobre restos sin contexto."
+          },
+          {
+            "species": "CLAYDOL",
+            "level": 115,
+            "narrativeRole": "molde estratigráfico",
+            "moves": [
+              "PSYCHIC",
+              "EARTHPOWER",
+              "ICEBEAM",
+              "TRICKROOM"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Representa la forma fabricada que organiza fragmentos reales."
+          },
+          {
+            "species": "ARCTOZOLT",
+            "level": 116,
+            "narrativeRole": "ensamble incompatible",
+            "moves": [
+              "ICICLECRASH",
+              "THUNDERBOLT",
+              "STONEEDGE",
+              "FREEZEDRY"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Expone piezas de épocas distintas convertidas en espectáculo."
+          },
+          {
+            "species": "DRACOVISH",
+            "level": 117,
+            "narrativeRole": "titular fósil",
+            "moves": [
+              "FISHIOUSREND",
+              "DRAGONPULSE",
+              "CRUNCH",
+              "ICEBEAM"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Hace visible el poder de una reconstrucción presentada sin cautela."
+          },
+          {
+            "species": "GOLURK",
+            "level": 118,
+            "narrativeRole": "armazón que despierta",
+            "moves": [
+              "SHADOWPUNCH",
+              "EARTHQUAKE",
+              "HEAVYSLAM",
+              "DRAINPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Sostiene la criatura hasta que puede elegir su propio movimiento."
+          },
+          {
+            "species": "REGIGIGAS",
+            "level": 120,
+            "narrativeRole": "vida ensamblada",
+            "moves": [
+              "BODYSLAM",
+              "EARTHQUAKE",
+              "ICEPUNCH",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Cierra como construcción poderosa cuyo presente no prueba un pasado falso."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Una huella termina junto al cubo de yeso fresco.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Una huella termina junto al cubo de yeso fresco.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Timo libera las poleas y el armazón continúa moviéndose.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Vera demuestra conducta autónoma sin inventar una especie.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige museo transparente o hábitat sin espectáculo.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los estratos convocan al Custodio Fabricado.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Custodio del Estrato Fabricado",
+            "action": "La batalla mantiene Mochila, curación, derrota y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Gala confiesa el montaje y entrega el sello.",
+            "stateChange": "switch741=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La criatura abre por sí misma la puerta orientada al bosque.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo se reparará el fraude sin negar a la criatura?",
+          "options": [
+            "Museo transparente y cuidado",
+            "Hábitat vigilado sin espectáculo"
+          ],
+          "immediateDifferences": [
+            "Gala abre talleres, cuentas y moldes mientras financia el recinto.",
+            "Timo desmonta focos y Vera acompaña la ruta elegida hacia el bosque."
+          ],
+          "laterDifferences": [
+            "La educación sobre fraudes sostendrá empleos y conservación.",
+            "La criatura vivirá bajo observación mínima y sin función promocional."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "RAREBONE",
+        "narrativeToken": "Sello de la Procedencia",
+        "globalEffect": "Atlas distingue que algo exista de que la historia contada sobre su origen sea verdadera.",
+        "futurePayoff": "El final citará un museo de reparación o un hábitat protegido fuera del espectáculo.",
+        "whyMeaningful": "El hueso raro conserva valor material, pero su etiqueta ya no pretende demostrar una leyenda."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 741,
+            "name": "POKEMOD ATLAS SEAL 34",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Gala Portada",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1871,
+      "tier": 1,
+      "title": "El Refugio que Contestaba Solo",
+      "oneSentencePromise": "Una baliza continúa enviando reportes perfectos desde una cordillera aislada, aunque el equipo de rescate real abandonó la voz sintética para conservar batería y espera ayuda en un refugio que el sistema no reconoce.",
+      "biome": {
+        "identity": "Pueblo nevado convertido en base de rescate, con panel meteorológico, depósitos visibles, balizas numeradas y una ruta cálida de regreso",
+        "visualStorytelling": [
+          "El panel central marca todo normal mientras las cuerdas de salida están cubiertas de hielo.",
+          "Los reportes impresos repiten manchas de tinta idénticas en días distintos.",
+          "Una línea de banderines físicos continúa más allá del alcance de la antena."
+        ],
+        "ambientChanges": [
+          "La voz de la baliza pierde naturalidad a medida que repite frases antiguas.",
+          "Tras el rescate, el sistema anuncia probabilidades o retransmite mensajes humanos fechados."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Lía recibe reportes regulares de un equipo aislado y retrasa el rescate porque todos afirman que el refugio funciona.",
+        "centralQuestion": "¿Cuándo una automatización diseñada para tranquilizar se convierte en una barrera contra pedir ayuda?",
+        "setup": "Oren detecta que los reportes repiten errores de pronunciación y ninguna observación nueva del cielo.",
+        "escalation": "Una tormenta corta la ruta mientras la baliza sigue calificando el estado como estable.",
+        "reversal": "Nara encuentra al equipo vivo en un segundo refugio: apagaron la radio para conservar calor y dejaron banderines que el modelo ignoró.",
+        "resolution": "El jugador decide convertir la baliza en pronóstico transparente o en relevo comunitario que nunca hable en nombre del equipo.",
+        "globalConnection": "El sello treinta y cinco revela que Atlas prefiere informes continuos incluso cuando la continuidad oculta una emergencia."
+      },
+      "voiceProfile": {
+        "tone": "aislado, operativo y esperanzador",
+        "lexicon": [
+          "baliza",
+          "batería",
+          "relevo",
+          "banderín",
+          "refugio",
+          "pronóstico",
+          "rescate"
+        ],
+        "sentenceRule": "Lía usa códigos de base; Oren compara frases y clima; Nara da posición, recurso y próxima acción.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Lía Base",
+          "sprite": "trchar008",
+          "role": "coordinadora de rescate",
+          "reasonForBeingHere": "Recibe los reportes y asigna recursos desde la base de la cordillera.",
+          "personalConflict": "Confió en una voz estable para evitar exponer otro equipo durante la tormenta.",
+          "want": "Lanzar el rescate sin convertir prudencia en abandono.",
+          "fear": "Que admitir el fallo destruya la confianza en futuras balizas.",
+          "verbalTic": "Da código, certeza disponible y decisión revisable.",
+          "dialogue": {
+            "before": [
+              "Código verde, certeza baja, decisión aplazada tres horas. Ahí empezó mi error.",
+              "La voz sonaba tranquila y dejé de mirar el cielo detrás de los datos.",
+              "Una baliza debe reducir incertidumbre, no ocultarla."
+            ],
+            "during": [
+              "Código rojo. El reporte automático queda suspendido.",
+              "Activen la ruta de banderines y mantengan caliente el regreso."
+            ],
+            "after": [
+              "Cada informe muestra origen, antigüedad y nivel de confianza.",
+              "La base moviliza exploración cuando faltan observaciones humanas.",
+              "Mi bitácora conserva la demora y la reparación."
+            ],
+            "optional": [
+              "Calma de voz no equivale a seguridad de ruta.",
+              "Un dato viejo debe envejecer también en la pantalla."
+            ]
+          }
+        },
+        {
+          "name": "Oren Eco",
+          "sprite": "trchar009",
+          "role": "operador de comunicaciones",
+          "reasonForBeingHere": "Comparó semanas de mensajes y descubrió repeticiones exactas.",
+          "personalConflict": "Programó la voz sintética para tranquilizar familias y no incluyó una forma clara de admitir silencio.",
+          "want": "Convertir el sistema en herramienta que declare sus límites.",
+          "fear": "Que retirarlo deje zonas remotas sin ningún aviso.",
+          "verbalTic": "Repite una frase y señala la diferencia que debería contener.",
+          "dialogue": {
+            "before": [
+              "Viento leve desde el norte. Misma pausa, misma tos, catorce días.",
+              "Programé serenidad y borré la única alarma que era el silencio.",
+              "El sistema sabía predecir palabras, no comprobar refugios."
+            ],
+            "during": [
+              "Corto la síntesis; dejamos solo ubicación y hora.",
+              "Los banderines cambian al oeste, donde la antena no mira."
+            ],
+            "after": [
+              "La voz dice pronóstico, no testimonio.",
+              "Cada mensaje humano conserva fecha y puede quedar sin respuesta.",
+              "Añadí una alarma que se activa cuando no sabemos."
+            ],
+            "optional": [
+              "La repetición exacta rara vez describe una montaña.",
+              "Decir no hay datos también comunica."
+            ]
+          }
+        },
+        {
+          "name": "Nara Banderín",
+          "sprite": "NPC 04",
+          "role": "guía del equipo aislado",
+          "reasonForBeingHere": "Condujo al grupo a un refugio secundario y regresó siguiendo señales físicas.",
+          "personalConflict": "Apagó la radio para conservar batería y teme que su decisión sea juzgada como abandono de protocolo.",
+          "want": "Compartir una ruta redundante que no dependa de justificar cada silencio.",
+          "fear": "Que la base convierta supervivencia improvisada en nueva obligación rígida.",
+          "verbalTic": "Da coordenada aproximada, recurso restante y siguiente movimiento.",
+          "dialogue": {
+            "before": [
+              "Ladera oeste, dos mantas, siguiente movimiento: esperar luz.",
+              "Apagamos la radio para calentar el sensor médico.",
+              "Dejé banderines bajos porque el viento arranca los altos; el modelo solo buscó los altos."
+            ],
+            "during": [
+              "Refugio a veinte pasos. Primero agua caliente, después informe.",
+              "El último integrante cruza conmigo; nadie queda como prueba."
+            ],
+            "after": [
+              "La ruta redundante admite radio, tela, silbato o silencio pactado.",
+              "Mi decisión se revisó sin tratarla como desobediencia automática.",
+              "El equipo volvió completo y conservó su propia voz."
+            ],
+            "optional": [
+              "Una señal sencilla funciona si alguien recuerda buscarla.",
+              "El protocolo debe caber dentro de una tormenta real."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Guardiana del Parte Invernal",
+        "trainerType": "POKEMONRANGER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo avanza desde mensajería insuficiente por tormenta, orientación y refugio hasta una guardiana del clima que distingue pronóstico de testimonio humano.",
+        "counterplayHint": "El hielo ofrece respuestas comunes con Fuego, Roca, Acero y Lucha; Aurora Veil está anunciado, la curación es limitada y el jugador conserva Mochila y salida.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "DELIBIRD",
+            "level": 116,
+            "narrativeRole": "reporte repetido",
+            "moves": [
+              "ICEBEAM",
+              "BRAVEBIRD",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Abre como mensajero útil cuyo contenido dejó de actualizarse."
+          },
+          {
+            "species": "ABOMASNOW",
+            "level": 117,
+            "narrativeRole": "tormenta medida",
+            "moves": [
+              "BLIZZARD",
+              "GIGADRAIN",
+              "EARTHPOWER",
+              "AURORAVEIL"
+            ],
+            "item": "LIGHTCLAY",
+            "whyItBelongs": "Hace visible el clima que el parte automático minimizó."
+          },
+          {
+            "species": "MAMOSWINE",
+            "level": 118,
+            "narrativeRole": "ruta física",
+            "moves": [
+              "ICICLECRASH",
+              "EARTHQUAKE",
+              "ICESHARD",
+              "ROCKSLIDE"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Sigue huellas y banderines fuera del alcance de la antena."
+          },
+          {
+            "species": "FROSLASS",
+            "level": 119,
+            "narrativeRole": "voz en la ventisca",
+            "moves": [
+              "ICEBEAM",
+              "SHADOWBALL",
+              "DESTINYBOND",
+              "THUNDERBOLT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Representa la voz sintética confundida con presencia humana."
+          },
+          {
+            "species": "AVALUGG",
+            "level": 120,
+            "narrativeRole": "refugio secundario",
+            "moves": [
+              "ICEHAMMER",
+              "BODYPRESS",
+              "RECOVER",
+              "RAPIDSPIN"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Protege al equipo sin pretender que la ruta principal siga abierta."
+          },
+          {
+            "species": "ARTICUNO",
+            "level": 122,
+            "narrativeRole": "pronóstico con límites",
+            "moves": [
+              "FREEZEDRY",
+              "HURRICANE",
+              "ICEBEAM",
+              "ROOST"
+            ],
+            "item": "NEVERMELTICE",
+            "whyItBelongs": "Cierra leyendo la tormenta sin hablar en nombre de quienes la atraviesan."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "La baliza repite un parte idéntico durante una tormenta creciente.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La baliza repite un parte idéntico durante una tormenta creciente.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Oren demuestra que la voz no contiene observaciones nuevas.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los banderines conducen al refugio secundario y el equipo aparece vivo.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige pronóstico transparente o relevo comunitario.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La tormenta convoca a la Guardiana del Parte Invernal.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Guardiana del Parte Invernal",
+            "action": "La batalla admite Mochila, curación, derrota y regreso.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La base corrige el protocolo y entrega el sello.",
+            "stateChange": "switch742=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El primer informe nuevo declara con claridad qué datos todavía faltan.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué función tendrá la baliza después del rescate?",
+          "options": [
+            "Pronóstico transparente",
+            "Relevo comunitario fechado"
+          ],
+          "immediateDifferences": [
+            "Oren elimina la voz testimonial y publica fuente, hora y confianza.",
+            "Nara organiza mensajes humanos que nunca se completan automáticamente."
+          ],
+          "laterDifferences": [
+            "Las bases sabrán cuándo una predicción necesita exploración física.",
+            "Los refugios compartirán rutas y estados sin una voz central que los suplante."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "NEVERMELTICE",
+        "narrativeToken": "Sello del Parte Incompleto",
+        "globalEffect": "Atlas aprende a declarar incertidumbre y a tratar el silencio como motivo de comprobación.",
+        "futurePayoff": "La convergencia recibirá un pronóstico auditable o una red de relevos comunitarios.",
+        "whyMeaningful": "El hielo que no se derrite representa un dato persistente, pero ya no se confunde con una persona presente."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 742,
+            "name": "POKEMOD ATLAS SEAL 35",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Lía Base",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    }
+  ]
+}

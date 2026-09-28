@@ -1,0 +1,2706 @@
+{
+  "version": 1,
+  "macroCycle": 1,
+  "scope": {
+    "visualBatches": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sectors": [
+      1,
+      25
+    ],
+    "maps": [
+      1021,
+      1046,
+      1071,
+      1096,
+      1121,
+      1146,
+      1171,
+      1196,
+      1221,
+      1246,
+      1271,
+      1296,
+      1321,
+      1346,
+      1371,
+      1396,
+      1421,
+      1446,
+      1471,
+      1496,
+      1521,
+      1546,
+      1571,
+      1596,
+      1621
+    ],
+    "method": "Composición de piso narrativa con tiles existentes y equivalencia estricta de colisión."
+  },
+  "summary": {
+    "visualBatches": 5,
+    "maps": 25,
+    "changedCells": 249,
+    "eventsMoved": 0,
+    "passabilityChangedCells": 0,
+    "inheritedGeometryRemainingAfterStyleGate": 15,
+    "exactPatternPlacements": 9,
+    "adaptivePatternPlacements": 16
+  },
+  "certification": {
+    "staticTechnicalGate": "required",
+    "gameExePreview": "required",
+    "playableArtCertified": false,
+    "note": "Los PNG de referencia permiten crítica estática, pero no sustituyen ritmo, clipping ni prueba visual dentro de Game.exe."
+  },
+  "maps": [
+    {
+      "mapId": 1021,
+      "sector": 1,
+      "sectorName": "Meridiano Ámbar",
+      "episode": "Santuario de la Última Campana",
+      "visualBatch": 1,
+      "motif": "ring",
+      "intent": "Anillo de campana alrededor del archivo de memoria",
+      "tilesetId": 1,
+      "tilesetName": "Outside",
+      "center": [
+        22,
+        9
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 12,
+      "changes": [
+        {
+          "x": 22,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 409
+        },
+        {
+          "x": 22,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 393
+        },
+        {
+          "x": 21,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 409
+        },
+        {
+          "x": 17,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 393
+        },
+        {
+          "x": 22,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 409
+        },
+        {
+          "x": 18,
+          "y": 14,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 393
+        },
+        {
+          "x": 22,
+          "y": 16,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 409
+        },
+        {
+          "x": 14,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 393
+        },
+        {
+          "x": 22,
+          "y": 17,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 409
+        },
+        {
+          "x": 21,
+          "y": 17,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 393
+        },
+        {
+          "x": 15,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 409
+        },
+        {
+          "x": 20,
+          "y": 17,
+          "layer": 0,
+          "oldTileId": 401,
+          "newTileId": 393
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "a37cb8b2bcad480e80f891b15b26bc21f09517f6fe7c9ad19cb14217894f8b6c",
+        "tileSha256": "85204ab4eb2124fee7f8673aab782ad66e4f1c8d0c4c9d0e514ccb123119b2e2"
+      },
+      "after": {
+        "fileSha256": "a0b4204c96bb4b9e1fd8d00ed98d91bd825e514c4863e7529d67c3b3beb2061c",
+        "tileSha256": "a1d09e5a8b2e76df92a4a2165254c0a3e38a7dabdd9949deed82d6a01398485f"
+      }
+    },
+    {
+      "mapId": 1046,
+      "sector": 2,
+      "sectorName": "Cuenca Celeste",
+      "episode": "La Copa del Huevo Vacío",
+      "visualBatch": 1,
+      "motif": "diamond",
+      "intent": "Óvalo quebrado para la copa y el huevo ausente",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        11,
+        3
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 11,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 11,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        },
+        {
+          "x": 11,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 9,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "b81a9888da2ba34822ef5471afe85b71b5c327b62f9ecd603dca98146b2ddf3d",
+        "tileSha256": "3009019baf6fd678ee61467a2b864731803a63670adee6287744349981894f1b"
+      },
+      "after": {
+        "fileSha256": "8a14108987e682c2839c4a703d8ef229f1be630442962b6a680979d53069bae2",
+        "tileSha256": "e854cc941ff88b14fdd165e8d497fc88de6762d1dfb2f1227dcfe2562a15881c"
+      }
+    },
+    {
+      "mapId": 1071,
+      "sector": 3,
+      "sectorName": "Frontera Carmesí",
+      "episode": "El Campeón de Fecha Imposible",
+      "visualBatch": 1,
+      "motif": "split",
+      "intent": "Dos cronologías enfrentadas para el campeón imposible",
+      "tilesetId": 4,
+      "tilesetName": "Poke Centre interior",
+      "center": [
+        10,
+        5
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 10,
+      "changes": [
+        {
+          "x": 10,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 10,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 10,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 13,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "deafb454748dfe6e801d0bd46b16ac76ee7f3fa8578471479edcab25a97304ac",
+        "tileSha256": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336"
+      },
+      "after": {
+        "fileSha256": "cfb72c4f915b89fa1fb76fb9ca44d9a728dfb1a4bcf04811880caf7680e11d5e",
+        "tileSha256": "6cd4e1c042958f487e94de4dca709a04ea3348c9569454894742593e95871705"
+      }
+    },
+    {
+      "mapId": 1096,
+      "sector": 4,
+      "sectorName": "Distrito Cuarzo",
+      "episode": "El Gremio de la Camilla Vacía",
+      "visualBatch": 1,
+      "motif": "trail",
+      "intent": "Pasillo de camilla y encargos que llegan desde otro tiempo",
+      "tilesetId": 4,
+      "tilesetName": "Poke Centre interior",
+      "center": [
+        10,
+        5
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 10,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 458
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        },
+        {
+          "x": 10,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 458
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 458
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        },
+        {
+          "x": 10,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 458
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "3aa9c4dae17f83d81453650815cc43bb5ce231beff79123bdf305269ee4e434c",
+        "tileSha256": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336"
+      },
+      "after": {
+        "fileSha256": "28cec72ccc84b4a563397d63ecbb4278399fdf35910717e585a44d104ccfa075",
+        "tileSha256": "9fce13384d110044f076f4529aac40db757830fc5b7db8a0ccdf519e93f07088"
+      }
+    },
+    {
+      "mapId": 1121,
+      "sector": 5,
+      "sectorName": "Órbita Esmeralda",
+      "episode": "Operación Rescate Demasiado Perfecto",
+      "visualBatch": 1,
+      "motif": "cross",
+      "intent": "Marca de rescate con salida visible y centro libre",
+      "tilesetId": 4,
+      "tilesetName": "Poke Centre interior",
+      "center": [
+        10,
+        5
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 10,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 473
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 473
+        },
+        {
+          "x": 10,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 473
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 473
+        },
+        {
+          "x": 10,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 473
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "a992149859ffc47966be79c8ef72fe773e0d3b30b0bd4cca9e207d52d567aea7",
+        "tileSha256": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336"
+      },
+      "after": {
+        "fileSha256": "adc82a2164646f047e712280d0eb4a7814e1af05de196e45716af021058fefea",
+        "tileSha256": "14f067bbe75bea96714fde428b68ed9fa11615d1288a66d07b3e991841be10e6"
+      }
+    },
+    {
+      "mapId": 1146,
+      "sector": 6,
+      "sectorName": "Paso Boreal",
+      "episode": "La Sombra que Eligió Quedarse",
+      "visualBatch": 2,
+      "motif": "trail",
+      "intent": "Rastro oscuro que decide quedarse sin bloquear el camino",
+      "tilesetId": 1,
+      "tilesetName": "Outside",
+      "center": [
+        42,
+        15
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 39,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 40,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 41,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 42,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 43,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 44,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 45,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 45,
+          "y": 14,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 45,
+          "y": 13,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "f1add052588ae7d7a1a63f40909a263f3392335644e169666e2781d9c145fbd2",
+        "tileSha256": "7146b6357f3ee357a9dc5546aac3f8d4b05e64262ede4dd8974b1dc6fef48a72"
+      },
+      "after": {
+        "fileSha256": "872153d0650f8a600e24d509afcf46ca0991fd3197dbcbcf83f8b97b441555bb",
+        "tileSha256": "c3e90386661531a30f7fecb4378b118970780b207737f1cd95f67645e098b7c6"
+      }
+    },
+    {
+      "mapId": 1171,
+      "sector": 7,
+      "sectorName": "Jardín Índigo",
+      "episode": "El Jardín de los Dos Juramentos",
+      "visualBatch": 2,
+      "motif": "split",
+      "intent": "Dos juramentos paralelos que comparten una misma sala",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        26,
+        33
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 10,
+      "changes": [
+        {
+          "x": 26,
+          "y": 33,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 27,
+          "y": 35,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 27,
+          "y": 34,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 27,
+          "y": 33,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 28,
+          "y": 35,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 28,
+          "y": 34,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 28,
+          "y": 33,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 28,
+          "y": 29,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 29,
+          "y": 34,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        },
+        {
+          "x": 29,
+          "y": 33,
+          "layer": 0,
+          "oldTileId": 728,
+          "newTileId": 737
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "58fbeac3dc3728ce5012111bb34eced5ba05b77359fc2b60f7e95bda8b22c9f8",
+        "tileSha256": "427beb2be30e707c3a99b77499891b0029169d68d6fa04652590c31fdd02c707"
+      },
+      "after": {
+        "fileSha256": "b31fbc0da6fa7139051b6a2e6cd1ac4c54c8983bdd1192afa0294b30f119436a",
+        "tileSha256": "64116036b1875c6e57e58658c547747b5a3bea0fd814c8dcfb76691e9b926c7b"
+      }
+    },
+    {
+      "mapId": 1196,
+      "sector": 8,
+      "sectorName": "Costa Prisma",
+      "episode": "La Persona Fuera del Encuadre",
+      "visualBatch": 2,
+      "motif": "threshold",
+      "intent": "Encuadre abierto para la persona ausente de la fotografía",
+      "tilesetId": 14,
+      "tilesetName": "Gyms interior",
+      "center": [
+        5,
+        7
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 11,
+      "changes": [
+        {
+          "x": 3,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        },
+        {
+          "x": 7,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 769,
+          "newTileId": 761
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "7b530cccec720927f59f305d4b719d49db2959e5d2c7a157b932b62cd6e8a038",
+        "tileSha256": "96a97b628468452c3b7eeb5a4a100debabd5a9fd7e484b05bd58bd84cf8a79e4"
+      },
+      "after": {
+        "fileSha256": "36268f5c68e316f8c30c1663ca2824fb418809c8d6096f44574ddd8eb1b1993b",
+        "tileSha256": "f12906c667cf6eee6ed5d509b7dbc1053412a18ffac7c3fd4fe983c8bb8d4f4f"
+      }
+    },
+    {
+      "mapId": 1221,
+      "sector": 9,
+      "sectorName": "Dominio Solar",
+      "episode": "El Festival que Olvidó su Motivo",
+      "visualBatch": 2,
+      "motif": "ring",
+      "intent": "Ruedo del festival conservado sin imponer un motivo",
+      "tilesetId": 14,
+      "tilesetName": "Gyms interior",
+      "center": [
+        3,
+        8
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 12,
+      "changes": [
+        {
+          "x": 3,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 3,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 6,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 1174,
+          "newTileId": 1193
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "18e589c6fdf2dde5ff411ed5c50a6ec14da41484a551d5ed879c9bd553c5d3c6",
+        "tileSha256": "6869c6034e70370f4b45f37454499dde01ece9bbed6b849fcb1d824e3c34c8c2"
+      },
+      "after": {
+        "fileSha256": "f7abb09f401faa6fc9e8a6bdd71f02c693f1f5db277de093eaf66bb4aa06de0a",
+        "tileSha256": "ec1a26aaa14e94e4aaa13d3c3fcae9034053ae55bec668e3835212fdc23b393a"
+      }
+    },
+    {
+      "mapId": 1246,
+      "sector": 10,
+      "sectorName": "Velo Lunar",
+      "episode": "La Carta que Recuerda a su Jugador",
+      "visualBatch": 2,
+      "motif": "constellation",
+      "intent": "Trazos dispersos de una carta que recuerda al jugador",
+      "tilesetId": 1,
+      "tilesetName": "Outside",
+      "center": [
+        51,
+        23
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 8,
+      "changes": [
+        {
+          "x": 48,
+          "y": 22,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 386
+        },
+        {
+          "x": 49,
+          "y": 24,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 388
+        },
+        {
+          "x": 50,
+          "y": 21,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 386
+        },
+        {
+          "x": 51,
+          "y": 23,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 388
+        },
+        {
+          "x": 52,
+          "y": 25,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 386
+        },
+        {
+          "x": 53,
+          "y": 22,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 388
+        },
+        {
+          "x": 54,
+          "y": 24,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 386
+        },
+        {
+          "x": 51,
+          "y": 26,
+          "layer": 0,
+          "oldTileId": 385,
+          "newTileId": 388
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "cd618d1574dbfd9638a1e2a9687f76bcacfb2c6f78c78183cc756f50d5f945f8",
+        "tileSha256": "bbf8c4ab7ce1c40c81a115771fce1ffcbdaca92d20276a1eb992dbdaef3cfd0e"
+      },
+      "after": {
+        "fileSha256": "fa9eab904cfc3d965a0456bc74b2128cc61a467e58738ccf07431b04cbab4a96",
+        "tileSha256": "664cef17c6f49a9caed37af26c811a96c1ad3d78e323c94ae6dba2fea3c0da64"
+      }
+    },
+    {
+      "mapId": 1271,
+      "sector": 11,
+      "sectorName": "Nexo Onírico",
+      "episode": "El Compañero del Minuto Cero",
+      "visualBatch": 3,
+      "motif": "ring",
+      "intent": "Reloj del minuto cero con un centro todavía revisable",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        10,
+        6
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 12,
+      "changes": [
+        {
+          "x": 10,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 657
+        },
+        {
+          "x": 11,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 634
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 657
+        },
+        {
+          "x": 10,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 634
+        },
+        {
+          "x": 9,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 657
+        },
+        {
+          "x": 11,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 634
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 657
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 634
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 657
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 634
+        },
+        {
+          "x": 7,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 657
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 624,
+          "newTileId": 634
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "7c321e126c079d0d624268b6a79a8cee231b5db46fb78415fc1ac55e68145c53",
+        "tileSha256": "76d22ef2f1e18db82358209cc563e7225535799f4f54a18fb87aebacfa447a1f"
+      },
+      "after": {
+        "fileSha256": "901eff5c805bb664cb3d36f299b4870beb9ed56febd13cda2fb542b9520652be",
+        "tileSha256": "e20e175efa55f986d61748817f7bef1a512773a9f54b4fa1fa118a5dbe2dd2b9"
+      }
+    },
+    {
+      "mapId": 1296,
+      "sector": 12,
+      "sectorName": "Valle Magnético",
+      "episode": "El Punto que Nadie Quiso Marcar",
+      "visualBatch": 3,
+      "motif": "diamond",
+      "intent": "Zona de puntuación que deja el punto central sin marcar",
+      "tilesetId": 1,
+      "tilesetName": "Outside",
+      "center": [
+        25,
+        38
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 25,
+          "y": 36,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 24,
+          "y": 37,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 26,
+          "y": 37,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 23,
+          "y": 38,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 25,
+          "y": 38,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 27,
+          "y": 38,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 24,
+          "y": 39,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        },
+        {
+          "x": 26,
+          "y": 39,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 388
+        },
+        {
+          "x": 25,
+          "y": 40,
+          "layer": 0,
+          "oldTileId": 386,
+          "newTileId": 385
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "f9f9a97991d172a332048f9a25c0e04fae8e034be47b3850c5c75be669b9749a",
+        "tileSha256": "a8389d4f7cfcd7ef1ca4e7fcbd8cc75f1b11babd3e8622fa4be9fe209700256b"
+      },
+      "after": {
+        "fileSha256": "cd96280918135611f8854ea8384415200faae6ede6fadcb01a4d8d67a79b4904",
+        "tileSha256": "63665f06f6f508a8ce2eba6199599be343f8ee180b876eb6b5b07d847b9c8b20"
+      }
+    },
+    {
+      "mapId": 1321,
+      "sector": 13,
+      "sectorName": "Arco Fósil",
+      "episode": "La Señal Hecha de Ausencias",
+      "visualBatch": 3,
+      "motif": "trail",
+      "intent": "Señal fragmentada construida a partir de ausencias",
+      "tilesetId": 14,
+      "tilesetName": "Gyms interior",
+      "center": [
+        14,
+        15
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 11,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 12,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 13,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 14,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 15,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 16,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 17,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 17,
+          "y": 14,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        },
+        {
+          "x": 17,
+          "y": 13,
+          "layer": 0,
+          "oldTileId": 452,
+          "newTileId": 446
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "26dfc1d6a68fe3e1951315c1569ccccd382701c9bb3f4c3bdd1708f363e904d4",
+        "tileSha256": "b6ab87674cd9b9c1de5ff43a01d45c6c692aa354fd40e3a3755d8399aecbd8e2"
+      },
+      "after": {
+        "fileSha256": "14135244707fa962eb49ceb7c7a8d1aa5c4c99ed5efa6645aaae142932396e77",
+        "tileSha256": "bce410dec75a1c665c394530aedcb4af89a9669ca2b2a465ffaece7c279224d2"
+      }
+    },
+    {
+      "mapId": 1346,
+      "sector": 14,
+      "sectorName": "Mar de Nubes",
+      "episode": "La Ciudad a la que Dieron Cuerda",
+      "visualBatch": 3,
+      "motif": "cross",
+      "intent": "Plano de ciudad de juguete que no copia a sus habitantes",
+      "tilesetId": 1,
+      "tilesetName": "Outside",
+      "center": [
+        11,
+        11
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 11,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 652
+        },
+        {
+          "x": 9,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 654
+        },
+        {
+          "x": 10,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 655
+        },
+        {
+          "x": 12,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 652
+        },
+        {
+          "x": 13,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 654
+        },
+        {
+          "x": 11,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 655
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 652
+        },
+        {
+          "x": 11,
+          "y": 12,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 654
+        },
+        {
+          "x": 11,
+          "y": 13,
+          "layer": 0,
+          "oldTileId": 658,
+          "newTileId": 655
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "be7bc8051cc11ab046f00612ae86ebae83ba05518fc833b1cad86b3e61f76e50",
+        "tileSha256": "8c8248fe093f9fffb2364003838bf18c081385245c657ba3921f6283b1e4f57f"
+      },
+      "after": {
+        "fileSha256": "e1ccbaa10eee9a609b8af74747d402d62d2df19fa730da666ba273213cf3c15a",
+        "tileSha256": "7e03798e73037379831486297d8956d7d0ead87ce5fdf0335078a2cbc2385fa2"
+      }
+    },
+    {
+      "mapId": 1371,
+      "sector": 15,
+      "sectorName": "Bosque de Hierro",
+      "episode": "El Mosaico de los Nombres Imposibles",
+      "visualBatch": 3,
+      "motif": "checker",
+      "intent": "Mosaico legible entre los nombres imposibles del suelo",
+      "tilesetId": 1,
+      "tilesetName": "Outside",
+      "center": [
+        10,
+        6
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 8,
+      "changes": [
+        {
+          "x": 8,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 606
+        },
+        {
+          "x": 10,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 612
+        },
+        {
+          "x": 12,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 614
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 606
+        },
+        {
+          "x": 11,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 612
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 614
+        },
+        {
+          "x": 10,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 606
+        },
+        {
+          "x": 12,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 602,
+          "newTileId": 612
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "03d25fc5d6cbc6ad99748bedd40280af8893c3d217e616f88038a600438f3b21",
+        "tileSha256": "ad9e09386dd90ffc2ed16601308314046eea063c4a9fea073b76b49c30282ef2"
+      },
+      "after": {
+        "fileSha256": "732ae04aaefc05ab4e44bbac36375cce65f8f3bc7f5c08793fcda60a43be913e",
+        "tileSha256": "ead3045a9ff295cc1f52a0ab0b0fbdb4a470f0f9ec8a99d6fcb49e528bee3130"
+      }
+    },
+    {
+      "mapId": 1396,
+      "sector": 16,
+      "sectorName": "Canal Estelar",
+      "episode": "La Receta que Lloraba por Otros",
+      "visualBatch": 4,
+      "motif": "diamond",
+      "intent": "Mesa-receta que separa emociones propias y prestadas",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        26,
+        3
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 9,
+      "changes": [
+        {
+          "x": 26,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 25,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 29,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 29,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 29,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 24,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "c5f8ed345636e2d086045d5fa217ba592756ea5bb6fcf321ac23c1206fc0bf53",
+        "tileSha256": "94e2b328761751d8826cc8844e703c0d057a24ecd74dae347f1f3fe2fd0d78ea"
+      },
+      "after": {
+        "fileSha256": "2b565786ba8b9104bfb2e863b88381a4370b28b921a804e2a2a59249da0a9866",
+        "tileSha256": "14eee798313657c6a2e161a06822bcad9a4b3a2f63d4b4091946da3c8867c3b4"
+      }
+    },
+    {
+      "mapId": 1421,
+      "sector": 17,
+      "sectorName": "Páramo Sonoro",
+      "episode": "El Caso de las Cuatro Mediasnoches",
+      "visualBatch": 4,
+      "motif": "constellation",
+      "intent": "Cuatro grupos de medianoche sin una versión dominante",
+      "tilesetId": 4,
+      "tilesetName": "Poke Centre interior",
+      "center": [
+        10,
+        5
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 8,
+      "changes": [
+        {
+          "x": 10,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 10,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 457
+        },
+        {
+          "x": 10,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 448,
+          "newTileId": 465
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "2927a43fe182224bfb7a17dd8e44d2fc56b151b1eb0792377de9d7113e8c6248",
+        "tileSha256": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336"
+      },
+      "after": {
+        "fileSha256": "83889b63b2aa4dfbb8a5722b8bdc751559a50564b37245eb0f78ecaa189752d9",
+        "tileSha256": "89be91971fd8227a52d0cfe77301d5666bf06b9fb3c6b678a4e4296fddc0c38b"
+      }
+    },
+    {
+      "mapId": 1446,
+      "sector": 18,
+      "sectorName": "Islas del Viento",
+      "episode": "El Museo de lo Todavía No Perdido",
+      "visualBatch": 4,
+      "motif": "threshold",
+      "intent": "Vitrina abierta para objetos que todavía no se perdieron",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        14,
+        8
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 11,
+      "changes": [
+        {
+          "x": 14,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 15,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 14,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 16,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 15,
+          "y": 9,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 14,
+          "y": 10,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 17,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 14,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 18,
+          "y": 8,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 15,
+          "y": 11,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "layer": 0,
+          "oldTileId": 584,
+          "newTileId": 593
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "a8585eaf5604412ea286e7718b171ca22e84fd9c48a4c7c1d60442816d965890",
+        "tileSha256": "50c568c3158d8611bbf14451addf7a955acbea39e63c2bfefe32a619ba753f73"
+      },
+      "after": {
+        "fileSha256": "82abf17d5b56d39d21b8e40b43479279b80a0a372683210038d27b5c9225ca88",
+        "tileSha256": "ea72c0037c53746d16d21bea4df159e17f7a2fc62e52f395836c9934d1d0a77b"
+      }
+    },
+    {
+      "mapId": 1471,
+      "sector": 19,
+      "sectorName": "Anillo Abisal",
+      "episode": "El Arrecife que Llegó Después",
+      "visualBatch": 4,
+      "motif": "wave",
+      "intent": "Dos ondas de restauración para el arrecife paradójico",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        26,
+        3
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 14,
+      "changes": [
+        {
+          "x": 26,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 25,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 29,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 29,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 29,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 24,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 23,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 27,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 26,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        },
+        {
+          "x": 28,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 760,
+          "newTileId": 769
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "8c144a1c6c81ecf6bd01868301e3f8a37c474172be0f92c0b4ad9e2fd4ff8793",
+        "tileSha256": "c855e117de17f738d47e6f69a40eec88a7858b8f0cb7b5d47e3538b342d9a761"
+      },
+      "after": {
+        "fileSha256": "a3bfd558d122481e297186d58a2950d8c2b197aafc0cda3366249ca06ef1381b",
+        "tileSha256": "bcdaf8ac072aa4911a94dd0343d2041ee966b9df8215da528f7d625793f9f60a"
+      }
+    },
+    {
+      "mapId": 1496,
+      "sector": 20,
+      "sectorName": "Ruta del Cometa",
+      "episode": "Los Dos Nombres del Cometa",
+      "visualBatch": 4,
+      "motif": "checker",
+      "intent": "Dos trayectorias alternadas que conservan los nombres del cometa",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        11,
+        3
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 8,
+      "changes": [
+        {
+          "x": 11,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 9,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1077
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 1060,
+          "newTileId": 1069
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "d298f5cdaac90501220d9b899d37155f6c96ce17eb58d4901b77c02c7cc09034",
+        "tileSha256": "27dbda8816cec47b207b928ebe626654f6a1fe1782342108e51432d13927c738"
+      },
+      "after": {
+        "fileSha256": "1a2513776321b0085b039f1dfc349e6259dfb715e01e537ed8ca5cff7edfd981",
+        "tileSha256": "49ca5ff87047456c5c8caecf67838e08065fbfe12001bfff03163c1cb3fa9130"
+      }
+    },
+    {
+      "mapId": 1521,
+      "sector": 21,
+      "sectorName": "Territorio Origami",
+      "episode": "La Central de las Cenizas Vivas",
+      "visualBatch": 5,
+      "motif": "spiral",
+      "intent": "Espiral de ceniza que vuelve visible el residuo vivo",
+      "tilesetId": 1,
+      "tilesetName": "Outside",
+      "center": [
+        34,
+        18
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 13,
+      "changes": [
+        {
+          "x": 34,
+          "y": 18,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 36,
+          "y": 23,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 35,
+          "y": 23,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 37,
+          "y": 23,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 34,
+          "y": 17,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 33,
+          "y": 18,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 38,
+          "y": 23,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 33,
+          "y": 17,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 32,
+          "y": 18,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 32,
+          "y": 17,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 31,
+          "y": 20,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 31,
+          "y": 19,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 34,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "7b3fc07c1ceced3ca26bc5816e2be140414f74d946b15c7339e7f5e36afd62e3",
+        "tileSha256": "4cd243b1c9f3d546a8dae5ddc112d3b41d8c26b674adc4c571f0e89c4f1eefca"
+      },
+      "after": {
+        "fileSha256": "3cfb45da802e44bdab2f46b8504deda85f65ed6b87d5a2e54bd91b1ec2c81404",
+        "tileSha256": "6d764a072dc015bc15005295f926bc0d7d4f83eddfc331ba083130915c600328"
+      }
+    },
+    {
+      "mapId": 1546,
+      "sector": 22,
+      "sectorName": "Delta de Cristal",
+      "episode": "La Profecía Escrita Después",
+      "visualBatch": 5,
+      "motif": "threshold",
+      "intent": "Umbral ritual que expone la profecía fabricada",
+      "tilesetId": 6,
+      "tilesetName": "Caves",
+      "center": [
+        7,
+        14
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 11,
+      "changes": [
+        {
+          "x": 5,
+          "y": 16,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 604
+        },
+        {
+          "x": 5,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 606
+        },
+        {
+          "x": 5,
+          "y": 14,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 612
+        },
+        {
+          "x": 5,
+          "y": 13,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 604
+        },
+        {
+          "x": 6,
+          "y": 12,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 606
+        },
+        {
+          "x": 7,
+          "y": 12,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 612
+        },
+        {
+          "x": 8,
+          "y": 12,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 604
+        },
+        {
+          "x": 9,
+          "y": 13,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 606
+        },
+        {
+          "x": 9,
+          "y": 14,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 612
+        },
+        {
+          "x": 9,
+          "y": 15,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 604
+        },
+        {
+          "x": 9,
+          "y": 16,
+          "layer": 0,
+          "oldTileId": 610,
+          "newTileId": 606
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "a101c15368863a3733f239b2378e5196c80f08ec0cd55a778ca06edf8fa45d9c",
+        "tileSha256": "09881fda011d6ab86e19dc8e8a1205b5b0f3a4e1092bf8046b4b7a7b916a5318"
+      },
+      "after": {
+        "fileSha256": "fbfb724e798f92db6fe0280d07f974b015fd4494b37eb7c97cc72dac6a9b2925",
+        "tileSha256": "5bb58738bdd28607d756d679417214ec580461ac055fe3562407222a67135ae0"
+      }
+    },
+    {
+      "mapId": 1571,
+      "sector": 23,
+      "sectorName": "Llanura Meteoro",
+      "episode": "La Ciudad que Pagaba con Recuerdos",
+      "visualBatch": 5,
+      "motif": "checker",
+      "intent": "Parcelas de memoria que la ciudad ya no puede cobrar",
+      "tilesetId": 3,
+      "tilesetName": "Interior general",
+      "center": [
+        3,
+        5
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 8,
+      "changes": [
+        {
+          "x": 3,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "layer": 0,
+          "oldTileId": 824,
+          "newTileId": 833
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "90101fb535ff0b233a1d3b466540c1c04f3e92ce86ca965d5fedbfbed58ae004",
+        "tileSha256": "316faa27167f8f5846de52a0f150eddec8991251b1483c10a3564520be2a14be"
+      },
+      "after": {
+        "fileSha256": "7c0d22e01a252f6a283982a488b5b20ffea33d46939db231080bc47d8651e1b0",
+        "tileSha256": "418c69012bdcdc3e599ac568dc67d544d534b060f40f7968864de4c39f6fb437"
+      }
+    },
+    {
+      "mapId": 1596,
+      "sector": 24,
+      "sectorName": "Cordillera Coral",
+      "episode": "Las Cartas de una Familia Incompatible",
+      "visualBatch": 5,
+      "motif": "split",
+      "intent": "Dos columnas de cartas familiares sin futuro obligatorio",
+      "tilesetId": 10,
+      "tilesetName": "Department store interior",
+      "center": [
+        9,
+        7
+      ],
+      "usedFallbackPlacement": true,
+      "keptOneTileBufferFromEvents": false,
+      "changedCells": 10,
+      "changes": [
+        {
+          "x": 9,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 429
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 437
+        },
+        {
+          "x": 12,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 430
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 429
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 437
+        },
+        {
+          "x": 8,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 430
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 429
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 437
+        },
+        {
+          "x": 6,
+          "y": 7,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 430
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "layer": 0,
+          "oldTileId": 420,
+          "newTileId": 429
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "0822c6f0067b8d548568953f0c9eb80b100014fe5acf40772cbe3042e0da132d",
+        "tileSha256": "d61c9fbb120fdab711a8e5c9d78d2ab8dcdfb78a037cee1c5830114c4cd8d46f"
+      },
+      "after": {
+        "fileSha256": "386eb133d452fcda0fffbdf56e13eb86183bd60fd09fb781c03af7574ee47dad",
+        "tileSha256": "b608d8bf7a0df89c3bc177655ee952440096ae6b5eddc9d1038091798128a2ab"
+      }
+    },
+    {
+      "mapId": 1621,
+      "sector": 25,
+      "sectorName": "Ciudad del Eclipse",
+      "episode": "El Mercado de los Umbrales Pequeños",
+      "visualBatch": 5,
+      "motif": "threshold",
+      "intent": "Portal pequeño con costo visible y retorno despejado",
+      "tilesetId": 2,
+      "tilesetName": "Outside",
+      "center": [
+        26,
+        26
+      ],
+      "usedFallbackPlacement": false,
+      "keptOneTileBufferFromEvents": true,
+      "changedCells": 11,
+      "changes": [
+        {
+          "x": 24,
+          "y": 28,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 24,
+          "y": 27,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 24,
+          "y": 26,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 24,
+          "y": 25,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 25,
+          "y": 24,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 26,
+          "y": 24,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 27,
+          "y": 24,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 28,
+          "y": 25,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 28,
+          "y": 26,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        },
+        {
+          "x": 28,
+          "y": 27,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 385
+        },
+        {
+          "x": 28,
+          "y": 28,
+          "layer": 0,
+          "oldTileId": 388,
+          "newTileId": 386
+        }
+      ],
+      "safety": {
+        "eventsMoved": 0,
+        "passabilityChangedCells": 0,
+        "priorityChangedCells": 0,
+        "terrainTagChangedCells": 0,
+        "dimensionsChanged": false,
+        "tilesetChanged": false
+      },
+      "before": {
+        "fileSha256": "ab701d22a1ecdaec96f86d72132ad3adc05da4c7e21ff75ea673725f5b6749cf",
+        "tileSha256": "0baefbc9fa77a31816e31184f7197d676ad7e93866bccbe950bdbefd03f886ee"
+      },
+      "after": {
+        "fileSha256": "65b05245ed743b021a7b08683c9c3011cea75c1e9217a95e17094f4d2948a11a",
+        "tileSha256": "9e248a7b31577375452122c8b8f5fa23806cabccdc3ff1608daa811acd1eee4c"
+      }
+    }
+  ]
+}

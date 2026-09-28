@@ -1,0 +1,2332 @@
+{
+  "version": 1,
+  "macroCycle": 5,
+  "tier2Batches": 5,
+  "blueprints": [
+    {
+      "tier": 2,
+      "routeBatch": 13,
+      "mapId": 1526,
+      "flag": 808,
+      "variable": 204,
+      "title": "El Camino que se Plegaba al Llover",
+      "promise": "Las señales de una ruta de papel se pliegan para protegerse de la lluvia y ocultan justo la información necesaria para volver.",
+      "objective": "Diseñar pliegues que resguarden el material sin esconder destino, distancia ni retorno.",
+      "mechanic": {
+        "name": "Prueba de pliegues",
+        "rules": [
+          "Mojar una muestra fuera de la ruta.",
+          "Mantener visible una cara esencial.",
+          "Comprobar lectura desde ambos sentidos."
+        ],
+        "failureSafe": "Las balizas rígidas de regreso permanecen instaladas."
+      },
+      "npcs": [
+        {
+          "name": "Lina Doblez",
+          "sprite": "trchar009",
+          "role": "ingeniera de papel",
+          "partnerPokemon": "LEAVANNY",
+          "motivation": "Quiere crear señales reparables que sigan siendo legibles bajo lluvia.",
+          "conflict": "Su error anterior fue que protegió toda la tinta plegándola hacia dentro.",
+          "dialogue": {
+            "before": [
+              "Leavanny cierra la hoja y desaparecen destino y distancia al mismo tiempo.",
+              "Me precipité: protegió toda la tinta plegándola hacia dentro.",
+              "reservaré una solapa exterior para la información vital."
+            ],
+            "after": [
+              "el pliegue protege detalles y deja visible el regreso.",
+              "LEAVANNY comprobó el cambio junto a Lina Doblez.",
+              "cada patrón tendrá instrucciones de apertura y secado."
+            ]
+          }
+        },
+        {
+          "name": "Taro Trazo",
+          "sprite": "NPC 04",
+          "role": "pintor de rutas",
+          "partnerPokemon": "SMEARGLE",
+          "motivation": "Quiere usar tintas resistentes sin volver permanentes los errores.",
+          "conflict": "Su error anterior fue que selló indicaciones temporales y dificultó cualquier corrección.",
+          "dialogue": {
+            "before": [
+              "Smeargle prueba una tinta lavable que mi barniz habría atrapado.",
+              "Tardé en reconocer que selló indicaciones temporales y dificultó cualquier corrección.",
+              "separaré base durable y capa revisable."
+            ],
+            "after": [
+              "las señales admiten cambios sin perder su orientación principal.",
+              "Taro Trazo repitió la prueba mientras SMEARGLE vigilaba el borde.",
+              "cada corrección conservará fecha y motivo."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué parte nunca se plegará?",
+        "options": [
+          "Destino y retorno exteriores",
+          "Código fijo con detalles desplegables"
+        ],
+        "immediate": [
+          "reservaré una solapa exterior para la información vital.",
+          "separaré base durable y capa revisable."
+        ],
+        "later": [
+          "cada patrón tendrá instrucciones de apertura y secado.",
+          "cada corrección conservará fecha y motivo."
+        ]
+      },
+      "reward": {
+        "item": "SILKSCARF",
+        "meaning": "Une flexibilidad y lectura clara sin endurecer el camino de papel."
+      },
+      "progression": {
+        "switchId": 808,
+        "decisionVariable": 204,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 13,
+      "mapId": 1533,
+      "flag": 809,
+      "variable": 205,
+      "title": "El Mapa que Hacía Pájaros con la Tormenta",
+      "promise": "Una estación dobla pronósticos en aves de papel y su vuelo decide qué senderos cerrar, aunque una ráfaga interior altera la dirección.",
+      "objective": "Separar predicción, demostración y cierre real antes de lanzar otra figura.",
+      "mechanic": {
+        "name": "Vuelo de prueba",
+        "rules": [
+          "Leer el pronóstico antes del pliegue.",
+          "Probar viento interior y exterior.",
+          "Cerrar solo con medición de terreno."
+        ],
+        "failureSafe": "La salida y un sendero de baja exposición siguen abiertos."
+      },
+      "npcs": [
+        {
+          "name": "Masi Ala",
+          "sprite": "trchar008",
+          "role": "meteoróloga de papel",
+          "partnerPokemon": "MASQUERAIN",
+          "motivation": "Quiere usar figuras para explicar incertidumbre sin convertirlas en oráculos.",
+          "conflict": "Su error anterior fue que trató la dirección del vuelo como confirmación meteorológica.",
+          "dialogue": {
+            "before": [
+              "Masquerain bate las alas y el pájaro cambia un pronóstico ya escrito.",
+              "Mi primer registro ocultaba que trató la dirección del vuelo como confirmación meteorológica.",
+              "mostraré varios vuelos como demostración, no como resultado."
+            ],
+            "after": [
+              "cada figura lleva rango y fuente del pronóstico.",
+              "MASQUERAIN ya reconoce la señal acordada con Masi Ala.",
+              "ningún cierre dependerá de una sola trayectoria de papel."
+            ]
+          }
+        },
+        {
+          "name": "Dram Nube",
+          "sprite": "NPC 04",
+          "role": "narrador de tormentas",
+          "partnerPokemon": "DRAMPA",
+          "motivation": "Quiere contar alertas comprensibles sin exagerar el peligro.",
+          "conflict": "Su error anterior fue que añadió finales dramáticos que borraban las rutas seguras.",
+          "dialogue": {
+            "before": [
+              "Drampa descansa bajo una lluvia que mi relato llamó catástrofe.",
+              "Convertí una suposición en regla: añadió finales dramáticos que borraban las rutas seguras.",
+              "leeré condiciones y alternativas antes de la historia."
+            ],
+            "after": [
+              "las alertas terminan con una acción concreta y una salida.",
+              "Con DRAMPA, Dram Nube recorrió la solución desde el otro extremo.",
+              "la ficción queda anunciada fuera del parte operativo."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué función tendrán las aves?",
+        "options": [
+          "Visualizar varios pronósticos",
+          "Enseñar viento sin autorizar cierres"
+        ],
+        "immediate": [
+          "mostraré varios vuelos como demostración, no como resultado.",
+          "leeré condiciones y alternativas antes de la historia."
+        ],
+        "later": [
+          "ningún cierre dependerá de una sola trayectoria de papel.",
+          "la ficción queda anunciada fuera del parte operativo."
+        ]
+      },
+      "reward": {
+        "item": "SHELLBELL",
+        "meaning": "Devuelve una señal clara después de que el viento dispersa el espectáculo."
+      },
+      "progression": {
+        "switchId": 809,
+        "decisionVariable": 205,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 13,
+      "mapId": 1540,
+      "flag": 810,
+      "variable": 206,
+      "title": "El Centro de los Formularios Infinitos",
+      "promise": "Un Centro Pokémon origami exige una hoja distinta por cada síntoma y las fichas plegadas esconden información cuando pasan de recepción a curación.",
+      "objective": "Reducir el registro a datos clínicos necesarios y una preferencia de contacto.",
+      "mechanic": {
+        "name": "Triage desplegable",
+        "rules": [
+          "Preguntar antes de duplicar datos.",
+          "Mantener visible la prioridad clínica.",
+          "Guardar preferencias en una sección separada."
+        ],
+        "failureSafe": "La curación nunca espera a que termine el formulario."
+      },
+      "npcs": [
+        {
+          "name": "Celia Hoja",
+          "sprite": "trchar009",
+          "role": "recepcionista clínica",
+          "partnerPokemon": "CHANSEY",
+          "motivation": "Quiere recibir información útil sin convertir la atención en papeleo.",
+          "conflict": "Su error anterior fue que añadió formularios para cada excepción y retrasó la primera evaluación.",
+          "dialogue": {
+            "before": [
+              "Chansey ya tomó temperatura mientras mi tercera hoja sigue vacía.",
+              "La rutina parecía útil, pero añadió formularios para cada excepción y retrasó la primera evaluación.",
+              "haré una ficha breve y módulos solo cuando sean necesarios."
+            ],
+            "after": [
+              "la prioridad clínica se lee sin desplegar datos personales.",
+              "Celia Hoja dejó que CHANSEY confirmara el resultado sin apurarlo.",
+              "cada módulo puede retirarse al dejar de ser útil."
+            ]
+          }
+        },
+        {
+          "name": "Inda Pliegue",
+          "sprite": "NPC 04",
+          "role": "enlace de cuidados",
+          "partnerPokemon": "INDEEDEE",
+          "motivation": "Quiere entregar preferencias al equipo correcto sin exponerlas en la sala.",
+          "conflict": "Su error anterior fue que dobló todas las notas juntas y una indicación privada quedó hacia fuera.",
+          "dialogue": {
+            "before": [
+              "Indeedee cubre la solapa que mi diseño presentaba como portada.",
+              "No comprobé a tiempo que dobló todas las notas juntas y una indicación privada quedó hacia fuera.",
+              "separaré clínica, contacto y comodidad."
+            ],
+            "after": [
+              "cada sección tiene acceso y duración definidos.",
+              "INDEEDEE encontró estable la nueva ruta de Inda Pliegue.",
+              "los pacientes deciden qué preferencia conservar."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo será la nueva ficha?",
+        "options": [
+          "Núcleo clínico y módulos opcionales",
+          "Prioridad visible con datos protegidos"
+        ],
+        "immediate": [
+          "haré una ficha breve y módulos solo cuando sean necesarios.",
+          "separaré clínica, contacto y comodidad."
+        ],
+        "later": [
+          "cada módulo puede retirarse al dejar de ser útil.",
+          "los pacientes deciden qué preferencia conservar."
+        ]
+      },
+      "reward": {
+        "item": "WISEGLASSES",
+        "meaning": "Favorece una lectura cuidadosa sin exigir más páginas de las necesarias."
+      },
+      "progression": {
+        "switchId": 810,
+        "decisionVariable": 206,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 13,
+      "mapId": 1551,
+      "flag": 811,
+      "variable": 207,
+      "title": "El Vestido de las Mil Facetas",
+      "promise": "Un concurso de cristal multiplica un traje mediante espejos y el jurado puntúa reflejos que ocultan costuras, movilidad y trabajo real.",
+      "objective": "Evaluar la prenda con luz neutra antes de añadir las facetas escénicas.",
+      "mechanic": {
+        "name": "Pasarela de facetas",
+        "rules": [
+          "Mostrar una vuelta sin espejos.",
+          "Declarar cada reflejo añadido.",
+          "Comprobar movilidad y seguridad."
+        ],
+        "failureSafe": "Existe una pasarela lateral sin efectos."
+      },
+      "npcs": [
+        {
+          "name": "Gala Prisma",
+          "sprite": "trchar008",
+          "role": "modista de concurso",
+          "partnerPokemon": "GLAMEOW",
+          "motivation": "Quiere hacer visible la construcción sin renunciar al brillo teatral.",
+          "conflict": "Su error anterior fue que colocó espejos donde escondían una unión frágil.",
+          "dialogue": {
+            "before": [
+              "Glameow roza la falda y una faceta tapa el hilo que necesita arreglo.",
+              "Confundí rapidez con certeza y colocó espejos donde escondían una unión frágil.",
+              "presentaré primero la prenda bajo luz uniforme."
+            ],
+            "after": [
+              "el jurado ve costura, movimiento y luego escenografía.",
+              "Gala Prisma y GLAMEOW verificaron que el cambio puede revertirse.",
+              "cada espejo tendrá una función declarada."
+            ]
+          }
+        },
+        {
+          "name": "Furo Corte",
+          "sprite": "NPC 04",
+          "role": "peluquero escénico",
+          "partnerPokemon": "FURFROU",
+          "motivation": "Quiere coordinar silueta y movimiento sin obligar una forma única.",
+          "conflict": "Su error anterior fue que fijó adornos para que coincidieran con reflejos y limitó el giro.",
+          "dialogue": {
+            "before": [
+              "Furfrou gira cómodo sin el aro que mi plano llamaba indispensable.",
+              "El plano no mostraba que fijó adornos para que coincidieran con reflejos y limitó el giro.",
+              "probaré adornos removibles durante el ensayo."
+            ],
+            "after": [
+              "la silueta cambia sin bloquear movimiento.",
+              "FURFROU respondió al nuevo criterio que propuso Furo Corte.",
+              "cada participante conserva la decisión final sobre su aspecto."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo puntuará el jurado?",
+        "options": [
+          "Prenda primero, efectos después",
+          "Costura, movilidad y escena separadas"
+        ],
+        "immediate": [
+          "presentaré primero la prenda bajo luz uniforme.",
+          "probaré adornos removibles durante el ensayo."
+        ],
+        "later": [
+          "cada espejo tendrá una función declarada.",
+          "cada participante conserva la decisión final sobre su aspecto."
+        ]
+      },
+      "reward": {
+        "item": "MUSCLEBAND",
+        "meaning": "Reconoce el trabajo estructural que sostiene una apariencia brillante."
+      },
+      "progression": {
+        "switchId": 811,
+        "decisionVariable": 207,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 13,
+      "mapId": 1558,
+      "flag": 812,
+      "variable": 208,
+      "title": "La Sala de Curación Transparente",
+      "promise": "Un Centro de cristal vuelve transparentes sus separadores para vigilar mejor y termina exponiendo conversaciones y tratamientos a toda la sala.",
+      "objective": "Restaurar privacidad sin impedir señales clínicas y rutas de asistencia.",
+      "mechanic": {
+        "name": "Diseño de separadores",
+        "rules": [
+          "Probar visibilidad desde cama y pasillo.",
+          "Mantener llamada de ayuda accesible.",
+          "Distinguir supervisión y exposición."
+        ],
+        "failureSafe": "La salida y la estación clínica permanecen despejadas."
+      },
+      "npcs": [
+        {
+          "name": "Crio Panel",
+          "sprite": "trchar009",
+          "role": "técnico de mamparas",
+          "partnerPokemon": "CRYOGONAL",
+          "motivation": "Quiere regular luz y privacidad según cada espacio.",
+          "conflict": "Su error anterior fue que usó transparencia total como sinónimo de seguridad.",
+          "dialogue": {
+            "before": [
+              "Cryogonal refleja el pasillo y una conversación llega a tres camas.",
+              "Mi criterio dejó fuera un dato: usó transparencia total como sinónimo de seguridad.",
+              "instalaré franjas opacas y ventanas orientadas."
+            ],
+            "after": [
+              "las camas conservan contacto clínico sin quedar en exhibición.",
+              "Crio Panel anotó la reacción de CRYOGONAL antes de cerrar el registro.",
+              "cada panel puede ajustarse desde ambos lados."
+            ]
+          }
+        },
+        {
+          "name": "Tessa Velo",
+          "sprite": "NPC 04",
+          "role": "coordinadora de sala",
+          "partnerPokemon": "GOTHITELLE",
+          "motivation": "Quiere responder a llamadas sin observar continuamente.",
+          "conflict": "Su error anterior fue que organizó rondas mirando a través de cada pared.",
+          "dialogue": {
+            "before": [
+              "Gothitelle detecta el timbre aunque la cortina esté cerrada.",
+              "Ahora puedo decirlo sin rodeos: organizó rondas mirando a través de cada pared.",
+              "usaré señales de llamada y visitas anunciadas."
+            ],
+            "after": [
+              "las rondas comienzan con aviso y permiso cuando es posible.",
+              "GOTHITELLE cruzó la zona corregida sin repetir el problema de Tessa Velo.",
+              "el equipo registra atención, no escenas privadas."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo combinará la sala cuidado y privacidad?",
+        "options": [
+          "Mamparas ajustables con timbre",
+          "Rondas anunciadas y ventanas clínicas"
+        ],
+        "immediate": [
+          "instalaré franjas opacas y ventanas orientadas.",
+          "usaré señales de llamada y visitas anunciadas."
+        ],
+        "later": [
+          "cada panel puede ajustarse desde ambos lados.",
+          "el equipo registra atención, no escenas privadas."
+        ]
+      },
+      "reward": {
+        "item": "AMULETCOIN",
+        "meaning": "Recuerda que algo valioso puede protegerse sin colocarlo a la vista."
+      },
+      "progression": {
+        "switchId": 812,
+        "decisionVariable": 208,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 14,
+      "mapId": 1565,
+      "flag": 813,
+      "variable": 209,
+      "title": "La Ruta de Hielo que Guardaba Pasos",
+      "promise": "Un sendero cristalino conserva huellas antiguas bajo el hielo y los guías las siguen aunque terminen en grietas nuevas.",
+      "objective": "Distinguir memoria congelada, paso reciente y ruta segura.",
+      "mechanic": {
+        "name": "Lectura de huellas",
+        "rules": [
+          "Fechar por capa y escarcha.",
+          "Sondear hielo antes de seguir.",
+          "Marcar desvíos sin borrar rastros antiguos."
+        ],
+        "failureSafe": "Una cuerda continua conecta refugio y retorno."
+      },
+      "npcs": [
+        {
+          "name": "Glacia Rastro",
+          "sprite": "trchar008",
+          "role": "guía de hielo",
+          "partnerPokemon": "GLACEON",
+          "motivation": "Quiere mostrar huellas históricas sin usarlas como instrucciones actuales.",
+          "conflict": "Su error anterior fue que tomó nitidez como prueba de que un rastro era reciente.",
+          "dialogue": {
+            "before": [
+              "Glaceon deja polvo nuevo sobre una marca nítida atrapada mucho más abajo.",
+              "Me precipité: tomó nitidez como prueba de que un rastro era reciente.",
+              "señalaré capa, fecha estimada y estado del hielo."
+            ],
+            "after": [
+              "las huellas antiguas se observan desde una pasarela.",
+              "GLACEON comprobó el cambio junto a Glacia Rastro.",
+              "ninguna memoria volverá a decidir un cruce."
+            ]
+          }
+        },
+        {
+          "name": "Bero Sonda",
+          "sprite": "NPC 04",
+          "role": "inspector de grietas",
+          "partnerPokemon": "BEARTIC",
+          "motivation": "Quiere abrir rutas solo después de medir espesor y tensión.",
+          "conflict": "Su error anterior fue que confió en el peso de Beartic como prueba para todos los viajeros.",
+          "dialogue": {
+            "before": [
+              "Beartic cruza una placa que vibra bajo pasos más rápidos.",
+              "Tardé en reconocer que confió en el peso de Beartic como prueba para todos los viajeros.",
+              "usaré sonda, temperatura y ruta de retorno."
+            ],
+            "after": [
+              "los límites publicados incluyen condición y hora.",
+              "Bero Sonda repitió la prueba mientras BEARTIC vigilaba el borde.",
+              "cada cambio de clima activa una revisión real."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se señalará el sendero?",
+        "options": [
+          "Ruta actual sobre pasarela",
+          "Huellas históricas y desvío separado"
+        ],
+        "immediate": [
+          "señalaré capa, fecha estimada y estado del hielo.",
+          "usaré sonda, temperatura y ruta de retorno."
+        ],
+        "later": [
+          "ninguna memoria volverá a decidir un cruce.",
+          "cada cambio de clima activa una revisión real."
+        ]
+      },
+      "reward": {
+        "item": "SMOKEBALL",
+        "meaning": "Permite retirarse de una ruta engañosa sin tener que borrar las huellas que conserva."
+      },
+      "progression": {
+        "switchId": 813,
+        "decisionVariable": 209,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 14,
+      "mapId": 1576,
+      "flag": 814,
+      "variable": 210,
+      "title": "El Estadio que Sembraba Rivales",
+      "promise": "Una llanura meteoro asigna oponentes según parecidos calculados y evita encuentros inesperados que podrían revelar estilos distintos.",
+      "objective": "Abrir el cuadro de emparejamientos y permitir criterios revisables antes de competir.",
+      "mechanic": {
+        "name": "Sorteo de constelaciones",
+        "rules": [
+          "Publicar variables del emparejamiento.",
+          "Ofrecer sorteo neutral.",
+          "Permitir rechazar una categoría errónea."
+        ],
+        "failureSafe": "La retirada no altera historial ni recompensa previa."
+      },
+      "npcs": [
+        {
+          "name": "Meta Órbita",
+          "sprite": "trchar009",
+          "role": "analista de cuadros",
+          "partnerPokemon": "METAGROSS",
+          "motivation": "Quiere crear cruces justos sin convertir similitud en destino.",
+          "conflict": "Su error anterior fue que usó un modelo opaco que repetía los mismos rivales.",
+          "dialogue": {
+            "before": [
+              "Metagross encuentra una coincidencia matemática donde los estilos no se parecen.",
+              "Mi primer registro ocultaba que usó un modelo opaco que repetía los mismos rivales.",
+              "publicaré criterios y margen de azar."
+            ],
+            "after": [
+              "el cuadro muestra por qué y cómo se formó cada cruce.",
+              "METAGROSS ya reconoce la señal acordada con Meta Órbita.",
+              "los participantes pueden impugnar una clasificación."
+            ]
+          }
+        },
+        {
+          "name": "Fali Fila",
+          "sprite": "NPC 04",
+          "role": "capitana de equipos",
+          "partnerPokemon": "FALINKS",
+          "motivation": "Quiere mantener orden sin fijar identidades competitivas.",
+          "conflict": "Su error anterior fue que trató la posición del grupo como rol permanente.",
+          "dialogue": {
+            "before": [
+              "Falinks cambia formación y mi registro insiste en una única función.",
+              "Convertí una suposición en regla: trató la posición del grupo como rol permanente.",
+              "registraré estrategia por encuentro, no como etiqueta personal."
+            ],
+            "after": [
+              "los roles pueden cambiar antes de cada ronda.",
+              "Con FALINKS, Fali Fila recorrió la solución desde el otro extremo.",
+              "el historial describe decisiones y no una esencia del equipo."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se formará el siguiente cuadro?",
+        "options": [
+          "Criterios públicos con azar",
+          "Sorteo neutral y revisión posterior"
+        ],
+        "immediate": [
+          "publicaré criterios y margen de azar.",
+          "registraré estrategia por encuentro, no como etiqueta personal."
+        ],
+        "later": [
+          "los participantes pueden impugnar una clasificación.",
+          "el historial describe decisiones y no una esencia del equipo."
+        ]
+      },
+      "reward": {
+        "item": "EVERSTONE",
+        "meaning": "Sirve como recordatorio de que estabilidad elegida no debe convertirse en identidad impuesta."
+      },
+      "progression": {
+        "switchId": 814,
+        "decisionVariable": 210,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 14,
+      "mapId": 1583,
+      "flag": 815,
+      "variable": 211,
+      "title": "La Danza del Polvo Meteórico",
+      "promise": "Un concurso usa polvo brillante caído del cielo y confunde la reacción alérgica de los participantes con falta de preparación escénica.",
+      "objective": "Separar material, respuesta física y valoración artística antes de reabrir la pista.",
+      "mechanic": {
+        "name": "Ensayo sin polvo",
+        "rules": [
+          "Presentar la rutina limpia primero.",
+          "Declarar composición y riesgo.",
+          "Ofrecer efectos alternativos."
+        ],
+        "failureSafe": "La salida y una zona sin partículas permanecen abiertas."
+      },
+      "npcs": [
+        {
+          "name": "Duna Ala",
+          "sprite": "trchar008",
+          "role": "coreógrafa nocturna",
+          "partnerPokemon": "DUSTOX",
+          "motivation": "Quiere conservar el efecto celeste sin exigir exposición.",
+          "conflict": "Su error anterior fue que normalizó la tos porque también ocurría durante ensayos intensos.",
+          "dialogue": {
+            "before": [
+              "Dustox evita el polvo meteórico aunque vuela dentro de otras nubes.",
+              "La rutina parecía útil, pero normalizó la tos porque también ocurría durante ensayos intensos.",
+              "retiraré partículas y reconstruiré el ritmo con luz."
+            ],
+            "after": [
+              "la rutina conserva su intención sin material suspendido.",
+              "Duna Ala dejó que DUSTOX confirmara el resultado sin apurarlo.",
+              "cada efecto tendrá una alternativa equivalente."
+            ]
+          }
+        },
+        {
+          "name": "Clea Brillo",
+          "sprite": "NPC 04",
+          "role": "inspectora de materiales",
+          "partnerPokemon": "CLEFABLE",
+          "motivation": "Quiere informar composición sin arruinar la sorpresa artística.",
+          "conflict": "Su error anterior fue que guardó la fórmula como secreto del concurso.",
+          "dialogue": {
+            "before": [
+              "Clefable reconoce un mineral que la ficha llama simplemente magia.",
+              "No comprobé a tiempo que guardó la fórmula como secreto del concurso.",
+              "publicaré ingredientes antes de la inscripción."
+            ],
+            "after": [
+              "los participantes eligen con información y sin perder categoría.",
+              "CLEFABLE encontró estable la nueva ruta de Clea Brillo.",
+              "la sorpresa quedará en la escena, no en el riesgo."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo volverá el brillo a la pista?",
+        "options": [
+          "Luz proyectada sin partículas",
+          "Material declarado y participación opcional"
+        ],
+        "immediate": [
+          "retiraré partículas y reconstruiré el ritmo con luz.",
+          "publicaré ingredientes antes de la inscripción."
+        ],
+        "later": [
+          "cada efecto tendrá una alternativa equivalente.",
+          "la sorpresa quedará en la escena, no en el riesgo."
+        ]
+      },
+      "reward": {
+        "item": "EVIOLITE",
+        "meaning": "Valora una forma todavía en desarrollo sin exigirle soportar una condición dañina."
+      },
+      "progression": {
+        "switchId": 815,
+        "decisionVariable": 211,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 14,
+      "mapId": 1590,
+      "flag": 816,
+      "variable": 212,
+      "title": "La Casa que Ensayaba Impactos",
+      "promise": "Una vivienda activa alarmas y cierra persianas cada vez que Beeheeyem predice un meteoro, aunque la mayoría se desintegra lejos.",
+      "objective": "Graduar observación, preparación y evacuación según evidencia actual.",
+      "mechanic": {
+        "name": "Escala de impacto",
+        "rules": [
+          "Separar detección y trayectoria.",
+          "Confirmar distancia antes de cerrar.",
+          "Mantener una salida manual."
+        ],
+        "failureSafe": "Las puertas nunca dependen de la alarma automática."
+      },
+      "npcs": [
+        {
+          "name": "Bea Vector",
+          "sprite": "trchar009",
+          "role": "observadora de meteoros",
+          "partnerPokemon": "BEHEEYEM",
+          "motivation": "Quiere compartir predicciones con nivel de confianza.",
+          "conflict": "Su error anterior fue que transmitió cada detección como impacto confirmado.",
+          "dialogue": {
+            "before": [
+              "Beeheeyem señala una luz alta y mi casa ya baja todas las persianas.",
+              "Confundí rapidez con certeza y transmitió cada detección como impacto confirmado.",
+              "publicaré trayectoria, margen y próxima revisión."
+            ],
+            "after": [
+              "las alertas indican qué sabemos y qué falta.",
+              "Bea Vector y BEHEEYEM verificaron que el cambio puede revertirse.",
+              "una observación lejana ya no vaciará la vivienda."
+            ]
+          }
+        },
+        {
+          "name": "Bron Cúpula",
+          "sprite": "NPC 04",
+          "role": "constructor de refugios",
+          "partnerPokemon": "BRONZONG",
+          "motivation": "Quiere preparar protección sin convertirla en encierro cotidiano.",
+          "conflict": "Su error anterior fue que bloqueó ventanas durante semanas para un evento improbable.",
+          "dialogue": {
+            "before": [
+              "Bronzong resuena dentro de una casa más peligrosa por falta de ventilación.",
+              "El plano no mostraba que bloqueó ventanas durante semanas para un evento improbable.",
+              "instalaré cierres manuales y pruebas breves."
+            ],
+            "after": [
+              "el refugio puede activarse sin inutilizar la casa.",
+              "BRONZONG respondió al nuevo criterio que propuso Bron Cúpula.",
+              "cada simulacro termina con reapertura comprobada."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué activará el refugio?",
+        "options": [
+          "Trayectoria confirmada y umbral",
+          "Alerta gradual con decisión manual"
+        ],
+        "immediate": [
+          "publicaré trayectoria, margen y próxima revisión.",
+          "instalaré cierres manuales y pruebas breves."
+        ],
+        "later": [
+          "una observación lejana ya no vaciará la vivienda.",
+          "cada simulacro termina con reapertura comprobada."
+        ]
+      },
+      "reward": {
+        "item": "ASSAULTVEST",
+        "meaning": "Protege frente a un impacto real sin obligar a vivir permanentemente bajo alarma."
+      },
+      "progression": {
+        "switchId": 816,
+        "decisionVariable": 212,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 14,
+      "mapId": 1601,
+      "flag": 817,
+      "variable": 213,
+      "title": "El Pueblo que Iluminaba el Coral",
+      "promise": "Una ciudad coralina copia el brillo de los arrecifes en sus faroles y confunde a especies nocturnas que siguen señales químicas distintas.",
+      "objective": "Rediseñar iluminación urbana sin imitar llamadas naturales.",
+      "mechanic": {
+        "name": "Mapa de luminiscencia",
+        "rules": [
+          "Observar una noche sin faroles nuevos.",
+          "Separar color y patrón.",
+          "Reservar corredores oscuros."
+        ],
+        "failureSafe": "Las balizas humanas apuntan al suelo y al retorno."
+      },
+      "npcs": [
+        {
+          "name": "Shii Lumen",
+          "sprite": "trchar008",
+          "role": "micóloga urbana",
+          "partnerPokemon": "SHIINOTIC",
+          "motivation": "Quiere preservar señales vivas sin convertirlas en decoración pública.",
+          "conflict": "Su error anterior fue que copió pulsos de Shiinoitic para atraer visitantes.",
+          "dialogue": {
+            "before": [
+              "Shiinotic apaga su copa cuando el farol repite su llamada.",
+              "Mi criterio dejó fuera un dato: copió pulsos de Shiinoitic para atraer visitantes.",
+              "cambiaré luz fija, baja y fuera de los corredores vivos."
+            ],
+            "after": [
+              "los hongos recuperan patrones distinguibles.",
+              "Shii Lumen anotó la reacción de SHIINOTIC antes de cerrar el registro.",
+              "la ciudad explicará por qué una zona permanece oscura."
+            ]
+          }
+        },
+        {
+          "name": "Cora Rama",
+          "sprite": "NPC 04",
+          "role": "restauradora de arrecife",
+          "partnerPokemon": "CURSOLA",
+          "motivation": "Quiere evitar que la estética coral oculte fragilidad real.",
+          "conflict": "Su error anterior fue que instaló réplicas sobre colonias dañadas y dificultó su inspección.",
+          "dialogue": {
+            "before": [
+              "Cursola atraviesa un adorno donde el coral vivo necesita espacio.",
+              "Ahora puedo decirlo sin rodeos: instaló réplicas sobre colonias dañadas y dificultó su inspección.",
+              "retiraré réplicas y marcaré restauración sin disfraz."
+            ],
+            "after": [
+              "las zonas dañadas son visibles y están protegidas.",
+              "CURSOLA cruzó la zona corregida sin repetir el problema de Cora Rama.",
+              "cada adorno futuro tendrá distancia ecológica."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo brillará el pueblo?",
+        "options": [
+          "Faroles humanos sin pulsos naturales",
+          "Corredores oscuros y luz fija"
+        ],
+        "immediate": [
+          "cambiaré luz fija, baja y fuera de los corredores vivos.",
+          "retiraré réplicas y marcaré restauración sin disfraz."
+        ],
+        "later": [
+          "la ciudad explicará por qué una zona permanece oscura.",
+          "cada adorno futuro tendrá distancia ecológica."
+        ]
+      },
+      "reward": {
+        "item": "WEAKNESSPOLICY",
+        "meaning": "Convierte una vulnerabilidad reconocida en una regla de cuidado y no en un motivo para ocultarla."
+      },
+      "progression": {
+        "switchId": 817,
+        "decisionVariable": 213,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 15,
+      "mapId": 1608,
+      "flag": 818,
+      "variable": 214,
+      "title": "La Casa que Filtraba el Mar",
+      "promise": "Una vivienda costera cristaliza toda el agua para volverla transparente y elimina minerales que un vivero coralino necesita.",
+      "objective": "Separar agua potable, agua de vivero y descarte antes de ajustar los filtros.",
+      "mechanic": {
+        "name": "Circuito de filtración",
+        "rules": [
+          "Medir uso antes de filtrar.",
+          "Registrar minerales retirados.",
+          "Evitar mezclar retornos."
+        ],
+        "failureSafe": "El depósito de emergencia conserva una línea independiente."
+      },
+      "npcs": [
+        {
+          "name": "Vera Caudal",
+          "sprite": "trchar009",
+          "role": "técnica de agua",
+          "partnerPokemon": "VAPOREON",
+          "motivation": "Quiere producir agua segura sin tratar todos los usos como iguales.",
+          "conflict": "Su error anterior fue que aplicó el filtro potable al vivero y al jardín.",
+          "dialogue": {
+            "before": [
+              "Vaporeon bebe una línea limpia mientras los pólipos pierden sales necesarias.",
+              "Me precipité: aplicó el filtro potable al vivero y al jardín.",
+              "separaré circuitos y objetivos de calidad."
+            ],
+            "after": [
+              "cada grifo indica uso y composición.",
+              "VAPOREON comprobó el cambio junto a Vera Caudal.",
+              "los cambios de filtro tendrán una prueba en pequeño."
+            ]
+          }
+        },
+        {
+          "name": "Mare Púa",
+          "sprite": "NPC 04",
+          "role": "cuidadora de vivero",
+          "partnerPokemon": "MAREANIE",
+          "motivation": "Quiere recuperar minerales sin devolver contaminantes.",
+          "conflict": "Su error anterior fue que añadió sales a ojo después de cada filtrado.",
+          "dialogue": {
+            "before": [
+              "Mareanie evita un tanque cuya etiqueta dice restaurado.",
+              "Tardé en reconocer que añadió sales a ojo después de cada filtrado.",
+              "mediré lote, dosis y respuesta antes de completar."
+            ],
+            "after": [
+              "el vivero recibe composición estable y trazable.",
+              "Mare Púa repitió la prueba mientras MAREANIE vigilaba el borde.",
+              "ningún ajuste volverá a depender del aspecto del agua."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se dividirá el circuito?",
+        "options": [
+          "Líneas según uso",
+          "Filtro modular con retorno medido"
+        ],
+        "immediate": [
+          "separaré circuitos y objetivos de calidad.",
+          "mediré lote, dosis y respuesta antes de completar."
+        ],
+        "later": [
+          "los cambios de filtro tendrán una prueba en pequeño.",
+          "ningún ajuste volverá a depender del aspecto del agua."
+        ]
+      },
+      "reward": {
+        "item": "BLUNDERPOLICY",
+        "meaning": "Premia reconocer una filtración equivocada y corregirla antes de repetirla."
+      },
+      "progression": {
+        "switchId": 818,
+        "decisionVariable": 214,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 15,
+      "mapId": 1615,
+      "flag": 819,
+      "variable": 215,
+      "title": "El Gimnasio de las Mareas Pintadas",
+      "promise": "Un gimnasio coralino pinta niveles de agua sobre las paredes y mantiene pruebas abiertas aunque la marea real supere las marcas decorativas.",
+      "objective": "Conectar sensores, señalización y evacuación sin borrar la identidad visual del recinto.",
+      "mechanic": {
+        "name": "Lectura de nivel",
+        "rules": [
+          "Comparar pintura y sensor.",
+          "Reservar un umbral operativo.",
+          "Ensayar salida antes de subir agua."
+        ],
+        "failureSafe": "Una pasarela seca conduce siempre al exterior."
+      },
+      "npcs": [
+        {
+          "name": "Quin Nivel",
+          "sprite": "trchar008",
+          "role": "líder de mantenimiento",
+          "partnerPokemon": "QUAGSIRE",
+          "motivation": "Quiere hacer legible el agua real sin depender del mural.",
+          "conflict": "Su error anterior fue que trató las marcas artísticas como escala calibrada.",
+          "dialogue": {
+            "before": [
+              "Quagsire flota sobre la línea azul que el folleto llama máxima.",
+              "Mi primer registro ocultaba que trató las marcas artísticas como escala calibrada.",
+              "instalaré reglas físicas junto al mural."
+            ],
+            "after": [
+              "el nivel operativo se distingue sin cubrir la pintura.",
+              "QUAGSIRE ya reconoce la señal acordada con Quin Nivel.",
+              "cada prueba empieza con lectura y ruta seca."
+            ]
+          }
+        },
+        {
+          "name": "Gala Drena",
+          "sprite": "NPC 04",
+          "role": "operadora de compuertas",
+          "partnerPokemon": "GASTRODON",
+          "motivation": "Quiere bajar agua sin vaciar humedales conectados.",
+          "conflict": "Su error anterior fue que abrió todas las compuertas ante una alarma y drenó zonas vecinas.",
+          "dialogue": {
+            "before": [
+              "Gastrodon sigue humedad hacia un canal que mi plan daba por aislado.",
+              "Convertí una suposición en regla: abrió todas las compuertas ante una alarma y drenó zonas vecinas.",
+              "separaré drenaje de emergencia y regulación."
+            ],
+            "after": [
+              "las compuertas indican destino y caudal.",
+              "Con GASTRODON, Gala Drena recorrió la solución desde el otro extremo.",
+              "un cierre local no desplazará el problema a otra costa."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué gobernará la prueba acuática?",
+        "options": [
+          "Sensores con umbrales públicos",
+          "Lectura manual antes de cada ronda"
+        ],
+        "immediate": [
+          "instalaré reglas físicas junto al mural.",
+          "separaré drenaje de emergencia y regulación."
+        ],
+        "later": [
+          "cada prueba empieza con lectura y ruta seca.",
+          "un cierre local no desplazará el problema a otra costa."
+        ]
+      },
+      "reward": {
+        "item": "THROATSPRAY",
+        "meaning": "Hace que una alerta se oiga con claridad sin reemplazar la medición del agua."
+      },
+      "progression": {
+        "switchId": 819,
+        "decisionVariable": 215,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 15,
+      "mapId": 1626,
+      "flag": 820,
+      "variable": 216,
+      "title": "La Ciudad que Alquilaba Sombras",
+      "promise": "Durante un eclipse, comercios reservan zonas oscuras a quien paga entrada y bloquean calles usadas para descansar del calor.",
+      "objective": "Distinguir espectáculo, refugio térmico y tránsito público.",
+      "mechanic": {
+        "name": "Mapa de penumbra",
+        "rules": [
+          "Medir temperatura y paso.",
+          "Marcar zonas públicas primero.",
+          "Evitar vallas que persigan la sombra."
+        ],
+        "failureSafe": "El corredor de retorno nunca puede reservarse."
+      },
+      "npcs": [
+        {
+          "name": "Mimi Umbral",
+          "sprite": "trchar009",
+          "role": "escenógrafa del eclipse",
+          "partnerPokemon": "MIMIKYU",
+          "motivation": "Quiere crear experiencias oscuras sin apropiarse de la sombra común.",
+          "conflict": "Su error anterior fue que cercó un callejón fresco y lo presentó como decorado exclusivo.",
+          "dialogue": {
+            "before": [
+              "Mimikyu descansa detrás de una valla que antes no existía.",
+              "La rutina parecía útil, pero cercó un callejón fresco y lo presentó como decorado exclusivo.",
+              "retiraré cierres de tránsito y llevaré el espectáculo a una plaza."
+            ],
+            "after": [
+              "las zonas públicas quedan marcadas antes del evento.",
+              "Mimi Umbral dejó que MIMIKYU confirmara el resultado sin apurarlo.",
+              "ninguna sombra móvil volverá a crear propiedad privada."
+            ]
+          }
+        },
+        {
+          "name": "Helio Reloj",
+          "sprite": "NPC 04",
+          "role": "medidor solar",
+          "partnerPokemon": "HELIOPTILE",
+          "motivation": "Quiere publicar horarios del eclipse sin convertirlos en turnos de acceso.",
+          "conflict": "Su error anterior fue que vendió franjas horarias como si controlara la trayectoria.",
+          "dialogue": {
+            "before": [
+              "Helioptile cambia de sitio y mi boleto promete oscuridad exacta.",
+              "No comprobé a tiempo que vendió franjas horarias como si controlara la trayectoria.",
+              "mostraré intervalos y visibilidad estimada."
+            ],
+            "after": [
+              "el calendario informa sin garantizar un fenómeno.",
+              "HELIOPTILE encontró estable la nueva ruta de Helio Reloj.",
+              "el descanso térmico permanece abierto todo el día."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Dónde ocurrirá la celebración?",
+        "options": [
+          "Plaza escénica sin cerrar calles",
+          "Recorrido público con refugios libres"
+        ],
+        "immediate": [
+          "retiraré cierres de tránsito y llevaré el espectáculo a una plaza.",
+          "mostraré intervalos y visibilidad estimada."
+        ],
+        "later": [
+          "ninguna sombra móvil volverá a crear propiedad privada.",
+          "el descanso térmico permanece abierto todo el día."
+        ]
+      },
+      "reward": {
+        "item": "ADRENALINEORB",
+        "meaning": "Recuerda que la emoción del eclipse no debe expulsar a quien usa la sombra para cuidarse."
+      },
+      "progression": {
+        "switchId": 820,
+        "decisionVariable": 216,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 15,
+      "mapId": 1633,
+      "flag": 821,
+      "variable": 217,
+      "title": "La Mina que Cambiaba de Turno con la Luna",
+      "promise": "Una isla de hierro adelanta turnos durante el eclipse y mezcla cuadrillas que no conocen las mismas rutas de evacuación.",
+      "objective": "Restaurar relevos, mapas y descansos antes de reabrir galerías.",
+      "mechanic": {
+        "name": "Relevo de galería",
+        "rules": [
+          "Confirmar equipo y mapa.",
+          "Completar descanso antes del cambio.",
+          "Recorrer la salida con cada cuadrilla."
+        ],
+        "failureSafe": "La galería de retorno permanece fuera del horario minero."
+      },
+      "npcs": [
+        {
+          "name": "Stela Veta",
+          "sprite": "trchar008",
+          "role": "jefa de cuadrilla",
+          "partnerPokemon": "STEELIX",
+          "motivation": "Quiere adaptar horarios sin saltar la transferencia de seguridad.",
+          "conflict": "Su error anterior fue que fusionó dos turnos para aprovechar la penumbra y perdió responsables de zona.",
+          "dialogue": {
+            "before": [
+              "Steelix reconoce una voz, pero la lista mezcla tres capataces.",
+              "Confundí rapidez con certeza y fusionó dos turnos para aprovechar la penumbra y perdió responsables de zona.",
+              "cerraré un relevo antes de abrir el siguiente."
+            ],
+            "after": [
+              "cada zona tiene responsable, mapa y descanso completos.",
+              "Stela Veta y STEELIX verificaron que el cambio puede revertirse.",
+              "el eclipse no volverá a acortar una transferencia."
+            ]
+          }
+        },
+        {
+          "name": "Dugo Broca",
+          "sprite": "NPC 04",
+          "role": "inspector de túneles",
+          "partnerPokemon": "DUGTRIO",
+          "motivation": "Quiere comprobar rutas con quienes realmente las usarán.",
+          "conflict": "Su error anterior fue que firmó mapas desde superficie y omitió un derrumbe reciente.",
+          "dialogue": {
+            "before": [
+              "Dugtrio emerge donde mi plano todavía dibuja un corredor libre.",
+              "El plano no mostraba que firmó mapas desde superficie y omitió un derrumbe reciente.",
+              "recorreré salida y ventilación con cada equipo."
+            ],
+            "after": [
+              "los mapas incorporan cierres y fecha de revisión.",
+              "DUGTRIO respondió al nuevo criterio que propuso Dugo Broca.",
+              "ninguna firma sustituirá una inspección en terreno."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se ajustarán los turnos?",
+        "options": [
+          "Relevos completos pese al eclipse",
+          "Horario estable con pausa de observación"
+        ],
+        "immediate": [
+          "cerraré un relevo antes de abrir el siguiente.",
+          "recorreré salida y ventilación con cada equipo."
+        ],
+        "later": [
+          "el eclipse no volverá a acortar una transferencia.",
+          "ninguna firma sustituirá una inspección en terreno."
+        ]
+      },
+      "reward": {
+        "item": "ELECTRICSEED",
+        "meaning": "Guarda energía para un relevo seguro en vez de gastarla siguiendo la oscuridad."
+      },
+      "progression": {
+        "switchId": 821,
+        "decisionVariable": 217,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 15,
+      "mapId": 1640,
+      "flag": 822,
+      "variable": 218,
+      "title": "La Ciudad que Apagaba su Calefacción",
+      "promise": "Una ciudad nevada corta calefacción para observar mejor el eclipse y obliga a hogares vulnerables a elegir entre frío y participación.",
+      "objective": "Crear zonas de observación sin reducir servicios térmicos esenciales.",
+      "mechanic": {
+        "name": "Balance térmico",
+        "rules": [
+          "Separar luz decorativa y calefacción.",
+          "Medir temperatura interior.",
+          "Publicar refugios y duración."
+        ],
+        "failureSafe": "Los centros cálidos y el retorno permanecen activos."
+      },
+      "npcs": [
+        {
+          "name": "Vani Caldera",
+          "sprite": "trchar009",
+          "role": "operadora térmica",
+          "partnerPokemon": "VANILLUXE",
+          "motivation": "Quiere mantener calor esencial mientras baja la contaminación lumínica.",
+          "conflict": "Su error anterior fue que conectó calefacción y luces a un corte común.",
+          "dialogue": {
+            "before": [
+              "Vanilluxe soporta el frío; la habitación vecina cae bajo el límite seguro.",
+              "Mi criterio dejó fuera un dato: conectó calefacción y luces a un corte común.",
+              "separaré circuitos y prioridades."
+            ],
+            "after": [
+              "la calefacción continúa mientras las luces escénicas se apagan.",
+              "Vani Caldera anotó la reacción de VANILLUXE antes de cerrar el registro.",
+              "cada corte futuro publicará servicio afectado."
+            ]
+          }
+        },
+        {
+          "name": "Dara Ascua",
+          "sprite": "NPC 04",
+          "role": "coordinadora de refugios",
+          "partnerPokemon": "DARMANITAN",
+          "motivation": "Quiere ofrecer observación y abrigo sin jerarquías de acceso.",
+          "conflict": "Su error anterior fue que reservó los mejores refugios para paquetes turísticos.",
+          "dialogue": {
+            "before": [
+              "Darmanitan calienta una fila que mi lista dejó fuera.",
+              "Ahora puedo decirlo sin rodeos: reservó los mejores refugios para paquetes turísticos.",
+              "abriré centros por capacidad y necesidad térmica."
+            ],
+            "after": [
+              "los refugios muestran espacio y ruta accesible.",
+              "DARMANITAN cruzó la zona corregida sin repetir el problema de Dara Ascua.",
+              "ver el eclipse no exigirá renunciar al cuidado."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se oscurecerá la ciudad?",
+        "options": [
+          "Solo luces no esenciales",
+          "Zonas de observación con calor activo"
+        ],
+        "immediate": [
+          "separaré circuitos y prioridades.",
+          "abriré centros por capacidad y necesidad térmica."
+        ],
+        "later": [
+          "cada corte futuro publicará servicio afectado.",
+          "ver el eclipse no exigirá renunciar al cuidado."
+        ]
+      },
+      "reward": {
+        "item": "GRASSYSEED",
+        "meaning": "Representa una reserva de cuidado que permanece incluso cuando cambia la luz del cielo."
+      },
+      "progression": {
+        "switchId": 822,
+        "decisionVariable": 218,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 16,
+      "mapId": 1651,
+      "flag": 823,
+      "variable": 219,
+      "title": "El Estadio que Jugaba entre Nubes de Vapor",
+      "promise": "Un estadio cubre errores de escena con vapor y termina ocultando límites, salidas y señales de pausa.",
+      "objective": "Reducir niebla, marcar bordes y separar efecto artístico de reglamento.",
+      "mechanic": {
+        "name": "Ensayo de visibilidad",
+        "rules": [
+          "Medir desde cada esquina.",
+          "Probar señales con vapor máximo.",
+          "Mantener una pausa que apague efectos."
+        ],
+        "failureSafe": "Las salidas usan luz fija y suelo despejado."
+      },
+      "npcs": [
+        {
+          "name": "Cola Brasa",
+          "sprite": "trchar008",
+          "role": "técnica de vapor",
+          "partnerPokemon": "COALOSSAL",
+          "motivation": "Quiere crear atmósfera sin esconder información de seguridad.",
+          "conflict": "Su error anterior fue que aumentó densidad cada vez que una marca escénica fallaba.",
+          "dialogue": {
+            "before": [
+              "Coalossal desaparece a tres pasos y mi consola llama perfecto al efecto.",
+              "Me precipité: aumentó densidad cada vez que una marca escénica fallaba.",
+              "limitaré densidad y tiempo por zona."
+            ],
+            "after": [
+              "las líneas y salidas siguen visibles durante el espectáculo.",
+              "COALOSSAL comprobó el cambio junto a Cola Brasa.",
+              "cada pausa corta vapor antes de cualquier movimiento."
+            ]
+          }
+        },
+        {
+          "name": "Cami Válvula",
+          "sprite": "NPC 04",
+          "role": "operadora de presión",
+          "partnerPokemon": "CAMERUPT",
+          "motivation": "Quiere mantener el sistema estable sin compensar fallos con más calor.",
+          "conflict": "Su error anterior fue que subió presión para distribuir niebla y forzó válvulas laterales.",
+          "dialogue": {
+            "before": [
+              "Camerupt retrocede donde el tubo vibra fuera del rango.",
+              "Tardé en reconocer que subió presión para distribuir niebla y forzó válvulas laterales.",
+              "reduciré presión y equilibraré conductos."
+            ],
+            "after": [
+              "las válvulas publican límite y cierre manual.",
+              "Cami Válvula repitió la prueba mientras CAMERUPT vigilaba el borde.",
+              "ninguna escena pedirá superar la capacidad del sistema."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se usará el vapor?",
+        "options": [
+          "Franjas breves fuera de salidas",
+          "Efecto apagable con umbral visible"
+        ],
+        "immediate": [
+          "limitaré densidad y tiempo por zona.",
+          "reduciré presión y equilibraré conductos."
+        ],
+        "later": [
+          "cada pausa corta vapor antes de cualquier movimiento.",
+          "ninguna escena pedirá superar la capacidad del sistema."
+        ]
+      },
+      "reward": {
+        "item": "MISTYSEED",
+        "meaning": "Permite entrar en la niebla con una protección nacida de límites claros."
+      },
+      "progression": {
+        "switchId": 823,
+        "decisionVariable": 219,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 16,
+      "mapId": 1658,
+      "flag": 824,
+      "variable": 220,
+      "title": "La Liga de los Calentamientos Eternos",
+      "promise": "Una Liga de vapor mantiene a los equipos calentando mientras espera una señal ceremonial y convierte la preparación en agotamiento.",
+      "objective": "Fijar tiempos, pausas y confirmación de inicio independientes de la ceremonia.",
+      "mechanic": {
+        "name": "Reloj de calentamiento",
+        "rules": [
+          "Registrar comienzo real.",
+          "Limitar cada bloque.",
+          "Permitir enfriamiento antes de competir."
+        ],
+        "failureSafe": "La zona de descanso conserva salida y curación."
+      },
+      "npcs": [
+        {
+          "name": "Centi Ronda",
+          "sprite": "trchar009",
+          "role": "preparadora física",
+          "partnerPokemon": "CENTISKORCH",
+          "motivation": "Quiere calentar lo necesario sin premiar resistencia al agotamiento.",
+          "conflict": "Su error anterior fue que reinició el reloj cada vez que la ceremonia se retrasaba.",
+          "dialogue": {
+            "before": [
+              "Centiskorch mantiene calor; el equipo humano ya perdió coordinación.",
+              "Mi primer registro ocultaba que reinició el reloj cada vez que la ceremonia se retrasaba.",
+              "cerraré cada bloque aunque no llegue la señal."
+            ],
+            "after": [
+              "los calentamientos tienen máximo y recuperación.",
+              "CENTISKORCH ya reconoce la señal acordada con Centi Ronda.",
+              "ningún retraso ceremonial añadirá esfuerzo obligatorio."
+            ]
+          }
+        },
+        {
+          "name": "Blaise Fuente",
+          "sprite": "NPC 04",
+          "role": "coordinador de hidratación",
+          "partnerPokemon": "BLASTOISE",
+          "motivation": "Quiere mantener agua y descanso disponibles durante esperas.",
+          "conflict": "Su error anterior fue que retiró estaciones al declarar que el combate estaba por comenzar.",
+          "dialogue": {
+            "before": [
+              "Blastoise conserva agua mientras mi cartel dice cierre inminente desde hace una hora.",
+              "Convertí una suposición en regla: retiró estaciones al declarar que el combate estaba por comenzar.",
+              "mantendré servicio hasta la llamada efectiva."
+            ],
+            "after": [
+              "las estaciones cierran solo al entrar al campo.",
+              "Con BLASTOISE, Blaise Fuente recorrió la solución desde el otro extremo.",
+              "cada retraso reactiva descanso completo."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué terminará el calentamiento?",
+        "options": [
+          "Tiempo máximo publicado",
+          "Confirmación deportiva, no ceremonial"
+        ],
+        "immediate": [
+          "cerraré cada bloque aunque no llegue la señal.",
+          "mantendré servicio hasta la llamada efectiva."
+        ],
+        "later": [
+          "ningún retraso ceremonial añadirá esfuerzo obligatorio.",
+          "cada retraso reactiva descanso completo."
+        ]
+      },
+      "reward": {
+        "item": "PSYCHICSEED",
+        "meaning": "Protege concentración y descanso frente a una espera que antes no tenía fin."
+      },
+      "progression": {
+        "switchId": 824,
+        "decisionVariable": 220,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 16,
+      "mapId": 1665,
+      "flag": 825,
+      "variable": 221,
+      "title": "La Frontera Dibujada con Vapor",
+      "promise": "Un mapa regional marca fronteras con vapor proyectado y cada corriente cambia qué aldea parece pertenecer a cada lado.",
+      "objective": "Sustituir límites móviles por acuerdos y rutas verificables sin borrar la instalación artística.",
+      "mechanic": {
+        "name": "Cartografía de corrientes",
+        "rules": [
+          "Mostrar base física antes del vapor.",
+          "Registrar acuerdos y pasos.",
+          "Separar efecto y administración."
+        ],
+        "failureSafe": "Todas las rutas de retorno figuran en una capa fija."
+      },
+      "npcs": [
+        {
+          "name": "Kora Nube",
+          "sprite": "trchar008",
+          "role": "artista cartográfica",
+          "partnerPokemon": "KOFFING",
+          "motivation": "Quiere conservar un mapa vivo sin darle autoridad política.",
+          "conflict": "Su error anterior fue que presentó corrientes decorativas como límites oficiales.",
+          "dialogue": {
+            "before": [
+              "Koffing desplaza una frontera sin que ninguna calle cambie.",
+              "La rutina parecía útil, pero presentó corrientes decorativas como límites oficiales.",
+              "proyectaré el vapor sobre una base con leyenda explícita."
+            ],
+            "after": [
+              "la instalación muestra movimiento sin reasignar hogares.",
+              "Kora Nube dejó que KOFFING confirmara el resultado sin apurarlo.",
+              "cada función artística comienza con el mapa acordado."
+            ]
+          }
+        },
+        {
+          "name": "Pía Posta",
+          "sprite": "NPC 04",
+          "role": "enlace de caminos",
+          "partnerPokemon": "PIDOVE",
+          "motivation": "Quiere mantener pasos abiertos aunque la imagen cambie.",
+          "conflict": "Su error anterior fue que movió puestos siguiendo la proyección y cortó rutas cotidianas.",
+          "dialogue": {
+            "before": [
+              "Pidove vuelve al mismo tejado que mi puesto declaró extranjero.",
+              "No comprobé a tiempo que movió puestos siguiendo la proyección y cortó rutas cotidianas.",
+              "fijaré servicios por acceso y acuerdo local."
+            ],
+            "after": [
+              "los puestos regresan a cruces estables.",
+              "PIDOVE encontró estable la nueva ruta de Pía Posta.",
+              "ninguna corriente volverá a modificar derechos o retorno."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo convivirán mapa y obra?",
+        "options": [
+          "Base oficial bajo proyección",
+          "Instalación separada de servicios"
+        ],
+        "immediate": [
+          "proyectaré el vapor sobre una base con leyenda explícita.",
+          "fijaré servicios por acceso y acuerdo local."
+        ],
+        "later": [
+          "cada función artística comienza con el mapa acordado.",
+          "ninguna corriente volverá a modificar derechos o retorno."
+        ]
+      },
+      "reward": {
+        "item": "NORMALGEM",
+        "meaning": "Da valor a la geografía cotidiana que permanece cuando el efecto extraordinario se disipa."
+      },
+      "progression": {
+        "switchId": 825,
+        "decisionVariable": 221,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 16,
+      "mapId": 1676,
+      "flag": 826,
+      "variable": 222,
+      "title": "La Casa de las Ventanas Selladas",
+      "promise": "Un santuario de polen cierra todas sus ventanas para proteger a visitantes alérgicos y concentra fragancias que también causan malestar.",
+      "objective": "Crear ventilación, zonas de descanso y avisos sin expulsar plantas ni personas.",
+      "mechanic": {
+        "name": "Ronda de aire",
+        "rules": [
+          "Medir polen interior y exterior.",
+          "Abrir por sectores.",
+          "Mantener una sala de aire filtrado."
+        ],
+        "failureSafe": "La salida y el refugio filtrado permanecen accesibles."
+      },
+      "npcs": [
+        {
+          "name": "Riba Miel",
+          "sprite": "trchar009",
+          "role": "cuidadora de flores",
+          "partnerPokemon": "RIBOMBEE",
+          "motivation": "Quiere mantener polinización y visitas con exposición informada.",
+          "conflict": "Su error anterior fue que selló la casa y concentró polen en una sola sala.",
+          "dialogue": {
+            "before": [
+              "Ribombee evita el techo donde mi medidor alcanza el valor más alto.",
+              "Confundí rapidez con certeza y selló la casa y concentró polen en una sola sala.",
+              "ventilaré por horarios y presión controlada."
+            ],
+            "after": [
+              "los niveles se publican por zona y momento.",
+              "Riba Miel y RIBOMBEE verificaron que el cambio puede revertirse.",
+              "las flores conservan corredores fuera del refugio filtrado."
+            ]
+          }
+        },
+        {
+          "name": "Aroma Lino",
+          "sprite": "NPC 04",
+          "role": "especialista de fragancias",
+          "partnerPokemon": "AROMATISSE",
+          "motivation": "Quiere distinguir perfume, polen y ventilación antes de recomendar una estancia.",
+          "conflict": "Su error anterior fue que añadió aromas para cubrir aire cargado.",
+          "dialogue": {
+            "before": [
+              "Aromatisse reconoce perfume; el sensor sigue marcando partículas.",
+              "El plano no mostraba que añadió aromas para cubrir aire cargado.",
+              "retiraré fragancias durante la medición."
+            ],
+            "after": [
+              "los avisos separan olor agradable y calidad de aire.",
+              "AROMATISSE respondió al nuevo criterio que propuso Aroma Lino.",
+              "cada visitante puede elegir una ruta sin perfume."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se ventilará el santuario?",
+        "options": [
+          "Sectores con horarios publicados",
+          "Corredores florales y refugio filtrado"
+        ],
+        "immediate": [
+          "ventilaré por horarios y presión controlada.",
+          "retiraré fragancias durante la medición."
+        ],
+        "later": [
+          "las flores conservan corredores fuera del refugio filtrado.",
+          "cada visitante puede elegir una ruta sin perfume."
+        ]
+      },
+      "reward": {
+        "item": "FIREGEM",
+        "meaning": "Concentra energía en un punto controlado, como la ventilación que debe actuar sin invadir toda la casa."
+      },
+      "progression": {
+        "switchId": 826,
+        "decisionVariable": 222,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 16,
+      "mapId": 1683,
+      "flag": 827,
+      "variable": 223,
+      "title": "La Cueva que Confundía Polen con Humo",
+      "promise": "Sensores de una cueva interpretan esporas iluminadas como incendio y activan corrientes que dispersan aún más partículas.",
+      "objective": "Distinguir humo, polen y esporas antes de mover aire o evacuar.",
+      "mechanic": {
+        "name": "Muestreo de partículas",
+        "rules": [
+          "Leer composición y temperatura.",
+          "Tomar dos muestras distantes.",
+          "Ventilar solo hacia una salida segura."
+        ],
+        "failureSafe": "La ruta de retorno usa señal física y no depende del sensor."
+      },
+      "npcs": [
+        {
+          "name": "Cruz Eco",
+          "sprite": "trchar008",
+          "role": "biólogo de cueva",
+          "partnerPokemon": "CROBAT",
+          "motivation": "Quiere proteger colonias y visitantes con alertas precisas.",
+          "conflict": "Su error anterior fue que usó opacidad como única prueba de humo.",
+          "dialogue": {
+            "before": [
+              "Crobat cruza una nube fría que mi panel clasifica como fuego.",
+              "Mi criterio dejó fuera un dato: usó opacidad como única prueba de humo.",
+              "añadiré temperatura y composición a la alarma."
+            ],
+            "after": [
+              "las esporas naturales tienen un perfil documentado.",
+              "Cruz Eco anotó la reacción de CROBAT antes de cerrar el registro.",
+              "una diferencia nueva seguirá activando revisión humana."
+            ]
+          }
+        },
+        {
+          "name": "Pera Micelio",
+          "sprite": "NPC 04",
+          "role": "micóloga subterránea",
+          "partnerPokemon": "PARASECT",
+          "motivation": "Quiere evitar corrientes que sequen los lechos de hongos.",
+          "conflict": "Su error anterior fue que abrió ventiladores máximos ante cada alerta falsa.",
+          "dialogue": {
+            "before": [
+              "Parasect se aferra al suelo cuando el flujo arranca sin calor.",
+              "Ahora puedo decirlo sin rodeos: abrió ventiladores máximos ante cada alerta falsa.",
+              "regularé dirección y caudal por sector."
+            ],
+            "after": [
+              "la ventilación protege la salida sin barrer toda la cueva.",
+              "PARASECT cruzó la zona corregida sin repetir el problema de Pera Micelio.",
+              "cada activación incluye cierre y recuperación."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué confirmará un incendio?",
+        "options": [
+          "Calor y composición coincidentes",
+          "Dos muestras más revisión humana"
+        ],
+        "immediate": [
+          "añadiré temperatura y composición a la alarma.",
+          "regularé dirección y caudal por sector."
+        ],
+        "later": [
+          "una diferencia nueva seguirá activando revisión humana.",
+          "cada activación incluye cierre y recuperación."
+        ]
+      },
+      "reward": {
+        "item": "WATERGEM",
+        "meaning": "Representa una respuesta específica al fuego real, no una reacción automática a cualquier nube."
+      },
+      "progression": {
+        "switchId": 827,
+        "decisionVariable": 223,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 17,
+      "mapId": 1690,
+      "flag": 828,
+      "variable": 224,
+      "title": "El Bosque que Numeraba Polinizadores",
+      "promise": "Un santuario puntúa cada visita floral y termina empujando a Beedrill y Vivillon hacia recorridos artificiales para mejorar estadísticas.",
+      "objective": "Cambiar el conteo por observación de diversidad, descanso y retorno natural.",
+      "mechanic": {
+        "name": "Censo sin carrera",
+        "rules": [
+          "Observar sin atraer.",
+          "Registrar especie y duración.",
+          "Dejar zonas sin conteo."
+        ],
+        "failureSafe": "Los caminos humanos rodean las áreas de descanso."
+      },
+      "npcs": [
+        {
+          "name": "Vivi Mapa",
+          "sprite": "trchar009",
+          "role": "observadora de alas",
+          "partnerPokemon": "VIVILLON",
+          "motivation": "Quiere entender rutas naturales sin convertirlas en circuito.",
+          "conflict": "Su error anterior fue que colocó flores cebo en línea para conseguir datos comparables.",
+          "dialogue": {
+            "before": [
+              "Vivillon abandona la fila perfecta y vuelve a un claro sin marcador.",
+              "Me precipité: colocó flores cebo en línea para conseguir datos comparables.",
+              "retiraré cebos y observaré puntos existentes."
+            ],
+            "after": [
+              "el mapa muestra variación y zonas no observadas.",
+              "VIVILLON comprobó el cambio junto a Vivi Mapa.",
+              "la ausencia de dato dejará de contarse como fallo."
+            ]
+          }
+        },
+        {
+          "name": "Beda Panal",
+          "sprite": "NPC 04",
+          "role": "guardiana de colmenas",
+          "partnerPokemon": "BEEDRILL",
+          "motivation": "Quiere proteger descanso y alimento durante el censo.",
+          "conflict": "Su error anterior fue que abrió panales para identificar individuos y alteró sus turnos.",
+          "dialogue": {
+            "before": [
+              "Beedrill cambia de guardia cuando mi ficha todavía exige vuelo.",
+              "Tardé en reconocer que abrió panales para identificar individuos y alteró sus turnos.",
+              "contaré desde distancia y por intervalos."
+            ],
+            "after": [
+              "los panales quedan fuera del recorrido público.",
+              "Beda Panal repitió la prueba mientras BEEDRILL vigilaba el borde.",
+              "cada censo termina antes de la fase de descanso."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se observará la polinización?",
+        "options": [
+          "Puntos naturales y datos parciales",
+          "Intervalos con zonas sin conteo"
+        ],
+        "immediate": [
+          "retiraré cebos y observaré puntos existentes.",
+          "contaré desde distancia y por intervalos."
+        ],
+        "later": [
+          "la ausencia de dato dejará de contarse como fallo.",
+          "cada censo termina antes de la fase de descanso."
+        ]
+      },
+      "reward": {
+        "item": "ELECTRICGEM",
+        "meaning": "Concentra una observación breve sin mantener al bosque bajo estímulo continuo."
+      },
+      "progression": {
+        "switchId": 828,
+        "decisionVariable": 224,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 17,
+      "mapId": 1701,
+      "flag": 829,
+      "variable": 225,
+      "title": "La Avenida de los Reflejos Patrocinados",
+      "promise": "Una ciudad de espejos inserta anuncios en cada reflejo y los peatones dejan de distinguir señales viales de mensajes comerciales.",
+      "objective": "Reservar superficies, colores y ángulos para orientación pública.",
+      "mechanic": {
+        "name": "Auditoría de reflejos",
+        "rules": [
+          "Mirar desde altura peatonal.",
+          "Separar color vial y comercial.",
+          "Eliminar destellos hacia cruces."
+        ],
+        "failureSafe": "La ruta de retorno usa placas mate permanentes."
+      },
+      "npcs": [
+        {
+          "name": "Zora Vidrio",
+          "sprite": "trchar008",
+          "role": "diseñadora de fachadas",
+          "partnerPokemon": "ZOROARK",
+          "motivation": "Quiere crear reflejos artísticos sin suplantar la señalización.",
+          "conflict": "Su error anterior fue que usó ilusiones para extender anuncios sobre placas públicas.",
+          "dialogue": {
+            "before": [
+              "Zoroark deshace un anuncio y aparece una flecha que llevaba horas oculta.",
+              "Mi primer registro ocultaba que usó ilusiones para extender anuncios sobre placas públicas.",
+              "limitaré proyecciones a marcos privados."
+            ],
+            "after": [
+              "las señales públicas recuperan contraste y superficie mate.",
+              "ZOROARK ya reconoce la señal acordada con Zora Vidrio.",
+              "cada efecto se probará desde el cruce real."
+            ]
+          }
+        },
+        {
+          "name": "Mimo Paso",
+          "sprite": "NPC 04",
+          "role": "coordinador peatonal",
+          "partnerPokemon": "MRMIME",
+          "motivation": "Quiere hacer legibles límites y cruces para distintos ritmos de marcha.",
+          "conflict": "Su error anterior fue que marcó barreras transparentes que solo él sabía representar.",
+          "dialogue": {
+            "before": [
+              "Mr. Mime toca un borde que el resto del paso no puede ver.",
+              "Convertí una suposición en regla: marcó barreras transparentes que solo él sabía representar.",
+              "añadiré textura, color y espacio de detención."
+            ],
+            "after": [
+              "las barreras visibles terminan antes de cada cruce.",
+              "Con MRMIME, Mimo Paso recorrió la solución desde el otro extremo.",
+              "ningún gesto privado volverá a sustituir una señal común."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué superficies quedarán libres de anuncios?",
+        "options": [
+          "Cruces y señales públicas",
+          "Corredor mate de orientación"
+        ],
+        "immediate": [
+          "limitaré proyecciones a marcos privados.",
+          "añadiré textura, color y espacio de detención."
+        ],
+        "later": [
+          "cada efecto se probará desde el cruce real.",
+          "ningún gesto privado volverá a sustituir una señal común."
+        ]
+      },
+      "reward": {
+        "item": "GRASSGEM",
+        "meaning": "Devuelve un color vivo a la orientación sin vender el paisaje reflejado."
+      },
+      "progression": {
+        "switchId": 829,
+        "decisionVariable": 225,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 17,
+      "mapId": 1708,
+      "flag": 830,
+      "variable": 226,
+      "title": "La Ruta que Copiaba al Viajero Más Rápido",
+      "promise": "Espejos de un camino aprenden el ritmo del primer viajero y proyectan instrucciones demasiado veloces para quienes llegan después.",
+      "objective": "Restablecer señales estáticas y ofrecer ritmos opcionales.",
+      "mechanic": {
+        "name": "Prueba de cadencia",
+        "rules": [
+          "Recorrer lento y rápido.",
+          "Mantener instrucciones completas.",
+          "Permitir pausar cada secuencia."
+        ],
+        "failureSafe": "Los mojones físicos indican siempre el regreso."
+      },
+      "npcs": [
+        {
+          "name": "Gira Tempo",
+          "sprite": "trchar009",
+          "role": "diseñadora de señales",
+          "partnerPokemon": "GIRAFARIG",
+          "motivation": "Quiere guiar sin asumir un único ritmo corporal.",
+          "conflict": "Su error anterior fue que entrenó el sistema con su propio paso y ocultó frases demasiado pronto.",
+          "dialogue": {
+            "before": [
+              "Girafarig se detiene a leer mientras el espejo ya muestra el tercer giro.",
+              "La rutina parecía útil, pero entrenó el sistema con su propio paso y ocultó frases demasiado pronto.",
+              "añadiré control de pausa y texto persistente."
+            ],
+            "after": [
+              "cada instrucción espera confirmación o permanece visible.",
+              "Gira Tempo dejó que GIRAFARIG confirmara el resultado sin apurarlo.",
+              "la ruta tendrá modos y no una velocidad correcta."
+            ]
+          }
+        },
+        {
+          "name": "Nemi Faro",
+          "sprite": "NPC 04",
+          "role": "acompañante de ruta",
+          "partnerPokemon": "STANTLER",
+          "motivation": "Quiere ofrecer ayuda sin empujar a seguir una proyección.",
+          "conflict": "Su error anterior fue que corrió delante para activar espejos y dejó atrás a su grupo.",
+          "dialogue": {
+            "before": [
+              "Stantler vuelve por un sendero que mi ayuda había saltado.",
+              "No comprobé a tiempo que corrió delante para activar espejos y dejó atrás a su grupo.",
+              "caminaré al ritmo acordado y activaré solo lo pedido."
+            ],
+            "after": [
+              "los acompañamientos empiezan con preferencia y pausa.",
+              "STANTLER encontró estable la nueva ruta de Nemi Faro.",
+              "nadie perderá orientación por aceptar ayuda."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo mostrarán instrucciones los espejos?",
+        "options": [
+          "Texto persistente con pausa",
+          "Modos de ritmo elegibles"
+        ],
+        "immediate": [
+          "añadiré control de pausa y texto persistente.",
+          "caminaré al ritmo acordado y activaré solo lo pedido."
+        ],
+        "later": [
+          "la ruta tendrá modos y no una velocidad correcta.",
+          "nadie perderá orientación por aceptar ayuda."
+        ]
+      },
+      "reward": {
+        "item": "ICEGEM",
+        "meaning": "Conserva una instrucción quieta el tiempo suficiente para ser comprendida."
+      },
+      "progression": {
+        "switchId": 830,
+        "decisionVariable": 226,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 17,
+      "mapId": 1715,
+      "flag": 831,
+      "variable": 227,
+      "title": "La Isla que Reflejaba una Leyenda Distinta",
+      "promise": "Los espejos costeros muestran una criatura diferente a cada visitante y el pueblo intenta elegir una versión oficial para atraer turismo.",
+      "objective": "Conservar testimonios contradictorios sin convertir uno en propaganda obligatoria.",
+      "mechanic": {
+        "name": "Archivo de avistamientos",
+        "rules": [
+          "Registrar ángulo y condición.",
+          "Separar observación e interpretación.",
+          "Permitir relato anónimo."
+        ],
+        "failureSafe": "El muelle y el retorno no atraviesan la exhibición."
+      },
+      "npcs": [
+        {
+          "name": "Mila Escama",
+          "sprite": "trchar008",
+          "role": "archivera insular",
+          "partnerPokemon": "MILOTIC",
+          "motivation": "Quiere guardar belleza y contradicción sin coronar una versión.",
+          "conflict": "Su error anterior fue que seleccionó el reflejo más elegante y descartó los demás.",
+          "dialogue": {
+            "before": [
+              "Milotic aparece curva en mi espejo y recta en el de la orilla.",
+              "Confundí rapidez con certeza y seleccionó el reflejo más elegante y descartó los demás.",
+              "publicaré condiciones junto a cada relato."
+            ],
+            "after": [
+              "el archivo muestra diferencias como información.",
+              "Mila Escama y MILOTIC verificaron que el cambio puede revertirse.",
+              "ningún testimonio perderá lugar por ser menos vendible."
+            ]
+          }
+        },
+        {
+          "name": "Inko Giro",
+          "sprite": "NPC 04",
+          "role": "guía de mareas",
+          "partnerPokemon": "INKAY",
+          "motivation": "Quiere explicar inversiones ópticas sin decidir qué vio otra persona.",
+          "conflict": "Su error anterior fue que corrigió relatos que no coincidían con su modelo.",
+          "dialogue": {
+            "before": [
+              "Inkay invierte la imagen y mi explicación todavía deja un detalle sin resolver.",
+              "El plano no mostraba que corrigió relatos que no coincidían con su modelo.",
+              "ofreceré hipótesis y una ruta para observar."
+            ],
+            "after": [
+              "las visitas conocen ángulo, marea y límites del modelo.",
+              "INKAY respondió al nuevo criterio que propuso Inko Giro.",
+              "la duda permanecerá sin convertirse en engaño."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se contará la leyenda?",
+        "options": [
+          "Testimonios con condiciones",
+          "Galería de versiones sin jerarquía"
+        ],
+        "immediate": [
+          "publicaré condiciones junto a cada relato.",
+          "ofreceré hipótesis y una ruta para observar."
+        ],
+        "later": [
+          "ningún testimonio perderá lugar por ser menos vendible.",
+          "la duda permanecerá sin convertirse en engaño."
+        ]
+      },
+      "reward": {
+        "item": "FIGHTINGGEM",
+        "meaning": "Representa la fuerza de sostener versiones distintas sin obligarlas a competir."
+      },
+      "progression": {
+        "switchId": 831,
+        "decisionVariable": 227,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 17,
+      "mapId": 1726,
+      "flag": 832,
+      "variable": 228,
+      "title": "La Bahía que Cobraba cada Relámpago",
+      "promise": "Una ruta costera almacena carga de tormenta y factura a los refugios por la energía que reciben, incluso cuando mantenerlos abiertos es cuestión de seguridad.",
+      "objective": "Separar red pública de emergencia, almacenamiento y consumo comercial.",
+      "mechanic": {
+        "name": "Balance de descarga",
+        "rules": [
+          "Medir captación y pérdida.",
+          "Reservar energía de refugio.",
+          "Publicar excedente antes de vender."
+        ],
+        "failureSafe": "Las puertas, balizas y curación usan una línea prioritaria."
+      },
+      "npcs": [
+        {
+          "name": "Rai Poste",
+          "sprite": "trchar009",
+          "role": "técnica de pararrayos",
+          "partnerPokemon": "RAICHU",
+          "motivation": "Quiere captar tormentas sin convertir la seguridad en producto.",
+          "conflict": "Su error anterior fue que conectó toda descarga al medidor comercial.",
+          "dialogue": {
+            "before": [
+              "Raichu deriva carga hacia un refugio que mi contrato intenta facturar.",
+              "Mi criterio dejó fuera un dato: conectó toda descarga al medidor comercial.",
+              "separaré red de emergencia y excedente."
+            ],
+            "after": [
+              "las balizas reciben energía antes de cualquier venta.",
+              "Rai Poste anotó la reacción de RAICHU antes de cerrar el registro.",
+              "cada tormenta publica captación, reserva y pérdida."
+            ]
+          }
+        },
+        {
+          "name": "Nectra Cable",
+          "sprite": "NPC 04",
+          "role": "guardiana de refugios",
+          "partnerPokemon": "MANECTRIC",
+          "motivation": "Quiere mantener puertas y comunicación aunque falle el mercado.",
+          "conflict": "Su error anterior fue que apagó refugios al superar el presupuesto de una ruta.",
+          "dialogue": {
+            "before": [
+              "Manectric enciende una radio que la hoja de costos daba por prescindible.",
+              "Ahora puedo decirlo sin rodeos: apagó refugios al superar el presupuesto de una ruta.",
+              "declararé servicios térmicos, puertas y radio como carga prioritaria."
+            ],
+            "after": [
+              "los refugios siguen abiertos durante toda alerta.",
+              "MANECTRIC cruzó la zona corregida sin repetir el problema de Nectra Cable.",
+              "ninguna deuda futura podrá bloquear el retorno."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se repartirá la carga?",
+        "options": [
+          "Reserva pública antes del excedente",
+          "Red de refugios independiente"
+        ],
+        "immediate": [
+          "separaré red de emergencia y excedente.",
+          "declararé servicios térmicos, puertas y radio como carga prioritaria."
+        ],
+        "later": [
+          "cada tormenta publica captación, reserva y pérdida.",
+          "ninguna deuda futura podrá bloquear el retorno."
+        ]
+      },
+      "reward": {
+        "item": "POISONGEM",
+        "meaning": "Advierte que una red útil se vuelve dañina cuando mezcla seguridad y cobro sin límites."
+      },
+      "progression": {
+        "switchId": 832,
+        "decisionVariable": 228,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    }
+  ]
+}

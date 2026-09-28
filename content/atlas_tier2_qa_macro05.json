@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "macroCycle": 5,
+  "scope": "Tier 2 macrociclo 05",
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0
+  },
+  "errors": []
+}

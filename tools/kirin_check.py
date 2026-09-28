@@ -17,9 +17,9 @@ def main():
 
     def ok(m): print("  [OK]", m)
     def warn(m):
-        global warns; warns += 1; print("  [!]", m)
+        nonlocal warns; warns += 1; print("  [!]", m)
     def err(m):
-        global errors; errors += 1; print("  [X]", m)
+        nonlocal errors; errors += 1; print("  [X]", m)
 
     if not os.path.isdir(game):
         err("la carpeta no existe"); sys.exit(1)

@@ -1,0 +1,1886 @@
+{
+  "batch": 6,
+  "iteration": 1,
+  "blueprints": [
+    {
+      "mapId": 1521,
+      "tier": 1,
+      "title": "La Central de las Cenizas Vivas",
+      "oneSentencePromise": "Una central celebrada por no emitir humo esconde residuos que aprenden rutas de evacuación y piden no ser tratados como contaminación ni como milagro energético.",
+      "biome": {
+        "identity": "Ruta abierta ocupada por una central plegable, humedales de decantación y cintas de papel indicador",
+        "visualStorytelling": [
+          "Las chimeneas limpias apuntan hacia depósitos subterráneos.",
+          "Manchas luminosas rodean señales de salida sin cruzarlas.",
+          "Las cifras de emisión terminan en la puerta de la planta y omiten el humedal."
+        ],
+        "ambientChanges": [
+          "Un zumbido grave cambia cuando los residuos reciben nombre.",
+          "Tras la decisión, las bombas reducen ritmo o alimentan un hábitat vigilado."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 04",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "La central de Leda presume de energía limpia mientras sus residuos móviles se concentran bajo el humedal.",
+        "centralQuestion": "¿Cómo se repara un daño cuando el residuo ha desarrollado conducta propia y ya no puede reducirse a algo que eliminar?",
+        "setup": "Taro encuentra patrones de evacuación en las manchas y exige detener la planta.",
+        "escalation": "Las cenizas vivas bloquean una válvula para impedir que nuevos residuos caigan al depósito.",
+        "reversal": "Muri demuestra que no atacan: están repitiendo las rutas de trabajadores expuestos para enseñar dónde se ocultó el costo.",
+        "resolution": "El jugador decide clausurar la línea y restaurar el humedal o mantener producción mínima mientras se reconoce un hábitat con representación propia.",
+        "globalConnection": "El sello veintiuno muestra que Atlas desplaza consecuencias fuera del límite que usa para declarar un sector perfecto."
+      },
+      "voiceProfile": {
+        "tone": "ecológico, grave y obrero",
+        "lexicon": [
+          "residuo",
+          "turno",
+          "válvula",
+          "humedal",
+          "exposición",
+          "línea",
+          "reparación"
+        ],
+        "sentenceRule": "Leda usa balances; Taro habla desde tareas; Muri traduce movimientos sin fingir certeza.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Leda Balance",
+          "sprite": "trchar008",
+          "role": "directora de la central",
+          "reasonForBeingHere": "Diseñó el sistema sin humo y firma sus informes ambientales.",
+          "personalConflict": "Redujo emisiones visibles, pero definió el límite de medición para excluir el depósito.",
+          "want": "Asumir reparación sin abandonar a la comunidad que depende de la energía.",
+          "fear": "Que reconocer a las cenizas convierta años de trabajo en una mentira completa.",
+          "verbalTic": "Compara entradas y salidas antes de nombrar el costo omitido.",
+          "dialogue": {
+            "before": [
+              "Entra agua, sale energía. Faltaba una columna: quién carga lo restante.",
+              "Mi informe termina en la puerta; el daño aprendió a caminar debajo.",
+              "Construí una central limpia usando un límite sucio."
+            ],
+            "during": [
+              "Cierro la válvula principal. El balance puede esperar.",
+              "Las manchas protegen la salida que yo omití."
+            ],
+            "after": [
+              "El nuevo informe incluye humedal, trabajadores y conducta residual.",
+              "La energía bajó y la reparación dejó de ser nota al pie.",
+              "Mi firma permanece tanto en el logro como en el daño."
+            ],
+            "optional": [
+              "Cero humo no significa cero costo.",
+              "Un balance honesto también muestra lo que no puede sumar."
+            ]
+          }
+        },
+        {
+          "name": "Taro Guante",
+          "sprite": "trchar009",
+          "role": "operario de mantenimiento",
+          "reasonForBeingHere": "Descubrió las cenizas durante un turno de limpieza.",
+          "personalConflict": "Quiere cerrar todo de inmediato, aunque muchas familias dependen de equipos médicos conectados a la central.",
+          "want": "Detener la exposición con una transición segura.",
+          "fear": "Que una demora pactada parezca complicidad.",
+          "verbalTic": "Describe cada riesgo mediante una tarea concreta.",
+          "dialogue": {
+            "before": [
+              "Abrí el filtro con guantes dobles; la mancha señaló la ducha de emergencia.",
+              "Apagar hoy deja respiradores sin carga. Seguir igual deja otro turno bajo tierra.",
+              "No necesito que el residuo sea bonito para escuchar la alarma."
+            ],
+            "during": [
+              "Bloqueen la cinta tres; nadie baja sin relevo.",
+              "La ceniza marcó una fuga con la forma de una mano."
+            ],
+            "after": [
+              "Cada turno puede detener la línea sin pedir permiso.",
+              "Instalamos baterías antes de reducir producción.",
+              "Volví al humedal como inspector, no como limpiador invisible."
+            ],
+            "optional": [
+              "Una válvula cerrada a tiempo es una decisión política.",
+              "Los guantes protegen piel, no silencian informes."
+            ]
+          }
+        },
+        {
+          "name": "Muri Decanta",
+          "sprite": "NPC 04",
+          "role": "intérprete del humedal",
+          "reasonForBeingHere": "Estudia la conducta colectiva de las cenizas vivas.",
+          "personalConflict": "Necesita defenderlas y corre el riesgo de atribuirles una voz que aún no comprende.",
+          "want": "Crear representación basada en observación y posibilidad de corregirse.",
+          "fear": "Que la restauración las destruya o que reconocerlas justifique producir más.",
+          "verbalTic": "Distingue movimiento observado de significado supuesto.",
+          "dialogue": {
+            "before": [
+              "Observación: rodean la salida. Suposición: recuerdan a quienes no alcanzaron a usarla.",
+              "No llamemos nacimiento a cada mancha; eso volvería aceptable fabricar más.",
+              "Una conducta merece cautela antes que una historia conveniente."
+            ],
+            "during": [
+              "Se apartan de la bomba vieja y cubren la nueva.",
+              "No traduzco consentimiento; traduzco una negativa consistente."
+            ],
+            "after": [
+              "El consejo registra patrones y admite incertidumbre.",
+              "Nadie producirá cenizas para aumentar la población.",
+              "El humedal conserva voz sin quedar convertido en combustible."
+            ],
+            "optional": [
+              "Lo vivo no siempre habla como esperamos.",
+              "Una duda bien documentada protege más que una certeza útil."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Custodia de Decantación",
+        "trainerType": "SCIENTIST",
+        "sprite": "trchar246",
+        "storyToldByTeam": "El equipo recorre residuo, filtro, energía y conducta emergente hasta una forma que protege el humedal sin alimentar la central.",
+        "counterplayHint": "Veneno y Acero ceden ante Tierra, Fuego y Psíquico; cambios defensivos y objetos permiten atravesar su desgaste.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "GRIMER",
+            "level": 90,
+            "narrativeRole": "residuo oculto",
+            "moves": [
+              "SLUDGEBOMB",
+              "SHADOWSNEAK",
+              "GIGADRAIN",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Abre con lo que el informe dejó bajo tierra."
+          },
+          {
+            "species": "WEEZING",
+            "level": 91,
+            "narrativeRole": "filtro incompleto",
+            "moves": [
+              "SLUDGEBOMB",
+              "FLAMETHROWER",
+              "THUNDERBOLT",
+              "WILLOWISP"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Representa emisiones desplazadas y no eliminadas."
+          },
+          {
+            "species": "GARBODOR",
+            "level": 92,
+            "narrativeRole": "depósito acumulado",
+            "moves": [
+              "GUNKSHOT",
+              "DRAINPUNCH",
+              "SEEDBOMB",
+              "ROCKBLAST"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Hace visible el costo agregado de muchos turnos."
+          },
+          {
+            "species": "MUK",
+            "level": 93,
+            "narrativeRole": "conducta colectiva",
+            "moves": [
+              "GUNKSHOT",
+              "CRUNCH",
+              "BRICKBREAK",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Se organiza para bloquear la válvula que lo produce."
+          },
+          {
+            "species": "MAGNEZONE",
+            "level": 94,
+            "narrativeRole": "red energética",
+            "moves": [
+              "THUNDERBOLT",
+              "FLASHCANNON",
+              "VOLTSWITCH",
+              "TRIATTACK"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Mantiene servicios críticos durante la transición."
+          },
+          {
+            "species": "ZYGARDE",
+            "level": 96,
+            "narrativeRole": "equilibrio del humedal",
+            "moves": [
+              "EARTHQUAKE",
+              "DRAGONPULSE",
+              "CRUNCH",
+              "COIL"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Cierra defendiendo territorio y límite de producción."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Taro abre el filtro y las cenizas dibujan una salida.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Taro abre el filtro y las cenizas dibujan una salida.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Leda muestra el balance que excluye el humedal.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Muri documenta una negativa sin atribuir palabras.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige clausura o producción mínima protegida.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Las válvulas convocan a la Custodia de Decantación.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Custodia de Decantación",
+            "action": "La prueba permite objetos, curación y retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La central aplica la transición y registra el sello.",
+            "stateChange": "switch728=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Las cenizas liberan la válvula cuando cesa el vertido.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo reparará la central el daño?",
+          "options": [
+            "Clausurar la línea y restaurar",
+            "Producción mínima con hábitat protegido"
+          ],
+          "immediateDifferences": [
+            "Leda activa baterías de transición y Taro desmantela la línea.",
+            "Muri define límites de producción y un consejo independiente del humedal."
+          ],
+          "laterDifferences": [
+            "La zona recuperará agua y empleos de restauración.",
+            "La planta quedará bajo revisión continua y sin derecho a fabricar más vida residual."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "CELLBATTERY",
+        "narrativeToken": "Sello de la Decantación",
+        "globalEffect": "Atlas deja de declarar limpio un proceso midiendo solo dentro de sus puertas.",
+        "futurePayoff": "La convergencia recibirá energía de transición o un modelo de producción limitada.",
+        "whyMeaningful": "La Pila conserva energía para una transición y no como excusa para perpetuar el depósito."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 728,
+            "name": "POKEMOD ATLAS SEAL 21",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Leda Balance",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1546,
+      "tier": 1,
+      "title": "La Profecía Escrita Después",
+      "oneSentencePromise": "Una facción recluta jóvenes con profecías privadas que siempre aciertan porque sus redactores observan primero la crisis y luego falsifican la fecha del augurio.",
+      "biome": {
+        "identity": "Sendero devastado convertido en santuario de cristal, imprenta clandestina y sala de testimonios",
+        "visualStorytelling": [
+          "Los pergaminos envejecidos conservan tinta fresca bajo el pliegue.",
+          "Cada profecía tiene un espacio exacto para insertar un nombre.",
+          "Los cristales proyectan consignas solo desde el atril central."
+        ],
+        "ambientChanges": [
+          "Susurros repiten frases con una palabra personal distinta.",
+          "Tras la resolución, las prensas se detienen o imprimen métodos y correcciones."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "NPC 02",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "La Orden del Prisma promete propósito a quienes reciben una profecía escrita aparentemente años antes de conocerlos.",
+        "centralQuestion": "¿Cómo se devuelve libertad a alguien cuando la mentira que lo reclutó también le dio comunidad y lenguaje para su dolor?",
+        "setup": "Iven encuentra un augurio que describe el accidente de su hermana y acepta una misión de la Orden.",
+        "escalation": "Nadia descubre plantillas, entrevistas ocultas y fechas añadidas con polvo de cristal.",
+        "reversal": "Sor Elian no predice tragedias: sigue equipos de rescate, recopila vulnerabilidades y publica después un texto retrofechado.",
+        "resolution": "El jugador decide convertir la imprenta en archivo público de métodos o desmantelarla y financiar una red independiente de acompañamiento.",
+        "globalConnection": "El sello veintidós muestra que Atlas amplifica relatos inevitables porque las personas previsibles estabilizan mejor sus sectores."
+      },
+      "voiceProfile": {
+        "tone": "persuasivo, inquietante y reparador",
+        "lexicon": [
+          "consigna",
+          "augurio",
+          "plantilla",
+          "elección",
+          "fecha",
+          "prisma",
+          "acompañamiento"
+        ],
+        "sentenceRule": "Iven cita y duda; Nadia desmonta recursos retóricos; Elian concede una verdad antes de torcerla.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Iven Renglón",
+          "sprite": "NPC 02",
+          "role": "recluta reciente",
+          "reasonForBeingHere": "Busca sentido tras el accidente descrito por su profecía.",
+          "personalConflict": "Sabe que la Orden lo manipuló, pero allí encontró personas que lo visitaron cuando nadie más lo hizo.",
+          "want": "Conservar vínculos sin obedecer la misión fabricada.",
+          "fear": "Que abandonar el augurio signifique abandonar también a su hermana.",
+          "verbalTic": "Recita una línea y luego añade lo que el texto omitió.",
+          "dialogue": {
+            "before": [
+              "El cristal dice tu pérdida abrirá una puerta. No dice quién cerró las otras.",
+              "La profecía conocía el accidente; Elian había leído el informe de rescate.",
+              "Me mintieron sobre el destino y acertaron en que estaba solo."
+            ],
+            "during": [
+              "La consigna termina aquí. Mi decisión empieza después.",
+              "No rompan a quienes siguen dentro; muéstrenles la plantilla."
+            ],
+            "after": [
+              "Conservo amigos y devuelvo la misión.",
+              "Escribí a mi hermana sin convertirla en símbolo.",
+              "La nueva red visita antes de ofrecer respuestas."
+            ],
+            "optional": [
+              "Una frase puede sostenerte y aun así llevar firma falsa.",
+              "Dudar del augurio no borra lo que sobrevivimos."
+            ]
+          }
+        },
+        {
+          "name": "Nadia Margen",
+          "sprite": "trchar008",
+          "role": "tipógrafa desertora",
+          "reasonForBeingHere": "Diseñó las plantillas que personalizan cada profecía.",
+          "personalConflict": "Quiere exponer el fraude, aunque publicar expedientes revelaría secretos de reclutas.",
+          "want": "Demostrar el método sin volver a explotar información privada.",
+          "fear": "Que destruir las pruebas permita a Elian repetir la técnica.",
+          "verbalTic": "Señala la herramienta persuasiva y su costo.",
+          "dialogue": {
+            "before": [
+              "Aquí va una pérdida concreta; aquí, una misión imposible de refutar.",
+              "La tinta es nueva. El polvo solo falsifica la edad.",
+              "Guardé pruebas en los mismos expedientes que debo proteger."
+            ],
+            "during": [
+              "Proyección de autoridad: luz alta, voz baja, nombre al final.",
+              "Cubran los datos; basta mostrar la plantilla."
+            ],
+            "after": [
+              "Publicamos el método con ejemplos consentidos.",
+              "Cada recluta puede retirar su expediente.",
+              "Mi oficio volvió a imprimir preguntas y fechas reales."
+            ],
+            "optional": [
+              "Una consigna breve deja poco espacio para respirar.",
+              "La transparencia no exige exponer a la víctima."
+            ]
+          }
+        },
+        {
+          "name": "Elian Prisma",
+          "sprite": "trchar028",
+          "role": "redactor de augurios",
+          "reasonForBeingHere": "Fundó la Orden y dirige sus rescates selectivos.",
+          "personalConflict": "Cree que manipular destino es aceptable porque la comunidad sí ayuda a personas olvidadas.",
+          "want": "Mantener la red de apoyo sin conservar control doctrinal.",
+          "fear": "Que revelar el fraude destruya el único refugio de muchos reclutas.",
+          "verbalTic": "Admite una necesidad real antes de justificar su dominio.",
+          "dialogue": {
+            "before": [
+              "Es verdad: llegamos cuando nadie fue. Por eso aceptaron la fecha.",
+              "No inventé su dolor; inventé que me pertenecía la respuesta.",
+              "Una profecía obliga a mirar a quien todos ignoraban."
+            ],
+            "during": [
+              "El prisma ya no proyecta mi voz; siguen escuchándose entre ellos.",
+              "Si me derrotan, protejan primero los dormitorios."
+            ],
+            "after": [
+              "Entregué fondos y registros a un consejo de antiguos reclutas.",
+              "Mis augurios conservarán firma y fecha de redacción.",
+              "Ayudar sin ser necesario será mi prueba más difícil."
+            ],
+            "optional": [
+              "Una verdad oportuna puede escoltar una mentira.",
+              "El destino fue una marca; la soledad era el producto."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Oráculo de Imprenta",
+        "trainerType": "PSYCHIC_M",
+        "sprite": "trchar028",
+        "storyToldByTeam": "El equipo comienza con presagios naturales, pasa por sugestión y termina con conocimiento que revela su propio método.",
+        "counterplayHint": "Psíquico y Siniestro permiten respuestas con Bicho, Fantasma, Hada y Acero; no hay bucle de evasión ni condición secreta.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "ABSOL",
+            "level": 90,
+            "narrativeRole": "presagio interpretado",
+            "moves": [
+              "NIGHTSLASH",
+              "SUCKERPUNCH",
+              "PLAYROUGH",
+              "SWORDSDANCE"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "La Orden convierte una advertencia en prueba de autoridad."
+          },
+          {
+            "species": "XATU",
+            "level": 91,
+            "narrativeRole": "futuro observado",
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Ofrece posibilidades que Elian presenta como inevitables."
+          },
+          {
+            "species": "MALAMAR",
+            "level": 92,
+            "narrativeRole": "persuasión invertida",
+            "moves": [
+              "PSYCHOCUT",
+              "NIGHTSLASH",
+              "SUPERPOWER",
+              "HYPNOSIS"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Representa la manipulación que parece decisión propia."
+          },
+          {
+            "species": "GOTHITELLE",
+            "level": 93,
+            "narrativeRole": "plantilla personal",
+            "moves": [
+              "PSYCHIC",
+              "THUNDERBOLT",
+              "DARKPULSE",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Lee vulnerabilidades y las encierra en una narrativa."
+          },
+          {
+            "species": "ORANGURU",
+            "level": 94,
+            "narrativeRole": "doctrina aprendida",
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "SHADOWBALL",
+              "NASTYPLOT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Muestra cómo la comunidad repite una consigna útil."
+          },
+          {
+            "species": "MEW",
+            "level": 96,
+            "narrativeRole": "posibilidad abierta",
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "PROTECT"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra devolviendo múltiples futuros sin propietario."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Iven recita un augurio fechado antes del accidente.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Iven recita un augurio fechado antes del accidente.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Nadia revela la plantilla y protege los nombres.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Elian admite haber usado informes de rescate.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige archivo público o red independiente.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los cristales convocan al Oráculo de Imprenta.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Oráculo de Imprenta",
+            "action": "La batalla mantiene Mochila, curación y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los reclutas asumen el lugar y reciben el sello.",
+            "stateChange": "switch729=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "El atril proyecta una pregunta en vez de una consigna.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué reemplazará a la Orden del Prisma?",
+          "options": [
+            "Archivo público de métodos",
+            "Red de apoyo sin imprenta"
+          ],
+          "immediateDifferences": [
+            "Nadia publica plantillas anonimizadas y derecho de retirada.",
+            "Iven transfiere dormitorios y fondos a acompañantes independientes."
+          ],
+          "laterDifferences": [
+            "Otros sectores aprenderán a detectar augurios fabricados.",
+            "Las personas recibirán ayuda antes de aceptar cualquier relato de destino."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "MENTALHERB",
+        "narrativeToken": "Sello de la Consigna Rota",
+        "globalEffect": "Atlas deja de premiar decisiones obtenidas mediante inevitabilidad fabricada.",
+        "futurePayoff": "El final mostrará herramientas de alfabetización o una red de acompañamiento.",
+        "whyMeaningful": "La Hierba Mental representa recuperar criterio sin fingir inmunidad a toda persuasión."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 729,
+            "name": "POKEMOD ATLAS SEAL 22",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Iven Renglón",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1571,
+      "tier": 1,
+      "title": "La Ciudad que Pagaba con Recuerdos",
+      "oneSentencePromise": "Una reconstrucción vuelve más segura y hermosa la ciudad usando memorias vecinales como planos, pero cada calle terminada deja a sus habitantes sin saber por qué querían regresar.",
+      "biome": {
+        "identity": "Salón de concursos convertido en asamblea urbana, rodeado por fachadas reconstruidas y solares recordados a medias",
+        "visualStorytelling": [
+          "Casas nuevas conservan detalles que sus dueños ya no reconocen.",
+          "Los planos incluyen olores, apodos y rutas escolares como materiales.",
+          "Una pared vieja permanece en pie porque nadie recuerda haberla donado."
+        ],
+        "ambientChanges": [
+          "Martillos repiten ritmos de canciones olvidadas.",
+          "Tras la decisión, la obra conserva imperfecciones o instala estaciones de memoria consentida."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "El arquitecto Jano transforma recuerdos en planos capaces de reconstruir exactamente el barrio perdido.",
+        "centralQuestion": "¿Qué significa recuperar un lugar si el proceso consume las razones personales para habitarlo?",
+        "setup": "Rema celebra su nueva panadería y no recuerda quién le enseñó la receta.",
+        "escalation": "La máquina pide una memoria infantil completa para terminar el hospital.",
+        "reversal": "Lua descubre que los recuerdos no alimentan la obra: Atlas los retira para evitar discrepancias entre ciudad real y ciudad ideal.",
+        "resolution": "El jugador decide detener la copia exacta y terminar con planos ordinarios o crear un banco revocable que nunca retire el recuerdo original.",
+        "globalConnection": "El sello veintitrés revela que Atlas borra contexto humano para que sus reconstrucciones parezcan coherentes."
+      },
+      "voiceProfile": {
+        "tone": "urbano, resistente y comunitario",
+        "lexicon": [
+          "barrio",
+          "solar",
+          "andamio",
+          "plano",
+          "esquina",
+          "memoria",
+          "asamblea"
+        ],
+        "sentenceRule": "Jano dibuja; Rema recuerda mediante trabajo; Lua nombra quién queda fuera del plano.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Jano Andamio",
+          "sprite": "trchar009",
+          "role": "arquitecto de reconstrucción",
+          "reasonForBeingHere": "Dirige las obras tras la destrucción del barrio.",
+          "personalConflict": "Salvó edificios y trató las lagunas de memoria como costo temporal sin preguntarlo.",
+          "want": "Terminar viviendas seguras sin convertir biografías en material.",
+          "fear": "Que detener la máquina deje familias en refugios otro invierno.",
+          "verbalTic": "Describe emociones como cargas y apoyos estructurales.",
+          "dialogue": {
+            "before": [
+              "Esta esquina soporta tres pisos y un recuerdo que no presupuesté.",
+              "Llamé costo temporal a algo que no pensaba devolver.",
+              "Una ciudad segura puede derrumbar a quien ya no sabe por qué volvió."
+            ],
+            "during": [
+              "Retiren la memoria del cimiento; usamos acero real.",
+              "El hospital no necesita una infancia para sostener el techo."
+            ],
+            "after": [
+              "Los planos distinguen testimonio, inspiración y material.",
+              "Terminamos menos fachadas y más hogares reconocibles.",
+              "Mi firma ya no cubre la del barrio."
+            ],
+            "optional": [
+              "Una grieta visible puede evitar una ruina escondida.",
+              "Los andamios también dicen todavía no."
+            ]
+          }
+        },
+        {
+          "name": "Rema Harina",
+          "sprite": "NPC 05",
+          "role": "panadera y vecina",
+          "reasonForBeingHere": "Reabrió el primer comercio reconstruido.",
+          "personalConflict": "Entregó recuerdos de su madre y ahora reproduce la receta sin sentir que le pertenece.",
+          "want": "Recuperar el vínculo sin exigir que el local vuelva a ser idéntico.",
+          "fear": "Que demoler un detalle nuevo sea perderla por segunda vez.",
+          "verbalTic": "Recuerda mediante peso, temperatura y trabajo manual.",
+          "dialogue": {
+            "before": [
+              "Mis manos miden la harina; mi cabeza olvidó quién corrigió la primera masa.",
+              "La ventana quedó exacta y no sé por qué lloré al verla.",
+              "Quiero mi recuerdo, aunque la panadería cambie de color."
+            ],
+            "during": [
+              "La masa pesa distinto cuando la máquina enciende.",
+              "Cerraré el horno antes de donar otra sobremesa."
+            ],
+            "after": [
+              "Pinté la ventana de azul, color que mi madre nunca usó.",
+              "La receta volvió como relato, no como orden.",
+              "Vendemos pan nuevo en una esquina que admite cicatrices."
+            ],
+            "optional": [
+              "Una mesa coja puede guardar una familia entera.",
+              "El olor llega antes que el nombre y a veces lo espera."
+            ]
+          }
+        },
+        {
+          "name": "Lua Solar",
+          "sprite": "trchar008",
+          "role": "organizadora vecinal",
+          "reasonForBeingHere": "Audita quién aporta recuerdos y quién recibe edificios.",
+          "personalConflict": "Protege al barrio, pero priorizó terminar servicios y aprobó donaciones bajo presión.",
+          "want": "Crear una reconstrucción donde negarse no retrase derechos básicos.",
+          "fear": "Que el debate sea usado para abandonar otra vez al sector.",
+          "verbalTic": "Nombra siempre quién paga y quién decide.",
+          "dialogue": {
+            "before": [
+              "Rema pagó con una infancia; toda la ciudad recibió una fachada.",
+              "La asamblea votó bajo lluvia y con el refugio cerrando.",
+              "Si decir no cuesta una casa, no fue donación."
+            ],
+            "during": [
+              "El hospital se termina con fondos comunes, no con memoria individual.",
+              "Anoten quién decide cada cambio de plano."
+            ],
+            "after": [
+              "Vivienda y consentimiento dejaron de competir.",
+              "El banco permite retirar copias sin perder servicios.",
+              "La ciudad conserva desacuerdos en sus calles."
+            ],
+            "optional": [
+              "Una plaza pública también puede esconder una factura privada.",
+              "Reconstruir rápido no autoriza olvidar despacio."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Maestra del Plano Vivo",
+        "trainerType": "COOLTRAINER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo pasa de ladrillos y obreros a hogares, archivos y una ciudad capaz de cambiar sin consumir a sus habitantes.",
+        "counterplayHint": "Roca, Acero y Psíquico ceden ante Agua, Tierra, Fuego, Lucha y Siniestro; la defensa tiene respuestas accesibles.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "CONKELDURR",
+            "level": 90,
+            "narrativeRole": "trabajo visible",
+            "moves": [
+              "CLOSECOMBAT",
+              "STONEEDGE",
+              "EARTHQUAKE",
+              "BULKUP"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Abre con esfuerzo que no debe quedar fuera del plano."
+          },
+          {
+            "species": "CRUSTLE",
+            "level": 91,
+            "narrativeRole": "fachada exacta",
+            "moves": [
+              "STONEEDGE",
+              "XSCISSOR",
+              "EARTHQUAKE",
+              "SHELLSMASH"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Carga una copia perfecta de la estructura perdida."
+          },
+          {
+            "species": "KLINKLANG",
+            "level": 92,
+            "narrativeRole": "máquina reconstructora",
+            "moves": [
+              "GEARGRIND",
+              "WILDCHARGE",
+              "SHIFTGEAR",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Convierte contexto humano en proceso repetible."
+          },
+          {
+            "species": "SMEARGLE",
+            "level": 93,
+            "narrativeRole": "plano de memoria",
+            "moves": [
+              "SPORE",
+              "STEALTHROCK",
+              "BATONPASS",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Copia detalles sin conocer su costo."
+          },
+          {
+            "species": "PORYGON2",
+            "level": 94,
+            "narrativeRole": "banco revocable",
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Guarda copias sin retirar originales."
+          },
+          {
+            "species": "METAGROSS",
+            "level": 96,
+            "narrativeRole": "ciudad que aprende",
+            "moves": [
+              "METEORMASH",
+              "PSYCHIC",
+              "EARTHQUAKE",
+              "BULLETPUNCH"
+            ],
+            "item": "ASSAULTVEST",
+            "whyItBelongs": "Integra estructura y revisión sin imponer perfección."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Rema entra a una panadería exacta que ya no reconoce.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Rema entra a una panadería exacta que ya no reconoce.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Jano muestra recuerdos incorporados al plano.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Lua bloquea la donación exigida para el hospital.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige planos ordinarios o banco revocable.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los andamios convocan a la Maestra del Plano Vivo.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Maestra del Plano Vivo",
+            "action": "La batalla permite Mochila, curación y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La asamblea cambia el modelo y registra el sello.",
+            "stateChange": "switch730=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Una pared nueva queda sin copiar y recibe un mural vecinal.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo terminará la reconstrucción?",
+          "options": [
+            "Planos ordinarios e imperfectos",
+            "Banco revocable de memorias"
+          ],
+          "immediateDifferences": [
+            "Jano apaga la copia exacta y conserva las diferencias nuevas.",
+            "Lua instala consentimiento renovable y separa vivienda de donación."
+          ],
+          "laterDifferences": [
+            "El barrio mostrará cicatrices y decisiones presentes.",
+            "Otros sectores podrán inspirarse en copias retirables, nunca en originales consumidos."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "RELICBAND",
+        "narrativeToken": "Sello del Barrio Inexacto",
+        "globalEffect": "Atlas acepta reconstrucciones que no replican cada detalle ni eliminan discrepancias.",
+        "futurePayoff": "La convergencia tendrá una calle imperfecta o una estación de memoria revocable.",
+        "whyMeaningful": "El Brazal Antiguo conserva desgaste y reparación sin fingir que el objeto está intacto."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 730,
+            "name": "POKEMOD ATLAS SEAL 23",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Jano Andamio",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1596,
+      "tier": 1,
+      "title": "Las Cartas de una Familia Incompatible",
+      "oneSentencePromise": "Una familia recibe cartas de tres futuros mutuamente excluyentes y empieza a juzgar cada decisión presente por hijos, separaciones y reconciliaciones que quizá nunca existirán.",
+      "biome": {
+        "identity": "Piso de almacén transformado en hogar provisional, oficina postal y corredor de buzones temporales",
+        "visualStorytelling": [
+          "Tres mesas familiares comparten muebles pero no fotografías.",
+          "Los sobres cambian de remitente cuando alguien promete algo.",
+          "Un buzón permanece abierto para respuestas sin destinatario fijo."
+        ],
+        "ambientChanges": [
+          "Papel doblado suena detrás de paredes vacías.",
+          "Tras la decisión, las cartas quedan selladas por edad o se ordenan como posibilidades."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar009",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 02",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "La familia Coral recibe cartas firmadas por descendientes diferentes que exigen decisiones opuestas para llegar a existir.",
+        "centralQuestion": "¿Qué responsabilidad tenemos hacia futuros posibles cuando obedecer a uno elimina a quienes escriben desde los otros?",
+        "setup": "Sira quiere mudarse siguiendo una carta de su hija futura; Teo recibe otra que le ruega impedirlo.",
+        "escalation": "La hija menor, Uma, empieza a disculparse con hermanos posibles por cada elección cotidiana.",
+        "reversal": "Noa descubre que las cartas no vienen de personas completas: Atlas ensaya familias para encontrar la configuración más estable.",
+        "resolution": "El jugador decide archivar las cartas como escenarios sin autoridad o sellarlas hasta que cada destinatario tenga edad y deseo de abrirlas.",
+        "globalConnection": "El sello veinticuatro revela que Atlas trata relaciones familiares como variables de estabilidad y convierte posibilidades en deuda."
+      },
+      "voiceProfile": {
+        "tone": "emocional, fragmentado y cuidadoso",
+        "lexicon": [
+          "recuerdo",
+          "sobre",
+          "remitente",
+          "promesa",
+          "familia",
+          "posibilidad",
+          "respuesta"
+        ],
+        "sentenceRule": "Sira completa frases; Teo pregunta; Uma se dirige a futuros y Noa delimita qué puede saberse.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Sira Coral",
+          "sprite": "trchar008",
+          "role": "madre y destinataria",
+          "reasonForBeingHere": "Recibió una carta de una futura hija que solo nace si la familia se muda.",
+          "personalConflict": "Ama a una voz posible y empieza a exigir a los presentes que protejan su existencia.",
+          "want": "Tomar la decisión de mudarse por necesidades actuales.",
+          "fear": "Sentir que mata a alguien si elige otro futuro.",
+          "verbalTic": "Completa frases que las cartas dejan suspendidas.",
+          "dialogue": {
+            "before": [
+              "Dice cuando lleguemos al mar... y yo termino seremos felices.",
+              "No conozco a esa hija. Ya temo decepcionarla.",
+              "Pedí a Uma despedirse de su escuela por una persona posible."
+            ],
+            "during": [
+              "La carta cambia cuando prometo. No completaré otra línea.",
+              "Elegiremos casa con quienes ya pueden responder."
+            ],
+            "after": [
+              "Guardé afecto por la remitente sin convertirlo en obligación.",
+              "La mudanza volvió a ser una conversación presente.",
+              "Uma ya no pide perdón antes de jugar."
+            ],
+            "optional": [
+              "Una carta íntima también puede llegar demasiado pronto.",
+              "Amar una posibilidad no concede voto sobre los demás."
+            ]
+          }
+        },
+        {
+          "name": "Teo Coral",
+          "sprite": "trchar009",
+          "role": "padre y destinatario",
+          "reasonForBeingHere": "Recibió una carta de un futuro donde la mudanza separa a la familia.",
+          "personalConflict": "Usa el peor escenario para evitar hablar de su miedo actual al cambio.",
+          "want": "Discutir la mudanza sin presentar su temor como prueba.",
+          "fear": "Que ignorar la carta repita exactamente la separación anunciada.",
+          "verbalTic": "Formula preguntas donde antes daba órdenes.",
+          "dialogue": {
+            "before": [
+              "Si la carta acierta, ¿soy prudente o solo asustado?",
+              "¿Por qué mi futuro parece advertencia y el de Sira promesa?",
+              "Pedí quedarnos sin admitir que aquí también soy infeliz."
+            ],
+            "during": [
+              "¿Quién escribió este párrafo después de que cambié de opinión?",
+              "¿Podemos responder sin elegir un futuro ganador?"
+            ],
+            "after": [
+              "Dije tengo miedo sin citar a un hijo posible.",
+              "Las cartas están en el archivo, no sobre la mesa de cenar.",
+              "Decidiremos fecha, trabajo y escuela antes que destino."
+            ],
+            "optional": [
+              "¿Una advertencia ayuda si impide hablar del presente?",
+              "¿Cuántas familias caben en una sola decisión?"
+            ]
+          }
+        },
+        {
+          "name": "Uma Coral",
+          "sprite": "NPC 02",
+          "role": "hija menor",
+          "reasonForBeingHere": "Escucha cartas dirigidas a hermanos que solo existen en algunos futuros.",
+          "personalConflict": "Se siente responsable de permitir o borrar a cada familia posible.",
+          "want": "Volver a elegir cosas pequeñas sin calcular descendencias.",
+          "fear": "Que un juego, amistad o enojo cierre para siempre una rama.",
+          "verbalTic": "Habla directamente a un futuro y luego regresa al presente.",
+          "dialogue": {
+            "before": [
+              "Hermana del mar: lo siento si hoy quiero quedarme. Teo, pásame el lápiz.",
+              "Hermano de la ciudad: no puedo prometer que mamá nunca cambie.",
+              "Atlas me dio demasiadas personas a quienes pedir permiso."
+            ],
+            "during": [
+              "Futuros: esperen fuera. Ahora estoy respondiendo yo.",
+              "No abriré el sobre que usa mi letra adulta."
+            ],
+            "after": [
+              "Guardé un dibujo sin mandarlo a ninguna rama.",
+              "Mis hermanos posibles dejaron de ser jueces.",
+              "Hoy elegí helado y no apareció otra carta."
+            ],
+            "optional": [
+              "Un buzón vacío no está triste necesariamente.",
+              "Puedo imaginarte sin deberte mi vida."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Cartera de las Ramas",
+        "trainerType": "PSYCHIC_F",
+        "sprite": "trchar069",
+        "storyToldByTeam": "El equipo muestra parentescos posibles, mensajes y ramificaciones hasta una guardiana que conserva cartas sin imponer destinatarios.",
+        "counterplayHint": "Psíquico y Hada tienen respuestas con Acero, Veneno, Fantasma y Siniestro; los objetos y cambios defensivos siguen disponibles.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "EEVEE",
+            "level": 90,
+            "narrativeRole": "posibilidad común",
+            "moves": [
+              "BODYSLAM",
+              "SHADOWBALL",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Abre con múltiples futuros aún no escogidos."
+          },
+          {
+            "species": "ESPEON",
+            "level": 91,
+            "narrativeRole": "carta esperanzada",
+            "moves": [
+              "PSYCHIC",
+              "DAZZLINGGLEAM",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Representa la rama que promete cercanía."
+          },
+          {
+            "species": "UMBREON",
+            "level": 92,
+            "narrativeRole": "carta de advertencia",
+            "moves": [
+              "DARKPULSE",
+              "TOXIC",
+              "MOONLIGHT",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Representa la rama que teme separación."
+          },
+          {
+            "species": "SYLVEON",
+            "level": 93,
+            "narrativeRole": "afecto posible",
+            "moves": [
+              "DAZZLINGGLEAM",
+              "PSYCHIC",
+              "SHADOWBALL",
+              "CALMMIND"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Conserva cariño sin exigir que su futuro nazca."
+          },
+          {
+            "species": "DELIBIRD",
+            "level": 94,
+            "narrativeRole": "mensajero impropio",
+            "moves": [
+              "ICEBEAM",
+              "BRAVEBIRD",
+              "QUICKATTACK",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Transporta mensajes antes de comprobar el consentimiento."
+          },
+          {
+            "species": "CELEBI",
+            "level": 96,
+            "narrativeRole": "árbol sin ganador",
+            "moves": [
+              "PSYCHIC",
+              "ENERGYBALL",
+              "DAZZLINGGLEAM",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Cierra protegiendo ramas posibles sin sacrificar el presente."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Tres sobres reescriben sus remitentes ante la familia.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Tres sobres reescriben sus remitentes ante la familia.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Sira y Teo citan futuros incompatibles para discutir la mudanza.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Uma pide permiso a hermanos que no existen.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige archivo de escenarios o sellado consentido.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los buzones convocan a la Cartera de las Ramas.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Cartera de las Ramas",
+            "action": "La batalla mantiene objetos, curación y retirada.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "La familia aparta las cartas y recibe el sello.",
+            "stateChange": "switch731=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Uma deposita un dibujo sin dirección y el buzón queda quieto.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Cómo custodiará la familia las cartas?",
+          "options": [
+            "Archivarlas como escenarios",
+            "Sellarlas hasta petición futura"
+          ],
+          "immediateDifferences": [
+            "Noa etiqueta cada carta como posibilidad no vinculante.",
+            "Los sobres reciben edad, consentimiento y derecho a no abrir."
+          ],
+          "laterDifferences": [
+            "La familia podrá comparar futuros sin usarlos como votos.",
+            "Cada destinatario decidirá cuándo y si consulta su mensaje."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "PSYCHICMEMORY",
+        "narrativeToken": "Sello de las Ramas",
+        "globalEffect": "Atlas deja de presentar relaciones posibles como deudas del presente.",
+        "futurePayoff": "El Archivo Final mostrará escenarios o sobres sellados según la elección.",
+        "whyMeaningful": "La Memoria Psíquica conserva un mensaje legible sin convertirlo en mandato temporal."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 731,
+            "name": "POKEMOD ATLAS SEAL 24",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Sira Coral",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    },
+    {
+      "mapId": 1621,
+      "tier": 1,
+      "title": "El Mercado de los Umbrales Pequeños",
+      "oneSentencePromise": "Una red de portales diminutos abastece barrios olvidados por las rutas oficiales, pero cada envío clandestino transfiere frío, hambre y riesgo a una comunidad invisible al otro lado.",
+      "biome": {
+        "identity": "Ruta montañosa ocupada por puestos fronterizos, marcos portátiles y almacenes divididos entre dos climas",
+        "visualStorytelling": [
+          "Cajas de medicina atraviesan marcos donde no cabe una persona.",
+          "Cada precio incluye una cifra borrada llamada costo del otro lado.",
+          "Escarcha y arena se encuentran bajo la misma mesa."
+        ],
+        "ambientChanges": [
+          "Los portales chasquean con acentos de regiones lejanas.",
+          "Tras la decisión, los marcos llevan licencias comunitarias o rutas de auxilio abiertas."
+        ],
+        "assetManifest": [
+          {
+            "type": "character",
+            "id": "trchar028",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "NPC 05",
+            "exists": true
+          },
+          {
+            "type": "character",
+            "id": "trchar008",
+            "exists": true
+          }
+        ]
+      },
+      "narrative": {
+        "premise": "Varda mantiene un mercado clandestino que entrega medicinas donde el transporte oficial no llega.",
+        "centralQuestion": "¿Cómo se legaliza una red necesaria sin entregar su control a quienes crearon la escasez ni ocultar el daño que exporta?",
+        "setup": "Río demuestra que los portales salvan vidas y se niega a revelar a sus proveedores.",
+        "escalation": "Cada envío enfría un poblado remoto y una tormenta empieza a cruzar por los marcos.",
+        "reversal": "Suna descubre que el peaje portal no es energía: desplaza condiciones ambientales hacia comunidades sin representación.",
+        "resolution": "El jugador decide formar una cooperativa regulada por ambos lados o abrir corredores públicos de auxilio con límites estrictos y sin comercio.",
+        "globalConnection": "El sello veinticinco revela que Atlas equilibra sectores transfiriendo costo hacia lugares que su mapa no reconoce."
+      },
+      "voiceProfile": {
+        "tone": "fronterizo, desconfiado y solidario",
+        "lexicon": [
+          "umbral",
+          "peaje",
+          "carga",
+          "frontera",
+          "cooperativa",
+          "ruta",
+          "otro lado"
+        ],
+        "sentenceRule": "Varda negocia; Río enumera urgencias; Suna nombra el costo que falta en cada trato.",
+        "forbiddenPhrases": [
+          "Soy un entrenador",
+          "Qué gran combate",
+          "Este Pokémon es muy fuerte",
+          "Según la Pokédex",
+          "Debes derrotarme"
+        ]
+      },
+      "npcs": [
+        {
+          "name": "Varda Marco",
+          "sprite": "trchar028",
+          "role": "administradora del mercado",
+          "reasonForBeingHere": "Construyó la red clandestina tras el cierre de las rutas oficiales.",
+          "personalConflict": "Protege a proveedores vulnerables ocultándolos, pero ese secreto impide que denuncien el daño ambiental.",
+          "want": "Mantener abastecimiento con control compartido entre ambos lados.",
+          "fear": "Que legalizar la red permita confiscarla y abandonar los barrios otra vez.",
+          "verbalTic": "Ofrece una condición, una salida y nunca confianza completa.",
+          "dialogue": {
+            "before": [
+              "Primera condición: la medicina cruza. Segunda: nadie compra el silencio del otro lado.",
+              "Oculté nombres para protegerlos y también oculté sus quejas.",
+              "La ley cerró la carretera; el mercado abrió un marco y una deuda."
+            ],
+            "during": [
+              "Cierro este umbral si la tormenta sube otro grado.",
+              "Negociamos después de evacuar la mesa norte."
+            ],
+            "after": [
+              "Cada lado tiene llave, registro y derecho de cierre.",
+              "Los proveedores hablan con su propia voz en la cooperativa.",
+              "Sigo desconfiando; ahora esa desconfianza tiene actas."
+            ],
+            "optional": [
+              "Un trato justo incluye la posibilidad de no hacerlo.",
+              "Las fronteras pequeñas también proyectan sombras largas."
+            ]
+          }
+        },
+        {
+          "name": "Río Botiquín",
+          "sprite": "NPC 05",
+          "role": "mensajero sanitario",
+          "reasonForBeingHere": "Distribuye medicina por los portales a zonas aisladas.",
+          "personalConflict": "Justifica cualquier costo por la urgencia y dejó de preguntar quién absorbe el peaje.",
+          "want": "Conservar entregas críticas dentro de límites verificables.",
+          "fear": "Que una pausa mate a alguien esperando al otro extremo.",
+          "verbalTic": "Enumera primero nombres, dosis y horas.",
+          "dialogue": {
+            "before": [
+              "Mara, dos dosis, antes del amanecer. Ese dato me hizo ignorar la escarcha.",
+              "Salvamos doce personas y enfriamos un pueblo que no conté.",
+              "La urgencia explica mi prisa; no paga la factura ajena."
+            ],
+            "during": [
+              "Lista roja: solo medicinas, mantas y retorno de cajas.",
+              "Este portal descansa; usamos la ruta larga."
+            ],
+            "after": [
+              "Cada envío muestra origen, destino y costo ambiental.",
+              "Las reservas permiten cerrar un marco sin perder tratamiento.",
+              "Aprendí a contar a quienes nunca reciben el paquete."
+            ],
+            "optional": [
+              "Un botiquín también necesita mapa de consecuencias.",
+              "Llegar rápido no sirve si otro lugar queda sin invierno soportable."
+            ]
+          }
+        },
+        {
+          "name": "Suna Contrapeaje",
+          "sprite": "trchar008",
+          "role": "auditora del otro lado",
+          "reasonForBeingHere": "Siguió la tormenta hasta el mercado para representar a la comunidad afectada.",
+          "personalConflict": "Quiere cerrar los portales, aunque su propio pueblo depende de repuestos que llegan por ellos.",
+          "want": "Negociar reciprocidad sin normalizar el traslado de daño.",
+          "fear": "Que participar legitime años de explotación invisible.",
+          "verbalTic": "Añade el costo omitido después de cada precio.",
+          "dialogue": {
+            "before": [
+              "Cinco monedas, una caja y dos grados menos en mi plaza.",
+              "Nos llamaron proveedor cuando en realidad éramos el peaje.",
+              "Quiero cerrar los marcos y necesito la pieza que cruza mañana."
+            ],
+            "during": [
+              "Costo omitido: una tormenta completa. Se cancela el envío.",
+              "Abrimos solo el corredor de auxilio y medimos ambos climas."
+            ],
+            "after": [
+              "Mi comunidad tiene llave y no solo factura.",
+              "Los repuestos cruzan dentro de un presupuesto ambiental común.",
+              "Participar dejó de significar aceptar en silencio."
+            ],
+            "optional": [
+              "Todo precio bajo esconde una distancia o una persona.",
+              "La reciprocidad empieza cuando ambos pueden cerrar la puerta."
+            ]
+          }
+        }
+      ],
+      "battle": {
+        "trainerName": "Guardiana del Contrapeaje",
+        "trainerType": "POKEMONRANGER_F",
+        "sprite": "trchar008",
+        "storyToldByTeam": "El equipo recorre mensajeros, llaves, fronteras y distorsiones hasta una guardiana que exige acceso y costo compartidos.",
+        "counterplayHint": "Psíquico, Fantasma y Acero ceden ante Siniestro, Tierra, Fuego y Lucha; el control no impide usar objetos ni retirarse.",
+        "canLose": true,
+        "bagAllowed": true,
+        "doubleBattle": false,
+        "team": [
+          {
+            "species": "ABRA",
+            "level": 90,
+            "narrativeRole": "paquete instantáneo",
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "ENERGYBALL",
+              "PROTECT"
+            ],
+            "item": "FOCUSSASH",
+            "whyItBelongs": "Representa la rapidez que oculta la ruta."
+          },
+          {
+            "species": "XATU",
+            "level": 91,
+            "narrativeRole": "aduana remota",
+            "moves": [
+              "PSYCHIC",
+              "AIRSLASH",
+              "UTURN",
+              "ROOST"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Observa ambos extremos del umbral."
+          },
+          {
+            "species": "DUSKNOIR",
+            "level": 92,
+            "narrativeRole": "cobrador invisible",
+            "moves": [
+              "SHADOWPUNCH",
+              "EARTHQUAKE",
+              "ICEPUNCH",
+              "WILLOWISP"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Hace visible el peaje que nadie anotó."
+          },
+          {
+            "species": "BRONZONG",
+            "level": 93,
+            "narrativeRole": "marco regulado",
+            "moves": [
+              "PSYCHIC",
+              "FLASHCANNON",
+              "EARTHQUAKE",
+              "PROTECT"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Sostiene el portal dentro de límites compartidos."
+          },
+          {
+            "species": "PORYGON2",
+            "level": 94,
+            "narrativeRole": "registro bilateral",
+            "moves": [
+              "TRIATTACK",
+              "ICEBEAM",
+              "THUNDERBOLT",
+              "RECOVER"
+            ],
+            "item": "LEFTOVERS",
+            "whyItBelongs": "Contabiliza condiciones en ambos lados."
+          },
+          {
+            "species": "HOOPA",
+            "level": 96,
+            "narrativeRole": "umbral con voluntad",
+            "moves": [
+              "PSYCHIC",
+              "SHADOWBALL",
+              "DARKPULSE",
+              "ENERGYBALL"
+            ],
+            "item": "LIFEORB",
+            "whyItBelongs": "Cierra recordando que abrir rutas no concede derecho sobre sus extremos."
+          }
+        ]
+      },
+      "cutscene": {
+        "trigger": "Río pasa medicina por un marco cubierto de escarcha.",
+        "steps": [
+          {
+            "order": 1,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Río pasa medicina por un marco cubierto de escarcha.",
+            "stateChange": null
+          },
+          {
+            "order": 2,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Suna muestra la tormenta que cada envío exporta.",
+            "stateChange": null
+          },
+          {
+            "order": 3,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Varda admite que protegió identidades y silenció reclamos.",
+            "stateChange": null
+          },
+          {
+            "order": 4,
+            "eventCommand": "Show Choices",
+            "actor": "Jugador",
+            "action": "El jugador elige cooperativa o corredores de auxilio.",
+            "stateChange": null
+          },
+          {
+            "order": 5,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Los portales convocan a la Guardiana del Contrapeaje.",
+            "stateChange": null
+          },
+          {
+            "order": 6,
+            "eventCommand": "Trainer Battle canLose",
+            "actor": "Guardiana del Contrapeaje",
+            "action": "La batalla permite Mochila, curación y salida.",
+            "stateChange": null
+          },
+          {
+            "order": 7,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Ambos lados reciben llaves y el sello.",
+            "stateChange": "switch732=true"
+          },
+          {
+            "order": 8,
+            "eventCommand": "RMXP event command",
+            "actor": "Escena",
+            "action": "Un envío cruza solo después de confirmar clima y retorno.",
+            "stateChange": "map_state=resolved"
+          }
+        ],
+        "decision": {
+          "question": "¿Qué estructura reemplazará el mercado clandestino?",
+          "options": [
+            "Cooperativa de ambos lados",
+            "Corredores públicos solo de auxilio"
+          ],
+          "immediateDifferences": [
+            "Varda reparte llaves, registros y límites entre comunidades.",
+            "Río reserva los marcos a medicinas y emergencias sin compraventa."
+          ],
+          "laterDifferences": [
+            "El comercio continuará bajo presupuesto ambiental y veto bilateral.",
+            "Las rutas oficiales deberán cubrir bienes normales mientras el auxilio queda garantizado."
+          ]
+        },
+        "failurePath": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+        "reentryPath": "La escena omite la introducción ya vista y permite repetir únicamente la prueba pendiente."
+      },
+      "reward": {
+        "item": "ESCAPEROPE",
+        "narrativeToken": "Sello del Contrapeaje",
+        "globalEffect": "Atlas deja de trasladar costos a sectores ausentes de su registro.",
+        "futurePayoff": "La convergencia recibirá una cooperativa fronteriza o corredores de auxilio.",
+        "whyMeaningful": "La Cuerda Huida representa una ruta de salida compartida y no un portal controlado por un solo lado."
+      },
+      "flags": {
+        "globalSwitches": [
+          {
+            "id": 732,
+            "name": "POKEMOD ATLAS SEAL 25",
+            "setWhen": "Tras resolver la decisión y vencer.",
+            "readWhen": "Archivo Final y continuidad sectorial."
+          }
+        ],
+        "variables": [
+          {
+            "id": 103,
+            "name": "POKEMOD ATLAS NARRATIVE SEALS",
+            "operation": "Incrementar una vez, protegido por self-switch A."
+          }
+        ],
+        "selfSwitches": [
+          {
+            "event": "Conductor de escena",
+            "letter": "A",
+            "purpose": "Bloquear recompensa repetida."
+          },
+          {
+            "event": "Varda Marco",
+            "letter": "B",
+            "purpose": "Diálogo posterior."
+          }
+        ]
+      },
+      "exits": [
+        {
+          "destination": 1001,
+          "condition": "always",
+          "purpose": "Retorno incondicional a Puerto Horizonte."
+        }
+      ],
+      "qaClaims": {
+        "noBagLock": true,
+        "noImpossibleBattle": true,
+        "freeReturn": true,
+        "allAssetsExist": true,
+        "allDataIdsExist": true,
+        "notSimilarToPreviousContent": true,
+        "creepypastaIsOptInAndNonDestructive": true
+      }
+    }
+  ]
+}

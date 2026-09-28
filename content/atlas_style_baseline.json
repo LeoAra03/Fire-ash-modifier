@@ -1,0 +1,3187 @@
+{
+  "version": 1,
+  "purpose": "Comparación de fidelidad visual/técnica contra mapas reales de Fire Ash.",
+  "scope": {
+    "anchors": 40,
+    "approvedEpisodes": 40,
+    "engine": "RPG Maker XP / Pokémon Essentials",
+    "finalGamePreviewStillRequired": true
+  },
+  "summary": {
+    "technicalPassed": 40,
+    "technicalFailed": 0,
+    "exactInheritedGeometry": 0,
+    "customGeometry": 40,
+    "staticCompositionPending": 0,
+    "artReviewRequired": 40,
+    "gamePreviewRequired": 40
+  },
+  "integrity": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      "1021: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1046: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1071: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1096: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1121: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1146: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1171: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1196: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1221: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1246: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1271: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1296: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1321: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1346: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1371: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1396: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1421: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1446: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1471: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1496: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1521: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1546: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1571: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1596: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1621: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1646: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1671: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1696: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1721: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1746: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1771: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1796: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1821: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1846: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1871: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1896: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1921: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1946: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1971: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe.",
+      "1996: incorpora composición visual propia, pero todavía requiere revisión estática y prueba dentro de Game.exe."
+    ]
+  },
+  "anchors": [
+    {
+      "mapId": 1021,
+      "sourceMapId": 2,
+      "sector": 1,
+      "sectorName": "Meridiano Ámbar",
+      "approvedEpisode": true,
+      "current": {
+        "width": 32,
+        "height": 21,
+        "tilesetId": 1,
+        "tileHash": "a1d09e5a8b2e76df92a4a2165254c0a3e38a7dabdd9949deed82d6a01398485f",
+        "uniqueTiles": 116,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 672,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 120,
+            "ratio": 0.1786
+          },
+          {
+            "layer": 2,
+            "occupied": 13,
+            "ratio": 0.0193
+          }
+        ],
+        "passabilityRatio": 0.4375,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 32,
+        "height": 21,
+        "tilesetId": 1,
+        "tileHash": "85204ab4eb2124fee7f8673aab782ad66e4f1c8d0c4c9d0e514ccb123119b2e2",
+        "uniqueTiles": 116,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 672,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 120,
+            "ratio": 0.1786
+          },
+          {
+            "layer": 2,
+            "occupied": 13,
+            "ratio": 0.0193
+          }
+        ],
+        "passabilityRatio": 0.4375,
+        "eventCount": 4
+      },
+      "comparison": {
+        "tileSimilarity": 0.994,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 5
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1046,
+      "sourceMapId": 27,
+      "sector": 2,
+      "sectorName": "Cuenca Celeste",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "e854cc941ff88b14fdd165e8d497fc88de6762d1dfb2f1227dcfe2562a15881c",
+        "uniqueTiles": 55,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 42,
+            "ratio": 0.14
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1867,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "3009019baf6fd678ee61467a2b864731803a63670adee6287744349981894f1b",
+        "uniqueTiles": 55,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 42,
+            "ratio": 0.14
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1867,
+        "eventCount": 3
+      },
+      "comparison": {
+        "tileSimilarity": 0.99,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 7
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1071,
+      "sourceMapId": 53,
+      "sector": 3,
+      "sectorName": "Frontera Carmesí",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "6cd4e1c042958f487e94de4dca709a04ea3348c9569454894742593e95871705",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 7
+      },
+      "comparison": {
+        "tileSimilarity": 0.9889,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 3
+      },
+      "assets": {
+        "tileset": "Poke Centre interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1096,
+      "sourceMapId": 78,
+      "sector": 4,
+      "sectorName": "Distrito Cuarzo",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "9fce13384d110044f076f4529aac40db757830fc5b7db8a0ccdf519e93f07088",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 12
+      },
+      "comparison": {
+        "tileSimilarity": 0.99,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -2
+      },
+      "assets": {
+        "tileset": "Poke Centre interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1121,
+      "sourceMapId": 103,
+      "sector": 5,
+      "sectorName": "Órbita Esmeralda",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "14f067bbe75bea96714fde428b68ed9fa11615d1288a66d07b3e991841be10e6",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 10
+      },
+      "comparison": {
+        "tileSimilarity": 0.99,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 0
+      },
+      "assets": {
+        "tileset": "Poke Centre interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1146,
+      "sourceMapId": 128,
+      "sector": 6,
+      "sectorName": "Paso Boreal",
+      "approvedEpisode": true,
+      "current": {
+        "width": 86,
+        "height": 41,
+        "tilesetId": 1,
+        "tileHash": "c3e90386661531a30f7fecb4378b118970780b207737f1cd95f67645e098b7c6",
+        "uniqueTiles": 104,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 3526,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 1890,
+            "ratio": 0.536
+          },
+          {
+            "layer": 2,
+            "occupied": 45,
+            "ratio": 0.0128
+          }
+        ],
+        "passabilityRatio": 0.8599,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 86,
+        "height": 41,
+        "tilesetId": 1,
+        "tileHash": "7146b6357f3ee357a9dc5546aac3f8d4b05e64262ede4dd8974b1dc6fef48a72",
+        "uniqueTiles": 102,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 3526,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 1890,
+            "ratio": 0.536
+          },
+          {
+            "layer": 2,
+            "occupied": 45,
+            "ratio": 0.0128
+          }
+        ],
+        "passabilityRatio": 0.8599,
+        "eventCount": 19
+      },
+      "comparison": {
+        "tileSimilarity": 0.9991,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -9
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1171,
+      "sourceMapId": 153,
+      "sector": 7,
+      "sectorName": "Jardín Índigo",
+      "approvedEpisode": true,
+      "current": {
+        "width": 40,
+        "height": 40,
+        "tilesetId": 3,
+        "tileHash": "64116036b1875c6e57e58658c547747b5a3bea0fd814c8dcfb76691e9b926c7b",
+        "uniqueTiles": 174,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 217,
+            "ratio": 0.1356
+          },
+          {
+            "layer": 2,
+            "occupied": 28,
+            "ratio": 0.0175
+          }
+        ],
+        "passabilityRatio": 0.1819,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 40,
+        "height": 40,
+        "tilesetId": 3,
+        "tileHash": "427beb2be30e707c3a99b77499891b0029169d68d6fa04652590c31fdd02c707",
+        "uniqueTiles": 174,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 217,
+            "ratio": 0.1356
+          },
+          {
+            "layer": 2,
+            "occupied": 28,
+            "ratio": 0.0175
+          }
+        ],
+        "passabilityRatio": 0.1819,
+        "eventCount": 18
+      },
+      "comparison": {
+        "tileSimilarity": 0.9979,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -8
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1196,
+      "sourceMapId": 178,
+      "sector": 8,
+      "sectorName": "Costa Prisma",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 35,
+        "tilesetId": 14,
+        "tileHash": "f12906c667cf6eee6ed5d509b7dbc1053412a18ffac7c3fd4fe983c8bb8d4f4f",
+        "uniqueTiles": 32,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 700,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 19,
+            "ratio": 0.0271
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.4286,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 35,
+        "tilesetId": 14,
+        "tileHash": "96a97b628468452c3b7eeb5a4a100debabd5a9fd7e484b05bd58bd84cf8a79e4",
+        "uniqueTiles": 32,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 700,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 19,
+            "ratio": 0.0271
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.4286,
+        "eventCount": 9
+      },
+      "comparison": {
+        "tileSimilarity": 0.9948,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 1
+      },
+      "assets": {
+        "tileset": "Gyms interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1221,
+      "sourceMapId": 203,
+      "sector": 9,
+      "sectorName": "Dominio Solar",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 14,
+        "tileHash": "ec1a26aaa14e94e4aaa13d3c3fcae9034053ae55bec668e3835212fdc23b393a",
+        "uniqueTiles": 45,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 2,
+            "ratio": 0.0067
+          },
+          {
+            "layer": 2,
+            "occupied": 37,
+            "ratio": 0.1233
+          }
+        ],
+        "passabilityRatio": 0.3533,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 14,
+        "tileHash": "6869c6034e70370f4b45f37454499dde01ece9bbed6b849fcb1d824e3c34c8c2",
+        "uniqueTiles": 45,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 2,
+            "ratio": 0.0067
+          },
+          {
+            "layer": 2,
+            "occupied": 37,
+            "ratio": 0.1233
+          }
+        ],
+        "passabilityRatio": 0.3533,
+        "eventCount": 2
+      },
+      "comparison": {
+        "tileSimilarity": 0.9867,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 8
+      },
+      "assets": {
+        "tileset": "Gyms interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1246,
+      "sourceMapId": 228,
+      "sector": 10,
+      "sectorName": "Velo Lunar",
+      "approvedEpisode": true,
+      "current": {
+        "width": 135,
+        "height": 110,
+        "tilesetId": 1,
+        "tileHash": "664cef17c6f49a9caed37af26c811a96c1ad3d78e323c94ae6dba2fea3c0da64",
+        "uniqueTiles": 140,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 14850,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 13649,
+            "ratio": 0.9191
+          },
+          {
+            "layer": 2,
+            "occupied": 704,
+            "ratio": 0.0474
+          }
+        ],
+        "passabilityRatio": 0.0977,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 135,
+        "height": 110,
+        "tilesetId": 1,
+        "tileHash": "bbf8c4ab7ce1c40c81a115771fce1ffcbdaca92d20276a1eb992dbdaef3cfd0e",
+        "uniqueTiles": 138,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 14850,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 13649,
+            "ratio": 0.9191
+          },
+          {
+            "layer": 2,
+            "occupied": 704,
+            "ratio": 0.0474
+          }
+        ],
+        "passabilityRatio": 0.0977,
+        "eventCount": 49
+      },
+      "comparison": {
+        "tileSimilarity": 0.9998,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -39
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1271,
+      "sourceMapId": 253,
+      "sector": 11,
+      "sectorName": "Nexo Onírico",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "e20e175efa55f986d61748817f7bef1a512773a9f54b4fa1fa118a5dbe2dd2b9",
+        "uniqueTiles": 72,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 110,
+            "ratio": 0.3667
+          },
+          {
+            "layer": 2,
+            "occupied": 6,
+            "ratio": 0.02
+          }
+        ],
+        "passabilityRatio": 0.3667,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "76d22ef2f1e18db82358209cc563e7225535799f4f54a18fb87aebacfa447a1f",
+        "uniqueTiles": 72,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 110,
+            "ratio": 0.3667
+          },
+          {
+            "layer": 2,
+            "occupied": 6,
+            "ratio": 0.02
+          }
+        ],
+        "passabilityRatio": 0.3667,
+        "eventCount": 10
+      },
+      "comparison": {
+        "tileSimilarity": 0.9867,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 0
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1296,
+      "sourceMapId": 278,
+      "sector": 12,
+      "sectorName": "Valle Magnético",
+      "approvedEpisode": true,
+      "current": {
+        "width": 55,
+        "height": 52,
+        "tilesetId": 1,
+        "tileHash": "63665f06f6f508a8ce2eba6199599be343f8ee180b876eb6b5b07d847b9c8b20",
+        "uniqueTiles": 162,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2860,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 316,
+            "ratio": 0.1105
+          },
+          {
+            "layer": 2,
+            "occupied": 20,
+            "ratio": 0.007
+          }
+        ],
+        "passabilityRatio": 0.3566,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 55,
+        "height": 52,
+        "tilesetId": 1,
+        "tileHash": "a8389d4f7cfcd7ef1ca4e7fcbd8cc75f1b11babd3e8622fa4be9fe209700256b",
+        "uniqueTiles": 160,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2860,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 316,
+            "ratio": 0.1105
+          },
+          {
+            "layer": 2,
+            "occupied": 20,
+            "ratio": 0.007
+          }
+        ],
+        "passabilityRatio": 0.3566,
+        "eventCount": 40
+      },
+      "comparison": {
+        "tileSimilarity": 0.999,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -30
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1321,
+      "sourceMapId": 303,
+      "sector": 13,
+      "sectorName": "Arco Fósil",
+      "approvedEpisode": true,
+      "current": {
+        "width": 30,
+        "height": 25,
+        "tilesetId": 14,
+        "tileHash": "bce410dec75a1c665c394530aedcb4af89a9669ca2b2a465ffaece7c279224d2",
+        "uniqueTiles": 15,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 750,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 65,
+            "ratio": 0.0867
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1893,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 30,
+        "height": 25,
+        "tilesetId": 14,
+        "tileHash": "b6ab87674cd9b9c1de5ff43a01d45c6c692aa354fd40e3a3755d8399aecbd8e2",
+        "uniqueTiles": 15,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 750,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 65,
+            "ratio": 0.0867
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1893,
+        "eventCount": 9
+      },
+      "comparison": {
+        "tileSimilarity": 0.996,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 1
+      },
+      "assets": {
+        "tileset": "Gyms interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1346,
+      "sourceMapId": 330,
+      "sector": 14,
+      "sectorName": "Mar de Nubes",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 25,
+        "tilesetId": 1,
+        "tileHash": "7e03798e73037379831486297d8956d7d0ead87ce5fdf0335078a2cbc2385fa2",
+        "uniqueTiles": 22,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 500,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 105,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.214,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 25,
+        "tilesetId": 1,
+        "tileHash": "8c8248fe093f9fffb2364003838bf18c081385245c657ba3921f6283b1e4f57f",
+        "uniqueTiles": 19,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 500,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 105,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.214,
+        "eventCount": 5
+      },
+      "comparison": {
+        "tileSimilarity": 0.994,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 5
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1371,
+      "sourceMapId": 355,
+      "sector": 15,
+      "sectorName": "Bosque de Hierro",
+      "approvedEpisode": true,
+      "current": {
+        "width": 27,
+        "height": 15,
+        "tilesetId": 1,
+        "tileHash": "ead3045a9ff295cc1f52a0ab0b0fbdb4a470f0f9ec8a99d6fcb49e528bee3130",
+        "uniqueTiles": 5,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 405,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 0,
+            "ratio": 0
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.8494,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 27,
+        "height": 15,
+        "tilesetId": 1,
+        "tileHash": "ad9e09386dd90ffc2ed16601308314046eea063c4a9fea073b76b49c30282ef2",
+        "uniqueTiles": 2,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 405,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 0,
+            "ratio": 0
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.8494,
+        "eventCount": 50
+      },
+      "comparison": {
+        "tileSimilarity": 0.9934,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -40
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1396,
+      "sourceMapId": 380,
+      "sector": 16,
+      "sectorName": "Canal Estelar",
+      "approvedEpisode": true,
+      "current": {
+        "width": 40,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "14eee798313657c6a2e161a06822bcad9a4b3a2f63d4b4091946da3c8867c3b4",
+        "uniqueTiles": 50,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 135,
+            "ratio": 0.1125
+          },
+          {
+            "layer": 2,
+            "occupied": 24,
+            "ratio": 0.02
+          }
+        ],
+        "passabilityRatio": 0.16,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 40,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "94e2b328761751d8826cc8844e703c0d057a24ecd74dae347f1f3fe2fd0d78ea",
+        "uniqueTiles": 50,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 135,
+            "ratio": 0.1125
+          },
+          {
+            "layer": 2,
+            "occupied": 24,
+            "ratio": 0.02
+          }
+        ],
+        "passabilityRatio": 0.16,
+        "eventCount": 6
+      },
+      "comparison": {
+        "tileSimilarity": 0.9975,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 4
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1421,
+      "sourceMapId": 405,
+      "sector": 17,
+      "sectorName": "Páramo Sonoro",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "89be91971fd8227a52d0cfe77301d5666bf06b9fb3c6b678a4e4296fddc0c38b",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "02160c5502af076ec109c74b93d7c8e9da2f5b00439e31d25b6f87c129819336",
+        "uniqueTiles": 78,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 63,
+            "ratio": 0.21
+          },
+          {
+            "layer": 2,
+            "occupied": 4,
+            "ratio": 0.0133
+          }
+        ],
+        "passabilityRatio": 0.2733,
+        "eventCount": 11
+      },
+      "comparison": {
+        "tileSimilarity": 0.9911,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -1
+      },
+      "assets": {
+        "tileset": "Poke Centre interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1446,
+      "sourceMapId": 430,
+      "sector": 18,
+      "sectorName": "Islas del Viento",
+      "approvedEpisode": true,
+      "current": {
+        "width": 30,
+        "height": 35,
+        "tilesetId": 3,
+        "tileHash": "ea72c0037c53746d16d21bea4df159e17f7a2fc62e52f395836c9934d1d0a77b",
+        "uniqueTiles": 75,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1050,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 97,
+            "ratio": 0.0924
+          },
+          {
+            "layer": 2,
+            "occupied": 43,
+            "ratio": 0.041
+          }
+        ],
+        "passabilityRatio": 0.16,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 30,
+        "height": 35,
+        "tilesetId": 3,
+        "tileHash": "50c568c3158d8611bbf14451addf7a955acbea39e63c2bfefe32a619ba753f73",
+        "uniqueTiles": 75,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1050,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 97,
+            "ratio": 0.0924
+          },
+          {
+            "layer": 2,
+            "occupied": 43,
+            "ratio": 0.041
+          }
+        ],
+        "passabilityRatio": 0.16,
+        "eventCount": 14
+      },
+      "comparison": {
+        "tileSimilarity": 0.9965,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -4
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1471,
+      "sourceMapId": 455,
+      "sector": 19,
+      "sectorName": "Anillo Abisal",
+      "approvedEpisode": true,
+      "current": {
+        "width": 40,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "bcdaf8ac072aa4911a94dd0343d2041ee966b9df8215da528f7d625793f9f60a",
+        "uniqueTiles": 50,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 180,
+            "ratio": 0.15
+          },
+          {
+            "layer": 2,
+            "occupied": 32,
+            "ratio": 0.0267
+          }
+        ],
+        "passabilityRatio": 0.2133,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 40,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "c855e117de17f738d47e6f69a40eec88a7858b8f0cb7b5d47e3538b342d9a761",
+        "uniqueTiles": 50,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 180,
+            "ratio": 0.15
+          },
+          {
+            "layer": 2,
+            "occupied": 32,
+            "ratio": 0.0267
+          }
+        ],
+        "passabilityRatio": 0.2133,
+        "eventCount": 11
+      },
+      "comparison": {
+        "tileSimilarity": 0.9961,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -1
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1496,
+      "sourceMapId": 481,
+      "sector": 20,
+      "sectorName": "Ruta del Cometa",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "49ca5ff87047456c5c8caecf67838e08065fbfe12001bfff03163c1cb3fa9130",
+        "uniqueTiles": 46,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 37,
+            "ratio": 0.1233
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1833,
+        "eventCount": 10
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "27dbda8816cec47b207b928ebe626654f6a1fe1782342108e51432d13927c738",
+        "uniqueTiles": 46,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 37,
+            "ratio": 0.1233
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1833,
+        "eventCount": 29
+      },
+      "comparison": {
+        "tileSimilarity": 0.9911,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -19
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1521,
+      "sourceMapId": 506,
+      "sector": 21,
+      "sectorName": "Territorio Origami",
+      "approvedEpisode": true,
+      "current": {
+        "width": 55,
+        "height": 35,
+        "tilesetId": 1,
+        "tileHash": "6d764a072dc015bc15005295f926bc0d7d4f83eddfc331ba083130915c600328",
+        "uniqueTiles": 77,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1925,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 110,
+            "ratio": 0.0571
+          },
+          {
+            "layer": 2,
+            "occupied": 15,
+            "ratio": 0.0078
+          }
+        ],
+        "passabilityRatio": 0.4151,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 55,
+        "height": 35,
+        "tilesetId": 1,
+        "tileHash": "4cd243b1c9f3d546a8dae5ddc112d3b41d8c26b674adc4c571f0e89c4f1eefca",
+        "uniqueTiles": 75,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1925,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 110,
+            "ratio": 0.0571
+          },
+          {
+            "layer": 2,
+            "occupied": 15,
+            "ratio": 0.0078
+          }
+        ],
+        "passabilityRatio": 0.4151,
+        "eventCount": 8
+      },
+      "comparison": {
+        "tileSimilarity": 0.9977,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 1
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1546,
+      "sourceMapId": 531,
+      "sector": 22,
+      "sectorName": "Delta de Cristal",
+      "approvedEpisode": true,
+      "current": {
+        "width": 40,
+        "height": 40,
+        "tilesetId": 6,
+        "tileHash": "5bb58738bdd28607d756d679417214ec580461ac055fe3562407222a67135ae0",
+        "uniqueTiles": 20,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 224,
+            "ratio": 0.14
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1313,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 40,
+        "height": 40,
+        "tilesetId": 6,
+        "tileHash": "09881fda011d6ab86e19dc8e8a1205b5b0f3a4e1092bf8046b4b7a7b916a5318",
+        "uniqueTiles": 17,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 224,
+            "ratio": 0.14
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.1313,
+        "eventCount": 2
+      },
+      "comparison": {
+        "tileSimilarity": 0.9977,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 7
+      },
+      "assets": {
+        "tileset": "Caves",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1571,
+      "sourceMapId": 556,
+      "sector": 23,
+      "sectorName": "Llanura Meteoro",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "418c69012bdcdc3e599ac568dc67d544d534b060f40f7968864de4c39f6fb437",
+        "uniqueTiles": 52,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 67,
+            "ratio": 0.2233
+          },
+          {
+            "layer": 2,
+            "occupied": 25,
+            "ratio": 0.0833
+          }
+        ],
+        "passabilityRatio": 0.32,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "316faa27167f8f5846de52a0f150eddec8991251b1483c10a3564520be2a14be",
+        "uniqueTiles": 52,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 67,
+            "ratio": 0.2233
+          },
+          {
+            "layer": 2,
+            "occupied": 25,
+            "ratio": 0.0833
+          }
+        ],
+        "passabilityRatio": 0.32,
+        "eventCount": 7
+      },
+      "comparison": {
+        "tileSimilarity": 0.9911,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 2
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1596,
+      "sourceMapId": 581,
+      "sector": 24,
+      "sectorName": "Cordillera Coral",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 18,
+        "tilesetId": 10,
+        "tileHash": "b608d8bf7a0df89c3bc177655ee952440096ae6b5eddc9d1038091798128a2ab",
+        "uniqueTiles": 79,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 354,
+            "ratio": 0.9833
+          },
+          {
+            "layer": 1,
+            "occupied": 71,
+            "ratio": 0.1972
+          },
+          {
+            "layer": 2,
+            "occupied": 9,
+            "ratio": 0.025
+          }
+        ],
+        "passabilityRatio": 0.3139,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 20,
+        "height": 18,
+        "tilesetId": 10,
+        "tileHash": "d61c9fbb120fdab711a8e5c9d78d2ab8dcdfb78a037cee1c5830114c4cd8d46f",
+        "uniqueTiles": 79,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 354,
+            "ratio": 0.9833
+          },
+          {
+            "layer": 1,
+            "occupied": 71,
+            "ratio": 0.1972
+          },
+          {
+            "layer": 2,
+            "occupied": 9,
+            "ratio": 0.025
+          }
+        ],
+        "passabilityRatio": 0.3139,
+        "eventCount": 7
+      },
+      "comparison": {
+        "tileSimilarity": 0.9907,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 2
+      },
+      "assets": {
+        "tileset": "Department store interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1621,
+      "sourceMapId": 606,
+      "sector": 25,
+      "sectorName": "Ciudad del Eclipse",
+      "approvedEpisode": true,
+      "current": {
+        "width": 112,
+        "height": 119,
+        "tilesetId": 2,
+        "tileHash": "9e248a7b31577375452122c8b8f5fa23806cabccdc3ff1608daa811acd1eee4c",
+        "uniqueTiles": 146,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 13328,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 9003,
+            "ratio": 0.6755
+          },
+          {
+            "layer": 2,
+            "occupied": 436,
+            "ratio": 0.0327
+          }
+        ],
+        "passabilityRatio": 0.6685,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 112,
+        "height": 119,
+        "tilesetId": 2,
+        "tileHash": "0baefbc9fa77a31816e31184f7197d676ad7e93866bccbe950bdbefd03f886ee",
+        "uniqueTiles": 144,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 13328,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 9003,
+            "ratio": 0.6755
+          },
+          {
+            "layer": 2,
+            "occupied": 436,
+            "ratio": 0.0327
+          }
+        ],
+        "passabilityRatio": 0.6685,
+        "eventCount": 45
+      },
+      "comparison": {
+        "tileSimilarity": 0.9997,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -36
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1646,
+      "sourceMapId": 631,
+      "sector": 26,
+      "sectorName": "Archipiélago Vapor",
+      "approvedEpisode": true,
+      "current": {
+        "width": 80,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "dc1f35205c2d131dd7634ef4a7fbe5eaa3e674c78d9a90006e49fc62bb4f0295",
+        "uniqueTiles": 114,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2400,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 466,
+            "ratio": 0.1942
+          },
+          {
+            "layer": 2,
+            "occupied": 162,
+            "ratio": 0.0675
+          }
+        ],
+        "passabilityRatio": 0.2362,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 80,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "b991a1d0bc04c90cd9d5728a513269751820ad3f142f579c7de8166f43a1966d",
+        "uniqueTiles": 114,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2400,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 466,
+            "ratio": 0.1942
+          },
+          {
+            "layer": 2,
+            "occupied": 162,
+            "ratio": 0.0675
+          }
+        ],
+        "passabilityRatio": 0.2362,
+        "eventCount": 18
+      },
+      "comparison": {
+        "tileSimilarity": 0.9982,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -9
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1671,
+      "sourceMapId": 656,
+      "sector": 27,
+      "sectorName": "Santuario de Polen",
+      "approvedEpisode": true,
+      "current": {
+        "width": 40,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "6be35bfe1ea4c817bf977b5ad403613e380386d848fea650db288302dc5e76b3",
+        "uniqueTiles": 50,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 135,
+            "ratio": 0.1125
+          },
+          {
+            "layer": 2,
+            "occupied": 24,
+            "ratio": 0.02
+          }
+        ],
+        "passabilityRatio": 0.16,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 40,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "54d65e3eccaa1c7569d1cd116af64f5cdc67056239c62454940d5c33696f9e74",
+        "uniqueTiles": 50,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 135,
+            "ratio": 0.1125
+          },
+          {
+            "layer": 2,
+            "occupied": 24,
+            "ratio": 0.02
+          }
+        ],
+        "passabilityRatio": 0.16,
+        "eventCount": 7
+      },
+      "comparison": {
+        "tileSimilarity": 0.9972,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 2
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1696,
+      "sourceMapId": 681,
+      "sector": 28,
+      "sectorName": "Cañón Espejo",
+      "approvedEpisode": true,
+      "current": {
+        "width": 40,
+        "height": 65,
+        "tilesetId": 14,
+        "tileHash": "d29cd786602b0868da24ff090511e890c09fd515c0b5065d2d50f56a8cbd296c",
+        "uniqueTiles": 29,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 372,
+            "ratio": 0.1431
+          },
+          {
+            "layer": 2,
+            "occupied": 25,
+            "ratio": 0.0096
+          }
+        ],
+        "passabilityRatio": 0.2177,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 40,
+        "height": 65,
+        "tilesetId": 14,
+        "tileHash": "6a969878af050db321b3b88255fbb15de8e66fb80578e1ea5257a64c8fec3348",
+        "uniqueTiles": 29,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 372,
+            "ratio": 0.1431
+          },
+          {
+            "layer": 2,
+            "occupied": 25,
+            "ratio": 0.0096
+          }
+        ],
+        "passabilityRatio": 0.2177,
+        "eventCount": 7
+      },
+      "comparison": {
+        "tileSimilarity": 0.9982,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 2
+      },
+      "assets": {
+        "tileset": "Gyms interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1721,
+      "sourceMapId": 706,
+      "sector": 29,
+      "sectorName": "Bahía Relámpago",
+      "approvedEpisode": true,
+      "current": {
+        "width": 70,
+        "height": 70,
+        "tilesetId": 6,
+        "tileHash": "d998c3bca84c61c6eb1459058a4bc6c540019a15afb35a69fd6ddb208485494f",
+        "uniqueTiles": 19,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 4900,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 4503,
+            "ratio": 0.919
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.8918,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 70,
+        "height": 70,
+        "tilesetId": 6,
+        "tileHash": "28aadf4e5647f28dc8885919b271564a3c8834b52e9869a65251b2b6bd969e1d",
+        "uniqueTiles": 19,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 4900,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 4503,
+            "ratio": 0.919
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.8918,
+        "eventCount": 18
+      },
+      "comparison": {
+        "tileSimilarity": 0.9993,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -9
+      },
+      "assets": {
+        "tileset": "Caves",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1746,
+      "sourceMapId": 731,
+      "sector": 30,
+      "sectorName": "Meseta de Tinta",
+      "approvedEpisode": true,
+      "current": {
+        "width": 55,
+        "height": 40,
+        "tilesetId": 1,
+        "tileHash": "c34c448b0c23ac2b1d9e9caf437cc3459a9187a08039c279f0cb38c1d5209d7e",
+        "uniqueTiles": 117,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 159,
+            "ratio": 0.0723
+          },
+          {
+            "layer": 2,
+            "occupied": 144,
+            "ratio": 0.0655
+          }
+        ],
+        "passabilityRatio": 0.2841,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 55,
+        "height": 40,
+        "tilesetId": 1,
+        "tileHash": "bdc12ea8a2ec6ced115ecd04f481297d3cddaec836b35134a2614f89339b2ebd",
+        "uniqueTiles": 115,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 159,
+            "ratio": 0.0723
+          },
+          {
+            "layer": 2,
+            "occupied": 144,
+            "ratio": 0.0655
+          }
+        ],
+        "passabilityRatio": 0.2841,
+        "eventCount": 19
+      },
+      "comparison": {
+        "tileSimilarity": 0.9988,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -10
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1771,
+      "sourceMapId": 756,
+      "sector": 31,
+      "sectorName": "Reserva de Engranajes",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "7953e9df38642f46640cc5fe5b220f389d676e947b7e6707242b385929072837",
+        "uniqueTiles": 74,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 47,
+            "ratio": 0.1567
+          },
+          {
+            "layer": 2,
+            "occupied": 13,
+            "ratio": 0.0433
+          }
+        ],
+        "passabilityRatio": 0.27,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "e23b34ee44b7935c9e7450406ae395ea9011c2a729c87cc41700c5c5979353fd",
+        "uniqueTiles": 74,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 47,
+            "ratio": 0.1567
+          },
+          {
+            "layer": 2,
+            "occupied": 13,
+            "ratio": 0.0433
+          }
+        ],
+        "passabilityRatio": 0.27,
+        "eventCount": 10
+      },
+      "comparison": {
+        "tileSimilarity": 0.9844,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -1
+      },
+      "assets": {
+        "tileset": "Poke Centre interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1796,
+      "sourceMapId": 781,
+      "sector": 32,
+      "sectorName": "Círculo de Ceniza",
+      "approvedEpisode": true,
+      "current": {
+        "width": 40,
+        "height": 35,
+        "tilesetId": 1,
+        "tileHash": "905b07ba8aacc4b62866cdef636ccbd42c9d7cd0f290363b5717c780386a5fd4",
+        "uniqueTiles": 133,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1400,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 705,
+            "ratio": 0.5036
+          },
+          {
+            "layer": 2,
+            "occupied": 29,
+            "ratio": 0.0207
+          }
+        ],
+        "passabilityRatio": 0.2036,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 40,
+        "height": 35,
+        "tilesetId": 1,
+        "tileHash": "361e887aabafa8e05265cdbb2054a2acd3625433440ebd181da652f2b28f4eaa",
+        "uniqueTiles": 131,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1400,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 705,
+            "ratio": 0.5036
+          },
+          {
+            "layer": 2,
+            "occupied": 29,
+            "ratio": 0.0207
+          }
+        ],
+        "passabilityRatio": 0.2036,
+        "eventCount": 10
+      },
+      "comparison": {
+        "tileSimilarity": 0.9981,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -1
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1821,
+      "sourceMapId": 806,
+      "sector": 33,
+      "sectorName": "Labertino Boreal",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "b9d49ed5a20cbe7410cf3c0d57a7d38598944ed79a8eba5e71804aa21cb9c305",
+        "uniqueTiles": 74,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 47,
+            "ratio": 0.1567
+          },
+          {
+            "layer": 2,
+            "occupied": 13,
+            "ratio": 0.0433
+          }
+        ],
+        "passabilityRatio": 0.27,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 4,
+        "tileHash": "e23b34ee44b7935c9e7450406ae395ea9011c2a729c87cc41700c5c5979353fd",
+        "uniqueTiles": 74,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 47,
+            "ratio": 0.1567
+          },
+          {
+            "layer": 2,
+            "occupied": 13,
+            "ratio": 0.0433
+          }
+        ],
+        "passabilityRatio": 0.27,
+        "eventCount": 12
+      },
+      "comparison": {
+        "tileSimilarity": 0.9889,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -3
+      },
+      "assets": {
+        "tileset": "Poke Centre interior",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1846,
+      "sourceMapId": 831,
+      "sector": 34,
+      "sectorName": "República de Musgo",
+      "approvedEpisode": true,
+      "current": {
+        "width": 50,
+        "height": 40,
+        "tilesetId": 1,
+        "tileHash": "3cf2a2dabb24fceb6133aad00492686b0b6c033e2a5384fc31721edba16b1008",
+        "uniqueTiles": 21,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2000,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 317,
+            "ratio": 0.1585
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.851,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 50,
+        "height": 40,
+        "tilesetId": 1,
+        "tileHash": "5285572651f651d4769c3292478fbabc476ee36bcc0db0440081fceb1c89420c",
+        "uniqueTiles": 19,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2000,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 317,
+            "ratio": 0.1585
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.851,
+        "eventCount": 7
+      },
+      "comparison": {
+        "tileSimilarity": 0.9978,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 2
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1871,
+      "sourceMapId": 856,
+      "sector": 35,
+      "sectorName": "Cinturón Aurora",
+      "approvedEpisode": true,
+      "current": {
+        "width": 60,
+        "height": 64,
+        "tilesetId": 2,
+        "tileHash": "fc71dd514c2b82a0b9e4fbf596500d8de2f98435698bad91d1e5cc6da51a3d68",
+        "uniqueTiles": 155,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 3840,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 1896,
+            "ratio": 0.4938
+          },
+          {
+            "layer": 2,
+            "occupied": 215,
+            "ratio": 0.056
+          }
+        ],
+        "passabilityRatio": 0.2669,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 60,
+        "height": 64,
+        "tilesetId": 2,
+        "tileHash": "8c6e1c6c9b2e6ea53ea044659d3b6bcca542883e9dec55af6edd44dca0b8367b",
+        "uniqueTiles": 153,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 3840,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 1896,
+            "ratio": 0.4938
+          },
+          {
+            "layer": 2,
+            "occupied": 215,
+            "ratio": 0.056
+          }
+        ],
+        "passabilityRatio": 0.2669,
+        "eventCount": 27
+      },
+      "comparison": {
+        "tileSimilarity": 0.9992,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -18
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1896,
+      "sourceMapId": 881,
+      "sector": 36,
+      "sectorName": "Trinchera de Luz",
+      "approvedEpisode": true,
+      "current": {
+        "width": 60,
+        "height": 70,
+        "tilesetId": 3,
+        "tileHash": "18064f31d93b6ae48bc7e7caa29f25a05d18a6eba7b4797d229a97c73c524041",
+        "uniqueTiles": 43,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 4200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 54,
+            "ratio": 0.0129
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.2333,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 60,
+        "height": 70,
+        "tilesetId": 3,
+        "tileHash": "e6ed2a037c1a563fad2a0eceff673cac059cf060933eaecf5eb60052ed7d447c",
+        "uniqueTiles": 42,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 4200,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 54,
+            "ratio": 0.0129
+          },
+          {
+            "layer": 2,
+            "occupied": 0,
+            "ratio": 0
+          }
+        ],
+        "passabilityRatio": 0.2333,
+        "eventCount": 106
+      },
+      "comparison": {
+        "tileSimilarity": 0.9994,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -97
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1921,
+      "sourceMapId": 906,
+      "sector": 37,
+      "sectorName": "Provincia del Eco",
+      "approvedEpisode": true,
+      "current": {
+        "width": 48,
+        "height": 44,
+        "tilesetId": 1,
+        "tileHash": "fff2723a5d3e0fdd45b417c68d8dace1864992728bc9b49b52ebc089ae5d237f",
+        "uniqueTiles": 126,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2112,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 447,
+            "ratio": 0.2116
+          },
+          {
+            "layer": 2,
+            "occupied": 51,
+            "ratio": 0.0241
+          }
+        ],
+        "passabilityRatio": 0.3239,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 48,
+        "height": 44,
+        "tilesetId": 1,
+        "tileHash": "f1381477c14648d128decf6fccefa9edc4ae97218de7cf40ec4536e0ef58b585",
+        "uniqueTiles": 124,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2112,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 447,
+            "ratio": 0.2116
+          },
+          {
+            "layer": 2,
+            "occupied": 51,
+            "ratio": 0.0241
+          }
+        ],
+        "passabilityRatio": 0.3239,
+        "eventCount": 17
+      },
+      "comparison": {
+        "tileSimilarity": 0.9987,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -8
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1946,
+      "sourceMapId": 931,
+      "sector": 38,
+      "sectorName": "Horizonte Fractal",
+      "approvedEpisode": true,
+      "current": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "afa6cb594e2d76323ee35ddac102b928915d146fe366b5d6e99c11a3ed913591",
+        "uniqueTiles": 23,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 0,
+            "ratio": 0
+          },
+          {
+            "layer": 2,
+            "occupied": 2,
+            "ratio": 0.0067
+          }
+        ],
+        "passabilityRatio": 0.0433,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 20,
+        "height": 15,
+        "tilesetId": 3,
+        "tileHash": "382fe9f883fcff231153cd264664730dbcc3fb65f4afb7f283c319ce73564ee8",
+        "uniqueTiles": 22,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 300,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 0,
+            "ratio": 0
+          },
+          {
+            "layer": 2,
+            "occupied": 2,
+            "ratio": 0.0067
+          }
+        ],
+        "passabilityRatio": 0.0433,
+        "eventCount": 2
+      },
+      "comparison": {
+        "tileSimilarity": 0.9989,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": 7
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1971,
+      "sourceMapId": 957,
+      "sector": 39,
+      "sectorName": "Corona de Bruma",
+      "approvedEpisode": true,
+      "current": {
+        "width": 65,
+        "height": 40,
+        "tilesetId": 1,
+        "tileHash": "60102263b1742d55a5865d8ff58c2326c98c9414c494595396738c02bfa015f1",
+        "uniqueTiles": 121,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 165,
+            "ratio": 0.0635
+          },
+          {
+            "layer": 2,
+            "occupied": 159,
+            "ratio": 0.0612
+          }
+        ],
+        "passabilityRatio": 0.1719,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 65,
+        "height": 40,
+        "tilesetId": 1,
+        "tileHash": "fbdc1f7f3de3f4d3b253224af78438c2edddd9beee467fcace581ca1f355a527",
+        "uniqueTiles": 119,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 2600,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 165,
+            "ratio": 0.0635
+          },
+          {
+            "layer": 2,
+            "occupied": 159,
+            "ratio": 0.0612
+          }
+        ],
+        "passabilityRatio": 0.1719,
+        "eventCount": 61
+      },
+      "comparison": {
+        "tileSimilarity": 0.9987,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -52
+      },
+      "assets": {
+        "tileset": "Outside",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    },
+    {
+      "mapId": 1996,
+      "sourceMapId": 982,
+      "sector": 40,
+      "sectorName": "Umbral Mil",
+      "approvedEpisode": true,
+      "current": {
+        "width": 60,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "0b90b023cb1e1aae7bfd6cf47ac80ee209b231b5d3e8f128194d831f019177de",
+        "uniqueTiles": 81,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1800,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 244,
+            "ratio": 0.1356
+          },
+          {
+            "layer": 2,
+            "occupied": 85,
+            "ratio": 0.0472
+          }
+        ],
+        "passabilityRatio": 0.1239,
+        "eventCount": 9
+      },
+      "source": {
+        "width": 60,
+        "height": 30,
+        "tilesetId": 3,
+        "tileHash": "ee293c84c106114b3cf49bb3364207a0b98f08d4308cf58b744979b4c3dc4a8d",
+        "uniqueTiles": 81,
+        "layerOccupancy": [
+          {
+            "layer": 0,
+            "occupied": 1800,
+            "ratio": 1
+          },
+          {
+            "layer": 1,
+            "occupied": 244,
+            "ratio": 0.1356
+          },
+          {
+            "layer": 2,
+            "occupied": 85,
+            "ratio": 0.0472
+          }
+        ],
+        "passabilityRatio": 0.1239,
+        "eventCount": 16
+      },
+      "comparison": {
+        "tileSimilarity": 0.9978,
+        "exactInheritedGeometry": false,
+        "passabilityDelta": 0,
+        "eventDelta": -7
+      },
+      "assets": {
+        "tileset": "Interior general",
+        "tilesetExists": true,
+        "missingAutotiles": [],
+        "missingSprites": []
+      },
+      "events": {
+        "pokeModEvents": 5,
+        "hasFreeReturn": true,
+        "outOfBounds": []
+      },
+      "technicalStatus": "passed",
+      "artDirectionStatus": "customized-needs-game-preview"
+    }
+  ]
+}
