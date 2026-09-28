@@ -1,0 +1,241 @@
+{
+  "title": "Monte Silver — reconstrucción a mano (Falda, Gruta de los Testigos y Cumbre)",
+  "note": "Sustituye los mapas genéricos 2021/2022 por mapas dibujados tile a tile con los tilesets del propio Fire Ash (Outside nevado de Ruta 216/Monte Lanakila y Caves de hielo de Lanakila/Ice Path). Añade la Gruta (2030) donde viven las siete puertas de niebla, ahora custodiadas por Unown que deletrean TESTIGO.",
+  "marker": "PokeMod Multiverso:",
+  "maps": {
+    "falda": {
+      "mapId": 2021,
+      "title": "Monte Silver — Falda",
+      "bgm": "Johto Route",
+      "metadataFrom": 620,
+      "weather": [
+        "Snow",
+        100
+      ]
+    },
+    "gruta": {
+      "mapId": 2030,
+      "title": "Monte Silver — Gruta de los Testigos",
+      "bgm": "PkmRS-MtPyre",
+      "metadataFrom": 939
+    },
+    "cumbre": {
+      "mapId": 2022,
+      "title": "Monte Silver — Cumbre",
+      "bgm": "secretred",
+      "metadataFrom": 620,
+      "weather": [
+        "Blizzard",
+        100
+      ]
+    }
+  },
+  "townMapPosition": [
+    1,
+    25,
+    5
+  ],
+  "battleMusicFrom": 342,
+  "texts": {
+    "toLab": "El sendero baja hasta el laboratorio del profesor Oak.",
+    "plaqueFalda": [
+      "MONTE SILVER — La montaña de las historias sin testigos.",
+      "Una placa añadida a mano: «Lo que aquí se cuenta, no se cuenta dos veces»."
+    ],
+    "plaqueGruta": [
+      "GRUTA DE LOS TESTIGOS — Siete puertas de niebla. Siete Unown que no parpadean.",
+      "Grabado en el hielo: «Léelos en orden y sabrás qué eres para ellos»."
+    ],
+    "plaqueCumbre": [
+      "CUMBRE DEL MONTE SILVER — Aquí solo hablan las batallas.",
+      "Alguien limpió la nieve de la placa hace poco. No hay huellas."
+    ],
+    "refugio": [
+      "Guardiana del refugio: Aquí arriba el frío cansa más que las batallas.",
+      "¿Restauro a tu equipo antes de que sigas?"
+    ],
+    "refugioHealed": "Equipo restaurado. La montaña seguirá ahí cuando vuelvas.",
+    "refugioNo": "Vuelve cuando lo necesites. El refugio no cierra.",
+    "montanero": [
+      "Montañero: ¿Subes a la gruta? Ten cuidado con el hielo: si empiezas a resbalar no paras hasta chocar con algo.",
+      "Dicen que ahí dentro hay siete Unown quietos. Yo no me quedé a contarlos."
+    ],
+    "archivero": [
+      "Soy el Archivero Prohibido. En esta montaña se congelan las historias que nadie se atrevió a terminar.",
+      "Las llamo emisiones: lugares que aparecen cuando alguien susurra un cuento prohibido. Siete siguen activas.",
+      "Entra en la gruta: cada puerta de niebla tiene un Unown que la vigila. Si algo te derrota, cúrate en el refugio y vuelve; si ganas, esa emisión queda en silencio para siempre.",
+      "Y si cruzas la gruta entera, la cumbre te espera. Allí no hay historias: solo un entrenador que no habla."
+    ],
+    "archiveroSealed": [
+      "Archivero Prohibido: Las siete emisiones callaron. TESTIGO. Eso eres ahora.",
+      "La cumbre sigue ahí. Él también."
+    ],
+    "doorIntro": "Un Unown flota inmóvil frente a la puerta de niebla. No parpadea. Deletrea:",
+    "doorSealed": "El Unown sigue ahí, pero la niebla ya no respira. Esta historia tiene testigo.",
+    "doorChoice": [
+      "Entrar",
+      "Quedarse"
+    ],
+    "returnFromEmission": "La niebla te devuelve a la Gruta de los Testigos.",
+    "toGruta": "El hielo de la gruta cruje bajo tus pies.",
+    "toCumbre": "Una corriente de aire helado baja por la escalera. Arriba está la cumbre.",
+    "toFalda": "La gruta se abre otra vez hacia la falda del Monte Silver.",
+    "cumbreDown": "La escalera de hielo baja de vuelta a la gruta."
+  },
+  "unownLetters": [
+    "T",
+    "E",
+    "S",
+    "T",
+    "I",
+    "G",
+    "O"
+  ],
+  "unownSprites": [
+    "UNOWN_19",
+    "UNOWN_4",
+    "UNOWN_18",
+    "UNOWN_19",
+    "UNOWN_8",
+    "UNOWN_6",
+    "UNOWN_14"
+  ],
+  "items": {
+    "falda": [
+      [
+        "RARECANDY",
+        30,
+        9
+      ],
+      [
+        "MAXREPEL",
+        38,
+        13
+      ],
+      [
+        "HYPERPOTION",
+        30,
+        37
+      ]
+    ],
+    "gruta": [
+      [
+        "MAXREVIVE",
+        5,
+        35
+      ],
+      [
+        "PPMAX",
+        58,
+        10
+      ],
+      [
+        "NEVERMELTICE",
+        50,
+        40
+      ]
+    ],
+    "cumbre": [
+      [
+        "FULLRESTORE",
+        5,
+        9
+      ],
+      [
+        "SACREDASH",
+        26,
+        17
+      ]
+    ]
+  },
+  "wildGruta": {
+    "mapId": 2030,
+    "label": "Monte Silver — Gruta de los Testigos",
+    "note": "La gruta de hielo del Monte Silver: la fauna helada de Johto más lo que baja de la cumbre.",
+    "step_chances": {
+      "Cave": 10
+    },
+    "types": {
+      "Cave": [
+        [
+          20,
+          "SNEASEL",
+          88,
+          96
+        ],
+        [
+          18,
+          "GOLBAT",
+          86,
+          94
+        ],
+        [
+          16,
+          "SWINUB",
+          85,
+          92
+        ],
+        [
+          14,
+          "PILOSWINE",
+          90,
+          98
+        ],
+        [
+          12,
+          "DELIBIRD",
+          86,
+          94
+        ],
+        [
+          10,
+          "JYNX",
+          88,
+          96
+        ],
+        [
+          7,
+          "PUPITAR",
+          92,
+          98
+        ],
+        [
+          3,
+          "UNOWN",
+          90,
+          90
+        ]
+      ]
+    }
+  },
+  "arrivals": {
+    "lab": [
+      10,
+      16
+    ],
+    "labArrival": [
+      6,
+      36
+    ],
+    "gruta": [
+      6,
+      9
+    ],
+    "grutaExit": [
+      6,
+      8
+    ],
+    "grutaCumbre": [
+      60,
+      9
+    ],
+    "cumbre": [
+      15,
+      16
+    ],
+    "emisionExit": [
+      36,
+      20
+    ]
+  }
+}

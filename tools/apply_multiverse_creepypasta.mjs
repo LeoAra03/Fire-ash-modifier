@@ -376,7 +376,7 @@ function verify() {
     const info = infos.find(([key]) => Number(key) === spec.mapId)?.[1];
     ok(Boolean(info) && txt(iv(info, "name")) === spec.title, `MapInfos: falta ${spec.title}`);
     const added = events.filter((entry) => entry.name.startsWith(MARKER));
-    ok(added.length === 4, `${spec.mapId}: ${added.length}/4 eventos propios`);
+    ok(added.length >= 4, `${spec.mapId}: ${added.length}/4 eventos propios`);
     for (const entry of added) ok(openCell(parsed, entry.x, entry.y), `${spec.mapId}: evento ${entry.name} sobre celda bloqueada (${entry.x},${entry.y})`);
   }
   for (const boss of roster) {
@@ -421,6 +421,9 @@ function backup() {
 }
 
 if (!VERIFY_ONLY) {
+  if (fs.existsSync(path.join(DATA, mapFile(2030)))) {
+    throw new Error("El Monte Silver ya fue reconstruido por tools/apply_monte_silver_rebuild.mjs (existe Map2030). Este instalador de plantillas ya no debe ejecutarse: sus mapas plantilla 2021/2022 han sido sustituidos.");
+  }
   backup();
   const arrivals = {};
   const built = buildMaps(arrivals);
