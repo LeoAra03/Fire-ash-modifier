@@ -1,0 +1,55 @@
+===============================================================
+ FIRE ASH — A TRAVÉS DEL MULTIVERSO · Pokémon Fire Ash 3.7.1
+ Expansión completa (PokeMod Studio - Fire Ash Edition)
+===============================================================
+
+QUÉ INCLUYE (todo aditivo, postgame, sin romper la historia base)
+----------------------------------------------------------------
+· Mochila libre en TODAS las batallas internas, incluida la torre
+  del Grandeur Club (switch 674 inofensivo; reto del club intacto).
+· Hub postgame en el sótano del laboratorio de Oak (tras el evento
+  de Mew): 5 destinos — Isla Espejo, Bosque Susurrante, Puerto
+  Horizonte, Atlas Mil y Monte Silver.
+· Monte Silver visitable (falda + cumbre) con RED, el Campeón
+  Silencioso, y 7 Emisiones Prohibidas (homenajes creepypasta
+  reinterpretados: La Torre que Escuchaba, La Partida Perdida,
+  La Fosa del Enterrado, La Cinta Carmesí, Ciudad Glitch, El Eco
+  que Jugó Contigo, La Consola de 1996).
+· Isla Espejo: 16 jefes de líneas alternativas con revancha.
+· Bosque Susurrante + misión de Hypno → Puerto Horizonte con 500
+  aventuras en 20 territorios (incluidas 20 manifestaciones
+  Pokégod capturables).
+· Atlas Mil: 1.000 mapas en 40 sectores — 40 episodios artesanales
+  con decisiones, 120 rutas con NPCs y recompensas, 840 Ecos con
+  reglas de anomalía.
+· Zonas salvajes temáticas (86 slots): Monte Silver, Emisiones,
+  Isla Espejo y Bosque Susurrante. Nivel máximo 150.
+
+REGLAS DE ORO
+-------------
+· Los enemigos derrotados quedan derrotados; las revanchas son
+  opcionales por menú.
+· Toda batalla de historia permite perder, con curación y reintento.
+· Todo tiene salida libre; las recompensas principales son únicas.
+· Las partidas guardadas jamás se tocan.
+
+CÓMO JUGAR
+----------
+1. Ejecuta Game.exe (Windows). En Android/Kirin: carpeta en
+   ALMACENAMIENTO INTERNO, no microSD.
+2. Juega la historia de Fire Ash; al terminar el evento de Mew,
+   vuelve a casa: Oak dispara el postgame (switch 429).
+3. Baja al sótano del laboratorio de Oak y usa la cápsula central.
+4. La checklist de prueba manual (96 comprobaciones) está en la
+   documentación del proyecto (docs/QA_MANUAL_PLAYTEST.md).
+
+VERIFICACIÓN DEL PAQUETE
+------------------------
+Este paquete fue compilado y auditado: 2.029 mapas, 0 errores de
+estructura, Kirin sin errores y 254 pruebas automáticas en verde.
+Las 45 advertencias heredadas del juego base original se conservan
+sin tocar (política de no modificar contenido base sin prueba de
+juego).
+
+PokeMod nunca borra partidas guardadas.
+===============================================================
