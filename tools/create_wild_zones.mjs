@@ -1,0 +1,134 @@
+#!/usr/bin/env node
+/**
+ * Autoriza content/wild_zones.json: tablas de encuentros salvajes para las zonas
+ * nuevas del proyecto (Monte Silver, Emisiones, Isla Espejo y Bosque Susurrante).
+ * Solo especies, niveles y objetos existentes en Fire Ash; niveles ≤ 150.
+ *
+ * Uso: node tools/create_wild_zones.mjs
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+
+// slot = [peso, ESPECIE, nivelMín, nivelMáx]
+const zones = [
+  {
+    mapId: 2021, label: "Monte Silver — Falda",
+    note: "La ladera rocosa del Monte Silver: la línea de Larvitar y los Pokémon de altura.",
+    step_chances: { Cave: 12 },
+    types: {
+      Cave: [[20, "LARVITAR", 85, 92], [18, "GOLBAT", 85, 92], [15, "SNEASEL", 86, 94], [15, "URSARING", 88, 96], [12, "DONPHAN", 88, 96], [10, "SKARMORY", 88, 95], [7, "MAGCARGO", 86, 94], [3, "PUPITAR", 92, 98]],
+    },
+  },
+  {
+    mapId: 2022, label: "Monte Silver — Cumbre",
+    note: "La cumbre respira niebla y escaramuzas: encuentros raros entre batallas.",
+    step_chances: { Cave: 30 },
+    types: {
+      Cave: [[22, "SKARMORY", 95, 104], [20, "PUPITAR", 95, 105], [18, "SNEASEL", 95, 103], [15, "MISDREAVUS", 95, 104], [15, "URSARING", 96, 105], [10, "GOLBAT", 94, 102]],
+    },
+  },
+  {
+    mapId: 2023, label: "La Torre que Escuchaba",
+    note: "Las voces de la torre se materializan entre canción y canción.",
+    step_chances: { Cave: 22 },
+    types: {
+      Cave: [[20, "GASTLY", 90, 98], [18, "HAUNTER", 94, 102], [16, "MISDREAVUS", 92, 100], [15, "LITWICK", 90, 98], [15, "DRIFLOON", 90, 98], [16, "SHUPPET", 90, 97]],
+    },
+  },
+  {
+    mapId: 2024, label: "La Partida Perdida",
+    note: "La nieve de la partida perdida guarda criaturas que tampoco encuentran el final.",
+    step_chances: { Cave: 22 },
+    types: {
+      Cave: [[22, "SNEASEL", 92, 102], [18, "SNORUNT", 90, 98], [16, "SWINUB", 90, 98], [15, "SPHEAL", 90, 97], [14, "SMOOCHUM", 90, 97], [15, "DELIBIRD", 92, 99]],
+    },
+  },
+  {
+    mapId: 2025, label: "La Fosa del Enterrado",
+    note: "Lo que la fosa enterró sigue moviéndose bajo la tierra.",
+    step_chances: { Cave: 22 },
+    types: {
+      Cave: [[20, "CUBONE", 92, 100], [18, "YAMASK", 92, 100], [16, "PHANTUMP", 92, 100], [15, "DUSKULL", 92, 99], [16, "SABLEYE", 93, 101], [15, "BALTOY", 90, 97]],
+    },
+  },
+  {
+    mapId: 2026, label: "La Cinta Carmesí",
+    note: "La consola roja escupe chispas y errores con patas.",
+    step_chances: { Cave: 22 },
+    types: {
+      Cave: [[20, "VOLTORB", 92, 100], [18, "MAGNEMITE", 92, 99], [16, "PORYGON", 93, 101], [16, "ELECTRODE", 95, 103], [15, "KOFFING", 92, 99], [15, "ROTOM", 96, 104]],
+    },
+  },
+  {
+    mapId: 2027, label: "Ciudad Glitch",
+    note: "Las calles desbordadas generan datos vivos al caminar.",
+    step_chances: { Cave: 20 },
+    types: {
+      Cave: [[20, "GRIMER", 92, 100], [18, "PORYGON", 93, 101], [16, "DITTO", 94, 102], [16, "UNOWN", 92, 99], [15, "MUK", 96, 104], [15, "PORYGON2", 98, 105]],
+    },
+  },
+  {
+    mapId: 2028, label: "El Eco que Jugó Contigo",
+    note: "La gruta y su agua repiten criaturas con unos segundos de retraso.",
+    step_chances: { Cave: 20, Water: 6 },
+    types: {
+      Cave: [[22, "GOLBAT", 92, 100], [18, "SABLEYE", 93, 101], [16, "DRIFLOON", 92, 100], [15, "HAUNTER", 94, 103], [15, "MISDREAVUS", 93, 102], [14, "DUSKULL", 92, 100]],
+      Water: [[25, "TENTACOOL", 92, 99], [18, "STARYU", 92, 100], [16, "CHINCHOU", 92, 99], [14, "LANTURN", 96, 104], [14, "TENTACRUEL", 96, 104], [13, "SLOWPOKE", 92, 99]],
+    },
+  },
+  {
+    mapId: 2029, label: "La Consola de 1996",
+    note: "La partida de 1996 despliega sus fichas: programas, fantasmas y voltios.",
+    step_chances: { Cave: 22 },
+    types: {
+      Cave: [[20, "PORYGON", 94, 102], [18, "VOLTORB", 93, 100], [16, "GASTLY", 93, 101], [16, "DITTO", 94, 102], [15, "ROTOM", 97, 105], [15, "PORYGON2", 99, 106]],
+    },
+  },
+  {
+    mapId: 1000, label: "Bosque Susurrante",
+    note: "El bosque que susurra tiene manadas propias entre los árboles.",
+    step_chances: { Land: 18 },
+    types: {
+      Land: [[20, "ODDISH", 55, 68], [18, "EXEGGCUTE", 55, 68], [16, "HOOTHOOT", 55, 67], [15, "PINECO", 56, 69], [16, "STANTLER", 58, 72], [15, "PARAS", 54, 67]],
+    },
+  },
+  {
+    mapId: 997, label: "Isla Espejo — Atrio",
+    note: "Reflejos sueltos patrullan el atrio de la isla.",
+    step_chances: { Cave: 20 },
+    types: {
+      Cave: [[20, "MURKROW", 72, 85], [18, "MISDREAVUS", 72, 85], [16, "HAUNTER", 72, 85], [15, "ABSOL", 75, 88], [16, "KADABRA", 72, 84], [15, "ZORUA", 70, 82]],
+    },
+  },
+  {
+    mapId: 998, label: "Isla Espejo — Galería de Leyendas",
+    note: "Crías de líneas legendarias deambulan entre los cuadros.",
+    step_chances: { Cave: 20 },
+    types: {
+      Cave: [[18, "DRATINI", 72, 84], [18, "LARVITAR", 72, 84], [16, "BAGON", 72, 84], [16, "BELDUM", 72, 84], [16, "RIOLU", 70, 82], [16, "ELEKID", 70, 82]],
+    },
+  },
+  {
+    mapId: 999, label: "Isla Espejo — Archivo Cero",
+    note: "Los registros corruptos del archivo se ejecutan solos.",
+    step_chances: { Cave: 20 },
+    types: {
+      Cave: [[20, "PORYGON", 74, 86], [18, "UNOWN", 72, 84], [16, "DITTO", 74, 86], [16, "VOLTORB", 72, 84], [15, "GRIMER", 72, 84], [15, "MAGNEMITE", 72, 83]],
+    },
+  },
+];
+
+const catalog = {
+  title: "Zonas salvajes de la expansión",
+  note: "Encuentros aleatorios temáticos para las zonas nuevas. Los tipos se disparan así: Cave = cualquier paso del mapa; Land = tiles de hierba; Water = al surfear. Horizontes conserva sus manadas scripteadas por diseño.",
+  guarantees: { maxLevel: 150, existingSpeciesOnly: true, noStoryBlocking: true },
+  zones,
+};
+
+const target = path.join(ROOT, "content", "wild_zones.json");
+fs.writeFileSync(target, `${JSON.stringify(catalog, null, 2)}\n`);
+const slots = zones.reduce((sum, zone) => sum + Object.values(zone.types).reduce((s, t) => s + t.length, 0), 0);
+console.log(`Catálogo escrito en ${path.relative(ROOT, target)}: ${zones.length} zonas, ${slots} slots de encuentro.`);

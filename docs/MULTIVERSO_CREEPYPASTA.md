@@ -57,6 +57,10 @@ Todas siguen las reglas de oro del proyecto:
 | EL JUGADOR DE 1996 | SUPERNERD | Porygon-Z 105, Rotom 104, Gengar 105, Chandelure 104, Banette 103, Dusknoir 105 | LIFE ORB |
 | **RED** | CHAMPION_Red | Pikachu 108, Venusaur 106, Charizard 106, Blastoise 106, Lapras 105, Snorlax 107 | LEFTOVERS |
 
+## Fauna salvaje
+
+Las 9 zonas del Monte Silver y las 3 de Isla Espejo tienen tablas de encuentros temáticas en `encounters.dat` (`content/wild_zones.json`): la línea de Larvitar en la montaña, fantasmas en la torre, hielo perdido en la nieve, datos vivos en Ciudad Glitch, agua ecoica al surfear en la gruta (86 slots, niveles 70–108). El Bosque Susurrante suma sus manadas en hierba.
+
 ## Integración
 
 - **Entrada**: laboratorio de Oak (mapa 48) → cápsula del hub → opción «Monte Silver» (postgame, switch 429).

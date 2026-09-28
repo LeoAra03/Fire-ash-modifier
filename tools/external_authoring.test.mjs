@@ -185,5 +185,23 @@ check(multiverseRoster.every((entry) => {
     && battle.pages[1].list.some((command) => command.getIvar("code") === 102);
 }), "los 8 jefes del multiverso quedan derrotados para siempre y solo revanchan por menú");
 
+// --- Zonas salvajes -----------------------------------------------------------
+const wild = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "wild_zones.json"), "utf8"));
+check(wild.zones.length === 13, `el catálogo define ${wild.zones.length}/13 zonas salvajes`);
+check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 150))), "las tablas salvajes respetan niveles 1-150");
+check(wild.zones.some((zone) => zone.mapId === 2021) && wild.zones.some((zone) => zone.mapId === 1000) && wild.zones.some((zone) => zone.types.Water), "hay Monte Silver, Bosque Susurrante y encuentros de agua (surf)");
+{
+  const species = new Set();
+  for (const [key] of readMarshalData("species.dat").pairs) if (key.name) species.add(key.name);
+  check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, sp]) => species.has(sp)))), "todas las especies salvajes existen en Fire Ash");
+}
+{
+  const encounters = readMarshalData("encounters.dat").pairs;
+  check(wild.zones.every((zone) => {
+    const entry = encounters.find(([key]) => (key.name ?? String(key)) === `${zone.mapId}_0`)?.[1];
+    return Boolean(entry) && Object.keys(zone.types).every((type) => (entry.getIvar("@types").pairs.some(([key]) => key.name === type)));
+  }), "las 13 tablas están instaladas en encounters.dat");
+}
+
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);
 if (failed) process.exitCode = 1;

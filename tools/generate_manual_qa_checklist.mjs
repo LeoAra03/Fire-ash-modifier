@@ -83,7 +83,7 @@ const multiverseRows = [...multiverse.bosses, multiverse.champion].map((boss, in
   `| ${index + 1} | ${boss.label} | ${boss.name} | ${boss.homage ?? "el campeón que aguarda en la cumbre"} | [ ] |`);
 md.push(
   "",
-  "## E. Monte Silver — Emisiones Prohibidas (10 comprobaciones)",
+  "## E. Monte Silver — Emisiones Prohibidas y zonas salvajes (12 comprobaciones)",
   "",
   "| # | Zona | Jefe | Esencia del homenaje | Hecho |",
   "|---:|---|---|---|---|",
@@ -91,6 +91,8 @@ md.push(
   "",
   "- [ ] E9. El Archivero Prohibido de la falda explica las emisiones y menciona los reintentos.",
   "- [ ] E10. Desde el hub del laboratorio de Oak, la 5.ª opción (Monte Silver) lleva a la falda y el regreso es libre.",
+  "- [ ] E11. Caminar por la falda/cumbre del Monte Silver y las emisiones: aparecen encuentros salvajes temáticos (Larvitar, fantasmas, datos…) y se pueden capturar.",
+  "- [ ] E12. En El Eco que Jugó Contigo, surfear da encuentros de agua; en el Bosque Susurrante, la hierba da los suyos.",
   "",
   "## F. Regresión general (5 comprobaciones)",
   "",
@@ -105,10 +107,10 @@ md.push(
   "",
   "## Total",
   "",
-  `**${12 + 40 + 10 + 14 + 10 + 8} comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 10 Monte Silver + 8 regresión). Marca este archivo o una copia local; no hace falta commitearlo.`,
+  `**${12 + 40 + 10 + 14 + 12 + 8} comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 12 Monte Silver + 8 regresión). Marca este archivo o una copia local; no hace falta commitearlo.`,
   "",
 );
 
 const target = path.join(ROOT, "docs", "QA_MANUAL_PLAYTEST.md");
 fs.writeFileSync(target, `${md.join("\n")}\n`);
-console.log(`Checklist escrita en ${path.relative(ROOT, target)}: ${12 + 40 + 10 + 14 + 10 + 8} comprobaciones.`);
+console.log(`Checklist escrita en ${path.relative(ROOT, target)}: ${12 + 40 + 10 + 14 + 12 + 8} comprobaciones.`);

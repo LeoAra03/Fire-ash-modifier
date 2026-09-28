@@ -60,7 +60,9 @@ El Cronista de Puerto Horizonte abre el Atlas: **1.000 mapas en 40 sectores**, c
 
 «Fire Ash: A Través del Multiverso»: la montaña de las historias sin testigos. El **Archivero Prohibido** (en la falda) custodia siete **emisiones** —dimensiones creepypasta reinterpretadas con voz propia—: La Torre que Escuchaba, La Partida Perdida, La Fosa del Enterrado, La Cinta Carmesí, Ciudad Glitch, El Eco que Jugó Contigo y La Consola de 1996. En la cumbre, entre las siete puertas de niebla, te espera **Red, el Campeón Silencioso**.
 
-Todas las batallas permiten perder, quedan **derrotadas para siempre** al ganar (con revancha amistosa solo por menú) y tienen curación, recompensa única y salida libre. Detalles en [`MULTIVERSO_CREEPYPASTA.md`](MULTIVERSO_CREEPYPASTA.md).
+Todas las batallas permiten perder, quedan **derrotadas para siempre** al ganar (con revancha amistosa solo por menú) y tienen curación, recompensa única y salida libre.
+
+**Zonas salvajes**: el Monte Silver y las emisiones tienen encuentros aleatorios temáticos (la línea de Larvitar en la montaña, fantasmas en la torre, datos vivos en Ciudad Glitch, agua ecoica al surfear en la gruta…), niveles 85–108. El Bosque Susurrante tiene sus manadas en la hierba (55–72) y Isla Espejo reflejos sueltos (70–88). Detalles en [`MULTIVERSO_CREEPYPASTA.md`](MULTIVERSO_CREEPYPASTA.md).
 
 ## Reglas de oro de la expansión
 
@@ -74,16 +76,17 @@ Todas las batallas permiten perder, quedan **derrotadas para siempre** al ganar 
 ## Verificación antes de publicar tu mod
 
 ```bash
-npm test                      # 51 + 114 + 62 pruebas
+npm test                      # 51 + 114 + 67 pruebas
 npm run verify:atlas          # Tier 2 y Tier 3 compilados y seguros
 npm run verify:grandeur:bag   # Mochila libre en la torre
 npm run verify:oak:hub        # transportador postgame de Oak
 npm run verify:defeats        # derrotas permanentes + revanchas solo por menú
 npm run verify:multiverse     # Monte Silver y las 7 emisiones
+npm run verify:wild           # tablas de encuentros salvajes
 python tools/kirin_check.py pokemon_fire_ash
 ```
 
-La checklist de prueba manual (94 comprobaciones) está en [`QA_MANUAL_PLAYTEST.md`](QA_MANUAL_PLAYTEST.md).
+La checklist de prueba manual (96 comprobaciones) está en [`QA_MANUAL_PLAYTEST.md`](QA_MANUAL_PLAYTEST.md).
 
 ## Entrenar hasta nivel 150
 
