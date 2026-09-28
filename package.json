@@ -25,7 +25,9 @@
     "verify:multiverse": "node tools/apply_multiverse_creepypasta.mjs --verify",
     "create:multiverse": "node tools/create_multiverse_creepypasta.mjs",
     "create:wild": "node tools/create_wild_zones.mjs",
-    "verify:wild": "node tools/apply_wild_zones.mjs --verify"
+    "verify:wild": "node tools/apply_wild_zones.mjs --verify",
+    "rebuild:monte_silver": "node tools/apply_monte_silver_rebuild.mjs",
+    "verify:monte_silver": "node tools/apply_monte_silver_rebuild.mjs --verify"
   },
   "dependencies": {
     "@napi-rs/canvas": "0.1.81"
