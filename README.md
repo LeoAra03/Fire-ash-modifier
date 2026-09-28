@@ -111,7 +111,7 @@ Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narra
 npm ci                              # dependencias del render PNG y de la prueba UI
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
 node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
-node tools/external_authoring.test.mjs  # 39 pruebas de interoperabilidad, estilo, backlog visual y Tier 2
+node tools/external_authoring.test.mjs  # 57 pruebas: interoperabilidad, estilo, Tier 2/3, Mochila y hub de Oak
 npm run verify:atlas               # 120 rutas Tier 2 y 840 Ecos compilados y seguros
 npm run verify:grandeur:bag        # Mochila libre en la torre del laboratorio de Oak
 npm run verify:oak:hub             # transportador postgame del sótano de Oak

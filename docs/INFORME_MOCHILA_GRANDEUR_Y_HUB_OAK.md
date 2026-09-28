@@ -89,7 +89,7 @@ Restaurar cada archivo sobre `Data/` revierte su cambio sin afectar al otro.
 node tools/apply_grandeur_bag_freedom.mjs --verify    OK
 node tools/apply_oak_lab_postgame_hub.mjs --verify    OK
 node tools/apply_isla_espejo_expansion.mjs --verify   OK
-npm test (51 + 114 + 39)                              OK
+npm test (51 + 114 + 57)                              OK
 ```
 
 ## 7. Límite de certificación

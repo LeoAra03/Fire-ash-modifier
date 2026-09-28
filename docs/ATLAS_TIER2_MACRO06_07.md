@@ -95,4 +95,4 @@ pokemon_fire_ash/PokeModBackups/atlas_tier2_macro07_originals/
 
 ## Límite de certificación
 
-El QA estático comprueba datos, flags, recompensas, eventos originales, retorno y consistencia narrativa (39 pruebas acumuladas en `tools/external_authoring.test.mjs`). Ritmo, clipping, densidad de NPCs y sensación de recorrido todavía requieren prueba manual en `Game.exe`.
+El QA estático comprueba datos, flags, recompensas, eventos originales, retorno y consistencia narrativa (57 pruebas acumuladas en `tools/external_authoring.test.mjs`). Ritmo, clipping, densidad de NPCs y sensación de recorrido todavía requieren prueba manual en `Game.exe`.
