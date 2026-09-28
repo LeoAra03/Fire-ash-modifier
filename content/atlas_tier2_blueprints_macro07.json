@@ -1,0 +1,937 @@
+{
+  "version": 1,
+  "macroCycle": 7,
+  "tier2Batches": 2,
+  "blueprints": [
+    {
+      "tier": 2,
+      "routeBatch": 23,
+      "mapId": 1940,
+      "flag": 858,
+      "variable": 254,
+      "title": "El Eco que Contestaba Antes de la Pregunta",
+      "promise": "Un oráculo del pueblo responde antes de que nadie pregunte y las respuestas parecen sabiduría cuando son solo truco.",
+      "objective": "Que las respuestas se emitan después de preguntar y que el oráculo pueda decir que no lo sabe.",
+      "mechanic": {
+        "name": "Pregunta primero",
+        "rules": [
+          "Toda respuesta sigue a una pregunta registrada.",
+          "El oráculo puede responder no sé.",
+          "El silencio se acepta como resultado."
+        ],
+        "failureSafe": "El sendero del pueblo y el regreso permanecen abiertos aunque el oráculo calle."
+      },
+      "npcs": [
+        {
+          "name": "Sía Oráculo",
+          "sprite": "trchar009",
+          "role": "guardiana del oráculo",
+          "partnerPokemon": "TSAREENA",
+          "motivation": "Quiere devolver al oráculo su papel de interlocutor.",
+          "conflict": "Su error anterior fue que programó las respuestas en guion fijo de feria.",
+          "dialogue": {
+            "before": [
+              "Las respuestas salen recitadas, en el mismo orden de siempre.",
+              "me apresuré: escribí un guion y lo llamé sabiduría.",
+              "esperaré la pregunta y permitiré que el oráculo dude."
+            ],
+            "after": [
+              "el oráculo escucha primero y calla cuando no sabe.",
+              "Tsareena anota cada pregunta sin sugerir respuestas.",
+              "las respuestas grabadas se archivan como teatro."
+            ]
+          }
+        },
+        {
+          "name": "Kibo Respuesta",
+          "sprite": "NPC 04",
+          "role": "aldeano creyente",
+          "partnerPokemon": "LURANTIS",
+          "motivation": "Quiere volver a preguntar sin sentirse tonto.",
+          "conflict": "Su error anterior fue que acató las respuestas del guion como órdenes del destino.",
+          "dialogue": {
+            "before": [
+              "Yo ordenaba la cosecha cuando el oráculo ya había hablado.",
+              "tardé en reconocer que obedecía un guion de feria.",
+              "preguntaré en voz alta y aceptaré el no sé."
+            ],
+            "after": [
+              "el pueblo pregunta de nuevo y las cosechas se deciden entre todos.",
+              "Lurantis abre las hojas cuando la pregunta llega completa.",
+              "el oráculo vuelve a ser una conversación."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo funcionará el oráculo?",
+        "options": [
+          "Conversación con no sé permitido",
+          "Consultas rápidas de guion"
+        ],
+        "immediate": [
+          "el pueblo cambia el oráculo por una conversación y archiva el guion.",
+          "las decisiones de cosecha vuelven a la asamblea."
+        ],
+        "later": [
+          "las respuestas grabadas se archivan como teatro.",
+          "el oráculo vuelve a ser una conversación."
+        ]
+      },
+      "reward": {
+        "item": "CUSTAPBERRY",
+        "meaning": "Actúa solo cuando la pregunta ya está dicha del todo."
+      },
+      "progression": {
+        "switchId": 858,
+        "decisionVariable": 254,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 23,
+      "mapId": 1951,
+      "flag": 859,
+      "variable": 255,
+      "title": "El Recuerdo que Enseñaba Venganza",
+      "promise": "Un recuerdo implantado convenció a una dependienta de que fue traicionada y su rencor ajeno pesa sobre todo el centro comercial.",
+      "objective": "Etiquetar los sentimientos implantados y abrir el registro de origen sin exigir perdón a nadie.",
+      "mechanic": {
+        "name": "Memoria con fuente",
+        "rules": [
+          "Los sentimientos implantados se etiquetan como tales.",
+          "El registro de origen queda abierto a la interesada.",
+          "Nadie debe perdonar para cerrar el expediente."
+        ],
+        "failureSafe": "Las salidas del centro comercial y la enfermería permanecen neutrales."
+      },
+      "npcs": [
+        {
+          "name": "Amira Recuerdo",
+          "sprite": "trchar008",
+          "role": "dependienta del centro",
+          "partnerPokemon": "WOBBUFFET",
+          "motivation": "Quiere reconocer qué parte de su rencor es suya.",
+          "conflict": "Su error anterior fue que dejó notas de acusación en los escaparates de sus compañeras.",
+          "dialogue": {
+            "before": [
+              "Las notas de acusación aparecieron en tres escaparates.",
+              "me precipité: sentí la traición y la escribí como verdad.",
+              "leeré el registro de origen antes de escribir otra nota."
+            ],
+            "after": [
+              "las notas se retiraron y el expediente se abrió sin exigir perdón.",
+              "Wobbuffet devuelve las cartas sin comentarlas.",
+              "mi rencor tendrá nombre, fecha y terapeuta."
+            ]
+          }
+        },
+        {
+          "name": "Simón Olvido",
+          "sprite": "NPC 04",
+          "role": "técnico de memoria",
+          "partnerPokemon": "SNORLAX",
+          "motivation": "Quiere diseñar borrados que no dejen rencores prestados.",
+          "conflict": "Su error anterior fue que instaló recuerdos de relleno sin registrar su origen.",
+          "dialogue": {
+            "before": [
+              "Mis instalaciones de recuerdos salieron del taller sin etiqueta.",
+              "tardé en reconocer que un relleno puede volverse herida.",
+              "etiquetaré cada instalación y guardaré su receta."
+            ],
+            "after": [
+              "las instalaciones nuevas salen con etiqueta y receta.",
+              "Snorlax vigila el registro sin leer los sentimientos.",
+              "los borrados pedirán consentimiento por escrito."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se tratará el recuerdo implantado?",
+        "options": [
+          "Etiquetado abierto y sin exigir perdón",
+          "Borrado inmediato del recuerdo"
+        ],
+        "immediate": [
+          "el centro comercial aprueba la etiqueta de origen y abre el registro.",
+          "la sala de memoria publica su reglamento de consentimiento."
+        ],
+        "later": [
+          "mi rencor tendrá nombre, fecha y terapeuta.",
+          "los borrados pedirán consentimiento por escrito."
+        ]
+      },
+      "reward": {
+        "item": "JABOCABERRY",
+        "meaning": "Deja que un rencor prestado se disuelva sin herir a quien lo cargó."
+      },
+      "progression": {
+        "switchId": 859,
+        "decisionVariable": 255,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 23,
+      "mapId": 1958,
+      "flag": 860,
+      "variable": 256,
+      "title": "La Deuda que Heredó un Hijo",
+      "promise": "Una deuda de venganza pasó de padres a hijos y el joven rehabilitado de la reserva carga con un rencor que nunca firmó.",
+      "objective": "Que ninguna deuda de odio se herede y que la rehabilitación del joven se proteja por escrito.",
+      "mechanic": {
+        "name": "Deuda personalísima",
+        "rules": [
+          "Las deudas de rencor no se heredan.",
+          "Las disculpas se registran, no se escenifican.",
+          "La cuenta del joven queda sellada hasta su mayoría."
+        ],
+        "failureSafe": "La salida de la reserva y la atención del centro Pokémon son siempre incondicionales."
+      },
+      "npcs": [
+        {
+          "name": "Cris Herencia",
+          "sprite": "trchar009",
+          "role": "mediadora de la reserva",
+          "partnerPokemon": "FURFROU",
+          "motivation": "Quiere cortar la cadena de rencor sin romper las familias.",
+          "conflict": "Su error anterior fue que presentó la deuda del padre como asunto del hijo.",
+          "dialogue": {
+            "before": [
+              "La mesa de mediación citó al hijo por la deuda del padre.",
+              "me precipité: escribí una herencia donde solo había una historia.",
+              "cerraré la cuenta del padre y sellaré la del joven."
+            ],
+            "after": [
+              "las dos cuentas viven separadas y la familia respira.",
+              "Furfrou camina entre las mesas sin elegir ninguna.",
+              "el expediente del joven se abrirá cuando él decida."
+            ]
+          }
+        },
+        {
+          "name": "Nilo Rehabilitado",
+          "sprite": "NPC 04",
+          "role": "joven en rehabilitación",
+          "partnerPokemon": "MIGHTYENA",
+          "motivation": "Quiere empezar su propia historia sin el apellido del rencor.",
+          "conflict": "Su error anterior fue que cargó con la deuda para parecer leal a su familia.",
+          "dialogue": {
+            "before": [
+              "Yo firmaba los pliegos de una guerra que no empecé.",
+              "tardé en reconocer que la lealtad me pedía ser rehén.",
+              "devolveré los pliegos y firmaré solo mis decisiones."
+            ],
+            "after": [
+              "los pliegos vuelven a sus autores y mi expediente se sella.",
+              "Mightyena me acompaña sin portar ninguna bandera.",
+              "cuando hable con mi familia, será sobre el presente."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué hará la reserva con la deuda de rencor?",
+        "options": [
+          "Declararla personalísima e intransferible",
+          "Renegociarla como asunto familiar"
+        ],
+        "immediate": [
+          "la reserva sella el registro de herencias de rencor.",
+          "el centro Pokémon acompaña al joven en su expediente propio."
+        ],
+        "later": [
+          "el expediente del joven se abrirá cuando él decida.",
+          "cuando hable con mi familia, será sobre el presente."
+        ]
+      },
+      "reward": {
+        "item": "GANLONBERRY",
+        "meaning": "Refuerza la defensa de quien rechazó heredar un rencor que no le pertenecía."
+      },
+      "progression": {
+        "switchId": 860,
+        "decisionVariable": 256,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 23,
+      "mapId": 1965,
+      "flag": 861,
+      "variable": 257,
+      "title": "La Carta que Volvió Culpable al Mensajero",
+      "promise": "Una carta falsa culpó al mensajero de un mensaje que nunca escribió y su memoria ahora carga con la letra ajena.",
+      "objective": "Huellas de tinta por carta, cuarentena de falsificaciones y ninguna culpa sin prueba de trazo.",
+      "mechanic": {
+        "name": "Rastro de tinta",
+        "rules": [
+          "Cada carta conserva su rastro de tinta.",
+          "Las falsificaciones se aíslan sin destruirse.",
+          "Sin trazo no hay culpa."
+        ],
+        "failureSafe": "La oficina de reparto mantiene su servicio y el regreso a la ruta sin interrupciones."
+      },
+      "npcs": [
+        {
+          "name": "Basco Mensajero",
+          "sprite": "trchar008",
+          "role": "cartero de la ruta",
+          "partnerPokemon": "CROBAT",
+          "motivation": "Quiere entregar cartas sin convertirse en sospechoso.",
+          "conflict": "Su error anterior fue que aceptó la culpa para cerrar rápido el asunto.",
+          "dialogue": {
+            "before": [
+              "La firma del pliego no es la mía y aun así la reconocí.",
+              "me precipité: firmé una culpa que mi tinta nunca escribió.",
+              "compararé trazos y devolveré el pliego al expediente."
+            ],
+            "after": [
+              "el trazo ajeno quedó aislado y mi nombre se limpió.",
+              "Crobat vuela la ruta sin cargar pliegos ajenos.",
+              "cada entrega nueva se sella con tinta de la oficina."
+            ]
+          }
+        },
+        {
+          "name": "Ángela Tinta",
+          "sprite": "NPC 04",
+          "role": "grafóloga de la oficina",
+          "partnerPokemon": "MASQUERAIN",
+          "motivation": "Quiere analizar trazos sin fabricar culpables.",
+          "conflict": "Su error anterior fue que escribió un informe que imitaba la letra del cartero.",
+          "dialogue": {
+            "before": [
+              "Mi informe parecía más una condena que un análisis.",
+              "tardé en reconocer que imité su letra para ser convincente.",
+              "separaré observación, conjetura y veredicto."
+            ],
+            "after": [
+              "el informe se reescribió en tres capas legibles.",
+              "Masquerain vuela sobre el papel sin gotear.",
+              "las falsificaciones esperan en cuarentena sin dueño."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo se resolverán las acusaciones postales?",
+        "options": [
+          "Con rastro de tinta y cuarentena",
+          "Con la confesión del cartero"
+        ],
+        "immediate": [
+          "la oficina abre su laboratorio de trazos y publica el reglamento.",
+          "la ruta recibe sellos nuevos de tinta verificable."
+        ],
+        "later": [
+          "cada entrega nueva se sella con tinta de la oficina.",
+          "las falsificaciones esperan en cuarentena sin dueño."
+        ]
+      },
+      "reward": {
+        "item": "BRIGHTPOWDER",
+        "meaning": "Difumina una acusación hasta que exista una prueba con trazo propio."
+      },
+      "progression": {
+        "switchId": 861,
+        "decisionVariable": 257,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 23,
+      "mapId": 1976,
+      "flag": 862,
+      "variable": 258,
+      "title": "El Guardado que Era una Persona",
+      "promise": "Un archivo de recuerdos se ofrece como partida guardable y la custodia de las personas archivadas no tiene dueño claro.",
+      "objective": "Custodia con doble llave, copias con caducidad y derecho a cerrar el archivo propio.",
+      "mechanic": {
+        "name": "Custodia con llave doble",
+        "rules": [
+          "Cada archivo necesita su llave y una llave de custodia.",
+          "Las copias caducan por fecha.",
+          "La persona puede cerrar su archivo cuando quiera."
+        ],
+        "failureSafe": "La salida del distrito y la asistencia del centro Pokémon no dependen del archivo."
+      },
+      "npcs": [
+        {
+          "name": "Alma Guardada",
+          "sprite": "trchar009",
+          "role": "archivera del distrito",
+          "partnerPokemon": "COFAGRIGUS",
+          "motivation": "Quiere custodiar personas sin poseerlas.",
+          "conflict": "Su error anterior fue que presentó el archivo de una persona como partida exportable.",
+          "dialogue": {
+            "before": [
+              "El catálogo ofrece mi archivo como si fuera un perfil.",
+              "me precipité: convertí la custodia en posesión.",
+              "devolveré las llaves y redactaré el consentimiento."
+            ],
+            "after": [
+              "las dobles llaves se firmaron y las copias tienen fecha.",
+              "Cofagrigus cierra el cajón sin mirar el contenido.",
+              "cada persona podrá cerrar su archivo sin dar motivos."
+            ]
+          }
+        },
+        {
+          "name": "Rubén Llave",
+          "sprite": "NPC 04",
+          "role": "familiar custodio",
+          "partnerPokemon": "SPIRITOMB",
+          "motivation": "Quiere guardar recuerdos ajenos sin apropiarse de ellos.",
+          "conflict": "Su error anterior fue que hizo copias de seguridad sin avisar a la persona archivada.",
+          "dialogue": {
+            "before": [
+              "Mis copias de seguridad viajaban en mi propia mochila.",
+              "tardé en reconocer que una copia sin avisar también es una toma.",
+              "pediré permiso y destruiré las copias viejas."
+            ],
+            "after": [
+              "las copias viejas se devolvieron y las nuevas caducan.",
+              "Spiritomb desaparece cuando se firman los permisos.",
+              "el registro de llaves quedará a la vista del distrito."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Quién tendrá la segunda llave del archivo?",
+        "options": [
+          "Un custodio rotatorio del distrito",
+          "La propia familia de la persona"
+        ],
+        "immediate": [
+          "el distrito elige su custodio rotatorio y publica el acta.",
+          "el archivo abre su registro de consentimientos y caducidades."
+        ],
+        "later": [
+          "cada persona podrá cerrar su archivo sin dar motivos.",
+          "el registro de llaves quedará a la vista del distrito."
+        ]
+      },
+      "reward": {
+        "item": "DEEPSEASCALE",
+        "meaning": "Protege la intimidad de quien prefirió no abrirse del todo."
+      },
+      "progression": {
+        "switchId": 862,
+        "decisionVariable": 258,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 24,
+      "mapId": 1983,
+      "flag": 863,
+      "variable": 259,
+      "title": "El Cofre de Recuerdos en Escena",
+      "promise": "Un concurso escénico presta recuerdos ajenos como utilería y los jurados premian habilidades que los participantes no desarrollaron.",
+      "objective": "Préstamos con devolución, originales sellados y un jurado que juzgue técnica propia.",
+      "mechanic": {
+        "name": "Préstamo con devolución",
+        "rules": [
+          "Todo préstamo de recuerdo se devuelve al terminar.",
+          "Los originales permanecen sellados durante la actuación.",
+          "El jurado puntúa técnica, no recuerdos prestados."
+        ],
+        "failureSafe": "La sala de descanso y la salida quedan fuera del concurso."
+      },
+      "npcs": [
+        {
+          "name": "Fina Escena",
+          "sprite": "trchar008",
+          "role": "directora del concurso",
+          "partnerPokemon": "CLEFAIRY",
+          "motivation": "Quiere que el escenario premie a quien actúa, no a quien alquila.",
+          "conflict": "Su error anterior fue que autorizó utilería de recuerdos sin contrato de devolución.",
+          "dialogue": {
+            "before": [
+              "Las utilerías de recuerdo llenaban el escenario sin contrato.",
+              "me precipité: quise un espectáculo brillante y presté vidas ajenas.",
+              "haré contrato de préstamo y sellaré los originales."
+            ],
+            "after": [
+              "los contratos de préstamo cierran con devolución firmada.",
+              "Clefable devuelve cada recuerdo antes del aplauso.",
+              "el jurado recibirá una parrilla de técnica propia."
+            ]
+          }
+        },
+        {
+          "name": "Lino Préstamo",
+          "sprite": "NPC 04",
+          "role": "participante",
+          "partnerPokemon": "AUDINO",
+          "motivation": "Quiere actuar con lo suyo aunque brille menos.",
+          "conflict": "Su error anterior fue que alquiló los recuerdos de su abuela para la final.",
+          "dialogue": {
+            "before": [
+              "La final de mi abuela brillaba más que mi propia voz.",
+              "tardé en reconocer que alquilé mi historia.",
+              "actuaré con mi técnica y devolveré el recuerdo antes del jurado."
+            ],
+            "after": [
+              "mi actuación salió sin utilería ajena y el público aplaudió igual.",
+              "Audino sostiene el contrato de devolución.",
+              "el concurso publicará su reglamento de préstamos."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué premiará el jurado?",
+        "options": [
+          "Técnica propia del participante",
+          "Impacto escénico, venga de donde venga"
+        ],
+        "immediate": [
+          "el concurso publica la parrilla de técnica y retira los préstamos sin contrato.",
+          "los originales vuelven a sus dueños con acta de devolución."
+        ],
+        "later": [
+          "el jurado recibirá una parrilla de técnica propia.",
+          "el concurso publicará su reglamento de préstamos."
+        ]
+      },
+      "reward": {
+        "item": "OVALSTONE",
+        "meaning": "Devuelve redondo y sin grietas cada recuerdo que volvió a su dueño."
+      },
+      "progression": {
+        "switchId": 863,
+        "decisionVariable": 259,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 24,
+      "mapId": 1990,
+      "flag": 864,
+      "variable": 260,
+      "title": "El Archivo que Guardaba el Fin de la Historia",
+      "promise": "Un archivo de la ruta colecciona finales de historias y corre el riesgo de coronar uno solo como canon.",
+      "objective": "Catálogo sin jerarquía: los finales se archivan sin clasificar y los autores pueden seguir escribiendo.",
+      "mechanic": {
+        "name": "Final sin canon",
+        "rules": [
+          "Los finales se catalogan sin ranking.",
+          "Los autores pueden añadir sin borrar.",
+          "El lector elige su propio punto de entrada."
+        ],
+        "failureSafe": "La sala de lectura y el regreso permanecen abiertos a toda hora."
+      },
+      "npcs": [
+        {
+          "name": "Nadia Final",
+          "sprite": "trchar009",
+          "role": "archivera de finales",
+          "partnerPokemon": "PERSIAN",
+          "motivation": "Quiere guardar finales sin coronar a ninguno.",
+          "conflict": "Su error anterior fue que clasificó los finales por calidad y escondió los modestos.",
+          "dialogue": {
+            "before": [
+              "El catálogo ordena los finales como si fueran podios.",
+              "me precipité: apliqué una escala donde solo cabía memoria.",
+              "quitaré los podios y dejaré las fechas y las firmas."
+            ],
+            "after": [
+              "los finales cuelgan en orden de llegada, sin medallas.",
+              "Persian se sienta sobre el cajón de los modestos.",
+              "el catálogo anunciará que ningún final está completo."
+            ]
+          }
+        },
+        {
+          "name": "Gabo Apertura",
+          "sprite": "NPC 04",
+          "role": "lector empedernido",
+          "partnerPokemon": "XATU",
+          "motivation": "Quiere leer sin exigir un final oficial.",
+          "conflict": "Su error anterior fue que presionó al archivo para que publicara un final único.",
+          "dialogue": {
+            "before": [
+              "Yo pedí a gritos un final oficial y cerrado.",
+              "tardé en reconocer que mi impaciencia empujaba al podio.",
+              "elegiré mi entrada y dejaré escribir a los demás."
+            ],
+            "after": [
+              "el archivo recuperó sus entradas múltiples y yo mi curiosidad.",
+              "Xatu señala puertas de lectura sin abrir ninguna.",
+              "los autores recibieron la invitación a continuar."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué publicará el archivo?",
+        "options": [
+          "Catálogo de finales sin ranking",
+          "Edición oficial de un final único"
+        ],
+        "immediate": [
+          "el archivo retira los podios y publica la invitación a continuar.",
+          "los lectores reciben un mapa de entradas posibles."
+        ],
+        "later": [
+          "el catálogo anunciará que ningún final está completo.",
+          "los autores recibieron la invitación a continuar."
+        ]
+      },
+      "reward": {
+        "item": "PETAYABERRY",
+        "meaning": "Impulsa a quien se atreve a escribir otro final sin borrar el anterior."
+      },
+      "progression": {
+        "switchId": 864,
+        "decisionVariable": 260,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 24,
+      "mapId": 2001,
+      "flag": 865,
+      "variable": 261,
+      "title": "La Mesa de los Cuarenta Testigos",
+      "promise": "Cuarenta historias compiten por decidir qué final merece Atlas y la asamblea del centro teme que una sola ocupe el atril.",
+      "objective": "Turno coral: cada historia habla una vez, el acta queda abierta y ninguna decisión es para siempre.",
+      "mechanic": {
+        "name": "Turno coral",
+        "rules": [
+          "Cada historia habla una sola vez por ronda.",
+          "El acta queda abierta a correcciones.",
+          "Toda decisión admite revisión la próxima temporada."
+        ],
+        "failureSafe": "La enfermería del centro y la salida nunca dependen de los turnos."
+      },
+      "npcs": [
+        {
+          "name": "Cira Mesa",
+          "sprite": "trchar008",
+          "role": "coordinadora de la asamblea",
+          "partnerPokemon": "MAGNEZONE",
+          "motivation": "Quiere reunir cuarenta voces sin que ninguna pese de más.",
+          "conflict": "Su error anterior fue que dejó que la historia más sonada acaparara la mesa.",
+          "dialogue": {
+            "before": [
+              "La ronda se cerraba cuando la voz famosa terminaba.",
+              "me precipité: confundí aplauso con derecho a turno.",
+              "mediré los turnos y dejaré el acta corregible."
+            ],
+            "after": [
+              "las cuarenta voces tuvieron su minuto y el acta quedó abierta.",
+              "Magnezone sostiene el cronómetro sin apagar ninguna voz.",
+              "la próxima temporada reabrirá las decisiones."
+            ]
+          }
+        },
+        {
+          "name": "Ugo Testigo",
+          "sprite": "NPC 04",
+          "role": "cronista invitado",
+          "partnerPokemon": "CHATOT",
+          "motivation": "Quiere transcribir sin decidir qué historia importa.",
+          "conflict": "Su error anterior fue que resumía las intervenciones dejando fuera las dudas.",
+          "dialogue": {
+            "before": [
+              "Mis actas eran limpias y mentían por omisión.",
+              "tardé en reconocer que un resumen también elige bando.",
+              "transcribiré dudas, silencios y correcciones."
+            ],
+            "after": [
+              "el acta conserva las cuatro capas de cada intervención.",
+              "Chatot repite lo dicho sin mejorar el tono.",
+              "cualquiera podrá firmar una corrección al acta."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Cómo decidirá la asamblea?",
+        "options": [
+          "Rondas de turno con acta revisable",
+          "Votación rápida al cierre de cada ronda"
+        ],
+        "immediate": [
+          "la asamblea aprueba el turno coral y abre el libro de correcciones.",
+          "el centro Pokémon publica el calendario de rondas."
+        ],
+        "later": [
+          "la próxima temporada reabrirá las decisiones.",
+          "cualquiera podrá firmar una corrección al acta."
+        ]
+      },
+      "reward": {
+        "item": "MARANGABERRY",
+        "meaning": "Eleva la voz de cada historia sin que ninguna ocupe el atril para siempre."
+      },
+      "progression": {
+        "switchId": 865,
+        "decisionVariable": 261,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 24,
+      "mapId": 2008,
+      "flag": 866,
+      "variable": 262,
+      "title": "El Escenario que Reunía a los Ausentes",
+      "promise": "Un escenario evoca ecos de campeones ausentes y el público trata a las apariciones como marionetas de su propio recuerdo.",
+      "objective": "Invitación con nombre: cada eco se anuncia con su nombre verdadero, descansa entre apariciones y sale cuando quiere.",
+      "mechanic": {
+        "name": "Invitación con nombre",
+        "rules": [
+          "Cada eco se anuncia con su nombre verdadero.",
+          "Ninguna aparición se repite sin descanso declarado.",
+          "Todo eco puede retirarse sin pedir permiso."
+        ],
+        "failureSafe": "Las salidas del escenario permanecen iluminadas y libres durante la función."
+      },
+      "npcs": [
+        {
+          "name": "Ámbar Escena",
+          "sprite": "trchar009",
+          "role": "maestra de ceremonias",
+          "partnerPokemon": "DRAGONITE",
+          "motivation": "Quiere honrar a los ausentes sin usarlos de trofeo.",
+          "conflict": "Su error anterior fue que programó tres funciones seguidas con el mismo eco.",
+          "dialogue": {
+            "before": [
+              "El eco del campeón apareció tres veces sin descanso.",
+              "me precipité: llené cartel y vacié la cortesía.",
+              "anunciaré nombres, respetaré descansos y abriré la retirada."
+            ],
+            "after": [
+              "las funciones se anuncian con nombre y pausa.",
+              "Dragonite anuncia cada retirada con la voz baja.",
+              "el público aprendió a aplaudir sin pedir repetición."
+            ]
+          }
+        },
+        {
+          "name": "Nardo Eco",
+          "sprite": "NPC 04",
+          "role": "evocador del escenario",
+          "partnerPokemon": "UNOWN",
+          "motivation": "Quiere evocar sin fabricar voluntades ajenas.",
+          "conflict": "Su error anterior fue que escribió guiones que ponían palabras en boca de los ausentes.",
+          "dialogue": {
+            "before": [
+              "Mis guiones hablaban por quienes ya no pueden corregirme.",
+              "tardé en reconocer que evocar no es ventriloquía.",
+              "devolveré el silencio y citaré solo lo documentado."
+            ],
+            "after": [
+              "las evocaciones citan fuentes y se detienen donde empieza la duda.",
+              "Unown deletrea lo que sí está escrito.",
+              "el escenario guarda sus guiones como homenaje, no como verdad."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué verá el público en la función?",
+        "options": [
+          "Ecos anunciados con nombre y pausa",
+          "Función continua de evocaciones"
+        ],
+        "immediate": [
+          "el escenario publica su reglamento de invitaciones y descansos.",
+          "las salidas se iluminan antes de cada función."
+        ],
+        "later": [
+          "el público aprendió a aplaudir sin pedir repetición.",
+          "el escenario guarda sus guiones como homenaje, no como verdad."
+        ]
+      },
+      "reward": {
+        "item": "DRAGONFANG",
+        "meaning": "Preserva el filo de una voz ausente sin convertirla en arma de espectáculo."
+      },
+      "progression": {
+        "switchId": 866,
+        "decisionVariable": 262,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    },
+    {
+      "tier": 2,
+      "routeBatch": 24,
+      "mapId": 2015,
+      "flag": 867,
+      "variable": 263,
+      "title": "La Torre que Reunía los Cuarenta Archivos",
+      "promise": "En el umbral final, los cuarenta archivos de Atlas compiten por definir un solo cierre y los archiveros temen perder versiones.",
+      "objective": "Cerrar la temporada sin cerrar el archivo: conservar las cuarenta versiones y decidir solo el siguiente capítulo.",
+      "mechanic": {
+        "name": "Cierre con reservas",
+        "rules": [
+          "Las cuarenta versiones se conservan íntegras.",
+          "La decisión se anuncia como capítulo, no como final.",
+          "Todo archivo conserva su llave propia."
+        ],
+        "failureSafe": "La torre mantiene su baliza de retorno y el acceso libre a los archivos en todo momento."
+      },
+      "npcs": [
+        {
+          "name": "Cima Archivo",
+          "sprite": "trchar008",
+          "role": "archivera del umbral",
+          "partnerPokemon": "MAMOSWINE",
+          "motivation": "Quiere sostener mil historias sin elegir una favorita.",
+          "conflict": "Su error anterior fue que propuso fundir los cuarenta archivos en uno solo.",
+          "dialogue": {
+            "before": [
+              "El borrador de cierre fundía los archivos y perdía las manos.",
+              "me precipité: quise un cierre elegante y apliqué una fusión.",
+              "conservaré las llaves y propondré un capítulo."
+            ],
+            "after": [
+              "las cuarenta llaves siguen en su sitio y el capítulo se anuncia.",
+              "Mamoswine sostiene la entrada sin entrar a elegir.",
+              "cada temporada podrá escribir el capítulo siguiente."
+            ]
+          }
+        },
+        {
+          "name": "Ilya Coro",
+          "sprite": "NPC 04",
+          "role": "coordinadora de voces",
+          "partnerPokemon": "PRIMARINA",
+          "motivation": "Quiere dirigir el coro sin imponer una letra.",
+          "conflict": "Su error anterior fue que ensayó un solo tema para todas las historias.",
+          "dialogue": {
+            "before": [
+              "Mi coro ensayaba una letra para cuarenta bocas distintas.",
+              "tardé en reconocer que la armonía exigía borrar diferencias.",
+              "ensayaré con las cuarenta voces y respetaré sus tonos."
+            ],
+            "after": [
+              "el coro sonó desigual y por fin verdadero.",
+              "Primarina marca el compás sin tapar ninguna voz.",
+              "el capítulo se cantará con todas las partituras a la vista."
+            ]
+          }
+        }
+      ],
+      "decision": {
+        "question": "¿Qué decidirá la torre?",
+        "options": [
+          "Un capítulo siguiente con archivos intactos",
+          "Un cierre único que funda los archivos"
+        ],
+        "immediate": [
+          "la torre publica el capítulo y devuelve las cuarenta llaves.",
+          "el umbral abre su calendario de temporadas."
+        ],
+        "later": [
+          "cada temporada podrá escribir el capítulo siguiente.",
+          "el capítulo se cantará con todas las partituras a la vista."
+        ]
+      },
+      "reward": {
+        "item": "PROTECTOR",
+        "meaning": "Custodia las cuarenta versiones mientras el coro decide su próximo capítulo."
+      },
+      "progression": {
+        "switchId": 867,
+        "decisionVariable": 263,
+        "freeReturnMapId": 1001
+      },
+      "safety": {
+        "bagAlwaysAvailable": true,
+        "noForcedBattle": true,
+        "existingChallengePreserved": true,
+        "baseChallengeExpected": false,
+        "freeReturn": true,
+        "rewardOnce": true
+      }
+    }
+  ]
+}

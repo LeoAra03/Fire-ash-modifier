@@ -103,7 +103,7 @@ El estado instalado, la diferencia entre infraestructura y autoría artesanal, y
 node tools/audit_content_progress.mjs
 ```
 
-Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–05 han instalado además 85 rutas Tier 2 en 17 lotes; los bloques recientes están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md) y [`docs/ATLAS_TIER2_MACRO04_05.md`](docs/ATLAS_TIER2_MACRO04_05.md).
+Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–07 han instalado además las 120 rutas Tier 2 en 24 lotes; los bloques recientes están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md), [`docs/ATLAS_TIER2_MACRO04_05.md`](docs/ATLAS_TIER2_MACRO04_05.md) y [`docs/ATLAS_TIER2_MACRO06_07.md`](docs/ATLAS_TIER2_MACRO06_07.md). Los 840 Ecos Tier 3 cierran su capa local (420 desafíos Atlas + 420 reglas reversibles) según [`docs/ATLAS_TIER3_REGLAS.md`](docs/ATLAS_TIER3_REGLAS.md). La Mochila funciona dentro de la torre del Grandeur Club del laboratorio de Oak y el sótano tiene un transportador hacia las expansiones: [`docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md`](docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md).
 
 ## Tests
 
@@ -112,7 +112,9 @@ npm ci                              # dependencias del render PNG y de la prueba
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
 node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
 node tools/external_authoring.test.mjs  # 39 pruebas de interoperabilidad, estilo, backlog visual y Tier 2
-npm run verify:tier2:macro04-05    # 50 rutas recientes compiladas y seguras
+npm run verify:atlas               # 120 rutas Tier 2 y 840 Ecos compilados y seguros
+npm run verify:grandeur:bag        # Mochila libre en la torre del laboratorio de Oak
+npm run verify:oak:hub             # transportador postgame del sótano de Oak
 node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom
 ```
 
