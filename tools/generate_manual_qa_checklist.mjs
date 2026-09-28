@@ -87,13 +87,16 @@ md.push(
   "- [ ] E3. Kirin/Android: recorrer la ruta crítica en el dispositivo y confirmar que los mapas nuevos aparecen con nombre.",
   "- [ ] E4. Los textos de los mapas nuevos se ven completos (sin cortes de línea raros) a resolución de la pantalla del dispositivo.",
   "- [ ] E5. Ninguna puerta de salida quedó bloqueada por los NPCs nuevos en el laboratorio de Oak ni en los hub.",
+  "- [ ] E6. Derrotar a un jefe de Atlas/Isla Espejo/Horizontes, salir y volver: sigue derrotado (página de registro, sin volver a atacar).",
+  "- [ ] E7. Perder a propósito contra otro jefe y confirmar que se puede reintentar con la Mochila disponible.",
+  "- [ ] E8. Tras derrotar a un jefe de Isla Espejo, hablar con él: ofrece revancha amistosa por menú (elegir «Later» no desata ningún combate).",
   "",
   "## Total",
   "",
-  `**${12 + 40 + 10 + 14 + 5} comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 5 regresión). Marca este archivo o una copia local; no hace falta commitearlo.`,
+  `**${12 + 40 + 10 + 14 + 8} comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 8 regresión). Marca este archivo o una copia local; no hace falta commitearlo.`,
   "",
 );
 
 const target = path.join(ROOT, "docs", "QA_MANUAL_PLAYTEST.md");
 fs.writeFileSync(target, `${md.join("\n")}\n`);
-console.log(`Checklist escrita en ${path.relative(ROOT, target)}: ${12 + 40 + 10 + 14 + 5} comprobaciones.`);
+console.log(`Checklist escrita en ${path.relative(ROOT, target)}: ${12 + 40 + 10 + 14 + 8} comprobaciones.`);

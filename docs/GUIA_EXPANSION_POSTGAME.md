@@ -61,7 +61,8 @@ El Cronista de Puerto Horizonte abre el Atlas: **1.000 mapas en 40 sectores**, c
 2. **Ningún combate es obligatorio ni imposible**: los jefes de historia permiten perder y hay curación antes de reintentar.
 3. **Todo tiene salida**: cada zona de la expansión puede volver a Puerto Horizonte y al laboratorio de Oak sin requisitos.
 4. **Las recompensas principales se entregan una sola vez**; con la Mochila llena puedes reintentarlo.
-5. Las partidas guardadas jamás se tocan; los backups de desarrollo están en `pokemon_fire_ash/PokeModBackups/`.
+5. **Un enemigo derrotado queda derrotado**: cada victoria cierra el encuentro (registro/«completado») y no vuelve a atacarte. Si pierdes puedes reintentar cuando quieras, y algunos jefes (Isla Espejo y los conductores de Atlas) te ofrecen una **revancha amistosa por menú** — nunca forzada. Las etapas de entrenamiento del Grandeur Club (Práctica, Gauntlet, Mayhem…) siguen siendo repetibles a propósito: es el gimnasio de la torre donde entrenar hasta nivel 150.
+6. Las partidas guardadas jamás se tocan; los backups de desarrollo están en `pokemon_fire_ash/PokeModBackups/`.
 
 ## Verificación antes de publicar tu mod
 
@@ -70,7 +71,12 @@ npm test                      # 51 + 114 + 57 pruebas
 npm run verify:atlas          # Tier 2 y Tier 3 compilados y seguros
 npm run verify:grandeur:bag   # Mochila libre en la torre
 npm run verify:oak:hub        # transportador postgame de Oak
+npm run verify:defeats        # derrotas permanentes + revanchas solo por menú
 python tools/kirin_check.py pokemon_fire_ash
 ```
 
-La checklist de prueba manual (81 comprobaciones) está en [`QA_MANUAL_PLAYTEST.md`](QA_MANUAL_PLAYTEST.md).
+La checklist de prueba manual (84 comprobaciones) está en [`QA_MANUAL_PLAYTEST.md`](QA_MANUAL_PLAYTEST.md).
+
+## Entrenar hasta nivel 150
+
+El tope del juego está en **nivel 150** (`Settings::MAXIMUM_LEVEL`) con las seis curvas de experiencia válidas por encima de 100. Para subir sin grind repetitivo: las ~1.200 batallas únicas de la expansión (Nv78–150) financian la progresión normal, y las **etapas del Grandeur Club** (líderes y campeones con equipos alternativos, repetibles) son el gimnasio libre para el tramo final. El juego incluye `EXPSHARE`, `LUCKYEGG`, caramelos de experiencia (XS/S/M/L/XL) y `RARECANDY`; Horizontes reparte 40 caramelos como recompensas.

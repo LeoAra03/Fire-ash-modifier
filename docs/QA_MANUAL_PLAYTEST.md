@@ -110,8 +110,11 @@ Cada regla: identificación del eco legible, las tres reglas de contrajuego se e
 - [ ] E3. Kirin/Android: recorrer la ruta crítica en el dispositivo y confirmar que los mapas nuevos aparecen con nombre.
 - [ ] E4. Los textos de los mapas nuevos se ven completos (sin cortes de línea raros) a resolución de la pantalla del dispositivo.
 - [ ] E5. Ninguna puerta de salida quedó bloqueada por los NPCs nuevos en el laboratorio de Oak ni en los hub.
+- [ ] E6. Derrotar a un jefe de Atlas/Isla Espejo/Horizontes, salir y volver: sigue derrotado (página de registro, sin volver a atacar).
+- [ ] E7. Perder a propósito contra otro jefe y confirmar que se puede reintentar con la Mochila disponible.
+- [ ] E8. Tras derrotar a un jefe de Isla Espejo, hablar con él: ofrece revancha amistosa por menú (elegir «Later» no desata ningún combate).
 
 ## Total
 
-**81 comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 5 regresión). Marca este archivo o una copia local; no hace falta commitearlo.
+**84 comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 8 regresión). Marca este archivo o una copia local; no hace falta commitearlo.
 
