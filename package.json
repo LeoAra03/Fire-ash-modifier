@@ -15,6 +15,7 @@
     "verify:tier2:macro06-07": "npm run verify:tier2:macro06 && npm run verify:tier2:macro07",
     "verify:tier3:rules": "node tools/apply_atlas_tier3_rules.mjs --verify",
     "verify:grandeur:bag": "node tools/apply_grandeur_bag_freedom.mjs --verify",
+    "verify:abra:tower": "node tools/apply_emergency_abra_and_free_tower.mjs --verify",
     "verify:oak:hub": "node tools/apply_oak_lab_postgame_hub.mjs --verify",
     "verify:atlas": "npm run verify:tier2:macro04-05 && npm run verify:tier2:macro06-07 && npm run verify:tier3:rules",
     "render:atlas:macro02": "node tools/render_atlas_visual_reference.mjs --macro 02",
@@ -27,7 +28,11 @@
     "create:wild": "node tools/create_wild_zones.mjs",
     "verify:wild": "node tools/apply_wild_zones.mjs --verify",
     "rebuild:monte_silver": "node tools/apply_monte_silver_rebuild.mjs",
-    "verify:monte_silver": "node tools/apply_monte_silver_rebuild.mjs --verify"
+    "verify:monte_silver": "node tools/apply_monte_silver_rebuild.mjs --verify",
+    "rebuild:isla_espejo": "node tools/apply_isla_espejo_maps_rebuild.mjs",
+    "verify:isla_espejo": "node tools/apply_isla_espejo_maps_rebuild.mjs --verify",
+    "rebuild:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs",
+    "verify:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs --verify"
   },
   "dependencies": {
     "@napi-rs/canvas": "0.1.81"

@@ -476,7 +476,7 @@ function freshTemplateMap() {
 function buildHubMap() {
   const map = freshTemplateMap();
   let id = 1;
-  addEvent(map, exitEvent(id++, "Return Ferry", 10, 9, PALLET_MAP, 39, 25,
+  addEvent(map, exitEvent(id++, "Return Ferry", 10, 9, PALLET_MAP, 39, 23,
     "The ferry returns directly to Pallet Town."));
   addEvent(map, simpleNpc(id++, "Mirror Archivist", 14, 11, "trchar028", [
     "Archivist: Welcome to Mirror Island, an echo caught by Professor Oak's receiver.",
@@ -585,7 +585,7 @@ function verify() {
       for (const c of commandsOf(ev)) {
         if (Number(iv(c, "code")) !== 201) continue;
         const p = iv(c, "parameters");
-        ok([33, 997, 998, 999].includes(Number(p[1])), `${file} transfiere a mapa inesperado ${p[1]}`);
+        ok([33, 42, 997, 998, 999].includes(Number(p[1])), `${file} transfiere a mapa inesperado ${p[1]}`);
       }
     }
   }
