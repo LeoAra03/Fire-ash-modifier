@@ -42,7 +42,7 @@
  *    - Si derrota al jugador: desmayo oficial y transporte al Centro Pokémon más cercano.
  * 6. Desenlace con Volus:
  *    - Volus sube a la cima tras el combate felicitando a Ash por salvar el cosmos.
- *    - Si capturamos a Arceus: Volus enloquece de obsesión y desafía a Ash en combate por Arceus (Volus con Giratina Origen Lv. 155).
+ *    - Si capturamos a Arceus: Volus enloquece de obsesión y desafía a Ash con su equipo válido de versión 4 (Nv. 100), reintentable tras perder.
  *    - Si perdemos ante Volus, podemos volver a subir y retarlo hasta derrotarlo.
  *    - Al vencer a Volus, reconoce nuestro vínculo, se marcha y el evento temporal concluye.
  *    - Los entrenadores de los pisos 1-4 desaparecen tras completarse el evento.
@@ -208,7 +208,7 @@ module GameData
   class GrowthRate
     alias _ruta_arceus_original_min_exp minimum_exp_for_level unless method_defined?(:_ruta_arceus_original_min_exp)
     def minimum_exp_for_level(level)
-      return ArgumentError.new("Level #{level} is invalid.") if !level || level <= 0
+      raise ArgumentError.new("Level #{level} is invalid.") if !level || level <= 0
       level = [level, 200].min
       return @exp_values[level] if @exp_values && level < @exp_values.length
       raise "No Exp formula is defined for growth rate #{name}" if !@exp_formula
@@ -256,6 +256,7 @@ end
 ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH = 878
 ARCEUS_ALLIES_GOLD_RED_SWITCH = 879
 ARCEUS_ALLIES_VOLUS_SWITCH = 880
+RUTA_ARCEUS_CAUGHT_SWITCH = 874
 
 RUTA_ARCEUS_PHASE_THRESHOLDS = [0.84, 0.68, 0.52, 0.38, 0.22]
 RUTA_ARCEUS_PHASE_PLATES = [
@@ -278,7 +279,7 @@ RUTA_ARCEUS_MOVE_SETS = [
   [:JUDGMENT, :AEROBLAST, :PRECIPICEBLADES, :ORIGINPULSE],
   [:JUDGMENT, :MOONBLAST, :EARTHPOWER, :DARKVOID],
   [:JUDGMENT, :PSYCHOBOOST, :DRACOMETEOR, :SACREDSWORD],
-  [:JUDGMENT, :WORLDOFCHAOS, :VCREATE, :PRECIPICEBLADES],
+  [:JUDGMENT, :EXTREMESPEED, :VCREATE, :PRECIPICEBLADES],
   [:JUDGMENT, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE]
 ]
 
@@ -287,6 +288,12 @@ class PokeBattle_Battler
   def pbReduceHP(amt, anim = true, registerDamage = true, anyAnim = true)
     if @battle && @battle.respond_to?(:arceus_before_damage)
       amt = @battle.arceus_before_damage(self, amt)
+      # The base battler clamps damage to at least 1 HP. Bypass that clamp when
+      # Arceus is already at 1 HP, or it would faint before the catch turn.
+      if amt == :ruta_arceus_hold_at_one
+        @battle.check_arceus_phase(self)
+        return 0
+      end
     end
     ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
     @battle.check_arceus_phase(self) if @battle && @battle.respond_to?(:check_arceus_phase)
@@ -335,20 +342,12 @@ class PokeBattle_Battle
   def arceus_before_damage(battler, amount)
     return amount if !arceus_divine? || !battler || battler.pokemon.species != :ARCEUS
     arceus_state(battler)
-    amount = [amount, battler.hp - 1].min if battler.hp > 1 && @arceus_phase < 6 && battler.hp - amount <= 0
-    if @arceus_phase >= 6 && !@arceus_capture_ready &&
-       (battler.hp <= 1 || battler.hp - amount <= 0)
-      @arceus_capture_ready = true
-      pbDisplay(_INTL("¡La última barrera de Arceus se rompe! El dios queda debilitado, inmóvil y expuesto a la captura."))
-      pbDisplay(_INTL("¡La animación del debilitamiento final termina! ¡Desde este instante, la probabilidad de captura es del 100%!"))
-      begin
-        pbFlash(Color.new(255, 255, 255, 255), 20)
-        pbShake(10, 10, 12)
-      rescue StandardError
-      end
-      save_arceus_state(battler)
-      amount = battler.hp - 1
-    end
+    return amount if @arceus_capture_ready
+    # Arceus must stay at 1 HP until phase six is complete and the player has
+    # had a real turn to throw a ball. At 1 HP, bypass the stock minimum-1-damage
+    # clamp in PokeBattle_Battler#pbReduceHP.
+    return :ruta_arceus_hold_at_one if battler.hp <= 1
+    return [amount, battler.hp - 1].min if battler.hp - amount <= 0
     return [amount, 0].max
   end
 
@@ -362,7 +361,6 @@ class PokeBattle_Battle
       @arceus_phase += 1
       pbArceusPhase(battler, @arceus_phase)
     end
-    save_arceus_state(battler)
     if @arceus_restores_used < 3 && @arceus_phase >= 4 && ratio <= 0.45
       @arceus_restores_used += 1
       pbDisplay(_INTL("¡El fulgor del Génesis retuerce la realidad alrededor de Arceus!"))
@@ -370,7 +368,19 @@ class PokeBattle_Battle
       battler.pbRecoverHP(battler.totalhp)
       battler.pbCureStatus
       save_arceus_state(battler)
+      return
     end
+    if @arceus_phase >= 6 && battler.hp <= 1 && !@arceus_capture_ready
+      @arceus_capture_ready = true
+      pbDisplay(_INTL("¡La última barrera de Arceus se rompe! El dios queda debilitado, inmóvil y expuesto a la captura."))
+      pbDisplay(_INTL("¡La animación del debilitamiento final termina! ¡Desde este instante, la probabilidad de captura es del 100%!"))
+      begin
+        pbFlash(Color.new(255, 255, 255, 255), 20)
+        pbShake(10, 10, 12)
+      rescue StandardError
+      end
+    end
+    save_arceus_state(battler)
   end
 
   def pbArceusDistortion
@@ -529,9 +539,13 @@ end
 # Pokemon, move, item, stat and animation code still owns the resulting object.
 def pbArceusCinematicPokemon(species, level, moves, item = nil)
   return nil if !GameData::Species.exists?(species)
-  pkmn = Pokemon.new(species, level)
+  max_level = (species == :ARCEUS) ? 200 : (GameData::GrowthRate.max_level || 150).to_i
+  max_level = 150 if max_level < 1
+  safe_level = [[level.to_i, 1].max, max_level].min
+  pkmn = Pokemon.new(species, safe_level)
   GameData::Stat.each_main { |stat| pkmn.iv[stat.id] = 31 }
-  pkmn.ev[:HP] = 252
+  # Keep cinematic teams within the standard 510 total EVs.
+  pkmn.ev[:HP] = 6
   pkmn.ev[:SPEED] = 252
   pkmn.ev[:SPECIAL_ATTACK] = 252
   pkmn.moves = []
@@ -548,7 +562,7 @@ end
 
 def pbArceusCinematicBoss(moves)
   boss = pbArceusCinematicPokemon(:ARCEUS, 200, moves, :LEGENDPLATE)
-  boss.ev[:HP] = 252
+  boss.ev[:HP] = 6
   boss.ev[:SPECIAL_ATTACK] = 252
   boss.ev[:SPEED] = 252
   boss.calc_stats
@@ -704,19 +718,19 @@ def pbArceusCinematicPrelude
   pbMessage(_INTL("Antes de que el polvo se asiente, Gold/Eco aparece junto a Red. Sus equipos entran al campo sin que Ash pueda intervenir."))
   gold = [
     pbArceusCinematicPokemon(:TYPHLOSION, 150, [:FLAMETHROWER, :ERUPTION, :FOCUSBLAST, :SOLARBEAM], :CHOICESPECS),
-    pbArceusCinematicPokemon(:AMPHAROS, 150, [:THUNDERBOLT, :VOLT_SWITCH, :SIGNALBEAM, :THUNDERWAVE], :AMPHAROSITE),
+    pbArceusCinematicPokemon(:AMPHAROS, 150, [:THUNDERBOLT, :VOLTSWITCH, :SIGNALBEAM, :THUNDERWAVE], :AMPHAROSITE),
     pbArceusCinematicPokemon(:HERACROSS, 150, [:MEGAHORN, :CLOSECOMBAT, :ROCKBLAST, :SWORDSDANCE], :HERACRONITE),
     pbArceusCinematicPokemon(:SUDOWOODO, 150, [:STONEEDGE, :WOODHAMMER, :SUCKERPUNCH, :EARTHQUAKE], :LEFTOVERS),
     pbArceusCinematicPokemon(:TOGEKISS, 150, [:AIRSLASH, :DAZZLINGGLEAM, :ROOST, :THUNDERWAVE], :LEFTOVERS),
     pbArceusCinematicPokemon(:LUGIA, 150, [:AEROBLAST, :PSYCHIC, :ROOST, :ICEBEAM], :LEFTOVERS),
   ]
   red = [
-    pbArceusCinematicPokemon(:PIKACHU, 155, [:THUNDERBOLT, :VOLTTACKLE, :IRONTAIL, :QUICKATTACK], :LIGHTBALL),
-    pbArceusCinematicPokemon(:CHARIZARD, 155, [:FLAMETHROWER, :AIRSLASH, :DRAGONPULSE, :ROOST], :CHARIZARDITE),
-    pbArceusCinematicPokemon(:BLASTOISE, 155, [:HYDROPUMP, :AURASPHERE, :ICEBEAM, :RAPIDSPIN], :BLASTOISINITE),
-    pbArceusCinematicPokemon(:VENUSAUR, 155, [:GIGADRAIN, :SLUDGEBOMB, :SLEEPPOWDER, :SYNTHESIS], :VENUSAURITE),
-    pbArceusCinematicPokemon(:SNORLAX, 155, [:BODYSLAM, :CRUNCH, :REST, :CURSE], :LEFTOVERS),
-    pbArceusCinematicPokemon(:MEWTWO, 155, [:PSYSTRIKE, :AURASPHERE, :ICEBEAM, :CALMMIND], :MEWTWONITE),
+    pbArceusCinematicPokemon(:PIKACHU, 150, [:THUNDERBOLT, :VOLTTACKLE, :IRONTAIL, :QUICKATTACK], :LIGHTBALL),
+    pbArceusCinematicPokemon(:CHARIZARD, 150, [:FLAMETHROWER, :AIRSLASH, :DRAGONPULSE, :ROOST], :CHARIZARDITEX),
+    pbArceusCinematicPokemon(:BLASTOISE, 150, [:HYDROPUMP, :AURASPHERE, :ICEBEAM, :RAPIDSPIN], :BLASTOISINITE),
+    pbArceusCinematicPokemon(:VENUSAUR, 150, [:GIGADRAIN, :SLUDGEBOMB, :SLEEPPOWDER, :SYNTHESIS], :VENUSAURITE),
+    pbArceusCinematicPokemon(:SNORLAX, 150, [:BODYSLAM, :CRUNCH, :REST, :CURSE], :LEFTOVERS),
+    pbArceusCinematicPokemon(:MEWTWO, 150, [:PSYSTRIKE, :AURASPHERE, :ICEBEAM, :CALMMIND], :MEWTWONITEX),
   ]
   pbArceusCinematicCpuBattle([
     ["Gold/Eco", :ARC_Ethan, gold],
@@ -730,7 +744,7 @@ def pbArceusCinematicPrelude
   pbArceusCinematicStage(ARCEUS_ALLIES_VOLUS_SWITCH)
   pbArceusCinematicImpact(Tone.new(90, 20, 140, 0))
   pbMessage(_INTL("Una última figura cruza la luz rota: Volus. Giratina Origen entra al campo para desafiar al creador."))
-  giratina = [pbArceusCinematicPokemon(:GIRATINA, 155,
+  giratina = [pbArceusCinematicPokemon(:GIRATINA, 150,
                                         [:SHADOWFORCE, :DRACOMETEOR, :EARTHPOWER, :AURASPHERE],
                                         :GRISEOUSORB)]
   pbArceusCinematicCpuBattle([
@@ -850,6 +864,7 @@ end
 # the engine finish a battle, show the pseudo-PC, and then start another battle
 # with the same Arceus object and its persistent phase/HP state.
 def pbStartArceusDivineBattle
+  $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = false if $game_switches
   pkmn = Pokemon.new(:ARCEUS, 200)
   pkmn.instance_variable_set(:@ruta_arceus_divine, true)
   pkmn.instance_variable_set(:@ruta_arceus_phase, 1)
@@ -874,9 +889,11 @@ def pbStartArceusDivineBattle
   loop do
     snapshot = $Trainer.party.map { |p| [p, p.hp, p.status] }
     decision = pbWildBattleCore(pkmn)
-    if decision == 4 || decision == 1
+    if decision == 4
+      $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true if $game_switches
       return decision
     end
+    return decision if decision == 1
     if decision == 2
       # pbWildBattleCore is run with canLose=true, which normally heals a party
       # after a loss. Restore every HP/status here: the pseudo-PC never heals.
@@ -1906,40 +1923,45 @@ export function buildFloor7() {
       "¡Prepárate, Ash Ketchum! ¡Presencia el poder del Principio y del Fin!",
     ]),
     script("pbStartArceusDivineBattle"),
-    cmd(111, [12, S("$Trainer.party.any? { |p| p.hp > 0 }")]),
-    cmd(121, [SW_ARCEUS_RESOLVED, SW_ARCEUS_RESOLVED, 0]),
-    cmd(223, [tone(255, 255, 255, 255), 30]),
+    // Only a surviving party may resolve the encounter. Indents are essential
+    // in RGSS: nested event branches at indent 0 can run after being skipped.
+    cmd(111, [12, S("$Trainer.party.any? { |p| p && p.hp > 0 }")]),
+    cmd(121, [SW_ARCEUS_RESOLVED, SW_ARCEUS_RESOLVED, 0], 1),
+    cmd(223, [tone(255, 255, 255, 255), 30], 1),
     ...textCommands([
       "El fulgor del ser supremo desciende en una armonía sobrecogedora...",
       "Arceus: Increíble... Tu voluntad no quebrantó la creación, sino que le ha devuelto su equilibrio.",
-    ]),
-    cmd(111, [12, S("$game_switches[874]")]),
+    ], 1),
+    cmd(111, [12, S("$game_switches[874]")], 1),
     ...textCommands([
-      "Arceus: Has demostrado que los humanos y los Pokémon son capaces de sostener el peso de la eternidad. Acepto caminar a tu lado.",
-    ]),
-    cmd(412),
+      "Arceus: Has demostrado que los humanos y los Pokémon pueden sostener el peso de la eternidad. Acepto caminar a tu lado.",
+      "Volo: Espera... ¿Has capturado al mismísimo Gran Uno? ¡No puede ser! ¡Durante eones busqué alcanzar la gloria del creador!",
+      "Volo: ¡No permitiré que un joven mortal lo conserve! ¡Te desafío por el derecho a portar la corona de la existencia!",
+    ], 2),
+    cmd(111, [12, S('pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)')], 2),
+    cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 3),
+    ...textCommands([
+      "Volo: Ja... ja... Es inútil luchar contra el destino, ¿verdad?",
+      "Tu lazo con los Pokémon no proviene de la ambición, sino del amor puro por este mundo. Me rindo ante tu verdad, Ash.",
+    ], 3),
+    cmd(411, [], 2),
+    ...textCommands([
+      "Volo retrocede, todavía decidido. Recupera fuerzas y vuelve cuando estés preparado.",
+    ], 3),
+    cmd(412, [], 2),
+    cmd(411, [], 1),
     ...textCommands([
       "El silencio absoluto envuelve la cima del monte. Las nubes se disipan, revelando el firmamento infinito.",
       "Volo: ¡Ash! ¡Lo... lo lograste! ¡El cosmos ha sido preservado!",
-    ]),
-    cmd(111, [12, S("$game_switches[874]")]),
-    ...textCommands([
-      "Volo: Espera... ¿Eso que llevas contigo... es el mismísimo Gran Uno?!",
-      "Volo: ¡No puede ser! ¡Durante eones busqué alcanzar la gloria del creador! ¡No permitiré que un joven mortal lo conserve!",
-      "Volo: ¡Ash! ¡Te desafío por el derecho a portar la corona de la existencia!",
-    ]),
-    script("pbTrainerBattle(:SECRET_Volo, \\\"Volo\\\", nil, false, 0, true)"),
-    cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0]),
-    ...textCommands([
-      "Volo: Ja... ja... Es inútil luchar contra el destino, ¿verdad?",
-      "Volo: Tu lazo con los Pokémon no proviene de la ambición, sino del amor puro por este mundo. Me rindo ante tu verdad, Ash.",
-    ]),
-    cmd(412),
-    cmd(121, [SW_COMPLETED, SW_COMPLETED, 0]),
+    ], 2),
+    cmd(412, [], 1),
+    cmd(111, [12, S("!$game_switches[874] || $game_switches[875]")], 1),
+    cmd(121, [SW_COMPLETED, SW_COMPLETED, 0], 2),
     ...textCommands([
       "El portal de Puntaneva resuena con un tono apacible. La crisis divina ha concluido.",
-    ]),
-    cmd(412),
+    ], 2),
+    cmd(412, [], 1),
+    cmd(412, [], 0),
     cmd(0),
   ];
 
@@ -1951,12 +1973,17 @@ export function buildFloor7() {
       ...textCommands([
         "Volo: ¡Aún no me rindo! ¡Arceus debe pertenecer a quien comprenda la verdadera grandeza!",
       ]),
-      script("pbTrainerBattle(:SECRET_Volo, \"Volo\", nil, false, 0, true)"),
-      cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0]),
-      cmd(121, [SW_COMPLETED, SW_COMPLETED, 0]),
+      cmd(111, [12, S('pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)')]),
+      cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 1),
+      cmd(121, [SW_COMPLETED, SW_COMPLETED, 0], 1),
       ...textCommands([
         "Volo: Lo entiendo ahora... El creador eligió a su campeón. Buen viaje, Ash.",
-      ]),
+      ], 1),
+      cmd(411, []),
+      ...textCommands([
+        "Volo retrocede. Recupérate y vuelve a desafiarlo cuando quieras.",
+      ], 1),
+      cmd(412),
       cmd(0),
     ],
   });

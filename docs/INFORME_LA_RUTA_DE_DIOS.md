@@ -87,7 +87,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 - Volus sube apresuradamente la escalinata del Altar y felicita a Ash por haber detenido la aniquilación universal.
 - **Si el jugador capturó a Arceus:**
   - Volus palidece y su expresión se transforma en locura y fanatismo: *«Espera... ¿Has... has CAPTURADO a Arceus? ¡¿Cómo te atreves?! ¡Ese poder me corresponde a mí para moldear un nuevo mundo sin dolor! ¡Si no me lo entregas por las buenas, te lo arrebataré en batalla!»*.
-  - Comienza el duelo decisivo contra **Volus** con su tema musical exclusivo (`secretvolo.ogg`) y su equipo legendario (Giratina Forma Origen Lv. 155, Garchomp Lv. 152, Lucario Lv. 150, Togekiss Lv. 150, Roserade Lv. 150, Spiritomb Lv. 150).
+  - Comienza el duelo decisivo contra **Volus** con su tema musical exclusivo (`secretvolo.ogg`) y el equipo registrado de la versión 4 de `SECRET_Volo` (Spiritomb, Giratina y Giratina Forma Origen, Nv. 100). Si Ash pierde, el duelo queda disponible para volver a intentarlo; solo una victoria cierra la historia.
   - *Sin castigo de bloqueo:* Si el jugador es derrotado por Volus, puede volver a subir a la cima cuantas veces necesite para enfrentarlo de nuevo.
   - Al vencer a Volus, este se arrodilla, admite que Arceus no fue dominado sino que eligió a Ash por su corazón puro, entrega 5 Caramelos Raros y se disuelve pacíficamente en la niebla del tiempo.
 - **Fin del Evento Temporal:**

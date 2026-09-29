@@ -7,8 +7,8 @@ import { validatePkregion } from "./region_builder_adapter.mjs";
 import { verify as verifyDirectPackage } from "./build_direct_package.mjs";
 import { inspectStudioProject, STUDIO_COLLECTIONS, STUDIO_VERSION } from "./pokemon_studio_adapter.mjs";
 import { buildAtlasStyleReport } from "./atlas_style_gate.mjs";
-import { ROOT, readMarshalData } from "./lib/fire_ash_registry.mjs";
-import { marshalLoad } from "../web/js/marshal.js";
+import { ROOT, loadFireAshRegistry, readMarshalData } from "./lib/fire_ash_registry.mjs";
+import { marshalLoad, RString, RSymbol } from "../web/js/marshal.js";
 import { parseEvent, parseMap } from "../web/js/rmxp.js";
 
 let passed = 0;
@@ -222,6 +222,80 @@ const cinematicSwitches = cinematicAllies.flatMap((event) => event.getIvar("page
   Number(page.getIvar("condition")?.getIvar("switch1_id"))));
 check(cinematicAllies.length === 5 && [878, 879, 880].every((id) => cinematicSwitches.includes(id)),
   "Map2037 contiene los cinco entrenadores de apoyo en tres entradas coreografiadas");
+const fireAshRegistry = loadFireAshRegistry();
+const supportPokemonCalls = [...rutaScript.matchAll(/pbArceusCinematicPokemon\(:([A-Z0-9_]+),\s*(\d+),\s*\[([^\]]*)\],\s*(?::([A-Z0-9_]+))?\)/g)];
+const supportSpecies = supportPokemonCalls.map((match) => match[1]);
+const supportMoves = supportPokemonCalls.flatMap((match) => [...match[3].matchAll(/:([A-Z0-9_]+)/g)].map((move) => move[1]));
+const supportItems = supportPokemonCalls.map((match) => match[4]).filter(Boolean);
+const supportLevelErrors = supportPokemonCalls.filter((match) => Number(match[2]) > (match[1] === "ARCEUS" ? 200 : 150));
+check(supportPokemonCalls.length === 25 && supportSpecies.every((id) => fireAshRegistry.speciesById.has(id)) &&
+  supportMoves.every((id) => fireAshRegistry.moves.has(id)) && supportItems.every((id) => fireAshRegistry.items.has(id)) &&
+  supportLevelErrors.length === 0 && rutaScript.includes("safe_level = [[level.to_i, 1].max, max_level].min") &&
+  rutaScript.includes('raise ArgumentError.new("Level #{level} is invalid.")') &&
+  (rutaScript.match(/pkmn\.ev\[:HP\] = 6/g) || []).length === 1 && rutaScript.includes("boss.ev[:HP] = 6"),
+  "los equipos cinemáticos usan especies/movimientos/objetos existentes y respetan el tope de nivel");
+const phaseMoveBlock = rutaScript.match(/RUTA_ARCEUS_MOVE_SETS = \[(.*?)\n\]/s)?.[1] ?? "";
+const phaseMoves = [...phaseMoveBlock.matchAll(/:([A-Z0-9_]+)/g)].map((match) => match[1]);
+check(phaseMoves.length > 0 && phaseMoves.every((id) => fireAshRegistry.moves.has(id)),
+  "los seis sets de movimientos de Arceus existen en los datos del juego");
+const requiredTrainerTypes = ["ARC_Cynthia", "ARC_Steven", "ARC_Ethan", "SECRET_Red", "SECRET_Volo", "LEGENDARYPOKEMON"];
+check(requiredTrainerTypes.every((id) => fireAshRegistry.trainerTypes.has(id)),
+  "los tipos de entrenador de las batallas cinemáticas y de Arceus están registrados");
+const voloVersion4Exists = readMarshalData("trainers.dat").pairs.some(([key]) => Array.isArray(key) &&
+  key[0] instanceof RSymbol && key[0].name === "SECRET_Volo" &&
+  key[1] instanceof RString && key[1].text === "Volo" && key[2] === 4);
+check(voloVersion4Exists,
+  "los datos del juego contienen la versión 4 del equipo de Volus usada por el evento");
+check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
+  rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
+  "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");
+const arceusPage = summitBoss?.getIvar("pages")?.[0];
+const arceusCommands = arceusPage?.getIvar("list") ?? [];
+function validConditionalIndents(commands) {
+  const stack = [];
+  for (const command of commands) {
+    const code = Number(command.getIvar("code"));
+    const indent = Number(command.getIvar("indent"));
+    if (code === 111) {
+      if (stack.length && indent <= stack.at(-1).indent) return false;
+      stack.push({ indent, hasElse: false });
+      continue;
+    }
+    if (code === 411) {
+      const top = stack.at(-1);
+      if (!top || top.indent !== indent || top.hasElse) return false;
+      top.hasElse = true;
+      continue;
+    }
+    if (code === 412) {
+      const top = stack.pop();
+      if (!top || top.indent !== indent) return false;
+      continue;
+    }
+    if (stack.length && indent <= stack.at(-1).indent) return false;
+  }
+  return stack.length === 0;
+}
+const arceusRematchCommands = summitBoss?.getIvar("pages")?.[1]?.getIvar("list") ?? [];
+const voloBattlePages = [arceusCommands, arceusRematchCommands];
+const voloBattleCalls = voloBattlePages.flatMap((commands) => commands.flatMap((command, index) => {
+  const source = command.getIvar("parameters")?.[1]?.text ?? "";
+  return Number(command.getIvar("code")) === 111 && source.includes("pbTrainerBattle")
+    ? [{ commands, index, command, source }] : [];
+}));
+const voloVictoryGated = voloBattleCalls.length === 2 && voloBattleCalls.every(({ commands, index, command, source }) => {
+  const next = commands[index + 1];
+  return source === 'pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)' &&
+    Number(next?.getIvar("code")) === 121 && Number(next?.getIvar("indent")) === Number(command.getIvar("indent")) + 1 &&
+    Number(next?.getIvar("parameters")?.[0]) === 875;
+});
+const completionGateIndex = arceusCommands.findIndex((command) =>
+  Number(command.getIvar("code")) === 111 &&
+  (command.getIvar("parameters")?.[1]?.text ?? "").includes("!$game_switches[874] || $game_switches[875]"));
+check(validConditionalIndents(arceusCommands) && validConditionalIndents(arceusRematchCommands) &&
+  voloVictoryGated && completionGateIndex >= 0 &&
+  Number(arceusCommands[completionGateIndex + 1]?.getIvar("parameters")?.[0]) === 876,
+  "Map2037 tiene ramas RGSS válidas; Volus usa una versión válida y solo una victoria cierra la ruta");
 
 // --- Archivo descargable corregido --------------------------------------------
 const gameScripts = readMarshalData("Scripts.rxdata");
