@@ -8,6 +8,8 @@
  * cubra eventos añadidos en el futuro:
  *
  *   - cualquier evento con character_name no vacío ocupa su casilla;
+ *   - un evento visible sigue pudiendo activarse con el botón de acción, incluso
+ *     si el jugador ya estaba sobre su casilla al cargar un mapa;
  *   - un evento sin gráfico conserva el comportamiento Through normal;
  *   - el cambio no modifica mapas ni partidas guardadas.
  *
@@ -56,39 +58,61 @@ function patchGameEvent(code) {
   return { code: code.replace(old, replacement), changed: true };
 }
 
+function patchGamePlayer(code) {
+  const old = "next if event.jumping? || event.over_trigger?";
+  const replacement = "next if event.jumping? || (event.over_trigger? && event.character_name == \"\")";
+  if (code.includes(replacement)) return { code, changed: false };
+  const occurrences = code.split(old).length - 1;
+  if (occurrences !== 5) throw new Error(`Game_Player: se esperaban 5 comprobaciones de interacción, se encontraron ${occurrences}`);
+  return { code: code.replaceAll(old, replacement), changed: true };
+}
+
 function inspect() {
   const scripts = marshalLoad(fs.readFileSync(INPUT));
   const character = section(scripts, "Game_Character");
   const event = section(scripts, "Game_Event");
-  if (!character || !event) throw new Error("No se encontraron las secciones Game_Character y Game_Event");
+  const player = section(scripts, "Game_Player");
+  if (!character || !event || !player) throw new Error("No se encontraron las secciones de colisión esperadas");
   const characterCode = inflate(character);
   const eventCode = inflate(event);
+  const playerCode = inflate(player);
   return {
     scripts,
     characterCode,
     eventCode,
+    playerCode,
     characterFixed: characterCode.includes("next if event.through && event.character_name == \"\"")
       && characterCode.includes("Los eventos con gráfico son sólidos"),
     eventFixed: eventCode.includes("@page.through && @character_name == \"\"")
       && eventCode.includes("Un evento con gráfico ocupa su casilla"),
+    playerFixed: playerCode.includes(replacementForPlayer())
+      && playerCode.includes("event.character_name == \"\""),
   };
+}
+
+function replacementForPlayer() {
+  return "next if event.jumping? || (event.over_trigger? && event.character_name == \"\")";
 }
 
 const state = inspect();
 if (VERIFY_ONLY) {
-  if (!state.characterFixed || !state.eventFixed) {
-    throw new Error("Scripts_corregido/Scripts.rxdata todavía no contiene la corrección de colisiones");
+  if (!state.characterFixed || !state.eventFixed || !state.playerFixed) {
+    throw new Error("Scripts_corregido/Scripts.rxdata todavía no contiene la corrección completa de colisiones");
   }
   console.log("OK: Game_Character bloquea eventos con sprite aunque estén marcados Through");
   console.log("OK: Game_Event hace sólidos los eventos con character_name");
+  console.log("OK: Game_Player conserva la interacción con sprites sólidos");
 } else {
   let changes = 0;
   const character = section(state.scripts, "Game_Character");
   const event = section(state.scripts, "Game_Event");
+  const player = section(state.scripts, "Game_Player");
   const characterPatch = patchGameCharacter(state.characterCode);
   const eventPatch = patchGameEvent(state.eventCode);
+  const playerPatch = patchGamePlayer(state.playerCode);
   if (characterPatch.changed) { setCode(character, characterPatch.code); changes++; }
   if (eventPatch.changed) { setCode(event, eventPatch.code); changes++; }
+  if (playerPatch.changed) { setCode(player, playerPatch.code); changes++; }
   fs.writeFileSync(OUTPUT, Buffer.from(marshalDump(state.scripts)));
   console.log(`Scripts_corregido/Scripts.rxdata actualizado (${changes} secciones de colisión)`);
 }

@@ -41,6 +41,36 @@ const patches = [
       'SPEED_SETTING_FILE = File.join(File.dirname(SaveData::FILE_PATH), "GameSpeedSetting.dat")',
     ].join("\r\n"),
   },
+  {
+    section: "StartGame",
+    old: '    save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)    # (Added by: kraegon)',
+    replacement: [
+      "    # Es un ajuste opcional: si el dispositivo no permite crear este archivo,",
+      "    # la partida principal debe continuar guardándose con normalidad.",
+      "    begin",
+      "      save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)",
+      "    rescue IOError, SystemCallError",
+      "      # Ignorar el ajuste auxiliar en instalaciones Android de solo acceso.",
+      "    end",
+    ].join("\r\n"),
+  },
+  {
+    section: "BetterFastForward",
+    old: [
+      "def save_speed_setting(speed)",
+      "    save_data(speed, SPEED_SETTING_FILE)",
+      "end",
+    ].join("\r\n"),
+    replacement: [
+      "def save_speed_setting(speed)",
+      "    begin",
+      "        save_data(speed, SPEED_SETTING_FILE)",
+      "    rescue IOError, SystemCallError",
+      "        # El guardado de velocidad no debe interrumpir el juego.",
+      "    end",
+      "end",
+    ].join("\r\n"),
+  },
 ];
 
 const scripts = marshalLoad(fs.readFileSync(FILE));

@@ -146,9 +146,10 @@ const scriptChanges = downloadableScripts.flatMap((row, index) => {
 const grandeurChange = scriptChanges.find((change) => change.name === "Grandeur Club");
 const characterChange = scriptChanges.find((change) => change.name === "Game_Character");
 const eventChange = scriptChanges.find((change) => change.name === "Game_Event");
+const playerChange = scriptChanges.find((change) => change.name === "Game_Player");
 const startGameChange = scriptChanges.find((change) => change.name === "StartGame");
 const fastForwardChange = scriptChanges.find((change) => change.name === "BetterFastForward");
-check(scriptChanges.length === 5 && grandeurChange && characterChange && eventChange && startGameChange && fastForwardChange,
+check(scriptChanges.length === 6 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange,
   "el archivo descargable solo cambia Grandeur Club, colisiones y rutas de ajustes");
 check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
   "Grandeur Club conserva la corrección del end sobrante");
@@ -160,11 +161,16 @@ check(characterChange.corrected.includes("next if event.through && event.charact
 check(eventChange.corrected.includes("@through              = @page.through && @character_name == \"\"") &&
   eventChange.corrected.includes("Through solo vale para eventos invisibles"),
   "Game_Event hace sólidos los eventos con character_name al refrescarse");
+check(playerChange.corrected.includes("event.over_trigger? && event.character_name == \"\"") &&
+  (playerChange.corrected.match(/event\.over_trigger\? && event\.character_name/g) || []).length === 5,
+  "Game_Player conserva la interacción con sprites sólidos");
 check(startGameChange.corrected.includes("File.join(File.dirname(SaveData::FILE_PATH), \"PokemonSystemSettings.dat\")") &&
-  !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat"),
-  "los ajustes de partida se guardan junto a Game.rxdata");
+  !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat") &&
+  startGameChange.corrected.includes("rescue IOError, SystemCallError"),
+  "los ajustes de partida se guardan de forma segura junto a Game.rxdata");
 check(fastForwardChange.corrected.includes("File.join(File.dirname(SaveData::FILE_PATH), \"GameSpeedSetting.dat\")") &&
-  !fastForwardChange.corrected.includes("Save Files/GameSpeedSetting.dat"),
+  !fastForwardChange.corrected.includes("Save Files/GameSpeedSetting.dat") &&
+  fastForwardChange.corrected.includes("rescue IOError, SystemCallError"),
   "la velocidad no depende de una carpeta Save Files inexistente");
 
 // --- Mochila libre en el Grandeur Club ---------------------------------------
