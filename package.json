@@ -40,7 +40,8 @@
     "verify:package": "node tools/build_direct_package.mjs --verify",
     "verify:ruta_de_dios:package": "node tools/sync_ruta_de_dios_package.mjs --verify",
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
-    "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify"
+    "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify",
+    "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

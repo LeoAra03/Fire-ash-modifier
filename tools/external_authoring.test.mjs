@@ -243,8 +243,9 @@ const startGameChange = scriptChanges.find((change) => change.name === "StartGam
 const fastForwardChange = scriptChanges.find((change) => change.name === "BetterFastForward");
 const screenToneChange = scriptChanges.find((change) => change.name === "Game_Screen");
 const pictureToneChange = scriptChanges.find((change) => change.name === "Game_Picture");
-check(scriptChanges.length === 8 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange,
-  "el archivo descargable corrige Grandeur Club, colisiones, guardado y tonos de pantalla");
+const sceneMapTransitionChange = scriptChanges.find((change) => change.name === "Scene_Map");
+check(scriptChanges.length === 9 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange && sceneMapTransitionChange,
+  "el archivo descargable corrige Grandeur Club, colisiones, guardado, tonos y transiciones");
 check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
   "Grandeur Club conserva la corrección del end sobrante");
 check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
@@ -265,6 +266,10 @@ check(screenToneChange.corrected.includes("module PokeModToneSafety") &&
 check(pictureToneChange.corrected.includes("PokeModToneSafety.normalize(tone)") &&
   pictureToneChange.corrected.includes("@tone = PokeModToneSafety.normalize(@tone)"),
   "Game_Picture normaliza tonos antes de interpolarlos");
+check(sceneMapTransitionChange.corrected.includes("transition_name = $game_temp.transition_name.to_s") &&
+  sceneMapTransitionChange.corrected.includes('if transition_name == ""') &&
+  !sceneMapTransitionChange.corrected.includes('"Graphics/Transitions/" + $game_temp.transition_name'),
+  "Scene_Map usa la transición predeterminada cuando transition_name es nil");
 check(!startGameChange.corrected.includes("save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)") &&
   !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat") &&
   startGameChange.corrected.includes("SaveData.save_to_file(save_file)"),
