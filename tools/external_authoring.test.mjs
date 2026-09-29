@@ -131,7 +131,28 @@ const tier3Compiled = tier3Entries.every((entry) => {
 });
 check(tier3Compiled, "las 420 reglas compiladas conservan baliza, retorno, microdecisión y self-switch A");
 
-// --- Archivo descargable con el end sobrante corregido ------------------------
+const snowpoint = parseMap(readMarshalData("Map625.rxdata"));
+const arceusPortal = snowpoint.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Portal a la Ruta de Dios");
+check(Boolean(arceusPortal) && arceusPortal.x === 20 && arceusPortal.y === 3 && arceusPortal.pages[0]?.condition?.switch1 === 0,
+  "el portal de Arceus aparece en Puntaneva aunque una partida antigua haya perdido la flag 870");
+const directPackagePortal = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map625.rxdata"))));
+const directPortal = directPackagePortal.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Portal a la Ruta de Dios");
+check(Boolean(directPortal) && directPortal.pages[0]?.condition?.switch1 === 0,
+  "el paquete directo conserva el portal de recuperación sin condición");
+const snowpointGuide = snowpoint.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Volus — Guía Celestial");
+check(Boolean(snowpointGuide) && snowpointGuide.x === 20 && snowpointGuide.y === 15 && snowpointGuide.pages[0]?.condition?.switch1 === 870,
+  "Puntaneva muestra al segundo Volus después de hablar con el primero");
+const approach = parseMap(readMarshalData("Map2030.rxdata"));
+const approachEvents = approach.events.map(({ obj }) => parseEvent(obj));
+check(approach.width === 52 && approach.height === 72 &&
+  approachEvents.some((event) => event.name === "Puerta de la Cima del Génesis") &&
+  approachEvents.some((event) => event.name === "Regreso a Ciudad Puntaneva"),
+  "la aproximación celestial conserva una montaña larga con entrada y retorno");
+const directApproach = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map2030.rxdata"))));
+check(directApproach.width === 52 && directApproach.height === 72,
+  "el paquete directo incluye la montaña celestial previa a los siete pisos");
+
+// --- Archivo descargable corregido --------------------------------------------
 const gameScripts = readMarshalData("Scripts.rxdata");
 const downloadableScripts = marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Scripts.rxdata")));
 check(downloadableScripts.length === gameScripts.length, "el Scripts.rxdata descargable conserva todas las secciones");
@@ -143,11 +164,34 @@ const scriptChanges = downloadableScripts.flatMap((row, index) => {
   if (!sameMetadata) return [{ index, name: row[1].text, invalidMetadata: true }];
   return source === corrected ? [] : [{ index, name: row[1].text, source, corrected }];
 });
-check(scriptChanges.length === 1 && scriptChanges[0].name === "Grandeur Club" &&
-  scriptChanges[0].corrected === scriptChanges[0].source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
-"el archivo descargable solo elimina el end extra de Grandeur Club");
-check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(scriptChanges[0]?.corrected ?? ""),
+const grandeurChange = scriptChanges.find((change) => change.name === "Grandeur Club");
+const characterChange = scriptChanges.find((change) => change.name === "Game_Character");
+const eventChange = scriptChanges.find((change) => change.name === "Game_Event");
+const playerChange = scriptChanges.find((change) => change.name === "Game_Player");
+const startGameChange = scriptChanges.find((change) => change.name === "StartGame");
+const fastForwardChange = scriptChanges.find((change) => change.name === "BetterFastForward");
+check(scriptChanges.length === 6 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange,
+  "el archivo descargable solo cambia Grandeur Club, colisiones y rutas de ajustes");
+check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
+  "Grandeur Club conserva la corrección del end sobrante");
+check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
   "el script descargable no contiene un end extra antes de givePassive");
+check(characterChange.corrected.includes("next if event.through && event.character_name == \"\"") &&
+  characterChange.corrected.includes("Los eventos con gráfico son sólidos"),
+  "Game_Character bloquea sprites aunque la página del evento marque Through");
+check(eventChange.corrected.includes("@through              = @page.through && @character_name == \"\"") &&
+  eventChange.corrected.includes("Through solo vale para eventos invisibles"),
+  "Game_Event hace sólidos los eventos con character_name al refrescarse");
+check(playerChange.corrected.includes("event.over_trigger? && event.character_name == \"\"") &&
+  (playerChange.corrected.match(/event\.over_trigger\? && event\.character_name/g) || []).length === 5,
+  "Game_Player conserva la interacción con sprites sólidos");
+check(!startGameChange.corrected.includes("save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)") &&
+  !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat") &&
+  startGameChange.corrected.includes("SaveData.save_to_file(save_file)"),
+  "la partida principal no depende del archivo auxiliar PokemonSystemSettings");
+check(!fastForwardChange.corrected.includes("save_data(speed, SPEED_SETTING_FILE)") &&
+  !fastForwardChange.corrected.includes("Save Files/GameSpeedSetting.dat"),
+  "la velocidad no depende de una carpeta Save Files inexistente");
 
 // --- Mochila libre en el Grandeur Club ---------------------------------------
 const scriptsRow = (name) => {

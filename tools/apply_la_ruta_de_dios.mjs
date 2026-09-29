@@ -10,8 +10,11 @@
  *    - Diálogo de sorpresa y asombro ("una oportunidad entre una infinidad").
  *    - Terremoto cinemático interrumpiendo la conversación que abre una fractura en Ciudad Puntaneva (Map 625).
  *    - Canalización opcional para obtener las tablas si se desea iniciar directamente en postgame.
- * 2. Acceso desde Ciudad Puntaneva (Map 625) mediante portal de luz ancestral en la entrada del Templo Puntaneva.
- * 3. Montaña Olímpica de 7 pisos (haciendo paralelismo al Monte Corona):
+ * 2. Acceso desde Ciudad Puntaneva (Map 625) mediante una avenida celeste despejada entre árboles,
+ *    un segundo Volus guía y un portal de luz ancestral en la entrada del Templo Puntaneva.
+ * 3. Aproximación Celestial larga (Map 2030, 52x72): cuatro terrazas, escaleras, santuarios,
+ *    hitos de las Regiones y una puerta de transición antes de la montaña principal.
+ * 4. Montaña Olímpica de 7 pisos (haciendo paralelismo al Monte Corona):
  *    - 1F (Map 2031, 40x40): Puerta de las Columnas. Nieve fresca, estatuas grisáceas (1310/3300), columnas de mármol (4453/4409).
  *         Encuentro y combate contra Maya / Dawn (Lv. 130). Ítem oculto: Caramelo Raro.
  *    - 2F (Map 2032, 40x40): Sendero de los Titanes. Laderas escarpadas, monolitos antiguos, nieve eterna.
@@ -58,6 +61,7 @@ import {
 import {
   TileCanvas, passabilityOf, reachableCells, buildMapObject,
 } from "./lib/map_painter.mjs";
+import { tableFromUserDef, tableToUserDef, tableSet } from "../web/js/rmxp.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
@@ -386,8 +390,71 @@ function installTwinleafVolo() {
 }
 
 // ---------------------------------------------------------------------------
-// 4. Portal in Snowpoint City (Map 625)
+// 4. Celestial approach in Snowpoint City (Map 625)
 // ---------------------------------------------------------------------------
+const SNOWPOINT_TREE_TILES = new Set([4480, 4481, 4484, 4485, 4488, 4489, 4496, 4497]);
+
+function paintSnowpointRoute(mapObj) {
+  const table = tableFromUserDef(iv(mapObj, "data"));
+  const pathTile = (x, y, z = 0) => {
+    let tile = 658;
+    if (z === 0) {
+      if (x === 18) tile = 657;
+      else if (x === 22) tile = 659;
+      if (y === 4) tile = x === 18 ? 649 : x === 22 ? 651 : 650;
+      if (y === 27) tile = x === 18 ? 665 : x === 22 ? 667 : 666;
+    }
+    tableSet(table, x, y, z, tile);
+  };
+
+  // Apertura deliberada de una avenida de cinco casillas: conserva la ciudad,
+  // pero elimina solo los árboles que bloqueaban el acceso al santuario.
+  for (let y = 4; y <= 7; y++) for (let x = 18; x <= 22; x++) {
+    for (let z = 1; z <= 2; z++) tableSet(table, x, y, z, 0);
+    if (SNOWPOINT_TREE_TILES.has(tableGetSafe(table, x, y, 0))) tableSet(table, x, y, 0, 4457);
+    pathTile(x, y);
+  }
+  for (let y = 14; y <= 27; y++) for (let x = 18; x <= 22; x++) {
+    for (let z = 1; z <= 2; z++) tableSet(table, x, y, z, 0);
+    if (SNOWPOINT_TREE_TILES.has(tableGetSafe(table, x, y, 0))) tableSet(table, x, y, 0, 4457);
+    pathTile(x, y);
+  }
+
+  mapObj.setIvar("data", tableToUserDef(table));
+}
+
+function tableGetSafe(table, x, y, z) {
+  if (x < 0 || y < 0 || z < 0 || x >= table.x || y >= table.y || z >= table.z) return 0;
+  return table.data[x + table.x * (y + table.y * z)];
+}
+
+function installSnowpointGuide() {
+  const map625 = readRx("Map625.rxdata");
+  const events = iv(map625, "events").pairs;
+  const idx = events.findIndex(([, ev]) => txt(iv(ev, "name")).includes("Volus — Guía Celestial"));
+  if (idx !== -1) events.splice(idx, 1);
+
+  const guide = event(103, "Volus — Guía Celestial", 20, 15, [
+    page({
+      cond: condition({ sw: SW_UNLOCKED }),
+      gfx: graphic("SECRET_Volo", 2),
+      list: [
+        ...textCommands([
+          "Volus: Has regresado. Mi otro yo de Pueblo Hojaverde despertó la resonancia, pero yo he preparado el sendero.",
+          "Volus: Los árboles que sellaban el antiguo camino ya no ocultan la avenida. Sigue la nieve azulada hacia el santuario.",
+          "Volus: Más allá del portal comienza una montaña que no pertenece a una sola región: en sus piedras duermen las leyendas de todos los Pokémon.",
+          "Volus: No corras. Observa las columnas, las fuentes y las luces; cada detalle marca el ascenso hacia la Cima del Génesis.",
+          "Volus: Cuando estés listo, avanza al norte. Yo custodiaré este umbral hasta que el cielo vuelva a cerrarse.",
+        ]),
+        cmd(0),
+      ],
+    }),
+    page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] }),
+  ]);
+  events.push([103, guide]);
+  writeRx("Map625.rxdata", map625);
+}
+
 function installSnowpointPortal() {
   const map625 = readRx("Map625.rxdata");
   const events = iv(map625, "events").pairs;
@@ -397,7 +464,10 @@ function installSnowpointPortal() {
 
   const id = 102;
   const p1 = page({
-    cond: condition({ sw: SW_UNLOCKED }),
+    // Recuperación: el portal debe aparecer aunque una partida antigua no conserve
+    // correctamente el switch 870. La conversación de Volus sigue siendo la ruta
+    // narrativa, pero la entrada no queda bloqueada por una flag perdida.
+    cond: condition(),
     gfx: graphic("Object ball special", 2),
     trigger: 0,
     list: [
@@ -405,15 +475,16 @@ function installSnowpointPortal() {
       cmd(101, [S("¿Deseas ascender por 'La Ruta de Dios' hacia las alturas del cosmos?\\ch[1,2,Ascender,Permanecer en Puntaneva]")]),
       cmd(111, [12, S("$game_variables[1] == 1")]),
       cmd(101, [S("Una ráfaga de viento sagrado envuelve tu cuerpo...")]),
-      transfer(2031, 20, 36, 8, 1),
+      transfer(2030, 26, 68, 8, 1),
       cmd(412),
       cmd(0),
     ],
   });
 
+  paintSnowpointRoute(map625);
   events.push([id, event(id, "Portal a la Ruta de Dios", 20, 3, [p1])]);
   writeRx("Map625.rxdata", map625);
-  console.log("OK: Portal to La Ruta de Dios installed in Snowpoint City (Map 625).");
+  console.log("OK: Portal and celestial avenue installed in Snowpoint City (Map 625).");
 }
 
 // ---------------------------------------------------------------------------
@@ -515,6 +586,102 @@ function drawPineGrove(canvas, x, y, w, h) {
       drawFrostedPineTree(canvas, x + i, y + j + 3);
     }
   }
+}
+
+function buildCelestialApproach() {
+  const W = 52, H = 72;
+  const cv = new TileCanvas(W, H, 1);
+  cv.fillAll(0, 4457);
+
+  // La aproximación no es una pantalla corta: es una montaña escalonada con
+  // cuatro terrazas, curvas de procesión y un cielo cada vez más despejado.
+  plantNaturalFlankPines(cv, W, H);
+  for (let y = 6; y < H - 4; y += 7) {
+    drawFrostedPineTree(cv, 6, y);
+    drawFrostedPineTree(cv, 8, y + 2);
+    drawFrostedPineTree(cv, W - 7, y + 1);
+    drawFrostedPineTree(cv, W - 9, y + 3);
+  }
+
+  // Avenida serpenteante: cada giro obliga a leer el relieve antes de seguir.
+  drawPavedRoad(cv, 24, 60, 5, 12);
+  drawPavedRoad(cv, 24, 46, 5, 16);
+  drawPavedRoad(cv, 24, 43, 13, 8);
+  drawPavedRoad(cv, 32, 27, 5, 18);
+  drawPavedRoad(cv, 15, 27, 22, 6);
+  drawPavedRoad(cv, 14, 13, 5, 17);
+  drawPavedRoad(cv, 14, 10, 15, 6);
+  drawPavedRoad(cv, 24, 4, 5, 10);
+
+  // Muros de montaña y escaleras talladas en puntos de cambio de altitud.
+  drawCoronetCliff(cv, 5, 57, 42, 3, { stairs: [25] });
+  drawCoronetCliff(cv, 7, 40, 38, 3, { stairs: [33] });
+  drawCoronetCliff(cv, 5, 23, 42, 3, { stairs: [15] });
+  drawCoronetCliff(cv, 10, 10, 32, 3, { stairs: [25] });
+
+  // Santuarios laterales: no bloquean la avenida, pero hacen que cada terraza
+  // parezca una estación de peregrinaje y no un pasillo repetido.
+  drawWhiteMarbleDais(cv, 7, 48, 11, 5, { stairs: [11] });
+  drawSunburstAltar(cv, 10, 48);
+  drawColumn(cv, 8, 46); drawColumn(cv, 15, 46);
+  drawGuardianStatue(cv, 9, 54); drawGuardianStatue(cv, 16, 54);
+
+  drawWhiteMarbleDais(cv, 37, 30, 10, 5, { stairs: [40] });
+  drawCosmicGateway(cv, 39, 30);
+  drawColumn(cv, 38, 28); drawColumn(cv, 44, 28);
+  drawGuardianStatue(cv, 39, 36); drawGuardianStatue(cv, 44, 36);
+
+  drawCosmicPool(cv, 7, 17);
+  drawCosmicPool(cv, 39, 16);
+  drawCosmicPool(cv, 39, 51);
+  drawMonolith(cv, 9, 28); drawMonolith(cv, 43, 24);
+  drawMonolith(cv, 9, 63); drawMonolith(cv, 43, 63);
+
+  // Praderas con encuentros, suspendidas entre los muros y la ruta principal.
+  drawWildGrassPatch(cv, 7, 35, 6, 7);
+  drawWildGrassPatch(cv, 39, 39, 6, 7);
+  drawWildGrassPatch(cv, 7, 58, 7, 7);
+  drawWildGrassPatch(cv, 38, 58, 7, 7);
+
+  // Cima de transición: el mármol blanco anuncia que ya no se pisa una montaña
+  // normal. Desde aquí se entra a la primera puerta de La Ruta de Dios.
+  drawWhiteMarbleDais(cv, 18, 2, 17, 6, { stairs: [25] });
+  drawSunburstAltar(cv, 24, 2);
+  drawCosmicGateway(cv, 20, 3);
+  drawCosmicGateway(cv, 31, 3);
+  drawColumn(cv, 22, 3); drawColumn(cv, 29, 3);
+
+  const map = buildMapObject(cv, { name: "La Ruta de Dios — Aproximación Celestial", bgm: "Legend Sinnoh" });
+  addEventToMap(map, transferEvent(1, "Regreso a Ciudad Puntaneva", 26, 70, 625, 20, 5, 2, [
+    "El sendero desciende entre nubes plateadas hacia Ciudad Puntaneva.",
+    "¿Deseas regresar al refugio de Sinnoh?",
+  ]));
+  addEventToMap(map, transferEvent(2, "Puerta de la Cima del Génesis", 26, 5, 2031, 20, 36, 8, [
+    "La última escalinata atraviesa las nubes. Más allá comienza la montaña sagrada.",
+    "¿Deseas cruzar hacia la Puerta de las Columnas?",
+  ]));
+
+  const beacon = (id, name, x, y, lines) => addEventToMap(map, event(id, name, x, y, [
+    page({ gfx: graphic("Object ball special", 2), list: [...textCommands(lines), cmd(0)] }),
+  ]));
+  beacon(3, "Hito de las Regiones", 21, 54, [
+    "Un hito de hielo refleja imágenes de muchas regiones: bosques, volcanes, océanos y ciudades suspendidas.",
+    "La inscripción dice: Ningún Pokémon pertenece a un solo horizonte; todos comparten el mismo cielo.",
+  ]);
+  beacon(4, "Hito del Tiempo", 37, 36, [
+    "La piedra vibra con un tic tac remoto. El aire parece recordar cada paso dado por los entrenadores del mundo.",
+    "Una segunda inscripción responde: El valor de un viaje se mide por los lazos que deja atrás.",
+  ]);
+  beacon(5, "Hito del Vínculo", 12, 19, [
+    "Una luz cálida late bajo el hielo. No es una recompensa: es el recuerdo de cada compañero que te ha seguido.",
+  ]);
+  beacon(6, "Hito del Origen", 30, 8, [
+    "Las nubes se abren por un instante. Una silueta de Arceus aparece en el firmamento y luego se convierte en estrellas.",
+    "El camino termina solo cuando el corazón deja de mirar hacia arriba.",
+  ]);
+  addEventToMap(map, hiddenItemEvent(7, "Reliquia de la Aurora", 37, 43, "STARDUST", "Polvo Estelar"));
+  addEventToMap(map, hiddenItemEvent(8, "Reliquia del Vínculo", 13, 29, "RARECANDY", "Caramelo Raro"));
+  return { map, cv };
 }
 
 function drawWildGrassPatch(canvas, x, y, w, h) {
@@ -1150,6 +1317,7 @@ export function buildFloor7() {
 function registerMapsInMapInfos() {
   const infos = readRx("MapInfos.rxdata");
   const floorNames = [
+    [2030, "La Ruta de Dios — Aproximación Celestial"],
     [2031, "La Ruta de Dios — 1F: Puerta de las Columnas"],
     [2032, "La Ruta de Dios — 2F: Sendero de los Titanes"],
     [2033, "La Ruta de Dios — 3F: Terraza del Aura"],
@@ -1174,12 +1342,12 @@ function registerMapsInMapInfos() {
   }
 
   writeRx("MapInfos.rxdata", infos);
-  console.log("OK: Maps 2031..2037 registered in MapInfos.rxdata.");
+  console.log("OK: Maps 2030..2037 registered in MapInfos.rxdata.");
 }
 
 function registerMapMetadata() {
   const meta = readRx("map_metadata.dat");
-  for (let id = 2031; id <= 2037; id++) {
+  for (let id = 2030; id <= 2037; id++) {
     const existing = meta.pairs.find(([k]) => k === id);
     const obj = new RObject("GameData::MapMetadata", [
       ["@id", id],
@@ -1210,13 +1378,22 @@ function registerMapMetadata() {
   }
 
   writeRx("map_metadata.dat", meta);
-  console.log("OK: Maps 2031..2037 metadata registered in map_metadata.dat.");
+  console.log("OK: Maps 2030..2037 metadata registered in map_metadata.dat.");
 }
 
 function registerEncounters() {
   const enc = readRx("encounters.dat");
 
   const tables = [
+    {
+      map: 2030,
+      mons: [
+        [30, Sy("SNORUNT"), 105, 110],
+        [25, Sy("SNEASEL"), 105, 110],
+        [25, Sy("SWINUB"), 105, 110],
+        [20, Sy("CHIMECHO"), 105, 110],
+      ],
+    },
     {
       map: 2031,
       mons: [
@@ -1348,11 +1525,16 @@ function install() {
   installScriptSection();
   installSwitches();
 
-  console.log("Installing Volo in Twinleaf Town and Portal in Snowpoint City...");
+  console.log("Installing Volus, the celestial avenue, and the portal in Snowpoint City...");
   installTwinleafVolo();
   installSnowpointPortal();
+  installSnowpointGuide();
 
-  console.log("Building the 7 Floors of La Ruta de Dios (Maps 2031..2037)...");
+  console.log("Building the long celestial approach and the 7 Floors of La Ruta de Dios (Maps 2030..2037)...");
+  const approach = buildCelestialApproach();
+  validateFloorReachability("Celestial approach", approach.map, approach.cv, [26, 68]);
+  writeRx("Map2030.rxdata", approach.map);
+
   const f1 = buildFloor1();
   validateFloorReachability("Floor 1", f1.map, f1.cv, [20, 36]);
   writeRx("Map2031.rxdata", f1.map);
@@ -1386,7 +1568,7 @@ function install() {
   registerMapMetadata();
   registerEncounters();
 
-  console.log("All 7 Floors of La Ruta de Dios successfully built and installed!");
+  console.log("The celestial approach and all 7 Floors of La Ruta de Dios successfully built and installed!");
 }
 
 function verify() {
@@ -1413,11 +1595,14 @@ function verify() {
 
   // 4. Verify Portal in Map 625
   const map625 = readRx("Map625.rxdata");
-  const portalEv = iv(map625, "events").pairs.find(([, ev]) => txt(iv(ev, "name")).includes("Portal a la Ruta de Dios"));
+  const snowEvents = iv(map625, "events").pairs;
+  const portalEv = snowEvents.find(([, ev]) => txt(iv(ev, "name")).includes("Portal a la Ruta de Dios"));
   if (!portalEv) errors.push("Missing Portal event in Map 625");
+  const guideEv = snowEvents.find(([, ev]) => txt(iv(ev, "name")).includes("Volus — Guía Celestial"));
+  if (!guideEv) errors.push("Missing second Volus guide in Map 625");
 
-  // 5. Verify 7 Map Files
-  for (let id = 2031; id <= 2037; id++) {
+  // 5. Verify the approach plus the 7 sacred floors
+  for (let id = 2030; id <= 2037; id++) {
     const f = path.join(DATA, `Map${id}.rxdata`);
     if (!fs.existsSync(f)) {
       errors.push(`Missing Map${id}.rxdata`);
