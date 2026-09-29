@@ -7,6 +7,7 @@ import { validatePkregion } from "./region_builder_adapter.mjs";
 import { inspectStudioProject, STUDIO_COLLECTIONS, STUDIO_VERSION } from "./pokemon_studio_adapter.mjs";
 import { buildAtlasStyleReport } from "./atlas_style_gate.mjs";
 import { ROOT, readMarshalData } from "./lib/fire_ash_registry.mjs";
+import { marshalLoad } from "../web/js/marshal.js";
 import { parseEvent, parseMap } from "../web/js/rmxp.js";
 
 let passed = 0;
@@ -129,6 +130,24 @@ const tier3Compiled = tier3Entries.every((entry) => {
     && commands.some((command) => command.getIvar("code") === 123 && Number(command.getIvar("parameters")?.[1]) === 0);
 });
 check(tier3Compiled, "las 420 reglas compiladas conservan baliza, retorno, microdecisión y self-switch A");
+
+// --- Archivo descargable con el end sobrante corregido ------------------------
+const gameScripts = readMarshalData("Scripts.rxdata");
+const downloadableScripts = marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Scripts.rxdata")));
+check(downloadableScripts.length === gameScripts.length, "el Scripts.rxdata descargable conserva todas las secciones");
+const scriptChanges = downloadableScripts.flatMap((row, index) => {
+  const original = gameScripts[index];
+  const sameMetadata = row[0] === original[0] && row[1].text === original[1].text;
+  const source = zlib.inflateSync(Buffer.from(original[2].bytes)).toString("utf8");
+  const corrected = zlib.inflateSync(Buffer.from(row[2].bytes)).toString("utf8");
+  if (!sameMetadata) return [{ index, name: row[1].text, invalidMetadata: true }];
+  return source === corrected ? [] : [{ index, name: row[1].text, source, corrected }];
+});
+check(scriptChanges.length === 1 && scriptChanges[0].name === "Grandeur Club" &&
+  scriptChanges[0].corrected === scriptChanges[0].source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
+"el archivo descargable solo elimina el end extra de Grandeur Club");
+check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(scriptChanges[0]?.corrected ?? ""),
+  "el script descargable no contiene un end extra antes de givePassive");
 
 // --- Mochila libre en el Grandeur Club ---------------------------------------
 const scriptsRow = (name) => {
