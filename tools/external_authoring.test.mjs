@@ -171,7 +171,8 @@ check(directZipError === null,
   directZipError === null
     ? "el ZIP descargable está al día con Paquete_directo/"
     : `el ZIP descargable está desactualizado: ${directZipError}`);
-const rutaScript = zlib.inflateSync(Buffer.from(readMarshalData("Scripts.rxdata").find((row) => row[1].text === "PokeMod_RutaDeDios")[2].bytes)).toString("utf8");
+const gameScriptRows = readMarshalData("Scripts.rxdata");
+const rutaScript = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "PokeMod_RutaDeDios")[2].bytes)).toString("utf8");
 check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes("pbSnowpointTreeCell?") &&
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
   "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
@@ -246,6 +247,63 @@ const voloVersion4Exists = readMarshalData("trainers.dat").pairs.some(([key]) =>
   key[1] instanceof RString && key[1].text === "Volo" && key[2] === 4);
 check(voloVersion4Exists,
   "los datos del juego contienen la versión 4 del equipo de Volus usada por el evento");
+const nonArceusLevel200Entries = [];
+for (const [, trainer] of readMarshalData("trainers.dat").pairs) {
+  for (const pokemon of trainer.getIvar("@pokemon") ?? []) {
+    const fields = new Map((pokemon.pairs ?? []).map(([key, value]) => [key instanceof RSymbol ? key.name : "", value]));
+    const species = fields.get("species") instanceof RSymbol ? fields.get("species").name : "";
+    if (Number(fields.get("level")) === 200 && species !== "ARCEUS") {
+      nonArceusLevel200Entries.push(`trainer:${species}`);
+    }
+  }
+}
+for (const [, encounter] of readMarshalData("encounters.dat").pairs) {
+  for (const [, rows] of encounter.getIvar("@types")?.pairs ?? []) {
+    for (const row of rows ?? []) {
+      const species = row?.[1] instanceof RSymbol ? row[1].name : "";
+      if (species !== "ARCEUS" && (Number(row?.[2]) === 200 || Number(row?.[3]) === 200)) {
+        nonArceusLevel200Entries.push(`encounter:${species}`);
+      }
+    }
+  }
+}
+const level200Constructor = /(?:Pokemon|PokeBattle_Pokemon)\s*\.\s*new\s*\(\s*(?:(?:PBSpecies::)|:)?(?!ARCEUS\b)[A-Z][A-Z0-9_]*\s*,\s*200\b|pbWildBattle(?:Core)?\s*\(\s*(?:(?:PBSpecies::)|:)?(?!ARCEUS\b)[A-Z][A-Z0-9_]*\s*,\s*200\b/g;
+const explicitNonArceusLevel200 = [];
+function scanForOtherLevel200(source, label) {
+  for (const match of source.matchAll(level200Constructor)) explicitNonArceusLevel200.push(`${label}:${match[0]}`);
+}
+for (const row of gameScriptRows) {
+  try { scanForOtherLevel200(zlib.inflateSync(Buffer.from(row[2].bytes)).toString("utf8"), `script:${row[1]?.text ?? "unknown"}`); } catch {}
+}
+function collectEventScriptText(commands = []) {
+  const lines = [];
+  for (const command of commands) {
+    const code = Number(command.getIvar("code"));
+    const parameters = command.getIvar("parameters") ?? [];
+    if (code === 355 || code === 655) {
+      if (parameters[0] instanceof RString) lines.push(parameters[0].text);
+    } else if (code === 111 && parameters[1] instanceof RString) {
+      lines.push(parameters[1].text);
+    }
+  }
+  return lines.join("\n");
+}
+const gameDataDirectory = path.join(ROOT, "pokemon_fire_ash", "Data");
+for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.rxdata$/.test(name))) {
+  const map = readMarshalData(file);
+  for (const [, event] of map.getIvar("events")?.pairs ?? []) {
+    for (const page of event.getIvar("pages") ?? []) {
+      scanForOtherLevel200(collectEventScriptText(page.getIvar("list") ?? []), `${file}:${event.getIvar("name")?.text ?? "event"}`);
+    }
+  }
+}
+const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
+const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*150\b/.test(settingsSource) &&
+  rutaScript.includes("max = (@species == :ARCEUS) ? 200 : GameData::GrowthRate.max_level") &&
+  rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
+  explicitNonArceusLevel200.length === 0;
+check(levelCapIsArceusOnly,
+  "Arceus es la única especie autorizada al nivel 200 en el tope global, equipos, encuentros y scripts del juego");
 check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
   rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
   "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");
