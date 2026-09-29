@@ -24,17 +24,26 @@
 
 ---
 
-## 4. Estructura de los 7 Pisos (Paralelismo al Monte Corona)
+## 4. Estructura de los 7 Pisos (Arquitectura Olímpica y Monte Corona)
+
+Todos los mapas han sido construidos con las paletas y reglas de diseño arquitectónico auténticas de **Monte Corona Pasado (`Map990`)**, **Columna Lanza (`Map970`)** y las **Ruinas Blancas (`Map771`)**:
+- **Acantilados Escalonados del Monte Corona (`1249..1273`):** Cornisas superiores sombreadas, fachadas de roca viva y cornisas inferiores, con escaleras de piedra tallada (`1243`) transitables sobre suelo de basalto (`1257`).
+- **Plataformas de Mármol Sagrado (`4400..4418`):** Tarimas ceremoniales de mármol blanco con bordes labrados curvos y escalinatas de plata y piedra (`1161..1162`).
+- **Columnata de Estatuas Guardianas Colosales (`4307` / `4315`):** Estatuas de dos piezas de bestias sagradas y dragones ancestrales sobre pedestales grabados con inscripciones míticas.
+- **Bosques de Pinos Escarchados de Sinnoh (`4480..4497`):** Árboles perennes cubiertos de nieve agrupados orgánicamente con profundidad en los flancos de la cordillera.
+- **Hierba Nevada Silvestre (`447`):** Hierba con etiqueta de terreno 2 (`:Grass`), que activa encuentros salvajes y animación de crujido en la nieve.
+- **Pozas Celestiales y Portales Cósmicos (`4430..4463`):** Fuentes de agua mística y arcos de distorsión azul zafiro.
+- **Sprites Oficiales de Overworld:** Sprites canónicos para **Dialga (`DIALGA.png`)**, **Palkia (`PALKIA.png`)** y **Arceus (`ARCEUS.png`)**.
 
 | Piso | Mapa | Dimensiones | Nombre | Descripción y Encuentros |
 | :--- | :--- | :---: | :--- | :--- |
-| **1F** | `Map2031` | 40×40 | **Puerta de las Columnas** | Meseta nevada con estatuas grisáceas (`1310/3300`) y columnas de mármol blanco. Portal de regreso a Puntaneva. Combate contra **Maya / Dawn** (Lv. 130). Ítem oculto: Caramelo Raro. |
-| **2F** | `Map2032` | 40×40 | **Sendero de los Titanes** | Laderas escarpadas, nieve eterna y monolitos antiguos. Combate contra **Jericor / Palmer** y diálogo con **Benito / Barry** (Lv. 135). Ítem oculto: Revivir Máximo. |
-| **3F** | `Map2033` | 42×42 | **Terraza del Aura** | Doble columnata de estatuas sagradas. Combate contra **Quinoa / Riley** (Lv. 140), quien advierte del despertar de la Consciencia Primordial. Ítem oculto: Más PP. |
-| **4F** | `Map2034` | 42×42 | **Baluarte Celestial** | Cima alpina y vientos cósmicos. Combate contra la **Campeona Cintia / Cynthia** (Lv. 145), quien recita el verso original de Caelestis. Ítem oculto: Ceniza Sagrada. |
-| **5F** | `Map2035` | 38×38 | **Santuario del Tiempo** | Templo temporal con cristales y monolitos. **Guardián Dialga Primordial (Lv. 150)** bloquea la escalinata al 6F. Al ser derrotado o capturado, el tiempo retoma su curso y Dialga se desvanece en polvo temporal azul. Ítem oculto: Parte Cometa. |
-| **6F** | `Map2036` | 38×38 | **Santuario del Espacio** | Templo espacial con distorsiones dimensionales. **Guardián Palkia Primordial (Lv. 150)** bloquea la escalinata final. Al ser derrotado o capturado, las dimensiones se alinean y Palkia se disuelve en perlas cósmicas. Ítem oculto: Cápsula Habilidad. |
-| **7F** | `Map2037` | 46×46 | **Cima del Génesis** | El Olimpo de Arceus. Calzada procesional de mármol blanco flanqueada por 12 estatuas colosales. Altar del Origen con **ARCEUS (Nivel 200)**. Ítem oculto: Chapa Dorada. |
+| **1F** | `Map2031` | 40×40 | **Puerta de las Columnas** | Estribaciones alpinas con bosques de pinos escarchados, doble columnata de estatuas guardianas en pedestal, praderas de hierba nevada y tarima de mármol al norte. Combate contra **Maya / Dawn** (Lv. 130). Ítem oculto: Caramelo Raro. |
+| **2F** | `Map2032` | 40×40 | **Sendero de los Titanes** | Meseta escarpada de vientos eternos, monolitos ancestrales y arena de combate de piedra basalto. Combate contra **Jericor / Palmer** y diálogo con **Benito / Barry** (Lv. 135). Ítem oculto: Revivir Máximo. |
+| **3F** | `Map2033` | 42×42 | **Terraza del Aura** | Cañón flanqueado por altos riscos de roca, tarima de mármol del aura, pozas de agua cósmica y estatuas guardianas. Combate contra **Quinoa / Riley** (Lv. 140). Ítem oculto: Más PP. |
+| **4F** | `Map2034` | 42×42 | **Baluarte Celestial** | Calzada procesional de los campeones flanqueada por estatuas monumentales, columnas quebradas y gran corte de mármol. Combate contra la **Campeona Cintia / Cynthia** (Lv. 145). Ítem oculto: Ceniza Sagrada. |
+| **5F** | `Map2035` | 38×38 | **Santuario del Tiempo** | Altar temporal sobre acantilados del Monte Corona. **Guardián Dialga Primordial (Lv. 150)** con sprite visible sobre la tarima del tiempo bloqueando el paso. Al caer, el tiempo se restaura y Dialga se desvanece. Ítem oculto: Parte Cometa. |
+| **6F** | `Map2036` | 38×38 | **Santuario del Espacio** | Altar espacial con pozas cósmicas que reflejan las dimensiones. **Guardián Palkia Primordial (Lv. 150)** con sprite visible sobre la tarima espacial. Al caer, las dimensiones se alinean y Palkia se disuelve. Ítem oculto: Cápsula Habilidad. |
+| **7F** | `Map2037` | 46×46 | **Cima del Génesis** | El Olimpo de la Creación sobre la estratósfera. Gran avenida procesional con 10 estatuas colosales, pórticos cósmicos gemelos, Altar del Solsticio Dorado y el Ser Supremo **ARCEUS (Nivel 200)** con sprite visible sobre el Altar del Origen. Duelo clímax posterior contra **Volus**. Ítem oculto: Chapa Dorada. |
 
 ---
 

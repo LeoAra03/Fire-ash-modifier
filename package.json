@@ -34,10 +34,8 @@
     "rebuild:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs",
     "verify:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs --verify"
   },
-  "dependencies": {
-    "@napi-rs/canvas": "0.1.81"
-  },
   "devDependencies": {
+    "@napi-rs/canvas": "^1.0.9",
     "jsdom": "27.0.0"
   }
 }

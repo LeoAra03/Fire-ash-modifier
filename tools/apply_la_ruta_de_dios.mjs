@@ -130,6 +130,28 @@ function script(line, indent = 0) { return cmd(355, [S(line)], indent); }
 function transfer(map, x, y, dir = 2, indent = 0) {
   return cmd(201, [0, map, x, y, dir, 1], indent);
 }
+function transferEvent(id, name, x, y, targetMap, targetX, targetY, targetDir = 8, prompts = []) {
+  const list = [];
+  if (prompts.length > 0) {
+    list.push(...textCommands(prompts));
+  }
+  list.push(transfer(targetMap, targetX, targetY, targetDir));
+  list.push(cmd(0));
+  return event(id, name, x, y, [page({ trigger: 1, list })]);
+}
+function hiddenItemEvent(id, name, x, y, itemSym, itemName) {
+  const p1 = page({
+    gfx: graphic("Item ball", 2),
+    list: [
+      cmd(101, [S(`¡Encontraste un ${itemName}!\\1`)]),
+      script(`pbReceiveItem(:${itemSym}, 1)`),
+      cmd(123, [S("A"), 0]),
+      cmd(0),
+    ],
+  });
+  const p2 = page({ cond: condition({ self: "A" }), list: [cmd(0)] });
+  return event(id, name, x, y, [p1, p2]);
+}
 function addEventToMap(mapObj, ev) {
   const events = iv(mapObj, "events");
   events.pairs.push([iv(ev, "id"), ev]);
@@ -398,6 +420,62 @@ function installSnowpointPortal() {
 // 5. Build Maps 2031..2037 (The 7 Floors of La Ruta de Dios)
 // ---------------------------------------------------------------------------
 
+// Architectural Primitives
+// ---------------------------------------------------------------------------
+function drawCoronetCliff(canvas, x, y, w, h, { stairs = [] } = {}) {
+  // Top rim
+  canvas.set(x, y, 1, 1259);
+  for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, y, 1, 1260);
+  canvas.set(x + w - 1, y, 1, 1261);
+
+  // Vertical cliff faces
+  for (let j = y + 1; j < y + h - 1; j++) {
+    canvas.set(x, j, 1, 1252);
+    for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, j, 1, 1249);
+    canvas.set(x + w - 1, j, 1, 1253);
+  }
+
+  // Bottom rim
+  canvas.set(x, y + h - 1, 1, 1265);
+  for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, y + h - 1, 1, 1273);
+  canvas.set(x + w - 1, y + h - 1, 1, 1267);
+
+  // Carve out stone stairs cutting through cliff face
+  for (const sx of stairs) {
+    for (let j = y; j < y + h; j++) {
+      canvas.set(sx, j, 1, 1243);
+      canvas.set(sx + 1, j, 1, 1243);
+      canvas.set(sx, j, 0, 1257);
+      canvas.set(sx + 1, j, 0, 1257);
+    }
+  }
+}
+
+function drawWhiteMarbleDais(canvas, x, y, w, h, { stairs = [] } = {}) {
+  // Top row
+  canvas.set(x, y, 1, 4400);
+  for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, y, 1, 4401);
+  canvas.set(x + w - 1, y, 1, 4402);
+
+  // Middle rows
+  for (let j = y + 1; j < y + h - 1; j++) {
+    canvas.set(x, j, 1, 4408);
+    for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, j, 1, 4409);
+    canvas.set(x + w - 1, j, 1, 4410);
+  }
+
+  // Bottom row
+  canvas.set(x, y + h - 1, 1, 4416);
+  for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, y + h - 1, 1, 4417);
+  canvas.set(x + w - 1, y + h - 1, 1, 4418);
+
+  // Bottom stairs
+  for (const sx of stairs) {
+    canvas.set(sx, y + h - 1, 1, 1161);
+    canvas.set(sx + 1, y + h - 1, 1, 1162);
+  }
+}
+
 function drawPavedRoad(canvas, x, y, w, h) {
   for (let j = 0; j < h; j++) {
     for (let i = 0; i < w; i++) {
@@ -415,38 +493,67 @@ function drawPavedRoad(canvas, x, y, w, h) {
   }
 }
 
-function drawCliff(canvas, x, y, w, h, { stairs = [] } = {}) {
-  canvas.set(x, y, 1, 1171);
-  for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, y, 1, 1172);
-  canvas.set(x + w - 1, y, 1, 1173);
+function drawGuardianStatue(canvas, x, y) {
+  canvas.set(x, y - 1, 2, 4307); // Carved dragon/gargoyle head with horns
+  canvas.set(x, y, 1, 4315);     // Inscribed stone plinth
+}
 
-  for (let j = y + 1; j < y + h - 1; j++) {
-    canvas.set(x, j, 1, 1179);
-    for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, j, 1, 1177);
-    canvas.set(x + w - 1, j, 1, 1181);
-  }
+function drawFrostedPineTree(canvas, x, y) {
+  canvas.set(x, y - 3, 2, 4484);
+  canvas.set(x + 1, y - 3, 2, 4485);
+  canvas.set(x, y - 2, 1, 4480);
+  canvas.set(x + 1, y - 2, 1, 4481);
+  canvas.set(x, y - 1, 1, 4488);
+  canvas.set(x + 1, y - 1, 1, 4489);
+  canvas.set(x, y, 1, 4496);
+  canvas.set(x + 1, y, 1, 4497);
+}
 
-  canvas.set(x, y + h - 1, 1, 1187);
-  for (let i = x + 1; i < x + w - 1; i++) canvas.set(i, y + h - 1, 1, 1188);
-  canvas.set(x + w - 1, y + h - 1, 1, 1189);
-
-  for (const sx of stairs) {
-    for (let j = y; j < y + h; j++) {
-      canvas.set(sx, j, 1, 1243);
-      canvas.set(sx + 1, j, 1, 1243);
-      canvas.set(sx, j, 0, 658);
-      canvas.set(sx + 1, j, 0, 658);
+function drawPineGrove(canvas, x, y, w, h) {
+  for (let j = 0; j < h; j += 4) {
+    for (let i = 0; i < w; i += 2) {
+      drawFrostedPineTree(canvas, x + i, y + j + 3);
     }
   }
 }
 
-function drawColumn(canvas, x, y) {
-  canvas.set(x, y, 2, 4453); // capital
-  canvas.set(x, y + 1, 1, 4409); // base
+function drawWildGrassPatch(canvas, x, y, w, h) {
+  for (let j = y; j < y + h; j++) {
+    for (let i = x; i < x + w; i++) {
+      canvas.set(i, j, 1, 447); // Frosted winter grass (Terrain Tag 2 = Wild encounters!)
+    }
+  }
 }
 
-function drawGrayStatue(canvas, x, y) {
-  canvas.set(x, y, 1, 1310);
+function drawSacredBoulder(canvas, x, y, cluster = false) {
+  canvas.set(x, y, 1, cluster ? 4461 : 4453);
+}
+
+function drawCosmicPool(canvas, x, y) {
+  canvas.set(x, y, 1, 4430); canvas.set(x + 1, y, 1, 4431);
+  canvas.set(x, y + 1, 1, 4438); canvas.set(x + 1, y + 1, 1, 4439);
+  canvas.set(x, y + 2, 1, 4446); canvas.set(x + 1, y + 2, 1, 4447);
+}
+
+function drawCosmicGateway(canvas, x, y) {
+  canvas.set(x, y, 2, 4454); canvas.set(x + 1, y, 2, 4455);
+  canvas.set(x, y + 1, 1, 4462); canvas.set(x + 1, y + 1, 1, 4463);
+}
+
+function drawSunburstAltar(canvas, x, y) {
+  canvas.set(x, y, 1, 4403);
+  canvas.set(x + 1, y, 1, 4404);
+  canvas.set(x + 2, y, 1, 4404);
+  canvas.set(x + 3, y, 1, 4405);
+  canvas.set(x, y + 1, 1, 4414);
+  canvas.set(x + 1, y + 1, 1, 4412);
+  canvas.set(x + 2, y + 1, 1, 4412);
+  canvas.set(x + 3, y + 1, 1, 4415);
+}
+
+function drawColumn(canvas, x, y) {
+  canvas.set(x, y, 2, 4453);
+  canvas.set(x, y + 1, 1, 4409);
 }
 
 function drawMonolith(canvas, x, y) {
@@ -454,85 +561,72 @@ function drawMonolith(canvas, x, y) {
   canvas.set(x, y + 1, 1, 3300);
 }
 
-function fillRect(canvas, z, x, y, w, h, tile) {
-  for (let j = y; j < y + h; j++) {
-    for (let i = x; i < x + w; i++) {
-      canvas.set(i, j, z, tile);
-    }
+// ---------------------------------------------------------------------------
+// Floor Builders
+// ---------------------------------------------------------------------------
+
+
+function plantNaturalFlankPines(cv, W, H) {
+  // West side clustered groves
+  for (let y = 3; y < H - 3; y += 5) {
+    drawFrostedPineTree(cv, 1, y);
+    if (y + 2 < H - 2) drawFrostedPineTree(cv, 3, y + 2);
+    if (y + 4 < H - 2) drawFrostedPineTree(cv, 2, y + 4);
+  }
+  // East side clustered groves
+  for (let y = 3; y < H - 3; y += 5) {
+    drawFrostedPineTree(cv, W - 3, y);
+    if (y + 2 < H - 2) drawFrostedPineTree(cv, W - 5, y + 2);
+    if (y + 4 < H - 2) drawFrostedPineTree(cv, W - 4, y + 4);
   }
 }
 
-function hiddenItemEvent(id, name, x, y, itemSym, itemName) {
-  const p1 = page({
-    gfx: graphic("Item ball", 2),
-    list: [
-      cmd(101, [S(`¡Encontraste un ${itemName}!\\1`)]),
-      script(`pbReceiveItem(:${itemSym}, 1)`),
-      cmd(123, [S("A"), 0]),
-      cmd(0),
-    ],
-  });
-  const p2 = page({ cond: condition({ self: "A" }), list: [cmd(0)] });
-  return event(id, name, x, y, [p1, p2]);
-}
-
-function transferEvent(id, name, x, y, targetMap, tx, ty, tdir, promptLines) {
-  const list = promptLines ? [
-    ...textCommands(promptLines),
-    cmd(102, [[S("Avanzar"), S("Permanecer")], 2]),
-    cmd(402, [0, S("Avanzar")]),
-    transfer(targetMap, tx, ty, tdir, 1),
-    cmd(402, [1, S("Permanecer")]),
-    cmd(404), cmd(0),
-  ] : [
-    transfer(targetMap, tx, ty, tdir),
-    cmd(0),
-  ];
-  return event(id, name, x, y, [page({ trigger: 0, list })]);
-}
-
-// ---------------------------------------------------------------------------
-// Floor 1 (Map 2031): Puerta de las Columnas (40x40)
-// ---------------------------------------------------------------------------
-function buildFloor1() {
+export function buildFloor1() {
   const W = 40, H = 40;
   const cv = new TileCanvas(W, H, 1);
-  cv.fillAll(0, 4457); // Pure white snow
+  cv.fillAll(0, 4457);
 
-  // Central Olympic Processional Avenue
+  plantNaturalFlankPines(cv, W, H);
+
+  // Tier 1 Cliff (y=29..31)
+  drawCoronetCliff(cv, 5, 29, 30, 3, { stairs: [19] });
+
+  // Tier 2 Cliff (y=8..10)
+  drawCoronetCliff(cv, 5, 8, 30, 3, { stairs: [19] });
+
+  // Grand Processional Avenue
   drawPavedRoad(cv, 18, 4, 5, 34);
-  // Arrival Square
-  drawPavedRoad(cv, 16, 32, 9, 6);
 
-  // Grayish statues & marble columns along the avenue
-  for (let y = 8; y <= 28; y += 4) {
-    drawGrayStatue(cv, 16, y);
-    drawGrayStatue(cv, 24, y);
+  // North Temple Dais
+  drawWhiteMarbleDais(cv, 13, 2, 15, 6, { stairs: [19] });
+  drawSunburstAltar(cv, 18, 2);
+
+  // Guardian Statues along the Avenue
+  for (let y = 14; y <= 26; y += 4) {
+    drawGuardianStatue(cv, 16, y);
+    drawGuardianStatue(cv, 24, y);
     drawColumn(cv, 14, y);
     drawColumn(cv, 26, y);
   }
 
-  // Terraces of Wild Encounter Grass
-  fillRect(cv, 0, 6, 12, 6, 16, 546);
-  fillRect(cv, 0, 29, 12, 6, 16, 546);
+  // Wild Grass Meadows
+  drawWildGrassPatch(cv, 6, 13, 9, 14);
+  drawWildGrassPatch(cv, 26, 13, 9, 14);
 
-  // Cliffs framing the sides and top
-  drawCliff(cv, 4, 30, 10, 3);
-  drawCliff(cv, 27, 30, 10, 3);
-  drawCliff(cv, 12, 4, 17, 3, { stairs: [19] });
+  // Sacred Boulders & Monoliths
+  drawSacredBoulder(cv, 6, 12);
+  drawSacredBoulder(cv, 33, 12, true);
+  drawSacredBoulder(cv, 10, 26);
+  drawSacredBoulder(cv, 30, 26, true);
 
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 1F", bgm: "Legend Sinnoh" });
 
-  // Event 1: Return Portal to Snowpoint City
   addEventToMap(map, transferEvent(1, "Retorno a Ciudad Puntaneva", 20, 37, 625, 20, 5, 2, [
     "Un portal resplandeciente desciende hacia las tierras de Sinnoh.",
     "¿Deseas regresar a Ciudad Puntaneva?",
   ]));
-
-  // Event 2: Stairs up to 2F
   addEventToMap(map, transferEvent(2, "Escaleras al 2F", 20, 5, 2032, 20, 36, 8));
 
-  // Event 3: Dawn / Maya
   const dawnBattle = [
     ...textCommands([
       "Maya: ¡Ash! ¿Tú también lo sentiste, verdad?",
@@ -556,40 +650,44 @@ function buildFloor1() {
       ...textCommands(["Maya: ¡Sigue ascendiendo, Ash! ¡No permitas que la creación se extinga!"]),
       cmd(0),
     ] }),
-    page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] }), // Vanishes when completed
+    page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] }),
   ]));
 
-  // Event 4: Hidden Item
   addEventToMap(map, hiddenItemEvent(4, "Item RARECANDY", 6, 12, "RARECANDY", "Caramelo Raro"));
 
   return { map, cv };
 }
 
-// ---------------------------------------------------------------------------
-// Floor 2 (Map 2032): Sendero de los Titanes (40x40)
-// ---------------------------------------------------------------------------
-function buildFloor2() {
+export function buildFloor2() {
   const W = 40, H = 40;
   const cv = new TileCanvas(W, H, 1);
   cv.fillAll(0, 4457);
 
-  // Winding serpentine avenue
-  drawPavedRoad(cv, 18, 30, 5, 8);
-  drawPavedRoad(cv, 10, 20, 21, 5);
-  drawPavedRoad(cv, 18, 4, 5, 17);
+  plantNaturalFlankPines(cv, W, H);
 
-  // Ancient grayish monoliths & statues
-  for (let i = 12; i <= 28; i += 4) {
-    drawGrayStatue(cv, i, 18);
-    drawMonolith(cv, i, 26);
-  }
+  drawCoronetCliff(cv, 5, 29, 30, 3, { stairs: [19] });
+  drawCoronetCliff(cv, 5, 8, 30, 3, { stairs: [19] });
 
-  fillRect(cv, 0, 6, 6, 8, 12, 546);
-  fillRect(cv, 0, 27, 6, 8, 12, 546);
+  // Winding serpentine road & Arena of Titans
+  drawPavedRoad(cv, 18, 25, 5, 12);
+  drawPavedRoad(cv, 12, 17, 17, 7);
+  drawPavedRoad(cv, 18, 4, 5, 14);
 
-  drawCliff(cv, 4, 26, 12, 3);
-  drawCliff(cv, 25, 26, 12, 3);
-  drawCliff(cv, 12, 4, 17, 3, { stairs: [19] });
+  drawWhiteMarbleDais(cv, 14, 2, 13, 6, { stairs: [19] });
+
+  // Arena Statues & Columns
+  drawGuardianStatue(cv, 13, 17); drawGuardianStatue(cv, 27, 17);
+  drawGuardianStatue(cv, 13, 23); drawGuardianStatue(cv, 27, 23);
+  drawMonolith(cv, 11, 20); drawMonolith(cv, 29, 20);
+  drawColumn(cv, 16, 17); drawColumn(cv, 24, 17);
+
+  // Wild grass
+  drawWildGrassPatch(cv, 6, 13, 6, 14);
+  drawWildGrassPatch(cv, 28, 13, 6, 14);
+
+  // Sacred Boulders
+  drawSacredBoulder(cv, 34, 18);
+  drawSacredBoulder(cv, 7, 25, true);
 
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 2F", bgm: "Legend Sinnoh" });
 
@@ -607,7 +705,7 @@ function buildFloor2() {
     ...textCommands([
       "Palmer: Majestuoso. Tu determinación resuena más fuerte que el trueno divino.",
       "Barry: ¡Uau! ¡Sabía que podías hacerlo, Ash! ¡Ahora ve y demuestra de qué estamos hechos los entrenadores!",
-      "Palmer: Lleva este auxilio contigo para restaurar a tus compañeros.",
+      "Palmer: Toma este tónico supremo. Lo necesitarás si planeas desafiar la cúspide.",
     ], 1),
     script("pbReceiveItem(:MAXREVIVE, 1)", 1),
     cmd(123, [S("A"), 0], 1),
@@ -616,7 +714,7 @@ function buildFloor2() {
   addEventToMap(map, event(3, "Palmer del Frente", 20, 20, [
     page({ gfx: graphic("SECRET_Palmer", 2), list: palmerBattle }),
     page({ cond: condition({ self: "A" }), gfx: graphic("SECRET_Palmer", 2), list: [
-      ...textCommands(["Palmer: Los peldaños superiores son cada vez más traicioneros. Mantén la calma y confía en tus Pokémon."]),
+      ...textCommands(["Palmer: Adelante, muchacho. Que la voluntad inquebrantable de los campeones guíe tus pasos."]),
       cmd(0),
     ] }),
     page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] }),
@@ -624,7 +722,9 @@ function buildFloor2() {
 
   addEventToMap(map, event(4, "Barry", 22, 20, [
     page({ gfx: graphic("SECRET_Barry", 4), list: [
-      ...textCommands(["Barry: ¡No te detengas, Ash! ¡Si Dios quiere destruir el mundo, dile que le pondré una multa de mil millones!"]),
+      ...textCommands([
+        "Barry: ¡Ash! ¡Mi padre reconoció tu poder! ¡Si no salvas el universo te pondré una multa de diez mil millones!",
+      ]),
       cmd(0),
     ] }),
     page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] }),
@@ -635,28 +735,39 @@ function buildFloor2() {
   return { map, cv };
 }
 
-// ---------------------------------------------------------------------------
-// Floor 3 (Map 2033): Terraza del Aura (42x42)
-// ---------------------------------------------------------------------------
-function buildFloor3() {
+export function buildFloor3() {
   const W = 42, H = 42;
   const cv = new TileCanvas(W, H, 1);
   cv.fillAll(0, 4457);
 
+  plantNaturalFlankPines(cv, W, H);
+
+  drawCoronetCliff(cv, 5, 31, 32, 3, { stairs: [20] });
+  drawCoronetCliff(cv, 5, 8, 32, 3, { stairs: [20] });
+
+  // Central Avenue
   drawPavedRoad(cv, 19, 4, 5, 36);
-  drawPavedRoad(cv, 11, 19, 21, 5);
 
-  for (let y = 8; y <= 32; y += 4) {
-    drawGrayStatue(cv, 17, y);
-    drawGrayStatue(cv, 25, y);
-    drawColumn(cv, 15, y);
-    drawColumn(cv, 27, y);
-  }
+  // Central Aura Dais
+  drawWhiteMarbleDais(cv, 15, 16, 13, 9, { stairs: [20] });
+  drawWhiteMarbleDais(cv, 15, 2, 13, 6, { stairs: [20] });
 
-  fillRect(cv, 0, 5, 10, 8, 14, 546);
-  fillRect(cv, 0, 30, 10, 8, 14, 546);
+  // Twin Cosmic Pools
+  drawCosmicPool(cv, 10, 19);
+  drawCosmicPool(cv, 30, 19);
 
-  drawCliff(cv, 13, 4, 17, 3, { stairs: [20] });
+  // Guardian Statues & Aura Colonnade
+  drawGuardianStatue(cv, 14, 17); drawGuardianStatue(cv, 28, 17);
+  drawGuardianStatue(cv, 14, 23); drawGuardianStatue(cv, 28, 23);
+  drawColumn(cv, 13, 20); drawColumn(cv, 29, 20);
+  drawColumn(cv, 18, 14); drawColumn(cv, 24, 14);
+
+  // Wild Grass
+  drawWildGrassPatch(cv, 7, 13, 7, 16);
+  drawWildGrassPatch(cv, 28, 13, 7, 16);
+
+  drawSacredBoulder(cv, 7, 10);
+  drawSacredBoulder(cv, 34, 26, true);
 
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 3F", bgm: "Legend Sinnoh" });
 
@@ -665,15 +776,15 @@ function buildFloor3() {
 
   const rileyBattle = [
     ...textCommands([
-      "Quinoa: El Aura en este estrato... es tan densa que casi puede tocarse con los dedos.",
-      "Las antiguas leyendas de la Isla Hierro hablan del pacto original: el Creador tejió el universo con mil brazos y luego selló su consciencia original en el letargo cósmico.",
-      "Si ese letargo se ha roto, significa que las Tablas están unidas. Ash, ¿tu Aura es lo suficientemente pura como para no ser consumida por el juicio divino? ¡Compruébalo ante mi Lucario!",
+      "Quinoa: Saludos, Ash. El aura que emana de ti resplandece con mayor intensidad que nunca.",
+      "Lucario y yo sentimos el despertar de la creación desde Isla Hierro. Esta altitud no perdona a los corazones vacilantes.",
+      "La energía de las Tablas fluye como un río cósmico por cada piedra de este templo.",
+      "¡Permíteme conectar mi aura con la tuya para templar tu concentración!",
     ]),
     script("pbTrainerBattle(:SECRET_Riley, \"Riley\", nil, false, 0, true)"),
     ...textCommands([
-      "Quinoa: Un Aura resplandeciente... limpia como la nieve de la montaña.",
-      "Ya no tengo dudas. Eres el emisario que las profecías aguardaban.",
-      "Conserva este elixir para los momentos decisivos.",
+      "Quinoa: Un aura verdaderamente formidable. Has trascendido los límites ordinarios de la comunión con los Pokémon.",
+      "Lleva este obsequio. Que tu energía jamás se agote en el combate que se avecina.",
     ], 1),
     script("pbReceiveItem(:PPMAX, 1)", 1),
     cmd(123, [S("A"), 0], 1),
@@ -682,7 +793,7 @@ function buildFloor3() {
   addEventToMap(map, event(3, "Quinoa de la Isla", 21, 21, [
     page({ gfx: graphic("SECRET_Riley", 2), list: rileyBattle }),
     page({ cond: condition({ self: "A" }), gfx: graphic("SECRET_Riley", 2), list: [
-      ...textCommands(["Quinoa: El Santuario del Tiempo está cerca. Prepárate para el rugido que frena los segundos."]),
+      ...textCommands(["Quinoa: Sigue adelante. El aura te acompaña, campeón de Sinnoh."]),
       cmd(0),
     ] }),
     page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] }),
@@ -693,26 +804,40 @@ function buildFloor3() {
   return { map, cv };
 }
 
-// ---------------------------------------------------------------------------
-// Floor 4 (Map 2034): Baluarte Celestial (42x42)
-// ---------------------------------------------------------------------------
-function buildFloor4() {
+export function buildFloor4() {
   const W = 42, H = 42;
   const cv = new TileCanvas(W, H, 1);
   cv.fillAll(0, 4457);
 
-  drawPavedRoad(cv, 19, 4, 5, 36);
-  drawPavedRoad(cv, 13, 19, 17, 5);
+  plantNaturalFlankPines(cv, W, H);
 
-  for (let i = 14; i <= 28; i += 4) {
-    drawGrayStatue(cv, i, 16);
-    drawMonolith(cv, i, 25);
+  drawCoronetCliff(cv, 5, 31, 32, 3, { stairs: [20] });
+  drawCoronetCliff(cv, 5, 8, 32, 3, { stairs: [20] });
+
+  // Avenue
+  drawPavedRoad(cv, 19, 4, 5, 36);
+
+  // Cynthia's Grand Marble Court
+  drawWhiteMarbleDais(cv, 13, 16, 17, 9, { stairs: [20] });
+  drawWhiteMarbleDais(cv, 15, 2, 13, 6, { stairs: [20] });
+  drawSunburstAltar(cv, 19, 2);
+
+  // Guardian Colonnade
+  for (let y = 14; y <= 28; y += 4) {
+    drawGuardianStatue(cv, 17, y);
+    drawGuardianStatue(cv, 25, y);
+    drawColumn(cv, 15, y);
+    drawColumn(cv, 27, y);
   }
 
-  fillRect(cv, 0, 6, 8, 8, 14, 546);
-  fillRect(cv, 0, 29, 8, 8, 14, 546);
+  // Sacred Boulders & Monoliths
+  drawSacredBoulder(cv, 35, 12);
+  drawSacredBoulder(cv, 8, 25, true);
+  drawMonolith(cv, 11, 20); drawMonolith(cv, 31, 20);
 
-  drawCliff(cv, 13, 4, 17, 3, { stairs: [20] });
+  // Wild Grass
+  drawWildGrassPatch(cv, 6, 13, 8, 16);
+  drawWildGrassPatch(cv, 28, 13, 8, 16);
 
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 4F", bgm: "Legend Sinnoh" });
 
@@ -721,18 +846,17 @@ function buildFloor4() {
 
   const cynthiaBattle = [
     ...textCommands([
-      "Cintia: Ash... Sabía que tus pasos te traerían hasta aquí.",
-      "En las ruinas de Pueblo Caelestis hay una inscripción casi borrada por los siglos:",
-      "'Cuando el mundo comenzó, el Uno Original dio a luz a dos seres: el Tiempo y el Espacio. Y después a tres más: el Conocimiento, la Emoción y la Voluntad.'",
-      "'Pero si la creación olvida su humilde origen, el Hacedor descenderá no a bendecir, sino a reiniciar la pizarra cósmica.'",
-      "Lo que aguarda en los dos pisos siguientes son los custodios originales del universo, y más allá... el Creador en persona.",
-      "Como Campeona de Sinnoh, este es el combate más importante de nuestras vidas. ¡Muéstrame todo lo que has aprendido en tu viaje!",
+      "Cintia: Ash. Sabía que las huellas en la nieve te traerían hasta aquí.",
+      "Durante años he estudiado los mitos de Sinnoh: el nacimiento del huevo primordial en medio de la nada, la separación de la materia y el espíritu...",
+      "Pero lo que se avecina tras este umbral desafía cualquier registro histórico.",
+      "Los guardianes del tiempo y del espacio han regresado en su manifestación primigenia, y sobre ellos... el arquitecto absoluto.",
+      "Como Campeona de la Liga Sinnoh, tengo el deber de ser tu última prueba terrenal.",
+      "¡Demuéstrame que tu lazo con tus Pokémon puede doblegar las leyes del mismísimo cosmos!",
     ]),
     script("pbTrainerBattle(:SECRET_Cynthia, \"Cynthia\", nil, false, 0, true)"),
     ...textCommands([
-      "Cintia: Simplemente sublime. No hay palabras en la mitología para describir la calidez y el poder de tu equipo.",
-      "Ve, Ash. Enfrenta el juicio de Dios y devuélvenos el mañana.",
-      "Toma esta Ceniza Sagrada de los templos de antaño.",
+      "Cintia: Sublime... Una batalla que quedará grabada en las leyendas de nuestro tiempo.",
+      "Lleva contigo esta reliquia de los templos de antaño. Si tus Pokémon caen ante el poder divino, esto les otorgará una segunda oportunidad.",
     ], 1),
     script("pbReceiveItem(:SACREDASH, 1)", 1),
     cmd(123, [S("A"), 0], 1),
@@ -741,7 +865,7 @@ function buildFloor4() {
   addEventToMap(map, event(3, "Cintia Campeona", 21, 21, [
     page({ gfx: graphic("SECRET_Cynthia", 2), list: cynthiaBattle }),
     page({ cond: condition({ self: "A" }), gfx: graphic("SECRET_Cynthia", 2), list: [
-      ...textCommands(["Cintia: No vaciles, Ash. Todo Sinnoh y todos los mundos confían en ti."]),
+      ...textCommands(["Cintia: Cruza el portal, Ash. Todos los que amamos a este mundo creemos en ti."]),
       cmd(0),
     ] }),
     page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] }),
@@ -752,55 +876,56 @@ function buildFloor4() {
   return { map, cv };
 }
 
-// ---------------------------------------------------------------------------
-// Floor 5 (Map 2035): Santuario del Tiempo (38x38)
-// ---------------------------------------------------------------------------
-function buildFloor5() {
+export function buildFloor5() {
   const W = 38, H = 38;
   const cv = new TileCanvas(W, H, 1);
   cv.fillAll(0, 4457);
 
-  drawPavedRoad(cv, 17, 4, 5, 32);
-  drawPavedRoad(cv, 11, 12, 17, 7);
+  plantNaturalFlankPines(cv, W, H);
 
-  // Blue temporal crystals and statues
-  drawMonolith(cv, 13, 10);
-  drawMonolith(cv, 25, 10);
-  drawMonolith(cv, 13, 20);
-  drawMonolith(cv, 25, 20);
+  drawCoronetCliff(cv, 4, 27, 30, 3, { stairs: [18] });
+  drawCoronetCliff(cv, 4, 7, 30, 3, { stairs: [18] });
 
-  fillRect(cv, 0, 5, 8, 8, 14, 546);
-  fillRect(cv, 0, 26, 8, 8, 14, 546);
+  // Central Temporal Altar Dais
+  drawWhiteMarbleDais(cv, 11, 10, 17, 13, { stairs: [18] });
+  drawWhiteMarbleDais(cv, 13, 2, 13, 5, { stairs: [18] });
 
-  drawCliff(cv, 11, 4, 17, 3, { stairs: [18] });
+  // Paved avenue
+  drawPavedRoad(cv, 17, 23, 5, 13);
+  drawPavedRoad(cv, 17, 4, 5, 7);
 
-  const map = buildMapObject(cv, { name: "La Ruta de Dios — 5F: Santuario del Tiempo", bgm: "Legend Creation Trio" });
+  // Temporal Guardian Statues & Spear Pillar Ruins
+  drawGuardianStatue(cv, 13, 13); drawGuardianStatue(cv, 25, 13);
+  drawGuardianStatue(cv, 13, 19); drawGuardianStatue(cv, 25, 19);
+  drawColumn(cv, 12, 16); drawColumn(cv, 26, 16);
+  drawMonolith(cv, 9, 14); drawMonolith(cv, 29, 14);
+
+  // Sacred Boulders
+  drawSacredBoulder(cv, 6, 10);
+  drawSacredBoulder(cv, 31, 24, true);
+
+  // Wild Grass
+  drawWildGrassPatch(cv, 5, 12, 5, 13);
+  drawWildGrassPatch(cv, 28, 12, 5, 13);
+
+  const map = buildMapObject(cv, { name: "La Ruta de Dios — 5F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 4F", 19, 35, 2034, 21, 6, 2));
   addEventToMap(map, transferEvent(2, "Escaleras al 6F", 19, 5, 2036, 19, 34, 8));
 
-  // Guardian Dialga
   const dialgaBattle = [
-    script("$game_screen.start_shake(5, 5, 40)"),
-    cmd(250, [new RObject("RPG::AudioFile", [["@name", S("Thunder8")], ["@volume", 100], ["@pitch", 100]])]),
-    ...textCommands([
-      "¡Gyaaa-oooh!",
-      "¡El Guardián Primordial del Tiempo, Dialga, ruge con una furia cósmica!",
-      "¡El tiempo a su alrededor se congela en cristales de diamante!",
-    ]),
-    script("decision = pbWildBattle(:DIALGA, 150)"),
-    cmd(111, [12, S("decision == 1 || decision == 4")]),
-    ...textCommands([
-      "¡El tiempo retoma su curso natural!",
-      "Dialga reconoce tu fuerza inquebrantable y se disuelve en una estela de polvo temporal azul...",
-    ], 1),
-    cmd(121, [SW_DIALGA_DEFEATED, SW_DIALGA_DEFEATED, 0], 1),
+    cmd(101, [S("¡GYYYROOOHHH!\\1")]),
+    cmd(101, [S("El señor del tiempo emite un rugido que desgarra el tejido de los segundos. ¡Una distorsión temporal envuelve el altar!")]),
+    script("pbWildBattle(:DIALGA, 150)"),
+    cmd(111, [12, S("$Trainer.party.any? { |p| p.hp > 0 }")]),
+    cmd(121, [SW_DIALGA_DEFEATED, SW_DIALGA_DEFEATED, 0]),
+    cmd(101, [S("La figura de Dialga se disuelve en una cascada de luz cósmica, abriendo el paso hacia el santuario espacial...")]),
     cmd(412),
     cmd(0),
   ];
   addEventToMap(map, event(3, "Guardián Dialga", 19, 14, [
     page({ gfx: graphic("DIALGA", 2), list: dialgaBattle }),
-    page({ cond: condition({ sw: SW_DIALGA_DEFEATED }), list: [cmd(0)] }), // Vanishes upon defeat
+    page({ cond: condition({ sw: SW_DIALGA_DEFEATED }), list: [cmd(0)] }),
   ]));
 
   addEventToMap(map, hiddenItemEvent(4, "Item COMETSHARD", 6, 10, "COMETSHARD", "Parte Cometa"));
@@ -808,198 +933,210 @@ function buildFloor5() {
   return { map, cv };
 }
 
-// ---------------------------------------------------------------------------
-// Floor 6 (Map 2036): Santuario del Espacio (38x38)
-// ---------------------------------------------------------------------------
-function buildFloor6() {
+export function buildFloor6() {
   const W = 38, H = 38;
   const cv = new TileCanvas(W, H, 1);
   cv.fillAll(0, 4457);
 
-  drawPavedRoad(cv, 17, 4, 5, 32);
-  drawPavedRoad(cv, 11, 12, 17, 7);
+  plantNaturalFlankPines(cv, W, H);
 
-  drawMonolith(cv, 13, 10);
-  drawMonolith(cv, 25, 10);
-  drawMonolith(cv, 13, 20);
-  drawMonolith(cv, 25, 20);
+  drawCoronetCliff(cv, 4, 27, 30, 3, { stairs: [18] });
+  drawCoronetCliff(cv, 4, 7, 30, 3, { stairs: [18] });
 
-  fillRect(cv, 0, 5, 8, 8, 14, 546);
-  fillRect(cv, 0, 26, 8, 8, 14, 546);
+  // Spatial Altar Dais
+  drawWhiteMarbleDais(cv, 11, 10, 17, 13, { stairs: [18] });
+  drawWhiteMarbleDais(cv, 13, 2, 13, 5, { stairs: [18] });
 
-  drawCliff(cv, 11, 4, 17, 3, { stairs: [18] });
+  // Paved avenue
+  drawPavedRoad(cv, 17, 23, 5, 13);
+  drawPavedRoad(cv, 17, 4, 5, 7);
 
-  const map = buildMapObject(cv, { name: "La Ruta de Dios — 6F: Santuario del Espacio", bgm: "Legend Creation Trio" });
+  // Twin Cosmic Pools in Spatial Sanctum
+  drawCosmicPool(cv, 7, 15);
+  drawCosmicPool(cv, 29, 15);
+
+  // Spatial Guardian Statues & Colonnade
+  drawGuardianStatue(cv, 13, 13); drawGuardianStatue(cv, 25, 13);
+  drawGuardianStatue(cv, 13, 19); drawGuardianStatue(cv, 25, 19);
+  drawColumn(cv, 12, 16); drawColumn(cv, 26, 16);
+
+  // Monoliths & Sacred Boulders
+  drawMonolith(cv, 9, 21); drawMonolith(cv, 29, 21);
+  drawSacredBoulder(cv, 32, 10);
+  drawSacredBoulder(cv, 6, 24, true);
+
+  // Wild Grass
+  drawWildGrassPatch(cv, 5, 12, 5, 13);
+  drawWildGrassPatch(cv, 28, 12, 5, 13);
+
+  const map = buildMapObject(cv, { name: "La Ruta de Dios — 6F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 5F", 19, 35, 2035, 19, 6, 2));
   addEventToMap(map, transferEvent(2, "Escaleras a la Cima", 19, 5, 2037, 23, 40, 8));
 
-  // Guardian Palkia
   const palkiaBattle = [
-    script("$game_screen.start_shake(5, 5, 40)"),
-    cmd(250, [new RObject("RPG::AudioFile", [["@name", S("Thunder8")], ["@volume", 100], ["@pitch", 100]])]),
-    ...textCommands([
-      "¡Gyaaa-shhh!",
-      "¡El Guardián Primordial del Espacio, Palkia, desgarra la bóveda celeste con un grito sobrecogedor!",
-      "¡Las dimensiones tiemblan ante el filo de su presencia!",
-    ]),
-    script("decision = pbWildBattle(:PALKIA, 150)"),
-    cmd(111, [12, S("decision == 1 || decision == 4")]),
-    ...textCommands([
-      "¡Las dimensiones rotas vuelven a alinearse pacíficamente!",
-      "Palkia inclina su silueta y se disuelve en un resplandor de perlas cósmicas...",
-    ], 1),
-    cmd(121, [SW_PALKIA_DEFEATED, SW_PALKIA_DEFEATED, 0], 1),
+    cmd(101, [S("¡GRAAAGHHH!\\1")]),
+    cmd(101, [S("El amo del espacio emite un alarido desgarrador. Las dimensiones tiemblan bajo el peso de su presencia.")]),
+    script("pbWildBattle(:PALKIA, 150)"),
+    cmd(111, [12, S("$Trainer.party.any? { |p| p.hp > 0 }")]),
+    cmd(121, [SW_PALKIA_DEFEATED, SW_PALKIA_DEFEATED, 0]),
+    cmd(101, [S("Palkia canaliza su esencia hacia las dimensiones lejanas. El portal hacia la Cima del Génesis ha sido despejado.")]),
     cmd(412),
     cmd(0),
   ];
   addEventToMap(map, event(3, "Guardián Palkia", 19, 14, [
     page({ gfx: graphic("PALKIA", 2), list: palkiaBattle }),
-    page({ cond: condition({ sw: SW_PALKIA_DEFEATED }), list: [cmd(0)] }), // Vanishes upon defeat
+    page({ cond: condition({ sw: SW_PALKIA_DEFEATED }), list: [cmd(0)] }),
   ]));
 
   addEventToMap(map, hiddenItemEvent(4, "Item ABILITYCAPSULE", 32, 10, "ABILITYCAPSULE", "Cápsula Habilidad"));
 
   return { map, cv };
 }
-
-// ---------------------------------------------------------------------------
-// Floor 7 (Map 2037): Cima del Génesis (46x46)
-// ---------------------------------------------------------------------------
-function buildFloor7() {
+export function buildFloor7() {
   const W = 46, H = 46;
   const cv = new TileCanvas(W, H, 1);
   cv.fillAll(0, 4457);
 
-  // Grand Olympic Processional Avenue
-  drawPavedRoad(cv, 21, 6, 5, 36);
+  // Clustered Frosted Pine Groves on flanks with depth
+  const westPines = [
+    [1, 3], [3, 4], [2, 8], [4, 9], [1, 14], [3, 15],
+    [2, 20], [4, 21], [1, 26], [3, 27], [2, 32], [4, 33],
+    [1, 38], [3, 39], [2, 43], [4, 44],
+    [6, 36], [7, 41]
+  ];
+  for (const [px, py] of westPines) drawFrostedPineTree(cv, px, py);
 
-  // Altar of Origin Dais (x=17..30, y=6..14)
-  drawPavedRoad(cv, 17, 6, 13, 9);
+  const eastPines = [
+    [W - 3, 3], [W - 5, 4], [W - 4, 8], [W - 6, 9], [W - 3, 14], [W - 5, 15],
+    [W - 4, 20], [W - 6, 21], [W - 3, 26], [W - 5, 27], [W - 4, 32], [W - 6, 33],
+    [W - 3, 38], [W - 5, 39], [W - 4, 43], [W - 6, 44],
+    [W - 8, 36], [W - 9, 41]
+  ];
+  for (const [px, py] of eastPines) drawFrostedPineTree(cv, px, py);
 
-  // Flanked by 12 colossal grayish statues & towering columns
-  for (let y = 14; y <= 38; y += 4) {
-    drawGrayStatue(cv, 18, y);
-    drawGrayStatue(cv, 28, y);
-    drawColumn(cv, 16, y);
-    drawColumn(cv, 30, y);
+  // Cliff Tier at y=20..22
+  drawCoronetCliff(cv, 6, 20, 34, 3, { stairs: [22] });
+
+  // Grand Processional Avenue of Creation
+  drawPavedRoad(cv, 21, 20, 5, 23);
+
+  // The Grand Altar of Creation
+  drawWhiteMarbleDais(cv, 10, 5, 27, 15, { stairs: [22] });
+
+  // Sunburst Altar of God at pinnacle
+  drawSunburstAltar(cv, 21, 5);
+
+  // Ancient Marble Colonnade atop the sacred altar
+  drawColumn(cv, 19, 6); drawColumn(cv, 20, 6);
+  drawColumn(cv, 25, 6); drawColumn(cv, 26, 6);
+
+  // Twin Cosmic Gateways
+  drawCosmicGateway(cv, 15, 6);
+  drawCosmicGateway(cv, 29, 6);
+
+  // Twin Cosmic Pools in Courtyard
+  drawCosmicPool(cv, 13, 12);
+  drawCosmicPool(cv, 31, 12);
+
+  // 10 Colossal Guardian Beast Statues along the Avenue
+  for (let y = 24; y <= 40; y += 4) {
+    drawGuardianStatue(cv, 19, y);
+    drawGuardianStatue(cv, 27, y);
+    drawColumn(cv, 17, y);
+    drawColumn(cv, 29, y);
   }
+  // Inner statues on the Altar
+  drawGuardianStatue(cv, 15, 9); drawGuardianStatue(cv, 30, 9);
+  drawGuardianStatue(cv, 15, 16); drawGuardianStatue(cv, 30, 16);
 
-  // Altar Columns
-  drawColumn(cv, 17, 6);
-  drawColumn(cv, 29, 6);
-  drawColumn(cv, 17, 14);
-  drawColumn(cv, 29, 14);
+  // Sacred Boulders & Monoliths
+  drawSacredBoulder(cv, 8, 12);
+  drawSacredBoulder(cv, 37, 12, true);
+  drawSacredBoulder(cv, 12, 28);
+  drawSacredBoulder(cv, 33, 28, true);
+  drawMonolith(cv, 14, 34);
+  drawMonolith(cv, 31, 34);
 
-  const map = buildMapObject(cv, { name: "La Ruta de Dios — Cima del Génesis", bgm: "Legend Sinnoh" });
+  // Wild grass on outer mountain terraces
+  drawWildGrassPatch(cv, 7, 24, 6, 10);
+  drawWildGrassPatch(cv, 33, 24, 6, 10);
+
+  const map = buildMapObject(cv, { name: "La Ruta de Dios — 7F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 6F", 23, 41, 2036, 19, 6, 2));
 
-  // ARCEUS EVENT (Altar of Origin)
-  const arceusCinematic = [
+  // Arceus Boss Event
+  const arceusBattle = [
+    cmd(223, [S("Tone.new(255,255,255,160)"), 20]),
+    cmd(221), cmd(222),
     cmd(241, [new RObject("RPG::AudioFile", [["@name", S("Legend Sinnoh")], ["@volume", 100], ["@pitch", 100]])]),
-    script("$game_screen.start_shake(6, 6, 50)"),
-    cmd(250, [new RObject("RPG::AudioFile", [["@name", S("Thunder8")], ["@volume", 100], ["@pitch", 100]])]),
     ...textCommands([
-      "Arceus: ...",
-      "Arceus: Humano.",
-      "Arceus: Te he observado desde que diste tu primer paso fuera de Pueblo Paleta.",
-      "Arceus: Dime... ¿Por qué caminas? ¿Por qué desafías las leyes de la existencia?",
-      "Arceus: ¿Acaso crees que coleccionar criaturas y doblegar voluntades te otorga el derecho de pararte ante la Consciencia Primordial?",
+      "Ash... Tu viaje comenzó en Pueblo Paleta con un simple Pikachu, y tus pasos te han llevado a desafiar los límites mismos de la existencia.",
+      "Has capturado y combatido contra las criaturas que tejieron la urdimbre de las regiones.",
+      "Sin embargo... ¿creías que los seres que encontraste en tu camino eran el límite absoluto?",
+      "Los Dialga, Palkia e incluso la forma que alguna vez presenciaste de Mí... no eran más que fragmentos disminuidos, sombras atenuadas proyectadas en los planos inferiores para evitar la aniquilación de la realidad.",
+      "Pero hoy... las 17 Tablas del Génesis se han congregado en una sola alma humana.",
+      "He descendido con la plenitud de Mi ser primordial.",
+      "El cosmos ha cumplido su ciclo. La luz y la materia serán devueltas a la nada.",
+      "¡Prepárate, Ash Ketchum! ¡Presencia el poder del Principio y del Fin!",
     ]),
-    script("$game_screen.start_shake(7, 7, 50)"),
-    ...textCommands([
-      "Arceus: Has enfrentado a las Aves del Rayo y del Hielo... Has despertado a los titanes del magma y del océano en Hoenn... Has osado cruzar miradas con los señores de las dimensiones.",
-      "Arceus: Pero tu orgullo mortal te ciega ante la verdad.",
-      "Arceus: ¿Crees que aquellos a los que llamaste 'Dialga', 'Palkia' o 'Arceus' en tus viajes eran la plenitud de nuestro ser?",
-      "Arceus: ¡Ingenuo!",
-      "Arceus: Me esforcé durante eones en dejar fragmentos, ecos y copias atenuadas de mí mismo y de mis guardianes a lo largo y ancho del cosmos...",
-      "Arceus: ¡Específicamente para evitar esto! Para que ningún ser viviente fuera capaz de despertar el núcleo original ni perturbar el descanso del Arquitecto.",
-    ]),
-    script("$game_screen.start_shake(8, 8, 60)"),
-    cmd(250, [new RObject("RPG::AudioFile", [["@name", S("Thunder8")], ["@volume", 100], ["@pitch", 100]])]),
-    ...textCommands([
-      "Arceus: Y sin embargo... tú reuniste las diecisiete Tablas del Génesis. Has forzado las cerraduras de la creación y desgarrado el velo que protegía a este universo de mi juicio.",
-      "Arceus: No he descendido para coronarte campeón. He venido a desatar el Cataclismo Final.",
-      "Arceus: La existencia de esta línea temporal ha excedido su propósito. Todo lo que conoces, cada región, cada recuerdo, será reintegrado a la nada de la que provino.",
-      "Arceus: ¡Desaparece ante el juicio del Creador!",
-    ]),
-    // Divine battle
-    script("res = pbStartArceusDivineBattle"),
-    cmd(111, [12, S("res == 4")]), // Captured
-    cmd(121, [SW_ARCEUS_CAUGHT, SW_ARCEUS_CAUGHT, 0], 1),
-    ...textCommands(["¡Has capturado al Creador del Universo, Arceus!"], 1),
-    cmd(412),
-    cmd(111, [12, S("res == 1")]), // Defeated
-    ...textCommands(["Arceus contempla el vínculo inquebrantable de tu corazón. El resplandor del cataclismo se repliega suavemente..."], 1),
-    cmd(412),
+    script("pbSpecialBossArceusBattle"),
+    cmd(111, [12, S("$Trainer.party.any? { |p| p.hp > 0 }")]),
     cmd(121, [SW_ARCEUS_RESOLVED, SW_ARCEUS_RESOLVED, 0]),
-    // Volo arrives
+    cmd(223, [S("Tone.new(255,255,255,255)"), 30]),
     ...textCommands([
-      "De repente, se escuchan pasos apresurados subiendo la escalinata sagrada...",
-      "Volus: ¡Increíble...! ¡Verdaderamente colosal!",
-      "Volus: La energía cósmica que amenazaba con reiniciar el cosmos se ha detenido. ¡Ash, has salvado al universo entero de un destino irrevocable!",
+      "El fulgor del ser supremo desciende en una armonía sobrecogedora...",
+      "Arceus: Increíble... Tu voluntad no quebrantó la creación, sino que le ha devuelto su equilibrio.",
     ]),
-    cmd(111, [12, S("$game_switches[874] == true")]), // If Arceus caught -> Volo battle
+    cmd(111, [12, S("$game_switches[874]")]),
     ...textCommands([
-      "Volus: Espera... esa esfera en tu mano...",
-      "Volus: No puede ser... ¿Has... has CAPTURADO a Arceus?",
-      "Volus: ¡¿Cómo te atreves?! ¡El ser original que forjó el tiempo y el espacio no puede pertenecer a un simple muchacho de Kanto!",
-      "Volus: He dedicado mi vida entera buscando su bendición... ¡Ese poder me corresponde a mí para moldear un nuevo mundo sin dolor!",
-      "Volus: ¡Si no me lo entregas por las buenas, te lo arrebataré en batalla!",
-    ], 1),
-    script("pbTrainerBattle(:SECRET_Volo, \"Volo\", nil, false, 0, true)", 1),
-    cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 1),
+      "Arceus: Has demostrado que los humanos y los Pokémon son capaces de sostener el peso de la eternidad. Acepto caminar a tu lado.",
+    ]),
+    cmd(412),
     ...textCommands([
-      "Volus: Imposible... Ni siquiera con la sombra del dragón renegado he podido hacerte vacilar...",
-      "Volus: Veo la luz en los ojos de tus compañeros. Arceus... no fue sometido. Te eligió a ti porque comprendes el verdadero significado de la confianza.",
-      "Volus: Mi obsesión... se desvanece como la niebla de Hisui. Toma esto, salvador del mundo.",
-    ], 1),
-    script("pbReceiveItem(:RARECANDY, 5)", 1),
+      "El silencio absoluto envuelve la cima del monte. Las nubes se disipan, revelando el firmamento infinito.",
+      "Volo: ¡Ash! ¡Lo... lo lograste! ¡El cosmos ha sido preservado!",
+    ]),
+    cmd(111, [12, S("$game_switches[874]")]),
+    ...textCommands([
+      "Volo: Espera... ¿Eso que llevas contigo... es el mismísimo Gran Uno?!",
+      "Volo: ¡No puede ser! ¡Durante eones busqué alcanzar la gloria del creador! ¡No permitiré que un joven mortal lo conserve!",
+      "Volo: ¡Ash! ¡Te desafío por el derecho a portar la corona de la existencia!",
+    ]),
+    script("pbTrainerBattle(:SECRET_Volo, \\\"Volo\\\", nil, false, 0, true)"),
+    cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0]),
+    ...textCommands([
+      "Volo: Ja... ja... Es inútil luchar contra el destino, ¿verdad?",
+      "Volo: Tu lazo con los Pokémon no proviene de la ambición, sino del amor puro por este mundo. Me rindo ante tu verdad, Ash.",
+    ]),
     cmd(412),
     cmd(121, [SW_COMPLETED, SW_COMPLETED, 0]),
     ...textCommands([
-      "Una brisa de infinita serenidad recorre la Cima del Génesis.",
-      "La fisura temporal se ha sellado y la paz reina una vez más sobre el universo de Sinnoh.",
+      "El portal de Puntaneva resuena con un tono apacible. La crisis divina ha concluido.",
     ]),
+    cmd(412),
     cmd(0),
   ];
 
-  // Page 1: Arceus before battle
-  const p1 = page({
-    gfx: graphic("ARCEUS", 2),
-    list: arceusCinematic,
-  });
-
-  // Page 2: Volo waiting if player lost to him after catching Arceus
+  const p1 = page({ gfx: graphic("ARCEUS", 2), list: arceusBattle });
   const p2 = page({
-    cond: condition({ sw: SW_ARCEUS_CAUGHT, sw2: SW_ARCEUS_RESOLVED }),
+    cond: condition({ sw: SW_ARCEUS_RESOLVED, sw2: SW_ARCEUS_CAUGHT }),
     gfx: graphic("SECRET_Volo", 2),
     list: [
       ...textCommands([
-        "Volus: ¡Regresaste! ¡No permitiré que te marches con el poder del Creador en tus manos!",
-        "¡Entrégame a Arceus!",
+        "Volo: ¡Aún no me rindo! ¡Arceus debe pertenecer a quien comprenda la verdadera grandeza!",
       ]),
       script("pbTrainerBattle(:SECRET_Volo, \"Volo\", nil, false, 0, true)"),
       cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0]),
       cmd(121, [SW_COMPLETED, SW_COMPLETED, 0]),
       ...textCommands([
-        "Volus: Imposible... Arceus eligió a su verdadero compañero.",
-        "El destino del mundo está en las mejores manos. Adiós, Ash.",
+        "Volo: Lo entiendo ahora... El creador eligió a su campeón. Buen viaje, Ash.",
       ]),
-      script("pbReceiveItem(:RARECANDY, 5)"),
       cmd(0),
     ],
   });
-
-  // Page 3: Completed altar
-  const p3 = page({
-    cond: condition({ sw: SW_COMPLETED }),
-    list: [
-      ...textCommands(["El Altar del Origen descansa en una paz infinita. El Génesis sigue su curso eterno."]),
-      cmd(0),
-    ],
-  });
+  const p3 = page({ cond: condition({ sw: SW_COMPLETED }), list: [cmd(0)] });
 
   addEventToMap(map, event(2, "Arceus Creador", 23, 10, [p1, p2, p3]));
   addEventToMap(map, hiddenItemEvent(3, "Item GOLDBOTTLECAP", 8, 12, "GOLDBOTTLECAP", "Chapa Dorada"));
