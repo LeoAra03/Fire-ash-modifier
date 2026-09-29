@@ -73,6 +73,9 @@ function syncScripts() {
 }
 function syncFiles() {
   for (const file of DATA_FILES) {
+    // Scripts.rxdata no viene del juego: el paquete lleva la copia corregida
+    // (colisiones, guardado y Grandeur Club), no el original de pokemon_fire_ash.
+    if (file === "Scripts.rxdata") continue;
     const source = path.join(GAME_DATA, file);
     const destination = path.join(DIRECT, "Data", file);
     if (!fs.existsSync(source)) throw new Error(`Falta el dato jugable ${source}`);
@@ -87,10 +90,8 @@ function syncFiles() {
   }
 }
 function zipPackage() {
-  const zip = path.join(PACKAGE, "Fire_Ash_Paquete_Directo.zip");
-  fs.rmSync(zip, { force: true });
-  execFileSync("zip", ["-qr", zip, "."], { cwd: DIRECT, stdio: "ignore" });
-  return zip;
+  execFileSync(process.execPath, [path.join(ROOT, "tools", "build_direct_package.mjs")], { stdio: "inherit" });
+  return path.join(PACKAGE, "Fire_Ash_Paquete_Directo.zip");
 }
 function verify() {
   ensureFiles();
@@ -107,8 +108,12 @@ function verify() {
   for (const [, destinationName] of ASSET_FILES) {
     if (!fs.existsSync(path.join(DIRECT, destinationName))) throw new Error(`Falta ${destinationName} en el paquete`);
   }
-  const zip = path.join(PACKAGE, "Fire_Ash_Paquete_Directo.zip");
-  if (!fs.existsSync(zip)) throw new Error("Falta el ZIP del paquete directo");
+  const packagedScripts = fs.readFileSync(path.join(PACKAGE, "Scripts.rxdata"));
+  const directScripts = fs.readFileSync(path.join(DIRECT, "Data", "Scripts.rxdata"));
+  if (!packagedScripts.equals(directScripts)) {
+    throw new Error("Paquete_directo/Data/Scripts.rxdata no es la copia corregida con las correcciones de distribución");
+  }
+  execFileSync(process.execPath, [path.join(ROOT, "tools", "build_direct_package.mjs"), "--verify"], { stdio: "inherit" });
   console.log("OK: Paquete_directo y ZIP sincronizados con PokeMod_RutaDeDios");
 }
 

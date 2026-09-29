@@ -39,7 +39,9 @@ Si no puedes descomprimir ZIP desde Android, usa la carpeta `Paquete_directo/` y
 - `Map2031.rxdata` a `Map2037.rxdata`: los siete pisos hasta Arceus.
 - `MapInfos.rxdata`, `System.rxdata`, `map_metadata.dat` y `encounters.dat`: registro y datos necesarios para los mapas nuevos.
 
-También se incluyen los sprites de Volus, Arceus, Dialga, Palkia y el portal, además de las músicas usadas por el evento.
+También se incluyen los sprites de Volus, Arceus, Dialga, Palkia y el portal, los cinco sprites de apoyo del combate automático (Cynthia, Steven, Ethan, Red y Volus) y las músicas usadas por el evento.
+
+El ZIP se genera de forma reproducible con `npm run build:package` y se comprueba con `npm run verify:package`, que compara cada archivo del ZIP con `Paquete_directo/`. Si alguna vez se toca el paquete sin rehacer el ZIP, esa verificación falla.
 
 ## Cómo iniciar el evento de Arceus
 

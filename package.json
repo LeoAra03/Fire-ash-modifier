@@ -36,6 +36,8 @@
     "rebuild:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs",
     "verify:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs --verify",
     "sync:ruta_de_dios:package": "node tools/sync_ruta_de_dios_package.mjs",
+    "build:package": "node tools/build_direct_package.mjs",
+    "verify:package": "node tools/build_direct_package.mjs --verify",
     "verify:ruta_de_dios:package": "node tools/sync_ruta_de_dios_package.mjs --verify",
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify"
   },

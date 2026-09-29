@@ -4,6 +4,7 @@ import os from "node:os";
 import zlib from "node:zlib";
 import path from "node:path";
 import { validatePkregion } from "./region_builder_adapter.mjs";
+import { verify as verifyDirectPackage } from "./build_direct_package.mjs";
 import { inspectStudioProject, STUDIO_COLLECTIONS, STUDIO_VERSION } from "./pokemon_studio_adapter.mjs";
 import { buildAtlasStyleReport } from "./atlas_style_gate.mjs";
 import { ROOT, readMarshalData } from "./lib/fire_ash_registry.mjs";
@@ -160,6 +161,16 @@ check(approach.width === 52 && approach.height === 72 &&
 const directApproach = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map2030.rxdata"))));
 check(directApproach.width === 52 && directApproach.height === 72,
   "el paquete directo incluye la montaña celestial previa a los siete pisos");
+let directZipError = null;
+try {
+  verifyDirectPackage();
+} catch (error) {
+  directZipError = error.message;
+}
+check(directZipError === null,
+  directZipError === null
+    ? "el ZIP descargable está al día con Paquete_directo/"
+    : `el ZIP descargable está desactualizado: ${directZipError}`);
 const rutaScript = zlib.inflateSync(Buffer.from(readMarshalData("Scripts.rxdata").find((row) => row[1].text === "PokeMod_RutaDeDios")[2].bytes)).toString("utf8");
 check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes("pbSnowpointTreeCell?") &&
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
