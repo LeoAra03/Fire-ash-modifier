@@ -164,13 +164,12 @@ check(eventChange.corrected.includes("@through              = @page.through && @
 check(playerChange.corrected.includes("event.over_trigger? && event.character_name == \"\"") &&
   (playerChange.corrected.match(/event\.over_trigger\? && event\.character_name/g) || []).length === 5,
   "Game_Player conserva la interacción con sprites sólidos");
-check(startGameChange.corrected.includes("File.join(File.dirname(SaveData::FILE_PATH), \"PokemonSystemSettings.dat\")") &&
+check(!startGameChange.corrected.includes("save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)") &&
   !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat") &&
-  startGameChange.corrected.includes("rescue IOError, SystemCallError"),
-  "los ajustes de partida se guardan de forma segura junto a Game.rxdata");
-check(fastForwardChange.corrected.includes("File.join(File.dirname(SaveData::FILE_PATH), \"GameSpeedSetting.dat\")") &&
-  !fastForwardChange.corrected.includes("Save Files/GameSpeedSetting.dat") &&
-  fastForwardChange.corrected.includes("rescue IOError, SystemCallError"),
+  startGameChange.corrected.includes("SaveData.save_to_file(save_file)"),
+  "la partida principal no depende del archivo auxiliar PokemonSystemSettings");
+check(!fastForwardChange.corrected.includes("save_data(speed, SPEED_SETTING_FILE)") &&
+  !fastForwardChange.corrected.includes("Save Files/GameSpeedSetting.dat"),
   "la velocidad no depende de una carpeta Save Files inexistente");
 
 // --- Mochila libre en el Grandeur Club ---------------------------------------

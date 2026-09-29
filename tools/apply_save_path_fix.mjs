@@ -43,8 +43,7 @@ const patches = [
   },
   {
     section: "StartGame",
-    old: '    save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)    # (Added by: kraegon)',
-    replacement: [
+    old: [
       "    # Es un ajuste opcional: si el dispositivo no permite crear este archivo,",
       "    # la partida principal debe continuar guardándose con normalidad.",
       "    begin",
@@ -53,21 +52,26 @@ const patches = [
       "      # Ignorar el ajuste auxiliar en instalaciones Android de solo acceso.",
       "    end",
     ].join("\r\n"),
+    replacement: [
+      "    # PokemonSystemSettings.dat es opcional y algunas instalaciones Android",
+      "    # no permiten crear archivos auxiliares junto a la carpeta del juego.",
+      "    # La partida principal se guarda abajo mediante SaveData.save_to_file.",
+    ].join("\r\n"),
   },
   {
     section: "BetterFastForward",
     old: [
-      "def save_speed_setting(speed)",
-      "    save_data(speed, SPEED_SETTING_FILE)",
-      "end",
-    ].join("\r\n"),
-    replacement: [
       "def save_speed_setting(speed)",
       "    begin",
       "        save_data(speed, SPEED_SETTING_FILE)",
       "    rescue IOError, SystemCallError",
       "        # El guardado de velocidad no debe interrumpir el juego.",
       "    end",
+      "end",
+    ].join("\r\n"),
+    replacement: [
+      "def save_speed_setting(speed)",
+      "    # El ajuste de velocidad es opcional y no se escribe en Android.",
       "end",
     ].join("\r\n"),
   },
@@ -87,8 +91,8 @@ for (const patch of patches) {
 
 if (VERIFY_ONLY) {
   if (changed !== 0) throw new Error("Scripts_corregido/Scripts.rxdata todavía usa la carpeta Save Files");
-  console.log("OK: PokemonSystemSettings.dat se guarda junto a Game.rxdata");
-  console.log("OK: GameSpeedSetting.dat se guarda junto a Game.rxdata");
+  console.log("OK: PokemonSystemSettings.dat ya no se escribe como archivo auxiliar");
+  console.log("OK: GameSpeedSetting.dat ya no se escribe como archivo auxiliar");
 } else {
   fs.writeFileSync(FILE, Buffer.from(marshalDump(scripts)));
   console.log(`Scripts_corregido/Scripts.rxdata actualizado (${changed} rutas de guardado)`);
