@@ -131,7 +131,69 @@ const tier3Compiled = tier3Entries.every((entry) => {
 });
 check(tier3Compiled, "las 420 reglas compiladas conservan baliza, retorno, microdecisión y self-switch A");
 
-// --- Archivo descargable con el end sobrante corregido ------------------------
+const snowpoint = parseMap(readMarshalData("Map625.rxdata"));
+const arceusPortal = snowpoint.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Portal a la Ruta de Dios");
+check(Boolean(arceusPortal) && arceusPortal.x === 20 && arceusPortal.y === 14 &&
+  arceusPortal.pages[0]?.condition?.switch1 === 0 && arceusPortal.pages[0]?.graphic?.charName === "ARCEUS_GATE",
+  "el portal de Arceus aparece en Puntaneva con un aro de luz accesible aunque se haya perdido la flag 870");
+const directPackagePortal = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map625.rxdata"))));
+const directPortal = directPackagePortal.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Portal a la Ruta de Dios");
+const directSupportSprites = ["ARC_Cynthia.png", "ARC_Ethan.png", "ARC_Steven.png", "SECRET_Red.png", "SECRET_Volo.png"];
+check(Boolean(directPortal) && directPortal.pages[0]?.condition?.switch1 === 0 &&
+  fs.existsSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Graphics", "Characters", "ARCEUS_GATE.png")) &&
+  fs.existsSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Graphics", "Characters", "SQUIRTLE.png")) &&
+  directSupportSprites.every((file) => fs.existsSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Graphics", "Characters", file))),
+  "el paquete directo conserva el portal, al Squirtle y los cinco sprites de apoyo cinematográfico");
+const snowpointGuide = snowpoint.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Volus — Guía Celestial");
+check(Boolean(snowpointGuide) && snowpointGuide.x === 20 && snowpointGuide.y === 16 && snowpointGuide.pages[0]?.condition?.switch1 === 870,
+  "Puntaneva muestra al segundo Volus después de hablar con el primero");
+const snowpointSquirtle = snowpoint.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Squirtle — Paso Temporal");
+check(Boolean(snowpointSquirtle) && snowpointSquirtle.x === 19 && snowpointSquirtle.y === 55 && snowpointSquirtle.pages[0]?.graphic?.charName === "SQUIRTLE" &&
+  !snowpoint.events.map(({ obj }) => parseEvent(obj)).some((event) => event.name === "Brandon" || event.name.includes("Regigigas")),
+  "la plaza del templo queda libre y Squirtle ofrece el paso temporal junto al Charmeleon");
+const approach = parseMap(readMarshalData("Map2030.rxdata"));
+const approachEvents = approach.events.map(({ obj }) => parseEvent(obj));
+check(approach.width === 52 && approach.height === 72 &&
+  approachEvents.some((event) => event.name === "Puerta de la Cima del Génesis") &&
+  approachEvents.some((event) => event.name === "Regreso a Ciudad Puntaneva"),
+  "la aproximación celestial conserva una montaña larga con entrada y retorno");
+const directApproach = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map2030.rxdata"))));
+check(directApproach.width === 52 && directApproach.height === 72,
+  "el paquete directo incluye la montaña celestial previa a los siete pisos");
+const rutaScript = zlib.inflateSync(Buffer.from(readMarshalData("Scripts.rxdata").find((row) => row[1].text === "PokeMod_RutaDeDios")[2].bytes)).toString("utf8");
+check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes("pbSnowpointTreeCell?") &&
+  rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
+  "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
+check(rutaScript.includes("pbStartArceusDivineBattle") &&
+  rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") && rutaScript.includes("pbArceusPseudoPC") &&
+  rutaScript.includes("pbArceusSurrenderSequence") && rutaScript.includes("pbArceusCopyActive") &&
+  rutaScript.includes("pbArceusCinematicPrelude") && rutaScript.includes("PokemonSprite"),
+  "Arceus conserva batalla por fases, pseudo-PC, copia del activo, rendición y prólogo cinematográfico");
+check(rutaScript.includes("return 0") && rutaScript.includes("return 4 if arceus_capture_ready?") &&
+  rutaScript.includes("100%") && rutaScript.includes("Master Ball"),
+  "la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después");
+check(rutaScript.includes("RUTA_ARCEUS_PHASE_PLATES") && rutaScript.includes("pbArceusRotateType") &&
+  rutaScript.includes("pbArceusSummon") && rutaScript.includes(":MEW") &&
+  rutaScript.includes(":GIRATINA"),
+  "la batalla instala ruleta de tipos, movimientos rotativos y aliados legendarios");
+const summitRaw = readMarshalData("Map2037.rxdata");
+const summitBoss = summitRaw.getIvar("events").pairs.find(([, event]) =>
+  (event.getIvar("name")?.text ?? "").includes("Arceus Creador"))?.[1];
+const summitToneCommands = summitBoss?.getIvar("pages")?.[0]?.getIvar("list")?.filter((command) =>
+  Number(command.getIvar("code")) === 223) ?? [];
+check(summitToneCommands.length >= 2 && summitToneCommands.every((command) => {
+  const tone = command.getIvar("parameters")?.[0];
+  return tone?.className === "Tone" && tone?.bytes?.length === 32;
+}), "los comandos de pantalla de Arceus serializan Tone como objeto RMXP, no como String");
+const cinematicAllies = summitRaw.getIvar("events").pairs
+  .map(([, event]) => event)
+  .filter((event) => (event.getIvar("name")?.text ?? "").startsWith("Apoyo —"));
+const cinematicSwitches = cinematicAllies.flatMap((event) => event.getIvar("pages").map((page) =>
+  Number(page.getIvar("condition")?.getIvar("switch1_id"))));
+check(cinematicAllies.length === 5 && [878, 879, 880].every((id) => cinematicSwitches.includes(id)),
+  "Map2037 contiene los cinco entrenadores de apoyo en tres entradas coreografiadas");
+
+// --- Archivo descargable corregido --------------------------------------------
 const gameScripts = readMarshalData("Scripts.rxdata");
 const downloadableScripts = marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Scripts.rxdata")));
 check(downloadableScripts.length === gameScripts.length, "el Scripts.rxdata descargable conserva todas las secciones");
@@ -143,11 +205,34 @@ const scriptChanges = downloadableScripts.flatMap((row, index) => {
   if (!sameMetadata) return [{ index, name: row[1].text, invalidMetadata: true }];
   return source === corrected ? [] : [{ index, name: row[1].text, source, corrected }];
 });
-check(scriptChanges.length === 1 && scriptChanges[0].name === "Grandeur Club" &&
-  scriptChanges[0].corrected === scriptChanges[0].source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
-"el archivo descargable solo elimina el end extra de Grandeur Club");
-check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(scriptChanges[0]?.corrected ?? ""),
+const grandeurChange = scriptChanges.find((change) => change.name === "Grandeur Club");
+const characterChange = scriptChanges.find((change) => change.name === "Game_Character");
+const eventChange = scriptChanges.find((change) => change.name === "Game_Event");
+const playerChange = scriptChanges.find((change) => change.name === "Game_Player");
+const startGameChange = scriptChanges.find((change) => change.name === "StartGame");
+const fastForwardChange = scriptChanges.find((change) => change.name === "BetterFastForward");
+check(scriptChanges.length === 6 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange,
+  "el archivo descargable solo cambia Grandeur Club, colisiones y rutas de ajustes");
+check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
+  "Grandeur Club conserva la corrección del end sobrante");
+check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
   "el script descargable no contiene un end extra antes de givePassive");
+check(characterChange.corrected.includes("next if event.through && event.character_name == \"\"") &&
+  characterChange.corrected.includes("Los eventos con gráfico son sólidos"),
+  "Game_Character bloquea sprites aunque la página del evento marque Through");
+check(eventChange.corrected.includes("@through              = @page.through && @character_name == \"\"") &&
+  eventChange.corrected.includes("Through solo vale para eventos invisibles"),
+  "Game_Event hace sólidos los eventos con character_name al refrescarse");
+check(playerChange.corrected.includes("event.over_trigger? && event.character_name == \"\"") &&
+  (playerChange.corrected.match(/event\.over_trigger\? && event\.character_name/g) || []).length === 5,
+  "Game_Player conserva la interacción con sprites sólidos");
+check(!startGameChange.corrected.includes("save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)") &&
+  !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat") &&
+  startGameChange.corrected.includes("SaveData.save_to_file(save_file)"),
+  "la partida principal no depende del archivo auxiliar PokemonSystemSettings");
+check(!fastForwardChange.corrected.includes("save_data(speed, SPEED_SETTING_FILE)") &&
+  !fastForwardChange.corrected.includes("Save Files/GameSpeedSetting.dat"),
+  "la velocidad no depende de una carpeta Save Files inexistente");
 
 // --- Mochila libre en el Grandeur Club ---------------------------------------
 const scriptsRow = (name) => {

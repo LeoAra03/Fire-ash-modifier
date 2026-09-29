@@ -18,13 +18,22 @@
 ---
 
 ## 3. Acceso en Ciudad Puntaneva
-- **Ubicación:** Ciudad Puntaneva (`Map625.rxdata`), en las coordenadas `(20, 3)` justo frente a la entrada del antiguo templo de Regigigas.
-- **Portal:** Manifestación de luz celestial (gráfico `Object ball special`), visible cuando el interruptor 870 (`RUTA_DE_DIOS_UNLOCKED`) está activo.
-- Al interactuar, transporta al jugador al primer estrato de la montaña (`Map2031`, 20, 36).
+- **Ubicación:** Ciudad Puntaneva (`Map625.rxdata`), en las coordenadas `(20, 14)`, justo delante de la entrada del antiguo templo de Regigigas, en una casilla transitable.
+- **Plaza de acceso:** se retiraron la fachada del antiguo templo de Regigigas y el NPC que ocupaba la entrada. El espacio queda libre y nevado, sin un edificio bloqueando el portal.
+- **Avenida celeste:** se despejó una calzada natural entre los árboles, desde la zona central de la ciudad hasta la plaza, sin franjas grises artificiales. La ruta conserva los árboles en los flancos.
+- **Segundo Volus:** aparece en `(20, 16)` solo después de hablar con el Volus de Pueblo Hojaverde y activar el switch 870. Explica el significado de la montaña, las balizas y el camino antes de que el jugador entre.
+- **Squirtle de paso:** junto al Charmeleon de la zona baja (`19,55`), el evento activa el switch temporal 877. Un parche de `Game_Player` permite cruzar únicamente celdas de árbol en el mapa 625; `Game_Map#setup` lo apaga al cargar cualquier mapa, por lo que no atraviesa árboles en otras ciudades ni conserva el permiso al regresar.
+- **Portal:** aro de luz celestial animado (`ARCEUS_GATE.png`), visible incluso si una partida antigua perdió el switch 870.
+- Al interactuar, transporta al jugador a la aproximación larga (`Map2030`, 26, 68), no directamente al primer piso.
 
 ---
 
-## 4. Estructura de los 7 Pisos (Arquitectura Olímpica y Monte Corona)
+## 4. Aproximación Celestial (`Map2030`)
+La entrada conduce a una montaña de **52×72 casillas**, con una avenida serpenteante de cinco casillas, cuatro cambios de nivel con escaleras talladas, bosques de pinos escarchados, praderas de encuentros, pozas cósmicas, santuarios laterales, hitos de las Regiones/Origen/Vínculo y retorno seguro a Puntaneva. En la cima hay una puerta de transición hacia `Map2031`. La composición busca que la zona se sienta como un resumen sagrado de toda la franquicia Pokémon, sin reducirla a una sola región.
+
+---
+
+## 5. Estructura de los 7 Pisos (Arquitectura Olímpica y Monte Corona)
 
 Todos los mapas han sido construidos con las paletas y reglas de diseño arquitectónico auténticas de **Monte Corona Pasado (`Map990`)**, **Columna Lanza (`Map970`)** y las **Ruinas Blancas (`Map771`)**:
 - **Acantilados Escalonados del Monte Corona (`1249..1273`):** Cornisas superiores sombreadas, fachadas de roca viva y cornisas inferiores, con escaleras de piedra tallada (`1243`) transitables sobre suelo de basalto (`1257`).
@@ -47,7 +56,7 @@ Todos los mapas han sido construidos con las paletas y reglas de diseño arquite
 
 ---
 
-## 5. Cinemática de Arceus y Combate contra Dios
+## 6. Cinemática de Arceus y Combate contra Dios
 Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
 1. **Puesta en escena:** La música se eleva con el tema sagrado *Legend Sinnoh*. La pantalla tiembla violentamente (intensidades 6, 7 y 8) con relámpagos divinos.
 2. **Cuestionamiento del Viaje:**
@@ -57,16 +66,23 @@ Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
    - Arceus confiesa con severidad: *«¿Crees que aquellos a los que llamaste 'Dialga', 'Palkia' o 'Arceus' en tus viajes eran la plenitud de nuestro ser? ¡Ingenuo! Me esforcé durante eones en dejar fragmentos, ecos y copias atenuadas de mí mismo y de mis guardianes a lo largo y ancho del cosmos... ¡Específicamente para evitar esto! Para que ningún mortal fuera capaz de despertar el núcleo original ni perturbar el descanso del Arquitecto.»*.
 4. **El Cataclismo Final:**
    - *«Y sin embargo... reuniste las diecisiete Tablas del Génesis. No he descendido para coronarte campeón. He venido a desatar el Cataclismo Final. La existencia de esta línea temporal ha excedido su propósito. ¡Desaparece ante el juicio del Creador!»*.
-5. **Combate Divino:**
+5. **Prólogo de apoyo coreografiado:** antes de que Ash tome el control, la cima recibe tres entradas escénicas. Cynthia y Steven forman el primer dúo; Gold/Eco y Red forman el segundo; Volus llega después con Giratina Origen para intentar intervenir. Todas las acciones están coreografiadas, el jugador no puede modificar el resultado y Arceus derrota a los cinco antes de que se conviertan en combatientes reales. Ash avanza al final con representaciones transparentes de su equipo y declara el duelo definitivo.
+6. **Combate Divino:**
    - **Nivel 200**, IVs 31 en todo, Tabla Legendaria / Multitipo.
    - Movimientos: *Sentencia*, *Distorsión*, *Corte Vacío*, *Golpe Umbrío*.
-   - **Mecánica de 3 Restaura Todo:** Implementada en el motor de batalla (`PokeBattle_Battler#pbReduceHP`). Cada vez que la salud de Arceus cae al 45% o menos, se activa una animación sagrada: *«¡El fulgor del Génesis envuelve al Arquitecto de la Existencia! ¡Arceus utilizó un Restaura Todo (X/3)! ¡Su salud y estado se restablecen por completo!»*.
-   - Una vez agotados los 3 usos, el jugador puede desgastarlo para debilitarlo o atraparlo.
-   - **Derrota:** Si el equipo del jugador es derrotado, el motor ejecuta el desmayo tradicional y lo traslada al Centro Pokémon más cercano.
+   - **Seis fases progresivas:** el motor conserva el mismo Arceus entre fases, cambia las Tablas y sus movimientos, y muestra distorsiones, destellos, tonos de pantalla y temblores. Las fases incluyen Mega Evolución del Génesis, Gigamax del Creador, Movimiento Z, copia del Pokémon activo, invocaciones legendarias (Mew/Giratina y ecos de Dialga/Palkia) y el último sello.
+   - **Ruleta de tipos:** en cada transición Arceus alterna entre las 17 Tablas y se actualiza su tipo con una animación contextual.
+   - **Control de la realidad:** puede curar o revivir un Pokémon del jugador durante una transición, y puede copiar temporalmente al Pokémon activo. También rota conjuntos de movimientos para cubrir ataques legendarios y de todas las familias disponibles en el motor.
+   - **Mecánica de 3 Restaura Todo:** implementada en el motor de batalla (`PokeBattle_Battler#pbReduceHP`). Cuando la salud alcanza el umbral, se activa la animación sagrada y el estado se restaura hasta tres veces.
+   - **Captura estricta:** la captura está bloqueada al 0%, incluyendo la Master Ball, antes de la animación final. El golpe que rompe el último sello deja a Arceus con 1 HP, muestra la animación de debilitamiento y habilita una captura determinista del 100%.
+   - **Sin huida:** el comando de escape muestra una rotura visual, temblor y destello antes de ser rechazado.
+   - **Continuación fuera de seis Pokémon:** al caer el equipo activo aparece `Debes continuar` y un pseudo-PC permite elegir hasta seis Pokémon capaces desde las cajas. El pseudo-PC mueve los datos sin curarlos. La batalla continúa mientras haya Pokémon disponibles o hasta que el jugador elija rendirse.
+   - **Rendición:** muestra temblores, destrucción progresiva de la presentación de los mapas y entrenadores gritando antes de usar el retorno normal del motor (`pbStartOver`).
+   - **Derrota:** si no quedan Pokémon activos ni reservas y no se elige continuar, se conserva el flujo de derrota del motor. La victoria y la captura regresan a la secuencia posterior normal de Volus.
 
 ---
 
-## 6. Desenlace y Traición de Volus
+## 7. Desenlace y Traición de Volus
 Tras concluir el combate contra Arceus (derrota o captura):
 - Volus sube apresuradamente la escalinata del Altar y felicita a Ash por haber detenido la aniquilación universal.
 - **Si el jugador capturó a Arceus:**
@@ -82,7 +98,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 
 ---
 
-## 7. Verificación Automatizada
+## 8. Verificación Automatizada
 - Comprobación de integridad y sintaxis: `npm run verify:ruta_de_dios`
 - Validación de tests del proyecto: `npm test`
 - Verificación del Hub de Oak y de Pueblo Paleta: `npm run verify:oak:hub` y `npm run verify:abra:tower`
