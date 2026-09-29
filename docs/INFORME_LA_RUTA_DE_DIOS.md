@@ -18,13 +18,20 @@
 ---
 
 ## 3. Acceso en Ciudad Puntaneva
-- **Ubicación:** Ciudad Puntaneva (`Map625.rxdata`), en las coordenadas `(20, 3)` justo frente a la entrada del antiguo templo de Regigigas.
-- **Portal:** Manifestación de luz celestial (gráfico `Object ball special`), visible cuando el interruptor 870 (`RUTA_DE_DIOS_UNLOCKED`) está activo.
-- Al interactuar, transporta al jugador al primer estrato de la montaña (`Map2031`, 20, 36).
+- **Ubicación:** Ciudad Puntaneva (`Map625.rxdata`), en las coordenadas `(20, 14)`, justo delante de la entrada del antiguo templo de Regigigas, en una casilla transitable.
+- **Avenida celeste:** se despejó una calzada de cinco casillas entre los árboles, desde la zona central de la ciudad hasta el templo, sin eliminar edificios ni partidas. La ruta queda legible visualmente y conserva los árboles en los flancos.
+- **Segundo Volus:** aparece en `(20, 16)` solo después de hablar con el Volus de Pueblo Hojaverde y activar el switch 870. Explica el significado de la montaña, las balizas y el camino antes de que el jugador entre.
+- **Portal:** aro de luz celestial animado (`ARCEUS_GATE.png`), visible incluso si una partida antigua perdió el switch 870.
+- Al interactuar, transporta al jugador a la aproximación larga (`Map2030`, 26, 68), no directamente al primer piso.
 
 ---
 
-## 4. Estructura de los 7 Pisos (Arquitectura Olímpica y Monte Corona)
+## 4. Aproximación Celestial (`Map2030`)
+La entrada conduce a una montaña de **52×72 casillas**, con una avenida serpenteante de cinco casillas, cuatro cambios de nivel con escaleras talladas, bosques de pinos escarchados, praderas de encuentros, pozas cósmicas, santuarios laterales, hitos de las Regiones/Origen/Vínculo y retorno seguro a Puntaneva. En la cima hay una puerta de transición hacia `Map2031`. La composición busca que la zona se sienta como un resumen sagrado de toda la franquicia Pokémon, sin reducirla a una sola región.
+
+---
+
+## 5. Estructura de los 7 Pisos (Arquitectura Olímpica y Monte Corona)
 
 Todos los mapas han sido construidos con las paletas y reglas de diseño arquitectónico auténticas de **Monte Corona Pasado (`Map990`)**, **Columna Lanza (`Map970`)** y las **Ruinas Blancas (`Map771`)**:
 - **Acantilados Escalonados del Monte Corona (`1249..1273`):** Cornisas superiores sombreadas, fachadas de roca viva y cornisas inferiores, con escaleras de piedra tallada (`1243`) transitables sobre suelo de basalto (`1257`).
@@ -47,7 +54,7 @@ Todos los mapas han sido construidos con las paletas y reglas de diseño arquite
 
 ---
 
-## 5. Cinemática de Arceus y Combate contra Dios
+## 6. Cinemática de Arceus y Combate contra Dios
 Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
 1. **Puesta en escena:** La música se eleva con el tema sagrado *Legend Sinnoh*. La pantalla tiembla violentamente (intensidades 6, 7 y 8) con relámpagos divinos.
 2. **Cuestionamiento del Viaje:**
@@ -66,7 +73,7 @@ Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
 
 ---
 
-## 6. Desenlace y Traición de Volus
+## 7. Desenlace y Traición de Volus
 Tras concluir el combate contra Arceus (derrota o captura):
 - Volus sube apresuradamente la escalinata del Altar y felicita a Ash por haber detenido la aniquilación universal.
 - **Si el jugador capturó a Arceus:**
@@ -82,7 +89,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 
 ---
 
-## 7. Verificación Automatizada
+## 8. Verificación Automatizada
 - Comprobación de integridad y sintaxis: `npm run verify:ruta_de_dios`
 - Validación de tests del proyecto: `npm test`
 - Verificación del Hub de Oak y de Pueblo Paleta: `npm run verify:oak:hub` y `npm run verify:abra:tower`
