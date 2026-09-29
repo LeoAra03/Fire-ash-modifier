@@ -1,22 +1,68 @@
-# Scripts.rxdata corregido
+# Paquete corregido y expansión «La Ruta de Dios»
 
-Descarga [`Scripts.rxdata`](Scripts.rxdata) desde esta carpeta (en GitHub: abre el archivo y pulsa **Download raw file**). Es el archivo completo de scripts del juego, listo para sustituir `pokemon_fire_ash/Data/Scripts.rxdata` en tu copia de Fire Ash. **No** es un archivo `.rb` para pegar como una sección nueva.
+Esta carpeta contiene dos opciones:
 
-Antes de sustituirlo, cierra el juego y haz una copia de seguridad de tu `Data/Scripts.rxdata` actual. Usa esta versión solo con los datos de este repositorio: sustituir los scripts de otra versión podría sobrescribir cambios propios. No es necesario tocar `Scripts_bak.rxdata` ni tus partidas.
+- `Scripts.rxdata`: archivo corregido de scripts. Incluye las colisiones de sprites, la interacción con NPCs, la corrección de guardado para Android/Kirin, `La Ruta de Dios` y la corrección de Grandeur Club.
+- `Paquete_directo/`: **paquete completo para copiar directamente a la carpeta original del juego**. Incluye los scripts, mapas, datos de mapas, sprites y músicas necesarios para que Volus y el portal de Arceus aparezcan.
 
-## Cambios incluidos
+## Instalación recomendada: paquete completo
 
-- **Colisiones de sprites:** los eventos con `character_name` ya no se pueden atravesar, aunque la página esté marcada como `Through`. Esto cubre los personajes, entrenadores, NPCs, objetos y sprites de los eventos añadidos, sin tener que editar mapa por mapa. Los eventos sin gráfico conservan su comportamiento normal.
-- **Guardado en Android/Kirin:** se desactivó la escritura opcional de `PokemonSystemSettings.dat` y `GameSpeedSetting.dat`, que no son necesarios para la partida. La partida principal continúa guardándose mediante `Game.rxdata` sin depender de `Save Files` ni de archivos auxiliares. Esto evita el error `Errno::ENOENT` de la captura.
-- **Grandeur Club:** se eliminó el `end` sobrante antes de `givePassive` en la sección **Grandeur Club** (línea 710 del código Ruby descomprimido).
+1. Cierra Fire Ash y Kirin.
+2. Haz una copia de seguridad de tu carpeta original del juego, especialmente de `Data/Game.rxdata` o de tus partidas.
+3. Abre `Scripts_corregido/Paquete_directo/`.
+4. Copia su contenido manteniendo la estructura de carpetas sobre la raíz de tu juego:
 
-Las otras secciones y sus nombres e identificadores permanecen intactos. El archivo original en `pokemon_fire_ash/Data/` se deja sin cambios para que puedas conservarlo como referencia.
+```text
+Paquete_directo/Data/*       → TuFireAsh/Data/
+Paquete_directo/Graphics/*   → TuFireAsh/Graphics/
+Paquete_directo/Audio/*      → TuFireAsh/Audio/
+```
 
-## Instalación rápida
+5. Acepta reemplazar los archivos cuando Android/Kirin lo solicite.
+6. Inicia el juego y carga tu partida.
 
-1. Cierra Fire Ash/Kirin.
-2. Haz una copia de seguridad de `Data/Scripts.rxdata`.
-3. Copia este `Scripts_corregido/Scripts.rxdata` sobre `Data/Scripts.rxdata` de tu carpeta original del juego.
-4. Inicia el juego y carga tu partida normalmente.
+También puedes copiar la carpeta `Paquete_directo` completa al lado de `pokemon_fire_ash` y después fusionar sus carpetas `Data`, `Graphics` y `Audio` con las del juego. **No reemplaces ni borres `Game.rxdata` ni tus archivos de partida.**
 
-El parche se aplica al iniciar los mapas y no altera las partidas guardadas. Si usas una versión distinta de Fire Ash, conserva tu copia original: este archivo corresponde a la versión de los datos de este repositorio.
+### Archivos incluidos en `Paquete_directo/Data`
+
+- `Scripts.rxdata`: scripts corregidos y código de la Ruta de Dios.
+- `Map513.rxdata`: Volus en Pueblo Hojaverde.
+- `Map625.rxdata`: portal en Ciudad Puntaneva.
+- `Map2031.rxdata` a `Map2037.rxdata`: los siete pisos hasta Arceus.
+- `MapInfos.rxdata`, `System.rxdata`, `map_metadata.dat` y `encounters.dat`: registro y datos necesarios para los mapas nuevos.
+
+También se incluyen los sprites de Volus, Arceus, Dialga, Palkia y el portal, además de las músicas usadas por el evento.
+
+## Cómo iniciar el evento de Arceus
+
+1. Ve a **Pueblo Hojaverde / Twinleaf Town** y habla con **Volus**.
+2. Si ofrece `Canalizar resonancia`, elige esa opción. Esto activa las 17 Tablas del Génesis y abre la ruta.
+3. Regresa a **Ciudad Puntaneva / Snowpoint City**.
+4. Ve a la entrada norte del templo de Regigigas. El portal está aproximadamente en `X 20, Y 3`.
+5. Ponte delante de la luz y pulsa **Z**.
+
+Si Volus dice que la Ruta de Dios ya está abierta pero el portal no aparece, normalmente se copió solo `Scripts.rxdata` y no `Map625.rxdata`. En ese caso instala todo `Paquete_directo`, no únicamente el script.
+
+## Opción de solo scripts
+
+Si únicamente quieres la corrección de colisiones y guardado, copia:
+
+```text
+Scripts_corregido/Scripts.rxdata
+```
+
+sobre:
+
+```text
+TuFireAsh/Data/Scripts.rxdata
+```
+
+Pero esta opción por sí sola no puede añadir el portal ni los mapas de Arceus a una instalación que todavía tenga sus mapas originales.
+
+## Importante
+
+- Los eventos con `character_name` tienen colisión, pero siguen pudiendo activarse con el botón de acción.
+- Los archivos auxiliares `PokemonSystemSettings.dat` y `GameSpeedSetting.dat` no se escriben, evitando el error `Errno::ENOENT` de Android/Kirin.
+- No hace falta crear ni borrar la carpeta `Save Files`.
+- No borres partidas, `Game.rxdata` ni `Scripts_bak.rxdata`.
+- Este paquete corresponde a los datos de este repositorio; haz una copia de seguridad si tu instalación tiene modificaciones propias.
