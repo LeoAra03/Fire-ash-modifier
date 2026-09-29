@@ -131,6 +131,15 @@ const tier3Compiled = tier3Entries.every((entry) => {
 });
 check(tier3Compiled, "las 420 reglas compiladas conservan baliza, retorno, microdecisión y self-switch A");
 
+const snowpoint = parseMap(readMarshalData("Map625.rxdata"));
+const arceusPortal = snowpoint.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Portal a la Ruta de Dios");
+check(Boolean(arceusPortal) && arceusPortal.x === 20 && arceusPortal.y === 3 && arceusPortal.pages[0]?.condition?.switch1 === 0,
+  "el portal de Arceus aparece en Puntaneva aunque una partida antigua haya perdido la flag 870");
+const directPackagePortal = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map625.rxdata"))));
+const directPortal = directPackagePortal.events.map(({ obj }) => parseEvent(obj)).find((event) => event.name === "Portal a la Ruta de Dios");
+check(Boolean(directPortal) && directPortal.pages[0]?.condition?.switch1 === 0,
+  "el paquete directo conserva el portal de recuperación sin condición");
+
 // --- Archivo descargable corregido --------------------------------------------
 const gameScripts = readMarshalData("Scripts.rxdata");
 const downloadableScripts = marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Scripts.rxdata")));

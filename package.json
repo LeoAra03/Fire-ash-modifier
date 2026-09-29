@@ -34,7 +34,8 @@
     "rebuild:isla_espejo": "node tools/apply_isla_espejo_maps_rebuild.mjs",
     "verify:isla_espejo": "node tools/apply_isla_espejo_maps_rebuild.mjs --verify",
     "rebuild:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs",
-    "verify:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs --verify"
+    "verify:ruta_de_dios": "node tools/apply_la_ruta_de_dios.mjs --verify",
+    "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

@@ -397,7 +397,10 @@ function installSnowpointPortal() {
 
   const id = 102;
   const p1 = page({
-    cond: condition({ sw: SW_UNLOCKED }),
+    // Recuperación: el portal debe aparecer aunque una partida antigua no conserve
+    // correctamente el switch 870. La conversación de Volus sigue siendo la ruta
+    // narrativa, pero la entrada no queda bloqueada por una flag perdida.
+    cond: condition(),
     gfx: graphic("Object ball special", 2),
     trigger: 0,
     list: [
