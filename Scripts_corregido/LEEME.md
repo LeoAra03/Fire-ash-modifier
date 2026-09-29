@@ -1,27 +1,31 @@
 # Paquete corregido y expansión «La Ruta de Dios»
 
-Esta carpeta contiene dos opciones:
+Esta carpeta contiene estas opciones:
 
 - `Scripts.rxdata`: archivo corregido de scripts. Incluye las colisiones de sprites, la interacción con NPCs, la corrección de guardado para Android/Kirin, `La Ruta de Dios` y la corrección de Grandeur Club.
-- `Paquete_directo/`: **paquete completo para copiar directamente a la carpeta original del juego**. Incluye los scripts, mapas, datos de mapas, sprites y músicas necesarios para que Volus y el portal de Arceus aparezcan.
+- `Paquete_directo/`: paquete completo sin comprimir.
+- `Fire_Ash_Paquete_Directo.zip`: **paquete completo listo para descomprimir sobre la carpeta del juego**. Es la opción recomendada para Android/Kirin.
 
-## Instalación recomendada: paquete completo
+## Instalación recomendada: ZIP completo
 
 1. Cierra Fire Ash y Kirin.
 2. Haz una copia de seguridad de tu carpeta original del juego, especialmente de `Data/Game.rxdata` o de tus partidas.
-3. Abre `Scripts_corregido/Paquete_directo/`.
-4. Copia su contenido manteniendo la estructura de carpetas sobre la raíz de tu juego:
+3. Descomprime `Fire_Ash_Paquete_Directo.zip` **dentro de la carpeta raíz de tu juego**, la que contiene `Game.exe` o `Game.ini`.
+4. El ZIP ya trae las carpetas `Data`, `Graphics` y `Audio` en la raíz. Al extraerlo, acepta reemplazar los archivos existentes.
+5. Inicia el juego y carga tu partida.
+
+La estructura final debe quedar así:
 
 ```text
-Paquete_directo/Data/*       → TuFireAsh/Data/
-Paquete_directo/Graphics/*   → TuFireAsh/Graphics/
-Paquete_directo/Audio/*      → TuFireAsh/Audio/
+TuFireAsh/Data/Scripts.rxdata
+TuFireAsh/Data/Map625.rxdata
+TuFireAsh/Graphics/Characters/ARCEUS.png
+TuFireAsh/Audio/BGM/secretvolo.ogg
 ```
 
-5. Acepta reemplazar los archivos cuando Android/Kirin lo solicite.
-6. Inicia el juego y carga tu partida.
+No dejes una carpeta intermedia como `TuFireAsh/Fire_Ash_Paquete_Directo/Data/`. **No reemplaces ni borres `Game.rxdata` ni tus archivos de partida.**
 
-También puedes copiar la carpeta `Paquete_directo` completa al lado de `pokemon_fire_ash` y después fusionar sus carpetas `Data`, `Graphics` y `Audio` con las del juego. **No reemplaces ni borres `Game.rxdata` ni tus archivos de partida.**
+Si no puedes descomprimir ZIP desde Android, usa la carpeta `Paquete_directo/` y copia sus carpetas `Data`, `Graphics` y `Audio` sobre las equivalentes del juego.
 
 ### Archivos incluidos en `Paquete_directo/Data`
 
