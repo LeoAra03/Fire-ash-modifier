@@ -146,8 +146,10 @@ const scriptChanges = downloadableScripts.flatMap((row, index) => {
 const grandeurChange = scriptChanges.find((change) => change.name === "Grandeur Club");
 const characterChange = scriptChanges.find((change) => change.name === "Game_Character");
 const eventChange = scriptChanges.find((change) => change.name === "Game_Event");
-check(scriptChanges.length === 3 && grandeurChange && characterChange && eventChange,
-  "el archivo descargable solo cambia Grandeur Club y las dos secciones de colisión");
+const startGameChange = scriptChanges.find((change) => change.name === "StartGame");
+const fastForwardChange = scriptChanges.find((change) => change.name === "BetterFastForward");
+check(scriptChanges.length === 5 && grandeurChange && characterChange && eventChange && startGameChange && fastForwardChange,
+  "el archivo descargable solo cambia Grandeur Club, colisiones y rutas de ajustes");
 check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
   "Grandeur Club conserva la corrección del end sobrante");
 check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
@@ -158,6 +160,12 @@ check(characterChange.corrected.includes("next if event.through && event.charact
 check(eventChange.corrected.includes("@through              = @page.through && @character_name == \"\"") &&
   eventChange.corrected.includes("Through solo vale para eventos invisibles"),
   "Game_Event hace sólidos los eventos con character_name al refrescarse");
+check(startGameChange.corrected.includes("File.join(File.dirname(SaveData::FILE_PATH), \"PokemonSystemSettings.dat\")") &&
+  !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat"),
+  "los ajustes de partida se guardan junto a Game.rxdata");
+check(fastForwardChange.corrected.includes("File.join(File.dirname(SaveData::FILE_PATH), \"GameSpeedSetting.dat\")") &&
+  !fastForwardChange.corrected.includes("Save Files/GameSpeedSetting.dat"),
+  "la velocidad no depende de una carpeta Save Files inexistente");
 
 // --- Mochila libre en el Grandeur Club ---------------------------------------
 const scriptsRow = (name) => {

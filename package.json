@@ -25,6 +25,7 @@
     "verify:defeats": "node tools/audit_defeat_persistence.mjs",
     "verify:multiverse": "node tools/apply_multiverse_creepypasta.mjs --verify",
     "verify:event-collision": "node tools/apply_event_collision_fix.mjs --verify",
+    "verify:save-path": "node tools/apply_save_path_fix.mjs --verify",
     "create:multiverse": "node tools/create_multiverse_creepypasta.mjs",
     "create:wild": "node tools/create_wild_zones.mjs",
     "verify:wild": "node tools/apply_wild_zones.mjs --verify",

@@ -7,6 +7,7 @@ Antes de sustituirlo, cierra el juego y haz una copia de seguridad de tu `Data/S
 ## Cambios incluidos
 
 - **Colisiones de sprites:** los eventos con `character_name` ya no se pueden atravesar, aunque la página esté marcada como `Through`. Esto cubre los personajes, entrenadores, NPCs, objetos y sprites de los eventos añadidos, sin tener que editar mapa por mapa. Los eventos sin gráfico conservan su comportamiento normal.
+- **Guardado en Android/Kirin:** `PokemonSystemSettings.dat` y `GameSpeedSetting.dat` ya no dependen de la carpeta `Save Files`; se guardan junto a `Game.rxdata`. Esto evita el error `Errno::ENOENT` de la captura cuando esa carpeta no existe.
 - **Grandeur Club:** se eliminó el `end` sobrante antes de `givePassive` en la sección **Grandeur Club** (línea 710 del código Ruby descomprimido).
 
 Las otras secciones y sus nombres e identificadores permanecen intactos. El archivo original en `pokemon_fire_ash/Data/` se deja sin cambios para que puedas conservarlo como referencia.
