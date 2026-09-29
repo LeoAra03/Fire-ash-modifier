@@ -201,7 +201,6 @@ function installScripts() {
   // 3b. Sección 392 (Grandeur Club): grandeurItemExchange a coste 0 libre
   const gc = sectionCode(scripts, "Grandeur Club");
   if (!gc.code.includes("# PokeMod: Grandeur Club Free Items (0 Credits)")) {
-    const oldExchangeRegex = /def grandeurItemExchange\(item,itemprice\)([\s\S]*?)end\r?\nend/m;
     const newExchange = `def grandeurItemExchange(item,itemprice=0)
   # PokeMod: Grandeur Club Free Items (0 Credits)
   itemprice = 0
@@ -225,8 +224,8 @@ function installScripts() {
   end
 end`;
     const replacedGc = gc.code.replace(
-      /def grandeurItemExchange\(item,itemprice\)[\s\S]*?pbMessage\(_INTL\("\\\\CN\\\\bYou have no room in your Bag\."\)\)\s+end\s+end\s+end/m,
-      newExchange + "\nend"
+      /def grandeurItemExchange\(item,itemprice\)[\s\S]*?pbMessage\(_INTL\("\\\\CN\\\\bYou have no room in your Bag\."\)\)\s+end\s+end\s+end\s+end/m,
+      newExchange
     );
     if (replacedGc === gc.code) throw new Error("No se pudo reemplazar grandeurItemExchange en Grandeur Club");
     storeCode(gc.row, replacedGc);
@@ -546,6 +545,7 @@ function verify() {
   const gc = sectionCode(scripts, "Grandeur Club");
   ok(gc.code.includes("# PokeMod: Grandeur Club Free Items (0 Credits)"), "falta parche de 0 créditos en Grandeur Club");
   ok(gc.code.includes("maxitems = 99"), "grandeurItemExchange debe permitir hasta 99 unidades libres");
+  ok(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(gc.code), "Grandeur Club contiene un end extra tras grandeurItemExchange");
 
   const buffs = sectionCode(scripts, "Sygna Buffs");
   ok(buffs.code.includes("# PokeMod: Sygna Buffs 0 Credits"), "falta parche de 0 créditos en Sygna Buffs");
