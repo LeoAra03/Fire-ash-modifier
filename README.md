@@ -74,9 +74,9 @@ tools/          CLI Python (descarga, backup, chequeo) — solo stdlib
 docs/           GUIA_KIRIN · GUIA_MODS · GUIA_CREAR · FORMATO_RXDATA
 ```
 
-## Scripts.rxdata corregido (Grandeur Club)
+## Scripts.rxdata corregido: colisiones de eventos
 
-Si el juego muestra un error por un `end` sobrante en la sección **Grandeur Club**, descarga el archivo completo [`Scripts_corregido/Scripts.rxdata`](Scripts_corregido/Scripts.rxdata). Lee las [instrucciones de instalación](Scripts_corregido/LEEME.md) antes de reemplazar el archivo de tu juego. El original permanece en `pokemon_fire_ash/Data/`.
+El archivo completo [`Scripts_corregido/Scripts.rxdata`](Scripts_corregido/Scripts.rxdata) hace sólidos los eventos con sprite: el jugador ya no puede atravesar NPCs, entrenadores, objetos ni personajes añadidos aunque sus páginas estén marcadas como `Through`. También conserva la corrección del `end` sobrante de **Grandeur Club**. Lee las [instrucciones de instalación](Scripts_corregido/LEEME.md) antes de copiarlo sobre `Data/Scripts.rxdata` de tu juego. El original permanece en `pokemon_fire_ash/Data/`.
 
 ## Compilar la APK
 

@@ -24,6 +24,7 @@
     "render:tier2:macro05": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro05.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro05_originals --before docs/referencia_tier2_macro05_antes.png --after docs/referencia_tier2_macro05_despues.png",
     "verify:defeats": "node tools/audit_defeat_persistence.mjs",
     "verify:multiverse": "node tools/apply_multiverse_creepypasta.mjs --verify",
+    "verify:event-collision": "node tools/apply_event_collision_fix.mjs --verify",
     "create:multiverse": "node tools/create_multiverse_creepypasta.mjs",
     "create:wild": "node tools/create_wild_zones.mjs",
     "verify:wild": "node tools/apply_wild_zones.mjs --verify",
