@@ -545,7 +545,11 @@ function verify() {
   const gc = sectionCode(scripts, "Grandeur Club");
   ok(gc.code.includes("# PokeMod: Grandeur Club Free Items (0 Credits)"), "falta parche de 0 créditos en Grandeur Club");
   ok(gc.code.includes("maxitems = 99"), "grandeurItemExchange debe permitir hasta 99 unidades libres");
-  ok(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(gc.code), "Grandeur Club contiene un end extra tras grandeurItemExchange");
+  // La copia del juego puede conservar el script original; la copia que se
+  // distribuye para instalar debe ser la que no contiene el `end` sobrante.
+  const correctedScripts = marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Scripts.rxdata")));
+  const correctedGc = sectionCode(correctedScripts, "Grandeur Club");
+  ok(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(correctedGc.code), "Scripts_corregido/Scripts.rxdata contiene un end extra tras grandeurItemExchange");
 
   const buffs = sectionCode(scripts, "Sygna Buffs");
   ok(buffs.code.includes("# PokeMod: Sygna Buffs 0 Credits"), "falta parche de 0 créditos en Sygna Buffs");

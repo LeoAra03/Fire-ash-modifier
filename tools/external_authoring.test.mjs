@@ -241,8 +241,10 @@ const eventChange = scriptChanges.find((change) => change.name === "Game_Event")
 const playerChange = scriptChanges.find((change) => change.name === "Game_Player");
 const startGameChange = scriptChanges.find((change) => change.name === "StartGame");
 const fastForwardChange = scriptChanges.find((change) => change.name === "BetterFastForward");
-check(scriptChanges.length === 6 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange,
-  "el archivo descargable solo cambia Grandeur Club, colisiones y rutas de ajustes");
+const screenToneChange = scriptChanges.find((change) => change.name === "Game_Screen");
+const pictureToneChange = scriptChanges.find((change) => change.name === "Game_Picture");
+check(scriptChanges.length === 8 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange,
+  "el archivo descargable corrige Grandeur Club, colisiones, guardado y tonos de pantalla");
 check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
   "Grandeur Club conserva la corrección del end sobrante");
 check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
@@ -256,6 +258,13 @@ check(eventChange.corrected.includes("@through              = @page.through && @
 check(playerChange.corrected.includes("event.over_trigger? && event.character_name == \"\"") &&
   (playerChange.corrected.match(/event\.over_trigger\? && event\.character_name/g) || []).length === 5,
   "Game_Player conserva la interacción con sprites sólidos");
+check(screenToneChange.corrected.includes("module PokeModToneSafety") &&
+  screenToneChange.corrected.includes("@tone = PokeModToneSafety.normalize(@tone)") &&
+  screenToneChange.corrected.includes("@tone_target = PokeModToneSafety.normalize(@tone_target)"),
+  "Game_Screen recupera los tonos String heredados sin cerrar el juego");
+check(pictureToneChange.corrected.includes("PokeModToneSafety.normalize(tone)") &&
+  pictureToneChange.corrected.includes("@tone = PokeModToneSafety.normalize(@tone)"),
+  "Game_Picture normaliza tonos antes de interpolarlos");
 check(!startGameChange.corrected.includes("save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)") &&
   !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat") &&
   startGameChange.corrected.includes("SaveData.save_to_file(save_file)"),

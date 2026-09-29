@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
   "scripts": {
-    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs",
+    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/tone_safety.test.mjs",
     "test:ui": "node --experimental-vm-modules web/js/ui.test.mjs",
     "verify:tier2:macro04": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro04.json --backup atlas_tier2_macro04_originals --verify",
     "verify:tier2:macro05": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro05.json --backup atlas_tier2_macro05_originals --verify",
@@ -39,7 +39,8 @@
     "build:package": "node tools/build_direct_package.mjs",
     "verify:package": "node tools/build_direct_package.mjs --verify",
     "verify:ruta_de_dios:package": "node tools/sync_ruta_de_dios_package.mjs --verify",
-    "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify"
+    "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
+    "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",
