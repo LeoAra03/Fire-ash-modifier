@@ -2,7 +2,7 @@
 
 Esta carpeta contiene estas opciones:
 
-- `Scripts.rxdata`: archivo corregido de scripts. Incluye las colisiones de sprites, la interacción con NPCs, la corrección de guardado para Android/Kirin, `La Ruta de Dios` y la corrección de Grandeur Club.
+- `Scripts.rxdata`: archivo corregido de scripts. Incluye las colisiones de sprites, la interacción con NPCs, la corrección de guardado para Android/Kirin, `La Ruta de Dios` y la corrección de Grandeur Club. También repara tonos serializados como texto (`Tone.new(...)`) antes de interpolarlos en pantalla o imágenes, evitando el `NoMethodError` de Kirin y conservando el efecto original cuando el tono se puede recuperar. Si un guardado antiguo deja `transition_name` en `nil`, usa la transición predeterminada al cambiar de mapa en lugar de generar un `TypeError`.
 - `Paquete_directo/`: paquete completo sin comprimir.
 - `Fire_Ash_Paquete_Directo.zip`: **paquete completo listo para descomprimir sobre la carpeta del juego**. Es la opción recomendada para Android/Kirin.
 

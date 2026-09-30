@@ -28,6 +28,7 @@ const patches = [
   {
     section: "StartGame",
     old: '  SYSTEM_SETTINGS_FILE = "Save Files/PokemonSystemSettings.dat"   # Added by: kraegon',
+    alreadyApplied: (code) => code.includes('SYSTEM_SETTINGS_FILE = File.join(File.dirname(SaveData::FILE_PATH), "PokemonSystemSettings.dat")'),
     replacement: [
       "  # Guarda este ajuste junto a la partida para que funcione también en Android.",
       '  SYSTEM_SETTINGS_FILE = File.join(File.dirname(SaveData::FILE_PATH), "PokemonSystemSettings.dat")',
@@ -36,6 +37,7 @@ const patches = [
   {
     section: "BetterFastForward",
     old: 'SPEED_SETTING_FILE = "Save Files/GameSpeedSetting.dat"',
+    alreadyApplied: (code) => code.includes('SPEED_SETTING_FILE = File.join(File.dirname(SaveData::FILE_PATH), "GameSpeedSetting.dat")'),
     replacement: [
       "# La carpeta Save Files no existe en algunas instalaciones de Kirin/Android.",
       'SPEED_SETTING_FILE = File.join(File.dirname(SaveData::FILE_PATH), "GameSpeedSetting.dat")',
@@ -52,6 +54,8 @@ const patches = [
       "      # Ignorar el ajuste auxiliar en instalaciones Android de solo acceso.",
       "    end",
     ].join("\r\n"),
+    alreadyApplied: (code) => !code.includes("save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)") &&
+      code.includes("SaveData.save_to_file(save_file)"),
     replacement: [
       "    # PokemonSystemSettings.dat es opcional y algunas instalaciones Android",
       "    # no permiten crear archivos auxiliares junto a la carpeta del juego.",
@@ -69,6 +73,8 @@ const patches = [
       "    end",
       "end",
     ].join("\r\n"),
+    alreadyApplied: (code) => !code.includes("save_data(speed, SPEED_SETTING_FILE)") &&
+      /def save_speed_setting\(speed\)[\s\S]*?end/.test(code),
     replacement: [
       "def save_speed_setting(speed)",
       "    # El ajuste de velocidad es opcional y no se escribe en Android.",
@@ -83,7 +89,7 @@ for (const patch of patches) {
   const row = section(scripts, patch.section);
   if (!row) throw new Error(`No se encontró la sección ${patch.section}`);
   const code = inflate(row);
-  if (code.includes(patch.replacement)) continue;
+  if (code.includes(patch.replacement) || patch.alreadyApplied?.(code)) continue;
   if (!code.includes(patch.old)) throw new Error(`${patch.section}: no se encontró la ruta de ajustes esperada`);
   if (!VERIFY_ONLY) setCode(row, code.replace(patch.old, patch.replacement));
   changed++;

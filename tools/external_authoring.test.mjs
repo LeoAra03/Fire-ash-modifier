@@ -7,8 +7,8 @@ import { validatePkregion } from "./region_builder_adapter.mjs";
 import { verify as verifyDirectPackage } from "./build_direct_package.mjs";
 import { inspectStudioProject, STUDIO_COLLECTIONS, STUDIO_VERSION } from "./pokemon_studio_adapter.mjs";
 import { buildAtlasStyleReport } from "./atlas_style_gate.mjs";
-import { ROOT, readMarshalData } from "./lib/fire_ash_registry.mjs";
-import { marshalLoad } from "../web/js/marshal.js";
+import { ROOT, loadFireAshRegistry, readMarshalData } from "./lib/fire_ash_registry.mjs";
+import { marshalLoad, RString, RSymbol } from "../web/js/marshal.js";
 import { parseEvent, parseMap } from "../web/js/rmxp.js";
 
 let passed = 0;
@@ -171,7 +171,8 @@ check(directZipError === null,
   directZipError === null
     ? "el ZIP descargable está al día con Paquete_directo/"
     : `el ZIP descargable está desactualizado: ${directZipError}`);
-const rutaScript = zlib.inflateSync(Buffer.from(readMarshalData("Scripts.rxdata").find((row) => row[1].text === "PokeMod_RutaDeDios")[2].bytes)).toString("utf8");
+const gameScriptRows = readMarshalData("Scripts.rxdata");
+const rutaScript = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "PokeMod_RutaDeDios")[2].bytes)).toString("utf8");
 check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes("pbSnowpointTreeCell?") &&
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
   "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
@@ -222,6 +223,137 @@ const cinematicSwitches = cinematicAllies.flatMap((event) => event.getIvar("page
   Number(page.getIvar("condition")?.getIvar("switch1_id"))));
 check(cinematicAllies.length === 5 && [878, 879, 880].every((id) => cinematicSwitches.includes(id)),
   "Map2037 contiene los cinco entrenadores de apoyo en tres entradas coreografiadas");
+const fireAshRegistry = loadFireAshRegistry();
+const supportPokemonCalls = [...rutaScript.matchAll(/pbArceusCinematicPokemon\(:([A-Z0-9_]+),\s*(\d+),\s*\[([^\]]*)\],\s*(?::([A-Z0-9_]+))?\)/g)];
+const supportSpecies = supportPokemonCalls.map((match) => match[1]);
+const supportMoves = supportPokemonCalls.flatMap((match) => [...match[3].matchAll(/:([A-Z0-9_]+)/g)].map((move) => move[1]));
+const supportItems = supportPokemonCalls.map((match) => match[4]).filter(Boolean);
+const supportLevelErrors = supportPokemonCalls.filter((match) => Number(match[2]) > (match[1] === "ARCEUS" ? 200 : 150));
+check(supportPokemonCalls.length === 25 && supportSpecies.every((id) => fireAshRegistry.speciesById.has(id)) &&
+  supportMoves.every((id) => fireAshRegistry.moves.has(id)) && supportItems.every((id) => fireAshRegistry.items.has(id)) &&
+  supportLevelErrors.length === 0 && rutaScript.includes("safe_level = [[level.to_i, 1].max, max_level].min") &&
+  rutaScript.includes('raise ArgumentError.new("Level #{level} is invalid.")') &&
+  (rutaScript.match(/pkmn\.ev\[:HP\] = 6/g) || []).length === 1 && rutaScript.includes("boss.ev[:HP] = 6"),
+  "los equipos cinemáticos usan especies/movimientos/objetos existentes y respetan el tope de nivel");
+const phaseMoveBlock = rutaScript.match(/RUTA_ARCEUS_MOVE_SETS = \[(.*?)\n\]/s)?.[1] ?? "";
+const phaseMoves = [...phaseMoveBlock.matchAll(/:([A-Z0-9_]+)/g)].map((match) => match[1]);
+check(phaseMoves.length > 0 && phaseMoves.every((id) => fireAshRegistry.moves.has(id)),
+  "los seis sets de movimientos de Arceus existen en los datos del juego");
+const requiredTrainerTypes = ["ARC_Cynthia", "ARC_Steven", "ARC_Ethan", "SECRET_Red", "SECRET_Volo", "LEGENDARYPOKEMON"];
+check(requiredTrainerTypes.every((id) => fireAshRegistry.trainerTypes.has(id)),
+  "los tipos de entrenador de las batallas cinemáticas y de Arceus están registrados");
+const voloVersion4Exists = readMarshalData("trainers.dat").pairs.some(([key]) => Array.isArray(key) &&
+  key[0] instanceof RSymbol && key[0].name === "SECRET_Volo" &&
+  key[1] instanceof RString && key[1].text === "Volo" && key[2] === 4);
+check(voloVersion4Exists,
+  "los datos del juego contienen la versión 4 del equipo de Volus usada por el evento");
+const nonArceusLevel200Entries = [];
+for (const [, trainer] of readMarshalData("trainers.dat").pairs) {
+  for (const pokemon of trainer.getIvar("@pokemon") ?? []) {
+    const fields = new Map((pokemon.pairs ?? []).map(([key, value]) => [key instanceof RSymbol ? key.name : "", value]));
+    const species = fields.get("species") instanceof RSymbol ? fields.get("species").name : "";
+    if (Number(fields.get("level")) === 200 && species !== "ARCEUS") {
+      nonArceusLevel200Entries.push(`trainer:${species}`);
+    }
+  }
+}
+for (const [, encounter] of readMarshalData("encounters.dat").pairs) {
+  for (const [, rows] of encounter.getIvar("@types")?.pairs ?? []) {
+    for (const row of rows ?? []) {
+      const species = row?.[1] instanceof RSymbol ? row[1].name : "";
+      if (species !== "ARCEUS" && (Number(row?.[2]) === 200 || Number(row?.[3]) === 200)) {
+        nonArceusLevel200Entries.push(`encounter:${species}`);
+      }
+    }
+  }
+}
+const level200Constructor = /(?:Pokemon|PokeBattle_Pokemon)\s*\.\s*new\s*\(\s*(?:(?:PBSpecies::)|:)?(?!ARCEUS\b)[A-Z][A-Z0-9_]*\s*,\s*200\b|pbWildBattle(?:Core)?\s*\(\s*(?:(?:PBSpecies::)|:)?(?!ARCEUS\b)[A-Z][A-Z0-9_]*\s*,\s*200\b/g;
+const explicitNonArceusLevel200 = [];
+function scanForOtherLevel200(source, label) {
+  for (const match of source.matchAll(level200Constructor)) explicitNonArceusLevel200.push(`${label}:${match[0]}`);
+}
+for (const row of gameScriptRows) {
+  try { scanForOtherLevel200(zlib.inflateSync(Buffer.from(row[2].bytes)).toString("utf8"), `script:${row[1]?.text ?? "unknown"}`); } catch {}
+}
+function collectEventScriptText(commands = []) {
+  const lines = [];
+  for (const command of commands) {
+    const code = Number(command.getIvar("code"));
+    const parameters = command.getIvar("parameters") ?? [];
+    if (code === 355 || code === 655) {
+      if (parameters[0] instanceof RString) lines.push(parameters[0].text);
+    } else if (code === 111 && parameters[1] instanceof RString) {
+      lines.push(parameters[1].text);
+    }
+  }
+  return lines.join("\n");
+}
+const gameDataDirectory = path.join(ROOT, "pokemon_fire_ash", "Data");
+for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.rxdata$/.test(name))) {
+  const map = readMarshalData(file);
+  for (const [, event] of map.getIvar("events")?.pairs ?? []) {
+    for (const page of event.getIvar("pages") ?? []) {
+      scanForOtherLevel200(collectEventScriptText(page.getIvar("list") ?? []), `${file}:${event.getIvar("name")?.text ?? "event"}`);
+    }
+  }
+}
+const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
+const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*150\b/.test(settingsSource) &&
+  rutaScript.includes("max = (@species == :ARCEUS) ? 200 : GameData::GrowthRate.max_level") &&
+  rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
+  explicitNonArceusLevel200.length === 0;
+check(levelCapIsArceusOnly,
+  "Arceus es la única especie autorizada al nivel 200 en el tope global, equipos, encuentros y scripts del juego");
+check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
+  rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
+  "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");
+const arceusPage = summitBoss?.getIvar("pages")?.[0];
+const arceusCommands = arceusPage?.getIvar("list") ?? [];
+function validConditionalIndents(commands) {
+  const stack = [];
+  for (const command of commands) {
+    const code = Number(command.getIvar("code"));
+    const indent = Number(command.getIvar("indent"));
+    if (code === 111) {
+      if (stack.length && indent <= stack.at(-1).indent) return false;
+      stack.push({ indent, hasElse: false });
+      continue;
+    }
+    if (code === 411) {
+      const top = stack.at(-1);
+      if (!top || top.indent !== indent || top.hasElse) return false;
+      top.hasElse = true;
+      continue;
+    }
+    if (code === 412) {
+      const top = stack.pop();
+      if (!top || top.indent !== indent) return false;
+      continue;
+    }
+    if (stack.length && indent <= stack.at(-1).indent) return false;
+  }
+  return stack.length === 0;
+}
+const arceusRematchCommands = summitBoss?.getIvar("pages")?.[1]?.getIvar("list") ?? [];
+const voloBattlePages = [arceusCommands, arceusRematchCommands];
+const voloBattleCalls = voloBattlePages.flatMap((commands) => commands.flatMap((command, index) => {
+  const source = command.getIvar("parameters")?.[1]?.text ?? "";
+  return Number(command.getIvar("code")) === 111 && source.includes("pbTrainerBattle")
+    ? [{ commands, index, command, source }] : [];
+}));
+const voloVictoryGated = voloBattleCalls.length === 2 && voloBattleCalls.every(({ commands, index, command, source }) => {
+  const next = commands[index + 1];
+  return source === 'pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)' &&
+    Number(next?.getIvar("code")) === 121 && Number(next?.getIvar("indent")) === Number(command.getIvar("indent")) + 1 &&
+    Number(next?.getIvar("parameters")?.[0]) === 875;
+});
+const completionGateIndex = arceusCommands.findIndex((command) =>
+  Number(command.getIvar("code")) === 111 &&
+  (command.getIvar("parameters")?.[1]?.text ?? "").includes("!$game_switches[874] || $game_switches[875]"));
+check(validConditionalIndents(arceusCommands) && validConditionalIndents(arceusRematchCommands) &&
+  voloVictoryGated && completionGateIndex >= 0 &&
+  Number(arceusCommands[completionGateIndex + 1]?.getIvar("parameters")?.[0]) === 876,
+  "Map2037 tiene ramas RGSS válidas; Volus usa una versión válida y solo una victoria cierra la ruta");
 
 // --- Archivo descargable corregido --------------------------------------------
 const gameScripts = readMarshalData("Scripts.rxdata");
@@ -241,8 +373,11 @@ const eventChange = scriptChanges.find((change) => change.name === "Game_Event")
 const playerChange = scriptChanges.find((change) => change.name === "Game_Player");
 const startGameChange = scriptChanges.find((change) => change.name === "StartGame");
 const fastForwardChange = scriptChanges.find((change) => change.name === "BetterFastForward");
-check(scriptChanges.length === 6 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange,
-  "el archivo descargable solo cambia Grandeur Club, colisiones y rutas de ajustes");
+const screenToneChange = scriptChanges.find((change) => change.name === "Game_Screen");
+const pictureToneChange = scriptChanges.find((change) => change.name === "Game_Picture");
+const sceneMapTransitionChange = scriptChanges.find((change) => change.name === "Scene_Map");
+check(scriptChanges.length === 9 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange && sceneMapTransitionChange,
+  "el archivo descargable corrige Grandeur Club, colisiones, guardado, tonos y transiciones");
 check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
   "Grandeur Club conserva la corrección del end sobrante");
 check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
@@ -256,6 +391,17 @@ check(eventChange.corrected.includes("@through              = @page.through && @
 check(playerChange.corrected.includes("event.over_trigger? && event.character_name == \"\"") &&
   (playerChange.corrected.match(/event\.over_trigger\? && event\.character_name/g) || []).length === 5,
   "Game_Player conserva la interacción con sprites sólidos");
+check(screenToneChange.corrected.includes("module PokeModToneSafety") &&
+  screenToneChange.corrected.includes("@tone = PokeModToneSafety.normalize(@tone)") &&
+  screenToneChange.corrected.includes("@tone_target = PokeModToneSafety.normalize(@tone_target)"),
+  "Game_Screen recupera los tonos String heredados sin cerrar el juego");
+check(pictureToneChange.corrected.includes("PokeModToneSafety.normalize(tone)") &&
+  pictureToneChange.corrected.includes("@tone = PokeModToneSafety.normalize(@tone)"),
+  "Game_Picture normaliza tonos antes de interpolarlos");
+check(sceneMapTransitionChange.corrected.includes("transition_name = $game_temp.transition_name.to_s") &&
+  sceneMapTransitionChange.corrected.includes('if transition_name == ""') &&
+  !sceneMapTransitionChange.corrected.includes('"Graphics/Transitions/" + $game_temp.transition_name'),
+  "Scene_Map usa la transición predeterminada cuando transition_name es nil");
 check(!startGameChange.corrected.includes("save_data($PokemonSystem, SYSTEM_SETTINGS_FILE)") &&
   !startGameChange.corrected.includes("Save Files/PokemonSystemSettings.dat") &&
   startGameChange.corrected.includes("SaveData.save_to_file(save_file)"),
