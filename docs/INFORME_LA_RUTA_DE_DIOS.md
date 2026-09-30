@@ -24,11 +24,14 @@
 - **Segundo Volus:** aparece en `(20, 16)` solo después de hablar con el Volus de Pueblo Hojaverde y activar el switch 870. Explica el significado de la montaña, las balizas y el camino antes de que el jugador entre.
 - **Squirtle de paso:** junto al Charmeleon de la zona baja (`19,55`), el evento activa el switch temporal 877. Un parche de `Game_Player` permite cruzar únicamente celdas de árbol en el mapa 625; `Game_Map#setup` lo apaga al cargar cualquier mapa, por lo que no atraviesa árboles en otras ciudades ni conserva el permiso al regresar.
 - **Portal:** aro de luz celestial animado (`ARCEUS_GATE.png`), visible incluso si una partida antigua perdió el switch 870.
-- Al interactuar, transporta al jugador a la aproximación larga (`Map2030`, 26, 68), no directamente al primer piso.
+- Al interactuar, transporta al jugador a la aproximación larga (`Map2038`, 26, 68), no directamente al primer piso.
 
 ---
 
-## 4. Aproximación Celestial (`Map2030`)
+
+> **Asignación de IDs:** la aproximación celestial está en `Map2038`; los siete pisos siguen en `Map2031–Map2037`. `Map2030` se reserva para la **Gruta de los Testigos** de Monte Silver.
+
+## 4. Aproximación Celestial (`Map2038`)
 La entrada conduce a una montaña de **52×72 casillas**, con una avenida serpenteante de cinco casillas, cuatro cambios de nivel con escaleras talladas, bosques de pinos escarchados, praderas de encuentros, pozas cósmicas, santuarios laterales, hitos de las Regiones/Origen/Vínculo y retorno seguro a Puntaneva. En la cima hay una puerta de transición hacia `Map2031`. La composición busca que la zona se sienta como un resumen sagrado de toda la franquicia Pokémon, sin reducirla a una sola región.
 
 ---

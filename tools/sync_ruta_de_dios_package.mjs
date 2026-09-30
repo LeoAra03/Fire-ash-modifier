@@ -24,8 +24,9 @@ const DIRECT = path.join(PACKAGE, "Paquete_directo");
 const VERIFY_ONLY = process.argv.includes("--verify");
 
 const DATA_FILES = [
-  "Map2030.rxdata", "Map2031.rxdata", "Map2032.rxdata", "Map2033.rxdata",
-  "Map2034.rxdata", "Map2035.rxdata", "Map2036.rxdata", "Map2037.rxdata",
+  "Map2031.rxdata", "Map2032.rxdata", "Map2033.rxdata", "Map2034.rxdata",
+  "Map2035.rxdata", "Map2036.rxdata", "Map2037.rxdata", "Map2038.rxdata",
+  "Map2030.rxdata",
   "Map513.rxdata", "Map625.rxdata", "MapInfos.rxdata", "Scripts.rxdata",
   "System.rxdata", "encounters.dat", "map_metadata.dat",
 ];
