@@ -119,6 +119,7 @@ Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narra
 
 ```bash
 npm ci                              # dependencias del render PNG y de la prueba UI
+npm run verify:all                  # suite completa: tests, UI, mapas, seguridad y paquetes
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
 node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
 node tools/external_authoring.test.mjs  # 67 pruebas: interoperabilidad, estilo, Tier 2/3, Mochila, hub, multiverso y fauna
@@ -130,6 +131,12 @@ npm run verify:defeats           # derrotas permanentes; revanchas solo por men�
 npm run verify:wild              # encuentros salvajes de las zonas nuevas
 node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom
 ```
+
+## Estado de entrega del PR #10
+
+El PR #10 incorpora los 16 mosaicos, el informe de 1.022 mapas y ambos paquetes ZIP. Las comprobaciones completas se ejecutan con `npm ci && npm run verify:all` y también en CI antes de compilar la APK. La sincronización comprueba cada dato y recurso byte a byte contra su origen; el informe se contrasta con los mapas y catálogos actuales (ignorando solamente la fecha de generación).
+
+Los pasos de instalación y las comprobaciones pendientes dentro del juego están en [`docs/ENTREGA_PR10.md`](docs/ENTREGA_PR10.md). Las pruebas automáticas no certifican una ejecución en Kirin/Game.exe.
 
 ## Roadmap
 

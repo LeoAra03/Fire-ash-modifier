@@ -514,12 +514,14 @@ function expectedZipEntries() {
     REPORT_NAME,
   ].sort();
 }
-function verifyReport() {
+function verifyReport(summaries) {
   if (!fs.existsSync(REPORT_PATH)) throw new Error(`Falta ${path.relative(ROOT, REPORT_PATH)}`);
   const report = fs.readFileSync(REPORT_PATH, "utf8");
   for (const id of REQUESTED_IDS) {
     if (!report.includes(`### Map${id} —`)) throw new Error(`El informe no contiene una ficha para Map${id}`);
   }
+  const withoutDate = (text) => text.replace(/^\*\*Generado:\*\* .*$/m, "**Generado:**");
+  if (withoutDate(report) !== withoutDate(buildReport(summaries))) throw new Error("El informe está desactualizado respecto a los mapas/catálogos: ejecuta --refresh-report");
   const headings = [...report.matchAll(/^### Map\d+ —/gm)].length;
   if (headings !== 1022) throw new Error(`El informe contiene ${headings} fichas, se esperaban 1.022`);
   for (const required of [
@@ -559,7 +561,7 @@ async function verifyAll() {
   const mapInfoById = loadMapIndex();
   const summaries = summarizeMaps(mapInfoById);
   if (summaries.size !== 1022) throw new Error(`Se leyeron ${summaries.size} mapas, no 1.022`);
-  verifyReport();
+  verifyReport(summaries);
   await verifyImages();
   verifyZip();
   console.log("Verificación referencial OK: 1.000 mapas de Atlas Mil + 22 mapas complementarios. No es una prueba en Game.exe/Kirin.");
@@ -571,7 +573,9 @@ async function createMissing() {
   if (summaries.size !== 1022) throw new Error(`Se leyeron ${summaries.size} mapas, no 1.022`);
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
+  let updated = false;
   if (FORCE || REFRESH_REPORT || !fs.existsSync(REPORT_PATH)) {
+    updated = true;
     fs.writeFileSync(REPORT_PATH, buildReport(summaries), "utf8");
     console.log(`Informe ${path.relative(ROOT, REPORT_PATH)} · 1.022 fichas`);
   } else {
@@ -588,11 +592,13 @@ async function createMissing() {
     const first = entries[0];
     const last = entries.at(-1);
     const subtitle = `Map${first}–Map${last} · ${entries.length} mapas · hojas 01–15 de Atlas Mil`;
+    updated = true;
     await renderSheet(entries, `ATLAS MIL · MOSAICO ${String(sheetIndex + 1).padStart(2, "0")} / 15`, subtitle, output, summaries, mapInfoById);
   }
 
   const otherOutput = path.join(OUTPUT_DIR, "Otros_Mapas_16.png");
   if (!fs.existsSync(otherOutput) || FORCE) {
+    updated = true;
     const entries = OTHER_GROUPS.flatMap((group) => group.ids);
     await renderSheet(entries, "MAPAS COMPLEMENTARIOS · MOSAICO 16 / 16",
       "22 mapas · Isla Espejo · Panteón Pokégod · Monte Silver · Multiverso Creepypasta · La Ruta de Dios",
@@ -601,7 +607,7 @@ async function createMissing() {
     console.log(`Conservo el mosaico existente: ${path.relative(ROOT, otherOutput)}`);
   }
 
-  if (fs.existsSync(ZIP_PATH) && !FORCE && !REFRESH_REPORT) {
+  if (fs.existsSync(ZIP_PATH) && !updated) {
     console.log(`Conservo el ZIP existente: ${path.relative(ROOT, ZIP_PATH)}`);
   } else {
     const extraFiles = Object.fromEntries([
