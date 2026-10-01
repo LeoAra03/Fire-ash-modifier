@@ -27,7 +27,50 @@ import { createCanvas, loadImage } from "@napi-rs/canvas";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REF = path.join(ROOT, "reference", "dimensional_nightmare");
 // El usuario deposita los mosaicos en Mapas/crepypasta/ (Mapas/Atlas/ se ignora en esta fase).
-const INPUT_DIRS = [path.join(ROOT, "Mapas", "crepypasta"), path.join(REF, "recursos")];
+// Se aceptan variantes de nombre y mayúsculas: crepypasta, Crepypastas, Creepypasta…
+const MAPPING_PATH = path.join(REF, "mapping.json");
+function resolveInputDirs() {
+  const dirs = [];
+  const mapas = path.join(ROOT, "Mapas");
+  if (fs.existsSync(mapas)) {
+    for (const entry of fs.readdirSync(mapas, { withFileTypes: true })) {
+      // Acepta crepypasta, creepypasta, Crepypastas, con o sin guion/espacio.
+      const plain = entry.name.toLowerCase().replace(/[^a-z]/g, "");
+      if (entry.isDirectory() && /^cre+py?pasta/.test(plain)) dirs.push(path.join(mapas, entry.name));
+    }
+  }
+  dirs.push(path.join(ROOT, "Mapas", "crepypasta"), path.join(REF, "recursos"));
+  const seen = new Set();
+  return dirs.filter((dir) => fs.existsSync(dir) && !seen.has(dir) && seen.add(dir));
+}
+const INPUT_DIRS = resolveInputDirs();
+
+/**
+ * mapping.json — asignación explícita, con prioridad absoluta sobre los tokens:
+ *   { "r7_catacumbas": "Mapas/Crepypastas/BURIED LIVE and White HAND crepypastas.jpg", … }
+ * Se lee, en orden, de $DN_MAPPING, reference/dimensional_nightmare/mapping.json y
+ * <carpetaDeImágenes>/mapping.json.
+ */
+function readMapping() {
+  const candidates = [
+    process.env.DN_MAPPING,
+    MAPPING_PATH,
+    ...INPUT_DIRS.map((dir) => path.join(dir, "mapping.json")),
+  ].filter(Boolean);
+  for (const file of candidates) {
+    if (!fs.existsSync(file)) continue;
+    try {
+      const raw = JSON.parse(fs.readFileSync(file, "utf8"));
+      const entries = Object.entries(raw).filter(
+        ([key, value]) => !key.startsWith("$") && !key.endsWith("_nota") && typeof value === "string" && value.trim(),
+      );
+      if (entries.length) return { file, entries };
+    } catch (error) {
+      console.warn(`mapping.json ilegible (${error.message}); se ignora.`);
+    }
+  }
+  return { file: null, entries: [] };
+}
 const SLICES = path.join(REF, "slices");
 const INDEX_PATH = path.join(REF, "index.json");
 const LAYOUT_PATH = path.join(REF, "layout.json");
@@ -44,7 +87,7 @@ const RESOURCES = [
   { key: "r3_king_unown", label: "R3 Sprite King Unown", rows: 1, cols: 1, expect: 1, tokens: ["king", "sprite", "rey", "boss", "jefe"] },
   { key: "r4_trono_unown", label: "R4 El Trono del Rey Unown", rows: 4, cols: 4, expect: 16, tokens: ["trono", "throne", "unown"] },
   { key: "r5_pueblos_tumbas", label: "R5 Pueblos y Tumbas", rows: 4, cols: 4, expect: 16, tokens: ["pueblo", "tumb", "sepia", "silver", "b&w", "bn"] },
-  { key: "r6_snowy_mountain", label: "R6 Creepy Snowy Mountain", rows: 5, cols: 3, expect: 15, tokens: ["snow", "nieve", "mountain", "monta"] },
+  { key: "r6_snowy_mountain", label: "R6 Creepy Snowy Mountain", rows: 3, cols: 5, expect: 15, tokens: ["snow", "nieve", "mountain", "monta"] },
   { key: "r7_catacumbas", label: "R7 Catacumbas de Lavanda", rows: 4, cols: 4, expect: 16, tokens: ["catacumb", "lavanda", "lavender", "buried", "mano", "hand"] },
 ];
 const EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"];
@@ -77,6 +120,26 @@ function discoverSources(dirs = INPUT_DIRS) {
   };
   for (const dir of dirs) walk(dir);
 
+  // 0) mapping.json manda: asigna por nombre de archivo o ruta relativa (sin distinguir mayúsculas).
+  const mapping = readMapping();
+  const found = new Map();
+  const used = new Set();
+  const unresolvedMapping = [];
+  for (const [key, value] of mapping.entries) {
+    if (!RESOURCES.some((resource) => resource.key === key)) continue;
+    const wanted = String(value).replace(/\\/g, "/").toLowerCase();
+    const hit = files.find((file) => {
+      const rel = path.relative(ROOT, file.full).replace(/\\/g, "/").toLowerCase();
+      return rel === wanted || file.name.toLowerCase() === path.basename(wanted);
+    });
+    if (hit) {
+      found.set(key, hit);
+      used.add(hit.full);
+    } else {
+      unresolvedMapping.push(`${key} → ${value}`);
+    }
+  }
+
   // Puntúa cada par (recurso, archivo) y asigna de mayor a menor: evita que
   // «4 EL TRONO DEL REY UNOWN» caiga en R3 por la palabra "rey".
   const scoreOf = (resource, file) => {
@@ -92,14 +155,14 @@ function discoverSources(dirs = INPUT_DIRS) {
   };
   const candidates = [];
   for (const resource of RESOURCES) {
+    if (found.has(resource.key)) continue;
     for (const file of files) {
+      if (used.has(file.full)) continue;
       const score = scoreOf(resource, file);
       if (score > 0) candidates.push({ resource, file, score });
     }
   }
   candidates.sort((a, b) => b.score - a.score);
-  const used = new Set();
-  const found = new Map();
   for (const { resource, file } of candidates) {
     if (found.has(resource.key) || used.has(file.full)) continue;
     found.set(resource.key, file);
@@ -113,7 +176,7 @@ function discoverSources(dirs = INPUT_DIRS) {
     if (next) { found.set(resource.key, next); used.add(next.full); }
     else unassigned.push(resource);
   }
-  return { found, files, unassigned, leftovers };
+  return { found, files, unassigned, leftovers, mapping, unresolvedMapping };
 }
 
 // ------------------------------------------------------------------- píxeles
@@ -281,9 +344,9 @@ async function ingestResource(resource, file, layout) {
   let rowCells = cellsBetween(rowRuns, px.height, minRow);
   let colCells = cellsBetween(colRuns, px.width, minCol);
   let mode = "auto";
-  if (rowCells.length !== resource.cols || colCells.length !== resource.rows) {
-    rowCells = uniformCells(px.height, resource.cols, layout);
-    colCells = uniformCells(px.width, resource.rows, layout);
+  if (rowCells.length !== resource.rows || colCells.length !== resource.cols) {
+    rowCells = uniformCells(px.height, resource.rows, layout);
+    colCells = uniformCells(px.width, resource.cols, layout);
     mode = "uniform";
   }
   const dir = path.join(SLICES, resource.key);
@@ -332,15 +395,21 @@ async function ingestResource(resource, file, layout) {
   };
 }
 
-function reportFound({ found, files, unassigned, leftovers }, dirs = INPUT_DIRS) {
+function reportFound({ found, files, unassigned, leftovers, mapping, unresolvedMapping }, dirs = INPUT_DIRS) {
   const home = path.relative(ROOT, dirs[0]) || "Mapas/crepypasta";
-  console.log(`Carpeta de recursos: ${home}/ (también se acepta reference/dimensional_nightmare/recursos/)`);
+  console.log(`Carpetas de recursos: ${dirs.map((dir) => path.relative(ROOT, dir)).join(", ")}`);
+  if (mapping?.file) console.log(`Asignación explícita: ${path.relative(ROOT, mapping.file)}`);
   console.log(`Archivos de imagen encontrados: ${files.length}`);
   for (const resource of RESOURCES) {
     const file = found.get(resource.key);
     const origin = file ? path.relative(ROOT, file.full) : "— falta —";
     console.log(`  ${file ? "OK " : "FALTA"} ${resource.key.padEnd(20)} ← ${origin}`);
   }
+  if (unresolvedMapping?.length) {
+    console.log("\nmapping.json apunta a archivos que no encuentro:");
+    for (const line of unresolvedMapping) console.log(`  - ${line}`);
+  }
+  if (!files.length) console.log(`\nNo hay imágenes en ${dirs.map((d) => path.relative(ROOT, d)).join(" ni ")}.`);
   if (unassigned.length) {
     console.log("\nSin archivo asignado: " + unassigned.map((r) => r.key).join(", "));
     console.log("Nombra los mosaicos como indica reference/dimensional_nightmare/README.md.");
@@ -424,7 +493,7 @@ async function selftest() {
   const minCol = Math.floor(px.width / 16);
   const rowCells = cellsBetween(rr, px.height, minRow);
   const colCells = cellsBetween(cr, px.width, minCol);
-  const ok = rowCells.length === cols && colCells.length === rows;
+  const ok = rowCells.length === rows && colCells.length === cols;
   console.log(`selftest: separadores filas=${rr.length} columnas=${cr.length} → celdas ${colCells.length}×${rowCells.length} (esperado ${cols}×${rows})`);
   if (!ok) {
     console.error("selftest FALLO: la autodetección no reconstruyó la rejilla.");

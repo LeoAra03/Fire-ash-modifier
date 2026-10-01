@@ -13,8 +13,14 @@
  * exactamente (se verifica en el selftest reconstruyendo píxel a píxel).
  *
  * Uso:
- *   node tools/dn_extract_tileset.mjs            # extrae de las fichas reales
- *   node tools/dn_extract_tileset.mjs --selftest # prueba con una ficha sintética
+ *   node tools/dn_extract_tileset.mjs                 # extrae de las fichas reales
+ *   node tools/dn_extract_tileset.mjs --scale 2       # versión ×2 (mapas RMXP a escala de juego)
+ *   node tools/dn_extract_tileset.mjs --selftest      # prueba con una ficha sintética
+ *
+ * `--scale N` amplía cada ficha ×N con vecino más cercano ANTES de cortar los
+ * bloques de 32 px: el arte GBA (16 px nativos) queda con la proporción con la
+ * que RPG Maker XP lo muestra en pantalla. Con N>1 las salidas llevan sufijo
+ * `_2x` y no pisan las del pipeline nativo.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -31,6 +37,13 @@ const TILE = 32;                 // celda de mapa en RPG Maker XP
 const COLUMNS = 8;               // columnas del PNG de tileset (formato RMXP)
 const MAX_TILES = 1024;          // aviso si un grupo necesita partirse
 const SELFTEST = process.argv.includes("--selftest");
+const SCALE = (() => {
+  const at = process.argv.indexOf("--scale");
+  const value = at >= 0 ? Number(process.argv[at + 1]) : 1;
+  return Number.isInteger(value) && value >= 1 && value <= 4 ? value : 1;
+})();
+const SUFFIX = SCALE > 1 ? `_${SCALE}x` : "";
+const CATALOG_OUT = CATALOG_PATH.replace(/\.json$/, `${SUFFIX}.json`);
 
 // ------------------------------------------------------------------ utilidades
 function toNative(px, factor) {
@@ -44,17 +57,54 @@ function toNative(px, factor) {
   return { width: w, height: h, canvas, ctx, data: ctx.getImageData(0, 0, w, h).data };
 }
 
+/** Amplía ×N con vecino más cercano (el pixel art no se interpola). */
+function upscale(px, factor) {
+  if (factor <= 1) return px;
+  const w = px.width * factor, h = px.height * factor;
+  const canvas = createCanvas(w, h);
+  const ctx = canvas.getContext("2d");
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(px.canvas, 0, 0, px.width, px.height, 0, 0, w, h);
+  return { width: w, height: h, canvas, ctx, data: ctx.getImageData(0, 0, w, h).data };
+}
+
+/**
+ * Ajusta la ficha al múltiplo de 32 inmediato por arriba, extendiendo el borde
+ * (última fila/columna). Así la rejilla de bloques cubre TODA la ficha: sin
+ * esto se perdían hasta 31 px del borde derecho/inferior de cada escena.
+ */
+function padToBlock(px) {
+  const width = Math.ceil(px.width / TILE) * TILE;
+  const height = Math.ceil(px.height / TILE) * TILE;
+  if (width === px.width && height === px.height) return px;
+  const canvas = createCanvas(width, height);
+  const ctx = canvas.getContext("2d");
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(px.canvas, 0, 0);
+  // borde derecho e inferior por extensión de la última fila/columna
+  ctx.drawImage(px.canvas, px.width - 1, 0, 1, px.height, px.width, 0, width - px.width, px.height);
+  ctx.drawImage(px.canvas, 0, px.height - 1, px.width, 1, 0, px.height, px.width, height - px.height);
+  ctx.drawImage(px.canvas, px.width - 1, px.height - 1, 1, 1, px.width, px.height, width - px.width, height - px.height);
+  return { width, height, canvas, ctx, data: ctx.getImageData(0, 0, width, height).data, padded: true };
+}
+
+/** Ficha lista para cortar: escala nativa (si el mosaico venía ampliado) → ×SCALE → múltiplo de 32. */
+const prepareSlice = (entry) => padToBlock(upscale(toNative(entry.px, entry.scale), SCALE));
+
 const blockHash = (data, width, x0, y0) => {
   const hash = crypto.createHash("sha1");
   for (let y = 0; y < TILE; y++) hash.update(Buffer.from(data.buffer, data.byteOffset + ((y0 + y) * width + x0) * 4, TILE * 4));
   return hash.digest("hex");
 };
 
+// Solo es "en blanco" lo totalmente transparente. Las zonas oscuras pero opacas
+// (cuevas, glitches, catacumbas) son tiles normales: colapsarlas en un único
+// índice rompía la reconstrucción píxel a píxel.
 const isBlank = (data, width, x0, y0) => {
   for (let y = 0; y < TILE; y++) {
     for (let x = 0; x < TILE; x++) {
       const i = ((y0 + y) * width + x0 + x) * 4;
-      if (data[i + 3] > 16 && (data[i] > 20 || data[i + 1] > 20 || data[i + 2] > 20)) return false;
+      if (data[i + 3] >= 16) return false;
     }
   }
   return true;
@@ -70,7 +120,7 @@ function extractGroup(entries) {
   const tiles = [];                  // { index, hash, uses, blank }
   const maps = [];
   for (const entry of entries) {
-    const px = toNative(entry.px, entry.scale);
+    const px = prepareSlice(entry);
     const cols = Math.floor(px.width / TILE);
     const rows = Math.floor(px.height / TILE);
     const matrix = [];
@@ -183,6 +233,7 @@ const catalog = {
   title: "Dimensional Nightmare — tilesets derivados de la referencia",
   generatedBy: "tools/dn_extract_tileset.mjs",
   warning: "Arte derivado de mosaicos de referencia de terceros: uso interno de desarrollo. No empaquetar en el juego distribuido.",
+  scale: SCALE,
   tileSize: TILE,
   columns: COLUMNS,
   groups: [],
@@ -206,7 +257,7 @@ for (const resource of index.resources) {
   // El PNG necesita, por índice, de dónde copiar: primer bloque que produjo ese índice.
   const firstSource = new Map();
   for (const entry of entries) {
-    const native = toNative(entry.px, entry.scale);
+    const native = prepareSlice(entry);
     const cols = Math.floor(native.width / TILE);
     const rows = Math.floor(native.height / TILE);
     const map = maps.find((m) => m.slice === entry.slice);
@@ -224,7 +275,7 @@ for (const resource of index.resources) {
   for (const [idx, { sx, sy, source }] of firstSource) {
     ctx.drawImage(source.canvas, sx, sy, TILE, TILE, (idx % COLUMNS) * TILE, Math.floor(idx / COLUMNS) * TILE, TILE, TILE);
   }
-  const png = path.join(TILESETS_DIR, `${resource.key}.png`);
+  const png = path.join(TILESETS_DIR, `${resource.key}${SUFFIX}.png`);
   fs.writeFileSync(png, canvas.toBuffer("image/png"));
   const blankCount = tiles.filter((t) => t.blank).length;
   const size = fs.statSync(png).size;
@@ -232,13 +283,14 @@ for (const resource of index.resources) {
   if (tileCount > MAX_TILES) console.warn(`  aviso: ${tileCount} tiles > ${MAX_TILES}; conviene partir el grupo por lotes.`);
   catalog.groups.push({
     key: resource.key,
+    scale: SCALE,
     tileset: path.relative(ROOT, png),
     tiles: tileCount,
     blankTiles: blankCount,
     maps: maps.map((m) => ({ slice: m.slice, width: m.width, height: m.height, native: m.native, matrix: m.matrix })),
   });
 }
-fs.writeFileSync(CATALOG_PATH, JSON.stringify(catalog, null, 2));
+fs.writeFileSync(CATALOG_OUT, JSON.stringify(catalog, null, 2));
 const totalTiles = catalog.groups.reduce((sum, g) => sum + g.tiles, 0);
 const totalMaps = catalog.groups.reduce((sum, g) => sum + g.maps.length, 0);
-console.log(`\nTotal: ${totalTiles} tiles únicos en ${catalog.groups.length} tilesets · ${totalMaps} matrices de mapa → ${path.relative(ROOT, CATALOG_PATH)}`);
+console.log(`\nTotal: ${totalTiles} tiles únicos en ${catalog.groups.length} tilesets (escala ×${SCALE}) · ${totalMaps} matrices de mapa → ${path.relative(ROOT, CATALOG_OUT)}`);

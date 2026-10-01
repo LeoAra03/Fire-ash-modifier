@@ -12,8 +12,9 @@
 >   como *uso interno de desarrollo* y **no se empaqueta en el juego distribuido**
 >   (`.gitignore` + aviso en el catálogo generado).
 >
-> Estado de las herramientas: **E1 y E2 construidas y probadas** (ingesta con 96/96 fichas de
-> prueba y reconstrucción exacta píxel a píxel en el selftest del extractor).
+> Estado de las herramientas: **E0, E1, E2 y la verificación de pixel-identidad ejecutadas sobre
+> los mosaicos reales**: 96/96 fichas reconstruidas **sin un solo píxel de diferencia**, tanto a
+> resolución nativa (×1) como a la escala de juego (×2). E3 es la etapa en curso.
 
 ---
 
@@ -23,20 +24,26 @@
 |---|---|
 | GDD funcional (101 mapas, 105 eventos, 77 anomalías, 19 entidades) | ✅ `docs/DIMENSIONAL_NIGHTMARE/` |
 | Catálogo de datos | ✅ `content/dimensional_nightmare.json` |
-| **E1** ingesta y medición de los mosaicos | ✅ `tools/dn_ingest_reference.mjs` · `npm run dn:ingest` |
-| **E2** extracción de tilesets y matrices de mapa | ✅ `tools/dn_extract_tileset.mjs` · `npm run dn:tiles` |
+| **E0** los 7 mosaicos en el repo | ✅ `Mapas/Crepypastas/` (7 JPG, subidos por el usuario) |
+| **E1** ingesta y medición de los mosaicos | ✅ `npm run dn:ingest` → 96/96 fichas |
+| **E2** extracción de tilesets y matrices de mapa | ✅ `npm run dn:tiles` (×1) · `npm run dn:tiles:2x` (×2) |
+| **E2-check** reconstrucción píxel a píxel | ✅ `npm run dn:verify` → 96/96 idénticas (×1 y ×2) |
 | Pruebas sin los mosaicos reales | ✅ `npm run dn:fixtures` (genera 7 mosaicos sintéticos y corre todo) |
-| Los 7 mosaicos en el repo | ❌ **falta**: depositarlos en `Mapas/crepypasta/` |
 | **E3** volcado a mapas + pasajes | ⏳ siguiente |
 
-### Paso 0 (manual, 2 minutos)
+### Paso 0 — ya hecho
 ```bash
-npm ci
-# copiar los 7 archivos a Mapas/crepypasta/  (nombres o palabras clave: ver README de la carpeta)
-npm run dn:check     # confirma el emparejamiento archivo → recurso
-npm run dn:ingest    # 96 fichas + index.json con medidas
-npm run dn:tiles     # 7 tilesets + 96 matrices de mapa
+npm install                     # dependencias (incluye @napi-rs/canvas)
+npm run dn:check                # emparejamiento archivo → recurso (mapping.json verificado)
+npm run dn:ingest               # 96 fichas + index.json con medidas
+npm run dn:tiles                # 7 tilesets ×1 + 96 matrices de mapa
+npm run dn:tiles:2x             # 7 tilesets ×2 (escala de juego RMXP)
+npm run dn:verify               # reconstruye las 96 fichas y las compara píxel a píxel
 ```
+
+**Resultado medido (2026-10-01):** 96/96 fichas con desviación `0.0000 %` en ×1 y en ×2
+(5 517 y 25 852 tiles únicos respectivamente). Los mosaicos no se tocan: se leen de
+`Mapas/Crepypastas/` mediante `reference/dimensional_nightmare/mapping.json`.
 
 ---
 
@@ -48,38 +55,55 @@ E0 depositar ─► E1 ingesta ✅ ─► E2 tilesets ✅ ─► E3 mapas + pasa
                         E6 instalación ◄── E5 verificación ◄──────────────┘
 ```
 
-### E0 — Depósito ✅ manual
-`Mapas/crepypasta/` + `npm run dn:check` en verde.
+### E0 — Depósito ✅
+`Mapas/Crepypastas/` (7 JPG) + `mapping.json` verificado por contenido + `npm run dn:check` en
+verde. Dos de los mosaicos venían con nombres engañosos (`Gold Lost Silver.jpg` es el set de
+montaña nevada R6 y `Pokemon Black GHOST.jpg` el de pueblos sepia R5): por eso la asignación
+manual en `mapping.json` tiene prioridad absoluta sobre cualquier heurística por nombre.
 
 ### E1 — Ingesta, corte y medición ✅ *construida y probada*
 - **Hace**: autodetecta la rejilla de cada mosaico (separadores oscuros), recorta las 96 fichas,
   y mide por ficha: tamaño, tiles aparentes, factor de escala (×1–×4), paleta, luminancia y
   huella 8×8.
 - **Salida**: `reference/dimensional_nightmare/slices/<recurso>/NN.png` + `index.json`.
-- **Prueba**: `npm run dn:fixtures` → 96/96 fichas, rejillas `auto`, sin avisos.
+- **Ejecutado sobre los mosaicos reales**: 96/96 fichas (16/16/1/16/16/15/16). Cuatro mosaicos
+  por autodetección de separadores y dos por rejilla uniforme (R3 = ficha única; R6 = 3 filas ×
+  5 columnas, corregido: la definición y el corte tenían filas/columnas invertidas).
+- **Prueba**: `npm run dn:fixtures` (mosaicos sintéticos) y `npm run dn:selftest` (rejilla).
 - **Riesgo cubierto**: rejillas raras se corrigen en `layout.json` sin tocar código.
 
 ### E2 — Tilesets derivados y matrices ✅ *construida y probada*
 - **Hace** (`tools/dn_extract_tileset.mjs`):
   1. Lleva cada ficha a resolución nativa (si el mosaico venía escalado ×2/×3/×4, reduce con
      *nearest neighbor*: sin interpolar, el pixel art no se ensucia).
-  2. Corta la ficha en bloques de **32×32** (la celda de RPG Maker XP = 2×2 tiles GBA de 16×16).
-  3. Deduplica bloques por hash SHA-1 y construye un **PNG de tileset** por recurso
+  2. Ajusta la ficha al múltiplo de 32 más cercano por arriba **extendiendo el borde**, para que
+     la rejilla cubra la escena completa (antes se perdían hasta 31 px del borde derecho/inferior).
+  3. Corta la ficha en bloques de **32×32** (la celda de RPG Maker XP = 2×2 tiles GBA de 16×16).
+     Con `--scale 2` el arte se amplía ×2 con vecino más cercano *antes* de cortar: es la escala
+     de juego (el pixel art GBA de 16 px queda como lo muestra RMXP en pantalla).
+  4. Deduplica bloques por hash SHA-1 y construye un **PNG de tileset** por recurso
      (8 columnas, formato RMXP; id de tile = 384 + índice).
-  4. Escribe la **matriz** de cada ficha: la rejilla de índices que, pintada con ese tileset,
+  5. Escribe la **matriz** de cada ficha: la rejilla de índices que, pintada con ese tileset,
      reproduce la imagen. Es el mapa listo para instalar.
-- **Salida**: `reference/dimensional_nightmare/tilesets/*.png` + `content/dimensional_nightmare_tiles.json`.
-- **Prueba**: `npm run dn:tiles:selftest` → 4 tiles únicos, **reconstrucción idéntica píxel a píxel**.
-- **Aviso automático** si un grupo supera 1.024 tiles (se parte por lotes).
+- **Salida**: `reference/dimensional_nightmare/tilesets/<grupo>{,_2x}.png` +
+  `content/dimensional_nightmare_tiles{,_2x}.json`.
+- **Prueba**: `npm run dn:tiles:selftest` (selftest sintético) y `npm run dn:verify`
+  (`tools/dn_verify_slices.mjs`): reconstruye las 96 fichas y las compara **píxel a píxel** contra
+  el mosaico → **96/96 idénticas, desviación 0.0000 %**, en ×1 y en ×2. Además genera una vista
+  previa `original | reconstruida | diferencias` por ficha (`--preview <grupo> --index N`).
+- **Aviso automático** si un grupo supera 1.024 tiles: en ×2 los siete grupos lo superan
+  (3 500–4 200 tiles), así que **E3 trocea el tileset por mapa** (cada mapa usa solo sus bloques)
+  en vez de instalar un PNG gigante por recurso.
 
 ### E3 — Mapas y pasajes (la etapa grande)
 - **Herramienta a crear**: `tools/apply_dimensional_nightmare_maps.mjs` (patrón
   `apply_monte_silver_rebuild.mjs`: backup → escritura → `--verify`).
 - **Hace**, por mapa:
-  1. Crea `MapXXXX.rxdata` con `TileCanvas` del tamaño de la matriz (celdas de 32×32).
-     Opción `--scale 2` para tamaños "GBA clásicos" (30×24, 40×40): duplica el tileset con
-     *nearest* y multiplica la matriz; sin `--scale` se respeta la resolución nativa.
-  2. Registra el **tileset nuevo** en `Tilesets.rxdata` (bloques + tabla de pasajes).
+  1. Crea `MapXXXX.rxdata` con `TileCanvas` del tamaño de la matriz ×2 (celdas de 32×32), es decir
+     el mapa mide exactamente la escena de referencia a escala de juego.
+  2. **Tileset por mapa**: se construye un PNG `DN_2XXX.png` con solo los bloques que ese mapa
+     usa y se registra la entrada `DN_2XXX` en `Tilesets.rxdata` (7 autotiles vacíos + tablas de
+     pasajes/priorities desde el índice 384). Así ningún mapa carga un tileset de 4 000 bloques.
   3. Calcula **pasajes** por heurística y por revisión:
      - arranque conservador: todo transitable salvo bloques "blancos"/vacíos y agua detectada
        por color;
@@ -186,7 +210,9 @@ EP05 (16), EP06 (16), Nexo (5) y antesala (1).
 npm ci                    # dependencias (incluye @napi-rs/canvas)
 npm run dn:check          # ¿están los 7? ¿cómo se emparejaron?
 npm run dn:ingest         # E1: 96 fichas + index.json
-npm run dn:tiles          # E2: tilesets + matrices de mapa
+npm run dn:tiles          # E2: tilesets ×1 + matrices de mapa
+npm run dn:tiles:2x       # E2: tilesets ×2 (escala de juego)
+npm run dn:verify         # E2-check: reconstrucción píxel a píxel (96/96)
 npm run dn:fixtures       # ensayo general sin los mosaicos reales
 npm run dn:selftest       # rejilla de la ingesta
 npm run dn:tiles:selftest # reconstrucción píxel a píxel del extractor
