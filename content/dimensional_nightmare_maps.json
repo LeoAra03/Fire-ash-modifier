@@ -1,0 +1,2108 @@
+{
+  "title": "Dimensional Nightmare — plano de recreación de mapas",
+  "generatedBy": "tools/create_dimensional_nightmare_maps.mjs",
+  "docs": "docs/DIMENSIONAL_NIGHTMARE/01..07 (tablas «Mapa | Título | Recurso (ficha) | …»)",
+  "note": "La ficha R#-N se resuelve al recorte NN.png de reference/dimensional_nightmare/slices/<recurso>/. El tamaño es el de DISEÑO del GDD; el mapa se construye al tamaño real de la ficha × escala.",
+  "resources": {
+    "R1": {
+      "key": "r1_glitch_city",
+      "label": "Glitch City Compilation",
+      "cols": 4
+    },
+    "R2": {
+      "key": "r2_dark_forest",
+      "label": "Creepy Dark Forest",
+      "cols": 4
+    },
+    "R3": {
+      "key": "r3_king_unown",
+      "label": "King Unown (sprite)",
+      "cols": 1
+    },
+    "R4": {
+      "key": "r4_trono_unown",
+      "label": "El Trono del Rey Unown",
+      "cols": 4
+    },
+    "R5": {
+      "key": "r5_pueblos_tumbas",
+      "label": "Pueblos y Tumbas",
+      "cols": 4
+    },
+    "R6": {
+      "key": "r6_snowy_mountain",
+      "label": "Creepy Snowy Mountain",
+      "cols": 5
+    },
+    "R7": {
+      "key": "r7_catacumbas",
+      "label": "Catacumbas de Lavanda",
+      "cols": 4
+    }
+  },
+  "count": 101,
+  "maps": [
+    {
+      "id": 2040,
+      "episode": "HUB",
+      "title": "Antesala de las Grietas",
+      "tilesetHint": "",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "—",
+      "role": "Entrada del Nightmare (hub); se construye a mano sobre tiles de la Gruta (2030)",
+      "primary": null,
+      "extras": []
+    },
+    {
+      "id": 2041,
+      "episode": "EP01",
+      "title": "Catacumbas — Entrada Arqueada",
+      "tilesetHint": "Outer/Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-1",
+      "role": "Entrada, NPC guía, guardado",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2042,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala de las Urnas",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-4",
+      "role": "Primeras anomalías, objeto oculto",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/04.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2043,
+      "episode": "EP01",
+      "title": "Catacumbas — Celdas",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R7-2",
+      "role": "NPCs conscientes, llave de celda",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2044,
+      "episode": "EP01",
+      "title": "Catacumbas — Galería de Barrotes",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R7-6",
+      "role": "Puzzle de puertas (4 palancas)",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2045,
+      "episode": "EP01",
+      "title": "Catacumbas — Escalera del Arco",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 24,
+        "height": 30
+      },
+      "fichaCell": "R7-8",
+      "role": "Vertical, transición de fase",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/08.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2046,
+      "episode": "EP01",
+      "title": "Catacumbas — Cripta de Sarcófagos",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-3",
+      "role": "Sarcófagos que se abren (fase 3+)",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2047,
+      "episode": "EP01",
+      "title": "Catacumbas — Osario",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-14",
+      "role": "Combates salvajes, huesos",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2048,
+      "episode": "EP01",
+      "title": "Catacumbas — Jardín de Raíces",
+      "tilesetHint": "Int Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-5",
+      "role": "Raíces vivas, curaciones",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2049,
+      "episode": "EP01",
+      "title": "Catacumbas — Pasadizo que Respira",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 20,
+        "height": 40
+      },
+      "fichaCell": "R7-11",
+      "role": "Laberinto; se cierra por detrás",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2050,
+      "episode": "EP01",
+      "title": "Catacumbas — Galería de Mausoleos",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R7-9",
+      "role": "NPC \"La Campanera\"",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2051,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala de Pedestales",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-12",
+      "role": "Puzzle de cráneos (4 pedestales)",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2052,
+      "episode": "EP01",
+      "title": "Catacumbas — Capilla de la Campana",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-10",
+      "role": "Anomalía ancla: la campana rota",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2053,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala de las Bestias",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-13",
+      "role": "Guardianes; miniboss opcional",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2054,
+      "episode": "EP01",
+      "title": "Catacumbas — Pared de Inscripciones",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-7",
+      "role": "Traducción (Rotom Sintonía); lore",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2055,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala Ritual",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R7-15",
+      "role": "Puzzle de pentagrama; antesala del jefe",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2056,
+      "episode": "EP01",
+      "title": "Catacumbas — Cámara de la Mano",
+      "tilesetHint": "Int Cueva + R1",
+      "designSize": {
+        "width": 24,
+        "height": 24
+      },
+      "fichaCell": "R7-16",
+      "role": "Jefe final; rojo sangre",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/16.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2057,
+      "episode": "EP02",
+      "title": "Pueblo Sin Color — Entrada",
+      "tilesetHint": "Outer Ciudad (gris)",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R5-1",
+      "role": "Entrada, reloj parado, NPCs normales",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2058,
+      "episode": "EP02",
+      "title": "Calle de las Casas Huecas",
+      "tilesetHint": "Outer Ciudad",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R5-6",
+      "role": "Casas abandonadas, primer objeto oculto",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2059,
+      "episode": "EP02",
+      "title": "Plaza de la Fuente Seca",
+      "tilesetHint": "Outer Ciudad",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R5-10",
+      "role": "Centro; fuente que \"recuerda\" agua",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2060,
+      "episode": "EP02",
+      "title": "Callejón de Escombros",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-2",
+      "role": "Paso bloqueado por escombros (puzzle de pala)",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2061,
+      "episode": "EP02",
+      "title": "Bosque de Troncos",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R5-9",
+      "role": "Combates; árbol retorcido ancla",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2062,
+      "episode": "EP02",
+      "title": "Páramo de Árboles Secos",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-3",
+      "role": "Anomalías auditivas",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2063,
+      "episode": "EP02",
+      "title": "Estanque Estancado",
+      "tilesetHint": "Outer Agua",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-13",
+      "role": "Surf simbólico; espejo de agua",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2064,
+      "episode": "EP02",
+      "title": "Puente de Madera Podrida",
+      "tilesetHint": "Outer Agua",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-5",
+      "role": "Puente; se hunde en fase ≥5",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2065,
+      "episode": "EP02",
+      "title": "Colina de la Iglesia",
+      "tilesetHint": "Outer Cementerio",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R5-7",
+      "role": "Iglesia; NPC sacerdote",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2066,
+      "episode": "EP02",
+      "title": "Cementerio Cercado",
+      "tilesetHint": "Outer Cementerio",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R5-3bis (R5-3, variante)",
+      "role": "Tumbas legibles (5 estados)",
+      "primary": {
+        "index": 3,
+        "bis": true,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2067,
+      "episode": "EP02",
+      "title": "Mausoleo Central",
+      "tilesetHint": "Int Cementerio",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-15",
+      "role": "Primer \"jefe de campanario\" opcional",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2068,
+      "episode": "EP02",
+      "title": "Cementerio Grande",
+      "tilesetHint": "Outer Cementerio",
+      "designSize": {
+        "width": 40,
+        "height": 40
+      },
+      "fichaCell": "R5-11",
+      "role": "Laberinto de cruces",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2069,
+      "episode": "EP02",
+      "title": "Estación Abandonada",
+      "tilesetHint": "Int Estación",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R5-14",
+      "role": "Vagón que no llega (anomalía temporal)",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2070,
+      "episode": "EP02",
+      "title": "Biblioteca Polvorienta",
+      "tilesetHint": "Int Biblioteca",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-12",
+      "role": "Páginas, lore, traducción",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2071,
+      "episode": "EP02",
+      "title": "Campanario",
+      "tilesetHint": "Int Campanario",
+      "designSize": {
+        "width": 24,
+        "height": 32
+      },
+      "fichaCell": "R5-16",
+      "role": "Campana; verticalidad; subida",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/16.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2072,
+      "episode": "EP02",
+      "title": "Torre de la Escalera de Caracol",
+      "tilesetHint": "Int Torre",
+      "designSize": {
+        "width": 20,
+        "height": 40
+      },
+      "fichaCell": "R5-4 + R5-8",
+      "role": "Jefe final: el descenso/asceso final",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/04.png"
+      },
+      "extras": [
+        {
+          "index": 8,
+          "bis": false,
+          "resource": "R5",
+          "key": "r5_pueblos_tumbas",
+          "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/08.png"
+        }
+      ]
+    },
+    {
+      "id": 2073,
+      "episode": "EP03",
+      "title": "Cara Norte — Vereda Helada",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R6-1",
+      "role": "Entrada; primera ventisca",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2074,
+      "episode": "EP03",
+      "title": "Acantilado de Zetas",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R6-2",
+      "role": "Escalada; caídas sin daño",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2075,
+      "episode": "EP03",
+      "title": "Sendero de la Cornisa",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R6-3",
+      "role": "Ruta larga; cueva escondida",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2076,
+      "episode": "EP03",
+      "title": "Cabaña del Montañés",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 24,
+        "height": 24
+      },
+      "fichaCell": "R6-4",
+      "role": "Curación; NPC ancla",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/04.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2077,
+      "episode": "EP03",
+      "title": "Lago Congelado",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R6-5",
+      "role": "Altar central bajo el hielo",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2078,
+      "episode": "EP03",
+      "title": "Pueblo de la Niebla",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R6-6",
+      "role": "NPCs normales; tienda",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2079,
+      "episode": "EP03",
+      "title": "Pueblo Alto",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 40,
+        "height": 40
+      },
+      "fichaCell": "R6-7",
+      "role": "NPCs conscientes; campana",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2080,
+      "episode": "EP03",
+      "title": "Cueva de Bloques de Hielo",
+      "tilesetHint": "Int Cueva Hielo",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R6-8",
+      "role": "Puzzle de hielo resbaladizo",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/08.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2081,
+      "episode": "EP03",
+      "title": "Entrada de Cueva",
+      "tilesetHint": "Nieve exterior",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R6-9",
+      "role": "Bifurcación (arriba/abajo)",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2082,
+      "episode": "EP03",
+      "title": "Caverna de Estalactitas",
+      "tilesetHint": "Int Cueva Hielo",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R6-10",
+      "role": "Combates; estalactitas que caen",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2083,
+      "episode": "EP03",
+      "title": "Cámara de los Dos Lagos",
+      "tilesetHint": "Int Cueva Hielo",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R6-11",
+      "role": "Runas; traducción",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2084,
+      "episode": "EP03",
+      "title": "Grieta Estrecha",
+      "tilesetHint": "Int Cueva Hielo",
+      "designSize": {
+        "width": 16,
+        "height": 40
+      },
+      "fichaCell": "R6-12",
+      "role": "Pasillo de 1 celda; se cierra detrás",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2085,
+      "episode": "EP03",
+      "title": "Cámara de Cristales",
+      "tilesetHint": "Int Cueva Hielo",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R6-13",
+      "role": "Miniboss opcional: \"la Bestia de Hielo\"",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2086,
+      "episode": "EP03",
+      "title": "Templo de las Estatuas",
+      "tilesetHint": "Int Templo",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R6-14",
+      "role": "Estatuas que cambian de pose",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2087,
+      "episode": "EP03",
+      "title": "Corazón del Monte",
+      "tilesetHint": "Int Cueva Hielo",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R6-15 + R1",
+      "role": "Jefe final; ventisca interior",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R6",
+        "key": "r6_snowy_mountain",
+        "slice": "reference/dimensional_nightmare/slices/r6_snowy_mountain/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2088,
+      "episode": "EP04",
+      "title": "Bosque Dormido — Entrada",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R2-1",
+      "role": "Entrada; primer canto",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2089,
+      "episode": "EP04",
+      "title": "Senda del Cartel Torcido",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R2-2",
+      "role": "Carteles que cambian de texto",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2090,
+      "episode": "EP04",
+      "title": "Puente de Piedra",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R2-3",
+      "role": "Cruce; el agua canta",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2091,
+      "episode": "EP04",
+      "title": "Cabaña de las Ventanas",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 24,
+        "height": 24
+      },
+      "fichaCell": "R2-4",
+      "role": "Curación; NPCs dormidos",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/04.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2092,
+      "episode": "EP04",
+      "title": "Arco de Niebla Púrpura",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R2-5",
+      "role": "Portal (puzzle de niebla)",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2093,
+      "episode": "EP04",
+      "title": "Cementerio del Bosque",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R2-6",
+      "role": "Tumbas de juguetes",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2094,
+      "episode": "EP04",
+      "title": "Campo de Flores Moradas",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R2-7",
+      "role": "Combates; efectos de sueño",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2095,
+      "episode": "EP04",
+      "title": "Campamento de Tiendas",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R2-8",
+      "role": "Refugio; punto seguro de reaparición",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/08.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2096,
+      "episode": "EP04",
+      "title": "Boca de la Cueva Negra",
+      "tilesetHint": "Outer Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R2-9",
+      "role": "Entrada a cueva; oscuridad",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2097,
+      "episode": "EP04",
+      "title": "Árboles Retorcidos",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R2-10",
+      "role": "Anomalías de susurro",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2098,
+      "episode": "EP04",
+      "title": "Estanque de Nenúfares",
+      "tilesetHint": "Outer Agua",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R2-11",
+      "role": "Espejo; \"el que duerme abajo\"",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2099,
+      "episode": "EP04",
+      "title": "Muro de Ruinas",
+      "tilesetHint": "Outer Ruinas",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R2-12",
+      "role": "Muro con inscripción musical",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2100,
+      "episode": "EP04",
+      "title": "Granero Abandonado",
+      "tilesetHint": "Int Granero",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R2-13",
+      "role": "Cama donde dormir (opcional)",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2101,
+      "episode": "EP04",
+      "title": "Bosque de Luciérnagas",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R2-14",
+      "role": "Zona preciosa y peligrosa",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2102,
+      "episode": "EP04",
+      "title": "Muro del Pasaje",
+      "tilesetHint": "Outer Ruinas",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R2-15",
+      "role": "Puzzle de 8 notas",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2103,
+      "episode": "EP04",
+      "title": "Árbol Anciano",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 40,
+        "height": 40
+      },
+      "fichaCell": "R2-16 + R1",
+      "role": "Jefe final: 3 puertas en la base",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/16.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2104,
+      "episode": "EP05",
+      "title": "Pueblo 000 — Entrada",
+      "tilesetHint": "Outer Ciudad (blanco)",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R5-1 vacío",
+      "role": "Entrada; no hay nadie",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2105,
+      "episode": "EP05",
+      "title": "Calle Incompleta",
+      "tilesetHint": "Outer Ciudad",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R5-6 vacío",
+      "role": "Tiles que faltan (huecos negros)",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2106,
+      "episode": "EP05",
+      "title": "Plaza sin Fuente",
+      "tilesetHint": "Outer Ciudad",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R5-10 vacío",
+      "role": "La fuente ha dejado de existir",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2107,
+      "episode": "EP05",
+      "title": "Callejón Terminado",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-2 vacío",
+      "role": "Antes lleno de escombros; ahora limpio y vacío",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2108,
+      "episode": "EP05",
+      "title": "Bosque Sin Troncos",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R5-9 vacío",
+      "role": "Solo sombras donde había árboles",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2109,
+      "episode": "EP05",
+      "title": "Páramo Blanco",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-3 vacío",
+      "role": "Blanco total; sin horizonte",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2110,
+      "episode": "EP05",
+      "title": "Estanque Vacío",
+      "tilesetHint": "Outer Agua",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-13 vacío",
+      "role": "El agua está en otra parte (tiles huecos)",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2111,
+      "episode": "EP05",
+      "title": "Puente Cortado",
+      "tilesetHint": "Outer Agua",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-5 vacío + R1",
+      "role": "Puente partido en 2; primera R1",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2112,
+      "episode": "EP05",
+      "title": "Colina Erguida",
+      "tilesetHint": "Outer Cementerio",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R5-7 vacío",
+      "role": "La iglesia está, pero su sombra no",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2113,
+      "episode": "EP05",
+      "title": "Cementerio Vacío",
+      "tilesetHint": "Outer Cementerio",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R5-3bis vacío",
+      "role": "Tumbas sin inscripción",
+      "primary": {
+        "index": 3,
+        "bis": true,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2114,
+      "episode": "EP05",
+      "title": "Mausoleo Abierto",
+      "tilesetHint": "Int Cementerio",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-15 vacío",
+      "role": "Dentro, un espejo (miniboss)",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2115,
+      "episode": "EP05",
+      "title": "Estación 000",
+      "tilesetHint": "Int Estación",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R5-14 vacío + R1",
+      "role": "Vías que no llevan a ningún sitio",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2116,
+      "episode": "EP05",
+      "title": "Biblioteca sin Letras",
+      "tilesetHint": "Int Biblioteca",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R5-12 vacío + R1",
+      "role": "Libros en blanco (puzzle)",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2117,
+      "episode": "EP05",
+      "title": "Campanario Roto",
+      "tilesetHint": "Int Campanario",
+      "designSize": {
+        "width": 24,
+        "height": 32
+      },
+      "fichaCell": "R5-16 vacío + R1",
+      "role": "Recuerdo del EP02; puerta al glitch",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R5",
+        "key": "r5_pueblos_tumbas",
+        "slice": "reference/dimensional_nightmare/slices/r5_pueblos_tumbas/16.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2118,
+      "episode": "EP05",
+      "title": "Pueblo 404",
+      "tilesetHint": "Outer Glitch",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R1-4 + R1-11",
+      "role": "El \"pueblo\" coral de la R1",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R1",
+        "key": "r1_glitch_city",
+        "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/04.png"
+      },
+      "extras": [
+        {
+          "index": 11,
+          "bis": false,
+          "resource": "R1",
+          "key": "r1_glitch_city",
+          "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/11.png"
+        }
+      ]
+    },
+    {
+      "id": 2119,
+      "episode": "EP05",
+      "title": "El Borde del Mundo",
+      "tilesetHint": "Void",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R1-6 + R1-16",
+      "role": "Jefe final: el Vacío con forma de Ash",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R1",
+        "key": "r1_glitch_city",
+        "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/06.png"
+      },
+      "extras": [
+        {
+          "index": 16,
+          "bis": false,
+          "resource": "R1",
+          "key": "r1_glitch_city",
+          "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/16.png"
+        }
+      ]
+    },
+    {
+      "id": 2120,
+      "episode": "EP06",
+      "title": "Atrio de las Letras",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-1",
+      "role": "Entrada; dos estatuas; primer Unown vivo",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2121,
+      "episode": "EP06",
+      "title": "Sala de la Inscripción",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-2",
+      "role": "Texto KINGGUS / AYO@HERE en el suelo",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2122,
+      "episode": "EP06",
+      "title": "Corredor de Columnas",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R4-3",
+      "role": "Trampa de pasos (alfombra que se hunde)",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2123,
+      "episode": "EP06",
+      "title": "Biblioteca Prohibida",
+      "tilesetHint": "Int Biblioteca",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R4-4",
+      "role": "Letra K — puzzle de estanterías",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/04.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2124,
+      "episode": "EP06",
+      "title": "Balcón de los Unown",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-5",
+      "role": "Unown flotantes; Letra I",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2125,
+      "episode": "EP06",
+      "title": "Sala del Ojo",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-6",
+      "role": "El ojo gigante; Letra N",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2126,
+      "episode": "EP06",
+      "title": "Escalinata Interior",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R4-7",
+      "role": "Vertical; puertas selladas por letra",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2127,
+      "episode": "EP06",
+      "title": "Cripta de Sarcófagos",
+      "tilesetHint": "Int Cripta",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R4-8",
+      "role": "Letra G (1)",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/08.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2128,
+      "episode": "EP06",
+      "title": "Sala de los Símbolos",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R4-9",
+      "role": "Puzzle de suelo Unown; Letra G (2)",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2129,
+      "episode": "EP06",
+      "title": "Caverna de Cristales",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-10",
+      "role": "Letra U; miniboss opcional",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2130,
+      "episode": "EP06",
+      "title": "Galería Inundada",
+      "tilesetHint": "Int Agua",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R4-11",
+      "role": "Unown en el agua; Letra S",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2131,
+      "episode": "EP06",
+      "title": "Salón de las Estatuas",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-12",
+      "role": "4 estatuas que hablan",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2132,
+      "episode": "EP06",
+      "title": "Galería Menor",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-13",
+      "role": "Estatuas pequeñas; objeto oculto",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2133,
+      "episode": "EP06",
+      "title": "Sala del Trono",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R4-14",
+      "role": "Trono vacío; se abre la cámara final",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2134,
+      "episode": "EP06",
+      "title": "Sala LEAVENOW",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-15",
+      "role": "Advertencia; última decisión",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2135,
+      "episode": "EP06",
+      "title": "Cámara de KINGGUS",
+      "tilesetHint": "Int Trono + Glitch",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R4-16 + R3 + R1",
+      "role": "Jefe final del juego",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/16.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2136,
+      "episode": "NEXO",
+      "title": "Nexo — Falla Cero",
+      "tilesetHint": "",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R1-6 (void con código)",
+      "role": "Entrada; 6 puertas (una por episodio)",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R1",
+        "key": "r1_glitch_city",
+        "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2137,
+      "episode": "NEXO",
+      "title": "Nexo — Pueblo Reensamblado",
+      "tilesetHint": "",
+      "designSize": {
+        "width": 32,
+        "height": 24
+      },
+      "fichaCell": "R1-1 + R1-13",
+      "role": "Los mundos se pegan: casa de EP02 sobre calle de EP05",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R1",
+        "key": "r1_glitch_city",
+        "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/01.png"
+      },
+      "extras": [
+        {
+          "index": 13,
+          "bis": false,
+          "resource": "R1",
+          "key": "r1_glitch_city",
+          "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/13.png"
+        }
+      ]
+    },
+    {
+      "id": 2138,
+      "episode": "NEXO",
+      "title": "Nexo — Centro Pokémon Sumergido",
+      "tilesetHint": "",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R1-10 (ERROR)",
+      "role": "Curación final (la única enfermera del Nexo)",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R1",
+        "key": "r1_glitch_city",
+        "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2139,
+      "episode": "NEXO",
+      "title": "Nexo — Pasillo de Código",
+      "tilesetHint": "",
+      "designSize": {
+        "width": 24,
+        "height": 40
+      },
+      "fichaCell": "R1-3 + R1-15",
+      "role": "Último pasillo; cada paso muestra una anomalía registrada",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R1",
+        "key": "r1_glitch_city",
+        "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/03.png"
+      },
+      "extras": [
+        {
+          "index": 15,
+          "bis": false,
+          "resource": "R1",
+          "key": "r1_glitch_city",
+          "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/15.png"
+        }
+      ]
+    },
+    {
+      "id": 2140,
+      "episode": "NEXO",
+      "title": "Nexo — Sala del Testigo",
+      "tilesetHint": "",
+      "designSize": {
+        "width": 30,
+        "height": 30
+      },
+      "fichaCell": "R1-4 + R1-16",
+      "role": "Epílogo jugable: la decisión de Ash",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R1",
+        "key": "r1_glitch_city",
+        "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/04.png"
+      },
+      "extras": [
+        {
+          "index": 16,
+          "bis": false,
+          "resource": "R1",
+          "key": "r1_glitch_city",
+          "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/16.png"
+        }
+      ]
+    }
+  ]
+}

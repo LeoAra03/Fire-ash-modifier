@@ -1,0 +1,108 @@
+{
+  "generatedBy": "tools/apply_dimensional_nightmare_maps.mjs",
+  "counts": 3,
+  "maps": [
+    {
+      "id": 2041,
+      "episode": "EP01",
+      "title": "Catacumbas — Entrada Arqueada",
+      "tilesetHint": "Outer/Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-1",
+      "role": "Entrada, NPC guía, guardado",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/01.png"
+      },
+      "extras": [],
+      "tilesetId": 26,
+      "tiles": 242,
+      "width": 22,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          11,
+          10
+        ],
+        "reachable": 242,
+        "walkable": 242,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2088,
+      "episode": "EP04",
+      "title": "Bosque Dormido — Entrada",
+      "tilesetHint": "Outer Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R2-1",
+      "role": "Entrada; primer canto",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R2",
+        "key": "r2_dark_forest",
+        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/01.png"
+      },
+      "extras": [],
+      "tilesetId": 27,
+      "tiles": 220,
+      "width": 22,
+      "height": 10,
+      "bfs": {
+        "entry": [
+          11,
+          9
+        ],
+        "reachable": 220,
+        "walkable": 220,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2120,
+      "episode": "EP06",
+      "title": "Atrio de las Letras",
+      "tilesetHint": "Int Trono",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R4-1",
+      "role": "Entrada; dos estatuas; primer Unown vivo",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R4",
+        "key": "r4_trono_unown",
+        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/01.png"
+      },
+      "extras": [],
+      "tilesetId": 28,
+      "tiles": 242,
+      "width": 22,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          11,
+          10
+        ],
+        "reachable": 242,
+        "walkable": 242,
+        "isolated": 0,
+        "ratio": 1
+      }
+    }
+  ]
+}

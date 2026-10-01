@@ -95,25 +95,36 @@ manual en `mapping.json` tiene prioridad absoluta sobre cualquier heurística po
   (3 500–4 200 tiles), así que **E3 trocea el tileset por mapa** (cada mapa usa solo sus bloques)
   en vez de instalar un PNG gigante por recurso.
 
-### E3 — Mapas y pasajes (la etapa grande)
-- **Herramienta a crear**: `tools/apply_dimensional_nightmare_maps.mjs` (patrón
-  `apply_monte_silver_rebuild.mjs`: backup → escritura → `--verify`).
+### E3 — Mapas y pasajes ✅ *piloto construido*
+- **Plano**: `content/dimensional_nightmare_maps.json` (`npm run dn:plan`) — generado de las
+  tablas del GDD (docs 01–07): 101 mapas, 100 con ficha de referencia asignada y su recorte de
+  `slices/` ya resuelto. `npm run dn:plan:check` verifica que todos los recortes existan.
+- **Herramienta**: `tools/apply_dimensional_nightmare_maps.mjs` (backup → escritura → `--verify`;
+  `--dry-run`, `--only`, `--episode`, `--render`).
 - **Hace**, por mapa:
-  1. Crea `MapXXXX.rxdata` con `TileCanvas` del tamaño de la matriz ×2 (celdas de 32×32), es decir
-     el mapa mide exactamente la escena de referencia a escala de juego.
-  2. **Tileset por mapa**: se construye un PNG `DN_2XXX.png` con solo los bloques que ese mapa
-     usa y se registra la entrada `DN_2XXX` en `Tilesets.rxdata` (7 autotiles vacíos + tablas de
-     pasajes/priorities desde el índice 384). Así ningún mapa carga un tileset de 4 000 bloques.
-  3. Calcula **pasajes** por heurística y por revisión:
-     - arranque conservador: todo transitable salvo bloques "blancos"/vacíos y agua detectada
-       por color;
-     - detección de muros por material (bloques muy repetidos que forman líneas continuas);
-     - overrides manuales en `content/dimensional_nightmare_passability.json` (celda → 0/1/2);
-     - **validación con BFS** (`reachableCells` de `map_painter`): si la entrada no llega a la
-       salida y a cada objeto, el mapa queda marcado para ajustar.
-  4. Coloca los eventos con **tile de origen** donde la imagen muestra props (estatuas, campana,
-     altar, trono) y deja el resto para E4.
-- **Salida**: `Map2040`–`Map2140` (los del ciclo) + `MapInfos` + `map_metadata`.
+  1. **Tileset por mapa** `DN_<id>.png`: solo los bloques que ese mapa usa (~220–250), con entrada
+     propia en `Tilesets.rxdata` (7 autotiles vacíos; pasajes/priorities/terrain desde el id 384).
+     Así ningún mapa carga un PNG de 3 500–4 200 bloques.
+  2. Escribe `Map<id>.rxdata` con la matriz de la ficha ×2 en la capa 1 — el mapa **es** la escena
+     de referencia a escala de juego (p. ej. 2041 → 704×352 px = 22×11 bloques).
+  3. Registra `MapInfos.rxdata` (`DN 2041 · Catacumbas — Entrada Arqueada`, padre 2030) y copia
+     `map_metadata.dat` del mapa 2021 (BGM de combate heredado, sin clima).
+  4. **Pasajes**: arranque conservador — todo transitable salvo bloques vacíos. Deliberadamente no
+     se infieren muros por color ni por oscuridad: en este arte el azul es agua (R5/R6), glitch
+     (R1) y trono (R4) a la vez, y la oscuridad es cueva (R7) y noche (R5). Los muros se declaran
+     por mapa en `content/dimensional_nightmare_passability.json` (celdas bloqueadas o liberadas)
+     y se revisan sobre el overlay; el BFS (`reachableCells`) valida que no queden zonas aisladas.
+  5. **Comparativa visual** en `docs/dn_referencia/<id>_comparacion.png`: ficha de referencia |
+     mapa construido | overlay de transitabilidad (verde = alcanzable, ámbar = aislado, rojo = muro).
+- **Piloto construido y verificado (2026-10-01)**: `2041` (R7-1, tileset #26), `2088` (R2-1, #27),
+  `2120` (R4-1, #28). `npm run dn:maps:verify` en verde: mapa, tamaño, tileset, PNG, MapInfos,
+  metadatos y BFS 100 %.
+- **Nota de fidelidad**: las fichas traen a veces horneado el sprite del jugador de la ROM de
+  referencia; al copiar la escena píxel a píxel ese sprite queda como tile del mapa. Opción
+  pendiente `--erase-actor` para sustituir esa zona por el suelo circundante si se quiere limpiar.
+- **Decisión de tamaño**: el mapa se construye al tamaño real de la ficha ×2 (no al `30×24` de
+  diseño del GDD, que era una estimación de pantalla GBA). A revisar con el piloto: opciones
+  `--fit <WxH>` para completar hasta el tamaño de diseño con el borde de la propia escena.
 - **Criterio de término por mapa**: checklist §4.
 
 ### E4 — Eventos, NPCs y jefes
@@ -148,7 +159,7 @@ Uno por familia de tileset. Fija la calidad de E3 antes de escalar.
 
 | Lote | Mapas | Episodio | Foco |
 |---:|---|---|---|
-| Piloto | 2041, 2088, 2120 | — | calibración de E3 |
+| Piloto | 2041, 2088, 2120 | — | ✅ construido: calibración de E3 |
 | L1–L3 | 2041–2056 | EP01 White Hand | 16 mapas, descenso vertical, sala de jefe |
 
 Lotes siguientes (a autorizar con el piloto y EP01 ya vistos): EP02 (16), EP03 (15), EP04 (16),
@@ -193,6 +204,8 @@ EP05 (16), EP06 (16), Nexo (5) y antesala (1).
 | D1 | Fidelidad | **B (pixel-identidad)** | arte derivado de terceros: uso interno, no empaquetado |
 | D2 | Alcance del primer ciclo | **Piloto + EP01** | 3 + 16 mapas |
 | D3 | Arte nuevo (Rey Unown, Mano Blanca) | pendiente | se decide al terminar el piloto |
+| D4 | Tamaño de mapa | **ficha ×2** (nativo de la escena) | alternativa `--fit WxH` a revisar con el piloto |
+| D5 | Pasajes | borrador abierto + overrides | la revisión del overlay del piloto define los muros |
 
 ---
 
