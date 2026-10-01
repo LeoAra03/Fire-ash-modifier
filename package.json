@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
   "scripts": {
-    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/tone_safety.test.mjs",
+    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs",
     "test:ui": "node --experimental-vm-modules web/js/ui.test.mjs",
     "verify:tier2:macro04": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro04.json --backup atlas_tier2_macro04_originals --verify",
     "verify:tier2:macro05": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro05.json --backup atlas_tier2_macro05_originals --verify",
@@ -43,7 +43,8 @@
     "verify:map-reference": "node tools/generate_map_reference_package.mjs --verify",
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
     "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify",
-    "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify"
+    "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify",
+    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:ruta_de_dios:package && npm run verify:map-reference && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

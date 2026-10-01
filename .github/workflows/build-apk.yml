@@ -2,11 +2,11 @@ name: PokeMod — Tests + APK
 
 on:
   push:
-    branches: ["arena/01a0e109-fire-ash-modifier"]
-    paths: ["web/**", "android/**", "tools/**", "content/**", "docs/**", ".github/workflows/build-apk.yml"]
+    branches: ["main", "arena/**"]
+    paths: ["web/**", "android/**", "tools/**", "content/**", "docs/**", "Scripts_corregido/**", "pokemon_fire_ash/**", "package.json", "package-lock.json", ".github/workflows/build-apk.yml"]
   pull_request:
     branches: ["main"]
-    paths: ["web/**", "android/**", "tools/**", "content/**", "docs/**", ".github/workflows/build-apk.yml"]
+    paths: ["web/**", "android/**", "tools/**", "content/**", "docs/**", "Scripts_corregido/**", "pokemon_fire_ash/**", "package.json", "package-lock.json", ".github/workflows/build-apk.yml"]
   workflow_dispatch: {}
   release:
     types: [created]
@@ -20,16 +20,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Marshal round-trip
-        run: node web/js/marshal.test.mjs
-      - name: Integración del núcleo
-        run: node web/js/integration.test.mjs
-      - name: Interfaz con DOM simulado
-        run: |
-          npm install --no-save --no-package-lock jsdom@27
-          node web/js/ui.test.mjs
-      - name: Autoría externa y fidelidad a Fire Ash
-        run: node tools/external_authoring.test.mjs
+      - name: Instalar dependencias reproducibles
+        run: npm ci
+      - name: Pruebas y auditoría completa de paquetes y mapas
+        run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas
         run: node tools/atlas_narrative_pipeline.mjs --qa content/atlas_tier1_blueprints_approved.json
       - name: Sintaxis de todos los módulos

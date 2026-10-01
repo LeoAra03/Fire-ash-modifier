@@ -15,6 +15,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { assertSameFile } from "./lib/package_integrity.mjs";
 import { marshalDump, marshalLoad } from "../web/js/marshal.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -104,10 +105,11 @@ function verify() {
     throw new Error("La sección PokeMod_RutaDeDios del paquete está desactualizada");
   }
   for (const file of DATA_FILES) {
-    if (!fs.existsSync(path.join(DIRECT, "Data", file))) throw new Error(`Falta Data/${file} en el paquete`);
+    const source = file === "Scripts.rxdata" ? path.join(PACKAGE, file) : path.join(GAME_DATA, file);
+    assertSameFile(source, path.join(DIRECT, "Data", file));
   }
-  for (const [, destinationName] of ASSET_FILES) {
-    if (!fs.existsSync(path.join(DIRECT, destinationName))) throw new Error(`Falta ${destinationName} en el paquete`);
+  for (const [sourceName, destinationName] of ASSET_FILES) {
+    assertSameFile(path.join(ROOT, "pokemon_fire_ash", sourceName), path.join(DIRECT, destinationName));
   }
   const packagedScripts = fs.readFileSync(path.join(PACKAGE, "Scripts.rxdata"));
   const directScripts = fs.readFileSync(path.join(DIRECT, "Data", "Scripts.rxdata"));
