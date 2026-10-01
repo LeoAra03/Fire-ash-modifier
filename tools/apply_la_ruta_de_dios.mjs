@@ -12,7 +12,7 @@
  *    - Canalización opcional para obtener las tablas si se desea iniciar directamente en postgame.
  * 2. Acceso desde Ciudad Puntaneva (Map 625) mediante una avenida celeste despejada entre árboles,
  *    un segundo Volus guía y un portal de luz ancestral en la entrada del Templo Puntaneva.
- * 3. Aproximación Celestial larga (Map 2030, 52x72): cuatro terrazas, escaleras, santuarios,
+ * 3. Aproximación Celestial larga (Map 2038, 52x72): cuatro terrazas, escaleras, santuarios,
  *    hitos de las Regiones y una puerta de transición antes de la montaña principal.
  * 4. Montaña Olímpica de 7 pisos (haciendo paralelismo al Monte Corona):
  *    - 1F (Map 2031, 40x40): Puerta de las Columnas. Nieve fresca, estatuas grisáceas (1310/3300), columnas de mármol (4453/4409).
@@ -1158,7 +1158,7 @@ function installSnowpointPortal() {
       cmd(101, [S("¿Deseas ascender por 'La Ruta de Dios' hacia las alturas del cosmos?\\ch[1,2,Ascender,Permanecer en Puntaneva]")]),
       cmd(111, [12, S("$game_variables[1] == 1")]),
       cmd(101, [S("Una ráfaga de viento sagrado envuelve tu cuerpo...")]),
-      transfer(2030, 26, 68, 8, 1),
+      transfer(2038, 26, 68, 8, 1),
       cmd(412),
       cmd(0),
     ],
@@ -2015,7 +2015,7 @@ export function buildFloor7() {
 function registerMapsInMapInfos() {
   const infos = readRx("MapInfos.rxdata");
   const floorNames = [
-    [2030, "La Ruta de Dios — Aproximación Celestial"],
+    [2038, "La Ruta de Dios — Aproximación Celestial"],
     [2031, "La Ruta de Dios — 1F: Puerta de las Columnas"],
     [2032, "La Ruta de Dios — 2F: Sendero de los Titanes"],
     [2033, "La Ruta de Dios — 3F: Terraza del Aura"],
@@ -2040,12 +2040,12 @@ function registerMapsInMapInfos() {
   }
 
   writeRx("MapInfos.rxdata", infos);
-  console.log("OK: Maps 2030..2037 registered in MapInfos.rxdata.");
+  console.log("OK: Maps 2031..2038 registered in MapInfos.rxdata.");
 }
 
 function registerMapMetadata() {
   const meta = readRx("map_metadata.dat");
-  for (let id = 2030; id <= 2037; id++) {
+  for (let id = 2031; id <= 2038; id++) {
     const existing = meta.pairs.find(([k]) => k === id);
     const obj = new RObject("GameData::MapMetadata", [
       ["@id", id],
@@ -2076,7 +2076,7 @@ function registerMapMetadata() {
   }
 
   writeRx("map_metadata.dat", meta);
-  console.log("OK: Maps 2030..2037 metadata registered in map_metadata.dat.");
+  console.log("OK: Maps 2031..2038 metadata registered in map_metadata.dat.");
 }
 
 function registerEncounters() {
@@ -2084,7 +2084,7 @@ function registerEncounters() {
 
   const tables = [
     {
-      map: 2030,
+      map: 2038,
       mons: [
         [30, Sy("SNORUNT"), 105, 110],
         [25, Sy("SNEASEL"), 105, 110],
@@ -2229,10 +2229,10 @@ function install() {
   installSnowpointGuide();
   installSnowpointTreeGuide();
 
-  console.log("Building the long celestial approach and the 7 Floors of La Ruta de Dios (Maps 2030..2037)...");
+  console.log("Building the long celestial approach and the 7 Floors of La Ruta de Dios (Maps 2031..2038)...");
   const approach = buildCelestialApproach();
   validateFloorReachability("Celestial approach", approach.map, approach.cv, [26, 68]);
-  writeRx("Map2030.rxdata", approach.map);
+  writeRx("Map2038.rxdata", approach.map);
 
   const f1 = buildFloor1();
   validateFloorReachability("Floor 1", f1.map, f1.cv, [20, 36]);
@@ -2301,6 +2301,13 @@ function verify() {
   const snowEvents = iv(map625, "events").pairs;
   const portalEv = snowEvents.find(([, ev]) => txt(iv(ev, "name")).includes("Portal a la Ruta de Dios"));
   if (!portalEv) errors.push("Missing Portal event in Map 625");
+  else {
+    const firstPage = iv(portalEv[1], "pages")?.[0];
+    const portalTransfer = iv(firstPage, "list")?.find((command) => Number(iv(command, "code")) === 201);
+    if (Number(iv(portalTransfer, "parameters")?.[1]) !== 2038) {
+      errors.push("The Snowpoint portal must transfer to Map 2038 (the celestial approach)");
+    }
+  }
   const guideEv = snowEvents.find(([, ev]) => txt(iv(ev, "name")).includes("Volus — Guía Celestial"));
   if (!guideEv) errors.push("Missing second Volus guide in Map 625");
   const squirtleEv = snowEvents.find(([, ev]) => txt(iv(ev, "name")).includes("Squirtle — Paso Temporal"));
@@ -2309,8 +2316,21 @@ function verify() {
     errors.push("The old Regigigas temple NPC still occupies the Snowpoint plaza");
   }
 
-  // 5. Verify the approach plus the 7 sacred floors
-  for (let id = 2030; id <= 2037; id++) {
+  // 5. Protect the shared ID allocation: Monte Silver owns 2030; the Ruta
+  // approach is 2038 and the seven floors remain 2031-2037.
+  const mapInfos = readRx("MapInfos.rxdata");
+  const infoName = (id) => {
+    const info = mapInfos.pairs.find(([key]) => Number(key) === id)?.[1];
+    return txt(iv(info, "name"));
+  };
+  if (!infoName(2030).includes("Gruta de los Testigos")) {
+    errors.push("Map 2030 must remain Monte Silver — Gruta de los Testigos");
+  }
+  if (!infoName(2038).includes("Aproximación Celestial")) {
+    errors.push("Map 2038 must be La Ruta de Dios — Aproximación Celestial");
+  }
+  // Verify the approach plus the 7 sacred floors, without reading or replacing 2030.
+  for (let id = 2031; id <= 2038; id++) {
     const f = path.join(DATA, `Map${id}.rxdata`);
     if (!fs.existsSync(f)) {
       errors.push(`Missing Map${id}.rxdata`);

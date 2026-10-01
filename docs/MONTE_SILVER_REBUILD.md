@@ -15,6 +15,8 @@ de la Ruta 216 y el Monte Lanakila (árbol nevado, montaña, cueva de hielo).
 | **2030 — Gruta de los Testigos** (NUEVO) | 68×46 | Vestíbulo con escaleras a falda y cumbre, siete puertas de niebla custodiadas por **Unown que deletrean T-E-S-T-I-G-O**, galerías de roca helada con rampas de hielo (terreno 12) y grietas bloqueantes, curación, Archivero, 3 objetos, encuentros salvajes tipo Cueva. |
 | **2022 — Monte Silver · Cumbre** | 32×24 | Meseta nevada con boca de cueva (anillo de rocas), RED el Campeón Silencioso, menú de las 7 emisiones, cabaña de la estación meteorológica, placa, 2 objetos. **Borrizón (Blizzard)** al 100 %. |
 
+> **Separación de IDs:** `Map2030` permanece como Gruta de los Testigos; la aproximación de La Ruta de Dios usa `Map2038`, y sus siete pisos siguen en `Map2031–Map2037`. Ningún generador de la Ruta debe escribir sobre `Map2030`.
+
 ## Cambios de comportamiento
 
 - **El contador (v264) solo sube al SELLAR una emisión** (victoria sobre el jefe):

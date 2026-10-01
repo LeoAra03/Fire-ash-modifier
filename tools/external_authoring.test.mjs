@@ -152,15 +152,22 @@ const snowpointSquirtle = snowpoint.events.map(({ obj }) => parseEvent(obj)).fin
 check(Boolean(snowpointSquirtle) && snowpointSquirtle.x === 19 && snowpointSquirtle.y === 55 && snowpointSquirtle.pages[0]?.graphic?.charName === "SQUIRTLE" &&
   !snowpoint.events.map(({ obj }) => parseEvent(obj)).some((event) => event.name === "Brandon" || event.name.includes("Regigigas")),
   "la plaza del templo queda libre y Squirtle ofrece el paso temporal junto al Charmeleon");
-const approach = parseMap(readMarshalData("Map2030.rxdata"));
+const approach = parseMap(readMarshalData("Map2038.rxdata"));
 const approachEvents = approach.events.map(({ obj }) => parseEvent(obj));
 check(approach.width === 52 && approach.height === 72 &&
   approachEvents.some((event) => event.name === "Puerta de la Cima del Génesis") &&
   approachEvents.some((event) => event.name === "Regreso a Ciudad Puntaneva"),
-  "la aproximación celestial conserva una montaña larga con entrada y retorno");
-const directApproach = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map2030.rxdata"))));
-check(directApproach.width === 52 && directApproach.height === 72,
-  "el paquete directo incluye la montaña celestial previa a los siete pisos");
+  "la aproximación celestial está en Map2038 y conserva una montaña larga con entrada y retorno");
+const grotto = parseMap(readMarshalData("Map2030.rxdata"));
+const grottoEvents = grotto.events.map(({ obj }) => parseEvent(obj));
+check(grotto.width === 68 && grotto.height === 46 &&
+  grottoEvents.some((event) => event.name.includes("Puerta 1")) &&
+  !grottoEvents.some((event) => event.name === "Puerta de la Cima del Génesis"),
+  "Map2030 sigue siendo la Gruta de los Testigos y no se reemplaza por la aproximación");
+const directApproach = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map2038.rxdata"))));
+const directGrotto = parseMap(marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Paquete_directo", "Data", "Map2030.rxdata"))));
+check(directApproach.width === 52 && directApproach.height === 72 && directGrotto.width === 68 && directGrotto.height === 46,
+  "el paquete directo conserva Map2030 como gruta y Map2038 como aproximación");
 let directZipError = null;
 try {
   verifyDirectPackage();

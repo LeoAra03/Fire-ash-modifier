@@ -6,6 +6,7 @@ game/
 *.zip
 *.7z
 *.rar
+!Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip
 
 # Saves y backups (protegidos, locales)
 Save*.rxdata

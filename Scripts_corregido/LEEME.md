@@ -35,7 +35,8 @@ Si no puedes descomprimir ZIP desde Android, usa la carpeta `Paquete_directo/` y
 - `Scripts.rxdata`: scripts corregidos y código de la Ruta de Dios.
 - `Map513.rxdata`: Volus en Pueblo Hojaverde.
 - `Map625.rxdata`: portal en Ciudad Puntaneva.
-- `Map2030.rxdata`: aproximación celestial larga, con terrazas, escaleras, santuarios, hitos y retorno a Puntaneva.
+- `Map2038.rxdata`: aproximación celestial larga, con terrazas, escaleras, santuarios, hitos y retorno a Puntaneva.
+- `Map2030.rxdata`: Gruta de los Testigos de Monte Silver (siete puertas Unown y conexión con falda/cumbre).
 - `Map2031.rxdata` a `Map2037.rxdata`: los siete pisos hasta Arceus.
 - `MapInfos.rxdata`, `System.rxdata`, `map_metadata.dat` y `encounters.dat`: registro y datos necesarios para los mapas nuevos.
 
@@ -52,7 +53,7 @@ El ZIP se genera de forma reproducible con `npm run build:package` y se comprueb
 5. El segundo Volus está aproximadamente en `X 20, Y 16` y te explica el ascenso.
 6. El portal está delante de la plaza, aproximadamente en `X 20, Y 14`. Ponte frente al aro de luz y pulsa **Z**.
 7. Junto al Charmeleon de la zona baja, aproximadamente en `X 19, Y 55`, encontrarás un Squirtle. Al hablarle podrás atravesar árboles únicamente mientras permanezcas en Ciudad Puntaneva. Al salir del mapa, el permiso se desactiva automáticamente.
-8. El portal lleva primero a `Map2030`, una montaña larga de terrazas celestiales. Al llegar arriba podrás entrar a los siete pisos de la Ruta de Dios.
+8. El portal lleva primero a `Map2038`, una montaña larga de terrazas celestiales. Al llegar arriba podrás entrar a los siete pisos de la Ruta de Dios.
 
 ### Batalla divina de Arceus
 
