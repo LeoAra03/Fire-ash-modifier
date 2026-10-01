@@ -44,5 +44,8 @@ tools/.cache/
 *.swp
 
 # Dimensional Nightmare: los recortes se regeneran con `npm run dn:ingest`
+# y los mosaicos de terceros no se redistribuyen en el repo
+reference/dimensional_nightmare/recursos/
 reference/dimensional_nightmare/slices/
+reference/dimensional_nightmare/index.json
 reference/dimensional_nightmare/selftest.png
