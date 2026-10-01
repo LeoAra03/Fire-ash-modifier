@@ -243,6 +243,7 @@ especificación. El catálogo de datos propuesto ya está en `content/dimensiona
 | `09_REGISTRO_DIMENSIONAL.md` | Entradas `#A001`–`#A0xx` de todas las entidades |
 | `10_EVENTOS_Y_FLAGS.md` | Switches, variables, eventos comunes y comandos RMXP listos para copiar |
 | `11_ASIGNACION_DE_RECURSOS.md` | Los 7 recursos: catálogo de sus 16/15 mapas con destino, tileset y propósito |
+| `12_PLAN_DE_RECREACION_DE_MAPAS.md` | **Plan de trabajo** para llevar los mosaicos de referencia a 101 mapas jugables (pipeline E0–E6, lotes, checklist, riesgos) |
 | `content/dimensional_nightmare.json` | Catálogo de datos propuesto para `create_*`/`apply_*` |
 
 ---

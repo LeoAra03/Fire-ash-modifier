@@ -1,0 +1,4 @@
+{
+  "$comment": "Ajustes manuales de rejilla para tools/dn_ingest_reference.mjs. Solo hacen falta si la autodetección de separadores falla. Las claves son el nombre del recurso; los valores, la fila/columna desde la que empieza la rejilla (px) y cuántas fichas hay.",
+  "overrides": {}
+}

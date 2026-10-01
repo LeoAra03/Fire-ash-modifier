@@ -29,6 +29,7 @@ android/local.properties
 # Web dev
 web/demo-out/
 node_modules/
+
 .DS_Store
 
 # Python
@@ -41,3 +42,7 @@ tools/.cache/
 .vscode/
 .idea/
 *.swp
+
+# Dimensional Nightmare: los recortes se regeneran con `npm run dn:ingest`
+reference/dimensional_nightmare/slices/
+reference/dimensional_nightmare/selftest.png

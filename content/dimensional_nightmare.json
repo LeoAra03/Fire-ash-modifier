@@ -257,6 +257,14 @@
     "docs/DIMENSIONAL_NIGHTMARE/08_SPRITES_Y_ASSETS.md",
     "docs/DIMENSIONAL_NIGHTMARE/09_REGISTRO_DIMENSIONAL.md",
     "docs/DIMENSIONAL_NIGHTMARE/10_EVENTOS_Y_FLAGS.md",
-    "docs/DIMENSIONAL_NIGHTMARE/11_ASIGNACION_DE_RECURSOS.md"
-  ]
+    "docs/DIMENSIONAL_NIGHTMARE/11_ASIGNACION_DE_RECURSOS.md",
+    "docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md"
+  ],
+  "recreationPipeline": {
+    "referenceFolder": "reference/dimensional_nightmare/recursos",
+    "ingestTool": "tools/dn_ingest_reference.mjs",
+    "commands": ["npm run dn:check", "npm run dn:ingest", "npm run dn:selftest"],
+    "stages": ["E0 deposito", "E1 ingesta", "E2 materiales", "E3 reconstruccion", "E4 eventos", "E5 verificacion", "E6 instalacion"],
+    "fidelity": "A (tilesets existentes) con las fichas como referencia interna"
+  }
 }
