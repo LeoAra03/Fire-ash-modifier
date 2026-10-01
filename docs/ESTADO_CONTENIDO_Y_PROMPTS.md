@@ -57,3 +57,13 @@ Además siguen pendientes 40 pruebas manuales en `Game.exe`. No se cuentan como 
 - Tier 2 tiene 120/120 rutas de autoría dedicada; faltan 0.
 - Tier 3 cubre 840/840 Ecos con regla local (420 desafíos Atlas + 420 reglas reversibles de `content/atlas_tier3_rules.json`); faltan 0.
 - La certificación final requiere `Game.exe`; ningún linter puede validar ritmo, clipping o sensación de juego.
+
+## Diseño en curso (no instalado)
+
+| Frente | Estado | Documento |
+|---|---|---|
+| **Dimensional Nightmare** (6 universos + Nexo, Map2040–2140, 101 mapas, 105 eventos) | **GDD funcional completo, sin instalar**; catálogo en `content/dimensional_nightmare.json` | `docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md` |
+
+> El Nightmare es una capa de diseño: describe qué construir y con qué flags (switches 882–902,
+> variables 265–276, verificados libres). No hay mapas, eventos ni batallas instalados todavía;
+> no entra en los conteos de arriba hasta que existan `create`/`apply`/`verify` y sus pruebas.
