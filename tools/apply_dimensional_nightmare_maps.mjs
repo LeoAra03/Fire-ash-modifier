@@ -305,8 +305,25 @@ async function renderComparison(map, built) {
   return { out, reach };
 }
 
+/** Copia de seguridad de los archivos del juego que se van a modificar (una sola vez). */
+function ensureBackups() {
+  fs.mkdirSync(BACKUP, { recursive: true });
+  const files = ["Tilesets.rxdata", "MapInfos.rxdata", "map_metadata.dat"];
+  for (const file of files) {
+    const origin = path.join(DATA, file);
+    const copy = path.join(BACKUP, file);
+    if (fs.existsSync(origin) && !fs.existsSync(copy)) fs.copyFileSync(origin, copy);
+  }
+  const readme = path.join(BACKUP, "LEEME.txt");
+  if (!fs.existsSync(readme)) {
+    fs.writeFileSync(readme, "Copias anteriores a la instalación de los mapas del Dimensional Nightmare " +
+      "(tilesets DN_*, MapInfos y map_metadata). No contienen partidas.\n" +
+      "Para revertir: copia estos archivos sobre pokemon_fire_ash/Data/ y borra los Map2xxx.rxdata del ciclo.\n");
+  }
+}
+
 // ------------------------------------------------------------------- main
-fs.mkdirSync(BACKUP, { recursive: true });
+ensureBackups();
 
 if (!VERIFY_ONLY) {
   const maps = selectedMaps();
