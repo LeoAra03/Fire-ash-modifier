@@ -1,45 +1,39 @@
 # Referencia visual — Dimensional Nightmare
 
-Aquí viven los **7 mosaicos de referencia** que originan los mapas del Nightmare
-(ver `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md`).
+Carpeta de trabajo del pipeline de recreación (enfoque **pixel-identidad**).
+Los mosaicos se depositan en **`Mapas/crepypasta/`**; aquí quedan los artefactos
+que produce `npm run dn:ingest` y `npm run dn:tiles`.
 
-## Qué subir (con estos nombres exactos)
+## Dónde va cada cosa
 
-Deposita los archivos en `reference/dimensional_nightmare/recursos/`. Se aceptan
-`.png`, `.jpg`, `.jpeg` y `.webp`; **se prefiere PNG** (sin recompresión JPEG, que
-introduce artefactos en los tiles).
+| Carpeta | Qué contiene | Se versiona |
+|---|---|---|
+| `Mapas/crepypasta/` | los 7 mosaicos que deposita el usuario | no (salvo su README) |
+| `reference/dimensional_nightmare/recursos/` | ubicación alternativa aceptada | no |
+| `reference/dimensional_nightmare/slices/` | 96 fichas recortadas | no (se regeneran) |
+| `reference/dimensional_nightmare/tilesets/` | tilesets derivados (bloques de 32×32) | no |
+| `reference/dimensional_nightmare/index.json` | medidas de cada ficha | no (se regenera) |
+| `reference/dimensional_nightmare/layout.json` | overrides de rejilla | **sí** |
+| `content/dimensional_nightmare_tiles.json` | matrices de mapa (ficha → índices de tile) | no |
 
-| Archivo | Recurso | Fichas | Contenido |
-|---|---|---:|---|
-| `r1_glitch_city.png` | R1 | 16 (4×4) | Glitch City: tiles corruptos, hexadecimal, ERROR |
-| `r2_dark_forest.png` | R2 | 16 (4×4) | Bosque oscuro con niebla púrpura y ruinas |
-| `r3_king_unown.png` | R3 | 1 | Sprite del Rey Unown (boss final) |
-| `r4_trono_unown.png` | R4 | 16 (4×4) | Trono del Rey Unown: trono, bibliotecas, criptas, KINGGUS |
-| `r5_pueblos_tumbas.png` | R5 | 16 (4×4) | Pueblos y tumbas en sepia / blanco y negro |
-| `r6_snowy_mountain.png` | R6 | 15 (5×3) | Montaña nevada: templos, cuevas de hielo, lagos |
-| `r7_catacumbas.png` | R7 | 16 (4×4) | Catacumbas de Lavanda / Buried Alive |
+## Nombres esperados
 
-> Si un mosaico tiene otra composición de rejilla (por ejemplo R6 en 3×5 en vez de
-> 5×3), no pasa nada: ajusta `layout.json` y el script usará esa rejilla.
+`r1_glitch_city`, `r2_dark_forest`, `r3_king_unown`, `r4_trono_unown`,
+`r5_pueblos_tumbas`, `r6_snowy_mountain` (5×3), `r7_catacumbas`.
+Si tus archivos llevan palabras clave (`glitch`, `forest`, `king`, `trono`,
+`pueblo`/`tumba`, `snow`/`mountain`, `catacumbas`/`lavanda`) el emparejamiento
+es automático: compruébalo con `npm run dn:check`.
 
 ## Comandos
 
 ```bash
-npm run dn:check     # ¿están los 7 recursos? (no corta nada)
-npm run dn:ingest    # corta las fichas y genera index.json + slices/
-npm run dn:selftest  # prueba la autodetección de rejilla con un fixture sintético
+npm run dn:check          # ¿están los 7? ¿cómo se emparejaron?
+npm run dn:ingest         # corta las 96 fichas y las mide
+npm run dn:tiles          # extrae los tiles únicos y las matrices de mapa
+npm run dn:fixtures       # ensayo general con mosaicos sintéticos
+npm run dn:selftest       # prueba la rejilla de la ingesta
+npm run dn:tiles:selftest # prueba la reconstrucción píxel a píxel
 ```
 
-Salidas:
-
-- `slices/<recurso>/NN.png` — una ficha por mapa (no se versiona: se regenera).
-- `index.json` — medidas por ficha: tamaño, tiles aparentes, factor de escala,
-  paleta dominante, luminancia y huella 8×8 (para detectar fichas repetidas).
-  **Sí se versiona**: es la entrada de las fases de reconstrucción.
-
-## Por qué se recorta y se mide
-
-Los mosaicos son **imágenes**, no mapas de RPG Maker. El pipeline del plan
-necesita, por cada ficha: saber cuántos tiles tiene, si viene escalada (×2, ×3…),
-qué materiales dominan y cuánta luz recibe (para elegir las fases de corrupción
-del GDD). Eso es exactamente lo que mide `index.json`.
+Plan completo y checklist de aceptación:
+`docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md`.

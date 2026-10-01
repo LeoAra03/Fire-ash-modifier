@@ -26,23 +26,26 @@ import { createCanvas, loadImage } from "@napi-rs/canvas";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REF = path.join(ROOT, "reference", "dimensional_nightmare");
-const SRC = path.join(REF, "recursos");
+// El usuario deposita los mosaicos en Mapas/crepypasta/ (Mapas/Atlas/ se ignora en esta fase).
+const INPUT_DIRS = [path.join(ROOT, "Mapas", "crepypasta"), path.join(REF, "recursos")];
 const SLICES = path.join(REF, "slices");
 const INDEX_PATH = path.join(REF, "index.json");
 const LAYOUT_PATH = path.join(REF, "layout.json");
 
 const CHECK_ONLY = process.argv.includes("--check");
 const SELFTEST = process.argv.includes("--selftest");
+const FIXTURES_MODE = process.argv.includes("--fixtures");
+const FIXTURES = path.join(REF, "_fixtures");
 
 // ------------------------------------------------------------------ recursos
 const RESOURCES = [
-  { key: "r1_glitch_city", label: "R1 Glitch City", rows: 4, cols: 4, expect: 16 },
-  { key: "r2_dark_forest", label: "R2 Creepy Dark Forest", rows: 4, cols: 4, expect: 16 },
-  { key: "r3_king_unown", label: "R3 Sprite King Unown", rows: 1, cols: 1, expect: 1 },
-  { key: "r4_trono_unown", label: "R4 El Trono del Rey Unown", rows: 4, cols: 4, expect: 16 },
-  { key: "r5_pueblos_tumbas", label: "R5 Pueblos y Tumbas", rows: 4, cols: 4, expect: 16 },
-  { key: "r6_snowy_mountain", label: "R6 Creepy Snowy Mountain", rows: 5, cols: 3, expect: 15 },
-  { key: "r7_catacumbas", label: "R7 Catacumbas de Lavanda", rows: 4, cols: 4, expect: 16 },
+  { key: "r1_glitch_city", label: "R1 Glitch City", rows: 4, cols: 4, expect: 16, tokens: ["glitch"] },
+  { key: "r2_dark_forest", label: "R2 Creepy Dark Forest", rows: 4, cols: 4, expect: 16, tokens: ["forest", "bosque"], exclude: ["snow", "nieve", "mountain"] },
+  { key: "r3_king_unown", label: "R3 Sprite King Unown", rows: 1, cols: 1, expect: 1, tokens: ["king", "sprite", "rey", "boss", "jefe"] },
+  { key: "r4_trono_unown", label: "R4 El Trono del Rey Unown", rows: 4, cols: 4, expect: 16, tokens: ["trono", "throne", "unown"] },
+  { key: "r5_pueblos_tumbas", label: "R5 Pueblos y Tumbas", rows: 4, cols: 4, expect: 16, tokens: ["pueblo", "tumb", "sepia", "silver", "b&w", "bn"] },
+  { key: "r6_snowy_mountain", label: "R6 Creepy Snowy Mountain", rows: 5, cols: 3, expect: 15, tokens: ["snow", "nieve", "mountain", "monta"] },
+  { key: "r7_catacumbas", label: "R7 Catacumbas de Lavanda", rows: 4, cols: 4, expect: 16, tokens: ["catacumb", "lavanda", "lavender", "buried", "mano", "hand"] },
 ];
 const EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"];
 
@@ -56,13 +59,62 @@ const readLayout = () => {
   }
 };
 
-const findSource = (key) => {
-  for (const ext of EXTENSIONS) {
-    const file = path.join(SRC, `${key}${ext}`);
-    if (fs.existsSync(file)) return file;
+/**
+ * Descubre los archivos de los 7 recursos: nombre exacto → tokens → sobrantes.
+ * Recolecta de Mapas/crepypasta/ (recursivo) y de reference/dimensional_nightmare/recursos/.
+ */
+function discoverSources(dirs = INPUT_DIRS) {
+  dirs = dirs.filter((dir) => fs.existsSync(dir));
+  const files = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (EXTENSIONS.includes(path.extname(entry.name).toLowerCase())) {
+        files.push({ full, name: entry.name, lower: entry.name.toLowerCase() });
+      }
+    }
+  };
+  for (const dir of dirs) walk(dir);
+
+  // Puntúa cada par (recurso, archivo) y asigna de mayor a menor: evita que
+  // «4 EL TRONO DEL REY UNOWN» caiga en R3 por la palabra "rey".
+  const scoreOf = (resource, file) => {
+    const base = path.basename(file.name, path.extname(file.name)).toLowerCase();
+    if (base === resource.key) return 1000;
+    const n = resource.key[1];
+    let score = 0;
+    if (new RegExp(`^\\s*(r?0?${n})\\b`).test(base)) score += 100;
+    if (base.includes(resource.key.replace(/_/g, " "))) score += 80;
+    for (const token of resource.tokens) if (base.includes(token)) score += 20;
+    for (const token of resource.exclude ?? []) if (base.includes(token)) score -= 200;
+    return score;
+  };
+  const candidates = [];
+  for (const resource of RESOURCES) {
+    for (const file of files) {
+      const score = scoreOf(resource, file);
+      if (score > 0) candidates.push({ resource, file, score });
+    }
   }
-  return null;
-};
+  candidates.sort((a, b) => b.score - a.score);
+  const used = new Set();
+  const found = new Map();
+  for (const { resource, file } of candidates) {
+    if (found.has(resource.key) || used.has(file.full)) continue;
+    found.set(resource.key, file);
+    used.add(file.full);
+  }
+  const leftovers = files.filter((f) => !used.has(f.full));
+  const unassigned = [];
+  for (const resource of RESOURCES) {
+    if (found.has(resource.key)) continue;
+    const next = leftovers.shift();
+    if (next) { found.set(resource.key, next); used.add(next.full); }
+    else unassigned.push(resource);
+  }
+  return { found, files, unassigned, leftovers };
+}
 
 // ------------------------------------------------------------------- píxeles
 const luminance = (r, g, b) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
@@ -220,10 +272,9 @@ function scaleGuess(w, h) {
 }
 
 // --------------------------------------------------------------- integración
-async function ingestResource(resource, layout) {
-  const file = findSource(resource.key);
+async function ingestResource(resource, file, layout) {
   if (!file) return null;
-  const px = await loadPixels(file);
+  const px = await loadPixels(file.full);
   const { rows: rowRuns, cols: colRuns } = findSeparators(px);
   const minRow = Math.floor(px.height / (resource.rows * 4));
   const minCol = Math.floor(px.width / (resource.cols * 4));
@@ -273,7 +324,7 @@ async function ingestResource(resource, layout) {
   return {
     key: resource.key,
     label: resource.label,
-    source: path.relative(ROOT, file),
+    source: path.relative(ROOT, file.full),
     image: { width: px.width, height: px.height },
     grid: { rows: resource.rows, cols: resource.cols, mode, rowRuns: rowRuns.length, colRuns: colRuns.length },
     expects: resource.expect,
@@ -281,22 +332,65 @@ async function ingestResource(resource, layout) {
   };
 }
 
-function reportMissing() {
-  const missing = [];
+function reportFound({ found, files, unassigned, leftovers }, dirs = INPUT_DIRS) {
+  const home = path.relative(ROOT, dirs[0]) || "Mapas/crepypasta";
+  console.log(`Carpeta de recursos: ${home}/ (también se acepta reference/dimensional_nightmare/recursos/)`);
+  console.log(`Archivos de imagen encontrados: ${files.length}`);
   for (const resource of RESOURCES) {
-    const file = findSource(resource.key);
-    if (!file) missing.push(resource);
+    const file = found.get(resource.key);
+    const origin = file ? path.relative(ROOT, file.full) : "— falta —";
+    console.log(`  ${file ? "OK " : "FALTA"} ${resource.key.padEnd(20)} ← ${origin}`);
   }
-  if (missing.length) {
-    console.log("Faltan recursos de referencia en reference/dimensional_nightmare/recursos/:");
-    for (const r of missing) {
-      console.log(`  - ${r.key}.png   (${r.label}; ${r.rows}×${r.cols} fichas)`);
-    }
-    console.log("\nSube los mosaicos con esos nombres (png/jpg/webp) y vuelve a ejecutar.");
+  if (unassigned.length) {
+    console.log("\nSin archivo asignado: " + unassigned.map((r) => r.key).join(", "));
+    console.log("Nombra los mosaicos como indica reference/dimensional_nightmare/README.md.");
     console.log("Documento de referencia: docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md");
     return false;
   }
+  if (leftovers.length) {
+    console.log(`\nAviso: ${leftovers.length} imagen(es) sin usar (¿Mapas/Atlas? se ignora en esta fase).`);
+  }
   return true;
+}
+
+// ------------------------------------------------------------------ fixtures
+/** Genera 7 mosaicos sintéticos con la rejilla real de cada recurso (para probar el pipeline). */
+function generateFixtures() {
+  fs.mkdirSync(FIXTURES, { recursive: true });
+  const CELL = 96, GAP = 8, HEADER = 48;
+  const defs = [
+    ["r1_glitch_city.png", 4, 4, "GLITCH CITY COMPILATION"],
+    ["r2_dark_forest.png", 4, 4, "CREEPY DARK FOREST"],
+    ["r3_king_unown.png", 1, 1, "KING UNOWN"],
+    ["r4_trono_unown.png", 4, 4, "EL TRONO DEL REY UNOWN"],
+    ["r5_pueblos_tumbas.png", 4, 4, "PUEBLOS Y TUMBAS"],
+    ["r6_snowy_mountain.png", 5, 3, "CREEPY SNOWY MOUNTAIN"],
+    ["r7_catacumbas.png", 4, 4, "CATACUMBAS DE LAVANDA"],
+  ];
+  for (const [name, cols, rows, title] of defs) {
+    const w = cols * CELL + (cols + 1) * GAP;
+    const h = HEADER + rows * CELL + (rows + 1) * GAP;
+    const canvas = createCanvas(w, h);
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#fff";
+    ctx.font = "22px sans-serif";
+    ctx.fillText(title, 12, 30);
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const px = GAP + c * (CELL + GAP);
+        const py = HEADER + GAP + r * (CELL + GAP);
+        ctx.fillStyle = `rgb(${30 + r * 35},${70 + c * 30},${110 + ((r + c) % 3) * 30})`;
+        ctx.fillRect(px, py, CELL, CELL);
+        ctx.fillStyle = "#e8e8d0";
+        ctx.fillRect(px + 10, py + 10, 20, 20);
+        ctx.fillRect(px + 60, py + 60, 18, 18);
+      }
+    }
+    fs.writeFileSync(path.join(FIXTURES, name), canvas.toBuffer("image/png"));
+  }
+  console.log(`fixtures: ${defs.length} mosaicos sintéticos → ${path.relative(ROOT, FIXTURES)}/`);
 }
 
 // ------------------------------------------------------------------ selftest
@@ -349,28 +443,24 @@ if (SELFTEST) {
 }
 
 const layoutOverrides = readLayout();
-if (!fs.existsSync(SRC)) {
-  if (CHECK_ONLY) { reportMissing(); process.exit(1); }
-  console.log(`No existe ${path.relative(ROOT, SRC)}.`);
-  reportMissing();
-  process.exit(1);
-}
-if (CHECK_ONLY) {
-  process.exit(reportMissing() ? 0 : 1);
-}
-if (!reportMissing()) process.exit(1);
+const sourceDirs = FIXTURES_MODE ? (generateFixtures(), [FIXTURES]) : INPUT_DIRS;
+const discovered = discoverSources(sourceDirs);
+const complete = reportFound(discovered, sourceDirs);
+if (CHECK_ONLY) process.exit(complete ? 0 : 1);
+if (!complete) process.exit(1);
 
 fs.mkdirSync(SLICES, { recursive: true });
 const index = {
   title: "Dimensional Nightmare — catálogo de referencia visual",
   generatedBy: "tools/dn_ingest_reference.mjs",
+  fixture: FIXTURES_MODE,
   note: "Cada ficha es la referencia de UN mapa del GDD (docs/DIMENSIONAL_NIGHTMARE/11_ASIGNACION_DE_RECURSOS.md).",
   resources: [],
 };
 let total = 0, mismatches = [];
 for (const resource of RESOURCES) {
   const layout = layoutOverrides[resource.key] ?? {};
-  const entry = await ingestResource(resource, layout);
+  const entry = await ingestResource(resource, discovered.found.get(resource.key), layout);
   if (!entry) continue;
   total += entry.slices.length;
   if (entry.slices.length !== resource.expect) {

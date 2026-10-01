@@ -47,5 +47,12 @@ tools/.cache/
 # y los mosaicos de terceros no se redistribuyen en el repo
 reference/dimensional_nightmare/recursos/
 reference/dimensional_nightmare/slices/
+reference/dimensional_nightmare/_fixtures/
+reference/dimensional_nightmare/tilesets/
 reference/dimensional_nightmare/index.json
 reference/dimensional_nightmare/selftest.png
+content/dimensional_nightmare_tiles.json
+Mapas/*
+!Mapas/crepypasta/
+Mapas/crepypasta/*
+!Mapas/crepypasta/README.md
