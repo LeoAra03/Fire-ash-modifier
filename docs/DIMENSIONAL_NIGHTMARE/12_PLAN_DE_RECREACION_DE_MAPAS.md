@@ -446,6 +446,12 @@ espejo real del EP05).
 
 ### 10.5 E5 — Verificación
 
+**Corrido el 2026-10-01:** `dn:events:verify` (100 mapas, celdas transitables, cuota de anomalías) y
+`dn:battles:verify` (trainers, objetos, iconos y pasos de fase B) en verde; `verify:defeats`
+(1 629 batallas en 718 eventos, 685 con derrota permanente y 64 revanchas por menú), 
+`verify:event-collision` y `npm test` (authoring, tone safety, integridad de paquete) también.
+Queda pendiente la QA manual en `Game.exe` y las variantes de corrupción por fase (arte).
+
 - `dn:events:verify` (**en verde**, 100 mapas): transfers a mapas existentes y celdas transitables,
   eventos dentro de límites, sin colisión de eventos en la misma celda, switches ≥882 (rango
   reservado) y lectura **sin reescribir** los mapas.
