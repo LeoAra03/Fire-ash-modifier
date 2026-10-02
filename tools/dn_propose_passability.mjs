@@ -39,7 +39,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CATALOG = path.join(ROOT, "content", "dimensional_nightmare_tiles_2x.json");
 const BLUEPRINT = path.join(ROOT, "content", "dimensional_nightmare_maps.json");
 const OUT = path.join(ROOT, "content", "dimensional_nightmare_passability.json");
-const RENDER_DIR = path.join(ROOT, "docs", "dn_referencia", "pasajes");
+const RENDER_DIR = path.join(ROOT, "docs", "dn_referencia", "detalle");
 const TILE = 32;
 const COLUMNS = 8;
 

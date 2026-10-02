@@ -54,6 +54,7 @@ reference/dimensional_nightmare/selftest.png
 content/dimensional_nightmare_tiles.json
 content/dimensional_nightmare_tiles_2x.json
 reference/dimensional_nightmare/preview_*.png
+docs/dn_referencia/detalle/
 Mapas/*
 !Mapas/crepypasta/
 Mapas/crepypasta/*

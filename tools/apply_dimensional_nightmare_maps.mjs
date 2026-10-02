@@ -38,7 +38,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(ROOT, "pokemon_fire_ash", "Data");
 const GRAPHICS = path.join(ROOT, "pokemon_fire_ash", "Graphics", "Tilesets");
 const BACKUP = path.join(ROOT, "pokemon_fire_ash", "PokeModBackups", "dimensional_nightmare_maps_originals");
-const RENDER_DIR = path.join(ROOT, "docs", "dn_referencia");
+const RENDER_DIR = path.join(ROOT, "docs", "dn_referencia", "detalle");
 const BLUEPRINT = path.join(ROOT, "content", "dimensional_nightmare_maps.json");
 const CATALOG = path.join(ROOT, "content", "dimensional_nightmare_tiles_2x.json");
 const BUILT_PATH = path.join(ROOT, "content", "dimensional_nightmare_maps_built.json");
@@ -392,7 +392,12 @@ if (!VERIFY_ONLY) {
     console.log(`${DRY ? "[dry-run] " : ""}${map.id} ${map.title} · ficha ${map.primary.resource}-${map.primary.index} · ${canvas.width}×${canvas.height} bloques · ${order.length} tiles · ts #${tilesetId} · ${badge}`);
   }
   if (!DRY) {
-    fs.writeFileSync(BUILT_PATH, `${JSON.stringify({ generatedBy: "tools/apply_dimensional_nightmare_maps.mjs", counts: built.length, maps: built }, null, 2)}\n`);
+    // fusión con lo ya construido: cada lote añade sus mapas sin borrar los anteriores
+    const previous = fs.existsSync(BUILT_PATH) ? JSON.parse(fs.readFileSync(BUILT_PATH, "utf8")).maps ?? [] : [];
+    const byId = new Map(previous.map((m) => [m.id, m]));
+    for (const entry of built) byId.set(entry.id, entry);
+    const merged = [...byId.values()].sort((a, b) => a.id - b.id);
+    fs.writeFileSync(BUILT_PATH, `${JSON.stringify({ generatedBy: "tools/apply_dimensional_nightmare_maps.mjs", counts: merged.length, maps: merged }, null, 2)}\n`);
     if (RENDER) {
       for (const map of built) {
         const info = await renderComparison(map, { canvas: rebuildFromFile(map.id), tilesetId: map.tilesetId, passages: passagesOfTileset(map.tilesetId) });

@@ -95,7 +95,7 @@ manual en `mapping.json` tiene prioridad absoluta sobre cualquier heurística po
   (3 500–4 200 tiles), así que **E3 trocea el tileset por mapa** (cada mapa usa solo sus bloques)
   en vez de instalar un PNG gigante por recurso.
 
-### E3 — Mapas y pasajes ✅ *piloto + EP01 construidos*
+### E3 — Mapas y pasajes ✅ *100/100 mapas construidos (2026-10-01)*
 - **Plano**: `content/dimensional_nightmare_maps.json` (`npm run dn:plan`) — generado de las
   tablas del GDD (docs 01–07): 101 mapas, 100 con ficha de referencia asignada y su recorte de
   `slices/` ya resuelto. `npm run dn:plan:check` verifica que todos los recortes existan.
@@ -123,11 +123,17 @@ manual en `mapping.json` tiene prioridad absoluta sobre cualquier heurística po
   manuales que mandan sobre la propuesta) y se revisan en el overlay
   `docs/dn_referencia/pasajes/<id>_pasajes.png`. El consumidor instala los pasajes **por tile**
   (RMXP guarda el pasaje por tile: un tile es transitable si alguna de sus celdas lo es).
-- **Construido y verificado (2026-10-01)**: piloto `2041` (R7-1, ts #26), `2088` (R2-1, #27),
-  `2120` (R4-1, #28) **y EP01 completo `2041`–`2056`** (tilesets #26 y #29–#43, 162–252 tiles
-  cada uno). `npm run dn:maps:verify` en verde (16 mapas: mapa, tamaño, tileset, PNG, MapInfos,
-  metadatos) y **BFS 100 % en los 16**. Comparativas antes/después de EP01 en
-  `docs/dn_referencia/` (referencia | mapa construido | overlay de transitabilidad).
+- **Construido y verificado (2026-10-01)**: **los 100 mapas con ficha** — piloto (`2041`, `2088`,
+  `2120`), EP01 (2041–2056), EP02 (2057–2072), EP03 (2073–2087), EP04 (2088–2103),
+  EP05 (2104–2119), EP06 (2120–2135) y Nexo (2136–2140). Tilesets #26–#125 (159–288 tiles cada
+  uno; 100 entradas `DN_*` en `Tilesets.rxdata`). `npm run dn:maps:verify` en verde para los 100
+  (mapa, tamaño, tileset, PNG, MapInfos, metadatos) y **BFS 100 % en los 100** (sin ninguna celda
+  transitable inalcanzable).
+- **Revisión visual**: una hoja de contacto por episodio en `docs/dn_referencia/lotes/<EP>.png`
+  con una fila por mapa (`referencia | mapa construido | overlay`). El detalle por mapa vive en
+  `docs/dn_referencia/detalle/` (ignorado en git). El hub 2040 no tiene ficha: queda para E4.
+- **Ficha reutilizada a propósito**: en EP02 y EP06 el GDD reutiliza una ficha con la marca `bis`
+  (`R5-3` en 2062 y 2066) — se construyen dos mapas de la misma escena, como pide el GDD.
 - **Nota de fidelidad**: las fichas traen a veces horneado el sprite del jugador de la ROM de
   referencia; al copiar la escena píxel a píxel ese sprite queda como tile del mapa. Opción
   pendiente `--erase-actor` para sustituir esa zona por el suelo circundante si se quiere limpiar.
@@ -223,6 +229,92 @@ EP05 (16), EP06 (16), Nexo (5) y antesala (1).
 - Tocar `Mapas/Atlas/` o los mapas v1 (2021–2030) y La Ruta de Dios.
 - Empaquetar arte derivado de terceros en el juego distribuido.
 - Modificar partidas (`Save*.rxdata` / `Game.rxdata`): jamás.
+
+---
+
+## 9. Plan de elaboración de los lotes restantes (L4–L9)
+
+**Objetivo del tramo**: pasar de 16 mapas construidos (EP01) a **los 101 del ciclo** con la misma
+calidad verificable, sin inventar contenido nuevo y sin tocar partidas.
+
+### 9.1 Alcance y orden
+
+| Lote | Episodio | Mapas | Recurso | Fichas |
+|---|---|---:|---|---|
+| L4 | EP02 Lost Silver | 16 | R5 | R5-1…R5-16 (dos usos de R5-3, «bis») |
+| L5 | EP03 Snow on Mt. Silver | 15 | R6 | R6-1…R6-15 |
+| L6 | EP04 Hypno's Lullaby | 16 | R2 | R2-1…R2-16 |
+| L7 | EP05 Pokémon Black | 16 | R5 (vacío) + R1 | R5-1…R5-16 + R1-4/R1-6 |
+| L8 | EP06 King Unown | 16 | R4 (+ R3 como asset) | R4-1…R4-16 |
+| L9 | Nexo de Ruptura | 5 | R1 | R1-6, R1-1, R1-10, R1-3, R1-4 |
+| — | Antesala (hub 2040) | 1 | — | sin ficha: se construye a mano en E4 |
+
+Orden justificado: de menos a más riesgo. R5/R6/R2 son escenas exteriores con separadores claros
+(autodetección ya probada). R4 es interior con alfombra y pilares (pasajes a mano, como 2120). R1
+es el caso difícil (collage glitch) y va al final, cuando el criterio de pasajes ya está rodado.
+
+### 9.2 Preparación (una vez por sesión)
+
+```bash
+npm install                    # node_modules no persiste
+npm run dn:ingest              # 96 fichas
+npm run dn:tiles && npm run dn:tiles:2x
+npm run dn:verify              # E2-check: 96/96 idénticas
+```
+
+Los derivados (`reference/.../slices`, `tilesets`, `content/dimensional_nightmare_tiles*.json`)
+están **ignorados en git**: se regeneran con esos cuatro comandos y nunca se redistribuyen.
+
+### 9.3 Ciclo por lote (comando a comando)
+
+```bash
+node tools/dn_propose_passability.mjs --episode <EP> --render   # muros + overlays
+node tools/apply_dimensional_nightmare_maps.mjs --episode <EP> --render
+node tools/apply_dimensional_nightmare_maps.mjs --verify
+node tools/dn_render_sheets.mjs --episode <EP>                  # hoja de contacto
+```
+
+**Criterio de cierre por lote** (los diez puntos del checklist §4, resumidos):
+
+1. `dn:maps:verify` en verde (mapa, tamaño, tileset, PNG, MapInfos, metadatos).
+2. **BFS 100 %** en todos los mapas del lote (sin celdas transitables inalcanzables).
+3. Suelo alcanzable ≥ 25 % del mapa (garantizado por el algoritmo; se revisa el número).
+4. Hoja de contacto del episodio revisada en `docs/dn_referencia/lotes/<EP>.png`.
+5. Ajustes de pasajes, si hacen falta, con `openRects`/`blockRects` en
+   `content/dimensional_nightmare_passability.json` (mandan sobre el automático y se conservan).
+6. `npm test` sin regresiones y commit del lote (herramientas + datos + hoja).
+
+### 9.4 Artefactos: qué se versiona y qué no
+
+- **Se versiona**: una **hoja de contacto por episodio** (`docs/dn_referencia/lotes/<EP>.png`)
+  con las filas `referencia | mapa construido | overlay`, más el JSON de plan/pasajes/construidos.
+- **No se versiona**: el detalle por mapa (`docs/dn_referencia/detalle/`), los recortes, los
+  tilesets derivados y los PNG `DN_*.png` del juego (arte de terceros / regenerable).
+- Motivo: 101 comparativas individuales suman ~30 MB; las 7 hojas, ~2 MB, y sirven mejor para
+  revisar de un vistazo.
+
+### 9.5 Riesgos del tramo y mitigación
+
+| # | Riesgo | Lote | Mitigación |
+|---:|---|---|---|
+| 1 | EP05 repite fichas de EP02 (versión «vacía») | L7 | construir la escena base y resolver la variante de corrupción en E4 (tono + tiles ausentes); decisión D6 |
+| 2 | R1 es un collage glitch con bordes raros | L9 | pasajes por estructura + revisión de la hoja; el Nexo admite pasillos rotos como diseño |
+| 3 | R4 y R1 tienen mucho detalle «decorativo» que el algoritmo marca muro | L8/L9 | `openRects` por zonas (ya probado en 2120) |
+| 4 | Mapas con <25 % de suelo tras podar | cualquiera | puenteo + suelo mínimo garantizado; si aun así queda corto, se revisa a mano el mapa |
+| 5 | R3 es el **sprite del Rey Unown**, no un mapa | L8 | no se construye como mapa: se usa como asset de jefe (doc 08) |
+| 6 | Presupuesto de arte de terceros | todos | los PNG `DN_*` del juego quedan **ignorados**; el pipeline lo avisa en el catálogo |
+| 7 | EP05 repite las fichas de EP02 (versión «vacía») | L7 | **D6 tomada**: se construye la escena de EP02 tal cual; la corrupción («vacío», huecos negros, tono) se resuelve en E4/E5 con eventos y el sistema de tono, sin duplicar arte |
+
+### 9.6 Criterio de cierre del tramo
+
+- **100/100 mapas con ficha** construidos y verificados (el hub 2040 queda para E4).
+- `dn:maps:verify` en verde para los 100 y `dn:pasajes:verify` al día.
+- 7 hojas de contacto en `docs/dn_referencia/lotes/` (una por episodio).
+- `npm test` y `verify:all` sin regresiones.
+- Doc 12 y `content/dimensional_nightmare_maps_built.json` al día; commit y push al PR #12.
+
+**Lo que NO entra en este tramo**: eventos, NPCs, jefes y anomalías (E4); variantes de corrupción
+por fase (E5); el hub 2040 y las conexiones (E4); empaquetado (E6).
 
 ---
 
