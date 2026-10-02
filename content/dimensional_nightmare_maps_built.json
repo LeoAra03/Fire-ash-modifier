@@ -3533,16 +3533,16 @@
       },
       "extras": [],
       "tilesetId": 126,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 222,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 77,
-        "walkable": 77,
+        "reachable": 66,
+        "walkable": 66,
         "isolated": 0,
         "ratio": 1
       }
@@ -3567,16 +3567,16 @@
       },
       "extras": [],
       "tilesetId": 127,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 76,
-        "walkable": 76,
+        "reachable": 59,
+        "walkable": 59,
         "isolated": 0,
         "ratio": 1
       }
@@ -3601,16 +3601,16 @@
       },
       "extras": [],
       "tilesetId": 128,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 66,
-        "walkable": 66,
+        "reachable": 77,
+        "walkable": 77,
         "isolated": 0,
         "ratio": 1
       }
@@ -3635,16 +3635,16 @@
       },
       "extras": [],
       "tilesetId": 129,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 230,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 119,
-        "walkable": 119,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -3669,16 +3669,16 @@
       },
       "extras": [],
       "tilesetId": 130,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 229,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          4
         ],
-        "reachable": 134,
-        "walkable": 134,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -3703,16 +3703,16 @@
       },
       "extras": [],
       "tilesetId": 131,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 81,
-        "walkable": 81,
+        "reachable": 62,
+        "walkable": 62,
         "isolated": 0,
         "ratio": 1
       }
@@ -3737,16 +3737,16 @@
       },
       "extras": [],
       "tilesetId": 132,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 138,
-        "walkable": 138,
+        "reachable": 60,
+        "walkable": 60,
         "isolated": 0,
         "ratio": 1
       }
@@ -3771,16 +3771,16 @@
       },
       "extras": [],
       "tilesetId": 133,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          17,
+          10
         ],
-        "reachable": 159,
-        "walkable": 159,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -3805,16 +3805,16 @@
       },
       "extras": [],
       "tilesetId": 134,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 83,
-        "walkable": 83,
+        "reachable": 71,
+        "walkable": 71,
         "isolated": 0,
         "ratio": 1
       }
@@ -3839,16 +3839,16 @@
       },
       "extras": [],
       "tilesetId": 135,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 77,
-        "walkable": 77,
+        "reachable": 61,
+        "walkable": 61,
         "isolated": 0,
         "ratio": 1
       }
@@ -3873,16 +3873,16 @@
       },
       "extras": [],
       "tilesetId": 136,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 229,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 67,
-        "walkable": 67,
+        "reachable": 139,
+        "walkable": 139,
         "isolated": 0,
         "ratio": 1
       }
@@ -3907,16 +3907,16 @@
       },
       "extras": [],
       "tilesetId": 137,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 98,
-        "walkable": 98,
+        "reachable": 146,
+        "walkable": 146,
         "isolated": 0,
         "ratio": 1
       }
@@ -3941,16 +3941,16 @@
       },
       "extras": [],
       "tilesetId": 138,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          19,
+          10
         ],
-        "reachable": 66,
-        "walkable": 66,
+        "reachable": 61,
+        "walkable": 61,
         "isolated": 0,
         "ratio": 1
       }
@@ -3975,16 +3975,16 @@
       },
       "extras": [],
       "tilesetId": 139,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 69,
-        "walkable": 69,
+        "reachable": 83,
+        "walkable": 83,
         "isolated": 0,
         "ratio": 1
       }
@@ -4009,16 +4009,16 @@
       },
       "extras": [],
       "tilesetId": 140,
-      "tiles": 263,
-      "width": 22,
-      "height": 12,
+      "tiles": 224,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
           4,
-          11
+          10
         ],
-        "reachable": 66,
-        "walkable": 66,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4043,16 +4043,16 @@
       },
       "extras": [],
       "tilesetId": 141,
-      "tiles": 263,
-      "width": 22,
-      "height": 12,
+      "tiles": 218,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          18,
-          11
+          14,
+          10
         ],
-        "reachable": 181,
-        "walkable": 181,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4077,16 +4077,16 @@
       },
       "extras": [],
       "tilesetId": 142,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 205,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 81,
-        "walkable": 81,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4111,16 +4111,16 @@
       },
       "extras": [],
       "tilesetId": 143,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 203,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 160,
-        "walkable": 160,
+        "reachable": 54,
+        "walkable": 54,
         "isolated": 0,
         "ratio": 1
       }
@@ -4145,16 +4145,16 @@
       },
       "extras": [],
       "tilesetId": 144,
-      "tiles": 231,
+      "tiles": 210,
       "width": 21,
-      "height": 11,
+      "height": 10,
       "bfs": {
         "entry": [
           4,
-          10
+          9
         ],
-        "reachable": 58,
-        "walkable": 58,
+        "reachable": 55,
+        "walkable": 55,
         "isolated": 0,
         "ratio": 1
       }
@@ -4179,16 +4179,16 @@
       },
       "extras": [],
       "tilesetId": 145,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          14,
-          10
+          11,
+          9
         ],
-        "reachable": 62,
-        "walkable": 62,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4213,16 +4213,16 @@
       },
       "extras": [],
       "tilesetId": 146,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          21,
-          10
+          9,
+          9
         ],
-        "reachable": 197,
-        "walkable": 197,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4247,16 +4247,16 @@
       },
       "extras": [],
       "tilesetId": 147,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 95,
-        "walkable": 95,
+        "reachable": 56,
+        "walkable": 56,
         "isolated": 0,
         "ratio": 1
       }
@@ -4281,16 +4281,16 @@
       },
       "extras": [],
       "tilesetId": 148,
-      "tiles": 231,
+      "tiles": 210,
       "width": 21,
-      "height": 11,
+      "height": 10,
       "bfs": {
         "entry": [
           10,
-          10
+          9
         ],
-        "reachable": 58,
-        "walkable": 58,
+        "reachable": 57,
+        "walkable": 57,
         "isolated": 0,
         "ratio": 1
       }
@@ -4315,16 +4315,16 @@
       },
       "extras": [],
       "tilesetId": 149,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 137,
-        "walkable": 137,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4349,16 +4349,16 @@
       },
       "extras": [],
       "tilesetId": 150,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          13,
-          10
+          10,
+          9
         ],
-        "reachable": 64,
-        "walkable": 64,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4383,16 +4383,16 @@
       },
       "extras": [],
       "tilesetId": 151,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 73,
-        "walkable": 73,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4417,16 +4417,16 @@
       },
       "extras": [],
       "tilesetId": 152,
-      "tiles": 231,
+      "tiles": 209,
       "width": 21,
-      "height": 11,
+      "height": 10,
       "bfs": {
         "entry": [
           10,
-          10
+          9
         ],
-        "reachable": 131,
-        "walkable": 131,
+        "reachable": 74,
+        "walkable": 74,
         "isolated": 0,
         "ratio": 1
       }
@@ -4451,16 +4451,16 @@
       },
       "extras": [],
       "tilesetId": 153,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 148,
-        "walkable": 148,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4485,16 +4485,16 @@
       },
       "extras": [],
       "tilesetId": 154,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 69,
-        "walkable": 69,
+        "reachable": 61,
+        "walkable": 61,
         "isolated": 0,
         "ratio": 1
       }
@@ -4519,16 +4519,16 @@
       },
       "extras": [],
       "tilesetId": 155,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 65,
-        "walkable": 65,
+        "reachable": 56,
+        "walkable": 56,
         "isolated": 0,
         "ratio": 1
       }
@@ -4553,16 +4553,16 @@
       },
       "extras": [],
       "tilesetId": 156,
-      "tiles": 231,
+      "tiles": 210,
       "width": 21,
-      "height": 11,
+      "height": 10,
       "bfs": {
         "entry": [
           10,
-          10
+          9
         ],
-        "reachable": 93,
-        "walkable": 93,
+        "reachable": 54,
+        "walkable": 54,
         "isolated": 0,
         "ratio": 1
       }
@@ -4587,16 +4587,16 @@
       },
       "extras": [],
       "tilesetId": 157,
-      "tiles": 242,
-      "width": 22,
-      "height": 11,
+      "tiles": 210,
+      "width": 21,
+      "height": 10,
       "bfs": {
         "entry": [
-          11,
-          10
+          10,
+          9
         ],
-        "reachable": 159,
-        "walkable": 159,
+        "reachable": 53,
+        "walkable": 53,
         "isolated": 0,
         "ratio": 1
       }
@@ -4621,16 +4621,16 @@
       },
       "extras": [],
       "tilesetId": 158,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 113,
-        "walkable": 113,
+        "reachable": 65,
+        "walkable": 65,
         "isolated": 0,
         "ratio": 1
       }
@@ -4655,16 +4655,16 @@
       },
       "extras": [],
       "tilesetId": 159,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 72,
-        "walkable": 72,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4689,16 +4689,16 @@
       },
       "extras": [],
       "tilesetId": 160,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 81,
-        "walkable": 81,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4723,16 +4723,16 @@
       },
       "extras": [],
       "tilesetId": 161,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 230,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 157,
-        "walkable": 157,
+        "reachable": 59,
+        "walkable": 59,
         "isolated": 0,
         "ratio": 1
       }
@@ -4757,16 +4757,16 @@
       },
       "extras": [],
       "tilesetId": 162,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 227,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 179,
-        "walkable": 179,
+        "reachable": 119,
+        "walkable": 119,
         "isolated": 0,
         "ratio": 1
       }
@@ -4791,16 +4791,16 @@
       },
       "extras": [],
       "tilesetId": 163,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          13,
+          9
         ],
-        "reachable": 66,
-        "walkable": 66,
+        "reachable": 75,
+        "walkable": 75,
         "isolated": 0,
         "ratio": 1
       }
@@ -4825,16 +4825,16 @@
       },
       "extras": [],
       "tilesetId": 164,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 230,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          12,
+          10
         ],
-        "reachable": 179,
-        "walkable": 179,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4859,16 +4859,16 @@
       },
       "extras": [],
       "tilesetId": 165,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 227,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          5,
+          10
         ],
-        "reachable": 189,
-        "walkable": 189,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4893,16 +4893,16 @@
       },
       "extras": [],
       "tilesetId": 166,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          12,
+          10
         ],
-        "reachable": 112,
-        "walkable": 112,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4927,16 +4927,16 @@
       },
       "extras": [],
       "tilesetId": 167,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          13,
+          9
         ],
-        "reachable": 66,
-        "walkable": 66,
+        "reachable": 76,
+        "walkable": 76,
         "isolated": 0,
         "ratio": 1
       }
@@ -4961,16 +4961,16 @@
       },
       "extras": [],
       "tilesetId": 168,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          12,
+          10
         ],
-        "reachable": 72,
-        "walkable": 72,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4995,16 +4995,16 @@
       },
       "extras": [],
       "tilesetId": 169,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 67,
-        "walkable": 67,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -5029,16 +5029,16 @@
       },
       "extras": [],
       "tilesetId": 170,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 74,
-        "walkable": 74,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -5063,16 +5063,16 @@
       },
       "extras": [],
       "tilesetId": 171,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          9
         ],
-        "reachable": 158,
-        "walkable": 158,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -5097,16 +5097,16 @@
       },
       "extras": [],
       "tilesetId": 172,
-      "tiles": 264,
-      "width": 22,
-      "height": 12,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          10,
+          10
         ],
-        "reachable": 230,
-        "walkable": 230,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -5131,18 +5131,18 @@
       },
       "extras": [],
       "tilesetId": 173,
-      "tiles": 258,
-      "width": 22,
-      "height": 12,
+      "tiles": 217,
+      "width": 21,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
-          11
+          14,
+          10
         ],
-        "reachable": 166,
-        "walkable": 166,
-        "isolated": 0,
-        "ratio": 1
+        "reachable": 67,
+        "walkable": 72,
+        "isolated": 5,
+        "ratio": 0.9305555555555556
       }
     }
   ]

@@ -129,52 +129,52 @@ La fuente de la transitabilidad es `content/dimensional_nightmare_passability.js
 | 2138 | NEXO | Nexo — Centro Pokémon Sumergido | R1-10 (ERROR) | #123 | 22×11 | 242 | 100% | NEXO |
 | 2139 | NEXO | Nexo — Pasillo de Código | R1-3 + R1-15 | #124 | 22×11 | 241 | 100% | NEXO |
 | 2140 | NEXO | Nexo — Sala del Testigo | R1-4 + R1-16 | #125 | 22×11 | 242 | 100% | NEXO |
-| 2143 | W7 | Strangled Red — Patio de la Casa Rota | R8-1 | #126 | 22×12 | 264 | 100% | W7 |
-| 2144 | W7 | Strangled Red — Cuarto del Amo | R8-2 | #127 | 22×12 | 264 | 100% | W7 |
-| 2145 | W7 | Strangled Red — Pasillo de Trofeos | R8-3 | #128 | 22×12 | 264 | 100% | W7 |
-| 2146 | W7 | Strangled Red — Jardín de la Promesa | R8-4 | #129 | 22×12 | 264 | 100% | W7 |
-| 2147 | W7 | Strangled Red — Cocina Fría | R8-5 | #130 | 22×12 | 264 | 100% | W7 |
-| 2148 | W7 | Strangled Red — Escalera Que Sube y Baja | R8-6 | #131 | 22×12 | 264 | 100% | W7 |
-| 2149 | W7 | Strangled Red — Cripta del Pokémon | R8-7 | #132 | 22×12 | 264 | 100% | W7 |
-| 2150 | W7 | Strangled Red — Torre de las Cintas | R8-8 | #133 | 22×12 | 264 | 100% | W7 |
-| 2151 | W7 | Strangled Red — Sala de los Reflejos | R8-9 | #134 | 22×12 | 264 | 100% | W7 |
-| 2152 | W7 | Strangled Red — Corredor de la Culpa | R8-10 | #135 | 22×12 | 264 | 100% | W7 |
-| 2153 | W7 | Strangled Red — Plaza Sin Gente | R8-11 | #136 | 22×12 | 264 | 100% | W7 |
-| 2154 | W7 | Strangled Red — Canil Vacío | R8-12 | #137 | 22×12 | 264 | 100% | W7 |
-| 2155 | W7 | Strangled Red — Capilla del Nudo | R8-13 | #138 | 22×12 | 264 | 100% | W7 |
-| 2156 | W7 | Strangled Red — Espejo Roto | R8-14 | #139 | 22×12 | 264 | 100% | W7 |
-| 2157 | W7 | Strangled Red — Umbral del Ahorcado | R8-15 | #140 | 22×12 | 263 | 100% | W7 |
-| 2158 | W7 | Strangled Red — Árbol del Ajuste | R8-16 | #141 | 22×12 | 263 | 100% | W7 |
-| 2159 | W8 | Buried Alive — Pozo de Entrada | R9-1 | #142 | 22×11 | 242 | 100% | W8 |
-| 2160 | W8 | Buried Alive — Túnel Angosto | R9-2 | #143 | 22×11 | 242 | 100% | W8 |
-| 2161 | W8 | Buried Alive — Cámara de Tierra | R9-3 | #144 | 21×11 | 231 | 100% | W8 |
-| 2162 | W8 | Buried Alive — Galería de Raíces | R9-4 | #145 | 22×11 | 242 | 100% | W8 |
-| 2163 | W8 | Buried Alive — Osario Inundado | R9-5 | #146 | 22×11 | 242 | 100% | W8 |
-| 2164 | W8 | Buried Alive — Escalera de Tierra | R9-6 | #147 | 22×11 | 242 | 100% | W8 |
-| 2165 | W8 | Buried Alive — Cripta del Aire | R9-7 | #148 | 21×11 | 231 | 100% | W8 |
-| 2166 | W8 | Buried Alive — Sala de los Sellados | R9-8 | #149 | 22×11 | 242 | 100% | W8 |
-| 2167 | W8 | Buried Alive — Pozo Sin Fondo | R9-9 | #150 | 22×11 | 242 | 100% | W8 |
-| 2168 | W8 | Buried Alive — Pueblo Enterrado | R9-10 | #151 | 22×11 | 242 | 100% | W8 |
-| 2169 | W8 | Buried Alive — Iglesia Boca Abajo | R9-11 | #152 | 21×11 | 231 | 100% | W8 |
-| 2170 | W8 | Buried Alive — Campo de Lápidas | R9-12 | #153 | 22×11 | 242 | 100% | W8 |
-| 2171 | W8 | Buried Alive — Fosa Común | R9-13 | #154 | 22×11 | 242 | 100% | W8 |
-| 2172 | W8 | Buried Alive — Túnel de la Mano | R9-14 | #155 | 22×11 | 242 | 100% | W8 |
-| 2173 | W8 | Buried Alive — Umbral del Aire | R9-15 | #156 | 21×11 | 231 | 100% | W8 |
-| 2174 | W8 | Buried Alive — Fondo de la Fosa | R9-16 | #157 | 22×11 | 242 | 100% | W8 |
-| 2175 | W9 | Lavender Syndrome — Entrada del Pueblo | R10-1 | #158 | 22×12 | 264 | 100% | W9 |
-| 2176 | W9 | Lavender Syndrome — Calle del Altavoz | R10-2 | #159 | 22×12 | 264 | 100% | W9 |
-| 2177 | W9 | Lavender Syndrome — Casa del Piano | R10-3 | #160 | 22×12 | 264 | 100% | W9 |
-| 2178 | W9 | Lavender Syndrome — Escuela de Música | R10-4 | #161 | 22×12 | 264 | 100% | W9 |
-| 2179 | W9 | Lavender Syndrome — Capilla de la Campana | R10-5 | #162 | 22×12 | 264 | 100% | W9 |
-| 2180 | W9 | Lavender Syndrome — Torre de las Ondas | R10-6 | #163 | 22×12 | 264 | 100% | W9 |
-| 2181 | W9 | Lavender Syndrome — Calle del Silencio | R10-7 | #164 | 22×12 | 264 | 100% | W9 |
-| 2182 | W9 | Lavender Syndrome — Jardín Sordo | R10-8 | #165 | 22×12 | 264 | 100% | W9 |
-| 2183 | W9 | Lavender Syndrome — Mercado de Cintas | R10-9 | #166 | 22×12 | 264 | 100% | W9 |
-| 2184 | W9 | Lavender Syndrome — Cine Sin Sonido | R10-10 | #167 | 22×12 | 264 | 100% | W9 |
-| 2185 | W9 | Lavender Syndrome — Fosa Acústica | R10-11 | #168 | 22×12 | 264 | 100% | W9 |
-| 2186 | W9 | Lavender Syndrome — Túnel de las Voces | R10-12 | #169 | 22×12 | 264 | 100% | W9 |
-| 2187 | W9 | Lavender Syndrome — Sala de los Audífonos | R10-13 | #170 | 22×12 | 264 | 100% | W9 |
-| 2188 | W9 | Lavender Syndrome — Torre del Canto | R10-14 | #171 | 22×12 | 264 | 100% | W9 |
-| 2189 | W9 | Lavender Syndrome — Estudio del Autor | R10-15 | #172 | 22×12 | 264 | 100% | W9 |
-| 2190 | W9 | Lavender Syndrome — Campanario Final | R10-16 | #173 | 22×12 | 258 | 100% | W9 |
+| 2143 | W7 | Strangled Red — Patio de la Casa Rota | R8-1 | #126 | 21×11 | 222 | 100% | W7 |
+| 2144 | W7 | Strangled Red — Cuarto del Amo | R8-2 | #127 | 21×11 | 231 | 100% | W7 |
+| 2145 | W7 | Strangled Red — Pasillo de Trofeos | R8-3 | #128 | 21×11 | 231 | 100% | W7 |
+| 2146 | W7 | Strangled Red — Jardín de la Promesa | R8-4 | #129 | 21×11 | 230 | 100% | W7 |
+| 2147 | W7 | Strangled Red — Cocina Fría | R8-5 | #130 | 21×11 | 229 | 100% | W7 |
+| 2148 | W7 | Strangled Red — Escalera Que Sube y Baja | R8-6 | #131 | 21×11 | 231 | 100% | W7 |
+| 2149 | W7 | Strangled Red — Cripta del Pokémon | R8-7 | #132 | 21×11 | 231 | 100% | W7 |
+| 2150 | W7 | Strangled Red — Torre de las Cintas | R8-8 | #133 | 21×11 | 231 | 100% | W7 |
+| 2151 | W7 | Strangled Red — Sala de los Reflejos | R8-9 | #134 | 21×11 | 231 | 100% | W7 |
+| 2152 | W7 | Strangled Red — Corredor de la Culpa | R8-10 | #135 | 21×11 | 231 | 100% | W7 |
+| 2153 | W7 | Strangled Red — Plaza Sin Gente | R8-11 | #136 | 21×11 | 229 | 100% | W7 |
+| 2154 | W7 | Strangled Red — Canil Vacío | R8-12 | #137 | 21×11 | 231 | 100% | W7 |
+| 2155 | W7 | Strangled Red — Capilla del Nudo | R8-13 | #138 | 21×11 | 231 | 100% | W7 |
+| 2156 | W7 | Strangled Red — Espejo Roto | R8-14 | #139 | 21×11 | 231 | 100% | W7 |
+| 2157 | W7 | Strangled Red — Umbral del Ahorcado | R8-15 | #140 | 21×11 | 224 | 100% | W7 |
+| 2158 | W7 | Strangled Red — Árbol del Ajuste | R8-16 | #141 | 21×11 | 218 | 100% | W7 |
+| 2159 | W8 | Buried Alive — Pozo de Entrada | R9-1 | #142 | 21×10 | 205 | 100% | W8 |
+| 2160 | W8 | Buried Alive — Túnel Angosto | R9-2 | #143 | 21×10 | 203 | 100% | W8 |
+| 2161 | W8 | Buried Alive — Cámara de Tierra | R9-3 | #144 | 21×10 | 210 | 100% | W8 |
+| 2162 | W8 | Buried Alive — Galería de Raíces | R9-4 | #145 | 21×10 | 210 | 100% | W8 |
+| 2163 | W8 | Buried Alive — Osario Inundado | R9-5 | #146 | 21×10 | 210 | 100% | W8 |
+| 2164 | W8 | Buried Alive — Escalera de Tierra | R9-6 | #147 | 21×10 | 210 | 100% | W8 |
+| 2165 | W8 | Buried Alive — Cripta del Aire | R9-7 | #148 | 21×10 | 210 | 100% | W8 |
+| 2166 | W8 | Buried Alive — Sala de los Sellados | R9-8 | #149 | 21×10 | 210 | 100% | W8 |
+| 2167 | W8 | Buried Alive — Pozo Sin Fondo | R9-9 | #150 | 21×10 | 210 | 100% | W8 |
+| 2168 | W8 | Buried Alive — Pueblo Enterrado | R9-10 | #151 | 21×10 | 210 | 100% | W8 |
+| 2169 | W8 | Buried Alive — Iglesia Boca Abajo | R9-11 | #152 | 21×10 | 209 | 100% | W8 |
+| 2170 | W8 | Buried Alive — Campo de Lápidas | R9-12 | #153 | 21×10 | 210 | 100% | W8 |
+| 2171 | W8 | Buried Alive — Fosa Común | R9-13 | #154 | 21×10 | 210 | 100% | W8 |
+| 2172 | W8 | Buried Alive — Túnel de la Mano | R9-14 | #155 | 21×10 | 210 | 100% | W8 |
+| 2173 | W8 | Buried Alive — Umbral del Aire | R9-15 | #156 | 21×10 | 210 | 100% | W8 |
+| 2174 | W8 | Buried Alive — Fondo de la Fosa | R9-16 | #157 | 21×10 | 210 | 100% | W8 |
+| 2175 | W9 | Lavender Syndrome — Entrada del Pueblo | R10-1 | #158 | 21×11 | 231 | 100% | W9 |
+| 2176 | W9 | Lavender Syndrome — Calle del Altavoz | R10-2 | #159 | 21×11 | 231 | 100% | W9 |
+| 2177 | W9 | Lavender Syndrome — Casa del Piano | R10-3 | #160 | 21×11 | 231 | 100% | W9 |
+| 2178 | W9 | Lavender Syndrome — Escuela de Música | R10-4 | #161 | 21×11 | 230 | 100% | W9 |
+| 2179 | W9 | Lavender Syndrome — Capilla de la Campana | R10-5 | #162 | 21×11 | 227 | 100% | W9 |
+| 2180 | W9 | Lavender Syndrome — Torre de las Ondas | R10-6 | #163 | 21×11 | 231 | 100% | W9 |
+| 2181 | W9 | Lavender Syndrome — Calle del Silencio | R10-7 | #164 | 21×11 | 230 | 100% | W9 |
+| 2182 | W9 | Lavender Syndrome — Jardín Sordo | R10-8 | #165 | 21×11 | 227 | 100% | W9 |
+| 2183 | W9 | Lavender Syndrome — Mercado de Cintas | R10-9 | #166 | 21×11 | 231 | 100% | W9 |
+| 2184 | W9 | Lavender Syndrome — Cine Sin Sonido | R10-10 | #167 | 21×11 | 231 | 100% | W9 |
+| 2185 | W9 | Lavender Syndrome — Fosa Acústica | R10-11 | #168 | 21×11 | 231 | 100% | W9 |
+| 2186 | W9 | Lavender Syndrome — Túnel de las Voces | R10-12 | #169 | 21×11 | 231 | 100% | W9 |
+| 2187 | W9 | Lavender Syndrome — Sala de los Audífonos | R10-13 | #170 | 21×11 | 231 | 100% | W9 |
+| 2188 | W9 | Lavender Syndrome — Torre del Canto | R10-14 | #171 | 21×11 | 231 | 100% | W9 |
+| 2189 | W9 | Lavender Syndrome — Estudio del Autor | R10-15 | #172 | 21×11 | 231 | 100% | W9 |
+| 2190 | W9 | Lavender Syndrome — Campanario Final | R10-16 | #173 | 21×11 | 217 | 93% | W9 |
 

@@ -10,10 +10,14 @@
  * con la paleta y el motivo de cada mundo. Cada ficha resultante es un mapa del
  * pipeline E0–E5: ficha → tileset → mapa → eventos.
  *
- * **Fuente por defecto: donantes recreados.** Para que los mapas del segundo anillo tengan
- * estructura legible (muros, objetos, suelo), cada ficha se compone del render de un mapa ya
- * recreado del primer anillo (W7 ← EP02, W8 ← EP01, W9 ← EP05) teñido con la paleta del mundo;
- * el modo `--fotos` conserva la composición directa desde las siete crepystastas del autor.
+ * **Estilo por mundo, no recoloreado.** Cada mundo nace de una creepypasta de Game Boy, así que
+ * cada hoja se dibuja con el estilo de SU juego: paleta de 4 tonos, píxel grande y tramado ordenado
+ * (el look de la consola), más el motivo propio (correa roja, tierra de la fosa, ondas del
+ * síndrome).   W7 ← Pokémon Red  ·  W8 ← hack sepia de la fosa  ·  W9 ← Pokémon Green/Red (JP).
+ *
+ * **Fuente: donantes recreados.** Cada ficha parte del render de un mapa ya recreado del primer
+ * anillo (W7 ← EP02, W8 ← EP01, W9 ← EP05) para conservar estructura legible (muros, objetos,
+ * suelo) y después pasa por el estilo del mundo; el modo `--fotos` usa las fichas del autor.
  *
  * Los tres PNG se escriben en `Mapas/Crepypastas/` (material de desarrollo
  * derivado del arte del autor, ignorado por git) y se registran como recursos
@@ -55,29 +59,29 @@ export const WORLDS = [
   {
     key: "W7", resource: "r8_strangled_red", file: "origen_W7_STRANGLED_RED.png",
     title: "W7 — STRANGLED RED",
-    subtitle: "16 fichas · duelo y culpa · rojo apagado, sombras que no siguen al dueño",
+    subtitle: "16 fichas · duelo y culpa · estilo Pokémon Red (GB): 4 tonos rojos, píxel y correa del amo",
     sources: ["r7_catacumbas", "r5_pueblos_tumbas", "r4_trono_unown", "r2_dark_forest"],
-    transform: "strangled",
+    transform: "strangled",   // Pokémon Red: 4 tonos rojos, píxel de GB y correa del amo
     donors: [2057, 2072],   // EP02 Lost Silver recreado
-    hue: -8, saturation: 0.55, tint: [180, 30, 30], tintAmount: 0.34, vignette: 0.35, zoom: 1.06, sharpen: 0.9,
+    zoom: 1.06,
   },
   {
     key: "W8", resource: "r9_buried_alive", file: "origen_W8_BURIED_ALIVE.png",
     title: "W8 — BURIED ALIVE",
-    subtitle: "16 fichas · claustrofobia · oscuridad sin aire, la fosa ya está cavada",
+    subtitle: "16 fichas · claustrofobia · estilo hack de GB: sepia de tierra, píxel grueso y borde de fosa",
     sources: ["r7_catacumbas", "r2_dark_forest", "r5_pueblos_tumbas"],
-    transform: "buried",
+    transform: "buried",      // hack sepia: 4 tonos de tierra, píxel grueso y borde de fosa
     donors: [2041, 2056],   // EP01 White Hand recreado
-    hue: 0, saturation: 0.4, tint: [70, 52, 30], tintAmount: 0.42, vignette: 0.5, zoom: 1.06, sharpen: 1.6,
+    zoom: 1.06,
   },
   {
     key: "W9", resource: "r10_lavender_syndrome", file: "origen_W9_LAVENDER_SYNDROME.png",
     title: "W9 — LAVENDER TOWN SYNDROME",
-    subtitle: "16 fichas · el sonido duele · violeta, ondas y silencios que interrumpen la imagen",
+    subtitle: "16 fichas · el sonido duele · estilo Pokémon Green/Red (JP): verdes de GB y ondas violeta",
     sources: ["r5_pueblos_tumbas", "r7_catacumbas", "r4_trono_unown", "r6_snowy_mountain"],
-    transform: "lavender",
+    transform: "lavender",    // Pokémon Green/Red (JP): verdes de GB y ondas violeta del síndrome
     donors: [2104, 2119],   // EP05 Pokémon Black recreado
-    hue: 46, saturation: 0.6, tint: [120, 70, 190], tintAmount: 0.4, vignette: 0.4, zoom: 1.1, sharpen: 0.5,
+    zoom: 1.1,
   },
 ];
 
@@ -115,76 +119,135 @@ function hslToRgb(h, s, l) {
   return [Math.round(conv(h + 1 / 3) * 255), Math.round(conv(h) * 255), Math.round(conv(h - 1 / 3) * 255)];
 }
 
-/** Transforma una ficha (ya recortada) con la paleta del mundo. */
-function transformSheet(canvas, world) {
+/**
+ * Estilos por mundo: cada creepypasta del segundo anillo nace de un juego de Game Boy, así que
+ * la ficha se dibuja como ese juego (paleta de 4 tonos + píxel grande + tramado ordenado), con
+ * el motivo propio encima. No es un recoloreado: cambia la resolución, la paleta y el grano.
+ */
+const STYLES = {
+  strangled: {
+    label: "Pokémon Red (GB) · 4 tonos rojos",
+    palette: ["#e2a8a8", "#a81c1c", "#581010", "#100303"],
+    pixel: 4, dither: 26, vignette: 0.3, frame: "#080202",
+  },
+  buried: {
+    label: "hack sepia de la fosa · 4 tonos de tierra",
+    palette: ["#cbb68e", "#7a5f3c", "#3a2c1c", "#0b0805"],
+    pixel: 5, dither: 34, vignette: 0.55, earth: true, frame: "#060402",
+  },
+  lavender: {
+    label: "Pokémon Green/Red (JP) · verdes de GB y ondas violeta",
+    palette: ["#bcd8b0", "#5f9a63", "#26502e", "#08170c"],
+    pixel: 4, dither: 28, vignette: 0.32, waves: true, accent: "#b48ce0", frame: "#040a05",
+  },
+};
+
+const hexToRgb = (hex) => [parseInt(hex.slice(1, 3), 16), parseInt(hex.slice(3, 5), 16), parseInt(hex.slice(5, 7), 16)];
+const lumaOf = (r, g, b) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
+
+/** Píxel grande: se reduce con promedio y se vuelve a subir sin suavizado (look de consola). */
+function pixelate(canvas, size) {
+  if (!size || size <= 1) return;
+  const w = Math.max(1, Math.round(canvas.width / size));
+  const h = Math.max(1, Math.round(canvas.height / size));
+  const small = createCanvas(w, h);
+  const sctx = small.getContext("2d");
+  sctx.imageSmoothingEnabled = true;
+  sctx.drawImage(canvas, 0, 0, w, h);
   const ctx = canvas.getContext("2d");
-  const { width, height } = canvas;
-  const image = ctx.getImageData(0, 0, width, height);
-  const data = image.data;
-  const [tr, tg, tb] = world.tint;
-  for (let i = 0; i < data.length; i += 4) {
-    if (data[i + 3] === 0) continue;
-    let [h, s, l] = rgbToHsl(data[i], data[i + 1], data[i + 2]);
-    h += world.hue;
-    s *= world.saturation;
-    // Las curvas de luz preservan el contraste local (el mapa se recorta por estructura,
-    // no por color): estirar antes de oscurecer, y oscurecer con gamma, no multiplicando.
-    if (world.transform === "buried") { l = (l - 6) * 1.25 + 6; l = 100 * Math.pow(Math.max(0, l) / 100, 1.35); }
-    if (world.transform === "strangled") { l = (l - 8) * 1.1 + 8; l = 100 * Math.pow(Math.max(0, l) / 100, 1.1); }
-    if (world.transform === "lavender") l = (l - 50) * 1.25 + 50;     // más contraste
-    let [r, g, b] = hslToRgb(h, Math.max(0, Math.min(100, s)), Math.max(0, Math.min(100, l)));
-    r = r * (1 - world.tintAmount) + tr * world.tintAmount;
-    g = g * (1 - world.tintAmount) + tg * world.tintAmount;
-    b = b * (1 - world.tintAmount) + tb * world.tintAmount;
-    data[i] = Math.max(0, Math.min(255, r));
-    data[i + 1] = Math.max(0, Math.min(255, g));
-    data[i + 2] = Math.max(0, Math.min(255, b));
-  }
-  ctx.putImageData(image, 0, 0);
-  return ctx;
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(small, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
 }
 
-/** Viñeta (claustrofobia / penumbra) y artefactos de imagen por mundo. */
+/** Tramado ordenado 4×4 (Bayer) al cuantizar a la paleta de 4 tonos. */
+const BAYER4 = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]];
+function quantize(canvas, palette, amount) {
+  const colors = palette.map(hexToRgb);
+  const lums = colors.map(([r, g, b]) => lumaOf(r, g, b));
+  const ctx = canvas.getContext("2d");
+  const image = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = image.data;
+  const { width, height } = canvas;
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const i = (y * width + x) * 4;
+      if (data[i + 3] === 0) continue;
+      let l = lumaOf(data[i], data[i + 1], data[i + 2]);
+      if (amount) l += ((BAYER4[y % 4][x % 4] + 0.5) / 16 - 0.5) * amount;
+      let best = 0, bestDelta = Infinity;
+      for (let k = 0; k < lums.length; k++) {
+        const delta = Math.abs(l - lums[k]);
+        if (delta < bestDelta) { bestDelta = delta; best = k; }
+      }
+      const [r, g, b] = colors[best];
+      data[i] = r; data[i + 1] = g; data[i + 2] = b; data[i + 3] = 255;
+    }
+  }
+  ctx.putImageData(image, 0, 0);
+}
+
+/** Motivos y acabado de cada mundo (después de cuantizar, para que los acentos sobrevivan). */
 function finishSheet(ctx, world, index) {
+  const style = STYLES[world.transform];
   const { width, height } = ctx.canvas;
-  if (world.vignette > 0) {
+  if (style.vignette > 0) {
     const grad = ctx.createRadialGradient(width / 2, height / 2, Math.min(width, height) * 0.25, width / 2, height / 2, Math.max(width, height) * 0.72);
     grad.addColorStop(0, "rgba(0,0,0,0)");
-    grad.addColorStop(1, `rgba(0,0,0,${world.vignette})`);
+    grad.addColorStop(1, `rgba(0,0,0,${style.vignette})`);
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, width, height);
   }
-  if (world.transform === "lavender") {
-    // Ondas del síndrome: bandas horizontales desplazadas y scanlines.
-    const bands = 1 + (index % 3);
-    for (let b = 0; b < bands; b++) {
-      const y = Math.floor(((index * 37 + b * 53) % height));
-      const h = 2 + ((index + b) % 4);
-      const shift = ((index * 7 + b * 13) % 9) - 4;
-      const slice = ctx.getImageData(0, y, width, Math.min(h, height - y));
-      ctx.putImageData(slice, shift, y);
-      ctx.fillStyle = "rgba(190,150,255,0.18)";
-      ctx.fillRect(0, y, width, 1);
-    }
-  }
   if (world.transform === "strangled") {
-    // Marcas del amo: una línea roja cruza la ficha (la correa), nunca igual.
-    ctx.strokeStyle = "rgba(190,20,30,0.55)";
-    ctx.lineWidth = 2;
-    const y = Math.round(height * (0.28 + ((index % 5) * 0.09)));
+    // La correa del amo: una curva roja cruza la ficha y nunca cae igual (culpa del duelo).
+    ctx.strokeStyle = "rgba(150,12,16,0.75)";
+    ctx.lineWidth = style.pixel;
+    const y = Math.round(height * (0.26 + ((index % 5) * 0.1)));
     ctx.beginPath();
     ctx.moveTo(0, y);
-    ctx.bezierCurveTo(width * 0.3, y + 8, width * 0.7, y - 8, width, y + 2);
+    ctx.bezierCurveTo(width * 0.3, y + style.pixel * 2, width * 0.7, y - style.pixel * 2, width, y + style.pixel);
     ctx.stroke();
+    // Glitch de cartucho: una franja negra recorta la ficha (el juego se cayó una vez).
+    if (index % 4 === 2) {
+      const gy = Math.round(height * (0.18 + (index % 3) * 0.22));
+      ctx.fillStyle = "#000000";
+      ctx.fillRect(0, gy, width, style.pixel * 2);
+    }
   }
   if (world.transform === "buried") {
-    // La fosa: borde de tierra en la parte baja de la ficha.
-    const grad = ctx.createLinearGradient(0, height * 0.78, 0, height);
-    grad.addColorStop(0, "rgba(20,12,6,0)");
-    grad.addColorStop(1, "rgba(12,8,4,0.55)");
+    // La fosa: tierra arriba y abajo, con guijarros del tono más oscuro (claustrofobia).
+    const grad = ctx.createLinearGradient(0, height * 0.7, 0, height);
+    grad.addColorStop(0, "rgba(11,8,5,0)");
+    grad.addColorStop(1, "rgba(11,8,5,0.9)");
     ctx.fillStyle = grad;
-    ctx.fillRect(0, Math.floor(height * 0.68), width, height);
+    ctx.fillRect(0, Math.floor(height * 0.62), width, height);
+    ctx.fillStyle = "#0b0805";
+    for (let k = 0; k < 18; k++) {
+      const px = (index * 53 + k * 71) % width;
+      const py = Math.floor(height * 0.72) + ((index * 29 + k * 37) % Math.max(1, Math.floor(height * 0.28)));
+      ctx.fillRect(px, py, style.pixel, style.pixel);
+    }
+    ctx.fillRect(0, 0, width, style.pixel);
   }
+  if (world.transform === "lavender") {
+    // Ondas del síndrome: el audio rompe la imagen en bandas desplazadas y ruido violeta.
+    for (let b = 0; b < 2 + (index % 2); b++) {
+      const y = Math.floor((index * 41 + b * 59) % height);
+      const h = style.pixel * (1 + ((index + b) % 2));
+      const shift = ((index * 11 + b * 17) % (style.pixel * 3)) - style.pixel;
+      const slice = ctx.getImageData(0, y, width, Math.min(h, height - y));
+      ctx.putImageData(slice, shift, y);
+    }
+    ctx.fillStyle = "rgba(180,140,224,0.35)";
+    for (let k = 0; k < 3; k++) ctx.fillRect(0, (index * 23 + k * 47) % height, width, 1);
+    if (index % 3 === 1) {
+      ctx.fillStyle = "rgba(232,232,255,0.5)";
+      const ny = Math.floor(height * (0.2 + (index % 4) * 0.19));
+      for (let x = 0; x < width; x += 2) if ((x + index) % 5 < 2) ctx.fillRect(x, ny, 1, style.pixel);
+    }
+  }
+  ctx.strokeStyle = style.frame;
+  ctx.lineWidth = 2;
+  ctx.strokeRect(1, 1, width - 2, height - 2);
 }
 
 /**
@@ -211,14 +274,16 @@ function sharpen(canvas, amount, radius = 1) {
   ctx.putImageData(out, 0, 0);
 }
 
-/** Recorta una ficha de origen a CELL_W×CELL_H cubriendo el marco (cover) y la transforma. */
+/** Recorta una ficha de origen a CELL_W×CELL_H (cover) y le aplica el estilo del mundo. */
 async function buildFicha(sourceFile, bbox, world, index, donorCanvas = null) {
+  const style = STYLES[world.transform];
   const canvas = createCanvas(CELL_W, CELL_H);
   const ctx = canvas.getContext("2d");
   ctx.imageSmoothingEnabled = false;
-  const zoom = world.zoom;
+  ctx.fillStyle = style.palette[style.palette.length - 1];
+  ctx.fillRect(0, 0, CELL_W, CELL_H);
+  const zoom = world.zoom ?? 1;
   if (donorCanvas) {
-    // ficha = mapa recreado del mundo donante, escalado a la celda (cover)
     const sw = donorCanvas.width, sh = donorCanvas.height;
     const cover = Math.max(CELL_W / sw, CELL_H / sh) * zoom;
     const dw = sw * cover, dh = sh * cover;
@@ -230,19 +295,19 @@ async function buildFicha(sourceFile, bbox, world, index, donorCanvas = null) {
     const dw = sw * cover, dh = sh * cover;
     ctx.drawImage(sourceFile, x0, y0, sw, sh, (CELL_W - dw) / 2, (CELL_H - dh) / 2, dw, dh);
   }
-  if (index % 3 === 1) { // espejo en una de cada tres fichas
+  if (index % 3 === 1) {   // espejo en una de cada tres fichas para variar la composición
     const flipped = createCanvas(CELL_W, CELL_H);
     const fctx = flipped.getContext("2d");
     fctx.imageSmoothingEnabled = false;
     fctx.translate(CELL_W, 0);
     fctx.scale(-1, 1);
     fctx.drawImage(canvas, 0, 0);
-    canvas.getContext("2d").clearRect(0, 0, CELL_W, CELL_H);
-    canvas.getContext("2d").drawImage(flipped, 0, 0);
+    ctx.clearRect(0, 0, CELL_W, CELL_H);
+    ctx.drawImage(flipped, 0, 0);
   }
-  transformSheet(canvas, world);
-  finishSheet(canvas.getContext("2d"), world, index);
-  if (world.sharpen) sharpen(canvas, world.sharpen);
+  pixelate(canvas, style.pixel);
+  quantize(canvas, style.palette, style.dither);
+  finishSheet(ctx, world, index);
   return canvas;
 }
 

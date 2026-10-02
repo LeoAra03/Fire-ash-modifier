@@ -17,6 +17,12 @@
       "ratio": 0.917
     },
     {
+      "id": 2190,
+      "walkable": 72,
+      "reachable": 67,
+      "ratio": 0.931
+    },
+    {
       "id": 2119,
       "walkable": 62,
       "reachable": 61,
@@ -92,12 +98,6 @@
       "id": 2049,
       "walkable": 61,
       "reachable": 61,
-      "ratio": 1
-    },
-    {
-      "id": 2050,
-      "walkable": 58,
-      "reachable": 58,
       "ratio": 1
     }
   ],
