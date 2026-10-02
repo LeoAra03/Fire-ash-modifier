@@ -35,10 +35,17 @@
  *    - Revela que dejó copias atenuadas de sí mismo, de Dialga y de Palkia a propósito para evitar este despertar.
  *    - Anuncia que ha descendido para desatar el Cataclismo Final y reiniciar el universo.
  * 5. Combate contra Arceus:
- *    - Nivel 200 (único Pokémon del juego en alcanzar este nivel).
+ *    - Nivel 200 (único Pokémon del juego en alcanzar este nivel) y sólo para la
+ *      instancia divina: el 200 exige @ruta_arceus_divine (S2/S2b).
  *    - Sentencia, Distorsión, Corte Vacío, Golpe Umbrío con Tabla Legendaria.
- *    - Capacidad de curarse 3 VECES con Restaura Todo cuando su salud baja del 45% (con animación y aviso en pantalla).
- *    - Se puede capturar o derrotar.
+ *    - Sellos del Génesis (R1): cada golpe conectado rompe uno de los 5 sellos y
+ *      fija el vigor al umbral (72/55/38/22% y, el último, 1 PS con captura al 100%).
+ *    - Hasta 2 Restaura Todo divinos (R5) cuando baja del 30% en fase 4+; los sellos
+ *      rotos no se restauran.
+ *    - Los ecos invocados (Mew, Giratina) usan el nivel máximo legal con empuje
+ *      divino, nunca el nivel 200 (R2).
+ *    - Se puede capturar o derrotar. El pseudo-PC nunca deja al jugador sin salida:
+ *      si no hay candidatos en el PC, el Rotom sostiene al equipo una vez (R4).
  *    - Si derrota al jugador: desmayo oficial y transporte al Centro Pokémon más cercano.
  * 6. Desenlace con Volus:
  *    - Volus sube a la cima tras el combate felicitando a Ash por salvar el cosmos.
@@ -88,6 +95,7 @@ const SW_SNOWPOINT_PASS = 877;   // Permite cruzar árboles solo durante esta vi
 const SW_ARCEUS_ALLIES_CYNTHIA_STEVEN = 878;
 const SW_ARCEUS_ALLIES_GOLD_RED = 879;
 const SW_ARCEUS_ALLIES_VOLUS = 880;
+const SW_ARCEUS_MERCY = 869;     // R4: el Rotom sostiene al equipo una sola vez (sin candidatos en el PC)
 
 // ---------------------------------------------------------------------------
 // RMXP Event Constructors
@@ -262,6 +270,7 @@ ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH = 878
 ARCEUS_ALLIES_GOLD_RED_SWITCH = 879
 ARCEUS_ALLIES_VOLUS_SWITCH = 880
 RUTA_ARCEUS_CAUGHT_SWITCH = 874
+RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH = 869
 
 RUTA_ARCEUS_PHASE_THRESHOLDS = [0.84, 0.68, 0.52, 0.38, 0.22]
 RUTA_ARCEUS_PHASE_PLATES = [
@@ -287,6 +296,12 @@ RUTA_ARCEUS_MOVE_SETS = [
   [:JUDGMENT, :EXTREMESPEED, :VCREATE, :PRECIPICEBLADES],
   [:JUDGMENT, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE]
 ]
+# R1: los sellos del Génesis son la garantía de progreso del combate. Cada golpe
+# que conecta rompe un sello y fija el vigor de Arceus en el siguiente umbral; el
+# quinto sello abre la captura. Así el desenlace nunca depende de un crítico ni de
+# la paciencia del jugador.
+RUTA_ARCEUS_SEAL_FLOORS = [0.72, 0.55, 0.38, 0.22]
+RUTA_ARCEUS_RESTORES = 2
 
 class PokeBattle_Battler
   alias _ruta_arceus_original_reduce_hp pbReduceHP unless method_defined?(:_ruta_arceus_original_reduce_hp)
@@ -300,6 +315,7 @@ class PokeBattle_Battler
         return 0
       end
       ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
+      @battle.check_arceus_seal(self, amt)
       @battle.check_arceus_phase(self)
       return ret
     end
@@ -309,6 +325,7 @@ end
 
 class PokeBattle_Battle
   attr_accessor :arceus_restores_used
+  attr_accessor :arceus_seals
 
   def arceus_battler
     return @battlers.find { |b| b && b.opposes? && b.pokemon && b.pokemon.species == :ARCEUS }
@@ -327,6 +344,7 @@ class PokeBattle_Battle
     @arceus_phase = pkmn.instance_variable_get(:@ruta_arceus_phase) || 1
     @arceus_restores_used = pkmn.instance_variable_get(:@ruta_arceus_restores) || 0
     @arceus_capture_ready = pkmn.instance_variable_get(:@ruta_arceus_capture_ready) == true
+    @arceus_seals = pkmn.instance_variable_get(:@ruta_arceus_seals).to_i
     @arceus_phase = 1 if @arceus_phase < 1
   end
 
@@ -335,6 +353,7 @@ class PokeBattle_Battle
     pkmn.instance_variable_set(:@ruta_arceus_phase, @arceus_phase)
     pkmn.instance_variable_set(:@ruta_arceus_restores, @arceus_restores_used)
     pkmn.instance_variable_set(:@ruta_arceus_capture_ready, @arceus_capture_ready == true)
+    pkmn.instance_variable_set(:@ruta_arceus_seals, @arceus_seals.to_i)
   end
 
   def arceus_capture_ready?
@@ -372,6 +391,43 @@ class PokeBattle_Battle
   rescue StandardError
   end
 
+  # Rompe un sello por golpe conectado y fija el vigor al umbral del sello. Si el
+  # jugador no tiene daño (veneno, clima, un movimiento de estado), el sello no se
+  # rompe: la garantía es "cada golpe cuenta", no "cualquier turno cuenta".
+  def check_arceus_seal(battler, amount)
+    return if !arceus_divine? || !battler || battler.pokemon.species != :ARCEUS
+    return if amount.to_i <= 0
+    arceus_state(battler)
+    return if @arceus_capture_ready || battler.fainted?
+    if @arceus_seals < RUTA_ARCEUS_SEAL_FLOORS.length
+      @arceus_seals += 1
+      floor = [(battler.totalhp * RUTA_ARCEUS_SEAL_FLOORS[@arceus_seals - 1]).to_i, 1].max
+      if battler.hp > floor
+        battler.hp = floor
+        battler.pbUpdate if battler.respond_to?(:pbUpdate)
+      end
+      pbDisplay(_INTL("¡El sello {1}/{2} del Génesis se rompe! Arceus desciende al {3}% de su vigor.",
+                      @arceus_seals, RUTA_ARCEUS_SEAL_FLOORS.length + 1,
+                      (RUTA_ARCEUS_SEAL_FLOORS[@arceus_seals - 1] * 100).round))
+      pbArceusDistortion
+    else
+      if battler.hp > 1
+        battler.hp = 1
+        battler.pbUpdate if battler.respond_to?(:pbUpdate)
+      end
+      @arceus_capture_ready = true
+      pbArceusEnsureCaptureBall
+      pbDisplay(_INTL("¡El quinto sello se rompe! La forma divina de Arceus queda expuesta: la captura es del 100%."))
+      begin
+        pbFlash(Color.new(255, 255, 255, 255), 20)
+        pbShake(10, 10, 12)
+      rescue StandardError
+      end
+    end
+    save_arceus_state(battler)
+  rescue StandardError
+  end
+
   def check_arceus_phase(battler)
     return if !arceus_divine? || !battler || battler.pokemon.species != :ARCEUS
     arceus_state(battler)
@@ -382,10 +438,11 @@ class PokeBattle_Battle
       @arceus_phase += 1
       pbArceusPhase(battler, @arceus_phase)
     end
-    if @arceus_restores_used < 3 && @arceus_phase >= 4 && ratio <= 0.45
+    if @arceus_restores_used < RUTA_ARCEUS_RESTORES && @arceus_phase >= 4 && ratio <= 0.30
       @arceus_restores_used += 1
       pbDisplay(_INTL("¡El fulgor del Génesis retuerce la realidad alrededor de Arceus!"))
-      pbDisplay(_INTL("¡Arceus utilizó un Restaura Todo divino ({1}/3)!", @arceus_restores_used))
+      pbDisplay(_INTL("¡Arceus utilizó un Restaura Todo divino ({1}/{2})! Los sellos rotos no se restauran.",
+                      @arceus_restores_used, RUTA_ARCEUS_RESTORES))
       battler.pbRecoverHP(battler.totalhp)
       battler.pbCureStatus
       save_arceus_state(battler)
@@ -436,10 +493,17 @@ class PokeBattle_Battle
 
   def pbArceusSummon(battler, species, label)
     return if !GameData::Species.exists?(species)
-    summon_level = [200, GameData::GrowthRate.max_level].min
+    # R2: los ecos no pueden nacer al nivel 200 (reservado al Arceus divino), pero
+    # conservan la fuerza de la aparición: nivel máximo legal y un empuje divino.
+    summon_level = GameData::GrowthRate.max_level
+    summon_level = 150 if !summon_level || summon_level < 1
     summon = Pokemon.new(species, summon_level)
     temp = PokeBattle_Battler.new(self, battler.index)
     temp.pbInitialize(summon, -1)
+    [:attack, :defense, :spatk, :spdef, :speed].each do |stat|
+      value = temp.instance_variable_get(:"@#{stat}")
+      temp.instance_variable_set(:"@#{stat}", (value.to_f * 1.25).round) if value
+    end
     battler.pbTransform(temp)
     pbDisplay(_INTL("¡Arceus invoca a {1}! La aparición legendaria toma el campo durante esta fase.", label))
   rescue StandardError
@@ -847,6 +911,27 @@ def pbArceusReplacePartyFromStorage(selected)
   return true
 end
 
+# R4: sin candidatos en el PC el jugador quedaría sin salida. El Rotom concede una
+# única restauración parcial (35%) para que el combate pueda continuar; nunca cura
+# del todo ni se repite.
+def pbArceusRotomMercy
+  return false if $game_switches && $game_switches[RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH]
+  healed = 0
+  $Trainer.party.each do |pkmn|
+    next if !pkmn
+    pkmn.hp = [(pkmn.totalhp * 0.35).to_i, 1].max if pkmn.hp <= 0
+    pkmn.heal_status if pkmn.respond_to?(:heal_status)
+    healed += 1
+  end
+  return false if healed == 0
+  $game_switches[RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH] = true if $game_switches
+  pbMessage(_INTL("El Rotom de Ash gira sobre sí mismo: «No hay nadie en la caja... pero yo puedo sostenerlos una vez más.»"))
+  pbMessage(_INTL("Una descarga cálida levanta al equipo: cada Pokémon recupera el 35% de su vigor. Sólo ocurrirá una vez."))
+  return true
+rescue StandardError
+  return false
+end
+
 def pbArceusPseudoPC
   candidates = pbArceusStorageCandidates
   return false if candidates.empty?
@@ -901,12 +986,23 @@ end
 # with the same Arceus object and its persistent phase/HP state.
 # S1: el Arceus capturado deja de ser el dios del combate. Sin esto, el ejemplar que entra
 # en la partida conservaba las variables de fase/restauraciones/captura del jefe.
+# R6: el duelo contra Volo llega justo después de la batalla divina. El santuario
+# concede un descanso explícito para que el reto sea justo (y se repite en cada
+# reintento, porque Volo espera).
+def pbArceusVoloRest
+  $Trainer.heal_party if $Trainer.respond_to?(:heal_party)
+  pbMessage(_INTL("El altar del Génesis devuelve las fuerzas a todo el equipo antes del duelo."))
+  pbMessage(_INTL("Volo: Tómate tu tiempo, Ash. Quiero vencerte en tu mejor momento."))
+rescue StandardError
+end
+
 def pbArceusNormalizeCaptured(pkmn)
   return if !pkmn
   pkmn.instance_variable_set(:@ruta_arceus_divine, false)
   pkmn.instance_variable_set(:@ruta_arceus_phase, 1)
   pkmn.instance_variable_set(:@ruta_arceus_restores, 0)
   pkmn.instance_variable_set(:@ruta_arceus_capture_ready, false)
+  pkmn.instance_variable_set(:@ruta_arceus_seals, 0)
 rescue StandardError
 end
 
@@ -918,6 +1014,7 @@ def pbStartArceusDivineBattle
   pkmn.instance_variable_set(:@ruta_arceus_phase, 1)
   pkmn.instance_variable_set(:@ruta_arceus_restores, 0)
   pkmn.instance_variable_set(:@ruta_arceus_capture_ready, false)
+  pkmn.instance_variable_set(:@ruta_arceus_seals, 0)
   GameData::Stat.each_main { |s| pkmn.iv[s.id] = 31 }
   pkmn.item = :LEGENDPLATE if GameData::Item.exists?(:LEGENDPLATE)
   pkmn.moves = RUTA_ARCEUS_MOVE_SETS[0].select { |id| GameData::Move.exists?(id) }.map { |id| Pokemon::Move.new(id) }
@@ -956,11 +1053,29 @@ def pbStartArceusDivineBattle
         $PokemonTemp.recordBattleRule("cannotRun")
         $PokemonTemp.recordBattleRule("canLose")
         next
+      elsif pbArceusRotomMercy
+        $PokemonTemp.clearBattleRules
+        $PokemonTemp.recordBattleRule("cannotRun")
+        $PokemonTemp.recordBattleRule("canLose")
+        next
       end
       pbArceusSurrenderSequence
       return 2
     end
-    return decision if decision == 3 || decision == 5
+    if decision == 5
+      # R3: un empate no debe cerrar el evento en silencio. Se restaura el estado
+      # previo (el motor sí cura con canLose) y se explica que la cima sigue abierta.
+      snapshot.each do |entry|
+        p = entry[0]
+        p.hp = entry[1] if entry[1] > 0
+        p.status = entry[2] if entry[1] > 0
+      end
+      pbMessage(_INTL("El choque de dos voluntades agota el campo: Ash y Arceus caen a la vez, sin vencedor."))
+      pbMessage(_INTL("La Cima del Génesis vuelve a cerrarse. Arceus espera de pie, intacto, para un nuevo intento."))
+      $PokemonTemp.clearBattleRules
+      return 5
+    end
+    return decision if decision == 3
   end
 end
 `;
@@ -1005,6 +1120,7 @@ function installSwitches() {
   sw[SW_ARCEUS_ALLIES_CYNTHIA_STEVEN] = S("ARCEUS_CINEMATIC_CYNTHIA_STEVEN");
   sw[SW_ARCEUS_ALLIES_GOLD_RED] = S("ARCEUS_CINEMATIC_GOLD_RED");
   sw[SW_ARCEUS_ALLIES_VOLUS] = S("ARCEUS_CINEMATIC_VOLUS");
+  sw[SW_ARCEUS_MERCY] = S("RUTA_DE_DIOS_ARCEUS_MERCY");
 
   writeRx("System.rxdata", sys);
   console.log("OK: Switches 870..880 registered in System.rxdata.");
@@ -1987,6 +2103,7 @@ export function buildFloor7() {
       "Volo: Espera... ¿Has capturado al mismísimo Gran Uno? ¡No puede ser! ¡Durante eones busqué alcanzar la gloria del creador!",
       "Volo: ¡No permitiré que un joven mortal lo conserve! ¡Te desafío por el derecho a portar la corona de la existencia!",
     ], 2),
+    cmd(355, [S("pbArceusVoloRest")], 2),
     cmd(111, [12, S('pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)')], 2),
     cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 3),
     ...textCommands([
@@ -2022,6 +2139,7 @@ export function buildFloor7() {
       ...textCommands([
         "Volo: ¡Aún no me rindo! ¡Arceus debe pertenecer a quien comprenda la verdadera grandeza!",
       ]),
+      cmd(355, [S("pbArceusVoloRest")]),
       cmd(111, [12, S('pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)')]),
       cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 1),
       cmd(121, [SW_COMPLETED, SW_COMPLETED, 0], 1),
@@ -2334,6 +2452,7 @@ function verify() {
   if (txt(sw[SW_ARCEUS_ALLIES_CYNTHIA_STEVEN]) !== "ARCEUS_CINEMATIC_CYNTHIA_STEVEN") errors.push("Switch 878 not named ARCEUS_CINEMATIC_CYNTHIA_STEVEN");
   if (txt(sw[SW_ARCEUS_ALLIES_GOLD_RED]) !== "ARCEUS_CINEMATIC_GOLD_RED") errors.push("Switch 879 not named ARCEUS_CINEMATIC_GOLD_RED");
   if (txt(sw[SW_ARCEUS_ALLIES_VOLUS]) !== "ARCEUS_CINEMATIC_VOLUS") errors.push("Switch 880 not named ARCEUS_CINEMATIC_VOLUS");
+  if (txt(sw[SW_ARCEUS_MERCY]) !== "RUTA_DE_DIOS_ARCEUS_MERCY") errors.push("Switch 869 not named RUTA_DE_DIOS_ARCEUS_MERCY");
 
   // 2. Verify Script Section
   const scripts = readRx("Scripts.rxdata");
@@ -2355,6 +2474,11 @@ function verify() {
       ["!(pkmn.respond_to?(:egg?) && pkmn.egg?)", "pseudo-PC sin huevos"],
       ["divine ? normal_cap : safe_level", "el Arceus cinemático nace al tope normal y sube como divino"],
       ["arceus_capture_ready", "captura determinista tras el último sello"],
+      ["RUTA_ARCEUS_SEAL_FLOORS", "sellos del Génesis con umbral fijo (R1)"],
+      ["@ruta_arceus_seals", "contador de sellos persistido en el Arceus divino (R1)"],
+      ["pbArceusRotomMercy", "el pseudo-PC nunca deja al jugador sin salida (R4)"],
+      ["pbArceusVoloRest", "descanso antes del duelo con Volo (R6)"],
+      ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
     ];
     for (const [needle, label] of guarantees) {
       if (ruby && !ruby.includes(needle)) errors.push(`Falta una garantía de la batalla: ${label}`);

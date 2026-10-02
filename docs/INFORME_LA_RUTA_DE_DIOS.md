@@ -76,10 +76,13 @@ Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
    - **Seis fases progresivas:** el motor conserva el mismo Arceus entre fases, cambia las Tablas y sus movimientos, y muestra distorsiones, destellos, tonos de pantalla y temblores. Las fases incluyen Mega Evolución del Génesis, Gigamax del Creador, Movimiento Z, copia del Pokémon activo, invocaciones legendarias (Mew/Giratina y ecos de Dialga/Palkia) y el último sello.
    - **Ruleta de tipos:** en cada transición Arceus alterna entre las 17 Tablas y se actualiza su tipo con una animación contextual.
    - **Control de la realidad:** puede curar o revivir un Pokémon del jugador durante una transición, y puede copiar temporalmente al Pokémon activo. También rota conjuntos de movimientos para cubrir ataques legendarios y de todas las familias disponibles en el motor.
-   - **Mecánica de 3 Restaura Todo:** implementada en el motor de batalla (`PokeBattle_Battler#pbReduceHP`). Cuando la salud alcanza el umbral, se activa la animación sagrada y el estado se restaura hasta tres veces.
+   - **Sellos del Génesis (R1/S9):** cada golpe que conecta rompe 1 de los 5 sellos y fija el vigor de Arceus en el umbral correspondiente (72 %, 55 %, 38 %, 22 % y 1 PS). El quinto sello muestra la animación de debilitamiento y habilita la captura determinista. Así el combate no depende de críticos, niveles ni paciencia: cinco golpes cualesquiera abren el desenlace.
+   - **Ecos legales (R2/S10):** las invocaciones de Mew y Giratina nacen al nivel máximo legal del juego (150) y reciben un empuje divino ×1,25; el nivel 200 queda reservado al Arceus divino.
+   - **Mecánica de 2 Restaura Todo (R5/S13):** implementada en el motor de batalla (`PokeBattle_Battler#pbReduceHP`). En fase 4+ y por debajo del 30 % de salud, se activa la animación sagrada y Arceus se restaura por completo **dos** veces; avisa del contador y los sellos rotos no se restauran.
    - **Captura estricta:** la captura está bloqueada al 0%, incluyendo la Master Ball, antes de la animación final. El golpe que rompe el último sello deja a Arceus con 1 HP, muestra la animación de debilitamiento y habilita una captura determinista del 100%.
    - **Sin huida:** el comando de escape muestra una rotura visual, temblor y destello antes de ser rechazado.
-   - **Continuación fuera de seis Pokémon:** al caer el equipo activo aparece `Debes continuar` y un pseudo-PC permite elegir hasta seis Pokémon capaces desde las cajas. El pseudo-PC mueve los datos sin curarlos. La batalla continúa mientras haya Pokémon disponibles o hasta que el jugador elija rendirse.
+   - **Continuación fuera de seis Pokémon:** al caer el equipo activo aparece `Debes continuar` y un pseudo-PC permite elegir hasta seis Pokémon capaces desde las cajas. El pseudo-PC mueve los datos sin curarlos (filtra huevos). Si no hay candidatos, **el Rotom sostiene al equipo una sola vez (35 %)** —R4/S12— para que nunca exista un callejón sin salida; el interruptor 869 (`RUTA_DE_DIOS_ARCEUS_MERCY`) registra ese auxilio.
+   - **Empate (R3/S11):** si el combate termina en empate, se restaura el estado previo del equipo, se explica la escena y la cima queda abierta para reintentar; el evento nunca se cierra en silencio.
    - **Rendición:** muestra temblores, destrucción progresiva de la presentación de los mapas y entrenadores gritando antes de usar el retorno normal del motor (`pbStartOver`).
    - **Derrota:** si no quedan Pokémon activos ni reservas y no se elige continuar, se conserva el flujo de derrota del motor. La victoria y la captura regresan a la secuencia posterior normal de Volus.
 
@@ -90,7 +93,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 - Volus sube apresuradamente la escalinata del Altar y felicita a Ash por haber detenido la aniquilación universal.
 - **Si el jugador capturó a Arceus:**
   - Volus palidece y su expresión se transforma en locura y fanatismo: *«Espera... ¿Has... has CAPTURADO a Arceus? ¡¿Cómo te atreves?! ¡Ese poder me corresponde a mí para moldear un nuevo mundo sin dolor! ¡Si no me lo entregas por las buenas, te lo arrebataré en batalla!»*.
-  - Comienza el duelo decisivo contra **Volus** con su tema musical exclusivo (`secretvolo.ogg`) y el equipo registrado de la versión 4 de `SECRET_Volo` (Spiritomb, Giratina y Giratina Forma Origen, Nv. 100). Si Ash pierde, el duelo queda disponible para volver a intentarlo; solo una victoria cierra la historia.
+  - Comienza el duelo decisivo contra **Volus** con su tema musical exclusivo (`secretvolo.ogg`) y el equipo registrado de la versión 4 de `SECRET_Volo` (Spiritomb, Giratina y Giratina Forma Origen, Nv. 100). Antes del reto, el altar concede un descanso explícito que cura al equipo (**R6/S14**), y se repite en cada reintento. Si Ash pierde, el duelo queda disponible para volver a intentarlo; solo una victoria cierra la historia.
   - *Sin castigo de bloqueo:* Si el jugador es derrotado por Volus, puede volver a subir a la cima cuantas veces necesite para enfrentarlo de nuevo.
   - Al vencer a Volus, este se arrodilla, admite que Arceus no fue dominado sino que eligió a Ash por su corazón puro, entrega 5 Caramelos Raros y se disuelve pacíficamente en la niebla del tiempo.
 - **Fin del Evento Temporal:**
@@ -102,7 +105,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 ---
 
 ## 8. Verificación Automatizada
-- Comprobación de integridad y sintaxis: `npm run verify:ruta_de_dios`
+- Comprobación de integridad y sintaxis: `npm run verify:ruta_de_dios`, que exige **once garantías** en la sección `PokeMod_RutaDeDios` ya instalada: normalización del Arceus capturado, ball garantizada, tope 200 sólo para el divino, pseudo-PC sin huevos, captura determinista, umbrales de los sellos, contador de sellos persistido, misericordia del Rotom, descanso de Volo, ecos al nivel legal y el helper cinemático que nace al tope normal.
 - Validación de tests del proyecto: `npm test`
 - Verificación del Hub de Oak y de Pueblo Paleta: `npm run verify:oak:hub` y `npm run verify:abra:tower`
 - Todo el conjunto de pruebas se ejecuta con 0 errores y 100% de aprobación.

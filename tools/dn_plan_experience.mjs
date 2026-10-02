@@ -197,8 +197,14 @@ ${auditBlock}
 | S6 | El pseudo-PC podía ofrecer **huevos** | se filtran (\`!pkmn.egg?\`) |
 | S7 | Rendirse salía del combate sin limpiar reglas | se limpian \`cannotRun\`/\`canLose\` y se marca \`RUTA_DE_DIOS_ARCEUS_RESOLVED\` |
 | S8 | Sin balls, la captura determinista era inalcanzable | \`pbArceusEnsureCaptureBall\`: el Rotom materializa una Bola del Testigo y avisa |
+| S9 | El desenlace dependía de bajar la vida paso a paso | **sellos del Génesis**: cada golpe conectado rompe 1 de 5 sellos y fija el vigor al umbral (72/55/38/22 % y 1 PS); el quinto abre la captura al 100 % |
+| S10 | Los ecos invocados (Mew, Giratina) nacían al nivel 200 | \`pbArceusSummon\` usa el nivel máximo legal (150) y compensa con un empuje divino ×1,25 |
+| S11 | Un empate cerraba el evento en silencio | \`decision == 5\` restaura el estado previo, explica el empate y deja la cima abierta para reintentar |
+| S12 | Sin candidatos en el PC, el pseudo-PC no tenía salida | \`pbArceusRotomMercy\`: el Rotom sostiene al equipo una sola vez (35 %); nunca deja al jugador sin opciones |
+| S13 | Arceus se curaba 3 veces al completo | quedan **2** Restaura Todo divinos, sólo en fase 4+ y por debajo del 30 %; los sellos rotos no se restauran |
+| S14 | El duelo con Volo llegaba con el equipo agotado | \`pbArceusVoloRest\`: descanso explícito antes del reto (y en cada reintento) |
 
-Verificación: \`npm run verify:ruta_de_dios\` comprueba las seis garantías en la sección
+Verificación: \`npm run verify:ruta_de_dios\` comprueba las once garantías en la sección
 \`PokeMod_RutaDeDios\` ya instalada en \`Scripts.rxdata\`.
 `;
 
