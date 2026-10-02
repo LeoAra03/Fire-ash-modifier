@@ -96,6 +96,7 @@ const SW_ARCEUS_ALLIES_CYNTHIA_STEVEN = 878;
 const SW_ARCEUS_ALLIES_GOLD_RED = 879;
 const SW_ARCEUS_ALLIES_VOLUS = 880;
 const SW_ARCEUS_MERCY = 869;     // R4: el Rotom sostiene al equipo una sola vez (sin candidatos en el PC)
+const SW_PRELUDE_SEEN = 881;     // R7: el prólogo cinemático (3 combates CPU) sólo se ve la primera vez
 
 // ---------------------------------------------------------------------------
 // RMXP Event Constructors
@@ -271,6 +272,7 @@ ARCEUS_ALLIES_GOLD_RED_SWITCH = 879
 ARCEUS_ALLIES_VOLUS_SWITCH = 880
 RUTA_ARCEUS_CAUGHT_SWITCH = 874
 RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH = 869
+RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH = 881
 
 RUTA_ARCEUS_PHASE_THRESHOLDS = [0.84, 0.68, 0.52, 0.38, 0.22]
 RUTA_ARCEUS_PHASE_PLATES = [
@@ -1026,7 +1028,16 @@ def pbStartArceusDivineBattle
   $PokemonTemp.recordBattleRule("cannotRun")
   $PokemonTemp.recordBattleRule("canLose")
 
-  pbArceusCinematicPrelude
+  # R7: el prólogo son tres combates CPU completos. Repetirlo en cada reintento castiga
+  # al jugador que ya lo vio: se muestra una vez y luego se resume en una línea.
+  primera_vez = !($game_switches && $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH])
+  if primera_vez
+    pbArceusCinematicPrelude
+    $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH] = true if $game_switches
+  else
+    pbArceusCinematicImpact(Tone.new(120, 120, 200, 0))
+    pbMessage(_INTL("Cynthia, Steven, Gold, Red y Volus ya cayeron aquí. Nadie más puede ganar tiempo: es el turno de Ash."))
+  end
   active = $Trainer.party.find { |p| p && p.able? }
   pbMessage(_INTL("Arceus toma a {1}, lo observa con la calma de un dios y dice: Con mi creación {1} pretendes hacerme frente, humano?", active ? active.name : $Trainer.name))
   pbMessage(_INTL("La ruleta de las 17 Tablas comienza a girar. Esta no es una batalla normal de seis Pokémon."))
@@ -1121,6 +1132,7 @@ function installSwitches() {
   sw[SW_ARCEUS_ALLIES_GOLD_RED] = S("ARCEUS_CINEMATIC_GOLD_RED");
   sw[SW_ARCEUS_ALLIES_VOLUS] = S("ARCEUS_CINEMATIC_VOLUS");
   sw[SW_ARCEUS_MERCY] = S("RUTA_DE_DIOS_ARCEUS_MERCY");
+  sw[SW_PRELUDE_SEEN] = S("RUTA_DE_DIOS_PRELUDE_SEEN");
 
   writeRx("System.rxdata", sys);
   console.log("OK: Switches 870..880 registered in System.rxdata.");
@@ -2453,6 +2465,7 @@ function verify() {
   if (txt(sw[SW_ARCEUS_ALLIES_GOLD_RED]) !== "ARCEUS_CINEMATIC_GOLD_RED") errors.push("Switch 879 not named ARCEUS_CINEMATIC_GOLD_RED");
   if (txt(sw[SW_ARCEUS_ALLIES_VOLUS]) !== "ARCEUS_CINEMATIC_VOLUS") errors.push("Switch 880 not named ARCEUS_CINEMATIC_VOLUS");
   if (txt(sw[SW_ARCEUS_MERCY]) !== "RUTA_DE_DIOS_ARCEUS_MERCY") errors.push("Switch 869 not named RUTA_DE_DIOS_ARCEUS_MERCY");
+  if (txt(sw[SW_PRELUDE_SEEN]) !== "RUTA_DE_DIOS_PRELUDE_SEEN") errors.push("Switch 881 not named RUTA_DE_DIOS_PRELUDE_SEEN");
 
   // 2. Verify Script Section
   const scripts = readRx("Scripts.rxdata");
@@ -2479,10 +2492,62 @@ function verify() {
       ["pbArceusRotomMercy", "el pseudo-PC nunca deja al jugador sin salida (R4)"],
       ["pbArceusVoloRest", "descanso antes del duelo con Volo (R6)"],
       ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
+      ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
     ];
     for (const [needle, label] of guarantees) {
       if (ruby && !ruby.includes(needle)) errors.push(`Falta una garantía de la batalla: ${label}`);
     }
+  }
+
+  // 2c. Recorrido completo: cada piso tiene bajada y subida, los guías de los
+  // pisos 1-4 desaparecen al completar el evento y los guardianes usan su switch.
+  const transferTargets = (map) => {
+    const out = [];
+    for (const [, ev] of iv(map, "events").pairs) {
+      for (const page of iv(ev, "pages") ?? []) {
+        for (const command of iv(page, "list") ?? []) {
+          if (Number(iv(command, "code")) !== 201) continue;
+          const params = iv(command, "parameters") ?? [];
+          out.push({ name: txt(iv(ev, "name")), x: Number(iv(ev, "x")), y: Number(iv(ev, "y")), target: Number(params[1]), tx: Number(params[2]), ty: Number(params[3]) });
+        }
+      }
+    }
+    return out;
+  };
+  const esperado = { 2031: [625, 2032], 2032: [2031, 2033], 2033: [2032, 2034], 2034: [2033, 2035], 2035: [2034, 2036], 2036: [2035, 2037], 2037: [2036] };
+  for (const [id, destinos] of Object.entries(esperado)) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const movs = transferTargets(readRx(`Map${id}.rxdata`));
+    for (const destino of destinos) {
+      if (!movs.some((m) => m.target === destino)) errors.push(`Map${id} no tiene transferencia a ${destino}`);
+    }
+  }
+  // Nombres reales de los guías/entrenadores de los pisos 1-4 (se ocultan al completar).
+  const guias = { 2031: "Maya de la Ruta", 2032: "Palmer del Frente", 2033: "Quinoa de la Isla", 2034: "Cintia Campeona" };
+  for (const [id, nombre] of Object.entries(guias)) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const map = readRx(`Map${id}.rxdata`);
+    const ev = iv(map, "events").pairs.find(([, e]) => txt(iv(e, "name")).includes(nombre));
+    if (!ev) { errors.push(`Map${id} no tiene al guía ${nombre}`); continue; }
+    const pages = iv(ev[1], "pages") ?? [];
+    const cierre = pages.find((page) => Number(iv(iv(page, "condition"), "switch1_id")) === SW_COMPLETED);
+    if (!cierre) { errors.push(`${nombre} (Map${id}) no desaparece tras RUTA_DE_DIOS_COMPLETED`); continue; }
+    const oculto = txt(iv(iv(cierre, "graphic"), "character_name")) === "" && (iv(cierre, "list") ?? []).length <= 1;
+    if (!oculto) errors.push(`${nombre} (Map${id}) sigue visible o activo tras completar el evento`);
+  }
+  for (const [id, guardian, swId] of [[2035, "Guardián Dialga", SW_DIALGA_DEFEATED], [2036, "Guardián Palkia", SW_PALKIA_DEFEATED]]) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const map = readRx(`Map${id}.rxdata`);
+    const ev = iv(map, "events").pairs.find(([, e]) => txt(iv(e, "name")).includes(guardian));
+    if (!ev) { errors.push(`Map${id} no tiene al guardián ${guardian}`); continue; }
+    const usaSwitch = (iv(ev[1], "pages") ?? []).some((page) => {
+      const cond = iv(page, "condition");
+      return Number(iv(cond, "switch1_id")) === swId || Number(iv(cond, "switch2_id")) === swId;
+    });
+    if (!usaSwitch) errors.push(`El guardián ${guardian} (Map${id}) no se apaga con su switch`);
   }
 
   // 3. Verify Volo in Map 513
