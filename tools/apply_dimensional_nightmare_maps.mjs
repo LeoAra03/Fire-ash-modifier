@@ -93,15 +93,15 @@ function sliceOf(map) {
 }
 
 // ------------------------------------------------------------- pasabilidad
-const overrides = fs.existsSync(OVERRIDES_PATH) ? JSON.parse(fs.readFileSync(OVERRIDES_PATH, "utf8")) : {};
+const overrides = fs.existsSync(OVERRIDES_PATH) ? JSON.parse(fs.readFileSync(OVERRIDES_PATH, "utf8")) : { maps: {} };
 
 /**
- * Pasaje por bloque: arranque conservador — todo transitable salvo lo que está
- * literalmente vacío (bloque transparente). Deliberadamente NO se infieren muros
- * por color: en este arte el azul es agua (R5/R6) pero también glitch (R1) y el
- * púrpura del trono (R4), y la oscuridad es cueva (R7) tanto como noche (R5).
- * Los muros se marcan por mapa en `content/dimensional_nightmare_passability.json`
- * y se revisan con el overlay de la comparativa (checklist E3, punto 4).
+ * Pasaje por bloque:
+ *  - sin archivo de pasajes: todo transitable salvo lo transparente (arranque abierto);
+ *  - con archivo: muro si la celda está en `computed`/`blocked` y no está en `open`
+ *    (o sus rectángulos). Como RMXP guarda el pasaje POR TILE, un tile que aparezca
+ *    en alguna celda transitable se instala transitable: los muros del arte se
+ *    bloquean porque sus tiles solo se usan en zonas marcadas como muro.
  */
 function passageForBlock(data, width, x0, y0) {
   let transparent = 0;
@@ -112,6 +112,36 @@ function passageForBlock(data, width, x0, y0) {
     }
   }
   return transparent / (TILE * TILE) > 0.5 ? PASS_BLOCKED : 0;
+}
+
+/** Celdas de un rectángulo [x0,y0,x1,y1] recortado al mapa. */
+function rectCellsIn(rect, width, height) {
+  const [x0, y0, x1, y1] = rect;
+  const cells = new Set();
+  for (let y = Math.max(0, y0); y <= Math.min(height - 1, y1); y++) {
+    for (let x = Math.max(0, x0); x <= Math.min(width - 1, x1); x++) cells.add(`${x},${y}`);
+  }
+  return cells;
+}
+
+/** Transitabilidad por celda según `content/dimensional_nightmare_passability.json`. */
+function walkableCells(mapId, width, height) {
+  const entry = overrides.maps?.[String(mapId)];
+  if (!entry) return null; // sin archivo: todo abierto salvo transparencia
+  const open = new Set(entry.open ?? []);
+  const blocked = new Set([...(entry.computed ?? []), ...(entry.blocked ?? [])]);
+  for (const rect of entry.openRects ?? []) for (const cell of rectCellsIn(rect, width, height)) { open.add(cell); blocked.delete(cell); }
+  for (const rect of entry.blockRects ?? []) for (const cell of rectCellsIn(rect, width, height)) { blocked.add(cell); open.delete(cell); }
+  const walkable = [];
+  for (let y = 0; y < height; y++) {
+    const row = [];
+    for (let x = 0; x < width; x++) {
+      const key = `${x},${y}`;
+      row.push(open.has(key) || !blocked.has(key));
+    }
+    walkable.push(row);
+  }
+  return walkable;
 }
 
 // ------------------------------------------------------------- construcción
@@ -128,7 +158,7 @@ function uniqueTiles(matrix) {
   return { order, localIdOf: map };
 }
 
-async function buildAtlas(group, order, outPng) {
+async function buildAtlas(group, order, outPng, { walkable, matrix, localIdOf }) {
   const source = await loadImage(path.join(ROOT, group.tileset));
   const canvas = createCanvas(COLUMNS * TILE, Math.ceil(order.length / COLUMNS) * TILE);
   const ctx = canvas.getContext("2d");
@@ -141,9 +171,26 @@ async function buildAtlas(group, order, outPng) {
   const px = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
   const passages = new Uint16Array(BASE_ID + order.length);
   const priorities = new Uint16Array(BASE_ID + order.length);
+  // 1) pasaje base por transparencia del bloque
   order.forEach((original, k) => {
     passages[BASE_ID + k] = passageForBlock(px, canvas.width, (k % COLUMNS) * TILE, Math.floor(k / COLUMNS) * TILE);
   });
+  // 2) si el mapa tiene pasajes definidos, manda la celda: un tile se instala
+  //    transitable cuando al menos una de sus celdas lo es.
+  if (walkable) {
+    const passableTile = new Set();
+    for (let y = 0; y < matrix.length; y++) {
+      for (let x = 0; x < matrix[0].length; x++) {
+        if (!walkable[y][x]) continue;
+        passableTile.add(localIdOf.get(matrix[y][x]));
+      }
+    }
+    order.forEach((original, k) => {
+      const tileId = BASE_ID + k;                                   // localIdOf guarda ids absolutos
+      if (passableTile.has(tileId)) passages[tileId] &= ~0x0f;      // limpia los bits de dirección → transitable
+      else if ((passages[tileId] & 0x0f) !== PASS_BLOCKED) passages[tileId] |= PASS_BLOCKED;
+    });
+  }
   if (!DRY) {
     fs.mkdirSync(path.dirname(outPng), { recursive: true });
     fs.writeFileSync(outPng, canvas.toBuffer("image/png"));
@@ -199,15 +246,11 @@ function installMetadata(mapId) {
   write("map_metadata.dat", metadata);
 }
 
-function buildMapData(matrix, localIdOf, tilesetId, overridesFor) {
+function buildMapData(matrix, localIdOf, tilesetId) {
   const width = matrix[0].length, height = matrix.length;
   const canvas = new TileCanvas(width, height, tilesetId);
   for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-      const local = localIdOf.get(matrix[y][x]) ?? 0;
-      if (overridesFor.blocked?.includes(`${x},${y}`)) continue;
-      canvas.set(x, y, 0, local);
-    }
+    for (let x = 0; x < width; x++) canvas.set(x, y, 0, localIdOf.get(matrix[y][x]) ?? 0);
   }
   return { canvas, object: buildMapObject(canvas) };
 }
@@ -335,11 +378,11 @@ if (!VERIFY_ONLY) {
   for (const map of maps) {
     const { group, map: fichaMap } = sliceOf(map);
     const { order, localIdOf } = uniqueTiles(fichaMap.matrix);
+    const walkable = walkableCells(map.id, fichaMap.matrix[0].length, fichaMap.matrix.length);
     const png = path.join(GRAPHICS, `DN_${map.id}.png`);
-    const atlas = await buildAtlas(group, order, png);
+    const atlas = await buildAtlas(group, order, png, { walkable, matrix: fichaMap.matrix, localIdOf });
     const tilesetId = installTileset(map.id, map.title, order.length, atlas.passages, atlas.priorities);
-    const overridesFor = overrides[map.id] ?? {};
-    const { canvas, object } = buildMapData(fichaMap.matrix, localIdOf, tilesetId, overridesFor);
+    const { canvas, object } = buildMapData(fichaMap.matrix, localIdOf, tilesetId);
     write(mapFile(map.id), object);
     installMapInfo(map.id, map.title);
     installMetadata(map.id);
