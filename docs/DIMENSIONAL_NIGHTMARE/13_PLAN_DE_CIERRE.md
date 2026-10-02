@@ -18,6 +18,7 @@
 | Tilesets derivados ×1 y ×2 (E2) | ✅ 25 852 tiles ×2 | `dn:tiles` · `dn:tiles:2x` |
 | Pixel-identidad (E2-check) | ✅ 96/96, 0.0000 % | `dn:verify` |
 | Mapas del ciclo (E3) | ✅ **101** (100 fichas + hub 2040) | `dn:maps:verify` |
+| Segundo anillo W7–W9 (E8) | ✅ **48** mapas (2143–2190) con hojas origen R8–R10 | `dn:plan:check` · `dn:mosaicos:origen:check` |
 | Pasajes revisables | ✅ al día | `dn:pasajes:verify` |
 | Eventos, NPCs, anomalías, jefes (E4) | ✅ 100 mapas · 80 NPCs · 77 anomalías · 6 jefes | `dn:events:verify` · `dn:battles:verify` |
 | Hub 2040 (mapa) | ✅ construido (ventana de la Gruta) | `dn:hub:verify` |
@@ -25,7 +26,7 @@
 | Arte prioridad ALTA (doc 08) | ❌ **pendiente** | — |
 | Empaquetado E6 | ⏳ por correr | `verify:package` |
 
-**Los números del ciclo**: 101 mapas (2040–2140) · 200 transferencias · 80 NPCs · 77 anomalías ·
+**Los números del ciclo (primer anillo)**: 101 mapas (2040–2140) · 200 transferencias · 80 NPCs · 77 anomalías ·
 121 eventos de índice · 6 jefes con fase B · 6 trainers + 6 objetos `DN_*`.
 
 ---
@@ -63,7 +64,7 @@ F0 rehidratar ─► F1 verificación integrada ─► F2 hub jugable ─► F3 
 
 ### F2 — Qué eventos lleva el hub (y por qué)
 El GDD sitúa la entrada del Nightmare en la **Gruta de los Testigos (2030, celda 36,12)** y la
-Antesala (2040) como reparto de las seis grietas:
+Antesala (2040) como reparto de las nueve grietas:
 
 | Evento | Dónde | Comportamiento |
 |---|---|---|
@@ -161,7 +162,8 @@ Hasta que exista, la fase sólo se documenta aquí y en el doc 15 §5.
 | **F3** Arte ALTA | ✅ | 7 assets + cableado (`DN_KINGGUS`, jefe EP06, `EV_EP01_JEFE`); `dn:art:verify` OK; `preview_arte.png` |
 | **F4** Paquete | ✅ | `verify:package` OK (30 archivos) · `npm test` verde; el ZIP de «Ruta de Dios» no incluye DN |
 | **F5** Cierre documental | ✅ | doc 12 §10.9 + este doc + `ESTADO_CONTENIDO_Y_PROMPTS.md` |
-| **E7** Mosaicos de referencia | ✅ | 9 hojas en `docs/dn_referencia/recreacion/` (101 mapas · ficha+mapa+transitabilidad) + `INDICE.md`; `dn:mosaicos:check` en `dn:verify:all` |
+| **E7** Mosaicos de referencia | ✅ | 11 hojas en `docs/dn_referencia/recreacion/` (149 mapas · ficha+mapa+transitabilidad) + `INDICE.md`; `dn:mosaicos:check` en `dn:verify:all` |
+| **E8** Segundo anillo W7–W9 | ✅ | hojas origen R8–R10 + 48 mapas (2143–2190) + 3 jefes con fase B + Medallas del Amo/Fosa/Silencio + Vitrina del Testigo (`DN_CASE_WIT`) |
 
 Decisiones tomadas al ejecutar:
 

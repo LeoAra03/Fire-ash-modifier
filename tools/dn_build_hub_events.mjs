@@ -9,6 +9,8 @@
  *   Map2030  HUB_GRIETA_CAVE   grieta de entrada (se abre con v264 ≥ 3) → Antesala
  *   Map2040  HUB_GRIETA_EPxx   seis grietas, una por episodio (EP01-03 con v264 ≥ 3,
  *                              EP04-06 con v264 ≥ 7) → primer mapa del episodio
+ *   Map2040  HUB_GRIETA_W7-W9  segundo anillo: los tres mundos nuevos (v264 ≥ 9 y la
+ *                              Liga Oscura cerrada, sw920) → primer mapa del mundo
  *   Map2040  HUB_ARCHIVERO     guía del hub (textos por progreso de sellos)
  *   Map2040  HUB_PROGRESO      monumento: sellos, resonancia y anomalías registradas
  *   Map2040  HUB_SALIDA        borde inferior de la Antesala → de vuelta a la Gruta
@@ -40,7 +42,7 @@ const EVENTS = path.join(ROOT, "content", "dimensional_nightmare_events_built.js
 const BACKUP = path.join(ROOT, "pokemon_fire_ash", "PokeModBackups", "dimensional_nightmare_maps_originals");
 
 const OWNED = ["HUB_GRIETA_CAVE", "HUB_ARCHIVERO", "HUB_PROGRESO", "HUB_SALIDA"];   // eventos propios
-const OWNS = (name) => OWNED.includes(name) || /^HUB_GRIETA_EP\d\d$/.test(name);
+const OWNS = (name) => OWNED.includes(name) || /^HUB_GRIETA_(EP\d\d|W\d+)$/.test(name);
 
 const CAVE_ID = 2030;          // Gruta de los Testigos (mapa base del juego)
 const HUB_ID = 2040;           // Antesala de las Grietas (construida en E3)
@@ -52,6 +54,11 @@ const EPISODES = [
   { key: "EP04", unlock: 7, hue: 144, flavor: "Alguien tararea una nana al otro lado." },
   { key: "EP05", unlock: 7, hue: 216, flavor: "La grieta devuelve tu propio reflejo, un paso tarde." },
   { key: "EP06", unlock: 7, hue: 288, flavor: "Una letra te observa desde el borde." },
+  // Segundo anillo: se abre con la Liga Oscura cerrada (v264 ≥ 9) y son los tres mundos
+  // que alimentan la Vitrina del Testigo.
+  { key: "W7", unlock: 9, requireSwitch: 920, hue: 12, flavor: "Del segundo anillo llega olor a correa vieja." },
+  { key: "W8", unlock: 9, requireSwitch: 920, hue: 30, flavor: "La grieta escupe tierra húmeda y no se cierra." },
+  { key: "W9", unlock: 9, requireSwitch: 920, hue: 300, flavor: "Alguien tararea desafinado detrás del muro." },
 ];
 
 const argv = process.argv.slice(2);
@@ -198,7 +205,7 @@ function makeEvents(plan, baseId) {
       list: [...texts([`La grieta de ${spec.key} está sellada.`, "El Rotom no reconoce su firma todavía."]), cmd(0)],
     }),
     page({
-      cond: condition({ variable: [264, spec.unlock] }),
+      cond: condition(spec.requireSwitch ? { variable: [264, spec.unlock], sw: spec.requireSwitch } : { variable: [264, spec.unlock] }),
       gfx: graphic("UNOWN", 2, 1, { hue: spec.hue }),
       trigger: 1, // entrar es caminar hacia la grieta
       list: [

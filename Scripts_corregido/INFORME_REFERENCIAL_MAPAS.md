@@ -1,6 +1,6 @@
 # Informe referencial de mapas — 1.022 fichas
 
-**Generado:** 2026-09-30
+**Generado:** 2026-10-02
 **Alcance:** Atlas Mil (Map1021–Map2020) y 22 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
@@ -5136,7 +5136,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2030 — Monte Silver — Gruta de los Testigos
 - **Categoría:** Monte Silver.
 - **Referencia:** Gruta de los Testigos: vestíbulo subterráneo con accesos a Falda y Cumbre, siete puertas Unown que deletrean TESTIGO, curación y encuentros de cueva.
-- **Datos compilados:** 68×46 tiles; 15 eventos; tileset 6.
+- **Datos compilados:** 68×46 tiles; 16 eventos; tileset 6.
 
 ### Map2022 — Monte Silver — Cumbre
 - **Categoría:** Monte Silver.

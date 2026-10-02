@@ -31,10 +31,15 @@ const RESOURCES = {
   R5: { key: "r5_pueblos_tumbas", label: "Pueblos y Tumbas", cols: 4 },
   R6: { key: "r6_snowy_mountain", label: "Creepy Snowy Mountain", cols: 5 },
   R7: { key: "r7_catacumbas", label: "Catacumbas de Lavanda", cols: 4 },
+  // Segundo anillo (W7–W9): hojas origen compuestas a partir del arte del autor
+  // por `tools/dn_create_world_sheets.mjs` (misma rejilla 4×4 que los mosaicos).
+  R8: { key: "r8_strangled_red", label: "Strangled Red (W7)", cols: 4 },
+  R9: { key: "r9_buried_alive", label: "Buried Alive (W8)", cols: 4 },
+  R10: { key: "r10_lavender_syndrome", label: "Lavender Town Syndrome (W9)", cols: 4 },
 };
 
 // `R7-1` · `R6-12` · `R5-3bis` · `R1-6 (void con código)` · `R5-1 vacío + R1`
-const FICHA_RE = /\bR(\d)-(\d+)(bis)?\b/g;
+const FICHA_RE = /\bR(\d{1,2})-(\d+)(bis)?\b/g;
 
 /** Índice secuencial (1..N) a partir de "R7-13" o de la forma "R7-3,2" (fila,col). */
 function fichaIndexOf(resource, number, bis) {
@@ -56,7 +61,7 @@ function loadEpisodeMaps(file, episode) {
       [, id, title, fichaCell, width, height, role] = five;
       tileset = "";
     } else continue;
-    if (!/\bR\d-\d/.test(fichaCell)) continue; // filas de NPCs, objetos…: no son mapas
+    if (!/\bR\d{1,2}-\d/.test(fichaCell)) continue; // filas de NPCs, objetos…: no son mapas
     maps.push({
       id: Number(id),
       episode,
@@ -92,6 +97,9 @@ for (const [file, episode] of [
   ["05_EP05_POKEMON_BLACK.md", "EP05"],
   ["06_EP06_KING_UNOWN.md", "EP06"],
   ["07_MAPA_DE_FLUJO.md", "NEXO"],
+  ["16_W7_STRANGLED_RED.md", "W7"],
+  ["17_W8_BURIED_ALIVE.md", "W8"],
+  ["18_W9_LAVENDER_SYNDROME.md", "W9"],
 ]) {
   maps.push(...loadEpisodeMaps(file, episode));
 }

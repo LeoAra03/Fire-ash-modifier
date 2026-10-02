@@ -532,7 +532,8 @@ El tramo de cierre se ejecutó con su propio plan (`13_PLAN_DE_CIERRE.md`, fases
 | Empaquetado | ✅ `verify:package` OK (30 archivos, 3067 KB), `npm test` verde | — |
 
 **Hub jugable** (`tools/dn_build_hub_events.mjs`, `npm run dn:hub:events`): la Antesala de las
-Grietas (2040) reparte las seis grietas por el perímetro — EP01 (0,0) · EP02 (27,4) · EP03 (0,18) ·
+Grietas (2040) reparte las nueve grietas por el perímetro — EP01 (0,0) · EP02 (27,4) · EP03 (0,18) ·
+EP04 (27,19) · EP05 (16,0) · EP06 (8,1) · W7 (5,22) · W8 (9,18) · W9 (26,11) ·
 EP04 (27,19) · EP05 (16,0) · EP06 (8,1) — con página sellada (texto) y página abierta
 (`v264 ≥ 3` para EP01–EP03, `≥ 7` para EP04–EP06) que transfiere al primer mapa del episodio; más
 `HUB_ARCHIVERO` (12,22), `HUB_PROGRESO` (18,12, lee sellos/resonancia/anomalías) y `HUB_SALIDA`
@@ -561,11 +562,11 @@ Capa nueva, en paralelo del mundo Atlas (doc `14_MEDALLAS_LIGA_OSCURA_Y_SENSACIO
 
 | Pieza | Estado |
 |---|---|
-| Medallas y cartucheras (`Badges of <mundo>`) | ✅ 14 objetos + 6 pedestales del Sello |
+| Medallas y cartucheras (`Badges of <mundo>`) | ✅ 21 objetos + 9 pedestales del Sello + Vitrina del Testigo |
 | Sensación por mundo | ✅ 212 transferencias en 103 mapas con su tono de pantalla |
 | Liga Oscura (2141 Pórtico · 2142 Coliseo) | ✅ construidos, BFS 100 % |
 | Mad Pikachu (255 → 150 por Arceus) | ✅ arco de 5 etapas + 3 ramas + trainer `MADPIKA` nv 150 |
-| Mundos nuevos W7–W9 | 📋 plan (necesitan mosaico de referencia) |
+| Mundos nuevos W7–W9 | ✅ construidos (E8): 48 mapas, 3 medallas, 3 jefes con fase B |
 
 ```bash
 npm run dn:build:all     # hub → medallas → liga → sensaciones
@@ -578,13 +579,13 @@ El usuario entregó las crepypastas como siete mosaicos de fichas. `tools/dn_ren
 devuelve el gesto con el material construido: una hoja por episodio (rejilla, separadores y rótulo
 como los mosaicos originales) donde cada celda enfrenta **ficha de la crepypasta · mapa instalado ·
 transitabilidad** (verde = alcanzable desde la entrada, ámbar = transitable aislado, rojo = muro,
-según `content/dimensional_nightmare_passability.json`). Cierra con un mosaico general de los 101
+según `content/dimensional_nightmare_passability.json`). Cierra con un mosaico general de los 149
 mapas en el orden del GDD.
 
 | Pieza | Salida |
 |---|---|
-| Hojas por episodio | `docs/dn_referencia/recreacion/<EP>.png` (HUB · EP01–EP06 · NEXO) |
-| Mosaico general | `docs/dn_referencia/recreacion/00_MOSAICO_GENERAL.png` (101 mapas, 2040–2142) |
+| Hojas por episodio | `docs/dn_referencia/recreacion/<EP>.png` (HUB · EP01–EP06 · NEXO · W7 · W8 · W9) |
+| Mosaico general | `docs/dn_referencia/recreacion/00_MOSAICO_GENERAL.png` (149 mapas, 2040–2190) |
 | Índice con ficha, tileset, tamaño, tiles y BFS por mapa | `docs/dn_referencia/recreacion/INDICE.md` |
 | Detalle suelto por mapa | `docs/dn_referencia/recreacion/detalle/<id>_mosaico.png` (ignorado; se regenera) |
 
@@ -594,6 +595,32 @@ node tools/dn_render_recreacion.mjs --episode EP01
 node tools/dn_render_recreacion.mjs --only 2041,2042
 npm run dn:mosaicos:check        # índice e imágenes presentes (entra en dn:verify:all)
 ```
+
+### 10.12 Segundo anillo — hojas origen y mapas W7–W9 (E8, 2026-10-02)
+
+Tres mundos nuevos con el pipeline completo, sin tocar el arte de las siete crepypastas: la
+herramienta `tools/dn_create_world_sheets.mjs` compone una **hoja origen** de 16 fichas por mundo
+reutilizando ese arte con la paleta y el motivo de cada creepypasta (Strangled Red, Buried Alive,
+Lavender Town Syndrome) y la registra en `reference/dimensional_nightmare/mapping.json`; después
+corre el mismo camino de la recreación (fichas → tilesets ×1/×2 → mapas → pasajes → eventos →
+jefes → medallas → sensaciones).
+
+| Pieza | Salida |
+|---|---|
+| Hojas origen (16 fichas, 1380×792) | `Mapas/Crepypastas/origen_W7_STRANGLED_RED.png` · `origen_W8_BURIED_ALIVE.png` · `origen_W9_LAVENDER_SYNDROME.png` (ignoradas por git; se regeneran) |
+| Recursos registrados | R8/R9/R10 en `mapping.json` (144 fichas en `index.json`) |
+| Mapas | 2143–2158 (W7) · 2159–2174 (W8) · 2175–2190 (W9), 22×12 / 21×11 bloques |
+| GDD de cada mundo | `16_W7_STRANGLED_RED.md` · `17_W8_BURIED_ALIVE.md` · `18_W9_LAVENDER_SYNDROME.md` |
+| Cierre | `DN_CASE_WIT` «Badges of the Witness» en la Vitrina del Testigo (2040, sw931) |
+
+```bash
+npm run dn:mosaicos:origen         # compone las tres hojas origen y registra R8–R10
+npm run dn:mosaicos:origen:check   # verifica hojas y registro (entra en dn:verify:all)
+```
+
+> **Nota de diseño**: las paletas oscuras (rojo apagado, penumbra de tierra, violeta) se aplican
+> preservando el contraste local — curvas de luz y afilado suave — porque la propuesta de muros
+> lee **estructura**, no color: sin eso los mapas quedaban sin paredes (0 % de muros).
 
 Los mosaicos son la evidencia visual versionada de la fidelidad B: cualquier mapa que se salga de su
 ficha se ve de inmediato en la celda correspondiente. Las hojas de `lotes/` (E5) siguen siendo el

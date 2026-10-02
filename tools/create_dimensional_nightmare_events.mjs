@@ -32,6 +32,11 @@ const EPISODES = [
   { key: "EP04", doc: "04_EP04_HYPNOS_LULLABY.md", from: 2088, to: 2103, seal: 886, grieta: 893, res: 14, var: 271, boss: "LA NANA" },
   { key: "EP05", doc: "05_EP05_POKEMON_BLACK.md", from: 2104, to: 2119, seal: 887, grieta: 894, res: 16, var: 272, boss: "EL JUGADOR 000" },
   { key: "EP06", doc: "06_EP06_KING_UNOWN.md", from: 2120, to: 2135, seal: 888, grieta: 895, res: 18, var: 273, boss: "KINGGUS" },
+  // Segundo anillo (W7–W9): se abre tras la Liga Oscura (v264 ≥ 9) y usa su propio
+  // bloque de flags 922–930 y variables 283–285.
+  { key: "W7", doc: "16_W7_STRANGLED_RED.md", from: 2143, to: 2158, seal: 922, grieta: 925, res: 12, var: 283, bossSwitch: 928, boss: "EL AMO Y LA CORREA" },
+  { key: "W8", doc: "17_W8_BURIED_ALIVE.md", from: 2159, to: 2174, seal: 923, grieta: 926, res: 11, var: 284, bossSwitch: 929, boss: "EL QUE RESPIRA DEBAJO" },
+  { key: "W9", doc: "18_W9_LAVENDER_SYNDROME.md", from: 2175, to: 2190, seal: 924, grieta: 927, res: 12, var: 285, bossSwitch: 930, boss: "EL CORO DEL CAMPANARIO" },
 ];
 
 /** Ficha de jefe y fase B, leídas del §9 de cada doc (celdas y conteos citados allí). */
@@ -83,11 +88,35 @@ const BOSSES = {
         "El suelo brilla: G", "El suelo brilla: U", "El suelo brilla: S"] },
     reward: "DN_ANCLA", notes: "Tras la fase 7 el Rey se levanta: forma final KINGGUS2 (equipo 120–125 propuesto).",
   },
+  W7: {
+    name: "EL AMO Y LA CORREA", phaseA: { type: "HIKER", label: "EL AMO", trainer: "DN_W7_A" },
+    team: [["MIGHTYENA", 104], ["HOUNDOUR", 103], ["MURKROW", 105], ["ARIADOS", 102], ["POOCHYENA", 101], ["SPINARAK", 102]],
+    phaseB: { kind: "correas", verb: "cortar", noun: "correa", cells: [[6, 4], [20, 4], [6, 10], [20, 10]], cellsMap: null,
+      texts: ["La correa 1 cede: el amo pierde un paso.", "La correa 2 cae y el aire se llena de polvo.",
+        "La correa 3 se corta sola en la mano.", "La cuarta correa se suelta: el amo dice el nombre del Pokémon."] },
+    reward: "DN_PAGE_W7", notes: "Ganar la fase A no cierra el duelo: hay que cortar las 4 correas del árbol.",
+  },
+  W8: {
+    name: "EL QUE RESPIRA DEBAJO", phaseA: { type: "CHAMPION", label: "EL QUE RESPIRA", trainer: "DN_W8_A" },
+    team: [["DUGTRIO", 106], ["SANDSLASH", 104], ["TRAPINCH", 103], ["VIBRAVA", 105], ["SANDSHREW", 102], ["CLAYDOL", 105]],
+    phaseB: { kind: "bolsas", verb: "abrir", noun: "bolsa de aire", cells: [[5, 5], [20, 5], [12, 8], [5, 8], [20, 8]], cellsMap: null,
+      texts: ["La bolsa 1 se abre: el mundo respira contigo.", "La bolsa 2 silba entre la tierra.",
+        "La bolsa 3 trae aire con olor a raíz.", "La bolsa 4 enfría la fosa.", "La quinta bolsa estalla: el que respira debajo se calla."] },
+    reward: "DN_PAGE_W8", notes: "La variable de aire v284 nunca derrota: obliga a ritmo y a buscar bolsas.",
+  },
+  W9: {
+    name: "EL CORO DEL CAMPANARIO", phaseA: { type: "PSYCHIC_F", label: "EL CORO", trainer: "DN_W9_A" },
+    team: [["MISMAGIUS", 105], ["HYPNO", 106], ["HAUNTER", 104], ["BANETTE", 103], ["DRIFBLIM", 104], ["GENGAR", 106]],
+    phaseB: { kind: "silencios", verb: "tocar", noun: "silencio", cells: [[5, 5], [20, 5], [5, 10], [20, 10]], cellsMap: null,
+      texts: ["Primer silencio: una voz se apaga.", "Segundo silencio: el coro pierde el compás.",
+        "Tercer silencio: el campanario se queda sin eco.", "Cuarto silencio: el pueblo calla para siempre."] },
+    reward: "DN_PAGE_W9", notes: "Los silencios van en el orden de DN_W9_SCORE; fuera de orden la voz vuelve (sin daño).",
+  },
 };
 
 const NPC_ROW = /^\|\s*(\d{4})\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*`?([^`|\s]+)`?[^|]*\|\s*([^|]+?)\s*\|?\s*$/;
 const CELL = () => /\((\d+)\s*,\s*(\d+)\)/g;
-const MAP_ID = () => /\b(20[3-9]\d|21[0-3]\d|2140)\b/g;   // 2039–2140 (no cualquier «20xx»)
+const MAP_ID = () => /\b(20[3-9]\d|21[0-8]\d|2190)\b/g;   // 2039–2140 · 2143–2190 (W7–W9)
 
 function sections(text) {
   const out = new Map();
@@ -134,7 +163,7 @@ function parseEvents(lines, episode) {
   for (const line of lines) {
     if (line.trim().startsWith("```")) { inBlock = !inBlock; current = null; continue; }
     if (!inBlock) continue;
-    const head = line.match(/^(EV_[A-Z]+_[A-Za-z0-9]+)\s*[—-]\s*(.*)$/);
+    const head = line.match(/^(EV_[A-Z0-9]+_[A-Za-z0-9]+)\s*[—-]\s*(.*)$/);
     if (head) {
       current = { name: head[1], episode: episode.key, detail: head[2].trim(), effect: "" };
       events.push(current);
@@ -193,14 +222,35 @@ function parseAnomalies(sectionsMap) {
   return { declared: 0, items: [] };
 }
 
+/**
+ * Valores curados en el catálogo anterior que la regeneración debe respetar: hoy sólo el
+ * `type` de la fase A del jefe (el tipo de entrenador «DN_KINGGUS» es un tipo propio del
+ * mod y no aparece en la tabla del plan). Si el catálogo previo trae el mismo jefe, se
+ * conserva su `phaseA` para no pisar ajustes hechos a mano.
+ */
+function curatedBossTypes() {
+  if (!fs.existsSync(OUT)) return new Map();
+  try {
+    const previous = JSON.parse(fs.readFileSync(OUT, "utf8"));
+    const out = new Map();
+    for (const ep of previous.episodes ?? []) {
+      if (ep.boss?.phaseA?.type && ep.bossName === ep.boss.name) out.set(ep.key, ep.boss.phaseA);
+    }
+    return out;
+  } catch {
+    return new Map();
+  }
+}
+const CURATED = curatedBossTypes();
+
 const blueprint = {
   title: "Dimensional Nightmare — plano de conexiones, NPCs y eventos",
   generatedBy: "tools/create_dimensional_nightmare_events.mjs",
   docs: "docs/DIMENSIONAL_NIGHTMARE/01..07",
   hub: { map: 2030, x: 36, y: 12, note: "Gruta de los Testigos: punto de entrada/salida de cada episodio" },
   flags: {
-    switchRange: [882, 902],
-    variableRange: [265, 276],
+    switchRange: [882, 931],
+    variableRange: [265, 285],
     commonEvents: [900, 906],
   },
   episodes: [],
@@ -221,7 +271,9 @@ for (const episode of EPISODES) {
     resonance: episode.res,
     anomalyVariable: episode.var,
     bossName: episode.boss,
-    boss: BOSSES[episode.key] ?? null,
+    boss: BOSSES[episode.key]
+      ? { ...BOSSES[episode.key], phaseA: CURATED.get(episode.key) ?? BOSSES[episode.key].phaseA }
+      : null,
     anomalies,
     npcs: parseNpcs(npcSection),
     events: parseEvents(eventSection, episode),

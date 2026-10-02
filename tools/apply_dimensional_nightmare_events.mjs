@@ -533,7 +533,7 @@ for (const ep of scopeEpisodes) {
         const bossSpot = placeNear(mask, [Math.floor(mask.width / 2), Math.floor(mask.height / 2)], occupied) ?? anchor;
         const phaseA = boss.phaseA ?? { type: "HIKER", label: ep.bossName, trainer: `DN_${ep.key}_A` };
         const phaseB = boss.phaseB ?? null;
-        const battleSwitch = 903 + Math.max(0, blueprint.episodes.filter((e) => e.boss).findIndex((e) => e.key === ep.key));
+        const battleSwitch = ep.bossSwitch ?? (903 + Math.max(0, blueprint.episodes.filter((e) => e.boss).findIndex((e) => e.key === ep.key)));
         const bossList = [
           ...texts([`${ep.bossName} te espera.`, "El Rotom registra el pico de resonancia."]),
           script(`begin; pbTrainerBattle(PBTrainer.new("${phaseA.type}", "${phaseA.label}"), false, "", true); rescue; pbMessage("(jefe pendiente de registrar: ${phaseA.trainer})"); end`),

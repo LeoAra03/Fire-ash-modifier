@@ -242,3 +242,24 @@ Riesgo: nulo.
 | A019 | El Coro | 06 | NO | 2124 |
 
 **Totales**: 19 entidades · 5 capturables condicionales · 14 no capturables · 0 permanentes.
+
+---
+
+## Segundo anillo — W7 · W8 · W9
+
+| # | Entidad | Mundo | Capturable | Mapa |
+|---|---|---|---|---|
+| A101 | El que Espera en la Puerta | W7 | NO | 2143 |
+| A102 | Sombra Sin Dueño | W7 | CONDICIONAL (Rotom ≥3) | 2145 |
+| A103 | El Nombre Raspado | W7 | NO | 2149 |
+| A104 | El Amo (memoria) | W7 | NO | 2158 |
+| A201 | El que Respira Debajo | W8 | NO | 2174 |
+| A202 | El Sellado Número 4 | W8 | CONDICIONAL (Rotom ≥4) | 2166 |
+| A203 | La Mano que Sale de la Tierra | W8 | NO | 2171 |
+| A204 | El Aire con Forma | W8 | NO | 2165 |
+| A301 | El Coro del Campanario | W9 | NO | 2190 |
+| A302 | El Autor | W9 | CONDICIONAL (partitura) | 2189 |
+| A303 | La Voz que Repite | W9 | NO | 2185 |
+| A304 | La Silueta que Marca el Compás | W9 | NO | 2190 |
+
+**Totales del ciclo (9 mundos)**: 31 entidades · 7 capturables condicionales · 24 no capturables · 0 permanentes.

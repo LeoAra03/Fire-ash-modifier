@@ -181,7 +181,21 @@ EP05 es el mismo pueblo, sin gente y sin color.
 | R5 Pueblos y Tumbas | 16 | 2057–2072 **y** 2104–2119 | EP02 + EP05 |
 | R6 Snowy Mountain | 15 | 2073–2087 | EP03 |
 | R7 Catacumbas | 16 | 2041–2056 | EP01 |
-| **Total** | **96** | **101 mapas** (95 de recursos + 5 del Nexo + 1 antesala) | 6 universos + cierre |
+| R8 Strangled Red | 16 | 2143–2158 | W7 |
+| R9 Buried Alive | 16 | 2159–2174 | W8 |
+| R10 Lavender Town Syndrome | 16 | 2175–2190 | W9 |
+| **Total** | **144** | **149 mapas** (143 de recursos + 5 del Nexo + 1 antesala) | 9 universos + cierre |
+
+### R8–R10 — hojas origen del segundo anillo (E8)
+
+Los tres mundos nuevos no tenían mosaico propio: `tools/dn_create_world_sheets.mjs` compone
+una **hoja origen** de 16 fichas por mundo reutilizando el arte de las siete crepypastas
+(`Mapas/Crepypastas/origen_W7_STRANGLED_RED.png`, `origen_W8_BURIED_ALIVE.png`,
+`origen_W9_LAVENDER_SYNDROME.png`) con la paleta, la viñeta y el motivo de cada mundo, y las
+registra en `reference/dimensional_nightmare/mapping.json` como `r8_strangled_red`,
+`r9_buried_alive` y `r10_lavender_syndrome`. La transformación **preserva el contraste local**
+(curvas de luz + afilado) para que la propuesta de muros y la pixel-identidad sigan leyendo
+estructura; el resto del pipeline (ingest → tiles ×1/×2 → mapas → eventos) es el mismo de E0–E5.
 
 > Las fichas de R1 restantes se usan como **piezas de tileset** (bloques hexadecimales, void,
 > cartel ERROR) en las fases 6–7 de todos los episodios — por eso el total de mapas (101) supera

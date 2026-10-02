@@ -56,14 +56,16 @@ const EDGE = Number(option("--edge", "0.16"));   // fracción de píxeles de bor
 const VOID = Number(option("--void", "0.8"));    // fracción de píxeles casi negros = masa sólida
 const MIN_GROUP = Number(option("--min", "4"));  // grupos menores = ruido, se dejan transitables
 const MIN_WALK = Number(option("--min-walk", "0.25")); // suelo mínimo garantizado por mapa
+const REL_MIN = Number(option("--rel-min", "0.06"));   // si el arte apenas da estructura, umbral relativo
+const REL_RATIO = Number(option("--rel-ratio", "0.3")); // fracción de bloques más estructurados que pasa a muro
 
 const blueprint = JSON.parse(fs.readFileSync(BLUEPRINT, "utf8"));
 const catalog = JSON.parse(fs.readFileSync(CATALOG, "utf8"));
 const existing = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : { maps: {} };
 const result = {
   generatedBy: "tools/dn_propose_passability.mjs",
-  how: "estructura (edge/void) + grupos grandes = muro + huecos internos = muro + componente mayor = transitable; `open`/`blocked` manuales mandan",
-  thresholds: { edge: EDGE, void: VOID, minGroup: MIN_GROUP, minWalk: MIN_WALK },
+  how: "estructura (edge/void) + grupos grandes = muro + huecos internos = muro + componente mayor = transitable; si el arte trae poca estructura (< relativeMin), el corte pasa a ser relativo al mapa (percentil relativeRatio); `open`/`blocked` manuales mandan",
+  thresholds: { edge: EDGE, void: VOID, minGroup: MIN_GROUP, minWalk: MIN_WALK, relativeMin: REL_MIN, relativeRatio: REL_RATIO },
   maps: {},  // se fusiona con el archivo existente: ejecutar con --only no borra el resto
 };
 
@@ -185,11 +187,25 @@ for (const entry of entries) {
   const { features } = await featuresOf(group.key, group.tileset);
   const width = ficha.matrix[0].length, height = ficha.matrix.length;
 
-  // 1) propuesta automática: bloques estructurados en grupos grandes = muro
-  const structured = ficha.matrix.map((row) => row.map((idx) => {
+  // 1) propuesta automática: bloques estructurados en grupos grandes = muro.
+  //    Si el arte del mundo trae poco contraste local (p. ej. las hojas origen con paleta
+  //    apagada de W7/W8), el umbral absoluto no encuentra nada: se usa un corte relativo
+  //    al propio mapa (percentil) para que la estructura siga mandando.
+  const score = ficha.matrix.map((row) => row.map((idx) => {
     const f = features(idx);
-    return f.edge >= EDGE || f.dark >= VOID;
+    return { edge: f.edge, dark: f.dark, value: f.edge + f.dark * 0.5 };
   }));
+  const total = width * height;
+  const absolute = score.map((row) => row.map((f) => f.edge >= EDGE || f.dark >= VOID));
+  const absoluteCount = absolute.flat().filter(Boolean).length;
+  let structured = absolute;
+  let relative = false;
+  if (absoluteCount / total < REL_MIN) {
+    relative = true;
+    const values = score.flat().map((f) => f.value).filter((v) => v > 0).sort((a, b) => b - a);
+    const cutoff = values.length ? values[Math.max(0, Math.min(values.length - 1, Math.floor(values.length * REL_RATIO) - 1))] : 0;
+    structured = score.map((row) => row.map((f) => f.value > 0 && f.value >= cutoff));
+  }
   const wall = structuralGroups(structured, width, height, MIN_GROUP);
 
   // 2) ajustes manuales (mandan sobre la propuesta)
@@ -333,7 +349,7 @@ for (const entry of entries) {
     blocked: [...blockedCells],
     auto: [...autoOpen],
     computed: blocked,
-    stats: { walls: blocked.length, walkable, pruned: pruned.length, bridged: bridged.length },
+    stats: { relative, walls: blocked.length, walkable, pruned: pruned.length, bridged: bridged.length },
     note: "computed = propuesta automática podada; open/blocked (celdas o rectángulos) mandan sobre ella.",
   };
   console.log(`${entry.id} ${entry.title}: muros ${blocked.length}/${width * height} (${(100 * blocked.length / (width * height)).toFixed(0)} %) · transitables ${walkable} desde ${entryFinal ?? "—"} · puenteadas ${bridged.length} · podadas ${pruned.length} · salidas al borde ${exits.length ? exits.join(" ") : "ninguna"}`);

@@ -1,5 +1,5 @@
 # NEXO DE RUPTURA Y MAPA DE FLUJO GENERAL
-## Cierre del Dimensional Nightmare y conexión de las seis grietas
+## Cierre del Dimensional Nightmare y conexión de las nueve grietas
 
 ---
 

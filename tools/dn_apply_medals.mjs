@@ -14,8 +14,14 @@
  *   EP05 Pokémon Black       DN_MEDAL_BLK + DN_CASE_BLK · Badges of Pokémon Black       (2119)
  *   EP06 King Unown          DN_MEDAL_UNO + DN_CASE_UNO · Badges of King Unown          (2135)
  *
+ *   W7  Strangled Red         DN_MEDAL_AMO + DN_CASE_AMO · Badges of Strangled Red     (2158)
+ *   W8  Buried Alive          DN_MEDAL_FOS + DN_CASE_FOS · Badges of Buried Alive      (2174)
+ *   W9  Lavender Town Syndr.  DN_MEDAL_SIL + DN_CASE_SIL · Badges of Lavender Town     (2190)
+ *
  * Los dos últimos (Medalla del Vínculo · Badges of Mad Pikachu) los entrega la Liga Oscura
- * (`tools/dn_build_liga.mjs`), que reutiliza estas mismas definiciones.
+ * (`tools/dn_build_liga.mjs`), que reutiliza estas mismas definiciones. Al cerrar los **nueve**
+ * mundos, la Antesala entrega además la cartuchera del testigo `DN_CASE_WIT`
+ * («Badges of the Witness») desde el evento `VITRINA_TESTIGO` (mapa 2040).
  *
  * Uso:
  *   node tools/dn_apply_medals.mjs            # objetos, iconos y pedestales
@@ -44,7 +50,26 @@ export const WORLDS = [
   { key: "EP04", world: "Hypno's Lullaby", medal: "DN_MEDAL_HYP", case: "DN_CASE_HYP", medalName: "Medalla de la Nana", caseName: "Badges of Hypno's Lullaby", body: "#b06ad8", ring: "#5a2a7a", glyph: "♪" },
   { key: "EP05", world: "Pokémon Black", medal: "DN_MEDAL_BLK", case: "DN_CASE_BLK", medalName: "Medalla del Jugador 000", caseName: "Badges of Pokémon Black", body: "#1c1c22", ring: "#8e1b1b", glyph: "0" },
   { key: "EP06", world: "King Unown", medal: "DN_MEDAL_UNO", case: "DN_CASE_UNO", medalName: "Medalla del Rey Unown", caseName: "Badges of King Unown", body: "#39ff88", ring: "#101418", glyph: "ᛝ" },
+  { key: "W7", world: "Strangled Red", medal: "DN_MEDAL_AMO", case: "DN_CASE_AMO", medalName: "Medalla del Amo", caseName: "Badges of Strangled Red", body: "#b03a3a", ring: "#3a0d0d", glyph: "⛓" },
+  { key: "W8", world: "Buried Alive", medal: "DN_MEDAL_FOS", case: "DN_CASE_FOS", medalName: "Medalla de la Fosa", caseName: "Badges of Buried Alive", body: "#6b5236", ring: "#241708", glyph: "▽" },
+  { key: "W9", world: "Lavender Town Syndrome", medal: "DN_MEDAL_SIL", case: "DN_CASE_SIL", medalName: "Medalla del Silencio", caseName: "Badges of Lavender Town Syndrome", body: "#b98ad8", ring: "#33134f", glyph: "◌" },
 ];
+
+/**
+ * Cartuchera del testigo: se entrega en la Antesala cuando los **nueve** sellos están cerrados.
+ * No tiene medalla propia: es el registro de haber visto cerrarse los nueve mundos.
+ */
+export const WITNESS = {
+  id: "DN_CASE_WIT", name: "Badges of the Witness",
+  description: "Cartuchera del Testigo: se entrega cuando los nueve sellos del Dimensional Nightmare están cerrados.",
+  hubMap: 2040,
+};
+
+/** Todos los sellos del Dimensional Nightmare (seis del primer anillo + tres del segundo). */
+export const SEALS = [883, 884, 885, 886, 887, 888, 922, 923, 924];
+
+/** Condición de la Vitrina del Testigo: los nueve sellos cerrados. */
+export const WITNESS_CHECK = `begin; $game_switches[931] = [${SEALS.map((id) => `$game_switches[${id}]`).join(", ")}].all?; rescue; end`;
 
 /** Con las seis cartucheras se abre la Liga Oscura (switch 917); lo comprueba también el Archivero. */
 export const READY_CHECK = `begin; $game_switches[917] = [${WORLDS.map((w) => `:${w.case}`).join(", ")}].all? { |i| $PokemonBag.pbHasItem?(i) }; rescue; end`;
@@ -63,6 +88,7 @@ export const ALL_ITEMS = [
   ]),
   { id: FINAL_WORLD.medal, name: FINAL_WORLD.medalName, description: `${FINAL_WORLD.medalName}: el vínculo que devolvió a Mad Pikachu.`, kind: "medal", color: FINAL_WORLD },
   { id: FINAL_WORLD.case, name: FINAL_WORLD.caseName, description: `Cartuchera de la Liga Oscura. Guarda la ${FINAL_WORLD.medalName}.`, kind: "case", color: FINAL_WORLD },
+  { id: WITNESS.id, name: WITNESS.name, description: WITNESS.description, kind: "case", color: { body: "#e8e2c8", ring: "#5a4a24", glyph: "◈" } },
 ];
 
 // --------------------------------------------------------------- iconos
@@ -187,7 +213,46 @@ function applyPedestals() {
     ], { dry: DRY });
     summary.push({ key: world.key, mapId, cell, seal, event: name, added: built.added.length });
   }
+  applyWitness(summary);
   return summary;
+}
+
+/** Vitrina del Testigo: un evento en la Antesala (2040) que entrega `DN_CASE_WIT` una sola vez. */
+function applyWitness(summary) {
+  const mapId = WITNESS.hubMap;
+  const g = grid(mapId);
+  const entry = readJson(EVENTS).maps?.[String(mapId)]?.entry ?? [Math.floor(g.width / 2), g.height - 2];
+  const reach = reachableFrom(g, entry);
+  const cell = nearestFreeCell(g, entry, { maxDistance: 12, allowed: reach }) ?? [Math.floor(g.width / 2), Math.floor(g.height / 2)];
+  const name = "VITRINA_TESTIGO";
+  const built = upsertEvents(mapId, [name], (baseId) => [
+    event(baseId, name, cell[0], cell[1], [
+      page({
+        cond: condition({ sw: 931 }),
+        gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
+        list: [
+          ...texts([
+            "La Vitrina del Testigo tiene nueve huecos.",
+            "Nueve sellos cerrados: la vitrina se abre sola y entrega una cartuchera vacía.",
+            "«Badges of the Witness»: el registro de quien vio cerrarse los nueve mundos.",
+          ]),
+          script(`begin; pbReceiveItem(:${WITNESS.id}); rescue; pbMessage("(cartuchera del testigo pendiente de registrar)"); end`),
+          selfSwitch("A"),
+          cmd(0),
+        ],
+      }),
+      page({
+        cond: condition({ self: "A" }),
+        gfx: graphic("Object ball special", 2, 1, { hue: 32 }),
+        list: [...texts(["La Vitrina del Testigo guarda tu cartuchera.", "Nueve mundos, nueve medallas, un solo testigo."]), cmd(0)],
+      }),
+      page({
+        gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
+        list: [...texts(["Vitrina del Testigo: nueve sellos por cerrar.", "Vuelve cuando los nueve mundos estén en silencio."]), cmd(0)],
+      }),
+    ]),
+  ], { dry: DRY });
+  summary.push({ key: "WIT", mapId, cell, seal: 931, event: name, added: built.added.length });
 }
 
 // --------------------------------------------------------------- verificación
@@ -228,7 +293,24 @@ function verify() {
     ok(claimText.includes(`:${world.medal}`) && claimText.includes(`:${world.case}`), `${world.key}: el pedestal no entrega medalla y cartuchera`);
     ok((ev.pages[0]?.getIvar("@condition")?.getIvar("@self_switch_valid") ?? false) === true, `${world.key}: falta la página «ya registrada» (self-switch A)`);
   }
-  console.log(`verificación de medallas y cartucheras (${ALL_ITEMS.length} objetos, ${WORLDS.length} pedestales)`);
+  // Vitrina del Testigo (2040)
+  {
+    const g = grid(WITNESS.hubMap);
+    const ev = g.events.find((e) => e.name === "VITRINA_TESTIGO");
+    ok(!!ev, `Map${WITNESS.hubMap}: falta la VITRINA_TESTIGO`);
+    if (ev) {
+      const cond = ev.pages[0]?.getIvar("@condition");
+      ok(cond?.getIvar("@switch1_id") === 931 && cond?.getIvar("@switch1_valid") === true,
+        "VITRINA_TESTIGO: la primera página debe exigir el switch 931 (nueve sellos)");
+      const claimText = (ev.pages[0]?.getIvar("@list") ?? []).map((c) => (c.getIvar("@parameters") ?? []).map((p) => txt(p)).join(" ")).join(" ");
+      ok(claimText.includes(`:${WITNESS.id}`), "VITRINA_TESTIGO: no entrega DN_CASE_WIT");
+    }
+    const entry = readData("items.dat");
+    const wit = entry.pairs.find(([k, v]) => k && k.name !== undefined && k.name === WITNESS.id);
+    ok(!!wit, `falta el objeto ${WITNESS.id}`);
+    if (wit) ok(txt(wit[1].getIvar("@real_name")) === WITNESS.name, `${WITNESS.id}: nombre ≠ «${WITNESS.name}»`);
+  }
+  console.log(`verificación de medallas y cartucheras (${ALL_ITEMS.length} objetos, ${WORLDS.length} pedestales, 1 vitrina)`);
   if (failures.length) { for (const f of failures) console.error(`  FALLA: ${f}`); process.exit(1); }
   console.log("verificación de medallas OK");
 }

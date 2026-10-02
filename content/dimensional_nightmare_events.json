@@ -11,11 +11,11 @@
   "flags": {
     "switchRange": [
       882,
-      902
+      931
     ],
     "variableRange": [
       265,
-      276
+      285
     ],
     "commonEvents": [
       900,
@@ -3776,6 +3776,1647 @@
           ],
           "cells": [],
           "trigger": "action",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "W7",
+      "doc": "16_W7_STRANGLED_RED.md",
+      "mapRange": {
+        "from": 2143,
+        "to": 2158
+      },
+      "seal": 922,
+      "grieta": 925,
+      "resonance": 12,
+      "anomalyVariable": 283,
+      "bossName": "EL AMO Y LA CORREA",
+      "boss": {
+        "name": "EL AMO Y LA CORREA",
+        "phaseA": {
+          "type": "HIKER",
+          "label": "EL AMO",
+          "trainer": "DN_W7_A"
+        },
+        "team": [
+          [
+            "MIGHTYENA",
+            104
+          ],
+          [
+            "HOUNDOUR",
+            103
+          ],
+          [
+            "MURKROW",
+            105
+          ],
+          [
+            "ARIADOS",
+            102
+          ],
+          [
+            "POOCHYENA",
+            101
+          ],
+          [
+            "SPINARAK",
+            102
+          ]
+        ],
+        "phaseB": {
+          "kind": "correas",
+          "verb": "cortar",
+          "noun": "correa",
+          "cells": [
+            [
+              6,
+              4
+            ],
+            [
+              20,
+              4
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              20,
+              10
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "La correa 1 cede: el amo pierde un paso.",
+            "La correa 2 cae y el aire se llena de polvo.",
+            "La correa 3 se corta sola en la mano.",
+            "La cuarta correa se suelta: el amo dice el nombre del Pokémon."
+          ]
+        },
+        "reward": "DN_PAGE_W7",
+        "notes": "Ganar la fase A no cierra el duelo: hay que cortar las 4 correas del árbol."
+      },
+      "anomalies": {
+        "declared": 12,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LA CORREA QUE VUELVE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2144,
+            "cells": [
+              [
+                7,
+                6
+              ]
+            ],
+            "text": "Map2144 — (7,6) [R8-2]. Fase ≥2. La correa colgada está en el suelo al reentrar, y viceversa.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "TROFEOS QUE GIRAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2145,
+            "cells": [
+              [
+                14,
+                9
+              ]
+            ],
+            "text": "Map2145 — (14,9). Fase ≥4. Los trofeos miran hacia la puerta cuando el jugador entra.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A03",
+            "name": "LA PROMESA SIN FLORES",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2146,
+            "cells": [
+              [
+                19,
+                11
+              ]
+            ],
+            "text": "Map2146 — (19,11). Fase ≥5. Al salir y volver, el jardín está seco y la regadera llena.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A04",
+            "name": "LA COCINA QUE HUELE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2147,
+            "cells": [
+              [
+                9,
+                4
+              ]
+            ],
+            "text": "Map2147 — (9,4). Fase ≥3. Se oye una olla silbando; al entrar a la cocina, silencio total.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "LA ESCALERA QUE REPITE",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2148,
+            "cells": [
+              [
+                12,
+                28
+              ]
+            ],
+            "text": "Map2148 — (12,28). Fase ≥4. Bajar dos veces seguidas devuelve al jugador al mismo escalón.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A06",
+            "name": "LA LÁPIDA SIN NOMBRE",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2149,
+            "cells": [
+              [
+                16,
+                7
+              ]
+            ],
+            "text": "Map2149 — (16,7). Fase ≥6. El nombre aparece sólo si el jugador ya rompió 2 correas.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A07",
+            "name": "LAS CINTAS QUE CUENTAN",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2150,
+            "cells": [
+              [
+                24,
+                5
+              ]
+            ],
+            "text": "Map2150 — (24,5). Fase ≥3. Al romper la 1.ª correa suena una cinta con una voz que llama a un Pokémon.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A08",
+            "name": "EL REFLEJO TARDE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2151,
+            "cells": [
+              [
+                11,
+                12
+              ]
+            ],
+            "text": "Map2151 — (11,12). Fase ≥2. El reflejo del espejo repite la posición anterior del jugador.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A09",
+            "name": "LA CORREA QUE SE ATA SOLA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2155,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2155 — (16,12). Fase ≥5. **Ancla del mundo.** Al reentrar, la correa del altar tiene un nudo nuevo.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A10",
+            "name": "LA PLAZA DESHABITADA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2153,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2153 — (15,12). Fase ≥5. Al reentrar después de hablar con el Vecino, no queda ningún NPC.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A11",
+            "name": "EL CANIL VACÍO",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2154,
+            "cells": [
+              [
+                13,
+                10
+              ]
+            ],
+            "text": "Map2154 — (13,10). Fase ≥4. Se oye un collar moviéndose; al acercarse, la caseta está cerrada.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A12",
+            "name": "EL ÁRBOL QUE RESPIRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2158,
+            "cells": [
+              [
+                12,
+                20
+              ]
+            ],
+            "text": "Map2158 — (12,20). Fase ≥7. La corteza sube y baja; la silueta de R1 aparece tras el tronco. ``` ---",
+            "trigger": "action",
+            "fase": 7
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2143,
+          "name": "El Sepulturero del Patio",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados. Cree que Ash viene a devolver algo. Estado 5: mira la correa y calla."
+        },
+        {
+          "map": 2143,
+          "name": "Rotom (proyección)",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Traduce el duelo en texto; cambia por fase."
+        },
+        {
+          "map": 2144,
+          "name": "La Madre del Amo",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "Guarda la ropa del Pokémon. Estado 4: la dobla sin mirar."
+        },
+        {
+          "map": 2145,
+          "name": "El Niño del Trofeo",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Lee los trofeos: cada uno tiene un año que no existe."
+        },
+        {
+          "map": 2146,
+          "name": "La Jardinera de Promesas",
+          "type": "Normal",
+          "sprite": "trchar052",
+          "notes": "Cura 1 vez por visita; en fase 5 ya no está, pero su regadera sí."
+        },
+        {
+          "map": 2147,
+          "name": "Cocinera Sin Fuego",
+          "type": "Normal",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Cambia objetos por recuerdos (intercambio simbólico)."
+        },
+        {
+          "map": 2149,
+          "name": "El Criptero",
+          "type": "Consciente",
+          "sprite": "trainer_HIKER",
+          "notes": "Sabe el nombre real del Pokémon y no lo dice hasta la fase 6."
+        },
+        {
+          "map": 2150,
+          "name": "La Tejedora de Cintas",
+          "type": "Normal",
+          "sprite": "trchar015",
+          "notes": "Explica el orden de las correas; una de ellas desaparece en fase 4."
+        },
+        {
+          "map": 2151,
+          "name": "El Reflejo de Red",
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Repite la última frase del jugador con la voz de Red."
+        },
+        {
+          "map": 2153,
+          "name": "El Vecino Que No Mira",
+          "type": "Normal",
+          "sprite": "trchar070",
+          "notes": "5 estados; nunca mira a los ojos, siempre a la correa."
+        },
+        {
+          "map": 2154,
+          "name": "El Cuidador del Canil",
+          "type": "Consciente",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "Reta a duelo opcional: quiere saber si Ash también perdió a alguien."
+        },
+        {
+          "map": 2155,
+          "name": "Los Cuatro Anudados",
+          "type": "Consciente ×4",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+        },
+        {
+          "map": 2156,
+          "name": "El Traductor de Cintas",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Traduce (con Rotom Sintonía ≥4) la inscripción del árbol."
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_W7_Entrada",
+          "episode": "W7",
+          "detail": "Mapa 2143 — Autorun al entrar (v264≥9)",
+          "effect": "texto de la grieta, sw922 = ON parcial, tone fase 1, música \"PkmRS-MtPyre\"",
+          "maps": [
+            2143
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Cuarto",
+          "episode": "W7",
+          "detail": "2144, 3 puntos — Al inspeccionar la cama, la correa y la foto",
+          "effect": "v288 += 1; al 3.º: aparece la primera correa (celda inicial de 2150)",
+          "maps": [
+            2144
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 3
+        },
+        {
+          "name": "EV_W7_Trofeos",
+          "episode": "W7",
+          "detail": "2145 — Al hablar con el Niño del Trofeo",
+          "effect": "lista de nombres con años imposibles; marca anomalía A02",
+          "maps": [
+            2145
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Jardin",
+          "episode": "W7",
+          "detail": "2146 — Pisar el centro del jardín en fase ≥3",
+          "effect": "la música se corta 4 s; el jardín se marchita (tile swap) y vuelve al salir",
+          "maps": [
+            2146
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Escalera",
+          "episode": "W7",
+          "detail": "2148, celda 12,28 — Pisar",
+          "effect": "fase 3: tono rojo apagado, 3 antorchas OFF, sombras desincronizadas",
+          "maps": [
+            2148
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Correas",
+          "episode": "W7",
+          "detail": "2150, 4 puntos (5,5) (24,5) (5,18) (24,18)",
+          "effect": "orden correcto 2-4-1-3: cada correa rota sube v288 y quita un paso al jefe",
+          "maps": [
+            2150
+          ],
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              24,
+              18
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W7_Reflejos",
+          "episode": "W7",
+          "detail": "2151 — Al pisar cada espejo",
+          "effect": "el reflejo copia la posición del jugador con 1 s de retraso (eco)",
+          "maps": [
+            2151
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Corredor",
+          "episode": "W7",
+          "detail": "2152 — Autorun al entrar",
+          "effect": "el pasaje se cierra detrás (tile swap); la única salida es avanzar",
+          "maps": [
+            2152
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Nudo",
+          "episode": "W7",
+          "detail": "2155 — Tocar el nudo con la 3.ª correa rota",
+          "effect": "la correa se ata sola; queda marcada la anomalía ancla A09",
+          "maps": [
+            2155
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Umbral",
+          "episode": "W7",
+          "detail": "2157 — 4 velas encendidas en las esquinas (5,5) (26,5) (5,26) (26,26)",
+          "effect": "abre 2158; en fase 6 una vela se apaga sola",
+          "maps": [
+            2157
+          ],
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              26,
+              5
+            ],
+            [
+              5,
+              26
+            ],
+            [
+              26,
+              26
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W7_Jefe",
+          "episode": "W7",
+          "detail": "2158 — Hablar con el amo (autorun de mapa)",
+          "effect": "fase A (canLose) + fase B de 4 correas; al cerrar: sw922 = ON, sello",
+          "maps": [
+            2158
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "W8",
+      "doc": "17_W8_BURIED_ALIVE.md",
+      "mapRange": {
+        "from": 2159,
+        "to": 2174
+      },
+      "seal": 923,
+      "grieta": 926,
+      "resonance": 11,
+      "anomalyVariable": 284,
+      "bossName": "EL QUE RESPIRA DEBAJO",
+      "boss": {
+        "name": "EL QUE RESPIRA DEBAJO",
+        "phaseA": {
+          "type": "CHAMPION",
+          "label": "EL QUE RESPIRA",
+          "trainer": "DN_W8_A"
+        },
+        "team": [
+          [
+            "DUGTRIO",
+            106
+          ],
+          [
+            "SANDSLASH",
+            104
+          ],
+          [
+            "TRAPINCH",
+            103
+          ],
+          [
+            "VIBRAVA",
+            105
+          ],
+          [
+            "SANDSHREW",
+            102
+          ],
+          [
+            "CLAYDOL",
+            105
+          ]
+        ],
+        "phaseB": {
+          "kind": "bolsas",
+          "verb": "abrir",
+          "noun": "bolsa de aire",
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              20,
+              5
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              20,
+              8
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "La bolsa 1 se abre: el mundo respira contigo.",
+            "La bolsa 2 silba entre la tierra.",
+            "La bolsa 3 trae aire con olor a raíz.",
+            "La bolsa 4 enfría la fosa.",
+            "La quinta bolsa estalla: el que respira debajo se calla."
+          ]
+        },
+        "reward": "DN_PAGE_W8",
+        "notes": "La variable de aire v284 nunca derrota: obliga a ritmo y a buscar bolsas."
+      },
+      "anomalies": {
+        "declared": 11,
+        "items": [
+          {
+            "code": "A01",
+            "name": "EL POLVO QUE SUBE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2161,
+            "cells": [
+              [
+                15,
+                6
+              ]
+            ],
+            "text": "Map2161 — (15,6) [R9-3]. Fase ≥2. El polvo flota hacia arriba en una franja de 3 tiles.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "LA BOLSA DE AIRE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2161,
+            "cells": [
+              [
+                9,
+                14
+              ]
+            ],
+            "text": "Map2161 — (9,14). Fase ≥3. Se oye una exhalación larga al entrar; sólo una vez por visita.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A03",
+            "name": "LA RAÍZ QUE APRIETA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2162,
+            "cells": [
+              [
+                18,
+                9
+              ]
+            ],
+            "text": "Map2162 — (18,9). Fase ≥4. Al reentrar, la raíz ocupa una celda más del pasillo.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A04",
+            "name": "EL AGUA NEGRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2163,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2163 — (20,12). Fase ≥3. El agua refleja un cielo que no existe en el mundo.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "LAS VELAS QUE VUELVEN",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2166,
+            "cells": [
+              [
+                14,
+                17
+              ]
+            ],
+            "text": "Map2166 — (14,17). Fase ≥5. Las velas apagadas están encendidas al reentrar.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A06",
+            "name": "EL ATAÚD RAYADO",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2166,
+            "cells": [
+              [
+                22,
+                17
+              ]
+            ],
+            "text": "Map2166 — (22,17). Fase ≥6. El nombre rayado cambia cada vez que se mira.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A07",
+            "name": "LA LÁMPARA AL REVÉS",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2173,
+            "cells": [
+              [
+                8,
+                8
+              ]
+            ],
+            "text": "Map2173 — (8,8). Fase ≥5. La lámpara alumbra hacia el suelo, no hacia el techo.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A08",
+            "name": "LA CAMPANA SORDA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2169,
+            "cells": [
+              [
+                13,
+                10
+              ]
+            ],
+            "text": "Map2169 — (13,10). Fase ≥4. Suena una campana que no existe; el sprite no se mueve.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A09",
+            "name": "EL AIRE QUE SE OYE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2165,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2165 — (16,12). Fase ≥5. **Ancla del mundo.** Al quedarse quieto 10 s se oye respirar al otro lado.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A10",
+            "name": "EL PUEBLO QUE FALTA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2168,
+            "cells": [
+              [
+                20,
+                15
+              ]
+            ],
+            "text": "Map2168 — (20,15). Fase ≥6. Al reentrar, una casa menos; nadie recuerda que estaba.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A11",
+            "name": "LA FOSA QUE CUENTA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2171,
+            "cells": [
+              [
+                16,
+                16
+              ]
+            ],
+            "text": "Map2171 — (16,16). Fase ≥7. Aparecen 3 cuerpos más, tapados con la misma tierra. ``` ---",
+            "trigger": "action",
+            "fase": 7
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2159,
+          "name": "El Pozo",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados. Pregunta si Ash bajó por alguien o por curiosidad."
+        },
+        {
+          "map": 2159,
+          "name": "Rotom (medidor)",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Marca el aire restante; cambia de color por fase."
+        },
+        {
+          "map": 2161,
+          "name": "El Minero Viejo",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Vende aire por objetos (intercambio simbólico)."
+        },
+        {
+          "map": 2162,
+          "name": "La Niña de las Raíces",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Dice qué raíz se puede cortar y cuál no."
+        },
+        {
+          "map": 2163,
+          "name": "El Sepulturero Inundado",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "5 estados; en fase 5 ya no está, pero su pala sí."
+        },
+        {
+          "map": 2166,
+          "name": "El Sellado Número 4",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Sabe que hay cinco ataúdes y cuatro nombres."
+        },
+        {
+          "map": 2166,
+          "name": "Los Sellados",
+          "type": "Consciente ×4",
+          "sprite": "trchar028",
+          "notes": "No hablan; cuentan con los dedos cuántos faltan."
+        },
+        {
+          "map": 2168,
+          "name": "El Alcalde Enterrado",
+          "type": "Normal",
+          "sprite": "trchar070",
+          "notes": "5 estados; niega que el pueblo esté debajo."
+        },
+        {
+          "map": 2169,
+          "name": "La Campanera Boca Abajo",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Toca la campana aunque no suene."
+        },
+        {
+          "map": 2170,
+          "name": "El Cuidandero de Lápidas",
+          "type": "Normal",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "Duelo opcional: quiere compañía, no ganar."
+        },
+        {
+          "map": 2171,
+          "name": "La Contadora de Cuerpos",
+          "type": "Interdimensional",
+          "sprite": "trchar015",
+          "notes": "Cuenta 47 y faltan 3; da la pista del jefe."
+        },
+        {
+          "map": 2172,
+          "name": "El Traductor de Tierra",
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Traduce las marcas del túnel (Rotom Sintonía ≥5)."
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_W8_Entrada",
+          "episode": "W8",
+          "detail": "Mapa 2159 — Autorun al entrar (v264≥9)",
+          "effect": "texto de la grieta, sw923 = ON parcial, tone fase 1, música \"PkmRS-MtPyre\"",
+          "maps": [
+            2159
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Aire",
+          "episode": "W8",
+          "detail": "2159–2174 — Proceso paralelo (no bloquea)",
+          "effect": "v286 baja al correr/pelear; ≤20 aviso del Rotom; 0 = paso lento",
+          "maps": [
+            2159,
+            2174
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Bolsa1",
+          "episode": "W8",
+          "detail": "2161, celda (15,6) — Inspeccionar la grieta de aire",
+          "effect": "v286 = 100; marca anomalía A02; el aire mueve el polvo (animación)",
+          "maps": [
+            2161
+          ],
+          "cells": [
+            [
+              15,
+              6
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Raices",
+          "episode": "W8",
+          "detail": "2162, 4 puntos — Cortar raíz correcta (orden 3-1-4-2)",
+          "effect": "se abre paso a 2163; raíz equivocada cierra la anterior (sin daño)",
+          "maps": [
+            2162
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W8_Escalera",
+          "episode": "W8",
+          "detail": "2164, celda 12,28 — Pisar",
+          "effect": "fase 3: tono de tierra, 4 velas OFF, las paredes se cierran al pasar",
+          "maps": [
+            2164
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Ataudes",
+          "episode": "W8",
+          "detail": "2166 — Abrir los 5 ataúdes",
+          "effect": "4 tienen nombre y 1 está rayado; al cerrar el 5.º aparece el Sellado Número 4",
+          "maps": [
+            2166
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Pozo",
+          "episode": "W8",
+          "detail": "2167 — Autorun al pisar el borde",
+          "effect": "descenso: la luz sube en vez de bajar; +1 al contador de anomalías si es la 1.ª vez",
+          "maps": [
+            2167
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Campana",
+          "episode": "W8",
+          "detail": "2169 — Tocar la campana en fase ≥5",
+          "effect": "suena una sola vez aunque el sprite no se mueva; marca A09",
+          "maps": [
+            2169
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Lapidas",
+          "episode": "W8",
+          "detail": "2170 — Inspeccionar la lápida sin nombre",
+          "effect": "si el jugador trae DN_W8_LAMP, aparece el nombre del Sellado",
+          "maps": [
+            2170
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Fosa",
+          "episode": "W8",
+          "detail": "2171 — Contar los cuerpos con la Contadora",
+          "effect": "47 contados, 3 ausentes; los 3 son el amo, el Pokémon y el jugador",
+          "maps": [
+            2171
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Umbral",
+          "episode": "W8",
+          "detail": "2173 — Encender 4 lámparas con v286 ≥ 60",
+          "effect": "abre 2174; con v286 < 60 las lámparas se apagan al encenderse",
+          "maps": [
+            2173
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Jefe",
+          "episode": "W8",
+          "detail": "2174 — Hablar con el que respira (autorun de mapa)",
+          "effect": "fase A (canLose) + fase B de 5 bolsas de aire; al cerrar: sw923 = ON, sello",
+          "maps": [
+            2174
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "W9",
+      "doc": "18_W9_LAVENDER_SYNDROME.md",
+      "mapRange": {
+        "from": 2175,
+        "to": 2190
+      },
+      "seal": 924,
+      "grieta": 927,
+      "resonance": 12,
+      "anomalyVariable": 285,
+      "bossName": "EL CORO DEL CAMPANARIO",
+      "boss": {
+        "name": "EL CORO DEL CAMPANARIO",
+        "phaseA": {
+          "type": "PSYCHIC_F",
+          "label": "EL CORO",
+          "trainer": "DN_W9_A"
+        },
+        "team": [
+          [
+            "MISMAGIUS",
+            105
+          ],
+          [
+            "HYPNO",
+            106
+          ],
+          [
+            "HAUNTER",
+            104
+          ],
+          [
+            "BANETTE",
+            103
+          ],
+          [
+            "DRIFBLIM",
+            104
+          ],
+          [
+            "GENGAR",
+            106
+          ]
+        ],
+        "phaseB": {
+          "kind": "silencios",
+          "verb": "tocar",
+          "noun": "silencio",
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              20,
+              5
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              20,
+              10
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "Primer silencio: una voz se apaga.",
+            "Segundo silencio: el coro pierde el compás.",
+            "Tercer silencio: el campanario se queda sin eco.",
+            "Cuarto silencio: el pueblo calla para siempre."
+          ]
+        },
+        "reward": "DN_PAGE_W9",
+        "notes": "Los silencios van en el orden de DN_W9_SCORE; fuera de orden la voz vuelve (sin daño)."
+      },
+      "anomalies": {
+        "declared": 12,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LA NOTA QUE FALTA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2176,
+            "cells": [
+              [
+                15,
+                8
+              ]
+            ],
+            "text": "Map2176 — (15,8) [R10-2]. Fase ≥2. La música salta siempre la misma nota; nadie la recuerda.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "EL ALTAVOZ QUE APUNTA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2176,
+            "cells": [
+              [
+                9,
+                14
+              ]
+            ],
+            "text": "Map2176 — (9,14). Fase ≥3. El altavoz gira hacia el jugador cuando entra.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A03",
+            "name": "EL PIANO SIN MANOS",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2177,
+            "cells": [
+              [
+                6,
+                6
+              ]
+            ],
+            "text": "Map2177 — (6,6). Fase ≥4. Suenan teclas que nadie toca; el orden es el correcto.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A04",
+            "name": "LA CLASE QUE SE REPITE",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2178,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2178 — (20,12). Fase ≥3. Al reentrar, la maestra está en la misma frase, con 10 años menos.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "LA CAMPANA MUDA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2179,
+            "cells": [
+              [
+                13,
+                10
+              ]
+            ],
+            "text": "Map2179 — (13,10). Fase ≥4. La campana se mueve sin sonar; el sonido llega desde 2180.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A06",
+            "name": "LAS ONDAS VISIBLES",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2180,
+            "cells": [
+              [
+                11,
+                29
+              ]
+            ],
+            "text": "Map2180 — (11,29). Fase ≥5. Bandas horizontales que desplazan la imagen 4 px y vuelven.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A07",
+            "name": "EL SILENCIO QUE DUELE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2181,
+            "cells": [
+              [
+                10,
+                20
+              ]
+            ],
+            "text": "Map2181 — (10,20). Fase ≥5. **Ancla del mundo.** Cinco segundos de silencio total, sin música ni pasos.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A08",
+            "name": "LAS PLANTAS QUE ESCUCHAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2182,
+            "cells": [
+              [
+                16,
+                9
+              ]
+            ],
+            "text": "Map2182 — (16,9). Fase ≥3. Las flores giran hacia el último sonido que hizo el jugador.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A09",
+            "name": "LA CINTA AL REVÉS",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2183,
+            "cells": [
+              [
+                18,
+                14
+              ]
+            ],
+            "text": "Map2183 — (18,14). Fase ≥6. Una cinta reproduce la melodía al revés y todos la tararean igual.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A10",
+            "name": "EL CINE SIN PÚBLICO",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2184,
+            "cells": [
+              [
+                14,
+                16
+              ]
+            ],
+            "text": "Map2184 — (14,16). Fase ≥5. Al reentrar, la sala está llena de siluetas que no estaban.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A11",
+            "name": "EL ECO QUE CONTESTA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2185,
+            "cells": [
+              [
+                16,
+                16
+              ]
+            ],
+            "text": "Map2185 — (16,16). Fase ≥6. El eco no repite lo que el jugador dijo: repite lo que pensó el Autor.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A12",
+            "name": "EL CAMPANARIO QUE LLAMA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2190,
+            "cells": [
+              [
+                12,
+                18
+              ]
+            ],
+            "text": "Map2190 — (12,18). Fase ≥7. La silueta de R1 marca el compás desde la torre. ``` ---",
+            "trigger": "action",
+            "fase": 7
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2175,
+          "name": "El Farolero Sordo",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados. No oye la melodía y por eso puede hablar."
+        },
+        {
+          "map": 2175,
+          "name": "Rotom (silenciador)",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Marca el nivel de canto; cambia de tono por fase."
+        },
+        {
+          "map": 2176,
+          "name": "La Mujer del Altavoz",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "5 estados; en fase 4 sólo señala el altavoz."
+        },
+        {
+          "map": 2177,
+          "name": "El Pianista Sin Manos",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Toca con la mirada; da el orden de las 4 notas."
+        },
+        {
+          "map": 2178,
+          "name": "La Maestra que Repite",
+          "type": "Normal",
+          "sprite": "trchar052",
+          "notes": "Repite la misma clase; el Rotom puede cortarla."
+        },
+        {
+          "map": 2179,
+          "name": "La Campanera Ciega",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Sabe que la campana suena en otra habitación."
+        },
+        {
+          "map": 2180,
+          "name": "El Vigía de Ondas",
+          "type": "Interdimensional",
+          "sprite": "trchar015",
+          "notes": "Cuenta las ondas que pasan: siempre 108."
+        },
+        {
+          "map": 2182,
+          "name": "La Jardinera Sorda",
+          "type": "Normal",
+          "sprite": "trchar010",
+          "notes": "Cura 1 vez por visita; sus plantas siguen el ruido."
+        },
+        {
+          "map": 2183,
+          "name": "El Cambista de Cintas",
+          "type": "Normal",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "Cambia cintas por objetos (intercambio simbólico)."
+        },
+        {
+          "map": 2184,
+          "name": "El Proyeccionista",
+          "type": "Consciente",
+          "sprite": "trchar070",
+          "notes": "Pone una película muda que explica el mundo."
+        },
+        {
+          "map": 2186,
+          "name": "El Coro de Dos",
+          "type": "Consciente ×2",
+          "sprite": "trchar028",
+          "notes": "Canta a dos voces; una va siempre un tono atrás."
+        },
+        {
+          "map": 2189,
+          "name": "El Autor",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Última verdad: escribió el pueblo para no oírlo solo."
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_W9_Entrada",
+          "episode": "W9",
+          "detail": "Mapa 2175 — Autorun al entrar (v264≥9)",
+          "effect": "texto de la grieta, sw924 = ON parcial, tone fase 1, música \"Lavender\"",
+          "maps": [
+            2175
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Canto",
+          "episode": "W9",
+          "detail": "2175–2190 — Proceso paralelo (no bloquea)",
+          "effect": "v287 sube cerca de altavoces/campanas, baja en los silencios; ≥80 distorsiona texto",
+          "maps": [
+            2175,
+            2190
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Altavoz",
+          "episode": "W9",
+          "detail": "2176, celda (15,8) — Inspeccionar el altavoz",
+          "effect": "el primer silencio: la música se detiene 5 s; marca anomalía A02",
+          "maps": [
+            2176
+          ],
+          "cells": [
+            [
+              15,
+              8
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Piano",
+          "episode": "W9",
+          "detail": "2177, 4 teclas (6,6) (12,6) (18,6) (24,6) — Tocar en orden 4-1-3-2",
+          "effect": "abre 2178; la tecla equivocada repite la nota (sin daño)",
+          "maps": [
+            2177
+          ],
+          "cells": [
+            [
+              6,
+              6
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              24,
+              6
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W9_Campana",
+          "episode": "W9",
+          "detail": "2179 — Tocar la campana en fase ≥4",
+          "effect": "no suena: la campana aparece tocando en 2180 (anomalía ancla A09)",
+          "maps": [
+            2179
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Ondas",
+          "episode": "W9",
+          "detail": "2180, celda 11,29 — Pisar",
+          "effect": "fase 3: tono violeta, bandas de glitch activas, música a pitch 90",
+          "maps": [
+            2180
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Silencio",
+          "episode": "W9",
+          "detail": "2181, 3 puntos — Apagar 3 altavoces en orden",
+          "effect": "el laberinto se abre; si suena uno fuera de orden, vuelve a empezar",
+          "maps": [
+            2181
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 3
+        },
+        {
+          "name": "EV_W9_Cintas",
+          "episode": "W9",
+          "detail": "2183 — Cambiar cintas con el Cambista",
+          "effect": "3 intercambios; al 3.º entrega DN_W9_TAPE",
+          "maps": [
+            2183
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Cine",
+          "episode": "W9",
+          "detail": "2184 — Encender el proyector",
+          "effect": "escena muda de 12 líneas; revela el nombre del Autor",
+          "maps": [
+            2184
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Estudio",
+          "episode": "W9",
+          "detail": "2189 — Hablar con el Autor (fase ≥6)",
+          "effect": "abre 2190; entrega DN_W9_SCORE (partitura completa)",
+          "maps": [
+            2189
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Coro",
+          "episode": "W9",
+          "detail": "2188, 7 estaciones — Escuchar las 7 estaciones en orden",
+          "effect": "cada estación sube v287; al 7.º se abre el campanario",
+          "maps": [
+            2188
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Jefe",
+          "episode": "W9",
+          "detail": "2190 — Hablar con el coro del campanario (autorun de mapa)",
+          "effect": "fase A (canLose) + fase B de 4 silencios; al cerrar: sw924 = ON, sello",
+          "maps": [
+            2190
+          ],
+          "cells": [],
+          "trigger": "autorun",
           "instances": 1
         }
       ]

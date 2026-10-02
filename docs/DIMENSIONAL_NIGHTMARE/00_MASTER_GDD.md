@@ -23,7 +23,7 @@
 | Regla de oro narrativa | Cada universo **conserva su canon interno intacto**; Ash es el intruso |
 | Herramienta central | **Rotom de Tiempo** (detector dimensional) |
 | Sistemas originales | Resonancia (0–100) · 7 Fases de Corrupción · Anomalías · Registro Dimensional |
-| Mapas nuevos | `Map2040`–`Map2140` (101 mapas; rango 2039+ verificado libre) |
+| Mapas nuevos | `Map2040`–`Map2190` (149 mapas: 101 del ciclo EP01–EP06 + Nexo, 48 de los mundos W7–W9; rango 2039+ verificado libre) |
 | Flags nuevas | Switches `882`–`902` · Variables `265`–`276` (verificado libre: switches usados hasta 881, variables hasta 264) |
 | Prerrequisito | `v264 ≥ 3` (emisiones selladas del Monte Silver) para EP01–EP03; `v264 = 7` para EP04–EP06 y el Nexo |
 | Assets | 100 % jugable con tiles/sprites/species **existentes**; el arte nuevo (R3 y derivados) es mejora opcional — ver `08_SPRITES_Y_ASSETS.md` |

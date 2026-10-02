@@ -73,6 +73,9 @@ const SCRIPTS = {
   EP04: ["pueblo", "casa", "colegio", "pasillo", "jardin", "casa", "colegio", "eco", "jardin", "plaza", "pueblo", "pasillo", "colegio", "jardin", "umbral", "camara"],
   EP05: ["calle", "vacio", "espejo", "mausoleo", "calle", "vacio", "tren", "espejo", "mausoleo", "eco", "calle", "glitch", "nucleo", "vacio", "umbral", "camara"],
   EP06: ["cripta", "templo", "coro", "glitch", "templo", "coro", "cripta", "glitch", "templo", "coro", "eco", "glitch", "nucleo", "coro", "umbral", "camara"],
+  W7: ["pueblo", "casa", "mausoleo", "jardin", "archivo", "via", "cripta", "eco", "espejo", "pasillo", "plaza", "mercado", "templo", "falla", "portico", "camara"],
+  W8: ["fosa", "via", "laberinto", "cripta", "vacio", "pueblo", "pasillo", "eco", "mausoleo", "templo", "plaza", "archivo", "torre", "falla", "portico", "camara"],
+  W9: ["calle", "coro", "colegio", "templo", "espejo", "jardin", "mercado", "mausoleo", "pasillo", "eco", "vacio", "glitch", "colegio", "templo", "portico", "camara"],
   NEXO: ["falla", "pueblo", "plaza", "via", "sala"],
   LIGA: ["portico", "arena"],
   HUB: ["sala"],
@@ -102,15 +105,17 @@ for (const info of built) {
   if (!byEpisode.has(info.episode)) byEpisode.set(info.episode, []);
   byEpisode.get(info.episode).push(info);
 }
+const DEFAULT_SCRIPT = Object.keys(ARCHETYPES);
 for (const [episode, maps] of byEpisode) {
   maps.sort((a, b) => a.id - b.id);
-  const script = SCRIPTS[episode] ?? [];
+  const script = SCRIPTS[episode]?.length ? SCRIPTS[episode] : DEFAULT_SCRIPT;
+  if (!SCRIPTS[episode]) problems.push(`${episode}: sin guion de arquetipos; se usa el ciclo por defecto`);
   const hooks = HOOKS[episode] ?? [];
   maps.forEach((info, index) => {
     const archetype = script[index % script.length] ?? "umbral";
     const arch = ARCHETYPES[archetype];
     const hook = hooks[index] ?? arch.hook;
-    const previous = index > 0 ? (script[(index - 1) % script.length] ?? null) : null;
+    const previous = index > 0 ? (script[(index - 1) % script.length] ?? null) : null; // vecino inmediato del tramo
     if (previous === archetype) problems.push(`Map${info.id}: repite el arquetipo «${archetype}» de su vecino`);
     const contrast = previous && previous !== archetype ? `tras «${previous}»` : "primer mapa del tramo";
     rows.push(`| **${info.id}** | ${titleOf(info)} | ${archetype} | ${arch.feel} | ${hook} | ${arch.gimmick} | ${arch.pace} (${contrast}) |`);

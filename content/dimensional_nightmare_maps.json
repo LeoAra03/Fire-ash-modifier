@@ -38,9 +38,24 @@
       "key": "r7_catacumbas",
       "label": "Catacumbas de Lavanda",
       "cols": 4
+    },
+    "R8": {
+      "key": "r8_strangled_red",
+      "label": "Strangled Red (W7)",
+      "cols": 4
+    },
+    "R9": {
+      "key": "r9_buried_alive",
+      "label": "Buried Alive (W8)",
+      "cols": 4
+    },
+    "R10": {
+      "key": "r10_lavender_syndrome",
+      "label": "Lavender Town Syndrome (W9)",
+      "cols": 4
     }
   },
-  "count": 101,
+  "count": 149,
   "maps": [
     {
       "id": 2040,
@@ -2103,6 +2118,966 @@
           "slice": "reference/dimensional_nightmare/slices/r1_glitch_city/16.png"
         }
       ]
+    },
+    {
+      "id": 2143,
+      "episode": "W7",
+      "title": "Strangled Red — Patio de la Casa Rota",
+      "tilesetHint": "Outer/Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-1",
+      "role": "Entrada, NPC guía, guardado",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2144,
+      "episode": "W7",
+      "title": "Strangled Red — Cuarto del Amo",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-2",
+      "role": "Primera correa, objeto de historia",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2145,
+      "episode": "W7",
+      "title": "Strangled Red — Pasillo de Trofeos",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R8-3",
+      "role": "Trofeos que nombran a los caídos",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2146,
+      "episode": "W7",
+      "title": "Strangled Red — Jardín de la Promesa",
+      "tilesetHint": "Int Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-4",
+      "role": "Escena de duelo (anomalía ancla)",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/04.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2147,
+      "episode": "W7",
+      "title": "Strangled Red — Cocina Fría",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-5",
+      "role": "Combates salvajes, objeto oculto",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2148,
+      "episode": "W7",
+      "title": "Strangled Red — Escalera Que Sube y Baja",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 24,
+        "height": 30
+      },
+      "fichaCell": "R8-6",
+      "role": "Vertical, transición de fase",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2149,
+      "episode": "W7",
+      "title": "Strangled Red — Cripta del Pokémon",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-7",
+      "role": "Lápida con el nombre real",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2150,
+      "episode": "W7",
+      "title": "Strangled Red — Torre de las Cintas",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-8",
+      "role": "Puzzle de correas (4 puntos)",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/08.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2151,
+      "episode": "W7",
+      "title": "Strangled Red — Sala de los Reflejos",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-9",
+      "role": "Espejos que muestran a Red",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2152,
+      "episode": "W7",
+      "title": "Strangled Red — Corredor de la Culpa",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 20,
+        "height": 40
+      },
+      "fichaCell": "R8-10",
+      "role": "Laberinto; se cierra por detrás",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2153,
+      "episode": "W7",
+      "title": "Strangled Red — Plaza Sin Gente",
+      "tilesetHint": "Outer/Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-11",
+      "role": "NPCs con 5 estados",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2154,
+      "episode": "W7",
+      "title": "Strangled Red — Canil Vacío",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-12",
+      "role": "Segundo duelo opcional (canLose)",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2155,
+      "episode": "W7",
+      "title": "Strangled Red — Capilla del Nudo",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-13",
+      "role": "Anomalía ancla: la correa se ata sola",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2156,
+      "episode": "W7",
+      "title": "Strangled Red — Espejo Roto",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R8-14",
+      "role": "Traducción del Rotom; lore",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2157,
+      "episode": "W7",
+      "title": "Strangled Red — Umbral del Ahorcado",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R8-15",
+      "role": "Antesala del jefe",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2158,
+      "episode": "W7",
+      "title": "Strangled Red — Árbol del Ajuste",
+      "tilesetHint": "Int Cueva + R1",
+      "designSize": {
+        "width": 24,
+        "height": 24
+      },
+      "fichaCell": "R8-16",
+      "role": "Jefe final; rojo de sangre",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R8",
+        "key": "r8_strangled_red",
+        "slice": "reference/dimensional_nightmare/slices/r8_strangled_red/16.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2159,
+      "episode": "W8",
+      "title": "Buried Alive — Pozo de Entrada",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-1",
+      "role": "Entrada, NPC guía, guardado",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2160,
+      "episode": "W8",
+      "title": "Buried Alive — Túnel Angosto",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 20,
+        "height": 40
+      },
+      "fichaCell": "R9-2",
+      "role": "Laberinto de una sola línea",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2161,
+      "episode": "W8",
+      "title": "Buried Alive — Cámara de Tierra",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-3",
+      "role": "Primera bolsa de aire; objeto oculto",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2162,
+      "episode": "W8",
+      "title": "Buried Alive — Galería de Raíces",
+      "tilesetHint": "Int Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-4",
+      "role": "Raíces que aprietan (puzzle)",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/04.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2163,
+      "episode": "W8",
+      "title": "Buried Alive — Osario Inundado",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R9-5",
+      "role": "Combates salvajes, agua negra",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2164,
+      "episode": "W8",
+      "title": "Buried Alive — Escalera de Tierra",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 24,
+        "height": 30
+      },
+      "fichaCell": "R9-6",
+      "role": "Vertical, transición de fase",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2165,
+      "episode": "W8",
+      "title": "Buried Alive — Cripta del Aire",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-7",
+      "role": "Anomalía ancla: el aire se oye",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2166,
+      "episode": "W8",
+      "title": "Buried Alive — Sala de los Sellados",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-8",
+      "role": "NPCs conscientes; 5 ataúdes",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/08.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2167,
+      "episode": "W8",
+      "title": "Buried Alive — Pozo Sin Fondo",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-9",
+      "role": "Descenso; luz que sube",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2168,
+      "episode": "W8",
+      "title": "Buried Alive — Pueblo Enterrado",
+      "tilesetHint": "Outer/Int Lavender",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R9-10",
+      "role": "Pueblo tapado; NPCs con 5 estados",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2169,
+      "episode": "W8",
+      "title": "Buried Alive — Iglesia Boca Abajo",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-11",
+      "role": "Segunda bolsa de aire; objeto",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2170,
+      "episode": "W8",
+      "title": "Buried Alive — Campo de Lápidas",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-12",
+      "role": "Duelo opcional (canLose)",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2171,
+      "episode": "W8",
+      "title": "Buried Alive — Fosa Común",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R9-13",
+      "role": "Anomalía de conteo (faltan cuerpos)",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2172,
+      "episode": "W8",
+      "title": "Buried Alive — Túnel de la Mano",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R9-14",
+      "role": "Traducción del Rotom; lore",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2173,
+      "episode": "W8",
+      "title": "Buried Alive — Umbral del Aire",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R9-15",
+      "role": "Antesala del jefe",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2174,
+      "episode": "W8",
+      "title": "Buried Alive — Fondo de la Fosa",
+      "tilesetHint": "Int Cueva + R1",
+      "designSize": {
+        "width": 24,
+        "height": 24
+      },
+      "fichaCell": "R9-16",
+      "role": "Jefe final; sin cielo",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R9",
+        "key": "r9_buried_alive",
+        "slice": "reference/dimensional_nightmare/slices/r9_buried_alive/16.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2175,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Entrada del Pueblo",
+      "tilesetHint": "Outer/Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-1",
+      "role": "Entrada, NPC guía, guardado",
+      "primary": {
+        "index": 1,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/01.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2176,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Calle del Altavoz",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-2",
+      "role": "Primer silencio; objeto oculto",
+      "primary": {
+        "index": 2,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/02.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2177,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Casa del Piano",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-3",
+      "role": "Puzzle de 4 notas",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/03.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2178,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Escuela de Música",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-4",
+      "role": "NPCs conscientes; clase en bucle",
+      "primary": {
+        "index": 4,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/04.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2179,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Capilla de la Campana",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-5",
+      "role": "Anomalía ancla: la campana que no suena",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/05.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2180,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Torre de las Ondas",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-6",
+      "role": "Subida; ondas que desplazan la imagen",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/06.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2181,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Calle del Silencio",
+      "tilesetHint": "Outer/Int Lavender",
+      "designSize": {
+        "width": 20,
+        "height": 40
+      },
+      "fichaCell": "R10-7",
+      "role": "Laberinto; el sonido delata",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/07.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2182,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Jardín Sordo",
+      "tilesetHint": "Int Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-8",
+      "role": "Curación; plantas que siguen el ruido",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/08.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2183,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Mercado de Cintas",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-9",
+      "role": "Intercambio de objetos",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/09.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2184,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Cine Sin Sonido",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-10",
+      "role": "Escena muda; lore",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/10.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2185,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Fosa Acústica",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R10-11",
+      "role": "Combates salvajes, eco",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/11.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2186,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Túnel de las Voces",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-12",
+      "role": "Duelo opcional (canLose)",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/12.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2187,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Sala de los Audífonos",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-13",
+      "role": "Traducción del Rotom; lore",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/13.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2188,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Torre del Canto",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R10-14",
+      "role": "7 estaciones (antesala del jefe)",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/14.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2189,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Estudio del Autor",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R10-15",
+      "role": "Última verdad del mundo",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/15.png"
+      },
+      "extras": []
+    },
+    {
+      "id": 2190,
+      "episode": "W9",
+      "title": "Lavender Syndrome — Campanario Final",
+      "tilesetHint": "Int Lavender + R1",
+      "designSize": {
+        "width": 24,
+        "height": 24
+      },
+      "fichaCell": "R10-16",
+      "role": "Jefe final; glitches de R1",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R10",
+        "key": "r10_lavender_syndrome",
+        "slice": "reference/dimensional_nightmare/slices/r10_lavender_syndrome/16.png"
+      },
+      "extras": []
     }
   ]
 }

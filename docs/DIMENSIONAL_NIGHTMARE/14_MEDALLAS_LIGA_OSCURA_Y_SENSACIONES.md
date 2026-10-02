@@ -125,17 +125,20 @@ la Antesala, y cada uno exige su medalla y su cartuchera con la misma nomenclatu
 **Requisitos y orden**: cada mundo se construye con el pipeline E0–E5 completo (fichas → tileset →
 mapas → eventos → verificación). Los mundos nuevos necesitan **su propio mosaico de referencia** para
 mantener la fidelidad B; si no lo hay, se levantan con tiles del juego base como el hub (2040) y la
-Liga (2141–2142). Asignación de ids prevista: **2143–2158** (W7), **2159–2174** (W8), **2175–2186**
-(W9). El cierre de los nueve mundos habilita la **Vitrina del Testigo** en la Antesala (cartuchera
-`DN_CASE_WIT` «Badges of the Witness»).
+Liga (2141–2142). **Estado (2026-10-02): construidos los tres con hojas origen propias** (R8–R10,
+16 fichas por mundo; `tools/dn_create_world_sheets.mjs`), ids finales **2143–2158** (W7 · Medalla del
+Amo), **2159–2174** (W8 · Medalla de la Fosa) y **2175–2190** (W9 · Medalla del Silencio: 16 fichas,
+no 12, para mantener el tamaño de los demás mundos). El cierre de los nueve mundos habilita la
+**Vitrina del Testigo** en la Antesala (cartuchera `DN_CASE_WIT` «Badges of the Witness», evento
+`VITRINA_TESTIGO` en 2040, switch 931 = los nueve sellos cerrados).
 
 ---
 
 ## 6. Convivencia con el mundo Atlas
 
 - Mapas nuevos **solo** desde 2141; el mundo Atlas conserva sus ids.
-- Flags nuevas solo en el tramo `917–929` (switches) y `278–289` (variables); ninguna pisa flags
-  `868–881` (Atlas T2) ni `882–916` (DN).
+- Flags nuevas solo en el tramo `917–931` (switches) y `278–289` (variables); ninguna pisa flags
+  `868–881` (Atlas T2) ni `882–916` (DN del primer anillo).
 - Objetos nuevos con prefijo `DN_`; ids numéricos desde `1040`.
 - Los eventos DN instalados en mapas base (Gruta 2030) ya están respaldados en
   `PokeModBackups/`; no se toca ningún archivo de Atlas.
@@ -147,6 +150,9 @@ Liga (2141–2142). Asignación de ids prevista: **2143–2158** (W7), **2159–
 | Recurso | Rango | Uso |
 |---|---|---|
 | Switches | 917 | `DN_MEDALS_READY` (seis cartucheras) |
+| Switches | 922–927 | sellos y grietas del segundo anillo (W7/W8/W9) |
+| Switches | 928–930 | fase A de los jefes W7/W8/W9 |
+| Switches | 931 | `DN_TESTIGO_LISTO` (los nueve sellos → Vitrina del Testigo) |
 | Switches | 918–921 | `DN_LIGA_*` (progreso, Arceus, cierre, guardado de Mad Pikachu) |
 | Variables | 278–281 | rama de Mad Pikachu, chispas, medallas contadas, velocidad |
 | Objetos | 1040–1056 | 7 medallas + 8 cartucheras |
@@ -171,8 +177,9 @@ npm run dn:verify:all         # todo el ciclo + hub · medallas · Liga · sensa
 
 | Pieza | Resultado | Comprobación |
 |---|---|---|
-| Medallas y cartucheras | ✅ 14 objetos (6 medallas + 6 cartucheras + medalla y cartuchera de la Liga) con icono 48×48 y nombre `Badges of <mundo>` | `dn:medals:verify` |
-| Pedestales del Sello | ✅ uno por cámara de jefe (2056 · 2072 · 2087 · 2103 · 2119 · 2135); entregan al cerrarse el sello y encienden `sw917` | `dn:medals:verify` |
+| Medallas y cartucheras | ✅ 21 objetos (9 medallas + 9 cartucheras + medalla/cartuchera de la Liga + cartuchera del Testigo) con icono 48×48 y nombre `Badges of <mundo>` | `dn:medals:verify` |
+| Pedestales del Sello | ✅ uno por cámara de jefe (2056 · 2072 · 2087 · 2103 · 2119 · 2135 · 2158 · 2174 · 2190); entregan al cerrarse el sello y encienden `sw917` | `dn:medals:verify` |
+| Vitrina del Testigo | ✅ evento `VITRINA_TESTIGO` en 2040 @ (15,21) con los nueve sellos (sw931) → `DN_CASE_WIT` | `dn:medals:verify` |
 | Puerta de la Liga | ✅ `HUB_LIGA_OSCURA` en la Antesala (2040), se abre con las seis cartucheras | `dn:hub:events:verify` · `dn:liga:verify` |
 | Mapas de la Liga | ✅ **2141 Pórtico del Código** (22×11) y **2142 Coliseo del Vínculo** (30×22), BFS 100 %, tiles del mundo del código | `dn:liga:verify` |
 | Arco de Mad Pikachu | ✅ 5 etapas por `v281` (intro → prueba → **Arceus** → combate → cierre), 3 ramas por `v278` (Pikachu / Raichu / ninguno), 4 chispas (`v279`) | `dn:liga:verify` |

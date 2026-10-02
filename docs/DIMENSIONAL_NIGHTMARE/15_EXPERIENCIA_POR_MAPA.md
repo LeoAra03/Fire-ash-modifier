@@ -50,7 +50,7 @@
 - **portico** — antesala del fin: gancho tipo «un custodio que avisa», mecánica «NPC de advertencia», ritmo medio.
 - **arena** — juicio: gancho tipo «el público es la tormenta», mecánica «prueba de vínculo por pasos», ritmo largo.
 
-## 3. Tabla por mapa (103 mapas)
+## 3. Tabla por mapa (151 mapas)
 
 | Mapa | Título | Arquetipo | Sensación | Gancho | Mecánica | Ritmo |
 |---|---|---|---|---|---|---|
@@ -157,12 +157,60 @@
 | **2140** | Nexo — Sala del Testigo | sala | reunión | la sala del Testigo | lectura de flags | largo (tras «via») |
 | **2141** | Liga Oscura — Pórtico del Código | portico | antesala del fin | el custodio que avisa | NPC de advertencia | medio (primer mapa del tramo) |
 | **2142** | Liga Oscura — Coliseo del Vínculo | arena | juicio | la tormenta que corre | prueba de vínculo por pasos | largo (tras «portico») |
+| **2143** | Strangled Red — Patio de la Casa Rota | pueblo | vida detenida | casas abiertas y nadie dentro | puertas inspeccionables | medio (primer mapa del tramo) |
+| **2144** | Strangled Red — Cuarto del Amo | casa | intimidad doméstica rota | una casa que canta | habitaciones con nana | medio (tras «pueblo») |
+| **2145** | Strangled Red — Pasillo de Trofeos | mausoleo | duelo privado | una foto en blanco | objetos de historia | medio (tras «casa») |
+| **2146** | Strangled Red — Jardín de la Promesa | jardin | belleza equivocada | flores que siguen al jugador | pétalos que marcan caminos | medio (tras «mausoleo») |
+| **2147** | Strangled Red — Cocina Fría | archivo | memoria acumulada | estanterías que responden al progreso | NPC que lee tus sellos | medio (tras «jardin») |
+| **2148** | Strangled Red — Escalera Que Sube y Baja | via | travesía | un corredor con un destino visible al fondo | línea recta con hitos | corto (tras «archivo») |
+| **2149** | Strangled Red — Cripta del Pokémon | cripta | intimidad funeraria | los nombres de los que cayeron | inspección de lápidas | medio (tras «via») |
+| **2150** | Strangled Red — Torre de las Cintas | eco | algo repite lo que haces | tu propio paso con retraso | evento que copia tu posición | corto (tras «cripta») |
+| **2151** | Strangled Red — Sala de los Reflejos | espejo | identidad invertida | un doble que no se mueve igual | comparación de posición | medio (tras «eco») |
+| **2152** | Strangled Red — Corredor de la Culpa | pasillo | urgencia | puertas que se cierran al pasar | velocidad obligatoria | corto (tras «espejo») |
+| **2153** | Strangled Red — Plaza Sin Gente | plaza | respiro social | el único lugar donde alguien te habla sin miedo | NPCs con 5 estados de visita | medio (tras «pasillo») |
+| **2154** | Strangled Red — Canil Vacío | mercado | negocio fantasma | precios de algo que ya no existe | intercambio de objetos | corto (tras «plaza») |
+| **2155** | Strangled Red — Capilla del Nudo | templo | reverencia | una letra por columna | orden correcto | largo (tras «mercado») |
+| **2156** | Strangled Red — Espejo Roto | falla | grieta en la realidad | el código se ve por debajo | tiles del archivo | medio (tras «templo») |
+| **2157** | Strangled Red — Umbral del Ahorcado | portico | antesala del fin | un custodio que avisa | NPC de advertencia | medio (tras «falla») |
+| **2158** | Strangled Red — Árbol del Ajuste | camara | clímax contenido | el jefe del tramo observa desde el fondo | fase B por pasos | largo (tras «portico») |
+| **2159** | Buried Alive — Pozo de Entrada | fosa | descenso | la luz queda arriba | pendiente y niebla | medio (primer mapa del tramo) |
+| **2160** | Buried Alive — Túnel Angosto | via | travesía | un corredor con un destino visible al fondo | línea recta con hitos | corto (tras «fosa») |
+| **2161** | Buried Alive — Cámara de Tierra | laberinto | desorientación controlada | un camino que se cierra detrás de ti | pasajes con retorno distinto | medio (tras «via») |
+| **2162** | Buried Alive — Galería de Raíces | cripta | intimidad funeraria | los nombres de los que cayeron | inspección de lápidas | medio (tras «laberinto») |
+| **2163** | Buried Alive — Osario Inundado | vacio | ausencia total | nada responde, ni el viento | oscuridad con luz propia | corto (tras «cripta») |
+| **2164** | Buried Alive — Escalera de Tierra | pueblo | vida detenida | casas abiertas y nadie dentro | puertas inspeccionables | medio (tras «vacio») |
+| **2165** | Buried Alive — Cripta del Aire | pasillo | urgencia | puertas que se cierran al pasar | velocidad obligatoria | corto (tras «pueblo») |
+| **2166** | Buried Alive — Sala de los Sellados | eco | algo repite lo que haces | tu propio paso con retraso | evento que copia tu posición | corto (tras «pasillo») |
+| **2167** | Buried Alive — Pozo Sin Fondo | mausoleo | duelo privado | una foto en blanco | objetos de historia | medio (tras «eco») |
+| **2168** | Buried Alive — Pueblo Enterrado | templo | reverencia | una letra por columna | orden correcto | largo (tras «mausoleo») |
+| **2169** | Buried Alive — Iglesia Boca Abajo | plaza | respiro social | el único lugar donde alguien te habla sin miedo | NPCs con 5 estados de visita | medio (tras «templo») |
+| **2170** | Buried Alive — Campo de Lápidas | archivo | memoria acumulada | estanterías que responden al progreso | NPC que lee tus sellos | medio (tras «plaza») |
+| **2171** | Buried Alive — Fosa Común | torre | ascenso | cada piso enseña algo nuevo del mundo | plataformas y atajos | largo (tras «archivo») |
+| **2172** | Buried Alive — Túnel de la Mano | falla | grieta en la realidad | el código se ve por debajo | tiles del archivo | medio (tras «torre») |
+| **2173** | Buried Alive — Umbral del Aire | portico | antesala del fin | un custodio que avisa | NPC de advertencia | medio (tras «falla») |
+| **2174** | Buried Alive — Fondo de la Fosa | camara | clímax contenido | el jefe del tramo observa desde el fondo | fase B por pasos | largo (tras «portico») |
+| **2175** | Lavender Syndrome — Entrada del Pueblo | calle | ciudad sin nadie | semáforos que siguen funcionando | luces que delatan | medio (primer mapa del tramo) |
+| **2176** | Lavender Syndrome — Calle del Altavoz | coro | muchos ojos, una voz | letras que cantan en orden | siete estaciones | largo (tras «calle») |
+| **2177** | Lavender Syndrome — Casa del Piano | colegio | costumbre y rutina rota | un aula que sigue en clase | cátedras que siguen el guion | medio (tras «coro») |
+| **2178** | Lavender Syndrome — Escuela de Música | templo | reverencia | una letra por columna | orden correcto | largo (tras «colegio») |
+| **2179** | Lavender Syndrome — Capilla de la Campana | espejo | identidad invertida | un doble que no se mueve igual | comparación de posición | medio (tras «templo») |
+| **2180** | Lavender Syndrome — Torre de las Ondas | jardin | belleza equivocada | flores que siguen al jugador | pétalos que marcan caminos | medio (tras «espejo») |
+| **2181** | Lavender Syndrome — Calle del Silencio | mercado | negocio fantasma | precios de algo que ya no existe | intercambio de objetos | corto (tras «jardin») |
+| **2182** | Lavender Syndrome — Jardín Sordo | mausoleo | duelo privado | una foto en blanco | objetos de historia | medio (tras «mercado») |
+| **2183** | Lavender Syndrome — Mercado de Cintas | pasillo | urgencia | puertas que se cierran al pasar | velocidad obligatoria | corto (tras «mausoleo») |
+| **2184** | Lavender Syndrome — Cine Sin Sonido | eco | algo repite lo que haces | tu propio paso con retraso | evento que copia tu posición | corto (tras «pasillo») |
+| **2185** | Lavender Syndrome — Fosa Acústica | vacio | ausencia total | nada responde, ni el viento | oscuridad con luz propia | corto (tras «eco») |
+| **2186** | Lavender Syndrome — Túnel de las Voces | glitch | el mundo se equivoca | una celda que no debería existir | tiles corruptos y parpadeo | corto (tras «vacio») |
+| **2187** | Lavender Syndrome — Sala de los Audífonos | colegio | costumbre y rutina rota | un aula que sigue en clase | cátedras que siguen el guion | medio (tras «glitch») |
+| **2188** | Lavender Syndrome — Torre del Canto | templo | reverencia | una letra por columna | orden correcto | largo (tras «colegio») |
+| **2189** | Lavender Syndrome — Estudio del Autor | portico | antesala del fin | un custodio que avisa | NPC de advertencia | medio (tras «templo») |
+| **2190** | Lavender Syndrome — Campanario Final | camara | clímax contenido | el jefe del tramo observa desde el fondo | fase B por pasos | largo (tras «portico») |
 
 ## 4. Estado de la auditoría (2026-10-02)
 
 | Comprobación | Resultado |
 |---|---|
-| Mapas auditados | 103 |
+| Mapas auditados | 151 |
 | Errores | **0** |
 | Avisos | **0** |
 

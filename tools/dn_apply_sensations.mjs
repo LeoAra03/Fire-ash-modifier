@@ -40,6 +40,9 @@ const TONES = {
   EP04: [40, -20, 60, 20],
   EP05: [-100, -100, -100, 0],
   EP06: [20, -40, 20, 80],
+  W7: [-40, -20, -20, 20],   // rojo apagado: duelo y culpa
+  W8: [-60, -50, -40, 10],   // tierra y penumbra: claustrofobia
+  W9: [20, -20, 60, 30],     // violeta y ondas: el sonido duele
   NEXO: [0, -20, 40, 20],
   HUB: [0, -10, 30, 10],
   LIGA: [-40, -40, -40, 0],

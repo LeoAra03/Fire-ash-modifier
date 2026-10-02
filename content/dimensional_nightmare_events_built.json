@@ -1506,6 +1506,723 @@
       "exit": null,
       "boss": null,
       "pending": []
+    },
+    "2143": {
+      "episode": "W7",
+      "events": 5,
+      "npcs": 2,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        13,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2144": {
+      "episode": "W7",
+      "events": 7,
+      "npcs": 1,
+      "entry": [
+        1,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2145": {
+      "episode": "W7",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2146": {
+      "episode": "W7",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        8,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2147": {
+      "episode": "W7",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        9,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2148": {
+      "episode": "W7",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2149": {
+      "episode": "W7",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2150": {
+      "episode": "W7",
+      "events": 8,
+      "npcs": 1,
+      "entry": [
+        3,
+        3
+      ],
+      "exit": [
+        12,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2151": {
+      "episode": "W7",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2152": {
+      "episode": "W7",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        16,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2153": {
+      "episode": "W7",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        11,
+        3
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2154": {
+      "episode": "W7",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        16,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2155": {
+      "episode": "W7",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2156": {
+      "episode": "W7",
+      "events": 3,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2157": {
+      "episode": "W7",
+      "events": 6,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2158": {
+      "episode": "W7",
+      "events": 5,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": null,
+      "boss": "EL AMO Y LA CORREA",
+      "pending": [
+        "fase B del jefe (correas)"
+      ]
+    },
+    "2159": {
+      "episode": "W8",
+      "events": 6,
+      "npcs": 2,
+      "entry": [
+        6,
+        1
+      ],
+      "exit": [
+        14,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2160": {
+      "episode": "W8",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2161": {
+      "episode": "W8",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2162": {
+      "episode": "W8",
+      "events": 8,
+      "npcs": 1,
+      "entry": [
+        13,
+        5
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2163": {
+      "episode": "W8",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2164": {
+      "episode": "W8",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2165": {
+      "episode": "W8",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        18,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2166": {
+      "episode": "W8",
+      "events": 7,
+      "npcs": 2,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2167": {
+      "episode": "W8",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2168": {
+      "episode": "W8",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        10,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2169": {
+      "episode": "W8",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2170": {
+      "episode": "W8",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        10,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2171": {
+      "episode": "W8",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2172": {
+      "episode": "W8",
+      "events": 3,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2173": {
+      "episode": "W8",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        16,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2174": {
+      "episode": "W8",
+      "events": 5,
+      "npcs": 0,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": null,
+      "boss": "EL QUE RESPIRA DEBAJO",
+      "pending": [
+        "fase B del jefe (bolsas)"
+      ]
+    },
+    "2175": {
+      "episode": "W9",
+      "events": 6,
+      "npcs": 2,
+      "entry": [
+        20,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2176": {
+      "episode": "W9",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        11,
+        6
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2177": {
+      "episode": "W9",
+      "events": 8,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2178": {
+      "episode": "W9",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2179": {
+      "episode": "W9",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2180": {
+      "episode": "W9",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2181": {
+      "episode": "W9",
+      "events": 6,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2182": {
+      "episode": "W9",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2183": {
+      "episode": "W9",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2184": {
+      "episode": "W9",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        15,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2185": {
+      "episode": "W9",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        15,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2186": {
+      "episode": "W9",
+      "events": 3,
+      "npcs": 1,
+      "entry": [
+        17,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2187": {
+      "episode": "W9",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2188": {
+      "episode": "W9",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2189": {
+      "episode": "W9",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        9,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2190": {
+      "episode": "W9",
+      "events": 6,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": null,
+      "boss": "EL CORO DEL CAMPANARIO",
+      "pending": [
+        "fase B del jefe (silencios)"
+      ]
     }
   },
   "hub": {
@@ -1603,6 +2320,39 @@
         "cellTo": [
           18,
           3
+        ]
+      },
+      "W7": {
+        "cell": [
+          5,
+          22
+        ],
+        "to": 2143,
+        "cellTo": [
+          11,
+          1
+        ]
+      },
+      "W8": {
+        "cell": [
+          9,
+          18
+        ],
+        "to": 2159,
+        "cellTo": [
+          6,
+          1
+        ]
+      },
+      "W9": {
+        "cell": [
+          26,
+          11
+        ],
+        "to": 2175,
+        "cellTo": [
+          20,
+          1
         ]
       }
     }

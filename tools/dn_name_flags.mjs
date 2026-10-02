@@ -61,6 +61,16 @@ export const SWITCHES = {
   919: "DN_LIGA_ARCEUS",
   920: "DN_LIGA_CLEARED",
   921: "DN_MADPIKA_SAVED",
+  922: "DN_SELLO_W7_STRANGLED_RED",
+  923: "DN_SELLO_W8_BURIED_ALIVE",
+  924: "DN_SELLO_W9_LAVENDER_SYNDROME",
+  925: "DN_GRIETA_W7",
+  926: "DN_GRIETA_W8",
+  927: "DN_GRIETA_W9",
+  928: "DN_JEFE_W7_FASE_A",
+  929: "DN_JEFE_W8_FASE_A",
+  930: "DN_JEFE_W9_FASE_A",
+  931: "DN_TESTIGO_LISTO",
 };
 
 /** Variables del ciclo: resonancia, fase, episodio, anomalías, Rotom, final y la Liga. */
@@ -84,6 +94,12 @@ export const VARIABLES = {
   280: "DN_MEDALLAS_CONTADAS",
   281: "DN_LIGA_ETAPA",
   282: "DN_LIGA_COMBATE_RESULTADO",
+  283: "DN_ANOMALIAS_W7",
+  284: "DN_ANOMALIAS_W8",
+  285: "DN_ANOMALIAS_W9",
+  286: "DN_W8_AIRE",
+  287: "DN_W9_CANTO",
+  288: "DN_W7_CORREAS",
 };
 
 function apply(table, map, label) {

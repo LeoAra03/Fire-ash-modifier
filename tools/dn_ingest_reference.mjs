@@ -89,6 +89,11 @@ const RESOURCES = [
   { key: "r5_pueblos_tumbas", label: "R5 Pueblos y Tumbas", rows: 4, cols: 4, expect: 16, tokens: ["pueblo", "tumb", "sepia", "silver", "b&w", "bn"] },
   { key: "r6_snowy_mountain", label: "R6 Creepy Snowy Mountain", rows: 3, cols: 5, expect: 15, tokens: ["snow", "nieve", "mountain", "monta"] },
   { key: "r7_catacumbas", label: "R7 Catacumbas de Lavanda", rows: 4, cols: 4, expect: 16, tokens: ["catacumb", "lavanda", "lavender", "buried", "mano", "hand"] },
+  // Segundo anillo (W7–W9): hojas origen compuestas por `dn:mosaicos:origen` a
+  // partir del arte del autor, con la paleta y el motivo de cada mundo.
+  { key: "r8_strangled_red", label: "R8 Strangled Red (W7)", rows: 4, cols: 4, expect: 16, tokens: ["strangled", "origen_w7", "w7"] },
+  { key: "r9_buried_alive", label: "R9 Buried Alive (W8)", rows: 4, cols: 4, expect: 16, tokens: ["buried_alive", "origen_w8", "w8"] },
+  { key: "r10_lavender_syndrome", label: "R10 Lavender Town Syndrome (W9)", rows: 4, cols: 4, expect: 16, tokens: ["lavender_syndrome", "origen_w9", "w9"] },
 ];
 const EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"];
 
