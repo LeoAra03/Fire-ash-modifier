@@ -571,3 +571,30 @@ Capa nueva, en paralelo del mundo Atlas (doc `14_MEDALLAS_LIGA_OSCURA_Y_SENSACIO
 npm run dn:build:all     # hub → medallas → liga → sensaciones
 npm run dn:verify:all    # todo el ciclo + lo nuevo
 ```
+
+### 10.11 Mosaicos de referencia de la recreación (E7, 2026-10-02)
+
+El usuario entregó las crepypastas como siete mosaicos de fichas. `tools/dn_render_recreacion.mjs`
+devuelve el gesto con el material construido: una hoja por episodio (rejilla, separadores y rótulo
+como los mosaicos originales) donde cada celda enfrenta **ficha de la crepypasta · mapa instalado ·
+transitabilidad** (verde = alcanzable desde la entrada, ámbar = transitable aislado, rojo = muro,
+según `content/dimensional_nightmare_passability.json`). Cierra con un mosaico general de los 101
+mapas en el orden del GDD.
+
+| Pieza | Salida |
+|---|---|
+| Hojas por episodio | `docs/dn_referencia/recreacion/<EP>.png` (HUB · EP01–EP06 · NEXO) |
+| Mosaico general | `docs/dn_referencia/recreacion/00_MOSAICO_GENERAL.png` (101 mapas, 2040–2142) |
+| Índice con ficha, tileset, tamaño, tiles y BFS por mapa | `docs/dn_referencia/recreacion/INDICE.md` |
+| Detalle suelto por mapa | `docs/dn_referencia/recreacion/detalle/<id>_mosaico.png` (ignorado; se regenera) |
+
+```bash
+npm run dn:mosaicos              # todas las hojas + mosaico general + índice
+node tools/dn_render_recreacion.mjs --episode EP01
+node tools/dn_render_recreacion.mjs --only 2041,2042
+npm run dn:mosaicos:check        # índice e imágenes presentes (entra en dn:verify:all)
+```
+
+Los mosaicos son la evidencia visual versionada de la fidelidad B: cualquier mapa que se salga de su
+ficha se ve de inmediato en la celda correspondiente. Las hojas de `lotes/` (E5) siguen siendo el
+detalle de la comparación con overlay, y `recreacion/` es la vista de presentación del conjunto.

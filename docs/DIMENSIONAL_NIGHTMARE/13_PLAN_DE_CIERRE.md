@@ -161,6 +161,7 @@ Hasta que exista, la fase sólo se documenta aquí y en el doc 15 §5.
 | **F3** Arte ALTA | ✅ | 7 assets + cableado (`DN_KINGGUS`, jefe EP06, `EV_EP01_JEFE`); `dn:art:verify` OK; `preview_arte.png` |
 | **F4** Paquete | ✅ | `verify:package` OK (30 archivos) · `npm test` verde; el ZIP de «Ruta de Dios» no incluye DN |
 | **F5** Cierre documental | ✅ | doc 12 §10.9 + este doc + `ESTADO_CONTENIDO_Y_PROMPTS.md` |
+| **E7** Mosaicos de referencia | ✅ | 9 hojas en `docs/dn_referencia/recreacion/` (101 mapas · ficha+mapa+transitabilidad) + `INDICE.md`; `dn:mosaicos:check` en `dn:verify:all` |
 
 Decisiones tomadas al ejecutar:
 
