@@ -2945,6 +2945,7 @@
         "18,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 148,
         "walkable": 116,
         "pruned": 6,
@@ -3214,6 +3215,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 14,
@@ -3448,6 +3450,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 17,
@@ -3647,6 +3650,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 168,
         "walkable": 96,
         "pruned": 15,
@@ -3788,6 +3792,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 114,
         "walkable": 150,
         "pruned": 14,
@@ -4031,6 +4036,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 39,
@@ -4199,6 +4205,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 140,
         "walkable": 124,
         "pruned": 13,
@@ -4436,6 +4443,7 @@
         "17,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 195,
         "walkable": 69,
         "pruned": 55,
@@ -4639,6 +4647,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 170,
         "walkable": 94,
         "pruned": 46,
@@ -4882,6 +4891,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 39,
@@ -5113,6 +5123,7 @@
         "18,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 59,
@@ -5300,6 +5311,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 154,
         "walkable": 110,
         "pruned": 8,
@@ -5581,6 +5593,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 9,
@@ -5793,6 +5806,7 @@
         "18,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 175,
         "walkable": 65,
         "pruned": 10,
@@ -6019,6 +6033,7 @@
         "19,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 167,
         "walkable": 73,
         "pruned": 8,
@@ -6187,6 +6202,7 @@
         "13,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 123,
         "walkable": 57,
         "pruned": 7,
@@ -6442,6 +6458,7 @@
         "17,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 216,
         "walkable": 72,
         "pruned": 14,
@@ -6644,6 +6661,7 @@
         "17,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 172,
         "walkable": 116,
         "pruned": 43,
@@ -6901,6 +6919,7 @@
         "8,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 216,
         "walkable": 72,
         "pruned": 38,
@@ -7143,6 +7162,7 @@
         "6,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 215,
         "walkable": 73,
         "pruned": 45,
@@ -7392,6 +7412,7 @@
         "16,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 209,
         "walkable": 79,
         "pruned": 80,
@@ -7639,6 +7660,7 @@
         "14,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 201,
         "walkable": 87,
         "pruned": 32,
@@ -7874,6 +7896,7 @@
         "17,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 208,
         "walkable": 80,
         "pruned": 47,
@@ -8125,6 +8148,7 @@
         "8,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 199,
         "walkable": 89,
         "pruned": 21,
@@ -8372,6 +8396,7 @@
         "17,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 213,
         "walkable": 75,
         "pruned": 42,
@@ -8538,6 +8563,7 @@
         "15,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 135,
         "walkable": 153,
         "pruned": 1,
@@ -8784,6 +8810,7 @@
         "17,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 216,
         "walkable": 72,
         "pruned": 24,
@@ -9019,6 +9046,7 @@
         "15,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 164,
         "walkable": 124,
         "pruned": 31,
@@ -9210,6 +9238,7 @@
         "14,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 161,
         "walkable": 127,
         "pruned": 27,
@@ -9344,6 +9373,7 @@
         "11,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 101,
         "walkable": 187,
         "pruned": 2,
@@ -9462,6 +9492,7 @@
         "17,15"
       ],
       "stats": {
+        "relative": false,
         "walls": 94,
         "walkable": 194,
         "pruned": 0,
@@ -9680,6 +9711,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 96,
         "walkable": 124,
         "pruned": 10,
@@ -9748,6 +9780,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 42,
         "walkable": 178,
         "pruned": 0,
@@ -9836,6 +9869,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 60,
         "walkable": 160,
         "pruned": 1,
@@ -9904,6 +9938,7 @@
         "0,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 44,
         "walkable": 176,
         "pruned": 0,
@@ -9947,6 +9982,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 19,
         "walkable": 201,
         "pruned": 0,
@@ -10033,6 +10069,7 @@
         "18,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 59,
         "walkable": 161,
         "pruned": 1,
@@ -10108,6 +10145,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 51,
         "walkable": 169,
         "pruned": 0,
@@ -10206,6 +10244,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 70,
         "walkable": 150,
         "pruned": 2,
@@ -10296,6 +10335,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 63,
         "walkable": 157,
         "pruned": 0,
@@ -10361,6 +10401,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 41,
         "walkable": 179,
         "pruned": 0,
@@ -10440,6 +10481,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 55,
         "walkable": 165,
         "pruned": 0,
@@ -10604,6 +10646,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 127,
         "walkable": 93,
         "pruned": 53,
@@ -10696,6 +10739,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 64,
         "walkable": 156,
         "pruned": 0,
@@ -10770,6 +10814,7 @@
         "0,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 47,
         "walkable": 173,
         "pruned": 0,
@@ -10868,6 +10913,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 69,
         "walkable": 151,
         "pruned": 3,
@@ -10980,6 +11026,7 @@
         "11,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 84,
         "walkable": 136,
         "pruned": 1,
@@ -11161,6 +11208,7 @@
         "18,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 148,
         "walkable": 116,
         "pruned": 6,
@@ -11430,6 +11478,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 14,
@@ -11664,6 +11713,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 17,
@@ -11863,6 +11913,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 168,
         "walkable": 96,
         "pruned": 15,
@@ -12004,6 +12055,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 114,
         "walkable": 150,
         "pruned": 14,
@@ -12247,6 +12299,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 39,
@@ -12415,6 +12468,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 140,
         "walkable": 124,
         "pruned": 13,
@@ -12652,6 +12706,7 @@
         "17,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 195,
         "walkable": 69,
         "pruned": 55,
@@ -12855,6 +12910,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 170,
         "walkable": 94,
         "pruned": 46,
@@ -13098,6 +13154,7 @@
         "21,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 39,
@@ -13329,6 +13386,7 @@
         "18,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 59,
@@ -13610,6 +13668,7 @@
         "21,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 198,
         "walkable": 66,
         "pruned": 9,
@@ -13822,6 +13881,7 @@
         "18,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 175,
         "walkable": 65,
         "pruned": 10,
@@ -14048,6 +14108,7 @@
         "19,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 167,
         "walkable": 73,
         "pruned": 8,
@@ -14177,6 +14238,7 @@
         "21,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 101,
         "walkable": 141,
         "pruned": 20,
@@ -14427,6 +14489,7 @@
         "21,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 181,
         "walkable": 61,
         "pruned": 8,
@@ -14686,6 +14749,7 @@
         "20,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 111,
         "walkable": 131,
         "pruned": 9,
@@ -14894,6 +14958,7 @@
         "18,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 153,
         "walkable": 56,
         "pruned": 28,
@@ -15068,6 +15133,7 @@
         "16,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 140,
         "walkable": 47,
         "pruned": 18,
@@ -15294,6 +15360,7 @@
         "11,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 172,
         "walkable": 59,
         "pruned": 24,
@@ -15523,6 +15590,7 @@
         "18,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 172,
         "walkable": 70,
         "pruned": 19,
@@ -15725,6 +15793,7 @@
         "7,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 150,
         "walkable": 59,
         "pruned": 21,
@@ -15952,6 +16021,7 @@
         "21,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 180,
         "walkable": 62,
         "pruned": 22,
@@ -16084,6 +16154,7 @@
         "19,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 101,
         "walkable": 130,
         "pruned": 0,
@@ -16289,6 +16360,7 @@
         "19,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 173,
         "walkable": 58,
         "pruned": 15,
@@ -16438,6 +16510,7 @@
         "18,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 120,
         "walkable": 89,
         "pruned": 1,
@@ -16598,6 +16671,7 @@
         "16,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 130,
         "walkable": 112,
         "pruned": 28,
@@ -16808,6 +16882,7 @@
         "19,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 168,
         "walkable": 63,
         "pruned": 8,
@@ -17029,6 +17104,7 @@
         "17,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 173,
         "walkable": 58,
         "pruned": 9,
@@ -17246,6 +17322,7 @@
         "17,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 162,
         "walkable": 54,
         "pruned": 18,
@@ -17400,6 +17477,7 @@
         "15,9"
       ],
       "stats": {
+        "relative": false,
         "walls": 120,
         "walkable": 40,
         "pruned": 3,
@@ -17642,6 +17720,7 @@
         "16,11"
       ],
       "stats": {
+        "relative": false,
         "walls": 193,
         "walkable": 71,
         "pruned": 13,
@@ -17892,6 +17971,7 @@
         "21,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 181,
         "walkable": 61,
         "pruned": 8,
@@ -17971,6 +18051,7 @@
         "6,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 51,
         "walkable": 191,
         "pruned": 2,
@@ -18015,6 +18096,7 @@
         "11,6"
       ],
       "stats": {
+        "relative": false,
         "walls": 20,
         "walkable": 222,
         "pruned": 0,
@@ -18257,6 +18339,7 @@
         "21,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 181,
         "walkable": 61,
         "pruned": 18,
@@ -18386,6 +18469,7 @@
         "21,10"
       ],
       "stats": {
+        "relative": false,
         "walls": 101,
         "walkable": 141,
         "pruned": 20,
@@ -21650,6 +21734,8 @@
         "11,3",
         "12,3",
         "13,3",
+        "14,3",
+        "15,3",
         "20,3",
         "0,4",
         "7,4",
@@ -21717,8 +21803,8 @@
       ],
       "stats": {
         "relative": false,
-        "walls": 81,
-        "walkable": 183,
+        "walls": 83,
+        "walkable": 181,
         "pruned": 0,
         "bridged": 1
       },
@@ -24388,8 +24474,6 @@
         "6,0",
         "10,0",
         "11,0",
-        "12,0",
-        "13,0",
         "0,1",
         "1,1",
         "2,1",
@@ -24467,9 +24551,9 @@
       ],
       "stats": {
         "relative": false,
-        "walls": 85,
-        "walkable": 157,
-        "pruned": 19,
+        "walls": 83,
+        "walkable": 159,
+        "pruned": 18,
         "bridged": 7
       },
       "note": "computed = propuesta automática podada; open/blocked (celdas o rectángulos) mandan sobre ella."
@@ -27190,6 +27274,7 @@
         "5,0",
         "6,0",
         "7,0",
+        "8,0",
         "14,0",
         "15,0",
         "16,0",
@@ -27283,8 +27368,8 @@
       ],
       "stats": {
         "relative": false,
-        "walls": 97,
-        "walkable": 167,
+        "walls": 98,
+        "walkable": 166,
         "pruned": 8,
         "bridged": 1
       },

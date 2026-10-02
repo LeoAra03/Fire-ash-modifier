@@ -4051,8 +4051,8 @@
           18,
           11
         ],
-        "reachable": 183,
-        "walkable": 183,
+        "reachable": 181,
+        "walkable": 181,
         "isolated": 0,
         "ratio": 1
       }
@@ -4595,8 +4595,8 @@
           11,
           10
         ],
-        "reachable": 157,
-        "walkable": 157,
+        "reachable": 159,
+        "walkable": 159,
         "isolated": 0,
         "ratio": 1
       }
@@ -5139,8 +5139,8 @@
           11,
           11
         ],
-        "reachable": 167,
-        "walkable": 167,
+        "reachable": 166,
+        "walkable": 166,
         "isolated": 0,
         "ratio": 1
       }
