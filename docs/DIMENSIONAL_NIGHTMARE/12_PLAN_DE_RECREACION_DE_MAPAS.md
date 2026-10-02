@@ -517,3 +517,38 @@ la pasada de QA), los eventos del hub 2040 (el mapa ya está construido con `dn:
 nuevo del Rey Unown / Mano Blanca (lista del doc 08).
 
 ---
+
+### 10.9 Cierre E6 (2026-10-02)
+
+El tramo de cierre se ejecutó con su propio plan (`13_PLAN_DE_CIERRE.md`, fases F0–F5). Resultados:
+
+| Pieza | Estado | Comprobación |
+|---|---|---|
+| Verificación integrada | ✅ `dn:verify:all` (plan · mapas · pasajes · eventos · jefes · hub · hub de eventos) | verde |
+| Hub 2040 jugable | ✅ 9 eventos en la Antesala + 1 en la Gruta (36,11) | `dn:hub:events:verify` |
+| Arte prioridad ALTA (doc 08) | ✅ 7 assets propios + cableado (tipo `DN_KINGGUS`, gráficos de jefe) | `dn:art:verify` |
+| Empaquetado | ✅ `verify:package` OK (30 archivos, 3067 KB), `npm test` verde | — |
+
+**Hub jugable** (`tools/dn_build_hub_events.mjs`, `npm run dn:hub:events`): la Antesala de las
+Grietas (2040) reparte las seis grietas por el perímetro — EP01 (0,0) · EP02 (27,4) · EP03 (0,18) ·
+EP04 (27,19) · EP05 (16,0) · EP06 (8,1) — con página sellada (texto) y página abierta
+(`v264 ≥ 3` para EP01–EP03, `≥ 7` para EP04–EP06) que transfiere al primer mapa del episodio; más
+`HUB_ARCHIVERO` (12,22), `HUB_PROGRESO` (18,12, lee sellos/resonancia/anomalías) y `HUB_SALIDA`
+(13,22 → Gruta). La entrada se abre en la Gruta de los Testigos con `HUB_GRIETA_CAVE` (36,11,
+`v264 ≥ 3`). Las celdas se calculan sobre la malla real del mapa y se registran en
+`content/..._events_built.json` → `hubMap` / `hubCave`; la hoja `docs/dn_referencia/lotes/HUB_2040.png`
+marca cada celda para revisión.
+
+**Arte ALTA** (`tools/dn_install_art.mjs`, `npm run dn:art`): los originales viven en
+`reference/dimensional_nightmare/art_src/` (arte propio, fondo magenta); el instalador recorta,
+reduce por media de área, cuantiza a ≤32 colores y escribe los 7 PNG (Front/DN_KINGGUS 64×64,
+Front/DN_KINGGUS_FINAL 64×64, Trainers/DN_KINGGUS 128×128, Characters/DN_KINGGUS 128×128,
+Characters/DN_WHITE_HAND 384×384, Pictures/DN_WHITE_HAND 96×96, Items/DN_UNOWN_FRAGMENT 48×48,
+manifest en `content/dimensional_nightmare_art.json`), da de alta el tipo de entrenador
+`DN_KINGGUS`, migra el registro del jefe de EP06 y le pone gráfico a `NPC_KINGGUS` (2135) y a
+`EV_EP01_JEFE` (2056). Vista previa: `docs/dn_referencia/arte/preview_arte.png`.
+
+**Empaquetado**: el ZIP de `Scripts_corregido/` corresponde a la línea «Ruta de Dios» y **no**
+incluye el contenido DN (ni sus tilesets derivados de los mosaicos); sigue verificado sin
+regresiones. Decidir si el Nightmare se distribuye en un paquete propio es un pendiente de
+diseño, no un bloqueo técnico.

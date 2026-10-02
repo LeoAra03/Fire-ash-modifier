@@ -1,0 +1,99 @@
+{
+  "title": "Dimensional Nightmare — arte de prioridad ALTA (doc 08)",
+  "generatedBy": "tools/dn_install_art.mjs",
+  "note": "Arte original generado para el mod (no derivado de los mosaicos). Sí puede empaquetarse.",
+  "paletteMax": 32,
+  "assets": [
+    {
+      "id": "kinggus_front",
+      "out": "Graphics/Pokemon/Front/DN_KINGGUS.png",
+      "use": "battler forma 1 (soporte arte)",
+      "source": "kinggus_form1.png",
+      "sourceSha1": "cb6ab2cc9edb",
+      "sha1": "592fda359c00",
+      "w": 64,
+      "h": 64,
+      "colors": 32,
+      "transparent": true,
+      "bytes": 3390
+    },
+    {
+      "id": "kinggus_final",
+      "out": "Graphics/Pokemon/Front/DN_KINGGUS_FINAL.png",
+      "use": "battler forma final",
+      "source": "kinggus_final.png",
+      "sourceSha1": "178f851c4f3f",
+      "sha1": "7e56b49ead3c",
+      "w": 64,
+      "h": 64,
+      "colors": 31,
+      "transparent": true,
+      "bytes": 3886
+    },
+    {
+      "id": "kinggus_trainer",
+      "out": "Graphics/Trainers/DN_KINGGUS.png",
+      "use": "sprite de entrenador del jefe EP06",
+      "source": "kinggus_form1.png",
+      "sourceSha1": "cb6ab2cc9edb",
+      "sha1": "b2f1e81d41ba",
+      "w": 128,
+      "h": 128,
+      "colors": 32,
+      "transparent": true,
+      "bytes": 8916
+    },
+    {
+      "id": "kinggus_over",
+      "out": "Graphics/Characters/DN_KINGGUS.png",
+      "use": "overworld (hoja 4×4 de 32 px)",
+      "source": "kinggus_over.png",
+      "sourceSha1": "04f0b6e3efec",
+      "sha1": "844464e9c14e",
+      "w": 128,
+      "h": 128,
+      "colors": 32,
+      "transparent": true,
+      "bytes": 4402
+    },
+    {
+      "id": "white_hand_over",
+      "out": "Graphics/Characters/DN_WHITE_HAND.png",
+      "use": "altar de la Mano Blanca (hoja 4×4 de 96 px)",
+      "source": "white_hand.png",
+      "sourceSha1": "61d22eddfd8e",
+      "sha1": "5dd60bda0165",
+      "w": 384,
+      "h": 384,
+      "colors": 31,
+      "transparent": true,
+      "bytes": 28228
+    },
+    {
+      "id": "white_hand_pic",
+      "out": "Graphics/Pictures/DN_WHITE_HAND.png",
+      "use": "escena (pantalla/altar)",
+      "source": "white_hand.png",
+      "sourceSha1": "61d22eddfd8e",
+      "sha1": "8b09d2b8ce7b",
+      "w": 96,
+      "h": 96,
+      "colors": 31,
+      "transparent": true,
+      "bytes": 5072
+    },
+    {
+      "id": "unown_fragment",
+      "out": "Graphics/Items/DN_UNOWN_FRAGMENT.png",
+      "use": "icono de objeto",
+      "source": "unown_fragment.png",
+      "sourceSha1": "4aef1b911a2e",
+      "sha1": "8582dc3eb1b5",
+      "w": 48,
+      "h": 48,
+      "colors": 31,
+      "transparent": true,
+      "bytes": 3060
+    }
+  ]
+}

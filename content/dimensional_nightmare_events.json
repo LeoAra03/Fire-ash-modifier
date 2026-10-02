@@ -3146,7 +3146,7 @@
       "boss": {
         "name": "KINGGUS",
         "phaseA": {
-          "type": "GENTLEMAN",
+          "type": "DN_KINGGUS",
           "label": "KINGGUS",
           "trainer": "DN_EP06_A"
         },
