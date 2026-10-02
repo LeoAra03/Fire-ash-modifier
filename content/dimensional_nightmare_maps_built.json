@@ -1,6 +1,6 @@
 {
   "generatedBy": "tools/apply_dimensional_nightmare_maps.mjs",
-  "counts": 3,
+  "counts": 16,
   "maps": [
     {
       "id": 2041,
@@ -30,66 +30,100 @@
           11,
           10
         ],
-        "reachable": 165,
-        "walkable": 165,
+        "reachable": 170,
+        "walkable": 170,
         "isolated": 0,
         "ratio": 1
       }
     },
     {
-      "id": 2088,
-      "episode": "EP04",
-      "title": "Bosque Dormido — Entrada",
-      "tilesetHint": "Outer Bosque",
+      "id": 2042,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala de las Urnas",
+      "tilesetHint": "Int Cueva",
       "designSize": {
         "width": 30,
         "height": 24
       },
-      "fichaCell": "R2-1",
-      "role": "Entrada; primer canto",
+      "fichaCell": "R7-4",
+      "role": "Primeras anomalías, objeto oculto",
       "primary": {
-        "index": 1,
+        "index": 4,
         "bis": false,
-        "resource": "R2",
-        "key": "r2_dark_forest",
-        "slice": "reference/dimensional_nightmare/slices/r2_dark_forest/01.png"
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/04.png"
       },
       "extras": [],
-      "tilesetId": 27,
-      "tiles": 220,
-      "width": 22,
-      "height": 10,
+      "tilesetId": 29,
+      "tiles": 162,
+      "width": 15,
+      "height": 11,
       "bfs": {
         "entry": [
-          11,
+          9,
           9
         ],
-        "reachable": 124,
-        "walkable": 124,
+        "reachable": 48,
+        "walkable": 48,
         "isolated": 0,
         "ratio": 1
       }
     },
     {
-      "id": 2120,
-      "episode": "EP06",
-      "title": "Atrio de las Letras",
-      "tilesetHint": "Int Trono",
+      "id": 2043,
+      "episode": "EP01",
+      "title": "Catacumbas — Celdas",
+      "tilesetHint": "Int Cueva",
       "designSize": {
-        "width": 30,
+        "width": 40,
         "height": 24
       },
-      "fichaCell": "R4-1",
-      "role": "Entrada; dos estatuas; primer Unown vivo",
+      "fichaCell": "R7-2",
+      "role": "NPCs conscientes, llave de celda",
       "primary": {
-        "index": 1,
+        "index": 2,
         "bis": false,
-        "resource": "R4",
-        "key": "r4_trono_unown",
-        "slice": "reference/dimensional_nightmare/slices/r4_trono_unown/01.png"
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/02.png"
       },
       "extras": [],
-      "tilesetId": 28,
+      "tilesetId": 30,
+      "tiles": 226,
+      "width": 21,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          5,
+          10
+        ],
+        "reachable": 80,
+        "walkable": 80,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2044,
+      "episode": "EP01",
+      "title": "Catacumbas — Galería de Barrotes",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 40,
+        "height": 30
+      },
+      "fichaCell": "R7-6",
+      "role": "Puzzle de puertas (4 palancas)",
+      "primary": {
+        "index": 6,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/06.png"
+      },
+      "extras": [],
+      "tilesetId": 31,
       "tiles": 242,
       "width": 22,
       "height": 11,
@@ -98,10 +132,418 @@
           11,
           10
         ],
-        "reachable": 94,
-        "walkable": 114,
-        "isolated": 20,
-        "ratio": 0.8245614035087719
+        "reachable": 62,
+        "walkable": 62,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2045,
+      "episode": "EP01",
+      "title": "Catacumbas — Escalera del Arco",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 24,
+        "height": 30
+      },
+      "fichaCell": "R7-8",
+      "role": "Vertical, transición de fase",
+      "primary": {
+        "index": 8,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/08.png"
+      },
+      "extras": [],
+      "tilesetId": 32,
+      "tiles": 163,
+      "width": 15,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          13,
+          10
+        ],
+        "reachable": 107,
+        "walkable": 107,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2046,
+      "episode": "EP01",
+      "title": "Catacumbas — Cripta de Sarcófagos",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-3",
+      "role": "Sarcófagos que se abren (fase 3+)",
+      "primary": {
+        "index": 3,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/03.png"
+      },
+      "extras": [],
+      "tilesetId": 33,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          10,
+          10
+        ],
+        "reachable": 97,
+        "walkable": 97,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2047,
+      "episode": "EP01",
+      "title": "Catacumbas — Osario",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-14",
+      "role": "Combates salvajes, huesos",
+      "primary": {
+        "index": 14,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/14.png"
+      },
+      "extras": [],
+      "tilesetId": 34,
+      "tiles": 252,
+      "width": 21,
+      "height": 12,
+      "bfs": {
+        "entry": [
+          10,
+          11
+        ],
+        "reachable": 64,
+        "walkable": 64,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2048,
+      "episode": "EP01",
+      "title": "Catacumbas — Jardín de Raíces",
+      "tilesetHint": "Int Bosque",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-5",
+      "role": "Raíces vivas, curaciones",
+      "primary": {
+        "index": 5,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/05.png"
+      },
+      "extras": [],
+      "tilesetId": 35,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          10,
+          10
+        ],
+        "reachable": 106,
+        "walkable": 106,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2049,
+      "episode": "EP01",
+      "title": "Catacumbas — Pasadizo que Respira",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 20,
+        "height": 40
+      },
+      "fichaCell": "R7-11",
+      "role": "Laberinto; se cierra por detrás",
+      "primary": {
+        "index": 11,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/11.png"
+      },
+      "extras": [],
+      "tilesetId": 36,
+      "tiles": 231,
+      "width": 21,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          10,
+          10
+        ],
+        "reachable": 61,
+        "walkable": 61,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2050,
+      "episode": "EP01",
+      "title": "Catacumbas — Galería de Mausoleos",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 40,
+        "height": 24
+      },
+      "fichaCell": "R7-9",
+      "role": "NPC \"La Campanera\"",
+      "primary": {
+        "index": 9,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/09.png"
+      },
+      "extras": [],
+      "tilesetId": 37,
+      "tiles": 222,
+      "width": 21,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          10,
+          10
+        ],
+        "reachable": 58,
+        "walkable": 58,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2051,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala de Pedestales",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-12",
+      "role": "Puzzle de cráneos (4 pedestales)",
+      "primary": {
+        "index": 12,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/12.png"
+      },
+      "extras": [],
+      "tilesetId": 38,
+      "tiles": 220,
+      "width": 20,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          10,
+          10
+        ],
+        "reachable": 119,
+        "walkable": 119,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2052,
+      "episode": "EP01",
+      "title": "Catacumbas — Capilla de la Campana",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-10",
+      "role": "Anomalía ancla: la campana rota",
+      "primary": {
+        "index": 10,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/10.png"
+      },
+      "extras": [],
+      "tilesetId": 39,
+      "tiles": 242,
+      "width": 22,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          11,
+          10
+        ],
+        "reachable": 108,
+        "walkable": 108,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2053,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala de las Bestias",
+      "tilesetHint": "Int Cueva",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-13",
+      "role": "Guardianes; miniboss opcional",
+      "primary": {
+        "index": 13,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/13.png"
+      },
+      "extras": [],
+      "tilesetId": 40,
+      "tiles": 246,
+      "width": 21,
+      "height": 12,
+      "bfs": {
+        "entry": [
+          10,
+          11
+        ],
+        "reachable": 107,
+        "walkable": 107,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2054,
+      "episode": "EP01",
+      "title": "Catacumbas — Pared de Inscripciones",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 30,
+        "height": 24
+      },
+      "fichaCell": "R7-7",
+      "role": "Traducción (Rotom Sintonía); lore",
+      "primary": {
+        "index": 7,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/07.png"
+      },
+      "extras": [],
+      "tilesetId": 41,
+      "tiles": 230,
+      "width": 21,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          7,
+          10
+        ],
+        "reachable": 68,
+        "walkable": 68,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2055,
+      "episode": "EP01",
+      "title": "Catacumbas — Sala Ritual",
+      "tilesetHint": "Int Lavender",
+      "designSize": {
+        "width": 32,
+        "height": 32
+      },
+      "fichaCell": "R7-15",
+      "role": "Puzzle de pentagrama; antesala del jefe",
+      "primary": {
+        "index": 15,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/15.png"
+      },
+      "extras": [],
+      "tilesetId": 42,
+      "tiles": 180,
+      "width": 15,
+      "height": 12,
+      "bfs": {
+        "entry": [
+          7,
+          11
+        ],
+        "reachable": 55,
+        "walkable": 55,
+        "isolated": 0,
+        "ratio": 1
+      }
+    },
+    {
+      "id": 2056,
+      "episode": "EP01",
+      "title": "Catacumbas — Cámara de la Mano",
+      "tilesetHint": "Int Cueva + R1",
+      "designSize": {
+        "width": 24,
+        "height": 24
+      },
+      "fichaCell": "R7-16",
+      "role": "Jefe final; rojo sangre",
+      "primary": {
+        "index": 16,
+        "bis": false,
+        "resource": "R7",
+        "key": "r7_catacumbas",
+        "slice": "reference/dimensional_nightmare/slices/r7_catacumbas/16.png"
+      },
+      "extras": [],
+      "tilesetId": 43,
+      "tiles": 240,
+      "width": 20,
+      "height": 12,
+      "bfs": {
+        "entry": [
+          10,
+          11
+        ],
+        "reachable": 164,
+        "walkable": 164,
+        "isolated": 0,
+        "ratio": 1
       }
     }
   ]

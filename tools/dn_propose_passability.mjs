@@ -55,6 +55,7 @@ const VERIFY = argv.includes("--verify");
 const EDGE = Number(option("--edge", "0.16"));   // fracción de píxeles de borde = bloque estructurado
 const VOID = Number(option("--void", "0.8"));    // fracción de píxeles casi negros = masa sólida
 const MIN_GROUP = Number(option("--min", "4"));  // grupos menores = ruido, se dejan transitables
+const MIN_WALK = Number(option("--min-walk", "0.25")); // suelo mínimo garantizado por mapa
 
 const blueprint = JSON.parse(fs.readFileSync(BLUEPRINT, "utf8"));
 const catalog = JSON.parse(fs.readFileSync(CATALOG, "utf8"));
@@ -62,7 +63,7 @@ const existing = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) :
 const result = {
   generatedBy: "tools/dn_propose_passability.mjs",
   how: "estructura (edge/void) + grupos grandes = muro + huecos internos = muro + componente mayor = transitable; `open`/`blocked` manuales mandan",
-  thresholds: { edge: EDGE, void: VOID, minGroup: MIN_GROUP },
+  thresholds: { edge: EDGE, void: VOID, minGroup: MIN_GROUP, minWalk: MIN_WALK },
   maps: {},  // se fusiona con el archivo existente: ejecutar con --only no borra el resto
 };
 
@@ -172,7 +173,8 @@ function rectCells(rect, width, height) {
 let entries = blueprint.maps.filter((m) => m.primary);
 if (ONLY) entries = entries.filter((m) => ONLY.includes(m.id));
 else if (EPISODE) entries = entries.filter((m) => m.episode === EPISODE);
-else if (!VERIFY) entries = entries.filter((m) => [2041, 2088, 2120].includes(m.id));
+else if (VERIFY) entries = entries.filter((m) => existing.maps?.[String(m.id)]);
+else entries = entries.filter((m) => [2041, 2088, 2120].includes(m.id));
 
 for (const [id, value] of Object.entries(existing.maps ?? {})) result.maps[id] = value; // conserva lo no reprocesado
 let differences = 0;
@@ -197,25 +199,19 @@ for (const entry of entries) {
   const blockRects = current.blockRects ?? [];
   const openCells = new Set([...(current.open ?? []), ...openRects.flatMap((r) => rectCells(r, width, height))]);
   const blockedCells = new Set([...(current.blocked ?? []), ...blockRects.flatMap((r) => rectCells(r, width, height))]);
-  const walk = wall.map((row) => row.map(() => true));
-  for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-      const key = `${x},${y}`;
-      walk[y][x] = !(blockedCells.has(key) || (wall[y][x] && !openCells.has(key)));
-    }
-  }
 
   // 2.5) puenteo acotado: abre el mínimo de bloques de muro para unir la zona
   //      alcanzable desde la entrada con el resto de celdas transitables.
   //      Sin esto, la poda del paso 3 convertiría en muro zonas legítimas que
   //      quedaron separadas por 1-2 bloques (probado en el piloto).
   const bridgeBudget = Math.max(4, Math.round(width * height * 0.03));
+  const autoOpen = new Set();   // celdas abiertas por el algoritmo (no manuales)
   const bridged = [];
   const walkOf = () => {
     const w = wall.map((row) => row.map(() => true));
     for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) {
       const key = `${x},${y}`;
-      w[y][x] = !(blockedCells.has(key) || (wall[y][x] && !openCells.has(key)));
+      w[y][x] = !(blockedCells.has(key) || (wall[y][x] && !openCells.has(key) && !autoOpen.has(key)));
     }
     return w;
   };
@@ -231,30 +227,77 @@ for (const entry of entries) {
       for (let x = 0; x < width; x++) {
         if (!wall[y][x] || blockedCells.has(`${x},${y}`)) continue;
         let inside = 0, outside = 0;
-        for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
-          const nx = x + dx, ny = y + dy;
-          if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
-          if (label[ny][nx]) inside++;
-          else if (w[ny][nx]) outside++;
+        // 8 vecinos: dos regiones pueden tocarse solo en diagonal
+        for (let dy = -1; dy <= 1; dy++) {
+          for (let dx = -1; dx <= 1; dx++) {
+            if (!dx && !dy) continue;
+            const nx = x + dx, ny = y + dy;
+            if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+            if (label[ny][nx]) inside++;
+            else if (w[ny][nx]) outside++;
+          }
         }
         const score = Math.min(inside, 1) * outside;
         if (score > bestScore) { bestScore = score; best = [x, y]; }
       }
     }
     if (!best) break;
-    openCells.add(`${best[0]},${best[1]}`);
+    autoOpen.add(`${best[0]},${best[1]}`);
+    bridged.push(`${best[0]},${best[1]}`);
+  }
+
+  // 2.6) suelo mínimo: si el puenteo no alcanza para dejar el mapa jugable (arte
+  //      muy detallado), se abren los bloques más "planos" que toquen la zona
+  //      alcanzable hasta llegar a MIN_WALK del mapa. Así ningún mapa del ciclo
+  //      sale con un pasillo de 5 celdas.
+  // El suelo mínimo se mide sobre el AL CANCE desde la entrada (que es lo que
+  // sobrevive a la poda del paso 3), no sobre el total de celdas abiertas.
+  const minWalk = Math.min(Math.max(MIN_WALK, 0), 1) * width * height;
+  for (let guard = 0; guard < width * height; guard++) {
+    const w = walkOf();
+    const start = entryCell(w, width, height);
+    const { label, size } = reachFrom(w, width, height, start);
+    if (size >= minWalk || !start) break;
+    let best = null, bestScore = Infinity;
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        if (!wall[y][x] || openCells.has(`${x},${y}`) || autoOpen.has(`${x},${y}`)) continue;
+        let touchesReach = false;
+        for (let dy = -1; dy <= 1 && !touchesReach; dy++) {
+          for (let dx = -1; dx <= 1; dx++) {
+            if (!dx && !dy) continue;
+            const nx = x + dx, ny = y + dy;
+            if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+            if (label[ny][nx]) { touchesReach = true; break; }
+          }
+        }
+        if (!touchesReach) continue;
+        const f = features(ficha.matrix[y][x]);
+        const score = f.edge + f.dark;
+        if (score < bestScore) { bestScore = score; best = [x, y]; }
+      }
+    }
+    if (!best) break;
+    autoOpen.add(`${best[0]},${best[1]}`);
     bridged.push(`${best[0]},${best[1]}`);
   }
 
   // 3) poda: toda celda transitable que no se alcance desde la entrada pasa a muro
   //    (no puede haber zonas transitables inalcanzables: rompe el checklist)
-  const entry0 = entryCell(walk, width, height);
-  const reach0 = reachFrom(walk, width, height, entry0);
+  //    Ojo: se parte de walkOf(), que ya incluye puenteo y suelo mínimo.
+  const finalWalk = walkOf();
+  const entry0 = entryCell(finalWalk, width, height);
+  const reach0 = reachFrom(finalWalk, width, height, entry0);
   const pruned = [];
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
-      if (walk[y][x] && !reach0.label[y][x]) { walk[y][x] = false; pruned.push(`${x},${y}`); }
+      if (finalWalk[y][x] && !reach0.label[y][x]) { finalWalk[y][x] = false; pruned.push(`${x},${y}`); }
     }
+  }
+  const walk = finalWalk;
+  if (process.env.DN_DEBUG) {
+    let walls = 0; for (const row of wall) for (const v of row) if (v) walls++;
+    console.log(`  [debug ${entry.id}] wall=${walls} blockedCells=${blockedCells.size} openCells=${openCells.size} autoOpen=${autoOpen.size} walkable=${walk.flat().filter(Boolean).length}`);
   }
 
   if (VERIFY) {
@@ -288,6 +331,7 @@ for (const entry of entries) {
     entry: entryFinal ?? null,
     open: [...openCells],
     blocked: [...blockedCells],
+    auto: [...autoOpen],
     computed: blocked,
     stats: { walls: blocked.length, walkable, pruned: pruned.length, bridged: bridged.length },
     note: "computed = propuesta automática podada; open/blocked (celdas o rectángulos) mandan sobre ella.",

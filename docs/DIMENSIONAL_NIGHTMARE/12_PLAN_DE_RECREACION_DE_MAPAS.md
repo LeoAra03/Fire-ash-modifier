@@ -95,7 +95,7 @@ manual en `mapping.json` tiene prioridad absoluta sobre cualquier heurística po
   (3 500–4 200 tiles), así que **E3 trocea el tileset por mapa** (cada mapa usa solo sus bloques)
   en vez de instalar un PNG gigante por recurso.
 
-### E3 — Mapas y pasajes ✅ *piloto construido*
+### E3 — Mapas y pasajes ✅ *piloto + EP01 construidos*
 - **Plano**: `content/dimensional_nightmare_maps.json` (`npm run dn:plan`) — generado de las
   tablas del GDD (docs 01–07): 101 mapas, 100 con ficha de referencia asignada y su recorte de
   `slices/` ya resuelto. `npm run dn:plan:check` verifica que todos los recortes existan.
@@ -116,9 +116,18 @@ manual en `mapping.json` tiene prioridad absoluta sobre cualquier heurística po
      y se revisan sobre el overlay; el BFS (`reachableCells`) valida que no queden zonas aisladas.
   5. **Comparativa visual** en `docs/dn_referencia/<id>_comparacion.png`: ficha de referencia |
      mapa construido | overlay de transitabilidad (verde = alcanzable, ámbar = aislado, rojo = muro).
-- **Piloto construido y verificado (2026-10-01)**: `2041` (R7-1, tileset #26), `2088` (R2-1, #27),
-  `2120` (R4-1, #28). `npm run dn:maps:verify` en verde: mapa, tamaño, tileset, PNG, MapInfos,
-  metadatos y BFS 100 %.
+- **Pasajes**: `tools/dn_propose_passability.mjs` (`npm run dn:pasajes`) propone los muros por
+  **estructura** (detalle local de alto contraste agrupado), **puentea** lo imprescindible para no
+  partir el mapa, **garantiza un 25 % de suelo alcanzable** desde la entrada y **poda** lo que
+  quedaría inaccesible. Los ajustes finos se hacen con `openRects` / `blockRects` (rectángulos
+  manuales que mandan sobre la propuesta) y se revisan en el overlay
+  `docs/dn_referencia/pasajes/<id>_pasajes.png`. El consumidor instala los pasajes **por tile**
+  (RMXP guarda el pasaje por tile: un tile es transitable si alguna de sus celdas lo es).
+- **Construido y verificado (2026-10-01)**: piloto `2041` (R7-1, ts #26), `2088` (R2-1, #27),
+  `2120` (R4-1, #28) **y EP01 completo `2041`–`2056`** (tilesets #26 y #29–#43, 162–252 tiles
+  cada uno). `npm run dn:maps:verify` en verde (16 mapas: mapa, tamaño, tileset, PNG, MapInfos,
+  metadatos) y **BFS 100 % en los 16**. Comparativas antes/después de EP01 en
+  `docs/dn_referencia/` (referencia | mapa construido | overlay de transitabilidad).
 - **Nota de fidelidad**: las fichas traen a veces horneado el sprite del jugador de la ROM de
   referencia; al copiar la escena píxel a píxel ese sprite queda como tile del mapa. Opción
   pendiente `--erase-actor` para sustituir esa zona por el suelo circundante si se quiere limpiar.
