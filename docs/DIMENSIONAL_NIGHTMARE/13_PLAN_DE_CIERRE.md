@@ -93,6 +93,42 @@ El instalador limpia fondo a alfa, recorta, cuantiza a ≤32 colores, escala con
 cercano y **cablea** el arte: nuevo `trainer_type` `DN_KINGGUS` para el jefe de EP06 y gráficos
 de los eventos `EV_EP06_JEFE` (2135) y `EV_CAT_Mano` (2056).
 
+### F3b — Variantes de corrupción por fase (FASE 1–7)
+El GDD define 7 fases de corrupción por universo. El tramo de cierre **no duplica mapas ni
+arte**: la fase se resuelve con tono + huecos + overlays sobre la escena ya construida, de
+modo que 103 mapas cubren 7 lecturas sin 721 variantes.
+
+| Fase | Nombre | Tono (R, G, B, A) | Qué cambia | Anomalías activas | Música |
+|---|---|---|---|---|---|
+| 1 | Normal | 0, 0, 0, 0 | nada: el mundo se ve limpio | 0 | normal |
+| 2 | Duda | −8, −8, −8, 0 | un NPC no responde; un objeto menor cambia de sitio | 1 | normal con un corte |
+| 3 | Grieta | −24, −24, −24, 0 | primeros huecos de tile (2 % del suelo transitable) | 2 | alterada al 60 % |
+| 4 | Ruido | −48, −32, −32, 0 | sprites duplicados; el mapa «respira» (scroll de 1 celda) | 3 | alterada + estática |
+| 5 | Pérdida | −64, −48, −48, 0 | un NPC consciente desaparece; se apaga un sector | 4 | alterada lenta |
+| 6 | Ruptura parcial | −96, −64, −64, 40 | huecos reales (5 %, paso bloqueado) y texto glitch | 5 | alterada + glitch de R1 |
+| 7 | Ruptura | −128, −96, −96, 80 | silueta de R1; la salida normal se sustituye por la grieta | 6 | silencio con zumbido |
+
+**Implementación** (una sola pieza de código, no una por mapa):
+
+- `v266 DN_FASE_CORRUPCION` guarda la fase global (0 = fuera del Nightmare; 1–7 dentro).
+  La fija el guion al cerrar anomalías/sellos; el mapa la lee al entrar.
+- `PokeMod_DN_Fase` (nueva sección Ruby) aplica al entrar en un mapa `DN_*`:
+  `tono_final = tono_base(dn:sensacion) + modificador(fase)`, el overlay de la fase
+  (`Graphics/Pictures/DN_FASE_3/6/7.png`, tres PNG de rayas y ruido) y la lista de huecos.
+- Los **huecos** son deterministas y viven en `content/dimensional_nightmare_fases.json`:
+  el generador elige celdas de suelo con una máscara (celda `(x*7 + y*13 + fase) % 40 == 0`)
+  y las marca sin gráfico y sin paso sólo en las fases 6–7; se revierten al restaurar el tono,
+  igual que `dn:sensacion`.
+- Las anomalías de las fases 2–6 se mapean a las 10–15 ya catalogadas por universo
+  (`content/dimensional_nightmare.json`); la fase sólo decide cuántas están activas.
+- Nada de esto entra en el ZIP: overlays y huecos se generan en el tramo de arte MEDIA (B1)
+  y se verifican en local.
+
+**Puerta de calidad**: `dn:fases:check` (a añadir con el generador) comprobará que la tabla
+de 7 fases es completa, que cada mapa `DN_*` declara cómo lee la fase, que los tonos vuelven a
+0 al salir y que ningún hueco cae sobre una celda obligatoria (transfers, NPCs, jefes).
+Hasta que exista, la fase sólo se documenta aquí y en el doc 15 §5.
+
 ### F4 — Empaquetado y derechos
 - `npm run build:package` genera `Scripts_corregido/Fire_Ash_Paquete_Directo.zip`;
 - `npm run verify:package` comprueba integridad y que **no** se cuelan los PNG derivados de los
@@ -111,6 +147,7 @@ de los eventos `EV_EP06_JEFE` (2135) y `EV_CAT_Mano` (2056).
 | B4 | Combate espejo real de EP05 | hoy usa equipo fijo equivalente | definir el equipo espejo en el catálogo |
 | B5 | Forma final de EP06 (equipo 120–125) | propuesta en el GDD | aprobar equipo y activar la segunda batalla |
 | B6 | Guion definitivo de los diálogos | los textos salen de las notas del GDD | pasada de redacción sobre los eventos |
+| B7 | Variantes de corrupción por fase (FASE 1–7) | el tramo construyó la escena base | tabla de tono + overlays + huecos deterministas y `dn:fases:check` (F3b) |
 
 ---
 
@@ -137,8 +174,8 @@ Decisiones tomadas al ejecutar:
   arrastra material de referencia.
 - **La salida del hub es una celda distinta de la llegada** para que entrar y salir no forme bucle.
 
-Pendientes que siguen abiertos: B1–B6 del §4 (arte MEDIA/BAJA, audio alterado, QA manual del EP01,
-espejo real de EP05, forma final de EP06 y guion definitivo).
+Pendientes que siguen abiertos: B1–B7 del §4 (arte MEDIA/BAJA, audio alterado, QA manual del EP01,
+espejo real de EP05, forma final de EP06, guion definitivo y variantes de corrupción por fase).
 
 ## 5b. Comandos del tramo
 

@@ -189,6 +189,7 @@ Sin errores ni avisos: gráficos, transferencias, tilesets, audio, objetos, trai
 | NPC | `trchar052` sigue sin existir (4 NPCs usan `trchar000`) | crear el sprite o aceptar la sustitución |
 | TILES | tilesets `DN_*` propios usan la tabla de pasajes del juego base | revisar los pasajes finos por mapa al final de la QA |
 | AUDIO | audio alterado por anomalía | composición/edición (B2) |
+| CORRUPCIÓN | las 7 fases del GDD no cambian la escena todavía | plan de fase en doc 13 §F3b (tono + huecos + overlays) y verificador de fases (B7) |
 
 ## 6. La batalla de La Ruta de Dios — soluciones (M2)
 
