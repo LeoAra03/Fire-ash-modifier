@@ -258,6 +258,7 @@ Sin errores ni avisos: gráficos, transferencias, tilesets, audio, objetos, trai
 | S12 | Sin candidatos en el PC, el pseudo-PC no tenía salida | `pbArceusRotomMercy`: el Rotom sostiene al equipo una sola vez (35 %); nunca deja al jugador sin opciones |
 | S13 | Arceus se curaba 3 veces al completo | quedan **2** Restaura Todo divinos, sólo en fase 4+ y por debajo del 30 %; los sellos rotos no se restauran |
 | S14 | El duelo con Volo llegaba con el equipo agotado | `pbArceusVoloRest`: descanso explícito antes del reto (y en cada reintento) |
+| S15 | El prólogo cinemático (3 combates CPU) se repetía entero en cada reintento | switch 881 `RUTA_DE_DIOS_PRELUDE_SEEN`: se ve una vez y en los reintentos se resume en una línea |
 
-Verificación: `npm run verify:ruta_de_dios` comprueba las once garantías en la sección
+Verificación: `npm run verify:ruta_de_dios` comprueba las doce garantías en la sección
 `PokeMod_RutaDeDios` ya instalada en `Scripts.rxdata`.
