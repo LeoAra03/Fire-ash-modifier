@@ -237,9 +237,7 @@
       "exit": null,
       "boss": "LA MANO BLANCA",
       "pending": [
-        "fase B del jefe (cadenas)",
-        "trainers DN_*",
-        "objetos DN_*"
+        "fase B del jefe (cadenas)"
       ]
     },
     "2057": {
@@ -478,9 +476,7 @@
       "exit": null,
       "boss": "EL SIN NOMBRE",
       "pending": [
-        "fase B del jefe (cadenas)",
-        "trainers DN_*",
-        "objetos DN_*"
+        "fase B del jefe (fotos)"
       ]
     },
     "2073": {
@@ -704,9 +700,7 @@
       "exit": null,
       "boss": "EL CAMINANTE",
       "pending": [
-        "fase B del jefe (cadenas)",
-        "trainers DN_*",
-        "objetos DN_*"
+        "fase B del jefe (fogatas)"
       ]
     },
     "2088": {
@@ -949,9 +943,7 @@
       "exit": null,
       "boss": "LA NANA",
       "pending": [
-        "fase B del jefe (cadenas)",
-        "trainers DN_*",
-        "objetos DN_*"
+        "fase B del jefe (cunas)"
       ]
     },
     "2104": {
@@ -1192,9 +1184,7 @@
       "exit": null,
       "boss": "EL JUGADOR 000",
       "pending": [
-        "fase B del jefe (cadenas)",
-        "trainers DN_*",
-        "objetos DN_*"
+        "fase B del jefe (rendijas)"
       ]
     },
     "2120": {
@@ -1441,9 +1431,7 @@
       "exit": null,
       "boss": "KINGGUS",
       "pending": [
-        "fase B del jefe (cadenas)",
-        "trainers DN_*",
-        "objetos DN_*",
+        "fase B del jefe (letras)",
         "2135: KINGGUS sin sprite (arte pendiente)"
       ]
     },
@@ -1517,11 +1505,7 @@
       ],
       "exit": null,
       "boss": null,
-      "pending": [
-        "fase B del jefe (cadenas)",
-        "trainers DN_*",
-        "objetos DN_*"
-      ]
+      "pending": []
     }
   },
   "hub": {

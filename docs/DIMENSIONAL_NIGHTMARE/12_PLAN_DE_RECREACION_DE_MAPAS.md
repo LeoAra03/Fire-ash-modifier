@@ -251,6 +251,8 @@ npm run dn:events:check   # E4: valida el plano (7/7 episodios)
 npm run dn:events         # E4: instala conexiones + NPCs + eventos + jefes en los 100 mapas
 npm run dn:events:ep      # E4: un episodio (--episode EP01)
 npm run dn:events:verify  # E4: verifica los mapas ya instalados (no reescribe)
+npm run dn:battles        # E4: fase B, trainers DN_* y objetos DN_* (idempotente)
+npm run dn:battles:verify # E4: ¿están los trainers, los objetos, los iconos y los pasos de fase B?
 ```
 
 ## 9. Plan de elaboración de los lotes restantes (L4–L9)
@@ -345,7 +347,7 @@ Con E3 cerrado (100/100 mapas), el objetivo del tramo es **que los mapas sean ju
 recorribles en cadena, con sus NPCs, sus anomalías contadas, sus jefes sellables y su instalación
 verificada. Orden: conexiones → NPCs → eventos clave → jefes → verificación → instalación.
 
-**Estado (2026-10-01): E4a–E4d INSTALADO y verificado en los 100 mapas.** Episodios completos
+**Estado (2026-10-01): E4a–E4d CERRADO, con la fase B de los 6 jefes instalada.** Episodios completos
 (EP01–EP06 + NEXO) con conexiones bidireccionales, 80 NPCs, **77 anomalías** (las 12/13/12/13/13/14
 del §5 de cada doc), 121 entradas de evento del índice y 6 jefes con sello. `dn:events:verify` y `dn:maps:verify` en verde y
 hojas de revisión `docs/dn_referencia/eventos/<EP>.png`. Lo pendiente (fase B de cada jefe,
@@ -425,15 +427,22 @@ Por episodio, el instalador escribe en el mapa del jefe (último del rango):
    dos fases (`pbTrainerBattle(PBTrainer.new(:CLAVE, "NOMBRE"), false, "", true)`);
 2. **Página 2** (condición `self-switch A`): el jefe ya no está, con el texto de la página 2 del
    doc 10;
-3. **Sello**: `sw88x = ON`, `v265 += N` (tope 100), recompensa única comprobada antes de dar
-   (`pbItemBall`/`pbReceiveItem`), página nueva del Archivero;
-4. **Salida**: transferencia al hub tras sellar.
+3. **Fase B (implementada)**: los pasos de escenario del §9 — 4 cadenas (EP01), 4 fotos (EP02),
+   4 fogatas (EP03, en 2073/2075/2078/2082), 4 cunas (EP04), 4 rendijas (EP05) y 7 letras (EP06) —
+   como eventos interactivos (`BOSSB_<EP>_n`) con switch propio (910+) y contador `v277`. **El
+   sello lo enciende el último paso**, no la batalla: es la mecánica que el GDD pide («no puedes
+   golpearlo: golpea lo que lo sostiene»). Las celdas que el GDD cita para mapas de 40×40 se
+   reubican en el suelo más cercano de la ficha real (los mapas son de 30×24/15×11…) y cada
+   reubicación queda como aviso;
+4. **Sello**: `sw88x = ON` + `v265 += N` (tope 100) + recompensa única (objeto `DN_*`) + grieta;
+5. **Salida**: transferencia al hub tras sellar.
 
-Los *trainers* de las dos fases se declaran en `content/dimensional_nightmare_events.json`
-(`boss.trainers`) para que el `create` correspondiente los registre; hasta entonces el evento usa el
-guion de batalla con *placeholder* de clave y lo marca `pending` en el catálogo (no rompe el mapa).
-La llamada va dentro de `begin/rescue` para que un trainer ausente no bloquee el mapa, y el sello se
-aplica **después** de la batalla, de modo que el episodio se cierra aunque el `rescue` salte.
+Los trainers de la fase A (`DN_EPxx_A`) y los objetos de recompensa ya están **registrados de
+verdad**: `apply_dimensional_nightmare_battles.mjs` añade los 6 entrenadores a `trainers.dat` (con
+los equipos del §9) y los objetos `DN_PAGE_01`…`DN_PAGE_06`/`DN_ANCLA` a `items.dat` junto con su
+icono 48×48 en `Graphics/Items/` (sin icono, la mochila puede fallar). La llamada de batalla sigue
+protegida con `begin/rescue` y el catálogo marca `pending` lo que aún no existe (p. ej. el combate
+espejo real del EP05).
 
 ### 10.5 E5 — Verificación
 
@@ -460,7 +469,8 @@ aplica **después** de la batalla, de modo que el episodio se cierra aunque el `
 | NPCs (todos los de las tablas del GDD) | ✅ 80 instalados | idem |
 | Anomalías del §5 | ✅ 77 (12/13/12/13/13/14) | `ANOM_Axx` en su mapa y celda | 
 | Eventos clave del índice | ✅ 121 entradas | idem |
-| 6 jefes con derrota permanente + sello | ✅ 6 (fase B pendiente) | idem |
+| 6 jefes con fase B (no se ganan a golpes) + sello | ✅ 6 (4+4+4+4+4+7 pasos) | `BOSSB_*` + switch del sello |
+| Trainers de jefe y objetos `DN_*` | ✅ 6 trainers + 6 objetos (con icono) | `trainers.dat`, `items.dat`, `Graphics/Items/` |
 | Verificación | ✅ `dn:events:verify` + `dn:maps:verify` | verde |
 | Revisión | ✅ 7 hojas `docs/dn_referencia/eventos/<EP>.png` | versionadas |
 
@@ -476,6 +486,13 @@ aplica **después** de la batalla, de modo que el episodio se cierra aunque el `
 | EP06 King Unown | 16 | 15 | 14 | 17 | 32 | KINGGUS (2135) |
 | NEXO | 5 | — | — | — | 10 | — |
 | **Total** | **100** | **80** | **77** | **121** | **200** | **6** |
+
+Fase B por jefe (implementada en `apply_dimensional_nightmare_battles.mjs`, con switch propio 910+ y
+contador `v277`): EP01 **4 cadenas** · EP02 **4 fotos** · EP03 **4 fogatas** (2073/2075/2078/2082) ·
+EP04 **4 cunas** · EP05 **4 rendijas** · EP06 **7 letras**. El sello lo enciende el último paso, no la
+batalla. Pendiente de arte/guion: el combate espejo real del EP05 (hoy usa equipo fijo equivalente),
+la forma final del EP06 (equipo 120–125 propuesto) y las pistas de audio alterado de las anomalías
+auditivas.
 
 Avisos que quedan en el catálogo (no rompen nada): `trchar052` no existe en `Graphics/Characters`
 (4 NPCs usan `trchar000`), `EV_HYP_Silenciador` no declara mapa en el GDD (se instala en el mapa del

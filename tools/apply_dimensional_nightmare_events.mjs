@@ -430,6 +430,11 @@ for (const ep of scopeEpisodes) {
     const mask = maskOf(mapId);
     if (!mask) { warnings.push(`${mapId}: sin pasabilidad; se omite`); continue; }
     const occupied = new Set();
+    // lo que instala la pasada de jefes (`BOSSB_*`) ocupa su celda: se conserva y se respeta
+    const previousEvents = read(mapFile(mapId)).getIvar("@events")?.pairs ?? [];
+    for (const [, ev] of previousEvents) {
+      if ((ev.getIvar("@name")?.text ?? "").startsWith("BOSSB_")) occupied.add(`${ev.getIvar("@x")},${ev.getIvar("@y")}`);
+    }
     const events = [];
     let nextId = 1;
     const add = (name, x, y, pages) => {
@@ -503,6 +508,7 @@ for (const ep of scopeEpisodes) {
     // Los eventos sin mapa explícito en el GDD se instalan UNA vez, en el mapa del jefe
     // (antes se replicaban en todos los mapas del episodio y multiplicaban el recuento).
     const isBossMap = index === ids.length - 1;
+    const phaseBPending = isBossMap ? ep.boss?.phaseB?.kind ?? null : null;
     const forThisMap = ep.events.filter((e) => (e.maps.length ? e.maps.includes(mapId) : isBossMap));
     for (const ev of forThisMap) {
       if (!ev.maps.length) warnings.push(`${ev.name}: sin mapa en el GDD; se instala en ${mapId} (mapa del jefe)`);
@@ -523,23 +529,44 @@ for (const ep of scopeEpisodes) {
     // --- jefe, sello y salida (mapa final) ---
     if (index === ids.length - 1) {
       const bossSpot = placeNear(mask, [Math.floor(mask.width / 2), Math.floor(mask.height / 2)], occupied) ?? anchor;
+      const boss = ep.boss ?? null;
+      const phaseA = boss?.phaseA ?? { type: "HIKER", label: ep.bossName, trainer: `DN_${ep.key}_A` };
+      const phaseB = boss?.phaseB ?? null;
+      const battleSwitch = 903 + Math.max(0, blueprint.episodes.filter((e) => e.boss).findIndex((e) => e.key === ep.key));
       const bossList = [
         ...texts([`${ep.bossName} te espera.`, "El Rotom registra el pico de resonancia."]),
-        script(`begin; pbTrainerBattle(PBTrainer.new("DN_${ep.key}_A", "${ep.bossName}"), false, "", true); rescue; pbMessage("(jefe pendiente de registrar: DN_${ep.key}_A)"); end`),
-        ...texts(["El altar se apaga. Algo cede bajo el suelo."]),
-        setSwitch(ep.seal),
-        setSwitch(ep.grieta),
-        script(`$game_variables[265] = [$game_variables[265] + ${ep.resonance}, 100].min`),
-        script(`$game_variables[274] = [$game_variables[274] + 3, 77].min`),
-        script("begin; pbItemBall(:SACREDASH); rescue; pbMessage(\"(recompensa pendiente de crear)\"); end"),
-        setSelf("A"),
+        script(`begin; pbTrainerBattle(PBTrainer.new("${phaseA.type}", "${phaseA.label}"), false, "", true); rescue; pbMessage("(jefe pendiente de registrar: ${phaseA.trainer})"); end`),
+        setSwitch(battleSwitch),
+        ...texts(["No puedes golpearlo: golpea lo que lo sostiene."]),
         wait(20),
         cmd(0),
       ];
-      add(`EV_${ep.key}_JEFE`, bossSpot[0], bossSpot[1], [
+      const bossPendingList = [
+        ...texts([
+          phaseB ? `${ep.bossName} no cae a golpes: ${phaseB.verb} ${phaseB.cells?.length ?? (phaseB.kind === "letras" ? 7 : 4)} ${phaseB.noun}${(phaseB.cells?.length ?? 4) === 1 ? "" : "s"} del escenario.` : `${ep.bossName} sigue en pie.`,
+          "El Rotom marca cada paso en el itinerario.",
+        ]),
+        cmd(0),
+      ];
+      const bossEpilogueList = [
+        ...texts([`${ep.bossName} ya no está. El sello aguanta.`,
+          "Lo que bajó contigo no puede volver a bajar. Pero puede recordar."]),
+        cmd(0),
+      ];
+      // Páginas (gana la última cuya condición se cumpla):
+      //   1. batalla de fase A (autorun, una sola vez)  → enciende battleSwitch
+      //   2. fase B pendiente (mientras no esté el sello)
+      //   3. epílogo (cuando el último paso de la fase B enciende el sello)
+      const bossPages = [
         page({ trigger: 3, list: bossList }),
-        page({ cond: condition({ self: "A" }), gfx: graphic(""), list: [...texts(["Lo que estaba aquí ya no está. Solo queda el hueco."]), cmd(0)] }),
-      ]);
+        page({ cond: condition({ sw: battleSwitch }), gfx: graphic(""), list: bossPendingList }),
+        page({ cond: condition({ sw: ep.seal }), gfx: graphic(""), list: bossEpilogueList }),
+      ];
+      if (phaseB && (phaseB.cells?.length ?? phaseB.maps?.length)) {
+        // con celdas declaradas también hay página de "sin batalla": el jefe espera de pie
+        bossPages.unshift(page({ gfx: graphic(""), list: [...texts([`${ep.bossName} está quieto. Todavía no reacciona.`]), cmd(0)] }));
+      }
+      add(`EV_${ep.key}_JEFE`, bossSpot[0], bossSpot[1], bossPages);
       const exitSpot = placeNear(mask, [anchor[0], anchor[1]], occupied) ?? anchor;
       add(`EV_${ep.key}_HUBSALIDA`, exitSpot[0], exitSpot[1], [page({
         cond: condition({ sw: ep.seal }), trigger: 1, through: true,
@@ -551,7 +578,13 @@ for (const ep of scopeEpisodes) {
     // --- volcado al mapa ---
     const mapPath = path.join(DATA, mapFile(mapId));
     const mapObject = read(mapFile(mapId));
-    const hash = new RHash(events.map((ev) => [ev.getIvar("@id"), ev]));
+    // Conserva lo que instala la pasada de jefes (`BOSSB_*`): este tool reescribe el mapa entero.
+    const carried = (mapObject.getIvar("@events")?.pairs ?? []).filter(([, ev]) => (ev.getIvar("@name")?.text ?? "").startsWith("BOSSB_"));
+    let carryId = Math.max(0, ...events.map((ev) => ev.getIvar("@id"))) + 1;
+    const hash = new RHash([
+      ...events.map((ev) => [ev.getIvar("@id"), ev]),
+      ...carried.map(([, ev]) => [carryId++, ev]),
+    ]);
     mapObject.setIvar("@events", hash);
     write(mapFile(mapId), mapObject);
     installed++;
@@ -562,7 +595,7 @@ for (const ep of scopeEpisodes) {
       entry, exit: index < ids.length - 1 ? exitCell(mask, "down") : null,
       boss: index === ids.length - 1 ? ep.bossName : null,
       pending: [
-        ...(index === ids.length - 1 ? ["fase B del jefe (cadenas)", "trainers DN_*", "objetos DN_*"] : []),
+        ...(index === ids.length - 1 ? (phaseBPending ? [`fase B del jefe (${phaseBPending})`] : []) : []),
         ...artPending.filter((p) => p.startsWith(`${mapId}:`)),
       ],
     };

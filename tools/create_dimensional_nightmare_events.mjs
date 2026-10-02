@@ -34,6 +34,57 @@ const EPISODES = [
   { key: "EP06", doc: "06_EP06_KING_UNOWN.md", from: 2120, to: 2135, seal: 888, grieta: 895, res: 18, var: 273, boss: "KINGGUS" },
 ];
 
+/** Ficha de jefe y fase B, leídas del §9 de cada doc (celdas y conteos citados allí). */
+const BOSSES = {
+  EP01: {
+    name: "LA MANO BLANCA", phaseA: { type: "HIKER", label: "EL SEPULTADO", trainer: "DN_EP01_A" },
+    team: [["MAROWAK", 103], ["GOLURK", 105], ["COFAGRIGUS", 103], ["DUSKNOIR", 104], ["SABLEYE", 101], ["SPIRITOMB", 105]],
+    phaseB: { kind: "cadenas", verb: "romper", noun: "cadena", cells: [[6, 4], [17, 4], [6, 19], [17, 19]], cellsMap: null,
+      texts: ["Una cadena sostiene la Mano.", "La cadena cruje y cae.", "La Mano pierde un dedo.", "El altar tiembla."] },
+    reward: "DN_PAGE_01", notes: "Al ganar la fase A no termina: hay que romper las 4 cadenas.",
+  },
+  EP02: {
+    name: "EL SIN NOMBRE", phaseA: { type: "COOLTRAINER_M", label: "EL SIN NOMBRE", trainer: "DN_EP02_A" },
+    team: [["NOCTOWL", 100], ["MAROWAK", 102], ["UMBREON", 101], ["GENGAR", 103], ["FROSLASS", 101], ["SPIRITOMB", 104]],
+    phaseB: { kind: "fotos", verb: "romper", noun: "foto", cells: null, cellsMap: null,
+      texts: ["La foto 1 se quema por los bordes.", "La foto 2 muestra un pueblo que ya no existe.",
+        "La foto 3 la firma Silver, con otra letra.", "La foto 4 está en blanco: ahí va tu nombre."] },
+    reward: "DN_PAGE_02", notes: "Ganar la fase A «no cuenta»: el jefe reinicia la silueta.",
+  },
+  EP03: {
+    name: "EL CAMINANTE", phaseA: { type: "CHAMPION", label: "EL CAMINANTE", trainer: "DN_EP03_A" },
+    team: [["ABOMASNOW", 104], ["MAMOSWINE", 105], ["GLALIE", 102], ["FROSLASS", 103], ["WEAVILE", 103], ["LAPRAS", 102]],
+    phaseB: { kind: "fogatas", verb: "encender", noun: "fogata", cells: null, cellsMap: null, maps: [2073, 2075, 2078, 2082],
+      texts: ["La fogata 1 se enciende: el Caminante retrocede un paso.", "La fogata 2 arde sin consumir leña.",
+        "La fogata 3 calienta el aire: la nieve derrite a su alrededor.", "La fogata 4 la dejaste tú al pasar. Ahora vuelve a arder."] },
+    reward: "DN_PAGE_03", notes: "Es un jefe que obliga a volver sobre tus pasos (fogatas en 2073/2075/2078/2082).",
+  },
+  EP04: {
+    name: "LA NANA", phaseA: { type: "PSYCHIC_F", label: "LA NANA", trainer: "DN_EP04_A" },
+    team: [["MUSHARNA", 104], ["HYPNO", 105], ["DROWZEE", 101], ["GENGAR", 104], ["MISMAGIUS", 103], ["SPIRITOMB", 106]],
+    phaseB: { kind: "cunas", verb: "despertar", noun: "cuna", cells: [[10, 12], [20, 12], [10, 26], [20, 26]], cellsMap: null,
+      texts: ["La cuna 1 se abre. Dentro no hay nadie.", "La cuna 2 tararea la nana al revés.",
+        "La cuna 3 está vacía y, aun así, se mece.", "La cuna 4 deja de cantar: el árbol se queda en silencio."] },
+    reward: "POKEFLUTE", notes: "La canción es el jefe: el equipo entra dormido y las cunas lo despiertan.",
+  },
+  EP05: {
+    name: "EL JUGADOR 000", phaseA: { type: "TEAMROCKET", label: "EL JUGADOR 000", trainer: "DN_EP05_A" },
+    team: [["UNOWN", 110], ["UNOWN", 110], ["MISMAGIUS", 110], ["SPIRITOMB", 110], ["GENGAR", 110], ["DUSKNOIR", 110]],
+    phaseB: { kind: "rendijas", verb: "cerrar", noun: "rendija", cells: null, cellsMap: null,
+      texts: ["Una rendija se cierra. La silueta pierde un borde.", "La segunda rendija te devuelve una copia de tu poción.",
+        "La tercera rendija repite tu último movimiento.", "La cuarta se cierra desde dentro."] },
+    reward: "DN_PAGE_05", notes: "El combate espejo real (pbPartyCopy) queda pendiente: hoy usa un equipo fijo equivalente.",
+  },
+  EP06: {
+    name: "KINGGUS", phaseA: { type: "GENTLEMAN", label: "KINGGUS", trainer: "DN_EP06_A" },
+    team: [["UNOWN", 120], ["UNOWN", 121], ["UNOWN", 122], ["UNOWN", 123], ["UNOWN", 124], ["UNOWN", 125]],
+    phaseB: { kind: "letras", verb: "colocar", noun: "letra", cells: null, cellsMap: null,
+      texts: ["El suelo brilla: K", "El suelo brilla: I", "El suelo brilla: N", "El suelo brilla: G",
+        "El suelo brilla: G", "El suelo brilla: U", "El suelo brilla: S"] },
+    reward: "DN_ANCLA", notes: "Tras la fase 7 el Rey se levanta: forma final KINGGUS2 (equipo 120–125 propuesto).",
+  },
+};
+
 const NPC_ROW = /^\|\s*(\d{4})\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*`?([^`|\s]+)`?[^|]*\|\s*([^|]+?)\s*\|?\s*$/;
 const CELL = () => /\((\d+)\s*,\s*(\d+)\)/g;
 const MAP_ID = () => /\b(20[3-9]\d|21[0-3]\d|2140)\b/g;   // 2039–2140 (no cualquier «20xx»)
@@ -170,6 +221,7 @@ for (const episode of EPISODES) {
     resonance: episode.res,
     anomalyVariable: episode.var,
     bossName: episode.boss,
+    boss: BOSSES[episode.key] ?? null,
     anomalies,
     npcs: parseNpcs(npcSection),
     events: parseEvents(eventSection, episode),
@@ -188,6 +240,7 @@ blueprint.episodes.push({
   resonance: 18,
   anomalyVariable: null,
   bossName: null,
+  boss: null,
   anomalies: { declared: 0, items: [] },
   npcs: [],
   events: [...new Set(nexoEvents)].map((name) => ({

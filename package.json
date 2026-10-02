@@ -69,7 +69,10 @@
     "dn:events": "node tools/apply_dimensional_nightmare_events.mjs --all",
     "dn:events:ep": "node tools/apply_dimensional_nightmare_events.mjs --episode",
     "dn:events:verify": "node tools/apply_dimensional_nightmare_events.mjs --verify",
-    "dn:maps:all": "node tools/apply_dimensional_nightmare_maps.mjs --all --render"
+    "dn:maps:all": "node tools/apply_dimensional_nightmare_maps.mjs --all --render",
+    "dn:battles": "node tools/apply_dimensional_nightmare_battles.mjs --all",
+    "dn:battles:ep": "node tools/apply_dimensional_nightmare_battles.mjs --episode",
+    "dn:battles:verify": "node tools/apply_dimensional_nightmare_battles.mjs --verify"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

@@ -1,0 +1,287 @@
+{
+  "generatedBy": "tools/apply_dimensional_nightmare_battles.mjs",
+  "flags": {
+    "chainSwitchBase": 910,
+    "chainVariable": 277,
+    "itemIdBase": 1032
+  },
+  "episodes": {
+    "EP01": {
+      "bossName": "LA MANO BLANCA",
+      "phaseB": {
+        "kind": "cadenas",
+        "total": 4,
+        "placed": [
+          {
+            "map": 2056,
+            "cell": [
+              6,
+              3
+            ],
+            "step": 1
+          },
+          {
+            "map": 2056,
+            "cell": [
+              17,
+              3
+            ],
+            "step": 2
+          },
+          {
+            "map": 2056,
+            "cell": [
+              6,
+              10
+            ],
+            "step": 3
+          },
+          {
+            "map": 2056,
+            "cell": [
+              17,
+              10
+            ],
+            "step": 4
+          }
+        ]
+      },
+      "epilogue": true
+    },
+    "EP02": {
+      "bossName": "EL SIN NOMBRE",
+      "phaseB": {
+        "kind": "fotos",
+        "total": 4,
+        "placed": [
+          {
+            "map": 2072,
+            "cell": [
+              11,
+              4
+            ],
+            "step": 1
+          },
+          {
+            "map": 2072,
+            "cell": [
+              7,
+              7
+            ],
+            "step": 2
+          },
+          {
+            "map": 2072,
+            "cell": [
+              2,
+              3
+            ],
+            "step": 3
+          },
+          {
+            "map": 2072,
+            "cell": [
+              4,
+              4
+            ],
+            "step": 4
+          }
+        ]
+      },
+      "epilogue": true
+    },
+    "EP03": {
+      "bossName": "EL CAMINANTE",
+      "phaseB": {
+        "kind": "fogatas",
+        "total": 4,
+        "placed": [
+          {
+            "map": 2073,
+            "cell": [
+              7,
+              3
+            ],
+            "step": 1
+          },
+          {
+            "map": 2075,
+            "cell": [
+              10,
+              2
+            ],
+            "step": 2
+          },
+          {
+            "map": 2078,
+            "cell": [
+              7,
+              6
+            ],
+            "step": 3
+          },
+          {
+            "map": 2082,
+            "cell": [
+              7,
+              1
+            ],
+            "step": 4
+          }
+        ]
+      },
+      "epilogue": true
+    },
+    "EP04": {
+      "bossName": "LA NANA",
+      "phaseB": {
+        "kind": "cunas",
+        "total": 4,
+        "placed": [
+          {
+            "map": 2103,
+            "cell": [
+              9,
+              8
+            ],
+            "step": 1
+          },
+          {
+            "map": 2103,
+            "cell": [
+              20,
+              8
+            ],
+            "step": 2
+          },
+          {
+            "map": 2103,
+            "cell": [
+              10,
+              6
+            ],
+            "step": 3
+          },
+          {
+            "map": 2103,
+            "cell": [
+              20,
+              7
+            ],
+            "step": 4
+          }
+        ]
+      },
+      "epilogue": true
+    },
+    "EP05": {
+      "bossName": "EL JUGADOR 000",
+      "phaseB": {
+        "kind": "rendijas",
+        "total": 4,
+        "placed": [
+          {
+            "map": 2119,
+            "cell": [
+              11,
+              2
+            ],
+            "step": 1
+          },
+          {
+            "map": 2119,
+            "cell": [
+              10,
+              4
+            ],
+            "step": 2
+          },
+          {
+            "map": 2119,
+            "cell": [
+              6,
+              1
+            ],
+            "step": 3
+          },
+          {
+            "map": 2119,
+            "cell": [
+              9,
+              1
+            ],
+            "step": 4
+          }
+        ]
+      },
+      "epilogue": true
+    },
+    "EP06": {
+      "bossName": "KINGGUS",
+      "phaseB": {
+        "kind": "letras",
+        "total": 7,
+        "placed": [
+          {
+            "map": 2135,
+            "cell": [
+              8,
+              9
+            ],
+            "step": 1
+          },
+          {
+            "map": 2135,
+            "cell": [
+              5,
+              8
+            ],
+            "step": 2
+          },
+          {
+            "map": 2135,
+            "cell": [
+              3,
+              8
+            ],
+            "step": 3
+          },
+          {
+            "map": 2135,
+            "cell": [
+              2,
+              8
+            ],
+            "step": 4
+          },
+          {
+            "map": 2135,
+            "cell": [
+              1,
+              10
+            ],
+            "step": 5
+          },
+          {
+            "map": 2135,
+            "cell": [
+              3,
+              10
+            ],
+            "step": 6
+          },
+          {
+            "map": 2135,
+            "cell": [
+              6,
+              10
+            ],
+            "step": 7
+          }
+        ]
+      },
+      "epilogue": true
+    }
+  },
+  "items": []
+}
