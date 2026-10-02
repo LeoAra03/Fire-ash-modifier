@@ -552,3 +552,20 @@ manifest en `content/dimensional_nightmare_art.json`), da de alta el tipo de ent
 incluye el contenido DN (ni sus tilesets derivados de los mosaicos); sigue verificado sin
 regresiones. Decidir si el Nightmare se distribuye en un paquete propio es un pendiente de
 diseño, no un bloqueo técnico.
+
+### 10.10 Tramo M2 — medallas, sensaciones y Liga Oscura (2026-10-02)
+
+Capa nueva, en paralelo del mundo Atlas (doc `14_MEDALLAS_LIGA_OSCURA_Y_SENSACIONES.md`):
+
+| Pieza | Estado |
+|---|---|
+| Medallas y cartucheras (`Badges of <mundo>`) | ✅ 14 objetos + 6 pedestales del Sello |
+| Sensación por mundo | ✅ 212 transferencias en 103 mapas con su tono de pantalla |
+| Liga Oscura (2141 Pórtico · 2142 Coliseo) | ✅ construidos, BFS 100 % |
+| Mad Pikachu (255 → 150 por Arceus) | ✅ arco de 5 etapas + 3 ramas + trainer `MADPIKA` nv 150 |
+| Mundos nuevos W7–W9 | 📋 plan (necesitan mosaico de referencia) |
+
+```bash
+npm run dn:build:all     # hub → medallas → liga → sensaciones
+npm run dn:verify:all    # todo el ciclo + lo nuevo
+```

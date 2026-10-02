@@ -1618,5 +1618,83 @@
       11,
       1
     ]
+  },
+  "liga": {
+    "maps": {
+      "portico": 2141,
+      "coliseo": 2142
+    },
+    "gate": {
+      "map": 2040,
+      "event": "HUB_LIGA_OSCURA",
+      "cell": [
+        19,
+        12
+      ]
+    },
+    "entry": {
+      "portico": [
+        11,
+        10
+      ],
+      "coliseo": [
+        15,
+        21
+      ]
+    },
+    "exit": {
+      "portico": [
+        8,
+        10
+      ],
+      "coliseo": [
+        13,
+        21
+      ]
+    },
+    "mpika": [
+      15,
+      11
+    ],
+    "sparks": [
+      [
+        5,
+        4
+      ],
+      [
+        24,
+        4
+      ],
+      [
+        5,
+        17
+      ],
+      [
+        24,
+        17
+      ]
+    ],
+    "switches": {
+      "ready": 917,
+      "ligaStarted": 918,
+      "arceus": 919,
+      "cleared": 920,
+      "pikaSaved": 921
+    },
+    "variables": {
+      "branch": 278,
+      "sparks": 279,
+      "medals": 280,
+      "stage": 281,
+      "battle": 282
+    },
+    "stage": {
+      "intro": 0,
+      "prueba": 1,
+      "arceus": 2,
+      "combate": 3,
+      "cierre": 4
+    },
+    "trainer": "DN_MADPIKA/MAD PIKACHU nv 150"
   }
 }

@@ -39,6 +39,9 @@ const BUILT = path.join(ROOT, "content", "dimensional_nightmare_maps_built.json"
 const EVENTS = path.join(ROOT, "content", "dimensional_nightmare_events_built.json");
 const BACKUP = path.join(ROOT, "pokemon_fire_ash", "PokeModBackups", "dimensional_nightmare_maps_originals");
 
+const OWNED = ["HUB_GRIETA_CAVE", "HUB_ARCHIVERO", "HUB_PROGRESO", "HUB_SALIDA"];   // eventos propios
+const OWNS = (name) => OWNED.includes(name) || /^HUB_GRIETA_EP\d\d$/.test(name);
+
 const CAVE_ID = 2030;          // Gruta de los Testigos (mapa base del juego)
 const HUB_ID = 2040;           // Antesala de las Grietas (construida en E3)
 const RIFT_STEP = 4;           // separación mínima entre altares
@@ -100,7 +103,7 @@ function grid(id) {
     y: obj.getIvar("@y"),
     obj,
   }));
-  const occupied = new Set(events.filter((e) => !e.name.startsWith("HUB_")).map((e) => `${e.x},${e.y}`));
+  const occupied = new Set(events.filter((e) => !OWNS(e.name)).map((e) => `${e.x},${e.y}`));
   return { raw, parsed, pass, events, occupied, width: parsed.width, height: parsed.height };
 }
 
@@ -209,11 +212,25 @@ function makeEvents(plan, baseId) {
     const cell = plan.rifts[i] ?? plan.entry;
     events.push(event(id++, `HUB_GRIETA_${spec.key}`, cell[0], cell[1], riftPages(spec, cell)));
   }
+  const readyCheck = `begin; $game_switches[917] = [:DN_CASE_WHT, :DN_CASE_LSV, :DN_CASE_SNO, :DN_CASE_HYP, :DN_CASE_BLK, :DN_CASE_UNO].all? { |i| $PokemonBag.pbHasItem?(i) }; rescue; end`;
   if (plan.archivero) {
     events.push(event(id++, "HUB_ARCHIVERO", plan.archivero[0], plan.archivero[1], [
       page({
+        cond: condition({ sw: 917 }),
         gfx: graphic("trchar000.png", 2, 1),
         list: [
+          ...texts([
+            "Archivero: las seis cartucheras están completas.",
+            "La puerta del centro ya responde: la Liga Oscura te espera.",
+            "Dentro hay algo que corre más rápido que cualquier nivel que hayas visto.",
+          ]),
+          cmd(0),
+        ],
+      }),
+      page({
+        gfx: graphic("trchar000.png", 2, 1),
+        list: [
+          script(readyCheck),
           ...texts([
             "Archivero: cada grieta que se cierra deja un registro.",
             "Los seis sellos de la Gruta son la cuenta del Nightmare.",
@@ -228,6 +245,7 @@ function makeEvents(plan, baseId) {
         cond: condition({ variable: [277, 6] }),
         gfx: graphic("trchar000.png", 2, 1),
         list: [
+          script(readyCheck),
           ...texts([
             "Archivero: los seis sellos están en su sitio.",
             "El Nexo de las Grietas te espera al final de la Gruta.",
@@ -290,13 +308,13 @@ function makeCaveGate(plan, baseId) {
 }
 
 // --------------------------------------------------------------- escritura
-function writeMap(id, add, prefix) {
+function writeMap(id, add) {
   const full = path.join(DATA, mapFile(id));
   fs.mkdirSync(BACKUP, { recursive: true });
   if (!fs.existsSync(path.join(BACKUP, mapFile(id)))) fs.copyFileSync(full, path.join(BACKUP, mapFile(id)));
   const map = marshalLoad(fs.readFileSync(full));
   const pairs = map.getIvar("@events").pairs;
-  const kept = pairs.filter(([, e]) => !txt(e.getIvar("@name")).startsWith(prefix));
+  const kept = pairs.filter(([, e]) => !OWNS(txt(e.getIvar("@name"))));
   const removed = pairs.length - kept.length;
   const baseId = Math.max(0, ...kept.map(([k]) => (typeof k === "number" ? k : 0))) + 1;
   const added = add(baseId).filter(Boolean);
@@ -378,8 +396,8 @@ async function main() {
   };
 
   if (!VERIFY) {
-    const hub = writeMap(HUB_ID, hudEvents, "HUB_");
-    const cave = writeMap(CAVE_ID, caveGate, "HUB_GRIETA_CAVE");
+    const hub = writeMap(HUB_ID, hudEvents);
+    const cave = writeMap(CAVE_ID, caveGate);
     const data = JSON.parse(fs.readFileSync(EVENTS, "utf8"));
     data.hubMap = summary.hub;
     data.hubCave = summary.cave;

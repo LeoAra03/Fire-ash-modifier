@@ -1,6 +1,6 @@
 {
   "generatedBy": "tools/apply_dimensional_nightmare_maps.mjs",
-  "counts": 101,
+  "counts": 103,
   "maps": [
     {
       "id": 2040,
@@ -3470,6 +3470,48 @@
         "isolated": 0,
         "ratio": 1
       }
+    },
+    {
+      "id": 2141,
+      "episode": "LIGA",
+      "title": "Liga Oscura — Pórtico del Código",
+      "primary": null,
+      "reusedTileset": true,
+      "tilesetId": 124,
+      "tiles": null,
+      "width": 22,
+      "height": 11,
+      "bfs": {
+        "entry": [
+          11,
+          10
+        ],
+        "reachable": 61,
+        "walkable": 61,
+        "ratio": 1
+      },
+      "source": "Map2139 ventana (0,0) + espejo"
+    },
+    {
+      "id": 2142,
+      "episode": "LIGA",
+      "title": "Liga Oscura — Coliseo del Vínculo",
+      "primary": null,
+      "reusedTileset": true,
+      "tilesetId": 124,
+      "tiles": null,
+      "width": 30,
+      "height": 22,
+      "bfs": {
+        "entry": [
+          15,
+          21
+        ],
+        "reachable": 563,
+        "walkable": 563,
+        "ratio": 1
+      },
+      "source": "Map2139 ventana (0,0) + espejo"
     }
   ]
 }
