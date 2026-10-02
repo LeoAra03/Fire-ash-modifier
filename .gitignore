@@ -59,3 +59,7 @@ Mapas/*
 !Mapas/crepypasta/
 Mapas/crepypasta/*
 !Mapas/crepypasta/README.md
+
+# Overlays de pasajes por mapa: se regeneran con `npm run dn:pasajes:*` (--render).
+# La evidencia versionada son las hojas por episodio de docs/dn_referencia/lotes/.
+docs/dn_referencia/pasajes/
