@@ -1,0 +1,1539 @@
+{
+  "generatedBy": "tools/apply_dimensional_nightmare_events.mjs",
+  "maps": {
+    "2041": {
+      "episode": "EP01",
+      "events": 5,
+      "npcs": 2,
+      "entry": [
+        11,
+        3
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2042": {
+      "episode": "EP01",
+      "events": 10,
+      "npcs": 2,
+      "entry": [
+        8,
+        1
+      ],
+      "exit": [
+        9,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2043": {
+      "episode": "EP01",
+      "events": 6,
+      "npcs": 2,
+      "entry": [
+        6,
+        1
+      ],
+      "exit": [
+        5,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2044": {
+      "episode": "EP01",
+      "events": 8,
+      "npcs": 1,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2045": {
+      "episode": "EP01",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        7,
+        1
+      ],
+      "exit": [
+        9,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2046": {
+      "episode": "EP01",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2047": {
+      "episode": "EP01",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2048": {
+      "episode": "EP01",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2049": {
+      "episode": "EP01",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        8,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2050": {
+      "episode": "EP01",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2051": {
+      "episode": "EP01",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2052": {
+      "episode": "EP01",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2053": {
+      "episode": "EP01",
+      "events": 3,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2054": {
+      "episode": "EP01",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        17,
+        2
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2055": {
+      "episode": "EP01",
+      "events": 7,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        7,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2056": {
+      "episode": "EP01",
+      "events": 6,
+      "npcs": 0,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": null,
+      "boss": "LA MANO BLANCA",
+      "pending": [
+        "fase B del jefe (cadenas)",
+        "trainers DN_*",
+        "objetos DN_*"
+      ]
+    },
+    "2057": {
+      "episode": "EP02",
+      "events": 5,
+      "npcs": 2,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2058": {
+      "episode": "EP02",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        16,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2059": {
+      "episode": "EP02",
+      "events": 7,
+      "npcs": 1,
+      "entry": [
+        13,
+        4
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2060": {
+      "episode": "EP02",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2061": {
+      "episode": "EP02",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2062": {
+      "episode": "EP02",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        11,
+        3
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2063": {
+      "episode": "EP02",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2064": {
+      "episode": "EP02",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        15,
+        1
+      ],
+      "exit": [
+        13,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2065": {
+      "episode": "EP02",
+      "events": 3,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2066": {
+      "episode": "EP02",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        3
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2067": {
+      "episode": "EP02",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        11,
+        5
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2068": {
+      "episode": "EP02",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2069": {
+      "episode": "EP02",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        15,
+        6
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2070": {
+      "episode": "EP02",
+      "events": 8,
+      "npcs": 1,
+      "entry": [
+        10,
+        6
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2071": {
+      "episode": "EP02",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        18,
+        1
+      ],
+      "exit": [
+        1,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2072": {
+      "episode": "EP02",
+      "events": 9,
+      "npcs": 1,
+      "entry": [
+        7,
+        3
+      ],
+      "exit": null,
+      "boss": "EL SIN NOMBRE",
+      "pending": [
+        "fase B del jefe (cadenas)",
+        "trainers DN_*",
+        "objetos DN_*"
+      ]
+    },
+    "2073": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        7,
+        2
+      ],
+      "exit": [
+        8,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2074": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        14,
+        1
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2075": {
+      "episode": "EP03",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        9,
+        2
+      ],
+      "exit": [
+        11,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2076": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        7,
+        5
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2077": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        5,
+        5
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2078": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        8,
+        4
+      ],
+      "exit": [
+        8,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2079": {
+      "episode": "EP03",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        6,
+        5
+      ],
+      "exit": [
+        11,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2080": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2081": {
+      "episode": "EP03",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        11,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2082": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        8,
+        1
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2083": {
+      "episode": "EP03",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2084": {
+      "episode": "EP03",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        14,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2085": {
+      "episode": "EP03",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2086": {
+      "episode": "EP03",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        7,
+        1
+      ],
+      "exit": [
+        9,
+        14
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2087": {
+      "episode": "EP03",
+      "events": 7,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": null,
+      "boss": "EL CAMINANTE",
+      "pending": [
+        "fase B del jefe (cadenas)",
+        "trainers DN_*",
+        "objetos DN_*"
+      ]
+    },
+    "2088": {
+      "episode": "EP04",
+      "events": 6,
+      "npcs": 2,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        7
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2089": {
+      "episode": "EP04",
+      "events": 8,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2090": {
+      "episode": "EP04",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2091": {
+      "episode": "EP04",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2092": {
+      "episode": "EP04",
+      "events": 7,
+      "npcs": 1,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2093": {
+      "episode": "EP04",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2094": {
+      "episode": "EP04",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2095": {
+      "episode": "EP04",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2096": {
+      "episode": "EP04",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": [
+        "2096: Voz de la Cueva sin sprite (arte pendiente)"
+      ]
+    },
+    "2097": {
+      "episode": "EP04",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2098": {
+      "episode": "EP04",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": [
+        "2098: El que Duerme Abajo sin sprite (arte pendiente)"
+      ]
+    },
+    "2099": {
+      "episode": "EP04",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        10,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2100": {
+      "episode": "EP04",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        12,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2101": {
+      "episode": "EP04",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2102": {
+      "episode": "EP04",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2103": {
+      "episode": "EP04",
+      "events": 8,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": null,
+      "boss": "LA NANA",
+      "pending": [
+        "fase B del jefe (cadenas)",
+        "trainers DN_*",
+        "objetos DN_*"
+      ]
+    },
+    "2104": {
+      "episode": "EP05",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2105": {
+      "episode": "EP05",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        16,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2106": {
+      "episode": "EP05",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        13,
+        4
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2107": {
+      "episode": "EP05",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2108": {
+      "episode": "EP05",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2109": {
+      "episode": "EP05",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        11,
+        3
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2110": {
+      "episode": "EP05",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2111": {
+      "episode": "EP05",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        15,
+        1
+      ],
+      "exit": [
+        13,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2112": {
+      "episode": "EP05",
+      "events": 4,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2113": {
+      "episode": "EP05",
+      "events": 5,
+      "npcs": 0,
+      "entry": [
+        11,
+        3
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2114": {
+      "episode": "EP05",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        11,
+        5
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": [
+        "2114: El Espejo sin sprite (arte pendiente)"
+      ]
+    },
+    "2115": {
+      "episode": "EP05",
+      "events": 4,
+      "npcs": 0,
+      "entry": [
+        15,
+        6
+      ],
+      "exit": [
+        11,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2116": {
+      "episode": "EP05",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        10,
+        6
+      ],
+      "exit": [
+        10,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2117": {
+      "episode": "EP05",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        18,
+        1
+      ],
+      "exit": [
+        1,
+        10
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2118": {
+      "episode": "EP05",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        4,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2119": {
+      "episode": "EP05",
+      "events": 7,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": null,
+      "boss": "EL JUGADOR 000",
+      "pending": [
+        "fase B del jefe (cadenas)",
+        "trainers DN_*",
+        "objetos DN_*"
+      ]
+    },
+    "2120": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        18,
+        3
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2121": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        12,
+        3
+      ],
+      "exit": [
+        9,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2122": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        8,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2123": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        14,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2124": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        16,
+        1
+      ],
+      "exit": [
+        18,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2125": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        13,
+        1
+      ],
+      "exit": [
+        9,
+        9
+      ],
+      "boss": null,
+      "pending": [
+        "2125: El Ojo sin sprite (arte pendiente)"
+      ]
+    },
+    "2126": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": [
+        "2126: Escalera Parlante sin sprite (arte pendiente)"
+      ]
+    },
+    "2127": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        9,
+        1
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2128": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        10,
+        1
+      ],
+      "exit": [
+        7,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2129": {
+      "episode": "EP06",
+      "events": 6,
+      "npcs": 1,
+      "entry": [
+        8,
+        1
+      ],
+      "exit": [
+        9,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2130": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        3
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2131": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        11,
+        4
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": [
+        "2131: Cuatro Estatuas sin sprite (arte pendiente)"
+      ]
+    },
+    "2132": {
+      "episode": "EP06",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        7,
+        2
+      ],
+      "exit": [
+        10,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2133": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        8,
+        4
+      ],
+      "exit": [
+        9,
+        10
+      ],
+      "boss": null,
+      "pending": [
+        "2133: El Trono Vacío sin sprite (arte pendiente)"
+      ]
+    },
+    "2134": {
+      "episode": "EP06",
+      "events": 5,
+      "npcs": 1,
+      "entry": [
+        8,
+        1
+      ],
+      "exit": [
+        7,
+        8
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2135": {
+      "episode": "EP06",
+      "events": 7,
+      "npcs": 1,
+      "entry": [
+        4,
+        6
+      ],
+      "exit": null,
+      "boss": "KINGGUS",
+      "pending": [
+        "fase B del jefe (cadenas)",
+        "trainers DN_*",
+        "objetos DN_*",
+        "2135: KINGGUS sin sprite (arte pendiente)"
+      ]
+    },
+    "2136": {
+      "episode": "NEXO",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        15,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2137": {
+      "episode": "NEXO",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2138": {
+      "episode": "NEXO",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        11,
+        1
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2139": {
+      "episode": "NEXO",
+      "events": 2,
+      "npcs": 0,
+      "entry": [
+        13,
+        2
+      ],
+      "exit": [
+        11,
+        9
+      ],
+      "boss": null,
+      "pending": []
+    },
+    "2140": {
+      "episode": "NEXO",
+      "events": 3,
+      "npcs": 0,
+      "entry": [
+        4,
+        1
+      ],
+      "exit": null,
+      "boss": null,
+      "pending": [
+        "fase B del jefe (cadenas)",
+        "trainers DN_*",
+        "objetos DN_*"
+      ]
+    }
+  },
+  "hub": {
+    "map": 2030,
+    "cell": [
+      36,
+      12
+    ],
+    "intended": [
+      36,
+      12
+    ],
+    "distance": 0
+  }
+}

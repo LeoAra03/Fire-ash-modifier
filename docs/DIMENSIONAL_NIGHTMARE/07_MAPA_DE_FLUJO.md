@@ -104,7 +104,7 @@ de encender `sw889`; el epílogo no bloquea contenido en ningún caso.]
 | Contenido | Se desbloquea con | Se cierra/sella con |
 |---|---|---|
 | Nightmare (Grieta de Cenizas visible) | `v264 ≥ 3` | — |
-| EP01 White Hand | Grieta de Cenizas (2030, 34,12) | `sw883` |
+| EP01 White Hand | Grieta de Cenizas (2030, 36,12) | `sw883` |
 | EP02 Lost Silver | `sw883` | `sw884` |
 | EP03 Snow | `sw884` | `sw885` |
 | EP04 Hypno | `sw885` **y** `sw703` | `sw886` |

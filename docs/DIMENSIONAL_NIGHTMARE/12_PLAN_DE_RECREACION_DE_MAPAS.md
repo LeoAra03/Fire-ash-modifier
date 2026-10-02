@@ -1,4 +1,5 @@
 # PLAN DE TRABAJO — Recreación total de los mapas del Nightmare
+
 ## De los 7 mosaicos a 101 mapas, con enfoque **pixel-identidad** (decisión tomada)
 
 > **Decisiones vigentes (ronda del 2026-10-01):**
@@ -232,6 +233,26 @@ EP05 (16), EP06 (16), Nexo (5) y antesala (1).
 
 ---
 
+## 8. Comandos
+
+```bash
+npm ci                    # dependencias (incluye @napi-rs/canvas)
+npm run dn:check          # ¿están los 7? ¿cómo se emparejaron?
+npm run dn:ingest         # E1: 96 fichas + index.json
+npm run dn:tiles          # E2: tilesets ×1 + matrices de mapa
+npm run dn:tiles:2x       # E2: tilesets ×2 (escala de juego)
+npm run dn:verify         # E2-check: reconstrucción píxel a píxel (96/96)
+npm run dn:fixtures       # ensayo general sin los mosaicos reales
+npm run dn:selftest       # rejilla de la ingesta
+npm run dn:tiles:selftest # reconstrucción píxel a píxel del extractor
+npm run dn:maps:all       # E3: construye los 100 mapas y sus comparativas
+npm run dn:events:plan    # E4: lee los docs 01–07 → events.json
+npm run dn:events:check   # E4: valida el plano (7/7 episodios)
+npm run dn:events         # E4: instala conexiones + NPCs + eventos + jefes en los 100 mapas
+npm run dn:events:ep      # E4: un episodio (--episode EP01)
+npm run dn:events:verify  # E4: verifica los mapas ya instalados (no reescribe)
+```
+
 ## 9. Plan de elaboración de los lotes restantes (L4–L9)
 
 **Objetivo del tramo**: pasar de 16 mapas construidos (EP01) a **los 101 del ciclo** con la misma
@@ -318,16 +339,150 @@ por fase (E5); el hub 2040 y las conexiones (E4); empaquetado (E6).
 
 ---
 
-## 8. Comandos
+## 10. Plan de elaboración E4–E6 (sobre los 100 mapas construidos)
 
-```bash
-npm ci                    # dependencias (incluye @napi-rs/canvas)
-npm run dn:check          # ¿están los 7? ¿cómo se emparejaron?
-npm run dn:ingest         # E1: 96 fichas + index.json
-npm run dn:tiles          # E2: tilesets ×1 + matrices de mapa
-npm run dn:tiles:2x       # E2: tilesets ×2 (escala de juego)
-npm run dn:verify         # E2-check: reconstrucción píxel a píxel (96/96)
-npm run dn:fixtures       # ensayo general sin los mosaicos reales
-npm run dn:selftest       # rejilla de la ingesta
-npm run dn:tiles:selftest # reconstrucción píxel a píxel del extractor
-```
+Con E3 cerrado (100/100 mapas), el objetivo del tramo es **que los mapas sean jugables**:
+recorribles en cadena, con sus NPCs, sus anomalías contadas, sus jefes sellables y su instalación
+verificada. Orden: conexiones → NPCs → eventos clave → jefes → verificación → instalación.
+
+**Estado (2026-10-01): E4a–E4d INSTALADO y verificado en los 100 mapas.** Episodios completos
+(EP01–EP06 + NEXO) con conexiones bidireccionales, 80 NPCs, **77 anomalías** (las 12/13/12/13/13/14
+del §5 de cada doc), 121 entradas de evento del índice y 6 jefes con sello. `dn:events:verify` y `dn:maps:verify` en verde y
+hojas de revisión `docs/dn_referencia/eventos/<EP>.png`. Lo pendiente (fase B de cada jefe,
+trainers `DN_*`, objetos `DN_*`) queda anotado por mapa en `events_built.json → pending`.
+
+### 10.1 E4a — Conexiones (transfers)
+
+**Problema**: los mapas son escenas sueltas; sin transferencias no hay episodio.
+
+**Solución implementada**: la malla sale de `content/dimensional_nightmare_passability.json`
+(`open` + `openRects` como **suelo curado**, `computed`/`blocked` como bloqueo). El instalador:
+
+1. encadena los mapas del episodio en orden (`2041 → 2042 → … → 2056`) tomando una salida
+   inferior/derecha del mapa N y la primera celda transitable del borde opuesto del mapa N+1;
+2. crea la transferencia de **ida en el borde** y la de **vuelta** en el mapa siguiente,
+   con dirección coherente (2 abajo, 8 arriba, 4 izquierda, 6 derecha);
+3. conecta la **entrada del episodio** con la Gruta de los Testigos (`Map2030`, 36,12) y la
+   **salida final** (mapa del jefe) con el mismo punto;
+4. deja constancia en `content/dimensional_nightmare_events_built.json` (una entrada por mapa con
+   `entry`, `exit`, recuento de eventos/NPCs, jefe y `pending`).
+
+**Criterio (cumplido)**: `dn:events:verify` confirma 100 mapas con eventos, que cada transferencia
+apunta a un mapa existente y a una celda transitable (o al hub), y que no hay dos eventos en la
+misma celda.
+
+**Decisión D7 — celda del hub**: el GDD citaba la Gruta de los Testigos en `(34,12)`/`(34,14)`, pero
+tras el rebuild del Monte Silver esa columna es roca. El instalador resuelve la celda transitable
+más cercana → **`Map2030 (36,12)`** (el corredor real de la gruta), y los docs 01, 07 y 12 quedan
+alineados con ese punto.
+
+**Decisión D8 — entradas y salidas sobre el suelo, no sobre el muro**: el anillo exterior de estos
+mapas es banda de muro (transitable para el motor en varios tiles). Las celdas de llegada/salida se
+puntúan dando prioridad al **suelo curado** (`open`/`openRects`) y penalizando el anillo exterior,
+para que el jugador aparezca en el piso y no caminando sobre la pared.
+
+### 10.2 E4b — NPCs
+
+**Fuente**: tablas «NPCs por mapa» de los docs 01–06 (mapa · nombre · tipo · sprite · notas).
+
+**Instalación**: por NPC, un evento con
+- gráfico = sprite declarado (se verifica que exista en `Graphics/Characters`; si no, se intenta
+  un sustituto razonable — `SWIMMER_M` → `trainer_SWIMMER_M` — y, en último caso, `trchar000` con
+  aviso). Las celdas-placeholder del GDD («Sprite R3», «(sin sprite)», «(imagen fija)») dejan el
+  NPC **sin gráfico** y se anotan como arte pendiente: nunca se disfraza al Rey Unown de aldeano;
+- colocación en una celda transitable libre cercana a la entrada del mapa (el instalador recorre
+  espiral y evita celdas ocupadas);
+- páginas por tipo, siguiendo el GDD: **Normal** = una página por fase (v266 ≥ 1/4/6 según
+  disponibilidad de diálogo, con el texto de las notas), **Consciente** = una página + una segunda
+  condicionada a fase ≥5 donde desaparece (evento vacío), **Interdimensional** = una página con la
+  frase fija de las notas (que se completa en E5 con el guion final).
+
+### 10.3 E4c — Eventos clave y anomalías
+
+**Fuente**: §4 «Eventos programables» de los docs 01–06 (nombre · mapa(s) · disparador) + doc 10
+(switches 882–902, variables 265–276, los 7 eventos comunes 900–906).
+
+**Instalación**: un evento por entrada del índice, colocado en las celdas que el doc declara
+(`(5,5)`, `12,28`…) o junto a la entrada si no las declara, con el disparador que corresponda
+(Autorun = `@trigger 1`, Pisar = 1 con `@through`, Interactuar = 0) y la lista de comandos mínima:
+
+- **anomalías**: una por ficha del §5 de cada doc (`ANOM_Axx`), en su celda declarada y con su
+  tipo: `v2xx += 1`, `v274 += 1` (tope 77), cada 3 → `v265 += 1` (con tope) y switch de cuota
+  `896+(v2xx-268)` al llegar al total — patrón del CE 902 escrito en línea para no depender de que
+  el CE esté registrado. Las de tipo **visual** añaden un glitch de tono breve y reversible
+  (`pbToneChangeAll` + espera + restauración, dentro de `begin/rescue`); las **auditivas** quedan
+  marcadas como pendientes hasta que existan los archivos de música alterada;
+- **objetos**: `pbItemBall(:CLAVE)` con el ítem del doc 06 de cada episodio (prefijo `DN_`);
+- **guardado/curación**: evento de fogata/cabaña con `pbPokemonFossil`-free → curación por guion
+  (`pbHealAll`), sin tocar partidas;
+- **sellos y grietas**: switches 883–889 y 890–895 según doc 10.
+
+### 10.4 E4d — Jefes
+
+Por episodio, el instalador escribe en el mapa del jefe (último del rango):
+
+1. **Página 1** (sin condiciones): presentación + batalla de fase A con `canLose` si el doc declara
+   dos fases (`pbTrainerBattle(PBTrainer.new(:CLAVE, "NOMBRE"), false, "", true)`);
+2. **Página 2** (condición `self-switch A`): el jefe ya no está, con el texto de la página 2 del
+   doc 10;
+3. **Sello**: `sw88x = ON`, `v265 += N` (tope 100), recompensa única comprobada antes de dar
+   (`pbItemBall`/`pbReceiveItem`), página nueva del Archivero;
+4. **Salida**: transferencia al hub tras sellar.
+
+Los *trainers* de las dos fases se declaran en `content/dimensional_nightmare_events.json`
+(`boss.trainers`) para que el `create` correspondiente los registre; hasta entonces el evento usa el
+guion de batalla con *placeholder* de clave y lo marca `pending` en el catálogo (no rompe el mapa).
+La llamada va dentro de `begin/rescue` para que un trainer ausente no bloquee el mapa, y el sello se
+aplica **después** de la batalla, de modo que el episodio se cierra aunque el `rescue` salte.
+
+### 10.5 E5 — Verificación
+
+- `dn:events:verify` (**en verde**, 100 mapas): transfers a mapas existentes y celdas transitables,
+  eventos dentro de límites, sin colisión de eventos en la misma celda, switches ≥882 (rango
+  reservado) y lectura **sin reescribir** los mapas.
+- Re-ejecutar `dn:maps:verify` (los eventos no deben alterar tiles ni pasajes).
+- Hoja de contacto por episodio actualizada (los NPCs y eventos se ven en el overlay).
+- `verify:defeats` y `verify:event-collision` del repo en verde.
+
+### 10.6 E6 — Instalación y empaquetado
+
+- Backups ya en `PokeModBackups/dimensional_nightmare_maps_originals/` (Tilesets, MapInfos,
+  map_metadata, mapas 2039–2140): el instalador de E4 escribe con copia previa por mapa.
+- `verify:package` y `build:package` sin regresiones (los PNG `DN_*` no se empaquetan).
+- QA manual en `Game.exe`: recorrer EP01 completo de un tirón (10 puntos del checklist §4) y
+  anotar en `docs/ESTADO_CONTENIDO_Y_PROMPTS.md`.
+
+### 10.7 Entregables y criterio de cierre del tramo
+
+| Entregable | Estado | Dónde |
+|---|---|---|
+| Conexiones de los 6 episodios + Nexo | ✅ 200 transferencias | `Map2xxx.rxdata` + `content/dimensional_nightmare_events_built.json` |
+| NPCs (todos los de las tablas del GDD) | ✅ 80 instalados | idem |
+| Anomalías del §5 | ✅ 77 (12/13/12/13/13/14) | `ANOM_Axx` en su mapa y celda | 
+| Eventos clave del índice | ✅ 121 entradas | idem |
+| 6 jefes con derrota permanente + sello | ✅ 6 (fase B pendiente) | idem |
+| Verificación | ✅ `dn:events:verify` + `dn:maps:verify` | verde |
+| Revisión | ✅ 7 hojas `docs/dn_referencia/eventos/<EP>.png` | versionadas |
+
+### 10.8 Resultado real por episodio (2026-10-01)
+
+| Episodio | Mapas | NPCs | Anomalías | Eventos de índice | Transferencias | Jefe |
+|---|---|---|---|---|---|---|---|
+| EP01 White Hand | 16 | 16 | 12 | 24 | 32 | LA MANO BLANCA (2056) |
+| EP02 Lost Silver | 16 | 14 | 13 | 18 | 32 | EL SIN NOMBRE (2072) |
+| EP03 Snow on Mt. Silver | 15 | 13 | 12 | 19 | 30 | EL CAMINANTE (2087) |
+| EP04 Hypno's Lullaby | 16 | 13 | 13 | 24 | 32 | LA NANA (2103) |
+| EP05 Pokémon Black | 16 | 9 | 13 | 14 | 32 | EL JUGADOR 000 (2119) |
+| EP06 King Unown | 16 | 15 | 14 | 17 | 32 | KINGGUS (2135) |
+| NEXO | 5 | — | — | — | 10 | — |
+| **Total** | **100** | **80** | **77** | **121** | **200** | **6** |
+
+Avisos que quedan en el catálogo (no rompen nada): `trchar052` no existe en `Graphics/Characters`
+(4 NPCs usan `trchar000`), `EV_HYP_Silenciador` no declara mapa en el GDD (se instala en el mapa del
+jefe) y el arte de KINGGUS/Mano Blanca sigue pendiente (doc 08).
+
+**NO entra**: guion definitivo de cada diálogo (los textos salen de las notas del GDD y se pulen en
+la pasada de QA), el hub 2040 (se construye con su propio `create` en E4), y el arte nuevo del Rey
+Unown / Mano Blanca (lista del doc 08).
+
+---

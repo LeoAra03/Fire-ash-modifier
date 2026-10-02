@@ -6,7 +6,7 @@
 fase de corrupción y cada fase es una forma de enterramiento (tierra, escombros, raíces, agua, olvido).
 **Mapas propuestos**: `Map2041`–`Map2056` (16) · **Resonancia al sellar**: **+12**.
 **Prerrequisito**: `v264 ≥ 3` (tres emisiones del Monte Silver selladas) y `v265 = 20` (Eco activo).
-**Acceso**: octava puerta de la Gruta de los Testigos (`Map2030`, celda 34,12) — la puerta sin Unown.
+**Acceso**: octava puerta de la Gruta de los Testigos (`Map2030`, celda 36,12) — la puerta sin Unown.
 
 ---
 
@@ -122,7 +122,7 @@ EV_CAT_Mano          — 2056 — Autorun al entrar
 EV_CAT_Sello         — 2056 — Tras ganar
                         → self-switch A del jefe, sello 883, +12 resonancia, item SACRED ASH
 EV_CAT_Salida        — 2056, celda 12,22 — Tras ganar
-                        → teletransporte a la Gruta de los Testigos (2030, 34,14); v264 se respeta (no se toca)
+                        → teletransporte a la Gruta de los Testigos (2030, 36,12); v264 se respeta (no se toca)
 ```
 
 ---
