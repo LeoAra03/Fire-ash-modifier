@@ -62,7 +62,7 @@ Además siguen pendientes 40 pruebas manuales en `Game.exe`. No se cuentan como 
 
 | Frente | Estado | Documento |
 |---|---|---|
-| **Dimensional Nightmare** (6 universos + Nexo, Map2040–2140, 101 mapas, 105 eventos) | **GDD funcional completo, sin instalar**; catálogo en `content/dimensional_nightmare.json` | `docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md` |
+| **Dimensional Nightmare** (6 universos + Nexo, Map2040–2140, 101 mapas, 105 eventos) | **Mapas recreados e instalados (101/101, hub incluido) y eventos/NPCs/jefes instalados en los 100 mapas de ficha (E4)**; arte de jefes y textos de QA pendientes. Catálogo en `content/dimensional_nightmare.json` | `docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md` · `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` |
 | **Recreación de mapas desde los 7 mosaicos de referencia** | **Plan aprobable**: pipeline E0–E6, lotes de 5 mapas, checklist de aceptación; fase 1 ya tiene herramienta probada (`tools/dn_ingest_reference.mjs`) | `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` |
 
 > El Nightmare es una capa de diseño: describe qué construir y con qué flags (switches 882–902,

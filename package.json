@@ -72,7 +72,10 @@
     "dn:maps:all": "node tools/apply_dimensional_nightmare_maps.mjs --all --render",
     "dn:battles": "node tools/apply_dimensional_nightmare_battles.mjs --all",
     "dn:battles:ep": "node tools/apply_dimensional_nightmare_battles.mjs --episode",
-    "dn:battles:verify": "node tools/apply_dimensional_nightmare_battles.mjs --verify"
+    "dn:battles:verify": "node tools/apply_dimensional_nightmare_battles.mjs --verify",
+    "dn:hub": "node tools/dn_build_hub_map.mjs",
+    "dn:hub:find": "node tools/dn_build_hub_map.mjs --find",
+    "dn:hub:verify": "node tools/dn_build_hub_map.mjs --verify"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

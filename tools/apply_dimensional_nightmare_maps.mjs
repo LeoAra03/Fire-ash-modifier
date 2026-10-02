@@ -444,11 +444,16 @@ if (VERIFY_ONLY) {
     ok(canvas.width === info.width && canvas.height === info.height, `${info.id}: tamaño ${canvas.width}×${canvas.height} ≠ ${info.width}×${info.height}`);
     const tileset = tilesets[info.tilesetId];
     ok(!!tileset, `${info.id}: tileset #${info.tilesetId} ausente`);
-    const entry = tileset?.getIvar("@tileset_name")?.text;
-    ok(entry === `DN_${info.id}`, `${info.id}: @tileset_name «${entry}»`);
+    if (info.reusedTileset) {
+      // El hub (2040) reutiliza un tileset del juego base: no tiene DN_<id>.png propio.
+      ok(!!tileset, `${info.id}: tileset base #${info.tilesetId} ausente`);
+    } else {
+      const entry = tileset?.getIvar("@tileset_name")?.text;
+      ok(entry === `DN_${info.id}`, `${info.id}: @tileset_name «${entry}»`);
+    }
     const parsedTileset = tileset ? parseTileset(tileset) : null;
     ok(parsedTileset && parsedTileset.passages.x >= BASE_ID + info.tiles, `${info.id}: tabla de pasajes corta`);
-    ok(fs.existsSync(path.join(GRAPHICS, `DN_${info.id}.png`)), `${info.id}: falta el PNG del tileset`);
+    if (!info.reusedTileset) ok(fs.existsSync(path.join(GRAPHICS, `DN_${info.id}.png`)), `${info.id}: falta el PNG del tileset`);
     ok(infos.some(([key]) => Number(key) === info.id), `${info.id}: falta en MapInfos`);
     ok(metadata.some(([key]) => Number(key) === info.id), `${info.id}: falta en map_metadata.dat`);
     // la matriz del mapa debe reproducir la ficha: se compara el render contra la referencia

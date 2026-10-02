@@ -59,7 +59,8 @@ for (const episode of episodes) {
   rows.forEach((row, i) => {
     const y = 12 + i * cellH;
     ctx.fillStyle = "#ffd479";
-    ctx.fillText(`${row.map.id} · ${row.map.title} · ficha R${row.map.primary.resource.slice(1)}-${row.map.primary.index} · ts #${row.map.tilesetId} · ${row.map.width}×${row.map.height}`, 12, y + 16);
+    const ficha = row.map.primary ? `ficha R${row.map.primary.resource.slice(1)}-${row.map.primary.index}` : `tileset del juego base${row.map.source ? ` · ${row.map.source}` : ""}`;
+    ctx.fillText(`${row.map.id} · ${row.map.title} · ${ficha} · ts #${row.map.tilesetId} · ${row.map.width}×${row.map.height}`, 12, y + 16);
     ctx.drawImage(row.img, 12, y + LABEL, row.img.width * SCALE, row.img.height * SCALE);
   });
   fs.mkdirSync(OUT_DIR, { recursive: true });

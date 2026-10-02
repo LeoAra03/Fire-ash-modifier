@@ -1,7 +1,28 @@
 {
   "generatedBy": "tools/apply_dimensional_nightmare_maps.mjs",
-  "counts": 100,
+  "counts": 101,
   "maps": [
+    {
+      "id": 2040,
+      "episode": "HUB",
+      "title": "Antesala de las Grietas",
+      "primary": null,
+      "reusedTileset": true,
+      "tilesetId": 6,
+      "tiles": null,
+      "width": 30,
+      "height": 24,
+      "bfs": {
+        "entry": [
+          15,
+          22
+        ],
+        "reachable": 354,
+        "walkable": 384,
+        "ratio": 0.921875
+      },
+      "source": "Map2030 ventana (38,20)"
+    },
     {
       "id": 2041,
       "episode": "EP01",

@@ -132,7 +132,15 @@ manual en `mapping.json` tiene prioridad absoluta sobre cualquier heurística po
   transitable inalcanzable).
 - **Revisión visual**: una hoja de contacto por episodio en `docs/dn_referencia/lotes/<EP>.png`
   con una fila por mapa (`referencia | mapa construido | overlay`). El detalle por mapa vive en
-  `docs/dn_referencia/detalle/` (ignorado en git). El hub 2040 no tiene ficha: queda para E4.
+  `docs/dn_referencia/detalle/` (ignorado en git).
+- **Hub 2040 (Antesala de las Grietas)**: único mapa sin ficha; lo construye
+  `tools/dn_build_hub_map.mjs` (`npm run dn:hub`) como **ventana jugable de la Gruta de los
+  Testigos (2030)**: busca los recortes de 30×24 con más superficie transitable y mejor
+  conectividad, elige la ventana `(38,20)` — una sala amplia con recodo — y copia las tres capas
+  tal cual. Reutiliza el tileset del juego base (no gasta una entrada `DN_*`), se registra en
+  `MapInfos` (padre 2030) y hereda los metadatos del 2030. Evidencia en
+  `docs/dn_referencia/lotes/HUB.png`; `npm run dn:hub:verify` comprueba tamaño, tileset, entrada,
+  BFS ≥ 90 % y **fidelidad exacta a la ventana de origen (0 diferencias)**.
 - **Ficha reutilizada a propósito**: en EP02 y EP06 el GDD reutiliza una ficha con la marca `bis`
   (`R5-3` en 2062 y 2066) — se construyen dos mapas de la misma escena, como pide el GDD.
 - **Nota de fidelidad**: las fichas traen a veces horneado el sprite del jugador de la ROM de
@@ -270,7 +278,7 @@ calidad verificable, sin inventar contenido nuevo y sin tocar partidas.
 | L7 | EP05 Pokémon Black | 16 | R5 (vacío) + R1 | R5-1…R5-16 + R1-4/R1-6 |
 | L8 | EP06 King Unown | 16 | R4 (+ R3 como asset) | R4-1…R4-16 |
 | L9 | Nexo de Ruptura | 5 | R1 | R1-6, R1-1, R1-10, R1-3, R1-4 |
-| — | Antesala (hub 2040) | 1 | — | sin ficha: se construye a mano en E4 |
+| — | Antesala (hub 2040) | 1 | — | sin ficha: ventana de la Gruta 2030 (`dn:hub`) ✅ |
 
 Orden justificado: de menos a más riesgo. R5/R6/R2 son escenas exteriores con separadores claros
 (autodetección ya probada). R4 es interior con alfombra y pilares (pasajes a mano, como 2120). R1
@@ -330,14 +338,14 @@ node tools/dn_render_sheets.mjs --episode <EP>                  # hoja de contac
 
 ### 9.6 Criterio de cierre del tramo
 
-- **100/100 mapas con ficha** construidos y verificados (el hub 2040 queda para E4).
-- `dn:maps:verify` en verde para los 100 y `dn:pasajes:verify` al día.
-- 7 hojas de contacto en `docs/dn_referencia/lotes/` (una por episodio).
+- **100/100 mapas con ficha** construidos y verificados, **más el hub 2040** (101/101 del ciclo).
+- `dn:maps:verify` en verde para los 101 y `dn:pasajes:verify` al día.
+- 8 hojas de contacto en `docs/dn_referencia/lotes/` (una por episodio + HUB).
 - `npm test` y `verify:all` sin regresiones.
 - Doc 12 y `content/dimensional_nightmare_maps_built.json` al día; commit y push al PR #12.
 
 **Lo que NO entra en este tramo**: eventos, NPCs, jefes y anomalías (E4); variantes de corrupción
-por fase (E5); el hub 2040 y las conexiones (E4); empaquetado (E6).
+por fase (E5); las conexiones y los eventos del hub 2040 (E4); empaquetado (E6).
 
 ---
 
@@ -505,7 +513,7 @@ Avisos que quedan en el catálogo (no rompen nada): `trchar052` no existe en `Gr
 jefe) y el arte de KINGGUS/Mano Blanca sigue pendiente (doc 08).
 
 **NO entra**: guion definitivo de cada diálogo (los textos salen de las notas del GDD y se pulen en
-la pasada de QA), el hub 2040 (se construye con su propio `create` en E4), y el arte nuevo del Rey
-Unown / Mano Blanca (lista del doc 08).
+la pasada de QA), los eventos del hub 2040 (el mapa ya está construido con `dn:hub`), y el arte
+nuevo del Rey Unown / Mano Blanca (lista del doc 08).
 
 ---
