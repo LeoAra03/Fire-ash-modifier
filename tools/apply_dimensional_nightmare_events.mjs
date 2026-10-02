@@ -528,45 +528,48 @@ for (const ep of scopeEpisodes) {
 
     // --- jefe, sello y salida (mapa final) ---
     if (index === ids.length - 1) {
-      const bossSpot = placeNear(mask, [Math.floor(mask.width / 2), Math.floor(mask.height / 2)], occupied) ?? anchor;
       const boss = ep.boss ?? null;
-      const phaseA = boss?.phaseA ?? { type: "HIKER", label: ep.bossName, trainer: `DN_${ep.key}_A` };
-      const phaseB = boss?.phaseB ?? null;
-      const battleSwitch = 903 + Math.max(0, blueprint.episodes.filter((e) => e.boss).findIndex((e) => e.key === ep.key));
-      const bossList = [
-        ...texts([`${ep.bossName} te espera.`, "El Rotom registra el pico de resonancia."]),
-        script(`begin; pbTrainerBattle(PBTrainer.new("${phaseA.type}", "${phaseA.label}"), false, "", true); rescue; pbMessage("(jefe pendiente de registrar: ${phaseA.trainer})"); end`),
-        setSwitch(battleSwitch),
-        ...texts(["No puedes golpearlo: golpea lo que lo sostiene."]),
-        wait(20),
-        cmd(0),
-      ];
-      const bossPendingList = [
-        ...texts([
-          phaseB ? `${ep.bossName} no cae a golpes: ${phaseB.verb} ${phaseB.cells?.length ?? (phaseB.kind === "letras" ? 7 : 4)} ${phaseB.noun}${(phaseB.cells?.length ?? 4) === 1 ? "" : "s"} del escenario.` : `${ep.bossName} sigue en pie.`,
-          "El Rotom marca cada paso en el itinerario.",
-        ]),
-        cmd(0),
-      ];
-      const bossEpilogueList = [
-        ...texts([`${ep.bossName} ya no está. El sello aguanta.`,
-          "Lo que bajó contigo no puede volver a bajar. Pero puede recordar."]),
-        cmd(0),
-      ];
-      // Páginas (gana la última cuya condición se cumpla):
-      //   1. batalla de fase A (autorun, una sola vez)  → enciende battleSwitch
-      //   2. fase B pendiente (mientras no esté el sello)
-      //   3. epílogo (cuando el último paso de la fase B enciende el sello)
-      const bossPages = [
-        page({ trigger: 3, list: bossList }),
-        page({ cond: condition({ sw: battleSwitch }), gfx: graphic(""), list: bossPendingList }),
-        page({ cond: condition({ sw: ep.seal }), gfx: graphic(""), list: bossEpilogueList }),
-      ];
-      if (phaseB && (phaseB.cells?.length ?? phaseB.maps?.length)) {
-        // con celdas declaradas también hay página de "sin batalla": el jefe espera de pie
-        bossPages.unshift(page({ gfx: graphic(""), list: [...texts([`${ep.bossName} está quieto. Todavía no reacciona.`]), cmd(0)] }));
+      if (boss) {
+        const bossSpot = placeNear(mask, [Math.floor(mask.width / 2), Math.floor(mask.height / 2)], occupied) ?? anchor;
+        const phaseA = boss.phaseA ?? { type: "HIKER", label: ep.bossName, trainer: `DN_${ep.key}_A` };
+        const phaseB = boss.phaseB ?? null;
+        const battleSwitch = 903 + Math.max(0, blueprint.episodes.filter((e) => e.boss).findIndex((e) => e.key === ep.key));
+        const bossList = [
+          ...texts([`${ep.bossName} te espera.`, "El Rotom registra el pico de resonancia."]),
+          script(`begin; pbTrainerBattle(PBTrainer.new("${phaseA.type}", "${phaseA.label}"), false, "", true); rescue; pbMessage("(jefe pendiente de registrar: ${phaseA.trainer})"); end`),
+          setSwitch(battleSwitch),
+          ...texts(["No puedes golpearlo: golpea lo que lo sostiene."]),
+          wait(20),
+          cmd(0),
+        ];
+        const bossPendingList = [
+          ...texts([
+            phaseB ? `${ep.bossName} no cae a golpes: ${phaseB.verb} ${phaseB.cells?.length ?? (phaseB.kind === "letras" ? 7 : 4)} ${phaseB.noun}${(phaseB.cells?.length ?? 4) === 1 ? "" : "s"} del escenario.` : `${ep.bossName} sigue en pie.`,
+            "El Rotom marca cada paso en el itinerario.",
+          ]),
+          cmd(0),
+        ];
+        const bossEpilogueList = [
+          ...texts([`${ep.bossName} ya no está. El sello aguanta.`,
+            "Lo que bajó contigo no puede volver a bajar. Pero puede recordar."]),
+          cmd(0),
+        ];
+        // Páginas (gana la última cuya condición se cumpla):
+        //   1. batalla de fase A (autorun, una sola vez)  → enciende battleSwitch
+        //   2. fase B pendiente (mientras no esté el sello)
+        //   3. epílogo (cuando el último paso de la fase B enciende el sello)
+        const bossPages = [
+          page({ trigger: 3, list: bossList }),
+          page({ cond: condition({ sw: battleSwitch }), gfx: graphic(""), list: bossPendingList }),
+          page({ cond: condition({ sw: ep.seal }), gfx: graphic(""), list: bossEpilogueList }),
+        ];
+        if (phaseB && (phaseB.cells?.length ?? phaseB.maps?.length)) {
+          // con celdas declaradas también hay página de "sin batalla": el jefe espera de pie
+          bossPages.unshift(page({ gfx: graphic(""), list: [...texts([`${ep.bossName} está quieto. Todavía no reacciona.`]), cmd(0)] }));
+        }
+        add(`EV_${ep.key}_JEFE`, bossSpot[0], bossSpot[1], bossPages);
       }
-      add(`EV_${ep.key}_JEFE`, bossSpot[0], bossSpot[1], bossPages);
+      // El mapa final sin jefe (NEXO) conserva su salida: es el camino de vuelta del epílogo.
       const exitSpot = placeNear(mask, [anchor[0], anchor[1]], occupied) ?? anchor;
       add(`EV_${ep.key}_HUBSALIDA`, exitSpot[0], exitSpot[1], [page({
         cond: condition({ sw: ep.seal }), trigger: 1, through: true,

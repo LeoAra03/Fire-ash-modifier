@@ -137,6 +137,25 @@ function installItemIcons(list) {
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "#2b2b2b";
     ctx.fillRect(0, 0, 48, 48);
+    if (item.photo) {
+      ctx.fillStyle = "#efe9dc";
+      ctx.fillRect(6, 6, 36, 30);                 // copia
+      ctx.fillStyle = item.photo === 4 ? "#f7f7f2" : "#5c6b7a";
+      ctx.fillRect(9, 9, 30, 20);                 // imagen (la 4ª está en blanco)
+      ctx.strokeStyle = "#2b2b2b";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(6, 6, 36, 30);
+      ctx.fillStyle = "#2b2b2b";
+      ctx.fillRect(6, 36, 36, 6);                 // pie de foto
+      ctx.fillStyle = "#c9a227";
+      ctx.font = "bold 12px sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(String(item.photo), 24, 39);
+      fs.writeFileSync(file, canvas.toBuffer("image/png"));
+      drawn++;
+      continue;
+    }
     ctx.fillStyle = item.page ? "#e8dcc0" : "#7fd8ff";
     ctx.fillRect(4, 3, 40, 42);
     ctx.strokeStyle = "#8a7856";
@@ -329,6 +348,14 @@ for (const ep of episodes) {
   if (ep.boss.reward.startsWith("DN_PAGE_")) {
     const page = Number(ep.boss.reward.slice(-2));
     itemList.push({ id: ep.boss.reward, name: `Página Quemada ${String(page).padStart(2, "0")}`, namePlural: `Páginas Quemadas ${String(page).padStart(2, "0")}`, page, description: `Una página quemada por los bordes, rescatada del ${ep.bossName}. Forma parte del itinerario del Nightmare y queda archivada en la Gruta de los Testigos.` });
+    for (let n = 1; n <= 4; n++) {
+      itemList.push({
+        id: `DN_PHOTO_0${n}`, name: `Foto ${n} del Sin Nombre`, namePlural: `Fotos del Sin Nombre`, photo: n,
+        description: n === 4
+          ? "La cuarta foto está en blanco: el nombre que aparece en ella es el de quien la sostiene."
+          : `Foto ${n} rescatada de las ruinas de Lost Silver: el Sin Nombre la firmó con otra letra.`,
+      });
+    }
   } else if (ep.boss.reward === "DN_ANCLA") {
     itemList.push({ id: "DN_ANCLA", name: "Ancla del Testigo", namePlural: "Anclas del Testigo", page: 0, description: "El ancla que el Rey sin Letra dejó al caer: con ella el Rotom despierta y el itinerario se cierra." });
   }

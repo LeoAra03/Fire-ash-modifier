@@ -194,12 +194,12 @@ function makeEvents(plan, baseId) {
   let id = baseId;
   const riftPages = (spec, cell) => [
     page({
-      gfx: graphic("UNOWN.png", 2, 1, { hue: spec.hue }),
+      gfx: graphic("UNOWN", 2, 1, { hue: spec.hue }),
       list: [...texts([`La grieta de ${spec.key} está sellada.`, "El Rotom no reconoce su firma todavía."]), cmd(0)],
     }),
     page({
       cond: condition({ variable: [264, spec.unlock] }),
-      gfx: graphic("UNOWN.png", 2, 1, { hue: spec.hue }),
+      gfx: graphic("UNOWN", 2, 1, { hue: spec.hue }),
       trigger: 1, // entrar es caminar hacia la grieta
       list: [
         ...texts([`${spec.key} — ${spec.flavor}`]),
@@ -217,7 +217,7 @@ function makeEvents(plan, baseId) {
     events.push(event(id++, "HUB_ARCHIVERO", plan.archivero[0], plan.archivero[1], [
       page({
         cond: condition({ sw: 917 }),
-        gfx: graphic("trchar000.png", 2, 1),
+        gfx: graphic("trchar000", 2, 1),
         list: [
           ...texts([
             "Archivero: las seis cartucheras están completas.",
@@ -228,7 +228,7 @@ function makeEvents(plan, baseId) {
         ],
       }),
       page({
-        gfx: graphic("trchar000.png", 2, 1),
+        gfx: graphic("trchar000", 2, 1),
         list: [
           script(readyCheck),
           ...texts([
@@ -243,7 +243,7 @@ function makeEvents(plan, baseId) {
       }),
       page({
         cond: condition({ variable: [277, 6] }),
-        gfx: graphic("trchar000.png", 2, 1),
+        gfx: graphic("trchar000", 2, 1),
         list: [
           script(readyCheck),
           ...texts([
@@ -256,7 +256,7 @@ function makeEvents(plan, baseId) {
       }),
       page({
         cond: condition({ sw: 889 }),
-        gfx: graphic("trchar000.png", 2, 1),
+        gfx: graphic("trchar000", 2, 1),
         list: [...texts(["Archivero: el registro está cerrado.", "La Grieta ya no responde. El Nightmare quedó atrás."]), cmd(0)],
       }),
     ]));
@@ -264,7 +264,7 @@ function makeEvents(plan, baseId) {
   if (plan.progreso) {
     events.push(event(id++, "HUB_PROGRESO", plan.progreso[0], plan.progreso[1], [
       page({
-        gfx: graphic("Object rock.png", 2, 1),
+        gfx: graphic("Object rock", 2, 1),
         list: [
           script("$game_variables[277] = (883..888).count { |i| $game_switches[i] }"),
           script('pbMessage("Sellos: #{$game_variables[277]}/6")'),
@@ -278,7 +278,7 @@ function makeEvents(plan, baseId) {
   }
   events.push(event(id++, "HUB_SALIDA", plan.exit[0], plan.exit[1], [
     page({
-      gfx: graphic("Object ball special.png", 2, 1),
+      gfx: graphic("Object ball special", 2, 1),
       trigger: 1, // tocar el borde inferior = salir
       list: [transfer(CAVE_ID, plan.arrival[0], plan.arrival[1], 8), cmd(0)],
     }),
@@ -291,12 +291,12 @@ function makeCaveGate(plan, baseId) {
   const [x, y] = plan.caveGate;
   return event(baseId, "HUB_GRIETA_CAVE", x, y, [
     page({
-      gfx: graphic("Object ball special.png", 2, 1),
+      gfx: graphic("Object ball special", 2, 1),
       list: [...texts(["Una grieta late en la roca, pero el Rotom duerme.", "(Vuelve cuando el Nightmare despierte: progreso 3.)"]), cmd(0)],
     }),
     page({
       cond: condition({ variable: [264, 3] }),
-      gfx: graphic("Object ball special.png", 2, 1),
+      gfx: graphic("Object ball special", 2, 1),
       trigger: 1, // se baja caminando hacia la grieta
       list: [
         ...texts(["El Rotom reconoce la firma de la grieta."]),

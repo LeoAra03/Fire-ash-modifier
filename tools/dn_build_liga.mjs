@@ -155,11 +155,13 @@ async function buildColiseo(source) {
     }
   }
   const free = [...used].filter((tile) => (parsed.passages.data[tile] ?? 0) === 0 && (parsed.priorities.data[tile] ?? 0) === 0);
-  const blocked = [...used].filter((tile) => (parsed.passages.data[tile] ?? 0) !== 0 || (parsed.priorities.data[tile] ?? 0) !== 0);
+  // muro = bloquea las cuatro direcciones (0x0f) o tiene prioridad; si no, el «muro» se podía cruzar
+  const blocked = [...used].filter((tile) => ((parsed.passages.data[tile] ?? 0) & 0x0f) === 0x0f || (parsed.priorities.data[tile] ?? 0) > 0);
   free.sort((a, b) => measure(b) - measure(a));
   blocked.sort((a, b) => measure(a) - measure(b));
   if (free.length < 6) throw new Error(`el mapa ${SOURCE_ID} no tiene suficientes tiles libres para el Coliseo (${free.length})`);
   const wall = blocked[Math.floor(blocked.length / 2)] ?? free[free.length - 1];
+  if (!blocked.length) console.log("  aviso: no hay tiles de muro plenamente bloqueantes en la fuente; el anillo usa el más oscuro");
   const floorAt = (index) => free[index % free.length];
   const canvas = new TileCanvas(COLISEO_W, COLISEO_H, source.tilesetId);
   const put = (x, y, tile) => { canvas.set(x, y, 0, tile); canvas.set(x, y, 1, 0); canvas.set(x, y, 2, 0); };
@@ -319,11 +321,11 @@ function buildPorticoEvents(baseId, plan) {
   events.push(event(id++, "LIGA_CUSTODIO", plan.custodio[0], plan.custodio[1], [
     page({
       cond: condition({ sw: SW.cleared }),
-      gfx: graphic("trchar000.png", 2, 1),
+      gfx: graphic("trchar000", 2, 1),
       list: [...texts(["Custodio: el pulso volvió a su sitio.", "Los mundos respiran. Mad Pikachu te espera en la Antesala, ya sin tormenta."]), cmd(0)],
     }),
     page({
-      gfx: graphic("trchar000.png", 2, 1),
+      gfx: graphic("trchar000", 2, 1),
       list: [...texts([
         "Custodio: aquí llegan los que cierran mundos, no los que ganan batallas.",
         "Arriba está el Coliseo. Lo que vive ahí no se mide en niveles normales.",
@@ -333,15 +335,15 @@ function buildPorticoEvents(baseId, plan) {
   ]));
   events.push(event(id++, "LIGA_ECO", plan.eco[0], plan.eco[1], [
     page({
-      gfx: graphic("UNOWN.png", 2, 1, { hue: 200, opacity: 140 }),
+      gfx: graphic("UNOWN", 2, 1, { hue: 200, opacity: 140 }),
       list: [...texts(["Un eco repite tu último paso.", "Después repite el de otra persona. Después el de nadie."]), cmd(0)],
     }),
   ]));
   events.push(event(id++, "LIGA_ACCESO_COLISEO", plan.acceso[0], plan.acceso[1], [
-    page({ gfx: graphic("Object ball special.png", 2, 1), trigger: 1, list: [...texts(["La puerta del Coliseo cede."]), transfer(COLISEO_ID, plan.coliseoEntry[0], plan.coliseoEntry[1], 8), cmd(0)] }),
+    page({ gfx: graphic("Object ball special", 2, 1), trigger: 1, list: [...texts(["La puerta del Coliseo cede."]), transfer(COLISEO_ID, plan.coliseoEntry[0], plan.coliseoEntry[1], 8), cmd(0)] }),
   ]));
   events.push(event(id++, "LIGA_SALIDA", plan.salida[0], plan.salida[1], [
-    page({ gfx: graphic("Object ball special.png", 2, 1), trigger: 1, list: [...texts(["Vuelves a la Antesala de las Grietas."]), script(SENS_HUB), transfer(HUB_ID, plan.hubCell[0], plan.hubCell[1], 8), cmd(0)] }),
+    page({ gfx: graphic("Object ball special", 2, 1), trigger: 1, list: [...texts(["Vuelves a la Antesala de las Grietas."]), script(SENS_HUB), transfer(HUB_ID, plan.hubCell[0], plan.hubCell[1], 8), cmd(0)] }),
   ]));
   return events;
 }
@@ -351,11 +353,11 @@ function sparkEvent(id, name, cell, index, branch) {
   return event(id, name, cell[0], cell[1], [
     page({
       cond: condition({ self: "A" }),
-      gfx: graphic("Object ball special.png", 2, 1, { opacity: 90 }),
+      gfx: graphic("Object ball special", 2, 1, { opacity: 90 }),
       list: [...texts(["La chispa ya está contigo."]), cmd(0)],
     }),
     page({
-      gfx: graphic("Object ball special.png", 2, 1, { hue: 32 + index * 24 }),
+      gfx: graphic("Object ball special", 2, 1, { hue: 32 + index * 24 }),
       list: [
         script([
           "begin",
@@ -386,7 +388,7 @@ function buildColiseoEvents(baseId, plan) {
   events.push(event(id++, "LIGA_MPIKA", plan.mpika[0], plan.mpika[1], [
     page({
       cond: condition({ variable: [VAR.stage, STAGE.intro] }),
-      gfx: graphic("DN_MADPIKA.png", 2, 1),
+      gfx: graphic("DN_MADPIKA", 2, 1),
       list: [
         script(SENS_LIGA),
         ...texts([
@@ -424,12 +426,12 @@ function buildColiseoEvents(baseId, plan) {
     }),
     page({
       cond: condition({ variable: [VAR.stage, STAGE.prueba] }),
-      gfx: graphic("DN_MADPIKA.png", 2, 1),
+      gfx: graphic("DN_MADPIKA", 2, 1),
       list: [...texts(["Rotom: «Chispas del vínculo: #{$game_variables[279]}/4.»", "Mad Pikachu espera, recorriendo el Coliseo en círculos imposibles."]), cmd(0)],
     }),
     page({
       cond: condition({ variable: [VAR.stage, STAGE.arceus] }),
-      gfx: graphic("DN_MADPIKA.png", 2, 1),
+      gfx: graphic("DN_MADPIKA", 2, 1),
       list: [
         script(toneLine([240, 240, 255, 0], 8, "dn:ambiente")),
         ...texts([
@@ -445,7 +447,7 @@ function buildColiseoEvents(baseId, plan) {
     }),
     page({
       cond: condition({ variable: [VAR.stage, STAGE.combate] }),
-      gfx: graphic("DN_MADPIKA.png", 2, 1),
+      gfx: graphic("DN_MADPIKA", 2, 1),
       list: [
         ...texts(["Mad Pikachu baja al suelo. Ahora se puede pelear."]),
         script([
@@ -473,7 +475,7 @@ function buildColiseoEvents(baseId, plan) {
     }),
     page({
       cond: condition({ variable: [VAR.stage, STAGE.cierre] }),
-      gfx: graphic("DN_MADPIKA.png", 2, 1),
+      gfx: graphic("DN_MADPIKA", 2, 1),
       list: [...texts(["Mad Pikachu duerme en el centro del Coliseo.", "Ya no hay tormenta: los mundos creepypasta quedaron atrás."]), cmd(0)],
     }),
   ]));
@@ -481,7 +483,7 @@ function buildColiseoEvents(baseId, plan) {
     events.push(sparkEvent(id++, `LIGA_CHISPA_${index + 1}`, cell, index, plan.branch));
   });
   events.push(event(id++, "LIGA_SALIDA_COLISEO", plan.salida[0], plan.salida[1], [
-    page({ gfx: graphic("Object ball special.png", 2, 1), trigger: 1, list: [...texts(["Bajas de nuevo al Pórtico."]), transfer(PORTICO_ID, plan.porticoEntry[0], plan.porticoEntry[1], 8), cmd(0)] }),
+    page({ gfx: graphic("Object ball special", 2, 1), trigger: 1, list: [...texts(["Bajas de nuevo al Pórtico."]), transfer(PORTICO_ID, plan.porticoEntry[0], plan.porticoEntry[1], 8), cmd(0)] }),
   ]));
   return events;
 }
@@ -492,12 +494,12 @@ function buildHubGate(plan) {
     event(plan.id, "HUB_LIGA_OSCURA", plan.cell[0], plan.cell[1], [
       page({
         cond: condition({ sw: SW.ready }),
-        gfx: graphic("Object ball special.png", 2, 1, { hue: 300 }),
+        gfx: graphic("Object ball special", 2, 1, { hue: 300 }),
         trigger: 1,
         list: [...texts(["La puerta de la Liga Oscura se abre.", "Seis firmas sostienen el mundo del código."]), script(SENS_LIGA), transfer(PORTICO_ID, plan.porticoEntry[0], plan.porticoEntry[1], 8), cmd(0)],
       }),
       page({
-        gfx: graphic("Object ball special.png", 2, 1, { hue: 300, opacity: 160 }),
+        gfx: graphic("Object ball special", 2, 1, { hue: 300, opacity: 160 }),
         list: [
           script(readyCheck),
           ...texts(["Una puerta de código espera las seis firmas.", "Rotom: «Cartucheras listas para la Liga: comprueba la Antesala.»"]),
@@ -530,7 +532,7 @@ async function buildPlan() {
 
   const cMpika = { cell: [15, 11] };
   const cSparks = coliseo.plazas.map((cell) => cell);
-  const cSalida = { cell: [13, COLISEO_H - 1] };
+  const cSalida = { cell: [14, COLISEO_H - 1] };   // puerta inferior, junto a la llegada
 
   const hub = grid(HUB_ID);
   const hubReach = reachableCells(hub.pass, hubGateEntry(hub));

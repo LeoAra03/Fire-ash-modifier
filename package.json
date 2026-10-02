@@ -76,7 +76,7 @@
     "dn:hub": "node tools/dn_build_hub_map.mjs",
     "dn:hub:find": "node tools/dn_build_hub_map.mjs --find",
     "dn:hub:verify": "node tools/dn_build_hub_map.mjs --verify",
-    "dn:verify:all": "npm run dn:plan:check && npm run dn:maps:verify && npm run dn:pasajes:verify && npm run dn:events:verify && npm run dn:battles:verify && npm run dn:hub:verify && npm run dn:hub:events:verify && npm run dn:medals:verify && npm run dn:liga:verify && npm run dn:sens:verify",
+    "dn:verify:all": "npm run dn:plan:check && npm run dn:maps:verify && npm run dn:pasajes:verify && npm run dn:events:verify && npm run dn:battles:verify && npm run dn:hub:verify && npm run dn:hub:events:verify && npm run dn:medals:verify && npm run dn:liga:verify && npm run dn:sens:verify && npm run dn:flags:verify && npm run dn:audit && npm run dn:plan:mapas:check",
     "dn:art": "node tools/dn_install_art.mjs",
     "dn:art:verify": "node tools/dn_install_art.mjs --verify",
     "dn:hub:events": "node tools/dn_build_hub_events.mjs",
@@ -87,7 +87,13 @@
     "dn:liga:verify": "node tools/dn_build_liga.mjs --verify",
     "dn:sens": "node tools/dn_apply_sensations.mjs",
     "dn:sens:verify": "node tools/dn_apply_sensations.mjs --verify",
-    "dn:build:all": "npm run dn:hub:events && npm run dn:medals && npm run dn:liga && npm run dn:sens"
+    "dn:build:all": "npm run dn:events && npm run dn:battles && npm run dn:hub:events && npm run dn:medals && npm run dn:liga && npm run dn:sens",
+    "dn:flags": "node tools/dn_name_flags.mjs",
+    "dn:flags:verify": "node tools/dn_name_flags.mjs --verify",
+    "dn:audit": "node tools/dn_audit_content.mjs",
+    "dn:audit:strict": "node tools/dn_audit_content.mjs --strict",
+    "dn:plan:mapas": "node tools/dn_plan_experience.mjs",
+    "dn:plan:mapas:check": "node tools/dn_plan_experience.mjs --check"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

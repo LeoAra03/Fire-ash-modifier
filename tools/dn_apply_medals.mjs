@@ -162,12 +162,12 @@ function applyPedestals() {
       event(baseId, name, cell[0], cell[1], [
         page({
           cond: condition({ self: "A" }),
-          gfx: graphic("Object ball special.png", 2, 1, { hue: 0 }),
+          gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
           list: [...texts([`El pedestal guarda la ${world.medalName}.`, `Cartuchera registrada: «${world.caseName}».`]), cmd(0)],
         }),
         page({
           cond: condition({ sw: seal }),
-          gfx: graphic("Object ball special.png", 2, 1, { hue: 32 }),
+          gfx: graphic("Object ball special", 2, 1, { hue: 32 }),
           list: [
             ...texts([
               `El sello de ${world.world} está cerrado.`,
@@ -180,7 +180,7 @@ function applyPedestals() {
           ],
         }),
         page({
-          gfx: graphic("Object ball special.png", 2, 1, { hue: 0 }),
+          gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
           list: [...texts([`Pedestal de ${world.world}.`, `Se encenderá cuando el sello cierre. La medalla se guarda en «${world.caseName}».`]), cmd(0)],
         }),
       ]),

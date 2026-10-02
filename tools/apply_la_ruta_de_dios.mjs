@@ -194,8 +194,13 @@ const RUTA_DE_DIOS_RUBY = `#====================================================
 # 1. Level 200 is reserved for the Arceus encounter.
 class Pokemon
   alias _ruta_arceus_original_level_set level= unless method_defined?(:_ruta_arceus_original_level_set)
+  # El nivel 200 está reservado al Arceus divino de La Ruta de Dios. Cualquier otro Arceus
+  # (intercambio, depuración, futuro evento) sigue topado al máximo normal del juego.
+  def ruta_arceus_divine?
+    return @ruta_arceus_divine == true
+  end
   def level=(value)
-    max = (@species == :ARCEUS) ? 200 : GameData::GrowthRate.max_level
+    max = (@species == :ARCEUS && @ruta_arceus_divine == true) ? 200 : GameData::GrowthRate.max_level
     if value < 1 || value > max
       raise ArgumentError.new(_INTL("The level number ({1}) is invalid.", value))
     end
@@ -286,7 +291,7 @@ RUTA_ARCEUS_MOVE_SETS = [
 class PokeBattle_Battler
   alias _ruta_arceus_original_reduce_hp pbReduceHP unless method_defined?(:_ruta_arceus_original_reduce_hp)
   def pbReduceHP(amt, anim = true, registerDamage = true, anyAnim = true)
-    if @battle && @battle.respond_to?(:arceus_before_damage)
+    if @battle && @battle.respond_to?(:arceus_divine?) && @battle.arceus_divine?
       amt = @battle.arceus_before_damage(self, amt)
       # The base battler clamps damage to at least 1 HP. Bypass that clamp when
       # Arceus is already at 1 HP, or it would faint before the catch turn.
@@ -294,10 +299,11 @@ class PokeBattle_Battler
         @battle.check_arceus_phase(self)
         return 0
       end
+      ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
+      @battle.check_arceus_phase(self)
+      return ret
     end
-    ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
-    @battle.check_arceus_phase(self) if @battle && @battle.respond_to?(:check_arceus_phase)
-    return ret
+    return _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
   end
 end
 
@@ -342,13 +348,28 @@ class PokeBattle_Battle
   def arceus_before_damage(battler, amount)
     return amount if !arceus_divine? || !battler || battler.pokemon.species != :ARCEUS
     arceus_state(battler)
-    return amount if @arceus_capture_ready
+    if @arceus_capture_ready
+      # La captura está abierta: Arceus ya no puede ser derrotado por daño, sólo capturado.
+      return :ruta_arceus_hold_at_one if battler.hp <= 1
+      return [amount, battler.hp - 1].min
+    end
     # Arceus must stay at 1 HP until phase six is complete and the player has
     # had a real turn to throw a ball. At 1 HP, bypass the stock minimum-1-damage
     # clamp in PokeBattle_Battler#pbReduceHP.
     return :ruta_arceus_hold_at_one if battler.hp <= 1
     return [amount, battler.hp - 1].min if battler.hp - amount <= 0
     return [amount, 0].max
+  end
+
+  # Red de seguridad de la captura final: si el jugador llega sin ninguna ball, el Rotom
+  # materializa una Bola del Testigo. Sin esto la fase final podía quedar sin salida.
+  def pbArceusEnsureCaptureBall
+    return if !$PokemonBag || !$PokemonBag.respond_to?(:pbHasItem?)
+    balls = [:POKEBALL, :GREATBALL, :ULTRABALL, :MASTERBALL]
+    return if balls.any? { |ball| $PokemonBag.pbHasItem?(ball) }
+    $PokemonBag.pbStoreItem(:POKEBALL, 1) if $PokemonBag.respond_to?(:pbStoreItem)
+    pbDisplay(_INTL("El Rotom vibra y materializa una Bola del Testigo: «No vas a dejar el trabajo a medias.»"))
+  rescue StandardError
   end
 
   def check_arceus_phase(battler)
@@ -372,6 +393,7 @@ class PokeBattle_Battle
     end
     if @arceus_phase >= 6 && battler.hp <= 1 && !@arceus_capture_ready
       @arceus_capture_ready = true
+      pbArceusEnsureCaptureBall
       pbDisplay(_INTL("¡La última barrera de Arceus se rompe! El dios queda debilitado, inmóvil y expuesto a la captura."))
       pbDisplay(_INTL("¡La animación del debilitamiento final termina! ¡Desde este instante, la probabilidad de captura es del 100%!"))
       begin
@@ -542,7 +564,16 @@ def pbArceusCinematicPokemon(species, level, moves, item = nil)
   max_level = (species == :ARCEUS) ? 200 : (GameData::GrowthRate.max_level || 150).to_i
   max_level = 150 if max_level < 1
   safe_level = [[level.to_i, 1].max, max_level].min
-  pkmn = Pokemon.new(species, safe_level)
+  normal_cap = (GameData::GrowthRate.max_level || 150).to_i
+  normal_cap = 150 if normal_cap < 1
+  # S2b: sólo el Arceus divino del combate puede nacer por encima del tope normal.
+  # Se marca antes de subirle el nivel porque el setter de nivel rechazaría el 200.
+  divine = (species == :ARCEUS && safe_level > normal_cap)
+  pkmn = Pokemon.new(species, divine ? normal_cap : safe_level)
+  if divine
+    pkmn.instance_variable_set(:@ruta_arceus_divine, true)
+    pkmn.level = safe_level
+  end
   GameData::Stat.each_main { |stat| pkmn.iv[stat.id] = 31 }
   # Keep cinematic teams within the standard 510 total EVs.
   pkmn.ev[:HP] = 6
@@ -783,7 +814,7 @@ def pbArceusStorageCandidates
   for box in 0...$PokemonStorage.maxBoxes
     for index in 0...$PokemonStorage.maxPokemon(box)
       pkmn = $PokemonStorage[box, index]
-      ret.push([box, index, pkmn]) if pkmn && pkmn.able?
+      ret.push([box, index, pkmn]) if pkmn && pkmn.able? && !(pkmn.respond_to?(:egg?) && pkmn.egg?)
     end
   end
   return ret
@@ -857,16 +888,33 @@ def pbArceusSurrenderSequence
   rescue StandardError
   end
   pbMessage(_INTL("La realidad expulsa a Ash. El viaje vuelve a la pantalla principal."))
+  begin
+    $PokemonTemp.clearBattleRules if $PokemonTemp
+    $game_switches[RUTA_DE_DIOS_ARCEUS_RESOLVED] = true if $game_switches
+  rescue StandardError
+  end
   pbStartOver
 end
 
 # 5. Starter. The loop is deliberately outside the normal battle loop: it lets
 # the engine finish a battle, show the pseudo-PC, and then start another battle
 # with the same Arceus object and its persistent phase/HP state.
+# S1: el Arceus capturado deja de ser el dios del combate. Sin esto, el ejemplar que entra
+# en la partida conservaba las variables de fase/restauraciones/captura del jefe.
+def pbArceusNormalizeCaptured(pkmn)
+  return if !pkmn
+  pkmn.instance_variable_set(:@ruta_arceus_divine, false)
+  pkmn.instance_variable_set(:@ruta_arceus_phase, 1)
+  pkmn.instance_variable_set(:@ruta_arceus_restores, 0)
+  pkmn.instance_variable_set(:@ruta_arceus_capture_ready, false)
+rescue StandardError
+end
+
 def pbStartArceusDivineBattle
   $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = false if $game_switches
-  pkmn = Pokemon.new(:ARCEUS, 200)
+  pkmn = Pokemon.new(:ARCEUS, GameData::GrowthRate.max_level)
   pkmn.instance_variable_set(:@ruta_arceus_divine, true)
+  pkmn.level = 200
   pkmn.instance_variable_set(:@ruta_arceus_phase, 1)
   pkmn.instance_variable_set(:@ruta_arceus_restores, 0)
   pkmn.instance_variable_set(:@ruta_arceus_capture_ready, false)
@@ -891,6 +939,7 @@ def pbStartArceusDivineBattle
     decision = pbWildBattleCore(pkmn)
     if decision == 4
       $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true if $game_switches
+      pbArceusNormalizeCaptured(pkmn)
       return decision
     end
     return decision if decision == 1
@@ -2290,6 +2339,27 @@ function verify() {
   const scripts = readRx("Scripts.rxdata");
   const scriptEntry = scripts.find(([id, title]) => title.text === "PokeMod_RutaDeDios");
   if (!scriptEntry) errors.push("Missing PokeMod_RutaDeDios in Scripts.rxdata");
+
+  // 2b. Garantías de la batalla divina (revisión M2)
+  if (scriptEntry) {
+    let ruby = "";
+    try {
+      ruby = zlib.inflateSync(Buffer.from(scriptEntry[2].bytes)).toString("utf-8");
+    } catch (error) {
+      errors.push(`No se pudo descomprimir la sección PokeMod_RutaDeDios: ${error.message}`);
+    }
+    const guarantees = [
+      ["pbArceusNormalizeCaptured", "normalización del Arceus capturado (no arrastra estado divino)"],
+      ["pbArceusEnsureCaptureBall", "red de seguridad: ball garantizada en el turno de captura"],
+      ["@species == :ARCEUS && @ruta_arceus_divine == true", "tope de nivel 200 reservado al Arceus divino"],
+      ["!(pkmn.respond_to?(:egg?) && pkmn.egg?)", "pseudo-PC sin huevos"],
+      ["divine ? normal_cap : safe_level", "el Arceus cinemático nace al tope normal y sube como divino"],
+      ["arceus_capture_ready", "captura determinista tras el último sello"],
+    ];
+    for (const [needle, label] of guarantees) {
+      if (ruby && !ruby.includes(needle)) errors.push(`Falta una garantía de la batalla: ${label}`);
+    }
+  }
 
   // 3. Verify Volo in Map 513
   const map513 = readRx("Map513.rxdata");

@@ -62,9 +62,11 @@ Además siguen pendientes 40 pruebas manuales en `Game.exe`. No se cuentan como 
 
 | Frente | Estado | Documento |
 |---|---|---|
-| **Dimensional Nightmare** (6 universos + Nexo + Liga Oscura, Map2040–2142, 103 mapas, 105 eventos) | **Mapas recreados e instalados (101/101) con eventos/NPCs/jefes (E4), hub 2040 jugable (E6), medallas y cartucheras `Badges of <mundo>`, sensaciones de tono por mundo y Liga Oscura con Mad Pikachu (M2, doc 14: 2141–2142)**: seis grietas, archivero, monumento de progreso y salida; arte ALTA instalado (KINGGUS/Mano Blanca/Fragmento). Pendientes: arte MEDIA/BAJA, audio alterado, QA manual, espejo EP05 y forma final EP06. Catálogo en `content/dimensional_nightmare.json` y plan de cierre en `docs/DIMENSIONAL_NIGHTMARE/13_PLAN_DE_CIERRE.md` | `docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md` · `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` |
-| **Recreación de mapas desde los 7 mosaicos de referencia** | **Plan aprobable**: pipeline E0–E6, lotes de 5 mapas, checklist de aceptación; fase 1 ya tiene herramienta probada (`tools/dn_ingest_reference.mjs`) | `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` |
+| **Dimensional Nightmare** (6 universos + Nexo + Liga Oscura, Map2040–2142, 103 mapas, 105 eventos) | **Mapas recreados e instalados (101/101) con eventos/NPCs/jefes (E4), hub 2040 jugable (E6), medallas y cartucheras `Badges of <mundo>`, sensaciones de tono por mundo y Liga Oscura con Mad Pikachu (M2, doc 14: 2141–2142)**: seis grietas, archivero, monumento de progreso y salida; arte ALTA instalado (KINGGUS/Mano Blanca/Fragmento). **Cierre M2: plan de experiencia por mapa (doc 15, 103 ganchos únicos), auditoría de contenido 103/103 sin errores ni avisos, flags DN nombradas (switches 882–921, variables 264–282) y correcciones de la Liga Oscura y de la batalla de La Ruta de Dios (S1–S8)**. Pendientes: arte MEDIA/BAJA, audio alterado, QA manual, espejo EP05 y forma final EP06. Catálogo en `content/dimensional_nightmare.json` y plan de cierre en `docs/DIMENSIONAL_NIGHTMARE/13_PLAN_DE_CIERRE.md` | `docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md` · `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` · `docs/DIMENSIONAL_NIGHTMARE/15_EXPERIENCIA_POR_MAPA.md` |
+| **Recreación de mapas desde los 7 mosaicos de referencia** | **Ejecutada (E0–E6)**: pipeline `dn:ingest` → `dn:tiles` → `dn:build:all` → `dn:verify:all`; 103 mapas con pasajes pasados, eventos y verificación integrada | `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` |
 
-> El Nightmare es una capa de diseño: describe qué construir y con qué flags (switches 882–902,
-> variables 265–276, verificados libres). No hay mapas, eventos ni batallas instalados todavía;
-> no entra en los conteos de arriba hasta que existan `create`/`apply`/`verify` y sus pruebas.
+> El Nightmare está instalado como capa de diseño: describe qué construir y con qué flags
+> (switches 882–921, variables 264–282, nombrados y verificados por `npm run dn:flags:verify`).
+> Sus 103 mapas (2040–2142), eventos, batallas y arte viven fuera de los conteos certificados
+> de arriba hasta que cierren los pendientes (arte MEDIA/BAJA, audio, QA manual, espejo EP05
+> y forma final EP06). La batería `npm run dn:verify:all` los comprueba por separado.
