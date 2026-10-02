@@ -22,6 +22,11 @@ jobs:
           node-version: "22"
       - name: Instalar dependencias reproducibles
         run: npm ci
+      - name: Preparar derivados del material de referencia
+        # Los mosaicos fuente (Mapas/Crepypastas) sí están versionados, pero los recortes
+        # (slices/), los tilesets deducidos y las hojas origen son artefactos ignorados por
+        # git: se regeneran aquí para que la verificación tenga contra qué comparar.
+        run: npm run dn:preparar
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas

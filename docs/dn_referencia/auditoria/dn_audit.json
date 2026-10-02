@@ -1,0 +1,106 @@
+{
+  "generatedBy": "tools/dn_audit_content.mjs",
+  "maps": 151,
+  "stats": {
+    "errors": 0,
+    "warnings": 0,
+    "byKind": {
+      "errors": {},
+      "warnings": {}
+    }
+  },
+  "levelDesign": [
+    {
+      "id": 2040,
+      "walkable": 384,
+      "reachable": 352,
+      "ratio": 0.917
+    },
+    {
+      "id": 2190,
+      "walkable": 72,
+      "reachable": 67,
+      "ratio": 0.931
+    },
+    {
+      "id": 2119,
+      "walkable": 62,
+      "reachable": 61,
+      "ratio": 0.984
+    },
+    {
+      "id": 2136,
+      "walkable": 62,
+      "reachable": 61,
+      "ratio": 0.984
+    },
+    {
+      "id": 2065,
+      "walkable": 95,
+      "reachable": 94,
+      "ratio": 0.989
+    },
+    {
+      "id": 2112,
+      "walkable": 95,
+      "reachable": 94,
+      "ratio": 0.989
+    },
+    {
+      "id": 2041,
+      "walkable": 170,
+      "reachable": 170,
+      "ratio": 1
+    },
+    {
+      "id": 2042,
+      "walkable": 48,
+      "reachable": 48,
+      "ratio": 1
+    },
+    {
+      "id": 2043,
+      "walkable": 80,
+      "reachable": 80,
+      "ratio": 1
+    },
+    {
+      "id": 2044,
+      "walkable": 62,
+      "reachable": 62,
+      "ratio": 1
+    },
+    {
+      "id": 2045,
+      "walkable": 107,
+      "reachable": 107,
+      "ratio": 1
+    },
+    {
+      "id": 2046,
+      "walkable": 97,
+      "reachable": 97,
+      "ratio": 1
+    },
+    {
+      "id": 2047,
+      "walkable": 64,
+      "reachable": 64,
+      "ratio": 1
+    },
+    {
+      "id": 2048,
+      "walkable": 106,
+      "reachable": 106,
+      "ratio": 1
+    },
+    {
+      "id": 2049,
+      "walkable": 61,
+      "reachable": 61,
+      "ratio": 1
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}

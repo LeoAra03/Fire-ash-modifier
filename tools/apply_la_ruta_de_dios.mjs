@@ -35,10 +35,17 @@
  *    - Revela que dejó copias atenuadas de sí mismo, de Dialga y de Palkia a propósito para evitar este despertar.
  *    - Anuncia que ha descendido para desatar el Cataclismo Final y reiniciar el universo.
  * 5. Combate contra Arceus:
- *    - Nivel 200 (único Pokémon del juego en alcanzar este nivel).
+ *    - Nivel 200 (único Pokémon del juego en alcanzar este nivel) y sólo para la
+ *      instancia divina: el 200 exige @ruta_arceus_divine (S2/S2b).
  *    - Sentencia, Distorsión, Corte Vacío, Golpe Umbrío con Tabla Legendaria.
- *    - Capacidad de curarse 3 VECES con Restaura Todo cuando su salud baja del 45% (con animación y aviso en pantalla).
- *    - Se puede capturar o derrotar.
+ *    - Sellos del Génesis (R1): cada golpe conectado rompe uno de los 5 sellos y
+ *      fija el vigor al umbral (72/55/38/22% y, el último, 1 PS con captura al 100%).
+ *    - Hasta 2 Restaura Todo divinos (R5) cuando baja del 30% en fase 4+; los sellos
+ *      rotos no se restauran.
+ *    - Los ecos invocados (Mew, Giratina) usan el nivel máximo legal con empuje
+ *      divino, nunca el nivel 200 (R2).
+ *    - Se puede capturar o derrotar. El pseudo-PC nunca deja al jugador sin salida:
+ *      si no hay candidatos en el PC, el Rotom sostiene al equipo una vez (R4).
  *    - Si derrota al jugador: desmayo oficial y transporte al Centro Pokémon más cercano.
  * 6. Desenlace con Volus:
  *    - Volus sube a la cima tras el combate felicitando a Ash por salvar el cosmos.
@@ -61,6 +68,7 @@ import {
 import {
   TileCanvas, passabilityOf, reachableCells, buildMapObject,
 } from "./lib/map_painter.mjs";
+import { parseMap, tableGet } from "../web/js/rmxp.js";
 import { tableFromUserDef, tableToUserDef, tableSet } from "../web/js/rmxp.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -88,6 +96,14 @@ const SW_SNOWPOINT_PASS = 877;   // Permite cruzar árboles solo durante esta vi
 const SW_ARCEUS_ALLIES_CYNTHIA_STEVEN = 878;
 const SW_ARCEUS_ALLIES_GOLD_RED = 879;
 const SW_ARCEUS_ALLIES_VOLUS = 880;
+const SW_ARCEUS_MERCY = 869;     // R4: el Rotom sostiene al equipo una sola vez (sin candidatos en el PC)
+const SW_PRELUDE_SEEN = 881;     // R7: el prólogo cinemático (3 combates CPU) sólo se ve la primera vez
+
+// R8: cada piso 1-4 guarda una reliquia detrás del sello de su guía (el objeto es el sello roto).
+const SW_RELIC_GUIDE_1 = 936;    // Maya (1F)
+const SW_RELIC_GUIDE_2 = 937;    // Palmer (2F)
+const SW_RELIC_GUIDE_3 = 938;    // Quinoa (3F)
+const SW_RELIC_GUIDE_4 = 939;    // Cintia (4F)
 
 // ---------------------------------------------------------------------------
 // RMXP Event Constructors
@@ -163,6 +179,167 @@ function transferEvent(id, name, x, y, targetMap, targetX, targetY, targetDir = 
   list.push(cmd(0));
   return event(id, name, x, y, [page({ trigger: 1, list })]);
 }
+/**
+ * R8: reliquia sellada. Cada piso 1-4 guarda una reliquia detrás del sello de su
+ * entrenador; los pisos 5-6, detrás de su guardián. La página 1 sólo existe cuando
+ * el sello está roto (`sealSwitch`), así que el objeto es un premio de exploración,
+ * no un caramelo tirado en el suelo.
+ */
+function sealedRelicEvent(id, name, x, y, sealSwitch, itemSym, itemName) {
+  const p1 = page({
+    cond: condition({ sw: sealSwitch }),
+    gfx: graphic("Item ball", 2),
+    list: [
+      cmd(101, [S(`¡La reliquia sellada cede! Encontraste ${itemName}.\\1`)]),
+      script(`pbReceiveItem(:${itemSym}, 1)`),
+      cmd(123, [S("A"), 0]),
+      cmd(0),
+    ],
+  });
+  const p2 = page({ cond: condition({ self: "A" }), list: [cmd(0)] });
+  const p3 = page({ list: [cmd(0)] });
+  return event(id, name, x, y, [p1, p2, p3]);
+}
+
+/**
+ * R8: busca el rincón sellado del piso: una celda sólida (muro o roca) a la que no se
+ * puede entrar pero a la que sí se llega de frente caminando, y que además queda lejos
+ * del inicio. El `salt` desempata para que cada piso esconda su reliquia en un lugar
+ * distinto. La reliquia es premio de exploración: hay que recorrerse el piso entero.
+ */
+function sealedRelicSpot(cv, start, salt = 0) {
+  const pass = passabilityOf(cv, cv.tilesetId);
+  const reachable = reachableCells(pass, start);
+  const bloqueada = (x, y) => [2, 4, 6, 8].every((dir) => {
+    const [dx, dy] = { 2: [0, 1], 4: [-1, 0], 6: [1, 0], 8: [0, -1] }[dir];
+    return !canMoveInto(pass, x + dx, y + dy, 10 - dir);
+  });
+  const candidatos = [];
+  for (let y = 3; y < cv.height - 3; y++) {
+    for (let x = 3; x < cv.width - 3; x++) {
+      if (reachable.has(`${x},${y}`)) continue;
+      if (!bloqueada(x, y)) continue;   // la reliquia vive sobre piedra, no en un hueco
+      const deFrente = [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]].some(([nx, ny]) => reachable.has(`${nx},${ny}`));
+      if (!deFrente) continue;
+      candidatos.push({ x, y, dist: Math.abs(x - start[0]) + Math.abs(y - start[1]) });
+    }
+  }
+  if (!candidatos.length) throw new Error("R8: no se encontró rincón sellado en el piso");
+  // Cuadrante preferido por piso: los pisos no esconden todos la reliquia en la misma esquina.
+  const cuadrantes = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
+  const [qx, qy] = cuadrantes[Math.abs(salt) % cuadrantes.length];
+  const cx = cv.width / 2, cy = cv.height / 2;
+  const lejos = Math.max(...candidatos.map((c) => c.dist));
+  const enCuadrante = candidatos.filter((c) => (c.x - cx) * qx > 0 && (c.y - cy) * qy > 0 && c.dist >= lejos * 0.55);
+  const pool = enCuadrante.length ? enCuadrante : candidatos;
+  const score = (c) => c.dist * 100 + ((c.x * 7 + c.y * 13 + salt * 5) % 37);
+  return pool.reduce((a, b) => (score(b) > score(a) ? b : a));
+}
+
+/** ¿La celda (x, y) es sólida? Se prueba entrando desde sus cuatro vecinos. */
+function canMoveInto(pass, x, y, reverseDir) {
+  return pass.canMove(x, y, reverseDir);
+}
+
+/**
+ * R9: peregrinos de la Ruta. Cada piso tiene dos voces: la que recuerda la mitología del
+ * lugar y la que apunta hacia la reliquia sellada de ese piso (el rumbo se calcula de la
+ * posición real de la reliquia, así la pista siempre dice la verdad). Se colocan en la
+ * celda alcanzable más cercana al punto deseado, nunca encima de otro evento.
+ */
+const PEREGRINOS = {
+  "1F": {
+    rostros: ["trchar001", "trchar003"],
+    lore: [
+      "Peregrino: Subí esta ruta cuando el cielo todavía era una sola pieza.",
+      "Peregrino: El Gran Uno no vive arriba: vive en lo que uno deja atrás al subir.",
+    ],
+  },
+  "2F": {
+    rostros: ["trchar004", "trchar005"],
+    lore: [
+      "Peregrina: Aquí el aire pesa más que en la costa. Los que suben con prisa bajan con las manos vacías.",
+      "Peregrina: Mi abuelo decía que la montaña no se conquista: se respeta.",
+    ],
+  },
+  "3F": {
+    rostros: ["trchar006", "trchar007"],
+    lore: [
+      "Peregrino: El mar de arriba no tiene agua: tiene tiempo. Lo vi una vez y no volví a nadar.",
+      "Peregrino: Cada piedra que pisas fue un pokémon que se quedó mirando demasiado la cumbre.",
+    ],
+  },
+  "4F": {
+    rostros: ["trchar008", "trchar009"],
+    lore: [
+      "Peregrina: Pocos llegan hasta aquí. Menos aún entienden por qué suben.",
+      "Peregrina: Yo sólo vine a comprobar si el mito aguantaba mi peso. Aguanta.",
+    ],
+  },
+  "5F": {
+    rostros: ["trainer_HIKER", "trchar000"],
+    lore: [
+      "Peregrino: Este piso respira despacio. Un segundo aquí adentro dura un invierno allá afuera.",
+      "Peregrino: No le des la espalda a la grieta del techo: eso que brilla es una hora que no fue.",
+    ],
+  },
+  "6F": {
+    rostros: ["trainer_SCIENTIST", "trchar001"],
+    lore: [
+      "Peregrina: Arriba el espacio se dobla. Caminé tres pasos y recorrí mi infancia entera.",
+      "Peregrina: Si ves dos veces la misma escalera, elige la que te mire.",
+    ],
+  },
+};
+
+/** Rumbo en palabras de una celda respecto al centro del piso (para las pistas). */
+function rumboDe(x, y, cv) {
+  const vertical = y < cv.height / 2 ? "norte" : "sur";
+  const horizontal = x < cv.width / 2 ? "poniente" : "oriente";
+  return `${vertical}, hacia el ${horizontal}`;
+}
+
+function installPilgrims(cv, map, floorKey, start, relic) {
+  const data = PEREGRINOS[floorKey];
+  if (!data) return;
+  const pass = passabilityOf(cv, cv.tilesetId);
+  const reachable = reachableCells(pass, start);
+  const ocupadas = new Set();
+  for (const [, ev] of iv(map, "events").pairs) ocupadas.add(`${Number(iv(ev, "x"))},${Number(iv(ev, "y"))}`);
+
+  const libres = [...reachable].filter((k) => !ocupadas.has(k)).map((k) => k.split(",").map(Number));
+  if (libres.length < 2) throw new Error(`R9: sin celdas libres para los peregrinos de ${floorKey}`);
+
+  const donde = (target) => {
+    let mejor = null;
+    for (const [x, y] of libres) {
+      if (ocupadas.has(`${x},${y}`)) continue;
+      const d = Math.abs(x - target[0]) + Math.abs(y - target[1]);
+      if (!mejor || d < mejor.d) mejor = { x, y, d };
+    }
+    if (mejor) ocupadas.add(`${mejor.x},${mejor.y}`);
+    return mejor;
+  };
+
+  const esquinas = [[Math.floor(cv.width * 0.25), Math.floor(cv.height * 0.3)],
+                    [Math.floor(cv.width * 0.75), Math.floor(cv.height * 0.7)]];
+  const pista = [
+    `Peregrino: Los antiguos sellaban lo que no debía subir.`,
+    `Peregrino: Mira donde el camino se corta: al ${rumboDe(relic.x, relic.y, cv)} hay una roca que no es roca. Sólo se abre cuando el sello del piso está roto.`,
+  ];
+  const voces = [
+    { target: esquinas[0], texto: data.lore, rostro: data.rostros[0], nombre: `Peregrino de la memoria (${floorKey})` },
+    { target: esquinas[1], texto: pista, rostro: data.rostros[1], nombre: `Peregrino del sello (${floorKey})` },
+  ];
+  for (const [i, voz] of voces.entries()) {
+    const spot = donde(voz.target);
+    if (!spot) break;
+    addEventToMap(map, event(40 + i, voz.nombre, spot.x, spot.y, [
+      page({ gfx: graphic(voz.rostro, 2), list: [...textCommands(voz.texto, 1), cmd(0)] }),
+    ]));
+  }
+}
+
 function hiddenItemEvent(id, name, x, y, itemSym, itemName) {
   const p1 = page({
     gfx: graphic("Item ball", 2),
@@ -194,8 +371,13 @@ const RUTA_DE_DIOS_RUBY = `#====================================================
 # 1. Level 200 is reserved for the Arceus encounter.
 class Pokemon
   alias _ruta_arceus_original_level_set level= unless method_defined?(:_ruta_arceus_original_level_set)
+  # El nivel 200 está reservado al Arceus divino de La Ruta de Dios. Cualquier otro Arceus
+  # (intercambio, depuración, futuro evento) sigue topado al máximo normal del juego.
+  def ruta_arceus_divine?
+    return @ruta_arceus_divine == true
+  end
   def level=(value)
-    max = (@species == :ARCEUS) ? 200 : GameData::GrowthRate.max_level
+    max = (@species == :ARCEUS && @ruta_arceus_divine == true) ? 200 : GameData::GrowthRate.max_level
     if value < 1 || value > max
       raise ArgumentError.new(_INTL("The level number ({1}) is invalid.", value))
     end
@@ -257,6 +439,8 @@ ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH = 878
 ARCEUS_ALLIES_GOLD_RED_SWITCH = 879
 ARCEUS_ALLIES_VOLUS_SWITCH = 880
 RUTA_ARCEUS_CAUGHT_SWITCH = 874
+RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH = 869
+RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH = 881
 
 RUTA_ARCEUS_PHASE_THRESHOLDS = [0.84, 0.68, 0.52, 0.38, 0.22]
 RUTA_ARCEUS_PHASE_PLATES = [
@@ -282,11 +466,17 @@ RUTA_ARCEUS_MOVE_SETS = [
   [:JUDGMENT, :EXTREMESPEED, :VCREATE, :PRECIPICEBLADES],
   [:JUDGMENT, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE]
 ]
+# R1: los sellos del Génesis son la garantía de progreso del combate. Cada golpe
+# que conecta rompe un sello y fija el vigor de Arceus en el siguiente umbral; el
+# quinto sello abre la captura. Así el desenlace nunca depende de un crítico ni de
+# la paciencia del jugador.
+RUTA_ARCEUS_SEAL_FLOORS = [0.72, 0.55, 0.38, 0.22]
+RUTA_ARCEUS_RESTORES = 2
 
 class PokeBattle_Battler
   alias _ruta_arceus_original_reduce_hp pbReduceHP unless method_defined?(:_ruta_arceus_original_reduce_hp)
   def pbReduceHP(amt, anim = true, registerDamage = true, anyAnim = true)
-    if @battle && @battle.respond_to?(:arceus_before_damage)
+    if @battle && @battle.respond_to?(:arceus_divine?) && @battle.arceus_divine?
       amt = @battle.arceus_before_damage(self, amt)
       # The base battler clamps damage to at least 1 HP. Bypass that clamp when
       # Arceus is already at 1 HP, or it would faint before the catch turn.
@@ -294,15 +484,18 @@ class PokeBattle_Battler
         @battle.check_arceus_phase(self)
         return 0
       end
+      ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
+      @battle.check_arceus_seal(self, amt)
+      @battle.check_arceus_phase(self)
+      return ret
     end
-    ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
-    @battle.check_arceus_phase(self) if @battle && @battle.respond_to?(:check_arceus_phase)
-    return ret
+    return _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
   end
 end
 
 class PokeBattle_Battle
   attr_accessor :arceus_restores_used
+  attr_accessor :arceus_seals
 
   def arceus_battler
     return @battlers.find { |b| b && b.opposes? && b.pokemon && b.pokemon.species == :ARCEUS }
@@ -321,6 +514,7 @@ class PokeBattle_Battle
     @arceus_phase = pkmn.instance_variable_get(:@ruta_arceus_phase) || 1
     @arceus_restores_used = pkmn.instance_variable_get(:@ruta_arceus_restores) || 0
     @arceus_capture_ready = pkmn.instance_variable_get(:@ruta_arceus_capture_ready) == true
+    @arceus_seals = pkmn.instance_variable_get(:@ruta_arceus_seals).to_i
     @arceus_phase = 1 if @arceus_phase < 1
   end
 
@@ -329,6 +523,7 @@ class PokeBattle_Battle
     pkmn.instance_variable_set(:@ruta_arceus_phase, @arceus_phase)
     pkmn.instance_variable_set(:@ruta_arceus_restores, @arceus_restores_used)
     pkmn.instance_variable_set(:@ruta_arceus_capture_ready, @arceus_capture_ready == true)
+    pkmn.instance_variable_set(:@ruta_arceus_seals, @arceus_seals.to_i)
   end
 
   def arceus_capture_ready?
@@ -342,13 +537,65 @@ class PokeBattle_Battle
   def arceus_before_damage(battler, amount)
     return amount if !arceus_divine? || !battler || battler.pokemon.species != :ARCEUS
     arceus_state(battler)
-    return amount if @arceus_capture_ready
+    if @arceus_capture_ready
+      # La captura está abierta: Arceus ya no puede ser derrotado por daño, sólo capturado.
+      return :ruta_arceus_hold_at_one if battler.hp <= 1
+      return [amount, battler.hp - 1].min
+    end
     # Arceus must stay at 1 HP until phase six is complete and the player has
     # had a real turn to throw a ball. At 1 HP, bypass the stock minimum-1-damage
     # clamp in PokeBattle_Battler#pbReduceHP.
     return :ruta_arceus_hold_at_one if battler.hp <= 1
     return [amount, battler.hp - 1].min if battler.hp - amount <= 0
     return [amount, 0].max
+  end
+
+  # Red de seguridad de la captura final: si el jugador llega sin ninguna ball, el Rotom
+  # materializa una Bola del Testigo. Sin esto la fase final podía quedar sin salida.
+  def pbArceusEnsureCaptureBall
+    return if !$PokemonBag || !$PokemonBag.respond_to?(:pbHasItem?)
+    balls = [:POKEBALL, :GREATBALL, :ULTRABALL, :MASTERBALL]
+    return if balls.any? { |ball| $PokemonBag.pbHasItem?(ball) }
+    $PokemonBag.pbStoreItem(:POKEBALL, 1) if $PokemonBag.respond_to?(:pbStoreItem)
+    pbDisplay(_INTL("El Rotom vibra y materializa una Bola del Testigo: «No vas a dejar el trabajo a medias.»"))
+  rescue StandardError
+  end
+
+  # Rompe un sello por golpe conectado y fija el vigor al umbral del sello. Si el
+  # jugador no tiene daño (veneno, clima, un movimiento de estado), el sello no se
+  # rompe: la garantía es "cada golpe cuenta", no "cualquier turno cuenta".
+  def check_arceus_seal(battler, amount)
+    return if !arceus_divine? || !battler || battler.pokemon.species != :ARCEUS
+    return if amount.to_i <= 0
+    arceus_state(battler)
+    return if @arceus_capture_ready || battler.fainted?
+    if @arceus_seals < RUTA_ARCEUS_SEAL_FLOORS.length
+      @arceus_seals += 1
+      floor = [(battler.totalhp * RUTA_ARCEUS_SEAL_FLOORS[@arceus_seals - 1]).to_i, 1].max
+      if battler.hp > floor
+        battler.hp = floor
+        battler.pbUpdate if battler.respond_to?(:pbUpdate)
+      end
+      pbDisplay(_INTL("¡El sello {1}/{2} del Génesis se rompe! Arceus desciende al {3}% de su vigor.",
+                      @arceus_seals, RUTA_ARCEUS_SEAL_FLOORS.length + 1,
+                      (RUTA_ARCEUS_SEAL_FLOORS[@arceus_seals - 1] * 100).round))
+      pbArceusDistortion
+    else
+      if battler.hp > 1
+        battler.hp = 1
+        battler.pbUpdate if battler.respond_to?(:pbUpdate)
+      end
+      @arceus_capture_ready = true
+      pbArceusEnsureCaptureBall
+      pbDisplay(_INTL("¡El quinto sello se rompe! La forma divina de Arceus queda expuesta: la captura es del 100%."))
+      begin
+        pbFlash(Color.new(255, 255, 255, 255), 20)
+        pbShake(10, 10, 12)
+      rescue StandardError
+      end
+    end
+    save_arceus_state(battler)
+  rescue StandardError
   end
 
   def check_arceus_phase(battler)
@@ -361,10 +608,11 @@ class PokeBattle_Battle
       @arceus_phase += 1
       pbArceusPhase(battler, @arceus_phase)
     end
-    if @arceus_restores_used < 3 && @arceus_phase >= 4 && ratio <= 0.45
+    if @arceus_restores_used < RUTA_ARCEUS_RESTORES && @arceus_phase >= 4 && ratio <= 0.30
       @arceus_restores_used += 1
       pbDisplay(_INTL("¡El fulgor del Génesis retuerce la realidad alrededor de Arceus!"))
-      pbDisplay(_INTL("¡Arceus utilizó un Restaura Todo divino ({1}/3)!", @arceus_restores_used))
+      pbDisplay(_INTL("¡Arceus utilizó un Restaura Todo divino ({1}/{2})! Los sellos rotos no se restauran.",
+                      @arceus_restores_used, RUTA_ARCEUS_RESTORES))
       battler.pbRecoverHP(battler.totalhp)
       battler.pbCureStatus
       save_arceus_state(battler)
@@ -372,6 +620,7 @@ class PokeBattle_Battle
     end
     if @arceus_phase >= 6 && battler.hp <= 1 && !@arceus_capture_ready
       @arceus_capture_ready = true
+      pbArceusEnsureCaptureBall
       pbDisplay(_INTL("¡La última barrera de Arceus se rompe! El dios queda debilitado, inmóvil y expuesto a la captura."))
       pbDisplay(_INTL("¡La animación del debilitamiento final termina! ¡Desde este instante, la probabilidad de captura es del 100%!"))
       begin
@@ -414,10 +663,17 @@ class PokeBattle_Battle
 
   def pbArceusSummon(battler, species, label)
     return if !GameData::Species.exists?(species)
-    summon_level = [200, GameData::GrowthRate.max_level].min
+    # R2: los ecos no pueden nacer al nivel 200 (reservado al Arceus divino), pero
+    # conservan la fuerza de la aparición: nivel máximo legal y un empuje divino.
+    summon_level = GameData::GrowthRate.max_level
+    summon_level = 150 if !summon_level || summon_level < 1
     summon = Pokemon.new(species, summon_level)
     temp = PokeBattle_Battler.new(self, battler.index)
     temp.pbInitialize(summon, -1)
+    [:attack, :defense, :spatk, :spdef, :speed].each do |stat|
+      value = temp.instance_variable_get(:"@#{stat}")
+      temp.instance_variable_set(:"@#{stat}", (value.to_f * 1.25).round) if value
+    end
     battler.pbTransform(temp)
     pbDisplay(_INTL("¡Arceus invoca a {1}! La aparición legendaria toma el campo durante esta fase.", label))
   rescue StandardError
@@ -542,7 +798,16 @@ def pbArceusCinematicPokemon(species, level, moves, item = nil)
   max_level = (species == :ARCEUS) ? 200 : (GameData::GrowthRate.max_level || 150).to_i
   max_level = 150 if max_level < 1
   safe_level = [[level.to_i, 1].max, max_level].min
-  pkmn = Pokemon.new(species, safe_level)
+  normal_cap = (GameData::GrowthRate.max_level || 150).to_i
+  normal_cap = 150 if normal_cap < 1
+  # S2b: sólo el Arceus divino del combate puede nacer por encima del tope normal.
+  # Se marca antes de subirle el nivel porque el setter de nivel rechazaría el 200.
+  divine = (species == :ARCEUS && safe_level > normal_cap)
+  pkmn = Pokemon.new(species, divine ? normal_cap : safe_level)
+  if divine
+    pkmn.instance_variable_set(:@ruta_arceus_divine, true)
+    pkmn.level = safe_level
+  end
   GameData::Stat.each_main { |stat| pkmn.iv[stat.id] = 31 }
   # Keep cinematic teams within the standard 510 total EVs.
   pkmn.ev[:HP] = 6
@@ -783,7 +1048,7 @@ def pbArceusStorageCandidates
   for box in 0...$PokemonStorage.maxBoxes
     for index in 0...$PokemonStorage.maxPokemon(box)
       pkmn = $PokemonStorage[box, index]
-      ret.push([box, index, pkmn]) if pkmn && pkmn.able?
+      ret.push([box, index, pkmn]) if pkmn && pkmn.able? && !(pkmn.respond_to?(:egg?) && pkmn.egg?)
     end
   end
   return ret
@@ -814,6 +1079,27 @@ def pbArceusReplacePartyFromStorage(selected)
   $Trainer.party.clear
   selected.each { |entry| $Trainer.party.push(entry[2]) }
   return true
+end
+
+# R4: sin candidatos en el PC el jugador quedaría sin salida. El Rotom concede una
+# única restauración parcial (35%) para que el combate pueda continuar; nunca cura
+# del todo ni se repite.
+def pbArceusRotomMercy
+  return false if $game_switches && $game_switches[RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH]
+  healed = 0
+  $Trainer.party.each do |pkmn|
+    next if !pkmn
+    pkmn.hp = [(pkmn.totalhp * 0.35).to_i, 1].max if pkmn.hp <= 0
+    pkmn.heal_status if pkmn.respond_to?(:heal_status)
+    healed += 1
+  end
+  return false if healed == 0
+  $game_switches[RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH] = true if $game_switches
+  pbMessage(_INTL("El Rotom de Ash gira sobre sí mismo: «No hay nadie en la caja... pero yo puedo sostenerlos una vez más.»"))
+  pbMessage(_INTL("Una descarga cálida levanta al equipo: cada Pokémon recupera el 35% de su vigor. Sólo ocurrirá una vez."))
+  return true
+rescue StandardError
+  return false
 end
 
 def pbArceusPseudoPC
@@ -857,19 +1143,48 @@ def pbArceusSurrenderSequence
   rescue StandardError
   end
   pbMessage(_INTL("La realidad expulsa a Ash. El viaje vuelve a la pantalla principal."))
+  begin
+    $PokemonTemp.clearBattleRules if $PokemonTemp
+    $game_switches[RUTA_DE_DIOS_ARCEUS_RESOLVED] = true if $game_switches
+  rescue StandardError
+  end
   pbStartOver
 end
 
 # 5. Starter. The loop is deliberately outside the normal battle loop: it lets
 # the engine finish a battle, show the pseudo-PC, and then start another battle
 # with the same Arceus object and its persistent phase/HP state.
-def pbStartArceusDivineBattle
-  $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = false if $game_switches
-  pkmn = Pokemon.new(:ARCEUS, 200)
-  pkmn.instance_variable_set(:@ruta_arceus_divine, true)
+# S1: el Arceus capturado deja de ser el dios del combate. Sin esto, el ejemplar que entra
+# en la partida conservaba las variables de fase/restauraciones/captura del jefe.
+# R6: el duelo contra Volo llega justo después de la batalla divina. El santuario
+# concede un descanso explícito para que el reto sea justo (y se repite en cada
+# reintento, porque Volo espera).
+def pbArceusVoloRest
+  $Trainer.heal_party if $Trainer.respond_to?(:heal_party)
+  pbMessage(_INTL("El altar del Génesis devuelve las fuerzas a todo el equipo antes del duelo."))
+  pbMessage(_INTL("Volo: Tómate tu tiempo, Ash. Quiero vencerte en tu mejor momento."))
+rescue StandardError
+end
+
+def pbArceusNormalizeCaptured(pkmn)
+  return if !pkmn
+  pkmn.instance_variable_set(:@ruta_arceus_divine, false)
   pkmn.instance_variable_set(:@ruta_arceus_phase, 1)
   pkmn.instance_variable_set(:@ruta_arceus_restores, 0)
   pkmn.instance_variable_set(:@ruta_arceus_capture_ready, false)
+  pkmn.instance_variable_set(:@ruta_arceus_seals, 0)
+rescue StandardError
+end
+
+def pbStartArceusDivineBattle
+  $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = false if $game_switches
+  pkmn = Pokemon.new(:ARCEUS, GameData::GrowthRate.max_level)
+  pkmn.instance_variable_set(:@ruta_arceus_divine, true)
+  pkmn.level = 200
+  pkmn.instance_variable_set(:@ruta_arceus_phase, 1)
+  pkmn.instance_variable_set(:@ruta_arceus_restores, 0)
+  pkmn.instance_variable_set(:@ruta_arceus_capture_ready, false)
+  pkmn.instance_variable_set(:@ruta_arceus_seals, 0)
   GameData::Stat.each_main { |s| pkmn.iv[s.id] = 31 }
   pkmn.item = :LEGENDPLATE if GameData::Item.exists?(:LEGENDPLATE)
   pkmn.moves = RUTA_ARCEUS_MOVE_SETS[0].select { |id| GameData::Move.exists?(id) }.map { |id| Pokemon::Move.new(id) }
@@ -881,7 +1196,16 @@ def pbStartArceusDivineBattle
   $PokemonTemp.recordBattleRule("cannotRun")
   $PokemonTemp.recordBattleRule("canLose")
 
-  pbArceusCinematicPrelude
+  # R7: el prólogo son tres combates CPU completos. Repetirlo en cada reintento castiga
+  # al jugador que ya lo vio: se muestra una vez y luego se resume en una línea.
+  primera_vez = !($game_switches && $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH])
+  if primera_vez
+    pbArceusCinematicPrelude
+    $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH] = true if $game_switches
+  else
+    pbArceusCinematicImpact(Tone.new(120, 120, 200, 0))
+    pbMessage(_INTL("Cynthia, Steven, Gold, Red y Volus ya cayeron aquí. Nadie más puede ganar tiempo: es el turno de Ash."))
+  end
   active = $Trainer.party.find { |p| p && p.able? }
   pbMessage(_INTL("Arceus toma a {1}, lo observa con la calma de un dios y dice: Con mi creación {1} pretendes hacerme frente, humano?", active ? active.name : $Trainer.name))
   pbMessage(_INTL("La ruleta de las 17 Tablas comienza a girar. Esta no es una batalla normal de seis Pokémon."))
@@ -891,6 +1215,7 @@ def pbStartArceusDivineBattle
     decision = pbWildBattleCore(pkmn)
     if decision == 4
       $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true if $game_switches
+      pbArceusNormalizeCaptured(pkmn)
       return decision
     end
     return decision if decision == 1
@@ -907,11 +1232,29 @@ def pbStartArceusDivineBattle
         $PokemonTemp.recordBattleRule("cannotRun")
         $PokemonTemp.recordBattleRule("canLose")
         next
+      elsif pbArceusRotomMercy
+        $PokemonTemp.clearBattleRules
+        $PokemonTemp.recordBattleRule("cannotRun")
+        $PokemonTemp.recordBattleRule("canLose")
+        next
       end
       pbArceusSurrenderSequence
       return 2
     end
-    return decision if decision == 3 || decision == 5
+    if decision == 5
+      # R3: un empate no debe cerrar el evento en silencio. Se restaura el estado
+      # previo (el motor sí cura con canLose) y se explica que la cima sigue abierta.
+      snapshot.each do |entry|
+        p = entry[0]
+        p.hp = entry[1] if entry[1] > 0
+        p.status = entry[2] if entry[1] > 0
+      end
+      pbMessage(_INTL("El choque de dos voluntades agota el campo: Ash y Arceus caen a la vez, sin vencedor."))
+      pbMessage(_INTL("La Cima del Génesis vuelve a cerrarse. Arceus espera de pie, intacto, para un nuevo intento."))
+      $PokemonTemp.clearBattleRules
+      return 5
+    end
+    return decision if decision == 3
   end
 end
 `;
@@ -956,9 +1299,16 @@ function installSwitches() {
   sw[SW_ARCEUS_ALLIES_CYNTHIA_STEVEN] = S("ARCEUS_CINEMATIC_CYNTHIA_STEVEN");
   sw[SW_ARCEUS_ALLIES_GOLD_RED] = S("ARCEUS_CINEMATIC_GOLD_RED");
   sw[SW_ARCEUS_ALLIES_VOLUS] = S("ARCEUS_CINEMATIC_VOLUS");
+  sw[SW_ARCEUS_MERCY] = S("RUTA_DE_DIOS_ARCEUS_MERCY");
+  sw[SW_PRELUDE_SEEN] = S("RUTA_DE_DIOS_PRELUDE_SEEN");
+  while (sw.length <= SW_RELIC_GUIDE_4) sw.push(null);
+  sw[SW_RELIC_GUIDE_1] = S("RUTA_DE_DIOS_RELIQUIA_1F");
+  sw[SW_RELIC_GUIDE_2] = S("RUTA_DE_DIOS_RELIQUIA_2F");
+  sw[SW_RELIC_GUIDE_3] = S("RUTA_DE_DIOS_RELIQUIA_3F");
+  sw[SW_RELIC_GUIDE_4] = S("RUTA_DE_DIOS_RELIQUIA_4F");
 
   writeRx("System.rxdata", sys);
-  console.log("OK: Switches 870..880 registered in System.rxdata.");
+  console.log("OK: Switches 869..881 y 936..939 registered in System.rxdata.");
 }
 
 // ---------------------------------------------------------------------------
@@ -1460,6 +1810,10 @@ export function buildFloor1() {
   drawSacredBoulder(cv, 10, 26);
   drawSacredBoulder(cv, 30, 26, true);
 
+  // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  const relic = sealedRelicSpot(cv, [20, 36], 1);
+  drawSacredBoulder(cv, relic.x, relic.y);
+
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 1F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Retorno a Ciudad Puntaneva", 20, 37, 625, 20, 5, 2, [
@@ -1483,6 +1837,7 @@ export function buildFloor1() {
     ], 1),
     script("pbReceiveItem(:RARECANDY, 1)", 1),
     cmd(123, [S("A"), 0], 1),
+    cmd(121, [SW_RELIC_GUIDE_1, SW_RELIC_GUIDE_1, 0], 1),   // R8: el sello del piso se rompe con el guía
     cmd(0),
   ];
   addEventToMap(map, event(3, "Maya de la Ruta", 20, 20, [
@@ -1495,7 +1850,9 @@ export function buildFloor1() {
   ]));
 
   addEventToMap(map, hiddenItemEvent(4, "Item RARECANDY", 6, 12, "RARECANDY", "Caramelo Raro"));
+  addEventToMap(map, sealedRelicEvent(5, "Reliquia Sellada de la Aurora", relic.x, relic.y, SW_RELIC_GUIDE_1, "BOTTLECAP", "Chapa"));
 
+  installPilgrims(cv, map, "1F", [20, 36], relic);   // R9: peregrinos del piso
   return { map, cv };
 }
 
@@ -1530,6 +1887,10 @@ export function buildFloor2() {
   drawSacredBoulder(cv, 34, 18);
   drawSacredBoulder(cv, 7, 25, true);
 
+  // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  const relic = sealedRelicSpot(cv, [20, 36], 2);
+  drawSacredBoulder(cv, relic.x, relic.y);
+
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 2F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 1F", 20, 37, 2031, 20, 6, 2));
@@ -1550,6 +1911,7 @@ export function buildFloor2() {
     ], 1),
     script("pbReceiveItem(:MAXREVIVE, 1)", 1),
     cmd(123, [S("A"), 0], 1),
+    cmd(121, [SW_RELIC_GUIDE_2, SW_RELIC_GUIDE_2, 0], 1),   // R8: el sello del piso se rompe con el guía
     cmd(0),
   ];
   addEventToMap(map, event(3, "Palmer del Frente", 20, 20, [
@@ -1572,7 +1934,9 @@ export function buildFloor2() {
   ]));
 
   addEventToMap(map, hiddenItemEvent(5, "Item MAXREVIVE", 34, 18, "MAXREVIVE", "Revivir Máximo"));
+  addEventToMap(map, sealedRelicEvent(5, "Reliquia Sellada del Trueno", relic.x, relic.y, SW_RELIC_GUIDE_2, "ABILITYPATCH", "Parche Habilidad"));
 
+  installPilgrims(cv, map, "2F", [20, 36], relic);   // R9: peregrinos del piso
   return { map, cv };
 }
 
@@ -1610,6 +1974,10 @@ export function buildFloor3() {
   drawSacredBoulder(cv, 7, 10);
   drawSacredBoulder(cv, 34, 26, true);
 
+  // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  const relic = sealedRelicSpot(cv, [21, 38], 3);
+  drawSacredBoulder(cv, relic.x, relic.y);
+
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 3F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 2F", 21, 39, 2032, 20, 6, 2));
@@ -1629,6 +1997,7 @@ export function buildFloor3() {
     ], 1),
     script("pbReceiveItem(:PPMAX, 1)", 1),
     cmd(123, [S("A"), 0], 1),
+    cmd(121, [SW_RELIC_GUIDE_3, SW_RELIC_GUIDE_3, 0], 1),   // R8: el sello del piso se rompe con el guía
     cmd(0),
   ];
   addEventToMap(map, event(3, "Quinoa de la Isla", 21, 21, [
@@ -1641,7 +2010,9 @@ export function buildFloor3() {
   ]));
 
   addEventToMap(map, hiddenItemEvent(4, "Item PPMAX", 7, 10, "PPMAX", "Más PP"));
+  addEventToMap(map, sealedRelicEvent(5, "Reliquia Sellada de la Isla", relic.x, relic.y, SW_RELIC_GUIDE_3, "MAXELIXIR", "Elixir Máximo"));
 
+  installPilgrims(cv, map, "3F", [21, 38], relic);   // R9: peregrinos del piso
   return { map, cv };
 }
 
@@ -1680,6 +2051,10 @@ export function buildFloor4() {
   drawWildGrassPatch(cv, 6, 13, 8, 16);
   drawWildGrassPatch(cv, 28, 13, 8, 16);
 
+  // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  const relic = sealedRelicSpot(cv, [21, 38], 4);
+  drawSacredBoulder(cv, relic.x, relic.y);
+
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 4F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 3F", 21, 39, 2033, 21, 6, 2));
@@ -1701,6 +2076,7 @@ export function buildFloor4() {
     ], 1),
     script("pbReceiveItem(:SACREDASH, 1)", 1),
     cmd(123, [S("A"), 0], 1),
+    cmd(121, [SW_RELIC_GUIDE_4, SW_RELIC_GUIDE_4, 0], 1),   // R8: el sello del piso se rompe con el guía
     cmd(0),
   ];
   addEventToMap(map, event(3, "Cintia Campeona", 21, 21, [
@@ -1713,7 +2089,9 @@ export function buildFloor4() {
   ]));
 
   addEventToMap(map, hiddenItemEvent(4, "Item SACREDASH", 35, 12, "SACREDASH", "Ceniza Sagrada"));
+  addEventToMap(map, sealedRelicEvent(5, "Reliquia Sellada de la Campeona", relic.x, relic.y, SW_RELIC_GUIDE_4, "GOLDBOTTLECAP", "Chapa Dorada"));
 
+  installPilgrims(cv, map, "4F", [21, 38], relic);   // R9: peregrinos del piso
   return { map, cv };
 }
 
@@ -1749,6 +2127,10 @@ export function buildFloor5() {
   drawWildGrassPatch(cv, 5, 12, 5, 13);
   drawWildGrassPatch(cv, 28, 12, 5, 13);
 
+  // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  const relic = sealedRelicSpot(cv, [19, 34], 5);
+  drawSacredBoulder(cv, relic.x, relic.y);
+
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 5F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 4F", 19, 35, 2034, 21, 6, 2));
@@ -1770,7 +2152,9 @@ export function buildFloor5() {
   ]));
 
   addEventToMap(map, hiddenItemEvent(4, "Item COMETSHARD", 6, 10, "COMETSHARD", "Parte Cometa"));
+  addEventToMap(map, sealedRelicEvent(5, "Reliquia Sellada del Tiempo", relic.x, relic.y, SW_DIALGA_DEFEATED, "SACREDASH", "Ceniza Sagrada"));
 
+  installPilgrims(cv, map, "5F", [19, 34], relic);   // R9: peregrinos del piso
   return { map, cv };
 }
 
@@ -1810,6 +2194,10 @@ export function buildFloor6() {
   drawWildGrassPatch(cv, 5, 12, 5, 13);
   drawWildGrassPatch(cv, 28, 12, 5, 13);
 
+  // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  const relic = sealedRelicSpot(cv, [19, 34], 6);
+  drawSacredBoulder(cv, relic.x, relic.y);
+
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 6F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 5F", 19, 35, 2035, 19, 6, 2));
@@ -1831,7 +2219,9 @@ export function buildFloor6() {
   ]));
 
   addEventToMap(map, hiddenItemEvent(4, "Item ABILITYCAPSULE", 32, 10, "ABILITYCAPSULE", "Cápsula Habilidad"));
+  addEventToMap(map, sealedRelicEvent(5, "Reliquia Sellada del Espacio", relic.x, relic.y, SW_PALKIA_DEFEATED, "ABILITYCAPSULE", "Cápsula Habilidad"));
 
+  installPilgrims(cv, map, "6F", [19, 34], relic);   // R9: peregrinos del piso
   return { map, cv };
 }
 export function buildFloor7() {
@@ -1938,6 +2328,7 @@ export function buildFloor7() {
       "Volo: Espera... ¿Has capturado al mismísimo Gran Uno? ¡No puede ser! ¡Durante eones busqué alcanzar la gloria del creador!",
       "Volo: ¡No permitiré que un joven mortal lo conserve! ¡Te desafío por el derecho a portar la corona de la existencia!",
     ], 2),
+    cmd(355, [S("pbArceusVoloRest")], 2),
     cmd(111, [12, S('pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)')], 2),
     cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 3),
     ...textCommands([
@@ -1973,6 +2364,7 @@ export function buildFloor7() {
       ...textCommands([
         "Volo: ¡Aún no me rindo! ¡Arceus debe pertenecer a quien comprenda la verdadera grandeza!",
       ]),
+      cmd(355, [S("pbArceusVoloRest")]),
       cmd(111, [12, S('pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)')]),
       cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 1),
       cmd(121, [SW_COMPLETED, SW_COMPLETED, 0], 1),
@@ -2171,6 +2563,18 @@ function registerEncounters() {
 // ---------------------------------------------------------------------------
 // Reachability Validation
 // ---------------------------------------------------------------------------
+/** Relee Map<id>.rxdata y devuelve el lienzo, para validar rincones sin depender del build. */
+function tileCanvasOf(mapId) {
+  const parsed = parseMap(readRx(`Map${mapId}.rxdata`));
+  const canvas = new TileCanvas(parsed.width, parsed.height, parsed.tilesetId);
+  for (let y = 0; y < parsed.height; y++) {
+    for (let x = 0; x < parsed.width; x++) {
+      for (const z of [0, 1, 2]) canvas.set(x, y, z, tableGet(parsed.table, x, y, z));
+    }
+  }
+  return canvas;
+}
+
 function validateFloorReachability(name, mapObj, canvas, start) {
   const pass = passabilityOf(canvas, canvas.tilesetId);
   const reachable = reachableCells(pass, start);
@@ -2285,11 +2689,95 @@ function verify() {
   if (txt(sw[SW_ARCEUS_ALLIES_CYNTHIA_STEVEN]) !== "ARCEUS_CINEMATIC_CYNTHIA_STEVEN") errors.push("Switch 878 not named ARCEUS_CINEMATIC_CYNTHIA_STEVEN");
   if (txt(sw[SW_ARCEUS_ALLIES_GOLD_RED]) !== "ARCEUS_CINEMATIC_GOLD_RED") errors.push("Switch 879 not named ARCEUS_CINEMATIC_GOLD_RED");
   if (txt(sw[SW_ARCEUS_ALLIES_VOLUS]) !== "ARCEUS_CINEMATIC_VOLUS") errors.push("Switch 880 not named ARCEUS_CINEMATIC_VOLUS");
+  if (txt(sw[SW_ARCEUS_MERCY]) !== "RUTA_DE_DIOS_ARCEUS_MERCY") errors.push("Switch 869 not named RUTA_DE_DIOS_ARCEUS_MERCY");
+  if (txt(sw[SW_PRELUDE_SEEN]) !== "RUTA_DE_DIOS_PRELUDE_SEEN") errors.push("Switch 881 not named RUTA_DE_DIOS_PRELUDE_SEEN");
+  for (const [id, name] of [[SW_RELIC_GUIDE_1, "RUTA_DE_DIOS_RELIQUIA_1F"], [SW_RELIC_GUIDE_2, "RUTA_DE_DIOS_RELIQUIA_2F"],
+                            [SW_RELIC_GUIDE_3, "RUTA_DE_DIOS_RELIQUIA_3F"], [SW_RELIC_GUIDE_4, "RUTA_DE_DIOS_RELIQUIA_4F"]]) {
+    if (txt(sw[id]) !== name) errors.push(`Switch ${id} not named ${name}`);
+  }
 
   // 2. Verify Script Section
   const scripts = readRx("Scripts.rxdata");
   const scriptEntry = scripts.find(([id, title]) => title.text === "PokeMod_RutaDeDios");
   if (!scriptEntry) errors.push("Missing PokeMod_RutaDeDios in Scripts.rxdata");
+
+  // 2b. Garantías de la batalla divina (revisión M2)
+  if (scriptEntry) {
+    let ruby = "";
+    try {
+      ruby = zlib.inflateSync(Buffer.from(scriptEntry[2].bytes)).toString("utf-8");
+    } catch (error) {
+      errors.push(`No se pudo descomprimir la sección PokeMod_RutaDeDios: ${error.message}`);
+    }
+    const guarantees = [
+      ["pbArceusNormalizeCaptured", "normalización del Arceus capturado (no arrastra estado divino)"],
+      ["pbArceusEnsureCaptureBall", "red de seguridad: ball garantizada en el turno de captura"],
+      ["@species == :ARCEUS && @ruta_arceus_divine == true", "tope de nivel 200 reservado al Arceus divino"],
+      ["!(pkmn.respond_to?(:egg?) && pkmn.egg?)", "pseudo-PC sin huevos"],
+      ["divine ? normal_cap : safe_level", "el Arceus cinemático nace al tope normal y sube como divino"],
+      ["arceus_capture_ready", "captura determinista tras el último sello"],
+      ["RUTA_ARCEUS_SEAL_FLOORS", "sellos del Génesis con umbral fijo (R1)"],
+      ["@ruta_arceus_seals", "contador de sellos persistido en el Arceus divino (R1)"],
+      ["pbArceusRotomMercy", "el pseudo-PC nunca deja al jugador sin salida (R4)"],
+      ["pbArceusVoloRest", "descanso antes del duelo con Volo (R6)"],
+      ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
+      ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
+    ];
+    for (const [needle, label] of guarantees) {
+      if (ruby && !ruby.includes(needle)) errors.push(`Falta una garantía de la batalla: ${label}`);
+    }
+  }
+
+  // 2c. Recorrido completo: cada piso tiene bajada y subida, los guías de los
+  // pisos 1-4 desaparecen al completar el evento y los guardianes usan su switch.
+  const transferTargets = (map) => {
+    const out = [];
+    for (const [, ev] of iv(map, "events").pairs) {
+      for (const page of iv(ev, "pages") ?? []) {
+        for (const command of iv(page, "list") ?? []) {
+          if (Number(iv(command, "code")) !== 201) continue;
+          const params = iv(command, "parameters") ?? [];
+          out.push({ name: txt(iv(ev, "name")), x: Number(iv(ev, "x")), y: Number(iv(ev, "y")), target: Number(params[1]), tx: Number(params[2]), ty: Number(params[3]) });
+        }
+      }
+    }
+    return out;
+  };
+  const esperado = { 2031: [625, 2032], 2032: [2031, 2033], 2033: [2032, 2034], 2034: [2033, 2035], 2035: [2034, 2036], 2036: [2035, 2037], 2037: [2036] };
+  for (const [id, destinos] of Object.entries(esperado)) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const movs = transferTargets(readRx(`Map${id}.rxdata`));
+    for (const destino of destinos) {
+      if (!movs.some((m) => m.target === destino)) errors.push(`Map${id} no tiene transferencia a ${destino}`);
+    }
+  }
+  // Nombres reales de los guías/entrenadores de los pisos 1-4 (se ocultan al completar).
+  const guias = { 2031: "Maya de la Ruta", 2032: "Palmer del Frente", 2033: "Quinoa de la Isla", 2034: "Cintia Campeona" };
+  for (const [id, nombre] of Object.entries(guias)) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const map = readRx(`Map${id}.rxdata`);
+    const ev = iv(map, "events").pairs.find(([, e]) => txt(iv(e, "name")).includes(nombre));
+    if (!ev) { errors.push(`Map${id} no tiene al guía ${nombre}`); continue; }
+    const pages = iv(ev[1], "pages") ?? [];
+    const cierre = pages.find((page) => Number(iv(iv(page, "condition"), "switch1_id")) === SW_COMPLETED);
+    if (!cierre) { errors.push(`${nombre} (Map${id}) no desaparece tras RUTA_DE_DIOS_COMPLETED`); continue; }
+    const oculto = txt(iv(iv(cierre, "graphic"), "character_name")) === "" && (iv(cierre, "list") ?? []).length <= 1;
+    if (!oculto) errors.push(`${nombre} (Map${id}) sigue visible o activo tras completar el evento`);
+  }
+  for (const [id, guardian, swId] of [[2035, "Guardián Dialga", SW_DIALGA_DEFEATED], [2036, "Guardián Palkia", SW_PALKIA_DEFEATED]]) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const map = readRx(`Map${id}.rxdata`);
+    const ev = iv(map, "events").pairs.find(([, e]) => txt(iv(e, "name")).includes(guardian));
+    if (!ev) { errors.push(`Map${id} no tiene al guardián ${guardian}`); continue; }
+    const usaSwitch = (iv(ev[1], "pages") ?? []).some((page) => {
+      const cond = iv(page, "condition");
+      return Number(iv(cond, "switch1_id")) === swId || Number(iv(cond, "switch2_id")) === swId;
+    });
+    if (!usaSwitch) errors.push(`El guardián ${guardian} (Map${id}) no se apaga con su switch`);
+  }
 
   // 3. Verify Volo in Map 513
   const map513 = readRx("Map513.rxdata");
@@ -2357,6 +2845,62 @@ function verify() {
   const map2036 = readRx("Map2036.rxdata");
   const palkiaEv = iv(map2036, "events").pairs.find(([, ev]) => txt(iv(ev, "name")).includes("Guardián Palkia"));
   if (!palkiaEv) errors.push("Missing Guardián Palkia in Map 2036");
+
+  // 8. R8: reliquias selladas. Cada piso 1-6 esconde una reliquia en un rincón sin
+  // salida, y sólo cede cuando el sello de ese piso (su guía o su guardián) está roto.
+  const reliquias = [
+    [2031, "Reliquia Sellada de la Aurora", SW_RELIC_GUIDE_1],
+    [2032, "Reliquia Sellada del Trueno", SW_RELIC_GUIDE_2],
+    [2033, "Reliquia Sellada de la Isla", SW_RELIC_GUIDE_3],
+    [2034, "Reliquia Sellada de la Campeona", SW_RELIC_GUIDE_4],
+    [2035, "Reliquia Sellada del Tiempo", SW_DIALGA_DEFEATED],
+    [2036, "Reliquia Sellada del Espacio", SW_PALKIA_DEFEATED],
+  ];
+  for (const [id, nombre, sello] of reliquias) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) { errors.push(`Falta Map${id} con la reliquia ${nombre}`); continue; }
+    const map = readRx(`Map${id}.rxdata`);
+    const ev = iv(map, "events").pairs.find(([, e]) => txt(iv(e, "name")) === nombre);
+    if (!ev) { errors.push(`Map${id} no tiene la reliquia ${nombre}`); continue; }
+    const pages = iv(ev[1], "pages") ?? [];
+    const apertura = pages[0];
+    if (Number(iv(iv(apertura, "condition"), "switch1_id")) !== sello) {
+      errors.push(`${nombre} (Map${id}) no está sellada con el switch ${sello}`);
+    }
+    // El rincón: la celda de la reliquia no es transitable, pero se llega de frente a ella.
+    const canvas = tileCanvasOf(id);
+    const pass = passabilityOf(canvas, canvas.tilesetId);
+    const x = Number(iv(ev[1], "x")), y = Number(iv(ev[1], "y"));
+    const start = { 2031: [20, 36], 2032: [20, 36], 2033: [21, 38], 2034: [21, 38], 2035: [19, 34], 2036: [19, 34] }[id];
+    const reachable = reachableCells(pass, start);
+    if (reachable.has(`${x},${y}`)) errors.push(`${nombre} (Map${id}) quedó en suelo pisable: no hay rincón que explorar`);
+    const deFrente = [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]].some(([nx, ny]) => reachable.has(`${nx},${ny}`));
+    if (!deFrente) errors.push(`${nombre} (Map${id}) está en (${x}, ${y}) sin acceso de frente desde el piso`);
+  }
+
+  // 9. R9: peregrinos. Dos por piso, en suelo alcanzable, y la voz del sello nombra el
+  // rumbo de la reliquia de ese piso (la pista no puede mentir).
+  const rumbos = {
+    2031: "norte", 2032: "sur", 2033: "sur", 2034: "norte", 2035: "norte", 2036: "sur",
+  };
+  for (const [id, esperado] of Object.entries(rumbos)) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const map = readRx(`Map${id}.rxdata`);
+    const peregrinos = iv(map, "events").pairs.filter(([, e]) => txt(iv(e, "name")).includes("Peregrino"));
+    if (peregrinos.length !== 2) { errors.push(`Map${id} tiene ${peregrinos.length} peregrinos (R9 pide 2)`); continue; }
+    const canvas = tileCanvasOf(id);
+    const pass = passabilityOf(canvas, canvas.tilesetId);
+    const start = { 2031: [20, 36], 2032: [20, 36], 2033: [21, 38], 2034: [21, 38], 2035: [19, 34], 2036: [19, 34] }[id];
+    const reachable = reachableCells(pass, start);
+    for (const [, e] of peregrinos) {
+      const x = Number(iv(e, "x")), y = Number(iv(e, "y"));
+      if (!reachable.has(`${x},${y}`)) errors.push(`Peregrino de Map${id} en (${x}, ${y}) fuera del piso transitable`);
+    }
+    const pista = peregrinos.map(([, e]) => iv(iv(e, "pages")[0], "list")).map((l) => l.map((c) => iv(c, "parameters").map(txt).join(" ")).join(" ")).join(" ");
+    if (!pista.includes("roca que no es roca")) errors.push(`Map${id}: el peregrino del sello no da la pista de la reliquia`);
+    if (!pista.includes(esperado)) errors.push(`Map${id}: la pista no nombra el rumbo ${esperado} de su reliquia`);
+  }
 
   if (errors.length) {
     throw new Error(`La Ruta de Dios verification failed (${errors.length}):\n- ${errors.join("\n- ")}`);

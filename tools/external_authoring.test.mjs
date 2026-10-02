@@ -306,11 +306,13 @@ for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.
 }
 const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
 const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*150\b/.test(settingsSource) &&
-  rutaScript.includes("max = (@species == :ARCEUS) ? 200 : GameData::GrowthRate.max_level") &&
+  rutaScript.includes("max = (@species == :ARCEUS && @ruta_arceus_divine == true) ? 200 : GameData::GrowthRate.max_level") &&
   rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
-  explicitNonArceusLevel200.length === 0;
+  explicitNonArceusLevel200.length === 0 &&
+  rutaScript.includes("pkmn.instance_variable_set(:@ruta_arceus_divine, false)") &&
+  rutaScript.includes("divine ? normal_cap : safe_level");
 check(levelCapIsArceusOnly,
-  "Arceus es la única especie autorizada al nivel 200 en el tope global, equipos, encuentros y scripts del juego");
+  "el nivel 200 queda reservado al Arceus divino (equipos, encuentros y scripts sin otro caso), y el Arceus normal vuelve al tope de 150");
 check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
   rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
   "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");

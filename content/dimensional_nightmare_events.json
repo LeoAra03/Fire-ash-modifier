@@ -1,0 +1,5454 @@
+{
+  "title": "Dimensional Nightmare — plano de conexiones, NPCs y eventos",
+  "generatedBy": "tools/create_dimensional_nightmare_events.mjs",
+  "docs": "docs/DIMENSIONAL_NIGHTMARE/01..07",
+  "hub": {
+    "map": 2030,
+    "x": 36,
+    "y": 12,
+    "note": "Gruta de los Testigos: punto de entrada/salida de cada episodio"
+  },
+  "flags": {
+    "switchRange": [
+      882,
+      934
+    ],
+    "variableRange": [
+      265,
+      288
+    ],
+    "commonEvents": [
+      900,
+      906
+    ]
+  },
+  "episodes": [
+    {
+      "key": "EP01",
+      "doc": "01_EP01_WHITE_HAND.md",
+      "mapRange": {
+        "from": 2041,
+        "to": 2056
+      },
+      "seal": 883,
+      "grieta": 890,
+      "resonance": 12,
+      "anomalyVariable": 268,
+      "cuota": 896,
+      "bossName": "LA MANO BLANCA",
+      "boss": {
+        "name": "LA MANO BLANCA",
+        "phaseA": {
+          "type": "HIKER",
+          "label": "EL SEPULTADO",
+          "trainer": "DN_EP01_A"
+        },
+        "team": [
+          [
+            "MAROWAK",
+            103
+          ],
+          [
+            "GOLURK",
+            105
+          ],
+          [
+            "COFAGRIGUS",
+            103
+          ],
+          [
+            "DUSKNOIR",
+            104
+          ],
+          [
+            "SABLEYE",
+            101
+          ],
+          [
+            "SPIRITOMB",
+            105
+          ]
+        ],
+        "phaseB": {
+          "kind": "cadenas",
+          "verb": "romper",
+          "noun": "cadena",
+          "cells": [
+            [
+              6,
+              4
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              6,
+              19
+            ],
+            [
+              17,
+              19
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "Una cadena sostiene la Mano.",
+            "La cadena cruje y cae.",
+            "La Mano pierde un dedo.",
+            "El altar tiembla."
+          ]
+        },
+        "reward": "DN_PAGE_01",
+        "notes": "Al ganar la fase A no termina: hay que romper las 4 cadenas."
+      },
+      "anomalies": {
+        "declared": 12,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LA ANTORCHA QUE VUELVE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2042,
+            "cells": [
+              [
+                7,
+                6
+              ]
+            ],
+            "text": "Map2042 — (7,6) [R7-4]. Fase ≥2. La antorcha apagada está encendida al reentrar, y viceversa. Documentar: usar Rotom junto a la antorcha.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "CUARENTA Y OCHO ÁNFORAS",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2042,
+            "cells": [
+              [
+                19,
+                11
+              ]
+            ],
+            "text": "Map2042 — (19,11). Fase ≥3. Al salir y volver a entrar, hay 48 ánforas y la mujer sigue contando 47.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A03",
+            "name": "EL APRENDIZ QUE NO RESPIRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2047,
+            "cells": [
+              [
+                14,
+                18
+              ]
+            ],
+            "text": "Map2047 — (14,18). Fase ≥4. El aprendiz no tiene sombra; al hablarle, su sprite mira al jugador.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A04",
+            "name": "LA CELDA 13",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2043,
+            "cells": [
+              [
+                24,
+                9
+              ]
+            ],
+            "text": "Map2043 — (24,9). Fase ≥3. Al reentrar, la celda 13 está abierta y vacía; el Preso 13 ya está fuera.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "GOTERAS AL REVÉS",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2044,
+            "cells": [
+              [
+                12,
+                3
+              ]
+            ],
+            "text": "Map2044 — (12,3). Fase ≥2. El agua cae hacia arriba en una franja de 3 tiles.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A06",
+            "name": "LA ESCALERA INFINITA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2045,
+            "cells": [
+              [
+                12,
+                2
+              ]
+            ],
+            "text": "Map2045 — (12,2). Fase ≥5. Si se sube 3 veces seguidas sin bajar, se llega al mismo sitio con 1 fase más.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A07",
+            "name": "EL HUESO QUE SE MUEVE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2047,
+            "cells": [
+              [
+                6,
+                20
+              ]
+            ],
+            "text": "Map2047 — (6,20). Cualquier fase. El hueso cambia de orientación según la dirección del jugador.",
+            "trigger": "action",
+            "fase": 1
+          },
+          {
+            "code": "A08",
+            "name": "LA RAÍZ CON LATIDO",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2048,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2048 — (15,12). Fase ≥4. Al pisar la raíz central la música baja a 50 % durante 6 s (latido).",
+            "trigger": "touch",
+            "fase": 4
+          },
+          {
+            "code": "A09",
+            "name": "LA CAMPANA QUE SUENA SOLA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2052,
+            "cells": [
+              [
+                12,
+                10
+              ]
+            ],
+            "text": "Map2052 — (12,10). Fase ≥5. Al reentrar, suena una campana aunque el mapa esté en silencio.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A10",
+            "name": "EL AGUA QUE SUBE",
+            "type": "visual",
+            "types": [
+              "visual",
+              "temporal"
+            ],
+            "map": 2050,
+            "cells": [
+              [
+                8,
+                9
+              ]
+            ],
+            "text": "Map2050 — (8,9). Fase ≥6. Cada reentrada el nivel de agua sube 1 tile; nunca supera la rodilla.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A11",
+            "name": "LOS CRÁNEOS QUE MIRAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2051,
+            "cells": [
+              [
+                15,
+                8
+              ]
+            ],
+            "text": "Map2051 — (15,8). Fase ≥6. Los 4 cráneos de los pedestales siguen al jugador con la mirada.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A12",
+            "name": "LA INSCRIPCIÓN QUE CAMBIA",
+            "type": "auditiva",
+            "types": [
+              "auditiva",
+              "visual"
+            ],
+            "map": 2054,
+            "cells": [
+              [
+                12,
+                4
+              ]
+            ],
+            "text": "Map2054 — (12,4). Fase ≥6. Con Rotom nivel ≥4, las runas dicen una frase distinta en cada visita (5 frases rotativas). Sin Sintonía, solo se oyen susurros. ``` ---",
+            "trigger": "action",
+            "fase": 6
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2041,
+          "name": "Sepulturero Anciano",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados. Cree que Ash es un familiar. Estado 4: deja de excavar."
+        },
+        {
+          "map": 2041,
+          "name": "Archivero (proyección)",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Fija: «Otro visitante. O el mismo.» Cambia por fase."
+        },
+        {
+          "map": 2042,
+          "name": "Mujer de las Urnas",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "Cuenta las ánforas: siempre 47, aunque cambien."
+        },
+        {
+          "map": 2042,
+          "name": "Niño de la Vela",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Sabe que el piso \"se repite\" cada vez que llora."
+        },
+        {
+          "map": 2043,
+          "name": "Carcelero Ciego",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Puzzle de celdas; no ve la fase hasta la 5."
+        },
+        {
+          "map": 2043,
+          "name": "Preso 13",
+          "type": "Consciente",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "«Cada vez que sales, vuelvo a entrar yo.» Da la llave si le muestras el Rotom."
+        },
+        {
+          "map": 2044,
+          "name": "Custodio Doble",
+          "type": "Normal ×2",
+          "sprite": "trchar015",
+          "notes": "Explican las 4 palancas; uno de ellos desaparece en fase 5."
+        },
+        {
+          "map": 2046,
+          "name": "La Campanera",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Sabe que la Campana rota \"se oye sola\". Vende curaciones simbólicas (gratis)."
+        },
+        {
+          "map": 2047,
+          "name": "Aprendiz de Huesos",
+          "type": "Normal",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "Anomalía A03 depende de sus diálogos."
+        },
+        {
+          "map": 2048,
+          "name": "Jardinera de Raíces",
+          "type": "Consciente",
+          "sprite": "trchar052",
+          "notes": "Cura 1 vez por visita; en fase 6 ya no está, pero su jaula de flores sí."
+        },
+        {
+          "map": 2050,
+          "name": "Eco del Archivero",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Repite la frase exacta del Archivero pero al revés."
+        },
+        {
+          "map": 2051,
+          "name": "Sacerdote de los Cráneos",
+          "type": "Normal",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Puzzle; en fase 6 sus cráneos \"lo miran\"."
+        },
+        {
+          "map": 2052,
+          "name": "La que Escucha la Campana",
+          "type": "Consciente",
+          "sprite": "trchar070",
+          "notes": "Ancla narrativa del episodio; sobrevive a todas las fases."
+        },
+        {
+          "map": 2053,
+          "name": "Guardián de las Bestias",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Reta a duelo opcional (canLose)."
+        },
+        {
+          "map": 2054,
+          "name": "Sombra Traductora",
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Traduce inscripciones (con Sintonía, nivel 4)."
+        },
+        {
+          "map": 2055,
+          "name": "Los Cuatro Encapuchados",
+          "type": "Consciente ×4",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_CAT_Entrada",
+          "episode": "EP01",
+          "detail": "Sala 2041 — Autorun al entrar (v264≥3)",
+          "effect": "texto de la Grieta, sw883 = ON parcial, tone fase 1, música PkmRS-MtPyre",
+          "maps": [
+            2041
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Urnas",
+          "episode": "EP01",
+          "detail": "2042, 4 puntos — Al interactuar cada ánfora (en orden 3-1-4-2)",
+          "effect": "v267 += 1; al 4.º: abre paso a 2043 y aparece objeto oculto A07",
+          "maps": [
+            2042
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_CAT_Celdas",
+          "episode": "EP01",
+          "detail": "2043 — Hablar con \"Preso 13\" con Rotom nivel ≥1",
+          "effect": "entrega llave de celda (event flag), sw de puerta 2044",
+          "maps": [
+            2043
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Palancas",
+          "episode": "EP01",
+          "detail": "2044 — 4 palancas en celdas (5,5) (24,5) (5,18) (24,18)",
+          "effect": "orden correcto = arranca sonido de campana; error = reinicio sonoro (sin daño)",
+          "maps": [
+            2044
+          ],
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              24,
+              18
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_CAT_Escalera",
+          "episode": "EP01",
+          "detail": "2045, celda 12,28 — Pisar",
+          "effect": "fase 3: tinte sepia, fog, 3 antorchas OFF (sw por mapa)",
+          "maps": [
+            2045
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Sarcofagos",
+          "episode": "EP01",
+          "detail": "2046 — Abrir 3 sarcófagos (9,7) (15,7) (21,7)",
+          "effect": "3 combates salvajes encadenados; al ganar: objeto DN_PAGE_01",
+          "maps": [
+            2046
+          ],
+          "cells": [
+            [
+              9,
+              7
+            ],
+            [
+              15,
+              7
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "trigger": "action",
+          "instances": 3
+        },
+        {
+          "name": "EV_CAT_Raices",
+          "episode": "EP01",
+          "detail": "2048 — Interactuar raíz central en fase ≥4",
+          "effect": "curación completa al grupo + visión de 10 s (texto del Archivero)",
+          "maps": [
+            2048
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Pasadizo",
+          "episode": "EP01",
+          "detail": "2049 — Autorun al entrar",
+          "effect": "el pasaje se cierra detrás (tile swap), la única salida es avanzar",
+          "maps": [
+            2049
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Campana",
+          "episode": "EP01",
+          "detail": "2052 — Pisar la plaza con la campana rota (fase ≥5)",
+          "effect": "la música se detiene 4 s, suena 1 campana, sube v268, anomalía A09 queda marcada",
+          "maps": [
+            2052
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Pentagrama",
+          "episode": "EP01",
+          "detail": "2055 — 4 antorchas encendidas en las esquinas (5,5) (26,5) (5,26) (26,26)",
+          "effect": "si las 4 están ON con v266=7: se abre 2056; si falta una, se apagan todas",
+          "maps": [
+            2055
+          ],
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              26,
+              5
+            ],
+            [
+              5,
+              26
+            ],
+            [
+              26,
+              26
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_CAT_Mano",
+          "episode": "EP01",
+          "detail": "2056 — Autorun al entrar",
+          "effect": "presentación de la Mano Blanca, batalla 2 fases (ver §7)",
+          "maps": [
+            2056
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Sello",
+          "episode": "EP01",
+          "detail": "2056 — Tras ganar",
+          "effect": "self-switch A del jefe, sello 883, +12 resonancia, item SACRED ASH",
+          "maps": [
+            2056
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_CAT_Salida",
+          "episode": "EP01",
+          "detail": "2056, celda 12,22 — Tras ganar",
+          "effect": "teletransporte a la Gruta de los Testigos (2030, 36,12); v264 se respeta (no se toca)",
+          "maps": [
+            2056
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "EP02",
+      "doc": "02_EP02_LOST_SILVER.md",
+      "mapRange": {
+        "from": 2057,
+        "to": 2072
+      },
+      "seal": 884,
+      "grieta": 891,
+      "resonance": 10,
+      "anomalyVariable": 269,
+      "cuota": 897,
+      "bossName": "EL SIN NOMBRE",
+      "boss": {
+        "name": "EL SIN NOMBRE",
+        "phaseA": {
+          "type": "COOLTRAINER_M",
+          "label": "EL SIN NOMBRE",
+          "trainer": "DN_EP02_A"
+        },
+        "team": [
+          [
+            "NOCTOWL",
+            100
+          ],
+          [
+            "MAROWAK",
+            102
+          ],
+          [
+            "UMBREON",
+            101
+          ],
+          [
+            "GENGAR",
+            103
+          ],
+          [
+            "FROSLASS",
+            101
+          ],
+          [
+            "SPIRITOMB",
+            104
+          ]
+        ],
+        "phaseB": {
+          "kind": "fotos",
+          "verb": "romper",
+          "noun": "foto",
+          "cells": null,
+          "cellsMap": null,
+          "texts": [
+            "La foto 1 se quema por los bordes.",
+            "La foto 2 muestra un pueblo que ya no existe.",
+            "La foto 3 la firma Silver, con otra letra.",
+            "La foto 4 está en blanco: ahí va tu nombre."
+          ]
+        },
+        "reward": "DN_PAGE_02",
+        "notes": "Ganar la fase A «no cuenta»: el jefe reinicia la silueta."
+      },
+      "anomalies": {
+        "declared": 13,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LA SOMBRA CON RETRASO",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2058,
+            "cells": [
+              [
+                10,
+                7
+              ]
+            ],
+            "text": "Map2058 — (10,7) [R5-6]. Fase >=2. La sombra del jugador camina 1 s después que él.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "EL RELOJ QUE NO AVANZA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2059,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2059 — (15,12). Fase >=3. Cada visita marca 4:44; si se usa el Rotom, marca la hora real.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A03",
+            "name": "LA FUENTE SECA QUE SUENA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2059,
+            "cells": [
+              [
+                12,
+                14
+              ]
+            ],
+            "text": "Map2059 — (12,14). Fase >=4. Sin agua, se oye un chorro cuando nadie mira.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A04",
+            "name": "EL CALLEJÓN QUE SE ALARGA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2060,
+            "cells": [
+              [
+                3,
+                20
+              ]
+            ],
+            "text": "Map2060 — (3,20). Fase >=5. Al reentrar, el callejón tiene 6 tiles más.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A05",
+            "name": "EL ÁRBOL QUE SUSURRA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2061,
+            "cells": [
+              [
+                22,
+                10
+              ]
+            ],
+            "text": "Map2061 — (22,10). Fase >=4. Susurra el nombre del pueblo; el texto es distinto si el Rotom está en nivel 4+.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A06",
+            "name": "EL ESTANQUE QUE DEVUELVE OTRA COSA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2063,
+            "cells": [
+              [
+                12,
+                9
+              ]
+            ],
+            "text": "Map2063 — (12,9). Fase >=4. El reflejo muestra un pueblo intacto con gente.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A07",
+            "name": "EL PUENTE QUE YA SE HUNDIÓ",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2064,
+            "cells": [
+              [
+                15,
+                10
+              ]
+            ],
+            "text": "Map2064 — (15,10). Fase >=5. Al reentrar, el puente está entero otra vez; al pisarlo, se hunde de nuevo.",
+            "trigger": "touch",
+            "fase": 5
+          },
+          {
+            "code": "A08",
+            "name": "EL JEFE DE ESTACIÓN QUE ENVEJECE",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2069,
+            "cells": [
+              [
+                8,
+                11
+              ]
+            ],
+            "text": "Map2069 — (8,11). Cada reentrada, el NPC tiene 10 años más (hasta 4 estados de sprite).",
+            "trigger": "action",
+            "fase": 1
+          },
+          {
+            "code": "A09",
+            "name": "EL VAGÓN QUE LLEGA VACÍO",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2069,
+            "cells": [
+              [
+                5,
+                12
+              ]
+            ],
+            "text": "Map2069 — (5,12). Fase >=3. Se oyen frenos y una puerta; el vagón no se mueve.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A10",
+            "name": "LOS LIBROS QUE SE BORRAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2070,
+            "cells": [
+              [
+                10,
+                6
+              ]
+            ],
+            "text": "Map2070 — (10,6). Fase >=6. Al leer un libro, su texto desaparece de la estantería.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A11",
+            "name": "LA TUMBA CON TU NOMBRE",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2066,
+            "cells": [
+              [
+                24,
+                18
+              ]
+            ],
+            "text": "Map2066 — (24,18). Fase >=5. La 6.ª tumba lleva el nombre del jugador; al reentrar, sigue ahí.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A12",
+            "name": "LA NIEVE DIGITAL",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2071,
+            "cells": [
+              [
+                12,
+                8
+              ]
+            ],
+            "text": "Map2071 — (12,8). Fase 7. Al tocar la campana por 7.ª vez, cae nieve de píxeles (partículas R1).",
+            "trigger": "action",
+            "fase": 1
+          },
+          {
+            "code": "A13",
+            "name": "LA ESCALERA QUE NO SUBE",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2072,
+            "cells": [
+              [
+                10,
+                20
+              ]
+            ],
+            "text": "Map2072 — (10,20). Fase >=6. La escalera de caracol sube 3 pisos idénticos; solo el Rotom distingue la salida. ``` ---",
+            "trigger": "action",
+            "fase": 6
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2057,
+          "name": "Guardagujas Viejo",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados; cree que el tren \"llega mañana\" desde hace 30 años"
+        },
+        {
+          "map": 2057,
+          "name": "Niña del Columpio",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Sabe que el pueblo \"se despierta\" cuando alguien entra"
+        },
+        {
+          "map": 2058,
+          "name": "Hombre del Sombrero",
+          "type": "Normal",
+          "sprite": "trainer_SCIENTIST",
+          "notes": "En fase ≥4 su sombra tiene forma de Pokémon"
+        },
+        {
+          "map": 2059,
+          "name": "Fontanera",
+          "type": "Normal",
+          "sprite": "trchar052",
+          "notes": "Repara la fuente que nunca da agua; da la pala"
+        },
+        {
+          "map": 2060,
+          "name": "Sepulturero Nuevo",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Bloquea el callejón; pide la pala"
+        },
+        {
+          "map": 2061,
+          "name": "Leñador Ciego",
+          "type": "Consciente",
+          "sprite": "trainer_HIKER",
+          "notes": "«El bosque no está muerto. Está esperando.»"
+        },
+        {
+          "map": 2063,
+          "name": "Pescador de Nada",
+          "type": "Normal",
+          "sprite": "SWIMMER_M",
+          "notes": "Lanza al agua sin anzuelo; pesca mejores \"recuerdos\" que peces"
+        },
+        {
+          "map": 2065,
+          "name": "Sacerdote Sepia",
+          "type": "Consciente",
+          "sprite": "trchar001",
+          "notes": "Custodia la iglesia; da acceso al mausoleo"
+        },
+        {
+          "map": 2066,
+          "name": "Visitante de Tumbas",
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Fija: «Vi tu gorra antes. En otra tumba.»"
+        },
+        {
+          "map": 2067,
+          "name": "Guardián del Mausoleo",
+          "type": "Normal",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Duelo opcional (canLose)"
+        },
+        {
+          "map": 2069,
+          "name": "Jefe de Estación",
+          "type": "Normal",
+          "sprite": "trchar015",
+          "notes": "Anomalía A08: cambia de edad según la fase"
+        },
+        {
+          "map": 2070,
+          "name": "Bibliotecaria Ausente",
+          "type": "Consciente",
+          "sprite": "trchar070",
+          "notes": "Su voz guía el puzzle de libros sin que esté el sprite"
+        },
+        {
+          "map": 2071,
+          "name": "Campanero Sin Nombre",
+          "type": "Consciente",
+          "sprite": "trchar042",
+          "notes": "Toca la campana una vez por fase; la 7.ª vez no suena"
+        },
+        {
+          "map": 2072,
+          "name": "El Entrenador Sin Nombre",
+          "type": "Interdimensional",
+          "sprite": "SECRET_Silver",
+          "notes": "El jefe del episodio; no habla, solo asiente"
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_SIL_Entrada",
+          "episode": "EP02",
+          "detail": "2057, celda 16,22 — Autorun (sw883 ON)",
+          "effect": "presentación, tone fase 1, música \"Lavender Town\" (tema base) a 60 %",
+          "maps": [
+            2057
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Reloj",
+          "episode": "EP02",
+          "detail": "2059 — Interactuar con el reloj (15,12)",
+          "effect": "v266>=3 : el minutero se mueve 1 min y vuelve; detecta anomalía A02",
+          "maps": [
+            2059
+          ],
+          "cells": [
+            [
+              15,
+              12
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Pala",
+          "episode": "EP02",
+          "detail": "2059 — Hablar con la Fontanera",
+          "effect": "objeto de evento PALA; permite desbloquear 2060 (12,3)",
+          "maps": [
+            2059
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Escombros",
+          "episode": "EP02",
+          "detail": "2060 (12,3) — Usar PALA (comando 111 con variable de objeto)",
+          "effect": "abre paso; 1 combate salvaje (arena)",
+          "maps": [
+            2060
+          ],
+          "cells": [
+            [
+              12,
+              3
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Espejo",
+          "episode": "EP02",
+          "detail": "2063 (10,8) — Autorun de celda",
+          "effect": "2 s de retraso en el reflejo del jugador (evento imagen espejo)",
+          "maps": [
+            2063
+          ],
+          "cells": [
+            [
+              10,
+              8
+            ]
+          ],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Puente",
+          "episode": "EP02",
+          "detail": "2064 (15,10) — Al pisar la mitad en fase >=5",
+          "effect": "el puente se hunde; el jugador puede volver por la orilla (sin daño)",
+          "maps": [
+            2064
+          ],
+          "cells": [
+            [
+              15,
+              10
+            ]
+          ],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Tumbas",
+          "episode": "EP02",
+          "detail": "2066 — Leer 6 tumbas (5 estados por tumba)",
+          "effect": "6.ª tumba con el nombre del jugador (\"\\PN\") en fase >=5",
+          "maps": [
+            2066
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Mausoleo",
+          "episode": "EP02",
+          "detail": "2067 — Entrar con Rotom nivel >=2",
+          "effect": "duelo opcional; al ganar: CREEPY_PAGE_02 + llave de la iglesia",
+          "maps": [
+            2067
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Vagon",
+          "episode": "EP02",
+          "detail": "2069 — Interactuar con el vagón (5,12) en fase >=3",
+          "effect": "la puerta se abre sola; dentro no hay nada y el reloj del andén cambia",
+          "maps": [
+            2069
+          ],
+          "cells": [
+            [
+              5,
+              12
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Libros",
+          "episode": "EP02",
+          "detail": "2070 — 4 estanterías (6,6) (10,6) (18,6) (22,6) con Sintonía (nivel 4)",
+          "effect": "reconstruye la frase \"EL QUE ESPERA NUNCA LLEGA\"; abre 2071",
+          "maps": [
+            2070
+          ],
+          "cells": [
+            [
+              6,
+              6
+            ],
+            [
+              10,
+              6
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              22,
+              6
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_SIL_Campana",
+          "episode": "EP02",
+          "detail": "2071 (12,8) — Tocar la campana 6 veces (1 por fase)",
+          "effect": "en fase 7 no suena: cae nieve digital del techo (marca A12)",
+          "maps": [
+            2071
+          ],
+          "cells": [
+            [
+              12,
+              8
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Caracol",
+          "episode": "EP02",
+          "detail": "2072 (10,20) — Pisar el centro de la escalera",
+          "effect": "bucle visual 3 veces; a la 4.ª aparece el jefe",
+          "maps": [
+            2072
+          ],
+          "cells": [
+            [
+              10,
+              20
+            ]
+          ],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Jefe",
+          "episode": "EP02",
+          "detail": "2072 — Autorun tras el bucle",
+          "effect": "batalla (canLose) + fase de \"fotografías\" (ver §7)",
+          "maps": [
+            2072
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Sello",
+          "episode": "EP02",
+          "detail": "2072 — Tras ganar",
+          "effect": "self-switch A, sw884 = ON, +10 resonancia, recompensa ODD KEystone (no duplicar: si ya existe, REVIVE)",
+          "maps": [
+            2072
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SIL_Salida",
+          "episode": "EP02",
+          "detail": "2072 — Salida libre al Monte Silver (2030)",
+          "effect": "",
+          "maps": [
+            2072,
+            2030
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "EP03",
+      "doc": "03_EP03_SNOW_ON_MT_SILVER.md",
+      "mapRange": {
+        "from": 2073,
+        "to": 2087
+      },
+      "seal": 885,
+      "grieta": 892,
+      "resonance": 12,
+      "anomalyVariable": 270,
+      "cuota": 898,
+      "bossName": "EL CAMINANTE",
+      "boss": {
+        "name": "EL CAMINANTE",
+        "phaseA": {
+          "type": "CHAMPION",
+          "label": "EL CAMINANTE",
+          "trainer": "DN_EP03_A"
+        },
+        "team": [
+          [
+            "ABOMASNOW",
+            104
+          ],
+          [
+            "MAMOSWINE",
+            105
+          ],
+          [
+            "GLALIE",
+            102
+          ],
+          [
+            "FROSLASS",
+            103
+          ],
+          [
+            "WEAVILE",
+            103
+          ],
+          [
+            "LAPRAS",
+            102
+          ]
+        ],
+        "phaseB": {
+          "kind": "fogatas",
+          "verb": "encender",
+          "noun": "fogata",
+          "cells": null,
+          "cellsMap": null,
+          "maps": [
+            2073,
+            2075,
+            2078,
+            2082
+          ],
+          "texts": [
+            "La fogata 1 se enciende: el Caminante retrocede un paso.",
+            "La fogata 2 arde sin consumir leña.",
+            "La fogata 3 calienta el aire: la nieve derrite a su alrededor.",
+            "La fogata 4 la dejaste tú al pasar. Ahora vuelve a arder."
+          ]
+        },
+        "reward": "DN_PAGE_03",
+        "notes": "Es un jefe que obliga a volver sobre tus pasos (fogatas en 2073/2075/2078/2082)."
+      },
+      "anomalies": {
+        "declared": 12,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LA FOGATA QUE NO DERRITE LA NIEVE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2073,
+            "cells": [
+              [
+                18,
+                8
+              ]
+            ],
+            "text": "Map2073 — (18,8) [R6-1]. Fase >=2. A su alrededor la nieve sigue intacta; el calor no deja marca.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "LAS HUELLAS QUE LLEGAN",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2074,
+            "cells": [
+              [
+                12,
+                20
+              ]
+            ],
+            "text": "Map2074 — (12,20). Fase >=3. Aparecen huellas que suben hacia donde está el jugador.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A03",
+            "name": "EL ACANTILADO MÁS ALTO",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2074,
+            "cells": [
+              [
+                24,
+                6
+              ]
+            ],
+            "text": "Map2074 — (24,6). Fase >=5. Al reentrar, la cima está 4 tiles más arriba (la ruta cambia de largo).",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A04",
+            "name": "LA CABEZA EN LA NIEVE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2075,
+            "cells": [
+              [
+                5,
+                22
+              ]
+            ],
+            "text": "Map2075 — (5,22). Fase >=4. Una cabeza de estatua asoma; al volver a entrar está más afuera.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A05",
+            "name": "LAS DOS TAZAS",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2076,
+            "cells": [
+              [
+                6,
+                10
+              ]
+            ],
+            "text": "Map2076 — (6,10). Fase >=3. La cabaña siempre tiene dos tazas servidas; nadie más está dentro.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A06",
+            "name": "BAJO EL HIELO, ALGO SE MUEVE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2077,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2077 — (16,12). Fase >=4. Una sombra grande cruza el lago bajo el hielo; nunca sale.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A07",
+            "name": "LA CAMPANA MUDA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2079,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2079 — (20,12). Fase >=3. La campana no suena para el jugador, pero los NPCs reaccionan como si sonara.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A08",
+            "name": "EL PUEBLO QUE NO ESTÁ EN EL MAPA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2079,
+            "cells": [
+              [
+                2,
+                2
+              ]
+            ],
+            "text": "Map2079 — (2,2). Fase >=5. Con el Rotom nivel >=3, el minimapa del pueblo no aparece; solo nieve.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A09",
+            "name": "EL BLOQUE DE HIELO QUE RESPIRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2080,
+            "cells": [
+              [
+                14,
+                10
+              ]
+            ],
+            "text": "Map2080 — (14,10). Fase >=4. Un bloque sube y baja 1 tile cada 4 s (se puede pisar igual).",
+            "trigger": "touch",
+            "fase": 4
+          },
+          {
+            "code": "A10",
+            "name": "LAS ESTALACTITAS QUE CUENTAN",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2082,
+            "cells": [
+              [
+                10,
+                14
+              ]
+            ],
+            "text": "Map2082 — (10,14). Fase >=5. Cada estalactita que cae deja un \"tic\" distinto; el 7.º tic no existe.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A11",
+            "name": "LA GRIETA QUE SE CIERRA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2084,
+            "cells": [
+              [
+                8,
+                20
+              ]
+            ],
+            "text": "Map2084 — (8,20). Fase >=6. Al reentrar, la grieta está cerrada por dentro; hay que salir al 2085 (nunca se atrapa).",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A12",
+            "name": "LA ESTATUA QUE CAMBIA DE CARA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2086,
+            "cells": [
+              [
+                10,
+                8
+              ]
+            ],
+            "text": "Map2086 — (10,8). Fase >=6. Las estatuas cambian de pose al mirarlas dos veces. ``` ---",
+            "trigger": "action",
+            "fase": 6
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2073,
+          "name": "Excursionista Perdido",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "5 estados; cree que está a 10 min del pueblo"
+        },
+        {
+          "map": 2074,
+          "name": "Escaladora Sola",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Sabe que el acantilado \"crece\" cada noche"
+        },
+        {
+          "map": 2075,
+          "name": "Guarda de la Cornisa",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Pide 3 fogatas encendidas para dejar pasar"
+        },
+        {
+          "map": 2076,
+          "name": "Montañés de la Cabaña",
+          "type": "Consciente",
+          "sprite": "trchar015",
+          "notes": "Cura; cada visita tiene una línea nueva"
+        },
+        {
+          "map": 2077,
+          "name": "Pescador de Hielo",
+          "type": "Normal",
+          "sprite": "SWIMMER_M",
+          "notes": "Habla del \"altar bajo el hielo\""
+        },
+        {
+          "map": 2078,
+          "name": "Tendera de Nieve",
+          "type": "Normal",
+          "sprite": "trchar052",
+          "notes": "Tienda real (ítems estándar)"
+        },
+        {
+          "map": 2079,
+          "name": "Alcaldesa de Pueblo Alto",
+          "type": "Consciente",
+          "sprite": "trchar070",
+          "notes": "Sabe que el pueblo aparece y desaparece del mapa"
+        },
+        {
+          "map": 2080,
+          "name": "Niño del Trineo",
+          "type": "Normal",
+          "sprite": "trchar010",
+          "notes": "Marca el camino del hielo resbaladizo"
+        },
+        {
+          "map": 2082,
+          "name": "Minero Ciego",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Da pistas de las estalactitas"
+        },
+        {
+          "map": 2083,
+          "name": "Sacerdote de las Runas",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Traduce runas con Rotom nivel ≥4"
+        },
+        {
+          "map": 2085,
+          "name": "Cazadora de Cristales",
+          "type": "Normal",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Miniboss opcional"
+        },
+        {
+          "map": 2086,
+          "name": "Los Tres Testigos",
+          "type": "Interdimensional ×3",
+          "sprite": "trchar028",
+          "notes": "Repiten la misma frase en 3 idiomas; cambian en fase 7"
+        },
+        {
+          "map": 2087,
+          "name": "EL CAMINANTE",
+          "type": "Interdimensional",
+          "sprite": "trchar137",
+          "notes": "Jefe; camina hacia el jugador durante todo el episodio (aparece en el fondo de 2073, 2079, 2086)"
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_SNOW_Fogata",
+          "episode": "EP03",
+          "detail": "2073, 2075, 2078, 2082 — Encender 4 fogatas (una por zona)",
+          "effect": "cada fogata fija punto de reaparición; la 4.ª quita la ventisca breve",
+          "maps": [
+            2073,
+            2075,
+            2078,
+            2082
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Ventisca",
+          "episode": "EP03",
+          "detail": "2075 (20,10) — Zona expuesta",
+          "effect": "pierde visibilidad 6 s (evento de imagen), empuja 2 tiles hacia atrás (sin daño)",
+          "maps": [
+            2075
+          ],
+          "cells": [
+            [
+              20,
+              10
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Cabana",
+          "episode": "EP03",
+          "detail": "2076 — Interactuar con el Montañés",
+          "effect": "cura grupo + guarda posición + v276 = 0",
+          "maps": [
+            2076
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Altar",
+          "episode": "EP03",
+          "detail": "2077 (16,16) — Golpear el hielo con fuerza 3 veces",
+          "effect": "el hielo se agrieta; se ve el altar; al 4.º golpe se abre agujero (mapa 2087)",
+          "maps": [
+            2077
+          ],
+          "cells": [
+            [
+              16,
+              16
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Tienda",
+          "episode": "EP03",
+          "detail": "2078 — Tendera",
+          "effect": "tienda estándar (sin inventario nuevo)",
+          "maps": [
+            2078
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Campana",
+          "episode": "EP03",
+          "detail": "2079 (20,12) — Tocar la campana en fase >=3",
+          "effect": "suena 1 vez; el pueblo entero deja de moverse 10 s",
+          "maps": [
+            2079
+          ],
+          "cells": [
+            [
+              20,
+              12
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Hielo",
+          "episode": "EP03",
+          "detail": "2080 — Zona resbaladiza (terreno 12 ya usado en Lanakila Cave)",
+          "effect": "puzzle de deslizamiento; sin combates mientras se resbala",
+          "maps": [
+            2080
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Runas",
+          "episode": "EP03",
+          "detail": "2083 — 3 losas (8,6) (15,6) (22,6) en orden con Rotom nivel >=4",
+          "effect": "abre 2084; si el orden es erróneo, se resetean al salir",
+          "maps": [
+            2083
+          ],
+          "cells": [
+            [
+              8,
+              6
+            ],
+            [
+              15,
+              6
+            ],
+            [
+              22,
+              6
+            ]
+          ],
+          "trigger": "action",
+          "instances": 3
+        },
+        {
+          "name": "EV_SNOW_Grieta",
+          "episode": "EP03",
+          "detail": "2084 (8,38) — Autorun al entrar",
+          "effect": "la grieta se cierra detrás; solo avanza (como en EP01, pero de hielo)",
+          "maps": [
+            2084
+          ],
+          "cells": [
+            [
+              8,
+              38
+            ]
+          ],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Bestia",
+          "episode": "EP03",
+          "detail": "2085 — Miniboss opcional (`trainer_PSYCHIC_F`, canLose)",
+          "effect": "recompensa FEATHER oculta; no bloquea el progreso",
+          "maps": [
+            2085
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Estatuas",
+          "episode": "EP03",
+          "detail": "2086 — 5 estatuas (cada una mira a un lado distinto)",
+          "effect": "colocarlas todas mirando al centro con 5 interacciones: abre 2087",
+          "maps": [
+            2086
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Jefe",
+          "episode": "EP03",
+          "detail": "2087 — Autorun",
+          "effect": "batalla + fase de \"pasos en la nieve\" (ver §7)",
+          "maps": [
+            2087
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Sello",
+          "episode": "EP03",
+          "detail": "2087 — Tras ganar",
+          "effect": "sw885 = ON, +12 resonancia, recompensa (ver §6)",
+          "maps": [
+            2087
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_SNOW_Salida",
+          "episode": "EP03",
+          "detail": "2087 — Salida libre a 2021 (falda) / 2030 (gruta)",
+          "effect": "",
+          "maps": [
+            2087,
+            2030
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "EP04",
+      "doc": "04_EP04_HYPNOS_LULLABY.md",
+      "mapRange": {
+        "from": 2088,
+        "to": 2103
+      },
+      "seal": 886,
+      "grieta": 893,
+      "resonance": 14,
+      "anomalyVariable": 271,
+      "cuota": 899,
+      "bossName": "LA NANA",
+      "boss": {
+        "name": "LA NANA",
+        "phaseA": {
+          "type": "PSYCHIC_F",
+          "label": "LA NANA",
+          "trainer": "DN_EP04_A"
+        },
+        "team": [
+          [
+            "MUSHARNA",
+            104
+          ],
+          [
+            "HYPNO",
+            105
+          ],
+          [
+            "DROWZEE",
+            101
+          ],
+          [
+            "GENGAR",
+            104
+          ],
+          [
+            "MISMAGIUS",
+            103
+          ],
+          [
+            "SPIRITOMB",
+            106
+          ]
+        ],
+        "phaseB": {
+          "kind": "cunas",
+          "verb": "despertar",
+          "noun": "cuna",
+          "cells": [
+            [
+              10,
+              12
+            ],
+            [
+              20,
+              12
+            ],
+            [
+              10,
+              26
+            ],
+            [
+              20,
+              26
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "La cuna 1 se abre. Dentro no hay nadie.",
+            "La cuna 2 tararea la nana al revés.",
+            "La cuna 3 está vacía y, aun así, se mece.",
+            "La cuna 4 deja de cantar: el árbol se queda en silencio."
+          ]
+        },
+        "reward": "POKEFLUTE",
+        "notes": "La canción es el jefe: el equipo entra dormido y las cunas lo despiertan."
+      },
+      "anomalies": {
+        "declared": 13,
+        "items": [
+          {
+            "code": "A01",
+            "name": "EL BOSQUE QUE RESPIRA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2088,
+            "cells": [
+              [
+                14,
+                12
+              ]
+            ],
+            "text": "Map2088 — (14,12) [R2-1]. Fase >=2. En los silencios de la música se oye una respiración lenta.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "EL CARTEL QUE TE NOMBRA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2089,
+            "cells": [
+              [
+                22,
+                18
+              ]
+            ],
+            "text": "Map2089 — (22,18). Fase >=4. El cartel dice \"\\PN\" y cambia de dirección cuando el jugador pasa.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A03",
+            "name": "EL PUENTE QUE CANTA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2090,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2090 — (16,12). Fase >=3. Al pisarlo, el agua entona la primera nota de la canción.",
+            "trigger": "touch",
+            "fase": 3
+          },
+          {
+            "code": "A04",
+            "name": "EL REFLEJO DORMIDO",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2090,
+            "cells": [
+              [
+                16,
+                14
+              ]
+            ],
+            "text": "Map2090 — (16,14). Fase >=4. El reflejo del jugador está acostado y no se mueve.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A05",
+            "name": "LAS VENTANAS QUE MIRAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2091,
+            "cells": [
+              [
+                6,
+                6
+              ]
+            ],
+            "text": "Map2091 — (6,6). Fase >=5. Las ventanas de la cabaña tienen una figura; al acercarse, ya no.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A06",
+            "name": "LA TUMBA SIN JUGUETE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2093,
+            "cells": [
+              [
+                28,
+                22
+              ]
+            ],
+            "text": "Map2093 — (28,22). Fase >=5. La 6.ª tumba está vacía y recién cavada; siempre hay tierra fresca.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A07",
+            "name": "LAS FLORES QUE SE CIERRAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2094,
+            "cells": [
+              [
+                20,
+                15
+              ]
+            ],
+            "text": "Map2094 — (20,15). Fase >=4. Las flores moradas se cierran cuando el jugador se acerca.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A08",
+            "name": "EL QUE DUERME ABAJO",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2098,
+            "cells": [
+              [
+                16,
+                16
+              ]
+            ],
+            "text": "Map2098 — (16,16). Fase >=5. Mirando el estanque 3 veces aparece una silueta enorme bajo el agua.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A09",
+            "name": "LOS CINCO DORMIDOS",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2095,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2095 — (15,12). Fase >=5. Hay 5 dormidos: el 5.º lleva la ropa del jugador.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A10",
+            "name": "LA NOTA QUE FALTA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2101,
+            "cells": [
+              [
+                24,
+                20
+              ]
+            ],
+            "text": "Map2101 — (24,20). Fase >=6. La melodía de los niños tiene una nota que no suena; el silencio dura 1 s de más.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A11",
+            "name": "LAS LUCES ROJAS",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2101,
+            "cells": [
+              [
+                10,
+                8
+              ]
+            ],
+            "text": "Map2101 — (10,8). Fase >=6. Una luciérnaga roja sigue al jugador y se apaga si se la mira de frente.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A12",
+            "name": "EL GRANERO QUE SE AGRANDA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2100,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2100 — (16,12). Fase >=6. Al reentrar, el granero tiene una puerta más (4 puertas en total).",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A13",
+            "name": "LA CAMA QUE RECUERDA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2100,
+            "cells": [
+              [
+                16,
+                10
+              ]
+            ],
+            "text": "Map2100 — (16,10). Fase >=5. Cada vez que se duerme en ella, el sueño dura 2 s más y muestra una imagen distinta. ``` ---",
+            "trigger": "action",
+            "fase": 5
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2088,
+          "name": "Leñador Dormido",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "5 estados; bosteza entre frases"
+        },
+        {
+          "map": 2088,
+          "name": "Niña del Oso de Trapo",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Sabe que \"la canción llama a los que tienen nombre\""
+        },
+        {
+          "map": 2089,
+          "name": "Cartelero Mudo",
+          "type": "Normal",
+          "sprite": "trchar015",
+          "notes": "Cambia los carteles; nunca habla"
+        },
+        {
+          "map": 2090,
+          "name": "Puentero",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "Cobra peaje en sueños (nunca lo cobra)"
+        },
+        {
+          "map": 2091,
+          "name": "Abuela de la Cabaña",
+          "type": "Consciente",
+          "sprite": "trchar070",
+          "notes": "Cura; cuenta las 4 estrofas del canto"
+        },
+        {
+          "map": 2092,
+          "name": "Guardián del Arco",
+          "type": "Interdimensional",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Fija: «Ya oíste esta canción. Ayer. Y anteayer.»"
+        },
+        {
+          "map": 2093,
+          "name": "Sepulturera de Juguetes",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "Entierra juguetes; da la pista del silenciador"
+        },
+        {
+          "map": 2095,
+          "name": "Los Cuatro Dormidos",
+          "type": "Normal ×4",
+          "sprite": "trchar000",
+          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
+        },
+        {
+          "map": 2096,
+          "name": "Voz de la Cueva",
+          "type": "Consciente",
+          "sprite": "",
+          "notes": "Solo texto, sin gráfico: la cueva responde"
+        },
+        {
+          "map": 2098,
+          "name": "El que Duerme Abajo",
+          "type": "Interdimensional",
+          "sprite": "",
+          "notes": "Aparece en el reflejo; no se puede hablar con él"
+        },
+        {
+          "map": 2100,
+          "name": "Granjero Ausente",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Su granero tiene una cama; dormir = ver una visión"
+        },
+        {
+          "map": 2101,
+          "name": "Niños de Luciérnagas",
+          "type": "Consciente ×2",
+          "sprite": "trchar010",
+          "notes": "Cantan la melodía; una nota está \"rota\""
+        },
+        {
+          "map": 2103,
+          "name": "LA NANA",
+          "type": "Interdimensional",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Jefe; canta durante todo el combate"
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_HYP_Entrada",
+          "episode": "EP04",
+          "detail": "2088 — Autorun (sw885 ON y sw703 ON)",
+          "effect": "tono fase 1, música \"Hypno's Lullaby (base)\" al 50 %, texto de la grieta",
+          "maps": [
+            2088
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Carteles",
+          "episode": "EP04",
+          "detail": "2089 — 4 carteles (5,5) (10,10) (18,6) (22,18)",
+          "effect": "cada fase muestra un texto distinto; el 4.º cartel lleva el nombre del jugador",
+          "maps": [
+            2089
+          ],
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              22,
+              18
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_HYP_Puente",
+          "episode": "EP04",
+          "detail": "2090 (16,12) — Pisar el centro",
+          "effect": "el reflejo del agua muestra a Ash durmiendo (anomalía A04)",
+          "maps": [
+            2090
+          ],
+          "cells": [
+            [
+              16,
+              12
+            ]
+          ],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Abuela",
+          "episode": "EP04",
+          "detail": "2091 — Hablar 4 veces",
+          "effect": "enseña las 4 estrofas (pistas del puzzle de 2102); cura",
+          "maps": [
+            2091
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Niebla",
+          "episode": "EP04",
+          "detail": "2092 (15,15) — 3 antorchas de niebla (8,8) (15,6) (22,20)",
+          "effect": "apagarlas en orden inverso a su encendido original: abre 2093",
+          "maps": [
+            2092
+          ],
+          "cells": [
+            [
+              15,
+              15
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              15,
+              6
+            ],
+            [
+              22,
+              20
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_HYP_Tumbas",
+          "episode": "EP04",
+          "detail": "2093 — 6 tumbas de juguetes",
+          "effect": "la 6.ª tumba vacía: primer \"silenciador\" del mapa",
+          "maps": [
+            2093
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Sueno",
+          "episode": "EP04",
+          "detail": "2094/2096/2098 — Evento de mapa (paralelo)",
+          "effect": "cada 45 s, si NO hay silenciador activo: tirada de sueño (15 %)",
+          "maps": [
+            2094,
+            2096,
+            2098
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Campamento",
+          "episode": "EP04",
+          "detail": "2095 — Dormir en la tienda (opcional)",
+          "effect": "visión de 12 s con texto de la historia; grupo curado",
+          "maps": [
+            2095
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Cueva",
+          "episode": "EP04",
+          "detail": "2096 (12,8) — Entrar sin silenciador activo",
+          "effect": "la cueva \"canta\" y duerme a 2 Pokémon (se despiertan al salir)",
+          "maps": [
+            2096
+          ],
+          "cells": [
+            [
+              12,
+              8
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Estanque",
+          "episode": "EP04",
+          "detail": "2098 (16,16) — Mirar el agua 3 veces",
+          "effect": "aparece \"El que duerme abajo\" (anomalía A08); no hay combate",
+          "maps": [
+            2098
+          ],
+          "cells": [
+            [
+              16,
+              16
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Musica",
+          "episode": "EP04",
+          "detail": "2099 — Leer el muro de ruinas con Rotom nivel >=4",
+          "effect": "partitura de 8 notas; sin Sintonía solo son garabatos",
+          "maps": [
+            2099
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Granero",
+          "episode": "EP04",
+          "detail": "2100 — Dormir en la cama 3 veces",
+          "effect": "3 visiones (1: el bosque antes; 2: los niños cantando; 3: una cuna vacía)",
+          "maps": [
+            2100
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Silenciador",
+          "episode": "EP04",
+          "detail": "6 troncos huecos — Interactuar",
+          "effect": "silencia el canto 60 s; v267 += 1 por cada uno distinto (máx 6)",
+          "maps": [],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Notas",
+          "episode": "EP04",
+          "detail": "2102 (10,12) — Tocar 8 troncos en el orden de la partitura",
+          "effect": "abre 2103; el orden correcto es el de las 4 estrofas + eco",
+          "maps": [
+            2102
+          ],
+          "cells": [
+            [
+              10,
+              12
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Jefe",
+          "episode": "EP04",
+          "detail": "2103 — Autorun",
+          "effect": "batalla + fase de \"cuna\" (ver §7)",
+          "maps": [
+            2103
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Sello",
+          "episode": "EP04",
+          "detail": "2103 — Tras ganar",
+          "effect": "sw886 = ON, +14 resonancia, recompensa (ver §6)",
+          "maps": [
+            2103
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_HYP_Salida",
+          "episode": "EP04",
+          "detail": "2103 — Salida libre a 2030 / 2021",
+          "effect": "",
+          "maps": [
+            2103,
+            2030
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "EP05",
+      "doc": "05_EP05_POKEMON_BLACK.md",
+      "mapRange": {
+        "from": 2104,
+        "to": 2119
+      },
+      "seal": 887,
+      "grieta": 894,
+      "resonance": 16,
+      "anomalyVariable": 272,
+      "cuota": 900,
+      "bossName": "EL JUGADOR 000",
+      "boss": {
+        "name": "EL JUGADOR 000",
+        "phaseA": {
+          "type": "TEAMROCKET",
+          "label": "EL JUGADOR 000",
+          "trainer": "DN_EP05_A"
+        },
+        "team": [
+          [
+            "UNOWN",
+            110
+          ],
+          [
+            "UNOWN",
+            110
+          ],
+          [
+            "MISMAGIUS",
+            110
+          ],
+          [
+            "SPIRITOMB",
+            110
+          ],
+          [
+            "GENGAR",
+            110
+          ],
+          [
+            "DUSKNOIR",
+            110
+          ]
+        ],
+        "phaseB": {
+          "kind": "rendijas",
+          "verb": "cerrar",
+          "noun": "rendija",
+          "cells": null,
+          "cellsMap": null,
+          "texts": [
+            "Una rendija se cierra. La silueta pierde un borde.",
+            "La segunda rendija te devuelve una copia de tu poción.",
+            "La tercera rendija repite tu último movimiento.",
+            "La cuarta se cierra desde dentro."
+          ]
+        },
+        "reward": "DN_PAGE_05",
+        "notes": "El combate espejo real (pbPartyCopy) queda pendiente: hoy usa un equipo fijo equivalente."
+      },
+      "anomalies": {
+        "declared": 13,
+        "items": [
+          {
+            "code": "A01",
+            "name": "EL PUEBLO SIN PERRO",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2104,
+            "cells": [
+              [
+                10,
+                10
+              ]
+            ],
+            "text": "Map2104 — (10,10) [R5-1 vacío]. Fase >=1. Hay una caseta de perro sin perro y sin cadena.",
+            "trigger": "action",
+            "fase": 1
+          },
+          {
+            "code": "A02",
+            "name": "LA CALLE QUE FALTA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2105,
+            "cells": [
+              [
+                16,
+                3
+              ]
+            ],
+            "text": "Map2105 — (16,3). Fase >=2. Al reentrar, un tramo de 4 tiles ya no existe (hueco negro transitable).",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A03",
+            "name": "LA FUENTE QUE NO SUENA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2106,
+            "cells": [
+              [
+                15,
+                15
+              ]
+            ],
+            "text": "Map2106 — (15,15). Fase >=2. Donde el EP02 había agua, ahora hay un silencio \"con forma de agua\".",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A04",
+            "name": "LOS ÁRBOLES QUE SON SOMBRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2108,
+            "cells": [
+              [
+                20,
+                14
+              ]
+            ],
+            "text": "Map2108 — (20,14). Fase >=3. Las sombras de los árboles siguen ahí aunque los árboles no.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "EL PÁRAMO SIN HORIZONTE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2109,
+            "cells": [
+              [
+                15,
+                15
+              ]
+            ],
+            "text": "Map2109 — (15,15). Fase >=4. El fondo blanco no tiene horizonte: es una pared a 3 tiles.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A06",
+            "name": "EL ESTANQUE EN OTRO SITIO",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2110,
+            "cells": [
+              [
+                12,
+                12
+              ]
+            ],
+            "text": "Map2110 — (12,12). Fase >=4. Al reentrar, el agua aparece 20 tiles más allá (un charco R1).",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A07",
+            "name": "EL PUENTE PARTIDO",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2111,
+            "cells": [
+              [
+                15,
+                10
+              ]
+            ],
+            "text": "Map2111 — (15,10). Fase >=4. La mitad del puente está en la otra orilla, invertida.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A08",
+            "name": "LA IGLESIA SIN SOMBRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2112,
+            "cells": [
+              [
+                20,
+                10
+              ]
+            ],
+            "text": "Map2112 — (20,10). Fase >=5. La iglesia proyecta sombra de un edificio que ya no está.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A09",
+            "name": "LAS TUMBAS SIN NOMBRE",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2113,
+            "cells": [
+              [
+                14,
+                14
+              ]
+            ],
+            "text": "Map2113 — (14,14). Fase >=5. Las 6 tumbas están en blanco; con Sintonía, muestran nombres 2 s.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A10",
+            "name": "EL MAUSOLEO ABIERTO",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2114,
+            "cells": [
+              [
+                15,
+                10
+              ]
+            ],
+            "text": "Map2114 — (15,10). Fase >=5. Al reentrar, la puerta del mausoleo está abierta y la de dentro cerrada.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A11",
+            "name": "LAS VÍAS A NINGUNA PARTE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2115,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2115 — (20,12). Fase >=6. Las vías se vuelven una línea de código hexadecimal (R1-3).",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A12",
+            "name": "LOS LIBROS EN BLANCO",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2116,
+            "cells": [
+              [
+                10,
+                6
+              ]
+            ],
+            "text": "Map2116 — (10,6). Fase >=6. Los libros no tienen letras; al abrirlos, el texto \"casi\" aparece.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A13",
+            "name": "LA CAMPANA HUECA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2117,
+            "cells": [
+              [
+                12,
+                8
+              ]
+            ],
+            "text": "Map2117 — (12,8). Fase >=6. Se oye una campana con 1 s de retraso exacto sobre el gesto de tocarla. ``` ---",
+            "trigger": "action",
+            "fase": 6
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2104,
+          "name": "Silueta del Guardagujas",
+          "type": "Consciente (eco)",
+          "sprite": "trchar028",
+          "notes": "Repite una frase del EP02, sin voz"
+        },
+        {
+          "map": 2105,
+          "name": "Silueta de la Fontanera",
+          "type": "Consciente (eco)",
+          "sprite": "trchar052",
+          "notes": "Señala un hueco en el suelo"
+        },
+        {
+          "map": 2107,
+          "name": "Silueta del Sepulturero",
+          "type": "Interdimensional",
+          "sprite": "trainer_HIKER",
+          "notes": "Fija: «Ya me enterraste una vez. Gracias.»"
+        },
+        {
+          "map": 2109,
+          "name": "El Último Niño",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Es el único NPC sólido del episodio; no tiene sombra"
+        },
+        {
+          "map": 2112,
+          "name": "Cura Silenciosa",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Cura sin hablar (menú de sí/no)"
+        },
+        {
+          "map": 2114,
+          "name": "El Espejo",
+          "type": "Interdimensional",
+          "sprite": "",
+          "notes": "Miniboss opcional: copia el equipo del jugador"
+        },
+        {
+          "map": 2116,
+          "name": "Bibliotecaria Que Se Fue",
+          "type": "Consciente (eco)",
+          "sprite": "trchar070",
+          "notes": "Solo aparece en fase ≥6"
+        },
+        {
+          "map": 2117,
+          "name": "El Campanero Vacío",
+          "type": "Consciente",
+          "sprite": "trchar042",
+          "notes": "Toca una campana que ya no existe"
+        },
+        {
+          "map": 2119,
+          "name": "EL JUGADOR 000",
+          "type": "Interdimensional",
+          "sprite": "SECRET_Red",
+          "notes": "Jefe final"
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_BLK_Entrada",
+          "episode": "EP05",
+          "detail": "2104 — Autorun (sw886 ON)",
+          "effect": "sin música; tone fase 1 (casi normal); mensaje \"no hay nadie\"",
+          "maps": [
+            2104
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Ausencia",
+          "episode": "EP05",
+          "detail": "Paralelo en 2105..2113 — Cada reentrada en fase >=2",
+          "effect": "desactiva 1 NPC/tile por visita (switch DN_BLK_AUS_XX); nunca toca curación/salida",
+          "maps": [
+            2105,
+            2113
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Fuente",
+          "episode": "EP05",
+          "detail": "2106 (15,15) — Interactuar con el hueco de la fuente",
+          "effect": "texto del EP02; el Rotom guarda la \"diferencia\" (v274 += 1)",
+          "maps": [
+            2106
+          ],
+          "cells": [
+            [
+              15,
+              15
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Escombros",
+          "episode": "EP05",
+          "detail": "2107 (12,3) — En fase >=3 hay un hueco con forma de pala",
+          "effect": "recoger la PALA del EP02 (si no se tiene); objeto de evento",
+          "maps": [
+            2107
+          ],
+          "cells": [
+            [
+              12,
+              3
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Puente",
+          "episode": "EP05",
+          "detail": "2111 (15,10) — El puente está partido",
+          "effect": "rodeo por la orilla; en fase >=5 el hueco es un tile R1 (glitch visual)",
+          "maps": [
+            2111
+          ],
+          "cells": [
+            [
+              15,
+              10
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Tumbas",
+          "episode": "EP05",
+          "detail": "2113 — 6 tumbas sin nombre",
+          "effect": "con Rotom nivel >=4 (Sintonía), las inscripciones \"reaparecen\" 2 s",
+          "maps": [
+            2113
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Espejo",
+          "episode": "EP05",
+          "detail": "2114 (15,12) — Miniboss opcional",
+          "effect": "batalla con un entrenador que copia el equipo del jugador (ver §7)",
+          "maps": [
+            2114
+          ],
+          "cells": [
+            [
+              15,
+              12
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Mausoleo",
+          "episode": "EP05",
+          "detail": "2114 — Tras el Espejo",
+          "effect": "objeto DN_PHOTO_03 (foto en blanco)",
+          "maps": [
+            2114
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Vias",
+          "episode": "EP05",
+          "detail": "2115 (20,12) — Caminar por las vías",
+          "effect": "en fase >=6 las vías se convierten en una línea de código (R1)",
+          "maps": [
+            2115
+          ],
+          "cells": [
+            [
+              20,
+              12
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Libros",
+          "episode": "EP05",
+          "detail": "2116 — 4 estanterías vacías",
+          "effect": "con Rotom nivel >=4, leer los libros \"en blanco\" reconstruye 4 frases de EP02",
+          "maps": [
+            2116
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Campana",
+          "episode": "EP05",
+          "detail": "2117 (12,8) — Tocar el hueco de la campana",
+          "effect": "suena una campana que no existe; abre 2118 (primera zona R1 pura)",
+          "maps": [
+            2117
+          ],
+          "cells": [
+            [
+              12,
+              8
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_R1Zona",
+          "episode": "EP05",
+          "detail": "2118 (16,12) — Estar 5 s quieto en fase 7",
+          "effect": "el mapa \"renderiza mal\": sprites duplicados (eventos espejo), sin daño",
+          "maps": [
+            2118
+          ],
+          "cells": [
+            [
+              16,
+              12
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Jefe",
+          "episode": "EP05",
+          "detail": "2119 — Autorun",
+          "effect": "batalla espejo (ver §7)",
+          "maps": [
+            2119
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Sello",
+          "episode": "EP05",
+          "detail": "2119 — Tras ganar",
+          "effect": "sw887 = ON, +16 resonancia, restauración de TODAS las ausencias de EP05",
+          "maps": [
+            2119
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_BLK_Salida",
+          "episode": "EP05",
+          "detail": "2119 (15,28) — Salida libre a 2030 / 2021",
+          "effect": "",
+          "maps": [
+            2119,
+            2030
+          ],
+          "cells": [
+            [
+              15,
+              28
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "EP06",
+      "doc": "06_EP06_KING_UNOWN.md",
+      "mapRange": {
+        "from": 2120,
+        "to": 2135
+      },
+      "seal": 888,
+      "grieta": 895,
+      "resonance": 18,
+      "anomalyVariable": 273,
+      "cuota": 901,
+      "bossName": "KINGGUS",
+      "boss": {
+        "name": "KINGGUS",
+        "phaseA": {
+          "type": "DN_KINGGUS",
+          "label": "KINGGUS",
+          "trainer": "DN_EP06_A"
+        },
+        "team": [
+          [
+            "UNOWN",
+            120
+          ],
+          [
+            "UNOWN",
+            121
+          ],
+          [
+            "UNOWN",
+            122
+          ],
+          [
+            "UNOWN",
+            123
+          ],
+          [
+            "UNOWN",
+            124
+          ],
+          [
+            "UNOWN",
+            125
+          ]
+        ],
+        "phaseB": {
+          "kind": "letras",
+          "verb": "colocar",
+          "noun": "letra",
+          "cells": null,
+          "cellsMap": null,
+          "texts": [
+            "El suelo brilla: K",
+            "El suelo brilla: I",
+            "El suelo brilla: N",
+            "El suelo brilla: G",
+            "El suelo brilla: G",
+            "El suelo brilla: U",
+            "El suelo brilla: S"
+          ]
+        },
+        "reward": "DN_ANCLA",
+        "notes": "Tras la fase 7 el Rey se levanta: forma final KINGGUS2 (equipo 120–125 propuesto)."
+      },
+      "anomalies": {
+        "declared": 14,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LOS UNOWN QUE ESCUCHAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2120,
+            "cells": [
+              [
+                12,
+                8
+              ]
+            ],
+            "text": "Map2120 — (12,8) [R4-1]. Fase >=1. Los Unown de las paredes giran hacia el jugador al pasar.",
+            "trigger": "action",
+            "fase": 1
+          },
+          {
+            "code": "A02",
+            "name": "EL TEXTO QUE TE NOMBRA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2121,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2121 — (15,12). Fase >=2. El suelo dice \"AYO@HERE\" y, si el Rotom nivel >=4, \"\\PN@HERE\".",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A03",
+            "name": "LA ALFOMBRA QUE SE HUNDE",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2122,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2122 — (20,12). Fase >=3. Al pisarla 2 veces, se hunde 1 tile y vuelve (sin caída).",
+            "trigger": "touch",
+            "fase": 3
+          },
+          {
+            "code": "A04",
+            "name": "EL LIBRO QUE SE ESCRIBE SOLO",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2123,
+            "cells": [
+              [
+                10,
+                8
+              ]
+            ],
+            "text": "Map2123 — (10,8). Fase >=3. Un libro de la estantería cambia de título cada vez que se mira.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "EL CORO DE UNOWN",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2124,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2124 — (15,12). Fase >=2. Los Unown no suenan; lo que suena es su \"sombra\" sonora (eco).",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A06",
+            "name": "EL OJO QUE PARPADEA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2125,
+            "cells": [
+              [
+                15,
+                8
+              ]
+            ],
+            "text": "Map2125 — (15,8). Fase >=4. El ojo gigante parpadea cuando el jugador abre el menú.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A07",
+            "name": "LA ESCALERA QUE LEE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2126,
+            "cells": [
+              [
+                12,
+                15
+              ]
+            ],
+            "text": "Map2126 — (12,15). Fase >=4. Cada 3 pasos, una voz dice una letra distinta (a veces la equivocada).",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A08",
+            "name": "EL SARCÓFAGO VACÍO CON FORMA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2127,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2127 — (20,12). Fase >=5. El 4.º sarcófago está abierto y tiene forma de cuerpo (sin cuerpo).",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A09",
+            "name": "LOS SÍMBOLOS QUE SE MUEVEN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2128,
+            "cells": [
+              [
+                15,
+                15
+              ]
+            ],
+            "text": "Map2128 — (15,15). Fase >=4. Los símbolos del suelo se reorganizan cuando nadie mira.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A10",
+            "name": "EL CRISTAL QUE MUESTRA OTRA SALA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2129,
+            "cells": [
+              [
+                22,
+                10
+              ]
+            ],
+            "text": "Map2129 — (22,10). Fase >=6. El cristal grande refleja la Sala del Trono (2133), no esta cueva.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A11",
+            "name": "EL AGUA QUE DELETREA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2130,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2130 — (16,12). Fase >=6. Las ondas forman una letra distinta cada vez.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A12",
+            "name": "LA ESTATUA QUE HABLA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2131,
+            "cells": [
+              [
+                10,
+                8
+              ]
+            ],
+            "text": "Map2131 — (10,8). Fase >=5. La 4.ª estatua dice una frase con la voz del jugador (texto, sin audio real).",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A13",
+            "name": "EL TRONO QUE SE GIRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2133,
+            "cells": [
+              [
+                15,
+                10
+              ]
+            ],
+            "text": "Map2133 — (15,10). Fase >=7. Al reentrar, el trono está girado hacia la puerta.",
+            "trigger": "action",
+            "fase": 7
+          },
+          {
+            "code": "A14",
+            "name": "EL RENGLÓN QUE SE BORRA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2134,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2134 — (15,12). Fase >=6. Al reentrar, \"LEAVENOW\" tiene una letra menos; a la 6.ª visita solo queda \"L\". ``` ---",
+            "trigger": "action",
+            "fase": 6
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2120,
+          "name": "Custodio del Atrio",
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Fija: «El Rey no lee libros. Lee gente.»"
+        },
+        {
+          "map": 2121,
+          "name": "Escriba Ciego",
+          "type": "Consciente",
+          "sprite": "trainer_SCIENTIST",
+          "notes": "Lee el texto del suelo con los dedos"
+        },
+        {
+          "map": 2122,
+          "name": "Los Dos Porteros",
+          "type": "Normal ×2",
+          "sprite": "trchar015",
+          "notes": "Exigen \"la primera letra\"; uno miente (según fase)"
+        },
+        {
+          "map": 2123,
+          "name": "Bibliotecaria del Rey",
+          "type": "Consciente",
+          "sprite": "trchar070",
+          "notes": "Da la letra K; sus libros no se pueden leer sin Sintonía"
+        },
+        {
+          "map": 2124,
+          "name": "Unown Coro",
+          "type": "Entidad ×5",
+          "sprite": "UNOWN",
+          "notes": "No hablan; forman palabras con su posición"
+        },
+        {
+          "map": 2125,
+          "name": "El Ojo",
+          "type": "Interdimensional",
+          "sprite": "",
+          "notes": "Observa; si el jugador parpadea (menú), parpadea"
+        },
+        {
+          "map": 2126,
+          "name": "Escalera Parlante",
+          "type": "Consciente",
+          "sprite": "",
+          "notes": "Cada 3 escalones dice una letra"
+        },
+        {
+          "map": 2127,
+          "name": "Sepulturero del Rey",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Da la letra G si se le cuenta una verdad"
+        },
+        {
+          "map": 2128,
+          "name": "Sacerdote de Símbolos",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Explica el orden K-I-N-G-G-U-S"
+        },
+        {
+          "map": 2129,
+          "name": "Minero de Cristal",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Miniboss opcional; da la letra U"
+        },
+        {
+          "map": 2130,
+          "name": "Pescador de Letras",
+          "type": "Consciente",
+          "sprite": "SWIMMER_M",
+          "notes": "Da la letra S a cambio de una `PEARL`"
+        },
+        {
+          "map": 2131,
+          "name": "Cuatro Estatuas",
+          "type": "Interdimensional ×4",
+          "sprite": "",
+          "notes": "Hablan una vez cada una; juntas dan la clave del trono"
+        },
+        {
+          "map": 2133,
+          "name": "El Trono Vacío",
+          "type": "Interdimensional",
+          "sprite": "",
+          "notes": "Al sentarse: visión de 20 s (lore completo)"
+        },
+        {
+          "map": 2134,
+          "name": "El Guardián de la Advertencia",
+          "type": "Consciente",
+          "sprite": "trchar137",
+          "notes": "Repite LEAVENOW; ofrece salir sin pelear"
+        },
+        {
+          "map": 2135,
+          "name": "KINGGUS",
+          "type": "Jefe final",
+          "sprite": "Sprite",
+          "notes": "No habla: deletrea"
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_UNO_Atrio",
+          "episode": "EP06",
+          "detail": "2120 — Autorun (sw883..887 y v264=7)",
+          "effect": "presentación; música de trono; Unown decorativos se mueven",
+          "maps": [
+            2120
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Inscripcion",
+          "episode": "EP06",
+          "detail": "2121 — Leer el suelo con Rotom nivel >=4",
+          "effect": "2 textos: KINGGUS (arriba) y AYO@HERE (abajo); v274 += 1",
+          "maps": [
+            2121
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Porteros",
+          "episode": "EP06",
+          "detail": "2122 — Responder \"K\" a uno de los dos porteros",
+          "effect": "abre 2123; si se responde al que miente, se retrocede 1 mapa (sin daño)",
+          "maps": [
+            2122
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_LetraK",
+          "episode": "EP06",
+          "detail": "2123 — 6 estanterías; colocar los 6 libros por altura",
+          "effect": "LETRA K",
+          "maps": [
+            2123
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_LetraI",
+          "episode": "EP06",
+          "detail": "2124 — 5 Unown flotantes; alinearlos con 5 palancas",
+          "effect": "LETRA I",
+          "maps": [
+            2124
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_LetraN",
+          "episode": "EP06",
+          "detail": "2125 — Mirar el ojo 7 veces (una por fase)",
+          "effect": "LETRA N; el ojo \"parpadea\" y el mapa oscurece 2 s",
+          "maps": [
+            2125
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Puertas",
+          "episode": "EP06",
+          "detail": "2126 — Puertas que piden letra (K/I/N/G/G/U/S)",
+          "effect": "cada letra obtenida abre su puerta",
+          "maps": [
+            2126
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_LetraG1",
+          "episode": "EP06",
+          "detail": "2127 — Abrir el sarcófago central con la letra N",
+          "effect": "LETRA G (1)",
+          "maps": [
+            2127
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_LetraG2",
+          "episode": "EP06",
+          "detail": "2128 — Puzzle de suelo: pisar los Unown en orden alfabético",
+          "effect": "LETRA G (2)",
+          "maps": [
+            2128
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_LetraU",
+          "episode": "EP06",
+          "detail": "2129 — Derrotar al Minero (opcional) o resolver la cueva",
+          "effect": "LETRA U",
+          "maps": [
+            2129
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_LetraS",
+          "episode": "EP06",
+          "detail": "2130 — Entregar PEARL al Pescador (o encontrar la perla en 2129)",
+          "effect": "LETRA S",
+          "maps": [
+            2130,
+            2129
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Estatuas",
+          "episode": "EP06",
+          "detail": "2131 — 4 estatuas en orden (N-O-W / N-O-W invertido)",
+          "effect": "abre 2132 y 2133",
+          "maps": [
+            2131
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Oculto",
+          "episode": "EP06",
+          "detail": "2132 — 1 objeto oculto (ver §6)",
+          "effect": "",
+          "maps": [
+            2132
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Trono",
+          "episode": "EP06",
+          "detail": "2133 — Sentarse en el trono",
+          "effect": "visión de lore (20 s); se abre 2134",
+          "maps": [
+            2133
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Leavenow",
+          "episode": "EP06",
+          "detail": "2134 — Leer el suelo: LEAVENOW (3 veces)",
+          "effect": "1.ª: advertencia; 2.ª: el Guardián ofrece salida; 3.ª: se abre 2135 (entrada final)",
+          "maps": [
+            2134
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Jefe",
+          "episode": "EP06",
+          "detail": "2135 — Autorun",
+          "effect": "batalla final multi-fase (ver §7)",
+          "maps": [
+            2135
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Sello",
+          "episode": "EP06",
+          "detail": "2135 — Tras ganar",
+          "effect": "sw888 = ON, +18 resonancia, recompensa única, fin del Nightmare",
+          "maps": [
+            2135
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_UNO_Salida",
+          "episode": "EP06",
+          "detail": "2135 — Salida libre a 2030 / 2021 (y al Nexo, ver doc 07)",
+          "effect": "",
+          "maps": [
+            2135,
+            2030
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "W7",
+      "doc": "16_W7_STRANGLED_RED.md",
+      "mapRange": {
+        "from": 2143,
+        "to": 2158
+      },
+      "seal": 922,
+      "grieta": 925,
+      "resonance": 12,
+      "anomalyVariable": 283,
+      "cuota": 932,
+      "bossName": "EL AMO Y LA CORREA",
+      "boss": {
+        "name": "EL AMO Y LA CORREA",
+        "phaseA": {
+          "type": "HIKER",
+          "label": "EL AMO",
+          "trainer": "DN_W7_A"
+        },
+        "team": [
+          [
+            "MIGHTYENA",
+            104
+          ],
+          [
+            "HOUNDOUR",
+            103
+          ],
+          [
+            "MURKROW",
+            105
+          ],
+          [
+            "ARIADOS",
+            102
+          ],
+          [
+            "POOCHYENA",
+            101
+          ],
+          [
+            "SPINARAK",
+            102
+          ]
+        ],
+        "phaseB": {
+          "kind": "correas",
+          "verb": "cortar",
+          "noun": "correa",
+          "cells": [
+            [
+              6,
+              4
+            ],
+            [
+              20,
+              4
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              20,
+              10
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "La correa 1 cede: el amo pierde un paso.",
+            "La correa 2 cae y el aire se llena de polvo.",
+            "La correa 3 se corta sola en la mano.",
+            "La cuarta correa se suelta: el amo dice el nombre del Pokémon."
+          ]
+        },
+        "reward": "DN_PAGE_W7",
+        "notes": "Ganar la fase A no cierra el duelo: hay que cortar las 4 correas del árbol."
+      },
+      "anomalies": {
+        "declared": 12,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LA CORREA QUE VUELVE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2144,
+            "cells": [
+              [
+                7,
+                6
+              ]
+            ],
+            "text": "Map2144 — (7,6) [R8-2]. Fase ≥2. La correa colgada está en el suelo al reentrar, y viceversa.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "TROFEOS QUE GIRAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2145,
+            "cells": [
+              [
+                14,
+                9
+              ]
+            ],
+            "text": "Map2145 — (14,9). Fase ≥4. Los trofeos miran hacia la puerta cuando el jugador entra.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A03",
+            "name": "LA PROMESA SIN FLORES",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2146,
+            "cells": [
+              [
+                19,
+                11
+              ]
+            ],
+            "text": "Map2146 — (19,11). Fase ≥5. Al salir y volver, el jardín está seco y la regadera llena.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A04",
+            "name": "LA COCINA QUE HUELE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2147,
+            "cells": [
+              [
+                9,
+                4
+              ]
+            ],
+            "text": "Map2147 — (9,4). Fase ≥3. Se oye una olla silbando; al entrar a la cocina, silencio total.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "LA ESCALERA QUE REPITE",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2148,
+            "cells": [
+              [
+                12,
+                28
+              ]
+            ],
+            "text": "Map2148 — (12,28). Fase ≥4. Bajar dos veces seguidas devuelve al jugador al mismo escalón.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A06",
+            "name": "LA LÁPIDA SIN NOMBRE",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2149,
+            "cells": [
+              [
+                16,
+                7
+              ]
+            ],
+            "text": "Map2149 — (16,7). Fase ≥6. El nombre aparece sólo si el jugador ya rompió 2 correas.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A07",
+            "name": "LAS CINTAS QUE CUENTAN",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2150,
+            "cells": [
+              [
+                24,
+                5
+              ]
+            ],
+            "text": "Map2150 — (24,5). Fase ≥3. Al romper la 1.ª correa suena una cinta con una voz que llama a un Pokémon.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A08",
+            "name": "EL REFLEJO TARDE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2151,
+            "cells": [
+              [
+                11,
+                12
+              ]
+            ],
+            "text": "Map2151 — (11,12). Fase ≥2. El reflejo del espejo repite la posición anterior del jugador.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A09",
+            "name": "LA CORREA QUE SE ATA SOLA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2155,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2155 — (16,12). Fase ≥5. **Ancla del mundo.** Al reentrar, la correa del altar tiene un nudo nuevo.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A10",
+            "name": "LA PLAZA DESHABITADA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2153,
+            "cells": [
+              [
+                15,
+                12
+              ]
+            ],
+            "text": "Map2153 — (15,12). Fase ≥5. Al reentrar después de hablar con el Vecino, no queda ningún NPC.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A11",
+            "name": "EL CANIL VACÍO",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2154,
+            "cells": [
+              [
+                13,
+                10
+              ]
+            ],
+            "text": "Map2154 — (13,10). Fase ≥4. Se oye un collar moviéndose; al acercarse, la caseta está cerrada.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A12",
+            "name": "EL ÁRBOL QUE RESPIRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2158,
+            "cells": [
+              [
+                12,
+                20
+              ]
+            ],
+            "text": "Map2158 — (12,20). Fase ≥7. La corteza sube y baja; la silueta de R1 aparece tras el tronco. ``` ---",
+            "trigger": "action",
+            "fase": 7
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2143,
+          "name": "El Sepulturero del Patio",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados. Cree que Ash viene a devolver algo. Estado 5: mira la correa y calla."
+        },
+        {
+          "map": 2143,
+          "name": "Rotom (proyección)",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Traduce el duelo en texto; cambia por fase."
+        },
+        {
+          "map": 2144,
+          "name": "La Madre del Amo",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "Guarda la ropa del Pokémon. Estado 4: la dobla sin mirar."
+        },
+        {
+          "map": 2145,
+          "name": "El Niño del Trofeo",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Lee los trofeos: cada uno tiene un año que no existe."
+        },
+        {
+          "map": 2146,
+          "name": "La Jardinera de Promesas",
+          "type": "Normal",
+          "sprite": "trchar052",
+          "notes": "Cura 1 vez por visita; en fase 5 ya no está, pero su regadera sí."
+        },
+        {
+          "map": 2147,
+          "name": "Cocinera Sin Fuego",
+          "type": "Normal",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Cambia objetos por recuerdos (intercambio simbólico)."
+        },
+        {
+          "map": 2149,
+          "name": "El Criptero",
+          "type": "Consciente",
+          "sprite": "trainer_HIKER",
+          "notes": "Sabe el nombre real del Pokémon y no lo dice hasta la fase 6."
+        },
+        {
+          "map": 2150,
+          "name": "La Tejedora de Cintas",
+          "type": "Normal",
+          "sprite": "trchar015",
+          "notes": "Explica el orden de las correas; una de ellas desaparece en fase 4."
+        },
+        {
+          "map": 2151,
+          "name": "El Reflejo de Red",
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Repite la última frase del jugador con la voz de Red."
+        },
+        {
+          "map": 2153,
+          "name": "El Vecino Que No Mira",
+          "type": "Normal",
+          "sprite": "trchar070",
+          "notes": "5 estados; nunca mira a los ojos, siempre a la correa."
+        },
+        {
+          "map": 2154,
+          "name": "El Cuidador del Canil",
+          "type": "Consciente",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "Reta a duelo opcional: quiere saber si Ash también perdió a alguien."
+        },
+        {
+          "map": 2155,
+          "name": "Los Cuatro Anudados",
+          "type": "Consciente ×4",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+        },
+        {
+          "map": 2156,
+          "name": "El Traductor de Cintas",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Traduce (con Rotom Sintonía ≥4) la inscripción del árbol."
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_W7_Entrada",
+          "episode": "W7",
+          "detail": "Mapa 2143 — Autorun al entrar (v264≥9)",
+          "effect": "texto de la grieta, sw922 = ON parcial, tone fase 1, música \"PkmRS-MtPyre\"",
+          "maps": [
+            2143
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Cuarto",
+          "episode": "W7",
+          "detail": "2144, 3 puntos — Al inspeccionar la cama, la correa y la foto",
+          "effect": "v288 += 1; al 3.º: aparece la primera correa (celda inicial de 2150)",
+          "maps": [
+            2144
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 3
+        },
+        {
+          "name": "EV_W7_Trofeos",
+          "episode": "W7",
+          "detail": "2145 — Al hablar con el Niño del Trofeo",
+          "effect": "lista de nombres con años imposibles; marca anomalía A02",
+          "maps": [
+            2145
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Jardin",
+          "episode": "W7",
+          "detail": "2146 — Pisar el centro del jardín en fase ≥3",
+          "effect": "la música se corta 4 s; el jardín se marchita (tile swap) y vuelve al salir",
+          "maps": [
+            2146
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Escalera",
+          "episode": "W7",
+          "detail": "2148, celda 12,28 — Pisar",
+          "effect": "fase 3: tono rojo apagado, 3 antorchas OFF, sombras desincronizadas",
+          "maps": [
+            2148
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Correas",
+          "episode": "W7",
+          "detail": "2150, 4 puntos (5,5) (24,5) (5,18) (24,18)",
+          "effect": "orden correcto 2-4-1-3: cada correa rota sube v288 y quita un paso al jefe",
+          "maps": [
+            2150
+          ],
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              24,
+              18
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W7_Reflejos",
+          "episode": "W7",
+          "detail": "2151 — Al pisar cada espejo",
+          "effect": "el reflejo copia la posición del jugador con 1 s de retraso (eco)",
+          "maps": [
+            2151
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Corredor",
+          "episode": "W7",
+          "detail": "2152 — Autorun al entrar",
+          "effect": "el pasaje se cierra detrás (tile swap); la única salida es avanzar",
+          "maps": [
+            2152
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Nudo",
+          "episode": "W7",
+          "detail": "2155 — Tocar el nudo con la 3.ª correa rota",
+          "effect": "la correa se ata sola; queda marcada la anomalía ancla A09",
+          "maps": [
+            2155
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W7_Umbral",
+          "episode": "W7",
+          "detail": "2157 — 4 velas encendidas en las esquinas (5,5) (26,5) (5,26) (26,26)",
+          "effect": "abre 2158; en fase 6 una vela se apaga sola",
+          "maps": [
+            2157
+          ],
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              26,
+              5
+            ],
+            [
+              5,
+              26
+            ],
+            [
+              26,
+              26
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W7_Jefe",
+          "episode": "W7",
+          "detail": "2158 — Hablar con el amo (autorun de mapa)",
+          "effect": "fase A (canLose) + fase B de 4 correas; al cerrar: sw922 = ON, sello",
+          "maps": [
+            2158
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "W8",
+      "doc": "17_W8_BURIED_ALIVE.md",
+      "mapRange": {
+        "from": 2159,
+        "to": 2174
+      },
+      "seal": 923,
+      "grieta": 926,
+      "resonance": 11,
+      "anomalyVariable": 284,
+      "cuota": 933,
+      "bossName": "EL QUE RESPIRA DEBAJO",
+      "boss": {
+        "name": "EL QUE RESPIRA DEBAJO",
+        "phaseA": {
+          "type": "CHAMPION",
+          "label": "EL QUE RESPIRA",
+          "trainer": "DN_W8_A"
+        },
+        "team": [
+          [
+            "DUGTRIO",
+            106
+          ],
+          [
+            "SANDSLASH",
+            104
+          ],
+          [
+            "TRAPINCH",
+            103
+          ],
+          [
+            "VIBRAVA",
+            105
+          ],
+          [
+            "SANDSHREW",
+            102
+          ],
+          [
+            "CLAYDOL",
+            105
+          ]
+        ],
+        "phaseB": {
+          "kind": "bolsas",
+          "verb": "abrir",
+          "noun": "bolsa de aire",
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              20,
+              5
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              20,
+              8
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "La bolsa 1 se abre: el mundo respira contigo.",
+            "La bolsa 2 silba entre la tierra.",
+            "La bolsa 3 trae aire con olor a raíz.",
+            "La bolsa 4 enfría la fosa.",
+            "La quinta bolsa estalla: el que respira debajo se calla."
+          ]
+        },
+        "reward": "DN_PAGE_W8",
+        "notes": "La variable de aire v284 nunca derrota: obliga a ritmo y a buscar bolsas."
+      },
+      "anomalies": {
+        "declared": 11,
+        "items": [
+          {
+            "code": "A01",
+            "name": "EL POLVO QUE SUBE",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2161,
+            "cells": [
+              [
+                15,
+                6
+              ]
+            ],
+            "text": "Map2161 — (15,6) [R9-3]. Fase ≥2. El polvo flota hacia arriba en una franja de 3 tiles.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "LA BOLSA DE AIRE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2161,
+            "cells": [
+              [
+                9,
+                14
+              ]
+            ],
+            "text": "Map2161 — (9,14). Fase ≥3. Se oye una exhalación larga al entrar; sólo una vez por visita.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A03",
+            "name": "LA RAÍZ QUE APRIETA",
+            "type": "espacial",
+            "types": [
+              "espacial"
+            ],
+            "map": 2162,
+            "cells": [
+              [
+                18,
+                9
+              ]
+            ],
+            "text": "Map2162 — (18,9). Fase ≥4. Al reentrar, la raíz ocupa una celda más del pasillo.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A04",
+            "name": "EL AGUA NEGRA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2163,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2163 — (20,12). Fase ≥3. El agua refleja un cielo que no existe en el mundo.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "LAS VELAS QUE VUELVEN",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2166,
+            "cells": [
+              [
+                14,
+                17
+              ]
+            ],
+            "text": "Map2166 — (14,17). Fase ≥5. Las velas apagadas están encendidas al reentrar.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A06",
+            "name": "EL ATAÚD RAYADO",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2166,
+            "cells": [
+              [
+                22,
+                17
+              ]
+            ],
+            "text": "Map2166 — (22,17). Fase ≥6. El nombre rayado cambia cada vez que se mira.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A07",
+            "name": "LA LÁMPARA AL REVÉS",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2173,
+            "cells": [
+              [
+                8,
+                8
+              ]
+            ],
+            "text": "Map2173 — (8,8). Fase ≥5. La lámpara alumbra hacia el suelo, no hacia el techo.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A08",
+            "name": "LA CAMPANA SORDA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2169,
+            "cells": [
+              [
+                13,
+                10
+              ]
+            ],
+            "text": "Map2169 — (13,10). Fase ≥4. Suena una campana que no existe; el sprite no se mueve.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A09",
+            "name": "EL AIRE QUE SE OYE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2165,
+            "cells": [
+              [
+                16,
+                12
+              ]
+            ],
+            "text": "Map2165 — (16,12). Fase ≥5. **Ancla del mundo.** Al quedarse quieto 10 s se oye respirar al otro lado.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A10",
+            "name": "EL PUEBLO QUE FALTA",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2168,
+            "cells": [
+              [
+                20,
+                15
+              ]
+            ],
+            "text": "Map2168 — (20,15). Fase ≥6. Al reentrar, una casa menos; nadie recuerda que estaba.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A11",
+            "name": "LA FOSA QUE CUENTA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2171,
+            "cells": [
+              [
+                16,
+                16
+              ]
+            ],
+            "text": "Map2171 — (16,16). Fase ≥7. Aparecen 3 cuerpos más, tapados con la misma tierra. ``` ---",
+            "trigger": "action",
+            "fase": 7
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2159,
+          "name": "El Pozo",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados. Pregunta si Ash bajó por alguien o por curiosidad."
+        },
+        {
+          "map": 2159,
+          "name": "Rotom (medidor)",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Marca el aire restante; cambia de color por fase."
+        },
+        {
+          "map": 2161,
+          "name": "El Minero Viejo",
+          "type": "Normal",
+          "sprite": "trainer_HIKER",
+          "notes": "Vende aire por objetos (intercambio simbólico)."
+        },
+        {
+          "map": 2162,
+          "name": "La Niña de las Raíces",
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Dice qué raíz se puede cortar y cuál no."
+        },
+        {
+          "map": 2163,
+          "name": "El Sepulturero Inundado",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "5 estados; en fase 5 ya no está, pero su pala sí."
+        },
+        {
+          "map": 2166,
+          "name": "El Sellado Número 4",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Sabe que hay cinco ataúdes y cuatro nombres."
+        },
+        {
+          "map": 2166,
+          "name": "Los Sellados",
+          "type": "Consciente ×4",
+          "sprite": "trchar028",
+          "notes": "No hablan; cuentan con los dedos cuántos faltan."
+        },
+        {
+          "map": 2168,
+          "name": "El Alcalde Enterrado",
+          "type": "Normal",
+          "sprite": "trchar070",
+          "notes": "5 estados; niega que el pueblo esté debajo."
+        },
+        {
+          "map": 2169,
+          "name": "La Campanera Boca Abajo",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Toca la campana aunque no suene."
+        },
+        {
+          "map": 2170,
+          "name": "El Cuidandero de Lápidas",
+          "type": "Normal",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "Duelo opcional: quiere compañía, no ganar."
+        },
+        {
+          "map": 2171,
+          "name": "La Contadora de Cuerpos",
+          "type": "Interdimensional",
+          "sprite": "trchar015",
+          "notes": "Cuenta 47 y faltan 3; da la pista del jefe."
+        },
+        {
+          "map": 2172,
+          "name": "El Traductor de Tierra",
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Traduce las marcas del túnel (Rotom Sintonía ≥5)."
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_W8_Entrada",
+          "episode": "W8",
+          "detail": "Mapa 2159 — Autorun al entrar (v264≥9)",
+          "effect": "texto de la grieta, sw923 = ON parcial, tone fase 1, música \"PkmRS-MtPyre\"",
+          "maps": [
+            2159
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Aire",
+          "episode": "W8",
+          "detail": "2159–2174 — Proceso paralelo (no bloquea)",
+          "effect": "v286 baja al correr/pelear; ≤20 aviso del Rotom; 0 = paso lento",
+          "maps": [
+            2159,
+            2174
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Bolsa1",
+          "episode": "W8",
+          "detail": "2161, celda (15,6) — Inspeccionar la grieta de aire",
+          "effect": "v286 = 100; marca anomalía A02; el aire mueve el polvo (animación)",
+          "maps": [
+            2161
+          ],
+          "cells": [
+            [
+              15,
+              6
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Raices",
+          "episode": "W8",
+          "detail": "2162, 4 puntos — Cortar raíz correcta (orden 3-1-4-2)",
+          "effect": "se abre paso a 2163; raíz equivocada cierra la anterior (sin daño)",
+          "maps": [
+            2162
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W8_Escalera",
+          "episode": "W8",
+          "detail": "2164, celda 12,28 — Pisar",
+          "effect": "fase 3: tono de tierra, 4 velas OFF, las paredes se cierran al pasar",
+          "maps": [
+            2164
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Ataudes",
+          "episode": "W8",
+          "detail": "2166 — Abrir los 5 ataúdes",
+          "effect": "4 tienen nombre y 1 está rayado; al cerrar el 5.º aparece el Sellado Número 4",
+          "maps": [
+            2166
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Pozo",
+          "episode": "W8",
+          "detail": "2167 — Autorun al pisar el borde",
+          "effect": "descenso: la luz sube en vez de bajar; +1 al contador de anomalías si es la 1.ª vez",
+          "maps": [
+            2167
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Campana",
+          "episode": "W8",
+          "detail": "2169 — Tocar la campana en fase ≥5",
+          "effect": "suena una sola vez aunque el sprite no se mueva; marca A09",
+          "maps": [
+            2169
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Lapidas",
+          "episode": "W8",
+          "detail": "2170 — Inspeccionar la lápida sin nombre",
+          "effect": "si el jugador trae DN_W8_LAMP, aparece el nombre del Sellado",
+          "maps": [
+            2170
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Fosa",
+          "episode": "W8",
+          "detail": "2171 — Contar los cuerpos con la Contadora",
+          "effect": "47 contados, 3 ausentes; los 3 son el amo, el Pokémon y el jugador",
+          "maps": [
+            2171
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Umbral",
+          "episode": "W8",
+          "detail": "2173 — Encender 4 lámparas con v286 ≥ 60",
+          "effect": "abre 2174; con v286 < 60 las lámparas se apagan al encenderse",
+          "maps": [
+            2173
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W8_Jefe",
+          "episode": "W8",
+          "detail": "2174 — Hablar con el que respira (autorun de mapa)",
+          "effect": "fase A (canLose) + fase B de 5 bolsas de aire; al cerrar: sw923 = ON, sello",
+          "maps": [
+            2174
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "W9",
+      "doc": "18_W9_LAVENDER_SYNDROME.md",
+      "mapRange": {
+        "from": 2175,
+        "to": 2190
+      },
+      "seal": 924,
+      "grieta": 927,
+      "resonance": 12,
+      "anomalyVariable": 285,
+      "cuota": 934,
+      "bossName": "EL CORO DEL CAMPANARIO",
+      "boss": {
+        "name": "EL CORO DEL CAMPANARIO",
+        "phaseA": {
+          "type": "PSYCHIC_F",
+          "label": "EL CORO",
+          "trainer": "DN_W9_A"
+        },
+        "team": [
+          [
+            "MISMAGIUS",
+            105
+          ],
+          [
+            "HYPNO",
+            106
+          ],
+          [
+            "HAUNTER",
+            104
+          ],
+          [
+            "BANETTE",
+            103
+          ],
+          [
+            "DRIFBLIM",
+            104
+          ],
+          [
+            "GENGAR",
+            106
+          ]
+        ],
+        "phaseB": {
+          "kind": "silencios",
+          "verb": "tocar",
+          "noun": "silencio",
+          "cells": [
+            [
+              5,
+              5
+            ],
+            [
+              20,
+              5
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              20,
+              10
+            ]
+          ],
+          "cellsMap": null,
+          "texts": [
+            "Primer silencio: una voz se apaga.",
+            "Segundo silencio: el coro pierde el compás.",
+            "Tercer silencio: el campanario se queda sin eco.",
+            "Cuarto silencio: el pueblo calla para siempre."
+          ]
+        },
+        "reward": "DN_PAGE_W9",
+        "notes": "Los silencios van en el orden de DN_W9_SCORE; fuera de orden la voz vuelve (sin daño)."
+      },
+      "anomalies": {
+        "declared": 12,
+        "items": [
+          {
+            "code": "A01",
+            "name": "LA NOTA QUE FALTA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2176,
+            "cells": [
+              [
+                15,
+                8
+              ]
+            ],
+            "text": "Map2176 — (15,8) [R10-2]. Fase ≥2. La música salta siempre la misma nota; nadie la recuerda.",
+            "trigger": "action",
+            "fase": 2
+          },
+          {
+            "code": "A02",
+            "name": "EL ALTAVOZ QUE APUNTA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2176,
+            "cells": [
+              [
+                9,
+                14
+              ]
+            ],
+            "text": "Map2176 — (9,14). Fase ≥3. El altavoz gira hacia el jugador cuando entra.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A03",
+            "name": "EL PIANO SIN MANOS",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2177,
+            "cells": [
+              [
+                6,
+                6
+              ]
+            ],
+            "text": "Map2177 — (6,6). Fase ≥4. Suenan teclas que nadie toca; el orden es el correcto.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A04",
+            "name": "LA CLASE QUE SE REPITE",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2178,
+            "cells": [
+              [
+                20,
+                12
+              ]
+            ],
+            "text": "Map2178 — (20,12). Fase ≥3. Al reentrar, la maestra está en la misma frase, con 10 años menos.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A05",
+            "name": "LA CAMPANA MUDA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2179,
+            "cells": [
+              [
+                13,
+                10
+              ]
+            ],
+            "text": "Map2179 — (13,10). Fase ≥4. La campana se mueve sin sonar; el sonido llega desde 2180.",
+            "trigger": "action",
+            "fase": 4
+          },
+          {
+            "code": "A06",
+            "name": "LAS ONDAS VISIBLES",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2180,
+            "cells": [
+              [
+                11,
+                29
+              ]
+            ],
+            "text": "Map2180 — (11,29). Fase ≥5. Bandas horizontales que desplazan la imagen 4 px y vuelven.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A07",
+            "name": "EL SILENCIO QUE DUELE",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2181,
+            "cells": [
+              [
+                10,
+                20
+              ]
+            ],
+            "text": "Map2181 — (10,20). Fase ≥5. **Ancla del mundo.** Cinco segundos de silencio total, sin música ni pasos.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A08",
+            "name": "LAS PLANTAS QUE ESCUCHAN",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2182,
+            "cells": [
+              [
+                16,
+                9
+              ]
+            ],
+            "text": "Map2182 — (16,9). Fase ≥3. Las flores giran hacia el último sonido que hizo el jugador.",
+            "trigger": "action",
+            "fase": 3
+          },
+          {
+            "code": "A09",
+            "name": "LA CINTA AL REVÉS",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2183,
+            "cells": [
+              [
+                18,
+                14
+              ]
+            ],
+            "text": "Map2183 — (18,14). Fase ≥6. Una cinta reproduce la melodía al revés y todos la tararean igual.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A10",
+            "name": "EL CINE SIN PÚBLICO",
+            "type": "temporal",
+            "types": [
+              "temporal"
+            ],
+            "map": 2184,
+            "cells": [
+              [
+                14,
+                16
+              ]
+            ],
+            "text": "Map2184 — (14,16). Fase ≥5. Al reentrar, la sala está llena de siluetas que no estaban.",
+            "trigger": "action",
+            "fase": 5
+          },
+          {
+            "code": "A11",
+            "name": "EL ECO QUE CONTESTA",
+            "type": "auditiva",
+            "types": [
+              "auditiva"
+            ],
+            "map": 2185,
+            "cells": [
+              [
+                16,
+                16
+              ]
+            ],
+            "text": "Map2185 — (16,16). Fase ≥6. El eco no repite lo que el jugador dijo: repite lo que pensó el Autor.",
+            "trigger": "action",
+            "fase": 6
+          },
+          {
+            "code": "A12",
+            "name": "EL CAMPANARIO QUE LLAMA",
+            "type": "visual",
+            "types": [
+              "visual"
+            ],
+            "map": 2190,
+            "cells": [
+              [
+                12,
+                18
+              ]
+            ],
+            "text": "Map2190 — (12,18). Fase ≥7. La silueta de R1 marca el compás desde la torre. ``` ---",
+            "trigger": "action",
+            "fase": 7
+          }
+        ]
+      },
+      "npcs": [
+        {
+          "map": 2175,
+          "name": "El Farolero Sordo",
+          "type": "Normal",
+          "sprite": "trchar028",
+          "notes": "5 estados. No oye la melodía y por eso puede hablar."
+        },
+        {
+          "map": 2175,
+          "name": "Rotom (silenciador)",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Marca el nivel de canto; cambia de tono por fase."
+        },
+        {
+          "map": 2176,
+          "name": "La Mujer del Altavoz",
+          "type": "Normal",
+          "sprite": "trchar042",
+          "notes": "5 estados; en fase 4 sólo señala el altavoz."
+        },
+        {
+          "map": 2177,
+          "name": "El Pianista Sin Manos",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_M",
+          "notes": "Toca con la mirada; da el orden de las 4 notas."
+        },
+        {
+          "map": 2178,
+          "name": "La Maestra que Repite",
+          "type": "Normal",
+          "sprite": "trchar052",
+          "notes": "Repite la misma clase; el Rotom puede cortarla."
+        },
+        {
+          "map": 2179,
+          "name": "La Campanera Ciega",
+          "type": "Consciente",
+          "sprite": "trainer_PSYCHIC_F",
+          "notes": "Sabe que la campana suena en otra habitación."
+        },
+        {
+          "map": 2180,
+          "name": "El Vigía de Ondas",
+          "type": "Interdimensional",
+          "sprite": "trchar015",
+          "notes": "Cuenta las ondas que pasan: siempre 108."
+        },
+        {
+          "map": 2182,
+          "name": "La Jardinera Sorda",
+          "type": "Normal",
+          "sprite": "trchar010",
+          "notes": "Cura 1 vez por visita; sus plantas siguen el ruido."
+        },
+        {
+          "map": 2183,
+          "name": "El Cambista de Cintas",
+          "type": "Normal",
+          "sprite": "trainer_YOUNGSTER",
+          "notes": "Cambia cintas por objetos (intercambio simbólico)."
+        },
+        {
+          "map": 2184,
+          "name": "El Proyeccionista",
+          "type": "Consciente",
+          "sprite": "trchar070",
+          "notes": "Pone una película muda que explica el mundo."
+        },
+        {
+          "map": 2186,
+          "name": "El Coro de Dos",
+          "type": "Consciente ×2",
+          "sprite": "trchar028",
+          "notes": "Canta a dos voces; una va siempre un tono atrás."
+        },
+        {
+          "map": 2189,
+          "name": "El Autor",
+          "type": "Interdimensional",
+          "sprite": "trchar001",
+          "notes": "Última verdad: escribió el pueblo para no oírlo solo."
+        }
+      ],
+      "events": [
+        {
+          "name": "EV_W9_Entrada",
+          "episode": "W9",
+          "detail": "Mapa 2175 — Autorun al entrar (v264≥9)",
+          "effect": "texto de la grieta, sw924 = ON parcial, tone fase 1, música \"Lavender\"",
+          "maps": [
+            2175
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Canto",
+          "episode": "W9",
+          "detail": "2175–2190 — Proceso paralelo (no bloquea)",
+          "effect": "v287 sube cerca de altavoces/campanas, baja en los silencios; ≥80 distorsiona texto",
+          "maps": [
+            2175,
+            2190
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Altavoz",
+          "episode": "W9",
+          "detail": "2176, celda (15,8) — Inspeccionar el altavoz",
+          "effect": "el primer silencio: la música se detiene 5 s; marca anomalía A02",
+          "maps": [
+            2176
+          ],
+          "cells": [
+            [
+              15,
+              8
+            ]
+          ],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Piano",
+          "episode": "W9",
+          "detail": "2177, 4 teclas (6,6) (12,6) (18,6) (24,6) — Tocar en orden 4-1-3-2",
+          "effect": "abre 2178; la tecla equivocada repite la nota (sin daño)",
+          "maps": [
+            2177
+          ],
+          "cells": [
+            [
+              6,
+              6
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              24,
+              6
+            ]
+          ],
+          "trigger": "action",
+          "instances": 4
+        },
+        {
+          "name": "EV_W9_Campana",
+          "episode": "W9",
+          "detail": "2179 — Tocar la campana en fase ≥4",
+          "effect": "no suena: la campana aparece tocando en 2180 (anomalía ancla A09)",
+          "maps": [
+            2179
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Ondas",
+          "episode": "W9",
+          "detail": "2180, celda 11,29 — Pisar",
+          "effect": "fase 3: tono violeta, bandas de glitch activas, música a pitch 90",
+          "maps": [
+            2180
+          ],
+          "cells": [],
+          "trigger": "touch",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Silencio",
+          "episode": "W9",
+          "detail": "2181, 3 puntos — Apagar 3 altavoces en orden",
+          "effect": "el laberinto se abre; si suena uno fuera de orden, vuelve a empezar",
+          "maps": [
+            2181
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 3
+        },
+        {
+          "name": "EV_W9_Cintas",
+          "episode": "W9",
+          "detail": "2183 — Cambiar cintas con el Cambista",
+          "effect": "3 intercambios; al 3.º entrega DN_W9_TAPE",
+          "maps": [
+            2183
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Cine",
+          "episode": "W9",
+          "detail": "2184 — Encender el proyector",
+          "effect": "escena muda de 12 líneas; revela el nombre del Autor",
+          "maps": [
+            2184
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Estudio",
+          "episode": "W9",
+          "detail": "2189 — Hablar con el Autor (fase ≥6)",
+          "effect": "abre 2190; entrega DN_W9_SCORE (partitura completa)",
+          "maps": [
+            2189
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Coro",
+          "episode": "W9",
+          "detail": "2188, 7 estaciones — Escuchar las 7 estaciones en orden",
+          "effect": "cada estación sube v287; al 7.º se abre el campanario",
+          "maps": [
+            2188
+          ],
+          "cells": [],
+          "trigger": "action",
+          "instances": 1
+        },
+        {
+          "name": "EV_W9_Jefe",
+          "episode": "W9",
+          "detail": "2190 — Hablar con el coro del campanario (autorun de mapa)",
+          "effect": "fase A (canLose) + fase B de 4 silencios; al cerrar: sw924 = ON, sello",
+          "maps": [
+            2190
+          ],
+          "cells": [],
+          "trigger": "autorun",
+          "instances": 1
+        }
+      ]
+    },
+    {
+      "key": "NEXO",
+      "doc": "07_MAPA_DE_FLUJO.md",
+      "mapRange": {
+        "from": 2136,
+        "to": 2140
+      },
+      "seal": 889,
+      "grieta": 895,
+      "resonance": 18,
+      "anomalyVariable": null,
+      "bossName": null,
+      "boss": null,
+      "anomalies": {
+        "declared": 0,
+        "items": []
+      },
+      "npcs": [],
+      "events": []
+    }
+  ]
+}

@@ -1,0 +1,767 @@
+{
+  "title": "Fire Ash: Dimensional Nightmare",
+  "voice": "Ash es una anomalía externa que entra en mundos cerrados. Cada universo conserva su canon interno intacto: el jugador no lo arregla, lo explora y lo sella. Homenajes reinterpretados con voz propia; sin copiar textos ni personajes ajenos.",
+  "status": "design (GDD funcional; sin instalar)",
+  "base": {
+    "requiresInstalled": "content/multiverse_creepypasta.json",
+    "postgameSwitch": 429,
+    "prerequisites": {
+      "ep01to03": "v264 >= 3",
+      "ep04to06AndNexus": "v264 = 7",
+      "ep04Extra": "sw703 POKEMOD CHILDREN RESCUED"
+    },
+    "hubMap": 48,
+    "sierraMap": 2021,
+    "cumbreMap": 2022,
+    "grutaMap": 2030
+  },
+  "mapRange": {
+    "from": 2040,
+    "to": 2190,
+    "count": 151
+  },
+  "flags": {
+    "switchRange": [
+      882,
+      934
+    ],
+    "variableRange": [
+      264,
+      288
+    ],
+    "switches": {
+      "882": "DN_UNLOCKED",
+      "883": "DN_SELLO_EP01_WHITE_HAND",
+      "884": "DN_SELLO_EP02_LOST_SILVER",
+      "885": "DN_SELLO_EP03_SNOW_MT_SILVER",
+      "886": "DN_SELLO_EP04_HYPNOS_LULLABY",
+      "887": "DN_SELLO_EP05_POKEMON_BLACK",
+      "888": "DN_SELLO_EP06_KING_UNOWN",
+      "889": "DN_NEXO_CLEARED",
+      "890": "DN_GRIETA_EP01",
+      "891": "DN_GRIETA_EP02",
+      "892": "DN_GRIETA_EP03",
+      "893": "DN_GRIETA_EP04",
+      "894": "DN_GRIETA_EP05",
+      "895": "DN_GRIETA_EP06",
+      "896": "DN_CUOTA_EP01",
+      "897": "DN_CUOTA_EP02",
+      "898": "DN_CUOTA_EP03",
+      "899": "DN_CUOTA_EP04",
+      "900": "DN_CUOTA_EP05",
+      "901": "DN_CUOTA_EP06",
+      "902": "DN_ROTOM_OBTAINED",
+      "903": "DN_JEFE_EP01_FASE_A",
+      "904": "DN_JEFE_EP02_FASE_A",
+      "905": "DN_JEFE_EP03_FASE_A",
+      "906": "DN_JEFE_EP04_FASE_A",
+      "907": "DN_JEFE_EP05_FASE_A",
+      "908": "DN_JEFE_EP06_FASE_A",
+      "909": "DN_JEFE_NEXO_FASE_A",
+      "910": "DN_BOSS_EP01_PASO_1",
+      "911": "DN_BOSS_EP02_PASO_1",
+      "912": "DN_BOSS_EP03_PASO_1",
+      "913": "DN_BOSS_EP04_PASO_1",
+      "914": "DN_BOSS_EP05_PASO_1",
+      "915": "DN_BOSS_EP06_PASO_1",
+      "916": "DN_BOSS_RESERVA",
+      "917": "DN_MEDALS_READY",
+      "918": "DN_LIGA_STARTED",
+      "919": "DN_LIGA_ARCEUS",
+      "920": "DN_LIGA_CLEARED",
+      "921": "DN_MADPIKA_SAVED",
+      "922": "DN_SELLO_W7_STRANGLED_RED",
+      "923": "DN_SELLO_W8_BURIED_ALIVE",
+      "924": "DN_SELLO_W9_LAVENDER_SYNDROME",
+      "925": "DN_GRIETA_W7",
+      "926": "DN_GRIETA_W8",
+      "927": "DN_GRIETA_W9",
+      "928": "DN_JEFE_W7_FASE_A",
+      "929": "DN_JEFE_W8_FASE_A",
+      "930": "DN_JEFE_W9_FASE_A",
+      "931": "DN_TESTIGO_LISTO",
+      "932": "DN_CUOTA_W7",
+      "933": "DN_CUOTA_W8",
+      "934": "DN_CUOTA_W9"
+    },
+    "variables": {
+      "264": "DN_PROGRESO_EPISODIOS",
+      "265": "DN_RESONANCE (0-100)",
+      "266": "DN_PHASE (1-7)",
+      "267": "DN_EP_ACTUAL (0-6)",
+      "268": "DN_EP01_ANOM (0-12)",
+      "269": "DN_EP02_ANOM (0-13)",
+      "270": "DN_EP03_ANOM (0-12)",
+      "271": "DN_EP04_ANOM (0-13)",
+      "272": "DN_EP05_ANOM (0-13)",
+      "273": "DN_EP06_ANOM (0-14)",
+      "274": "DN_ANOM_TOTAL (0-112)",
+      "275": "DN_ROTOM_NIVEL (0-5)",
+      "276": "DN_FINAL_CHOICE (0-1)",
+      "277": "DN_SELLOS_Y_CONTADOR",
+      "278": "DN_LIGA_RAMA_MADPIKA",
+      "279": "DN_LIGA_CHISPAS",
+      "280": "DN_MEDALLAS_CONTADAS",
+      "281": "DN_LIGA_ETAPA",
+      "282": "DN_LIGA_COMBATE_RESULTADO",
+      "283": "DN_ANOMALIAS_W7",
+      "284": "DN_ANOMALIAS_W8",
+      "285": "DN_ANOMALIAS_W9",
+      "286": "DN_W8_AIRE",
+      "287": "DN_W9_CANTO",
+      "288": "DN_W7_CORREAS"
+    }
+  },
+  "rotom": {
+    "name": "Rotom de Tiempo",
+    "keyItem": "DN_ROTOM",
+    "commonEvent": 900,
+    "levels": [
+      {
+        "n": 0,
+        "name": "Calibración",
+        "umbral": 0
+      },
+      {
+        "n": 1,
+        "name": "Eco",
+        "umbral": 20
+      },
+      {
+        "n": 2,
+        "name": "Escucha",
+        "umbral": 40
+      },
+      {
+        "n": 3,
+        "name": "Marcador",
+        "umbral": 60
+      },
+      {
+        "n": 4,
+        "name": "Sintonía",
+        "umbral": 80
+      },
+      {
+        "n": 5,
+        "name": "Ancla",
+        "umbral": 100
+      }
+    ]
+  },
+  "phases": [
+    {
+      "n": 1,
+      "name": "Normal",
+      "tone": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "n": 2,
+      "name": "Desaturación",
+      "tone": [
+        -30,
+        -30,
+        -30,
+        60
+      ]
+    },
+    {
+      "n": 3,
+      "name": "Primer eco",
+      "tone": [
+        -40,
+        -35,
+        -20,
+        90
+      ]
+    },
+    {
+      "n": 4,
+      "name": "Inversión",
+      "tone": [
+        -60,
+        -50,
+        -20,
+        120
+      ]
+    },
+    {
+      "n": 5,
+      "name": "Presencia",
+      "tone": [
+        -80,
+        -60,
+        -30,
+        150
+      ]
+    },
+    {
+      "n": 6,
+      "name": "Sepultamiento",
+      "tone": [
+        -110,
+        -90,
+        -60,
+        190
+      ]
+    },
+    {
+      "n": 7,
+      "name": "Ruptura",
+      "tone": [
+        -160,
+        -140,
+        -120,
+        240
+      ]
+    }
+  ],
+  "universes": [
+    {
+      "ep": 1,
+      "key": "white_hand",
+      "name": "WHITE HAND / BURIED ALIVE",
+      "subtitle": "Las Catacumbas que se hunden",
+      "resource": "R7",
+      "philosophy": "Descenso vertical",
+      "maps": {
+        "from": 2041,
+        "to": 2056,
+        "count": 16
+      },
+      "resonance": 12,
+      "boss": {
+        "name": "LA MANO BLANCA",
+        "trainer": "EL SEPULTADO",
+        "sprite": "HIKER",
+        "mechanic": "Dos fases: batalla normal (canLose) y fase de 4 cadenas del escenario; el jefe no tiene PS visibles.",
+        "team": [
+          [
+            "MAROWAK",
+            103
+          ],
+          [
+            "GOLURK",
+            105
+          ],
+          [
+            "COFAGRIGUS",
+            103
+          ],
+          [
+            "DUSKNOIR",
+            104
+          ],
+          [
+            "SABLEYE",
+            101
+          ],
+          [
+            "SPIRITOMB",
+            105
+          ]
+        ],
+        "reward": "SACRED ASH",
+        "sealSwitch": 883
+      },
+      "anomalies": 12,
+      "entities": [
+        "#A001",
+        "#A002",
+        "#A003"
+      ]
+    },
+    {
+      "ep": 2,
+      "key": "lost_silver",
+      "name": "LOST SILVER",
+      "subtitle": "El pueblo que se quedó sin color",
+      "resource": "R5",
+      "philosophy": "Memoria desaturada",
+      "maps": {
+        "from": 2057,
+        "to": 2072,
+        "count": 16
+      },
+      "resonance": 10,
+      "boss": {
+        "name": "EL SIN NOMBRE",
+        "trainer": "SIN NOMBRE",
+        "sprite": "SECRET_Silver",
+        "mechanic": "Tres fases: silueta (la victoria no cuenta), 4 fotografías, y captura condicional sin objetos de curación.",
+        "team": [
+          [
+            "NOCTOWL",
+            100
+          ],
+          [
+            "MAROWAK",
+            102
+          ],
+          [
+            "UMBREON",
+            101
+          ],
+          [
+            "GENGAR",
+            103
+          ],
+          [
+            "FROSLASS",
+            101
+          ],
+          [
+            "SPIRITOMB",
+            104
+          ]
+        ],
+        "reward": "ODD KEystone (alternativa: REVIVE)",
+        "sealSwitch": 884
+      },
+      "anomalies": 13,
+      "entities": [
+        "#A004",
+        "#A005",
+        "#A006"
+      ]
+    },
+    {
+      "ep": 3,
+      "key": "snow_mt_silver",
+      "name": "SNOW ON MT. SILVER",
+      "subtitle": "La cara del monte que nadie mira",
+      "resource": "R6",
+      "philosophy": "Supervivencia y visibilidad reducida",
+      "maps": {
+        "from": 2073,
+        "to": 2087,
+        "count": 15
+      },
+      "resonance": 12,
+      "boss": {
+        "name": "EL CAMINANTE",
+        "trainer": "CAMINANTE",
+        "sprite": "trchar137",
+        "mechanic": "Batalla + volver a encender las 4 fogatas del episodio; captura condicional si no usó objetos de curación en la fase B.",
+        "team": [
+          [
+            "ABOMASNOW",
+            104
+          ],
+          [
+            "MAMOSWINE",
+            105
+          ],
+          [
+            "GLALIE",
+            102
+          ],
+          [
+            "FROSLASS",
+            103
+          ],
+          [
+            "WEAVILE",
+            103
+          ],
+          [
+            "LAPRAS",
+            102
+          ]
+        ],
+        "reward": "NEVERMELTICE",
+        "sealSwitch": 885
+      },
+      "anomalies": 12,
+      "entities": [
+        "#A007",
+        "#A008",
+        "#A009"
+      ]
+    },
+    {
+      "ep": 4,
+      "key": "hypnos_lullaby",
+      "name": "HYPNOS'S LULLABY",
+      "subtitle": "El bosque que canta para que no despiertes",
+      "resource": "R2",
+      "philosophy": "Persecución suave / laberinto que respira",
+      "maps": {
+        "from": 2088,
+        "to": 2103,
+        "count": 16
+      },
+      "resonance": 14,
+      "boss": {
+        "name": "LA NANA",
+        "trainer": "NANA",
+        "sprite": "trainer_PSYCHIC_F",
+        "mechanic": "El equipo entra dormido; se gana rompiendo 4 cunas de musgo. Sin captura.",
+        "team": [
+          [
+            "MUSHARNA",
+            104
+          ],
+          [
+            "HYPNO",
+            105
+          ],
+          [
+            "DROWZEE",
+            101
+          ],
+          [
+            "GENGAR",
+            104
+          ],
+          [
+            "MISMAGIUS",
+            103
+          ],
+          [
+            "SPIRITOMB",
+            106
+          ]
+        ],
+        "reward": "POKE FLUTE",
+        "sealSwitch": 886,
+        "extraPrerequisite": "sw703"
+      },
+      "anomalies": 13,
+      "entities": [
+        "#A010",
+        "#A011",
+        "#A012"
+      ]
+    },
+    {
+      "ep": 5,
+      "key": "pokemon_black",
+      "name": "POKÉMON BLACK",
+      "subtitle": "El mundo que se quedó en blanco",
+      "resource": "R5+R1",
+      "philosophy": "Vacío progresivo",
+      "maps": {
+        "from": 2104,
+        "to": 2119,
+        "count": 16
+      },
+      "resonance": 16,
+      "boss": {
+        "name": "EL JUGADOR 000",
+        "trainer": "JUGADOR000",
+        "sprite": "SECRET_Red",
+        "mechanic": "Combate espejo: copia composición del equipo del jugador (nunca instancias) + 4 rendijas del escenario.",
+        "team": "mirror",
+        "reward": "LEFTOVERS (si no se obtuvo del v1)",
+        "sealSwitch": 887
+      },
+      "anomalies": 13,
+      "entities": [
+        "#A013",
+        "#A014",
+        "#A015"
+      ]
+    },
+    {
+      "ep": 6,
+      "key": "king_unown",
+      "name": "KING UNOWN",
+      "subtitle": "El trono que lee a quien lo mira",
+      "resource": "R4+R3",
+      "philosophy": "Conocimiento prohibido / acertijo total",
+      "maps": {
+        "from": 2120,
+        "to": 2135,
+        "count": 16
+      },
+      "resonance": 18,
+      "boss": {
+        "name": "KINGGUS",
+        "trainer": "KINGGUS",
+        "sprite": "DN_KINGGUS_FRONT",
+        "spriteFallback": "UNOWN (tinte teal, escala 1.5)",
+        "mechanic": "7 fases, una por letra K-I-N-G-G-U-S; una batalla intermedia y una forma final (niveles 120-125). Sin captura.",
+        "team": [
+          [
+            "UNOWN",
+            100
+          ],
+          [
+            "UNOWN",
+            100
+          ],
+          [
+            "UNOWN",
+            100
+          ],
+          [
+            "BRONZONG",
+            106
+          ],
+          [
+            "SIGILYPH",
+            104
+          ],
+          [
+            "XATU",
+            105
+          ]
+        ],
+        "finalTeam": [
+          [
+            "UNOWN",
+            120
+          ],
+          [
+            "UNOWN",
+            121
+          ],
+          [
+            "BRONZONG",
+            123
+          ],
+          [
+            "SIGILYPH",
+            122
+          ],
+          [
+            "GOTHITELLE",
+            122
+          ],
+          [
+            "XATU",
+            125
+          ]
+        ],
+        "reward": "DN_ANCLA",
+        "sealSwitch": 888
+      },
+      "anomalies": 14,
+      "entities": [
+        "#A016",
+        "#A017",
+        "#A018",
+        "#A019"
+      ]
+    },
+    {
+      "ep": 7,
+      "key": "strangled_red",
+      "name": "STRANGLED RED",
+      "subtitle": "La casa que aprieta a quien entra",
+      "resource": "R8",
+      "philosophy": "Duelo y culpa / claustrofobia roja",
+      "maps": {
+        "from": 2143,
+        "to": 2158,
+        "count": 16
+      },
+      "resonance": 12,
+      "boss": {
+        "name": "EL AMO Y LA CORREA",
+        "trainer": "DN_W7_A",
+        "sprite": "DN_AMO_FRONT",
+        "spriteFallback": "GENTLEMAN (tinte rojo apagado, escala 1.5)",
+        "mechanic": "Fase A con batalla normal; fase B con 4 correas que se rompen interactuando en el orden de la memoria del Amo. La fase B no baja PS.",
+        "reward": "DN_PAGE_W7",
+        "sealSwitch": 922
+      },
+      "anomalies": 12,
+      "entities": [
+        "#A101",
+        "#A102",
+        "#A103",
+        "#A104"
+      ]
+    },
+    {
+      "ep": 8,
+      "key": "buried_alive",
+      "name": "BURIED ALIVE",
+      "subtitle": "La fosa que ya estaba cavada",
+      "resource": "R9",
+      "philosophy": "Claustrofobia / el aire como recurso",
+      "maps": {
+        "from": 2159,
+        "to": 2174,
+        "count": 16
+      },
+      "resonance": 11,
+      "boss": {
+        "name": "EL QUE RESPIRA DEBAJO",
+        "trainer": "DN_W8_A",
+        "sprite": "DN_TIERRA_FRONT",
+        "spriteFallback": "HIKER (tinte tierra, escala 1.5)",
+        "mechanic": "Fase A con batalla normal; fase B con 5 reservas de aire que se encienden interactuando. Si se apagan, el mapa oscurece y el jefe recupera presencia.",
+        "reward": "DN_PAGE_W8",
+        "sealSwitch": 923
+      },
+      "anomalies": 11,
+      "entities": [
+        "#A201",
+        "#A202",
+        "#A203",
+        "#A204"
+      ]
+    },
+    {
+      "ep": 9,
+      "key": "lavender_syndrome",
+      "name": "LAVENDER TOWN SYNDROME",
+      "subtitle": "El pueblo que canta a quien lo escucha",
+      "resource": "R10",
+      "philosophy": "El sonido duele / silencios y ondas",
+      "maps": {
+        "from": 2175,
+        "to": 2190,
+        "count": 16
+      },
+      "resonance": 12,
+      "boss": {
+        "name": "EL CORO DEL CAMPANARIO",
+        "trainer": "DN_W9_A",
+        "sprite": "DN_MELODIA_FRONT",
+        "spriteFallback": "PSYCHIC_F (tinte violeta, escala 1.5)",
+        "mechanic": "Fase A con batalla normal; fase B con 4 silencios que se cortan en el orden de la cinta original. El jefe queda sin voz y se rinde.",
+        "reward": "DN_PAGE_W9",
+        "sealSwitch": 924
+      },
+      "anomalies": 12,
+      "entities": [
+        "#A301",
+        "#A302",
+        "#A303",
+        "#A304"
+      ]
+    }
+  ],
+  "antechamber": {
+    "map": 2040,
+    "title": "Antesala de las Grietas",
+    "role": "hub de entrada: nueve grietas (seis episodios + segundo anillo W7-W9), Archivero, monumento de progreso, Vitrina del Testigo y puerta de la Liga Oscura",
+    "prerequisite": "DN_UNLOCKED (sw882)",
+    "secondRing": "se abre con la Liga Oscura cerrada (sw920) y v264 >= 9; W7 -> W8 -> W9 encadenan por sello (922/923/924)"
+  },
+  "nexus": {
+    "maps": {
+      "from": 2136,
+      "to": 2140,
+      "count": 5
+    },
+    "resource": "R1",
+    "endings": [
+      {
+        "id": "sellar",
+        "name": "El Testigo",
+        "variable276": 0
+      },
+      {
+        "id": "dejar_abierta",
+        "name": "La Rendija",
+        "variable276": 1
+      }
+    ]
+  },
+  "guarantees": {
+    "canLoseEveryBattle": true,
+    "permanentDefeat": true,
+    "optionalRematchByMenu": true,
+    "rewardOnce": true,
+    "bagAlwaysAvailable": true,
+    "maxLevel": 150,
+    "newSpecies": false,
+    "noSaveWrites": true,
+    "existingAssetsFirst": true,
+    "anomaliesRange": [
+      10,
+      15
+    ]
+  },
+  "assetsToGenerate": [
+    {
+      "id": "DN_KINGGUS_FRONT",
+      "type": "battler-front",
+      "size": "64x64",
+      "priority": "alta"
+    },
+    {
+      "id": "DN_KINGGUS_FINAL_FRONT",
+      "type": "battler-front",
+      "size": "64x64",
+      "priority": "alta"
+    },
+    {
+      "id": "DN_KINGGUS_OVER",
+      "type": "charset-celda",
+      "size": "32x32",
+      "priority": "alta"
+    },
+    {
+      "id": "DN_WHITE_HAND",
+      "type": "evento/escenario",
+      "size": "96x96",
+      "priority": "alta"
+    },
+    {
+      "id": "DN_UNOWN_FRAGMENT",
+      "type": "icono",
+      "size": "32x32",
+      "priority": "alta"
+    },
+    {
+      "id": "DN_ROTOM_TIME",
+      "type": "icono",
+      "size": "32x32",
+      "priority": "media"
+    },
+    {
+      "id": "DN_GLITCH_TILES",
+      "type": "tileset",
+      "size": "256x256",
+      "priority": "media"
+    }
+  ],
+  "documents": [
+    "docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md",
+    "docs/DIMENSIONAL_NIGHTMARE/01_EP01_WHITE_HAND.md",
+    "docs/DIMENSIONAL_NIGHTMARE/02_EP02_LOST_SILVER.md",
+    "docs/DIMENSIONAL_NIGHTMARE/03_EP03_SNOW_ON_MT_SILVER.md",
+    "docs/DIMENSIONAL_NIGHTMARE/04_EP04_HYPNOS_LULLABY.md",
+    "docs/DIMENSIONAL_NIGHTMARE/05_EP05_POKEMON_BLACK.md",
+    "docs/DIMENSIONAL_NIGHTMARE/06_EP06_KING_UNOWN.md",
+    "docs/DIMENSIONAL_NIGHTMARE/07_MAPA_DE_FLUJO.md",
+    "docs/DIMENSIONAL_NIGHTMARE/08_SPRITES_Y_ASSETS.md",
+    "docs/DIMENSIONAL_NIGHTMARE/09_REGISTRO_DIMENSIONAL.md",
+    "docs/DIMENSIONAL_NIGHTMARE/10_EVENTOS_Y_FLAGS.md",
+    "docs/DIMENSIONAL_NIGHTMARE/11_ASIGNACION_DE_RECURSOS.md",
+    "docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md",
+    "docs/DIMENSIONAL_NIGHTMARE/16_W7_STRANGLED_RED.md",
+    "docs/DIMENSIONAL_NIGHTMARE/17_W8_BURIED_ALIVE.md",
+    "docs/DIMENSIONAL_NIGHTMARE/18_W9_LAVENDER_SYNDROME.md"
+  ],
+  "recreationPipeline": {
+    "referenceFolder": "reference/dimensional_nightmare/recursos",
+    "ingestTool": "tools/dn_ingest_reference.mjs",
+    "commands": [
+      "npm run dn:check",
+      "npm run dn:ingest",
+      "npm run dn:selftest"
+    ],
+    "stages": [
+      "E0 deposito",
+      "E1 ingesta",
+      "E2 materiales",
+      "E3 reconstruccion",
+      "E4 eventos",
+      "E5 verificacion",
+      "E6 instalacion"
+    ],
+    "fidelity": "A (tilesets existentes) con las fichas como referencia interna"
+  }
+}

@@ -29,6 +29,7 @@ android/local.properties
 # Web dev
 web/demo-out/
 node_modules/
+
 .DS_Store
 
 # Python
@@ -41,3 +42,25 @@ tools/.cache/
 .vscode/
 .idea/
 *.swp
+
+# Dimensional Nightmare: los recortes se regeneran con `npm run dn:ingest`
+# y los mosaicos de terceros no se redistribuyen en el repo
+reference/dimensional_nightmare/recursos/
+reference/dimensional_nightmare/slices/
+reference/dimensional_nightmare/_fixtures/
+reference/dimensional_nightmare/tilesets/
+reference/dimensional_nightmare/index.json
+reference/dimensional_nightmare/selftest.png
+content/dimensional_nightmare_tiles.json
+content/dimensional_nightmare_tiles_2x.json
+reference/dimensional_nightmare/preview_*.png
+docs/dn_referencia/detalle/
+docs/dn_referencia/recreacion/detalle/
+Mapas/*
+!Mapas/crepypasta/
+Mapas/crepypasta/*
+!Mapas/crepypasta/README.md
+
+# Overlays de pasajes por mapa: se regeneran con `npm run dn:pasajes:*` (--render).
+# La evidencia versionada son las hojas por episodio de docs/dn_referencia/lotes/.
+docs/dn_referencia/pasajes/
