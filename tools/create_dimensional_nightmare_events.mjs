@@ -26,17 +26,17 @@ const OUT = path.join(ROOT, "content", "dimensional_nightmare_events.json");
 const CHECK = process.argv.includes("--check");
 
 const EPISODES = [
-  { key: "EP01", doc: "01_EP01_WHITE_HAND.md", from: 2041, to: 2056, seal: 883, grieta: 890, res: 12, var: 268, boss: "LA MANO BLANCA" },
-  { key: "EP02", doc: "02_EP02_LOST_SILVER.md", from: 2057, to: 2072, seal: 884, grieta: 891, res: 10, var: 269, boss: "EL SIN NOMBRE" },
-  { key: "EP03", doc: "03_EP03_SNOW_ON_MT_SILVER.md", from: 2073, to: 2087, seal: 885, grieta: 892, res: 12, var: 270, boss: "EL CAMINANTE" },
-  { key: "EP04", doc: "04_EP04_HYPNOS_LULLABY.md", from: 2088, to: 2103, seal: 886, grieta: 893, res: 14, var: 271, boss: "LA NANA" },
-  { key: "EP05", doc: "05_EP05_POKEMON_BLACK.md", from: 2104, to: 2119, seal: 887, grieta: 894, res: 16, var: 272, boss: "EL JUGADOR 000" },
-  { key: "EP06", doc: "06_EP06_KING_UNOWN.md", from: 2120, to: 2135, seal: 888, grieta: 895, res: 18, var: 273, boss: "KINGGUS" },
+  { key: "EP01", doc: "01_EP01_WHITE_HAND.md", from: 2041, to: 2056, seal: 883, grieta: 890, res: 12, var: 268, cuota: 896, boss: "LA MANO BLANCA" },
+  { key: "EP02", doc: "02_EP02_LOST_SILVER.md", from: 2057, to: 2072, seal: 884, grieta: 891, res: 10, var: 269, cuota: 897, boss: "EL SIN NOMBRE" },
+  { key: "EP03", doc: "03_EP03_SNOW_ON_MT_SILVER.md", from: 2073, to: 2087, seal: 885, grieta: 892, res: 12, var: 270, cuota: 898, boss: "EL CAMINANTE" },
+  { key: "EP04", doc: "04_EP04_HYPNOS_LULLABY.md", from: 2088, to: 2103, seal: 886, grieta: 893, res: 14, var: 271, cuota: 899, boss: "LA NANA" },
+  { key: "EP05", doc: "05_EP05_POKEMON_BLACK.md", from: 2104, to: 2119, seal: 887, grieta: 894, res: 16, var: 272, cuota: 900, boss: "EL JUGADOR 000" },
+  { key: "EP06", doc: "06_EP06_KING_UNOWN.md", from: 2120, to: 2135, seal: 888, grieta: 895, res: 18, var: 273, cuota: 901, boss: "KINGGUS" },
   // Segundo anillo (W7–W9): se abre tras la Liga Oscura (v264 ≥ 9) y usa su propio
   // bloque de flags 922–930 y variables 283–285.
-  { key: "W7", doc: "16_W7_STRANGLED_RED.md", from: 2143, to: 2158, seal: 922, grieta: 925, res: 12, var: 283, bossSwitch: 928, boss: "EL AMO Y LA CORREA" },
-  { key: "W8", doc: "17_W8_BURIED_ALIVE.md", from: 2159, to: 2174, seal: 923, grieta: 926, res: 11, var: 284, bossSwitch: 929, boss: "EL QUE RESPIRA DEBAJO" },
-  { key: "W9", doc: "18_W9_LAVENDER_SYNDROME.md", from: 2175, to: 2190, seal: 924, grieta: 927, res: 12, var: 285, bossSwitch: 930, boss: "EL CORO DEL CAMPANARIO" },
+  { key: "W7", doc: "16_W7_STRANGLED_RED.md", from: 2143, to: 2158, seal: 922, grieta: 925, res: 12, var: 283, cuota: 932, bossSwitch: 928, boss: "EL AMO Y LA CORREA" },
+  { key: "W8", doc: "17_W8_BURIED_ALIVE.md", from: 2159, to: 2174, seal: 923, grieta: 926, res: 11, var: 284, cuota: 933, bossSwitch: 929, boss: "EL QUE RESPIRA DEBAJO" },
+  { key: "W9", doc: "18_W9_LAVENDER_SYNDROME.md", from: 2175, to: 2190, seal: 924, grieta: 927, res: 12, var: 285, cuota: 934, bossSwitch: 930, boss: "EL CORO DEL CAMPANARIO" },
 ];
 
 /** Ficha de jefe y fase B, leídas del §9 de cada doc (celdas y conteos citados allí). */
@@ -249,8 +249,8 @@ const blueprint = {
   docs: "docs/DIMENSIONAL_NIGHTMARE/01..07",
   hub: { map: 2030, x: 36, y: 12, note: "Gruta de los Testigos: punto de entrada/salida de cada episodio" },
   flags: {
-    switchRange: [882, 931],
-    variableRange: [265, 285],
+    switchRange: [882, 934],
+    variableRange: [265, 288],
     commonEvents: [900, 906],
   },
   episodes: [],
@@ -270,6 +270,7 @@ for (const episode of EPISODES) {
     grieta: episode.grieta,
     resonance: episode.res,
     anomalyVariable: episode.var,
+    cuota: episode.cuota,
     bossName: episode.boss,
     boss: BOSSES[episode.key]
       ? { ...BOSSES[episode.key], phaseA: CURATED.get(episode.key) ?? BOSSES[episode.key].phaseA }

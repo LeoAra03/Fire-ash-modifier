@@ -10,6 +10,11 @@
  * con la paleta y el motivo de cada mundo. Cada ficha resultante es un mapa del
  * pipeline E0–E5: ficha → tileset → mapa → eventos.
  *
+ * **Fuente por defecto: donantes recreados.** Para que los mapas del segundo anillo tengan
+ * estructura legible (muros, objetos, suelo), cada ficha se compone del render de un mapa ya
+ * recreado del primer anillo (W7 ← EP02, W8 ← EP01, W9 ← EP05) teñido con la paleta del mundo;
+ * el modo `--fotos` conserva la composición directa desde las siete crepystastas del autor.
+ *
  * Los tres PNG se escriben en `Mapas/Crepypastas/` (material de desarrollo
  * derivado del arte del autor, ignorado por git) y se registran como recursos
  * R8/R9/R10 en `reference/dimensional_nightmare/mapping.json` para que `dn:ingest`
@@ -24,6 +29,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createCanvas, loadImage } from "@napi-rs/canvas";
+import { renderMapId } from "./render_map_png.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REF = path.join(ROOT, "reference", "dimensional_nightmare");
@@ -32,6 +38,7 @@ const MAPPING_PATH = path.join(REF, "mapping.json");
 
 const argv = process.argv.slice(2);
 const VERIFY = argv.includes("--verify");
+const PHOTOS = argv.includes("--fotos");   // composición directa desde las fotos del autor
 const SAMPLE = (() => {
   const at = argv.indexOf("--sample");
   return at >= 0 && argv[at + 1] ? argv[at + 1] : null;
@@ -51,6 +58,7 @@ export const WORLDS = [
     subtitle: "16 fichas · duelo y culpa · rojo apagado, sombras que no siguen al dueño",
     sources: ["r7_catacumbas", "r5_pueblos_tumbas", "r4_trono_unown", "r2_dark_forest"],
     transform: "strangled",
+    donors: [2057, 2072],   // EP02 Lost Silver recreado
     hue: -8, saturation: 0.55, tint: [180, 30, 30], tintAmount: 0.34, vignette: 0.35, zoom: 1.06, sharpen: 0.9,
   },
   {
@@ -59,6 +67,7 @@ export const WORLDS = [
     subtitle: "16 fichas · claustrofobia · oscuridad sin aire, la fosa ya está cavada",
     sources: ["r7_catacumbas", "r2_dark_forest", "r5_pueblos_tumbas"],
     transform: "buried",
+    donors: [2041, 2056],   // EP01 White Hand recreado
     hue: 0, saturation: 0.4, tint: [70, 52, 30], tintAmount: 0.42, vignette: 0.5, zoom: 1.06, sharpen: 1.6,
   },
   {
@@ -67,6 +76,7 @@ export const WORLDS = [
     subtitle: "16 fichas · el sonido duele · violeta, ondas y silencios que interrumpen la imagen",
     sources: ["r5_pueblos_tumbas", "r7_catacumbas", "r4_trono_unown", "r6_snowy_mountain"],
     transform: "lavender",
+    donors: [2104, 2119],   // EP05 Pokémon Black recreado
     hue: 46, saturation: 0.6, tint: [120, 70, 190], tintAmount: 0.4, vignette: 0.4, zoom: 1.1, sharpen: 0.5,
   },
 ];
@@ -202,16 +212,24 @@ function sharpen(canvas, amount, radius = 1) {
 }
 
 /** Recorta una ficha de origen a CELL_W×CELL_H cubriendo el marco (cover) y la transforma. */
-async function buildFicha(sourceFile, bbox, world, index) {
+async function buildFicha(sourceFile, bbox, world, index, donorCanvas = null) {
   const canvas = createCanvas(CELL_W, CELL_H);
   const ctx = canvas.getContext("2d");
   ctx.imageSmoothingEnabled = false;
-  const [x0, y0, x1, y1] = bbox;
-  const sw = x1 - x0, sh = y1 - y0;
   const zoom = world.zoom;
-  const cover = Math.max(CELL_W / sw, CELL_H / sh) * zoom;
-  const dw = sw * cover, dh = sh * cover;
-  ctx.drawImage(sourceFile, x0, y0, sw, sh, (CELL_W - dw) / 2, (CELL_H - dh) / 2, dw, dh);
+  if (donorCanvas) {
+    // ficha = mapa recreado del mundo donante, escalado a la celda (cover)
+    const sw = donorCanvas.width, sh = donorCanvas.height;
+    const cover = Math.max(CELL_W / sw, CELL_H / sh) * zoom;
+    const dw = sw * cover, dh = sh * cover;
+    ctx.drawImage(donorCanvas, (CELL_W - dw) / 2, (CELL_H - dh) / 2, dw, dh);
+  } else {
+    const [x0, y0, x1, y1] = bbox;
+    const sw = x1 - x0, sh = y1 - y0;
+    const cover = Math.max(CELL_W / sw, CELL_H / sh) * zoom;
+    const dw = sw * cover, dh = sh * cover;
+    ctx.drawImage(sourceFile, x0, y0, sw, sh, (CELL_W - dw) / 2, (CELL_H - dh) / 2, dw, dh);
+  }
   if (index % 3 === 1) { // espejo en una de cada tres fichas
     const flipped = createCanvas(CELL_W, CELL_H);
     const fctx = flipped.getContext("2d");
@@ -347,6 +365,11 @@ async function buildWorldSheet(world, pool, mappingSources) {
     return images.get(file);
   };
   const picks = pickCells(pool, world, COLS * ROWS);
+  const donors = [];
+  if (!PHOTOS && world.donors) {
+    for (let id = world.donors[0]; id <= world.donors[1]; id++) donors.push(id);
+    if (donors.length < COLS * ROWS) throw new Error(`${world.key}: ${donors.length} mapas donantes para ${COLS * ROWS} fichas`);
+  }
   const width = TILE + COLS * (CELL_W + TILE);
   const height = HEADER + TILE + ROWS * (CELL_H + TILE);
   const sheet = createCanvas(width, height);
@@ -363,8 +386,9 @@ async function buildWorldSheet(world, pool, mappingSources) {
   ctx.font = "13px sans-serif";
   ctx.fillText(world.subtitle, TILE + 4, 46);
   for (const [i, pick] of picks.entries()) {
-    const source = await load(pick.file);
-    const ficha = await buildFicha(source, pick.bbox, world, i);
+    const source = donors.length ? null : await load(pick.file);
+    const donorCanvas = donors.length ? (await renderMapId(donors[i])).canvas : null;
+    const ficha = await buildFicha(source, pick.bbox, world, i, donorCanvas);
     const cx = TILE + (i % COLS) * (CELL_W + TILE);
     const cy = HEADER + TILE + Math.floor(i / COLS) * (CELL_H + TILE);
     ctx.fillStyle = "#101010";
@@ -376,7 +400,7 @@ async function buildWorldSheet(world, pool, mappingSources) {
   fs.writeFileSync(out, sheet.toBuffer("image/png"));
   mapping[world.resource] = path.relative(ROOT, out);
   void mappingSources;
-  return { out, width, height, fichas: picks.length };
+  return { out, width, height, fichas: picks.length, modo: donors.length ? `donantes ${world.donors[0]}–${world.donors[1]}` : "fotos del autor" };
 }
 
 if (VERIFY) {
@@ -400,7 +424,7 @@ const pool = await collectCells();
 for (const world of WORLDS) {
   if (SAMPLE && world.key !== SAMPLE) continue;
   const result = await buildWorldSheet(world, pool, sources);
-  console.log(`${world.key} ${world.title} · ${result.fichas} fichas · ${result.width}×${result.height} → ${path.relative(ROOT, result.out)}`);
+  console.log(`${world.key} ${world.title} · ${result.fichas} fichas · ${result.width}×${result.height} · ${result.modo} → ${path.relative(ROOT, result.out)}`);
 }
 fs.writeFileSync(MAPPING_PATH, `${JSON.stringify(mapping, null, 2)}\n`);
 console.log(`mapping.json actualizado con R8/R9/R10`);

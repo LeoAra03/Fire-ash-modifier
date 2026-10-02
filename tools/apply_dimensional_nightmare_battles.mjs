@@ -269,6 +269,9 @@ function installPhaseB(ep) {
     if (!used.has(mapId)) {
       const taken = new Set();
       for (const [, ev] of read(mapFile(mapId)).getIvar("@events").pairs) {
+        // los pasos propios de este episodio no bloquean su propia celda declarada:
+        // sin esto, cada pasada de dn:battles movía un poco los marcadores de fase B.
+        if ((ev.getIvar("@name")?.text ?? "").startsWith(`BOSSB_${ep.key}_`)) continue;
         taken.add(`${ev.getIvar("@x")},${ev.getIvar("@y")}`);
       }
       used.set(mapId, taken);

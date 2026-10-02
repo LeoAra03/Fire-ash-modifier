@@ -1,4 +1,4 @@
-# REGISTRO DIMENSIONAL — Entradas #A001–#A019
+# REGISTRO DIMENSIONAL — Entradas #A001–#A019 · #A101–#A104 · #A201–#A204 · #A301–#A304
 
 > Fichas normalizadas de todas las entidades del Dimensional Nightmare.
 > **Regla**: una entidad "no capturable" **jamás** entra en la caja ni en el equipo; el Rotom
@@ -217,6 +217,99 @@ Riesgo: nulo.
 
 ---
 
+## Segundo anillo (W7–W9)
+
+Los mundos del segundo anillo usan un registro por bloque: **#A1xx** para Strangled Red,
+**#A2xx** para Buried Alive y **#A3xx** para Lavender Town Syndrome. Todas son ANOMALÍA / ???
+y la cuota de cada mundo es de 12/11/12 anomalías (112 en total con el primer anillo).
+
+```
+#A101 — EL QUE ESPERA EN LA PUERTA
+ANOMALÍA / ??? · no capturable · Map2143 (7,10)
+Descripción: La silueta que recibe al jugador en la casa del Amo. No ataca: cuenta en voz
+             baja cuántas veces ha entrado el jugador y se aparta siempre un paso.
+```
+
+```
+#A102 — SOMBRA SIN DUEÑO
+ANOMALÍA / ??? · condicional (Rotom ≥3) · Map2145 (20,14)
+Descripción: La sombra del hermano sin cuerpo que la proyecte. Se registra solo si el Rotom
+             ya alcanzó el nivel 3 (Marcador) antes de entrar al mundo.
+```
+
+```
+#A103 — EL NOMBRE RASPADO
+ANOMALÍA / ??? · no capturable · Map2149 (16,7)
+Descripción: El nombre borrado de la puerta que el Amo talló. Al tocarlo, el juego repite el
+             último grito guardado en el cartucho.
+```
+
+```
+#A104 — EL AMO (memoria)
+ANOMALÍA / ??? · no capturable · Map2158 (12,18)
+Descripción: La memoria del jefe en el mapa final; queda de pie después del sello y repite sin
+             voz las reglas de la casa. Es el testigo del mundo, no el jefe de combate.
+```
+
+```
+#A201 — EL QUE RESPIRA DEBAJO
+ANOMALÍA / ??? · no capturable · Map2174 (12,18)
+Descripción: El guardián de la fosa dormido bajo el último piso. Su respiración mueve el suelo
+             de los mapas 2161–2174 en la fase ≥6.
+```
+
+```
+#A202 — EL SELLADO NÚMERO 4
+ANOMALÍA / ??? · condicional (Rotom ≥4) · Map2166 (18,17)
+Descripción: El cuarto sepultado que no figura en el archivo. Se registra solo con el Rotom en
+             nivel 4 (Sintonía), cuando puede leer su nombre en el barro.
+```
+
+```
+#A203 — LA MANO QUE SALE DE LA TIERRA
+ANOMALÍA / ??? · no capturable · Map2171 (16,16)
+Descripción: La mano que aguanta la viga vencida. Si el jugador la cruza sin romper el nudo del
+             mapa, lo devuelve a la entrada.
+```
+
+```
+#A204 — EL AIRE CON FORMA
+ANOMALÍA / ??? · no capturable · Map2165 (16,12)
+Descripción: La última reserva de aire condensada. Solo se ve por sus bordes, y marca cuánto
+             queda antes de que la linterna se apague.
+```
+
+```
+#A301 — EL CORO DEL CAMPANARIO
+ANOMALÍA / ??? · no capturable · Map2190 (12,18)
+Descripción: El jefe del mundo sin cuerpo: cinco voces que sostienen la melodía desde las
+             vigas. Su partitura se corta antena por antena.
+```
+
+```
+#A302 — EL AUTOR
+ANOMALÍA / ??? · condicional (partitura) · Map2189 (15,8)
+Descripción: La firma del autor de la cinta original. Se registra solo si el jugador reunió la
+             partitura completa antes del campanario.
+```
+
+```
+#A303 — LA VOZ QUE REPITE
+ANOMALÍA / ??? · no capturable · Map2185 (16,16)
+Descripción: La voz del locutor que repite el diálogo anterior del jugador, una visita tarde.
+             No se calla; solo se silencia con el interruptor del estudio.
+```
+
+```
+#A304 — LA SILUETA QUE MARCA EL COMPÁS
+ANOMALÍA / ??? · no capturable · Map2190 (6,6)
+Descripción: La silueta que marca el compás en el campanario. Cuando la melodía se corta, se
+             queda quieta por primera vez.
+```
+
+
+---
+
 ## Tabla resumen
 
 | # | Entidad | EP | Capturable | Mapa |
@@ -240,8 +333,20 @@ Riesgo: nulo.
 | A017 | KINGGUS | 06 | NO | 2135 |
 | A018 | El Ojo | 06 | NO | 2125 |
 | A019 | El Coro | 06 | NO | 2124 |
+| A101 | El que Espera en la Puerta | W7 | NO | 2143 |
+| A102 | Sombra sin Dueño | W7 | CONDICIONAL | 2145 |
+| A103 | El Nombre Raspado | W7 | NO | 2149 |
+| A104 | El Amo (memoria) | W7 | NO | 2158 |
+| A201 | El que Respira Debajo | W8 | NO | 2174 |
+| A202 | El Sellado Número 4 | W8 | CONDICIONAL | 2166 |
+| A203 | La Mano que Sale de la Tierra | W8 | NO | 2171 |
+| A204 | El Aire con Forma | W8 | NO | 2165 |
+| A301 | El Coro del Campanario | W9 | NO | 2190 |
+| A302 | El Autor | W9 | CONDICIONAL | 2189 |
+| A303 | La Voz que Repite | W9 | NO | 2185 |
+| A304 | La Silueta que Marca el Compás | W9 | NO | 2190 |
 
-**Totales**: 19 entidades · 5 capturables condicionales · 14 no capturables · 0 permanentes.
+**Totales**: 31 entidades (19 del primer anillo + 12 del segundo) · 8 capturables condicionales · 23 no capturables · 0 permanentes.
 
 ---
 

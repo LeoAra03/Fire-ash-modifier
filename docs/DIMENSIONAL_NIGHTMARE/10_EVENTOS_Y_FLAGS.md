@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Switches nuevas (882–902)
+## 1. Switches nuevas (882–902 · segundo anillo 922–934)
 
 | ID | Nombre | Escritura | Lectura |
 |---:|---|---|---|
@@ -31,8 +31,15 @@
 | 900 | `DN_EP05_ANOM_DONE` | 13/13 anomalías EP05 | idem |
 | 901 | `DN_EP06_ANOM_DONE` | 14/14 anomalías EP06 | idem |
 | 902 | `DN_ROTOM_OBTAINED` | Al recibir el Rotom (Archivero) | Menú de objetos del Rotom |
+| 922 | `DN_SELLO_W7_STRANGLED_RED` | Tras EL AMO Y LA CORREA (2158) | Grieta W7 → W8 |
+| 923 | `DN_SELLO_W8_BURIED_ALIVE` | Tras EL QUE RESPIRA DEBAJO (2174) | Grieta W8 → W9 |
+| 924 | `DN_SELLO_W9_LAVENDER_TOWN_SYNDROME` | Tras EL CORO DEL CAMPANARIO (2190) | Vitrina del Testigo |
+| 925–927 | `DN_GRIETA_W7/W8/W9` | Al cruzar cada grieta del segundo anillo | Antesala (2040) |
+| 928–930 | `DN_JEFE_W7/W8/W9_FASE_A` | Al ganar la fase A de cada jefe | Marca la fase B pendiente |
+| 931 | `DN_TESTIGO_LISTO` | Nueve cartucheras en la mochila | Vitrina del Testigo (`DN_CASE_WIT`) |
+| 932–934 | `DN_CUOTA_W7/W8/W9` | 12/12 · 11/11 · 12/12 anomalías del mundo | Archivero y monumento |
 
-## 2. Variables nuevas (265–276)
+## 2. Variables nuevas (265–276 · segundo anillo 283–288)
 
 | ID | Nombre | Rango | Quién la escribe |
 |---:|---|---|---|
@@ -45,9 +52,13 @@
 | 271 | `DN_EP04_ANOM` | 0–13 | Anomalías de EP04 |
 | 272 | `DN_EP05_ANOM` | 0–13 | Anomalías de EP05 |
 | 273 | `DN_EP06_ANOM` | 0–14 | Anomalías de EP06 |
-| 274 | `DN_ANOM_TOTAL` | 0–77 | Suma de las seis |
+| 274 | `DN_ANOM_TOTAL` | 0–112 | Suma de los nueve mundos (primer anillo 77 + segundo 35) |
 | 275 | `DN_ROTOM_NIVEL` | 0–5 | Espejo de los umbrales de 265 |
 | 276 | `DN_FINAL_CHOICE` | 0–1 | Epílogo del Nexo (0 sellar, 1 dejar abierta) |
+| 283–285 | `DN_ANOMALIAS_W7/W8/W9` | 0–12 / 0–11 / 0–12 | Cuota de anomalías de cada mundo del segundo anillo |
+| 286 | `DN_W8_AIRE` | 0–5 | Reservas de aire encendidas (fase B de W8) |
+| 287 | `DN_W9_CANTO` | 0–4 | Antenas cortadas (fase B de W9) |
+| 288 | `DN_W7_CORREAS` | 0–4 | Correas rotas (fase B de W7) |
 
 ### Cálculo de nivel del Rotom (evento común)
 ```ruby
@@ -71,7 +82,7 @@ $game_switches[sw] = true   # según umbral, para condicionar páginas de evento
 |---:|---|---|
 | 900 | `DN_ROTOM_SCAN` | Menú del Rotom: resonancia, fase, anomalías `n/total`, nivel; opción «Eco» (pista), «Marcador» (destello) |
 | 901 | `DN_FASE_APLICAR` | Aplica tinte/clima de `v266` al mapa actual (respetando `PokeModToneSafety`) |
-| 902 | `DN_ANOMALIA_MARCAR` | Suma 1 a la variable del episodio, 1 a `v274`; cada 3 → +1 a `v265` (tope +3/EP) |
+| 902 | `DN_ANOMALIA_MARCAR` | Suma 1 a la variable del episodio, 1 a `v274` (tope 112); cada 3 → +1 a `v265` (tope +3/EP); cuota explícita por episodio (`sw896–901`, `sw932–934`) |
 | 903 | `DN_PARTY_CURAR` | Curación completa (fogatas, cabañas, guardiana) |
 | 904 | `DN_MIRROR_PARTY` | Genera la party espejo del jefe 000 (EP05) sin tocar la del jugador |
 | 905 | `DN_SELLO_JEFE` | Self-switch del jefe + switch de episodio + resonancia + página del Archivero |
@@ -137,11 +148,11 @@ tiles con los de R1 recortados.]
 
 ## 7. Checklist de verificación (para `verify:dimensional_nightmare`)
 
-- [ ] 101 mapas nuevos en `MapInfos.rxdata` (2040–2140), sin tocar 2021–2038.
+- [ ] 151 mapas nuevos en `MapInfos.rxdata` (2040–2190: primer anillo 2040–2140 + segundo 2143–2190), sin tocar 2021–2038.
 - [ ] Switches 882–902 y variables 265–276 creadas y con nombre en `System.rxdata`.
 - [ ] 6 batallas de jefe con `canLose` + derrota permanente + recompensa única.
 - [ ] 105 eventos con el prefijo del episodio (`EV_CAT_`, `EV_SIL_`, `EV_SNOW_`, `EV_HYP_`, `EV_BLK_`, `EV_UNO_`, `EV_NEXO_`).
-- [ ] 77 anomalías declaradas y contadas (12+13+12+13+13+14).
+- [ ] 112 anomalías declaradas y contadas (primer anillo 77 = 12+13+12+13+13+14; segundo 35 = 12+11+12).
 - [ ] 19 entidades del Registro Dimensional con su ficha.
 - [ ] Resonancia máxima alcanzable = 100 (sin bloqueos).
 - [ ] Ninguna escritura sobre `Save*.rxdata` / `Game.rxdata`.

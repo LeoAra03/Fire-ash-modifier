@@ -143,24 +143,24 @@ La fuente de la transitabilidad es `content/dimensional_nightmare_passability.js
 | 2154 | W7 | Strangled Red — Canil Vacío | R8-12 | #137 | 22×12 | 264 | 100% | W7 |
 | 2155 | W7 | Strangled Red — Capilla del Nudo | R8-13 | #138 | 22×12 | 264 | 100% | W7 |
 | 2156 | W7 | Strangled Red — Espejo Roto | R8-14 | #139 | 22×12 | 264 | 100% | W7 |
-| 2157 | W7 | Strangled Red — Umbral del Ahorcado | R8-15 | #140 | 22×12 | 260 | 100% | W7 |
-| 2158 | W7 | Strangled Red — Árbol del Ajuste | R8-16 | #141 | 22×12 | 264 | 100% | W7 |
+| 2157 | W7 | Strangled Red — Umbral del Ahorcado | R8-15 | #140 | 22×12 | 263 | 100% | W7 |
+| 2158 | W7 | Strangled Red — Árbol del Ajuste | R8-16 | #141 | 22×12 | 263 | 100% | W7 |
 | 2159 | W8 | Buried Alive — Pozo de Entrada | R9-1 | #142 | 22×11 | 242 | 100% | W8 |
-| 2160 | W8 | Buried Alive — Túnel Angosto | R9-2 | #143 | 21×11 | 231 | 100% | W8 |
-| 2161 | W8 | Buried Alive — Cámara de Tierra | R9-3 | #144 | 22×11 | 242 | 100% | W8 |
-| 2162 | W8 | Buried Alive — Galería de Raíces | R9-4 | #145 | 21×11 | 231 | 100% | W8 |
+| 2160 | W8 | Buried Alive — Túnel Angosto | R9-2 | #143 | 22×11 | 242 | 100% | W8 |
+| 2161 | W8 | Buried Alive — Cámara de Tierra | R9-3 | #144 | 21×11 | 231 | 100% | W8 |
+| 2162 | W8 | Buried Alive — Galería de Raíces | R9-4 | #145 | 22×11 | 242 | 100% | W8 |
 | 2163 | W8 | Buried Alive — Osario Inundado | R9-5 | #146 | 22×11 | 242 | 100% | W8 |
-| 2164 | W8 | Buried Alive — Escalera de Tierra | R9-6 | #147 | 21×11 | 231 | 100% | W8 |
-| 2165 | W8 | Buried Alive — Cripta del Aire | R9-7 | #148 | 22×11 | 242 | 100% | W8 |
-| 2166 | W8 | Buried Alive — Sala de los Sellados | R9-8 | #149 | 21×11 | 231 | 100% | W8 |
-| 2167 | W8 | Buried Alive — Pozo Sin Fondo | R9-9 | #150 | 22×10 | 220 | 100% | W8 |
-| 2168 | W8 | Buried Alive — Pueblo Enterrado | R9-10 | #151 | 21×10 | 210 | 100% | W8 |
-| 2169 | W8 | Buried Alive — Iglesia Boca Abajo | R9-11 | #152 | 22×10 | 220 | 100% | W8 |
-| 2170 | W8 | Buried Alive — Campo de Lápidas | R9-12 | #153 | 21×10 | 209 | 100% | W8 |
-| 2171 | W8 | Buried Alive — Fosa Común | R9-13 | #154 | 22×11 | 234 | 100% | W8 |
-| 2172 | W8 | Buried Alive — Túnel de la Mano | R9-14 | #155 | 21×11 | 231 | 100% | W8 |
-| 2173 | W8 | Buried Alive — Umbral del Aire | R9-15 | #156 | 22×11 | 242 | 100% | W8 |
-| 2174 | W8 | Buried Alive — Fondo de la Fosa | R9-16 | #157 | 21×11 | 231 | 100% | W8 |
+| 2164 | W8 | Buried Alive — Escalera de Tierra | R9-6 | #147 | 22×11 | 242 | 100% | W8 |
+| 2165 | W8 | Buried Alive — Cripta del Aire | R9-7 | #148 | 21×11 | 231 | 100% | W8 |
+| 2166 | W8 | Buried Alive — Sala de los Sellados | R9-8 | #149 | 22×11 | 242 | 100% | W8 |
+| 2167 | W8 | Buried Alive — Pozo Sin Fondo | R9-9 | #150 | 22×11 | 242 | 100% | W8 |
+| 2168 | W8 | Buried Alive — Pueblo Enterrado | R9-10 | #151 | 22×11 | 242 | 100% | W8 |
+| 2169 | W8 | Buried Alive — Iglesia Boca Abajo | R9-11 | #152 | 21×11 | 231 | 100% | W8 |
+| 2170 | W8 | Buried Alive — Campo de Lápidas | R9-12 | #153 | 22×11 | 242 | 100% | W8 |
+| 2171 | W8 | Buried Alive — Fosa Común | R9-13 | #154 | 22×11 | 242 | 100% | W8 |
+| 2172 | W8 | Buried Alive — Túnel de la Mano | R9-14 | #155 | 22×11 | 242 | 100% | W8 |
+| 2173 | W8 | Buried Alive — Umbral del Aire | R9-15 | #156 | 21×11 | 231 | 100% | W8 |
+| 2174 | W8 | Buried Alive — Fondo de la Fosa | R9-16 | #157 | 22×11 | 242 | 100% | W8 |
 | 2175 | W9 | Lavender Syndrome — Entrada del Pueblo | R10-1 | #158 | 22×12 | 264 | 100% | W9 |
 | 2176 | W9 | Lavender Syndrome — Calle del Altavoz | R10-2 | #159 | 22×12 | 264 | 100% | W9 |
 | 2177 | W9 | Lavender Syndrome — Casa del Piano | R10-3 | #160 | 22×12 | 264 | 100% | W9 |
@@ -176,5 +176,5 @@ La fuente de la transitabilidad es `content/dimensional_nightmare_passability.js
 | 2187 | W9 | Lavender Syndrome — Sala de los Audífonos | R10-13 | #170 | 22×12 | 264 | 100% | W9 |
 | 2188 | W9 | Lavender Syndrome — Torre del Canto | R10-14 | #171 | 22×12 | 264 | 100% | W9 |
 | 2189 | W9 | Lavender Syndrome — Estudio del Autor | R10-15 | #172 | 22×12 | 264 | 100% | W9 |
-| 2190 | W9 | Lavender Syndrome — Campanario Final | R10-16 | #173 | 22×12 | 264 | 100% | W9 |
+| 2190 | W9 | Lavender Syndrome — Campanario Final | R10-16 | #173 | 22×12 | 258 | 100% | W9 |
 

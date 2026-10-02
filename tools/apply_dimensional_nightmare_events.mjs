@@ -241,10 +241,14 @@ function npcPages(npc) {
 }
 
 // ----------------------------------------------------------- comandos evento
-const ANOMALY_SCRIPT = (varId) =>
-  `$game_variables[${varId}] += 1; $game_variables[274] = [$game_variables[274] + 1, 77].min; ` +
-  `$game_variables[265] = [$game_variables[265] + (($game_variables[${varId}] % 3 == 0 && $game_variables[${varId}] <= 9) ? 1 : 0), 100].min; ` +
-  `$game_switches[896 + ${varId - 268}] = true if $game_variables[${varId}] >= ${"__TOTAL__"}`;
+// Tope del contador total: suma de anomalías declaradas de todos los mundos (77 del primer anillo
+// + 35 del segundo). Antes era 77 fijo y el segundo anillo saturaba el contador.
+const ANOMALY_TOTAL_CAP = blueprint.episodes.reduce((sum, ep) => sum + (ep.anomalies?.declared ?? 0), 0);
+
+const ANOMALY_SCRIPT = (episode) =>
+  `$game_variables[${episode.anomalyVariable}] += 1; $game_variables[274] = [$game_variables[274] + 1, ${ANOMALY_TOTAL_CAP}].min; ` +
+  `$game_variables[265] = [$game_variables[265] + (($game_variables[${episode.anomalyVariable}] % 3 == 0 && $game_variables[${episode.anomalyVariable}] <= 9) ? 1 : 0), 100].min; ` +
+  `$game_switches[${episode.cuota}] = true if $game_variables[${episode.anomalyVariable}] >= ${"__TOTAL__"}`;
 
 /** Glitch visual breve y reversible (si el motor no trae el helper, no pasa nada). */
 const VISUAL_GLITCH =
@@ -260,7 +264,7 @@ function anomalyPages(item, episode) {
   const list = [];
   list.push(...texts([`[${item.code}] ${item.name}`, item.text.slice(0, 220)]));
   list.push(script(VISUAL_GLITCH));
-  list.push(script(ANOMALY_SCRIPT(episode.anomalyVariable).replace("__TOTAL__", String(episode.anomalies.declared))));
+  list.push(script(ANOMALY_SCRIPT(episode).replace("__TOTAL__", String(episode.anomalies.declared))));
   list.push(cmd(0));
   return [page({ gfx: graphic(""), trigger: item.trigger === "touch" ? 1 : 0, through: true, list })];
 }
@@ -271,7 +275,7 @@ function commandsForEvent(ev, episode) {
   list.push(...texts([`[${ev.name}] ${ev.effect || ev.detail}`.slice(0, 240)]));
   if (/anomal|v268|v269|v270|v271|v272|v273|\+1 a la variable/i.test(effect)) {
     const total = episode.anomalies.declared;
-    list.push(script(ANOMALY_SCRIPT(episode.anomalyVariable).replace("__TOTAL__", String(total))));
+    list.push(script(ANOMALY_SCRIPT(episode).replace("__TOTAL__", String(total))));
   }
   if (/curaci/.test(effect)) list.push(script("begin; pbHealAll; rescue; end"));
   if (/objeto|item|dn_page/i.test(effect)) {

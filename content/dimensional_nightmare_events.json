@@ -11,11 +11,11 @@
   "flags": {
     "switchRange": [
       882,
-      931
+      934
     ],
     "variableRange": [
       265,
-      285
+      288
     ],
     "commonEvents": [
       900,
@@ -34,6 +34,7 @@
       "grieta": 890,
       "resonance": 12,
       "anomalyVariable": 268,
+      "cuota": 896,
       "bossName": "LA MANO BLANCA",
       "boss": {
         "name": "LA MANO BLANCA",
@@ -655,6 +656,7 @@
       "grieta": 891,
       "resonance": 10,
       "anomalyVariable": 269,
+      "cuota": 897,
       "bossName": "EL SIN NOMBRE",
       "boss": {
         "name": "EL SIN NOMBRE",
@@ -1291,6 +1293,7 @@
       "grieta": 892,
       "resonance": 12,
       "anomalyVariable": 270,
+      "cuota": 898,
       "bossName": "EL CAMINANTE",
       "boss": {
         "name": "EL CAMINANTE",
@@ -1880,6 +1883,7 @@
       "grieta": 893,
       "resonance": 14,
       "anomalyVariable": 271,
+      "cuota": 899,
       "bossName": "LA NANA",
       "boss": {
         "name": "LA NANA",
@@ -2552,6 +2556,7 @@
       "grieta": 894,
       "resonance": 16,
       "anomalyVariable": 272,
+      "cuota": 900,
       "bossName": "EL JUGADOR 000",
       "boss": {
         "name": "EL JUGADOR 000",
@@ -3142,6 +3147,7 @@
       "grieta": 895,
       "resonance": 18,
       "anomalyVariable": 273,
+      "cuota": 901,
       "bossName": "KINGGUS",
       "boss": {
         "name": "KINGGUS",
@@ -3791,6 +3797,7 @@
       "grieta": 925,
       "resonance": 12,
       "anomalyVariable": 283,
+      "cuota": 932,
       "bossName": "EL AMO Y LA CORREA",
       "boss": {
         "name": "EL AMO Y LA CORREA",
@@ -4352,6 +4359,7 @@
       "grieta": 926,
       "resonance": 11,
       "anomalyVariable": 284,
+      "cuota": 933,
       "bossName": "EL QUE RESPIRA DEBAJO",
       "boss": {
         "name": "EL QUE RESPIRA DEBAJO",
@@ -4877,6 +4885,7 @@
       "grieta": 927,
       "resonance": 12,
       "anomalyVariable": 285,
+      "cuota": 934,
       "bossName": "EL CORO DEL CAMPANARIO",
       "boss": {
         "name": "EL CORO DEL CAMPANARIO",

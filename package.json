@@ -67,7 +67,7 @@
     "dn:mosaicos:origen": "node tools/dn_create_world_sheets.mjs",
     "dn:mosaicos:origen:check": "node tools/dn_create_world_sheets.mjs --verify",
     "dn:mosaicos:check": "node tools/dn_render_recreacion.mjs --check",
-    "dn:pasajes:all": "node tools/dn_propose_passability.mjs --episode EP02 --render && node tools/dn_propose_passability.mjs --episode EP03 --render && node tools/dn_propose_passability.mjs --episode EP04 --render && node tools/dn_propose_passability.mjs --episode EP05 --render && node tools/dn_propose_passability.mjs --episode EP06 --render && node tools/dn_propose_passability.mjs --episode NEXO --render",
+    "dn:pasajes:all": "node tools/dn_propose_passability.mjs --episode EP02 --render && node tools/dn_propose_passability.mjs --episode EP03 --render && node tools/dn_propose_passability.mjs --episode EP04 --render && node tools/dn_propose_passability.mjs --episode EP05 --render && node tools/dn_propose_passability.mjs --episode EP06 --render && node tools/dn_propose_passability.mjs --episode W7 --render && node tools/dn_propose_passability.mjs --episode W8 --render && node tools/dn_propose_passability.mjs --episode W9 --render && node tools/dn_propose_passability.mjs --episode NEXO --render",
     "dn:events:plan": "node tools/create_dimensional_nightmare_events.mjs",
     "dn:events:check": "node tools/create_dimensional_nightmare_events.mjs --check",
     "dn:events": "node tools/apply_dimensional_nightmare_events.mjs --all",

@@ -71,6 +71,10 @@ export const SWITCHES = {
   929: "DN_JEFE_W8_FASE_A",
   930: "DN_JEFE_W9_FASE_A",
   931: "DN_TESTIGO_LISTO",
+  // Cuotas de anomalías del segundo anillo (la fórmula 896+var-268 colisionaba con 911–913).
+  932: "DN_CUOTA_W7",
+  933: "DN_CUOTA_W8",
+  934: "DN_CUOTA_W9",
 };
 
 /** Variables del ciclo: resonancia, fase, episodio, anomalías, Rotom, final y la Liga. */
