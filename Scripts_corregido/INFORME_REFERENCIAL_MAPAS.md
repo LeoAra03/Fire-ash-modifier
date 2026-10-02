@@ -5190,32 +5190,32 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2031 — La Ruta de Dios — 1F: Puerta de las Columnas
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 1F, Puerta de las Columnas: entrada de la montaña sagrada, con nieve, estatuas y el desafío de Maya/Dawn.
-- **Datos compilados:** 40×40 tiles; 4 eventos; tileset 1.
+- **Datos compilados:** 40×40 tiles; 7 eventos; tileset 1.
 
 ### Map2032 — La Ruta de Dios — 2F: Sendero de los Titanes
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 2F, Sendero de los Titanes: laderas y monolitos nevados; alberga el encuentro de Palmer y Barry.
-- **Datos compilados:** 40×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×40 tiles; 8 eventos; tileset 1.
 
 ### Map2033 — La Ruta de Dios — 3F: Terraza del Aura
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 3F, Terraza del Aura: avenida y plataformas de mármol entre riscos, pozas cósmicas y estatuas; encuentro de Riley.
-- **Datos compilados:** 42×42 tiles; 4 eventos; tileset 1.
+- **Datos compilados:** 42×42 tiles; 7 eventos; tileset 1.
 
 ### Map2034 — La Ruta de Dios — 4F: Baluarte Celestial
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 4F, Baluarte Celestial: calzada procesional alpina y santuario de campeones; encuentro de Cynthia.
-- **Datos compilados:** 42×42 tiles; 4 eventos; tileset 1.
+- **Datos compilados:** 42×42 tiles; 7 eventos; tileset 1.
 
 ### Map2035 — La Ruta de Dios — 5F: Santuario del Tiempo
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 5F, Santuario del Tiempo: recinto de Dialga Primordial, con altar, escalinatas y salida al siguiente piso.
-- **Datos compilados:** 38×38 tiles; 4 eventos; tileset 1.
+- **Datos compilados:** 38×38 tiles; 7 eventos; tileset 1.
 
 ### Map2036 — La Ruta de Dios — 6F: Santuario del Espacio
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 6F, Santuario del Espacio: recinto de Palkia Primordial y transición hacia la cima.
-- **Datos compilados:** 38×38 tiles; 4 eventos; tileset 1.
+- **Datos compilados:** 38×38 tiles; 7 eventos; tileset 1.
 
 ### Map2037 — La Ruta de Dios — 7F: Cima del Génesis
 - **Categoría:** La Ruta de Dios.

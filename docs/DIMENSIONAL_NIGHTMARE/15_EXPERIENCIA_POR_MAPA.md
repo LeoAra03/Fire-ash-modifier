@@ -261,4 +261,46 @@ Sin errores ni avisos: gráficos, transferencias, tilesets, audio, objetos, trai
 | S15 | El prólogo cinemático (3 combates CPU) se repetía entero en cada reintento | switch 881 `RUTA_DE_DIOS_PRELUDE_SEEN`: se ve una vez y en los reintentos se resume en una línea |
 
 Verificación: `npm run verify:ruta_de_dios` comprueba las doce garantías en la sección
-`PokeMod_RutaDeDios` ya instalada en `Scripts.rxdata`.
+`PokeMod_RutaDeDios` ya instalada en `Scripts.rxdata`, el recorrido completo de los siete
+pisos y las secciones R8 (reliquias selladas) y R9 (peregrinos) sobre los mapas.
+
+## 7. Aventura de la subida — reliquias selladas (R8) y peregrinos (R9)
+
+La subida tenía un problema de ritmo: los pisos se cruzaban de una sola vez y sólo los
+guías y los guardianes daban algo que hacer. Dos capas nuevas convierten cada piso en un
+lugar que se explora y se escucha.
+
+### 7.1 Reliquias selladas (R8)
+
+Cada piso 1-6 esconde **una reliquia** en un rincón sin salida: una roca marcada con un
+altar (celda sólida) a la que sólo se llega de frente caminando. La reliquia está dormida
+hasta que el **sello del piso** se rompe, y el sello es su propio dueño:
+
+| Piso | Mapa | Sello que la abre | Switch | Reliquia | Objeto |
+|---|---|---|---|---|---|
+| 1F | 2031 | Maya de la Ruta | 936 `RUTA_DE_DIOS_RELIQUIA_1F` | Reliquia Sellada de la Aurora | Chapa |
+| 2F | 2032 | Palmer del Frente | 937 `RUTA_DE_DIOS_RELIQUIA_2F` | Reliquia Sellada del Trueno | Parche Habilidad |
+| 3F | 2033 | Quinoa de la Isla | 938 `RUTA_DE_DIOS_RELIQUIA_3F` | Reliquia Sellada de la Isla | Elixir Máximo |
+| 4F | 2034 | Cintia Campeona | 939 `RUTA_DE_DIOS_RELIQUIA_4F` | Reliquia Sellada de la Campeona | Chapa Dorada |
+| 5F | 2035 | Guardián Dialga | 871 `RUTA_DE_DIOS_DIALGA_DEFEATED` | Reliquia Sellada del Tiempo | Ceniza Sagrada |
+| 6F | 2036 | Guardián Palkia | 872 `RUTA_DE_DIOS_PALKIA_DEFEATED` | Reliquia Sellada del Espacio | Cápsula Habilidad |
+
+El rincón lo elige el generador (`sealedRelicSpot`): la celda sólida más lejana del piso
+con acceso de frente, en un cuadrante distinto por piso, y el altar se pinta antes de
+construir el mapa. Nada de esto se pisa con el recorrido obligatorio: la reliquia es
+premio de exploración, no un peaje.
+
+### 7.2 Peregrinos (R9)
+
+Dos voces por piso (12 en total), en suelo alcanzable y lejos del camino recto:
+
+- **Peregrino de la memoria**: mitología del piso (el tiempo que pesa, el espacio que se
+  dobla, el mar sin agua).
+- **Peregrino del sello**: nombra el **rumbo real** de la reliquia de ese piso («al norte,
+  hacia el oriente hay una roca que no es roca»). El rumbo se calcula de la posición de la
+  reliquia al construir el piso, así que la pista nunca miente.
+
+Verificación adicional: la sección 8 comprueba que cada reliquia esté sellada con su
+switch y en un rincón no pisable con acceso de frente; la sección 9, que haya dos
+peregrinos por piso, en suelo transitable, y que la pista del sello nombre el rumbo
+correcto.
