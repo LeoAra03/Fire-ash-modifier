@@ -43,6 +43,7 @@
     "verify:map-reference": "node tools/generate_map_reference_package.mjs --verify",
     "dn:check": "node tools/dn_ingest_reference.mjs --check",
     "dn:ingest": "node tools/dn_ingest_reference.mjs",
+    "dn:preparar": "npm run dn:mosaicos:origen && npm run dn:ingest && npm run dn:tiles && npm run dn:tiles:2x",
     "dn:fixtures": "node tools/dn_ingest_reference.mjs --fixtures",
     "dn:selftest": "node tools/dn_ingest_reference.mjs --selftest",
     "dn:tiles": "node tools/dn_extract_tileset.mjs",
