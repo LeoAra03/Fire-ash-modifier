@@ -458,7 +458,9 @@ espejo real del EP05).
 `dn:battles:verify` (trainers, objetos, iconos y pasos de fase B) en verde; `verify:defeats`
 (1 629 batallas en 718 eventos, 685 con derrota permanente y 64 revanchas por menú), 
 `verify:event-collision` y `npm test` (authoring, tone safety, integridad de paquete) también.
-Queda pendiente la QA manual en `Game.exe` y las variantes de corrupción por fase (arte).
+Queda pendiente la QA manual en `Game.exe` (B3) y las variantes de corrupción por fase, ya
+planificadas en el doc 13 §F3b (tono + huecos deterministas + overlays, sin duplicar mapas)
+con su puerta de calidad y el pendiente B7 del backlog de cierre.
 
 - `dn:events:verify` (**en verde**, 100 mapas): transfers a mapas existentes y celdas transitables,
   eventos dentro de límites, sin colisión de eventos en la misma celda, switches ≥882 (rango
