@@ -737,28 +737,28 @@
     },
     {
       "path": "Data/Map2073.rxdata",
-      "bytes": 10882,
-      "sha256": "eae81250f8e1149aff6f37ac51560c43a4734f38bb4965f614796887876055bd"
+      "bytes": 10939,
+      "sha256": "a478f63c6a3459f1f4d69f5efd2bf3f667d51adac17bb3a9df56994c65db2428"
     },
     {
       "path": "Data/Map2074.rxdata",
-      "bytes": 10323,
-      "sha256": "9042970682bcd7c7f53e6c3d2456c179c1b43e3fc70c0a84559cae1f04abba0e"
+      "bytes": 10380,
+      "sha256": "3dcdf9857e357a91ae2172d1d830b001d707c05496b6ce0a8831cc5ffcf049f4"
     },
     {
       "path": "Data/Map2075.rxdata",
-      "bytes": 10458,
-      "sha256": "f4afcbb85dd7e8856640b3b5544c791d8b737776cbc5939d33f60ba136d33102"
+      "bytes": 10515,
+      "sha256": "ad1d376ff0d011d8369153828c52009037d428fc05d90eb439c24d04d86ec8dd"
     },
     {
       "path": "Data/Map2076.rxdata",
-      "bytes": 9302,
-      "sha256": "a902bc4dc0f52a6ee92f9b8b243b773b6104b3e79d7101654163ff5ed6b534ba"
+      "bytes": 9359,
+      "sha256": "0cc2606f61d6c7b865020ce39daf159219666170b6fb00365f531d182b913fc6"
     },
     {
       "path": "Data/Map2077.rxdata",
-      "bytes": 10086,
-      "sha256": "778c7c2544a966ac868c91b7db6ab676dbb9a7754ef724b5f4695b1e3715aff3"
+      "bytes": 10143,
+      "sha256": "0aee707742b626d2d5d6b1f305b806ab60ff0610ee0001e0059566fc0e2e2122"
     },
     {
       "path": "Data/Map2078.rxdata",
@@ -1342,8 +1342,8 @@
     },
     {
       "path": "Data/Scripts.rxdata",
-      "bytes": 1101239,
-      "sha256": "8d88cbdec113bd65b75502aeb368efe6e7e6bcb9afba90c22aadd2ec32f86407"
+      "bytes": 1105485,
+      "sha256": "cd352db0b223aa11bdf5ad8bbebad0f162f2c5d8fb11f6472ce103ed4532e6d1"
     },
     {
       "path": "Data/System.rxdata",
@@ -1352,8 +1352,8 @@
     },
     {
       "path": "Data/Tilesets.rxdata",
-      "bytes": 760403,
-      "sha256": "852b2c9dea6a427c228a643841055630ce886c2189eb6902fb2fb4b0a183fd8b"
+      "bytes": 761717,
+      "sha256": "e315efe7fe2575d4e34f3b555eb790db4fe25bcdc219c366a65966c97dae10bd"
     },
     {
       "path": "Data/encounters.dat",
@@ -1812,28 +1812,28 @@
     },
     {
       "path": "Graphics/Tilesets/DN_2073.png",
-      "bytes": 153049,
-      "sha256": "53568124ea2068195faac63db1a33f675e09a0f0393012323cd9e1e470ac7028"
+      "bytes": 172041,
+      "sha256": "75c88c731ecf6e3a731713e1d7db7788e3a1b7d4532dcf1b1ba66e710e83208d"
     },
     {
       "path": "Graphics/Tilesets/DN_2074.png",
-      "bytes": 126006,
-      "sha256": "cae0a291cc28fc66c45514b97c42a7c9f9c79dad4640e46375016c9e6118bc4b"
+      "bytes": 134271,
+      "sha256": "14f2185a21f738ac06251327cd4405785a956904090c49a01f36bbd533b49d6e"
     },
     {
       "path": "Graphics/Tilesets/DN_2075.png",
-      "bytes": 140056,
-      "sha256": "cfb27205e76a21e5899bfd28c187f0e8805931cb6d937c7e995a9e34864dde1f"
+      "bytes": 166806,
+      "sha256": "28711f4d687abf3e4e8fa9ffcf16cbed0671a384ef240f6a0aaeaec544fdee7a"
     },
     {
       "path": "Graphics/Tilesets/DN_2076.png",
-      "bytes": 143149,
-      "sha256": "328d6a77ed80990ba0630e6e0beedd05572432dc03d10b9018f7d46599c5b136"
+      "bytes": 161738,
+      "sha256": "ff3a66445d3abb29f270fe1d5698cc470eb072537b2219fb4c69e11358da1bf0"
     },
     {
       "path": "Graphics/Tilesets/DN_2077.png",
-      "bytes": 124400,
-      "sha256": "f47e14cfc87e890e14b1985c13cc0d42ef208038b02238d3246114a20c5b6704"
+      "bytes": 152396,
+      "sha256": "d6b211cd348f3056eaad4fc4c1cffc993696130e34c383440c445dc8f2540ce7"
     },
     {
       "path": "Graphics/Tilesets/DN_2078.png",

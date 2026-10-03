@@ -184,23 +184,42 @@ check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes(
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
   "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
 check(rutaScript.includes("pbStartArceusDivineBattle") &&
-  rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") && rutaScript.includes("pbArceusPseudoPC") &&
+  rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS") && rutaScript.includes("pbArceusPseudoPC") &&
   rutaScript.includes("pbArceusSurrenderSequence") && rutaScript.includes("pbArceusCopyActive") &&
   rutaScript.includes("pbArceusCinematicPrelude") && rutaScript.includes("PokemonSprite"),
   "Arceus conserva batalla por fases, pseudo-PC, copia del activo, rendición y prólogo cinematográfico");
+check(rutaScript.includes("def ruta_arceus_pokedex") &&
+  rutaScript.includes("defined?($player)") && rutaScript.includes("defined?($Trainer)") &&
+  rutaScript.includes("owner.respond_to?(:pokedex)") &&
+  rutaScript.includes("pokedex.register_battled") && !rutaScript.includes("pbPlayer.pokedex"),
+  "pbSetSeen/pbSetBattled resuelven la Pokédex global en v19–v21 sin invocarla sobre NPCTrainer");
+const mirrorIsland = JSON.parse(fs.readFileSync(path.join(ROOT, "web", "packs", "isla_espejo.json"), "utf8"));
+const ancestralCynthia = mirrorIsland.bosses.find((trainer) => trainer.id === "cintia_anc");
+const requiredSeenTeam = ["SPIRITOMB", "TOGEKISS", "MILOTIC", "LUCARIO", "ROSERADE", "GARCHOMP"];
+check(ancestralCynthia?.team?.length === 6 &&
+  requiredSeenTeam.every((species) => ancestralCynthia.team.some((pokemon) => pokemon.species === species)) &&
+  rutaScript.includes("party = pbParty(battler.index)") &&
+  rutaScript.includes("pokedex.register(species, gender, form)"),
+  "el equipo de Cintia registra como vistos sus seis Pokémon al aparecer el primer rival");
 const cpuBattleCount = (rutaScript.match(/pbArceusCinematicCpuBattle\(\[/g) || []).length;
 check(cpuBattleCount === 3 &&
   rutaScript.includes("PokeBattle_Battle.new(scene, player_party, boss_party,\n                                   player_trainers, [boss_trainer])") &&
+  rutaScript.includes("battle.instance_variable_set(:@ruta_arceus_cinematic_mode, true)") &&
   rutaScript.includes("battle.controlPlayer = true") &&
   rutaScript.includes("battle.canRun = false") &&
   rutaScript.includes("battle.expGain = false") &&
   rutaScript.includes("battle.moneyGain = false") &&
   rutaScript.includes("pbBattleAnimation(pbGetTrainerBattleBGM([boss_trainer])") &&
-  rutaScript.includes("pbDefaultChooseNewEnemy(idxBattler, pbParty(idxBattler))") &&
+  rutaScript.includes("pbArceusScriptedAction(index, false)") &&
+  rutaScript.includes("RUTA_ARCEUS_CINEMATIC_RNG_SEED") &&
+  rutaScript.includes("@ruta_arceus_rng_state * 1103515245 + 12345") &&
+  rutaScript.includes("_ruta_arceus_original_accuracy_check") &&
+  rutaScript.includes("arceus_cinematic_damage(self, amt)") &&
+  rutaScript.includes("@ruta_arceus_cinematic_boss, true") &&
   rutaScript.includes("ash_party_state") &&
   rutaScript.includes("old_rules.each { |key, value| $PokemonTemp.battleRules[key] = value }") &&
   !rutaScript.includes("$Trainer.party = player_party"),
-  "los tres apoyos usan combates reales CPU vs CPU, con escena normal, sin huida, objetos, cambios ni intervención");
+  "los tres apoyos conservan la escena de combate, pero sus comandos, azar y desenlace están coreografiados" );
 check(rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") &&
   rutaScript.includes(":ARC_Ethan") && rutaScript.includes(":SECRET_Red") &&
   rutaScript.includes(":SECRET_Volo") && rutaScript.includes("\"2v1\"") &&
@@ -211,9 +230,15 @@ check(rutaScript.includes("return 0") && rutaScript.includes("return 4 if arceus
   rutaScript.includes("100%") && rutaScript.includes("Master Ball"),
   "la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después");
 check(rutaScript.includes("RUTA_ARCEUS_PHASE_PLATES") && rutaScript.includes("pbArceusRotateType") &&
+  rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS = [0.72, 0.55, 0.38, 0.22]") &&
+  rutaScript.includes("target_phase = [@arceus_seals + 1, 6].min") &&
+  rutaScript.includes("@ruta_arceus_seal_move_key") &&
+  !rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") &&
   rutaScript.includes("pbArceusSummon") && rutaScript.includes(":MEW") &&
-  rutaScript.includes(":GIRATINA"),
-  "la batalla instala ruleta de tipos, movimientos rotativos y aliados legendarios");
+  rutaScript.includes(":GIRATINA") && rutaScript.includes("pbArceusScaleSprite") &&
+  rutaScript.includes("def pbStartBattleSendOut(sendOuts)") &&
+  rutaScript.includes("class PokeBattle_Scene"),
+  "Arceus avanza por cinco sellos fijos, una fase por golpe y con apariciones/efectos personalizados");
 const summitRaw = readMarshalData("Map2037.rxdata");
 const summitBoss = summitRaw.getIvar("events").pairs.find(([, event]) =>
   (event.getIvar("name")?.text ?? "").includes("Arceus Creador"))?.[1];
@@ -491,6 +516,15 @@ check(wild.zones.some((zone) => zone.mapId === 2021) && wild.zones.some((zone) =
     return Boolean(entry) && Object.keys(zone.types).every((type) => (entry.getIvar("@types").pairs.some(([key]) => key.name === type)));
   }), "las 13 tablas están instaladas en encounters.dat");
 }
+
+const dnPolish = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "dimensional_nightmare_map_polish.json"), "utf8"));
+check(dnPolish.auditedMapCount === 151 && dnPolish.auditedMaps.length === 151 &&
+  new Set(dnPolish.auditedMaps.map((map) => map.id)).size === 151 &&
+  JSON.stringify(dnPolish.cleanupTargets.map((entry) => [entry.id, entry.rows])) ===
+    JSON.stringify([[2073, 2], [2074, 2], [2075, 3], [2076, 2], [2077, 3]]) &&
+  dnPolish.cleanupTargets.every((entry) => entry.baseline?.eventsSha256 && entry.baseline?.collisionSha256 &&
+    entry.baseline?.atlasPixelSha256 && entry.baseline?.outsideBandTileSha256),
+  "la depuración DN audita los 151 mapas y limita el artefacto de rótulos a cinco bandas con huellas de integridad");
 
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);
 if (failed) process.exitCode = 1;
