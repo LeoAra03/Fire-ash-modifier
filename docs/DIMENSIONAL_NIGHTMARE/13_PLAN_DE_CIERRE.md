@@ -165,21 +165,19 @@ Hasta que exista, la fase sólo se documenta aquí y en el doc 15 §5.
 | **E7** Mosaicos de referencia | ✅ | 11 hojas en `docs/dn_referencia/recreacion/` (149 mapas · ficha+mapa+transitabilidad) + `INDICE.md`; `dn:mosaicos:check` en `dn:verify:all` |
 | **E8** Segundo anillo W7–W9 | ✅ | hojas origen R8–R10 + 48 mapas (2143–2190) + 3 jefes con fase B + Medallas del Amo/Fosa/Silencio + Vitrina del Testigo (`DN_CASE_WIT`) |
 | **F9** Audio y silenciador EP04 | ✅ estática | 11 MIDI originales; BGM explícita en 149 mapas, silencio EP05 2104–2109, seis troncos en Map2103 y guardia de 60 s; `dn:audio:verify` + `dn:events:verify` |
+| **E9** Guion, exploración, estatuas, ciudades y paquete QA | ✅ estática | 142 NPCs con estados/memoria, 151 `DN_MAP_MEMORY`, 151 `DN_STATUE_LORE`, 13 `DN_TOWN_CENTER`, 13 `DN_TOWN_MART`, 12 llegadas, 32 interludios, 10 decisiones, espejo real EP05 y forma final EP06 en `DN_RuntimeSupport`, 0 bloqueos por sprites sólidos y `Scripts_corregido/Dimensional_Nightmare_QA.zip` |
 
 Decisiones tomadas al ejecutar:
 
-- **Las grietas se abren a pie**: el bloque de elección (comando 102) no se usa en ningún evento
-  del proyecto; las grietas y la entrada usan «tocar el jugador» (trigger 1) con una línea de
-  texto. Menos piezas móviles y coherente con el resto del contenido.
+- **Las grietas se abren a pie** y las decisiones de episodio usan elección explícita (`comando 102`) sin riesgo de softlock ni bloqueo de progreso.
 - **La entrada al hub vive en la Gruta (2030, celda 36,11)**, pegada a la celda de llegada que ya
-  usaban los 200 transfers de E4 (36,12), y se abre con `v264 ≥ 3` (el switch 882 no lo enciende
-  hoy ninguna herramienta; documentarlo como decisión pendiente si se quiere un candado propio).
+  usaban los 200 transfers de E4 (36,12), y se abre con `v264 ≥ 3`.
 - **El arte se genera original**, no se recorta de los mosaicos: así el ZIP que se distribuya no
   arrastra material de referencia.
 - **La salida del hub es una celda distinta de la llegada** para que entrar y salir no forme bucle.
+- **Cero bloqueos por sprites sólidos**: todos los eventos con sprite (`NPC_*`, `MEDALLA_*`, `DN_MAP_MEMORY`, `DN_STATUE_LORE`, `DN_TOWN_CENTER`, `DN_TOWN_MART`, `DN_DECISION_*`) se ubican en celdas no articuladas y sin movimiento aleatorio por pasillos de 1 celda.
 
-Pendientes que siguen abiertos: B1–B7 del §4 (arte MEDIA/BAJA, variantes de audio por fase/anomalía,
-QA manual, combate espejo real de EP05, forma final de EP06, guion definitivo y variantes de corrupción).
+Pendiente único fuera del alcance estático: la prueba manual en vivo dentro de `Game.exe` por parte del usuario.
 
 ## 5b. Comandos del tramo
 

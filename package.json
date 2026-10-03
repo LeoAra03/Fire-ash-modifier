@@ -99,7 +99,7 @@
     "dn:sens:verify": "node tools/dn_apply_sensations.mjs --verify",
     "dn:story": "node tools/dn_apply_story_content.mjs",
     "dn:story:verify": "node tools/dn_apply_story_content.mjs --verify",
-    "dn:build:all": "npm run dn:events:plan && npm run dn:events && npm run dn:battles && npm run dn:art && npm run dn:hub:events && npm run dn:medals && npm run dn:liga && npm run dn:sens && npm run dn:flags && npm run dn:story && npm run dn:audio",
+    "dn:build:all": "npm run dn:events:plan && npm run dn:events && npm run dn:battles && npm run dn:art && npm run dn:hub:events && npm run dn:medals && npm run dn:liga && npm run dn:sens && npm run dn:flags && npm run dn:visual:plan && npm run dn:story && npm run dn:audio",
     "dn:flags": "node tools/dn_name_flags.mjs",
     "dn:flags:verify": "node tools/dn_name_flags.mjs --verify",
     "dn:audit": "node tools/dn_audit_content.mjs",

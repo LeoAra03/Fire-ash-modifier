@@ -72,6 +72,15 @@ La salida será un parche de QA separado en `Scripts_corregido/Dimensional_Night
 7. Confirmar música, tonos, lectura de textos, sprites, centros/tiendas cuando correspondan, y que no haya bloqueos de movimiento.
 8. Probar ambos finales del Nexo y la vitrina de recuerdos; cargar/reiniciar una partida para confirmar persistencia.
 
-## Registro de cierre
+## Registro de cierre (2026-10-03)
 
-Este archivo es la puerta y no una declaración de éxito anticipada. Cada fase se marcará con fecha, comandos y resultado sólo después de ejecutarla. El pendiente que no se puede cerrar desde la validación estática es F7: la partida real en `Game.exe`, responsabilidad del usuario.
+| Fase | Estado | Evidencia / Comando verificado |
+|---|---|---|
+| **F0 — Línea base e IDs** | `[x] Completado` | `npm run dn:flags:verify` (54 switches, 43 variables, 0 escrituras a `v264`) |
+| **F1 — Biblia de mapas y layout** | `[x] Completado` | `npm run dn:visual:check` (151 fichas orgánicas, 4–6 decoraciones por mapa, 13 asentamientos con Centro/Tienda explícitos) |
+| **F2 — Guion, NPCs y estatuas** | `[x] Completado` | `npm run dn:story:verify` (142 NPCs con memoria y estados, 12 escenas de llegada, 32 interludios emotivos, 151 `DN_MAP_MEMORY`, 151 `DN_STATUE_LORE`, 13 `DN_TOWN_CENTER`, 13 `DN_TOWN_MART`) |
+| **F3 — Decisiones y consecuencias** | `[x] Completado` | `npm run dn:story:verify` (10 decisiones independientes en `v279`–`v288` + `DN_DECISION_ARCHIVE` en Map2040 + finales de Nexo en `v276`) |
+| **F4 — Sistemas, puzzles y combates** | `[x] Completado` | `npm run dn:battles:verify && npm test` (combate espejo real `dn_mirror_battle` en EP05, forma final `dn_kinggus_final_sequence` en EP06, 0 bloqueos por sprites sólidos en los 151 mapas) |
+| **F5 — Arte y audio de juego** | `[x] Completado` | `npm run dn:art:verify && npm run dn:audio:verify` (7 assets pixel art + portada + 11 MIDI originales `DN_*.mid`) |
+| **F6 — Empaquetado de QA** | `[x] Completado` | `npm run build:dn:qa && npm run verify:all` (`Scripts_corregido/Dimensional_Nightmare_QA.zip` y `Scripts_corregido/Fire_Ash_Paquete_Directo.zip` verificados al 100 %) |
+| **F7 — Prueba manual en `Game.exe`** | `[ ] Pendiente de usuario` | Lista para ejecutar por el usuario extrayendo el ZIP en una copia de Pokémon Fire Ash 3.7.1 |

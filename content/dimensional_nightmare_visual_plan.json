@@ -20,7 +20,8 @@
         "vitrinas separadas por universo",
         "bancos de piedra desplazados"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2041,
@@ -41,7 +42,8 @@
         "urnas volcadas con ceniza",
         "campanas con grietas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2042,
@@ -62,7 +64,8 @@
         "velas con cera oscura",
         "barro húmedo en desniveles"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2043,
@@ -83,7 +86,8 @@
         "placas funerarias sin simetría",
         "nichos con polvo en abanico"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2044,
@@ -104,7 +108,8 @@
         "rejillas de hierro y cadenas sueltas",
         "raíces que levantan losas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2045,
@@ -125,7 +130,8 @@
         "urnas volcadas con ceniza",
         "campanas con grietas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2046,
@@ -146,7 +152,8 @@
         "velas con cera oscura",
         "barro húmedo en desniveles"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2047,
@@ -167,7 +174,8 @@
         "placas funerarias sin simetría",
         "nichos con polvo en abanico"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2048,
@@ -188,7 +196,8 @@
         "rejillas de hierro y cadenas sueltas",
         "raíces que levantan losas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2049,
@@ -209,7 +218,8 @@
         "urnas volcadas con ceniza",
         "campanas con grietas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2050,
@@ -230,7 +240,8 @@
         "velas con cera oscura",
         "barro húmedo en desniveles"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2051,
@@ -251,7 +262,8 @@
         "placas funerarias sin simetría",
         "nichos con polvo en abanico"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2052,
@@ -272,7 +284,8 @@
         "rejillas de hierro y cadenas sueltas",
         "raíces que levantan losas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2053,
@@ -293,7 +306,8 @@
         "urnas volcadas con ceniza",
         "campanas con grietas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2054,
@@ -314,7 +328,8 @@
         "velas con cera oscura",
         "barro húmedo en desniveles"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2055,
@@ -335,7 +350,8 @@
         "placas funerarias sin simetría",
         "nichos con polvo en abanico"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2056,
@@ -356,7 +372,8 @@
         "rejillas de hierro y cadenas sueltas",
         "raíces que levantan losas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2057,
@@ -377,7 +394,8 @@
         "rieles enterrados en tierra seca",
         "letreros vencidos"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: edificio clausurado por el cartucho detenido, con banco de descanso exterior operativo que cura al equipo. Tienda: persiana baja congelada en el minuto 999:59 (entrega suministro de emergencia una vez).",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2058,
@@ -398,7 +416,8 @@
         "cintas magnéticas enredadas",
         "ventanas tapiadas de forma desigual"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Tramo residencial entre la entrada (Map2057) y la Plaza de la Fuente Seca (Map2059), donde operan el botiquín y la botica sepia.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2059,
@@ -419,7 +438,8 @@
         "lápidas con letras erosionadas",
         "vagones con pintura descascarada"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: botiquín del relojero junto a la fuente seca (operativo). Tienda: puesto de botica sepia operativo con medicinas de viaje.",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2060,
@@ -440,7 +460,8 @@
         "maleza sepia entre adoquines",
         "pozos de fuente agrietados"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Callejón de paso posterior a la plaza; los servicios médicos y de tienda quedan centralizados en Map2057 y Map2059.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2061,
@@ -461,7 +482,8 @@
         "rieles enterrados en tierra seca",
         "letreros vencidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2062,
@@ -482,7 +504,8 @@
         "cintas magnéticas enredadas",
         "ventanas tapiadas de forma desigual"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2063,
@@ -503,7 +526,8 @@
         "lápidas con letras erosionadas",
         "vagones con pintura descascarada"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2064,
@@ -524,7 +548,8 @@
         "maleza sepia entre adoquines",
         "pozos de fuente agrietados"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2065,
@@ -545,7 +570,8 @@
         "rieles enterrados en tierra seca",
         "letreros vencidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2066,
@@ -566,7 +592,8 @@
         "cintas magnéticas enredadas",
         "ventanas tapiadas de forma desigual"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2067,
@@ -587,7 +614,8 @@
         "lápidas con letras erosionadas",
         "vagones con pintura descascarada"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2068,
@@ -608,7 +636,8 @@
         "maleza sepia entre adoquines",
         "pozos de fuente agrietados"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2069,
@@ -629,7 +658,8 @@
         "rieles enterrados en tierra seca",
         "letreros vencidos"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Andén ferroviario detenido; el descanso y la botica del cartucho se ubican en la plaza superior (Map2059).",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2070,
@@ -650,7 +680,8 @@
         "cintas magnéticas enredadas",
         "ventanas tapiadas de forma desigual"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2071,
@@ -671,7 +702,8 @@
         "lápidas con letras erosionadas",
         "vagones con pintura descascarada"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2072,
@@ -692,7 +724,8 @@
         "maleza sepia entre adoquines",
         "pozos de fuente agrietados"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2073,
@@ -713,7 +746,8 @@
         "ventisqueros que cortan el sendero",
         "huellas que terminan en roca"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2074,
@@ -734,7 +768,8 @@
         "estalactitas quebradas",
         "cristales con vetas desiguales"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2075,
@@ -755,7 +790,8 @@
         "estatuas cubiertas de escarcha",
         "cornisas con escalones naturales"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2076,
@@ -776,7 +812,8 @@
         "cabañas inclinadas por el viento",
         "fogatas con nieve intacta alrededor"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2077,
@@ -797,7 +834,8 @@
         "ventisqueros que cortan el sendero",
         "huellas que terminan en roca"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2078,
@@ -818,7 +856,8 @@
         "estalactitas quebradas",
         "cristales con vetas desiguales"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: refugio térmico de montaña junto a la lumbre (operativo). Tienda: puesto de expedición de nieve operativo.",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2079,
@@ -839,7 +878,8 @@
         "estatuas cubiertas de escarcha",
         "cornisas con escalones naturales"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: enfermería de cumbre con generador de emergencia (operativo). Tienda: almacén de cuerdas cerrado por la ventisca (entrega provisión de cumbre una vez).",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2080,
@@ -860,7 +900,8 @@
         "cabañas inclinadas por el viento",
         "fogatas con nieve intacta alrededor"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2081,
@@ -881,7 +922,8 @@
         "ventisqueros que cortan el sendero",
         "huellas que terminan en roca"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2082,
@@ -902,7 +944,8 @@
         "estalactitas quebradas",
         "cristales con vetas desiguales"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2083,
@@ -923,7 +966,8 @@
         "estatuas cubiertas de escarcha",
         "cornisas con escalones naturales"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2084,
@@ -944,7 +988,8 @@
         "cabañas inclinadas por el viento",
         "fogatas con nieve intacta alrededor"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2085,
@@ -965,7 +1010,8 @@
         "ventisqueros que cortan el sendero",
         "huellas que terminan en roca"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2086,
@@ -986,7 +1032,8 @@
         "estalactitas quebradas",
         "cristales con vetas desiguales"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2087,
@@ -1007,7 +1054,8 @@
         "estatuas cubiertas de escarcha",
         "cornisas con escalones naturales"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2088,
@@ -1028,7 +1076,8 @@
         "cunas vacías de madera gastada",
         "troncos huecos que parecen tubos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2089,
@@ -1049,7 +1098,8 @@
         "luciérnagas en claros irregulares",
         "carteles torcidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2090,
@@ -1070,7 +1120,8 @@
         "flores orientadas hacia el sendero",
         "mantas dobladas en refugios vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2091,
@@ -1091,7 +1142,8 @@
         "raíces sobre puentes de piedra",
         "juguetes con una pieza ausente"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2092,
@@ -1112,7 +1164,8 @@
         "cunas vacías de madera gastada",
         "troncos huecos que parecen tubos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2093,
@@ -1133,7 +1186,8 @@
         "luciérnagas en claros irregulares",
         "carteles torcidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2094,
@@ -1154,7 +1208,8 @@
         "flores orientadas hacia el sendero",
         "mantas dobladas en refugios vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2095,
@@ -1175,7 +1230,8 @@
         "raíces sobre puentes de piedra",
         "juguetes con una pieza ausente"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2096,
@@ -1196,7 +1252,8 @@
         "cunas vacías de madera gastada",
         "troncos huecos que parecen tubos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2097,
@@ -1217,7 +1274,8 @@
         "luciérnagas en claros irregulares",
         "carteles torcidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2098,
@@ -1238,7 +1296,8 @@
         "flores orientadas hacia el sendero",
         "mantas dobladas en refugios vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2099,
@@ -1259,7 +1318,8 @@
         "raíces sobre puentes de piedra",
         "juguetes con una pieza ausente"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2100,
@@ -1280,7 +1340,8 @@
         "cunas vacías de madera gastada",
         "troncos huecos que parecen tubos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2101,
@@ -1301,7 +1362,8 @@
         "luciérnagas en claros irregulares",
         "carteles torcidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2102,
@@ -1322,7 +1384,8 @@
         "flores orientadas hacia el sendero",
         "mantas dobladas en refugios vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2103,
@@ -1343,7 +1406,8 @@
         "raíces sobre puentes de piedra",
         "juguetes con una pieza ausente"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2104,
@@ -1364,7 +1428,8 @@
         "vías cortadas antes del andén",
         "señales de tránsito partidas"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: fachada ausente por fallo 0x00; terminal de pulso médico exterior operativo. Tienda: mostrador 000 sin índice en memoria (entrega respaldo una vez).",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2105,
@@ -1385,7 +1450,8 @@
         "fotografías sin imagen",
         "edificios con una fachada faltante"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Vía urbana fracturada entre la entrada 000 (Map2104) y la Plaza sin Fuente (Map2106), donde operan los terminales de Centro y Tienda.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2106,
@@ -1406,7 +1472,8 @@
         "reflejos desfasados en charcos",
         "baldosas negras fuera de alineación"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: terminal médica en blanco y negro (operativa). Tienda: quiosco de respaldo del Jugador 000 operativo con curaciones.",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2107,
@@ -1427,7 +1494,8 @@
         "cables que terminan en el aire",
         "huecos de fuente con borde quebrado"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Callejón sin salida de memoria; los servicios de curación y quiosco están a un mapa de distancia en Map2106.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2108,
@@ -1448,7 +1516,8 @@
         "vías cortadas antes del andén",
         "señales de tránsito partidas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2109,
@@ -1469,7 +1538,8 @@
         "fotografías sin imagen",
         "edificios con una fachada faltante"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2110,
@@ -1490,7 +1560,8 @@
         "reflejos desfasados en charcos",
         "baldosas negras fuera de alineación"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2111,
@@ -1511,7 +1582,8 @@
         "cables que terminan en el aire",
         "huecos de fuente con borde quebrado"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2112,
@@ -1532,7 +1604,8 @@
         "vías cortadas antes del andén",
         "señales de tránsito partidas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2113,
@@ -1553,7 +1626,8 @@
         "fotografías sin imagen",
         "edificios con una fachada faltante"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2114,
@@ -1574,7 +1648,8 @@
         "reflejos desfasados en charcos",
         "baldosas negras fuera de alineación"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2115,
@@ -1595,7 +1670,8 @@
         "cables que terminan en el aire",
         "huecos de fuente con borde quebrado"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Andén sin tren del sector 000; conecta el tramo de oficinas con la zona 404 (servicios en Map2106 y Map2118).",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2116,
@@ -1616,7 +1692,8 @@
         "vías cortadas antes del andén",
         "señales de tránsito partidas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2117,
@@ -1637,7 +1714,8 @@
         "fotografías sin imagen",
         "edificios con una fachada faltante"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2118,
@@ -1658,7 +1736,8 @@
         "reflejos desfasados en charcos",
         "baldosas negras fuera de alineación"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: edificio 404 no encontrado; protocolo de restauración del Rotom operativo. Tienda: fachada cortada por el borde del mapa (entrega suministro rescatado una vez).",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2119,
@@ -1679,7 +1758,8 @@
         "cables que terminan en el aire",
         "huecos de fuente con borde quebrado"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2120,
@@ -1700,7 +1780,8 @@
         "columnas desalineadas",
         "cristales con letras incompletas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2121,
@@ -1721,7 +1802,8 @@
         "estatuas giradas hacia rincones distintos",
         "escalones de alturas alternas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2122,
@@ -1742,7 +1824,8 @@
         "mosaicos Unown quebrados",
         "raíces atravesando piedra grabada"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2123,
@@ -1763,7 +1846,8 @@
         "placas que reflejan al visitante",
         "libros mudos con lomos vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2124,
@@ -1784,7 +1868,8 @@
         "columnas desalineadas",
         "cristales con letras incompletas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2125,
@@ -1805,7 +1890,8 @@
         "estatuas giradas hacia rincones distintos",
         "escalones de alturas alternas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2126,
@@ -1826,7 +1912,8 @@
         "mosaicos Unown quebrados",
         "raíces atravesando piedra grabada"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2127,
@@ -1847,7 +1934,8 @@
         "placas que reflejan al visitante",
         "libros mudos con lomos vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2128,
@@ -1868,7 +1956,8 @@
         "columnas desalineadas",
         "cristales con letras incompletas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2129,
@@ -1889,7 +1978,8 @@
         "estatuas giradas hacia rincones distintos",
         "escalones de alturas alternas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2130,
@@ -1910,7 +2000,8 @@
         "mosaicos Unown quebrados",
         "raíces atravesando piedra grabada"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2131,
@@ -1931,7 +2022,8 @@
         "placas que reflejan al visitante",
         "libros mudos con lomos vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2132,
@@ -1952,7 +2044,8 @@
         "columnas desalineadas",
         "cristales con letras incompletas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2133,
@@ -1973,7 +2066,8 @@
         "estatuas giradas hacia rincones distintos",
         "escalones de alturas alternas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2134,
@@ -1994,7 +2088,8 @@
         "mosaicos Unown quebrados",
         "raíces atravesando piedra grabada"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2135,
@@ -2015,7 +2110,8 @@
         "placas que reflejan al visitante",
         "libros mudos con lomos vacíos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2136,
@@ -2036,7 +2132,8 @@
         "grietas de ancho irregular",
         "fragmentos de suelo suspendidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2137,
@@ -2057,7 +2154,8 @@
         "señales de mundos distintos",
         "raíces que cruzan una costura"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: puesto de tregua local operativo y señal hacia el Centro Sumergido (Map2138). Tienda: mostrador de la Costura operativo con suministros rescatados de los seis universos.",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2138,
@@ -2078,7 +2176,8 @@
         "estelas con nombres incompletos",
         "charcos que reflejan otro mapa"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "Centro Pokémon: terminal principal del Centro Sumergido 100 % operativo («el centro que aún cura» antes del tramo final y la Liga). Tienda: dispensador médico auxiliar operativo.",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2139,
@@ -2099,7 +2198,8 @@
         "placas de registro rotas",
         "bloques de código flotantes"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2140,
@@ -2120,7 +2220,8 @@
         "grietas de ancho irregular",
         "fragmentos de suelo suspendidos"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2141,
@@ -2141,7 +2242,8 @@
         "bloques de código suspendidos",
         "escalón fracturado al Coliseo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2142,
@@ -2162,7 +2264,8 @@
         "arcos funerarios en altura",
         "escalera lateral que se abre a una galería irregular"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2143,
@@ -2183,7 +2286,8 @@
         "trofeos con fechas imposibles",
         "correas simbólicas sin cuerpo"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Patio doméstico inicial de W7; el Centro en vigilia y la tienda cerrada por duelo se encuentran en la Plaza Sin Gente (Map2153).",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2144,
@@ -2204,7 +2308,8 @@
         "macetas volcadas",
         "fotografías veladas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2145,
@@ -2225,7 +2330,8 @@
         "árboles con ramas quebradas",
         "senderos que rodean el claro"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2146,
@@ -2246,7 +2352,8 @@
         "bancos cubiertos de hojas",
         "cintas anudadas a ramas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2147,
@@ -2267,7 +2374,8 @@
         "trofeos con fechas imposibles",
         "correas simbólicas sin cuerpo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2148,
@@ -2288,7 +2396,8 @@
         "macetas volcadas",
         "fotografías veladas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2149,
@@ -2309,7 +2418,8 @@
         "árboles con ramas quebradas",
         "senderos que rodean el claro"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2150,
@@ -2330,7 +2440,8 @@
         "bancos cubiertos de hojas",
         "cintas anudadas a ramas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2151,
@@ -2351,7 +2462,8 @@
         "trofeos con fechas imposibles",
         "correas simbólicas sin cuerpo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2152,
@@ -2372,7 +2484,8 @@
         "macetas volcadas",
         "fotografías veladas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2153,
@@ -2393,7 +2506,8 @@
         "árboles con ramas quebradas",
         "senderos que rodean el claro"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: enfermería en silencio con la máquina encendida para Red (operativo). Tienda: cerrada por duelo desde la partida al monte (entrega recuerdo de botica una vez).",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2154,
@@ -2414,7 +2528,8 @@
         "bancos cubiertos de hojas",
         "cintas anudadas a ramas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2155,
@@ -2435,7 +2550,8 @@
         "trofeos con fechas imposibles",
         "correas simbólicas sin cuerpo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2156,
@@ -2456,7 +2572,8 @@
         "macetas volcadas",
         "fotografías veladas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2157,
@@ -2477,7 +2594,8 @@
         "árboles con ramas quebradas",
         "senderos que rodean el claro"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2158,
@@ -2498,7 +2616,8 @@
         "bancos cubiertos de hojas",
         "cintas anudadas a ramas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2159,
@@ -2519,7 +2638,8 @@
         "raíces expuestas en paredes",
         "lámparas a distintas alturas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2160,
@@ -2540,7 +2660,8 @@
         "lápidas inclinadas",
         "escalones tallados en tierra"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2161,
@@ -2561,7 +2682,8 @@
         "grietas de luz indirecta",
         "nichos con marcas de conteo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2162,
@@ -2582,7 +2704,8 @@
         "charcos con polvo ascendente",
         "bolsas de aire iluminadas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2163,
@@ -2603,7 +2726,8 @@
         "raíces expuestas en paredes",
         "lámparas a distintas alturas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2164,
@@ -2624,7 +2748,8 @@
         "lápidas inclinadas",
         "escalones tallados en tierra"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2165,
@@ -2645,7 +2770,8 @@
         "grietas de luz indirecta",
         "nichos con marcas de conteo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2166,
@@ -2666,7 +2792,8 @@
         "charcos con polvo ascendente",
         "bolsas de aire iluminadas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2167,
@@ -2687,7 +2814,8 @@
         "raíces expuestas en paredes",
         "lámparas a distintas alturas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2168,
@@ -2708,7 +2836,8 @@
         "lápidas inclinadas",
         "escalones tallados en tierra"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: botiquín de la brigada de excavación entre raíces (operativo). Tienda: depósito subterráneo de lámparas y medicinas operativo.",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2169,
@@ -2729,7 +2858,8 @@
         "grietas de luz indirecta",
         "nichos con marcas de conteo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2170,
@@ -2750,7 +2880,8 @@
         "charcos con polvo ascendente",
         "bolsas de aire iluminadas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2171,
@@ -2771,7 +2902,8 @@
         "raíces expuestas en paredes",
         "lámparas a distintas alturas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2172,
@@ -2792,7 +2924,8 @@
         "lápidas inclinadas",
         "escalones tallados en tierra"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2173,
@@ -2813,7 +2946,8 @@
         "grietas de luz indirecta",
         "nichos con marcas de conteo"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2174,
@@ -2834,7 +2968,8 @@
         "charcos con polvo ascendente",
         "bolsas de aire iluminadas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2175,
@@ -2855,7 +2990,8 @@
         "altavoces apuntando en ángulos distintos",
         "faroles apagados"
       ],
-      "townServices": "Centro Pokémon: revisar si funciona según la historia; si está cerrado, dejar señal y refugio narrativo. Tienda: indicar abierta/cerrada por contexto, nunca dejarla implícita."
+      "townServices": "Centro Pokémon: santuario de descanso con campanas de bronce que amortiguan la frecuencia (operativo). Tienda: cerrada por cuarentena acústica (entrega botiquín sellado y redirige a Map2183).",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2176,
@@ -2876,7 +3012,8 @@
         "cintas en los aleros",
         "pupitres fuera de fila"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Calle intermedia de altavoces desconectados; el Centro Acústico opera en la entrada (Map2175) y la tienda activa en el Mercado (Map2183).",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2177,
@@ -2897,7 +3034,8 @@
         "ondas grabadas en baldosas",
         "flores inclinadas hacia fuentes de sonido"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Vivienda interior de estudio musical; servicios urbanos concentrados en Map2175 y Map2183.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2178,
@@ -2918,7 +3056,8 @@
         "campanas detrás de paredes",
         "teclas sueltas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2179,
@@ -2939,7 +3078,8 @@
         "altavoces apuntando en ángulos distintos",
         "faroles apagados"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2180,
@@ -2960,7 +3100,8 @@
         "cintas en los aleros",
         "pupitres fuera de fila"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2181,
@@ -2981,7 +3122,8 @@
         "ondas grabadas en baldosas",
         "flores inclinadas hacia fuentes de sonido"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Corredor urbano en silencio previo al mausoleo; suministros y cabina de descanso disponibles en Map2183.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2182,
@@ -3002,7 +3144,8 @@
         "campanas detrás de paredes",
         "teclas sueltas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2183,
@@ -3023,7 +3166,8 @@
         "altavoces apuntando en ángulos distintos",
         "faroles apagados"
       ],
-      "townServices": "No se fuerza Centro/Tienda en una calle, estación o vivienda; si el asentamiento tiene servicios, se documentan en el mapa social más cercano."
+      "townServices": "Centro Pokémon: cabina de descanso acústico del mercado (operativa). Tienda: puesto principal del Mercado de Cintas operativo con suministros.",
+      "hasTownServiceEvents": true
     },
     {
       "map": 2184,
@@ -3044,7 +3188,8 @@
         "cintas en los aleros",
         "pupitres fuera de fila"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2185,
@@ -3065,7 +3210,8 @@
         "ondas grabadas en baldosas",
         "flores inclinadas hacia fuentes de sonido"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2186,
@@ -3086,7 +3232,8 @@
         "campanas detrás de paredes",
         "teclas sueltas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2187,
@@ -3107,7 +3254,8 @@
         "altavoces apuntando en ángulos distintos",
         "faroles apagados"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2188,
@@ -3128,7 +3276,8 @@
         "cintas en los aleros",
         "pupitres fuera de fila"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2189,
@@ -3149,7 +3298,8 @@
         "ondas grabadas en baldosas",
         "flores inclinadas hacia fuentes de sonido"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     },
     {
       "map": 2190,
@@ -3170,7 +3320,8 @@
         "campanas detrás de paredes",
         "teclas sueltas"
       ],
-      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama."
+      "townServices": "No aplica: zona no urbana; usar refugio/curación sólo donde esté señalado por la trama.",
+      "hasTownServiceEvents": false
     }
   ]
 }
