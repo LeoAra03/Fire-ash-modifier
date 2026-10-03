@@ -1,16 +1,40 @@
 {
   "generatedBy": "tools/apply_dimensional_nightmare_battles.mjs",
   "flags": {
-    "chainSwitchBase": 910,
-    "chainVariable": 277,
+    "phaseASwitches": {
+      "EP01": 903,
+      "EP02": 904,
+      "EP03": 905,
+      "EP04": 906,
+      "EP05": 907,
+      "EP06": 908,
+      "W7": 928,
+      "W8": 929,
+      "W9": 930
+    },
+    "phaseBCounterBase": 289,
+    "witnessSwitch": 931,
     "itemIdBase": 1032
   },
   "episodes": {
     "EP01": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_EP01_A",
+          "type": "HIKER",
+          "name": "EL SEPULTADO",
+          "trainerId": 3912
+        }
+      ],
+      "trainer": "DN_EP01_A",
+      "trainerId": 3912,
       "bossName": "LA MANO BLANCA",
       "phaseB": {
         "kind": "cadenas",
         "total": 4,
+        "counterVariable": 289,
+        "phaseASwitch": 903,
         "placed": [
           {
             "map": 2056,
@@ -46,13 +70,27 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {}
     },
     "EP02": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_EP02_A",
+          "type": "COOLTRAINER_M",
+          "name": "EL SIN NOMBRE",
+          "trainerId": 3913
+        }
+      ],
+      "trainer": "DN_EP02_A",
+      "trainerId": 3913,
       "bossName": "EL SIN NOMBRE",
       "phaseB": {
         "kind": "fotos",
         "total": 4,
+        "counterVariable": 290,
+        "phaseASwitch": 904,
         "placed": [
           {
             "map": 2072,
@@ -88,13 +126,27 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {}
     },
     "EP03": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_EP03_A",
+          "type": "CHAMPION",
+          "name": "EL CAMINANTE",
+          "trainerId": 3914
+        }
+      ],
+      "trainer": "DN_EP03_A",
+      "trainerId": 3914,
       "bossName": "EL CAMINANTE",
       "phaseB": {
         "kind": "fogatas",
         "total": 4,
+        "counterVariable": 291,
+        "phaseASwitch": 905,
         "placed": [
           {
             "map": 2073,
@@ -130,13 +182,27 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {}
     },
     "EP04": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_EP04_A",
+          "type": "PSYCHIC_F",
+          "name": "LA NANA",
+          "trainerId": 3915
+        }
+      ],
+      "trainer": "DN_EP04_A",
+      "trainerId": 3915,
       "bossName": "LA NANA",
       "phaseB": {
         "kind": "cunas",
         "total": 4,
+        "counterVariable": 292,
+        "phaseASwitch": 906,
         "placed": [
           {
             "map": 2103,
@@ -172,13 +238,27 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {}
     },
     "EP05": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_EP05_A",
+          "type": "TEAMROCKET",
+          "name": "EL JUGADOR 000",
+          "trainerId": 3916
+        }
+      ],
+      "trainer": "DN_EP05_A",
+      "trainerId": 3916,
       "bossName": "EL JUGADOR 000",
       "phaseB": {
         "kind": "rendijas",
         "total": 4,
+        "counterVariable": 293,
+        "phaseASwitch": 907,
         "placed": [
           {
             "map": 2119,
@@ -214,13 +294,39 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {
+        "mirrorMiniBoss": true,
+        "mirrorBossPagesPatched": 2
+      }
     },
     "EP06": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_EP06_A",
+          "type": "DN_KINGGUS",
+          "name": "KINGGUS",
+          "trainerId": 3917
+        },
+        {
+          "role": "final",
+          "trainer": "DN_EP06_FINAL",
+          "type": "DN_KINGGUS",
+          "name": "EL REY SIN LETRA",
+          "trainerId": 3922
+        }
+      ],
+      "trainer": "DN_EP06_A",
+      "trainerId": 3917,
+      "finalTrainer": "DN_EP06_FINAL",
+      "finalTrainerId": 3922,
       "bossName": "KINGGUS",
       "phaseB": {
         "kind": "letras",
         "total": 7,
+        "counterVariable": 294,
+        "phaseASwitch": 908,
         "placed": [
           {
             "map": 2135,
@@ -280,13 +386,30 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {
+        "finalBoss": true,
+        "lettersBeforeBattle": true
+      }
     },
     "W7": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_W7_A",
+          "type": "HIKER",
+          "name": "EL AMO",
+          "trainerId": 3919
+        }
+      ],
+      "trainer": "DN_W7_A",
+      "trainerId": 3919,
       "bossName": "EL AMO Y LA CORREA",
       "phaseB": {
         "kind": "correas",
         "total": 4,
+        "counterVariable": 295,
+        "phaseASwitch": 928,
         "placed": [
           {
             "map": 2158,
@@ -322,13 +445,27 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {}
     },
     "W8": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_W8_A",
+          "type": "CHAMPION",
+          "name": "EL QUE RESPIRA",
+          "trainerId": 3920
+        }
+      ],
+      "trainer": "DN_W8_A",
+      "trainerId": 3920,
       "bossName": "EL QUE RESPIRA DEBAJO",
       "phaseB": {
         "kind": "bolsas",
         "total": 5,
+        "counterVariable": 296,
+        "phaseASwitch": 929,
         "placed": [
           {
             "map": 2174,
@@ -372,13 +509,27 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {}
     },
     "W9": {
+      "trainers": [
+        {
+          "role": "phaseA",
+          "trainer": "DN_W9_A",
+          "type": "PSYCHIC_F",
+          "name": "EL CORO",
+          "trainerId": 3921
+        }
+      ],
+      "trainer": "DN_W9_A",
+      "trainerId": 3921,
       "bossName": "EL CORO DEL CAMPANARIO",
       "phaseB": {
         "kind": "silencios",
         "total": 4,
+        "counterVariable": 297,
+        "phaseASwitch": 930,
         "placed": [
           {
             "map": 2190,
@@ -414,7 +565,8 @@
           }
         ]
       },
-      "epilogue": true
+      "epilogue": true,
+      "mechanics": {}
     }
   },
   "items": []

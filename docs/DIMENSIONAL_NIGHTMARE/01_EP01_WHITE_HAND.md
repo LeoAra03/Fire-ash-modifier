@@ -75,7 +75,7 @@ pbSet(266, 3)                                          # v266 DN_PHASE
 | 2044 | Custodio Doble | Normal ×2 | `trchar015` | Explican las 4 palancas; uno de ellos desaparece en fase 5. |
 | 2046 | La Campanera | Consciente | `trainer_PSYCHIC_F` | Sabe que la Campana rota "se oye sola". Vende curaciones simbólicas (gratis). |
 | 2047 | Aprendiz de Huesos | Normal | `trainer_YOUNGSTER` | Anomalía A03 depende de sus diálogos. |
-| 2048 | Jardinera de Raíces | Consciente | `trchar052` | Cura 1 vez por visita; en fase 6 ya no está, pero su jaula de flores sí. |
+| 2048 | Jardinera de Raíces | Consciente | `trchar059` | Cura 1 vez por visita; en fase 6 ya no está, pero su jaula de flores sí. (Sustituto visual de `trchar052`, ausente en el juego base.) |
 | 2050 | Eco del Archivero | Interdimensional | `trchar001` | Repite la frase exacta del Archivero pero al revés. |
 | 2051 | Sacerdote de los Cráneos | Normal | `trainer_PSYCHIC_M` | Puzzle; en fase 6 sus cráneos "lo miran". |
 | 2052 | La que Escucha la Campana | Consciente | `trchar070` | Ancla narrativa del episodio; sobrevive a todas las fases. |
@@ -218,16 +218,11 @@ pbSet(274, $game_variables[274] + 1)   # anomalía registrada
 
 ## 8. Música
 
-| Momento | Pista (existente en `Audio/BGM`) | Modificación |
+| Momento | Pista | Nota |
 |---|---|---|
-| Pisos 1–2 | `PkmRS-MtPyre` | normal |
-| Pisos 3–5 | `PkmRS-MtPyre` | pitch −8 %, volumen 85 %, reverb |
-| Pisos 6–7 | `A Trap With No Return` | volumen 70 %, se corta 4 s en cada anomalía auditiva |
-| Anomalía detectada | (silencio) | 1.5 s de silencio + `SE: Rotom ping` |
-| **Jefe — 1.ª fase** | `A Trap With No Return` | + `SE: Bell` cada 4 turnos |
-| **Jefe — 2.ª fase (Mano)** | `secretred` (procesado) | pitch −15 %, coro invertido |
-[Nota para desarrollador: reutilizar pistas existentes; si se desea un tema propio del jefe,
-componerlo es decisión de arte, no requisito de implementación.]
+| Exploración EP01 (2041–2056) | `DN_WhiteHand.mid` | Tema MIDI original: cuerdas bajas y campana tenue; no reutiliza música comercial como composición nueva. |
+| Silencio/corte de una anomalía | Pendiente por evento | La pista existe; los cortes de 4 s y sus condiciones por anomalía requieren QA manual. |
+| Combate del jefe | BGM de batalla del juego | El BGM de exploración no sustituye el tema de combate del motor.
 
 ---
 

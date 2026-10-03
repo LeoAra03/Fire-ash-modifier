@@ -68,6 +68,21 @@ export const WITNESS = {
 /** Todos los sellos del Dimensional Nightmare (seis del primer anillo + tres del segundo). */
 export const SEALS = [883, 884, 885, 886, 887, 888, 922, 923, 924];
 
+const PHASE_A_SWITCHES = Object.freeze({
+  EP01: 903, EP02: 904, EP03: 905, EP04: 906, EP05: 907, EP06: 908,
+  W7: 928, W8: 929, W9: 930,
+});
+const PHASE_B_VARIABLE_BASE = 289;
+function bossProgress(catalog, key) {
+  const bosses = catalog.episodes.filter((episode) => episode.boss);
+  const index = bosses.findIndex((episode) => episode.key === key);
+  const episode = bosses[index];
+  if (!episode || !PHASE_A_SWITCHES[key]) throw new Error(`${key}: faltan datos de progresión del jefe`);
+  const spec = episode.boss.phaseB;
+  const total = spec.maps?.length || spec.cells?.length || (spec.kind === "letras" ? 7 : 4);
+  return { phaseA: PHASE_A_SWITCHES[key], variable: PHASE_B_VARIABLE_BASE + index, total };
+}
+
 /** Condición de la Vitrina del Testigo: los nueve sellos cerrados. */
 export const WITNESS_CHECK = `begin; $game_switches[931] = [${SEALS.map((id) => `$game_switches[${id}]`).join(", ")}].all?; rescue; end`;
 
@@ -176,6 +191,7 @@ function applyPedestals() {
     const mapId = bosses.get(world.key);
     if (!episode || !mapId) { summary.push({ key: world.key, mapId: null, cell: null, error: "sin mapa de jefe" }); continue; }
     const seal = episode.seal;
+    const progress = bossProgress(catalog, world.key);
     const g = grid(mapId);
     const sealEvent = g.events.find((e) => /Sello/.test(e.name)) ?? g.events.find((e) => /JEFE/.test(e.name));
     const from = sealEvent ? [sealEvent.x, sealEvent.y] : [Math.floor(g.width / 2), Math.floor(g.height / 2)];
@@ -186,13 +202,13 @@ function applyPedestals() {
     const name = `MEDALLA_${world.key}`;
     const built = upsertEvents(mapId, [name], (baseId) => [
       event(baseId, name, cell[0], cell[1], [
+        // Página base primero; en RMXP siempre gana la página activa de número más alto.
         page({
-          cond: condition({ self: "A" }),
           gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
-          list: [...texts([`El pedestal guarda la ${world.medalName}.`, `Cartuchera registrada: «${world.caseName}».`]), cmd(0)],
+          list: [...texts([`Pedestal de ${world.world}.`, `Se encenderá cuando el sello cierre. La medalla se guarda en «${world.caseName}».`]), cmd(0)],
         }),
         page({
-          cond: condition({ sw: seal }),
+          cond: condition({ sw: seal, sw2: progress.phaseA, variable: [progress.variable, progress.total] }),
           gfx: graphic("Object ball special", 2, 1, { hue: 32 }),
           list: [
             ...texts([
@@ -206,8 +222,9 @@ function applyPedestals() {
           ],
         }),
         page({
+          cond: condition({ self: "A" }),
           gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
-          list: [...texts([`Pedestal de ${world.world}.`, `Se encenderá cuando el sello cierre. La medalla se guarda en «${world.caseName}».`]), cmd(0)],
+          list: [...texts([`El pedestal guarda la ${world.medalName}.`, `Cartuchera registrada: «${world.caseName}».`]), cmd(0)],
         }),
       ]),
     ], { dry: DRY });
@@ -228,6 +245,10 @@ function applyWitness(summary) {
   const built = upsertEvents(mapId, [name], (baseId) => [
     event(baseId, name, cell[0], cell[1], [
       page({
+        gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
+        list: [...texts(["Vitrina del Testigo: nueve sellos por cerrar.", "Vuelve cuando los nueve mundos estén en silencio."]), cmd(0)],
+      }),
+      page({
         cond: condition({ sw: 931 }),
         gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
         list: [
@@ -245,10 +266,6 @@ function applyWitness(summary) {
         cond: condition({ self: "A" }),
         gfx: graphic("Object ball special", 2, 1, { hue: 32 }),
         list: [...texts(["La Vitrina del Testigo guarda tu cartuchera.", "Nueve mundos, nueve medallas, un solo testigo."]), cmd(0)],
-      }),
-      page({
-        gfx: graphic("Object ball special", 2, 1, { hue: 0 }),
-        list: [...texts(["Vitrina del Testigo: nueve sellos por cerrar.", "Vuelve cuando los nueve mundos estén en silencio."]), cmd(0)],
       }),
     ]),
   ], { dry: DRY });
@@ -284,14 +301,21 @@ function verify() {
     const ev = g.events.find((e) => e.name === `MEDALLA_${world.key}`);
     ok(!!ev, `Map${mapId}: falta el pedestal MEDALLA_${world.key}`);
     if (!ev) continue;
-    ok(ev.pages.length === 3, `${world.key}: el pedestal necesita 3 páginas (registrada / sello / vacío)`);
+    ok(ev.pages.length === 3, `${world.key}: el pedestal necesita 3 páginas (bloqueada / entrega / registrada)`);
     const claim = ev.pages[1];
-    const sealOk = claim?.getIvar("@condition")?.getIvar("@switch1_id") === catalog.episodes.find((e) => e.key === world.key).seal &&
-      claim?.getIvar("@condition")?.getIvar("@switch1_valid") === true;
-    ok(sealOk, `${world.key}: la página que entrega la medalla no está condicionada al sello`);
+    const progress = bossProgress(catalog, world.key);
+    const claimCondition = claim?.getIvar("@condition");
+    const sealOk = claimCondition?.getIvar("@switch1_id") === catalog.episodes.find((e) => e.key === world.key).seal &&
+      claimCondition?.getIvar("@switch1_valid") === true
+      && claimCondition?.getIvar("@switch2_id") === progress.phaseA && claimCondition?.getIvar("@switch2_valid") === true
+      && claimCondition?.getIvar("@variable_id") === progress.variable && claimCondition?.getIvar("@variable_value") === progress.total
+      && claimCondition?.getIvar("@variable_valid") === true;
+    ok(sealOk, `${world.key}: la página que entrega la medalla no exige sello, victoria y fase B completa`);
     const claimText = (claim?.getIvar("@list") ?? []).map((c) => (c.getIvar("@parameters") ?? []).map((p) => txt(p)).join(" ")).join(" ");
     ok(claimText.includes(`:${world.medal}`) && claimText.includes(`:${world.case}`), `${world.key}: el pedestal no entrega medalla y cartuchera`);
-    ok((ev.pages[0]?.getIvar("@condition")?.getIvar("@self_switch_valid") ?? false) === true, `${world.key}: falta la página «ya registrada» (self-switch A)`);
+    ok(!(ev.pages[0]?.getIvar("@condition")?.getIvar("@switch1_valid") ?? false)
+      && !(ev.pages[0]?.getIvar("@condition")?.getIvar("@self_switch_valid") ?? false), `${world.key}: la página bloqueada no es la página base`);
+    ok((ev.pages[2]?.getIvar("@condition")?.getIvar("@self_switch_valid") ?? false) === true, `${world.key}: falta la página «ya registrada» (self-switch A)`);
   }
   // Vitrina del Testigo (2040)
   {
@@ -299,11 +323,17 @@ function verify() {
     const ev = g.events.find((e) => e.name === "VITRINA_TESTIGO");
     ok(!!ev, `Map${WITNESS.hubMap}: falta la VITRINA_TESTIGO`);
     if (ev) {
-      const cond = ev.pages[0]?.getIvar("@condition");
+      const locked = ev.pages[0]?.getIvar("@condition");
+      const claim = ev.pages[1];
+      const cond = claim?.getIvar("@condition");
+      ok(!(locked?.getIvar("@switch1_valid") ?? false) && !(locked?.getIvar("@self_switch_valid") ?? false),
+        "VITRINA_TESTIGO: la página bloqueada debe ser la página base");
       ok(cond?.getIvar("@switch1_id") === 931 && cond?.getIvar("@switch1_valid") === true,
-        "VITRINA_TESTIGO: la primera página debe exigir el switch 931 (nueve sellos)");
-      const claimText = (ev.pages[0]?.getIvar("@list") ?? []).map((c) => (c.getIvar("@parameters") ?? []).map((p) => txt(p)).join(" ")).join(" ");
+        "VITRINA_TESTIGO: la página de entrega debe exigir el switch 931 (nueve sellos)");
+      const claimText = (claim?.getIvar("@list") ?? []).map((c) => (c.getIvar("@parameters") ?? []).map((p) => txt(p)).join(" ")).join(" ");
       ok(claimText.includes(`:${WITNESS.id}`), "VITRINA_TESTIGO: no entrega DN_CASE_WIT");
+      ok(ev.pages[2]?.getIvar("@condition")?.getIvar("@self_switch_valid") === true,
+        "VITRINA_TESTIGO: la página registrada debe cerrar con self-switch A");
     }
     const entry = readData("items.dat");
     const wit = entry.pairs.find(([k, v]) => k && k.name !== undefined && k.name === WITNESS.id);

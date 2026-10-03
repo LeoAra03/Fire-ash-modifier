@@ -143,7 +143,7 @@ Hasta que exista, la fase sólo se documenta aquí y en el doc 15 §5.
 | # | Pendiente | Motivo | Cómo se cierra |
 |---|---|---|---|
 | B1 | Arte prioridad MEDIA/BAJA (14 assets del doc 08) | no bloquea jugar | misma herramienta de F3, tanda siguiente |
-| B2 | Pistas de audio alterado de las anomalías auditivas | requiere composición/edición | reemplazar los avisos `pending` del catálogo |
+| B2 | Variantes de audio por fase/anomalía (cortes, pings y clima/BGS) | ya existen 11 MIDI originales de exploración; falta cableado temporal adicional | completar efectos por evento y validarlos en Game.exe |
 | B3 | QA manual en `Game.exe` (recorrido de EP01, 10 puntos) | necesita ejecutar el juego | sesión de juego + anotar en `ESTADO_CONTENIDO_Y_PROMPTS.md` |
 | B4 | Combate espejo real de EP05 | hoy usa equipo fijo equivalente | definir el equipo espejo en el catálogo |
 | B5 | Forma final de EP06 (equipo 120–125) | propuesta en el GDD | aprobar equipo y activar la segunda batalla |
@@ -164,6 +164,7 @@ Hasta que exista, la fase sólo se documenta aquí y en el doc 15 §5.
 | **F5** Cierre documental | ✅ | doc 12 §10.9 + este doc + `ESTADO_CONTENIDO_Y_PROMPTS.md` |
 | **E7** Mosaicos de referencia | ✅ | 11 hojas en `docs/dn_referencia/recreacion/` (149 mapas · ficha+mapa+transitabilidad) + `INDICE.md`; `dn:mosaicos:check` en `dn:verify:all` |
 | **E8** Segundo anillo W7–W9 | ✅ | hojas origen R8–R10 + 48 mapas (2143–2190) + 3 jefes con fase B + Medallas del Amo/Fosa/Silencio + Vitrina del Testigo (`DN_CASE_WIT`) |
+| **F9** Audio y silenciador EP04 | ✅ estática | 11 MIDI originales; BGM explícita en 149 mapas, silencio EP05 2104–2109, seis troncos en Map2103 y guardia de 60 s; `dn:audio:verify` + `dn:events:verify` |
 
 Decisiones tomadas al ejecutar:
 
@@ -177,8 +178,8 @@ Decisiones tomadas al ejecutar:
   arrastra material de referencia.
 - **La salida del hub es una celda distinta de la llegada** para que entrar y salir no forme bucle.
 
-Pendientes que siguen abiertos: B1–B7 del §4 (arte MEDIA/BAJA, audio alterado, QA manual del EP01,
-espejo real de EP05, forma final de EP06, guion definitivo y variantes de corrupción por fase).
+Pendientes que siguen abiertos: B1–B7 del §4 (arte MEDIA/BAJA, variantes de audio por fase/anomalía,
+QA manual, combate espejo real de EP05, forma final de EP06, guion definitivo y variantes de corrupción).
 
 ## 5b. Comandos del tramo
 

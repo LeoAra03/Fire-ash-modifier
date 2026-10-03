@@ -15,8 +15,9 @@
  * `DN_MPIKA_150` → cierre: se salva al Pikachu y a los mundos, con la Medalla del Vínculo y su
  * cartuchera «Badges of Mad Pikachu».
  *
- * El Coliseo se arma **espejando** la mejor ventana del Nexo (simetría de coliseo) y abriendo una
- * cruz central para que las cuatro alas queden conectadas.
+ * El Pórtico conserva el lenguaje de código del Nexo; el Coliseo cambia con intención a un único
+ * tileset funerario original de Fire Ash. Se compone como recinto irregular y asimétrico: bóveda
+ * rota, altar teal descentrado, cuatro balizas y llegada separada de la salida.
  *
  * Uso:
  *   node tools/dn_build_liga.mjs            # mapas, eventos, trainer y arte
@@ -43,9 +44,11 @@ const HUB_ID = 2040;
 const PORTICO_ID = 2141;
 const COLISEO_ID = 2142;
 const SOURCE_ID = 2139;                       // Nexo — Pasillo de Código (estilo del mundo del código)
+const COLISEO_SOURCE_ID = 1165;                // Fire Ash — torre funeraria, tileset original morado/piedra
 const PORTICO_W = 22, PORTICO_H = 11;
 const COLISEO_W = 30, COLISEO_H = 22;
-const HALF_W = 15, HALF_H = 11;               // mitad que se repite/espeja en el Coliseo (fuente 22×11)
+const COLISEO_ENTRY = [14, 20];                // umbral interior: evita volver al Pórtico al aparecer
+const COLISEO_EXIT = [14, 21];                 // salida única del anillo, separada del umbral
 
 const SW = { ready: 917, ligaStarted: 918, arceus: 919, cleared: 920, pikaSaved: 921 };
 const VAR = { branch: 278, sparks: 279, medals: 280, stage: 281, battle: 282 };
@@ -54,6 +57,14 @@ const MADPIKA = { type: "DN_MADPIKA", label: "MAD PIKACHU", species: "PIKACHU", 
 
 const CASES = ["DN_CASE_WHT", "DN_CASE_LSV", "DN_CASE_SNO", "DN_CASE_HYP", "DN_CASE_BLK", "DN_CASE_UNO"];
 const readyCheck = `begin; $game_switches[${SW.ready}] = [${CASES.map((c) => `:${c}`).join(", ")}].all? { |i| $PokemonBag.pbHasItem?(i) }; rescue; end`;
+
+function tilesetFile(name) {
+  const dir = path.join(GRAPHICS, "Tilesets");
+  const wanted = `${name}.png`.toLowerCase();
+  const match = fs.readdirSync(dir).find((file) => file.toLowerCase() === wanted);
+  if (!match) throw new Error(`falta Graphics/Tilesets/${name}.png (búsqueda insensible a mayúsculas)`);
+  return path.join(dir, match);
+}
 
 const SENS_LIGA = toneLine([-40, -40, -40, 0], 16, "dn:ambiente");   // tono de sala (no va pegado a una transferencia)
 const SENS_HUB = toneLine([0, 0, 0, 0], 16, "dn:ambiente");
@@ -116,75 +127,106 @@ function buildPortico(source) {
 }
 
 /**
- * Coliseo: arena simétrica construida con los tiles del mundo del código.
- * Se clasifican los tiles del Nexo en suelo (transitable en las cuatro direcciones y sin prioridad)
- * y muro (no transitable), se ordenan por brillo para que el suelo se lea y se dibuja el mosaico:
- * anillo de muro con puerta inferior, estrado central para Mad Pikachu y cuatro plazas (las
- * chispas), cada una con un tile distinto del archivo.
+ * Coliseo: cámara de piedra tomada de un solo tileset original de Fire Ash (torre funeraria).
+ * Se conserva la lectura pixel-art del tileset; el plano no remuestrea ni mezcla capturas: recorta
+ * el santuario fuente, abre una galería lateral orgánica y talla una llegada serpenteante.
  */
-async function buildColiseo(source) {
-  const tilesets = readData("Tilesets.rxdata");
-  const name = tilesets[source.tilesetId].getIvar("@tileset_name").text;
-  const image = await loadImage(path.join(GRAPHICS, "Tilesets", `${name}.png`));
-  const { parseTileset } = await import("../web/js/rmxp.js");
-  const parsed = parseTileset(tilesets[source.tilesetId]);
-  const S = 32, COLS = Math.max(1, Math.floor(image.width / S));
-  const brightness = new Map();
-  const measure = (tile) => {
-    if (brightness.has(tile)) return brightness.get(tile);
-    if (tile < 384) { brightness.set(tile, 0); return 0; }
-    const k = tile - 384;
-    const canvas = createCanvas(S, S);
-    const ctx = canvas.getContext("2d");
-    ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(image, (k % COLS) * S, Math.floor(k / COLS) * S, S, S, 0, 0, S, S);
-    const { data } = ctx.getImageData(0, 0, S, S);
-    let total = 0;
-    for (let i = 0; i < data.length; i += 4) total += (data[i] + data[i + 1] + data[i + 2]) / 3 * (data[i + 3] / 255);
-    const value = total / (S * S);
-    brightness.set(tile, value);
-    return value;
-  };
-  const used = new Set();
-  for (let y = 0; y < source.height; y++) {
-    for (let x = 0; x < source.width; x++) {
-      for (const z of [0, 1, 2]) {
-        const tile = tableGet(source.table, x, y, z);
-        if (tile >= 384) used.add(tile);
-      }
-    }
+function buildColiseo(source) {
+  const sourcePass = passabilityOf(source, source.tilesetId);
+  const floorCounts = new Map();
+  for (let y = 0; y < source.height; y++) for (let x = 0; x < source.width; x++) {
+    const tile = tableGet(source.table, x, y, 0);
+    if (tile >= 384 && sourcePass.passable(x, y, 8)) floorCounts.set(tile, (floorCounts.get(tile) ?? 0) + 1);
   }
-  const free = [...used].filter((tile) => (parsed.passages.data[tile] ?? 0) === 0 && (parsed.priorities.data[tile] ?? 0) === 0);
-  // muro = bloquea las cuatro direcciones (0x0f) o tiene prioridad; si no, el «muro» se podía cruzar
-  const blocked = [...used].filter((tile) => ((parsed.passages.data[tile] ?? 0) & 0x0f) === 0x0f || (parsed.priorities.data[tile] ?? 0) > 0);
-  free.sort((a, b) => measure(b) - measure(a));
-  blocked.sort((a, b) => measure(a) - measure(b));
-  if (free.length < 6) throw new Error(`el mapa ${SOURCE_ID} no tiene suficientes tiles libres para el Coliseo (${free.length})`);
-  const wall = blocked[Math.floor(blocked.length / 2)] ?? free[free.length - 1];
-  if (!blocked.length) console.log("  aviso: no hay tiles de muro plenamente bloqueantes en la fuente; el anillo usa el más oscuro");
-  const floorAt = (index) => free[index % free.length];
+  const floor = [...floorCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+  if (!floor) throw new Error(`Map${COLISEO_SOURCE_ID}: no se pudo identificar el suelo transitable`);
+
   const canvas = new TileCanvas(COLISEO_W, COLISEO_H, source.tilesetId);
-  const put = (x, y, tile) => { canvas.set(x, y, 0, tile); canvas.set(x, y, 1, 0); canvas.set(x, y, 2, 0); };
-  for (let y = 0; y < COLISEO_H; y++) {
-    for (let x = 0; x < COLISEO_W; x++) put(x, y, floorAt(0));
+  const voidTile = tableGet(source.table, 0, 0, 0);
+  if (sourcePass.passable(0, 0, 8)) throw new Error(`Map${COLISEO_SOURCE_ID}: el tile de vacío del borde no bloquea el movimiento`);
+  canvas.fillAll(0, voidTile);
+  canvas.fillAll(1, 0);
+  canvas.fillAll(2, 0);
+  const copyCell = (sx, sy, dx, dy) => {
+    if (sx < 0 || sy < 0 || sx >= source.width || sy >= source.height) return;
+    for (const z of [0, 1, 2]) canvas.set(dx, dy, z, tableGet(source.table, sx, sy, z));
+  };
+  const clearCell = (x, y) => {
+    canvas.set(x, y, 0, floor);
+    canvas.set(x, y, 1, 0);
+    canvas.set(x, y, 2, 0);
+  };
+
+  // Núcleo de 25×22 sin escalar (sin estirar lápidas/columnas); el margen asimétrico queda abierto.
+  for (let y = 0; y < COLISEO_H; y++) for (let x = 0; x < COLISEO_W; x++) copyCell(x - 2, y + 1, x, y);
+
+  // Costura oriental: la escalera desemboca en una senda de anchura variable, con recodo y alcoba.
+  const wing = [
+    [21, 9], [22, 9], [23, 9],
+    [21, 10], [22, 10], [23, 10], [24, 10],
+    [21, 11], [22, 11], [23, 11], [24, 11],
+    [22, 12], [23, 12], [24, 12], [25, 12], [26, 12],
+    [24, 13], [25, 13], [26, 13], [27, 13],
+    [26, 14], [27, 14], [28, 14], [29, 14],
+    [27, 15], [28, 15],
+  ];
+  for (const [x, y] of wing) clearCell(x, y);
+
+  // La escalera occidental colapsó: un borde roto asimétrico sustituye su espejo intacto.
+  const collapse = [[2, 9], [3, 9], [2, 10], [3, 10], [4, 10], [2, 11], [3, 11], [4, 11], [3, 12], [4, 12], [5, 12], [4, 13]];
+  for (const [x, y] of collapse) {
+    canvas.set(x, y, 0, voidTile);
+    canvas.set(x, y, 1, 0);
+    canvas.set(x, y, 2, 0);
   }
-  for (let x = 0; x < COLISEO_W; x++) { put(x, 0, wall); put(x, COLISEO_H - 1, wall); }
-  for (let y = 0; y < COLISEO_H; y++) { put(0, y, wall); put(COLISEO_W - 1, y, wall); }
-  for (const x of [14, 15, 16]) put(x, COLISEO_H - 1, floorAt(3));       // puerta inferior
-  const plazas = [[5, 4], [24, 4], [5, 17], [24, 17]];
-  plazas.forEach(([px, py], index) => {
-    for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) put(px + dx, py + dy, floorAt(4 + index));
-  });
-  for (let y = 9; y <= 12; y++) for (let x = 13; x <= 16; x++) put(x, y, floorAt(1));   // estrado central
-  return { canvas, floor: floorAt(0), wall, plazas, palette: { free: free.slice(0, 10), wall } };
+
+  // Una fisura abre la bóveda por el nordeste; el resto del perímetro conserva la lectura de arco.
+  for (const [x, y] of [[18, 1], [19, 1], [19, 2], [20, 2], [21, 3]]) clearCell(x, y);
+
+  // Dos lápidas aisladas reaparecen en la alcoba, no como espejo de los hileros del santuario.
+  copyCell(7, 5, 28, 13);
+  copyCell(7, 5, 29, 15);
+
+  // Senda de regreso en S: bordea el altar y corta una única hilera de sepulcros, sin calle recta.
+  const procession = [[14, 21], [14, 20], [15, 19], [14, 18], [13, 17], [14, 16], [15, 15], [14, 14]];
+  const carveLine = (from, to) => {
+    let [x, y] = from;
+    const [tx, ty] = to;
+    const dx = Math.abs(tx - x), sx = x < tx ? 1 : -1;
+    const dy = -Math.abs(ty - y), sy = y < ty ? 1 : -1;
+    let error = dx + dy;
+    while (true) {
+      if (x >= 0 && y >= 0 && x < COLISEO_W && y < COLISEO_H) clearCell(x, y);
+      if (x === tx && y === ty) break;
+      const twice = 2 * error;
+      if (twice >= dy) { error += dy; x += sx; }
+      if (twice <= dx) { error += dx; y += sy; }
+    }
+  };
+  for (let i = 0; i < procession.length - 1; i++) carveLine(procession[i], procession[i + 1]);
+
+  // Elimina tres lápidas que repetían el espejo; el hueco irregular deja un atajo visual, no obligatorio.
+  for (const [x, y] of [[9, 4], [10, 4], [21, 4], [21, 6], [22, 6], [7, 16]]) clearCell(x, y);
+
+  const plazas = [[7, 6], [20, 5], [9, 17], [27, 13]];
+  for (const [x, y] of plazas) clearCell(x, y);
+  for (const [x, y] of [COLISEO_ENTRY, COLISEO_EXIT]) clearCell(x, y);
+
+  const pass = passabilityOf(canvas, canvas.tilesetId);
+  const reached = reachableCells(pass, COLISEO_ENTRY);
+  for (const [x, y] of [[14, 11], ...plazas, COLISEO_EXIT]) {
+    if (!reached.has(`${x},${y}`)) throw new Error(`Coliseo: ${x},${y} quedó aislado en Map${COLISEO_SOURCE_ID}`);
+  }
+  return { canvas, floor, plazas, source: COLISEO_SOURCE_ID };
 }
 
 // ------------------------------------------------------------------ registro de mapas
-function registerMap(id, title, canvas, sourceId, parentId) {
+function registerMap(id, title, canvas, sourceId, parentId, entryCell = null) {
   const object = buildMapObject(canvas, { bgm: "", encounterStep: 25 });
   const parsed = { width: canvas.width, height: canvas.height };
   const pass = passabilityOf(canvas, canvas.tilesetId);
-  const entry = bottomEntry(pass, parsed.width, parsed.height) ?? [Math.floor(parsed.width / 2), parsed.height - 1];
+  const entry = entryCell ?? bottomEntry(pass, parsed.width, parsed.height) ?? [Math.floor(parsed.width / 2), parsed.height - 1];
+  if (!pass.passable(entry[0], entry[1], 8)) throw new Error(`Map${id}: entrada ${entry} no transitable`);
   const reach = reachableCells(pass, entry).size;
   let walkable = 0;
   for (let y = 0; y < parsed.height; y++) for (let x = 0; x < parsed.width; x++) if (pass.passable(x, y, 8)) walkable++;
@@ -214,7 +256,7 @@ function registerMap(id, title, canvas, sourceId, parentId) {
       id, episode: "LIGA", title, primary: null, reusedTileset: true, tilesetId: canvas.tilesetId, tiles: null,
       width: parsed.width, height: parsed.height,
       bfs: { entry, reachable: reach, walkable, ratio: walkable ? reach / walkable : 0 },
-      source: `Map${sourceId} ventana (${canvas === undefined ? 0 : 0},0) + espejo`,
+      source: `Map${sourceId} · tileset funerario Fire Ash + cámara recortada y galería asimétrica`,
     });
     built.maps.sort((a, b) => a.id - b.id);
     built.counts = built.maps.length;
@@ -514,14 +556,15 @@ function buildHubGate(plan) {
 // ------------------------------------------------------------------ plan y escritura
 async function buildPlan() {
   const source = parseMap(readMap(SOURCE_ID));
+  const coliseoSource = parseMap(readMap(COLISEO_SOURCE_ID));
   const built = readJson(BUILT);
   const hubMeta = built.maps.find((m) => m.id === HUB_ID);
   const hubCell = readJson(EVENTS).hubMap?.entry ?? hubMeta?.bfs?.entry ?? [15, 22];
 
   const portico = buildPortico(source);
-  const coliseo = await buildColiseo(source);
+  const coliseo = buildColiseo(coliseoSource);
   const regPortico = registerMap(PORTICO_ID, "Liga Oscura — Pórtico del Código", portico.canvas, SOURCE_ID, 2140);
-  const regColiseo = registerMap(COLISEO_ID, "Liga Oscura — Coliseo del Vínculo", coliseo.canvas, SOURCE_ID, PORTICO_ID);
+  const regColiseo = registerMap(COLISEO_ID, "Liga Oscura — Coliseo del Vínculo", coliseo.canvas, COLISEO_SOURCE_ID, PORTICO_ID, COLISEO_ENTRY);
 
   const pEntry = regPortico.entry;
   const cEntry = regColiseo.entry;
@@ -530,7 +573,7 @@ async function buildPlan() {
   const pEco = { cell: freeFromCanvas(portico.canvas, [Math.floor(PORTICO_W / 2) + 5, Math.floor(PORTICO_H / 2)], 8) };
   const pSalida = { cell: freeFromCanvas(portico.canvas, [3, PORTICO_H - 1], 6) };
 
-  const cMpika = { cell: [15, 11] };
+  const cMpika = { cell: [14, 11] };                // sobre el sello teal central de la bóveda
   const cSparks = coliseo.plazas.map((cell) => cell);
   const cSalida = { cell: [14, COLISEO_H - 1] };   // puerta inferior, junto a la llegada
 
@@ -570,7 +613,7 @@ async function renderLiga(plan) {
     const width = map.width, height = map.height;
     const tilesetId = map.tilesetId;
     const name = tilesets[tilesetId]?.getIvar("@tileset_name")?.text;
-    const img = await loadImage(path.join(GRAPHICS, "Tilesets", `${name}.png`));
+    const img = await loadImage(tilesetFile(name));
     const cols = Math.max(1, Math.floor(img.width / S));
     const canvas = createCanvas(width * S * Z, height * S * Z);
     const ctx = canvas.getContext("2d");
@@ -621,6 +664,18 @@ async function renderLiga(plan) {
 }
 
 // ------------------------------------------------------------------ verificación
+function axisMismatch(map, axis) {
+  let mismatch = 0, total = 0;
+  for (let y = 0; y < map.height; y++) for (let x = 0; x < map.width; x++) {
+    const ox = axis === "x" ? map.width - 1 - x : x;
+    const oy = axis === "y" ? map.height - 1 - y : y;
+    if (y * map.width + x >= oy * map.width + ox) continue;
+    total++;
+    if (tableGet(map.table, x, y, 0) !== tableGet(map.table, ox, oy, 0)) mismatch++;
+  }
+  return total ? mismatch / total : 0;
+}
+
 function verify() {
   const failures = [];
   const ok = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -639,6 +694,20 @@ function verify() {
     const g = grid(id);
     ok((meta.bfs?.ratio ?? 0) >= 0.9, `${id}: BFS ${((meta.bfs?.ratio ?? 0) * 100).toFixed(0)} % (< 90 %)`);
     ok(g.events.length > 0, `${id}: sin eventos`);
+    if (id === COLISEO_ID) {
+      const horizontal = axisMismatch(g.parsed, "x");
+      const vertical = axisMismatch(g.parsed, "y");
+      ok(horizontal > 0.12 && vertical > 0.12, `${id}: composición demasiado simétrica (X ${(horizontal * 100).toFixed(0)} %, Y ${(vertical * 100).toFixed(0)} %)`);
+      const entry = meta.bfs?.entry ?? COLISEO_ENTRY;
+      const reached = reachableCells(g.pass, entry);
+      for (const name of ["LIGA_ENTRADA_COLISEO", "LIGA_MPIKA", "LIGA_CHISPA_1", "LIGA_CHISPA_2", "LIGA_CHISPA_3", "LIGA_CHISPA_4", "LIGA_SALIDA_COLISEO"]) {
+        const point = g.events.find((e) => e.name === name);
+        ok(!!point, `Coliseo: falta ${name}`);
+        if (point) ok(reached.has(`${point.x},${point.y}`), `Coliseo: ${name} no es alcanzable desde ${entry}`);
+      }
+      const exit = g.events.find((e) => e.name === "LIGA_SALIDA_COLISEO");
+      ok(!exit || entry[0] !== exit.x || entry[1] !== exit.y, "Coliseo: la llegada coincide con el evento de salida (transferencia de retorno inmediata)");
+    }
   }
   const portico = grid(PORTICO_ID);
   for (const name of ["LIGA_LLEGADA", "LIGA_CUSTODIO", "LIGA_ECO", "LIGA_ACCESO_COLISEO", "LIGA_SALIDA"]) {
@@ -736,7 +805,7 @@ if (VERIFY) {
   const type = installTrainerType();
   const trainer = installTrainer();
   console.log(`Liga Oscura: Map${PORTICO_ID} ${PORTICO_W}×${PORTICO_H} (BFS ${(plan.regPortico.ratio * 100).toFixed(0)} %, ventana ${plan.portico.win.ox},${plan.portico.win.oy})`);
-  console.log(`  Map${COLISEO_ID} ${COLISEO_W}×${COLISEO_H} (BFS ${(plan.regColiseo.ratio * 100).toFixed(0)} %, espejo de ${HALF_W}×${HALF_H})`);
+  console.log(`  Map${COLISEO_ID} ${COLISEO_W}×${COLISEO_H} (BFS ${(plan.regColiseo.ratio * 100).toFixed(0)} %, planta orgánica asimétrica, entrada interior ${COLISEO_ENTRY.join(",")} / salida ${COLISEO_EXIT.join(",")})`);
   console.log(`  eventos: Pórtico ${portico.added.length} · Coliseo ${coliseo.added.length} · Antesala ${gate.added.length}`);
   if (DRY) for (const group of [portico, coliseo, gate]) for (const e of group.added) console.log(`    · ${e.name} @ ${e.x},${e.y}`);
   console.log(`  Mad Pikachu: tipo ${type.added ? "creado" : "ya existía"} · trainer ${trainer.added ? `#${trainer.idNumber}` : "ya existía"} · arte ${art.trainer ? "OK" : art.reason}`);

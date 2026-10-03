@@ -33,6 +33,7 @@ const DRY = argv.includes("--dry-run");
 
 const DURATION = 24;
 const MARKER = "dn:sensacion";
+const PHASE_MARKER = "dn:fase";
 const TONES = {
   EP01: [-30, -20, -20, 40],
   EP02: [-60, -20, 20, 30],
@@ -55,8 +56,43 @@ function episodeIndex() {
   return index;
 }
 
-const toneOf = (mapId, index) => TONES[index.get(mapId)] ?? TONES.DEFAULT;
+function mapIds() {
+  return [...new Set([2030, ...readJson(BUILT).maps.map((map) => map.id)])].sort((a, b) => a - b);
+}
+
+const PHASE_OFFSETS = {
+  1: [0, 0, 0, 0],
+  2: [-8, -8, -8, 0],
+  3: [-24, -24, -24, 0],
+  4: [-48, -32, -32, 0],
+  5: [-64, -48, -48, 0],
+  6: [-96, -64, -64, 40],
+  7: [-128, -96, -96, 80],
+};
+const PHASE_RANGES = [
+  [2041, 2056], [2057, 2072], [2073, 2087], [2088, 2103], [2104, 2119], [2120, 2135],
+  [2136, 2140], [2143, 2158], [2159, 2174], [2175, 2190],
+];
+
+function phaseOf(mapId, index) {
+  const key = index.get(Number(mapId));
+  if (!key || key === "HUB" || key === "DEFAULT") return 0;
+  if (key === "LIGA") return Number(mapId) === 2141 ? 5 : 7;
+  const range = PHASE_RANGES.find(([from, to]) => Number(mapId) >= from && Number(mapId) <= to);
+  if (!range) return 0;
+  const [from, to] = range;
+  const span = Math.max(1, to - from);
+  return Math.max(1, Math.min(7, Math.round(((Number(mapId) - from) / span) * 6) + 1));
+}
+
+function toneOf(mapId, index) {
+  const base = TONES[index.get(Number(mapId))] ?? TONES.DEFAULT;
+  const phase = phaseOf(mapId, index);
+  const offset = PHASE_OFFSETS[phase] ?? [0, 0, 0, 0];
+  return base.map((value, channel) => Math.max(channel === 3 ? 0 : -255, Math.min(255, value + offset[channel])));
+}
 const toneText = (tone) => `Tone.new(${tone.join(", ")})`;
+const phaseLine = (phase) => `begin; $game_variables[266] = ${phase}; rescue; end # ${PHASE_MARKER}`;
 
 /** Transferencias (comando 201) de un mapa, agrupadas por lista para poder editar en orden inverso. */
 function transfersOf(map) {
@@ -74,8 +110,10 @@ function transfersOf(map) {
   return byList;
 }
 
-const isToneCommand = (command) =>
-  command?.getIvar("@code") === 355 && isToneLine((command.getIvar("@parameters") ?? []).map((p) => txt(p)).join(""), MARKER);
+const scriptText = (command) => (command?.getIvar("@parameters") ?? []).map((p) => txt(p)).join("");
+const isToneCommand = (command) => command?.getIvar("@code") === 355 && isToneLine(scriptText(command), MARKER);
+const isPhaseCommand = (command) => command?.getIvar("@code") === 355 && scriptText(command).includes(`# ${PHASE_MARKER}`);
+const isManagedCommand = (command) => isToneCommand(command) || isPhaseCommand(command);
 
 function applyToMap(mapId, index) {
   const map = readMap(mapId);
@@ -86,8 +124,10 @@ function applyToMap(mapId, index) {
       const destination = (list[at].getIvar("@parameters") ?? [])[1];
       const indent = list[at].getIvar("@indent") ?? 0;
       let head = at;
-      while (head > 0 && isToneCommand(list[head - 1])) { list.splice(head - 1, 1); head--; removed++; }
-      list.splice(head, 0, script(toneLine(toneOf(destination, index), DURATION, MARKER), indent));
+      while (head > 0 && isManagedCommand(list[head - 1])) { list.splice(head - 1, 1); head--; removed++; }
+      list.splice(head, 0,
+        script(phaseLine(phaseOf(destination, index)), indent),
+        script(toneLine(toneOf(destination, index), DURATION, MARKER), indent));
       inserted++;
     }
   }
@@ -100,7 +140,7 @@ function applyToMap(mapId, index) {
 
 function verify(index) {
   const failures = [];
-  const maps = readJson(BUILT).maps.map((m) => m.id);
+  const maps = mapIds();
   let checked = 0, orphans = 0;
   for (const mapId of maps) {
     const map = readMap(mapId);
@@ -108,21 +148,26 @@ function verify(index) {
       for (const page of ev.getIvar("@pages") ?? []) {
         const list = page.getIvar("@list") ?? [];
         list.forEach((command, at) => {
-          const text = (command.getIvar("@parameters") ?? []).map((p) => txt(p)).join("");
-          const adjacentToTransfer = (list[at + 1]?.getIvar("@code") ?? 0) === 201 || (list[at - 1]?.getIvar("@code") ?? 0) === 201;
-          if (isToneCommand(command) && !adjacentToTransfer) {
+          if (isToneCommand(command) && (list[at + 1]?.getIvar("@code") ?? 0) !== 201) {
             orphans++;
             failures.push(`Map${mapId}: línea de sensación sin transferencia detrás (comando ${at})`);
           }
+          if (isPhaseCommand(command) && !isToneCommand(list[at + 1])) {
+            orphans++;
+            failures.push(`Map${mapId}: línea de fase sin tono de transferencia detrás (comando ${at})`);
+          }
           if (command.getIvar("@code") !== 201) return;
-          const destination = (command.getIvar("@parameters") ?? [])[1];
+          const destination = (list[at].getIvar("@parameters") ?? [])[1];
           const previous = list[at - 1];
+          const phasePrevious = list[at - 2];
           if (!isToneCommand(previous)) {
             failures.push(`Map${mapId}: transferencia a ${destination} sin línea de sensación`);
             return;
           }
-          const previousText = (previous.getIvar("@parameters") ?? []).map((p) => txt(p)).join("");
-          if (!previousText.includes(toneText(toneOf(destination, index)))) {
+          if (!isPhaseCommand(phasePrevious) || !scriptText(phasePrevious).includes(`$game_variables[266] = ${phaseOf(destination, index)}`)) {
+            failures.push(`Map${mapId}: transferencia a ${destination} sin su fase de corrupción`);
+          }
+          if (!scriptText(previous).includes(toneText(toneOf(destination, index)))) {
             failures.push(`Map${mapId}: transferencia a ${destination} con tono equivocado`);
           }
           checked++;
@@ -140,7 +185,7 @@ const index = episodeIndex();
 if (VERIFY) {
   verify(index);
 } else {
-  const maps = readJson(BUILT).maps.map((m) => m.id);
+  const maps = mapIds();
   let inserted = 0, removed = 0;
   for (const mapId of maps) {
     const result = applyToMap(mapId, index);

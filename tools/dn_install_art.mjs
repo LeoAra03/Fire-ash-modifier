@@ -10,7 +10,7 @@
  * Después cablea el arte:
  *   - tipo de entrenador `DN_KINGGUS` (clon de GENTLEMAN) → el jefe de EP06 se ve como KINGGUS;
  *   - registro del entrenador `DN_EP06_A` → pasa a tipo DN_KINGGUS (clave + @trainer_type);
- *   - evento `EV_EP06_JEFE` (Map2135) → `PBTrainer.new("DN_KINGGUS", "KINGGUS")`;
+ *   - evento `EV_EP06_JEFE` (Map2135) → secuencia registrada `dn_kinggus_final_sequence` (forma intermedia + final);
  *   - `NPC_KINGGUS` (Map2135) → gráfico de personaje `DN_KINGGUS`;
  *   - `EV_EP01_JEFE` (Map2056) → gráfico de personaje `DN_WHITE_HAND`.
  * El catálogo `content/dimensional_nightmare_events.json` se actualiza igual, para que regenerar
@@ -368,7 +368,7 @@ function verifyWiring() {
   push(graphicOf(m2135, "NPC_KINGGUS") === "DN_KINGGUS", "Map2135: NPC_KINGGUS sin gráfico DN_KINGGUS");
   push(graphicOf(m2056, "EV_EP01_JEFE") === "DN_WHITE_HAND", "Map2056: EV_EP01_JEFE sin gráfico DN_WHITE_HAND");
   const battleCalls = scriptTexts(m2135, "EV_EP06_JEFE").map((p) => p.text).join("\n");
-  push(battleCalls.includes('PBTrainer.new("DN_KINGGUS"'), "Map2135: la batalla de EP06 no invoca DN_KINGGUS");
+  push(battleCalls.includes("dn_kinggus_final_sequence"), "Map2135: falta la secuencia intermedia + forma final de KINGGUS");
   push(!battleCalls.includes('PBTrainer.new("GENTLEMAN"'), "Map2135: la batalla de EP06 sigue con GENTLEMAN");
   const catalog = JSON.parse(fs.readFileSync(CATALOG, "utf8"));
   push((catalog.episodes ?? []).find((e) => e.key === "EP06")?.boss?.phaseA?.type === "DN_KINGGUS", "catálogo: EP06 sigue con el tipo antiguo");
@@ -406,7 +406,6 @@ async function main() {
   const type = installTrainerType();
   const record = installTrainerRecord();
   const wire2135 = wireMapEvents("Map2135.rxdata", [
-    { event: "EV_EP06_JEFE", from: "GENTLEMAN", to: "DN_KINGGUS" },
     { event: "NPC_KINGGUS", graphic: "DN_KINGGUS" },
   ]);
   const wire2056 = wireMapEvents("Map2056.rxdata", [{ event: "EV_EP01_JEFE", graphic: "DN_WHITE_HAND" }]);
