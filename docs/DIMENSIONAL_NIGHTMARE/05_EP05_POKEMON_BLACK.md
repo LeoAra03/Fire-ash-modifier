@@ -68,7 +68,7 @@ es más corta — es una decisión de diseño, no un hueco.)*
 | Mapa | NPC | Tipo | Sprite | Rol y notas |
 |---:|---|---|---|---|
 | 2104 | Silueta del Guardagujas | Consciente (eco) | `trchar028` opacidad 90 | Repite una frase del EP02, sin voz |
-| 2105 | Silueta de la Fontanera | Consciente (eco) | `trchar052` opacidad 90 | Señala un hueco en el suelo |
+| 2105 | Silueta de la Fontanera | Consciente (eco) | `trchar056` opacidad 90 | Señala un hueco en el suelo; reutiliza el sprite de la Fontanera (sustituto visual de `trchar052`, ausente en el juego base). |
 | 2107 | Silueta del Sepulturero | Interdimensional | `trainer_HIKER` | Fija: «Ya me enterraste una vez. Gracias.» |
 | 2109 | El Último Niño | Consciente | `trchar010` | Es el único NPC sólido del episodio; no tiene sombra |
 | 2112 | Cura Silenciosa | Interdimensional | `trchar001` | Cura sin hablar (menú de sí/no) |
@@ -205,13 +205,12 @@ EV_BLK_Salida     — 2119 (15,28) — Salida libre a 2030 / 2021
 
 ## 8. Música
 
-| Momento | Pista existente | Modificación |
+| Momento | Pista | Nota |
 |---|---|---|
-| Fases 1–3 | (ninguna) | silencio absoluto + viento |
-| Fases 4–5 | `Lavender Town` | volumen 20 %, con cortes de 2 s |
-| Fases 6–7 | `A Trap With No Return` | 40 %, pitch variable (sube/baja 1 semitono por anomalía) |
-| Anomalía detectada | (silencio) | ping del Rotom |
-| Jefe | `secretred` | invertida, con `SE: Static` cada 4 turnos |
+| Silencio inicial EP05 (2104–2109) | ninguna; BGM vacía con autoplay | Silencio explícito al entrar, para que no continúe la música del hub. |
+| EP05 desde Map2110 | `DN_PokemonBlack.mid` | Señal original, escasa y quebrada; no altera ni imita música comercial. |
+| Variaciones por fase / ping | Pendiente por evento | La pista base está asignada; los cortes y el cambio por anomalía quedan para QA. |
+| Combate del Jugador 000 | BGM de batalla del juego | Sin intervención en el motor de combate. |
 
 ---
 

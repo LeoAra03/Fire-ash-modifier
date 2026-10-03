@@ -1,0 +1,49 @@
+PAQUETE QA — POKÉMON FIRE ASH: ASHEN GUARDIAN
+==================================================
+
+Este parche independiente prepara el contenido Dimensional Nightmare / Protector de la Ceniza
+para una prueba manual. Es una entrega interna de QA, no una distribución pública de recursos.
+Los mosaicos derivados se incluyen únicamente para que el juego pueda cargarlos durante esta prueba.
+
+COMPATIBILIDAD
+--------------
+- Diseñado para una copia limpia de Pokémon Fire Ash 3.7.1 con RPG Maker XP / Essentials v19.
+- Instálalo en una copia separada del juego. El ZIP no incluye Game.exe, partidas ni Game.rxdata.
+- Incluye los datos, gráficos originales y pistas MIDI propias del contenido DN, nombres de flags
+  y una copia del Scripts.rxdata corregido con un módulo Runtime DN aislado (batalla espejo y
+  secuencia final de EP06). El archivo compartido del paquete de La Ruta de Dios no se modifica.
+
+INSTALACIÓN
+-----------
+1. Cierra Fire Ash y el emulador/launcher.
+2. Duplica la carpeta del juego y conserva intacta la original.
+3. Haz una copia adicional de tus partidas. No se deben reemplazar ni borrar Game.rxdata o Save*.
+4. Extrae Dimensional_Nightmare_QA.zip directamente en la raíz de la copia, junto a Game.exe y
+   Game.ini. Acepta reemplazar Data/Scripts.rxdata, Data/MapInfos.rxdata, Data/System.rxdata,
+   Data/Tilesets.rxdata, los mapas listados, los gráficos y Audio/BGM/DN_*.mid.
+5. No dejes Data/ ni Graphics/ dentro de una carpeta intermedia llamada
+   Dimensional_Nightmare_QA/; deben quedar directamente bajo la raíz del juego.
+6. Inicia una partida postgame en la copia. La entrada está en la Gruta de los Testigos (Map2030),
+   junto a la llegada de la Antesala. El primer anillo requiere v264 ≥ 3; el contenido tardío conserva
+   las condiciones narrativas indicadas por el juego (incluidos los 7 sellos de Monte Silver).
+
+RECORRIDO DE QA SUGERIDO
+------------------------
+- Prueba el acceso a la Antesala y confirma que las puertas cerradas explican qué falta.
+- Visita EP01–EP06, el Nexo, la Liga Oscura y W7–W9; usa las salidas y retornos de cada zona.
+- Habla varias veces con NPC normales, conscientes e interdimensionales. Sus páginas recuerdan
+  visitas, se mueven según su papel y reaccionan al cambio de fase.
+- Inspecciona el hito de Rotom de cada mapa. Registra anomalías, objetos, pedestales y estatuas.
+- Prueba las diez decisiones opcionales y consulta la Vitrina del Testigo en la Antesala.
+- Pierde y reintenta los combates; comprueba fase B, curación, recompensas únicas y regreso seguro.
+- Comprueba el subtítulo Ashen Guardian, las BGM MIDI originales, el silencio de EP05 (2104–2109) y el fade/restauración del silenciador de EP04.
+- Comprueba que los tonos/fases vuelvan a neutro al salir y que v264 no cambie al recorrer el Nightmare; DN sólo lo consulta como contador externo.
+
+LIMITACIONES CONOCIDAS
+----------------------
+- Esta entrega pasó verificación estática y de empaquetado; no se ha ejecutado en Game.exe/Kirin.
+- La QA manual sigue pendiente. Si detectas un error, anota mapa, coordenadas, flags y pasos para
+  reproducirlo antes de restaurar la copia limpia.
+- No redistribuyas el paquete ni los gráficos de referencia fuera de esta prueba.
+
+La carpeta descomprimida equivalente está en Scripts_corregido/Dimensional_Nightmare_QA/.

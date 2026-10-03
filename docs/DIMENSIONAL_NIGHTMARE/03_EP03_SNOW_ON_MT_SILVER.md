@@ -71,7 +71,7 @@ es una mecánica de ritmo. Alternativa aún más suave: solo oscurecer la pantal
 | 2075 | Guarda de la Cornisa | Normal | `trainer_HIKER` | Pide 3 fogatas encendidas para dejar pasar |
 | 2076 | Montañés de la Cabaña | Consciente | `trchar015` | Cura; cada visita tiene una línea nueva |
 | 2077 | Pescador de Hielo | Normal | `SWIMMER_M` | Habla del "altar bajo el hielo" |
-| 2078 | Tendera de Nieve | Normal | `trchar052` | Tienda real (ítems estándar) |
+| 2078 | Tendera de Nieve | Normal | `trchar060` | Tienda real (ítems estándar). Sustituto visual de `trchar052`, ausente en el juego base. |
 | 2079 | Alcaldesa de Pueblo Alto | Consciente | `trchar070` | Sabe que el pueblo aparece y desaparece del mapa |
 | 2080 | Niño del Trineo | Normal | `trchar010` | Marca el camino del hielo resbaladizo |
 | 2082 | Minero Ciego | Normal | `trainer_HIKER` | Da pistas de las estalactitas |
@@ -204,13 +204,11 @@ EV_SNOW_Salida      — 2087 — Salida libre a 2021 (falda) / 2030 (gruta)
 
 ## 8. Música
 
-| Momento | Pista existente | Modificación |
+| Momento | Pista | Nota |
 |---|---|---|
-| Exterior nevado | `Snow` / `MtPyre` según mapa | normal, con viento de fondo (`BGS: Wind`) |
-| Fases 3–5 | misma | pitch −6 %, volumen 75 % |
-| Fase 6–7 | `A Trap With No Return` | filtrada, casi solo viento |
-| Anomalía detectada | (silencio de viento) | ping del Rotom |
-| Jefe | `secretred` | sin cambios (es el tema del testigo) |
+| Exploración EP03 (2073–2087) | `DN_SnowSilver.mid` | Composición original de tres pulsos, aireada y sin percusión. |
+| Viento / variaciones por fase | Pendiente por evento | La pista base está asignada; los cambios de pitch, BGS y cortes requieren QA/implementación. |
+| Combate del jefe | BGM de batalla del juego | Sin cambio al motor de combate. |
 
 ---
 

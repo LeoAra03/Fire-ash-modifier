@@ -11,12 +11,15 @@
   "flags": {
     "switchRange": [
       882,
-      934
+      935
     ],
     "variableRange": [
       265,
-      288
+      307
     ],
+    "externalVariablesReadOnly": {
+      "264": "Emisiones selladas de Monte Silver; DN sólo lee este contador (0–7)."
+    },
     "commonEvents": [
       900,
       906
@@ -329,6 +332,9 @@
         {
           "map": 2041,
           "name": "Sepulturero Anciano",
+          "displayName": "Sepulturero Anciano",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar028",
           "notes": "5 estados. Cree que Ash es un familiar. Estado 4: deja de excavar."
@@ -336,6 +342,9 @@
         {
           "map": 2041,
           "name": "Archivero (proyección)",
+          "displayName": "Archivero (proyección)",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Fija: «Otro visitante. O el mismo.» Cambia por fase."
@@ -343,6 +352,9 @@
         {
           "map": 2042,
           "name": "Mujer de las Urnas",
+          "displayName": "Mujer de las Urnas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar042",
           "notes": "Cuenta las ánforas: siempre 47, aunque cambien."
@@ -350,6 +362,9 @@
         {
           "map": 2042,
           "name": "Niño de la Vela",
+          "displayName": "Niño de la Vela",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Sabe que el piso \"se repite\" cada vez que llora."
@@ -357,6 +372,9 @@
         {
           "map": 2043,
           "name": "Carcelero Ciego",
+          "displayName": "Carcelero Ciego",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Puzzle de celdas; no ve la fase hasta la 5."
@@ -364,6 +382,9 @@
         {
           "map": 2043,
           "name": "Preso 13",
+          "displayName": "Preso 13",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_YOUNGSTER",
           "notes": "«Cada vez que sales, vuelvo a entrar yo.» Da la llave si le muestras el Rotom."
@@ -371,13 +392,29 @@
         {
           "map": 2044,
           "name": "Custodio Doble",
-          "type": "Normal ×2",
+          "displayName": "Custodio Doble 1",
+          "instance": 1,
+          "groupCount": 2,
+          "type": "Normal",
+          "sprite": "trchar015",
+          "notes": "Explican las 4 palancas; uno de ellos desaparece en fase 5."
+        },
+        {
+          "map": 2044,
+          "name": "Custodio Doble",
+          "displayName": "Custodio Doble 2",
+          "instance": 2,
+          "groupCount": 2,
+          "type": "Normal",
           "sprite": "trchar015",
           "notes": "Explican las 4 palancas; uno de ellos desaparece en fase 5."
         },
         {
           "map": 2046,
           "name": "La Campanera",
+          "displayName": "La Campanera",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_PSYCHIC_F",
           "notes": "Sabe que la Campana rota \"se oye sola\". Vende curaciones simbólicas (gratis)."
@@ -385,6 +422,9 @@
         {
           "map": 2047,
           "name": "Aprendiz de Huesos",
+          "displayName": "Aprendiz de Huesos",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_YOUNGSTER",
           "notes": "Anomalía A03 depende de sus diálogos."
@@ -392,13 +432,19 @@
         {
           "map": 2048,
           "name": "Jardinera de Raíces",
+          "displayName": "Jardinera de Raíces",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
-          "sprite": "trchar052",
-          "notes": "Cura 1 vez por visita; en fase 6 ya no está, pero su jaula de flores sí."
+          "sprite": "trchar059",
+          "notes": "Cura 1 vez por visita; en fase 6 ya no está, pero su jaula de flores sí. (Sustituto visual de `trchar052`, ausente en el juego base.)"
         },
         {
           "map": 2050,
           "name": "Eco del Archivero",
+          "displayName": "Eco del Archivero",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Repite la frase exacta del Archivero pero al revés."
@@ -406,6 +452,9 @@
         {
           "map": 2051,
           "name": "Sacerdote de los Cráneos",
+          "displayName": "Sacerdote de los Cráneos",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_PSYCHIC_M",
           "notes": "Puzzle; en fase 6 sus cráneos \"lo miran\"."
@@ -413,6 +462,9 @@
         {
           "map": 2052,
           "name": "La que Escucha la Campana",
+          "displayName": "La que Escucha la Campana",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar070",
           "notes": "Ancla narrativa del episodio; sobrevive a todas las fases."
@@ -420,6 +472,9 @@
         {
           "map": 2053,
           "name": "Guardián de las Bestias",
+          "displayName": "Guardián de las Bestias",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Reta a duelo opcional (canLose)."
@@ -427,6 +482,9 @@
         {
           "map": 2054,
           "name": "Sombra Traductora",
+          "displayName": "Sombra Traductora",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar028",
           "notes": "Traduce inscripciones (con Sintonía, nivel 4)."
@@ -434,7 +492,40 @@
         {
           "map": 2055,
           "name": "Los Cuatro Encapuchados",
-          "type": "Consciente ×4",
+          "displayName": "Los Cuatro Encapuchados 1",
+          "instance": 1,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
+        },
+        {
+          "map": 2055,
+          "name": "Los Cuatro Encapuchados",
+          "displayName": "Los Cuatro Encapuchados 2",
+          "instance": 2,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
+        },
+        {
+          "map": 2055,
+          "name": "Los Cuatro Encapuchados",
+          "displayName": "Los Cuatro Encapuchados 3",
+          "instance": 3,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
+        },
+        {
+          "map": 2055,
+          "name": "Los Cuatro Encapuchados",
+          "displayName": "Los Cuatro Encapuchados 4",
+          "instance": 4,
+          "groupCount": 4,
+          "type": "Consciente",
           "sprite": "trchar028",
           "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
         }
@@ -950,6 +1041,9 @@
         {
           "map": 2057,
           "name": "Guardagujas Viejo",
+          "displayName": "Guardagujas Viejo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar028",
           "notes": "5 estados; cree que el tren \"llega mañana\" desde hace 30 años"
@@ -957,6 +1051,9 @@
         {
           "map": 2057,
           "name": "Niña del Columpio",
+          "displayName": "Niña del Columpio",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Sabe que el pueblo \"se despierta\" cuando alguien entra"
@@ -964,6 +1061,9 @@
         {
           "map": 2058,
           "name": "Hombre del Sombrero",
+          "displayName": "Hombre del Sombrero",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_SCIENTIST",
           "notes": "En fase ≥4 su sombra tiene forma de Pokémon"
@@ -971,13 +1071,19 @@
         {
           "map": 2059,
           "name": "Fontanera",
+          "displayName": "Fontanera",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
-          "sprite": "trchar052",
-          "notes": "Repara la fuente que nunca da agua; da la pala"
+          "sprite": "trchar056",
+          "notes": "Repara la fuente que nunca da agua; da la pala. Sustituto visual de `trchar052`, ausente en el juego base."
         },
         {
           "map": 2060,
           "name": "Sepulturero Nuevo",
+          "displayName": "Sepulturero Nuevo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Bloquea el callejón; pide la pala"
@@ -985,6 +1091,9 @@
         {
           "map": 2061,
           "name": "Leñador Ciego",
+          "displayName": "Leñador Ciego",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_HIKER",
           "notes": "«El bosque no está muerto. Está esperando.»"
@@ -992,6 +1101,9 @@
         {
           "map": 2063,
           "name": "Pescador de Nada",
+          "displayName": "Pescador de Nada",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "SWIMMER_M",
           "notes": "Lanza al agua sin anzuelo; pesca mejores \"recuerdos\" que peces"
@@ -999,6 +1111,9 @@
         {
           "map": 2065,
           "name": "Sacerdote Sepia",
+          "displayName": "Sacerdote Sepia",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar001",
           "notes": "Custodia la iglesia; da acceso al mausoleo"
@@ -1006,6 +1121,9 @@
         {
           "map": 2066,
           "name": "Visitante de Tumbas",
+          "displayName": "Visitante de Tumbas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar028",
           "notes": "Fija: «Vi tu gorra antes. En otra tumba.»"
@@ -1013,6 +1131,9 @@
         {
           "map": 2067,
           "name": "Guardián del Mausoleo",
+          "displayName": "Guardián del Mausoleo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_PSYCHIC_M",
           "notes": "Duelo opcional (canLose)"
@@ -1020,6 +1141,9 @@
         {
           "map": 2069,
           "name": "Jefe de Estación",
+          "displayName": "Jefe de Estación",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar015",
           "notes": "Anomalía A08: cambia de edad según la fase"
@@ -1027,6 +1151,9 @@
         {
           "map": 2070,
           "name": "Bibliotecaria Ausente",
+          "displayName": "Bibliotecaria Ausente",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar070",
           "notes": "Su voz guía el puzzle de libros sin que esté el sprite"
@@ -1034,6 +1161,9 @@
         {
           "map": 2071,
           "name": "Campanero Sin Nombre",
+          "displayName": "Campanero Sin Nombre",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar042",
           "notes": "Toca la campana una vez por fase; la 7.ª vez no suena"
@@ -1041,6 +1171,9 @@
         {
           "map": 2072,
           "name": "El Entrenador Sin Nombre",
+          "displayName": "El Entrenador Sin Nombre",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "SECRET_Silver",
           "notes": "El jefe del episodio; no habla, solo asiente"
@@ -1575,6 +1708,9 @@
         {
           "map": 2073,
           "name": "Excursionista Perdido",
+          "displayName": "Excursionista Perdido",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "5 estados; cree que está a 10 min del pueblo"
@@ -1582,6 +1718,9 @@
         {
           "map": 2074,
           "name": "Escaladora Sola",
+          "displayName": "Escaladora Sola",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Sabe que el acantilado \"crece\" cada noche"
@@ -1589,6 +1728,9 @@
         {
           "map": 2075,
           "name": "Guarda de la Cornisa",
+          "displayName": "Guarda de la Cornisa",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Pide 3 fogatas encendidas para dejar pasar"
@@ -1596,6 +1738,9 @@
         {
           "map": 2076,
           "name": "Montañés de la Cabaña",
+          "displayName": "Montañés de la Cabaña",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar015",
           "notes": "Cura; cada visita tiene una línea nueva"
@@ -1603,6 +1748,9 @@
         {
           "map": 2077,
           "name": "Pescador de Hielo",
+          "displayName": "Pescador de Hielo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "SWIMMER_M",
           "notes": "Habla del \"altar bajo el hielo\""
@@ -1610,13 +1758,19 @@
         {
           "map": 2078,
           "name": "Tendera de Nieve",
+          "displayName": "Tendera de Nieve",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
-          "sprite": "trchar052",
-          "notes": "Tienda real (ítems estándar)"
+          "sprite": "trchar060",
+          "notes": "Tienda real (ítems estándar). Sustituto visual de `trchar052`, ausente en el juego base."
         },
         {
           "map": 2079,
           "name": "Alcaldesa de Pueblo Alto",
+          "displayName": "Alcaldesa de Pueblo Alto",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar070",
           "notes": "Sabe que el pueblo aparece y desaparece del mapa"
@@ -1624,6 +1778,9 @@
         {
           "map": 2080,
           "name": "Niño del Trineo",
+          "displayName": "Niño del Trineo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar010",
           "notes": "Marca el camino del hielo resbaladizo"
@@ -1631,6 +1788,9 @@
         {
           "map": 2082,
           "name": "Minero Ciego",
+          "displayName": "Minero Ciego",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Da pistas de las estalactitas"
@@ -1638,6 +1798,9 @@
         {
           "map": 2083,
           "name": "Sacerdote de las Runas",
+          "displayName": "Sacerdote de las Runas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_PSYCHIC_M",
           "notes": "Traduce runas con Rotom nivel ≥4"
@@ -1645,6 +1808,9 @@
         {
           "map": 2085,
           "name": "Cazadora de Cristales",
+          "displayName": "Cazadora de Cristales",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_PSYCHIC_F",
           "notes": "Miniboss opcional"
@@ -1652,13 +1818,39 @@
         {
           "map": 2086,
           "name": "Los Tres Testigos",
-          "type": "Interdimensional ×3",
+          "displayName": "Los Tres Testigos 1",
+          "instance": 1,
+          "groupCount": 3,
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Repiten la misma frase en 3 idiomas; cambian en fase 7"
+        },
+        {
+          "map": 2086,
+          "name": "Los Tres Testigos",
+          "displayName": "Los Tres Testigos 2",
+          "instance": 2,
+          "groupCount": 3,
+          "type": "Interdimensional",
+          "sprite": "trchar028",
+          "notes": "Repiten la misma frase en 3 idiomas; cambian en fase 7"
+        },
+        {
+          "map": 2086,
+          "name": "Los Tres Testigos",
+          "displayName": "Los Tres Testigos 3",
+          "instance": 3,
+          "groupCount": 3,
+          "type": "Interdimensional",
           "sprite": "trchar028",
           "notes": "Repiten la misma frase en 3 idiomas; cambian en fase 7"
         },
         {
           "map": 2087,
           "name": "EL CAMINANTE",
+          "displayName": "EL CAMINANTE",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar137",
           "notes": "Jefe; camina hacia el jugador durante todo el episodio (aparece en el fondo de 2073, 2079, 2086)"
@@ -2194,6 +2386,9 @@
         {
           "map": 2088,
           "name": "Leñador Dormido",
+          "displayName": "Leñador Dormido",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "5 estados; bosteza entre frases"
@@ -2201,6 +2396,9 @@
         {
           "map": 2088,
           "name": "Niña del Oso de Trapo",
+          "displayName": "Niña del Oso de Trapo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Sabe que \"la canción llama a los que tienen nombre\""
@@ -2208,6 +2406,9 @@
         {
           "map": 2089,
           "name": "Cartelero Mudo",
+          "displayName": "Cartelero Mudo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar015",
           "notes": "Cambia los carteles; nunca habla"
@@ -2215,6 +2416,9 @@
         {
           "map": 2090,
           "name": "Puentero",
+          "displayName": "Puentero",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar028",
           "notes": "Cobra peaje en sueños (nunca lo cobra)"
@@ -2222,6 +2426,9 @@
         {
           "map": 2091,
           "name": "Abuela de la Cabaña",
+          "displayName": "Abuela de la Cabaña",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar070",
           "notes": "Cura; cuenta las 4 estrofas del canto"
@@ -2229,6 +2436,9 @@
         {
           "map": 2092,
           "name": "Guardián del Arco",
+          "displayName": "Guardián del Arco",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trainer_PSYCHIC_M",
           "notes": "Fija: «Ya oíste esta canción. Ayer. Y anteayer.»"
@@ -2236,6 +2446,9 @@
         {
           "map": 2093,
           "name": "Sepulturera de Juguetes",
+          "displayName": "Sepulturera de Juguetes",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar042",
           "notes": "Entierra juguetes; da la pista del silenciador"
@@ -2243,13 +2456,49 @@
         {
           "map": 2095,
           "name": "Los Cuatro Dormidos",
-          "type": "Normal ×4",
+          "displayName": "Los Cuatro Dormidos 1",
+          "instance": 1,
+          "groupCount": 4,
+          "type": "Normal",
+          "sprite": "trchar000",
+          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
+        },
+        {
+          "map": 2095,
+          "name": "Los Cuatro Dormidos",
+          "displayName": "Los Cuatro Dormidos 2",
+          "instance": 2,
+          "groupCount": 4,
+          "type": "Normal",
+          "sprite": "trchar000",
+          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
+        },
+        {
+          "map": 2095,
+          "name": "Los Cuatro Dormidos",
+          "displayName": "Los Cuatro Dormidos 3",
+          "instance": 3,
+          "groupCount": 4,
+          "type": "Normal",
+          "sprite": "trchar000",
+          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
+        },
+        {
+          "map": 2095,
+          "name": "Los Cuatro Dormidos",
+          "displayName": "Los Cuatro Dormidos 4",
+          "instance": 4,
+          "groupCount": 4,
+          "type": "Normal",
           "sprite": "trchar000",
           "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
         },
         {
           "map": 2096,
           "name": "Voz de la Cueva",
+          "displayName": "Voz de la Cueva",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "",
           "notes": "Solo texto, sin gráfico: la cueva responde"
@@ -2257,6 +2506,9 @@
         {
           "map": 2098,
           "name": "El que Duerme Abajo",
+          "displayName": "El que Duerme Abajo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "",
           "notes": "Aparece en el reflejo; no se puede hablar con él"
@@ -2264,6 +2516,9 @@
         {
           "map": 2100,
           "name": "Granjero Ausente",
+          "displayName": "Granjero Ausente",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Su granero tiene una cama; dormir = ver una visión"
@@ -2271,13 +2526,29 @@
         {
           "map": 2101,
           "name": "Niños de Luciérnagas",
-          "type": "Consciente ×2",
+          "displayName": "Niños de Luciérnagas 1",
+          "instance": 1,
+          "groupCount": 2,
+          "type": "Consciente",
+          "sprite": "trchar010",
+          "notes": "Cantan la melodía; una nota está \"rota\""
+        },
+        {
+          "map": 2101,
+          "name": "Niños de Luciérnagas",
+          "displayName": "Niños de Luciérnagas 2",
+          "instance": 2,
+          "groupCount": 2,
+          "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Cantan la melodía; una nota está \"rota\""
         },
         {
           "map": 2103,
           "name": "LA NANA",
+          "displayName": "LA NANA",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trainer_PSYCHIC_F",
           "notes": "Jefe; canta durante todo el combate"
@@ -2399,14 +2670,14 @@
           "name": "EV_HYP_Sueno",
           "episode": "EP04",
           "detail": "2094/2096/2098 — Evento de mapa (paralelo)",
-          "effect": "cada 45 s, si NO hay silenciador activo: tirada de sueño (15 %)",
+          "effect": "cada 45 s, si NO hay silenciador activo: tirada atmosférica (15 %, mensaje/glitch; no aplica estado al equipo)",
           "maps": [
             2094,
             2096,
             2098
           ],
           "cells": [],
-          "trigger": "action",
+          "trigger": "parallel",
           "instances": 1
         },
         {
@@ -2482,12 +2753,39 @@
         {
           "name": "EV_HYP_Silenciador",
           "episode": "EP04",
-          "detail": "6 troncos huecos — Interactuar",
-          "effect": "silencia el canto 60 s; v267 += 1 por cada uno distinto (máx 6)",
-          "maps": [],
-          "cells": [],
+          "detail": "2103 (5,2) (8,4) (3,5) (14,5) (19,4) (21,6) — 6 puntos, interactuar",
+          "effect": "cada tronco silencia la BGM 60 s; Game_System registra cada uno distinto (máx. 6); no consume variables DN",
+          "maps": [
+            2103
+          ],
+          "cells": [
+            [
+              5,
+              2
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              14,
+              5
+            ],
+            [
+              19,
+              4
+            ],
+            [
+              21,
+              6
+            ]
+          ],
           "trigger": "action",
-          "instances": 1
+          "instances": 6
         },
         {
           "name": "EV_HYP_Notas",
@@ -2605,7 +2903,7 @@
           ]
         },
         "reward": "DN_PAGE_05",
-        "notes": "El combate espejo real (pbPartyCopy) queda pendiente: hoy usa un equipo fijo equivalente."
+        "notes": "El jefe usa una copia temporal del equipo del jugador; nunca comparte ni transfiere instancias."
       },
       "anomalies": {
         "declared": 13,
@@ -2850,6 +3148,9 @@
         {
           "map": 2104,
           "name": "Silueta del Guardagujas",
+          "displayName": "Silueta del Guardagujas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente (eco)",
           "sprite": "trchar028",
           "notes": "Repite una frase del EP02, sin voz"
@@ -2857,13 +3158,19 @@
         {
           "map": 2105,
           "name": "Silueta de la Fontanera",
+          "displayName": "Silueta de la Fontanera",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente (eco)",
-          "sprite": "trchar052",
-          "notes": "Señala un hueco en el suelo"
+          "sprite": "trchar056",
+          "notes": "Señala un hueco en el suelo; reutiliza el sprite de la Fontanera (sustituto visual de `trchar052`, ausente en el juego base)."
         },
         {
           "map": 2107,
           "name": "Silueta del Sepulturero",
+          "displayName": "Silueta del Sepulturero",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trainer_HIKER",
           "notes": "Fija: «Ya me enterraste una vez. Gracias.»"
@@ -2871,6 +3178,9 @@
         {
           "map": 2109,
           "name": "El Último Niño",
+          "displayName": "El Último Niño",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Es el único NPC sólido del episodio; no tiene sombra"
@@ -2878,6 +3188,9 @@
         {
           "map": 2112,
           "name": "Cura Silenciosa",
+          "displayName": "Cura Silenciosa",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Cura sin hablar (menú de sí/no)"
@@ -2885,6 +3198,9 @@
         {
           "map": 2114,
           "name": "El Espejo",
+          "displayName": "El Espejo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "",
           "notes": "Miniboss opcional: copia el equipo del jugador"
@@ -2892,6 +3208,9 @@
         {
           "map": 2116,
           "name": "Bibliotecaria Que Se Fue",
+          "displayName": "Bibliotecaria Que Se Fue",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente (eco)",
           "sprite": "trchar070",
           "notes": "Solo aparece en fase ≥6"
@@ -2899,6 +3218,9 @@
         {
           "map": 2117,
           "name": "El Campanero Vacío",
+          "displayName": "El Campanero Vacío",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar042",
           "notes": "Toca una campana que ya no existe"
@@ -2906,6 +3228,9 @@
         {
           "map": 2119,
           "name": "EL JUGADOR 000",
+          "displayName": "EL JUGADOR 000",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "SECRET_Red",
           "notes": "Jefe final"
@@ -2934,7 +3259,7 @@
             2113
           ],
           "cells": [],
-          "trigger": "action",
+          "trigger": "parallel",
           "instances": 1
         },
         {
@@ -3159,29 +3484,60 @@
         "team": [
           [
             "UNOWN",
-            120
+            100
           ],
           [
             "UNOWN",
-            121
+            100
           ],
           [
             "UNOWN",
-            122
+            100
           ],
           [
-            "UNOWN",
-            123
+            "BRONZONG",
+            106
           ],
           [
-            "UNOWN",
-            124
+            "SIGILYPH",
+            104
           ],
           [
-            "UNOWN",
-            125
+            "XATU",
+            105
           ]
         ],
+        "finalForm": {
+          "type": "DN_KINGGUS",
+          "label": "EL REY SIN LETRA",
+          "trainer": "DN_EP06_FINAL",
+          "team": [
+            [
+              "UNOWN",
+              120
+            ],
+            [
+              "UNOWN",
+              121
+            ],
+            [
+              "BRONZONG",
+              123
+            ],
+            [
+              "SIGILYPH",
+              122
+            ],
+            [
+              "GOTHITELLE",
+              122
+            ],
+            [
+              "XATU",
+              125
+            ]
+          ]
+        },
         "phaseB": {
           "kind": "letras",
           "verb": "colocar",
@@ -3199,7 +3555,7 @@
           ]
         },
         "reward": "DN_ANCLA",
-        "notes": "Tras la fase 7 el Rey se levanta: forma final KINGGUS2 (equipo 120–125 propuesto)."
+        "notes": "Tras completar KINGGUS en orden, se vencen la forma que deletrea y la forma final (niveles 120–125)."
       },
       "anomalies": {
         "declared": 14,
@@ -3462,6 +3818,9 @@
         {
           "map": 2120,
           "name": "Custodio del Atrio",
+          "displayName": "Custodio del Atrio",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar028",
           "notes": "Fija: «El Rey no lee libros. Lee gente.»"
@@ -3469,6 +3828,9 @@
         {
           "map": 2121,
           "name": "Escriba Ciego",
+          "displayName": "Escriba Ciego",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_SCIENTIST",
           "notes": "Lee el texto del suelo con los dedos"
@@ -3476,13 +3838,29 @@
         {
           "map": 2122,
           "name": "Los Dos Porteros",
-          "type": "Normal ×2",
+          "displayName": "Los Dos Porteros 1",
+          "instance": 1,
+          "groupCount": 2,
+          "type": "Normal",
+          "sprite": "trchar015",
+          "notes": "Exigen \"la primera letra\"; uno miente (según fase)"
+        },
+        {
+          "map": 2122,
+          "name": "Los Dos Porteros",
+          "displayName": "Los Dos Porteros 2",
+          "instance": 2,
+          "groupCount": 2,
+          "type": "Normal",
           "sprite": "trchar015",
           "notes": "Exigen \"la primera letra\"; uno miente (según fase)"
         },
         {
           "map": 2123,
           "name": "Bibliotecaria del Rey",
+          "displayName": "Bibliotecaria del Rey",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar070",
           "notes": "Da la letra K; sus libros no se pueden leer sin Sintonía"
@@ -3490,13 +3868,59 @@
         {
           "map": 2124,
           "name": "Unown Coro",
-          "type": "Entidad ×5",
+          "displayName": "Unown Coro 1",
+          "instance": 1,
+          "groupCount": 5,
+          "type": "Entidad",
+          "sprite": "UNOWN",
+          "notes": "No hablan; forman palabras con su posición"
+        },
+        {
+          "map": 2124,
+          "name": "Unown Coro",
+          "displayName": "Unown Coro 2",
+          "instance": 2,
+          "groupCount": 5,
+          "type": "Entidad",
+          "sprite": "UNOWN",
+          "notes": "No hablan; forman palabras con su posición"
+        },
+        {
+          "map": 2124,
+          "name": "Unown Coro",
+          "displayName": "Unown Coro 3",
+          "instance": 3,
+          "groupCount": 5,
+          "type": "Entidad",
+          "sprite": "UNOWN",
+          "notes": "No hablan; forman palabras con su posición"
+        },
+        {
+          "map": 2124,
+          "name": "Unown Coro",
+          "displayName": "Unown Coro 4",
+          "instance": 4,
+          "groupCount": 5,
+          "type": "Entidad",
+          "sprite": "UNOWN",
+          "notes": "No hablan; forman palabras con su posición"
+        },
+        {
+          "map": 2124,
+          "name": "Unown Coro",
+          "displayName": "Unown Coro 5",
+          "instance": 5,
+          "groupCount": 5,
+          "type": "Entidad",
           "sprite": "UNOWN",
           "notes": "No hablan; forman palabras con su posición"
         },
         {
           "map": 2125,
           "name": "El Ojo",
+          "displayName": "El Ojo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "",
           "notes": "Observa; si el jugador parpadea (menú), parpadea"
@@ -3504,6 +3928,9 @@
         {
           "map": 2126,
           "name": "Escalera Parlante",
+          "displayName": "Escalera Parlante",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "",
           "notes": "Cada 3 escalones dice una letra"
@@ -3511,6 +3938,9 @@
         {
           "map": 2127,
           "name": "Sepulturero del Rey",
+          "displayName": "Sepulturero del Rey",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Da la letra G si se le cuenta una verdad"
@@ -3518,6 +3948,9 @@
         {
           "map": 2128,
           "name": "Sacerdote de Símbolos",
+          "displayName": "Sacerdote de Símbolos",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_PSYCHIC_M",
           "notes": "Explica el orden K-I-N-G-G-U-S"
@@ -3525,6 +3958,9 @@
         {
           "map": 2129,
           "name": "Minero de Cristal",
+          "displayName": "Minero de Cristal",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Miniboss opcional; da la letra U"
@@ -3532,6 +3968,9 @@
         {
           "map": 2130,
           "name": "Pescador de Letras",
+          "displayName": "Pescador de Letras",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "SWIMMER_M",
           "notes": "Da la letra S a cambio de una `PEARL`"
@@ -3539,13 +3978,49 @@
         {
           "map": 2131,
           "name": "Cuatro Estatuas",
-          "type": "Interdimensional ×4",
+          "displayName": "Cuatro Estatuas 1",
+          "instance": 1,
+          "groupCount": 4,
+          "type": "Interdimensional",
+          "sprite": "",
+          "notes": "Hablan una vez cada una; juntas dan la clave del trono"
+        },
+        {
+          "map": 2131,
+          "name": "Cuatro Estatuas",
+          "displayName": "Cuatro Estatuas 2",
+          "instance": 2,
+          "groupCount": 4,
+          "type": "Interdimensional",
+          "sprite": "",
+          "notes": "Hablan una vez cada una; juntas dan la clave del trono"
+        },
+        {
+          "map": 2131,
+          "name": "Cuatro Estatuas",
+          "displayName": "Cuatro Estatuas 3",
+          "instance": 3,
+          "groupCount": 4,
+          "type": "Interdimensional",
+          "sprite": "",
+          "notes": "Hablan una vez cada una; juntas dan la clave del trono"
+        },
+        {
+          "map": 2131,
+          "name": "Cuatro Estatuas",
+          "displayName": "Cuatro Estatuas 4",
+          "instance": 4,
+          "groupCount": 4,
+          "type": "Interdimensional",
           "sprite": "",
           "notes": "Hablan una vez cada una; juntas dan la clave del trono"
         },
         {
           "map": 2133,
           "name": "El Trono Vacío",
+          "displayName": "El Trono Vacío",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "",
           "notes": "Al sentarse: visión de 20 s (lore completo)"
@@ -3553,6 +4028,9 @@
         {
           "map": 2134,
           "name": "El Guardián de la Advertencia",
+          "displayName": "El Guardián de la Advertencia",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar137",
           "notes": "Repite LEAVENOW; ofrece salir sin pelear"
@@ -3560,6 +4038,9 @@
         {
           "map": 2135,
           "name": "KINGGUS",
+          "displayName": "KINGGUS",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Jefe final",
           "sprite": "Sprite",
           "notes": "No habla: deletrea"
@@ -4090,6 +4571,9 @@
         {
           "map": 2143,
           "name": "El Sepulturero del Patio",
+          "displayName": "El Sepulturero del Patio",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar028",
           "notes": "5 estados. Cree que Ash viene a devolver algo. Estado 5: mira la correa y calla."
@@ -4097,6 +4581,9 @@
         {
           "map": 2143,
           "name": "Rotom (proyección)",
+          "displayName": "Rotom (proyección)",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Traduce el duelo en texto; cambia por fase."
@@ -4104,6 +4591,9 @@
         {
           "map": 2144,
           "name": "La Madre del Amo",
+          "displayName": "La Madre del Amo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar042",
           "notes": "Guarda la ropa del Pokémon. Estado 4: la dobla sin mirar."
@@ -4111,6 +4601,9 @@
         {
           "map": 2145,
           "name": "El Niño del Trofeo",
+          "displayName": "El Niño del Trofeo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Lee los trofeos: cada uno tiene un año que no existe."
@@ -4118,13 +4611,19 @@
         {
           "map": 2146,
           "name": "La Jardinera de Promesas",
+          "displayName": "La Jardinera de Promesas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
-          "sprite": "trchar052",
-          "notes": "Cura 1 vez por visita; en fase 5 ya no está, pero su regadera sí."
+          "sprite": "trchar059",
+          "notes": "Cura 1 vez por visita; en fase 5 ya no está, pero su regadera sí. Reutiliza el sprite alternativo de la Jardinera de Raíces."
         },
         {
           "map": 2147,
           "name": "Cocinera Sin Fuego",
+          "displayName": "Cocinera Sin Fuego",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_PSYCHIC_F",
           "notes": "Cambia objetos por recuerdos (intercambio simbólico)."
@@ -4132,6 +4631,9 @@
         {
           "map": 2149,
           "name": "El Criptero",
+          "displayName": "El Criptero",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_HIKER",
           "notes": "Sabe el nombre real del Pokémon y no lo dice hasta la fase 6."
@@ -4139,6 +4641,9 @@
         {
           "map": 2150,
           "name": "La Tejedora de Cintas",
+          "displayName": "La Tejedora de Cintas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar015",
           "notes": "Explica el orden de las correas; una de ellas desaparece en fase 4."
@@ -4146,6 +4651,9 @@
         {
           "map": 2151,
           "name": "El Reflejo de Red",
+          "displayName": "El Reflejo de Red",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar028",
           "notes": "Repite la última frase del jugador con la voz de Red."
@@ -4153,6 +4661,9 @@
         {
           "map": 2153,
           "name": "El Vecino Que No Mira",
+          "displayName": "El Vecino Que No Mira",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar070",
           "notes": "5 estados; nunca mira a los ojos, siempre a la correa."
@@ -4160,6 +4671,9 @@
         {
           "map": 2154,
           "name": "El Cuidador del Canil",
+          "displayName": "El Cuidador del Canil",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_YOUNGSTER",
           "notes": "Reta a duelo opcional: quiere saber si Ash también perdió a alguien."
@@ -4167,13 +4681,49 @@
         {
           "map": 2155,
           "name": "Los Cuatro Anudados",
-          "type": "Consciente ×4",
+          "displayName": "Los Cuatro Anudados 1",
+          "instance": 1,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+        },
+        {
+          "map": 2155,
+          "name": "Los Cuatro Anudados",
+          "displayName": "Los Cuatro Anudados 2",
+          "instance": 2,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+        },
+        {
+          "map": 2155,
+          "name": "Los Cuatro Anudados",
+          "displayName": "Los Cuatro Anudados 3",
+          "instance": 3,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+        },
+        {
+          "map": 2155,
+          "name": "Los Cuatro Anudados",
+          "displayName": "Los Cuatro Anudados 4",
+          "instance": 4,
+          "groupCount": 4,
+          "type": "Consciente",
           "sprite": "trchar028",
           "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
         },
         {
           "map": 2156,
           "name": "El Traductor de Cintas",
+          "displayName": "El Traductor de Cintas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Traduce (con Rotom Sintonía ≥4) la inscripción del árbol."
@@ -4183,7 +4733,7 @@
         {
           "name": "EV_W7_Entrada",
           "episode": "W7",
-          "detail": "Mapa 2143 — Autorun al entrar (v264≥9)",
+          "detail": "Mapa 2143 — Autorun tras abrir W7 con sw920 (Liga Oscura cerrada; v264 no cambia)",
           "effect": "texto de la grieta, sw922 = ON parcial, tone fase 1, música \"PkmRS-MtPyre\"",
           "maps": [
             2143
@@ -4639,6 +5189,9 @@
         {
           "map": 2159,
           "name": "El Pozo",
+          "displayName": "El Pozo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar028",
           "notes": "5 estados. Pregunta si Ash bajó por alguien o por curiosidad."
@@ -4646,6 +5199,9 @@
         {
           "map": 2159,
           "name": "Rotom (medidor)",
+          "displayName": "Rotom (medidor)",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Marca el aire restante; cambia de color por fase."
@@ -4653,6 +5209,9 @@
         {
           "map": 2161,
           "name": "El Minero Viejo",
+          "displayName": "El Minero Viejo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_HIKER",
           "notes": "Vende aire por objetos (intercambio simbólico)."
@@ -4660,6 +5219,9 @@
         {
           "map": 2162,
           "name": "La Niña de las Raíces",
+          "displayName": "La Niña de las Raíces",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar010",
           "notes": "Dice qué raíz se puede cortar y cuál no."
@@ -4667,6 +5229,9 @@
         {
           "map": 2163,
           "name": "El Sepulturero Inundado",
+          "displayName": "El Sepulturero Inundado",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar042",
           "notes": "5 estados; en fase 5 ya no está, pero su pala sí."
@@ -4674,6 +5239,9 @@
         {
           "map": 2166,
           "name": "El Sellado Número 4",
+          "displayName": "El Sellado Número 4",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_PSYCHIC_M",
           "notes": "Sabe que hay cinco ataúdes y cuatro nombres."
@@ -4681,13 +5249,49 @@
         {
           "map": 2166,
           "name": "Los Sellados",
-          "type": "Consciente ×4",
+          "displayName": "Los Sellados 1",
+          "instance": 1,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; cuentan con los dedos cuántos faltan."
+        },
+        {
+          "map": 2166,
+          "name": "Los Sellados",
+          "displayName": "Los Sellados 2",
+          "instance": 2,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; cuentan con los dedos cuántos faltan."
+        },
+        {
+          "map": 2166,
+          "name": "Los Sellados",
+          "displayName": "Los Sellados 3",
+          "instance": 3,
+          "groupCount": 4,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "No hablan; cuentan con los dedos cuántos faltan."
+        },
+        {
+          "map": 2166,
+          "name": "Los Sellados",
+          "displayName": "Los Sellados 4",
+          "instance": 4,
+          "groupCount": 4,
+          "type": "Consciente",
           "sprite": "trchar028",
           "notes": "No hablan; cuentan con los dedos cuántos faltan."
         },
         {
           "map": 2168,
           "name": "El Alcalde Enterrado",
+          "displayName": "El Alcalde Enterrado",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar070",
           "notes": "5 estados; niega que el pueblo esté debajo."
@@ -4695,6 +5299,9 @@
         {
           "map": 2169,
           "name": "La Campanera Boca Abajo",
+          "displayName": "La Campanera Boca Abajo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_PSYCHIC_F",
           "notes": "Toca la campana aunque no suene."
@@ -4702,6 +5309,9 @@
         {
           "map": 2170,
           "name": "El Cuidandero de Lápidas",
+          "displayName": "El Cuidandero de Lápidas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_YOUNGSTER",
           "notes": "Duelo opcional: quiere compañía, no ganar."
@@ -4709,6 +5319,9 @@
         {
           "map": 2171,
           "name": "La Contadora de Cuerpos",
+          "displayName": "La Contadora de Cuerpos",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar015",
           "notes": "Cuenta 47 y faltan 3; da la pista del jefe."
@@ -4716,6 +5329,9 @@
         {
           "map": 2172,
           "name": "El Traductor de Tierra",
+          "displayName": "El Traductor de Tierra",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar028",
           "notes": "Traduce las marcas del túnel (Rotom Sintonía ≥5)."
@@ -4725,7 +5341,7 @@
         {
           "name": "EV_W8_Entrada",
           "episode": "W8",
-          "detail": "Mapa 2159 — Autorun al entrar (v264≥9)",
+          "detail": "Mapa 2159 — Autorun tras abrir W8 con sw925 (sello de W7; v264 no cambia)",
           "effect": "texto de la grieta, sw923 = ON parcial, tone fase 1, música \"PkmRS-MtPyre\"",
           "maps": [
             2159
@@ -4744,7 +5360,7 @@
             2174
           ],
           "cells": [],
-          "trigger": "action",
+          "trigger": "parallel",
           "instances": 1
         },
         {
@@ -5178,6 +5794,9 @@
         {
           "map": 2175,
           "name": "El Farolero Sordo",
+          "displayName": "El Farolero Sordo",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar028",
           "notes": "5 estados. No oye la melodía y por eso puede hablar."
@@ -5185,6 +5804,9 @@
         {
           "map": 2175,
           "name": "Rotom (silenciador)",
+          "displayName": "Rotom (silenciador)",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Marca el nivel de canto; cambia de tono por fase."
@@ -5192,6 +5814,9 @@
         {
           "map": 2176,
           "name": "La Mujer del Altavoz",
+          "displayName": "La Mujer del Altavoz",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar042",
           "notes": "5 estados; en fase 4 sólo señala el altavoz."
@@ -5199,6 +5824,9 @@
         {
           "map": 2177,
           "name": "El Pianista Sin Manos",
+          "displayName": "El Pianista Sin Manos",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_PSYCHIC_M",
           "notes": "Toca con la mirada; da el orden de las 4 notas."
@@ -5206,13 +5834,19 @@
         {
           "map": 2178,
           "name": "La Maestra que Repite",
+          "displayName": "La Maestra que Repite",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
-          "sprite": "trchar052",
-          "notes": "Repite la misma clase; el Rotom puede cortarla."
+          "sprite": "trchar058",
+          "notes": "Repite la misma clase; el Rotom puede cortarla. Sustituto visual de `trchar052`, ausente en el juego base."
         },
         {
           "map": 2179,
           "name": "La Campanera Ciega",
+          "displayName": "La Campanera Ciega",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trainer_PSYCHIC_F",
           "notes": "Sabe que la campana suena en otra habitación."
@@ -5220,6 +5854,9 @@
         {
           "map": 2180,
           "name": "El Vigía de Ondas",
+          "displayName": "El Vigía de Ondas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar015",
           "notes": "Cuenta las ondas que pasan: siempre 108."
@@ -5227,6 +5864,9 @@
         {
           "map": 2182,
           "name": "La Jardinera Sorda",
+          "displayName": "La Jardinera Sorda",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trchar010",
           "notes": "Cura 1 vez por visita; sus plantas siguen el ruido."
@@ -5234,6 +5874,9 @@
         {
           "map": 2183,
           "name": "El Cambista de Cintas",
+          "displayName": "El Cambista de Cintas",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Normal",
           "sprite": "trainer_YOUNGSTER",
           "notes": "Cambia cintas por objetos (intercambio simbólico)."
@@ -5241,6 +5884,9 @@
         {
           "map": 2184,
           "name": "El Proyeccionista",
+          "displayName": "El Proyeccionista",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Consciente",
           "sprite": "trchar070",
           "notes": "Pone una película muda que explica el mundo."
@@ -5248,13 +5894,29 @@
         {
           "map": 2186,
           "name": "El Coro de Dos",
-          "type": "Consciente ×2",
+          "displayName": "El Coro de Dos 1",
+          "instance": 1,
+          "groupCount": 2,
+          "type": "Consciente",
+          "sprite": "trchar028",
+          "notes": "Canta a dos voces; una va siempre un tono atrás."
+        },
+        {
+          "map": 2186,
+          "name": "El Coro de Dos",
+          "displayName": "El Coro de Dos 2",
+          "instance": 2,
+          "groupCount": 2,
+          "type": "Consciente",
           "sprite": "trchar028",
           "notes": "Canta a dos voces; una va siempre un tono atrás."
         },
         {
           "map": 2189,
           "name": "El Autor",
+          "displayName": "El Autor",
+          "instance": 1,
+          "groupCount": 1,
           "type": "Interdimensional",
           "sprite": "trchar001",
           "notes": "Última verdad: escribió el pueblo para no oírlo solo."
@@ -5264,7 +5926,7 @@
         {
           "name": "EV_W9_Entrada",
           "episode": "W9",
-          "detail": "Mapa 2175 — Autorun al entrar (v264≥9)",
+          "detail": "Mapa 2175 — Autorun tras abrir W9 con sw926 (sello de W8; v264 no cambia)",
           "effect": "texto de la grieta, sw924 = ON parcial, tone fase 1, música \"Lavender\"",
           "maps": [
             2175
@@ -5283,7 +5945,7 @@
             2190
           ],
           "cells": [],
-          "trigger": "action",
+          "trigger": "parallel",
           "instances": 1
         },
         {

@@ -234,9 +234,9 @@ Sin errores ni avisos: gráficos, transferencias, tilesets, audio, objetos, trai
 | LEVEL DESIGN | ganchos por mapa de §3 sin implementar | pasada de guion + eventos por mapa (B6) |
 | CINEMÁTICA | escenas largas del Nexo y la Liga sin recursos visuales propios | arte MEDIA (doc 08) |
 | BATTLE | combate espejo real de EP05 y forma final de EP06 | equipo 120–125 aprobado + fase C |
-| NPC | `trchar052` sigue sin existir (4 NPCs usan `trchar000`) | crear el sprite o aceptar la sustitución |
+| NPC | `trchar052` no existe; seis NPCs usan sprites existentes alternativos (`trchar059`, `trchar056`, `trchar060`, `trchar058`) | sustitución aplicada en el GDD y plano de eventos |
 | TILES | tilesets `DN_*` propios usan la tabla de pasajes del juego base | revisar los pasajes finos por mapa al final de la QA |
-| AUDIO | audio alterado por anomalía | composición/edición (B2) |
+| AUDIO | variantes de audio por fase/anomalía (cortes, pings, clima/BGS) | temas originales y BGM base instalados; queda cableado de efectos y QA manual (B2) |
 | CORRUPCIÓN | las 7 fases del GDD no cambian la escena todavía | plan de fase en doc 13 §F3b (tono + huecos + overlays) y verificador de fases (B7) |
 
 ## 6. La batalla de La Ruta de Dios — soluciones (M2)

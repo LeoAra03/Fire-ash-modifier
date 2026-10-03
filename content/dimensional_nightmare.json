@@ -7,7 +7,7 @@
     "postgameSwitch": 429,
     "prerequisites": {
       "ep01to03": "v264 >= 3",
-      "ep04to06AndNexus": "v264 = 7",
+      "ep04to06AndNexus": "v264 >= 7 (contador de emisiones selladas de Monte Silver; sólo lectura para DN)",
       "ep04Extra": "sw703 POKEMOD CHILDREN RESCUED"
     },
     "hubMap": 48,
@@ -23,12 +23,15 @@
   "flags": {
     "switchRange": [
       882,
-      934
+      935
     ],
     "variableRange": [
-      264,
-      288
+      265,
+      297
     ],
+    "externalVariablesReadOnly": {
+      "264": "Emisiones selladas de Monte Silver; DN sólo consulta este contador (0–7)."
+    },
     "switches": {
       "882": "DN_UNLOCKED",
       "883": "DN_SELLO_EP01_WHITE_HAND",
@@ -82,10 +85,10 @@
       "931": "DN_TESTIGO_LISTO",
       "932": "DN_CUOTA_W7",
       "933": "DN_CUOTA_W8",
-      "934": "DN_CUOTA_W9"
+      "934": "DN_CUOTA_W9",
+      "935": "DN_NEXO_RESOLVED"
     },
     "variables": {
-      "264": "DN_PROGRESO_EPISODIOS",
       "265": "DN_RESONANCE (0-100)",
       "266": "DN_PHASE (1-7)",
       "267": "DN_EP_ACTUAL (0-6)",
@@ -109,7 +112,16 @@
       "285": "DN_ANOMALIAS_W9",
       "286": "DN_W8_AIRE",
       "287": "DN_W9_CANTO",
-      "288": "DN_W7_CORREAS"
+      "288": "DN_W7_CORREAS",
+      "289": "DN_BOSS_STEPS_EP01",
+      "290": "DN_BOSS_STEPS_EP02",
+      "291": "DN_BOSS_STEPS_EP03",
+      "292": "DN_BOSS_STEPS_EP04",
+      "293": "DN_BOSS_STEPS_EP05",
+      "294": "DN_BOSS_STEPS_EP06",
+      "295": "DN_BOSS_STEPS_W7",
+      "296": "DN_BOSS_STEPS_W8",
+      "297": "DN_BOSS_STEPS_W9"
     }
   },
   "rotom": {
@@ -646,7 +658,7 @@
     "title": "Antesala de las Grietas",
     "role": "hub de entrada: nueve grietas (seis episodios + segundo anillo W7-W9), Archivero, monumento de progreso, Vitrina del Testigo y puerta de la Liga Oscura",
     "prerequisite": "DN_UNLOCKED (sw882)",
-    "secondRing": "se abre con la Liga Oscura cerrada (sw920) y v264 >= 9; W7 -> W8 -> W9 encadenan por sello (922/923/924)"
+    "secondRing": "W7 se abre al cerrar la Liga Oscura (sw920), sin requisito sobre v264; W8 y W9 encadenan por las grietas tras sellar W7/W8 (sw925/sw926). v264 permanece sólo como contador de emisiones selladas de Monte Silver, con máximo 7."
   },
   "nexus": {
     "maps": {

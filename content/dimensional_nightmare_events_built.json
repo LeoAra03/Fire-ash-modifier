@@ -48,8 +48,8 @@
     },
     "2044": {
       "episode": "EP01",
-      "events": 8,
-      "npcs": 1,
+      "events": 9,
+      "npcs": 2,
       "entry": [
         12,
         1
@@ -213,8 +213,8 @@
     },
     "2055": {
       "episode": "EP01",
-      "events": 7,
-      "npcs": 1,
+      "events": 10,
+      "npcs": 4,
       "entry": [
         11,
         1
@@ -676,8 +676,8 @@
     },
     "2086": {
       "episode": "EP03",
-      "events": 5,
-      "npcs": 1,
+      "events": 7,
+      "npcs": 3,
       "entry": [
         7,
         1
@@ -705,7 +705,7 @@
     },
     "2088": {
       "episode": "EP04",
-      "events": 6,
+      "events": 7,
       "npcs": 2,
       "entry": [
         11,
@@ -720,7 +720,7 @@
     },
     "2089": {
       "episode": "EP04",
-      "events": 8,
+      "events": 9,
       "npcs": 1,
       "entry": [
         11,
@@ -735,7 +735,7 @@
     },
     "2090": {
       "episode": "EP04",
-      "events": 6,
+      "events": 7,
       "npcs": 1,
       "entry": [
         11,
@@ -750,7 +750,7 @@
     },
     "2091": {
       "episode": "EP04",
-      "events": 5,
+      "events": 6,
       "npcs": 1,
       "entry": [
         11,
@@ -765,7 +765,7 @@
     },
     "2092": {
       "episode": "EP04",
-      "events": 7,
+      "events": 8,
       "npcs": 1,
       "entry": [
         12,
@@ -780,7 +780,7 @@
     },
     "2093": {
       "episode": "EP04",
-      "events": 5,
+      "events": 6,
       "npcs": 1,
       "entry": [
         10,
@@ -795,7 +795,7 @@
     },
     "2094": {
       "episode": "EP04",
-      "events": 4,
+      "events": 5,
       "npcs": 0,
       "entry": [
         11,
@@ -810,8 +810,8 @@
     },
     "2095": {
       "episode": "EP04",
-      "events": 5,
-      "npcs": 1,
+      "events": 9,
+      "npcs": 4,
       "entry": [
         11,
         1
@@ -825,7 +825,7 @@
     },
     "2096": {
       "episode": "EP04",
-      "events": 5,
+      "events": 6,
       "npcs": 1,
       "entry": [
         11,
@@ -842,7 +842,7 @@
     },
     "2097": {
       "episode": "EP04",
-      "events": 2,
+      "events": 3,
       "npcs": 0,
       "entry": [
         11,
@@ -857,7 +857,7 @@
     },
     "2098": {
       "episode": "EP04",
-      "events": 6,
+      "events": 7,
       "npcs": 1,
       "entry": [
         11,
@@ -874,7 +874,7 @@
     },
     "2099": {
       "episode": "EP04",
-      "events": 3,
+      "events": 4,
       "npcs": 0,
       "entry": [
         11,
@@ -889,7 +889,7 @@
     },
     "2100": {
       "episode": "EP04",
-      "events": 6,
+      "events": 7,
       "npcs": 1,
       "entry": [
         12,
@@ -904,8 +904,8 @@
     },
     "2101": {
       "episode": "EP04",
-      "events": 5,
-      "npcs": 1,
+      "events": 7,
+      "npcs": 2,
       "entry": [
         11,
         1
@@ -919,7 +919,7 @@
     },
     "2102": {
       "episode": "EP04",
-      "events": 3,
+      "events": 4,
       "npcs": 0,
       "entry": [
         11,
@@ -934,7 +934,7 @@
     },
     "2103": {
       "episode": "EP04",
-      "events": 8,
+      "events": 14,
       "npcs": 1,
       "entry": [
         11,
@@ -1219,8 +1219,8 @@
     },
     "2122": {
       "episode": "EP06",
-      "events": 5,
-      "npcs": 1,
+      "events": 6,
+      "npcs": 2,
       "entry": [
         11,
         1
@@ -1249,8 +1249,8 @@
     },
     "2124": {
       "episode": "EP06",
-      "events": 5,
-      "npcs": 1,
+      "events": 9,
+      "npcs": 5,
       "entry": [
         16,
         1
@@ -1358,8 +1358,8 @@
     },
     "2131": {
       "episode": "EP06",
-      "events": 5,
-      "npcs": 1,
+      "events": 8,
+      "npcs": 4,
       "entry": [
         11,
         4
@@ -1370,6 +1370,9 @@
       ],
       "boss": null,
       "pending": [
+        "2131: Cuatro Estatuas sin sprite (arte pendiente)",
+        "2131: Cuatro Estatuas sin sprite (arte pendiente)",
+        "2131: Cuatro Estatuas sin sprite (arte pendiente)",
         "2131: Cuatro Estatuas sin sprite (arte pendiente)"
       ]
     },
@@ -1497,7 +1500,7 @@
     },
     "2140": {
       "episode": "NEXO",
-      "events": 2,
+      "events": 3,
       "npcs": 0,
       "entry": [
         4,
@@ -1689,8 +1692,8 @@
     },
     "2155": {
       "episode": "W7",
-      "events": 5,
-      "npcs": 1,
+      "events": 8,
+      "npcs": 4,
       "entry": [
         11,
         2
@@ -1853,8 +1856,8 @@
     },
     "2166": {
       "episode": "W8",
-      "events": 7,
-      "npcs": 2,
+      "events": 10,
+      "npcs": 5,
       "entry": [
         9,
         4
@@ -2152,8 +2155,8 @@
     },
     "2186": {
       "episode": "W9",
-      "events": 3,
-      "npcs": 1,
+      "events": 4,
+      "npcs": 2,
       "entry": [
         1,
         3
@@ -2322,10 +2325,21 @@
           3
         ]
       },
-      "W7": {
+      "NEXO": {
         "cell": [
           5,
           22
+        ],
+        "to": 2136,
+        "cellTo": [
+          11,
+          1
+        ]
+      },
+      "W7": {
+        "cell": [
+          9,
+          18
         ],
         "to": 2143,
         "cellTo": [
@@ -2335,8 +2349,8 @@
       },
       "W8": {
         "cell": [
-          9,
-          18
+          26,
+          11
         ],
         "to": 2159,
         "cellTo": [
@@ -2346,8 +2360,8 @@
       },
       "W9": {
         "cell": [
-          26,
-          11
+          22,
+          7
         ],
         "to": 2175,
         "cellTo": [
@@ -2365,8 +2379,8 @@
     ],
     "gate": [
       36,
-      11,
-      1
+      14,
+      2
     ]
   },
   "liga": {
@@ -2388,8 +2402,8 @@
         10
       ],
       "coliseo": [
-        15,
-        21
+        14,
+        20
       ]
     },
     "exit": {
@@ -2403,25 +2417,25 @@
       ]
     },
     "mpika": [
-      15,
+      14,
       11
     ],
     "sparks": [
       [
-        5,
-        4
+        7,
+        6
       ],
       [
-        24,
-        4
+        20,
+        5
       ],
       [
-        5,
+        9,
         17
       ],
       [
-        24,
-        17
+        27,
+        13
       ]
     ],
     "switches": {

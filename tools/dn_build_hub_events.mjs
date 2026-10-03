@@ -9,8 +9,9 @@
  *   Map2030  HUB_GRIETA_CAVE   grieta de entrada (se abre con v264 ≥ 3) → Antesala
  *   Map2040  HUB_GRIETA_EPxx   seis grietas, una por episodio (EP01-03 con v264 ≥ 3,
  *                              EP04-06 con v264 ≥ 7) → primer mapa del episodio
- *   Map2040  HUB_GRIETA_W7-W9  segundo anillo: los tres mundos nuevos (v264 ≥ 9 y la
- *                              Liga Oscura cerrada, sw920) → primer mapa del mundo
+ *   Map2040  HUB_GRIETA_W7-W9  segundo anillo: W7 abre con la Liga Oscura cerrada (sw920);
+ *                              W8 y W9 se encadenan por los cierres W7/W8 (sw925/sw926).
+ *                              v264 sigue siendo sólo el contador de emisiones de Monte Silver.
  *   Map2040  HUB_ARCHIVERO     guía del hub (textos por progreso de sellos)
  *   Map2040  HUB_PROGRESO      monumento: sellos, resonancia y anomalías registradas
  *   Map2040  HUB_SALIDA        borde inferior de la Antesala → de vuelta a la Gruta
@@ -42,23 +43,24 @@ const EVENTS = path.join(ROOT, "content", "dimensional_nightmare_events_built.js
 const BACKUP = path.join(ROOT, "pokemon_fire_ash", "PokeModBackups", "dimensional_nightmare_maps_originals");
 
 const OWNED = ["HUB_GRIETA_CAVE", "HUB_ARCHIVERO", "HUB_PROGRESO", "HUB_SALIDA"];   // eventos propios
-const OWNS = (name) => OWNED.includes(name) || /^HUB_GRIETA_(EP\d\d|W\d+)$/.test(name);
+const OWNS = (name) => OWNED.includes(name) || /^HUB_GRIETA_(EP\d\d|W\d+|NEXO)$/.test(name);
 
 const CAVE_ID = 2030;          // Gruta de los Testigos (mapa base del juego)
 const HUB_ID = 2040;           // Antesala de las Grietas (construida en E3)
 const RIFT_STEP = 4;           // separación mínima entre altares
 const EPISODES = [
   { key: "EP01", unlock: 3, hue: 0, flavor: "La grieta huele a papel viejo y a tinta." },
-  { key: "EP02", unlock: 3, hue: 36, flavor: "Un cartucho gira en el aire, sin consola." },
-  { key: "EP03", unlock: 3, hue: 72, flavor: "De la grieta cae nieve que no derrite." },
-  { key: "EP04", unlock: 7, hue: 144, flavor: "Alguien tararea una nana al otro lado." },
-  { key: "EP05", unlock: 7, hue: 216, flavor: "La grieta devuelve tu propio reflejo, un paso tarde." },
-  { key: "EP06", unlock: 7, hue: 288, flavor: "Una letra te observa desde el borde." },
-  // Segundo anillo: se abre con la Liga Oscura cerrada (v264 ≥ 9) y son los tres mundos
-  // que alimentan la Vitrina del Testigo.
-  { key: "W7", unlock: 9, requireSwitch: 920, hue: 12, flavor: "Del segundo anillo llega olor a correa vieja." },
-  { key: "W8", unlock: 9, requireSwitch: 920, hue: 30, flavor: "La grieta escupe tierra húmeda y no se cierra." },
-  { key: "W9", unlock: 9, requireSwitch: 920, hue: 300, flavor: "Alguien tararea desafinado detrás del muro." },
+  { key: "EP02", requireSwitch: 890, hue: 36, flavor: "Un cartucho gira en el aire, sin consola." },
+  { key: "EP03", requireSwitch: 891, hue: 72, flavor: "De la grieta cae nieve que no derrite." },
+  { key: "EP04", requireSwitch: 892, requireSwitch2: 703, hue: 144, flavor: "Alguien tararea una nana al otro lado." },
+  { key: "EP05", requireSwitch: 893, requireVariable: [275, 2], hue: 216, flavor: "La grieta devuelve tu propio reflejo, un paso tarde." },
+  { key: "EP06", unlock: 7, requireSwitch: 894, hue: 288, flavor: "Una letra te observa desde el borde." },
+  { key: "NEXO", requireSwitch: 895, hue: 180, flavor: "El Nexo sólo responde cuando King Unown deja su sello." },
+  // Segundo anillo: la Liga Oscura ya cerrada abre W7; los sellos encadenan W8 → W9.
+  // No se reutiliza v264: pertenece al contador de emisiones selladas de Monte Silver (máximo 7).
+  { key: "W7", requireSwitch: 920, hue: 12, flavor: "Del segundo anillo llega olor a correa vieja." },
+  { key: "W8", requireSwitch: 925, hue: 30, flavor: "La grieta escupe tierra húmeda y no se cierra." },
+  { key: "W9", requireSwitch: 926, hue: 300, flavor: "Alguien tararea desafinado detrás del muro." },
 ];
 
 const argv = process.argv.slice(2);
@@ -74,9 +76,9 @@ const warnings = [];
 
 // --------------------------------------------------------------- RMXP bits
 const cmd = (code, params = [], indent = 0) => new RObject("RPG::EventCommand", [["@code", code], ["@indent", indent], ["@parameters", params]]);
-const condition = ({ sw = 0, self = "", variable = null } = {}) => new RObject("RPG::Event::Page::Condition", [
+const condition = ({ sw = 0, sw2 = 0, self = "", variable = null } = {}) => new RObject("RPG::Event::Page::Condition", [
   ["@switch1_valid", !!sw], ["@switch1_id", sw || 1],
-  ["@switch2_valid", false], ["@switch2_id", 1],
+  ["@switch2_valid", !!sw2], ["@switch2_id", sw2 || 1],
   ["@variable_valid", !!variable], ["@variable_id", variable ? variable[0] : 1], ["@variable_value", variable ? variable[1] : 0],
   ["@self_switch_valid", !!self], ["@self_switch_ch", S(self || "A")],
 ]);
@@ -166,12 +168,24 @@ function buildPlan() {
   const caveOccupied = new Set(cave.occupied);
   const arrival = (eventData.hub?.cell ?? [36, 12]).slice(0, 2);
   if (caveOccupied.has(arrival.join(","))) warnings.push(`la llegada al hub ${arrival} coincide con un evento de la Gruta`);
+  let caveStart = arrival;
+  if (!cave.pass.passable(caveStart[0], caveStart[1], 8)) {
+    let best = null, bestDistance = Infinity;
+    for (let y = 0; y < cave.height; y++) for (let x = 0; x < cave.width; x++) {
+      if (!cave.pass.passable(x, y, 8)) continue;
+      const d = dist([x, y], arrival);
+      if (d < bestDistance) { best = [x, y]; bestDistance = d; }
+    }
+    caveStart = best ?? arrival;
+  }
+  const caveReach = reachableCells(cave.pass, caveStart);
   const ringCave = [];
   for (let dy = -6; dy <= 6; dy++) {
     for (let dx = -6; dx <= 6; dx++) {
       const x = arrival[0] + dx, y = arrival[1] + dy;
       if (x < 0 || y < 0 || x >= cave.width || y >= cave.height) continue;
       if (caveOccupied.has(`${x},${y}`)) continue;
+      if (!caveReach.has(`${x},${y}`)) continue;
       if (!cave.pass.canMove(x, y, 2) || !cave.pass.canMove(x, y, 8)) continue;
       if (dx === 0 && dy === 0) continue;
       ringCave.push([x, y, Math.abs(dx) + Math.abs(dy)]);
@@ -192,7 +206,7 @@ function buildPlan() {
     return { ...ep, mapId: first?.id ?? null, cell: first?.entry ?? null };
   });
 
-  return { entry, exit, rifts: chosen, archivero, progreso, targets, caveGate, arrival, hub, cave };
+  return { entry, exit, rifts: chosen, archivero, progreso, targets, caveGate, caveStart, arrival, hub, cave };
 }
 
 // --------------------------------------------------------------- eventos
@@ -205,7 +219,11 @@ function makeEvents(plan, baseId) {
       list: [...texts([`La grieta de ${spec.key} está sellada.`, "El Rotom no reconoce su firma todavía."]), cmd(0)],
     }),
     page({
-      cond: condition(spec.requireSwitch ? { variable: [264, spec.unlock], sw: spec.requireSwitch } : { variable: [264, spec.unlock] }),
+      cond: condition({
+        sw: spec.requireSwitch ?? 0,
+        sw2: spec.requireSwitch2 ?? 0,
+        variable: spec.requireVariable ?? (spec.unlock ? [264, spec.unlock] : null),
+      }),
       gfx: graphic("UNOWN", 2, 1, { hue: spec.hue }),
       trigger: 1, // entrar es caminar hacia la grieta
       list: [
@@ -398,8 +416,9 @@ async function main() {
       archivero: plan.archivero, progreso: plan.progreso,
       rifts: Object.fromEntries(plan.targets.map((t, i) => [plan.rifts[i] ? t.key : t.key, { cell: plan.rifts[i] ?? plan.entry, to: t.mapId, cellTo: t.cell }])),
     },
-    switches: { unlock: 882, seals: [883, 888], cleared: 889 },
-    variables: { epGate: 264, epGateLate: 7, seals: 277 },
+    switches: { unlock: 882, seals: [883, 888], cleared: 889, secondRing: 920, nextRifts: [925, 926] },
+    variables: { monteSilverEmissionsReadOnly: 264, epGate: 264, epGateLate: 7, seals: 277 },
+    progression: { secondRingGate: "DN_LIGA_CLEARED (sw920)", secondRingVariableGate: null },
   };
 
   if (!VERIFY) {
@@ -420,6 +439,22 @@ async function main() {
     ok(!!data.hubMap, "events_built.json: falta hubMap (corre `npm run dn:hub:events`)");
     const hub = grid(HUB_ID);
     const names = hub.events.map((e) => e.name);
+    const readOnlyV264Events = [
+      [HUB_ID, hub.events],
+      [CAVE_ID, grid(CAVE_ID).events.filter((e) => e.name === "HUB_GRIETA_CAVE")],
+    ];
+    for (const [mapId, ownedEvents] of readOnlyV264Events) {
+      for (const ev of ownedEvents) {
+        for (const pg of ev.obj.getIvar("@pages") ?? []) {
+          for (const command of pg.getIvar("@list") ?? []) {
+            if (command.getIvar("@code") !== 355) continue;
+            const source = txt(command.getIvar("@parameters")?.[0]);
+            ok(!/\$game_variables\[264\]\s*(?:=(?!=)|\+=|-=|\*=|\/=)/.test(source),
+              `Map${mapId} ${ev.name}: escribe el contador v264 de Monte Silver`);
+          }
+        }
+      }
+    }
     for (const want of ["HUB_SALIDA", "HUB_ARCHIVERO", "HUB_PROGRESO", ...plan.targets.map((t) => `HUB_GRIETA_${t.key}`)]) {
       ok(names.includes(want), `Antesala ${HUB_ID}: falta el evento ${want}`);
     }
@@ -429,24 +464,54 @@ async function main() {
     const salida = find("HUB_SALIDA");
     ok(salida && !(salida.x === plan.entry[0] && salida.y === plan.entry[1]), "la salida no puede estar en la celda de llegada (bucle)");
     const pagesOf = (ev) => (ev ? ev.obj.getIvar("@pages") ?? [] : []);
+    const hubReach = reachableCells(hub.pass, plan.entry);
+    ok(plan.rifts.length === plan.targets.length, `sólo hay ${plan.rifts.length}/${plan.targets.length} celdas de grieta`);
+    for (const name of ["HUB_SALIDA", "HUB_ARCHIVERO", "HUB_PROGRESO", ...plan.targets.map((t) => `HUB_GRIETA_${t.key}`)]) {
+      const ev = find(name);
+      if (ev) ok(hubReach.has(`${ev.x},${ev.y}`), `${name}: evento fuera de la ruta transitable desde la entrada`);
+    }
     for (const t of plan.targets) {
       const ev = find(`HUB_GRIETA_${t.key}`);
       ok(!!ev, `falta la grieta de ${t.key}`);
       if (!ev) continue;
       const pages = pagesOf(ev);
-      ok(pages.length >= 2, `${t.key}: la grieta necesita página bloqueada y página abierta`);
-      const open = pages[pages.length - 1];
+      ok(pages.length === 2, `${t.key}: la grieta necesita página bloqueada y página abierta`);
+      const open = pages[1];
       const cond = open.getIvar("@condition");
-      ok(cond?.getIvar("@variable_valid") && cond.getIvar("@variable_id") === 264 && cond.getIvar("@variable_value") === t.unlock,
-        `${t.key}: condición de apertura distinta de v264 ≥ ${t.unlock}`);
+      const expectedVariable = t.requireVariable ?? (t.unlock ? [264, t.unlock] : null);
+      ok((cond?.getIvar("@switch1_valid") ?? false) === !!t.requireSwitch
+        && cond?.getIvar("@switch1_id") === (t.requireSwitch ?? 1),
+      `${t.key}: switch de apertura distinto de ${t.requireSwitch ?? "ninguno"}`);
+      ok((cond?.getIvar("@switch2_valid") ?? false) === !!t.requireSwitch2
+        && cond?.getIvar("@switch2_id") === (t.requireSwitch2 ?? 1),
+      `${t.key}: segundo switch de apertura distinto de ${t.requireSwitch2 ?? "ninguno"}`);
+      ok((cond?.getIvar("@variable_valid") ?? false) === !!expectedVariable
+        && cond?.getIvar("@variable_id") === (expectedVariable?.[0] ?? 1)
+        && cond?.getIvar("@variable_value") === (expectedVariable?.[1] ?? 0),
+      `${t.key}: requisito variable no coincide con el plan`);
+      if (t.key === "W7") {
+        ok(t.requireSwitch === 920 && expectedVariable === null,
+          "W7 debe abrirse con DN_LIGA_CLEARED (sw920), sin exigir v264≥9 (contador de Monte Silver, máximo 7)");
+      }
       const codes = (open.getIvar("@list") ?? []).map((c) => c.getIvar("@code"));
       ok(codes.includes(201), `${t.key}: la página abierta no transfiere`);
       const dest = (open.getIvar("@list") ?? []).find((c) => c.getIvar("@code") === 201)?.getIvar("@parameters");
-      ok(dest?.[1] === t.mapId, `${t.key}: transfiere a ${dest?.[1]} y no a ${t.mapId}`);
+      ok(dest?.[1] === t.mapId && dest?.[2] === t.cell?.[0] && dest?.[3] === t.cell?.[1],
+        `${t.key}: destino (${dest?.[1]},${dest?.[2]},${dest?.[3]}) ≠ Map${t.mapId} @ ${t.cell}`);
+      if (t.mapId && t.cell) {
+        const destination = grid(t.mapId);
+        const targetInfo = (data.maps ?? {})[String(t.mapId)];
+        const targetStart = targetInfo?.entry ?? t.cell;
+        const targetReach = reachableCells(destination.pass, targetStart);
+        ok(targetReach.has(`${t.cell[0]},${t.cell[1]}`), `${t.key}: destino no alcanzable en Map${t.mapId} desde ${targetStart}`);
+      }
     }
     const gate = cave.events.find((e) => e.name === "HUB_GRIETA_CAVE");
     const gateOpen = pagesOf(gate).slice(-1)[0];
     ok(!!gateOpen && (gateOpen.getIvar("@list") ?? []).some((c) => c.getIvar("@code") === 201), "la grieta de entrada no transfiere a la Antesala");
+    const caveReach = reachableCells(cave.pass, plan.caveStart);
+    ok(!!plan.caveGate && caveReach.has(`${plan.caveGate[0]},${plan.caveGate[1]}`), "la grieta de la Gruta queda aislada de la celda de llegada");
+    if (gate) ok(caveReach.has(`${gate.x},${gate.y}`), "HUB_GRIETA_CAVE no se puede alcanzar en la Gruta");
     if (warnings.length) for (const w of warnings) console.log(`  aviso: ${w}`);
     console.log(`verificación del hub jugable (${hub.events.length} eventos en ${HUB_ID}, ${cave.events.length} en ${CAVE_ID})`);
     if (failures.length) { for (const f of failures) console.error(`  FALLA: ${f}`); process.exit(1); }

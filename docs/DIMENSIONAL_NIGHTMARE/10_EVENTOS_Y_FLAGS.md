@@ -1,12 +1,14 @@
 # EVENTOS, SWITCHES Y VARIABLES — Referencia técnica
 ## Todo lo que hay que crear para el Dimensional Nightmare
 
-> Rangos **verificados libres** contra los datos compilados:
-> `MapInfos.rxdata` llega a `2038` · switches usados hasta `881` · variables usadas hasta `264`.
+> Rangos **verificados contra los datos compilados**:
+> `MapInfos.rxdata` llega a `2190` · switches DN `882–935` (935 reservado antes de RUTA_DE_DIOS 936+) ·
+> `v264` es el contador compartido de emisiones selladas de Monte Silver (DN sólo lo lee, nunca lo escribe) ·
+> variables propias de DN `265–297` (contadores de fase B 289–297 añadidos tras confirmar el hueco en `System.rxdata`).
 
 ---
 
-## 1. Switches nuevas (882–902 · segundo anillo 922–934)
+## 1. Switches nuevas (882–902 · segundo anillo 922–935)
 
 | ID | Nombre | Escritura | Lectura |
 |---:|---|---|---|
@@ -38,8 +40,9 @@
 | 928–930 | `DN_JEFE_W7/W8/W9_FASE_A` | Al ganar la fase A de cada jefe | Marca la fase B pendiente |
 | 931 | `DN_TESTIGO_LISTO` | Nueve cartucheras en la mochila | Vitrina del Testigo (`DN_CASE_WIT`) |
 | 932–934 | `DN_CUOTA_W7/W8/W9` | 12/12 · 11/11 · 12/12 anomalías del mundo | Archivero y monumento |
+| 935 | `DN_NEXO_RESOLVED` | Al elegir uno de los dos finales del Nexo | Habilita el retorno sin confundirlo con el final sellado (`sw889`) |
 
-## 2. Variables nuevas (265–276 · segundo anillo 283–288)
+## 2. Variables nuevas (265–276 · segundo anillo 283–288 · contadores aislados 289–297)
 
 | ID | Nombre | Rango | Quién la escribe |
 |---:|---|---|---|
@@ -58,7 +61,8 @@
 | 283–285 | `DN_ANOMALIAS_W7/W8/W9` | 0–12 / 0–11 / 0–12 | Cuota de anomalías de cada mundo del segundo anillo |
 | 286 | `DN_W8_AIRE` | 0–5 | Reservas de aire encendidas (fase B de W8) |
 | 287 | `DN_W9_CANTO` | 0–4 | Antenas cortadas (fase B de W9) |
-| 288 | `DN_W7_CORREAS` | 0–4 | Correas rotas (fase B de W7) |
+| 288 | `DN_W7_CORREAS` | 0–4 | Correas rotas (fase B de W7, puzzle GDD) |
+| 289–297 | `DN_BOSS_STEPS_EP01…EP06/W7…W9` | 0–7 por mundo | Contadores independientes de las fases B; no se comparte `v277` (que el hub usa para contar sellos) |
 
 ### Cálculo de nivel del Rotom (evento común)
 ```ruby
@@ -96,21 +100,21 @@ no colisionan con el rango usado por el contenido base según la auditoría de f
 ## 4. Patrón obligatorio: batalla de jefe con derrota permanente
 
 ```ruby
-# --- Página 1 del evento de jefe (sin condiciones) ---
-pbTrainerBattle(PBTrainer.new("CLAVE", "NOMBRE"), false, "", true)   # canLose = true
-# al ganar:
-$game_self_switches[[map, event, "A"]] = true     # el jefe no vuelve
-$game_switches[883] = true                        # sello de episodio
-$game_variables[265] = [$game_variables[265] + 12, 100].min
-$game_variables[274] = [$game_variables[274] + 3, 77].min   # tope de anomalías del EP
-# recompensa única (comprobar posesión antes)
-pbItemBall(:SACREDASH) unless $PokemonBag.pbQuantity(:SACREDASH) > 0
+# Página autorun: la propia llamada determina la rama; una derrota no cierra el evento.
+if pbTrainerBattle(PBTrainer.new("CLAVE", "NOMBRE"), false, "", true) # canLose = true
+  $game_switches[903] = true                 # fase A ganada: sólo dentro de esta rama
+  $game_variables[289] = 0                  # contador propio del episodio
+else
+  $game_self_switches[[$game_map.map_id, @event_id, "A"]] = true # detiene el autorun
+end
 
-# --- Página 2 del evento (condición: self-switch A) ---
-pbMessage("Lo que estaba aquí ya no está. Solo queda el hueco.")
+# Página de acción (self-switch A): reintento manual, vuelve a probar el resultado.
+# Tras victoria, BOSSB_n se habilita en orden: fase A + contador >= n-1.
+# Cada paso se cierra con self-switch A; sólo el último activa sello/recompensa.
 ```
-**Verificación** (`tools/audit_defeat_persistence.mjs`): todo jefe del Nightmare debe salir
-`permanent defeat` en la auditoría global, igual que las 8 batallas del v1.
+**Verificación** (`npm run dn:battles:verify`): resultado bool de `pbTrainerBattle`, reintento sin bucle,
+flags válidas de RMXP y contadores independientes por mundo (289–297). No se activa el sello antes
+de completar la última interacción de fase B.
 
 ---
 

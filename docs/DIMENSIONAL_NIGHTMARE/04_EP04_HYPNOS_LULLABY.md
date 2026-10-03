@@ -108,7 +108,7 @@ EV_HYP_Niebla       — 2092 (15,15) — 3 antorchas de niebla (8,8) (15,6) (22,
 EV_HYP_Tumbas       — 2093 — 6 tumbas de juguetes
                        → la 6.ª tumba vacía: primer "silenciador" del mapa
 EV_HYP_Sueno        — 2094/2096/2098 — Evento de mapa (paralelo)
-                       → cada 45 s, si NO hay silenciador activo: tirada de sueño (15 %)
+                       → cada 45 s, si NO hay silenciador activo: tirada atmosférica (15 %, mensaje/glitch; no aplica estado al equipo)
 EV_HYP_Campamento   — 2095 — Dormir en la tienda (opcional)
                        → visión de 12 s con texto de la historia; grupo curado
 EV_HYP_Cueva        — 2096 (12,8) — Entrar sin silenciador activo
@@ -119,8 +119,8 @@ EV_HYP_Musica       — 2099 — Leer el muro de ruinas con Rotom nivel >=4
                        → partitura de 8 notas; sin Sintonía solo son garabatos
 EV_HYP_Granero      — 2100 — Dormir en la cama 3 veces
                        → 3 visiones (1: el bosque antes; 2: los niños cantando; 3: una cuna vacía)
-EV_HYP_Silenciador  — 6 troncos huecos — Interactuar
-                       → silencia el canto 60 s; v267 += 1 por cada uno distinto (máx 6)
+EV_HYP_Silenciador  — 2103 (5,2) (8,4) (3,5) (14,5) (19,4) (21,6) — 6 puntos, interactuar
+                       → cada tronco silencia la BGM 60 s; Game_System registra cada uno distinto (máx. 6); no consume variables DN
 EV_HYP_Notas        — 2102 (10,12) — Tocar 8 troncos en el orden de la partitura
                        → abre 2103; el orden correcto es el de las 4 estrofas + eco
 EV_HYP_Jefe         — 2103 — Autorun
@@ -214,14 +214,12 @@ EV_HYP_Salida       — 2103 — Salida libre a 2030 / 2021
 
 ## 8. Música
 
-| Momento | Pista existente | Modificación |
+| Momento | Pista | Nota |
 |---|---|---|
-| Bosque (fases 1–2) | `Lavender Town` (base de cuna) | volumen 45 %, muy lejos |
-| Fases 3–5 | tema de cuna | + coro (`SE: Choir`), volumen 60 % |
-| Fase 6–7 | tema de cuna | invertida y a 30 %; silencios de 1 s |
-| Silenciador activo | (silencio total) | solo pasos y viento |
-| Anomalía detectada | (silencio) | ping del Rotom |
-| Jefe | `secretred` + cuna | cruzados; la cuna "canta" cada 3 turnos |
+| Exploración EP04 (2088–2103) | `DN_Hypnos_Lullaby.mid` | Canción de cuna MIDI original en 3/4; tema propio, sin sample o melodía prestada. |
+| Silenciador activo | silencio BGM durante 60 s | Los troncos activan fade; guardia paralela conserva el silencio al cambiar de mapa y restaura el tema al expirar. |
+| Anomalía de sueño | variación de tono visual | Tirada narrativa cada 45 s (15 %), sólo si no hay silenciador; no aplica estado dañino al equipo. |
+| Combate de la Nana | BGM de batalla del juego | La composición de exploración no sustituye el tema de combate. |
 
 ---
 

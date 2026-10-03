@@ -87,7 +87,7 @@ Estado 5: (silencio) "..."   # el evento ya no muestra texto; hace sonar el pozo
 ## 4. Eventos programables
 
 ```
-EV_W8_Entrada        — Mapa 2159 — Autorun al entrar (v264≥9)
+EV_W8_Entrada        — Mapa 2159 — Autorun tras abrir W8 con sw925 (sello de W7; v264 no cambia)
                         → texto de la grieta, sw923 = ON parcial, tone fase 1, música "PkmRS-MtPyre"
 EV_W8_Aire           — 2159–2174 — Proceso paralelo (no bloquea)
                         → v286 baja al correr/pelear; ≤20 aviso del Rotom; 0 = paso lento
@@ -187,11 +187,9 @@ EV_W8_Jefe           — 2174 — Hablar con el que respira (autorun de mapa)
 
 | Momento | Pista | Nota |
 |---|---|---|
-| Mundo normal | `PkmRS-MtPyre` | tono de tierra, volumen 80 |
-| Aire bajo (v286 ≤ 20) | `PkmRS-MtPyre` pitch 70 | la música se apaga por momentos |
-| Anomalías auditivas | silencio + respiración de 2 s | nunca un grito |
-| Jefe | `Legend Sinnoh` pitch 70 | el que respira pelea sin moverse |
-| Cierre | `PkmRS-MtPyre` volume 100 | el aire vuelve a entrar |
+| Exploración W8 (2159–2174) | `DN_BuriedAlive.mid` | Tema MIDI original grave y sostenido, sin gritos ni muestras comerciales. |
+| Variación por aire / anomalía | Pendiente por evento | El tema base está asignado; faltan los cambios de intensidad sincronizados con v286. |
+| Combate del jefe | BGM de batalla del juego | No se altera el tema del motor de batalla. |
 
 ---
 
