@@ -1,6 +1,6 @@
 # Informe referencial de mapas — 1.022 fichas
 
-**Generado:** 2026-10-02
+**Generado:** 2026-10-03
 **Alcance:** Atlas Mil (Map1021–Map2020) y 22 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
@@ -30,7 +30,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1022 — Atlas 0002 - \PN's house
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de \PN's house (Map3) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 31×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 31×15 tiles; 6 eventos; tileset 3.
 
 ### Map1023 — Atlas 0003 - Pokémon Lab
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
@@ -50,7 +50,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1026 — El Semáforo de las Promesas Tardías
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Cedolan City (Map7). Objetivo: Revisar tres ciclos de faroles y abrir un cruce que no premie la promesa más insistente. Mecánica de referencia: Secuencia de faroles. Promesa: Un cruce cambia de prioridad cada vez que alguien promete volver pronto, hasta que dos trabajadores separan urgencia real de cortesía automática.
-- **Datos compilados:** 60×43 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 60×43 tiles; 9 eventos; tileset 1.
 
 ### Map1027 — Atlas 0007 - Daisy's house
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
@@ -60,7 +60,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1028 — Atlas 0008 - Cedolan City Poké Center
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cedolan City Poké Center (Map9) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 4.
 
 ### Map1029 — Atlas 0009 - Cedolan Gym
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
@@ -70,7 +70,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1030 — Atlas 0010 - Pokémon Institute
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pokémon Institute (Map11) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1031 — Atlas 0011 - Cedolan City Condo
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
@@ -80,7 +80,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1032 — Atlas 0012 - Game Corner
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Game Corner (Map13) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×31 tiles; 5 eventos; tileset 12.
+- **Datos compilados:** 20×31 tiles; 8 eventos; tileset 12.
 
 ### Map1033 — La Devolución que Conservó su Historia
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 2 · ruta estable.
@@ -130,17 +130,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1042 — Atlas 0022 - Lerucean Town
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lerucean Town (Map23) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 41×41 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 41×41 tiles; 7 eventos; tileset 1.
 
 ### Map1043 — Atlas 0023 - Lerucean Town Poké Center
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lerucean Town Poké Center (Map24) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 4.
 
 ### Map1044 — Atlas 0024 - Lerucean Town Mart
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lerucean Town Mart (Map25) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 5.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 5.
 
 ### Map1045 — Atlas 0025 - Pokémon Fan Club
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
@@ -152,7 +152,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1046 — La Copa del Huevo Vacío
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Pokémon Day Care (Map27). Identidad del lugar: Guardería convertida en patio de torneo, con gradas pequeñas y una incubadora apagada. Episodio: Una campeona escolar intenta renunciar a un premio vivo antes de que el torneo convierta una elección compasiva en una derrota pública.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 3.
 
 ### Map1047 — Atlas 0027 - National Park
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
@@ -162,7 +162,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1048 — Atlas 0028 - National Park Entrance
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de National Park Entrance (Map29) en el sector Cuenca Celeste. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1049 — Atlas 0029 - National Park Pavillion
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
@@ -197,7 +197,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1055 — Atlas 0035 - Pokémon League
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pokémon League (Map36) en el sector Cuenca Celeste. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 25×18 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 25×18 tiles; 10 eventos; tileset 4.
 
 ### Map1056 — Atlas 0036 - Pokémon League
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
@@ -227,12 +227,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1061 — Atlas 0041 - Pallet House
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pallet House (Map42) en el sector Cuenca Celeste. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 75×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 75×30 tiles; 7 eventos; tileset 3.
 
 ### Map1062 — Atlas 0042 - Viridian City
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Viridian City (Map43) en el sector Cuenca Celeste. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 60×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×50 tiles; 8 eventos; tileset 1.
 
 ### Map1063 — Atlas 0043 - Route 6
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
@@ -257,7 +257,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1067 — Atlas 0047 - Professor Oak's Lab
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Professor Oak's Lab (Map48) en el sector Cuenca Celeste. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×25 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×25 tiles; 6 eventos; tileset 3.
 
 ### Map1068 — Atlas 0048 - Rock Cave
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
@@ -272,24 +272,24 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1070 — Atlas 0050 - Battle Frontier
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Frontier (Map52) en el sector Cuenca Celeste. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 44×36 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 44×36 tiles; 7 eventos; tileset 1.
 
 ## Sector 03 — Frontera Carmesí (Custodios Carmesí) · Map1071–Map1095
 
 ### Map1071 — El Campeón de Fecha Imposible
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Battle Frontier Poké Center (Map53). Identidad del lugar: Centro Pokémon convertido en archivo provisional de una Liga que aún no debería existir. Episodio: Un expediente anterior a la Liga obliga a decidir si una institución nació de un héroe borrado o de una falsificación creada para unir Kanto.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 14 eventos; tileset 4.
 
 ### Map1072 — Atlas 0052 - Battle Frontier Mart
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Frontier Mart (Map54) en el sector Frontera Carmesí. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 5.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 5.
 
 ### Map1073 — Atlas 0053 - Battle Tower
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Tower (Map55) en el sector Frontera Carmesí. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 20.
+- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 20.
 
 ### Map1074 — Atlas 0054 - Battle Tower arena
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
@@ -299,12 +299,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1075 — Atlas 0055 - Stadium Cup lobby
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Stadium Cup lobby (Map57) en el sector Frontera Carmesí. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 20.
+- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 20.
 
 ### Map1076 — El Palacio que Anunciaba la Jugada
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Battle Palace (Map58). Objetivo: Revisar tres órdenes tácticas y publicar suficiente información para responder sin resolver el combate de antemano. Mecánica de referencia: Tablero de intención. Promesa: Un palacio táctico llama intuición a reglas que solo conocen sus jueces, hasta que dos estrategas convierten el misterio en lectura, elección y contrajuego.
-- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 8 eventos; tileset 3.
 
 ### Map1077 — Atlas 0057 - Battle Palace arena
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
@@ -314,7 +314,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1078 — Atlas 0058 - Battle Arena
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Arena (Map60) en el sector Frontera Carmesí. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1079 — Atlas 0059 - Battle Arena arena
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
@@ -324,7 +324,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1080 — Atlas 0060 - Battle Factory
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Factory (Map62) en el sector Frontera Carmesí. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1081 — Atlas 0061 - Battle Factory intro corridor
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
@@ -406,7 +406,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1096 — El Gremio de la Camilla Vacía
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Viridian Pokémon Center (Map78). Identidad del lugar: Centro Pokémon adaptado como gremio de expedición con tablón, camillas y mapas de túneles. Episodio: Un gremio recibe encargos firmados por exploradores desaparecidos y descubre que las misiones fueron enviadas por sus versiones futuras para impedir un rescate equivocado.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
 
 ### Map1097 — Atlas 0077 - Gate
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
@@ -426,7 +426,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1100 — Atlas 0080 - Pewter City
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pewter City (Map82) en el sector Distrito Cuarzo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 55×41 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 55×41 tiles; 8 eventos; tileset 1.
 
 ### Map1101 — La Habitación que Reservó una Ausencia
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 2 · ruta estable.
@@ -436,7 +436,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1102 — Atlas 0082 - Pewter Pokémon Center
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pewter Pokémon Center (Map84) en el sector Distrito Cuarzo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1103 — Atlas 0083 - Opelucid Gym
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
@@ -461,7 +461,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1107 — Atlas 0087 - Cerulean City
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cerulean City (Map89) en el sector Distrito Cuarzo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 55×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 55×60 tiles; 8 eventos; tileset 1.
 
 ### Map1108 — La Veta que Firmaba con Luz
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 2 · ruta estable.
@@ -481,12 +481,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1111 — Atlas 0091 - Cerulean Pokémon Center
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cerulean Pokémon Center (Map93) en el sector Distrito Cuarzo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1112 — Atlas 0092 - Professor Cerise's Lab
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Professor Cerise's Lab (Map94) en el sector Distrito Cuarzo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 50×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 50×30 tiles; 8 eventos; tileset 3.
 
 ### Map1113 — Atlas 0093 - Cerulean Gym
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
@@ -506,7 +506,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1116 — Atlas 0096 - Route 5 Daycare
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 5 Daycare (Map98) en el sector Distrito Cuarzo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1117 — Atlas 0097 - Route 9 Gem Shop
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
@@ -521,7 +521,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1119 — Atlas 0099 - Route 24
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 24 (Map101) en el sector Distrito Cuarzo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 50×52 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 50×52 tiles; 6 eventos; tileset 1.
 
 ### Map1120 — Atlas 0100 - Cinnabar Power Shop
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
@@ -533,7 +533,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1121 — Operación Rescate Demasiado Perfecto
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 24 Pokémon Center (Map103). Identidad del lugar: Centro de coordinación Ranger rodeado por un corredor ecológico inexplicablemente vacío. Episodio: Una patrulla que evacuó cada Pokémon de un incendio descubre que salvar individuos puede destruir un hábitat si nadie pregunta quién debe regresar.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
 
 ### Map1122 — Atlas 0102 - Route 25
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
@@ -553,12 +553,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1125 — Atlas 0105 - Bill's Lighthouse
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Bill's Lighthouse (Map107) en el sector Órbita Esmeralda. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1126 — La Ciudad que Adelantaba el Mediodía
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Vermilion City (Map108). Objetivo: Sincronizar tres relojes públicos con señales observables y devolver a cada barrio su margen local. Mecánica de referencia: Ronda de sincronía. Promesa: Un reloj orbital adelanta las tareas de la ciudad cada vez que Rotom detecta una nube, hasta mezclar desayunos, turnos y descansos.
-- **Datos compilados:** 68×60 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 68×60 tiles; 10 eventos; tileset 1.
 
 ### Map1127 — Atlas 0107 - Vermilion House
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
@@ -568,7 +568,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1128 — Atlas 0108 - Vermilion Pokémon Center
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Vermilion Pokémon Center (Map110) en el sector Órbita Esmeralda. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1129 — Atlas 0109 - Malie Item Shop
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
@@ -598,7 +598,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1134 — Atlas 0114 - S.S. Anne Rooms
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de S.S. Anne Rooms (Map116) en el sector Órbita Esmeralda. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 65×15 tiles; 5 eventos; tileset 9.
+- **Datos compilados:** 65×15 tiles; 7 eventos; tileset 9.
 
 ### Map1135 — Atlas 0115 - S.S. Anne B1F
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
@@ -670,7 +670,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1148 — Atlas 0128 - Saffron City
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Saffron City (Map130) en el sector Paso Boreal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 90×80 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 90×80 tiles; 10 eventos; tileset 1.
 
 ### Map1149 — Atlas 0129 - Saffron House
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
@@ -680,7 +680,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1150 — Atlas 0130 - Saffron Pokémon Center
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Saffron Pokémon Center (Map132) en el sector Paso Boreal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1151 — El Club de los Abrigos Invencibles
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 2 · ruta estable.
@@ -705,7 +705,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1155 — Atlas 0135 - Lavender Town
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lavender Town (Map137) en el sector Paso Boreal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 42×37 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 42×37 tiles; 7 eventos; tileset 1.
 
 ### Map1156 — Atlas 0136 - Zarude's Den
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
@@ -720,12 +720,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1158 — La Sala de Espera de las Mantas Azules
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Lavender Pokémon Center (Map140). Objetivo: Reordenar la entrega de mantas usando solicitud, temperatura y disponibilidad en vez de apariencia. Mecánica de referencia: Ronda de confort. Promesa: Un Centro Pokémon asigna mantas según la gravedad visible y deja sin abrigo a pacientes cuyo cansancio no se nota.
-- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 4.
 
 ### Map1159 — Atlas 0139 - SECRET PEAK
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de SECRET PEAK (Map141) en el sector Paso Boreal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 60×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×70 tiles; 9 eventos; tileset 1.
 
 ### Map1160 — Atlas 0140 - Route 38
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
@@ -755,7 +755,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1165 — La Campana que Recordaba Demasiado
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Pokémon Tower 5F (Map147). Objetivo: Separar homenaje público, recuerdo familiar y señal de orientación para los Pokémon de la torre. Mecánica de referencia: Afinación memorial. Promesa: En una torre memorial, una campana repite todos los nombres grabados cada noche, incluso aquellos que sus familias pidieron guardar en silencio.
-- **Datos compilados:** 25×25 tiles; 7 eventos; tileset 13.
+- **Datos compilados:** 25×25 tiles; 8 eventos; tileset 13.
 
 ### Map1166 — Atlas 0146 - Pokémon Tower 6F
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
@@ -775,12 +775,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1169 — Atlas 0149 - GRANDEUR LOUNGE
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de GRANDEUR LOUNGE (Map151) en el sector Paso Boreal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 100×120 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 100×120 tiles; 8 eventos; tileset 3.
 
 ### Map1170 — Atlas 0150 - Celadon City
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Celadon City (Map152) en el sector Paso Boreal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 60×43 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×43 tiles; 8 eventos; tileset 1.
 
 ## Sector 07 — Jardín Índigo (Tejedores Índigo) · Map1171–Map1195
 
@@ -792,7 +792,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1172 — Atlas 0152 - Celadon Pokémon Center
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Celadon Pokémon Center (Map154) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1173 — Atlas 0153 - Celadon Dept. 1F
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
@@ -832,7 +832,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1180 — Atlas 0160 - Game Corner
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Game Corner (Map162) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 85×75 tiles; 5 eventos; tileset 12.
+- **Datos compilados:** 85×75 tiles; 23 eventos; tileset 12.
 
 ### Map1181 — Atlas 0161 - Celadon Gym
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
@@ -857,7 +857,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1185 — Atlas 0165 - Hoenn Battle Frontier
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hoenn Battle Frontier (Map167) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×35 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×35 tiles; 6 eventos; tileset 1.
 
 ### Map1186 — Atlas 0166 - Gringey City Power Plant
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
@@ -872,12 +872,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1188 — Atlas 0168 - Route 18
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 18 (Map170) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 41×26 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 41×26 tiles; 6 eventos; tileset 1.
 
 ### Map1189 — Atlas 0169 - Wyndon
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Wyndon (Map171) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 71×58 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 71×58 tiles; 7 eventos; tileset 1.
 
 ### Map1190 — La Azotea que Cultivaba Pronósticos
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 2 · ruta estable.
@@ -887,12 +887,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1191 — Atlas 0171 - Wyndon Pokémon Center
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Wyndon Pokémon Center (Map173) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1192 — Atlas 0172 - Fuchsia City
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Fuchsia City (Map174) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 74×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 74×60 tiles; 7 eventos; tileset 1.
 
 ### Map1193 — Atlas 0173 - Fuchsia House
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
@@ -902,12 +902,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1194 — Atlas 0174 - Fuchsia Pokémon Center
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Fuchsia Pokémon Center (Map176) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1195 — Atlas 0175 - Wyndon Stadium
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Wyndon Stadium (Map177) en el sector Jardín Índigo. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×40 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×40 tiles; 11 eventos; tileset 4.
 
 ## Sector 08 — Costa Prisma (Ópticos Prisma) · Map1196–Map1220
 
@@ -944,7 +944,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1202 — Atlas 0182 - Cinnabar Island
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cinnabar Island (Map184) en el sector Costa Prisma. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 37×32 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 37×32 tiles; 8 eventos; tileset 1.
 
 ### Map1203 — Atlas 0183 - Cinnabar House
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
@@ -954,7 +954,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1204 — Atlas 0184 - Cinnabar Pokémon Center
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cinnabar Pokémon Center (Map186) en el sector Costa Prisma. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1205 — Atlas 0185 - Wild Area
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
@@ -964,7 +964,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1206 — Atlas 0186 - Pewter Museum of Science
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pewter Museum of Science (Map188) en el sector Costa Prisma. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1207 — Atlas 0187 - Pokémon Mansion 1F
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
@@ -999,12 +999,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1213 — Atlas 0193 - Route 22
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 22 (Map195) en el sector Costa Prisma. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 90×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 90×40 tiles; 6 eventos; tileset 1.
 
 ### Map1214 — Atlas 0194 - Indigo Plateau
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Indigo Plateau (Map196) en el sector Costa Prisma. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 60×35 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×35 tiles; 8 eventos; tileset 1.
 
 ### Map1215 — La Meseta de los Aplausos Diferidos
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 2 · ruta estable.
@@ -1014,7 +1014,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1216 — Atlas 0196 - Kanto Pokemon League
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Kanto Pokemon League (Map198) en el sector Costa Prisma. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×20 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 10 eventos; tileset 4.
 
 ### Map1217 — Atlas 0197 - Indigo Rock
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
@@ -1061,7 +1061,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1225 — Atlas 0205 - Valencia House
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Valencia House (Map207) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×15 tiles; 6 eventos; tileset 3.
 
 ### Map1226 — El Dirigible que Cargaba Sombras
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 2 · ruta estable.
@@ -1071,17 +1071,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1227 — Atlas 0207 - Valencia Island
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Valencia Island (Map209) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 45×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 45×60 tiles; 6 eventos; tileset 1.
 
 ### Map1228 — Atlas 0208 - Valencia Pokémon Center
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Valencia Pokémon Center (Map210) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1229 — Atlas 0209 - Tangelo Island
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Tangelo Island (Map211) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 80×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 80×70 tiles; 7 eventos; tileset 1.
 
 ### Map1230 — Atlas 0210 - Tangelo House
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
@@ -1091,7 +1091,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1231 — Atlas 0211 - Tangelo Pokémon Center
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Tangelo Pokémon Center (Map213) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1232 — Atlas 0212 - STAGE
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
@@ -1101,7 +1101,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1233 — El Faro que Pintaba el Sol
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Mikan Island (Map215). Objetivo: Revisar tres marcas con marea alta y diseñar señales que no dependan de una pintura temporal. Mecánica de referencia: Lectura de costa. Promesa: Un faro insular pinta franjas amarillas sobre las rocas para anunciar sol seguro, pero la marea borra unas antes que otras y crea rutas falsas.
-- **Datos compilados:** 55×65 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 55×65 tiles; 9 eventos; tileset 1.
 
 ### Map1234 — Atlas 0214 - Mikan House
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
@@ -1111,7 +1111,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1235 — Atlas 0215 - Mikan Pokémon Center
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mikan Pokémon Center (Map217) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1236 — Atlas 0216 - Mikan Gym
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
@@ -1126,12 +1126,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1238 — Atlas 0218 - Navel Island
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Navel Island (Map220) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 53×43 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 53×43 tiles; 7 eventos; tileset 1.
 
 ### Map1239 — Atlas 0219 - Navel Pokémon Center
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Navel Pokémon Center (Map221) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1240 — La Sombra que Llegaba Primero
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 2 · ruta estable.
@@ -1161,19 +1161,19 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1245 — Atlas 0225 - Navel Gym
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Navel Gym (Map227) en el sector Dominio Solar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 35×25 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 35×25 tiles; 6 eventos; tileset 1.
 
 ## Sector 10 — Velo Lunar (Cartógrafos Lunares) · Map1246–Map1270
 
 ### Map1246 — La Carta que Recuerda a su Jugador
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Seven Grapefruit Islands (Map228). Identidad del lugar: Islas conectadas por mesas rituales donde una única carta pasa de mano en mano. Episodio: Una carta cambia su ilustración para mostrar al primer compañero que cada persona cree haber decepcionado, convirtiendo un duelo ritual en confesión involuntaria.
-- **Datos compilados:** 135×110 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 135×110 tiles; 12 eventos; tileset 1.
 
 ### Map1247 — Atlas 0227 - Grapefruit Pokémon Center
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Grapefruit Pokémon Center (Map229) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1248 — Atlas 0228 - Grapefruit House
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
@@ -1183,7 +1183,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1249 — Atlas 0229 - Trovita Island
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Trovita Island (Map231) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 50×45 tiles; 5 eventos; tileset 2.
+- **Datos compilados:** 50×45 tiles; 7 eventos; tileset 2.
 
 ### Map1250 — Atlas 0230 - Wild Area
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
@@ -1198,7 +1198,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1252 — Atlas 0232 - Trovita Pokémon Center
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Trovita Pokémon Center (Map234) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1253 — Atlas 0233 - Trovita Gym
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
@@ -1208,7 +1208,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1254 — Atlas 0234 - Ascorbia Island
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Ascorbia Island (Map236) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 95×68 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 95×68 tiles; 6 eventos; tileset 1.
 
 ### Map1255 — Atlas 0235 - Ascorbia House
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
@@ -1218,7 +1218,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1256 — Atlas 0236 - Ascorbia Pokémon Center
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Ascorbia Pokémon Center (Map238) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1257 — Atlas 0237 - Ascorbia House
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
@@ -1228,12 +1228,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1258 — El Jardín que Encendía la Noche
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Kumquat Island (Map240). Objetivo: Identificar tres rutas de polinización y repartir luz, penumbra y oscuridad sin cerrar el paseo. Mecánica de referencia: Mapa de vuelo nocturno. Promesa: Un jardín lunar ilumina todas sus flores para atraer visitantes y desorienta a los polinizadores que solo trabajan en oscuridad.
-- **Datos compilados:** 50×50 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 50×50 tiles; 10 eventos; tileset 1.
 
 ### Map1259 — Atlas 0239 - Kumquat Pokémon Center
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Kumquat Pokémon Center (Map241) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1260 — Atlas 0240 - Kumquat House
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
@@ -1253,12 +1253,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1263 — Atlas 0243 - Pummelo Island
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pummelo Island (Map245) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 45×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 45×40 tiles; 6 eventos; tileset 1.
 
 ### Map1264 — Atlas 0244 - Pummelo Pokémon Center
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pummelo Pokémon Center (Map246) en el sector Velo Lunar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 30×30 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 30×30 tiles; 10 eventos; tileset 4.
 
 ### Map1265 — El Estadio de la Segunda Luna
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 2 · ruta estable.
@@ -1295,7 +1295,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1271 — El Compañero del Minuto Cero
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Professor Elm's Lab (Map253). Identidad del lugar: Laboratorio de sincronía cubierto por relojes detenidos, cápsulas de sueño y dos plataformas enlazadas. Episodio: Un laboratorio sueña una pareja compi procedente de un mañana descartado, pero solo puede estabilizarla si sus dos integrantes aceptan dejar de ser imprescindibles.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 3.
 
 ### Map1272 — Atlas 0252 - Route 29
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
@@ -1310,7 +1310,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1274 — Atlas 0254 - Cherrygrove City
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cherrygrove City (Map256) en el sector Nexo Onírico. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 50×35 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 50×35 tiles; 7 eventos; tileset 1.
 
 ### Map1275 — Atlas 0255 - Cherrygrove House
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
@@ -1320,7 +1320,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1276 — La Sala de los Sueños en Fila
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Cherrygrove Pokémon Center (Map258). Objetivo: Rediseñar la lista de descanso usando llegada, necesidad y preferencia sin exigir relatos privados. Mecánica de referencia: Turno de reposo. Promesa: Un Centro Pokémon ordena el descanso según sueños contados al despertar y quienes no recuerdan ninguno pierden su turno de cama.
-- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 4.
 
 ### Map1277 — Atlas 0257 - Wild Area
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
@@ -1335,12 +1335,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1279 — Atlas 0259 - Hoenn Battle Frontier
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hoenn Battle Frontier (Map261) en el sector Nexo Onírico. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 25×40 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 25×40 tiles; 10 eventos; tileset 4.
 
 ### Map1280 — Atlas 0260 - Violet City
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Violet City (Map262) en el sector Nexo Onírico. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 70×71 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×71 tiles; 8 eventos; tileset 1.
 
 ### Map1281 — Atlas 0261 - Violet House
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
@@ -1350,7 +1350,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1282 — Atlas 0262 - Violet Pokémon Center
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Violet Pokémon Center (Map264) en el sector Nexo Onírico. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1283 — La Isla de las Cartas sin Destino
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 2 · ruta estable.
@@ -1385,7 +1385,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1289 — Atlas 0269 - Azalea Town
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Azalea Town (Map271) en el sector Nexo Onírico. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 65×47 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 65×47 tiles; 8 eventos; tileset 1.
 
 ### Map1290 — La Casa que Despertaba por Turnos
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 2 · ruta estable.
@@ -1395,7 +1395,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1291 — Atlas 0271 - Azalea Pokémon Center
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Azalea Pokémon Center (Map273) en el sector Nexo Onírico. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1292 — Atlas 0272 - Wyndon Stadium
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
@@ -1422,12 +1422,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1296 — El Punto que Nadie Quiso Marcar
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Pokémon Swap Meet (Map278). Identidad del lugar: Mercado de intercambio transformado en cancha, con puestos como bases y un marcador magnético suspendido. Episodio: Dos equipos descubren que su estadio premia en secreto cada pase que evita el aro, y deben decidir si competir aún tiene sentido cuando cuidar al rival vale más que vencer.
-- **Datos compilados:** 55×52 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 55×52 tiles; 11 eventos; tileset 1.
 
 ### Map1297 — Atlas 0277 - Swap Meet Pokémon Center
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Swap Meet Pokémon Center (Map279) en el sector Valle Magnético. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1298 — Atlas 0278 - Route 34
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
@@ -1442,17 +1442,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1300 — Atlas 0280 - Goldenrod City
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Goldenrod City (Map282) en el sector Valle Magnético. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 75×61 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 75×61 tiles; 8 eventos; tileset 1.
 
 ### Map1301 — La Cocina que Atraía los Cubiertos
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Goldenrod House (Map283). Objetivo: Rastrear tres campos magnéticos y reorganizar la cocina sin expulsar a los Pokémon que viven en el tejado. Mecánica de referencia: Rastreo de polaridad. Promesa: Una casa del valle magnético concentra los cubiertos sobre una pared y culpa a Magnemite, aunque el verdadero origen es una batería instalada bajo la mesa.
-- **Datos compilados:** 32×60 tiles; 7 eventos; tileset 3.
+- **Datos compilados:** 32×60 tiles; 8 eventos; tileset 3.
 
 ### Map1302 — Atlas 0282 - Goldenrod Pokémon Center
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Goldenrod Pokémon Center (Map284) en el sector Valle Magnético. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1303 — Atlas 0283 - Goldenrod Dept. 1F
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
@@ -1527,7 +1527,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1317 — Atlas 0297 - Ecruteak City
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Ecruteak City (Map299) en el sector Valle Magnético. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 60×52 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×52 tiles; 7 eventos; tileset 1.
 
 ### Map1318 — Atlas 0298 - Ecruteak House
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
@@ -1537,7 +1537,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1319 — Atlas 0299 - Ecruteak Pokémon Center
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Ecruteak Pokémon Center (Map301) en el sector Valle Magnético. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1320 — Atlas 0300 - Desert Resort
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
@@ -1569,7 +1569,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1325 — Atlas 0305 - Olivine City
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Olivine City (Map308) en el sector Arco Fósil. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 51×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 51×50 tiles; 8 eventos; tileset 1.
 
 ### Map1326 — La Casa de los Huesos Repuestos
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 2 · ruta estable.
@@ -1579,7 +1579,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1327 — Atlas 0307 - Olivine Pokémon Center
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Olivine Pokémon Center (Map310) en el sector Arco Fósil. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1328 — Atlas 0308 - Colossus Ruins
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
@@ -1614,7 +1614,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1334 — Atlas 0314 - Cianwood City
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cianwood City (Map317) en el sector Arco Fósil. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 50×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 50×70 tiles; 7 eventos; tileset 1.
 
 ### Map1335 — Atlas 0315 - Cianwood House
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
@@ -1624,7 +1624,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1336 — Atlas 0316 - Cianwood Pokémon Center
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cianwood Pokémon Center (Map319) en el sector Arco Fósil. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1337 — Atlas 0317 - Safari Zone Johto
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
@@ -1644,7 +1644,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1340 — La Isla que Restauraba Pisadas
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Red Rock Isle (Map323). Objetivo: Comparar moldes antiguos, erosión y retoques para decidir qué huellas dejar sin intervenir. Mecánica de referencia: Rastreo de relieve. Promesa: En una isla de roca roja, voluntarios profundizan huellas fósiles para que sean visibles y cambian sin querer la forma que pretendían preservar.
-- **Datos compilados:** 50×50 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 50×50 tiles; 9 eventos; tileset 1.
 
 ### Map1341 — Atlas 0321 - Red Rock House
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
@@ -1654,12 +1654,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1342 — Atlas 0322 - Red Rock Pokémon Center
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Red Rock Pokémon Center (Map325) en el sector Arco Fósil. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1343 — Atlas 0323 - Red Rock Pokémon Mart
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Red Rock Pokémon Mart (Map326) en el sector Arco Fósil. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 5.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 5.
 
 ### Map1344 — Atlas 0324 - Yellow Rock Isle
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
@@ -1686,7 +1686,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1348 — Atlas 0328 - Route 42 Day Care
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 42 Day Care (Map332) en el sector Mar de Nubes. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1349 — Atlas 0329 - Route 43
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
@@ -1701,7 +1701,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1351 — El Mercado que Vendía Rocío
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Mahogany Town (Map335). Objetivo: Medir captación, suelo y retorno para repartir agua sin convertir la niebla en propiedad. Mecánica de referencia: Balance de rocío. Promesa: Un pueblo del Mar de Nubes embotella el rocío matinal como si perteneciera al primer puesto que lo recoge y deja jardines sin humedad.
-- **Datos compilados:** 40×35 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 40×35 tiles; 10 eventos; tileset 1.
 
 ### Map1352 — Atlas 0332 - Mahogany House
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
@@ -1711,7 +1711,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1353 — Atlas 0333 - Mahogany Pokémon Center
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mahogany Pokémon Center (Map337) en el sector Mar de Nubes. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1354 — Atlas 0334 - Route 229
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
@@ -1731,12 +1731,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1357 — Atlas 0337 - Ice Cave
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Ice Cave (Map341) en el sector Mar de Nubes. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 80×65 tiles; 5 eventos; tileset 6.
+- **Datos compilados:** 80×65 tiles; 6 eventos; tileset 6.
 
 ### Map1358 — El Puente que Pesaba las Nubes
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Blackthorn City (Map342). Objetivo: Cruzar sensores de viento, hielo y visibilidad para evitar cierres arbitrarios. Mecánica de referencia: Lectura de puente. Promesa: Una ciudad suspendida cierra sus puentes cuando las nubes parecen densas, aunque el riesgo real depende del viento lateral y del hielo sobre las cuerdas.
-- **Datos compilados:** 55×60 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 55×60 tiles; 10 eventos; tileset 1.
 
 ### Map1359 — Atlas 0339 - Blackthorn House
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
@@ -1746,7 +1746,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1360 — Atlas 0340 - Blackthorn Pokémon Center
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Blackthorn Pokémon Center (Map344) en el sector Mar de Nubes. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1361 — Atlas 0341 - Resort Area
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
@@ -1771,12 +1771,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1365 — La Final que Pronosticaba Campeones
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Silver Conference (Map349). Objetivo: Separar pronóstico, condiciones reales y puntuación antes de la siguiente ronda. Mecánica de referencia: Mesa de marcador. Promesa: Un torneo en las nubes ajusta el marcador según el clima previsto y otorga ventaja a equipos que aún no han entrado al campo.
-- **Datos compilados:** 56×45 tiles; 7 eventos; tileset 1.
+- **Datos compilados:** 56×45 tiles; 8 eventos; tileset 1.
 
 ### Map1366 — Atlas 0346 - Johto Pokemon League
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Johto Pokemon League (Map350) en el sector Mar de Nubes. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×20 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 10 eventos; tileset 4.
 
 ### Map1367 — Atlas 0347 - Silver Elimination
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
@@ -1823,7 +1823,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1375 — Atlas 0355 - Professor Birch's Lab
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Professor Birch's Lab (Map359) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 3.
 
 ### Map1376 — El Bosque que Seguía una Aguja de Hierro
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 2 · ruta estable.
@@ -1833,7 +1833,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1377 — Atlas 0357 - Oldale Town
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Oldale Town (Map361) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×40 tiles; 7 eventos; tileset 1.
 
 ### Map1378 — Atlas 0358 - Oldale House
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
@@ -1843,12 +1843,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1379 — Atlas 0359 - Oldale Pokémon Center
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Oldale Pokémon Center (Map363) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1380 — Atlas 0360 - Resort Area House
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Resort Area House (Map364) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 70×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 70×50 tiles; 6 eventos; tileset 3.
 
 ### Map1381 — Atlas 0361 - Route 102
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
@@ -1858,7 +1858,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1382 — Atlas 0362 - Petalburg City
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Petalburg City (Map366) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×42 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×42 tiles; 8 eventos; tileset 1.
 
 ### Map1383 — La Casa que Afinaba sus Clavos
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 2 · ruta estable.
@@ -1868,7 +1868,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1384 — Atlas 0364 - Petalburg Pokémon Center
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Petalburg Pokémon Center (Map368) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1385 — Atlas 0365 - Mauville City
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
@@ -1893,7 +1893,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1389 — Atlas 0369 - Rustboro City
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Rustboro City (Map373) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 45×55 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 45×55 tiles; 8 eventos; tileset 1.
 
 ### Map1390 — La Ciudad que Excavaba sus Cimientos
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 2 · ruta estable.
@@ -1908,7 +1908,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1392 — Atlas 0372 - Rustboro Pokémon Center
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Rustboro Pokémon Center (Map376) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1393 — Atlas 0373 - Galar
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
@@ -1923,7 +1923,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1395 — Atlas 0375 - Dewford Town
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Dewford Town (Map379) en el sector Bosque de Hierro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 45×43 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 45×43 tiles; 7 eventos; tileset 1.
 
 ## Sector 16 — Canal Estelar (Astrónomos del Canal) · Map1396–Map1420
 
@@ -1935,7 +1935,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1397 — Atlas 0377 - Dewford Pokémon Center
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Dewford Pokémon Center (Map381) en el sector Canal Estelar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1398 — Atlas 0378 - Granite Cave
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -1965,7 +1965,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1403 — Atlas 0383 - Slateport City
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Slateport City (Map387) en el sector Canal Estelar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 85×88 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 85×88 tiles; 8 eventos; tileset 1.
 
 ### Map1404 — Atlas 0384 - Slateport House
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -1975,7 +1975,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1405 — Atlas 0385 - Slateport Pokémon Center
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Slateport Pokémon Center (Map389) en el sector Canal Estelar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1406 — Atlas 0386 - Cerise Park
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -2000,7 +2000,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1410 — Atlas 0390 - Mauville City
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mauville City (Map394) en el sector Canal Estelar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 75×32 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 75×32 tiles; 9 eventos; tileset 1.
 
 ### Map1411 — Atlas 0391 - Mauville House
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -2010,7 +2010,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1412 — Atlas 0392 - Mauville Pokémon Center
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mauville Pokémon Center (Map396) en el sector Canal Estelar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1413 — Atlas 0393 - Wild Area
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -2035,7 +2035,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1417 — Atlas 0397 - Route 111 House
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 111 House (Map401) en el sector Canal Estelar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 35×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 35×15 tiles; 6 eventos; tileset 3.
 
 ### Map1418 — Atlas 0398 - Route 113
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -2045,7 +2045,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1419 — Atlas 0399 - Fallarbor Town
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Fallarbor Town (Map403) en el sector Canal Estelar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×35 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×35 tiles; 8 eventos; tileset 1.
 
 ### Map1420 — Atlas 0400 - Fallarbor House
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -2057,7 +2057,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1421 — El Caso de las Cuatro Mediasnoches
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Fallarbor Pokémon Center (Map405). Identidad del lugar: Centro de descanso convertido en oficina detectivesca, con relojes acústicos y una campana ausente. Episodio: Tres testigos describen con precisión el robo de una campana, aunque cada uno lo vio a una hora distinta porque el centro está atrapado en cuatro versiones verdaderas de la misma noche.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
 
 ### Map1422 — Atlas 0402 - Route 10
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2072,7 +2072,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1424 — Atlas 0404 - Lavaridge Town
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lavaridge Town (Map408) en el sector Páramo Sonoro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×40 tiles; 8 eventos; tileset 1.
 
 ### Map1425 — Atlas 0405 - Fiery Path
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2087,7 +2087,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1427 — Atlas 0407 - Lavaridge Pokémon Center
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lavaridge Pokémon Center (Map411) en el sector Páramo Sonoro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1428 — Atlas 0408 - Kanto Power Plant
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2127,7 +2127,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1435 — Atlas 0415 - Fortree City
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Fortree City (Map419) en el sector Páramo Sonoro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 54×45 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 54×45 tiles; 8 eventos; tileset 1.
 
 ### Map1436 — Atlas 0416 - Fortree House
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2137,7 +2137,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1437 — Atlas 0417 - Fortree Pokémon Center
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Fortree Pokémon Center (Map421) en el sector Páramo Sonoro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1438 — Atlas 0418 - Slumbering Weald
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2162,7 +2162,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1442 — Atlas 0422 - Lilycove City
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lilycove City (Map426) en el sector Páramo Sonoro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 55×55 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 55×55 tiles; 7 eventos; tileset 1.
 
 ### Map1443 — Atlas 0423 - Lilycove House
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2172,7 +2172,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1444 — Atlas 0424 - Lilycove Pokémon Center
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lilycove Pokémon Center (Map428) en el sector Páramo Sonoro. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1445 — Atlas 0425 - Lilycove Contest
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2184,7 +2184,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1446 — El Museo de lo Todavía No Perdido
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Weather Institute (Map430). Identidad del lugar: Instituto meteorológico convertido en museo provisional de objetos prematuros. Episodio: Una distorsión devuelve brújulas, diarios y emblemas días antes de que sus dueños los extravíen, empujando a una expedición a representar pérdidas que quizá nunca debieron ocurrir.
-- **Datos compilados:** 30×35 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 30×35 tiles; 11 eventos; tileset 3.
 
 ### Map1447 — Atlas 0427 - Lilycove Dept. 1F
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
@@ -2219,7 +2219,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1453 — Atlas 0433 - Mossdeep City
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mossdeep City (Map437) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 95×80 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 95×80 tiles; 8 eventos; tileset 1.
 
 ### Map1454 — Atlas 0434 - Mossdeep House
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
@@ -2229,12 +2229,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1455 — Atlas 0435 - Mossdeep Pokémon Center
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mossdeep Pokémon Center (Map439) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1456 — Atlas 0436 - Hammerlocke
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hammerlocke (Map440) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 104×38 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 104×38 tiles; 8 eventos; tileset 1.
 
 ### Map1457 — Atlas 0437 - Mossdeep Space Center
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
@@ -2249,7 +2249,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1459 — Atlas 0439 - Izabe Island
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Izabe Island (Map443) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 150×100 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 150×100 tiles; 10 eventos; tileset 1.
 
 ### Map1460 — Atlas 0440 - Izabe House
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
@@ -2259,17 +2259,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1461 — Atlas 0441 - Purika Pokémon Center
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Purika Pokémon Center (Map445) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1462 — Atlas 0442 - Riyado Pokémon Center
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Riyado Pokémon Center (Map446) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1463 — Atlas 0443 - Cerosi Pokémon Center
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cerosi Pokémon Center (Map447) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1464 — Atlas 0444 - Hammerlocke House
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
@@ -2294,17 +2294,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1468 — Atlas 0448 - Hammerlocke Pokémon Center
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hammerlocke Pokémon Center (Map452) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1469 — Atlas 0449 - Izabe Cave
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Izabe Cave (Map453) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 80×65 tiles; 5 eventos; tileset 6.
+- **Datos compilados:** 80×65 tiles; 6 eventos; tileset 6.
 
 ### Map1470 — Atlas 0450 - Sootopolis City
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Sootopolis City (Map454) en el sector Islas del Viento. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 100×80 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 100×80 tiles; 8 eventos; tileset 1.
 
 ## Sector 19 — Anillo Abisal (Buzos Abisales) · Map1471–Map1495
 
@@ -2316,7 +2316,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1472 — Atlas 0452 - Sootopolis Pokémon Center
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Sootopolis Pokémon Center (Map456) en el sector Anillo Abisal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1473 — Atlas 0453 - Hammerlocke Stadium
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
@@ -2336,7 +2336,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1476 — El Centro que Diagnosticaba Profundidad
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Pacifidlog Pokémon Center (Map461). Objetivo: Separar profundidad tolerada, síntomas y especie sin retrasar la curación. Mecánica de referencia: Triage de presión. Promesa: Un Centro Pokémon flotante asigna tratamiento según cuánto se hunde cada paciente en una cámara de presión, aunque especies ligeras muestran síntomas graves antes.
-- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 4.
 
 ### Map1477 — Atlas 0457 - Pacifidlog Contest
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
@@ -2346,12 +2346,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1478 — Atlas 0458 - Ever Grande Conference
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Ever Grande Conference (Map463) en el sector Anillo Abisal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 70×65 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×65 tiles; 6 eventos; tileset 1.
 
 ### Map1479 — Atlas 0459 - Hoenn Pokemon League
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hoenn Pokemon League (Map464) en el sector Anillo Abisal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×20 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 10 eventos; tileset 4.
 
 ### Map1480 — Atlas 0460 - Ever Grande Elimination
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
@@ -2391,7 +2391,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1487 — Atlas 0467 - Lavaridge Day Care
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lavaridge Day Care (Map472) en el sector Anillo Abisal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1488 — Atlas 0468 - Battle Factory
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
@@ -2401,7 +2401,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1489 — Atlas 0469 - Battle Factory
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Factory (Map474) en el sector Anillo Abisal. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 40×20 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 10 eventos; tileset 4.
 
 ### Map1490 — La Fábrica de los Compañeros Temporales
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 2 · ruta estable.
@@ -2438,7 +2438,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1496 — Los Dos Nombres del Cometa
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 12 Breeding Center (Map481). Identidad del lugar: Centro de crianza transformado en clínica de convergencia, con dos habitaciones unidas por una franja de luz. Episodio: Una fusión estable pide conservar los dos nombres de quienes la formaron, mientras el centro de crianza insiste en registrarla como una criatura nueva o como un accidente que debe revertirse.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 3.
 
 ### Map1497 — Atlas 0477 - Route 13
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
@@ -2453,7 +2453,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1499 — Atlas 0479 - Battle Dome
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Dome (Map484) en el sector Ruta del Cometa. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 30×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 30×30 tiles; 7 eventos; tileset 3.
 
 ### Map1500 — Atlas 0480 - Route 14
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
@@ -2478,7 +2478,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1504 — Atlas 0484 - Battle Pike
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Pike (Map489) en el sector Ruta del Cometa. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 50×55 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 50×55 tiles; 7 eventos; tileset 3.
 
 ### Map1505 — Atlas 0485 - Battle Pike Stage
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
@@ -2493,7 +2493,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1507 — Atlas 0487 - Battle Palace
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Palace (Map492) en el sector Ruta del Cometa. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 30×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 30×30 tiles; 7 eventos; tileset 3.
 
 ### Map1508 — El Palacio que Elegía por su Cometa
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 2 · ruta estable.
@@ -2513,7 +2513,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1511 — Atlas 0491 - Battle Tower
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Tower (Map496) en el sector Ruta del Cometa. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 30×25 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 30×25 tiles; 7 eventos; tileset 3.
 
 ### Map1512 — Atlas 0492 - Battle Tower Challenge
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
@@ -2533,7 +2533,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1515 — La Pirámide de las Habitaciones Fugaces
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Battle Pyramid (Map500). Objetivo: Asignar identificadores físicos permanentes y conservar los nombres celestes como alias. Mecánica de referencia: Índice de cámaras. Promesa: Las salas de una pirámide cambian de nombre con cada lluvia de meteoros y los mapas de emergencia dejan de coincidir con las puertas.
-- **Datos compilados:** 30×30 tiles; 7 eventos; tileset 3.
+- **Datos compilados:** 30×30 tiles; 9 eventos; tileset 3.
 
 ### Map1516 — Atlas 0496 - Sinnoh
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
@@ -2558,7 +2558,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1520 — Atlas 0500 - Sandgem Pokémon Center
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Sandgem Pokémon Center (Map505) en el sector Ruta del Cometa. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ## Sector 21 — Territorio Origami (Plegadores del Territorio) · Map1521–Map1545
 
@@ -2570,7 +2570,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1522 — Atlas 0502 - Sandgem Town
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Sandgem Town (Map507). Anomalía documentada: La geografía Sandgem Town respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Medir dos veces — Eco 0502. Primer contrajuego: Contar los pasos de ida antes de confiar en la vuelta.
-- **Datos compilados:** 45×28 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 45×28 tiles; 7 eventos; tileset 1.
 
 ### Map1523 — Atlas 0503 - Tower Summit
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
@@ -2580,7 +2580,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1524 — Atlas 0504 - Professor Rowan's Lab
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Professor Rowan's Lab (Map509). Anomalía documentada: Los pasos en Professor Rowan's Lab vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Eco con retraso — Eco 0504. Primer contrajuego: Esperar el retorno de cada paso.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 3.
 
 ### Map1525 — Atlas 0505 - Route 201
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
@@ -2610,7 +2610,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1530 — Atlas 0510 - Jubilife City
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Jubilife City (Map515). Anomalía documentada: En Jubilife City se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Paso de prestado — Eco 0510. Primer contrajuego: Ceder el paso a la fila de ecos.
-- **Datos compilados:** 64×53 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 64×53 tiles; 8 eventos; tileset 1.
 
 ### Map1531 — Atlas 0511 - Jubilife House
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
@@ -2630,7 +2630,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1534 — Atlas 0514 - Jubilife Pokémon Center
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Jubilife Pokémon Center (Map519). Anomalía documentada: Los compases de Jubilife Pokémon Center se desfasan: la música va por delante de las baldosas. Regla local: Compás de contratiempo — Eco 0514. Primer contrajuego: Pisar en contratiempo deliberado.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1535 — Atlas 0515 - Route 6
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
@@ -2650,7 +2650,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1538 — Atlas 0518 - Oreburgh City
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Oreburgh City (Map523). Anomalía documentada: La geografía Oreburgh City respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Andar al revés — Eco 0518. Primer contrajuego: Recorrer el tramo mirando hacia atrás.
-- **Datos compilados:** 90×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 90×60 tiles; 8 eventos; tileset 1.
 
 ### Map1539 — Atlas 0519 - Oreburgh House
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
@@ -2660,12 +2660,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1540 — El Centro de los Formularios Infinitos
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Oreburgh Pokémon Center (Map525). Objetivo: Reducir el registro a datos clínicos necesarios y una preferencia de contacto. Mecánica de referencia: Triage desplegable. Promesa: Un Centro Pokémon origami exige una hoja distinta por cada síntoma y las fichas plegadas esconden información cuando pasan de recepción a curación.
-- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1541 — Atlas 0521 - Stow-on-Side
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Stow-on-Side (Map526). Anomalía documentada: Los pasos en Stow-on-Side vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Cuenta atrás — Eco 0521. Primer contrajuego: Contar diez antes de cada cruce.
-- **Datos compilados:** 55×55 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 55×55 tiles; 8 eventos; tileset 1.
 
 ### Map1542 — Atlas 0522 - Oreburgh Mining Museum
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
@@ -2697,7 +2697,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1547 — Atlas 0527 - Floaroma Town
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Floaroma Town (Map532). Anomalía documentada: En Floaroma Town se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Andar propio — Eco 0527. Primer contrajuego: Marcar el ritmo con el propio compás.
-- **Datos compilados:** 46×27 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 46×27 tiles; 8 eventos; tileset 1.
 
 ### Map1548 — Atlas 0528 - Floaroma House
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
@@ -2707,7 +2707,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1549 — Atlas 0529 - Floaroma Pokémon Center
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Floaroma Pokémon Center (Map534). Anomalía documentada: Los materiales de Floaroma Pokémon Center recuerdan su forma anterior y se niegan a la reforma. Regla local: Prestar textura — Eco 0529. Primer contrajuego: Llevar una pieza prestada del taller.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1550 — Atlas 0530 - Stow-on-Side House
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
@@ -2732,7 +2732,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1554 — Atlas 0534 - Route 205 House
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 205 House (Map539). Anomalía documentada: Los nombres de Route 205 House cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Nombre de prestado — Eco 0534. Primer contrajuego: Prestar un nombre al lugar sin etiqueta.
-- **Datos compilados:** 35×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 35×15 tiles; 6 eventos; tileset 3.
 
 ### Map1555 — Atlas 0535 - Eterna Forest
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
@@ -2742,17 +2742,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1556 — Atlas 0536 - Eterna City
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Eterna City (Map541). Anomalía documentada: La gravedad de Eterna City está prestada y reclama devolución en el tramo más estrecho. Regla local: Cruzar cargado — Eco 0536. Primer contrajuego: Atravesar con la mochila cerrada y lenta.
-- **Datos compilados:** 75×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 75×70 tiles; 8 eventos; tileset 1.
 
 ### Map1557 — Atlas 0537 - Eterna House
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Eterna House (Map542). Anomalía documentada: Los pasos en Eterna House vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Regreso programado — Eco 0537. Primer contrajuego: Entrar cuando el reloj marque cuarto.
-- **Datos compilados:** 40×60 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×60 tiles; 6 eventos; tileset 3.
 
 ### Map1558 — La Sala de Curación Transparente
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Eterna Pokémon Center (Map543). Objetivo: Restaurar privacidad sin impedir señales clínicas y rutas de asistencia. Mecánica de referencia: Diseño de separadores. Promesa: Un Centro de cristal vuelve transparentes sus separadores para vigilar mejor y termina exponiendo conversaciones y tratamientos a toda la sala.
-- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1559 — Atlas 0539 - Stow-on-Side Stadium
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
@@ -2792,12 +2792,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1566 — Atlas 0546 - Hearthome City
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hearthome City (Map551). Anomalía documentada: Los materiales de Hearthome City recuerdan su forma anterior y se niegan a la reforma. Regla local: Escuchar la veta — Eco 0546. Primer contrajuego: Seguir la veta de la madera.
-- **Datos compilados:** 80×65 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 80×65 tiles; 9 eventos; tileset 1.
 
 ### Map1567 — Atlas 0547 - Hearthome House
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hearthome House (Map552). Anomalía documentada: Los compases de Hearthome House se desfasan: la música va por delante de las baldosas. Regla local: Silencio de compás — Eco 0547. Primer contrajuego: Pisar solo en los silencios.
-- **Datos compilados:** 40×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 6 eventos; tileset 3.
 
 ### Map1568 — Atlas 0548 - Hearthome Pokémon Fan Club
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
@@ -2807,12 +2807,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1569 — Atlas 0549 - Hearthome Pokémon Center
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hearthome Pokémon Center (Map554). Anomalía documentada: Los mapas de Hearthome Pokémon Center se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Trazo de retorno — Eco 0549. Primer contrajuego: Dibujar el regreso antes de avanzar.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1570 — Atlas 0550 - Stow-on-Side Pokémon Center
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Stow-on-Side Pokémon Center (Map555). Anomalía documentada: Los nombres de Stow-on-Side Pokémon Center cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Llamar por señas — Eco 0550. Primer contrajuego: Saludar al lugar con gestos.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ## Sector 23 — Llanura Meteoro (Meteorólogos Errantes) · Map1571–Map1595
 
@@ -2824,7 +2824,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1572 — Atlas 0552 - Battle Hall
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Battle Hall (Map557). Anomalía documentada: La geografía Battle Hall respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Medir dos veces — Eco 0552. Primer contrajuego: Contar los pasos de ida antes de confiar en la vuelta.
-- **Datos compilados:** 30×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 30×30 tiles; 7 eventos; tileset 3.
 
 ### Map1573 — Atlas 0553 - Battle Hall Stadium
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
@@ -2854,7 +2854,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1578 — Atlas 0558 - Solaceon Town
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Solaceon Town (Map563). Anomalía documentada: La luz de Solaceon Town recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Encender lo propio — Eco 0558. Primer contrajuego: Traer luz prestada de la baliza.
-- **Datos compilados:** 70×42 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×42 tiles; 8 eventos; tileset 1.
 
 ### Map1579 — Atlas 0559 - Solaceon House
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
@@ -2864,12 +2864,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1580 — Atlas 0560 - Solaceon Day Care
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Solaceon Day Care (Map565). Anomalía documentada: En Solaceon Day Care se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Paso de prestado — Eco 0560. Primer contrajuego: Ceder el paso a la fila de ecos.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1581 — Atlas 0561 - Solaceon Pokémon Center
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Solaceon Pokémon Center (Map566). Anomalía documentada: El silencio de Solaceon Pokémon Center es activo: escucha, ordena y se enfada con el ruido. Regla local: Silencio pactado — Eco 0561. Primer contrajuego: Hablar solo en los círculos de piedra.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1582 — Atlas 0562 - Glimwood Tangle
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
@@ -2909,7 +2909,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1589 — Atlas 0569 - Veilstone City
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Veilstone City (Map574). Anomalía documentada: La gravedad de Veilstone City está prestada y reclama devolución en el tramo más estrecho. Regla local: Prestar lo justo — Eco 0569. Primer contrajuego: Tomar gravedad prestada solo para el salto.
-- **Datos compilados:** 65×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 65×70 tiles; 8 eventos; tileset 1.
 
 ### Map1590 — La Casa que Ensayaba Impactos
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 2 · ruta estable.
@@ -2919,7 +2919,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1591 — Atlas 0571 - Veilstone Pokémon Center
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Veilstone Pokémon Center (Map576). Anomalía documentada: Los pasos en Veilstone Pokémon Center vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Cuenta atrás — Eco 0571. Primer contrajuego: Contar diez antes de cada cruce.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1592 — Atlas 0572 - Veilstone Dept. 1F
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
@@ -2971,17 +2971,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1601 — El Pueblo que Iluminaba el Coral
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Ballonlea (Map586). Objetivo: Rediseñar iluminación urbana sin imitar llamadas naturales. Mecánica de referencia: Mapa de luminiscencia. Promesa: Una ciudad coralina copia el brillo de los arrecifes en sus faroles y confunde a especies nocturnas que siguen señales químicas distintas.
-- **Datos compilados:** 38×40 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 38×40 tiles; 8 eventos; tileset 1.
 
 ### Map1602 — Atlas 0582 - Valor Lakefront
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Valor Lakefront (Map587). Anomalía documentada: Las señales de Valor Lakefront responden tarde: la flecha de hoy avisa del camino de ayer. Regla local: Preguntar a la señal — Eco 0582. Primer contrajuego: Repetir la pregunta hasta la segunda respuesta.
-- **Datos compilados:** 68×88 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 68×88 tiles; 7 eventos; tileset 1.
 
 ### Map1603 — Atlas 0583 - Valor Lakefront House
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Valor Lakefront House (Map588). Anomalía documentada: Los mapas de Valor Lakefront House se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Copia de viaje — Eco 0583. Primer contrajuego: Copiar el mapa antes de entrar.
-- **Datos compilados:** 40×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 6 eventos; tileset 3.
 
 ### Map1604 — Atlas 0584 - Seven Stars Restaurant
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
@@ -2996,7 +2996,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1606 — Atlas 0586 - Lake Valor Contest
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lake Valor Contest (Map591). Anomalía documentada: La gravedad de Lake Valor Contest está prestada y reclama devolución en el tramo más estrecho. Regla local: Cruzar cargado — Eco 0586. Primer contrajuego: Atravesar con la mochila cerrada y lenta.
-- **Datos compilados:** 50×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 50×50 tiles; 6 eventos; tileset 3.
 
 ### Map1607 — Atlas 0587 - Route 213
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
@@ -3011,7 +3011,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1609 — Atlas 0589 - Pastoria City
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pastoria City (Map594). Anomalía documentada: El clima de Pastoria City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Tormenta en conserva — Eco 0589. Primer contrajuego: Atravesar durante la tregua anunciada.
-- **Datos compilados:** 76×64 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 76×64 tiles; 8 eventos; tileset 1.
 
 ### Map1610 — Atlas 0590 - Safari Zone Sinnoh
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
@@ -3031,12 +3031,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1613 — Atlas 0593 - Pastoria Pokémon Center
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pastoria Pokémon Center (Map598). Anomalía documentada: En Pastoria Pokémon Center se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Prestar un paso — Eco 0593. Primer contrajuego: Ofrecer un paso al eco cansado.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1614 — Atlas 0594 - Ballonlea Pokémon Center
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Ballonlea Pokémon Center (Map599). Anomalía documentada: El silencio de Ballonlea Pokémon Center es activo: escucha, ordena y se enfada con el ruido. Regla local: Silencio prestado — Eco 0594. Primer contrajuego: Pedir prestado un minuto de silencio.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1615 — El Gimnasio de las Mareas Pintadas
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 2 · ruta estable.
@@ -3056,7 +3056,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1618 — Atlas 0598 - Pokémon Mansion
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pokémon Mansion (Map603). Anomalía documentada: Las señales de Pokémon Mansion responden tarde: la flecha de hoy avisa del camino de ayer. Regla local: Responder tarde — Eco 0598. Primer contrajuego: Caminar con respuesta diferida.
-- **Datos compilados:** 70×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 70×50 tiles; 6 eventos; tileset 3.
 
 ### Map1619 — Atlas 0599 - Trophy Garden
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
@@ -3078,7 +3078,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1622 — Atlas 0602 - Celestic Town
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Celestic Town (Map607). Anomalía documentada: La geografía Celestic Town respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Medir dos veces — Eco 0602. Primer contrajuego: Contar los pasos de ida antes de confiar en la vuelta.
-- **Datos compilados:** 44×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 44×50 tiles; 6 eventos; tileset 1.
 
 ### Map1623 — Atlas 0603 - Celestic House
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
@@ -3088,7 +3088,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1624 — Atlas 0604 - Celestic Contest
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Celestic Contest (Map609). Anomalía documentada: Los pasos en Celestic Contest vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Eco con retraso — Eco 0604. Primer contrajuego: Esperar el retorno de cada paso.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1625 — Atlas 0605 - Celestic Ruins
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
@@ -3108,7 +3108,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1628 — Atlas 0608 - Canalave City
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Canalave City (Map613). Anomalía documentada: La luz de Canalave City recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Encender lo propio — Eco 0608. Primer contrajuego: Traer luz prestada de la baliza.
-- **Datos compilados:** 46×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 46×70 tiles; 8 eventos; tileset 1.
 
 ### Map1629 — Atlas 0609 - Canalave House
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
@@ -3118,12 +3118,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1630 — Atlas 0610 - Canalave Pokémon Center
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Canalave Pokémon Center (Map615). Anomalía documentada: En Canalave Pokémon Center se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Paso de prestado — Eco 0610. Primer contrajuego: Ceder el paso a la fila de ecos.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1631 — Atlas 0611 - Castle of Chivalry
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Castle of Chivalry (Map616). Anomalía documentada: El silencio de Castle of Chivalry es activo: escucha, ordena y se enfada con el ruido. Regla local: Silencio pactado — Eco 0611. Primer contrajuego: Hablar solo en los círculos de piedra.
-- **Datos compilados:** 70×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 70×50 tiles; 6 eventos; tileset 3.
 
 ### Map1632 — Atlas 0612 - Canalave Gym
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
@@ -3168,7 +3168,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1640 — La Ciudad que Apagaba su Calefacción
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Snowpoint City (Map625). Objetivo: Crear zonas de observación sin reducir servicios térmicos esenciales. Mecánica de referencia: Balance térmico. Promesa: Una ciudad nevada corta calefacción para observar mejor el eclipse y obliga a hogares vulnerables a elegir entre frío y participación.
-- **Datos compilados:** 40×70 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 40×70 tiles; 9 eventos; tileset 1.
 
 ### Map1641 — Atlas 0621 - Snowpoint House
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
@@ -3178,7 +3178,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1642 — Atlas 0622 - Snowpoint Pokémon Center
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Snowpoint Pokémon Center (Map627). Anomalía documentada: El clima de Snowpoint Pokémon Center viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Leer el cielo — Eco 0622. Primer contrajuego: Observar la nube antes de girar.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1643 — Atlas 0623 - Mt. Coronet
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
@@ -3200,12 +3200,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1646 — La Estatua que Ensayaba Ciudades
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 222 House (Map631). Identidad del lugar: Casa de ruta convertida en taller arqueológico costero, con una estatua central, archivos y herramientas de restauración. Episodio: Una estatua arqueológica talla cada noche una civilización futura distinta y obliga al pueblo a decidir si sus habitantes son profecías, propuestas o personas usadas como argumentos.
-- **Datos compilados:** 80×30 tiles; 9 eventos; tileset 3.
+- **Datos compilados:** 80×30 tiles; 10 eventos; tileset 3.
 
 ### Map1647 — Atlas 0627 - Sunnyshore City
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Sunnyshore City (Map632). Anomalía documentada: En Sunnyshore City se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Andar propio — Eco 0627. Primer contrajuego: Marcar el ritmo con el propio compás.
-- **Datos compilados:** 75×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 75×70 tiles; 9 eventos; tileset 1.
 
 ### Map1648 — Atlas 0628 - Sunnyshore House
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
@@ -3220,7 +3220,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1650 — Atlas 0630 - Sunnyshore Pokémon Center
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Sunnyshore Pokémon Center (Map635). Anomalía documentada: Los compases de Sunnyshore Pokémon Center se desfasan: la música va por delante de las baldosas. Regla local: Cantar despacio — Eco 0630. Primer contrajuego: Marcar el compás con voz propia.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1651 — El Estadio que Jugaba entre Nubes de Vapor
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 2 · ruta estable.
@@ -3255,12 +3255,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1657 — Atlas 0637 - Lily of the Valley Island
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lily of the Valley Island (Map642). Anomalía documentada: Los pasos en Lily of the Valley Island vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Regreso programado — Eco 0637. Primer contrajuego: Entrar cuando el reloj marque cuarto.
-- **Datos compilados:** 60×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×50 tiles; 6 eventos; tileset 1.
 
 ### Map1658 — La Liga de los Calentamientos Eternos
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Sinnoh Pokemon League (Map643). Objetivo: Fijar tiempos, pausas y confirmación de inicio independientes de la ceremonia. Mecánica de referencia: Reloj de calentamiento. Promesa: Una Liga de vapor mantiene a los equipos calentando mientras espera una señal ceremonial y convierte la preparación en agotamiento.
-- **Datos compilados:** 40×20 tiles; 6 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 11 eventos; tileset 4.
 
 ### Map1659 — Atlas 0639 - Lily Basic
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
@@ -3310,7 +3310,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1668 — Atlas 0648 - Professor Juniper's Lab
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Professor Juniper's Lab (Map653). Anomalía documentada: Las señales de Professor Juniper's Lab responden tarde: la flecha de hoy avisa del camino de ayer. Regla local: Responder tarde — Eco 0648. Primer contrajuego: Caminar con respuesta diferida.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 3.
 
 ### Map1669 — Atlas 0649 - Route 1
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
@@ -3320,7 +3320,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1670 — Atlas 0650 - Accumula Town
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Accumula Town (Map655). Anomalía documentada: Los nombres de Accumula Town cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Llamar por señas — Eco 0650. Primer contrajuego: Saludar al lugar con gestos.
-- **Datos compilados:** 44×36 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 44×36 tiles; 6 eventos; tileset 1.
 
 ## Sector 27 — Santuario de Polen (Guardianes de Polen) · Map1671–Map1695
 
@@ -3332,7 +3332,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1672 — Atlas 0652 - Accumula Pokémon Center
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Accumula Pokémon Center (Map657). Anomalía documentada: La geografía Accumula Pokémon Center respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Medir dos veces — Eco 0652. Primer contrajuego: Contar los pasos de ida antes de confiar en la vuelta.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1673 — Atlas 0653 - Accumula House
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3347,17 +3347,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1675 — Atlas 0655 - Striaton City
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Striaton City (Map660). Anomalía documentada: El clima de Striaton City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Paraguas de baldosa — Eco 0655. Primer contrajuego: Elegir tramos secos y medir el húmedo.
-- **Datos compilados:** 76×36 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 76×36 tiles; 7 eventos; tileset 1.
 
 ### Map1676 — La Casa de las Ventanas Selladas
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Striaton House (Map661). Objetivo: Crear ventilación, zonas de descanso y avisos sin expulsar plantas ni personas. Mecánica de referencia: Ronda de aire. Promesa: Un santuario de polen cierra todas sus ventanas para proteger a visitantes alérgicos y concentra fragancias que también causan malestar.
-- **Datos compilados:** 40×35 tiles; 6 eventos; tileset 3.
+- **Datos compilados:** 40×35 tiles; 7 eventos; tileset 3.
 
 ### Map1677 — Atlas 0657 - Striaton Pokémon Center
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Striaton Pokémon Center (Map662). Anomalía documentada: Las sombras en Striaton Pokémon Center se duplican y solo una de ellas sigue al visitante. Regla local: Sombra de relleno — Eco 0657. Primer contrajuego: Mirar cuál sombra imita tarde.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1678 — Atlas 0658 - Striaton Gym
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3377,7 +3377,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1681 — Atlas 0661 - Route 3 Day Care
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 3 Day Care (Map666). Anomalía documentada: El silencio de Route 3 Day Care es activo: escucha, ordena y se enfada con el ruido. Regla local: Silencio pactado — Eco 0661. Primer contrajuego: Hablar solo en los círculos de piedra.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1682 — Atlas 0662 - Route 3 House
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3392,7 +3392,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1684 — Atlas 0664 - Nacrene City
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Nacrene City (Map669). Anomalía documentada: Los compases de Nacrene City se desfasan: la música va por delante de las baldosas. Regla local: Compás de contratiempo — Eco 0664. Primer contrajuego: Pisar en contratiempo deliberado.
-- **Datos compilados:** 70×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×40 tiles; 6 eventos; tileset 1.
 
 ### Map1685 — Atlas 0665 - Pinwheel Forest
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3407,7 +3407,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1687 — Atlas 0667 - Nacrene Pokémon Center
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Nacrene Pokémon Center (Map672). Anomalía documentada: Los nombres de Nacrene Pokémon Center cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Etiqueta atada — Eco 0667. Primer contrajuego: Atar la etiqueta con cordel propio.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1688 — Atlas 0668 - Nacrene Museum
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3432,7 +3432,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1692 — Atlas 0672 - Castelia City
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Castelia City (Map677). Anomalía documentada: El clima de Castelia City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Leer el cielo — Eco 0672. Primer contrajuego: Observar la nube antes de girar.
-- **Datos compilados:** 88×95 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 88×95 tiles; 7 eventos; tileset 1.
 
 ### Map1693 — Atlas 0673 - Castelia House
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3442,7 +3442,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1694 — Atlas 0674 - Castelia Pokémon Center
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Castelia Pokémon Center (Map679). Anomalía documentada: La luz de Castelia Pokémon Center recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Fotografiar la sombra — Eco 0674. Primer contrajuego: Anotar dónde cae la luz al mediodía.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1695 — Atlas 0675 - Castelia House
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3464,12 +3464,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1698 — Atlas 0678 - Route 4
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 4 (Map683). Anomalía documentada: El silencio de Route 4 es activo: escucha, ordena y se enfada con el ruido. Regla local: Escuchar primero — Eco 0678. Primer contrajuego: Parar a oír el eco antes de cada giro.
-- **Datos compilados:** 40×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×40 tiles; 6 eventos; tileset 1.
 
 ### Map1699 — Atlas 0679 - Club Battle
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Club Battle (Map684). Anomalía documentada: Los materiales de Club Battle recuerdan su forma anterior y se niegan a la reforma. Regla local: Prestar textura — Eco 0679. Primer contrajuego: Llevar una pieza prestada del taller.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1700 — Atlas 0680 - Club Battle Room
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
@@ -3479,7 +3479,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1701 — La Avenida de los Reflejos Patrocinados
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Nimbasa City (Map686). Objetivo: Reservar superficies, colores y ángulos para orientación pública. Mecánica de referencia: Auditoría de reflejos. Promesa: Una ciudad de espejos inserta anuncios en cada reflejo y los peatones dejan de distinguir señales viales de mensajes comerciales.
-- **Datos compilados:** 120×55 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 120×55 tiles; 12 eventos; tileset 1.
 
 ### Map1702 — Atlas 0682 - Nimbasa House
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
@@ -3504,7 +3504,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1706 — Atlas 0686 - Nimbasa Pokémon Center
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Nimbasa Pokémon Center (Map691). Anomalía documentada: La gravedad de Nimbasa Pokémon Center está prestada y reclama devolución en el tramo más estrecho. Regla local: Cruzar cargado — Eco 0686. Primer contrajuego: Atravesar con la mochila cerrada y lenta.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1707 — Atlas 0687 - Nimbasa Gym
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
@@ -3519,7 +3519,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1709 — Atlas 0689 - Driftveil City
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Driftveil City (Map694). Anomalía documentada: El clima de Driftveil City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Tormenta en conserva — Eco 0689. Primer contrajuego: Atravesar durante la tregua anunciada.
-- **Datos compilados:** 70×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×70 tiles; 11 eventos; tileset 1.
 
 ### Map1710 — Atlas 0690 - Driftveil Drawbridge
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
@@ -3534,7 +3534,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1712 — Atlas 0692 - Driftveil Pokémon Center
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Driftveil Pokémon Center (Map697). Anomalía documentada: Las coordenadas de Driftveil Pokémon Center mienten con educación: la X señala bien y la Y se equivoca a propósito. Regla local: Coordenada honesta — Eco 0692. Primer contrajuego: Escribir la posición propia en el suelo.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1713 — Atlas 0693 - Milos Island
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
@@ -3564,12 +3564,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1718 — Atlas 0698 - Route 6 House
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 6 House (Map703). Anomalía documentada: Las señales de Route 6 House responden tarde: la flecha de hoy avisa del camino de ayer. Regla local: Responder tarde — Eco 0698. Primer contrajuego: Caminar con respuesta diferida.
-- **Datos compilados:** 20×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×30 tiles; 6 eventos; tileset 3.
 
 ### Map1719 — Atlas 0699 - Chargestone Cave 1F
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Chargestone Cave 1F (Map704). Anomalía documentada: Los mapas de Chargestone Cave 1F se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Trazo de retorno — Eco 0699. Primer contrajuego: Dibujar el regreso antes de avanzar.
-- **Datos compilados:** 71×70 tiles; 5 eventos; tileset 6.
+- **Datos compilados:** 71×70 tiles; 6 eventos; tileset 6.
 
 ### Map1720 — Atlas 0700 - Chargestone Cave B1F
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
@@ -3586,7 +3586,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1722 — Atlas 0702 - Mistralton City
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mistralton City (Map707). Anomalía documentada: La geografía Mistralton City respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Medir dos veces — Eco 0702. Primer contrajuego: Contar los pasos de ida antes de confiar en la vuelta.
-- **Datos compilados:** 60×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×50 tiles; 7 eventos; tileset 1.
 
 ### Map1723 — Atlas 0703 - Mistralton House
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
@@ -3596,7 +3596,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1724 — Atlas 0704 - Mistralton Pokémon Center
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mistralton Pokémon Center (Map709). Anomalía documentada: Los pasos en Mistralton Pokémon Center vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Eco con retraso — Eco 0704. Primer contrajuego: Esperar el retorno de cada paso.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1725 — Atlas 0705 - Mistralton Gym
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
@@ -3616,12 +3616,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1728 — Atlas 0708 - Route 7
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 7 (Map713). Anomalía documentada: La luz de Route 7 recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Encender lo propio — Eco 0708. Primer contrajuego: Traer luz prestada de la baliza.
-- **Datos compilados:** 40×40 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×40 tiles; 6 eventos; tileset 1.
 
 ### Map1729 — Atlas 0709 - Clubsplosion
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Clubsplosion (Map714). Anomalía documentada: Las coordenadas de Clubsplosion mienten con educación: la X señala bien y la Y se equivoca a propósito. Regla local: Dos brújulas — Eco 0709. Primer contrajuego: Cruzar lectura de X con lectura de Y.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1730 — Atlas 0710 - Clubsplosion Room
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
@@ -3656,7 +3656,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1736 — Atlas 0716 - Twist Mountain
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Twist Mountain (Map721). Anomalía documentada: Los mapas de Twist Mountain se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Mapa de capas — Eco 0716. Primer contrajuego: Leer el trazo viejo bajo el nuevo.
-- **Datos compilados:** 75×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 75×70 tiles; 6 eventos; tileset 1.
 
 ### Map1737 — Atlas 0717 - Twist Mountain 1F
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
@@ -3676,7 +3676,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1740 — El Consejo que Compartía un Campeón
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Icirrus City (Map725). Objetivo: Conservar una biografía original intacta y repartir copias selladas que ninguna liga pueda reescribir. Mecánica de referencia: Registro doble. Promesa: Dos ligas reclaman al mismo campeón sin querer combatir y las biografías oficiales se corrigen entre sí cada semana.
-- **Datos compilados:** 74×70 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 74×70 tiles; 8 eventos; tileset 1.
 
 ### Map1741 — Atlas 0721 - Icirrus House
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
@@ -3691,7 +3691,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1743 — Atlas 0723 - Icirrus Pokémon Center
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Icirrus Pokémon Center (Map728). Anomalía documentada: Las sombras en Icirrus Pokémon Center se duplican y solo una de ellas sigue al visitante. Regla local: Cuenta de sombras — Eco 0723. Primer contrajuego: Contar las sombras antes de girar.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1744 — Atlas 0724 - Icirrus Gym
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
@@ -3708,7 +3708,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1746 — La Academia del Error Permitido
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 9 (Map731). Identidad del lugar: Ruta elevada convertida en academia táctica al aire libre, con aulas-campo, paneles de análisis y estaciones de curación. Episodio: Una academia presume de dificultad perfecta mientras castiga la experimentación, hasta que sus mejores alumnos demuestran que un desafío justo debe enseñar por qué se perdió y permitir volver con otra estrategia.
-- **Datos compilados:** 55×40 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 55×40 tiles; 10 eventos; tileset 1.
 
 ### Map1747 — Atlas 0727 - Shopping Mall Nine 1F
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
@@ -3743,7 +3743,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1753 — Atlas 0733 - Virbank City
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Virbank City (Map738). Anomalía documentada: Los mapas de Virbank City se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Copia de viaje — Eco 0733. Primer contrajuego: Copiar el mapa antes de entrar.
-- **Datos compilados:** 70×42 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×42 tiles; 7 eventos; tileset 1.
 
 ### Map1754 — Atlas 0734 - Virbank House
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
@@ -3753,7 +3753,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1755 — Atlas 0735 - Virbank Pokémon Center
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Virbank Pokémon Center (Map740). Anomalía documentada: La geografía Virbank Pokémon Center respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Esperar la marea — Eco 0735. Primer contrajuego: No entrar mientras el borde suba.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1756 — Atlas 0736 - Virbank Gym
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
@@ -3768,7 +3768,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1758 — El Análisis que Fichaba a los Jugadores
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Undella Town (Map743). Objetivo: Separar el análisis deportivo del carácter y permitir que cada jugador lea su propio expediente. Mecánica de referencia: Hoja de lectura doble. Promesa: Los exploradores de la costa reducen jugadores a estadísticas y venden predicciones de carácter que condicionan a los equipos.
-- **Datos compilados:** 75×35 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 75×35 tiles; 8 eventos; tileset 1.
 
 ### Map1759 — Atlas 0739 - Undella House
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
@@ -3778,17 +3778,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1760 — Atlas 0740 - Undella Pokémon Center
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Undella Pokémon Center (Map745). Anomalía documentada: Las sombras en Undella Pokémon Center se duplican y solo una de ellas sigue al visitante. Regla local: Sombras en fila — Eco 0740. Primer contrajuego: Caminar cuando las sombras marquen compás.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1761 — Atlas 0741 - Cynthia's Villa
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cynthia's Villa (Map746). Anomalía documentada: La luz de Cynthia's Villa recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Prestar luminosidad — Eco 0741. Primer contrajuego: Encender la linterna en el umbral.
-- **Datos compilados:** 70×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 70×50 tiles; 6 eventos; tileset 3.
 
 ### Map1762 — Atlas 0742 - Junior Cup
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Junior Cup (Map747). Anomalía documentada: Las coordenadas de Junior Cup mienten con educación: la X señala bien y la Y se equivoca a propósito. Regla local: Coordenada honesta — Eco 0742. Primer contrajuego: Escribir la posición propia en el suelo.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1763 — Atlas 0743 - Junior Cup Room
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
@@ -3823,7 +3823,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1769 — Atlas 0749 - Opelucid City
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Opelucid City (Map754). Anomalía documentada: Los mapas de Opelucid City se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Trazo de retorno — Eco 0749. Primer contrajuego: Dibujar el regreso antes de avanzar.
-- **Datos compilados:** 60×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×60 tiles; 7 eventos; tileset 1.
 
 ### Map1770 — Atlas 0750 - Opelucid House
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
@@ -3835,17 +3835,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1771 — La Frecuencia que Pide Permiso
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Opelucid Pokémon Center (Map756). Identidad del lugar: Centro Pokémon convertido en archivo acústico de acceso voluntario, con cabinas aisladas, luces de consentimiento y una sala central que permanece en silencio. Episodio: Una melodía inquietante solo existe para quien acepta escucharla, pero una restauradora descubre que el santuario llevaba años registrando el silencio de quienes eligieron no participar.
-- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
 
 ### Map1772 — Atlas 0752 - Vetress City
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Vetress City (Map757). Anomalía documentada: La geografía Vetress City respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Medir dos veces — Eco 0752. Primer contrajuego: Contar los pasos de ida antes de confiar en la vuelta.
-- **Datos compilados:** 45×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 45×50 tiles; 6 eventos; tileset 1.
 
 ### Map1773 — Atlas 0753 - Unova Pokemon League
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Unova Pokemon League (Map758). Anomalía documentada: La gravedad de Unova Pokemon League está prestada y reclama devolución en el tramo más estrecho. Regla local: Pesar la mochila — Eco 0753. Primer contrajuego: Vaciar un bolsillo antes del tramo.
-- **Datos compilados:** 40×20 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 10 eventos; tileset 4.
 
 ### Map1774 — Atlas 0754 - Vetress 128
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 3 · eco dimensional.
@@ -3890,7 +3890,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1782 — Atlas 0762 - Aspertia City
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Aspertia City (Map767). Anomalía documentada: Los materiales de Aspertia City recuerdan su forma anterior y se niegan a la reforma. Regla local: Alinear memoria — Eco 0762. Primer contrajuego: Pedir a la piedra su forma vieja.
-- **Datos compilados:** 50×70 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 50×70 tiles; 7 eventos; tileset 1.
 
 ### Map1783 — La Casa que Repetía la Canción
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 2 · ruta estable.
@@ -3900,7 +3900,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1784 — Atlas 0764 - Aspertia Pokémon Center
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Aspertia Pokémon Center (Map769). Anomalía documentada: Los compases de Aspertia Pokémon Center se desfasan: la música va por delante de las baldosas. Regla local: Compás de contratiempo — Eco 0764. Primer contrajuego: Pisar en contratiempo deliberado.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1785 — Atlas 0765 - Aspertia Gym
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 3 · eco dimensional.
@@ -4022,7 +4022,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1808 — La Avenida que Contaba los Ausentes
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Lumiose City (Map793). Objetivo: Conservar las placas con su fecha y mover cualquier retiro al archivo, nunca a la basura. Mecánica de referencia: Placa con fecha. Promesa: Las placas de una avenida recuerdan a entrenadores desaparecidos y el ayuntamiento quiere cambiar el nombre por celebridades vivas.
-- **Datos compilados:** 80×80 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 80×80 tiles; 8 eventos; tileset 1.
 
 ### Map1809 — Atlas 0789 - Lumiose House
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
@@ -4032,12 +4032,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1810 — Atlas 0790 - Lumiose Pokémon Center
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lumiose Pokémon Center (Map795). Anomalía documentada: Las sombras en Lumiose Pokémon Center se duplican y solo una de ellas sigue al visitante. Regla local: Sombras en fila — Eco 0790. Primer contrajuego: Caminar cuando las sombras marquen compás.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1811 — Atlas 0791 - Professor Sycamore's Lab
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Professor Sycamore's Lab (Map796). Anomalía documentada: La luz de Professor Sycamore's Lab recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Prestar luminosidad — Eco 0791. Primer contrajuego: Encender la linterna en el umbral.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 3.
 
 ### Map1812 — Atlas 0792 - Lumiose Gate
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
@@ -4052,7 +4052,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1814 — Atlas 0794 - Santalune City
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Santalune City (Map799). Anomalía documentada: El silencio de Santalune City es activo: escucha, ordena y se enfada con el ruido. Regla local: Silencio prestado — Eco 0794. Primer contrajuego: Pedir prestado un minuto de silencio.
-- **Datos compilados:** 60×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×50 tiles; 7 eventos; tileset 1.
 
 ### Map1815 — El Jardín de los Nombres Cortados
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 2 · ruta estable.
@@ -4062,7 +4062,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1816 — Atlas 0796 - Santalune Pokémon Center
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Santalune Pokémon Center (Map801). Anomalía documentada: Los materiales de Santalune Pokémon Center recuerdan su forma anterior y se niegan a la reforma. Regla local: Escuchar la veta — Eco 0796. Primer contrajuego: Seguir la veta de la madera.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1817 — Atlas 0797 - Santalune Gym
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
@@ -4077,7 +4077,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1819 — Atlas 0799 - Camphrier Town
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Camphrier Town (Map804). Anomalía documentada: Los mapas de Camphrier Town se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Trazo de retorno — Eco 0799. Primer contrajuego: Dibujar el regreso antes de avanzar.
-- **Datos compilados:** 40×58 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 40×58 tiles; 6 eventos; tileset 1.
 
 ### Map1820 — Atlas 0800 - Camphrier House
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
@@ -4089,7 +4089,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1821 — La Victoria que Nadie Ganó
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Camphrier Pokémon Center (Map806). Identidad del lugar: Centro de descanso convertido en oficina de resultados, con trofeos sin reflejo, terminales de actas y un campo de revancha abierto. Episodio: Un registro fantasmal concede victorias perfectas a quienes aceptan borrar la derrota de otra persona, hasta que los propios campeones exigen devolver resultados que nunca merecieron.
-- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
 
 ### Map1822 — Atlas 0802 - Route 6
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4104,7 +4104,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1824 — Atlas 0804 - Parfum Palace
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Parfum Palace (Map809). Anomalía documentada: Los pasos en Parfum Palace vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Eco con retraso — Eco 0804. Primer contrajuego: Esperar el retorno de cada paso.
-- **Datos compilados:** 70×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 70×50 tiles; 6 eventos; tileset 3.
 
 ### Map1825 — Atlas 0805 - Route 7
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4114,7 +4114,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1826 — La Ofrenda que Ganaba por Nosotros
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Route 7 Day Care (Map811). Objetivo: Marcar con asterisco toda victoria ayudada y permitir renunciar a ella sin castigo. Mecánica de referencia: Marcador honesto. Promesa: Una ofrenda del día cuida concede victorias que nadie quiere aceptar y el marcador de la guardería acumula triunfos sin dueño.
-- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 3.
 
 ### Map1827 — Atlas 0807 - Route 8
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4124,17 +4124,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1828 — Atlas 0808 - Cyllage City
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cyllage City (Map813). Anomalía documentada: La luz de Cyllage City recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Encender lo propio — Eco 0808. Primer contrajuego: Traer luz prestada de la baliza.
-- **Datos compilados:** 72×66 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 72×66 tiles; 7 eventos; tileset 1.
 
 ### Map1829 — Atlas 0809 - Cyllage House
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cyllage House (Map814). Anomalía documentada: Las coordenadas de Cyllage House mienten con educación: la X señala bien y la Y se equivoca a propósito. Regla local: Dos brújulas — Eco 0809. Primer contrajuego: Cruzar lectura de X con lectura de Y.
-- **Datos compilados:** 40×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×50 tiles; 6 eventos; tileset 3.
 
 ### Map1830 — Atlas 0810 - Cyllage Pokémon Center
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Cyllage Pokémon Center (Map815). Anomalía documentada: En Cyllage Pokémon Center se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Paso de prestado — Eco 0810. Primer contrajuego: Ceder el paso a la fila de ecos.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1831 — Atlas 0811 - Cyllage Gym
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4149,7 +4149,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1833 — El Cartucho que Ofrecía Victoria Fácil
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Geosenge Town (Map818). Objetivo: Que todo reto del cartucho permita perder y registre sus victorias como asistidas. Mecánica de referencia: Prueba con derrota posible. Promesa: Un cartucho negro regala victorias fáciles a cambio de nada y el pueblo debate si sellarlo o convertirlo en atracción.
-- **Datos compilados:** 54×50 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 54×50 tiles; 7 eventos; tileset 1.
 
 ### Map1834 — Atlas 0814 - Geosenge House
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4159,7 +4159,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1835 — Atlas 0815 - Geosenge Pokémon Center
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Geosenge Pokémon Center (Map820). Anomalía documentada: Las señales de Geosenge Pokémon Center responden tarde: la flecha de hoy avisa del camino de ayer. Regla local: Señal de retraso — Eco 0815. Primer contrajuego: Leer la señal con un día de atraso.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1836 — Atlas 0816 - Route 11
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4174,17 +4174,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1838 — Atlas 0818 - Shalour City
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Shalour City (Map823). Anomalía documentada: La geografía Shalour City respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Andar al revés — Eco 0818. Primer contrajuego: Recorrer el tramo mirando hacia atrás.
-- **Datos compilados:** 90×66 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 90×66 tiles; 6 eventos; tileset 1.
 
 ### Map1839 — Atlas 0819 - Shalour House
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Shalour House (Map824). Anomalía documentada: La gravedad de Shalour House está prestada y reclama devolución en el tramo más estrecho. Regla local: Prestar lo justo — Eco 0819. Primer contrajuego: Tomar gravedad prestada solo para el salto.
-- **Datos compilados:** 50×50 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 50×50 tiles; 6 eventos; tileset 3.
 
 ### Map1840 — La Curación que Cobraba una Victoria
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Shalour Pokémon Center (Map825). Objetivo: Que ninguna curación dependa de una victoria y que la deuda deje de ser pelea. Mecánica de referencia: Deuda sin pelea. Promesa: Un programa de curación de la costa cobra victorias futuras como deuda y los entrenadores combaten enfermos para saldarla.
-- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 4.
 
 ### Map1841 — Atlas 0821 - Shalour Gym
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4199,7 +4199,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1843 — Atlas 0823 - Coumarine City
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Coumarine City (Map828). Anomalía documentada: Las sombras en Coumarine City se duplican y solo una de ellas sigue al visitante. Regla local: Cuenta de sombras — Eco 0823. Primer contrajuego: Contar las sombras antes de girar.
-- **Datos compilados:** 56×94 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 56×94 tiles; 6 eventos; tileset 1.
 
 ### Map1844 — Atlas 0824 - Coumarine House
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4209,7 +4209,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1845 — Atlas 0825 - Coumarine Pokémon Center
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Coumarine Pokémon Center (Map830). Anomalía documentada: Las coordenadas de Coumarine Pokémon Center mienten con educación: la X señala bien y la Y se equivoca a propósito. Regla local: Preguntar al poste — Eco 0825. Primer contrajuego: Leer los postes de kilómetro en orden.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ## Sector 34 — República de Musgo (Consejo de Musgo) · Map1846–Map1870
 
@@ -4236,7 +4236,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1850 — Atlas 0830 - Laverre City
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Laverre City (Map835). Anomalía documentada: Los compases de Laverre City se desfasan: la música va por delante de las baldosas. Regla local: Cantar despacio — Eco 0830. Primer contrajuego: Marcar el compás con voz propia.
-- **Datos compilados:** 50×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 50×60 tiles; 9 eventos; tileset 1.
 
 ### Map1851 — La Excavación que Ensamblaba un Monstruo
 - **Categoría:** Atlas Mil · República de Musgo · Tier 2 · ruta estable.
@@ -4256,7 +4256,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1854 — Atlas 0834 - Laverre Pokémon Center
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Laverre Pokémon Center (Map839). Anomalía documentada: Los nombres de Laverre Pokémon Center cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Nombre de prestado — Eco 0834. Primer contrajuego: Prestar un nombre al lugar sin etiqueta.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1855 — Atlas 0835 - Laverre Gym
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
@@ -4271,7 +4271,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1857 — Atlas 0837 - Dendemille Town
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Dendemille Town (Map842). Anomalía documentada: Los pasos en Dendemille Town vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Regreso programado — Eco 0837. Primer contrajuego: Entrar cuando el reloj marque cuarto.
-- **Datos compilados:** 49×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 49×60 tiles; 6 eventos; tileset 1.
 
 ### Map1858 — El Retrato del Esqueleto Inexistente
 - **Categoría:** Atlas Mil · República de Musgo · Tier 2 · ruta estable.
@@ -4281,7 +4281,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1859 — Atlas 0839 - Dendemille Pokémon Center
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Dendemille Pokémon Center (Map844). Anomalía documentada: El clima de Dendemille Pokémon Center viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Tormenta en conserva — Eco 0839. Primer contrajuego: Atravesar durante la tregua anunciada.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1860 — Atlas 0840 - Route 17
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
@@ -4291,7 +4291,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1861 — Atlas 0841 - Frost Cavern 1F
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Frost Cavern 1F (Map846). Anomalía documentada: La luz de Frost Cavern 1F recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Prestar luminosidad — Eco 0841. Primer contrajuego: Encender la linterna en el umbral.
-- **Datos compilados:** 60×61 tiles; 5 eventos; tileset 6.
+- **Datos compilados:** 60×61 tiles; 6 eventos; tileset 6.
 
 ### Map1862 — Atlas 0842 - Frost Cavern 2F
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
@@ -4306,7 +4306,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1864 — Atlas 0844 - Anistar City
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Anistar City (Map849). Anomalía documentada: El silencio de Anistar City es activo: escucha, ordena y se enfada con el ruido. Regla local: Silencio prestado — Eco 0844. Primer contrajuego: Pedir prestado un minuto de silencio.
-- **Datos compilados:** 60×49 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 60×49 tiles; 7 eventos; tileset 1.
 
 ### Map1865 — La Piedra que Simulaba un Entierro
 - **Categoría:** Atlas Mil · República de Musgo · Tier 2 · ruta estable.
@@ -4316,7 +4316,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1866 — Atlas 0846 - Anistar Pokémon Center
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Anistar Pokémon Center (Map851). Anomalía documentada: Los materiales de Anistar Pokémon Center recuerdan su forma anterior y se niegan a la reforma. Regla local: Escuchar la veta — Eco 0846. Primer contrajuego: Seguir la veta de la madera.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1867 — Atlas 0847 - Anistar Sundial
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
@@ -4343,7 +4343,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1871 — El Refugio que Contestaba Solo
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Couriway Town (Map856). Identidad del lugar: Pueblo nevado convertido en base de rescate, con panel meteorológico, depósitos visibles, balizas numeradas y una ruta cálida de regreso. Episodio: Una baliza continúa enviando reportes perfectos desde una cordillera aislada, aunque el equipo de rescate real abandonó la voz sintética para conservar batería y espera ayuda en un refugio que el sistema no reconoce.
-- **Datos compilados:** 60×64 tiles; 9 eventos; tileset 2.
+- **Datos compilados:** 60×64 tiles; 10 eventos; tileset 2.
 
 ### Map1872 — Atlas 0852 - Couriway House
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
@@ -4353,12 +4353,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1873 — Atlas 0853 - Couriway Pokémon Center
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Couriway Pokémon Center (Map858). Anomalía documentada: La gravedad de Couriway Pokémon Center está prestada y reclama devolución en el tramo más estrecho. Regla local: Pesar la mochila — Eco 0853. Primer contrajuego: Vaciar un bolsillo antes del tramo.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1874 — Atlas 0854 - Route 19
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 19 (Map859). Anomalía documentada: Los pasos en Route 19 vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Eco con retraso — Eco 0854. Primer contrajuego: Esperar el retorno de cada paso.
-- **Datos compilados:** 75×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 75×60 tiles; 6 eventos; tileset 1.
 
 ### Map1875 — Atlas 0855 - Route 21
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
@@ -4378,7 +4378,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1878 — Atlas 0858 - Snowbelle City
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Snowbelle City (Map863). Anomalía documentada: La luz de Snowbelle City recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Encender lo propio — Eco 0858. Primer contrajuego: Traer luz prestada de la baliza.
-- **Datos compilados:** 72×60 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 72×60 tiles; 7 eventos; tileset 1.
 
 ### Map1879 — Atlas 0859 - Snowbelle House
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
@@ -4398,7 +4398,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1882 — Atlas 0862 - Snowbelle Pokémon Center
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Snowbelle Pokémon Center (Map867). Anomalía documentada: Los materiales de Snowbelle Pokémon Center recuerdan su forma anterior y se niegan a la reforma. Regla local: Alinear memoria — Eco 0862. Primer contrajuego: Pedir a la piedra su forma vieja.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1883 — El Equipo que No Pedía Rescate
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 2 · ruta estable.
@@ -4408,7 +4408,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1884 — Atlas 0864 - Kalos Pokemon League
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Kalos Pokemon League (Map869). Anomalía documentada: Los compases de Kalos Pokemon League se desfasan: la música va por delante de las baldosas. Regla local: Compás de contratiempo — Eco 0864. Primer contrajuego: Pisar en contratiempo deliberado.
-- **Datos compilados:** 40×20 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 10 eventos; tileset 4.
 
 ### Map1885 — Atlas 0865 - Lumiose 64
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
@@ -4443,7 +4443,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1891 — Atlas 0871 - Lumiose City
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Lumiose City (Map876). Anomalía documentada: Los pasos en Lumiose City vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Cuenta atrás — Eco 0871. Primer contrajuego: Contar diez antes de cada cruce.
-- **Datos compilados:** 80×80 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 80×80 tiles; 7 eventos; tileset 1.
 
 ### Map1892 — Atlas 0872 - Lumiose Gym
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
@@ -4470,7 +4470,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1896 — El Registro que No Pudo Clasificarte
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Driftveil Battle House (Map881). Identidad del lugar: Casa de combate convertida en aduana de datos, con filas de fichas incompletas, paneles de checksum y una salida blanca que no exige categoría. Episodio: Un clasificador averiado intenta decidir si cada visitante es héroe, intruso o error, hasta que sus técnicos descubren que la corrupción nació de obligar a personas contradictorias a caber en una sola casilla.
-- **Datos compilados:** 60×70 tiles; 9 eventos; tileset 3.
+- **Datos compilados:** 60×70 tiles; 15 eventos; tileset 3.
 
 ### Map1897 — Atlas 0877 - Safari Zone Unova
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
@@ -4520,12 +4520,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1906 — Atlas 0886 - Pokémon School
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pokémon School (Map891). Anomalía documentada: La gravedad de Pokémon School está prestada y reclama devolución en el tramo más estrecho. Regla local: Cruzar cargado — Eco 0886. Primer contrajuego: Atravesar con la mochila cerrada y lenta.
-- **Datos compilados:** 60×60 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 60×60 tiles; 7 eventos; tileset 3.
 
 ### Map1907 — Atlas 0887 - Kukui's House
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Kukui's House (Map892). Anomalía documentada: Los pasos en Kukui's House vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Regreso programado — Eco 0887. Primer contrajuego: Entrar cuando el reloj marque cuarto.
-- **Datos compilados:** 32×28 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 32×28 tiles; 8 eventos; tileset 3.
 
 ### Map1908 — La Luz que Purgaba Archivos Rotos
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 2 · ruta estable.
@@ -4535,7 +4535,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1909 — Atlas 0889 - Hau'oli City
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hau'oli City (Map894). Anomalía documentada: El clima de Hau'oli City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Tormenta en conserva — Eco 0889. Primer contrajuego: Atravesar durante la tregua anunciada.
-- **Datos compilados:** 69×64 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 69×64 tiles; 6 eventos; tileset 1.
 
 ### Map1910 — Atlas 0890 - Hau'oli House
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
@@ -4545,12 +4545,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1911 — Atlas 0891 - Hau'oli Pokémon Center
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hau'oli Pokémon Center (Map896). Anomalía documentada: La luz de Hau'oli Pokémon Center recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Prestar luminosidad — Eco 0891. Primer contrajuego: Encender la linterna en el umbral.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1912 — Atlas 0892 - Hau'oli Outskirts
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Hau'oli Outskirts (Map897). Anomalía documentada: Las coordenadas de Hau'oli Outskirts mienten con educación: la X señala bien y la Y se equivoca a propósito. Regla local: Coordenada honesta — Eco 0892. Primer contrajuego: Escribir la posición propia en el suelo.
-- **Datos compilados:** 90×100 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 90×100 tiles; 6 eventos; tileset 1.
 
 ### Map1913 — Atlas 0893 - Hau'oli Shopping Mall
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
@@ -4575,7 +4575,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1917 — Atlas 0897 - Iki Town
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Iki Town (Map902). Anomalía documentada: Los compases de Iki Town se desfasan: la música va por delante de las baldosas. Regla local: Silencio de compás — Eco 0897. Primer contrajuego: Pisar solo en los silencios.
-- **Datos compilados:** 44×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 44×50 tiles; 6 eventos; tileset 1.
 
 ### Map1918 — Atlas 0898 - Iki House
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
@@ -4585,7 +4585,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1919 — Atlas 0899 - Iki Pokémon Center
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Iki Pokémon Center (Map904). Anomalía documentada: Los mapas de Iki Pokémon Center se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Trazo de retorno — Eco 0899. Primer contrajuego: Dibujar el regreso antes de avanzar.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1920 — Atlas 0900 - Verdant Cavern
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
@@ -4597,7 +4597,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1921 — El Acertijo que Cambiaba la Pregunta
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Paniola Town (Map906). Identidad del lugar: Pueblo rural dispuesto como circuito de pistas, con mojones numerados, tablones de reglas y un atril donde cada corrección conserva fecha. Episodio: Una provincia celebra un acertijo supuestamente insondable, pero sus cuidadores movían la respuesta cada vez que alguien se acercaba para que la dificultad pareciera sabiduría.
-- **Datos compilados:** 48×44 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 48×44 tiles; 10 eventos; tileset 1.
 
 ### Map1922 — Atlas 0902 - Paniola Ranch
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
@@ -4607,12 +4607,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1923 — Atlas 0903 - Paniola House
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Paniola House (Map908). Anomalía documentada: La gravedad de Paniola House está prestada y reclama devolución en el tramo más estrecho. Regla local: Pesar la mochila — Eco 0903. Primer contrajuego: Vaciar un bolsillo antes del tramo.
-- **Datos compilados:** 40×25 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×25 tiles; 6 eventos; tileset 3.
 
 ### Map1924 — Atlas 0904 - Paniola Pokémon Center
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Paniola Pokémon Center (Map909). Anomalía documentada: Los pasos en Paniola Pokémon Center vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Eco con retraso — Eco 0904. Primer contrajuego: Esperar el retorno de cada paso.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1925 — Atlas 0905 - Melemele Meadow
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
@@ -4622,7 +4622,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1926 — El Acertijo que Fingía Profundidad
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Route 5 (Map911). Objetivo: Que todo acertijo salga con su pista de resolución y su hoja de respuestas a la vista del organizador. Mecánica de referencia: Acertijo con pista. Promesa: Un acertijo imposible de la provincia escondía sus respuestas para parecer profundo y el club de acertijos quiere reglas justas.
-- **Datos compilados:** 70×60 tiles; 6 eventos; tileset 1.
+- **Datos compilados:** 70×60 tiles; 7 eventos; tileset 1.
 
 ### Map1927 — Atlas 0907 - Brooklet Hill
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
@@ -4662,7 +4662,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1934 — Atlas 0914 - Aether Paradise
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Aether Paradise (Map919). Anomalía documentada: Los compases de Aether Paradise se desfasan: la música va por delante de las baldosas. Regla local: Compás de contratiempo — Eco 0914. Primer contrajuego: Pisar en contratiempo deliberado.
-- **Datos compilados:** 50×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 50×30 tiles; 7 eventos; tileset 3.
 
 ### Map1935 — Atlas 0915 - Ten Carat Hill
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
@@ -4702,17 +4702,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1942 — Atlas 0922 - Royal Avenue
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Royal Avenue (Map927). Anomalía documentada: El clima de Royal Avenue viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Leer el cielo — Eco 0922. Primer contrajuego: Observar la nube antes de girar.
-- **Datos compilados:** 53×37 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 53×37 tiles; 8 eventos; tileset 1.
 
 ### Map1943 — Atlas 0923 - Royal House
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Royal House (Map928). Anomalía documentada: Las sombras en Royal House se duplican y solo una de ellas sigue al visitante. Regla local: Cuenta de sombras — Eco 0923. Primer contrajuego: Contar las sombras antes de girar.
-- **Datos compilados:** 20×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×30 tiles; 6 eventos; tileset 3.
 
 ### Map1944 — Atlas 0924 - Royal Pokémon Center
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Royal Pokémon Center (Map929). Anomalía documentada: La luz de Royal Pokémon Center recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Fotografiar la sombra — Eco 0924. Primer contrajuego: Anotar dónde cae la luz al mediodía.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1945 — Atlas 0925 - Battle Royal Dome
 - **Categoría:** Atlas Mil · Provincia del Eco · Tier 3 · eco dimensional.
@@ -4729,7 +4729,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1947 — Atlas 0927 - Tapu Village
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Tapu Village (Map932). Anomalía documentada: En Tapu Village se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Andar propio — Eco 0927. Primer contrajuego: Marcar el ritmo con el propio compás.
-- **Datos compilados:** 50×22 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 50×22 tiles; 6 eventos; tileset 1.
 
 ### Map1948 — Atlas 0928 - Route 14
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
@@ -4744,7 +4744,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1950 — Atlas 0930 - Tapu Pokémon Center
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Tapu Pokémon Center (Map935). Anomalía documentada: Los compases de Tapu Pokémon Center se desfasan: la música va por delante de las baldosas. Regla local: Cantar despacio — Eco 0930. Primer contrajuego: Marcar el compás con voz propia.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1951 — El Recuerdo que Enseñaba Venganza
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 2 · ruta estable.
@@ -4799,7 +4799,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1961 — Atlas 0941 - Seafolk Pokémon Center
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Seafolk Pokémon Center (Map947). Anomalía documentada: La luz de Seafolk Pokémon Center recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Prestar luminosidad — Eco 0941. Primer contrajuego: Encender la linterna en el umbral.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1962 — Atlas 0942 - Ancient Poni Path
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
@@ -4829,7 +4829,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1967 — Atlas 0947 - Malie City
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Malie City (Map953). Anomalía documentada: Los compases de Malie City se desfasan: la música va por delante de las baldosas. Regla local: Silencio de compás — Eco 0947. Primer contrajuego: Pisar solo en los silencios.
-- **Datos compilados:** 70×34 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×34 tiles; 8 eventos; tileset 1.
 
 ### Map1968 — Atlas 0948 - Malie House
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
@@ -4839,7 +4839,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1969 — Atlas 0949 - Malie Pokémon Center
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Malie Pokémon Center (Map955). Anomalía documentada: Los mapas de Malie Pokémon Center se corrigen solos y el trazo nuevo tapa el camino aprendido. Regla local: Trazo de retorno — Eco 0949. Primer contrajuego: Dibujar el regreso antes de avanzar.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 4.
 
 ### Map1970 — Atlas 0950 - Kantonian Gym
 - **Categoría:** Atlas Mil · Horizonte Fractal · Tier 3 · eco dimensional.
@@ -4851,12 +4851,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1971 — La Copia que Aprendió a Despertar
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Manalo Stadium (Map957). Identidad del lugar: Estadio cubierto por bruma convertido en archivo habitable, con cámaras de lectura, ventanas al exterior y puertas manuales que ningún proceso automático controla. Episodio: Los Archiveros del Último Guardado aseguran custodiar una copia de emergencia, pero la memoria archivada lleva meses despierta entre ciclos y ya no acepta ser tratada como la propiedad de su persona fuente.
-- **Datos compilados:** 65×40 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 65×40 tiles; 10 eventos; tileset 1.
 
 ### Map1972 — Atlas 0952 - Alola Pokemon League
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Alola Pokemon League (Map958). Anomalía documentada: La geografía Alola Pokemon League respira: los pasos se alargan o se encogen según quién mire el mapa. Regla local: Medir dos veces — Eco 0952. Primer contrajuego: Contar los pasos de ida antes de confiar en la vuelta.
-- **Datos compilados:** 40×20 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 40×20 tiles; 10 eventos; tileset 4.
 
 ### Map1973 — Atlas 0953 - Manalo Royal
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
@@ -4886,7 +4886,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1978 — Atlas 0958 - Verdanturf Town
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Verdanturf Town (Map964). Anomalía documentada: La luz de Verdanturf Town recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Encender lo propio — Eco 0958. Primer contrajuego: Traer luz prestada de la baliza.
-- **Datos compilados:** 34×35 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 34×35 tiles; 7 eventos; tileset 1.
 
 ### Map1979 — Atlas 0959 - Route 117
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
@@ -4906,7 +4906,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1982 — Atlas 0962 - Kanto Grand Festival
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Kanto Grand Festival (Map968). Anomalía documentada: Los materiales de Kanto Grand Festival recuerdan su forma anterior y se niegan a la reforma. Regla local: Alinear memoria — Eco 0962. Primer contrajuego: Pedir a la piedra su forma vieja.
-- **Datos compilados:** 20×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×30 tiles; 6 eventos; tileset 3.
 
 ### Map1983 — El Cofre de Recuerdos en Escena
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 2 · ruta estable.
@@ -4921,7 +4921,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1985 — Atlas 0965 - Pokémon Mart
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pokémon Mart (Map971). Anomalía documentada: Las señales de Pokémon Mart responden tarde: la flecha de hoy avisa del camino de ayer. Regla local: Señal de retraso — Eco 0965. Primer contrajuego: Leer la señal con un día de atraso.
-- **Datos compilados:** 210×70 tiles; 5 eventos; tileset 5.
+- **Datos compilados:** 210×70 tiles; 46 eventos; tileset 5.
 
 ### Map1986 — Atlas 0966 - Stow-on-Side Stadium
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
@@ -4951,12 +4951,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1991 — Atlas 0971 - Spikemuth
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Spikemuth (Map977). Anomalía documentada: Los pasos en Spikemuth vuelven tarde, como ecos de un minuto que ya pasó. Regla local: Cuenta atrás — Eco 0971. Primer contrajuego: Contar diez antes de cada cruce.
-- **Datos compilados:** 90×30 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 90×30 tiles; 6 eventos; tileset 1.
 
 ### Map1992 — Atlas 0972 - Spikemuth Pokémon Center
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Spikemuth Pokémon Center (Map978). Anomalía documentada: El clima de Spikemuth Pokémon Center viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Leer el cielo — Eco 0972. Primer contrajuego: Observar la nube antes de girar.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 4.
 
 ### Map1993 — Atlas 0973 - Seafoam Islands
 - **Categoría:** Atlas Mil · Corona de Bruma · Tier 3 · eco dimensional.
@@ -4978,12 +4978,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1996 — El Final que Dejó Cuarenta Puertas Abiertas
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Freezington House (Map982). Identidad del lugar: Casa del Umbral ampliada como cámara coral, con cuarenta puertas iluminadas, una mesa sin cabecera y un pedestal vacío para el último sello. Episodio: Las cuarenta anclas ofrecen desenlaces incompatibles para estabilizar Atlas, pero sus últimos archiveros rechazan coronar una sola historia y piden construir un final capaz de conservar retornos, desacuerdos y cambios futuros.
-- **Datos compilados:** 60×30 tiles; 9 eventos; tileset 3.
+- **Datos compilados:** 60×30 tiles; 10 eventos; tileset 3.
 
 ### Map1997 — Atlas 0977 - Crown Tundra
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Crown Tundra (Map983). Anomalía documentada: En Crown Tundra se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Andar propio — Eco 0977. Primer contrajuego: Marcar el ritmo con el propio compás.
-- **Datos compilados:** 70×50 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 70×50 tiles; 6 eventos; tileset 1.
 
 ### Map1998 — Atlas 0978 - Safari Zone Galar
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
@@ -4993,7 +4993,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1999 — Atlas 0979 - Wedgehurst
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Wedgehurst (Map985). Anomalía documentada: Los materiales de Wedgehurst recuerdan su forma anterior y se niegan a la reforma. Regla local: Prestar textura — Eco 0979. Primer contrajuego: Llevar una pieza prestada del taller.
-- **Datos compilados:** 50×45 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 50×45 tiles; 6 eventos; tileset 1.
 
 ### Map2000 — Atlas 0980 - Wedgehurst House
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
@@ -5003,12 +5003,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2001 — La Mesa de los Cuarenta Testigos
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 2 · ruta estable.
 - **Referencia:** Ruta estable basada en Wedgehurst Pokémon Center (Map987). Objetivo: Turno coral: cada historia habla una vez, el acta queda abierta y ninguna decisión es para siempre. Mecánica de referencia: Turno coral. Promesa: Cuarenta historias compiten por decidir qué final merece Atlas y la asamblea del centro teme que una sola ocupe el atril.
-- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 4.
 
 ### Map2002 — Atlas 0982 - Professor Magnolia's Lab
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Professor Magnolia's Lab (Map988). Anomalía documentada: Las señales de Professor Magnolia's Lab responden tarde: la flecha de hoy avisa del camino de ayer. Regla local: Preguntar a la señal — Eco 0982. Primer contrajuego: Repetir la pregunta hasta la segunda respuesta.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 7 eventos; tileset 3.
 
 ### Map2003 — Atlas 0983 - Split-Decision Ruins
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
@@ -5043,7 +5043,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2009 — Atlas 0989 - Wyndon Stadium?
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Wyndon Stadium? (Map995). Anomalía documentada: El clima de Wyndon Stadium? viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa. Regla local: Tormenta en conserva — Eco 0989. Primer contrajuego: Atravesar durante la tregua anunciada.
-- **Datos compilados:** 25×40 tiles; 5 eventos; tileset 4.
+- **Datos compilados:** 25×40 tiles; 10 eventos; tileset 4.
 
 ### Map2010 — Atlas 0990 - Stadium
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
@@ -5053,17 +5053,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2011 — Atlas 0991 - Mirror Island - Atrium
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mirror Island - Atrium (Map997). Anomalía documentada: La luz de Mirror Island - Atrium recuerda dónde estuvo ayer y se niega a iluminar lo nuevo. Regla local: Prestar luminosidad — Eco 0991. Primer contrajuego: Encender la linterna en el umbral.
-- **Datos compilados:** 32×20 tiles; 5 eventos; tileset 10.
+- **Datos compilados:** 32×20 tiles; 6 eventos; tileset 10.
 
 ### Map2012 — Atlas 0992 - Mirror Island - Gallery of Legends
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mirror Island - Gallery of Legends (Map998). Anomalía documentada: Las coordenadas de Mirror Island - Gallery of Legends mienten con educación: la X señala bien y la Y se equivoca a propósito. Regla local: Coordenada honesta — Eco 0992. Primer contrajuego: Escribir la posición propia en el suelo.
-- **Datos compilados:** 32×20 tiles; 5 eventos; tileset 10.
+- **Datos compilados:** 32×20 tiles; 6 eventos; tileset 10.
 
 ### Map2013 — Atlas 0993 - Mirror Island - Zero Archive
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Mirror Island - Zero Archive (Map999). Anomalía documentada: En Mirror Island - Zero Archive se usan pasos prestados: los pies ajenos cruzan antes que los propios. Regla local: Prestar un paso — Eco 0993. Primer contrajuego: Ofrecer un paso al eco cansado.
-- **Datos compilados:** 32×20 tiles; 5 eventos; tileset 10.
+- **Datos compilados:** 32×20 tiles; 6 eventos; tileset 10.
 
 ### Map2014 — Atlas 0994 - Whisperwood Rescue Forest
 - **Categoría:** Atlas Mil · Umbral Mil · Tier 3 · eco dimensional.
