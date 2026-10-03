@@ -3,8 +3,9 @@
  * dn_name_flags.mjs — pone nombre a las switches y variables del Dimensional Nightmare en
  * `System.rxdata`.
  *
- * Sin nombre, las flags del ciclo (882–921 y 264–289) aparecen como «—» en el editor de RMXP y en
- * la lista de eventos, y es fácil pisar una ajena. Esta herramienta:
+ * Sin nombre, las flags del ciclo (switches 882–935 y variables DN 265–307) aparecen como «—» en el editor de RMXP y en
+ * la lista de eventos, y es fácil pisar una ajena. v264 queda fuera del rango DN: es el contador de emisiones selladas
+ * de Monte Silver, que el Nightmare sólo consulta. Esta herramienta:
  *   1. extiende las listas hasta el último índice que usa el ciclo;
  *   2. escribe el nombre de cada flag DN (sólo si el hueco está vacío o ya es DN);
  *   3. **rechaza** tocar cualquier nombre de Atlas o de La Ruta de Dios, y avisa si detecta
@@ -75,11 +76,11 @@ export const SWITCHES = {
   932: "DN_CUOTA_W7",
   933: "DN_CUOTA_W8",
   934: "DN_CUOTA_W9",
+  935: "DN_NEXO_RESOLVED",
 };
 
-/** Variables del ciclo: resonancia, fase, episodio, anomalías, Rotom, final y la Liga. */
+/** Variables propias de DN desde v265: resonancia, fase, episodio, anomalías, Rotom, final y Liga. v264 es externo/read-only. */
 export const VARIABLES = {
-  264: "DN_PROGRESO_EPISODIOS",
   265: "DN_RESONANCIA",
   266: "DN_FASE_CORRUPCION",
   267: "DN_EPISODIO_ACTUAL",
@@ -104,6 +105,25 @@ export const VARIABLES = {
   286: "DN_W8_AIRE",
   287: "DN_W9_CANTO",
   288: "DN_W7_CORREAS",
+  289: "DN_BOSS_STEPS_EP01",
+  290: "DN_BOSS_STEPS_EP02",
+  291: "DN_BOSS_STEPS_EP03",
+  292: "DN_BOSS_STEPS_EP04",
+  293: "DN_BOSS_STEPS_EP05",
+  294: "DN_BOSS_STEPS_EP06",
+  295: "DN_BOSS_STEPS_W7",
+  296: "DN_BOSS_STEPS_W8",
+  297: "DN_BOSS_STEPS_W9",
+  298: "DN_DECISION_EP01",
+  299: "DN_DECISION_EP02",
+  300: "DN_DECISION_EP03",
+  301: "DN_DECISION_EP04",
+  302: "DN_DECISION_EP05",
+  303: "DN_DECISION_EP06",
+  304: "DN_DECISION_W7",
+  305: "DN_DECISION_W8",
+  306: "DN_DECISION_W9",
+  307: "DN_DECISION_LIGA",
 };
 
 function apply(table, map, label) {

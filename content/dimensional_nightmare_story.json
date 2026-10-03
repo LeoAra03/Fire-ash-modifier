@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "title": "Pokémon Fire Ash: Ashen Guardian — guion final del Dimensional Nightmare",
+  "worlds": {
+    "EP01": {
+      "title": "Catacumbas de la Mano Blanca",
+      "opening": [
+        "Rotom: Señal estable... no. La lectura acaba de abrirse en dos.",
+        "Ash: El aire huele a piedra mojada. ¿Hay alguien ahí?",
+        "Rotom: Una huella blanca cruza el polvo y termina donde empieza la tuya."
+      ],
+      "normal": [
+        "No apoyes la mano en la ceniza. Aquí las huellas aparecen antes que los pasos.",
+        "Vuelves a la misma esquina. Yo sigo con mi tarea para que este lugar no se quede vacío.",
+        "La campana lleva años rota; aun así, cada vez que te detienes, cuenta una visita.",
+        "La sombra de la puerta crece por el lado equivocado. Si te llama, contéstale con tu nombre.",
+        "No responde. Mantiene la mirada fija en la huella blanca del suelo."
+      ],
+      "conscious": [
+        "Cuando entras, las urnas recuerdan un ruido que todavía no has hecho.",
+        "Sí, te recuerdo. La vez anterior preguntaste por una puerta que aún no existía.",
+        "La salida no se encuentra: se reconoce. Sigue la campana rota, no la más brillante.",
+        "Confieso algo, Ash: primero creí que el bucle era una prisión. Ahora temo ser yo quien lo mantiene."
+      ],
+      "interdimensional": {
+        "phase4": "Las paredes guardan tu voz con la fecha de mañana.",
+        "phase7": "Ya no queda tinta para escribir tu nombre. Déjalo en el Rotom, no en la piedra."
+      },
+      "phaseScenes": {
+        "3": ["La ceniza se ordena en huellas. Ninguna va hacia la salida."],
+        "5": ["Rotom: La señal de Ash aparece también al otro lado de la pared."],
+        "7": ["El mapa deja de ser una cámara y empieza a comportarse como un testigo."]
+      },
+      "boss": {
+        "intro": ["El altar no proyecta una sombra: su sombra ocupa el altar.", "Rotom: No registro una especie. Registro un testimonio retenido."],
+        "victory": ["La presión cede; la huella no se borra. Sólo deja de alcanzar la puerta.", "Ash: No te llevaré conmigo. Aquí puedes descansar sin volver a llamar."]
+      },
+      "decision": {
+        "variable": 298,
+        "prompt": ["La campana rota aún guarda una vibración. Puedes archivarla o dejar que el silencio la cubra.", "Ninguna elección cambia el sello; el Rotom recordará la tuya."],
+        "choices": [
+          {"label": "Dejar la campana en silencio", "value": 1, "response": "Ash: No hace falta que todo eco continúe. El silencio también puede cuidar un lugar.", "archive": "La campana quedó en silencio; su registro permanece."},
+          {"label": "Guardar una nota en el Rotom", "value": 2, "response": "Rotom: Nota preservada. La campana no volverá a sonar, pero nadie olvidará que estuvo aquí.", "archive": "Una nota de la campana quedó guardada en el Rotom."}
+        ]
+      }
+    },
+    "EP02": {
+      "title": "Pueblo del Cartucho Gris",
+      "opening": [
+        "Rotom: El cartucho no está conectado a ningún dispositivo.",
+        "Ash: Entonces, ¿por qué oigo un tren?",
+        "Rotom: Porque el pueblo recuerda un viaje que nunca llegó a comenzar."
+      ],
+      "normal": [
+        "El reloj marca la misma hora desde que cerraron la estación. No lo corrijas: alguien sigue esperando.",
+        "Te vi ayer junto a la fuente. O tal vez fue mañana; aquí los días comparten la misma página.",
+        "Las casas tienen luz, pero ninguna ventana recuerda quién la encendió.",
+        "Si el puente cruje bajo tus pies, no corras. A veces el ruido sólo quiere comprobar que sigues aquí.",
+        "No responde. En la placa de la estación, su nombre parece recién borrado."
+      ],
+      "conscious": [
+        "Cuando sales del pueblo, mi conversación se detiene. Cuando vuelves, yo la recuerdo completa.",
+        "La fuente no está seca: está esperando que alguien recuerde cómo era el agua.",
+        "La página que buscas no está al final del libro; está en el sitio donde falta una letra.",
+        "Te confieso algo: he dejado de contar los días. Sólo cuento cuántas veces alguien vuelve."
+      ],
+      "interdimensional": {
+        "phase4": "Tu reflejo llegó a la estación un minuto antes que tú.",
+        "phase7": "El cartucho ya no puede guardar otra partida. Conserva el recuerdo, no el archivo."
+      },
+      "phaseScenes": {
+        "3": ["El minutero avanza un minuto. La hora escrita en el andén no cambia."],
+        "5": ["Una casa enciende su lámpara cuando Ash mira hacia otro lado."],
+        "7": ["Rotom: El registro se está escribiendo encima de sí mismo. Mantengo intactos tus datos."]
+      },
+      "boss": {
+        "intro": ["La escalera vuelve a bajar hacia el mismo andén.", "Rotom: Esa silueta no está perdida. Está esperando que la recuerden sin retenerla."],
+        "victory": ["El último tren no parte. Por primera vez, la estación puede quedarse quieta.", "Ash: No necesito saber quién eras para dejarte descansar." ]
+      },
+      "decision": {
+        "variable": 299,
+        "prompt": ["En el libro de la estación hay un renglón vacío. Puedes respetarlo o escribir lo que recuerdas.", "La historia seguirá abierta en ambos casos."],
+        "choices": [
+          {"label": "Dejar el renglón en blanco", "value": 1, "response": "Ash: No voy a poner un nombre que no me pertenece.", "archive": "El renglón del libro quedó en blanco por elección de Ash."},
+          {"label": "Anotar el recuerdo del viaje", "value": 2, "response": "Rotom: Recuerdo registrado como recuerdo; no como una verdad comprobada.", "archive": "El viaje pendiente quedó anotado como memoria, no como hecho."}
+        ]
+      }
+    },
+    "EP03": {
+      "title": "Monte de la Nieve Inmóvil",
+      "opening": [
+        "Rotom: Temperatura exterior en descenso. No hay viento en el micrófono.",
+        "Ash: La nieve se mueve aunque el aire esté quieto.",
+        "Rotom: Son huellas. Alguien subió antes de que existiera el sendero."
+      ],
+      "normal": [
+        "Mira las huellas antes de mirar la cima. La nieve borra la distancia, no el camino que elegiste.",
+        "Cada fogata sigue encendida cuando vuelves, aunque nadie recuerde haberla prendido.",
+        "El hielo guarda figuras bajo la superficie. No las despiertes a golpes; busca la orilla segura.",
+        "La ventisca tapa el refugio, pero no lo mueve. Si pierdes el rumbo, sigue el sonido de una campana.",
+        "No responde. Su bufanda apenas se mueve, aunque la nieve cae sobre sus hombros."
+      ],
+      "conscious": [
+        "El acantilado crece cuando nadie lo mira. Por eso dejé marcas en la piedra, no en la nieve.",
+        "Te recuerdo por tus pasos: vuelven al mismo sitio, pero cada vez tardan menos.",
+        "Las cuatro fogatas no señalan un tesoro. Señalan que alguien estuvo aquí y no tuvo que quedarse solo.",
+        "Confieso que ya no distingo el deshielo de una despedida. Por eso mantengo una luz encendida."
+      ],
+      "interdimensional": {
+        "phase4": "La nieve cae hacia arriba alrededor de tu sombra.",
+        "phase7": "La cima no es un destino. Es el lugar donde por fin puedes dejar de perseguir las huellas."
+      },
+      "phaseScenes": {
+        "3": ["Las huellas aparecen delante de Ash y avanzan hacia atrás."],
+        "5": ["El viento calla. Las fogatas siguen ardiendo sin consumir leña."],
+        "7": ["Una figura espera en la nieve, pero ya no se acerca cuando Ash da un paso."]
+      },
+      "boss": {
+        "intro": ["El Caminante se detiene. La ventisca deja un círculo de aire quieto.", "Rotom: La señal no pide que la sigas. Pide que la escuches."],
+        "victory": ["Las huellas terminan junto al refugio, no al borde del monte.", "Ash: Ya no tienes que caminar detrás de nadie." ]
+      },
+      "decision": {
+        "variable": 300,
+        "prompt": ["La nieve puede cubrir las huellas o conservar una sola marca de regreso.", "El refugio y la salida seguirán disponibles en ambos casos."],
+        "choices": [
+          {"label": "Dejar que nieve sobre el sendero", "value": 1, "response": "Ash: No todo lo que termina necesita quedar señalado.", "archive": "La nieve cubrió el sendero, sin borrar el refugio."},
+          {"label": "Conservar una huella de regreso", "value": 2, "response": "Rotom: Una marca de regreso queda archivada. No dirige el camino: sólo recuerda que existe.", "archive": "Una huella de regreso quedó conservada en el registro."}
+        ]
+      }
+    },
+    "EP04": {
+      "title": "Bosque de la Nana",
+      "opening": [
+        "Rotom: Hay una melodía en el bosque. La señal no contiene una fuente sonora.",
+        "Ash: No vamos a seguir una voz a ciegas.",
+        "Rotom: De acuerdo. Registraré las marcas del sendero y mantendré visible la salida."
+      ],
+      "normal": [
+        "Los carteles cambian cuando duermes. Lee el camino despierto y comprueba cada giro.",
+        "La nana no abre puertas; sólo recuerda a quienes esperan detrás de ellas.",
+        "Si oyes cuatro estrofas, detente entre la tercera y la cuarta. Ese espacio también forma parte de la canción.",
+        "Las flores se inclinan hacia el sonido. No confundas belleza con una invitación a perderte.",
+        "No responde. Sus ojos siguen abiertos; la canción no consigue moverlos."
+      ],
+      "conscious": [
+        "La cabaña cura al equipo porque el descanso también es una forma de decir que no.",
+        "Te recuerdo. La vez pasada te quedaste a escuchar; hoy puedes marcharte cuando quieras.",
+        "La pista está en lo que falta entre una estrofa y otra. El silencio corta el canto, no el camino.",
+        "Confieso que tuve miedo de despertar. Ahora sé que elegir descansar no significa rendirse."
+      ],
+      "interdimensional": {
+        "phase4": "Ya oíste esta canción antes. Lo extraño es que todavía no ha empezado.",
+        "phase7": "La nana se detiene cuando alguien escucha de verdad. No tienes que responderle."
+      },
+      "phaseScenes": {
+        "3": ["Las notas llegan desde un lugar distinto cada vez que Ash se detiene."],
+        "5": ["Las flores dejan de seguir el sonido y giran hacia la salida."],
+        "7": ["Rotom: El silencio no apaga el mapa. La ruta de regreso sigue registrada."]
+      },
+      "boss": {
+        "intro": ["El árbol antiguo tararea las cuatro estrofas sin mover una sola hoja.", "Rotom: El sueño no es una orden. Podemos interrumpirlo."],
+        "victory": ["El canto termina en una nota baja. Nadie cae; el bosque simplemente despierta.", "Ash: Ya puedes dormir sin llamar a nadie." ]
+      },
+      "decision": {
+        "variable": 301,
+        "prompt": ["La última estrofa puede apagarse o quedar escrita en el archivo, sin volver a sonar.", "El descanso de la cabaña sigue disponible."],
+        "choices": [
+          {"label": "Apagar la última estrofa", "value": 1, "response": "Ash: A veces cuidar es dejar que una voz descanse.", "archive": "La última estrofa quedó en silencio."},
+          {"label": "Guardar la letra sin reproducirla", "value": 2, "response": "Rotom: Letra archivada sin audio. El registro no repetirá la nana.", "archive": "La letra quedó guardada, sin volver a reproducirse."}
+        ]
+      }
+    },
+    "EP05": {
+      "title": "Pueblo 000",
+      "opening": [
+        "Rotom: No hay habitantes en el registro. Tampoco hay marcas de salida.",
+        "Ash: Entonces empezaremos por lo que aún responde.",
+        "Rotom: El mapa conserva tu posición. No puede borrarte ni tocar tu partida."
+      ],
+      "normal": [
+        "Las luces siguen el horario de un pueblo que ya no está. No las confundas con una señal de peligro.",
+        "Hoy encontré una página nueva en el libro vacío: sólo tiene la marca de tus pasos.",
+        "El reflejo llega tarde. Si repite tu gesto, no es una invitación a imitarlo.",
+        "La calle pierde sus bordes, pero el Rotom mantiene fija la ruta de regreso.",
+        "No responde. Su reflejo permanece un instante más y luego se queda quieto."
+      ],
+      "conscious": [
+        "El mundo dejó de contestar, pero todavía sabe que estás aquí.",
+        "Te recuerdo entre una visita y otra. La página no se guarda sola; la guarda el Rotom.",
+        "El doble no es tu futuro. Es el espacio que este lugar dejó para alguien que no llegó.",
+        "Confieso que me acostumbré a estar solo. No quiero que confundas esa costumbre con una invitación a quedarte."
+      ],
+      "interdimensional": {
+        "phase4": "La pantalla se oscurece, pero el camino se mantiene debajo.",
+        "phase7": "No hay partida que cargar aquí. Tu equipo y tu historia permanecen intactos."
+      },
+      "phaseScenes": {
+        "3": ["Una baldosa blanca aparece donde el mapa mostraba un hueco."],
+        "5": ["Rotom: Si el mundo se oscurece, conservaré el nombre de cada salida."],
+        "7": ["La ausencia ocupa la plaza; no ocupa el registro de Ash ni el de sus Pokémon."]
+      },
+      "boss": {
+        "intro": ["El borde del mundo no muestra una batalla. Muestra una página esperando un final.", "Rotom: El rival no tiene que ser copiado para que puedas seguir."],
+        "victory": ["La página se cierra sin borrar los nombres que contiene.", "Ash: Ya puedes dejar de repetir mi lugar." ]
+      },
+      "decision": {
+        "variable": 302,
+        "prompt": ["El reflejo ofrece dos finales para el recuerdo: cerrarlo o dejar una luz de consulta.", "Ninguna opción cambia el mundo ni afecta a tu equipo."],
+        "choices": [
+          {"label": "Cerrar el reflejo", "value": 1, "response": "Ash: No eres una copia mía. No tengo que pedirte que te quedes.", "archive": "El reflejo se cerró; el recuerdo de su existencia permanece."},
+          {"label": "Dejar una luz en el archivo", "value": 2, "response": "Rotom: Una luz queda en el archivo, no en el mundo. La salida no cambia.", "archive": "El archivo conserva una luz para recordar el reflejo."}
+        ]
+      }
+    },
+    "EP06": {
+      "title": "Reino de las Letras",
+      "opening": [
+        "Rotom: El texto del mapa está cambiando mientras lo leo.",
+        "Ash: No lo traduzcas todavía. Primero averigüemos quién lo escribió.",
+        "Rotom: Entendido. Guardaré cada glifo sin asignarle un significado."
+      ],
+      "normal": [
+        "Las letras no forman una orden. Están intentando recordar sus propios nombres.",
+        "Te vi leer ese glifo la vez anterior. Hoy su trazo empieza un poco más lejos.",
+        "Siete marcas no son siete pruebas de obediencia. Son siete ocasiones para detenerte y mirar.",
+        "Cuando el código parpadee, espera a que vuelva el suelo antes de avanzar.",
+        "No responde. Una letra se enciende en su ropa y luego vuelve a apagarse."
+      ],
+      "conscious": [
+        "El corredor cambia las columnas cuando dejamos de mirarlo; la fisura siempre queda en la misma pared.",
+        "Recuerdo la pregunta que hiciste antes de aprender a leer las letras.",
+        "La palabra KINGGUS se forma de siete fragmentos; no tienes que completarla deprisa.",
+        "Confieso que fui testigo antes de saberlo. La memoria no me convierte en dueño de esta historia."
+      ],
+      "interdimensional": {
+        "phase4": "El código se dobla alrededor del nombre de Ash, pero no consigue escribirlo por él.",
+        "phase7": "La última letra no es una cerradura. Puedes dejarla sin traducir y aun así regresar."
+      },
+      "phaseScenes": {
+        "3": ["Una columna cambia de lugar. El acceso que acabas de usar permanece abierto."],
+        "5": ["Los glifos se leen al revés; el Rotom conserva la lectura anterior como referencia."],
+        "7": ["El código pierde sus bordes. Las siete marcas de regreso siguen visibles en el registro."]
+      },
+      "boss": {
+        "intro": ["Los glifos convergen en una silueta; el trono no tiene escalones de entrada.", "Rotom: No es un dios ni un acertijo. Es un testigo que olvidó cómo terminar."],
+        "victory": ["Las letras dejan de perseguirse y descansan alrededor del trono.", "Ash: No necesito completar tu nombre para reconocer que estuviste aquí." ]
+      },
+      "decision": {
+        "variable": 303,
+        "prompt": ["Un glifo final espera traducción. Puedes conservar el signo o dejar una letra sin interpretar.", "La puerta de regreso no depende de esta lectura."],
+        "choices": [
+          {"label": "Conservar el glifo sin traducir", "value": 1, "response": "Ash: No todo lo que existe tiene que explicarse para ser respetado.", "archive": "El glifo quedó conservado sin traducción."},
+          {"label": "Registrar una lectura provisional", "value": 2, "response": "Rotom: Lectura provisional guardada. Puede cambiar si aparece nueva evidencia.", "archive": "El Rotom guardó una lectura provisional, no una verdad definitiva."}
+        ]
+      }
+    },
+    "NEXO": {
+      "title": "Nexo de Ruptura",
+      "opening": [
+        "Rotom: Seis mundos responden desde un mismo pasillo.",
+        "Ash: No voy a corregir sus historias. Sólo quiero saber por qué se tocaron.",
+        "Rotom: El registro señala una misma huella: alguien decidió escuchar antes de cerrar."
+      ],
+      "normal": [],
+      "conscious": [],
+      "interdimensional": {"phase4": "Cada puerta devuelve una voz distinta; ninguna habla por las otras.", "phase7": "La sala del Testigo espera una decisión, no una respuesta correcta."},
+      "phaseScenes": {
+        "3": ["Las seis puertas se encienden a ritmos distintos; ninguna se abre por la fuerza."],
+        "5": ["La ruta de regreso queda dibujada en el Rotom antes de que el pasillo se pliegue."],
+        "7": ["Ash puede cerrar la rendija o dejarla abierta. En ambos casos podrá volver a casa."]
+      },
+      "boss": null,
+      "decision": null
+    },
+    "LIGA": {
+      "title": "Liga Oscura",
+      "opening": [
+        "Rotom: El Pórtico reconoce seis sellos y un vínculo que todavía no ha sido medido.",
+        "Ash: No voy a confundir velocidad con maldad.",
+        "Rotom: Entendido. Registraré las chispas sin decidir por quién deben brillar."
+      ],
+      "normal": [],
+      "conscious": [],
+      "interdimensional": {"phase4": "La tormenta imita cada paso, pero nunca alcanza el ritmo de un vínculo.", "phase7": "La luz de Arceus no borra la prueba. La vuelve posible de terminar."},
+      "phaseScenes": {
+        "3": ["La electricidad recorre el muro en una ruta quebrada, no en un círculo cerrado."],
+        "5": ["El pulso acelera; las chispas siguen visibles desde el centro."],
+        "7": ["Rotom: La escala de 255 no cabe en el combate. El vínculo sí puede medirse a 150."]
+      },
+      "boss": {
+        "intro": ["Mad Pikachu espera frente al glifo. La tormenta no lo deja solo: tampoco lo posee.", "Rotom: Hay una diferencia entre resistir y salvar. La prueba empieza por escuchar."],
+        "victory": ["La electricidad pierde fuerza sin desaparecer. Mad Pikachu vuelve a respirar a su propio ritmo.", "Ash: No eres una cifra. El vínculo no se mide por lo rápido que golpeas." ]
+      },
+      "decision": {
+        "variable": 307,
+        "prompt": ["La última chispa puede quedar en la vitrina o volver al cielo del Coliseo.", "La Liga ya está cerrada; esta elección sólo decide cómo conservar el recuerdo."],
+        "choices": [
+          {"label": "Guardar la chispa en la vitrina", "value": 1, "response": "Ash: Que la próxima persona vea que alguien eligió cuidar este vínculo.", "archive": "La chispa de la Liga quedó en la vitrina."},
+          {"label": "Dejar la chispa volver al cielo", "value": 2, "response": "Rotom: La chispa vuelve al cielo del Coliseo. Su registro sigue en la vitrina.", "archive": "La chispa volvió al cielo; su registro permanece en la vitrina."}
+        ]
+      }
+    },
+    "W7": {
+      "title": "Strangled Red — Casa Rota",
+      "opening": [
+        "Rotom: La grieta tiene una marca roja, pero no detecto un pulso peligroso.",
+        "Ash: Entonces no la llamemos una amenaza antes de saber qué pasó.",
+        "Rotom: Ruta y refugio registrados. Puedes detenerte cuando lo necesites."
+      ],
+      "normal": [
+        "Las cintas del jardín no sujetan a nadie. Marcan los sitios donde alguien solía detenerse.",
+        "Te vi regresar por el pasillo. Esta vez abriste la puerta sin llevarte nada.",
+        "El retrato está vacío porque nadie quiso posar. No porque alguien haya desaparecido.",
+        "La luz roja se apaga cuando dejas de mirarla. El camino de regreso no depende de ella.",
+        "No responde. Sus dedos descansan, por fin, fuera del nudo de la cinta."
+      ],
+      "conscious": [
+        "El árbol repite el mismo gesto cada noche. Yo dejé de llamarlo una orden.",
+        "Te recuerdo por la pausa que hiciste antes de tocar la cinta.",
+        "Si encuentras una correa, suéltala; no hace falta demostrar nada cortando algo más.",
+        "Confieso que cuidé de todos menos de mí. Ahora puedo pedir ayuda sin tener que desaparecer."
+      ],
+      "interdimensional": {
+        "phase4": "El color rojo no es una alarma. Es la memoria de una casa que necesita descanso.",
+        "phase7": "La última cinta cae al suelo. Nadie queda atado a una decisión anterior."
+      },
+      "phaseScenes": {
+        "3": ["Una cinta roja se desplaza del árbol a una rama baja, lejos del paso."],
+        "5": ["El jardín deja de repetir la sombra de Ash y muestra sus propios senderos."],
+        "7": ["El árbol queda quieto. La ruta no se cierra detrás de nadie."]
+      },
+      "boss": {
+        "intro": ["El Amo aguarda bajo el árbol; las correas están sueltas, aunque parezcan tensas.", "Rotom: El combate no decide quién pertenece a quién. Sólo abre espacio para hablar."],
+        "victory": ["Las cuatro correas caen. El árbol conserva las marcas, no la atadura.", "Ash: No hace falta que sigas cargando con todo tú solo." ]
+      },
+      "decision": {
+        "variable": 304,
+        "prompt": ["La cinta final puede quedarse en el registro o volver a la rama vacía.", "Ambas decisiones dejan el sendero y el sello abiertos."],
+        "choices": [
+          {"label": "Guardar la cinta en el registro", "value": 1, "response": "Rotom: La cinta queda archivada como señal de cuidado, no de posesión.", "archive": "La cinta quedó guardada en el registro de cuidado."},
+          {"label": "Dejar la rama sin cinta", "value": 2, "response": "Ash: Que la rama vuelva a crecer sin tener que representar nada.", "archive": "La rama quedó libre de cintas."}
+        ]
+      }
+    },
+    "W8": {
+      "title": "Buried Alive — La Fosa del Aire",
+      "opening": [
+        "Rotom: El aire está quieto, pero la lectura muestra espacio para respirar.",
+        "Ash: Seguiremos despacio. Nadie se queda atrás.",
+        "Rotom: Marqué cinco cámaras seguras. Puedes volver a cualquiera de ellas."
+      ],
+      "normal": [
+        "La tierra está cerca, no encima de ti. Mira los bordes del túnel y avanza a tu ritmo.",
+        "Cuando vuelves, el pasillo aún tiene aire. No hace falta correr para merecerlo.",
+        "Las raíces no forman una jaula; dibujan dónde el techo sigue firme.",
+        "La bolsa de aire silba porque encuentra una salida. El sonido es una señal de espacio abierto.",
+        "No responde. Su respiración se acompasa con la tuya y luego se queda quieta."
+      ],
+      "conscious": [
+        "Las bolsas de aire se llenan incluso cuando no las buscas. El refugio no se cierra por tardar.",
+        "Te recuerdo. La primera vez intentaste resolverlo todo deprisa; ahora puedes descansar.",
+        "El camino parece bajar porque la luz queda arriba. La siguiente cámara tiene sitio para detenerse.",
+        "Confieso que temía ocupar espacio. La fosa es amplia; también hay lugar para mí."
+      ],
+      "interdimensional": {
+        "phase4": "La voz bajo la tierra acompasa su pausa a tu respiración.",
+        "phase7": "El aire no se acaba por elegir una ruta distinta. Todas las cámaras seguras siguen abiertas."
+      },
+      "phaseScenes": {
+        "3": ["La tierra deja un hueco respirable junto a la pared izquierda."],
+        "5": ["Rotom: El pulso de aire se mantiene estable. No hay temporizador ni castigo por detenerse."],
+        "7": ["La fosa se abre en una cámara amplia. El silencio no te impide regresar." ]
+      },
+      "boss": {
+        "intro": ["La figura del fondo deja un espacio libre entre las raíces.", "Rotom: El desafío se puede interrumpir y reintentar. El aire no es una cuenta regresiva."],
+        "victory": ["La tierra se asienta; el hueco de salida queda abierto.", "Ash: Ya no tienes que demostrar que puedes soportarlo sin ayuda." ]
+      },
+      "decision": {
+        "variable": 305,
+        "prompt": ["Queda una última bolsa de aire. Puedes compartir su señal con el refugio o guardarla como recuerdo.", "No modifica la respiración ni el acceso a las cámaras."],
+        "choices": [
+          {"label": "Compartir la señal con el refugio", "value": 1, "response": "Rotom: El refugio recibe la señal. Nadie pierde el aire que ya tenía.", "archive": "La señal de aire se compartió con el refugio."},
+          {"label": "Guardar la señal en el Rotom", "value": 2, "response": "Ash: La guardamos para recordar que siempre había espacio para respirar.", "archive": "La señal de aire quedó archivada como recuerdo."}
+        ]
+      }
+    },
+    "W9": {
+      "title": "Lavender Syndrome — Campanario del Silencio",
+      "opening": [
+        "Rotom: Hay una frecuencia en el campanario, pero no hace falta reproducirla.",
+        "Ash: Escucharemos el lugar, no una grabación que lo hiera.",
+        "Rotom: Los subtítulos de las voces quedarán activos y el audio seguirá en silencio."
+      ],
+      "normal": [
+        "El campanario está callado. Las ondas en la pared recuerdan que alguna vez hubo música.",
+        "Te vi volver a la misma ventana. La habitación no cambia, pero ahora escuchas antes de entrar.",
+        "Las campanas no necesitan sonar para marcar el orden. Mira las letras talladas en la piedra.",
+        "Si una voz se corta, deja que termine el silencio antes de tocar la siguiente campana.",
+        "No responde. La campana queda inmóvil y el polvo no se levanta."
+      ],
+      "conscious": [
+        "El sonido de este mundo se queda en los objetos, no dentro de tus oídos.",
+        "Te recuerdo. Antes de seguir, comprobaste que el pueblo aún tenía una salida.",
+        "Cada silencio corta una repetición. No hace falta romper la campana ni la puerta.",
+        "Confieso que temía ser la última voz. Ahora sé que el silencio también puede acompañar."
+      ],
+      "interdimensional": {
+        "phase4": "La campana responde a una pausa que todavía no ha ocurrido.",
+        "phase7": "El coro termina sin una última nota. Nadie tiene que responderle."
+      },
+      "phaseScenes": {
+        "3": ["Una onda se dibuja en la piedra y se detiene antes de llegar a la salida."],
+        "5": ["Las voces dejan de superponerse. El subtítulo aparece sin reproducir audio."],
+        "7": ["El campanario calla. La ruta y las voces archivadas permanecen disponibles." ]
+      },
+      "boss": {
+        "intro": ["El Coro no canta; las campanas muestran marcas de luz en el orden correcto.", "Rotom: La prueba se completa con pausas. No hace falta reproducir ninguna frecuencia."],
+        "victory": ["Las cuatro ondas se apagan. El campanario permanece en pie y en silencio.", "Ash: Gracias por dejarme escuchar hasta el final." ]
+      },
+      "decision": {
+        "variable": 306,
+        "prompt": ["Una campana conserva luz en el borde. Puedes archivarla en silencio o dejar que vuelva al cielo.", "No se reproducirá audio en ninguna de las opciones."],
+        "choices": [
+          {"label": "Guardar el silencio en el archivo", "value": 1, "response": "Rotom: Silencio registrado. Ninguna frecuencia ha sido reproducida.", "archive": "El silencio del campanario quedó registrado sin audio."},
+          {"label": "Dejar que la luz vuelva al cielo", "value": 2, "response": "Ash: Que la luz se vaya sin tener que convertirse en sonido.", "archive": "La luz de la campana volvió al cielo; el archivo conserva la elección."}
+        ]
+      }
+    }
+  }
+}

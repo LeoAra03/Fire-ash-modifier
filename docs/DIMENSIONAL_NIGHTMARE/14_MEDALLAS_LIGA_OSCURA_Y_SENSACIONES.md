@@ -42,9 +42,10 @@ leído.
 | **Atlas (paralelo)** | — | sin tocar | — | — |
 
 Implementación: el tono se aplica **al entrar a cada mapa** (cada transferencia del ciclo inserta su
-`pbToneChangeAll` con marca `dn:sensacion`), y salir a la Gruta o al Nexo lo devuelve a neutro. El
-clima y el audio quedan como backlog B2 (necesitan archivos de audio propios), documentados aquí
-para no perder la intención.
+`pbToneChangeAll` con marca `dn:sensacion`), y salir a la Gruta o al Nexo lo devuelve a neutro. Ya
+se generaron 11 temas MIDI originales y se asignaron a 149 mapas; EP05 conserva silencio explícito
+en 2104–2109. Quedan como backlog B2 las variantes de audio por fase, clima/BGS y los cortes de
+anomalías que no sean el silenciador de EP04; su reproducción aún requiere QA manual.
 
 ---
 
@@ -114,7 +115,9 @@ combate real. Sin esta escena el combate no existe: la Liga no se puede terminar
 
 Se proponen **tres mundos** más, coherentes con el canon elegido (Ash como anomalía externa, mundos
 cerrados, una medalla por mundo). Se construyen **después** de la Liga Oscura, en un segundo anillo de
-la Antesala, y cada uno exige su medalla y su cartuchera con la misma nomenclatura.
+la Antesala, y cada uno exige su medalla y su cartuchera con la misma nomenclatura. **W7 abre al
+cerrar la Liga (sw920); W8 y W9 abren en orden tras sw925 y sw926.** No se exige `v264 ≥ 9`: `v264`
+es el contador de las siete emisiones de Monte Silver, y DN sólo lo consulta para sus gates antiguos.
 
 | # | Mundo | Sensación | Medalla / cartuchera | Por qué existe (motivo) |
 |---|---|---|---|---|
@@ -137,7 +140,7 @@ no 12, para mantener el tamaño de los demás mundos). El cierre de los nueve mu
 ## 6. Convivencia con el mundo Atlas
 
 - Mapas nuevos **solo** desde 2141; el mundo Atlas conserva sus ids.
-- Flags nuevas solo en el tramo `917–931` (switches) y `278–289` (variables); ninguna pisa flags
+- Flags nuevas en `917–935` (switches DN) y `278–297` (variables DN; `v264` sigue siendo contador externo de Monte Silver, sólo lectura); ninguna pisa flags
   `868–881` (Atlas T2) ni `882–916` (DN del primer anillo).
 - Objetos nuevos con prefijo `DN_`; ids numéricos desde `1040`.
 - Los eventos DN instalados en mapas base (Gruta 2030) ya están respaldados en
@@ -150,11 +153,14 @@ no 12, para mantener el tamaño de los demás mundos). El cierre de los nueve mu
 | Recurso | Rango | Uso |
 |---|---|---|
 | Switches | 917 | `DN_MEDALS_READY` (seis cartucheras) |
+| Switches | 918–921 | `DN_LIGA_*` (progreso, Arceus, cierre, guardado de Mad Pikachu) |
 | Switches | 922–927 | sellos y grietas del segundo anillo (W7/W8/W9) |
 | Switches | 928–930 | fase A de los jefes W7/W8/W9 |
 | Switches | 931 | `DN_TESTIGO_LISTO` (los nueve sellos → Vitrina del Testigo) |
-| Switches | 918–921 | `DN_LIGA_*` (progreso, Arceus, cierre, guardado de Mad Pikachu) |
-| Variables | 278–281 | rama de Mad Pikachu, chispas, medallas contadas, velocidad |
+| Switches | 932–935 | cuotas de anomalías W7/W8/W9 y resolución del Nexo |
+| Variables | 264 | contador de emisiones Monte Silver; lectura de DN, sin escrituras DN |
+| Variables | 278–288 | Liga Oscura y mecánicas propias de W7/W8/W9 |
+| Variables | 289–297 | contadores independientes de fase B (uno por mundo) |
 | Objetos | 1040–1056 | 7 medallas + 8 cartucheras |
 | Mapas | 2141–2142 | Pórtico y Coliseo de la Liga Oscura |
 

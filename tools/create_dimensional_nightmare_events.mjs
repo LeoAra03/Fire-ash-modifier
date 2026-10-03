@@ -32,8 +32,8 @@ const EPISODES = [
   { key: "EP04", doc: "04_EP04_HYPNOS_LULLABY.md", from: 2088, to: 2103, seal: 886, grieta: 893, res: 14, var: 271, cuota: 899, boss: "LA NANA" },
   { key: "EP05", doc: "05_EP05_POKEMON_BLACK.md", from: 2104, to: 2119, seal: 887, grieta: 894, res: 16, var: 272, cuota: 900, boss: "EL JUGADOR 000" },
   { key: "EP06", doc: "06_EP06_KING_UNOWN.md", from: 2120, to: 2135, seal: 888, grieta: 895, res: 18, var: 273, cuota: 901, boss: "KINGGUS" },
-  // Segundo anillo (W7–W9): se abre tras la Liga Oscura (v264 ≥ 9) y usa su propio
-  // bloque de flags 922–930 y variables 283–285.
+  // Segundo anillo (W7–W9): W7 se abre tras la Liga Oscura (sw920), sin reutilizar v264;
+  // ese contador pertenece a las emisiones selladas de Monte Silver. El anillo usa flags 922–930.
   { key: "W7", doc: "16_W7_STRANGLED_RED.md", from: 2143, to: 2158, seal: 922, grieta: 925, res: 12, var: 283, cuota: 932, bossSwitch: 928, boss: "EL AMO Y LA CORREA" },
   { key: "W8", doc: "17_W8_BURIED_ALIVE.md", from: 2159, to: 2174, seal: 923, grieta: 926, res: 11, var: 284, cuota: 933, bossSwitch: 929, boss: "EL QUE RESPIRA DEBAJO" },
   { key: "W9", doc: "18_W9_LAVENDER_SYNDROME.md", from: 2175, to: 2190, seal: 924, grieta: 927, res: 12, var: 285, cuota: 934, bossSwitch: 930, boss: "EL CORO DEL CAMPANARIO" },
@@ -78,15 +78,19 @@ const BOSSES = {
     phaseB: { kind: "rendijas", verb: "cerrar", noun: "rendija", cells: null, cellsMap: null,
       texts: ["Una rendija se cierra. La silueta pierde un borde.", "La segunda rendija te devuelve una copia de tu poción.",
         "La tercera rendija repite tu último movimiento.", "La cuarta se cierra desde dentro."] },
-    reward: "DN_PAGE_05", notes: "El combate espejo real (pbPartyCopy) queda pendiente: hoy usa un equipo fijo equivalente.",
+    reward: "DN_PAGE_05", notes: "El jefe usa una copia temporal del equipo del jugador; nunca comparte ni transfiere instancias.",
   },
   EP06: {
-    name: "KINGGUS", phaseA: { type: "GENTLEMAN", label: "KINGGUS", trainer: "DN_EP06_A" },
-    team: [["UNOWN", 120], ["UNOWN", 121], ["UNOWN", 122], ["UNOWN", 123], ["UNOWN", 124], ["UNOWN", 125]],
+    name: "KINGGUS", phaseA: { type: "DN_KINGGUS", label: "KINGGUS", trainer: "DN_EP06_A" },
+    team: [["UNOWN", 100], ["UNOWN", 100], ["UNOWN", 100], ["BRONZONG", 106], ["SIGILYPH", 104], ["XATU", 105]],
+    finalForm: {
+      type: "DN_KINGGUS", label: "EL REY SIN LETRA", trainer: "DN_EP06_FINAL",
+      team: [["UNOWN", 120], ["UNOWN", 121], ["BRONZONG", 123], ["SIGILYPH", 122], ["GOTHITELLE", 122], ["XATU", 125]],
+    },
     phaseB: { kind: "letras", verb: "colocar", noun: "letra", cells: null, cellsMap: null,
       texts: ["El suelo brilla: K", "El suelo brilla: I", "El suelo brilla: N", "El suelo brilla: G",
         "El suelo brilla: G", "El suelo brilla: U", "El suelo brilla: S"] },
-    reward: "DN_ANCLA", notes: "Tras la fase 7 el Rey se levanta: forma final KINGGUS2 (equipo 120–125 propuesto).",
+    reward: "DN_ANCLA", notes: "Tras completar KINGGUS en orden, se vencen la forma que deletrea y la forma final (niveles 120–125).",
   },
   W7: {
     name: "EL AMO Y LA CORREA", phaseA: { type: "HIKER", label: "EL AMO", trainer: "DN_W7_A" },
@@ -138,19 +142,29 @@ function parseNpcs(lines) {
   for (const line of lines) {
     const m = line.match(NPC_ROW);
     if (!m) continue;
-    const [, mapId, name, type, rawSprite, notes] = m;
-    if (!/^\d{4}$/.test(mapId) || /^:?-+$/.test(name)) continue;
+    const [, mapId, rawName, rawType, rawSprite, rawNotes] = m;
+    if (!/^\d{4}$/.test(mapId) || /^:?-+$/.test(rawName)) continue;
+    const name = rawName.trim().replace(/\*\*/g, "");
+    const typeText = rawType.trim();
+    const group = typeText.match(/[×x]\s*(\d+)\s*$/i);
+    const groupCount = group ? Math.max(1, Math.min(12, Number(group[1]))) : 1;
+    const type = typeText.replace(/[×x]\s*\d+\s*$/i, "").trim();
     let sprite = rawSprite.trim();
     // El GDD escribe cosas como «(sin sprite)», «(imagen fija)» o «(evento sin sprite)»:
     // no son nombres de archivo de Graphics/Characters, son eventos sin gráfico propio.
     if (sprite.startsWith("(")) sprite = "";
-    npcs.push({
-      map: Number(mapId),
-      name: name.trim().replace(/\*\*/g, ""),
-      type: type.trim(),
-      sprite,
-      notes: notes.trim().replace(/\*\*/g, ""),
-    });
+    for (let instance = 1; instance <= groupCount; instance++) {
+      npcs.push({
+        map: Number(mapId),
+        name,
+        displayName: groupCount > 1 ? `${name} ${instance}` : name,
+        instance,
+        groupCount,
+        type,
+        sprite,
+        notes: rawNotes.trim().replace(/\*\*/g, ""),
+      });
+    }
   }
   return npcs;
 }
@@ -175,7 +189,9 @@ function parseEvents(lines, episode) {
     const maps = [...ev.detail.matchAll(MAP_ID())].map((m) => Number(m[1]));
     const cells = [...ev.detail.matchAll(CELL())].map((m) => [Number(m[1]), Number(m[2])]);
     const triggerText = ev.detail.toLowerCase();
-    const trigger = /autorun/.test(triggerText) ? "autorun" : /pisar|al pisar/.test(triggerText) ? "touch" : "action";
+    const trigger = /paralelo/.test(triggerText) ? "parallel"
+      : /autorun/.test(triggerText) ? "autorun"
+        : /pisar|al pisar/.test(triggerText) ? "touch" : "action";
     ev.maps = maps.length ? maps : [];
     ev.cells = cells;
     ev.trigger = trigger;
@@ -249,8 +265,9 @@ const blueprint = {
   docs: "docs/DIMENSIONAL_NIGHTMARE/01..07",
   hub: { map: 2030, x: 36, y: 12, note: "Gruta de los Testigos: punto de entrada/salida de cada episodio" },
   flags: {
-    switchRange: [882, 934],
-    variableRange: [265, 288],
+    switchRange: [882, 935],
+    variableRange: [265, 307],
+    externalVariablesReadOnly: { 264: "Emisiones selladas de Monte Silver; DN sólo lee este contador (0–7)." },
     commonEvents: [900, 906],
   },
   episodes: [],

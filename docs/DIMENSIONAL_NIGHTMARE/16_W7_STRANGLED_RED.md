@@ -64,7 +64,7 @@ tone(-96,-64,-64,40); v266 = 6; huecos activos (content/dimensional_nightmare_fa
 | 2143 | Rotom (proyección) | Interdimensional | `trchar001` | Traduce el duelo en texto; cambia por fase. |
 | 2144 | La Madre del Amo | Normal | `trchar042` | Guarda la ropa del Pokémon. Estado 4: la dobla sin mirar. |
 | 2145 | El Niño del Trofeo | Consciente | `trchar010` | Lee los trofeos: cada uno tiene un año que no existe. |
-| 2146 | La Jardinera de Promesas | Normal | `trchar052` | Cura 1 vez por visita; en fase 5 ya no está, pero su regadera sí. |
+| 2146 | La Jardinera de Promesas | Normal | `trchar059` | Cura 1 vez por visita; en fase 5 ya no está, pero su regadera sí. Reutiliza el sprite alternativo de la Jardinera de Raíces. |
 | 2147 | Cocinera Sin Fuego | Normal | `trainer_PSYCHIC_F` | Cambia objetos por recuerdos (intercambio simbólico). |
 | 2149 | El Criptero | Consciente | `trainer_HIKER` | Sabe el nombre real del Pokémon y no lo dice hasta la fase 6. |
 | 2150 | La Tejedora de Cintas | Normal | `trchar015` | Explica el orden de las correas; una de ellas desaparece en fase 4. |
@@ -88,7 +88,7 @@ Estado 5: (silencio) "..."   # el evento ya no muestra texto; mira la correa y s
 ## 4. Eventos programables
 
 ```
-EV_W7_Entrada        — Mapa 2143 — Autorun al entrar (v264≥9)
+EV_W7_Entrada        — Mapa 2143 — Autorun tras abrir W7 con sw920 (Liga Oscura cerrada; v264 no cambia)
                         → texto de la grieta, sw922 = ON parcial, tone fase 1, música "PkmRS-MtPyre"
 EV_W7_Cuarto         — 2144, 3 puntos — Al inspeccionar la cama, la correa y la foto
                         → v288 += 1; al 3.º: aparece la primera correa (celda inicial de 2150)
@@ -189,11 +189,9 @@ EV_W7_Jefe           — 2158 — Hablar con el amo (autorun de mapa)
 
 | Momento | Pista | Nota |
 |---|---|---|
-| Mundo normal | `PkmRS-MtPyre` | tono base del mundo |
-| Fases 3–5 | `PkmRS-MtPyre` pitch 90 | la melodía se arrastra |
-| Anomalías auditivas | `PkmRS-MtPyre` + corte de 4 s | silencio incómodo, no jump scare |
-| Jefe | `Legend Sinnoh` pitch 80 | el duelo del amo |
-| Cierre | `PkmRS-MtPyre` pitch 100 | vuelve el rojo vivo 8 s antes de la grieta |
+| Exploración W7 (2143–2158) | `DN_StrangledRed.mid` | Tema original de cuerdas tenues, con una nota que se estrecha y vuelve. |
+| Cortes de anomalía / fases | Pendiente por evento | La BGM base está asignada; las variantes temporales siguen en backlog. |
+| Combate del jefe | BGM de batalla del juego | No se altera el tema del motor de batalla. |
 
 ---
 

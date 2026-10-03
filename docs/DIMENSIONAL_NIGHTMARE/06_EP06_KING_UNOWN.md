@@ -225,14 +225,11 @@ EV_UNO_Salida     — 2135 — Salida libre a 2030 / 2021 (y al Nexo, ver doc 07
 
 ## 8. Música
 
-| Momento | Pista existente | Modificación |
+| Momento | Pista | Nota |
 |---|---|---|
-| Trono (fases 1–2) | `PkmRS-MtPyre` | pitch −4 %, volumen 70 % |
-| Fases 3–5 | `PkmRS-MtPyre` + coro | 60 %; Unown hacen eco en cada letra |
-| Fases 6–7 | `A Trap With No Return` | 80 %, con cortes rítmicos (una letra por corte) |
-| Visión del trono | `secretred` | piano solo (si existe; si no, `secretred` a 30 %) |
-| Anomalía detectada | (silencio) | ping del Rotom |
-| **Jefe KINGGUS** | `secretred` | invertida + coro + latido a 90 BPM |
+| Exploración EP06 (2120–2135) | `DN_KingUnown.mid` | Órgano suspendido y motivo original de siete grados. |
+| Variaciones de letra / fase | Pendiente por evento | BGM base instalada; faltan cortes sincronizados con el progreso del puzzle. |
+| Combate de KINGGUS | BGM de batalla del juego | La composición de exploración no sustituye el tema de combate. |
 
 ---
 

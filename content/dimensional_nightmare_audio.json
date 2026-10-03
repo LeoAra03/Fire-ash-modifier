@@ -1,0 +1,219 @@
+{
+  "generatedBy": "tools/dn_build_audio.mjs",
+  "originalComposition": true,
+  "format": "Standard MIDI File type 0 · 480 PPQ · General MIDI · no borrowed samples",
+  "silence": {
+    "from": 2104,
+    "to": 2109,
+    "reason": "EP05 phases 1–3 require true silence"
+  },
+  "tracks": [
+    {
+      "file": "Audio/BGM/DN_WitnessAtrium.mid",
+      "title": "The Witness Atrium",
+      "bpm": 64,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 30,
+      "mood": "Umbral sereno del hub; piano-celesta tenue sobre un acorde suspendido.",
+      "bytes": 605,
+      "sha256": "20d020b8ab4e2ea127c70c582244b76a87e1f25d2010f558183561361f3f68cd"
+    },
+    {
+      "file": "Audio/BGM/DN_WhiteHand.mid",
+      "title": "A Hand Beneath the Ash",
+      "bpm": 68,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 28,
+      "mood": "Pulso de piedra y ceniza; figura de campana original, lenta y sin percusión.",
+      "bytes": 553,
+      "sha256": "52f047edfaa80c8f91948dd6b05a1ea7cd0d272967e55566b0ee50502ca60a49"
+    },
+    {
+      "file": "Audio/BGM/DN_LostSilver.mid",
+      "title": "The Name Left Behind",
+      "bpm": 62,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 31,
+      "mood": "Celesta distante y armonía menor; una frase que vuelve sin resolver el nombre.",
+      "bytes": 568,
+      "sha256": "378befd2e0038e8f3cef2ac82d419e4cb00c26d6a4b79650f859ec88011f8104"
+    },
+    {
+      "file": "Audio/BGM/DN_SnowSilver.mid",
+      "title": "Snow on the Witness Ridge",
+      "bpm": 54,
+      "bars": 8,
+      "beatsPerBar": 3,
+      "durationSeconds": 27,
+      "mood": "Tres pulsos amplios, como pasos sobre nieve; aireado, sin reutilizar una melodía existente.",
+      "bytes": 538,
+      "sha256": "9716e7354339dc6a5afba0991aff31291c5f46a9cef3ca53cb8e81cd5e8d8f94"
+    },
+    {
+      "file": "Audio/BGM/DN_Hypnos_Lullaby.mid",
+      "title": "The Hollow Trunk Lullaby",
+      "bpm": 60,
+      "bars": 8,
+      "beatsPerBar": 3,
+      "durationSeconds": 24,
+      "mood": "Canción de cuna propia de tres pulsos; la BGM se puede apagar durante el silenciador.",
+      "bytes": 560,
+      "sha256": "5314ec95ff75461a4184f24ea7637180a0c5020773aca8571593d6b8e58fe143"
+    },
+    {
+      "file": "Audio/BGM/DN_PokemonBlack.mid",
+      "title": "A Signal with No Sender",
+      "bpm": 72,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 27,
+      "mood": "Código tonal escaso que emerge tras el tramo de silencio absoluto de EP05.",
+      "bytes": 590,
+      "sha256": "bd132f93163aba7a58e1623e6bd0cba22e3075432dcb93164fb81a191760c9db"
+    },
+    {
+      "file": "Audio/BGM/DN_KingUnown.mid",
+      "title": "Seven Letters, One Throne",
+      "bpm": 70,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 27,
+      "mood": "Órgano suspendido y siete grados que se contestan; trono sin fanfarria prestada.",
+      "bytes": 591,
+      "sha256": "d8d8a43e241631f7e0c50bb9f309a176f3d6627021e750a82ba8e6126b6f9493"
+    },
+    {
+      "file": "Audio/BGM/DN_AshenGuardian.mid",
+      "title": "Ashen Guardian",
+      "bpm": 76,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 25,
+      "mood": "Resolución cálida en Re mayor; motivo nuevo para el Nexo y el subtítulo Ashen Guardian.",
+      "bytes": 607,
+      "sha256": "8e35473d8d973a6e139e3c146adc5790dbb06909cac90762a2b529fae43a24b2"
+    },
+    {
+      "file": "Audio/BGM/DN_StrangledRed.mid",
+      "title": "The Garden Holds Its Breath",
+      "bpm": 82,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 23,
+      "mood": "Cuerda tenue con una nota que se estrecha y vuelve; no imita la BGM del juego base.",
+      "bytes": 594,
+      "sha256": "5e896837f78dfe7492c6b18c9d7da48233f4844ce09498df0b617ba31aff8d27"
+    },
+    {
+      "file": "Audio/BGM/DN_BuriedAlive.mid",
+      "title": "Air Under the Earth",
+      "bpm": 48,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 40,
+      "mood": "Grave baja y sostenida; sensación de aire limitado sin efectos de susto fuerte.",
+      "bytes": 519,
+      "sha256": "070d8baa6273107bf4d85e8fa9c507987bb956d23899524644457d56f58b57ed"
+    },
+    {
+      "file": "Audio/BGM/DN_LavenderEcho.mid",
+      "title": "A Bell Remembers the Silence",
+      "bpm": 68,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "durationSeconds": 28,
+      "mood": "Campana de celesta y pausas amplias; composición nueva para las ondas de Lavender.",
+      "bytes": 594,
+      "sha256": "3af741330abc7e802955244d923b19eb46604d9585e69370e953fd8d8c100d52"
+    }
+  ],
+  "mapAssignments": [
+    {
+      "from": 2040,
+      "to": 2040,
+      "track": "DN_WitnessAtrium",
+      "volume": 55,
+      "pitch": 100
+    },
+    {
+      "from": 2041,
+      "to": 2056,
+      "track": "DN_WhiteHand",
+      "volume": 52,
+      "pitch": 100
+    },
+    {
+      "from": 2057,
+      "to": 2072,
+      "track": "DN_LostSilver",
+      "volume": 48,
+      "pitch": 100
+    },
+    {
+      "from": 2073,
+      "to": 2087,
+      "track": "DN_SnowSilver",
+      "volume": 48,
+      "pitch": 100
+    },
+    {
+      "from": 2088,
+      "to": 2103,
+      "track": "DN_Hypnos_Lullaby",
+      "volume": 56,
+      "pitch": 100
+    },
+    {
+      "from": 2104,
+      "to": 2109,
+      "track": null,
+      "volume": 100,
+      "pitch": 100
+    },
+    {
+      "from": 2110,
+      "to": 2119,
+      "track": "DN_PokemonBlack",
+      "volume": 40,
+      "pitch": 100
+    },
+    {
+      "from": 2120,
+      "to": 2135,
+      "track": "DN_KingUnown",
+      "volume": 52,
+      "pitch": 100
+    },
+    {
+      "from": 2136,
+      "to": 2140,
+      "track": "DN_AshenGuardian",
+      "volume": 55,
+      "pitch": 100
+    },
+    {
+      "from": 2143,
+      "to": 2158,
+      "track": "DN_StrangledRed",
+      "volume": 50,
+      "pitch": 100
+    },
+    {
+      "from": 2159,
+      "to": 2174,
+      "track": "DN_BuriedAlive",
+      "volume": 46,
+      "pitch": 100
+    },
+    {
+      "from": 2175,
+      "to": 2190,
+      "track": "DN_LavenderEcho",
+      "volume": 50,
+      "pitch": 100
+    }
+  ]
+}

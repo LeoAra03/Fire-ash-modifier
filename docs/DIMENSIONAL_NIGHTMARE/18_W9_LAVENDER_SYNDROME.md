@@ -64,7 +64,7 @@ tone(-24,-8,-32,0); v266 = 3; música "Lavender" pitch 90; ondas activas (overla
 | 2175 | Rotom (silenciador) | Interdimensional | `trchar001` | Marca el nivel de canto; cambia de tono por fase. |
 | 2176 | La Mujer del Altavoz | Normal | `trchar042` | 5 estados; en fase 4 sólo señala el altavoz. |
 | 2177 | El Pianista Sin Manos | Consciente | `trainer_PSYCHIC_M` | Toca con la mirada; da el orden de las 4 notas. |
-| 2178 | La Maestra que Repite | Normal | `trchar052` | Repite la misma clase; el Rotom puede cortarla. |
+| 2178 | La Maestra que Repite | Normal | `trchar058` | Repite la misma clase; el Rotom puede cortarla. Sustituto visual de `trchar052`, ausente en el juego base. |
 | 2179 | La Campanera Ciega | Consciente | `trainer_PSYCHIC_F` | Sabe que la campana suena en otra habitación. |
 | 2180 | El Vigía de Ondas | Interdimensional | `trchar015` | Cuenta las ondas que pasan: siempre 108. |
 | 2182 | La Jardinera Sorda | Normal | `trchar010` | Cura 1 vez por visita; sus plantas siguen el ruido. |
@@ -87,7 +87,7 @@ Estado 5: (silencio) "..."   # el evento ya no muestra texto; levanta la lintern
 ## 4. Eventos programables
 
 ```
-EV_W9_Entrada        — Mapa 2175 — Autorun al entrar (v264≥9)
+EV_W9_Entrada        — Mapa 2175 — Autorun tras abrir W9 con sw926 (sello de W8; v264 no cambia)
                         → texto de la grieta, sw924 = ON parcial, tone fase 1, música "Lavender"
 EV_W9_Canto          — 2175–2190 — Proceso paralelo (no bloquea)
                         → v287 sube cerca de altavoces/campanas, baja en los silencios; ≥80 distorsiona texto
@@ -190,11 +190,9 @@ EV_W9_Jefe           — 2190 — Hablar con el coro del campanario (autorun de 
 
 | Momento | Pista | Nota |
 |---|---|---|
-| Mundo normal | `Lavender` | volumen bajo, sin sorpresas |
-| Fases 3–5 | `Lavender` pitch 90 | se arrastra |
-| Silencio ancla | silencio total 5 s | el jugador debe notar la ausencia |
-| Jefe | `Legend Sinnoh` pitch 60 | el coro canta encima |
-| Cierre | `Lavender` pitch 100 | el pueblo canta una vez y calla |
+| Exploración W9 (2175–2190) | `DN_LavenderEcho.mid` | Campana de celesta y pausas amplias; composición original para las ondas. |
+| Silencio ancla / variantes | Pendiente por evento | El tema está asignado; el silencio de cinco segundos aún requiere un disparador de QA. |
+| Combate del jefe | BGM de batalla del juego | No se altera el tema del motor de batalla. |
 
 ---
 

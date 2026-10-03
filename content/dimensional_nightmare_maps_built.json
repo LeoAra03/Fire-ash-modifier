@@ -3490,7 +3490,7 @@
         "walkable": 61,
         "ratio": 1
       },
-      "source": "Map2139 ventana (0,0) + espejo"
+      "source": "Map2139 · tileset funerario Fire Ash + cámara recortada y galería asimétrica"
     },
     {
       "id": 2142,
@@ -3498,20 +3498,20 @@
       "title": "Liga Oscura — Coliseo del Vínculo",
       "primary": null,
       "reusedTileset": true,
-      "tilesetId": 124,
+      "tilesetId": 13,
       "tiles": null,
       "width": 30,
       "height": 22,
       "bfs": {
         "entry": [
-          15,
-          21
+          14,
+          20
         ],
-        "reachable": 563,
-        "walkable": 563,
-        "ratio": 1
+        "reachable": 238,
+        "walkable": 246,
+        "ratio": 0.967479674796748
       },
-      "source": "Map2139 ventana (0,0) + espejo"
+      "source": "Map1165 · tileset funerario Fire Ash + cámara recortada y galería asimétrica"
     },
     {
       "id": 2143,

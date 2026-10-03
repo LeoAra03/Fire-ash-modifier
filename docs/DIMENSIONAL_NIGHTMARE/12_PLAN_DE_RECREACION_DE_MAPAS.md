@@ -507,12 +507,15 @@ Fase B por jefe (implementada en `apply_dimensional_nightmare_battles.mjs`, con 
 contador `v277`): EP01 **4 cadenas** · EP02 **4 fotos** · EP03 **4 fogatas** (2073/2075/2078/2082) ·
 EP04 **4 cunas** · EP05 **4 rendijas** · EP06 **7 letras**. El sello lo enciende el último paso, no la
 batalla. Pendiente de arte/guion: el combate espejo real del EP05 (hoy usa equipo fijo equivalente),
-la forma final del EP06 (equipo 120–125 propuesto) y las pistas de audio alterado de las anomalías
-auditivas.
+la forma final del EP06 (equipo 120–125 propuesto). El audio ya tiene 11 temas MIDI originales y
+149 mapas asignados; siguen pendientes las variantes por fase/BGS y los cortes auditivos individuales.
 
-Avisos que quedan en el catálogo (no rompen nada): `trchar052` no existe en `Graphics/Characters`
-(4 NPCs usan `trchar000`), `EV_HYP_Silenciador` no declara mapa en el GDD (se instala en el mapa del
-jefe) y el arte de KINGGUS/Mano Blanca sigue pendiente (doc 08).
+Cierre de avisos: los sprites ausentes `trchar052` se sustituyeron por alternativas existentes por
+rol y `EV_HYP_Silenciador` ya declara seis celdas transitables en Map2103; el constructor de eventos
+no reporta sprites faltantes ni mapas inferidos. `dn:build:all` aún informa reubicaciones de algunas
+celdas de fase B cuando el objetivo del GDD está fuera del mapa, bloqueado u ocupado; `dn:battles:verify`
+y la auditoría de 151 mapas confirman accesibilidad (0 errores, 0 avisos). Los sprites de KINGGUS y
+la Mano Blanca ya están instalados (`dn:art:verify` OK).
 
 **NO entra**: guion definitivo de cada diálogo (los textos salen de las notas del GDD y se pulen en
 la pasada de QA), los eventos del hub 2040 (el mapa ya está construido con `dn:hub`), y el arte

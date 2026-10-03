@@ -66,7 +66,7 @@ pbMessage("El reloj de la plaza marca las 4:44. \\nNo ha avanzado ni un minuto d
 | 2057 | Guardagujas Viejo | Normal | `trchar028` | 5 estados; cree que el tren "llega mañana" desde hace 30 años |
 | 2057 | Niña del Columpio | Consciente | `trchar010` | Sabe que el pueblo "se despierta" cuando alguien entra |
 | 2058 | Hombre del Sombrero | Normal | `trainer_SCIENTIST` | En fase ≥4 su sombra tiene forma de Pokémon |
-| 2059 | Fontanera | Normal | `trchar052` | Repara la fuente que nunca da agua; da la pala |
+| 2059 | Fontanera | Normal | `trchar056` | Repara la fuente que nunca da agua; da la pala. Sustituto visual de `trchar052`, ausente en el juego base. |
 | 2060 | Sepulturero Nuevo | Normal | `trainer_HIKER` | Bloquea el callejón; pide la pala |
 | 2061 | Leñador Ciego | Consciente | `trainer_HIKER` | «El bosque no está muerto. Está esperando.» |
 | 2063 | Pescador de Nada | Normal | `SWIMMER_M` | Lanza al agua sin anzuelo; pesca mejores "recuerdos" que peces |
@@ -207,14 +207,11 @@ EV_SIL_Salida        — 2072 — Salida libre al Monte Silver (2030)
 
 ## 8. Música
 
-| Momento | Pista existente | Modificación |
+| Momento | Pista | Nota |
 |---|---|---|
-| Pueblo (fases 1–2) | `Lavender Town` | normal, volumen 60 % |
-| Fases 3–4 | `Lavender Town` | pitch −10 %, se entrecorta en cada anomalía |
-| Fases 5–6 | `PkmRS-MtPyre` | cruzada con `Lavender Town` al 50 % |
-| Fase 7 | — | silencio + zumbido de cinta (`SE: Tape`) |
-| Anomalía detectada | (silencio) | ping del Rotom |
-| Jefe | `secretred` | pitch −12 %, sin percusión |
+| Exploración EP02 (2057–2072) | `DN_LostSilver.mid` | Composición MIDI original; celesta distante y frase que no resuelve. |
+| Cortes de anomalía / fase 7 | Pendiente por evento | No se alteran archivos comerciales; faltan las variantes temporales y el ping de Rotom. |
+| Combate del jefe | BGM de batalla del juego | El tema nuevo se asigna a mapas, no al motor de combate. |
 
 ---
 

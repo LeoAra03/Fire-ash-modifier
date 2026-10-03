@@ -66,7 +66,7 @@ import {
   marshalLoad, marshalDump, RHash, RObject, RString, RSymbol, RUserDef,
 } from "../web/js/marshal.js";
 import {
-  TileCanvas, passabilityOf, reachableCells, buildMapObject,
+  TileCanvas, passabilityOf, reachableCells, buildMapObject, tilesets,
 } from "./lib/map_painter.mjs";
 import { parseMap, tableGet } from "../web/js/rmxp.js";
 import { tableFromUserDef, tableToUserDef, tableSet } from "../web/js/rmxp.js";
@@ -231,7 +231,11 @@ function sealedRelicSpot(cv, start, salt = 0) {
   const cx = cv.width / 2, cy = cv.height / 2;
   const lejos = Math.max(...candidatos.map((c) => c.dist));
   const enCuadrante = candidatos.filter((c) => (c.x - cx) * qx > 0 && (c.y - cy) * qy > 0 && c.dist >= lejos * 0.55);
-  const pool = enCuadrante.length ? enCuadrante : candidatos;
+  // Si el acceso está en el borde inferior, puede que la esquina preferida no
+  // alcance el umbral de distancia. Mantener al menos el hemisferio indicado
+  // conserva veraz la pista norte/sur en lugar de caer en el cuadrante opuesto.
+  const enHemisferio = candidatos.filter((c) => (c.y - cy) * qy > 0);
+  const pool = enCuadrante.length ? enCuadrante : enHemisferio.length ? enHemisferio : candidatos;
   const score = (c) => c.dist * 100 + ((c.x * 7 + c.y * 13 + salt * 5) % 37);
   return pool.reduce((a, b) => (score(b) > score(a) ? b : a));
 }
@@ -1675,6 +1679,9 @@ function buildCelestialApproach() {
   drawCosmicGateway(cv, 31, 3);
   drawColumn(cv, 22, 3); drawColumn(cv, 29, 3);
 
+  // Sustituye franjas paralelas por terrazas quebradas, praderas orgánicas y una
+  // senda visible que serpentea hasta la puerta superior.
+  redesignCelestialApproach(cv);
   const map = buildMapObject(cv, { name: "La Ruta de Dios — Aproximación Celestial", bgm: "Legend Sinnoh" });
   addEventToMap(map, transferEvent(1, "Regreso a Ciudad Puntaneva", 26, 70, 625, 20, 5, 2, [
     "El sendero desciende entre nubes plateadas hacia Ciudad Puntaneva.",
@@ -1758,18 +1765,260 @@ function drawMonolith(canvas, x, y) {
 
 
 function plantNaturalFlankPines(cv, W, H) {
-  // West side clustered groves
-  for (let y = 3; y < H - 3; y += 5) {
-    drawFrostedPineTree(cv, 1, y);
-    if (y + 2 < H - 2) drawFrostedPineTree(cv, 3, y + 2);
-    if (y + 4 < H - 2) drawFrostedPineTree(cv, 2, y + 4);
+  // Kept for legacy call sites. The redesigned maps use hand-authored, asymmetric
+  // grove clusters instead of parallel rows.
+  const west = [[1, 5], [4, 11], [2, 19], [5, 27], [1, 35]];
+  const east = [[W - 4, 8], [W - 2, 17], [W - 6, 26], [W - 3, 34]];
+  for (const [x, y] of [...west, ...east]) if (x >= 0 && y >= 3 && x + 1 < W && y < H) drawFrostedPineTree(cv, x, y);
+}
+
+const TRAIL_TILE_PALETTES = {
+  approach: [1260, 1257], dawn: [1177, 1180], basalt: [1257, 1260],
+  aura: [4409, 1260], marble: [4409, 1257], time: [1260, 1257],
+  space: [4409, 1260], genesis: [4409, 1257],
+};
+const TRAIL_SAFE_TILES = new Set([4457, 1177, 1180, 1257, 1260, 4409]);
+function resetVisualCanvas(cv) {
+  for (let z = 0; z < 3; z++) cv.fillAll(z, 0);
+  cv.fillAll(0, 4457);
+}
+function verifyTrailPalette(cv, palette) {
+  const tileset = tilesets().get(cv.tilesetId);
+  if (!tileset) throw new Error(`Tileset ${cv.tilesetId} ausente al diseñar la ruta.`);
+  const base = 4457;
+  for (const tileId of palette) {
+    if (!TRAIL_SAFE_TILES.has(tileId)) throw new Error(`Tile ${tileId} no está autorizado para el sendero.`);
+    if (tileset.passages.data[tileId] !== tileset.passages.data[base]
+      || tileset.priorities.data[tileId] !== tileset.priorities.data[base]
+      || tileset.terrain.data[tileId] !== tileset.terrain.data[base]) {
+      throw new Error(`El tile ${tileId} altera pasabilidad, prioridad o terreno respecto a la nieve ${base}.`);
+    }
   }
-  // East side clustered groves
-  for (let y = 3; y < H - 3; y += 5) {
-    drawFrostedPineTree(cv, W - 3, y);
-    if (y + 2 < H - 2) drawFrostedPineTree(cv, W - 5, y + 2);
-    if (y + 4 < H - 2) drawFrostedPineTree(cv, W - 4, y + 4);
+}
+function rasterLine([x0, y0], [x1, y1]) {
+  const cells = [];
+  let x = x0, y = y0;
+  const dx = Math.abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
+  const dy = -Math.abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
+  let error = dx + dy;
+  while (true) {
+    cells.push([x, y]);
+    if (x === x1 && y === y1) break;
+    const twice = 2 * error;
+    if (twice >= dy) { error += dy; x += sx; }
+    if (twice <= dx) { error += dx; y += sy; }
   }
+  return cells;
+}
+function drawWindingTrail(cv, waypoints, palette, { width = 1, wideAt = [] } = {}) {
+  verifyTrailPalette(cv, palette);
+  const centerline = [];
+  for (let i = 0; i < waypoints.length - 1; i++) {
+    const segment = rasterLine(waypoints[i], waypoints[i + 1]);
+    centerline.push(...(i ? segment.slice(1) : segment).map(([x, y]) => ({ x, y, segment: i, step: centerline.length })));
+  }
+  const cells = new Map();
+  for (const point of centerline) {
+    const expanded = wideAt.some(([x, y]) => Math.abs(x - point.x) + Math.abs(y - point.y) <= 2);
+    const radius = expanded ? width + 1 : width;
+    for (let dy = -radius; dy <= radius; dy++) for (let dx = -radius; dx <= radius; dx++) {
+      const distance = Math.abs(dx) + Math.abs(dy);
+      if (distance > radius) continue;
+      const x = point.x + dx, y = point.y + dy;
+      if (!cv.inside(x, y) || !TRAIL_SAFE_TILES.has(cv.get(x, y, 0))) continue;
+      if (cv.get(x, y, 1) || cv.get(x, y, 2)) continue;
+      const key = `${x},${y}`;
+      const old = cells.get(key);
+      if (!old || distance < old.distance) cells.set(key, { distance, radius, step: point.step, segment: point.segment });
+    }
+  }
+  for (const [key, cell] of cells) {
+    const [x, y] = key.split(",").map(Number);
+    const edge = cell.distance === cell.radius;
+    cv.set(x, y, 0, edge ? palette[1] : palette[0]);
+  }
+  return cells.size;
+}
+function drawOrganicGrass(cv, x, y, rows) {
+  let placed = 0;
+  rows.forEach((row, dy) => [...row].forEach((cell, dx) => {
+    if (cell !== "#") return;
+    const px = x + dx, py = y + dy;
+    if (!cv.inside(px, py) || cv.get(px, py, 1) || cv.get(px, py, 2)) return;
+    if (cv.get(px, py, 0) !== 4457) return;
+    // La hierba es autotile de capa 2 en el juego: el suelo nevado queda debajo
+    // y las zonas transparentes no se convierten en huecos negros.
+    cv.set(px, py, 1, 447);
+    placed++;
+  }));
+  return placed;
+}
+function drawPineCluster(cv, roots) {
+  for (const [x, y] of roots) drawFrostedPineTree(cv, x, y);
+}
+function drawBrokenRidges(cv, segments) {
+  for (const [x, y, w, h, stairs = []] of segments) {
+    drawCoronetCliff(cv, x, y, w, h, { stairs });
+  }
+}
+function drawDaisSurface(cv, rows, x, y, tile = 4409) {
+  for (let dy = 0; dy < rows.length; dy++) for (let dx = 0; dx < rows[dy].length; dx++) {
+    if (rows[dy][dx] !== "#") continue;
+    const px = x + dx, py = y + dy;
+    if (!cv.inside(px, py)) continue;
+    if (cv.get(px, py, 1) || cv.get(px, py, 2)) continue;
+    cv.set(px, py, 0, tile);
+  }
+}
+
+function redesignCelestialApproach(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [
+    [1, 6], [4, 12], [2, 20], [5, 29], [1, 39], [4, 48], [2, 61], [7, 66],
+    [47, 8], [44, 16], [49, 25], [45, 34], [48, 45], [43, 55], [49, 64],
+  ]);
+  drawBrokenRidges(cv, [
+    [5, 56, 11, 3], [38, 55, 10, 3], [9, 39, 9, 3], [36, 38, 11, 3],
+    [4, 24, 12, 3], [37, 23, 11, 3], [13, 10, 8, 3], [34, 12, 9, 3],
+  ]);
+  drawWhiteMarbleDais(cv, 19, 2, 14, 6, { stairs: [24] });
+  drawSunburstAltar(cv, 23, 2);
+  drawWhiteMarbleDais(cv, 7, 47, 9, 5, { stairs: [10] });
+  drawSunburstAltar(cv, 9, 47);
+  drawCosmicGateway(cv, 40, 31);
+  drawColumn(cv, 38, 29); drawColumn(cv, 44, 34);
+  drawGuardianStatue(cv, 10, 54); drawGuardianStatue(cv, 42, 43);
+  drawCosmicPool(cv, 7, 17); drawCosmicPool(cv, 42, 17); drawCosmicPool(cv, 39, 52);
+  drawMonolith(cv, 9, 31); drawMonolith(cv, 44, 24); drawMonolith(cv, 9, 64);
+  drawSacredBoulder(cv, 37, 43); drawSacredBoulder(cv, 13, 29);
+  drawOrganicGrass(cv, 7, 34, ["  ####", " ######", "#######", " #####", "  ###"]);
+  drawOrganicGrass(cv, 39, 38, ["  ####", "######", " #####", "  ####"]);
+  drawOrganicGrass(cv, 7, 58, ["#####", "######", " ####", "  ###"]);
+  drawOrganicGrass(cv, 39, 59, [" ######", "#######", " #####", "  ####"]);
+  drawWindingTrail(cv, [
+    [26, 68], [24, 64], [28, 61], [32, 57], [30, 53], [23, 50], [20, 46],
+    [25, 43], [31, 40], [34, 36], [30, 33], [25, 30], [21, 26], [17, 22],
+    [17, 18], [21, 15], [25, 12], [29, 9], [26, 5],
+  ], TRAIL_TILE_PALETTES.approach, { width: 1, wideAt: [[26, 68], [26, 5], [21, 26], [25, 12]] });
+}
+
+function redesignFloor1(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [[2, 5], [5, 12], [2, 22], [5, 31], [34, 7], [32, 18], [36, 31]]);
+  drawBrokenRidges(cv, [[4, 27, 11, 3], [28, 24, 8, 3], [7, 9, 9, 3], [28, 8, 8, 3]]);
+  drawWhiteMarbleDais(cv, 16, 2, 10, 6, { stairs: [19] });
+  drawSunburstAltar(cv, 18, 2);
+  drawGuardianStatue(cv, 12, 19); drawGuardianStatue(cv, 29, 28); drawGuardianStatue(cv, 14, 34);
+  drawColumn(cv, 25, 13); drawColumn(cv, 10, 27); drawMonolith(cv, 32, 34);
+  drawSacredBoulder(cv, 6, 12); drawSacredBoulder(cv, 32, 15); drawSacredBoulder(cv, 9, 29, true);
+  drawOrganicGrass(cv, 6, 14, ["  ####", "#######", "######", " #####", "  ###"]);
+  drawOrganicGrass(cv, 29, 20, [" ####", "######", "#####", " ###"]);
+  drawOrganicGrass(cv, 6, 30, ["#####", "######", " ####", "  ##"]);
+  drawWindingTrail(cv, [[20, 36], [17, 33], [15, 29], [18, 26], [24, 24], [27, 21], [24, 18], [19, 16], [17, 12], [21, 9], [20, 5]], TRAIL_TILE_PALETTES.dawn, { width: 1, wideAt: [[20, 36], [24, 24], [20, 5]] });
+}
+
+function redesignFloor2(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [[3, 7], [1, 18], [6, 31], [36, 11], [33, 33]]);
+  drawBrokenRidges(cv, [[4, 26, 9, 3], [29, 24, 8, 3], [7, 11, 9, 3], [27, 8, 10, 3]]);
+  drawWhiteMarbleDais(cv, 16, 2, 9, 6, { stairs: [19] });
+  drawGuardianStatue(cv, 11, 16); drawGuardianStatue(cv, 31, 27); drawGuardianStatue(cv, 28, 13);
+  drawMonolith(cv, 10, 29); drawMonolith(cv, 31, 10); drawColumn(cv, 28, 31);
+  drawSacredBoulder(cv, 34, 18); drawSacredBoulder(cv, 8, 25, true); drawSacredBoulder(cv, 30, 19);
+  drawOrganicGrass(cv, 5, 14, ["####", "######", " #####", "  ###"]);
+  drawOrganicGrass(cv, 29, 17, ["  ###", "#####", "######", "####"]);
+  drawOrganicGrass(cv, 13, 29, ["###", "####", "  ##"]);
+  drawWindingTrail(cv, [[20, 36], [24, 33], [28, 30], [25, 27], [19, 26], [14, 23], [17, 20], [24, 18], [28, 15], [24, 12], [20, 9], [20, 5]], TRAIL_TILE_PALETTES.basalt, { width: 1, wideAt: [[20, 36], [19, 26], [20, 5]] });
+}
+
+function redesignFloor3(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [[2, 9], [5, 18], [1, 30], [36, 7], [34, 31]]);
+  drawBrokenRidges(cv, [[4, 30, 10, 3], [29, 27, 9, 3], [3, 14, 8, 3], [31, 11, 8, 3]]);
+  drawWhiteMarbleDais(cv, 15, 2, 12, 6, { stairs: [20] });
+  drawCosmicPool(cv, 8, 20); drawCosmicPool(cv, 32, 15); drawCosmicPool(cv, 34, 29);
+  drawGuardianStatue(cv, 13, 20); drawGuardianStatue(cv, 30, 26); drawGuardianStatue(cv, 19, 32);
+  drawColumn(cv, 27, 13); drawMonolith(cv, 8, 12); drawMonolith(cv, 34, 35);
+  drawSacredBoulder(cv, 7, 10); drawSacredBoulder(cv, 33, 30, true); drawSacredBoulder(cv, 8, 34);
+  drawOrganicGrass(cv, 5, 17, ["####", "######", "#####", "  ###"]);
+  drawOrganicGrass(cv, 31, 24, ["  ###", "######", "#####", " ####"]);
+  drawOrganicGrass(cv, 17, 32, ["####", "#####", " ###"]);
+  drawWindingTrail(cv, [[21, 38], [18, 35], [15, 31], [18, 27], [24, 24], [27, 20], [23, 17], [18, 14], [20, 10], [21, 5]], TRAIL_TILE_PALETTES.aura, { width: 1, wideAt: [[21, 38], [24, 24], [21, 5]] });
+}
+
+function redesignFloor4(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [[2, 8], [6, 22], [3, 34], [37, 10], [34, 27]]);
+  drawBrokenRidges(cv, [[4, 30, 10, 3], [29, 27, 8, 3], [7, 13, 9, 3], [29, 8, 10, 3]]);
+  drawWhiteMarbleDais(cv, 15, 2, 12, 6, { stairs: [20] });
+  drawDaisSurface(cv, ["  ####", " #######", "#########", " #######", "  #####"], 17, 18, 4409);
+  drawSunburstAltar(cv, 19, 2);
+  drawGuardianStatue(cv, 12, 17); drawGuardianStatue(cv, 30, 22); drawGuardianStatue(cv, 15, 30);
+  drawColumn(cv, 29, 34); drawColumn(cv, 11, 25); drawMonolith(cv, 33, 13);
+  drawSacredBoulder(cv, 35, 12); drawSacredBoulder(cv, 8, 25, true);
+  drawOrganicGrass(cv, 5, 15, ["#####", "######", " ####", "  ###"]);
+  drawOrganicGrass(cv, 30, 19, ["  ###", "#####", "######", " ####"]);
+  drawOrganicGrass(cv, 14, 32, ["###", "#####", " ####"]);
+  drawWindingTrail(cv, [[21, 38], [24, 35], [29, 32], [27, 28], [22, 25], [17, 22], [18, 18], [24, 16], [28, 12], [23, 9], [21, 5]], TRAIL_TILE_PALETTES.marble, { width: 1, wideAt: [[21, 38], [22, 25], [21, 5]] });
+}
+
+function redesignFloor5(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [[2, 8], [5, 27], [33, 31], [35, 9]]);
+  drawBrokenRidges(cv, [[4, 25, 8, 3], [27, 23, 8, 3], [5, 7, 9, 3], [26, 7, 8, 3]]);
+  drawDaisSurface(cv, [
+    "    ######", "  ##########", " ###########", "############",
+    " ###########", "  #########", "    #######", "      #####",
+  ], 13, 7, 4409);
+  drawCosmicPool(cv, 6, 18); drawCosmicPool(cv, 29, 23);
+  drawGuardianStatue(cv, 10, 17); drawGuardianStatue(cv, 28, 12); drawGuardianStatue(cv, 26, 28);
+  drawColumn(cv, 12, 12); drawMonolith(cv, 30, 10); drawMonolith(cv, 8, 30);
+  drawSacredBoulder(cv, 6, 10); drawSacredBoulder(cv, 31, 24, true);
+  drawOrganicGrass(cv, 5, 13, ["####", "#####", " ###"]);
+  drawOrganicGrass(cv, 28, 28, ["  ###", "#####", " ####"]);
+  drawWindingTrail(cv, [[19, 34], [15, 30], [13, 26], [17, 23], [23, 21], [26, 18], [23, 15], [19, 14], [17, 10], [22, 7], [19, 5]], TRAIL_TILE_PALETTES.time, { width: 1, wideAt: [[19, 34], [23, 21], [19, 5]] });
+}
+
+function redesignFloor6(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [[3, 32], [1, 13], [36, 8], [34, 28]]);
+  drawBrokenRidges(cv, [[4, 25, 8, 3], [27, 22, 8, 3], [6, 7, 8, 3], [25, 8, 9, 3]]);
+  drawDaisSurface(cv, [
+    "      ######", "   ##########", "  ###########", "############",
+    " ###########", "  ##########", "    #######",
+  ], 13, 8, 4409);
+  drawCosmicGateway(cv, 29, 25); drawCosmicGateway(cv, 8, 10);
+  drawCosmicPool(cv, 5, 16); drawCosmicPool(cv, 30, 18); drawCosmicPool(cv, 29, 8);
+  drawGuardianStatue(cv, 10, 19); drawGuardianStatue(cv, 28, 13);
+  drawColumn(cv, 11, 12); drawMonolith(cv, 29, 31);
+  drawSacredBoulder(cv, 32, 10); drawSacredBoulder(cv, 6, 24, true);
+  drawOrganicGrass(cv, 5, 13, ["####", "#####", " ###"]);
+  drawOrganicGrass(cv, 29, 29, ["  ####", "######", " ####"]);
+  drawWindingTrail(cv, [[19, 34], [23, 31], [28, 28], [26, 24], [22, 21], [16, 19], [13, 15], [18, 13], [24, 11], [21, 8], [19, 5]], TRAIL_TILE_PALETTES.space, { width: 1, wideAt: [[19, 34], [22, 21], [19, 5]] });
+}
+
+function redesignFloor7(cv) {
+  resetVisualCanvas(cv);
+  drawPineCluster(cv, [[1, 6], [4, 14], [2, 26], [6, 39], [43, 9], [39, 20], [44, 33], [40, 42]]);
+  drawBrokenRidges(cv, [[6, 22, 10, 3], [34, 25, 8, 3], [8, 34, 9, 3], [31, 36, 10, 3]]);
+  // Terraza de mármol erosionada: un contorno escalonado que se abre hacia el
+  // sur, en vez de una plaza rectangular cerrada.
+  drawDaisSurface(cv, [
+    "         #######", "      ###########", "   ##############",
+    " ##################", " ###################", "  #################",
+    "   ###############", "     ############", "        ########",
+  ], 12, 5, 4409);
+  drawSunburstAltar(cv, 21, 5);
+  drawCosmicGateway(cv, 11, 8); drawCosmicPool(cv, 34, 11);
+  drawGuardianStatue(cv, 13, 10); drawGuardianStatue(cv, 33, 18);
+  drawGuardianStatue(cv, 15, 19); drawGuardianStatue(cv, 32, 28);
+  drawGuardianStatue(cv, 12, 32); drawGuardianStatue(cv, 28, 37);
+  drawColumn(cv, 35, 34); drawMonolith(cv, 14, 35); drawMonolith(cv, 38, 35);
+  drawSacredBoulder(cv, 8, 12); drawSacredBoulder(cv, 37, 12, true); drawSacredBoulder(cv, 12, 28);
+  drawOrganicGrass(cv, 7, 24, ["  ####", "######", " #####", "  ###"]);
+  drawOrganicGrass(cv, 33, 25, ["#####", "######", " ####", " ###"]);
+  drawOrganicGrass(cv, 25, 34, ["###", "#####", " ####"]);
+  drawWindingTrail(cv, [[23, 40], [20, 36], [16, 32], [18, 28], [24, 26], [29, 23], [27, 19], [22, 17], [19, 14], [23, 10]], TRAIL_TILE_PALETTES.genesis, { width: 1, wideAt: [[23, 40], [24, 26], [23, 10]] });
 }
 
 export function buildFloor1() {
@@ -1811,6 +2060,7 @@ export function buildFloor1() {
   drawSacredBoulder(cv, 30, 26, true);
 
   // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  redesignFloor1(cv);
   const relic = sealedRelicSpot(cv, [20, 36], 1);
   drawSacredBoulder(cv, relic.x, relic.y);
 
@@ -1888,6 +2138,7 @@ export function buildFloor2() {
   drawSacredBoulder(cv, 7, 25, true);
 
   // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  redesignFloor2(cv);
   const relic = sealedRelicSpot(cv, [20, 36], 2);
   drawSacredBoulder(cv, relic.x, relic.y);
 
@@ -1975,6 +2226,7 @@ export function buildFloor3() {
   drawSacredBoulder(cv, 34, 26, true);
 
   // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  redesignFloor3(cv);
   const relic = sealedRelicSpot(cv, [21, 38], 3);
   drawSacredBoulder(cv, relic.x, relic.y);
 
@@ -2052,6 +2304,7 @@ export function buildFloor4() {
   drawWildGrassPatch(cv, 28, 13, 8, 16);
 
   // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  redesignFloor4(cv);
   const relic = sealedRelicSpot(cv, [21, 38], 4);
   drawSacredBoulder(cv, relic.x, relic.y);
 
@@ -2128,6 +2381,7 @@ export function buildFloor5() {
   drawWildGrassPatch(cv, 28, 12, 5, 13);
 
   // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  redesignFloor5(cv);
   const relic = sealedRelicSpot(cv, [19, 34], 5);
   drawSacredBoulder(cv, relic.x, relic.y);
 
@@ -2195,6 +2449,7 @@ export function buildFloor6() {
   drawWildGrassPatch(cv, 28, 12, 5, 13);
 
   // R8: el rincón sellado del piso (el altar de roca marca dónde buscar)
+  redesignFloor6(cv);
   const relic = sealedRelicSpot(cv, [19, 34], 6);
   drawSacredBoulder(cv, relic.x, relic.y);
 
@@ -2293,6 +2548,8 @@ export function buildFloor7() {
   drawWildGrassPatch(cv, 7, 24, 6, 10);
   drawWildGrassPatch(cv, 33, 24, 6, 10);
 
+  // Cima abierta y asimétrica: la ruta se ensancha frente al Altar del Origen.
+  redesignFloor7(cv);
   const map = buildMapObject(cv, { name: "La Ruta de Dios — 7F", bgm: "Legend Sinnoh" });
 
   addEventToMap(map, transferEvent(1, "Escaleras al 6F", 23, 41, 2036, 19, 6, 2));
