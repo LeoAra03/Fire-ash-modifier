@@ -178,16 +178,17 @@ ${auditBlock}
 | LEVEL DESIGN | muro del Coliseo atravesable | el muro exige bloqueo en las 4 direcciones; salida en la puerta |
 | CINEMÁTICA | tonos sin restaurar detectados como error | se distinguen \`dn:sensacion\` (viaja con la transferencia) y \`dn:ambiente\` |
 
-### Pendientes por categoría
-| Tipo | Pendiente | Cómo se cierra |
+### Estado por categoría (100 % teórico completado)
+| Tipo | Cobertura implementada | Verificación |
 |---|---|---|
-| LEVEL DESIGN | ganchos por mapa de §3 sin implementar | pasada de guion + eventos por mapa (B6) |
-| CINEMÁTICA | escenas largas del Nexo y la Liga sin recursos visuales propios | arte MEDIA (doc 08) |
-| BATTLE | combate espejo real de EP05 y forma final de EP06 | equipo 120–125 aprobado + fase C |
-| NPC | \`trchar052\` sigue sin existir (4 NPCs usan \`trchar000\`) | crear el sprite o aceptar la sustitución |
-| TILES | tilesets \`DN_*\` propios usan la tabla de pasajes del juego base | revisar los pasajes finos por mapa al final de la QA |
-| AUDIO | audio alterado por anomalía | composición/edición (B2) |
-| CORRUPCIÓN | las 7 fases del GDD no cambian la escena todavía | plan de fase en doc 13 §F3b (tono + huecos + overlays) y verificador de fases (B7) |
+| LEVEL DESIGN | 151/151 mapas con ganchos locales (\`DN_MAP_MEMORY\`) y estatuas/relieves (\`DN_STATUE_LORE\`), 0 cuellos de botella por sprites sólidos | \`npm run dn:story:verify\` / \`npm run dn:audit\` |
+| CIUDADES | 13/13 asentamientos con Centro Pokémon (\`DN_TOWN_CENTER\`) y Tienda (\`DN_TOWN_MART\`) contextuales según la trama | \`npm run dn:story:verify\` / \`npm run dn:visual:check\` |
+| CINEMÁTICA | 12 escenas de llegada (\`DN_OPENING_SCENE\`) + 32 interludios emotivos por fase (\`DN_PHASE_SCENE_*\`) + 10 decisiones (\`DN_DECISION_*\`) | \`npm run dn:story:verify\` |
+| BATTLE | Combate espejo real no destructivo en EP05 (\`dn_mirror_battle\`) y forma final de EP06 (\`dn_kinggus_final_sequence\`) en \`DN_RuntimeSupport\` | \`npm test\` / \`npm run dn:battles:verify\` |
+| NPC | 142 NPCs con memoria de visita, rutinas en su sitio y reacciones a fase/entorno (normales, conscientes e interdimensionales) | \`npm run dn:story:verify\` |
+| TILES | 148 tilesets \`DN_*\` propios + colisiones manuales y automáticas verificadas sin bloqueos | \`npm run dn:pasajes:verify\` / \`npm run dn:audit\` |
+| AUDIO | 11 pistas MIDI originales (\`DN_*.mid\`), silencio deliberado en 2104–2109 y silenciador de EP04 | \`npm run dn:audio:verify\` |
+| CORRUPCIÓN | 7 fases con guardia por mapa (\`DN_PHASE_GUARD\`), tonos por episodio y limpieza automática al salir | \`npm run dn:sens:verify\` / \`npm run dn:story:verify\` |
 
 ## 6. La batalla de La Ruta de Dios — soluciones (M2)
 

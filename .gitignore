@@ -7,6 +7,8 @@ game/
 *.7z
 *.rar
 !Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip
+!Scripts_corregido/Fire_Ash_Paquete_Directo.zip
+!Scripts_corregido/Dimensional_Nightmare_QA.zip
 
 # Saves y backups (protegidos, locales)
 Save*.rxdata

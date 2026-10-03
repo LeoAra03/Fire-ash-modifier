@@ -27,10 +27,31 @@ const MANIFEST_NAME = "QA_MANIFEST.json";
 const VERIFY_ONLY = process.argv.includes("--verify");
 
 const MAP_IDS = [2030, ...Array.from({ length: 151 }, (_, index) => 2040 + index)];
+const POSTGAME_MAP_FILES = [
+  "Map033.rxdata",
+  "Map513.rxdata",
+  "Map625.rxdata",
+  ...Array.from({ length: 38 }, (_, index) => `Map${2001 + index}.rxdata`),
+];
 const DATA_FILES = [
-  "MapInfos.rxdata", "System.rxdata", "Tilesets.rxdata", "map_metadata.dat",
+  "MapInfos.rxdata", "System.rxdata", "Tilesets.rxdata", "map_metadata.dat", "encounters.dat",
   "items.dat", "trainers.dat", "trainertypes.dat", "trainer_types.dat",
   "trainerlists.dat", "trainer_lists.dat",
+];
+const POSTGAME_ASSETS = [
+  "Graphics/Characters/ARCEUS.png",
+  "Graphics/Characters/ARCEUS_GATE.png",
+  "Graphics/Characters/ARC_Cynthia.png",
+  "Graphics/Characters/ARC_Ethan.png",
+  "Graphics/Characters/ARC_Steven.png",
+  "Graphics/Characters/DIALGA.png",
+  "Graphics/Characters/Object ball special.png",
+  "Graphics/Characters/PALKIA.png",
+  "Graphics/Characters/SECRET_Red.png",
+  "Graphics/Characters/SECRET_Volo.png",
+  "Graphics/Characters/SQUIRTLE.png",
+  "Audio/BGM/Legend Sinnoh.ogg",
+  "Audio/BGM/secretvolo.ogg",
 ];
 const COPY_GRAPHIC_DIRS = [
   "Characters", "Items", "Pictures", "Pokemon/Front", "Trainers",
@@ -187,6 +208,7 @@ export function build() {
   cleanOutput();
   fs.mkdirSync(path.join(OUTPUT, "Data"), { recursive: true });
   for (const name of MAP_IDS) copyFile(path.join(DATA, `Map${name}.rxdata`), `Data/Map${name}.rxdata`);
+  for (const name of POSTGAME_MAP_FILES) copyFile(path.join(DATA, name), `Data/${name}`);
   for (const name of DATA_FILES) copyFile(path.join(DATA, name), `Data/${name}`);
   const scriptsDestination = path.join(OUTPUT, "Data/Scripts.rxdata");
   fs.writeFileSync(scriptsDestination, runtimePatchedScripts());
@@ -195,11 +217,12 @@ export function build() {
   for (const name of tilesetNames) copyFile(path.join(GRAPHICS, "Tilesets", `${name}.png`), `Graphics/Tilesets/${name}.png`);
   for (const name of customGraphics()) copyFile(path.join(GRAPHICS, name), `Graphics/${name}`);
   for (const name of customAudio()) copyFile(path.join(AUDIO_BGM, path.basename(name)), name);
+  for (const rel of POSTGAME_ASSETS) copyFile(path.join(GAME, rel), rel);
   copyFile(path.join(GRAPHICS, TITLE_GRAPHIC), `Graphics/${TITLE_GRAPHIC}`);
   fs.writeFileSync(path.join(OUTPUT, README_NAME), README, "utf8");
   const manifest = createManifest();
   writeZip({ root: OUTPUT, destination: ZIP });
-  return { maps: MAP_IDS.length, tilesets: manifest.customTilesets.length, files: manifest.files.length + 1, bytes: fs.statSync(ZIP).size };
+  return { maps: MAP_IDS.length + POSTGAME_MAP_FILES.length - 1, tilesets: manifest.customTilesets.length, files: manifest.files.length + 1, bytes: fs.statSync(ZIP).size };
 }
 
 export function verify() {
@@ -233,9 +256,11 @@ export function verify() {
     throw new Error("El paquete contiene una partida o Game.rxdata; no debe empaquetarse");
   }
   for (const name of MAP_IDS) if (!expected.has(`Data/Map${name}.rxdata`)) throw new Error(`Falta Map${name}.rxdata`);
+  for (const name of POSTGAME_MAP_FILES) if (!expected.has(`Data/${name}`)) throw new Error(`Falta ${name}`);
+  for (const rel of POSTGAME_ASSETS) if (!expected.has(rel)) throw new Error(`Falta asset de postgame: ${rel}`);
   for (const required of [
     "Data/Scripts.rxdata", "Data/MapInfos.rxdata", "Data/System.rxdata", "Data/Tilesets.rxdata",
-    "Data/map_metadata.dat", "Data/items.dat", "Data/trainers.dat", `Graphics/${TITLE_GRAPHIC}`, README_NAME,
+    "Data/map_metadata.dat", "Data/encounters.dat", "Data/items.dat", "Data/trainers.dat", `Graphics/${TITLE_GRAPHIC}`, README_NAME,
   ]) if (!expected.has(required)) throw new Error(`Falta archivo imprescindible: ${required}`);
   ensureSource(AUDIO_MANIFEST, "manifiesto de música DN");
   const audioManifest = JSON.parse(fs.readFileSync(AUDIO_MANIFEST, "utf8"));

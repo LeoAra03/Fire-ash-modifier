@@ -110,9 +110,34 @@ for (const info of built) {
   if (ratio < 0.9) warn("LEVEL DESIGN", `Map${info.id}: BFS ${(ratio * 100).toFixed(0)} % (${walkable - reach.size} celdas aisladas)`);
   mapStats.push({ id: info.id, walkable, reachable: reach.size, ratio: Number(ratio.toFixed(3)) });
 
-  // eventos: celdas, NPCs y gráficos
+  // eventos: celdas, NPCs, gráficos y transitabilidad con sprites sólidos
+  const eventsList = pairEvents(raw);
+  const entryEv = eventsList.find(([, obj]) => /_entrada$|^LIGA_LLEGADA$/.test(txt(obj.getIvar("@name"))))?.[1];
+  const solidStart = entryEv ? [entryEv.getIvar("@x"), entryEv.getIvar("@y")] : entry;
+  const solidCells = new Set();
+  for (const [, ev] of eventsList) {
+    const hasSprite = (ev.getIvar("@pages") ?? []).some(
+      (page) => txt(page.getIvar("@graphic")?.getIvar("@character_name")) !== "",
+    );
+    if (hasSprite) solidCells.add(`${ev.getIvar("@x")},${ev.getIvar("@y")}`);
+  }
+  const reachWithSolids = new Set([`${solidStart[0]},${solidStart[1]}`]);
+  const solidQueue = [[solidStart[0], solidStart[1]]];
+  while (solidQueue.length) {
+    const [sx, sy] = solidQueue.shift();
+    for (const [dx, dy, d, od] of [[0, -1, 8, 2], [0, 1, 2, 8], [-1, 0, 4, 6], [1, 0, 6, 4]]) {
+      const nx = sx + dx, ny = sy + dy, k = `${nx},${ny}`;
+      if (nx < 0 || ny < 0 || nx >= parsed.width || ny >= parsed.height || reachWithSolids.has(k)) continue;
+      if (solidCells.has(k)) continue;
+      if (pass.passable(sx, sy, d) && pass.passable(nx, ny, od)) {
+        reachWithSolids.add(k);
+        solidQueue.push([nx, ny]);
+      }
+    }
+  }
+
   const cells = new Map();
-  for (const [, ev] of pairEvents(raw)) {
+  for (const [, ev] of eventsList) {
     const name = txt(ev.getIvar("@name"));
     const x = ev.getIvar("@x"), y = ev.getIvar("@y");
     const key = `${x},${y}`;
@@ -121,6 +146,15 @@ for (const info of built) {
     if (/^NPC_/.test(name) && !pass.passable(x, y, 8)) warn("LEVEL DESIGN", `Map${info.id}: ${name} sobre celda no transitable (${x},${y})`);
     if (/^(EV_|CONN_|LIGA_|HUB_|MEDALLA_|BOSSB_)/.test(name) && !reach.has(key)) {
       warn("LEVEL DESIGN", `Map${info.id}: ${name} en celda aislada (${x},${y})`);
+    }
+    if (name !== "DN_PHASE_GUARD" && name !== "DN_OPENING_SCENE" && !name.startsWith("DN_PHASE_SCENE_")) {
+      const isSolidOrWall = solidCells.has(key) || !pass.passable(x, y, 8);
+      const reachableInGame = isSolidOrWall
+        ? [[0, 0], [0, -1], [0, 1], [-1, 0], [1, 0]].some(([dx, dy]) => reachWithSolids.has(`${x + dx},${y + dy}`))
+        : reachWithSolids.has(key);
+      if (!reachableInGame) {
+        err("LEVEL DESIGN", `Map${info.id}: ${name} en (${x},${y}) bloqueado por eventos con sprite desde (${solidStart.join(",")})`);
+      }
     }
     for (const page of ev.getIvar("@pages") ?? []) {
       const graphic = txt(page.getIvar("@graphic")?.getIvar("@character_name"));
