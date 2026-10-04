@@ -120,7 +120,8 @@
     "expansion": "node tools/apply_expansion_multiversal.mjs",
     "verify:expansion": "node tools/apply_expansion_multiversal.mjs --verify",
     "build:expansion:package": "node tools/build_expansion_package.mjs",
-    "verify:expansion:package": "node tools/build_expansion_package.mjs --verify"
+    "verify:expansion:package": "node tools/build_expansion_package.mjs --verify",
+    "rom:assets": "node tools/unpack_assets.mjs"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

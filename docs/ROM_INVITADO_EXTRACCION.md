@@ -14,10 +14,18 @@ este repositorio y —lo más importante— **qué no se copia nunca**.
 | Batallas: entrenadores, equipos, niveles, objetos | Guiones (`Scripts.rxdata`) |
 | Catálogos: especies, movimientos, objetos, habilidades | Gráficos de interfaz |
 
-La regla es simple: **se estudia la estructura y se reinterpreta**, nunca se
-copia. Lo que se genera a partir de ahí es contenido original: nuestros textos,
-nuestros mapas, nuestras batallas y nuestra música. Así el DLC no arrastra
-derechos de terceros y, además, encaja con el tono de Fire Ash.
+La regla que rigió las fases 1 y 2 era simple: **se estudia la estructura y se
+reinterpreta**, nunca se copia. Lo que se genera a partir de ahí es contenido
+original: nuestros textos, nuestros mapas, nuestras batallas y nuestra música.
+
+> **Actualización (fase 3).** El usuario autorizó expresamente el siguiente paso:
+> *«saca todos los assets de cada juego y guárdalos en otra carpeta para
+> ocuparlos… hay aceptación legal y es para uso personal»*. Por eso ahora
+> también se **desempaquetan los assets** (sprites, tiles, texto) en una carpeta
+> propia. Sigue siendo material de **referencia**: vive en
+> `reference/roms_invitadas/` (ignorada por Git) y no se distribuye ni entra en
+> el juego; sirve para reconstruir y reimaginar el contenido de forma original
+> (p. ej. los Pokégods de `FactoryAdventure.gb`).
 
 ## Requisitos y entrega
 
@@ -163,3 +171,48 @@ Con eso se comprueba que el analizador entiende:
    Dimensional Nightmare.
 6. **Sprites** → se crean reinterpretaciones originales; el inventario sólo dice
    qué sprite usaba cada NPC y para qué servía.
+
+---
+
+## Desempaquetado de assets (`npm run rom:assets`)
+
+`tools/unpack_assets.mjs` saca los recursos decodificables de las 4 ROMs
+invitadas y los deja en `reference/roms_invitadas/<rom>/assets/` (carpeta
+ignorada por Git, igual que la de entrada):
+
+| ROM | Qué se extrae | Resultado |
+|---|---|---|
+| `FactoryAdventure.gb` (GB) | Sprites de Pokémon **frontal y trasero** (RLE de 1ª generación), tabla de 193 especies | 386 PNG + `especies.txt` |
+| `GlazedESPB6.gba` | Bloques LZ77 de la BIOS de GBA → tiles 4bpp | 2.399 PNG + 2.399 BIN |
+| `LightPlatinumEsp.gba` | Ídem | 2.274 PNG + 2.274 BIN |
+| `PkmnTeamRocket.gba` | Ídem | 29 PNG + 29 BIN |
+
+### Cómo se decodifica el GB (Pokégods)
+
+1. **Nombres**: tabla en `0x1C236`, 10 bytes por entrada, mapa de caracteres de
+   1ª generación (`A`=0x80, espacio=0x7F, fin=0x50). Salida: **193 especies**.
+2. **Sprites**: compresión RLE de 1ª generación —stream de bits MSB-first, dos
+   planos de 1bpp escritos por **columnas de 2 píxeles** y empaquetados en
+   tiles, con recuento de ceros en código exponencial-Golomb
+   (`2^(c+1) - 1` + valor)— seguida de la **decodificación diferencial**
+   (modo 0: delta a los dos planos; modo 1: delta+XOR; modo 2: delta, delta y
+   XOR). Implementado tal cual `pret/pokered` (`home/uncompress.asm`).
+3. **Emparejamiento con la especie**: tabla de estadísticas base de **28 bytes
+   por entrada** (localizada automáticamente por votación de punteros; en este
+   ROM está en `0x384CE`), con el puntero al frontal en `+0x0B` y al trasero en
+   `+0x0D`. El banco del sprite se resuelve probando los 64 bancos.
+4. **Validación**: un emparejamiento se considera bueno cuando el trasero está
+   justo a continuación del frontal (como almacena la ROM). 190 de 193
+   especies cumplen esa condición.
+
+Salidas por ROM: `assets/sprites/<nnn>_<NOMBRE>_frontal.png`,
+`assets/sprites/<nnn>_<NOMBRE>_trasero.png`, `assets/sprites_sin_emparejar/`
+(entrenadores), `assets/especies.txt` y `assets/indice_assets.json`.
+Informe global: `reference/roms_invitadas/ASSETS_DESEMPAQUETADOS.md`.
+
+### Uso previsto
+
+Los PNG extraídos son **referencia visual**, no contenido final: a partir de
+ellos se generan assets originales en los formatos de Fire Ash
+(Front 96×96, Icons 128×64, Characters 256×256, fondo transparente), que es lo
+que realmente se integra en el juego.
