@@ -1,11 +1,21 @@
-# Paquete corregido, expansión «La Ruta de Dios» y «Dimensional Nightmare»
+# Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
 Esta carpeta contiene estas opciones listas para reemplazar sobre una copia de Pokémon Fire Ash 3.7.1:
 
 - `Dimensional_Nightmare_QA.zip`: **paquete integral todo-en-uno (100 % teórico)**. Incluye `Scripts.rxdata` corregido con `PokeMod_RutaDeDios` y `DN_RuntimeSupport`, además de todos los mapas y recursos de Isla Espejo (`Map2001`–`Map2020`), Monte Silver (`Map2021`–`Map2030`), La Ruta de Dios (`Map513`, `Map625`, `Map2031`–`Map2038`) y **Dimensional Nightmare / Protector de la Ceniza** (`Map2040`–`Map2190`, 148 tilesets `DN_*`, sprites originales, 11 temas MIDI `DN_*.mid`, 142 NPCs con estados/memoria, 151 memorias, 151 estatuas/relieves, 13 Centros Pokémon y 13 Tiendas contextuales, 10 decisiones y combates de jefes con espejo real en EP05 y forma final en EP06).
 - `Fire_Ash_Paquete_Directo.zip`: **paquete directo de La Ruta de Dios + correcciones base** listo para descomprimir sobre la carpeta del juego.
 - `Scripts.rxdata`: archivo corregido de scripts base. Incluye las colisiones de sprites, la interacción con NPCs, la corrección de guardado para Android/Kirin, `La Ruta de Dios` y la corrección de Grandeur Club. También repara tonos serializados como texto (`Tone.new(...)`) antes de interpolarlos en pantalla o imágenes, evitando el `NoMethodError` de Kirin y conservando el efecto original cuando el tono se puede recuperar. Si un guardado antiguo deja `transition_name` en `nil`, usa la transición predeterminada al cambiar de mapa en lugar de generar un `TypeError`.
+- `Fire_Ash_Expansion_Multiversal.zip`: **Expansión Multiversal**, el arco posterior a La Ruta de Dios. Siete grietas purgables en Kanto y Johto, punto de colapso en la Torre Pokémon, Liga Oscura (mapas 2192 y 2193), expedición a Atlas Mil desde el puerto de Ciudad Carmín y el espejo del sótano de la Mansión Pokémon que abre la Isla Espejo con sus doce Pokégods. Incluye sus mapas (`Map2191`–`Map2194`), los mapas de Kanto y Johto con grietas, las salidas nuevas del Monte Silver, `trainers.dat`, `species.dat`, los sprites y gritos de los Pokégods y el laboratorio de Oak sin la cápsula nueva.
+- `Expansion_Multiversal/`: paquete de la Expansión Multiversal sin comprimir.
 - `Paquete_directo/`: paquete directo sin comprimir.
+
+## Orden de instalación recomendado
+
+1. `Fire_Ash_Paquete_Directo.zip` (base corregida y La Ruta de Dios).
+2. `Dimensional_Nightmare_QA.zip` (Pesadilla Dimensional, opcional pero recomendado).
+3. `Fire_Ash_Expansion_Multiversal.zip` (Expansión Multiversal, el arco final).
+
+Cada ZIP se extrae en la raíz del juego, junto a `Game.exe`, aceptando reemplazar.
 
 ## Instalación recomendada: ZIP completo
 

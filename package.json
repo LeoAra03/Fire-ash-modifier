@@ -66,7 +66,7 @@
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
     "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify",
     "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify",
-    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all",
+    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:expansion:package && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all",
     "dn:sheets": "node tools/dn_render_sheets.mjs --all",
     "dn:sheets:ep": "node tools/dn_render_sheets.mjs --episode",
     "dn:mosaicos": "node tools/dn_render_recreacion.mjs --all",
@@ -113,7 +113,9 @@
     "create:expansion": "node tools/create_expansion_multiversal.mjs",
     "verify:expansion:plan": "node tools/create_expansion_multiversal.mjs --check",
     "expansion": "node tools/apply_expansion_multiversal.mjs",
-    "verify:expansion": "node tools/apply_expansion_multiversal.mjs --verify"
+    "verify:expansion": "node tools/apply_expansion_multiversal.mjs --verify",
+    "build:expansion:package": "node tools/build_expansion_package.mjs",
+    "verify:expansion:package": "node tools/build_expansion_package.mjs --verify"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

@@ -13,6 +13,23 @@ npm run create:expansion     # regenera el plano content/expansion_multiversal.j
 npm run verify:expansion:plan   # el plano coincide con el generador
 ```
 
+## Cómo instalarlo para jugar
+
+El paquete `Scripts_corregido/Fire_Ash_Expansion_Multiversal.zip` (o la carpeta
+`Scripts_corregido/Expansion_Multiversal/`) se extrae **en la raíz de una copia
+de Fire Ash 3.7.1**, junto a `Game.exe`, aceptando reemplazar. Trae los 27 mapas
+del arco, `trainers.dat`, `species.dat`, los sprites y gritos de los Pokégods y
+el laboratorio de Oak sin la cápsula nueva.
+
+Orden recomendado: primero `Fire_Ash_Paquete_Directo.zip` (base + La Ruta de
+Dios), después `Dimensional_Nightmare_QA.zip` y por último la Expansión
+Multiversal. Requisito de juego: postgame activo (termina el evento de Mew).
+
+```bash
+npm run build:expansion:package   # regenera carpeta y ZIP
+npm run verify:expansion:package  # comprueba que el paquete es idéntico al juego
+```
+
 ---
 
 ## Bloque 1 — Las Grietas del Terror y la Liga Oscura
