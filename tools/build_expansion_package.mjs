@@ -152,9 +152,10 @@ function build() {
 
 function verify() {
   if (!fs.existsSync(ZIP)) {
-    throw new Error(
-      "Falta el ZIP de la Expansión Multiversal (no se versiona en Git). Ejecuta: npm run build:expansion:package"
-    );
+    // El ZIP es un artefacto generado (está en .gitignore): si no existe, se
+    // construye a partir de la carpeta versionada en vez de fallar.
+    console.log("El ZIP de la Expansión Multiversal no existía; lo construyo a partir de Expansion_Multiversal/.");
+    build();
   }
   const files = fileList();
   for (const relative of files) assertSameFile(path.join(GAME, relative), path.join(OUTPUT, relative));

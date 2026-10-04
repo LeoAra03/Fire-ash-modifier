@@ -30,6 +30,7 @@ android/local.properties
 
 # Web dev
 web/demo-out/
+reference/roms_invitadas/
 node_modules/
 
 .DS_Store
