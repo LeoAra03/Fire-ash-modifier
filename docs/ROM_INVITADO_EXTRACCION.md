@@ -19,10 +19,34 @@ copia. Lo que se genera a partir de ahí es contenido original: nuestros textos,
 nuestros mapas, nuestras batallas y nuestra música. Así el DLC no arrastra
 derechos de terceros y, además, encaja con el tono de Fire Ash.
 
-## Requisitos
+## Requisitos y entrega
 
-El ROM debe llegar **descomprimido** (o en ZIP) conservando la estructura de
-RPG Maker XP:
+Dónde dejarlo: **`reference/roms_invitadas/entrada/`** (carpeta ignorada por
+Git, así que ningún binario con derechos de terceros entra en el repositorio).
+
+Formatos, de mejor a peor:
+
+1. **Carpeta ya descomprimida** con `Data/`, `Graphics/` y `Audio/`. Es lo ideal.
+2. **ZIP** — se abre sin problema en este entorno (`unzip`, con o sin clave).
+3. **RAR de varias partes** — **no se puede abrir aquí**: el entorno no tiene
+   `unrar`, `unar`, `7z` ni `bsdtar`, `apt` no tiene red y `libunrar` no está
+   disponible. Si llega en RAR, hay que descomprimirlo en el PC y subir la
+   carpeta, o recomprimirlo como ZIP.
+
+Preparación automática:
+
+```bash
+node tools/unpack_guest_rom.mjs --entrada reference/roms_invitadas/entrada --slug team_rocket
+node tools/unpack_guest_rom.mjs --entrada reference/roms_invitadas/entrada --slug glazed --clave 12345678
+```
+
+Busca el contenedor, prueba contraseñas (las que pases con `--clave` y la serie
+numérica típica: 1, 12, 123, …, 12345678), descomprime en
+`reference/roms_invitadas/<slug>/juego/` y te imprime el comando siguiente. Si
+el contenedor es un RAR y no hay herramienta, lo dice y te propone las dos
+alternativas.
+
+El ROM invitado debe conservar la estructura de RPG Maker XP:
 
 ```
 <juego>/
@@ -35,6 +59,44 @@ RPG Maker XP:
 Si el hack se distribuye como parche (`.ups`, `.ips`, `.xdelta`), hay que
 aplicarlo antes sobre un ROM base de Pokémon Esmeralda/Fuego Rojo en español o
 inglés; a partir de ahí, el juego parcheado ya tiene la estructura de arriba.
+
+## Los ROM invitados son de GBA, no de RPG Maker XP
+
+Glazed, Light Platinum y Pokémon Team Rocket son **ROMs de Game Boy Advance**,
+así que no valen ni Pokémon Studio ni el analizador de Essentials
+(`tools/inspect_guest_rom.mjs`). Para estos ROMs está
+`tools/inspect_gba_rom.mjs`, que trabaja directamente sobre la ROM:
+
+```bash
+node tools/inspect_gba_rom.mjs --dir reference/roms_invitadas/entrada
+node tools/inspect_gba_rom.mjs --rom "reference/roms_invitadas/entrada/GlazedESPB6.gba"
+```
+
+Qué saca, y con qué método:
+
+| Dato | Cómo se obtiene |
+|---|---|
+| ROM base (Esmeralda, Rubí…), título interno, revisión | Cabecera de la ROM (0xA0–0xBC) |
+| Nombres de especies, movimientos, objetos, habilidades y clases de entrenador | Charmap de la 3ª generación + búsqueda de series de entradas de ancho fijo, **ancladas** por nombres conocidos («BULBASAUR», «PLACAJE», «STENCH»…) |
+| **Batallas**: entrenador, clase, equipo con especie y nivel, objetos | Estructura de entrenador de 40 bytes de la 3ª generación, buscando la serie contigua más larga |
+| Recursos gráficos | Inventario de bloques LZ77 (mágico 0x10), clasificados por tamaño (64×64 = sprites de Pokémon, 32×32 = iconos…) |
+
+Resultados reales de esta primera pasada:
+
+| ROM | Base | Especies | Movimientos | Habilidades | Entrenadores | Bloques LZ77 |
+|---|---|---:|---:|---:|---:|---:|
+| GlazedESPB6 | Esmeralda | 203 (+208 en fragmentos) | 86 | 79 | 145 | 32.494 |
+| LightPlatinumEsp | Rubí | 413 | 86 | 78 | 37 clases / 66 | 28.694 |
+| PkmnTeamRocket | Esmeralda | en progreso | en progreso | — | en progreso | 39.143 |
+
+PkmnTeamRocket es el más difícil: tiene las tablas repunterizadas y partidas en
+muchos fragmentos (sólo aparecen nombres sueltos dentro de diálogo), así que
+habrá que afinar la detección ROM por ROM.
+
+Salida por ROM, en `reference/roms_invitadas/<nombre>/` (ignorada por Git):
+`gba_inventory.json`, `informe_gba.md` y `pbs/` con `pokemon.txt`, `moves.txt`,
+`items.txt`, `abilities.txt`, `trainerclasses.txt` y `trainers.txt` — este
+último ya en formato PBS, listo para leer en Pokémon Studio.
 
 ## Uso
 
