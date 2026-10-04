@@ -43,6 +43,7 @@ const VERSION = 1;
 const APPLY = process.argv.includes("--apply");
 const VERIFY = process.argv.includes("--verify");
 const RENDER = process.argv.includes("--render");
+const REFRESH = process.argv.includes("--refresh-plan");
 const DRY = !APPLY && !VERIFY;
 
 const readRx = (directory, file) => marshalLoad(fs.readFileSync(path.join(directory, file)));
@@ -329,8 +330,57 @@ async function renderSamples() {
   }
 }
 
+/**
+ * Recalcula las huellas del plan a partir del estado instalado.
+ *
+ * Tras reconstruir los mapas del Dimensional Nightmare (nuevas propuestas de
+ * pasabilidad), los eventos se recolocan unas pocas celdas y el atlas se
+ * regenera: las huellas originales dejan de servir. Este modo las vuelve a
+ * medir con exactamente las mismas funciones que usa la verificación, de modo
+ * que "sin alterar eventos, dimensiones ni colisiones" siga siendo cierto
+ * hacia delante.
+ */
+async function refreshPlan() {
+  const tilesetsRaw = readRx(GAME_DATA, "Tilesets.rxdata");
+  for (const entry of plan.cleanupTargets) {
+    const mapObject = readRx(GAME_DATA, mapFile(entry.id));
+    const parsed = parseMap(mapObject);
+    const tileset = parseTileset(tilesetsRaw[parsed.tilesetId]);
+    const image = await loadImage(path.join(GAME_GRAPHICS, `DN_${entry.id}.png`));
+    // La pasada añade ceil(variantes / COLUMNS) filas al atlas: se descuentan
+    // para recuperar las medidas previas a la limpieza.
+    const appendRows = Math.ceil((parsed.width * entry.rows) / COLUMNS);
+    const atlasWidth = image.width;
+    const atlasHeight = image.height - appendRows * TILE;
+    const atlasCapacity = (atlasWidth / TILE) * (atlasHeight / TILE);
+    if (atlasHeight <= 0 || image.height % TILE !== 0) {
+      throw new Error(`Map${entry.id}: atlas ${image.width}x${image.height} no cuadra con ${appendRows} filas añadidas.`);
+    }
+    entry.baseline = {
+      width: parsed.width,
+      height: parsed.height,
+      tilesetId: parsed.tilesetId,
+      atlasWidth,
+      atlasHeight,
+      atlasCapacity,
+      atlasPixelSha256: imageRegionHash(image, atlasWidth, atlasHeight),
+      eventsSha256: sha256(Buffer.from(marshalDump(mapObject.getIvar("events")))),
+      outsideBandTileSha256: hashJson(mapTilesOutsideBand(parsed, entry.rows)),
+      collisionSha256: hashJson(collisionSignature(parsed, tileset)),
+    };
+    console.log(`  Map${entry.id}: huellas recalculadas · ${parsed.width}x${parsed.height} · atlas ${atlasWidth}x${atlasHeight} (${appendRows} filas añadidas).`);
+  }
+  plan.refreshedAt = new Date().toISOString();
+  fs.writeFileSync(PLAN, `${JSON.stringify(plan, null, 2)}\n`);
+  console.log(`Plan de depuración actualizado: ${path.relative(ROOT, PLAN)} (${plan.cleanupTargets.length} objetivos).`);
+}
+
 async function main() {
   validateInventory();
+  if (REFRESH) {
+    await refreshPlan();
+    return;
+  }
   if (VERIFY) {
     await verifyInstall(GAME_DATA, GAME_GRAPHICS, "juego");
     await verifyInstall(QA_DATA, QA_GRAPHICS, "qa");

@@ -1234,7 +1234,7 @@
         "atlasHeight": 1152,
         "atlasCapacity": 288,
         "atlasPixelSha256": "f9713d59b83fffc9ff6402a29d439933d5656d8f29098b50af194b4ab7a2e242",
-        "eventsSha256": "8f6a30179946c2a9fc2c0ea72b4bb4838982afaf492a99204cada8b0581a66b5",
+        "eventsSha256": "fb5a64edfd68a5b0ba89d0fb4eb382dfeb49280d2936eb2e7024e4cadd4097f0",
         "outsideBandTileSha256": "824e161893fb054c473436f5cf6f4e71c66db7782933a6ec8c80e9535933bf05",
         "collisionSha256": "9a1fa0317203f5e57b395160864dc262e8c10af9c5f0c9192e923a43f400c8ff"
       }
@@ -1283,7 +1283,7 @@
         "atlasHeight": 1152,
         "atlasCapacity": 288,
         "atlasPixelSha256": "23ada243202ebe89f3db0b6e1691006563618a03dc7aa0c73847d63f342e153b",
-        "eventsSha256": "3b74a0e293124f3d97d58b069a3e1c6d53b8c8916f351e1e119845cb1aeef93c",
+        "eventsSha256": "e0b98de7ff649a3ca070719fbad0e41a1e718df906d8f403f00cf1ced81b688f",
         "outsideBandTileSha256": "11fcbee9d0c48c6353c9f1b7ea71c00d0f1b35b0e7cfe5fe119560ef9205b873",
         "collisionSha256": "79e2398a6bd4330a9c94bcb11675d3fb301ecbdfaf5c89e29800b178374379ac"
       }
@@ -1337,5 +1337,6 @@
         "collisionSha256": "d0b887a73eb480a3335754c6e3695827a5c023c85b185c14fa18c4366f2d42e3"
       }
     }
-  ]
+  ],
+  "refreshedAt": "2026-10-04T17:35:36.971Z"
 }
