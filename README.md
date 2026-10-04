@@ -113,7 +113,14 @@ El estado instalado, la diferencia entre infraestructura y autoría artesanal, y
 node tools/audit_content_progress.mjs
 ```
 
-Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–07 han instalado además las 120 rutas Tier 2 en 24 lotes; los bloques recientes están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md), [`docs/ATLAS_TIER2_MACRO04_05.md`](docs/ATLAS_TIER2_MACRO04_05.md) y [`docs/ATLAS_TIER2_MACRO06_07.md`](docs/ATLAS_TIER2_MACRO06_07.md). Los 840 Ecos Tier 3 cierran su capa local (420 desafíos Atlas + 420 reglas reversibles) según [`docs/ATLAS_TIER3_REGLAS.md`](docs/ATLAS_TIER3_REGLAS.md). La Mochila funciona dentro de la torre del Grandeur Club del laboratorio de Oak y el sótano tiene un transportador hacia las expansiones: [`docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md`](docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md).
+Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–07 han instalado además las 120 rutas Tier 2 en 24 lotes; los bloques recientes están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md), [`docs/ATLAS_TIER2_MACRO04_05.md`](docs/ATLAS_TIER2_MACRO04_05.md) y [`docs/ATLAS_TIER2_MACRO06_07.md`](docs/ATLAS_TIER2_MACRO06_07.md). Los 840 Ecos Tier 3 cierran su capa local (420 desafíos Atlas + 420 reglas reversibles) según [`docs/ATLAS_TIER3_REGLAS.md`](docs/ATLAS_TIER3_REGLAS.md). La Mochila funciona dentro de la torre del Grandeur Club del laboratorio de Oak: [`docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md`](docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md).
+
+El arco posterior a La Ruta de Dios —**Expansión Multiversal**— se recorre sin
+menús de viaje: siete grietas purgables en Kanto y Johto, el punto de colapso de
+la Torre Pokémon, la Liga Oscura, la expedición del capitán de Ciudad Carmín a
+Atlas Mil y el espejo del sótano de la Mansión Pokémon que abre la Isla Espejo y
+sus doce Pokégods. El laboratorio de Oak solo conserva sus transportadores
+originales y Oak actúa como consejero: [`docs/EXPANSION_MULTIVERSAL.md`](docs/EXPANSION_MULTIVERSAL.md).
 
 ## Tests
 
@@ -126,8 +133,9 @@ node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear,
 node tools/external_authoring.test.mjs  # 67 pruebas: interoperabilidad, estilo, Tier 2/3, Mochila, hub, multiverso y fauna
 npm run verify:atlas               # 120 rutas Tier 2 y 840 Ecos compilados y seguros
 npm run verify:grandeur:bag        # Mochila libre en la torre del laboratorio de Oak
-npm run verify:oak:hub           # transportador postgame del sótano de Oak
+npm run verify:oak:hub           # el laboratorio de Oak conserva solo sus transportadores
 npm run verify:multiverse        # Monte Silver y emisiones creepypasta
+npm run verify:expansion         # grietas, Liga Oscura, Atlas Mil e Isla Espejo
 npm run verify:defeats           # derrotas permanentes; revanchas solo por menú
 npm run verify:wild              # encuentros salvajes de las zonas nuevas
 node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom

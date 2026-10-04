@@ -706,14 +706,28 @@ function verify() {
     if (g === "Object ball" && !ev.name.includes("Objeto")) errors.push(`orbe suelto: ${ev.name}`);
     if (g === "Object ball special" && !ev.name.includes("Puertas")) errors.push(`orbe de menú fuera de sitio: ${ev.name}`);
   }
-  // transferencias externas re-apuntadas
-  const hub = parseMap(read(mapFile(48)));
-  let hubTarget = null;
-  for (const { obj } of hub.events) {
+  // Acceso a la falda: ya no es el hub del laboratorio (retirado por la
+  // Expansión Multiversal), sino el punto de colapso del mundo. Se exige que la
+  // falda tenga salida al mundo y que el laboratorio no ofrezca un menú de viaje.
+  const faldaExits = [];
+  for (const { obj } of falda.events) {
     const ev = parseEvent(obj);
-    for (const p of ev.pages) for (const c of p.list) if (cmdCode(c) === 201 && Number(cmdParams(c)[1]) === 2021) hubTarget = [Number(cmdParams(c)[2]), Number(cmdParams(c)[3])];
+    for (const p of ev.pages) for (const c of p.list) {
+      if (cmdCode(c) === 201 && Number(cmdParams(c)[1]) !== 2021) faldaExits.push(Number(cmdParams(c)[1]));
+    }
   }
-  ok(hubTarget && hubTarget[0] === FALDA_POS.labDoor[0] && hubTarget[1] === FALDA_POS.labDoor[1] + 1, "mapa 48: el hub no apunta a la nueva puerta de la falda");
+  ok(faldaExits.length > 0 && !faldaExits.includes(48), "la falda debe volver al mundo y no al laboratorio de Oak");
+  const lab = parseMap(read(mapFile(48)));
+  let labMenus = 0;
+  for (const { obj } of lab.events) {
+    const ev = parseEvent(obj);
+    if (!ev.name.startsWith("PokeMod")) continue;
+    for (const p of ev.pages) {
+      const destinations = new Set(p.list.filter((c) => cmdCode(c) === 201).map((c) => Number(cmdParams(c)[1])));
+      if (destinations.size > 1) labMenus++;
+    }
+  }
+  ok(labMenus === 0, "el laboratorio de Oak no debe ofrecer menús de destinos");
   for (const boss of MULTI.bosses) {
     const { events } = parseEvents(boss.mapId);
     const back = events.find((e) => e.name.includes("Volver a la gruta"));

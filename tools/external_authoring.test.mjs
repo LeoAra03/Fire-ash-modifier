@@ -471,14 +471,20 @@ const towerLocks = [141, 151, 214].flatMap((mapId) => parseMap(readMarshalData(`
   .filter((command) => command.getIvar("code") === 121 && Number(command.getIvar("parameters")?.[2]) === 0 && Number(command.getIvar("parameters")?.[0]) <= 674 && Number(command.getIvar("parameters")?.[1]) >= 674);
 check(towerLocks.length === 8, `la torre conserva sus 8 activaciones originales del switch 674 (${towerLocks.length})`);
 const oakLab = parseMap(readMarshalData("Map048.rxdata")).events.map(({ obj }) => parseEvent(obj));
+// La Expansión Multiversal retiró la cápsula central: el laboratorio vuelve a
+// tener solo sus transportadores originales y Oak como consejero.
 const hubEvents = oakLab.filter((event) => event.name.startsWith("PokeMod Hub:"));
-check(hubEvents.length === 5, `el laboratorio de Oak tiene ${hubEvents.length}/5 eventos del hub postgame`);
-check(hubEvents.every((event) => event.pages.length === 2 && event.pages[1].condition?.switch1 === 429), "todo el hub del laboratorio depende del switch 429 de postgame");
-const hubPod = hubEvents.find((event) => event.name.endsWith("Transportador"));
-const hubTransfers = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 201).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
-check(hubTransfers.join() === "997,1000,1001,1021,2021", `la cápsula nueva enlaza Isla Espejo, Bosque, Horizontes, Atlas y Monte Silver (${hubTransfers.join()})`);
-const hubGates = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 111 && Number(command.getIvar("parameters")?.[0]) === 0).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
-check([701, 704, 706].every((flag) => hubGates.includes(flag)), "las señales del hub se calibran con los switches 701/704/706 de la progresión real");
+check(hubEvents.length === 0, `el laboratorio de Oak conserva ${hubEvents.length} cápsulas del hub (debe ser 0)`);
+const labMenus = oakLab.filter((event) => event.name.startsWith("PokeMod"))
+  .filter((event) => event.pages.some((page) => new Set(page.list
+    .filter((command) => command.getIvar("code") === 201)
+    .map((command) => Number(command.getIvar("parameters")?.[1]))).size > 1));
+check(labMenus.length === 0, `el laboratorio no debe ofrecer menús de destinos (${labMenus.map((event) => event.name).join(", ")})`);
+const oakAdvisor = oakLab.find((event) => event.name === "PokeMod Oak: Registro de Grietas");
+check(Boolean(oakAdvisor), "Oak aconseja sobre las lecturas de las grietas en el laboratorio");
+check(Boolean(oakAdvisor) && oakAdvisor.pages[1]?.condition?.switch1 === 429, "el Oak consejero depende del switch 429 de postgame");
+check(Boolean(oakAdvisor) && !oakAdvisor.pages.some((page) => page.list.some((command) => command.getIvar("code") === 201)), "Oak no teletransporta: solo aconseja");
+check(Boolean(oakAdvisor) && oakAdvisor.pages[1].list.some((command) => command.getIvar("code") === 401 && String(command.getIvar("parameters")?.[0] ?? "").includes("\\v[264]")), "Oak lee el contador de purgas (\\v[264])");
 const originalDoors = oakLab.filter((event) => [15, 16].includes(event.id));
 check(originalDoors.length === 2 && originalDoors.every((event) => event.pages[1]?.condition?.switch1 === 429 && event.pages[1].list.some((command) => command.getIvar("code") === 201)), "los transportadores originales siguen intactos y condicionados por el postgame");
 const towerDoor = originalDoors.find((event) => event.id === 16);

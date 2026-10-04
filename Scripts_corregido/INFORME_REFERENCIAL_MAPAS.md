@@ -1,6 +1,6 @@
 # Informe referencial de mapas — 1.022 fichas
 
-**Generado:** 2026-10-03
+**Generado:** 2026-10-04
 **Alcance:** Atlas Mil (Map1021–Map2020) y 22 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
@@ -5107,17 +5107,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map997 — Mirror Island - Atrium
 - **Categoría:** Isla Espejo.
 - **Referencia:** Atrio de llegada de Isla Espejo: concentra el acceso a la isla, la orientación inicial y el ferry de retorno.
-- **Datos compilados:** 56×48 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 56×48 tiles; 16 eventos; tileset 1.
 
 ### Map998 — Mirror Island - Gallery of Legends
 - **Categoría:** Isla Espejo.
 - **Referencia:** Galería de Leyendas: sala de enfrentamientos con reflejos de entrenadores y líneas alternativas del multiverso.
-- **Datos compilados:** 56×52 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 56×52 tiles; 14 eventos; tileset 1.
 
 ### Map999 — Mirror Island - Zero Archive
 - **Categoría:** Isla Espejo.
 - **Referencia:** Archivo Cero: cámara final de Isla Espejo, con su encuentro de cierre y una vía de regreso al exterior.
-- **Datos compilados:** 56×52 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 56×52 tiles; 14 eventos; tileset 1.
 
 ## Panteón Pokégod
 
@@ -5148,37 +5148,37 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2023 — La Torre que Escuchaba
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Torre que Escuchaba: emisión inspirada en “Lavender Town Syndrome”. Un memorial sin nombres. La música se grabó con voces que ya no responden.
-- **Datos compilados:** 25×25 tiles; 4 eventos; tileset 13.
+- **Datos compilados:** 25×25 tiles; 5 eventos; tileset 13.
 
 ### Map2024 — La Partida Perdida
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Partida Perdida: emisión inspirada en “Lost Silver”. Nieve que registra pasos que nadie dio.
-- **Datos compilados:** 20×15 tiles; 4 eventos; tileset 14.
+- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 14.
 
 ### Map2025 — La Fosa del Enterrado
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Fosa del Enterrado: emisión inspirada en “Buried Alive”. Aquí el suelo se tragó una promesa. No la busques.
-- **Datos compilados:** 30×25 tiles; 4 eventos; tileset 14.
+- **Datos compilados:** 30×25 tiles; 5 eventos; tileset 14.
 
 ### Map2026 — La Cinta Carmesí
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Cinta Carmesí: emisión inspirada en “Strangled Red”. Una cinta carmesí con una sola letra grabada a mano.
-- **Datos compilados:** 40×30 tiles; 4 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 5 eventos; tileset 3.
 
 ### Map2027 — Ciudad Glitch
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** Ciudad Glitch: emisión inspirada en “Glitch City”. Este cartel cambia cuando no lo miras.
-- **Datos compilados:** 42×37 tiles; 4 eventos; tileset 1.
+- **Datos compilados:** 42×37 tiles; 5 eventos; tileset 1.
 
 ### Map2028 — El Eco que Jugó Contigo
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** El Eco que Jugó Contigo: emisión inspirada en “el eco de una partida que se niega a desaparecer”. El agua está quieta. Tus reflejos, no.
-- **Datos compilados:** 30×25 tiles; 4 eventos; tileset 6.
+- **Datos compilados:** 30×25 tiles; 5 eventos; tileset 6.
 
 ### Map2029 — La Consola de 1996
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Consola de 1996: emisión inspirada en “la cartucho embrujada”. Una etiqueta escrita a mano: «NO BORRAR».
-- **Datos compilados:** 40×30 tiles; 4 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 5 eventos; tileset 3.
 
 ## La Ruta de Dios
 
