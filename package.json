@@ -22,6 +22,7 @@
     "rom:unpack": "node tools/unpack_guest_rom.mjs",
     "rom:inspect": "node tools/inspect_guest_rom.mjs",
     "rom:inspect:gba": "node tools/inspect_gba_rom.mjs",
+    "rom:mapas": "node tools/gba_maps_events.mjs",
     "verify:rom:inspect": "node tools/inspect_guest_rom.mjs --selftest",
     "render:atlas:macro02": "node tools/render_atlas_visual_reference.mjs --macro 02",
     "render:tier2:macro03": "node tools/render_atlas_visual_reference.mjs --tier2 content/atlas_tier2_blueprints_macro03.json --backup pokemon_fire_ash/PokeModBackups/atlas_tier2_macro03_originals --before docs/referencia_tier2_macro03_antes.png --after docs/referencia_tier2_macro03_despues.png",
