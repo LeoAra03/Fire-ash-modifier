@@ -151,6 +151,11 @@ function build() {
 }
 
 function verify() {
+  if (!fs.existsSync(ZIP)) {
+    throw new Error(
+      "Falta el ZIP de la Expansión Multiversal (no se versiona en Git). Ejecuta: npm run build:expansion:package"
+    );
+  }
   const files = fileList();
   for (const relative of files) assertSameFile(path.join(GAME, relative), path.join(OUTPUT, relative));
   const index = readZipIndex(ZIP).entries;

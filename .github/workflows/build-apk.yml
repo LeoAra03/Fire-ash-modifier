@@ -27,6 +27,11 @@ jobs:
         # (slices/), los tilesets deducidos y las hojas origen son artefactos ignorados por
         # git: se regeneran aquí para que la verificación tenga contra qué comparar.
         run: npm run dn:preparar
+      - name: Construir el paquete de la Expansión Multiversal
+        # Fire_Ash_Expansion_Multiversal.zip es un artefacto generado (.gitignore lo excluye,
+        # igual que a los recortes de referencia): se construye aquí para que la auditoría
+        # pueda compararlo con el juego. La carpeta Expansion_Multiversal/ sí está versionada.
+        run: npm run build:expansion:package
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas
