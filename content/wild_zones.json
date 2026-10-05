@@ -681,6 +681,348 @@
           ]
         ]
       }
+    },
+    {
+      "mapId": 2195,
+      "label": "Vía de las Nueve Eras",
+      "note": "Un paseo entre nueve épocas: la Vía entera está viva y en cualquier paso puede salir algo de cualquiera de ellas.",
+      "step_chances": {
+        "Cave": 14
+      },
+      "types": {
+        "Cave": [
+          [
+            16,
+            "PIKACHU",
+            88,
+            96
+          ],
+          [
+            14,
+            "EEVEE",
+            88,
+            96
+          ],
+          [
+            12,
+            "MEOWTH",
+            86,
+            94
+          ],
+          [
+            11,
+            "PSYDUCK",
+            86,
+            94
+          ],
+          [
+            10,
+            "MACHOP",
+            88,
+            96
+          ],
+          [
+            10,
+            "GEODUDE",
+            88,
+            96
+          ],
+          [
+            9,
+            "ZUBAT",
+            86,
+            94
+          ],
+          [
+            8,
+            "GRIMER",
+            86,
+            94
+          ],
+          [
+            6,
+            "DROWZEE",
+            86,
+            94
+          ],
+          [
+            4,
+            "JIGGLYPUFF",
+            86,
+            94
+          ]
+        ]
+      }
+    },
+    {
+      "mapId": 2200,
+      "label": "Glazed — Bahía de Cedolán",
+      "note": "La bahía fría: hielo y nieve en los pastos de la costa.",
+      "step_chances": {
+        "Land": 14
+      },
+      "types": {
+        "Land": [
+          [
+            18,
+            "SNORUNT",
+            88,
+            96
+          ],
+          [
+            16,
+            "SWINUB",
+            88,
+            96
+          ],
+          [
+            14,
+            "SPHEAL",
+            88,
+            96
+          ],
+          [
+            12,
+            "SNEASEL",
+            90,
+            98
+          ],
+          [
+            11,
+            "SNOM",
+            88,
+            96
+          ],
+          [
+            10,
+            "CUBCHOO",
+            88,
+            96
+          ],
+          [
+            9,
+            "VANILLITE",
+            88,
+            96
+          ],
+          [
+            6,
+            "GLACEON",
+            92,
+            100
+          ],
+          [
+            4,
+            "MAMOSWINE",
+            94,
+            100
+          ]
+        ]
+      }
+    },
+    {
+      "mapId": 2210,
+      "label": "Light Platinum — Costa de Lappet",
+      "note": "La costa luminosa: chispas, imanes y alas que no se cansan.",
+      "step_chances": {
+        "Land": 14
+      },
+      "types": {
+        "Land": [
+          [
+            17,
+            "SHINX",
+            88,
+            96
+          ],
+          [
+            15,
+            "MAGNEMITE",
+            88,
+            96
+          ],
+          [
+            13,
+            "ELEKID",
+            88,
+            96
+          ],
+          [
+            12,
+            "FLETCHLING",
+            88,
+            96
+          ],
+          [
+            11,
+            "RUFFLET",
+            88,
+            96
+          ],
+          [
+            10,
+            "VOLTORB",
+            86,
+            94
+          ],
+          [
+            9,
+            "LARVESTA",
+            90,
+            98
+          ],
+          [
+            8,
+            "SOLOSIS",
+            88,
+            96
+          ],
+          [
+            5,
+            "LUXRAY",
+            94,
+            100
+          ]
+        ]
+      }
+    },
+    {
+      "mapId": 2220,
+      "label": "Team Rocket — Base Subterránea",
+      "note": "En los pasillos de la base también hay Pokémon sueltos: los que el Sindicato dejó atrás.",
+      "step_chances": {
+        "Cave": 16
+      },
+      "types": {
+        "Cave": [
+          [
+            18,
+            "RATTATA",
+            86,
+            94
+          ],
+          [
+            16,
+            "ZUBAT",
+            86,
+            94
+          ],
+          [
+            14,
+            "KOFFING",
+            88,
+            96
+          ],
+          [
+            12,
+            "GRIMER",
+            88,
+            96
+          ],
+          [
+            11,
+            "MURKROW",
+            88,
+            96
+          ],
+          [
+            10,
+            "HOOTHOOT",
+            86,
+            94
+          ],
+          [
+            9,
+            "MEOWTH",
+            86,
+            94
+          ],
+          [
+            6,
+            "PERSIAN",
+            92,
+            100
+          ],
+          [
+            4,
+            "HOUNDOUR",
+            90,
+            98
+          ]
+        ]
+      }
+    },
+    {
+      "mapId": 2230,
+      "label": "Atlas — Avenida de los Ocho Gimnasios",
+      "note": "Seis plazas de ciudades distintas: lo que merodea por ellas tampoco se pone de acuerdo.",
+      "step_chances": {
+        "Cave": 15
+      },
+      "types": {
+        "Cave": [
+          [
+            14,
+            "MEOWTH",
+            88,
+            96
+          ],
+          [
+            13,
+            "RATTATA",
+            86,
+            94
+          ],
+          [
+            12,
+            "ZUBAT",
+            86,
+            94
+          ],
+          [
+            11,
+            "MACHOP",
+            90,
+            98
+          ],
+          [
+            10,
+            "GEODUDE",
+            90,
+            98
+          ],
+          [
+            10,
+            "PSYDUCK",
+            88,
+            96
+          ],
+          [
+            9,
+            "DROWZEE",
+            88,
+            96
+          ],
+          [
+            8,
+            "JIGGLYPUFF",
+            86,
+            94
+          ],
+          [
+            8,
+            "GRIMER",
+            86,
+            94
+          ],
+          [
+            5,
+            "EEVEE",
+            92,
+            100
+          ]
+        ]
+      }
     }
   ]
 }
