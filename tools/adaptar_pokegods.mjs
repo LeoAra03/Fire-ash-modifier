@@ -73,6 +73,27 @@ const RUTAS = {
   characters: 'pokemon_fire_ash/Graphics/Characters',
 };
 
+/** Mantiene content/pokegods_assets.json al día con los Pokégods derivados. */
+function registrarEnManifiesto(nombre, origen) {
+  const ruta = 'content/pokegods_assets.json';
+  let d = { pokegods: [] };
+  if (existsSync(ruta)) { try { d = JSON.parse(readFileSync(ruta, 'utf8')); } catch { d = { pokegods: [] }; } }
+  const mapa = new Map((d.pokegods || []).map((p) => [p.nombre, p]));
+  mapa.set(nombre, {
+    nombre,
+    frontal: `pokemon_fire_ash/Graphics/Pokemon/Front/${nombre}.png`,
+    trasero: `pokemon_fire_ash/Graphics/Pokemon/Back/${nombre}.png`,
+    icono: `pokemon_fire_ash/Graphics/Pokemon/Icons/${nombre}.png`,
+    personaje: `pokemon_fire_ash/Graphics/Characters/${nombre}.png`,
+    vista_trasera_propia: false,
+    origen,
+  });
+  d.pokegods = [...mapa.values()].sort((a, b) => a.nombre.localeCompare(b.nombre));
+  d.actualizado = new Date().toISOString();
+  mkdirSync('content', { recursive: true });
+  writeFileSync(ruta, JSON.stringify(d, null, 2));
+}
+
 function derivar(base, nombre, tono) {
   const hechos = [];
   for (const [clave, dir] of Object.entries(RUTAS)) {
@@ -100,6 +121,7 @@ function derivar(base, nombre, tono) {
     escribirPNG(join(RUTAS.characters, `${nombre}.png`), lado, lado, hoja);
     hechos.push('characters(desde frontal)');
   }
+  registrarEnManifiesto(nombre, `derivado por código de ${base} (tono ${tono}°)`);
   console.log(`  ✔ ${nombre} ← ${base} (tono ${tono}°): ${hechos.join(', ')}`);
   return hechos;
 }

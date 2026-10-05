@@ -393,12 +393,20 @@ function main() {
   }
 
   mkdirSync('content', { recursive: true });
-  writeFileSync('content/pokegods_assets.json', JSON.stringify({
+  const rutaManifiesto = 'content/pokegods_assets.json';
+  // el manifiesto se fusiona: cada ejecución aporta su lote sin borrar el anterior
+  let previo = { pokegods: [] };
+  if (existsSync(rutaManifiesto)) {
+    try { previo = JSON.parse(readFileSync(rutaManifiesto, 'utf8')); } catch { previo = { pokegods: [] }; }
+  }
+  const fusion = new Map((previo.pokegods || []).map((p) => [p.nombre, p]));
+  for (const p of manifesto) fusion.set(p.nombre, p);
+  writeFileSync(rutaManifiesto, JSON.stringify({
     generado: new Date().toISOString(),
     origen: src,
     destino: juego,
     formatos: { Front: '96x96', Back: '96x96', Icons: '128x64 (8 celdas 32x32)', Characters: '256x256 (4x4 celdas 64x64: abajo/izq/dcha/arriba)' },
-    pokegods: manifesto,
+    pokegods: [...fusion.values()].sort((a, b) => a.nombre.localeCompare(b.nombre)),
   }, null, 2));
   console.log(`\n✔ ${manifesto.length} Pokégods convertidos · manifiesto: content/pokegods_assets.json`);
 }

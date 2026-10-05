@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-05T00:06:20.455Z",
+  "generado": "2026-10-05T00:35:16.994Z",
   "origen": "reference/pokegods/concepto",
   "destino": "pokemon_fire_ash",
   "formatos": {
@@ -10,11 +10,29 @@
   },
   "pokegods": [
     {
+      "nombre": "ANTHRAX",
+      "frontal": "Graphics/Pokemon/Front/ANTHRAX.png",
+      "trasero": "Graphics/Pokemon/Back/ANTHRAX.png",
+      "icono": "Graphics/Pokemon/Icons/ANTHRAX.png",
+      "personaje": "Graphics/Characters/ANTHRAX.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
       "nombre": "APACOLYPSE",
       "frontal": "Graphics/Pokemon/Front/APACOLYPSE.png",
       "trasero": "Graphics/Pokemon/Back/APACOLYPSE.png",
       "icono": "Graphics/Pokemon/Icons/APACOLYPSE.png",
       "personaje": "Graphics/Characters/APACOLYPSE.png",
+      "vista_trasera_propia": true,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "DIMONIX",
+      "frontal": "Graphics/Pokemon/Front/DIMONIX.png",
+      "trasero": "Graphics/Pokemon/Back/DIMONIX.png",
+      "icono": "Graphics/Pokemon/Icons/DIMONIX.png",
+      "personaje": "Graphics/Characters/DIMONIX.png",
       "vista_trasera_propia": false,
       "colores_paleta": 48
     },
@@ -24,7 +42,7 @@
       "trasero": "Graphics/Pokemon/Back/DOOMSAY.png",
       "icono": "Graphics/Pokemon/Icons/DOOMSAY.png",
       "personaje": "Graphics/Characters/DOOMSAY.png",
-      "vista_trasera_propia": false,
+      "vista_trasera_propia": true,
       "colores_paleta": 48
     },
     {
@@ -33,6 +51,24 @@
       "trasero": "Graphics/Pokemon/Back/DOOMSDAY.png",
       "icono": "Graphics/Pokemon/Icons/DOOMSDAY.png",
       "personaje": "Graphics/Characters/DOOMSDAY.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "ELECTRAMEW",
+      "frontal": "pokemon_fire_ash/Graphics/Pokemon/Front/ELECTRAMEW.png",
+      "trasero": "pokemon_fire_ash/Graphics/Pokemon/Back/ELECTRAMEW.png",
+      "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/ELECTRAMEW.png",
+      "personaje": "pokemon_fire_ash/Graphics/Characters/ELECTRAMEW.png",
+      "vista_trasera_propia": false,
+      "origen": "derivado por código de MEW (tono 190°)"
+    },
+    {
+      "nombre": "FLARETH",
+      "frontal": "Graphics/Pokemon/Front/FLARETH.png",
+      "trasero": "Graphics/Pokemon/Back/FLARETH.png",
+      "icono": "Graphics/Pokemon/Icons/FLARETH.png",
+      "personaje": "Graphics/Characters/FLARETH.png",
       "vista_trasera_propia": false,
       "colores_paleta": 48
     },
@@ -51,6 +87,15 @@
       "trasero": "Graphics/Pokemon/Back/MECHTROID.png",
       "icono": "Graphics/Pokemon/Icons/MECHTROID.png",
       "personaje": "Graphics/Characters/MECHTROID.png",
+      "vista_trasera_propia": true,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "MEWTHREE",
+      "frontal": "Graphics/Pokemon/Front/MEWTHREE.png",
+      "trasero": "Graphics/Pokemon/Back/MEWTHREE.png",
+      "icono": "Graphics/Pokemon/Icons/MEWTHREE.png",
+      "personaje": "Graphics/Characters/MEWTHREE.png",
       "vista_trasera_propia": false,
       "colores_paleta": 48
     },
@@ -60,8 +105,72 @@
       "trasero": "Graphics/Pokemon/Back/MISSINGNO.png",
       "icono": "Graphics/Pokemon/Icons/MISSINGNO.png",
       "personaje": "Graphics/Characters/MISSINGNO.png",
+      "vista_trasera_propia": true,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "NIDOGOD",
+      "frontal": "Graphics/Pokemon/Front/NIDOGOD.png",
+      "trasero": "Graphics/Pokemon/Back/NIDOGOD.png",
+      "icono": "Graphics/Pokemon/Icons/NIDOGOD.png",
+      "personaje": "Graphics/Characters/NIDOGOD.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "PIKAMARS",
+      "frontal": "pokemon_fire_ash/Graphics/Pokemon/Front/PIKAMARS.png",
+      "trasero": "pokemon_fire_ash/Graphics/Pokemon/Back/PIKAMARS.png",
+      "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/PIKAMARS.png",
+      "personaje": "pokemon_fire_ash/Graphics/Characters/PIKAMARS.png",
+      "vista_trasera_propia": false,
+      "origen": "derivado por código de PIKACHU (tono 8°)"
+    },
+    {
+      "nombre": "RATICLAW",
+      "frontal": "pokemon_fire_ash/Graphics/Pokemon/Front/RATICLAW.png",
+      "trasero": "pokemon_fire_ash/Graphics/Pokemon/Back/RATICLAW.png",
+      "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/RATICLAW.png",
+      "personaje": "pokemon_fire_ash/Graphics/Characters/RATICLAW.png",
+      "vista_trasera_propia": false,
+      "origen": "derivado por código de RATICATE (tono 285°)"
+    },
+    {
+      "nombre": "SHADYBUG",
+      "frontal": "Graphics/Pokemon/Front/SHADYBUG.png",
+      "trasero": "Graphics/Pokemon/Back/SHADYBUG.png",
+      "icono": "Graphics/Pokemon/Icons/SHADYBUG.png",
+      "personaje": "Graphics/Characters/SHADYBUG.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "SOLAREON",
+      "frontal": "Graphics/Pokemon/Front/SOLAREON.png",
+      "trasero": "Graphics/Pokemon/Back/SOLAREON.png",
+      "icono": "Graphics/Pokemon/Icons/SOLAREON.png",
+      "personaje": "Graphics/Characters/SOLAREON.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "SPOOKY",
+      "frontal": "Graphics/Pokemon/Front/SPOOKY.png",
+      "trasero": "Graphics/Pokemon/Back/SPOOKY.png",
+      "icono": "Graphics/Pokemon/Icons/SPOOKY.png",
+      "personaje": "Graphics/Characters/SPOOKY.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "TRICKET",
+      "frontal": "Graphics/Pokemon/Front/TRICKET.png",
+      "trasero": "Graphics/Pokemon/Back/TRICKET.png",
+      "icono": "Graphics/Pokemon/Icons/TRICKET.png",
+      "personaje": "Graphics/Characters/TRICKET.png",
       "vista_trasera_propia": false,
       "colores_paleta": 48
     }
-  ]
+  ],
+  "actualizado": "2026-10-05T00:35:43.185Z"
 }
