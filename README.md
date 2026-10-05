@@ -22,6 +22,16 @@ Mapas, eventos, diálogos, flags, NPCs y Pokémon — compatible con **Kirin** y
 - **Kirin ready**: chequeo de estructura, `.rgssad`, audio y mayúsculas (lo que en PC funciona y en Android falla).
 - **Offline**: PWA + APK sin internet ni servidores; tus archivos no salen del dispositivo.
 
+## Documentación del DLC
+
+| Documento | Para qué sirve |
+|---|---|
+| **`docs/PROMPT_MAESTRO_Y_ESTADO.md`** | **Empieza aquí.** El prompt completo del juego (pegable en cualquier agente) + el inventario medido de lo que hay y lo que falta. |
+| `docs/DLC_TOTAL.md` | El acta narrativa del DLC: los seis pilares contados. |
+| `docs/ENTREGA_PROYECTO.md` | La entrega, punto por punto. |
+| `docs/AUDITORIA_TOTAL_FLAGS.md` | Qué switch y qué variable está libre. |
+| `docs/PLAN_SWARM_161.md` | El plan de producción con 161 agentes. |
+
 ## Uso rápido
 
 ### Opción A — APK en Android (recomendado)
