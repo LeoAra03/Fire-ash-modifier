@@ -1,5 +1,14 @@
 #!/usr/bin/env node
-/** Extiende el crecimiento real de Pokémon hasta nivel 150 sin invalidar partidas. */
+/**
+ * Extiende el crecimiento real de Pokémon hasta nivel 175 sin invalidar partidas.
+ *
+ * Dos excepciones por encima del techo, ambas deliberadas y fuera del alcance
+ * de este instalador (las define apply_la_ruta_de_dios.mjs):
+ *   · Arceus de La Ruta de Dios: nivel 200, el único Pokémon que lo alcanza.
+ *   · Mad Pikachu: nivel desconocido («???»). No se puede vencer por fuerza:
+ *     hace falta que Arceus lo devuelva al límite o sostener el vínculo en la
+ *     Liga Oscura.
+ */
 import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
@@ -9,7 +18,7 @@ import { marshalLoad,marshalDump,RString } from "../web/js/marshal.js";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const DATA=path.join(ROOT,"pokemon_fire_ash","Data");
 const BACKUP=path.join(ROOT,"pokemon_fire_ash","PokeModBackups","extended_level_cap_originals");
-const FILE=path.join(DATA,"Scripts.rxdata"),MAX_LEVEL=150,VERIFY=process.argv.includes("--verify");
+const FILE=path.join(DATA,"Scripts.rxdata"),MAX_LEVEL=175,VERIFY=process.argv.includes("--verify");
 const text=v=>v instanceof RString?v.text:String(v??"");
 const load=()=>marshalLoad(fs.readFileSync(FILE));
 const save=v=>fs.writeFileSync(FILE,Buffer.from(marshalDump(v)));
@@ -47,7 +56,7 @@ function install(){
 function verify(){
   const scripts=load(),settings=section(scripts,"Settings"),growth=section(scripts,"GrowthRate"),storage=section(scripts,"UI_PokemonStorage"),errors=[];
   const s=settings?source(settings):"",g=growth?source(growth):"",u=storage?source(storage):"";
-  if(!new RegExp(`MAXIMUM_LEVEL\\s*=\\s*${MAX_LEVEL}\\b`).test(s))errors.push("MAXIMUM_LEVEL no es 150");
+  if(!new RegExp(`MAXIMUM_LEVEL\\s*=\\s*${MAX_LEVEL}\\b`).test(s))errors.push(`MAXIMUM_LEVEL no es ${MAX_LEVEL}`);
   if(!s.includes("PokeMod Extended Level Cap"))errors.push("falta marcador PokeMod");
   if(!g.includes("next ((level ** 4) * rate / 5000).floor"))errors.push("fórmula Fluctuating no devuelve entero");
   if(!u.includes("params.setRange(1, GameData::GrowthRate.max_level)"))errors.push("búsqueda de almacenamiento sigue limitada a 100");

@@ -145,7 +145,7 @@
     "build:wild": "node tools/apply_wild_zones.mjs"
   },
   "devDependencies": {
-    "@napi-rs/canvas": "^1.0.9",
+    "@napi-rs/canvas": "^1.0.10",
     "jsdom": "27.0.0"
   }
 }

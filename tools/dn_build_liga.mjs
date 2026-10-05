@@ -9,9 +9,9 @@
  *   2141 Pórtico         llegada, salida a la Antesala, custodio, eco y acceso al Coliseo
  *   2142 Coliseo         LIGA_MPIKA (máquina de etapas en v281) + cuatro LIGA_CHISPA_n
  *
- * Arco de Mad Pikachu: el Rotom escanea «nivel 255, fuera de rango» y se niega a calcular la
+ * Arco de Mad Pikachu: el Rotom escanea «NIVEL ???, fuera de rango» y se niega a calcular la
  * batalla → hay que completar las cuatro chispas del vínculo (rama Pikachu) o las cuatro marcas de
- * velocidad (rama Raichu) → **Arceus interviene y lo nivela a 150** → combate final contra
+ * velocidad (rama Raichu) → **Arceus interviene y lo nivela al límite (175)** → combate final contra
  * `DN_MPIKA_150` → cierre: se salva al Pikachu y a los mundos, con la Medalla del Vínculo y su
  * cartuchera «Badges of Mad Pikachu».
  *
@@ -53,7 +53,11 @@ const COLISEO_EXIT = [14, 21];                 // salida única del anillo, sepa
 const SW = { ready: 917, ligaStarted: 918, arceus: 919, cleared: 920, pikaSaved: 921 };
 const VAR = { branch: 278, sparks: 279, medals: 280, stage: 281, battle: 282 };
 const STAGE = { intro: 0, prueba: 1, arceus: 2, combate: 3, cierre: 4 };
-const MADPIKA = { type: "DN_MADPIKA", label: "MAD PIKACHU", species: "PIKACHU", level: 150 };
+// El nivel real de combate es el techo legal (175). Antes de la intervención de
+// Arceus su nivel es literalmente desconocido («???», fuera de rango) y no se
+// puede vencer: el Rotom se niega a calcularlo. Sólo se vuelve medible cuando
+// Arceus lo devuelve al límite o cuando el vínculo sostiene la Liga Oscura.
+const MADPIKA = { type: "DN_MADPIKA", label: "MAD PIKACHU", species: "PIKACHU", level: 175, nivelMostrado: "???" };
 
 const CASES = ["DN_CASE_WHT", "DN_CASE_LSV", "DN_CASE_SNO", "DN_CASE_HYP", "DN_CASE_BLK", "DN_CASE_UNO"];
 const readyCheck = `begin; $game_switches[${SW.ready}] = [${CASES.map((c) => `:${c}`).join(", ")}].all? { |i| $PokemonBag.pbHasItem?(i) }; rescue; end`;
@@ -329,7 +333,26 @@ function pokemonHash({ species, level }) {
 
 function installTrainer() {
   const trainers = readData("trainers.dat");
-  if (trainers.pairs.some(([key]) => Array.isArray(key) && txt(key[1]) === MADPIKA.label)) return { added: false };
+  const previo = trainers.pairs.find(([key]) => Array.isArray(key) && txt(key[1]) === MADPIKA.label);
+  if (previo) {
+    // El techo legal subió de 150 a 175: Mad Pikachu pelea al nuevo límite.
+    // Sin esta migración el entrenador se queda con el nivel de la instalación
+    // anterior y la verificación lo rechaza.
+    const porNombre = (a, b) => txt(a) === txt(b);
+    let cambiado = false;
+    for (const mon of (previo[1].getIvar("@pokemon") ?? [])) {
+      if (mon && mon.get && mon.get(Sym("level"), porNombre) !== MADPIKA.level) {
+        mon.set(Sym("level"), MADPIKA.level, porNombre);
+        cambiado = true;
+      }
+    }
+    if (cambiado) {
+      backup("trainers.dat");
+      if (!DRY) writeData("trainers.dat", trainers);
+      return { added: false, migrado: true };
+    }
+    return { added: false };
+  }
   const next = Math.max(-1, ...trainers.pairs.filter(([key]) => typeof key === "number").map(([key]) => key)) + 1;
   const key = [Sym(MADPIKA.type), S(MADPIKA.label), 0];
   const obj = new RObject("GameData::Trainer", [
@@ -435,8 +458,11 @@ function buildColiseoEvents(baseId, plan) {
         script(SENS_LIGA),
         ...texts([
           "El Coliseo se cierra. Algo pequeño se pone de pie en el centro.",
-          "Rotom: «Lectura imposible. NIVEL 255. FUERA DE RANGO.»",
+          "Rotom: «Lectura imposible. NIVEL ???. FUERA DE RANGO.»",
           "Rotom: «No puedo calcular esta batalla. No es un combate: es una tormenta.»",
+          "Rotom: «Y escúchame bien: así no se puede ganar. Con ese nivel no hay",
+          "golpe que valga. Sólo hay dos caminos: que ARCEUS lo devuelva al límite",
+          "legal (" + MADPIKA.level + "), o sostener tú el vínculo en la Liga Oscura hasta el final.»",
         ]),
         script([
           "begin",
@@ -480,7 +506,7 @@ function buildColiseoEvents(baseId, plan) {
           "Las cuatro chispas se alinean y el Coliseo se queda en silencio.",
           "Una luz original baja por el centro: ARCEUS.",
           "ARCEUS: «Un nivel que no existe no puede sostener un mundo.»",
-          "ARCEUS: «Se te devuelve al límite: 150. Ahora el vínculo sí puede medirse.»",
+          `ARCEUS: «Se te devuelve al límite: ${MADPIKA.level}. Ahora el vínculo sí puede medirse.»`,
         ]),
         script([`begin; $game_switches[${SW.arceus}] = true; $game_variables[${VAR.stage}] = ${STAGE.combate}; rescue; end`].join("\n")),
         script(toneLine([-40, -40, -40, 0], 16, "dn:ambiente")),
@@ -724,7 +750,7 @@ function verify() {
   if (mpika) {
     ok(stageOf(mpika.pages[2]) === STAGE.arceus, "LIGA_MPIKA: la etapa de Arceus no está en la página correcta");
     ok(textsOf(mpika.pages[2]).includes("ARCEUS"), "LIGA_MPIKA: la escena de Arceus no lo nombra");
-    ok(textsOf(mpika.pages[2]).includes("150"), "LIGA_MPIKA: Arceus no nivela a 150");
+    ok(textsOf(mpika.pages[2]).includes(String(MADPIKA.level)), `LIGA_MPIKA: Arceus no nivela a ${MADPIKA.level}`);
     ok(textsOf(mpika.pages[2]).includes(`[${SW.arceus}]`) || textsOf(mpika.pages[2]).includes(String(SW.arceus)), "LIGA_MPIKA: Arceus no enciende su switch");
     ok(textsOf(mpika.pages[3]).includes(`PBTrainer.new(\\"${MADPIKA.type}\\"`), "LIGA_MPIKA: el combate final no invoca al trainer de Mad Pikachu");
     ok(textsOf(mpika.pages[3]).includes("DN_MEDAL_MPK") && textsOf(mpika.pages[3]).includes("DN_CASE_MPK"), "LIGA_MPIKA: el cierre no entrega medalla y cartuchera");
@@ -745,7 +771,7 @@ function verify() {
     const mon = team[0];
     const byName = (a, b) => txt(a) === txt(b);
     ok(txt(mon.get(Sym("species"), byName)) === MADPIKA.species, `${MADPIKA.label}: especie ≠ ${MADPIKA.species}`);
-    ok(mon.get(Sym("level"), byName) === MADPIKA.level, `${MADPIKA.label}: nivel ≠ ${MADPIKA.level} (Arceus lo nivela a 150)`);
+    ok(mon.get(Sym("level"), byName) === MADPIKA.level, `${MADPIKA.label}: nivel ≠ ${MADPIKA.level} (Arceus lo nivela al límite)`);
   }
   ok(fs.existsSync(path.join(GRAPHICS, "Trainers", "DN_MADPIKA.png")), "falta Graphics/Trainers/DN_MADPIKA.png");
   ok(fs.existsSync(path.join(GRAPHICS, "Characters", "DN_MADPIKA.png")), "falta Graphics/Characters/DN_MADPIKA.png");

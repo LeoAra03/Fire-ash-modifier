@@ -2392,8 +2392,8 @@
       "map": 2040,
       "event": "HUB_LIGA_OSCURA",
       "cell": [
-        19,
-        12
+        18,
+        11
       ]
     },
     "entry": {
@@ -2459,6 +2459,6 @@
       "combate": 3,
       "cierre": 4
     },
-    "trainer": "DN_MADPIKA/MAD PIKACHU nv 150"
+    "trainer": "DN_MADPIKA/MAD PIKACHU nv 175"
   }
 }
