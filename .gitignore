@@ -71,3 +71,6 @@ docs/dn_referencia/pasajes/
 # Arte conceptual sin procesar (pesado; los assets derivados sí se versionan)
 reference/pokegods/concept/
 reference/pokegods/concepto/
+
+# ROMs invitadas y su material extraído (no se versiona)
+roms pokemon/
