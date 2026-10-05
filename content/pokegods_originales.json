@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "title": "Pokégods originales — Isla Espejo",
   "voice": "Los rumores de patio de 1999 y 2000 tomaron forma física en una isla que el juego no debería recordar.",
   "guarantees": {
@@ -38,7 +38,10 @@
         256
       ]
     },
-    "conceptHint": "PNG con fondo liso y criatura centrada a cuerpo completo; el conversor recorta, funde el fondo y reduce la paleta."
+    "conceptHint": "PNG con fondo liso y criatura centrada a cuerpo completo; el conversor recorta, funde el fondo y reduce la paleta.",
+    "generados": "2026-10-04T23:55:00.226Z",
+    "pendientes": [],
+    "completos": 19
   },
   "forms": {
     "alfa": {
@@ -163,6 +166,14 @@
         "source": "PIKACHU",
         "adapted": true,
         "note": "Azul cielo sobre la silueta del rumor; el concepto propio manda si aparece."
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/PIKABLU.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/PIKABLU.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/PIKABLU.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/PIKABLU.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -221,6 +232,14 @@
           "beta": "ShadowSky",
           "omega": "ShadowSky"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/MEWTHREE.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/MEWTHREE.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/MEWTHREE.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/MEWTHREE.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -279,6 +298,14 @@
           "beta": "Sun",
           "omega": "Sandstorm"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/FLARETH.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/FLARETH.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/FLARETH.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/FLARETH.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -338,6 +365,14 @@
           "beta": "Hail",
           "omega": "ShadowSky"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/LUNAREON.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/LUNAREON.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/LUNAREON.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/LUNAREON.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -397,6 +432,14 @@
           "beta": "Sun",
           "omega": "HarshSun"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/SOLAREON.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/SOLAREON.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/SOLAREON.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/SOLAREON.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -457,6 +500,14 @@
           "beta": "Sandstorm",
           "omega": "Sandstorm"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/NIDOGOD.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/NIDOGOD.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/NIDOGOD.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/NIDOGOD.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -516,6 +567,14 @@
           "beta": "Hail",
           "omega": "ShadowSky"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/SPOOKY.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/SPOOKY.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/SPOOKY.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/SPOOKY.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -575,6 +634,14 @@
           "beta": "Sandstorm",
           "omega": "ShadowSky"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/DOOMSDAY.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/DOOMSDAY.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/DOOMSDAY.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/DOOMSDAY.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -635,6 +702,14 @@
           "beta": "Sun",
           "omega": "Fog"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/TRICKET.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/TRICKET.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/TRICKET.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/TRICKET.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -694,6 +769,14 @@
           "beta": "Sandstorm",
           "omega": "ShadowSky"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/SHADYBUG.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/SHADYBUG.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/SHADYBUG.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/SHADYBUG.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -755,6 +838,14 @@
           "beta": "Sandstorm",
           "omega": "ShadowSky"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/ANTHRAX.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/ANTHRAX.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/ANTHRAX.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/ANTHRAX.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
       }
     },
     {
@@ -814,7 +905,352 @@
           "beta": "Sandstorm",
           "omega": "Sandstorm"
         }
+      },
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/DIMONIX.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/DIMONIX.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/DIMONIX.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/DIMONIX.png",
+        "completo": true,
+        "origen": "arte conceptual (sesiones anteriores)"
+      }
+    },
+    {
+      "id": "PIKAMARS",
+      "name": "Pikamars",
+      "category": "Ember Mouse",
+      "romIndex": 27,
+      "dex": "Un ratón eléctrico de pelaje rojo cuyas mejillas despiden brasas en lugar de chispas. El rumor decía que solo salía en las noches más caluras de Pueblo Paleta.",
+      "homage": "Variante marciana de Pikachu (2000)",
+      "lore": "Versión volcánica del ratón amarillo: dicen que llegó en un meteorito.",
+      "types": [
+        "ELECTRIC",
+        "FIRE"
+      ],
+      "baseStats": {
+        "HP": 70,
+        "ATTACK": 85,
+        "DEFENSE": 65,
+        "SPECIAL_ATTACK": 95,
+        "SPECIAL_DEFENSE": 75,
+        "SPEED": 110
+      },
+      "evs": {
+        "SPEED": 3
+      },
+      "abilities": [
+        "BLAZE"
+      ],
+      "hiddenAbility": "LIGHTNINGROD",
+      "moves": [
+        "THUNDER",
+        "FLAMETHROWER",
+        "FLAMECHARGE",
+        "AGILITY"
+      ],
+      "crySource": "PIKACHU",
+      "color": "Red",
+      "shape": "Quadruped",
+      "habitat": "Mountain",
+      "growthRate": "Medium",
+      "source": "FactoryAdventure.gb (Pokégod auténtico, índice 27)",
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/PIKAMARS.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/PIKAMARS.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/PIKAMARS.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/PIKAMARS.png",
+        "completo": true,
+        "origen": "derivado por código de PIKACHU (variante volcánica)"
+      }
+    },
+    {
+      "id": "RATICLAW",
+      "name": "Raticlaw",
+      "category": "Gillies Pokémon",
+      "romIndex": 39,
+      "dex": "Raticate mutado por la energía de una grieta: sus garras crecieron hasta convertirse en guadañas. Nada se interpone dos veces en su camino.",
+      "homage": "Evolución violenta de Raticate",
+      "lore": "Se cuenta que corta el metal igual que el aire.",
+      "types": [
+        "NORMAL",
+        "DARK"
+      ],
+      "baseStats": {
+        "HP": 85,
+        "ATTACK": 110,
+        "DEFENSE": 75,
+        "SPECIAL_ATTACK": 55,
+        "SPECIAL_DEFENSE": 75,
+        "SPEED": 95
+      },
+      "evs": {
+        "ATTACK": 3
+      },
+      "abilities": [
+        "GUTS"
+      ],
+      "hiddenAbility": "TOUGHCLAWS",
+      "moves": [
+        "CRUNCH",
+        "SLASH",
+        "XSCISSOR",
+        "SWORDSDANCE"
+      ],
+      "crySource": "RATICATE",
+      "color": "Purple",
+      "shape": "Quadruped",
+      "habitat": "Grassland",
+      "growthRate": "Medium",
+      "source": "FactoryAdventure.gb (Pokégod auténtico, índice 39)",
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/RATICLAW.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/RATICLAW.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/RATICLAW.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/RATICLAW.png",
+        "completo": true,
+        "origen": "derivado por código de RATICATE (variante aberrante)"
+      }
+    },
+    {
+      "id": "DOOMSAY",
+      "name": "Doomsay",
+      "category": "Omen Pokémon",
+      "romIndex": 179,
+      "dex": "Anuncia las grietas antes de que se abran. Cuando las membranas de sus alas humean, la isla entera contiene el aliento.",
+      "homage": "Pokégod del apocalipsis",
+      "lore": "Su nombre era la advertencia, no la criatura.",
+      "types": [
+        "DARK",
+        "DRAGON"
+      ],
+      "baseStats": {
+        "HP": 90,
+        "ATTACK": 100,
+        "DEFENSE": 80,
+        "SPECIAL_ATTACK": 110,
+        "SPECIAL_DEFENSE": 85,
+        "SPEED": 95
+      },
+      "evs": {
+        "SPECIAL_ATTACK": 3
+      },
+      "abilities": [
+        "LEVITATE"
+      ],
+      "hiddenAbility": "MULTISCALE",
+      "moves": [
+        "DARKPULSE",
+        "DRACOMETEOR",
+        "SHADOWBALL",
+        "NASTYPLOT"
+      ],
+      "crySource": "HYDREIGON",
+      "color": "Black",
+      "shape": "Wings",
+      "habitat": "Rare",
+      "growthRate": "Slow",
+      "source": "FactoryAdventure.gb (Pokégod auténtico, índice 179)",
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/DOOMSAY.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/DOOMSAY.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/DOOMSAY.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/DOOMSAY.png",
+        "completo": true,
+        "origen": "generado con IA desde el sprite original del ROM"
+      }
+    },
+    {
+      "id": "APACOLYPSE",
+      "name": "Apacolypse",
+      "category": "Endbringer Pokémon",
+      "romIndex": 130,
+      "dex": "La falta de ortografía del ROM se volvió criatura: un ave de fuego negro que anida en el fin de los tiempos.",
+      "homage": "Apocalypse mal escrito en la ROM",
+      "lore": "Nadie lo vio dos veces; la segunda vez ya no quedaba nadie para contarlo.",
+      "types": [
+        "FIRE",
+        "DARK"
+      ],
+      "baseStats": {
+        "HP": 105,
+        "ATTACK": 120,
+        "DEFENSE": 90,
+        "SPECIAL_ATTACK": 120,
+        "SPECIAL_DEFENSE": 90,
+        "SPEED": 100
+      },
+      "evs": {
+        "SPECIAL_ATTACK": 3
+      },
+      "abilities": [
+        "DROUGHT"
+      ],
+      "hiddenAbility": "MAGICGUARD",
+      "moves": [
+        "FLAREBLITZ",
+        "DARKPULSE",
+        "EARTHPOWER",
+        "CALMMIND"
+      ],
+      "crySource": "MOLTRES",
+      "color": "Black",
+      "shape": "Wings",
+      "habitat": "Rare",
+      "growthRate": "Slow",
+      "source": "FactoryAdventure.gb (Pokégod auténtico, índice 130)",
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/APACOLYPSE.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/APACOLYPSE.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/APACOLYPSE.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/APACOLYPSE.png",
+        "completo": true,
+        "origen": "generado con IA desde el sprite original del ROM"
+      }
+    },
+    {
+      "id": "ELECTRAMEW",
+      "name": "Electramew",
+      "category": "New Species Pokémon",
+      "romIndex": 30,
+      "dex": "Cruce imposible entre Mew y la electricidad estática de una grieta. Se teletransporta dejando olor a ozono.",
+      "homage": "Mew eléctrico",
+      "lore": "Los datos corruptos tomaron la forma del Pokémon más flexible de todos.",
+      "types": [
+        "ELECTRIC",
+        "PSYCHIC"
+      ],
+      "baseStats": {
+        "HP": 100,
+        "ATTACK": 95,
+        "DEFENSE": 95,
+        "SPECIAL_ATTACK": 115,
+        "SPECIAL_DEFENSE": 100,
+        "SPEED": 110
+      },
+      "evs": {
+        "SPECIAL_ATTACK": 3
+      },
+      "abilities": [
+        "STATIC"
+      ],
+      "hiddenAbility": "MAGICBOUNCE",
+      "moves": [
+        "THUNDERBOLT",
+        "PSYSHOCK",
+        "NASTYPLOT",
+        "RECOVER"
+      ],
+      "crySource": "MEW",
+      "color": "Yellow",
+      "shape": "Upright",
+      "habitat": "Rare",
+      "growthRate": "Slow",
+      "source": "FactoryAdventure.gb (Pokégod auténtico, índice 30)",
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/ELECTRAMEW.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/ELECTRAMEW.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/ELECTRAMEW.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/ELECTRAMEW.png",
+        "completo": true,
+        "origen": "derivado por código de MEW (variante eléctrica)"
+      }
+    },
+    {
+      "id": "MECHTROID",
+      "name": "Mechtroid",
+      "category": "Machine Pokémon",
+      "romIndex": 142,
+      "dex": "Un autómata construido con los restos de un Pokémon que el juego dejó de recordar. Su núcleo late con electricidad robada.",
+      "homage": "Pokégod mecánico",
+      "lore": "No respira: recalcula.",
+      "types": [
+        "STEEL",
+        "ELECTRIC"
+      ],
+      "baseStats": {
+        "HP": 95,
+        "ATTACK": 115,
+        "DEFENSE": 120,
+        "SPECIAL_ATTACK": 85,
+        "SPECIAL_DEFENSE": 90,
+        "SPEED": 70
+      },
+      "evs": {
+        "DEFENSE": 3
+      },
+      "abilities": [
+        "LEVITATE"
+      ],
+      "hiddenAbility": "CLEARBODY",
+      "moves": [
+        "IRONHEAD",
+        "WILDCHARGE",
+        "FLASHCANNON",
+        "ROCKPOLISH"
+      ],
+      "crySource": "MAGNEZONE",
+      "color": "Gray",
+      "shape": "Head",
+      "habitat": "Rare",
+      "growthRate": "Slow",
+      "source": "FactoryAdventure.gb (Pokégod auténtico, índice 142)",
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/MECHTROID.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/MECHTROID.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/MECHTROID.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/MECHTROID.png",
+        "completo": true,
+        "origen": "generado con IA desde el sprite original del ROM"
+      }
+    },
+    {
+      "id": "MISSINGNO",
+      "name": "MissingNo",
+      "category": "Glitch Pokémon",
+      "romIndex": 190,
+      "dex": "No es un Pokémon: es lo que queda cuando el juego intenta recordar algo que no existe. Sus estadísticas conservan los valores corruptos originales de 1998.",
+      "homage": "MissingNo. (1998)",
+      "lore": "El primer dios de todos, y el único que cualquiera pudo ver realmente.",
+      "types": [
+        "BIRD",
+        "NORMAL"
+      ],
+      "baseStats": {
+        "HP": 33,
+        "ATTACK": 136,
+        "DEFENSE": 0,
+        "SPECIAL_ATTACK": 6,
+        "SPECIAL_DEFENSE": 6,
+        "SPEED": 29
+      },
+      "evs": {
+        "ATTACK": 3
+      },
+      "abilities": [
+        "GLITCHFIELD"
+      ],
+      "hiddenAbility": "GLITCHFIELD",
+      "moves": [
+        "WATERGUN",
+        "SKYATTACK",
+        "TRANSFORM",
+        "SUBSTITUTE"
+      ],
+      "crySource": "MISSINGNO",
+      "color": "Black",
+      "shape": "Wings",
+      "habitat": "Rare",
+      "growthRate": "Erratic",
+      "source": "FactoryAdventure.gb (Pokégod auténtico, índices 190-192)",
+      "assets": {
+        "front": "pokemon_fire_ash/Graphics/Pokemon/Front/MISSINGNO.png",
+        "back": "pokemon_fire_ash/Graphics/Pokemon/Back/MISSINGNO.png",
+        "icono": "pokemon_fire_ash/Graphics/Pokemon/Icons/MISSINGNO.png",
+        "personaje": "pokemon_fire_ash/Graphics/Characters/MISSINGNO.png",
+        "completo": true,
+        "origen": "generado con IA desde el sprite original del ROM"
       }
     }
-  ]
+  ],
+  "nota_fase3": "Ampliado con los Pokégods auténticos del ROM invitado FactoryAdventure.gb (tabla de especies 0x1C236, 193 entradas) y con los assets convertidos por tools/generar_assets_pokegods.mjs a los formatos reales del proyecto."
 }

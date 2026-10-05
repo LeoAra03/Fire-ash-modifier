@@ -121,7 +121,9 @@
     "verify:expansion": "node tools/apply_expansion_multiversal.mjs --verify",
     "build:expansion:package": "node tools/build_expansion_package.mjs",
     "verify:expansion:package": "node tools/build_expansion_package.mjs --verify",
-    "rom:assets": "node tools/unpack_assets.mjs"
+    "rom:assets": "node tools/unpack_assets.mjs",
+    "pokegods:assets": "node tools/generar_assets_pokegods.mjs",
+    "rom:mones": "node tools/unpack_gba_mons.mjs"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

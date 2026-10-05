@@ -1,0 +1,67 @@
+{
+  "generado": "2026-10-05T00:06:20.455Z",
+  "origen": "reference/pokegods/concepto",
+  "destino": "pokemon_fire_ash",
+  "formatos": {
+    "Front": "96x96",
+    "Back": "96x96",
+    "Icons": "128x64 (8 celdas 32x32)",
+    "Characters": "256x256 (4x4 celdas 64x64: abajo/izq/dcha/arriba)"
+  },
+  "pokegods": [
+    {
+      "nombre": "APACOLYPSE",
+      "frontal": "Graphics/Pokemon/Front/APACOLYPSE.png",
+      "trasero": "Graphics/Pokemon/Back/APACOLYPSE.png",
+      "icono": "Graphics/Pokemon/Icons/APACOLYPSE.png",
+      "personaje": "Graphics/Characters/APACOLYPSE.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "DOOMSAY",
+      "frontal": "Graphics/Pokemon/Front/DOOMSAY.png",
+      "trasero": "Graphics/Pokemon/Back/DOOMSAY.png",
+      "icono": "Graphics/Pokemon/Icons/DOOMSAY.png",
+      "personaje": "Graphics/Characters/DOOMSAY.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "DOOMSDAY",
+      "frontal": "Graphics/Pokemon/Front/DOOMSDAY.png",
+      "trasero": "Graphics/Pokemon/Back/DOOMSDAY.png",
+      "icono": "Graphics/Pokemon/Icons/DOOMSDAY.png",
+      "personaje": "Graphics/Characters/DOOMSDAY.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "LUNAREON",
+      "frontal": "Graphics/Pokemon/Front/LUNAREON.png",
+      "trasero": "Graphics/Pokemon/Back/LUNAREON.png",
+      "icono": "Graphics/Pokemon/Icons/LUNAREON.png",
+      "personaje": "Graphics/Characters/LUNAREON.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "MECHTROID",
+      "frontal": "Graphics/Pokemon/Front/MECHTROID.png",
+      "trasero": "Graphics/Pokemon/Back/MECHTROID.png",
+      "icono": "Graphics/Pokemon/Icons/MECHTROID.png",
+      "personaje": "Graphics/Characters/MECHTROID.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    },
+    {
+      "nombre": "MISSINGNO",
+      "frontal": "Graphics/Pokemon/Front/MISSINGNO.png",
+      "trasero": "Graphics/Pokemon/Back/MISSINGNO.png",
+      "icono": "Graphics/Pokemon/Icons/MISSINGNO.png",
+      "personaje": "Graphics/Characters/MISSINGNO.png",
+      "vista_trasera_propia": false,
+      "colores_paleta": 48
+    }
+  ]
+}
