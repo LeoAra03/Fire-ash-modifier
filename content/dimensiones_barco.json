@@ -1,0 +1,159 @@
+{
+  "esquema": "dimensiones_barco/1.0",
+  "titulo": "Dos dimensiones invitadas navegables: Glazed y Light Platinum",
+  "nota": "Se llega en barco desde Puerto Horizonte, como a Atlas Mil: un capitán por dimensión y, en cada orilla, el mismo barco esperando para volver. Son Fragmentos de dimensión sostenidos por el Rotom del Tiempo, así que ninguna se abre antes del duelo de Arceus y de todas se puede volver cuando se quiera.",
+  "interruptores": {
+    "DUELO_RESUELTO": 873,
+    "GLAZED_ABIERTA": 960,
+    "LIGHT_PLATINUM_ABIERTA": 961
+  },
+  "puerto": {
+    "mapa": 1001,
+    "nombre": "Puerto Horizonte",
+    "pistas": [[6, 40], [10, 44]]
+  },
+  "dimensiones": [
+    {
+      "id": "glazed",
+      "slug": "Glazed",
+      "mapaId": 2200,
+      "gimnasioId": 2201,
+      "padre": 1001,
+      "abierta": 960,
+      "medalla": "GLAZEDBADGE",
+      "nombreMedalla": "Medalla Glazed",
+      "titulo": "Glazed — Bahía de Cedolán",
+      "tituloGimnasio": "Gimnasio Glazed — Líder Ámbar",
+      "tileset": 1,
+      "lado": 30,
+      "columnas": 3,
+      "musica": "",
+      "capitan": {
+        "sprite": "trchar062",
+        "nombre": "Capitán Ferrán",
+        "saludo": [
+          "Capitán Ferrán: ¿Glazed? Sí, señor. Es el Fragmento más frío de los tres: nieva en pleno verano y nadie sabe por qué.",
+          "Capitán Ferrán: Mi barco va y vuelve cuando quieras. Nunca dejo a nadie al otro lado."
+        ],
+        "ir": "Capitán Ferrán: ¡Leva anclas! En Glazed hace frío, pero la gente es templada.",
+        "quedarse": "Capitán Ferrán: Como quieras. El barco no se mueve sin ti."
+      },
+      "muelle": {
+        "saludo": "El barco de Ferrán amanece en la bahía, con la caldera encendida.",
+        "volver": "Capitán Ferrán: ¿De vuelta? Sube. Puerto Horizonte nos espera."
+      },
+      "distritos": [
+        { "sourceId": 7, "label": "Cedolán" },
+        { "sourceId": 23, "label": "Lerucean" },
+        { "sourceId": 35, "label": "Meseta Ingido" },
+        { "sourceId": 21, "label": "Ruta costera" },
+        { "sourceId": 31, "label": "Ruta alta" },
+        { "sourceId": 28, "label": "Parque natural" }
+      ],
+      "cronista": {
+        "sprite": "trchar028",
+        "lineas": [
+          "Cronista de Glazed: Este Fragmento se sostuvo porque alguien se empeñó en que Cedolán siguiera en pie.",
+          "Cronista de Glazed: Míralo bien: las mismas calles de siempre, pero sin nadie que las cierre por la noche.",
+          "Cronista de Glazed: Si quieres la Medalla Glazed, el Líder Ámbar te espera en el gimnasio del norte."
+        ]
+      },
+      "lider": {
+        "tipo": "GLAZED_LEADER",
+        "nombre": "AMBAR",
+        "mostrado": "Líder Ámbar",
+        "sprite": "trchar048",
+        "nivel": 100,
+        "equipo": ["ABOMASNOW", "GLACEON", "MAMOSWINE", "LAPRAS", "WEAVILE", "KYUREM"],
+        "intro": [
+          "Líder Ámbar: Glazed no es una región: es una costumbre que se negó a morir.",
+          "Líder Ámbar: Si vienes de fuera, enséñame cómo se pelea cuando no hace frío."
+        ],
+        "victoria": "Líder Ámbar: El hielo se ha roto y no me molesta. Toma la Medalla Glazed: es de aquí, pero te la has ganado tú.",
+        "derrota": "Líder Ámbar: Vuelve cuando hayas entendido que el frío también se entrena."
+      },
+      "entrenadores": [
+        { "nombre": "GLA_01", "sprite": "trchar005", "equipo": ["SNORUNT", "SNEASEL", "FROSLASS"], "frase": "El frío no es un problema: es una herramienta." },
+        { "nombre": "GLA_02", "sprite": "trchar009", "equipo": ["SWINUB", "PILOSWINE", "MAMOSWINE"], "frase": "Cava hondo y encontrarás hielo con memoria." },
+        { "nombre": "GLA_03", "sprite": "trchar016", "equipo": ["SPHEAL", "SEALEO", "WALREIN"], "frase": "La bahía cría Pokémon que no conocen el invierno." },
+        { "nombre": "GLA_04", "sprite": "trchar021", "equipo": ["SNOM", "FROSMOTH", "ABOMASNOW"], "frase": "La escarcha de Cedolán se queda en la ropa." }
+      ],
+      "pobladores": [
+        { "sprite": "trchar033", "lineas": ["Vecina: Aquí nunca nieva en la misma calle dos días seguidos. Nos hemos acostumbrado a adivinar dónde."] },
+        { "sprite": "trchar013", "lineas": ["Marinero: El barco de Ferrán es el único que entra y sale de esta bahía sin permiso de nadie."] }
+      ]
+    },
+    {
+      "id": "lightplatinum",
+      "slug": "Light Platinum",
+      "mapaId": 2210,
+      "gimnasioId": 2211,
+      "padre": 1001,
+      "abierta": 961,
+      "medalla": "PLATINUMBADGE",
+      "nombreMedalla": "Medalla Platino",
+      "titulo": "Light Platinum — Costa de Lappet",
+      "tituloGimnasio": "Gimnasio Light Platinum — Líder Resplandor",
+      "tileset": 1,
+      "lado": 30,
+      "columnas": 3,
+      "musica": "",
+      "capitan": {
+        "sprite": "trchar063",
+        "nombre": "Capitana Ñuke",
+        "saludo": [
+          "Capitana Ñuke: Light Platinum es el Fragmento más claro: todo el día con el sol alto y la gente de buen humor.",
+          "Capitana Ñuke: Me gusta llevaros, pero me gusta más traeros. Mi barco siempre vuelve."
+        ],
+        "ir": "Capitana Ñuke: ¡Navegamos! Aviso: en Lappet el sol engaña, lleva agua.",
+        "quedarse": "Capitana Ñuke: Sin prisa. El muelle no se va a ningún sitio."
+      },
+      "muelle": {
+        "saludo": "La goleta de Ñuke cabecea despacio, pintada de blanco y plata.",
+        "volver": "Capitana Ñuke: ¿Ya? Sube, que la marea está de nuestro lado."
+      },
+      "distritos": [
+        { "sourceId": 33, "label": "Pueblo costero" },
+        { "sourceId": 43, "label": "Ciudad verde" },
+        { "sourceId": 41, "label": "Senda larga" },
+        { "sourceId": 44, "label": "Ruta del bosque" },
+        { "sourceId": 180, "label": "Zona safari" },
+        { "sourceId": 167, "label": "Frente de batalla" }
+      ],
+      "cronista": {
+        "sprite": "trchar030",
+        "lineas": [
+          "Cronista de Light Platinum: Este Fragmento se sostuvo porque alguien decidió que la luz no se acabara nunca.",
+          "Cronista de Light Platinum: No es perfecto: es luminoso, y eso ya es mucho.",
+          "Cronista de Light Platinum: El Líder Resplandor pelea en el gimnasio del este. Ve cuando quieras."
+        ]
+      },
+      "lider": {
+        "tipo": "PLATINUM_LEADER",
+        "nombre": "RESPLANDOR",
+        "mostrado": "Líder Resplandor",
+        "sprite": "trchar049",
+        "nivel": 100,
+        "equipo": ["LUXRAY", "MAGNEZONE", "ROTOM", "BRAVIARY", "VOLCARONA", "ZACIAN"],
+        "intro": [
+          "Líder Resplandor: En Light Platinum nadie apaga la luz. Ni de noche, ni al perder.",
+          "Líder Resplandor: Enséñame cómo brilla alguien que viene de fuera."
+        ],
+        "victoria": "Líder Resplandor: Me has dejado a oscuras y me ha gustado. Toma la Medalla Platino.",
+        "derrota": "Líder Resplandor: Te ha faltado brillo. Vuelve cuando te sobre."
+      },
+      "entrenadores": [
+        { "nombre": "LPL_01", "sprite": "trchar007", "equipo": ["SHINX", "LUXIO", "LUXRAY"], "frase": "¿Ves la chispa? Eso es entrenar en serio." },
+        { "nombre": "LPL_02", "sprite": "trchar011", "equipo": ["MAGNEMITE", "MAGNETON", "MAGNEZONE"], "frase": "El campo magnético de la costa lo mueve todo." },
+        { "nombre": "LPL_03", "sprite": "trchar018", "equipo": ["RUFFLET", "BRAVIARY", "STARAPTOR"], "frase": "Vuelo alto porque aquí el cielo no se acaba." },
+        { "nombre": "LPL_04", "sprite": "trchar024", "equipo": ["LARVESTA", "VOLCARONA", "TALONFLAME"], "frase": "El sol de Lappet cría alas que no se cansan." }
+      ],
+      "pobladores": [
+        { "sprite": "trchar026", "lineas": ["Pescador: El mar aquí es de un azul que no se ve en ningún otro Fragmento. Lo he comprobado."] },
+        { "sprite": "trchar003", "lineas": ["Niña: Dicen que la Capitana Ñuke conoce todas las corrientes. Yo sólo sé que siempre vuelve."] }
+      ]
+    }
+  ],
+  "donanteGimnasio": 10,
+  "gimnasio": { "ancho": 46, "alto": 42, "tileset": 14 }
+}

@@ -44,6 +44,10 @@ const maps = new Set([
   PLAN.mirror.mansionMap, PLAN.mirror.basement.mapId, PLAN.mirror.islandMap,
   998, 999,                                            // resto de la Isla Espejo
   2195, 2196,                                          // Vía de las Nueve Eras y su gimnasio
+  2200, 2201, 2210, 2211,                              // Glazed y Light Platinum
+  2220, 2221,                                          // dimensión Team Rocket
+  2230,                                                // Avenida de los Ocho Gimnasios
+  ...Array.from({ length: 8 }, (_, i) => 2250 + i),     // los ocho gimnasios de Atlas
 ]);
 
 /** Archivos del arco, siempre relativos a la raíz del juego. */
@@ -52,8 +56,8 @@ function fileList() {
     "Data/MapInfos.rxdata",     // nombres de los mapas nuevos
     "Data/map_metadata.dat",    // metadatos de los mapas nuevos
     "Data/trainers.dat",        // los cinco combates de la Liga Oscura y los diez del Gimnasio de las Eras
-    "Data/trainer_types.dat",   // tipos del Gimnasio de las Eras
-    "Data/items.dat",           // Medalla Era
+    "Data/trainer_types.dat",   // tipos de las Eras, las dimensiones y el circuito
+    "Data/items.dat",           // medallas de las Eras, Glazed, Platino, Rocket y Atlas
     "Data/species.dat",         // los doce Pokégods
   ];
   for (const id of [...maps].sort((a, b) => a - b)) files.push(`Data/${mapFile(id)}`);

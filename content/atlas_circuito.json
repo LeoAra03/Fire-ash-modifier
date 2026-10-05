@@ -1,0 +1,571 @@
+{
+  "esquema": "atlas_circuito/1.0",
+  "titulo": "Atlas: el circuito de los ocho gimnasios",
+  "nota": "Atlas es literalmente otro mundo: mil mapas sostenidos por el Fragmento. Le faltaba lo que tiene cualquier mundo: una liga propia. Este circuito añade ocho gimnasios de Atlas con ocho líderes originales, ocho medallas, tres rivales y cuatro cuadrillas. Se entra por el Portal de Atlas en Puerto Horizonte, se recorre en el orden que marcan las medallas y se puede volver cuando se quiera.",
+  "interruptores": {
+    "DUELO_RESUELTO": 873,
+    "CIRCUITO_BASE": 970
+  },
+  "portal": {
+    "mapa": 1001,
+    "pista": [
+      14,
+      32
+    ],
+    "sprite": "ARCEUS_GATE",
+    "cerrado": [
+      "El portal de Atlas está ahí, pero no lleva a ninguna parte.",
+      "Gira despacio, como una puerta que nadie ha terminado de abrir."
+    ],
+    "abierto": [
+      "El portal de Atlas respira. Al otro lado hay un mundo entero esperando.",
+      "Rotom del Tiempo lo sostiene: entrar y salir es libre, y siempre lo será."
+    ]
+  },
+  "circuito": {
+    "mapaId": 2230,
+    "titulo": "Atlas — Avenida de los Ocho Gimnasios",
+    "padre": 1001,
+    "tileset": 1,
+    "lado": 30,
+    "columnas": 3,
+    "distritos": [
+      {
+        "sourceId": 130,
+        "label": "Plaza de Azafrán"
+      },
+      {
+        "sourceId": 282,
+        "label": "Plaza de Trigal"
+      },
+      {
+        "sourceId": 387,
+        "label": "Plaza de Portual"
+      },
+      {
+        "sourceId": 574,
+        "label": "Plaza de Pirita"
+      },
+      {
+        "sourceId": 793,
+        "label": "Plaza de Luminalia"
+      },
+      {
+        "sourceId": 171,
+        "label": "Plaza de Artejo"
+      }
+    ],
+    "maestro": {
+      "sprite": "trchar028",
+      "lineas": [
+        "Maestro de Circuito: Ocho gimnasios, ocho líderes, ocho medallas. En orden: cada puerta se abre con la medalla anterior.",
+        "Maestro de Circuito: Y si te cansas, te sientas. Nadie te va a echar de Atlas: aquí se viene a quedarse el tiempo que haga falta."
+      ]
+    },
+    "tablon": {
+      "sprite": "trchar030",
+      "lineas": [
+        "TABLÓN DEL CIRCUITO",
+        "Medallas de Atlas: \\v[319] de 8.",
+        "Ocho puertas, ocho líderes. La primera está abierta; las demás se abren con lo que ganes."
+      ]
+    },
+    "regreso": {
+      "sprite": "trchar062",
+      "lineas": [
+        "El portal de vuelta a Puerto Horizonte no se cierra nunca. Estás en tu casa."
+      ]
+    }
+  },
+  "gimnasios": [
+    {
+      "id": 1,
+      "mapaId": 2250,
+      "donante": 416,
+      "nombre": "Bruma",
+      "tipo": "FANTASMA",
+      "titulo": "Gimnasio de Atlas · Bruma",
+      "medalla": "ATLASBRUMABADGE",
+      "nombreMedalla": "Medalla Bruma",
+      "lider": {
+        "nombre": "NEBOA",
+        "mostrado": "Líder Néboa",
+        "sprite": "trchar048",
+        "equipo": [
+          "GENGAR",
+          "CHANDELURE",
+          "DRAGAPULT",
+          "MIMIKYU",
+          "AEGISLASH",
+          "SABLEYE"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_BRU_01",
+          "sprite": "trchar005",
+          "equipo": [
+            "GASTLY",
+            "HAUNTER",
+            "GENGAR"
+          ]
+        },
+        {
+          "nombre": "ATL_BRU_02",
+          "sprite": "trchar009",
+          "equipo": [
+            "SHUPPET",
+            "BANETTE",
+            "DUSKNOIR"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Néboa: Aquí dentro nadie ve la puerta de salida. Busca la niebla: ella sí la ve."
+      ],
+      "victoria": "Líder Néboa: Se ha levantado. Toma la Medalla Bruma: la primera de las ocho.",
+      "derrota": "Líder Néboa: Vuelve cuando no te asuste no ver."
+    },
+    {
+      "id": 2,
+      "mapaId": 2251,
+      "donante": 136,
+      "nombre": "Veta",
+      "tipo": "ROCA",
+      "titulo": "Gimnasio de Atlas · Veta",
+      "medalla": "ATLASVETABADGE",
+      "nombreMedalla": "Medalla Veta",
+      "lider": {
+        "nombre": "CANTO",
+        "mostrado": "Líder Canto",
+        "sprite": "trchar049",
+        "equipo": [
+          "TYRANITAR",
+          "RHYPERIOR",
+          "TERRAKION",
+          "AGGRON",
+          "GIGALITH",
+          "LYCANROC"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_VET_01",
+          "sprite": "trchar016",
+          "equipo": [
+            "GEODUDE",
+            "GRAVELER",
+            "GOLEM"
+          ]
+        },
+        {
+          "nombre": "ATL_VET_02",
+          "sprite": "trchar021",
+          "equipo": [
+            "ROGGENROLA",
+            "BOLDORE",
+            "GIGALITH"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Canto: La piedra no se mueve. Se convence. Igual que yo."
+      ],
+      "victoria": "Líder Canto: Me has convencido. Medalla Veta.",
+      "derrota": "Líder Canto: Te ha faltado peso. Vuelve con más."
+    },
+    {
+      "id": 3,
+      "mapaId": 2252,
+      "donante": 413,
+      "nombre": "Duna",
+      "tipo": "TIERRA",
+      "titulo": "Gimnasio de Atlas · Duna",
+      "medalla": "ATLASDUNABADGE",
+      "nombreMedalla": "Medalla Duna",
+      "lider": {
+        "nombre": "AGATA",
+        "mostrado": "Líder Ágata",
+        "sprite": "trchar050",
+        "equipo": [
+          "GARCHOMP",
+          "EXCADRILL",
+          "GROUDON",
+          "HIPPOWDON",
+          "MAMOSWINE",
+          "KROOKODILE"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_DUN_01",
+          "sprite": "trchar013",
+          "equipo": [
+            "SANDSHREW",
+            "SANDSLASH",
+            "DUGTRIO"
+          ]
+        },
+        {
+          "nombre": "ATL_DUN_02",
+          "sprite": "trchar018",
+          "equipo": [
+            "DRILBUR",
+            "EXCADRILL",
+            "FLYGON"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Ágata: La duna cambia de sitio cada noche. Aprende a leer el suelo."
+      ],
+      "victoria": "Líder Ágata: Has leído bien. Medalla Duna.",
+      "derrota": "Líder Ágata: Se te ha hundido el pie. Inténtalo otra vez."
+    },
+    {
+      "id": 4,
+      "mapaId": 2253,
+      "donante": 442,
+      "nombre": "Fragua",
+      "tipo": "FUEGO",
+      "titulo": "Gimnasio de Atlas · Fragua",
+      "medalla": "ATLASFRAGUABADGE",
+      "nombreMedalla": "Medalla Fragua",
+      "lider": {
+        "nombre": "CRISOL",
+        "mostrado": "Líder Crisol",
+        "sprite": "trchar052",
+        "equipo": [
+          "CHARIZARD",
+          "ARCANINE",
+          "BLAZIKEN",
+          "VOLCARONA",
+          "ENTEI",
+          "INCINEROAR"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_FRA_01",
+          "sprite": "trchar024",
+          "equipo": [
+            "VULPIX",
+            "NINETALES",
+            "ARCANINE"
+          ]
+        },
+        {
+          "nombre": "ATL_FRA_02",
+          "sprite": "trchar026",
+          "equipo": [
+            "LITWICK",
+            "LAMPENT",
+            "CHANDELURE"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Crisol: Aquí se funde y se vuelve a empezar. Trae algo que arda."
+      ],
+      "victoria": "Líder Crisol: Bien templado. Medalla Fragua.",
+      "derrota": "Líder Crisol: Te has apagado pronto. Sopla y vuelve."
+    },
+    {
+      "id": 5,
+      "mapaId": 2254,
+      "donante": 611,
+      "nombre": "Marea",
+      "tipo": "AGUA",
+      "titulo": "Gimnasio de Atlas · Marea",
+      "medalla": "ATLASMAREABADGE",
+      "nombreMedalla": "Medalla Marea",
+      "lider": {
+        "nombre": "NAYADE",
+        "mostrado": "Líder Náyade",
+        "sprite": "trchar054",
+        "equipo": [
+          "BLASTOISE",
+          "MILOTIC",
+          "SWAMPERT",
+          "GYARADOS",
+          "SUICUNE",
+          "TOXAPEX"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_MAR_01",
+          "sprite": "trchar011",
+          "equipo": [
+            "MAGIKARP",
+            "GYARADOS",
+            "MILOTIC"
+          ]
+        },
+        {
+          "nombre": "ATL_MAR_02",
+          "sprite": "trchar033",
+          "equipo": [
+            "FEEBAS",
+            "MILOTIC",
+            "VAPOREON"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Náyade: La marea sube, baja y siempre vuelve. Como los que entrenan en serio."
+      ],
+      "victoria": "Líder Náyade: Has sabido esperar la ola. Medalla Marea.",
+      "derrota": "Líder Náyade: Te ha cogido la corriente. Vuelve a nadar."
+    },
+    {
+      "id": 6,
+      "mapaId": 2255,
+      "donante": 710,
+      "nombre": "Vendaval",
+      "tipo": "VOLADOR",
+      "titulo": "Gimnasio de Atlas · Vendaval",
+      "medalla": "ATLASVENTABADGE",
+      "nombreMedalla": "Medalla Vendaval",
+      "lider": {
+        "nombre": "CIERZO",
+        "mostrado": "Líder Cierzo",
+        "sprite": "trchar056",
+        "equipo": [
+          "DRAGONITE",
+          "STARAPTOR",
+          "TALONFLAME",
+          "CORVIKNIGHT",
+          "LUGIA",
+          "BRAVIARY"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_VEN_01",
+          "sprite": "trchar007",
+          "equipo": [
+            "PIDGEY",
+            "PIDGEOTTO",
+            "PIDGEOT"
+          ]
+        },
+        {
+          "nombre": "ATL_VEN_02",
+          "sprite": "trchar019",
+          "equipo": [
+            "ROOKIDEE",
+            "CORVISQUIRE",
+            "CORVIKNIGHT"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Cierzo: Sin suelo no hay refugio. Aprende a pelear donde no te agarres a nada."
+      ],
+      "victoria": "Líder Cierzo: Has volado conmigo. Medalla Vendaval.",
+      "derrota": "Líder Cierzo: Te ha faltado aire. Descansa y sube."
+    },
+    {
+      "id": 7,
+      "mapaId": 2256,
+      "donante": 833,
+      "nombre": "Invernadero",
+      "tipo": "PLANTA",
+      "titulo": "Gimnasio de Atlas · Invernadero",
+      "medalla": "ATLASFLORABADGE",
+      "nombreMedalla": "Medalla Invernadero",
+      "lider": {
+        "nombre": "RETONO",
+        "mostrado": "Líder Retoño",
+        "sprite": "trchar058",
+        "equipo": [
+          "VENUSAUR",
+          "FERROTHORN",
+          "ROSERADE",
+          "TORTERRA",
+          "TANGROWTH",
+          "RILLABOOM"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_INV_01",
+          "sprite": "trchar003",
+          "equipo": [
+            "BULBASAUR",
+            "IVYSAUR",
+            "VENUSAUR"
+          ]
+        },
+        {
+          "nombre": "ATL_INV_02",
+          "sprite": "trchar023",
+          "equipo": [
+            "SEEDOT",
+            "NUZLEAF",
+            "SHIFTRY"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Retoño: Todo lo de aquí creció sin que nadie lo regara. A ver qué haces tú."
+      ],
+      "victoria": "Líder Retoño: Has crecido a mi sombra. Medalla Invernadero.",
+      "derrota": "Líder Retoño: Te has quedado sin raíces. Plántate y vuelve."
+    },
+    {
+      "id": 8,
+      "mapaId": 2257,
+      "donante": 681,
+      "nombre": "Cumbre",
+      "tipo": "ELECTRICO",
+      "titulo": "Gimnasio de Atlas · Cumbre",
+      "medalla": "ATLASCHISPABADGE",
+      "nombreMedalla": "Medalla Cumbre",
+      "lider": {
+        "nombre": "CHISPA",
+        "mostrado": "Líder Chispa",
+        "sprite": "trchar060",
+        "equipo": [
+          "RAICHU",
+          "LUXRAY",
+          "MAGNEZONE",
+          "ZAPDOS",
+          "ELECTIVIRE",
+          "THUNDURUS"
+        ]
+      },
+      "entrenadores": [
+        {
+          "nombre": "ATL_CUM_01",
+          "sprite": "trchar015",
+          "equipo": [
+            "PIKACHU",
+            "RAICHU",
+            "ELECTIVIRE"
+          ]
+        },
+        {
+          "nombre": "ATL_CUM_02",
+          "sprite": "trchar027",
+          "equipo": [
+            "ELEKID",
+            "ELECTABUZZ",
+            "ELECTIVIRE"
+          ]
+        }
+      ],
+      "intro": [
+        "Líder Chispa: Última puerta. Si llegas aquí es que Atlas ya te ha cambiado algo."
+      ],
+      "victoria": "Líder Chispa: Ocho de ocho. Medalla Cumbre, y con ella el circuito entero.",
+      "derrota": "Líder Chispa: Se te ha cortado la luz. Vuelve a cargar."
+    }
+  ],
+  "rivales": [
+    {
+      "nombre": "DALIA",
+      "mostrado": "Rival Dalia",
+      "sprite": "trchar044",
+      "nivel": 100,
+      "equipo": [
+        "LUCARIO",
+        "GARDEVOIR",
+        "SALAMENCE",
+        "Tyrantrum",
+        "KOMMO_O",
+        "PRIMARINA"
+      ],
+      "intro": [
+        "Rival Dalia: Te sigo desde Bruma. No para ganarte: para ver si llegas."
+      ],
+      "victoria": "Rival Dalia: Has llegado. Yo sigo en la Veta, entrenando. No te pares.",
+      "derrota": "Rival Dalia: Te he ganado y no me ha sabido a nada. Anda, levántate."
+    },
+    {
+      "nombre": "INIGO",
+      "mostrado": "Rival Íñigo",
+      "sprite": "trchar046",
+      "nivel": 100,
+      "equipo": [
+        "METAGROSS",
+        "SCIZOR",
+        "HYDREIGON",
+        "GOODRA",
+        "VOLCANION",
+        "TAPUKOKO"
+      ],
+      "intro": [
+        "Rival Íñigo: Dalia dice que vienes en serio. Yo vengo a comprobarlo."
+      ],
+      "victoria": "Rival Íñigo: De acuerdo. Eres de los que llegan. Nos vemos en la Cumbre.",
+      "derrota": "Rival Íñigo: Demasiado fácil. Mejor: así tendré que entrenar."
+    },
+    {
+      "nombre": "NESTOR",
+      "mostrado": "Rival Néstor",
+      "sprite": "trchar064",
+      "nivel": 100,
+      "equipo": [
+        "DARKRAI",
+        "CRESSELIA",
+        "MELMETAL",
+        "ARCHALUDON",
+        "IRONHANDS",
+        "KINGAMBIT"
+      ],
+      "intro": [
+        "Rival Néstor: Yo no quiero ocho medallas. Quiero las tuyas."
+      ],
+      "victoria": "Rival Néstor: Quédate las ocho. Me conformo con haberte hecho sudar.",
+      "derrota": "Rival Néstor: Guárdame un sitio en la Cumbre. Voy a por él."
+    }
+  ],
+  "cuadrillas": [
+    {
+      "nombre": "CUAD_BRUMA",
+      "sprite": "trainer_TEAMROCKET_M",
+      "equipo": [
+        "CROBAT",
+        "SKUNTANK",
+        "TOXICROAK"
+      ],
+      "frase": "Cuadrilla Bruma: Nadie entra en nuestra plaza sin pagar peaje."
+    },
+    {
+      "nombre": "CUAD_VETA",
+      "sprite": "trainer_TEAMROCKET_F",
+      "equipo": [
+        "RHYPERIOR",
+        "AGGRON",
+        "GIGALITH"
+      ],
+      "frase": "Cuadrilla Veta: La piedra de esta avenida es nuestra. Pisa con cuidado."
+    },
+    {
+      "nombre": "CUAD_MAREA",
+      "sprite": "trainer_TEAMROCKET_M",
+      "equipo": [
+        "GYARADOS",
+        "TOXAPEX",
+        "SHARPEDO"
+      ],
+      "frase": "Cuadrilla Marea: El puerto se cierra cuando nosotros queremos."
+    },
+    {
+      "nombre": "CUAD_CHISPA",
+      "sprite": "trainer_TEAMROCKET_F",
+      "equipo": [
+        "MANECTRIC",
+        "ELECTIVIRE",
+        "RAICHU"
+      ],
+      "frase": "Cuadrilla Chispa: Si ves caer un rayo, ése es nuestro. No lo toques."
+    }
+  ],
+  "medallas": {
+    "variable": 319,
+    "total": 8
+  }
+}

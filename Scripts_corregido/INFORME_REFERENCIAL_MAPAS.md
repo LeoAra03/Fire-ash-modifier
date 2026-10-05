@@ -1,7 +1,7 @@
-# Informe referencial de mapas — 1.024 fichas
+# Informe referencial de mapas — 1.039 fichas
 
 **Generado:** 2026-10-05
-**Alcance:** Atlas Mil (Map1021–Map2020) y 24 mapas complementarios en `Otros_Mapas_16.png`.
+**Alcance:** Atlas Mil (Map1021–Map2020) y 39 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
 
@@ -14,6 +14,7 @@
 - **Multiverso Creepypasta:** siete emisiones, Map2023–Map2029.
 - **La Ruta de Dios:** siete pisos Map2031–Map2037 y aproximación celestial Map2038.
 - **Vía de las Nueve Eras:** Map2195 (vía de nueve distritos) y Map2196 (Gimnasio Atlas · Las Nueve Eras).
+- **Dimensiones del DLC:** Map2200–Map2201 (Glazed), Map2210–Map2211 (Light Platinum), Map2220–Map2221 (Team Rocket), Map2230 (Avenida) y Map2250–Map2257 (ocho gimnasios de Atlas).
 
 **Colisión evitada:** Map2030 sigue siendo la Gruta de los Testigos. La aproximación de La Ruta de Dios está en Map2038; los pisos permanecen en Map2031–Map2037.
 
@@ -5101,7 +5102,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 - **Referencia:** Eco dimensional de Selva Prismática (Map1006). Anomalía documentada: Los nombres de Selva Prismática cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Llamar por señas — Eco 1000. Primer contrajuego: Saludar al lugar con gestos.
 - **Datos compilados:** 70×50 tiles; 4 eventos; tileset 1.
 
-## Mapas complementarios — 24 fichas
+## Mapas complementarios — 39 fichas
 
 ## Isla Espejo
 
@@ -5132,7 +5133,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2021 — Monte Silver — Falda
 - **Categoría:** Monte Silver.
 - **Referencia:** Falda del Monte Silver: acceso desde el hub, ladera nevada, cabaña y entrada a la gruta; aquí aparece el Archivero Prohibido.
-- **Datos compilados:** 44×41 tiles; 11 eventos; tileset 1.
+- **Datos compilados:** 44×41 tiles; 13 eventos; tileset 1.
 
 ### Map2030 — Monte Silver — Gruta de los Testigos
 - **Categoría:** Monte Silver.
@@ -5149,37 +5150,37 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2023 — La Torre que Escuchaba
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Torre que Escuchaba: emisión inspirada en “Lavender Town Syndrome”. Un memorial sin nombres. La música se grabó con voces que ya no responden.
-- **Datos compilados:** 25×25 tiles; 5 eventos; tileset 13.
+- **Datos compilados:** 25×25 tiles; 9 eventos; tileset 13.
 
 ### Map2024 — La Partida Perdida
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Partida Perdida: emisión inspirada en “Lost Silver”. Nieve que registra pasos que nadie dio.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 14.
+- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 14.
 
 ### Map2025 — La Fosa del Enterrado
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Fosa del Enterrado: emisión inspirada en “Buried Alive”. Aquí el suelo se tragó una promesa. No la busques.
-- **Datos compilados:** 30×25 tiles; 5 eventos; tileset 14.
+- **Datos compilados:** 30×25 tiles; 9 eventos; tileset 14.
 
 ### Map2026 — La Cinta Carmesí
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Cinta Carmesí: emisión inspirada en “Strangled Red”. Una cinta carmesí con una sola letra grabada a mano.
-- **Datos compilados:** 40×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 9 eventos; tileset 3.
 
 ### Map2027 — Ciudad Glitch
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** Ciudad Glitch: emisión inspirada en “Glitch City”. Este cartel cambia cuando no lo miras.
-- **Datos compilados:** 42×37 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 42×37 tiles; 9 eventos; tileset 1.
 
 ### Map2028 — El Eco que Jugó Contigo
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** El Eco que Jugó Contigo: emisión inspirada en “el eco de una partida que se niega a desaparecer”. El agua está quieta. Tus reflejos, no.
-- **Datos compilados:** 30×25 tiles; 5 eventos; tileset 6.
+- **Datos compilados:** 30×25 tiles; 9 eventos; tileset 6.
 
 ### Map2029 — La Consola de 1996
 - **Categoría:** Multiverso Creepypasta.
 - **Referencia:** La Consola de 1996: emisión inspirada en “la cartucho embrujada”. Una etiqueta escrita a mano: «NO BORRAR».
-- **Datos compilados:** 40×30 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 9 eventos; tileset 3.
 
 ## La Ruta de Dios
 
@@ -5234,6 +5235,83 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 - **Categoría:** Vía de las Nueve Eras.
 - **Referencia:** Gimnasio Atlas · Las Nueve Eras: recinto de la Líder Vera, nueve entrenadores de era y la Medalla Era.
 - **Datos compilados:** 46×42 tiles; 11 eventos; tileset 14.
+
+## Dimensiones del DLC
+
+### Map2200 — Glazed — Bahía de Cedolán
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Glazed — Bahía de Cedolán: dimensión navegable con seis distritos tomados de Cedolán, Lerucean, la Meseta Ingido y sus rutas.
+- **Datos compilados:** 106×72 tiles; 9 eventos; tileset 1.
+
+### Map2201 — Gimnasio Glazed — Líder Ámbar
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio Glazed: sala del Líder Ámbar y la Medalla Glazed.
+- **Datos compilados:** 46×42 tiles; 2 eventos; tileset 14.
+
+### Map2210 — Light Platinum — Costa de Lappet
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Light Platinum — Costa de Lappet: dimensión navegable con seis distritos de costa, sendas, safari y frente de batalla.
+- **Datos compilados:** 106×72 tiles; 9 eventos; tileset 1.
+
+### Map2211 — Gimnasio Light Platinum — Líder Resplandor
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio Light Platinum: sala del Líder Resplandor y la Medalla Platino.
+- **Datos compilados:** 46×42 tiles; 2 eventos; tileset 14.
+
+### Map2220 — Team Rocket — Base Subterránea
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Team Rocket — Base Subterránea: la infiltración de Ash, cinco misiones encadenadas por rango y tres heridos que socorrer.
+- **Datos compilados:** 106×72 tiles; 18 eventos; tileset 3.
+
+### Map2221 — Team Rocket — Núcleo del Mando
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Team Rocket — Núcleo del Mando: despacho donde Ash toma el control de la dimensión al llegar a Jefe Supremo.
+- **Datos compilados:** 72×72 tiles; 3 eventos; tileset 3.
+
+### Map2230 — Atlas — Avenida de los Ocho Gimnasios
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Atlas — Avenida de los Ocho Gimnasios: seis plazas canónicas, ocho puertas, tres rivales y cuatro cuadrillas.
+- **Datos compilados:** 106×72 tiles; 18 eventos; tileset 1.
+
+### Map2250 — Gimnasio de Atlas · Bruma
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Bruma (FANTASMA): Líder Néboa y la Medalla Bruma, primera del circuito.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
+
+### Map2251 — Gimnasio de Atlas · Veta
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Veta (ROCA): Líder Canto y la Medalla Veta.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
+
+### Map2252 — Gimnasio de Atlas · Duna
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Duna (TIERRA): Líder Ágata y la Medalla Duna.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
+
+### Map2253 — Gimnasio de Atlas · Fragua
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Fragua (FUEGO): Líder Crisol y la Medalla Fragua.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
+
+### Map2254 — Gimnasio de Atlas · Marea
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Marea (AGUA): Líder Náyade y la Medalla Marea.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
+
+### Map2255 — Gimnasio de Atlas · Vendaval
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Vendaval (VOLADOR): Líder Cierzo y la Medalla Vendaval.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
+
+### Map2256 — Gimnasio de Atlas · Invernadero
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Invernadero (PLANTA): Líder Retoño y la Medalla Invernadero.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
+
+### Map2257 — Gimnasio de Atlas · Cumbre
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Gimnasio de Atlas · Cumbre (ELÉCTRICO): Líder Chispa y la Medalla Cumbre, octava del circuito.
+- **Datos compilados:** 46×42 tiles; 4 eventos; tileset 14.
 
 ## Límites de esta referencia
 

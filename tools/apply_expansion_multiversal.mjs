@@ -87,6 +87,7 @@ function texts(lines, indent = 0) {
   return [cmd(101, [S(flat[0])], indent), ...flat.slice(1).map((line) => cmd(401, [S(line)], indent))];
 }
 const script = (line, indent = 0) => cmd(355, [S(line)], indent);
+const wait = (frames, indent = 0) => cmd(106, [frames], indent);
 /** Mensaje con menú \ch: no se parte en líneas, o el motor perdería la opción. */
 const choiceText = (line, indent = 0) => cmd(101, [S(line)], indent);
 const transfer = (mapId, x, y, dir = 2, indent = 0) => cmd(201, [0, mapId, x, y, dir, 1], indent);
@@ -307,6 +308,10 @@ function worldReturnEvent(rift, cell) {
       gfx: graphic("", 2, 1, {}),
       list: [
         ...texts([PLAN.emissionsReturn.exitMessage]),
+        // El gris de la ceniza es de la emisión, no del mundo: se limpia antes
+        // de cruzar. (apply_restauracion_cromatica mantiene este mismo gesto.)
+        cmd(223, [toneObject(0, 0, 0), 6]),
+        wait(8),
         transfer(rift.world.mapId, rift.cell[0], rift.cell[1], 2),
         cmd(0),
       ],

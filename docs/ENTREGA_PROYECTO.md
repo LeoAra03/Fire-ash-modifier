@@ -164,6 +164,37 @@ identificadores nuevos.
 Verificación nueva: `npm run verify:arceus:cinematics` y `npm run verify:eras`,
 ambos ya encadenados en `npm run verify:all`.
 
+## 6 quater. Novedad de esta entrega: el DLC completo punto por punto
+
+Se audité el DLC contra los cinco puntos que tenían que quedar en perfección y
+se construyó lo que faltaba. Resumen completo: `docs/DLC_TOTAL.md`.
+
+1. **La Ruta de Dios.** Construida. Arceus manda sobre conceptos (OBJETO,
+   CIELO, TALENTO, VELOCIDAD, TIPO, REGLA), sabe que está dentro de un juego y
+   nombra a su retador, **Ash Ketchum**. Los dobles cinematográficos se auditan
+   con 25 comprobaciones y no pueden tumbar la escena.
+2. **Creepypasta y Liga Oscura.** Construidas, con un fallo de canon
+   corregido: los sellos de las emisiones vivían en 868–875 y el 873 es «duelo
+   de Arceus resuelto» y el 874 «Arceus capturado», así que purgar la sexta o
+   la séptima abría en falso todas las puertas del canon. Se han movido a
+   940–947. Además, **Ash restaura el color**: purgar cierra una emisión, pero
+   no la salva; hay que volver, tocar su Nexo de Color y devolverle su momento
+   de paz. Cada emisión es fiel a su creepypasta.
+3. **Atlas, Glazed y Light Platinum.** Glazed (Map2200) y Light Platinum
+   (Map2210) **no existían**: ahora son dos dimensiones navegables con capitán
+   propio en Puerto Horizonte, barco de vuelta, cronista, entrenadores y
+   gimnasio con líder y medalla. Atlas gana el **Portal de Atlas** y el
+   **circuito de los ocho gimnasios** (Map2230 + Map2250–2257): ocho líderes
+   originales encadenados por medallas, tres rivales y cuatro cuadrillas.
+4. **Isla Espejo y Pokégods.** Ya estaban: veintiún Pokégods y el Panteón.
+5. **Dimensión Team Rocket.** **No existía.** Ahora es Map2220–Map2221: Ash
+   entra como **infiltrado**, hace cinco misiones encadenadas por rango
+   (Recluta → Jefe Supremo), **socorre a tres heridos** por el camino y, al
+   tomar el mando, dicta tres órdenes que no son de poder sino de bienestar.
+
+Diecisiete mapas nuevos, todos con **0 celdas vacías y 0 celdas
+inalcanzables**. Nada de esto toca contenido original.
+
 ## 7. Siguiente paso
 
 Con el proyecto jugable, el objetivo abierto es la **fusión de Glazed, Light

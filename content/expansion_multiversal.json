@@ -26,7 +26,7 @@
       "id": "locutora",
       "boss": "LA LOCUTORA",
       "emissionMap": 2023,
-      "seal": 868,
+      "seal": 940,
       "label": "La Torre que Escuchaba",
       "place": "Torre Pokémon",
       "world": {
@@ -50,7 +50,7 @@
       "id": "plata",
       "boss": "PLATA PERDIDA",
       "emissionMap": 2024,
-      "seal": 869,
+      "seal": 941,
       "label": "La Partida Perdida",
       "place": "Islas Espuma",
       "world": {
@@ -74,7 +74,7 @@
       "id": "enterrado",
       "boss": "EL ENTERRADO",
       "emissionMap": 2025,
-      "seal": 870,
+      "seal": 942,
       "label": "La Fosa del Enterrado",
       "place": "Monte Moon",
       "world": {
@@ -98,7 +98,7 @@
       "id": "cinta",
       "boss": "EL NIÑO DE LA CINTA",
       "emissionMap": 2026,
-      "seal": 871,
+      "seal": 943,
       "label": "La Cinta Carmesí",
       "place": "Torre Quemada",
       "world": {
@@ -122,7 +122,7 @@
       "id": "fallo",
       "boss": "EL FALLO CERO",
       "emissionMap": 2027,
-      "seal": 872,
+      "seal": 944,
       "label": "Ciudad Glitch",
       "place": "Planta de Energía de Kanto",
       "world": {
@@ -146,7 +146,7 @@
       "id": "eco",
       "boss": "EL ECO AHOGADO",
       "emissionMap": 2028,
-      "seal": 873,
+      "seal": 945,
       "label": "El Eco que Jugó Contigo",
       "place": "Ruinas Alfa",
       "world": {
@@ -170,7 +170,7 @@
       "id": "jugador",
       "boss": "EL JUGADOR DE 1996",
       "emissionMap": 2029,
-      "seal": 874,
+      "seal": 946,
       "label": "La Consola de 1996",
       "place": "Mansión Pokémon",
       "world": {

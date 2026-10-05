@@ -482,48 +482,48 @@
     },
     {
       "path": "Data/Map2021.rxdata",
-      "bytes": 16967,
-      "sha256": "90ec41aa5e98c0c0cb77cd93458f2863da4b545e40cd86cfc060a5238fba11bb"
+      "bytes": 18483,
+      "sha256": "6933b0098255fc64f4d0423e1899b5a18812f774c031295ee93d8d39fa22d43e"
     },
     {
       "path": "Data/Map2022.rxdata",
       "bytes": 9938,
-      "sha256": "ab3db5e7a2e20dd35f48ef09edb61c42475f86dc786e81f051034260790d2aa3"
+      "sha256": "85f804427ab240ccaecf4c9640ea25c6bec89247b2a5db755ac4158d58e41b29"
     },
     {
       "path": "Data/Map2023.rxdata",
-      "bytes": 7952,
-      "sha256": "2fe383aff316e2c7ce8d24fe605f60c6c851be61607a426cc1c74ae651469c5d"
+      "bytes": 12245,
+      "sha256": "48d0642e287d1e0cf64bac1431a65a94d851880546a10b0172ee923cecee768c"
     },
     {
       "path": "Data/Map2024.rxdata",
-      "bytes": 6159,
-      "sha256": "b8506eae84e829b504fb01ee1b6635a64f0e4c36247926ce33a3a322a4438cf8"
+      "bytes": 10413,
+      "sha256": "65759eeca5cf30d5f3570fe649ab2789a7fff69e77026c9b8a6a36a28a7a4439"
     },
     {
       "path": "Data/Map2025.rxdata",
-      "bytes": 8720,
-      "sha256": "9e3fd9f70cabce48dd735ed24b949170124b759ed1ced82260ed364c0a448960"
+      "bytes": 12965,
+      "sha256": "e41787a67db823e2ac43c8c5cb8c51aff1eff08b1f57dd2beac0cf7be2b6ab6b"
     },
     {
       "path": "Data/Map2026.rxdata",
-      "bytes": 11467,
-      "sha256": "d76d936ed617d9a9521630c40a1377613fcaa7414cc59b491655b2e6068c28b4"
+      "bytes": 15696,
+      "sha256": "6a4275ccf38e2819e18b591871bff103ea6358caa2ff2d58b438b0dced4228cd"
     },
     {
       "path": "Data/Map2027.rxdata",
-      "bytes": 13585,
-      "sha256": "b034bb3a774bd16d4f913ca6c19717d14274bc4445a05fddba7f2fd290ceafbe"
+      "bytes": 17864,
+      "sha256": "b1a1a177c2779e09dcc4195ac0ab2dfdac7c75b09add442cee632e7dc9898bbb"
     },
     {
       "path": "Data/Map2028.rxdata",
-      "bytes": 8733,
-      "sha256": "da13ddb4bd38b1626f5f372b74b46d6daa0026b7d2ddf452f9eea8a4f8d8cf97"
+      "bytes": 13004,
+      "sha256": "69c6d4adc759abe025f3af29dae2dcc036a98a35834c3d9b610e1a4731447698"
     },
     {
       "path": "Data/Map2029.rxdata",
-      "bytes": 11405,
-      "sha256": "3f3897d33950309bb9561c2ca7d69da56b9e7d3aa8e6aa56b81ec3727d41a5f4"
+      "bytes": 15678,
+      "sha256": "4049fb65f9e26f6d8291937eec1ae0ab63ae5baf337546fc9805a9a51ab187b5"
     },
     {
       "path": "Data/Map2030.rxdata",
@@ -563,7 +563,7 @@
     {
       "path": "Data/Map2037.rxdata",
       "bytes": 20820,
-      "sha256": "9ada28ffad58fb3d0dab6fc5ee182d2afaca1d4d82e94245636ab2410e4a0b93"
+      "sha256": "61317f7333a681c4964c5885d2b9b2c117116f0d2a987e6bf24d47d5607cf6d8"
     },
     {
       "path": "Data/Map2038.rxdata",
@@ -1083,7 +1083,7 @@
     {
       "path": "Data/Map2142.rxdata",
       "bytes": 17919,
-      "sha256": "aefde15b4721b2c13722c7f9dbe05dcc541a206688381f2d8a9720d7893d03a2"
+      "sha256": "90641c5ac26612906b8f8d758fdcedc2cb08651c124bfabeb756ca16c9bc2a2d"
     },
     {
       "path": "Data/Map2143.rxdata",
@@ -1337,8 +1337,8 @@
     },
     {
       "path": "Data/MapInfos.rxdata",
-      "bytes": 138753,
-      "sha256": "1dd765b4118aea3cf583d70385df8bec301974fe8b5420a19d7fc9de6a61c809"
+      "bytes": 139741,
+      "sha256": "394daef1aa2e98dfec0e01739804fb5ffeb31c88904ac337a21584118dd33955"
     },
     {
       "path": "Data/Scripts.rxdata",
@@ -1362,13 +1362,13 @@
     },
     {
       "path": "Data/items.dat",
-      "bytes": 202698,
-      "sha256": "0471421184973eb14491132d967879e4021a4c1578a8f0a1598521d1e42ed749"
+      "bytes": 203802,
+      "sha256": "adf05b0d84bd3ba3fcb0d8a0e63830c19278b933361f494acafffbe4f91969e7"
     },
     {
       "path": "Data/map_metadata.dat",
-      "bytes": 484494,
-      "sha256": "fab39f6a02b15f44c961230d71b736e3650a9140cb2b582e1f73ecef71e23d28"
+      "bytes": 484734,
+      "sha256": "5f26063c971c1a94a202dd9eefbfd86fe58ed0d2a86d335d631b7fe464e4289f"
     },
     {
       "path": "Data/trainer_lists.dat",
@@ -1377,8 +1377,8 @@
     },
     {
       "path": "Data/trainer_types.dat",
-      "bytes": 57443,
-      "sha256": "8fd96cd3a6299b3a2cdd9e3f752bb7d0d3d841e9d96a87820944d1d5e660f920"
+      "bytes": 58822,
+      "sha256": "f1fc22f8b0832cc845c6ec1c64f628fcd70686e7b3df95d0a925b3c1f9a16366"
     },
     {
       "path": "Data/trainerlists.dat",
@@ -1387,8 +1387,8 @@
     },
     {
       "path": "Data/trainers.dat",
-      "bytes": 1195536,
-      "sha256": "2d513a386a63712bf99dedf4dedccd0161685ad330c6946ce1e74687348fb4c0"
+      "bytes": 1204075,
+      "sha256": "fc601d3215293e7bf946fcd13c4f54548e10fa4f77fbeb2e5be910ab809feb67"
     },
     {
       "path": "Data/trainertypes.dat",
