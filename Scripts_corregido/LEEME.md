@@ -87,6 +87,33 @@ La batalla de `Map2037` no es un combate salvaje normal:
 
 Si Volus dice que la Ruta de Dios ya está abierta pero el portal no aparece, normalmente se copió solo `Scripts.rxdata` y no `Map625.rxdata`. En ese caso instala todo `Paquete_directo`, no únicamente el script.
 
+## Techo de nivel: 175
+
+Todos los Pokémon pueden subir hasta **nivel 175**. Hay dos excepciones deliberadas por encima del techo, y ninguna de las dos se puede encontrar por casualidad:
+
+- **Arceus de La Ruta de Dios: nivel 200.** Es el único Pokémon del juego que lo alcanza.
+- **Mad Pikachu: nivel «???».** No se puede vencer por fuerza: hace falta que Arceus lo devuelva al límite o sostener el vínculo contra él en la Liga Oscura.
+
+El techo se instala en los dos `Scripts.rxdata` — el del juego y el de esta carpeta — y se verifica en los dos. La búsqueda por nivel de las cajas ya llega hasta 175 en vez de parar en 100.
+
+## Regiones: Glazed, Light Platinum y Team Rocket
+
+Después del duelo de Arceus, las tres dimensiones dejan de ser dos habitaciones con un gimnasio y pasan a ser regiones que se recorren, con sus rutas de ida y vuelta, sus pobladores y sus encuentros salvajes.
+
+**Glazed (mapas 2260-2265).** Afueras de Cedolán, la ciudad de Cedolán, la Cueva Glaciar y tres interiores. Nieve con niebla propia, clima de nieve en el exterior y la cueva marcada como oscura.
+
+**Light Platinum (mapas 2270-2275).** Senda Luminosa, la ciudad costera, la zona safari y tres interiores. Costa con bruma y horizonte a varias velocidades.
+
+**Team Rocket (mapas 2280-2286).** Siete salas de infiltración industrial: muelle, vestíbulo de reclutas, pasillo, fábrica, almacén, enfermería y sala de comunicaciones. El polvo en suspensión cubre los dos mapas de la base, y en la sala de comunicaciones una alarma roja late sobre el mapa entero.
+
+Se entra como en el canon: **Glazed y Light Platinum por barco**, desde los puertos; **Team Rocket** como infiltrado. Ninguna de las tres atrapa: siempre se puede volver.
+
+### El disfraz del Team Rocket
+
+En la base, Ash no pasea: se infiltra. Habla con el **Intendente Norbert** (en la base subterránea) o con la **Armera Violeta** (en el vestíbulo de reclutas) para ponerte el uniforme. Al hacerlo cambian a la vez tu sprite en el mundo, la música de combate y los sprites de batalla — porque lo que cambia es tu tipo de entrenador — y los centinelas dejan de cortarte el paso. Puedes volver a tu ropa cuando quieras, hablando otra vez con quien te lo dio.
+
+El uniforme es una entrada de jugador nueva: `player_A` y `player_B`, los originales, siguen exactamente igual.
+
 ## Opción de solo scripts
 
 Si únicamente quieres la corrección de colisiones y guardado, copia:
