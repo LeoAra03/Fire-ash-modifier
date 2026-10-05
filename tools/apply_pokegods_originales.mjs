@@ -35,7 +35,7 @@ const BACKUP = path.join(GAME, "PokeModBackups", "pokegods_originales");
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "pokegods_originales.json"), "utf8"));
 const MARKER = "PokeMod Pokégod:";
 const ISLAND_MAPS = [997, 998, 999];
-const PER_MAP = 4;
+const PER_MAP = 7;
 const POSTGAME = 429;
 const CHOICE_VARIABLE = 1;
 const TEMPLATE_SPECIES = "PIKACHU";
@@ -368,23 +368,28 @@ function archiveEvent(id, x, y, count) {
 function installIsland(installed) {
   const placed = [];
   let cursor = 0;
+  // reparto equilibrado entre los mapas de la isla (la capacidad ya no es fija)
+  const total = installed.length;
+  const counts = ISLAND_MAPS.map((_, i) =>
+    Math.floor(total / ISLAND_MAPS.length) + (i < total % ISLAND_MAPS.length ? 1 : 0));
   ISLAND_MAPS.forEach((mapId, mapIndex) => {
-    const slice = installed.slice(cursor, cursor + PER_MAP);
-    cursor += PER_MAP;
+    const slice = installed.slice(cursor, cursor + counts[mapIndex]);
+    cursor += counts[mapIndex];
     if (!slice.length) return;
     const file = mapFile(mapId);
     backup(file);
     const map = marshalLoad(fs.readFileSync(path.join(DATA, file)));
     const events = iv(map, "events");
     const kept = events.pairs.filter(([, object]) => !txt(iv(object, "name")).startsWith(MARKER));
-    const cells = spread(freeCells(mapId), slice.length + (mapIndex === 0 ? 1 : 0));
+    const archiveHere = mapIndex === ISLAND_MAPS.length - 1 && slice.length > 0;
+    const cells = spread(freeCells(mapId), slice.length + (archiveHere ? 1 : 0));
     let nextId = Math.max(0, ...kept.map(([key]) => (typeof key === "number" ? key : 0))) + 1;
     const added = [];
     slice.forEach(({ entry }, index) => {
       added.push(pokegodEvent(nextId++, entry, cells[index][0], cells[index][1]));
       placed.push({ mapId, id: entry.id, x: cells[index][0], y: cells[index][1] });
     });
-    if (mapIndex === 0) {
+    if (archiveHere) {
       const [ax, ay] = cells[slice.length];
       added.push(archiveEvent(nextId++, ax, ay, installed.length));
       placed.push({ mapId, id: "Archivo", x: ax, y: ay });

@@ -961,6 +961,28 @@
         "personaje": "pokemon_fire_ash/Graphics/Characters/PIKAMARS.png",
         "completo": true,
         "origen": "derivado por código de PIKACHU (variante volcánica)"
+      },
+      "eggGroups": [
+        "Field",
+        "Fairy"
+      ],
+      "hatchSteps": 2560,
+      "height": 5,
+      "weight": 80,
+      "genderRatio": "Female50Percent",
+      "catchRate": 45,
+      "happiness": 50,
+      "baseExp": 180,
+      "anomaly": {
+        "nature": "NAIVE",
+        "evSpread": [
+          "ATTACK",
+          "SPEED"
+        ],
+        "weather": {
+          "beta": "Sun",
+          "omega": "Sandstorm"
+        }
       }
     },
     {
@@ -1009,6 +1031,27 @@
         "personaje": "pokemon_fire_ash/Graphics/Characters/RATICLAW.png",
         "completo": true,
         "origen": "derivado por código de RATICATE (variante aberrante)"
+      },
+      "eggGroups": [
+        "Field"
+      ],
+      "hatchSteps": 4080,
+      "height": 10,
+      "weight": 320,
+      "genderRatio": "Female50Percent",
+      "catchRate": 60,
+      "happiness": 0,
+      "baseExp": 190,
+      "anomaly": {
+        "nature": "ADAMANT",
+        "evSpread": [
+          "ATTACK",
+          "SPEED"
+        ],
+        "weather": {
+          "beta": "Sandstorm",
+          "omega": "Hail"
+        }
       }
     },
     {
@@ -1057,6 +1100,27 @@
         "personaje": "pokemon_fire_ash/Graphics/Characters/DOOMSAY.png",
         "completo": true,
         "origen": "generado con IA desde el sprite original del ROM"
+      },
+      "eggGroups": [
+        "Dragon"
+      ],
+      "hatchSteps": 10455,
+      "height": 22,
+      "weight": 1100,
+      "genderRatio": "Female50Percent",
+      "catchRate": 15,
+      "happiness": 0,
+      "baseExp": 290,
+      "anomaly": {
+        "nature": "MODEST",
+        "evSpread": [
+          "SPECIAL_ATTACK",
+          "SPEED"
+        ],
+        "weather": {
+          "beta": "Fog",
+          "omega": "Hail"
+        }
       }
     },
     {
@@ -1105,6 +1169,27 @@
         "personaje": "pokemon_fire_ash/Graphics/Characters/APACOLYPSE.png",
         "completo": true,
         "origen": "generado con IA desde el sprite original del ROM"
+      },
+      "eggGroups": [
+        "Flying"
+      ],
+      "hatchSteps": 20535,
+      "height": 34,
+      "weight": 2200,
+      "genderRatio": "Genderless",
+      "catchRate": 5,
+      "happiness": 0,
+      "baseExp": 340,
+      "anomaly": {
+        "nature": "MODEST",
+        "evSpread": [
+          "SPECIAL_ATTACK",
+          "SPEED"
+        ],
+        "weather": {
+          "beta": "Sun",
+          "omega": "Sun"
+        }
       }
     },
     {
@@ -1153,6 +1238,27 @@
         "personaje": "pokemon_fire_ash/Graphics/Characters/ELECTRAMEW.png",
         "completo": true,
         "origen": "derivado por código de MEW (variante eléctrica)"
+      },
+      "eggGroups": [
+        "Undiscovered"
+      ],
+      "hatchSteps": 30720,
+      "height": 6,
+      "weight": 60,
+      "genderRatio": "Genderless",
+      "catchRate": 20,
+      "happiness": 100,
+      "baseExp": 270,
+      "anomaly": {
+        "nature": "TIMID",
+        "evSpread": [
+          "SPECIAL_ATTACK",
+          "SPEED"
+        ],
+        "weather": {
+          "beta": "Rain",
+          "omega": "Rain"
+        }
       }
     },
     {
@@ -1201,6 +1307,27 @@
         "personaje": "pokemon_fire_ash/Graphics/Characters/MECHTROID.png",
         "completo": true,
         "origen": "generado con IA desde el sprite original del ROM"
+      },
+      "eggGroups": [
+        "Mineral"
+      ],
+      "hatchSteps": 7905,
+      "height": 16,
+      "weight": 1800,
+      "genderRatio": "Genderless",
+      "catchRate": 25,
+      "happiness": 0,
+      "baseExp": 240,
+      "anomaly": {
+        "nature": "BRAVE",
+        "evSpread": [
+          "ATTACK",
+          "DEFENSE"
+        ],
+        "weather": {
+          "beta": "Sandstorm",
+          "omega": "Fog"
+        }
       }
     },
     {
@@ -1236,7 +1363,7 @@
         "TRANSFORM",
         "SUBSTITUTE"
       ],
-      "crySource": "MISSINGNO",
+      "crySource": "UNOWN",
       "color": "Black",
       "shape": "Wings",
       "habitat": "Rare",
@@ -1249,6 +1376,27 @@
         "personaje": "pokemon_fire_ash/Graphics/Characters/MISSINGNO.png",
         "completo": true,
         "origen": "generado con IA desde el sprite original del ROM"
+      },
+      "eggGroups": [
+        "Amorphous"
+      ],
+      "hatchSteps": 5355,
+      "height": 30,
+      "weight": 15908,
+      "genderRatio": "Genderless",
+      "catchRate": 29,
+      "happiness": 70,
+      "baseExp": 215,
+      "anomaly": {
+        "nature": "QUIRKY",
+        "evSpread": [
+          "ATTACK",
+          "SPECIAL_ATTACK"
+        ],
+        "weather": {
+          "beta": "Fog",
+          "omega": "Fog"
+        }
       }
     }
   ],
