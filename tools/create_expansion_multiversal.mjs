@@ -12,7 +12,7 @@
  *   2. Nadie queda atrapado. Cada destino tiene retorno al mundo y cada combate
  *      se puede perder.
  *   3. Purgar una grieta cierra una línea temporal: la cuenta vive en el
- *      contador 264 y en los sellos 868-875 que ya instala el Monte Silver.
+ *      contador 264 y en los sellos 940-947 que ya instala el Monte Silver.
  *      Con las siete purgadas aparece el punto de colapso; con las ocho, la
  *      Liga Oscura.
  *   4. El laboratorio de Oak recupera sus funciones originales: se retira la
@@ -44,7 +44,7 @@ const mapExists = (id) => fs.existsSync(path.join(DATA, `Map${String(id).padStar
 // ------------------------------------------------------------------ planos
 const POSTGAME = 429;
 const COUNTER = 264;          // purgas realizadas (siete emisiones + Red)
-const SEAL_BASE = 868;        // 868-874 emisiones, 875 Red
+const SEAL_BASE = 940;        // 940-946 emisiones, 947 Campeón Silencioso
 const PURGE_GOAL = 7;         // grietas necesarias para que aparezca el colapso
 const FINAL_GOAL = 8;         // con Red, se abre la Liga Oscura
 

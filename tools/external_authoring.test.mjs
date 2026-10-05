@@ -330,14 +330,14 @@ for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.
   }
 }
 const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
-const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*150\b/.test(settingsSource) &&
+const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*175\b/.test(settingsSource) &&
   rutaScript.includes("max = (@species == :ARCEUS && @ruta_arceus_divine == true) ? 200 : GameData::GrowthRate.max_level") &&
   rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
   explicitNonArceusLevel200.length === 0 &&
   rutaScript.includes("pkmn.instance_variable_set(:@ruta_arceus_divine, false)") &&
   rutaScript.includes("divine ? normal_cap : safe_level");
 check(levelCapIsArceusOnly,
-  "el nivel 200 queda reservado al Arceus divino (equipos, encuentros y scripts sin otro caso), y el Arceus normal vuelve al tope de 150");
+  "el nivel 200 queda reservado al Arceus divino (equipos, encuentros y scripts sin otro caso), y el Arceus normal no pasa del techo de 175");
 check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
   rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
   "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");
@@ -496,7 +496,7 @@ check(multiverse.maps.length === 9 && multiverse.bosses.length === 7 && multiver
 check(multiverse.guarantees.reinterpretedHomagesOnly && multiverse.guarantees.existingAssetsOnly && multiverse.guarantees.canLoseEveryBattle && multiverse.guarantees.permanentDefeat && multiverse.guarantees.optionalRematchByMenu && multiverse.guarantees.freeReturn, "el multiverso declara homenajes reinterpretados, canLose, derrota permanente, revancha por menú y retorno libre");
 const multiverseRoster = [...multiverse.bosses, multiverse.champion];
 check(new Set(multiverseRoster.map((entry) => entry.reward)).size === multiverseRoster.length, "las recompensas del multiverso son únicas");
-check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 150)), "los equipos del multiverso respetan 6 Pokémon y nivel 150");
+check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 175)), "los equipos del multiverso respetan 6 Pokémon y el techo de 175");
 check(multiverseRoster.every((entry) => {
   const events = parseMap(readMarshalData(`Map${entry.mapId}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
   const battle = events.find((event) => event.name.includes(entry.name));
@@ -507,8 +507,8 @@ check(multiverseRoster.every((entry) => {
 
 // --- Zonas salvajes -----------------------------------------------------------
 const wild = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "wild_zones.json"), "utf8"));
-check(wild.zones.length === 13, `el catálogo define ${wild.zones.length}/13 zonas salvajes`);
-check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 150))), "las tablas salvajes respetan niveles 1-150");
+check(wild.zones.length >= 13, `el catálogo define ${wild.zones.length} zonas salvajes (mínimo 13)`);
+check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 175))), "las tablas salvajes respetan niveles 1-175");
 check(wild.zones.some((zone) => zone.mapId === 2021) && wild.zones.some((zone) => zone.mapId === 1000) && wild.zones.some((zone) => zone.types.Water), "hay Monte Silver, Bosque Susurrante y encuentros de agua (surf)");
 {
   const species = new Set();

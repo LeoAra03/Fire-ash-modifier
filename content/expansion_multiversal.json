@@ -4,8 +4,8 @@
   "voice": "Nada se alcanza por un menú: cada umbral se camina, se navega o se cruza.",
   "postgameSwitch": 429,
   "counterVariable": 264,
-  "sealSwitchBase": 868,
-  "championSeal": 875,
+  "sealSwitchBase": 940,
+  "championSeal": 947,
   "purgeGoal": 7,
   "finalGoal": 8,
   "guarantees": {

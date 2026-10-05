@@ -1023,6 +1023,276 @@
           ]
         ]
       }
+    },
+    {
+      "mapId": 2260,
+      "label": "Glazed — Afueras de Cedolán",
+      "note": "La nieve de Glazed: fauna de hielo alrededor del primer asentamiento humano. Tipo Cave porque sobre la nieve no hay hierba alta que pise el encuentro.",
+      "step_chances": {
+        "Cave": 12
+      },
+      "types": {
+        "Cave": [
+          [
+            20,
+            "SNOVER",
+            78,
+            86
+          ],
+          [
+            16,
+            "SNORUNT",
+            78,
+            86
+          ],
+          [
+            14,
+            "SPHEAL",
+            79,
+            87
+          ],
+          [
+            12,
+            "DELIBIRD",
+            78,
+            85
+          ],
+          [
+            12,
+            "CUBCHOO",
+            79,
+            87
+          ],
+          [
+            10,
+            "SEALEO",
+            84,
+            92
+          ],
+          [
+            8,
+            "SNEASEL",
+            82,
+            90
+          ],
+          [
+            5,
+            "ABOMASNOW",
+            88,
+            96
+          ],
+          [
+            3,
+            "BEARTIC",
+            90,
+            96
+          ]
+        ]
+      }
+    },
+    {
+      "mapId": 2262,
+      "label": "Glazed — Cueva Glaciar",
+      "note": "Bajo el hielo: lo que dejaron las Grietas del Terror antes de que Ash las cerrara.",
+      "step_chances": {
+        "Cave": 12
+      },
+      "types": {
+        "Cave": [
+          [
+            18,
+            "CRYOGONAL",
+            80,
+            90
+          ],
+          [
+            16,
+            "SNORUNT",
+            79,
+            88
+          ],
+          [
+            14,
+            "BERGMITE",
+            80,
+            89
+          ],
+          [
+            12,
+            "SNEASEL",
+            82,
+            91
+          ],
+          [
+            12,
+            "AMAURA",
+            82,
+            91
+          ],
+          [
+            10,
+            "WALREIN",
+            86,
+            94
+          ],
+          [
+            8,
+            "REGICE",
+            92,
+            98
+          ],
+          [
+            6,
+            "AURORUS",
+            90,
+            98
+          ],
+          [
+            4,
+            "WEAVILE",
+            90,
+            97
+          ]
+        ]
+      }
+    },
+    {
+      "mapId": 2270,
+      "label": "Light Platinum — Senda Luminosa",
+      "note": "La costa templada de Light Platinum. Fauna de pradera y bosque junto al acantilado.",
+      "step_chances": {
+        "Cave": 12
+      },
+      "types": {
+        "Cave": [
+          [
+            18,
+            "SWABLU",
+            78,
+            86
+          ],
+          [
+            14,
+            "MARILL",
+            78,
+            86
+          ],
+          [
+            14,
+            "SHROOMISH",
+            78,
+            86
+          ],
+          [
+            12,
+            "TROPIUS",
+            82,
+            90
+          ],
+          [
+            10,
+            "ALTARIA",
+            86,
+            94
+          ],
+          [
+            10,
+            "HERACROSS",
+            84,
+            92
+          ],
+          [
+            8,
+            "PINSIR",
+            84,
+            92
+          ],
+          [
+            6,
+            "BRELOOM",
+            88,
+            95
+          ],
+          [
+            5,
+            "SUNFLORA",
+            80,
+            88
+          ],
+          [
+            3,
+            "YANMEGA",
+            90,
+            97
+          ]
+        ]
+      }
+    },
+    {
+      "mapId": 2272,
+      "label": "Light Platinum — Zona Safari",
+      "note": "La reserva natural perpetua de Light Platinum: sabana templada sin depredadores.",
+      "step_chances": {
+        "Cave": 12
+      },
+      "types": {
+        "Cave": [
+          [
+            16,
+            "GIRAFARIG",
+            79,
+            88
+          ],
+          [
+            14,
+            "STANTLER",
+            79,
+            88
+          ],
+          [
+            14,
+            "ZANGOOSE",
+            80,
+            89
+          ],
+          [
+            14,
+            "SEVIPER",
+            80,
+            89
+          ],
+          [
+            12,
+            "AIPOM",
+            78,
+            87
+          ],
+          [
+            10,
+            "MILTANK",
+            84,
+            93
+          ],
+          [
+            10,
+            "TAUROS",
+            84,
+            93
+          ],
+          [
+            6,
+            "AMBIPOM",
+            88,
+            96
+          ],
+          [
+            4,
+            "DODRIO",
+            86,
+            94
+          ]
+        ]
+      }
     }
   ]
 }

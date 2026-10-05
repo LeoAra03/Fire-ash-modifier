@@ -71,7 +71,7 @@
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
     "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify",
     "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify",
-    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:expansion:package && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:rom:inspect && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all && npm run verify:canon:arceus && npm run verify:atlas:tiles && npm run verify:arceus:cinematics && npm run verify:eras && npm run verify:restauracion && npm run verify:dimensiones && npm run verify:rocket && npm run verify:circuito && npm run verify:ambience && npm run verify:wild",
+    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:expansion:package && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:rom:inspect && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all && npm run verify:canon:arceus && npm run verify:atlas:tiles && npm run verify:arceus:cinematics && npm run verify:eras && npm run verify:restauracion && npm run verify:dimensiones && npm run verify:rocket && npm run verify:circuito && npm run verify:ambience && npm run verify:wild && npm run verify:regiones && npm run verify:disfraz && npm run verify:paquete",
     "dn:sheets": "node tools/dn_render_sheets.mjs --all",
     "dn:sheets:ep": "node tools/dn_render_sheets.mjs --episode",
     "dn:mosaicos": "node tools/dn_render_recreacion.mjs --all",
@@ -142,7 +142,14 @@
     "verify:circuito": "node tools/apply_atlas_circuito.mjs --verify",
     "build:ambience": "node tools/apply_dlc_ambience.mjs",
     "verify:ambience": "node tools/apply_dlc_ambience.mjs --verify",
-    "build:wild": "node tools/apply_wild_zones.mjs"
+    "build:wild": "node tools/apply_wild_zones.mjs",
+    "build:regiones": "node --max-old-space-size=6144 tools/apply_dlc_regiones.mjs",
+    "verify:regiones": "node --max-old-space-size=6144 tools/apply_dlc_regiones.mjs --verify",
+    "build:disfraz": "node tools/apply_rocket_disfraz.mjs",
+    "verify:disfraz": "node tools/apply_rocket_disfraz.mjs --verify",
+    "sync:paquete": "node tools/sync_paquete_directo.mjs",
+    "verify:paquete": "node tools/sync_paquete_directo.mjs --verify",
+    "build:paquete:zip": "node tools/build_direct_package.mjs"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.10",

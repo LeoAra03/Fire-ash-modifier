@@ -5241,7 +5241,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2200 — Glazed — Bahía de Cedolán
 - **Categoría:** Dimensiones del DLC.
 - **Referencia:** Glazed — Bahía de Cedolán: dimensión navegable con seis distritos tomados de Cedolán, Lerucean, la Meseta Ingido y sus rutas.
-- **Datos compilados:** 106×72 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 106×72 tiles; 10 eventos; tileset 1.
 
 ### Map2201 — Gimnasio Glazed — Líder Ámbar
 - **Categoría:** Dimensiones del DLC.
@@ -5251,7 +5251,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2210 — Light Platinum — Costa de Lappet
 - **Categoría:** Dimensiones del DLC.
 - **Referencia:** Light Platinum — Costa de Lappet: dimensión navegable con seis distritos de costa, sendas, safari y frente de batalla.
-- **Datos compilados:** 106×72 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 106×72 tiles; 10 eventos; tileset 1.
 
 ### Map2211 — Gimnasio Light Platinum — Líder Resplandor
 - **Categoría:** Dimensiones del DLC.
@@ -5261,12 +5261,12 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2220 — Team Rocket — Base Subterránea
 - **Categoría:** Dimensiones del DLC.
 - **Referencia:** Team Rocket — Base Subterránea: la infiltración de Ash, cinco misiones encadenadas por rango y tres heridos que socorrer.
-- **Datos compilados:** 106×72 tiles; 18 eventos; tileset 3.
+- **Datos compilados:** 106×72 tiles; 21 eventos; tileset 179.
 
 ### Map2221 — Team Rocket — Núcleo del Mando
 - **Categoría:** Dimensiones del DLC.
 - **Referencia:** Team Rocket — Núcleo del Mando: despacho donde Ash toma el control de la dimensión al llegar a Jefe Supremo.
-- **Datos compilados:** 72×72 tiles; 3 eventos; tileset 3.
+- **Datos compilados:** 72×72 tiles; 4 eventos; tileset 179.
 
 ### Map2230 — Atlas — Avenida de los Ocho Gimnasios
 - **Categoría:** Dimensiones del DLC.

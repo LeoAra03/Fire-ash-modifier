@@ -1,0 +1,494 @@
+{
+  "esquema": "dlc_regiones/1.0",
+  "titulo": "Glazed y Light Platinum como regiones; la base del Sindicato como infiltración",
+  "nota": "Hasta aquí, Glazed y Light Platinum eran dos habitaciones con un gimnasio: un puerto, no una región. Y la dimensión del Team Rocket era un descampado con uniformes. Este plano convierte las dos invitadas en regiones navegables de verdad —rutas, ciudades, cuevas, centros, tiendas— y la base del Sindicato en un edificio industrial de siete salas por el que Ash se mueve de uniforme, de misión en misión. Cada mapa se dibuja con materiales aprendidos de mapas reales del juego, así que los bordes, la pasabilidad y el terreno son los que dibujó el autor original. Nada de esto toca contenido existente: todo son IDs nuevos.",
+  "marcador": "PokeMod Región:",
+  "interruptores": {
+    "DUELO_RESUELTO": 873
+  },
+  "medidas": {
+    "exterior": [37, 25],
+    "interior": [20, 15],
+    "nota": "Medidas oficiales de la saga para exteriores estándar e interiores. La cámara de RPG Maker XP siempre muestra 20×15, así que el tamaño del mapa nunca la deforma: lo que hace es obligar a que la cámara se mueva, que es lo que da sensación de región."
+  },
+  "nieblas": {
+    "nieve_glazed": {
+      "capa": "nieve",
+      "opacidad": 96,
+      "zoom": 200,
+      "sx": 14,
+      "sy": 5,
+      "semilla": 7,
+      "descripcion": "Capa cercana: copos que cruzan la pantalla en diagonal."
+    },
+    "bruma_costa": {
+      "capa": "bruma",
+      "opacidad": 70,
+      "zoom": 200,
+      "sx": 5,
+      "sy": 0,
+      "semilla": 11,
+      "descripcion": "Capa cercana: bruma marina que se desplaza despacio."
+    },
+    "bruma_cueva": {
+      "capa": "bruma",
+      "opacidad": 62,
+      "zoom": 260,
+      "sx": 3,
+      "sy": 0,
+      "semilla": 19,
+      "descripcion": "Capa cercana: vaho helado dentro de la glaciar."
+    },
+    "polvo_rocket": {
+      "capa": "polvo",
+      "opacidad": 74,
+      "zoom": 200,
+      "sx": 4,
+      "sy": -2,
+      "semilla": 23,
+      "descripcion": "Capa cercana: polvo en suspensión de la base."
+    },
+    "alarma_rocket": {
+      "capa": "alarma",
+      "opacidad": 58,
+      "zoom": 100,
+      "sx": 0,
+      "sy": 0,
+      "semilla": 0,
+      "descripcion": "Capa cercana: viñeta roja de alarma. El latido lo mueven los eventos con el comando 206 (cambiar opacidad de niebla)."
+    }
+  },
+  "tilesets": [
+    { "id": 174, "origen": 1, "etiqueta": "Exterior con nieve (Glazed)", "niebla": "nieve_glazed" },
+    { "id": 175, "origen": 6, "etiqueta": "Cueva con vaho (Glaciar)", "niebla": "bruma_cueva" },
+    { "id": 176, "origen": 3, "etiqueta": "Interior con polvo (Sindicato)", "niebla": "polvo_rocket" },
+    { "id": 177, "origen": 1, "etiqueta": "Costa con bruma (Light Platinum)", "niebla": "bruma_costa" },
+    { "id": 178, "origen": 3, "etiqueta": "Sala con alarma roja (Sindicato)", "niebla": "alarma_rocket" }
+  ],
+  "mapas": [
+    {
+      "mapId": 2260,
+      "titulo": "Glazed — Afueras de Cedolán",
+      "padre": 2200,
+      "arquetipo": "ruta",
+      "donante": 863,
+      "familia": 5,
+      "semilla": 1101,
+      "tileset": 174,
+      "bgm": "Sinnoh Route.ogg",
+      "clima": "Snow",
+      "exterior": true,
+      "anunciar": true,
+      "nota": "La nieve de Glazed. Donante: Snowbelle City, la ciudad nevada con más vocabulario del juego."
+    },
+    {
+      "mapId": 2261,
+      "titulo": "Glazed — Ciudad de Lerucean",
+      "padre": 2260,
+      "arquetipo": "ciudad",
+      "donante": 863,
+      "familia": 5,
+      "semilla": 1102,
+      "tileset": 174,
+      "bgm": "Sinnoh Town.ogg",
+      "clima": "Snow",
+      "exterior": true,
+      "anunciar": true,
+      "nota": "Manzanas de casas con calles de tres tiles y una plaza central con fuente helada."
+    },
+    {
+      "mapId": 2262,
+      "titulo": "Glazed — Cueva Glaciar",
+      "padre": 2260,
+      "arquetipo": "cueva",
+      "donante": 34,
+      "familia": 4,
+      "semilla": 1103,
+      "tileset": 175,
+      "bgm": "Cave.ogg",
+      "clima": "None",
+      "exterior": false,
+      "oscuro": true,
+      "nota": "Bajo tierra y sin sol: el tileset es de cueva y el mapa se marca como oscuro."
+    },
+    {
+      "mapId": 2263,
+      "titulo": "Glazed — Centro Pokémon de Lerucean",
+      "padre": 2261,
+      "arquetipo": "sala",
+      "donante": 24,
+      "familia": 5,
+      "semilla": 1104,
+      "tileset": 4,
+      "bgm": "PokeCenter.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2264,
+      "titulo": "Glazed — Tienda de Lerucean",
+      "padre": 2261,
+      "arquetipo": "sala",
+      "donante": 25,
+      "familia": 5,
+      "semilla": 1105,
+      "tileset": 5,
+      "bgm": "PokeMart.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2265,
+      "titulo": "Glazed — Casa del Pescador",
+      "padre": 2260,
+      "arquetipo": "sala",
+      "donante": 864,
+      "familia": 5,
+      "semilla": 1106,
+      "tileset": 3,
+      "bgm": "Kanto Town.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2270,
+      "titulo": "Light Platinum — Senda Luminosa",
+      "padre": 2210,
+      "arquetipo": "ruta",
+      "donante": 308,
+      "familia": 5,
+      "semilla": 1201,
+      "tileset": 177,
+      "bgm": "Kalos Route.ogg",
+      "clima": "None",
+      "exterior": true,
+      "anunciar": true,
+      "nota": "Costa de Olivine: acantilados, arena y mar. Donante con 235 tiles distintos."
+    },
+    {
+      "mapId": 2271,
+      "titulo": "Light Platinum — Ciudad de Platino",
+      "padre": 2270,
+      "arquetipo": "ciudad",
+      "donante": 108,
+      "familia": 5,
+      "semilla": 1202,
+      "tileset": 177,
+      "bgm": "Kalos Town.ogg",
+      "clima": "None",
+      "exterior": true,
+      "anunciar": true,
+      "nota": "Puerto y ciudad: el donante es Vermilion, con 350 tiles distintos."
+    },
+    {
+      "mapId": 2272,
+      "titulo": "Light Platinum — Zona Safari",
+      "padre": 2270,
+      "arquetipo": "safari",
+      "donante": 180,
+      "familia": 5,
+      "semilla": 1203,
+      "tileset": 177,
+      "bgm": "Safari.mid",
+      "clima": "None",
+      "exterior": true,
+      "safari": true,
+      "anunciar": true
+    },
+    {
+      "mapId": 2273,
+      "titulo": "Light Platinum — Centro Pokémon",
+      "padre": 2271,
+      "arquetipo": "sala",
+      "donante": 9,
+      "familia": 5,
+      "semilla": 1204,
+      "tileset": 4,
+      "bgm": "PokeCenter.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2274,
+      "titulo": "Light Platinum — Tienda de Platino",
+      "padre": 2271,
+      "arquetipo": "sala",
+      "donante": 634,
+      "familia": 5,
+      "semilla": 1205,
+      "tileset": 5,
+      "bgm": "PokeMart.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2275,
+      "titulo": "Light Platinum — Laboratorio del Fragmento",
+      "padre": 2271,
+      "arquetipo": "sala",
+      "donante": 48,
+      "familia": 5,
+      "semilla": 1206,
+      "tileset": 3,
+      "bgm": "Lab.mid",
+      "interior": true
+    },
+    {
+      "mapId": 2280,
+      "titulo": "Team Rocket — Muelle de Infiltración",
+      "padre": 2220,
+      "arquetipo": "muelle",
+      "donante": 65,
+      "familia": 5,
+      "semilla": 1301,
+      "tileset": 176,
+      "bgm": "Team Rocket OW Journeys.ogg",
+      "interior": true,
+      "nota": "Ash se quita la gorra en la escollera y se la guarda antes de ponerse el uniforme."
+    },
+    {
+      "mapId": 2281,
+      "titulo": "Team Rocket — Vestíbulo de Recepción",
+      "padre": 2280,
+      "arquetipo": "sala",
+      "donante": 62,
+      "familia": 5,
+      "semilla": 1302,
+      "tileset": 176,
+      "bgm": "TeamRocket1.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2282,
+      "titulo": "Team Rocket — Pasillo de Tuberías",
+      "padre": 2281,
+      "arquetipo": "sala",
+      "donante": 65,
+      "familia": 5,
+      "semilla": 1303,
+      "tileset": 176,
+      "bgm": "Team Rocket OW Unova.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2283,
+      "titulo": "Team Rocket — Sala de Máquinas",
+      "padre": 2282,
+      "arquetipo": "fabrica",
+      "donante": 838,
+      "familia": 5,
+      "semilla": 1304,
+      "tileset": 176,
+      "bgm": "TeamGalactic.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2284,
+      "titulo": "Team Rocket — Almacén de Suministros",
+      "padre": 2282,
+      "arquetipo": "almacen",
+      "donante": 64,
+      "familia": 5,
+      "semilla": 1305,
+      "tileset": 176,
+      "bgm": "Team Rocket OW Hoenn.ogg",
+      "interior": true
+    },
+    {
+      "mapId": 2285,
+      "titulo": "Team Rocket — Enfermería",
+      "padre": 2282,
+      "arquetipo": "enfermeria",
+      "donante": 441,
+      "familia": 5,
+      "semilla": 1306,
+      "tileset": 176,
+      "bgm": "Poke Center.mid",
+      "interior": true,
+      "nota": "El único sitio de la base donde nadie manda. Aquí es donde Ash se quita el casco."
+    },
+    {
+      "mapId": 2286,
+      "titulo": "Team Rocket — Sala de Comunicaciones",
+      "padre": 2282,
+      "arquetipo": "sala",
+      "donante": 63,
+      "familia": 5,
+      "semilla": 1307,
+      "tileset": 178,
+      "bgm": "TeamPlasma.ogg",
+      "interior": true,
+      "alarma": true
+    }
+  ],
+  "rutas": [
+    {
+      "de": 2200, "a": 2260,
+      "nombre": "Senda de las Afueras",
+      "texto": ["Un sendero de nieve apelmazada sube hacia las afueras.", "La nieve cruje distinto aquí: como si el suelo estuviera hueco por debajo."]
+    },
+    { "de": 2260, "a": 2261, "nombre": "Camino a Lerucean", "texto": ["El camino se ensancha y aparecen las primeras casas."] },
+    {
+      "de": 2260, "a": 2262, "nombre": "Boca de la Glaciar",
+      "texto": ["Una grieta azulada en la roca. Sale vaho de dentro, lento y constante.", "No hay sol ahí abajo. No lo ha habido nunca."]
+    },
+    { "de": 2260, "a": 2265, "nombre": "Casa del Pescador", "texto": ["La puerta está sin cerrar. Dentro huele a sopa."] },
+    { "de": 2261, "a": 2263, "nombre": "Centro Pokémon", "texto": ["Empujas la puerta y el contraste de calor te empaña las gafas."] },
+    { "de": 2261, "a": 2264, "nombre": "Tienda de Lerucean", "texto": ["Una campanilla suena al entrar."] },
+    {
+      "de": 2210, "a": 2270,
+      "nombre": "Senda Luminosa",
+      "texto": ["El sendero sube entre acantilados y el mar se queda abajo, muy azul.", "Aquí la luz no es la de Kanto: es más limpia, como recién lavada."]
+    },
+    { "de": 2270, "a": 2271, "nombre": "Camino a Ciudad Platino", "texto": ["El camino baja hacia el puerto."] },
+    {
+      "de": 2270, "a": 2272, "nombre": "Entrada de la Zona Safari",
+      "texto": ["Una cancela verde y un cartel: «Se entra por parejas. Se sale cuando se quiera»."]
+    },
+    { "de": 2271, "a": 2273, "nombre": "Centro Pokémon", "texto": ["El Centro de Platino tiene las ventanas abiertas al mar."] },
+    { "de": 2271, "a": 2274, "nombre": "Tienda de Platino", "texto": ["Todo reluce. Incluso el suelo."] },
+    {
+      "de": 2271, "a": 2275,
+      "nombre": "Laboratorio del Fragmento",
+      "texto": ["Un cartel manuscrito: «Si el Fragmento parpadea, no lo toquéis. Avidadme»."]
+    },
+    {
+      "de": 2220, "a": 2280,
+      "nombre": "Escollera interior",
+      "texto": ["Bajas por una escalera de hierro y el ruido de la base se vuelve mecánico.", "Ash se guarda la gorra en la mochila. Desde aquí, no es Ash Ketchum: es el Recluta 447."]
+    },
+    { "de": 2280, "a": 2281, "nombre": "Puerta del vestíbulo", "texto": ["Un recepcionista ni levanta la vista. Señala el pasillo con dos dedos."] },
+    { "de": 2281, "a": 2282, "nombre": "Pasillo de tuberías", "texto": ["Las tuberías corren por el techo y gotean a un ritmo constante."] },
+    { "de": 2282, "a": 2283, "nombre": "Sala de Máquinas", "texto": ["El calor aquí es bestial. Alguien ha dejado un ventilador apuntando a la pared."] },
+    { "de": 2282, "a": 2284, "nombre": "Almacén", "texto": ["Cajas hasta el techo, todas con el mismo logotipo."] },
+    { "de": 2282, "a": 2285, "nombre": "Enfermería", "texto": ["El pasillo se enfría de golpe. Aquí se habla bajo."] },
+    { "de": 2282, "a": 2286, "nombre": "Sala de Comunicaciones", "texto": ["La luz roja de alarma barre la sala una y otra vez."] }
+  ],
+  "pobladores": [
+    {
+      "mapa": 2260, "sprite": "trchar013", "nombre": "Leñador de Cedolán",
+      "lineas": [
+        "Leñador: ¿Ves la nieve? Lleva tres días sin dejar de caer y no cuaja.",
+        "Leñador: En mi pueblo dicen que es porque el cielo está ocupado en otra parte."
+      ]
+    },
+    {
+      "mapa": 2260, "sprite": "trainer_HIKER", "nombre": "Montañero",
+      "lineas": [
+        "Montañero: He subido a la Glaciar seis veces. Las seis he bajado antes de la segunda cámara.",
+        "Montañero: No es miedo. Es que ahí dentro la piedra suena como si respirara."
+      ]
+    },
+    {
+      "mapa": 2261, "sprite": "trchar003", "nombre": "Vecina de Lerucean",
+      "lineas": [
+        "Vecina: La fuente de la plaza se hiela todas las noches y se deshiela todas las mañanas.",
+        "Vecina: Nadie sabe por qué. Yo ya no pregunto: me gusta que pase."
+      ]
+    },
+    {
+      "mapa": 2261, "sprite": "trchar033", "nombre": "Niña con bufanda",
+      "lineas": [
+        "Niña: Mi abuelo dice que antes hacía más frío.",
+        "Niña: Yo creo que antes teníamos más frío nosotros y el mundo era igual."
+      ]
+    },
+    {
+      "mapa": 2262, "sprite": "trainer_FISHERMAN", "nombre": "Pescador de la Glaciar",
+      "lineas": [
+        "Pescador: Pesco bajo el hielo desde que tenía tu edad.",
+        "Pescador: Y te juro que este año el hielo suena distinto. Más fino. Más... delgado."
+      ]
+    },
+    {
+      "mapa": 2265, "sprite": "trchar045", "nombre": "El pescador de la casa",
+      "lineas": [
+        "Pescador: Siéntate. Hay sopa para diez y yo soy uno.",
+        "Pescador: No me preguntes por qué hay sopa para diez. La hago así desde que se fueron."
+      ]
+    },
+    {
+      "mapa": 2270, "sprite": "trchar013", "nombre": "Caminante de la costa",
+      "lineas": [
+        "Caminante: Este sendero lo hice yo con mi padre, y él con el suyo.",
+        "Caminante: Fíjate en el acantilado: La luz de aquí no miente nunca sobre la hora que es."
+      ]
+    },
+    {
+      "mapa": 2271, "sprite": "trainer_SAILOR", "nombre": "Marinero de Platino",
+      "lineas": [
+        "Marinero: ¿Que si sé que esto es un Fragmento de dimensión? Claro que lo sé.",
+        "Marinero: Yo también soy un Fragmento de algo. Eso no te vuelve falso: te vuelve prestado."
+      ]
+    },
+    {
+      "mapa": 2271, "sprite": "trchar003", "nombre": "Vendedora de pescado",
+      "lineas": [
+        "Vendedora: ¡Lamprea fresca! ¿Que no sabes qué es una lamprea? Pues exacto.",
+        "Vendedora:En esta ciudad todo el mundo finge saber de qué va todo. Prueba una y ya sabremos los dos."
+      ]
+    },
+    {
+      "mapa": 2272, "sprite": "trchar033", "nombre": "Guarda de la Zona Safari",
+      "lineas": [
+        "Guarda: Entras con lo que llevas y sales con lo que atrapes. Esa es la gracia.",
+        "Guarda: Y si te cansas, te vas. Nadie te retiene aquí."
+      ]
+    },
+    {
+      "mapa": 2275, "sprite": "trainer_SCIENTIST", "nombre": "Ayudante del Fragmento",
+      "lineas": [
+        "Ayudante: El Fragmento del Rotom sostiene esta costa igual que sostiene Glazed.",
+        "Ayudante: Si alguna vez deja de latir, se apaga todo. Por eso lo medimos cada hora.",
+        "Ayudante: Tú no te preocupes. Preocúpate si dejamos de medirlo."
+      ]
+    },
+    {
+      "mapa": 2280, "sprite": "trainer_TEAMROCKET_M", "nombre": "Recluta de guardia",
+      "lineas": [
+        "Recluta: Tú eres el nuevo. 447, ¿no?",
+        "Recluta: Escucha: aquí dentro haces lo que te manden y callas.",
+        "Recluta: Y si ves a alguien tirado en un pasillo... bueno. Eso ya lo verás."
+      ]
+    },
+    {
+      "mapa": 2281, "sprite": "trainer_TEAMROCKET_F", "nombre": "Recepcionista",
+      "lineas": [
+        "Recepcionista: Rango y destino. No me cuentes tu vida.",
+        "Recepcionista: Si vienes a que te den una orden, hay cola. Si vienes a curarte, la enfermería está al fondo."
+      ]
+    },
+    {
+      "mapa": 2282, "sprite": "trainer_ENGINEER", "nombre": "Técnico de tuberías",
+      "lineas": [
+        "Técnico: Estas tuberías llevan cuarenta años sin revisarse.",
+        "Técnico: Si oyes un golpe seco cada siete segundos, no es una fuga: es la bomba cuatro pidiendo que la jubilen."
+      ]
+    },
+    {
+      "mapa": 2283, "sprite": "trainer_SCIENTIST", "nombre": "Operario de máquinas",
+      "lineas": [
+        "Operario: El generador sostiene la mitad de la base y un trozo de la dimensión.",
+        "Operario: Si lo paras, se apaga la luz. Si lo fuerzas, se apaga algo más.",
+        "Operario: Yo no lo toco. Yo sólo leo los diales."
+      ]
+    },
+    {
+      "mapa": 2284, "sprite": "trainer_BURGLAR", "nombre": "Encargado del almacén",
+      "lineas": [
+        "Encargado: Todo contado. Todo en su sitio. Todo exactamente igual que ayer.",
+        "Encargado: A veces me pregunto para qué queremos tantas cajas iguales.",
+        "Encargado: Luego me acuerdo de que aquí nadie pregunta y sigo contando."
+      ]
+    },
+    {
+      "mapa": 2285, "sprite": "trchar033", "nombre": "La que cuida",
+      "lineas": [
+        "Cuidadora: Yo no estoy herida. Estoy cansada. Eso no cuenta.",
+        "Cuidadora: Si ves a alguien tirado, no pases de largo. Aquí eso vale más que un ascenso."
+      ]
+    },
+    {
+      "mapa": 2286, "sprite": "trainer_TEAMROCKET_M", "nombre": "Radiooperador",
+      "lineas": [
+        "Radiooperador: La alarma lleva encendida desde antes de que yo entrara.",
+        "Radiooperador: Nadie sabe qué avisa. Si la apagas, alguien sube a preguntarte por qué."
+      ]
+    }
+  ]
+}
