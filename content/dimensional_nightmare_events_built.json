@@ -1725,8 +1725,8 @@
       "events": 6,
       "npcs": 0,
       "entry": [
-        18,
-        2
+        6,
+        1
       ],
       "exit": [
         4,
@@ -1890,7 +1890,7 @@
       "npcs": 1,
       "entry": [
         10,
-        2
+        1
       ],
       "exit": [
         1,
@@ -1993,7 +1993,7 @@
       "events": 6,
       "npcs": 2,
       "entry": [
-        10,
+        9,
         1
       ],
       "exit": [
@@ -2365,7 +2365,7 @@
         ],
         "to": 2175,
         "cellTo": [
-          10,
+          9,
           1
         ]
       }
@@ -2459,6 +2459,6 @@
       "combate": 3,
       "cierre": 4
     },
-    "trainer": "DN_MADPIKA/MAD PIKACHU nv 150"
+    "trainer": "DN_MADPIKA/MAD PIKACHU nv 175"
   }
 }

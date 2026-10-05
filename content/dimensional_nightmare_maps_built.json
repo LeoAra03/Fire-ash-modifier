@@ -3575,8 +3575,8 @@
           10,
           10
         ],
-        "reachable": 59,
-        "walkable": 59,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -3609,8 +3609,8 @@
           10,
           10
         ],
-        "reachable": 77,
-        "walkable": 77,
+        "reachable": 75,
+        "walkable": 75,
         "isolated": 0,
         "ratio": 1
       }
@@ -3711,8 +3711,8 @@
           10,
           10
         ],
-        "reachable": 62,
-        "walkable": 62,
+        "reachable": 59,
+        "walkable": 59,
         "isolated": 0,
         "ratio": 1
       }
@@ -3847,8 +3847,8 @@
           10,
           10
         ],
-        "reachable": 61,
-        "walkable": 61,
+        "reachable": 59,
+        "walkable": 59,
         "isolated": 0,
         "ratio": 1
       }
@@ -3881,8 +3881,8 @@
           10,
           10
         ],
-        "reachable": 139,
-        "walkable": 139,
+        "reachable": 138,
+        "walkable": 138,
         "isolated": 0,
         "ratio": 1
       }
@@ -3946,7 +3946,7 @@
       "height": 11,
       "bfs": {
         "entry": [
-          19,
+          18,
           10
         ],
         "reachable": 61,
@@ -4048,11 +4048,11 @@
       "height": 11,
       "bfs": {
         "entry": [
-          14,
+          15,
           10
         ],
-        "reachable": 58,
-        "walkable": 58,
+        "reachable": 59,
+        "walkable": 59,
         "isolated": 0,
         "ratio": 1
       }
@@ -4153,8 +4153,8 @@
           4,
           9
         ],
-        "reachable": 55,
-        "walkable": 55,
+        "reachable": 54,
+        "walkable": 54,
         "isolated": 0,
         "ratio": 1
       }
@@ -4425,8 +4425,8 @@
           10,
           9
         ],
-        "reachable": 74,
-        "walkable": 74,
+        "reachable": 72,
+        "walkable": 72,
         "isolated": 0,
         "ratio": 1
       }
@@ -4527,8 +4527,8 @@
           10,
           9
         ],
-        "reachable": 56,
-        "walkable": 56,
+        "reachable": 55,
+        "walkable": 55,
         "isolated": 0,
         "ratio": 1
       }
@@ -4629,8 +4629,8 @@
           10,
           10
         ],
-        "reachable": 65,
-        "walkable": 65,
+        "reachable": 64,
+        "walkable": 64,
         "isolated": 0,
         "ratio": 1
       }
@@ -4731,8 +4731,8 @@
           10,
           10
         ],
-        "reachable": 59,
-        "walkable": 59,
+        "reachable": 58,
+        "walkable": 58,
         "isolated": 0,
         "ratio": 1
       }
@@ -4799,8 +4799,8 @@
           13,
           9
         ],
-        "reachable": 75,
-        "walkable": 75,
+        "reachable": 73,
+        "walkable": 73,
         "isolated": 0,
         "ratio": 1
       }
@@ -4935,8 +4935,8 @@
           13,
           9
         ],
-        "reachable": 76,
-        "walkable": 76,
+        "reachable": 75,
+        "walkable": 75,
         "isolated": 0,
         "ratio": 1
       }
@@ -5068,11 +5068,11 @@
       "height": 11,
       "bfs": {
         "entry": [
-          10,
-          9
+          16,
+          10
         ],
-        "reachable": 58,
-        "walkable": 58,
+        "reachable": 59,
+        "walkable": 59,
         "isolated": 0,
         "ratio": 1
       }
@@ -5139,10 +5139,10 @@
           14,
           10
         ],
-        "reachable": 67,
-        "walkable": 72,
+        "reachable": 65,
+        "walkable": 70,
         "isolated": 5,
-        "ratio": 0.9305555555555556
+        "ratio": 0.9285714285714286
       }
     }
   ]

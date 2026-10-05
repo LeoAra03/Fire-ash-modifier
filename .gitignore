@@ -30,6 +30,7 @@ android/local.properties
 
 # Web dev
 web/demo-out/
+reference/roms_invitadas/
 node_modules/
 
 .DS_Store
@@ -66,3 +67,16 @@ Mapas/crepypasta/*
 # Overlays de pasajes por mapa: se regeneran con `npm run dn:pasajes:*` (--render).
 # La evidencia versionada son las hojas por episodio de docs/dn_referencia/lotes/.
 docs/dn_referencia/pasajes/
+
+# Arte conceptual sin procesar (pesado; los assets derivados sí se versionan)
+reference/pokegods/concept/
+reference/pokegods/concepto/
+
+# ROMs invitadas y su material extraído (no se versiona)
+roms pokemon/
+
+# Paquete TIMPS Swarm: se guarda el zip, no el contenido descomprimido
+agents/timps-swarm-main/
+
+# Referencia de Atlas Mil (generada por tools/atlas_ingest_reference.mjs)
+reference/atlas/

@@ -6,8 +6,6 @@
 > 3. **Detalle y Decoración (Clutter):** Entre 4 y 6 elementos decorativos específicos por bioma/escena distribuidos de forma asimétrica, con variación de textura en el suelo base.
 > 4. **Servicios Urbanos por Contexto:** En ciudades, pueblos y plazas habitadas se define e instala explícitamente el estado del **Centro Pokémon** y la **Tienda** según el contexto narrativo del universo.
 
-Para llevar este estándar a un plan de tiles jugable específico de montaña, cara norte y cuevas de hielo, consulta también el [Plan de reconstrucción orgánica](../PLAN_RECONSTRUCCION_MONTAÑA_CUEVAS_HIELO.md), con composición por mapa para Map2073–Map2087 y Monte Silver.
-
 ## Resumen de Bloques de Postgame (Monte Silver y La Ruta de Dios)
 
 | Bloque | Bioma / subtema | Atmósfera | Paleta | Estructura orgánica y relieve | 4–6 detalles decorativos (Clutter) | Centro / Tienda |

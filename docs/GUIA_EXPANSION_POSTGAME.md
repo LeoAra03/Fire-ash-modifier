@@ -7,23 +7,29 @@
 La expansión entera se habilita con el postgame convencional de Fire Ash: termina el evento de Mew (Proyecto Mew) y vuelve a casa. Oak visita el laboratorio y dispara `429 = Postgame`. A partir de ahí:
 
 - el **Pokédex de entrenador** queda habilitado (la escena clásica de Oak);
-- en el **segundo piso del laboratorio de Oak** aparece la zona secreta y sus transportadores cuánticos.
+- en el **segundo piso del laboratorio de Oak** aparece la zona secreta y sus transportadores cuánticos;
+- **Oak** comenta las lecturas de las grietas: te dice cuántas líneas temporales llevas purgadas (\v[264] de 8) y hacia dónde mirar, sin llevarte a ningún sitio.
 
-## 1. El sótano del laboratorio de Oak (hub de la expansión)
+## 1. Cómo se llega a cada zona (sin menús de viaje)
 
-Baja las escaleras del laboratorio. Verás dos cápsulas originales y una **tercera cápsula nueva** entre ellas, con su ayudante:
+> **Novedad:** la cápsula central nueva del sótano de Oak **se retiró**. El
+> laboratorio conserva únicamente sus dos transportadores originales y Oak actúa
+> como consejero (`PokeMod Oak: Registro de Grietas`): lee el contador de purgas
+> y te dice qué te falta, pero no teletransporta a nadie. Todo el contenido nuevo
+> se alcanza **andando por Kanto y Johto**. Detalle completo en
+> [`EXPANSION_MULTIVERSAL.md`](EXPANSION_MULTIVERSAL.md).
 
-| Cápsula | Destino | Condición |
+| Zona | Cómo se llega | Cómo se vuelve |
 |---|---|---|
-| Original izquierda | Pokédex holders (23 dimensiones alternativas) | Postgame |
-| **Nueva (menú)** | Isla Espejo | Siempre |
-| | Bosque Susurrante | Misión del guardabosques aceptada (habla con él en Ciudad Verde) |
-| | Puerto Horizonte | Rescatados los niños del Bosque Susurrante |
-| | Atlas Mil | Que el Cronista de Puerto Horizonte lo haya abierto |
-| | **Monte Silver** | Siempre |
-| Original derecha | **Torre del Grandeur Club** (mapa 141) | Postgame |
+| **Monte Silver — emisiones** (2023-2029) | Entrando en las **siete grietas** repartidas por Kanto y Johto (Torre Pokémon, Islas Espuma, Monte Moon, Torre Quemada, Planta de Energía, Ruinas Alfa y Mansión Pokémon) | Evento «Volver al mundo» de cada emisión, o por la gruta original |
+| **Monte Silver — falda y cumbre** (2021-2022) | **Punto de colapso** en la Torre Pokémon 1F: aparece con las siete purgas (`\v[264] >= 7`) | «Volver al mundo» en la falda; «Bajar a la gruta» en la cumbre |
+| **Liga Oscura** (2192-2193) | Umbral de la cumbre del Monte Silver, con las ocho purgas (`\v[264] >= 8`) | Salida al umbral y salida al mundo dentro de la misma arena |
+| **Atlas Mil** | **Capitán Ferrán** en el puerto de **Ciudad Carmín** (con el Atlas ya abierto por el Cronista) | Barco del capitán en el Muelle de Atlas Mil (2191) |
+| **Isla Espejo** (997-999) | Escotilla nueva en el **B1F de la Mansión Pokémon** → Sótano Sellado (2194) → espejo | Espejo del atrio → sótano → escaleras a la mansión; el ferry de Pueblo Paleta sigue disponible |
 
-Si una señal todavía no está calibrada, la cápsula te dice qué te falta en vez de teletransportarte a ciegas.
+Cada grieta avisa antes de abrirse y pregunta **Entrar / Retirarse**. Al limpiar
+su jefe, la línea temporal queda purgada y la grieta se convierte en una cicatriz
+que ya no amenaza (pero sigue permitiendo cruzar para las revanchas).
 
 ## 2. La torre del Grandeur Club — con Mochila libre
 
@@ -79,7 +85,8 @@ Todas las batallas permiten perder, quedan **derrotadas para siempre** al ganar 
 npm test                      # 51 + 114 + 67 pruebas
 npm run verify:atlas          # Tier 2 y Tier 3 compilados y seguros
 npm run verify:grandeur:bag   # Mochila libre en la torre
-npm run verify:oak:hub        # transportador postgame de Oak
+npm run verify:oak:hub        # el laboratorio de Oak conserva solo sus transportadores
+npm run verify:expansion      # grietas, Liga Oscura, Atlas Mil e Isla Espejo
 npm run verify:defeats        # derrotas permanentes + revanchas solo por menú
 npm run verify:multiverse     # Monte Silver y las 7 emisiones
 npm run verify:wild           # tablas de encuentros salvajes

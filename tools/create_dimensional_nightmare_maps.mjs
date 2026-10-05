@@ -153,11 +153,28 @@ const blueprint = {
 if (CHECK) {
   const withoutFicha = blueprint.maps.filter((m) => !m.primary);
   const missingSlice = blueprint.maps.filter((m) => m.primary && !fs.existsSync(path.join(ROOT, m.primary.slice)));
+  // Un recorte puede faltar por dos motivos muy distintos: que el mosaico de
+  // ese mundo nunca se depositó (referencia pendiente) o que, estando el
+  // mosaico, la ingesta no lo haya producido (fallo real). Sólo el segundo
+  // detiene la cadena; el primero se anuncia y los mapas conservan su arte.
+  const indexPath = path.join(ROOT, "reference", "dimensional_nightmare", "index.json");
+  const pending = new Set();
+  if (fs.existsSync(indexPath)) {
+    for (const entry of JSON.parse(fs.readFileSync(indexPath, "utf8")).pending ?? []) pending.add(entry.key);
+  }
+  const esperando = missingSlice.filter((m) => pending.has(m.primary.key));
+  const rotos = missingSlice.filter((m) => !pending.has(m.primary.key));
   console.log(`mapas en el plano: ${blueprint.count}`);
   console.log(`  con ficha: ${blueprint.count - withoutFicha.length} (sin ficha: ${withoutFicha.map((m) => m.id).join(", ") || "ninguno"})`);
   console.log(`  recortes presentes: ${blueprint.maps.filter((m) => m.primary).length - missingSlice.length}`);
-  if (missingSlice.length) {
-    console.log(`  recortes ausentes: ${missingSlice.map((m) => `${m.id} (${m.primary.slice})`).join(", ")}`);
+  if (esperando.length) {
+    const mundos = [...new Set(esperando.map((m) => m.primary.key))];
+    console.log(`  pendientes de referencia: ${esperando.length} recorte(s) · mundos ${mundos.join(", ")}`);
+    console.log("  → deposita el mosaico en Mapas/Crepypastas/ y ejecuta `npm run dn:ingest`");
+    console.log("  (mientras tanto esos mapas conservan el arte ya instalado)");
+  }
+  if (rotos.length) {
+    console.log(`  recortes ausentes: ${rotos.map((m) => `${m.id} (${m.primary.slice})`).join(", ")}`);
     console.log("  → ejecutar `npm run dn:ingest`");
     process.exitCode = 1;
   }

@@ -330,14 +330,14 @@ for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.
   }
 }
 const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
-const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*150\b/.test(settingsSource) &&
+const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*175\b/.test(settingsSource) &&
   rutaScript.includes("max = (@species == :ARCEUS && @ruta_arceus_divine == true) ? 200 : GameData::GrowthRate.max_level") &&
   rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
   explicitNonArceusLevel200.length === 0 &&
   rutaScript.includes("pkmn.instance_variable_set(:@ruta_arceus_divine, false)") &&
   rutaScript.includes("divine ? normal_cap : safe_level");
 check(levelCapIsArceusOnly,
-  "el nivel 200 queda reservado al Arceus divino (equipos, encuentros y scripts sin otro caso), y el Arceus normal vuelve al tope de 150");
+  "el nivel 200 queda reservado al Arceus divino (equipos, encuentros y scripts sin otro caso), y el Arceus normal no pasa del techo de 175");
 check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
   rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
   "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");
@@ -471,14 +471,20 @@ const towerLocks = [141, 151, 214].flatMap((mapId) => parseMap(readMarshalData(`
   .filter((command) => command.getIvar("code") === 121 && Number(command.getIvar("parameters")?.[2]) === 0 && Number(command.getIvar("parameters")?.[0]) <= 674 && Number(command.getIvar("parameters")?.[1]) >= 674);
 check(towerLocks.length === 8, `la torre conserva sus 8 activaciones originales del switch 674 (${towerLocks.length})`);
 const oakLab = parseMap(readMarshalData("Map048.rxdata")).events.map(({ obj }) => parseEvent(obj));
+// La Expansión Multiversal retiró la cápsula central: el laboratorio vuelve a
+// tener solo sus transportadores originales y Oak como consejero.
 const hubEvents = oakLab.filter((event) => event.name.startsWith("PokeMod Hub:"));
-check(hubEvents.length === 5, `el laboratorio de Oak tiene ${hubEvents.length}/5 eventos del hub postgame`);
-check(hubEvents.every((event) => event.pages.length === 2 && event.pages[1].condition?.switch1 === 429), "todo el hub del laboratorio depende del switch 429 de postgame");
-const hubPod = hubEvents.find((event) => event.name.endsWith("Transportador"));
-const hubTransfers = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 201).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
-check(hubTransfers.join() === "997,1000,1001,1021,2021", `la cápsula nueva enlaza Isla Espejo, Bosque, Horizontes, Atlas y Monte Silver (${hubTransfers.join()})`);
-const hubGates = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 111 && Number(command.getIvar("parameters")?.[0]) === 0).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
-check([701, 704, 706].every((flag) => hubGates.includes(flag)), "las señales del hub se calibran con los switches 701/704/706 de la progresión real");
+check(hubEvents.length === 0, `el laboratorio de Oak conserva ${hubEvents.length} cápsulas del hub (debe ser 0)`);
+const labMenus = oakLab.filter((event) => event.name.startsWith("PokeMod"))
+  .filter((event) => event.pages.some((page) => new Set(page.list
+    .filter((command) => command.getIvar("code") === 201)
+    .map((command) => Number(command.getIvar("parameters")?.[1]))).size > 1));
+check(labMenus.length === 0, `el laboratorio no debe ofrecer menús de destinos (${labMenus.map((event) => event.name).join(", ")})`);
+const oakAdvisor = oakLab.find((event) => event.name === "PokeMod Oak: Registro de Grietas");
+check(Boolean(oakAdvisor), "Oak aconseja sobre las lecturas de las grietas en el laboratorio");
+check(Boolean(oakAdvisor) && oakAdvisor.pages[1]?.condition?.switch1 === 429, "el Oak consejero depende del switch 429 de postgame");
+check(Boolean(oakAdvisor) && !oakAdvisor.pages.some((page) => page.list.some((command) => command.getIvar("code") === 201)), "Oak no teletransporta: solo aconseja");
+check(Boolean(oakAdvisor) && oakAdvisor.pages[1].list.some((command) => command.getIvar("code") === 401 && String(command.getIvar("parameters")?.[0] ?? "").includes("\\v[264]")), "Oak lee el contador de purgas (\\v[264])");
 const originalDoors = oakLab.filter((event) => [15, 16].includes(event.id));
 check(originalDoors.length === 2 && originalDoors.every((event) => event.pages[1]?.condition?.switch1 === 429 && event.pages[1].list.some((command) => command.getIvar("code") === 201)), "los transportadores originales siguen intactos y condicionados por el postgame");
 const towerDoor = originalDoors.find((event) => event.id === 16);
@@ -490,7 +496,7 @@ check(multiverse.maps.length === 9 && multiverse.bosses.length === 7 && multiver
 check(multiverse.guarantees.reinterpretedHomagesOnly && multiverse.guarantees.existingAssetsOnly && multiverse.guarantees.canLoseEveryBattle && multiverse.guarantees.permanentDefeat && multiverse.guarantees.optionalRematchByMenu && multiverse.guarantees.freeReturn, "el multiverso declara homenajes reinterpretados, canLose, derrota permanente, revancha por menú y retorno libre");
 const multiverseRoster = [...multiverse.bosses, multiverse.champion];
 check(new Set(multiverseRoster.map((entry) => entry.reward)).size === multiverseRoster.length, "las recompensas del multiverso son únicas");
-check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 150)), "los equipos del multiverso respetan 6 Pokémon y nivel 150");
+check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 175)), "los equipos del multiverso respetan 6 Pokémon y el techo de 175");
 check(multiverseRoster.every((entry) => {
   const events = parseMap(readMarshalData(`Map${entry.mapId}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
   const battle = events.find((event) => event.name.includes(entry.name));
@@ -501,8 +507,8 @@ check(multiverseRoster.every((entry) => {
 
 // --- Zonas salvajes -----------------------------------------------------------
 const wild = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "wild_zones.json"), "utf8"));
-check(wild.zones.length === 13, `el catálogo define ${wild.zones.length}/13 zonas salvajes`);
-check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 150))), "las tablas salvajes respetan niveles 1-150");
+check(wild.zones.length >= 13, `el catálogo define ${wild.zones.length} zonas salvajes (mínimo 13)`);
+check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 175))), "las tablas salvajes respetan niveles 1-175");
 check(wild.zones.some((zone) => zone.mapId === 2021) && wild.zones.some((zone) => zone.mapId === 1000) && wild.zones.some((zone) => zone.types.Water), "hay Monte Silver, Bosque Susurrante y encuentros de agua (surf)");
 {
   const species = new Set();

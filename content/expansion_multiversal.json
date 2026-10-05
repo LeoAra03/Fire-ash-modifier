@@ -1,0 +1,527 @@
+{
+  "version": 1,
+  "title": "Expansión Multiversal — Post-Ruta de Dios",
+  "voice": "Nada se alcanza por un menú: cada umbral se camina, se navega o se cruza.",
+  "postgameSwitch": 429,
+  "counterVariable": 264,
+  "sealSwitchBase": 940,
+  "championSeal": 947,
+  "purgeGoal": 7,
+  "finalGoal": 8,
+  "guarantees": {
+    "noTravelMenus": true,
+    "everyDestinationHasReturn": true,
+    "canLoseEveryBattle": true,
+    "permanentDefeatBySeal": true,
+    "optionalRematchByMenu": true,
+    "noNewSwitches": true,
+    "noNewVariables": true,
+    "oakLabKeepsOriginalTransporters": true,
+    "existingAssetsOnly": true,
+    "maxLevel": 125,
+    "levelCap": 150
+  },
+  "rifts": [
+    {
+      "id": "locutora",
+      "boss": "LA LOCUTORA",
+      "emissionMap": 2023,
+      "seal": 940,
+      "label": "La Torre que Escuchaba",
+      "place": "Torre Pokémon",
+      "world": {
+        "mapId": 149,
+        "hint": [
+          12,
+          12
+        ]
+      },
+      "warning": [
+        "Una grieta se abre en el aire de la torre, a la altura de un altavoz que no existe.",
+        "Dentro suena una canción que nadie está cantando."
+      ],
+      "enter": "El suelo de la torre deja de sonar bajo tus pies. La canción te reconoce.",
+      "retreat": "Retrocedes. La grieta se queda donde estaba, esperando.",
+      "closed": "La grieta está sellada. La torre ya solo suena a madera vieja.",
+      "scar": "La cicatriz queda quieta: ya no es una amenaza, es una puerta a lo que ocurrió.",
+      "scarAsk": "¿Cruzar al eco o dejarla en paz?\\ch[1,2,Cruzar,Dejarla]"
+    },
+    {
+      "id": "plata",
+      "boss": "PLATA PERDIDA",
+      "emissionMap": 2024,
+      "seal": 941,
+      "label": "La Partida Perdida",
+      "place": "Islas Espuma",
+      "world": {
+        "mapId": 979,
+        "hint": [
+          60,
+          40
+        ]
+      },
+      "warning": [
+        "Entre la nieve y la espuma hay una grieta con forma de huella.",
+        "Alguien camina en círculos al otro lado y no levanta la vista."
+      ],
+      "enter": "La nieve del otro lado no está fría: está repetida.",
+      "retreat": "Cierras los ojos y la huella sigue ahí cuando los abres.",
+      "closed": "La huella se borró. El frío volvió a ser solo frío.",
+      "scar": "La cicatriz queda quieta: ya no es una amenaza, es una puerta a lo que ocurrió.",
+      "scarAsk": "¿Cruzar al eco o dejarla en paz?\\ch[1,2,Cruzar,Dejarla]"
+    },
+    {
+      "id": "enterrado",
+      "boss": "EL ENTERRADO",
+      "emissionMap": 2025,
+      "seal": 942,
+      "label": "La Fosa del Enterrado",
+      "place": "Monte Moon",
+      "world": {
+        "mapId": 90,
+        "hint": [
+          30,
+          25
+        ]
+      },
+      "warning": [
+        "La roca se ha abierto sola. Huele a excavación reciente y a algo más antiguo.",
+        "Desde abajo sube un ruido de uñas."
+      ],
+      "enter": "Bajas por un túnel que no cavó nadie de este mundo.",
+      "retreat": "Te apartas. Las uñas siguen arañando, pacientes.",
+      "closed": "La fosa fue tapiada con algo mejor que piedra: silencio.",
+      "scar": "La cicatriz queda quieta: ya no es una amenaza, es una puerta a lo que ocurrió.",
+      "scarAsk": "¿Cruzar al eco o dejarla en paz?\\ch[1,2,Cruzar,Dejarla]"
+    },
+    {
+      "id": "cinta",
+      "boss": "EL NIÑO DE LA CINTA",
+      "emissionMap": 2026,
+      "seal": 943,
+      "label": "La Cinta Carmesí",
+      "place": "Torre Quemada",
+      "world": {
+        "mapId": 303,
+        "hint": [
+          15,
+          12
+        ]
+      },
+      "warning": [
+        "Una cinta carmesí atraviesa la pared como si la pared fuera agua.",
+        "Al otro lado hay una partida guardada que no termina de cargar."
+      ],
+      "enter": "La cinta te envuelve y el mundo tarda un segundo en dibujarse.",
+      "retreat": "Sueltas la cinta. La torre vuelve a oler a ceniza.",
+      "closed": "La cinta quedó sin nudo. La partida, por fin, terminó.",
+      "scar": "La cicatriz queda quieta: ya no es una amenaza, es una puerta a lo que ocurrió.",
+      "scarAsk": "¿Cruzar al eco o dejarla en paz?\\ch[1,2,Cruzar,Dejarla]"
+    },
+    {
+      "id": "fallo",
+      "boss": "EL FALLO CERO",
+      "emissionMap": 2027,
+      "seal": 944,
+      "label": "Ciudad Glitch",
+      "place": "Planta de Energía de Kanto",
+      "world": {
+        "mapId": 412,
+        "hint": [
+          22,
+          15
+        ]
+      },
+      "warning": [
+        "Los generadores zumban en un idioma que no es electricidad.",
+        "La grieta parpadea como una pantalla con un error que nadie corrigió."
+      ],
+      "enter": "Las calles del otro lado se desbordan de datos al llegar a su borde.",
+      "retreat": "Sales antes de que el error te aprenda el nombre.",
+      "closed": "El error fue corregido. El zumbido volvió a ser corriente.",
+      "scar": "La cicatriz queda quieta: ya no es una amenaza, es una puerta a lo que ocurrió.",
+      "scarAsk": "¿Cruzar al eco o dejarla en paz?\\ch[1,2,Cruzar,Dejarla]"
+    },
+    {
+      "id": "eco",
+      "boss": "EL ECO AHOGADO",
+      "emissionMap": 2028,
+      "seal": 945,
+      "label": "El Eco que Jugó Contigo",
+      "place": "Ruinas Alfa",
+      "world": {
+        "mapId": 295,
+        "hint": [
+          20,
+          17
+        ]
+      },
+      "warning": [
+        "Un reflejo con retraso repite tus movimientos junto a la grieta.",
+        "Cuando te detienes, él tarda un paso en detenerse."
+      ],
+      "enter": "El agua del otro lado devuelve tu imagen con un segundo de retraso.",
+      "retreat": "Te quedas quieto hasta que el eco se cansa.",
+      "closed": "El eco aprendió su propio nombre y dejó de repetir el tuyo.",
+      "scar": "La cicatriz queda quieta: ya no es una amenaza, es una puerta a lo que ocurrió.",
+      "scarAsk": "¿Cruzar al eco o dejarla en paz?\\ch[1,2,Cruzar,Dejarla]"
+    },
+    {
+      "id": "jugador",
+      "boss": "EL JUGADOR DE 1996",
+      "emissionMap": 2029,
+      "seal": 946,
+      "label": "La Consola de 1996",
+      "place": "Mansión Pokémon",
+      "world": {
+        "mapId": 190,
+        "hint": [
+          25,
+          25
+        ]
+      },
+      "warning": [
+        "Una grieta con forma de pantalla se enciende entre los diarios quemados.",
+        "Alguien sigue jugando al otro lado desde hace treinta años."
+      ],
+      "enter": "La partida sigue en marcha. Te estaba esperando para el relevo.",
+      "retreat": "Apagas la mirada. La consola sigue sola.",
+      "closed": "La partida terminó. Alguien, por fin, guardó y apagó.",
+      "scar": "La cicatriz queda quieta: ya no es una amenaza, es una puerta a lo que ocurrió.",
+      "scarAsk": "¿Cruzar al eco o dejarla en paz?\\ch[1,2,Cruzar,Dejarla]"
+    }
+  ],
+  "collapse": {
+    "mapId": 143,
+    "hint": [
+      12,
+      18
+    ],
+    "place": "Torre Pokémon",
+    "targetMap": 2021,
+    "title": "Monte Silver — Falda",
+    "lines": [
+      "La torre que abrió la primera grieta es la que las cierra todas.",
+      "La inestabilidad se ha derrumbado en un solo punto: una grieta que ya no parpadea, sino que respira.",
+      "Al otro lado está el Monte Silver, la montaña de las historias sin testigos."
+    ],
+    "enter": "Subes por la grieta. Arriba, siete puertas de niebla ya no respiran: ahora guardan silencio.",
+    "retreat": "No es el momento. La montaña puede esperar."
+  },
+  "emissionsReturn": {
+    "note": "Cada emisión conserva su salida a la gruta y gana una salida nueva al mundo.",
+    "exitName": "PokeMod Grieta: Volver al mundo",
+    "exitMessage": "El aire se cierra detrás de ti como una herida que por fin cicatriza."
+  },
+  "falda": {
+    "mapId": 2021,
+    "eventName": "PokeMod Multiverso: Bajar al laboratorio",
+    "newName": "PokeMod Grieta: Volver al mundo",
+    "message": "El sendero baja hasta la torre que abrió la primera grieta."
+  },
+  "darkLeague": {
+    "maps": [
+      {
+        "mapId": 2192,
+        "title": "Liga Oscura — Umbral",
+        "template": 151,
+        "role": "umbral",
+        "battleBackdrop": "distortion",
+        "lines": [
+          "Umbral de la Liga Oscura. El aire aquí no circula: se repite.",
+          "Detrás de esa puerta esperan las siete voces, pero ya no por separado."
+        ]
+      },
+      {
+        "mapId": 2193,
+        "title": "Liga Oscura — Arena Final",
+        "template": 214,
+        "role": "arena",
+        "battleBackdrop": "distortion",
+        "lines": [
+          "Arena Final. No hay gradas: hay reflejos de todas las personas que contaron estas historias."
+        ]
+      }
+    ],
+    "gate": {
+      "mapId": 2022,
+      "eventName": "PokeMod Multiverso: Puertas de niebla",
+      "newName": "PokeMod Grieta: Umbral de la Liga Oscura",
+      "locked": "Las siete puertas callan, pero el umbral no se abre. Falta que el Campeón Silencioso hable.",
+      "open": "Red asiente y señala la pared del fondo. Detrás del silencio hay una puerta que no estaba."
+    },
+    "battles": [
+      {
+        "id": "canto",
+        "name": "EL CANTO",
+        "type": "PSYCHIC_F",
+        "sprite": "MISMAGIUS",
+        "reward": "CHOICESPECS",
+        "intro": [
+          "El coro de la torre se ordena en una sola voz.",
+          "EL CANTO: ¿Oyes? Es lo que queda de quienes escucharon demasiado."
+        ],
+        "win": "EL CANTO: Bien. Ahora la canción se queda aquí.",
+        "loss": "EL CANTO: Vuelve. La melodía no se acaba por descansar.",
+        "rematch": "EL CANTO: ¿Otra vez? Cantemos, entonces.",
+        "team": [
+          [
+            "CHANDELURE",
+            110
+          ],
+          [
+            "MISMAGIUS",
+            112
+          ],
+          [
+            "GENGAR",
+            114
+          ],
+          [
+            "DRIFBLIM",
+            110
+          ],
+          [
+            "BANETTE",
+            110
+          ],
+          [
+            "FROSLASS",
+            112
+          ]
+        ]
+      },
+      {
+        "id": "estatica",
+        "name": "LA ESTÁTICA",
+        "type": "SCIENTIST",
+        "sprite": "PORYGON",
+        "reward": "ASSAULTVEST",
+        "intro": [
+          "Un científico que ya no distingue su cara de la del error que corregía.",
+          "LA ESTÁTICA: Todo lo que ves es un dato que se negó a morir."
+        ],
+        "win": "LA ESTÁTICA: Corregido. Al fin.",
+        "loss": "LA ESTÁTICA: El error vuelve a empezar. Siempre lo hace.",
+        "rematch": "LA ESTÁTICA: Otra comprobación. Otra vez.",
+        "team": [
+          [
+            "PORYGON2",
+            112
+          ],
+          [
+            "PORYGONZ",
+            116
+          ],
+          [
+            "MUK",
+            112
+          ],
+          [
+            "ELECTRODE",
+            112
+          ],
+          [
+            "DITTO",
+            113
+          ],
+          [
+            "UNOWN",
+            110
+          ]
+        ]
+      },
+      {
+        "id": "sinrostro",
+        "name": "EL SIN ROSTRO",
+        "type": "HIKER",
+        "sprite": "MAROWAK",
+        "reward": "ROCKYHELMET",
+        "intro": [
+          "Lo que excavaron donde no debían aprendió a esperar de pie.",
+          "EL SIN ROSTRO: Nadie me enterró. Yo me quedé."
+        ],
+        "win": "EL SIN ROSTRO: Descansa. Yo también puedo, por fin.",
+        "loss": "EL SIN ROSTRO: La tierra es paciente.",
+        "rematch": "EL SIN ROSTRO: ¿Otra palada?",
+        "team": [
+          [
+            "MAROWAK",
+            114
+          ],
+          [
+            "GOLURK",
+            116
+          ],
+          [
+            "COFAGRIGUS",
+            114
+          ],
+          [
+            "DUSKNOIR",
+            115
+          ],
+          [
+            "SABLEYE",
+            113
+          ],
+          [
+            "SPIRITOMB",
+            116
+          ]
+        ]
+      },
+      {
+        "id": "eco",
+        "name": "EL ECO",
+        "type": "SWIMMER_M",
+        "sprite": "JELLICENT",
+        "reward": "FOCUSSASH",
+        "intro": [
+          "Un reflejo con retraso que esta vez no se limita a repetir.",
+          "EL ECO: Jugué contigo. Ahora juego en serio."
+        ],
+        "win": "EL ECO: Ya sé quién soy. Gracias por prestármelo.",
+        "loss": "EL ECO: Vuelve cuando aprendas tus propios pasos.",
+        "rematch": "EL ECO: Otra partida. Sin trampas esta vez.",
+        "team": [
+          [
+            "JELLICENT",
+            115
+          ],
+          [
+            "FROSLASS",
+            114
+          ],
+          [
+            "GENGAR",
+            117
+          ],
+          [
+            "MISMAGIUS",
+            114
+          ],
+          [
+            "SPIRITOMB",
+            118
+          ],
+          [
+            "DUSKNOIR",
+            115
+          ]
+        ]
+      },
+      {
+        "id": "convergencia",
+        "name": "LA CONVERGENCIA",
+        "type": "CHAMPION",
+        "sprite": "GENGAR",
+        "reward": "MASTERBALL",
+        "intro": [
+          "Las siete vocas convergen en una sola figura que no termina de dibujarse.",
+          "LA CONVERGENCIA: No soy la suma de las siete. Soy lo que contaban cuando nadie las contaba."
+        ],
+        "win": "LA CONVERGENCIA: Entonces ya puedes volver. Y esta vez, de verdad.",
+        "loss": "LA CONVERGENCIA: Ninguna de nosotras te encierra. Vuelve cuando quieras.",
+        "rematch": "LA CONVERGENCIA: ¿Otra vez el final? Adelante.",
+        "team": [
+          [
+            "PORYGONZ",
+            120
+          ],
+          [
+            "CHANDELURE",
+            120
+          ],
+          [
+            "GOLURK",
+            122
+          ],
+          [
+            "DUSKNOIR",
+            122
+          ],
+          [
+            "GENGAR",
+            124
+          ],
+          [
+            "SPIRITOMB",
+            125
+          ]
+        ]
+      }
+    ]
+  },
+  "atlas": {
+    "captainMap": 108,
+    "captainHint": [
+      34,
+      40
+    ],
+    "captainName": "Capitán Ferrán",
+    "captainSprite": "trchar016",
+    "gate": 706,
+    "horizons": 704,
+    "portMap": 1001,
+    "dock": {
+      "mapId": 2191,
+      "title": "Muelle de Atlas Mil",
+      "template": 1001,
+      "role": "muelle",
+      "battleBackdrop": "city"
+    },
+    "ask": "Capitán: El Atlas Mil no está en ninguna carta, pero se deja navegar. ¿Zarpamos?",
+    "notYet": "Capitán: Necesito las cartas del Cronista de Puerto Horizonte antes de meter el barco en esa nada.",
+    "setSail": "Capitán: ¡Izad! Y si el mar se equivoca, no le hagáis caso.",
+    "back": "Capitán: ¿Volvemos a Ciudad Carmín? El barco obedece cuando quiere, pero hoy quiere.",
+    "stay": "Capitán: Tómate tu tiempo. El muelle no se mueve."
+  },
+  "mirror": {
+    "mansionMap": 192,
+    "mansionHint": [
+      25,
+      25
+    ],
+    "basement": {
+      "mapId": 2194,
+      "title": "Sótano Sellado de la Mansión",
+      "template": 192,
+      "role": "sotano",
+      "battleBackdrop": "indoor3"
+    },
+    "islandMap": 997,
+    "islandArrival": [
+      14,
+      10
+    ],
+    "hatch": "Una escotilla que no figuraba en los planos de la mansión. Alguien la abrió desde dentro.",
+    "lines": [
+      "El sótano no aparecía en ningún plano y, sin embargo, siempre estuvo aquí.",
+      "En el centro hay un espejo grande como una pared, con el cristal deformado.",
+      "Te acercas... y el reflejo no te devuelve a ti: devuelve una isla."
+    ],
+    "ask": "El reflejo muestra una isla que no conoces. ¿Cruzas el umbral?",
+    "cross": "El cristal cede como el agua. Del otro lado, el aire sabe a datos viejos.",
+    "retreat": "Retrocedes. El espejo sigue mostrando la isla, paciente.",
+    "backAsk": "El espejo sigue ahí, visto desde dentro. ¿Vuelves al sótano de la mansión?",
+    "back": "Atraviesas el cristal. El sótano te recibe como si no hubieras salido nunca.",
+    "stay": "Te quedas. La isla tiene más cosas que enseñar."
+  },
+  "oakLab": {
+    "mapId": 48,
+    "hubMarker": "PokeMod Hub:",
+    "sprite": "trchar024",
+    "hint": [
+      11,
+      17
+    ],
+    "name": "PokeMod Oak: Registro de Grietas",
+    "lines": [
+      "Prof. Oak: Ash, no he instalado nada nuevo abajo. Las dos cápsulas de siempre siguen donde estaban y con ellas me basta.",
+      "Prof. Oak: Lo que sí hago es medir. Las lecturas de energía de estas grietas suben cada vez que cierras una.",
+      "Prof. Oak: Llevas \\v[264] de 8 líneas temporales purgadas. Cuando falte una, la inestabilidad caerá en un solo punto.",
+      "Prof. Oak: Si quieres ir más lejos, no busques un transportador: busca el mundo. Hay un capitán en el puerto de Ciudad Carmín, un sótano recién abierto en la Mansión de Isla Canela y grietas en lugares que conoces de sobra."
+    ]
+  }
+}

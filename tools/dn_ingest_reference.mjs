@@ -521,7 +521,18 @@ const sourceDirs = FIXTURES_MODE ? (generateFixtures(), [FIXTURES]) : INPUT_DIRS
 const discovered = discoverSources(sourceDirs);
 const complete = reportFound(discovered, sourceDirs);
 if (CHECK_ONLY) process.exit(complete ? 0 : 1);
-if (!complete) process.exit(1);
+if (!complete) {
+  // Ingesta parcial: si falta algún mosaico se ingesta lo que sí hay y se
+  // deja constancia en el índice. Bloquearlo todo por un recurso pendiente
+  // dejaba el resto del pipeline — y sus 101 mapas — sin poder avanzar.
+  if (discovered.found.size === 0) {
+    console.error("No hay ningún mosaico asignado: no se puede ingestar nada.");
+    process.exit(1);
+  }
+  const faltan = RESOURCES.filter((r) => !discovered.found.has(r.key)).map((r) => r.key);
+  console.log(`\nAviso: faltan ${faltan.length} mosaico(s) (${faltan.join(", ")}).`);
+  console.log("Se ingesta sólo lo disponible; el índice marca los pendientes.");
+}
 
 fs.mkdirSync(SLICES, { recursive: true });
 const index = {
@@ -529,6 +540,7 @@ const index = {
   generatedBy: "tools/dn_ingest_reference.mjs",
   fixture: FIXTURES_MODE,
   note: "Cada ficha es la referencia de UN mapa del GDD (docs/DIMENSIONAL_NIGHTMARE/11_ASIGNACION_DE_RECURSOS.md).",
+  pending: RESOURCES.filter((r) => !discovered.found.has(r.key)).map((r) => ({ key: r.key, label: r.label })),
   resources: [],
 };
 let total = 0, mismatches = [];

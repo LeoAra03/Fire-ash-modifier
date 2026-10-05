@@ -1,0 +1,332 @@
+{
+  "esquema": "restauracion_cromatica/1.0",
+  "titulo": "Ash, agente externo: devolver el color a las siete emisiones",
+  "nota": "Cada emisión del Monte Silver es una dimensión rota que sigue fiel a su creepypasta. Derrotar al jefe la purga (sello), pero NO la salva: el mundo sigue en gris. Ash, que viene de fuera de estas dimensiones, toca el Nexo de Color y devuelve al mundo su momento de paz: el color vuelve, los pobladores dejan de repetir su trauma y la emisión deja de doler.",
+  "interruptores": {
+    "SELLO_BASE": 940,
+    "COLOR_BASE": 950,
+    "PAZ_TOTAL": 957
+  },
+  "variables": {
+    "MUNDOS_RESTAURADOS": 310
+  },
+  "contadorPurgas": 264,
+  "censo": {
+    "mapa": 2021,
+    "prefijo": "PokeMod Restauración:",
+    "titulo": "Censo Cromático"
+  },
+  "mundos": [
+    {
+      "id": "locutora",
+      "mapId": 2023,
+      "zona": 0,
+      "titulo": "La Torre que Escuchaba",
+      "homenaje": "Lavender Town Syndrome",
+      "jefe": "LA LOCUTORA",
+      "ceniza": [
+        "La torre suena igual que siempre, pero el sonido no tiene color.",
+        "Todo aquí es gris de radio: un gris que se mete detrás de los oídos."
+      ],
+      "nexo": {
+        "nombre": "Nexo de Color — La antena muda",
+        "objeto": "la antena de la torre",
+        "antes": "La antena vibra sin transmitir nada. Si apoyas la mano, notas una canción que no está sonando.",
+        "ash": [
+          "Ash: Esto no es de mi mundo. Yo vengo de fuera, y por eso puedo oír lo que vosotros ya no oís.",
+          "Ash: No he venido a purgaros. He venido a devolveros la tarde en la que la torre sólo era una torre.",
+          "Ash: Pikachu, ¿listo? Vamos a devolverle el color a este sitio."
+        ],
+        "despues": [
+          "La antena emite un chasquido limpio y se calla.",
+          "El gris de radio se desprende de las paredes como polvo.",
+          "Por primera vez, la torre suena a silencio… y el silencio tiene color."
+        ],
+        "paz": "Un operador vuelve a poner música de verdad. Nadie recuerda haberla echado de menos."
+      },
+      "pobladores": [
+        {
+          "sprite": "trchar028",
+          "nombre": "Operadora sin turno",
+          "gris": "Operadora: Llevo años emitiendo. No sé qué emito. Nadie me ha dicho que pare.",
+          "color": "Operadora: Hoy he puesto una canción de las mías. Se me ha olvidado apagarla de lo bien que sonaba."
+        },
+        {
+          "sprite": "trchar005",
+          "nombre": "El niño que tararea",
+          "gris": "Niño: No puedo dejar de tararearla. Si paro, empieza otra vez más fuerte.",
+          "color": "Niño: Se me ha olvidado la canción. ¿Tú sabes alguna? Te la cambio por un caramelo."
+        }
+      ]
+    },
+    {
+      "id": "plata",
+      "mapId": 2024,
+      "zona": 1,
+      "titulo": "La Partida Perdida",
+      "homenaje": "Lost Silver",
+      "jefe": "PLATA PERDIDA",
+      "ceniza": [
+        "Una partida que nadie terminó sigue cargada.",
+        "El gris aquí es de pantalla con el brillo bajado: un gris cansado."
+      ],
+      "nexo": {
+        "nombre": "Nexo de Color — La partida sin guardar",
+        "objeto": "una consola encendida en la hierba",
+        "antes": "La consita sigue encendida con una partida a medio acabar. Nadie ha pulsado nada en mucho tiempo.",
+        "ash": [
+          "Ash: Hay partidas que se quedan a medias porque alguien se fue. Eso no es un monstruo: es una pena.",
+          "Ash: Yo no vengo a borraros el archivo. Vengo a terminar la partida con vosotros.",
+          "Ash: Guardamos, salimos, y os dejamos descansar."
+        ],
+        "despues": [
+          "Pulsas GUARDAR. La pantalla parpadea una vez y se apaga sola.",
+          "El gris cansado se levanta del pasto.",
+          "La hierba vuelve a ser verde de hierba, no de pantalla."
+        ],
+        "paz": "Un entrenador recupera a su equipo. Los Pokémon lo reconocen, y eso es todo lo que hacía falta."
+      },
+      "pobladores": [
+        {
+          "sprite": "trchar009",
+          "nombre": "Entrenador sin equipo",
+          "gris": "Entrenador: Tenía seis. Sé que tenía seis. No consigo recordar sus nombres.",
+          "color": "Entrenador: ¡Ahí están! Se me fueron a buscar bayas. Gracias por esperar conmigo."
+        },
+        {
+          "sprite": "trchar016",
+          "nombre": "El Cyndaquil que camina",
+          "gris": "Cyndaquil: (Camina en círculos. Su llama es un punto gris que no calienta.)",
+          "color": "Cyndaquil: ¡Cynda! (La llama vuelve a arder, pequeña y naranja, como debe ser.)"
+        }
+      ]
+    },
+    {
+      "id": "enterrado",
+      "mapId": 2025,
+      "zona": 2,
+      "titulo": "La Fosa del Enterrado",
+      "homenaje": "Buried Alive",
+      "jefe": "EL ENTERRADO",
+      "ceniza": [
+        "La tierra está removida en un círculo que nadie terminó de cavar.",
+        "Aquí el gris es de tierra seca, y huele a barro con la boca cerrada."
+      ],
+      "nexo": {
+        "nombre": "Nexo de Color — La mano de tierra",
+        "objeto": "un montículo con forma de mano",
+        "antes": "Del suelo asoman unos dedos de tierra apretada. No se mueven. No necesitan moverse para dar miedo.",
+        "ash": [
+          "Ash: A nadie se le deja a medio enterrar. Ni en mi mundo, ni en este.",
+          "Ash: No tengo miedo de la tierra, tengo prisa por quitarla.",
+          "Ash: Vamos a sacarlo bien. Despacio, pero bien."
+        ],
+        "despues": [
+          "Apartas la tierra con las manos, como se aparta la nieve.",
+          "Debajo no hay nadie. Sólo una semilla que por fin puede salir.",
+          "El gris de tierra seca se rompe y debajo hay verde de verdad."
+        ],
+        "paz": "Brotan hierbas en la fosa. El hoyo, por fin, es sólo un hoyo: algo que se puede rellenar."
+      },
+      "pobladores": [
+        {
+          "sprite": "trchar021",
+          "nombre": "El que cavaba",
+          "gris": "Cavador: Cavé para sacarlo. Llevo tanto cavando que ya no sé si cavé para salir yo.",
+          "color": "Cavador: Ya está. Ahora puedo tapar el hoyo y plantar algo encima. Eso también se me da bien."
+        },
+        {
+          "sprite": "trchar033",
+          "nombre": "La que contaba los días",
+          "gris": "Mujer: Cuento los días desde que dejamos de oírlo. He perdido la cuenta siete veces.",
+          "color": "Mujer: Hoy no he contado. He mirado el cielo, que es lo que se hace cuando ya pasó."
+        }
+      ]
+    },
+    {
+      "id": "cinta",
+      "mapId": 2026,
+      "zona": 3,
+      "titulo": "La Cinta Carmesí",
+      "homenaje": "Strangled Red",
+      "jefe": "EL NIÑO DE LA CINTA",
+      "ceniza": [
+        "Hay muñecos colgados de los árboles, cada uno con su cinta.",
+        "El gris es de tela vieja: un gris que aprieta."
+      ],
+      "nexo": {
+        "nombre": "Nexo de Color — La cinta del cuello",
+        "objeto": "una cinta roja colgada de una rama",
+        "antes": "La cinta está anudada a la rama con demasiada fuerza. La corteza ha crecido alrededor.",
+        "ash": [
+          "Ash: Una cinta se ata para adornar, no para apretar.",
+          "Ash: Vengo de fuera, así que puedo desatar lo que aquí nadie se atreve.",
+          "Ash: Pikachu, sujeta esto. Voy a aflojar el nudo despacio."
+        ],
+        "despues": [
+          "Deshaces el nudo sin tirar. La corteza respira.",
+          "La cinta cae y, al caer, recupera el rojo.",
+          "Los muñecos dejan de colgar: ahora están sentados, como si descansaran."
+        ],
+        "paz": "Los muñecos descansan bajo los árboles. Nadie los ha colgado; alguien los ha sentado a la sombra."
+      },
+      "pobladores": [
+        {
+          "sprite": "trchar013",
+          "nombre": "El que hace muñecos",
+          "gris": "Artesano: Hago muñecos para que no estén solos. Luego los cuelgo para que no se vayan.",
+          "color": "Artesano: Hoy he hecho uno y lo he dejado en el suelo. Se ha quedado donde lo puse, y eso basta."
+        },
+        {
+          "sprite": "trchar007",
+          "nombre": "El Pikachu de la cinta",
+          "gris": "Pikachu: …Pika. (Lleva una cinta al cuello que no es suya.)",
+          "color": "Pikachu: ¡Pika, pikachu! (Corre en círculos. La cinta está en el suelo, sin apretar a nadie.)"
+        }
+      ]
+    },
+    {
+      "id": "fallo",
+      "mapId": 2027,
+      "zona": 4,
+      "titulo": "Ciudad Glitch",
+      "homenaje": "Glitch City",
+      "jefe": "EL FALLO CERO",
+      "ceniza": [
+        "Las paredes se repiten mal. Algunas casas están dentro de otras casas.",
+        "El gris aquí no es gris: es estática de televisión sin antena."
+      ],
+      "nexo": {
+        "nombre": "Nexo de Color — El bloque que sobra",
+        "objeto": "un trozo de muro que se repite al infinito",
+        "antes": "Hay un bloque de muro metido dentro de otro bloque igual. Y otro dentro. Y otro.",
+        "ash": [
+          "Ash: Esto no es una ciudad: es un error al que nadie le dijo que podía parar.",
+          "Ash: Yo he visto errores así. Se arreglan cerrando el juego… o dándoles una salida.",
+          "Ash: Vamos a darle una puerta al error. Que sea un sitio, no un fallo."
+        ],
+        "despues": [
+          "Empujas el bloque que sobra. Cede, como una puerta mal ajustada.",
+          "Al otro lado hay una calle corta, recta y ridículamente normal.",
+          "La estática se ordena en tejados, ventanas y un gato en una repisa."
+        ],
+        "paz": "La ciudad se queda pequeña y legible. Es fea en dos esquinas, y por eso es real."
+      },
+      "pobladores": [
+        {
+          "sprite": "trchar024",
+          "nombre": "El programador",
+          "gris": "Programador: Encontré el fallo. Lo documenté. El fallo sigue ahí y yo también.",
+          "color": "Programador: Lo arreglé. Tardé tres líneas. A veces arreglar es tirar lo que sobra."
+        },
+        {
+          "sprite": "trchar030",
+          "nombre": "La que vive dentro del muro",
+          "gris": "Voz: Vivo aquí. Mi casa está dentro de otra casa. Salir tarda mucho.",
+          "color": "Vecina: Ahora mi casa da a la calle. Tengo ventana. Es lo mejor que me ha pasado."
+        }
+      ]
+    },
+    {
+      "id": "eco",
+      "mapId": 2028,
+      "zona": 5,
+      "titulo": "El Eco que Jugó Contigo",
+      "homenaje": "el eco de una partida que se niega a desaparecer",
+      "jefe": "EL ECO AHOGADO",
+      "ceniza": [
+        "Alguien sigue jugando en la habitación de al lado, aunque ya no hay nadie.",
+        "El gris es de agua quieta: un gris que devuelve tu cara torcida."
+      ],
+      "nexo": {
+        "nombre": "Nexo de Color — El mando mojado",
+        "objeto": "un mando con olor a río",
+        "antes": "El mando está frío y huele a río. Los botones siguen respondiendo a dedos que no están.",
+        "ash": [
+          "Ash: Un eco es alguien que se quedó a repetir lo último que hizo.",
+          "Ash: Yo no soy de aquí, así que puedo decirle lo que nadie le dijo: ya ganó, puede soltar el mando.",
+          "Ash: Suéltalo. La partida terminó bien. Te lo juro por mi sombra."
+        ],
+        "despues": [
+          "El mando suelta un chasquido pequeño y se queda quieto.",
+          "El agua del río deja de devolverte una cara que no es la tuya.",
+          "Vuelven los verdes de la orilla, los marrones del puente, el azul del cielo."
+        ],
+        "paz": "Un chico deja el mando en la mesa y sale a la calle. No apaga la consola: la deja encendida, que es distinto."
+      },
+      "pobladores": [
+        {
+          "sprite": "trchar003",
+          "nombre": "El que juega solo",
+          "gris": "Chico: Juego contra mí. Gano siempre y no me sirve de nada.",
+          "color": "Chico: Hoy he perdido. Ha sido raro. Me ha gustado. ¿Jugamos otra?"
+        },
+        {
+          "sprite": "trchar018",
+          "nombre": "La hermana que espera",
+          "gris": "Hermana: Lleva ahí dentro desde la tarde del río. Le llevo comida y no me contesta.",
+          "color": "Hermana: Ha salido. Me ha preguntado qué hay de comer. Se me han saltado las lágrimas."
+        }
+      ]
+    },
+    {
+      "id": "jugador",
+      "mapId": 2029,
+      "zona": 6,
+      "titulo": "La Consola de 1996",
+      "homenaje": "la cartucho embrujada",
+      "jefe": "EL JUGADOR DE 1996",
+      "ceniza": [
+        "Un cartucho gris que no es de ningún juego conocido sigue metido en la consola.",
+        "El gris es de plástico viejo, de los que amarillean sin llegar a amarillo."
+      ],
+      "nexo": {
+        "nombre": "Nexo de Color — El cartucho sin etiqueta",
+        "objeto": "un cartucho gris sin pegatina",
+        "antes": "El cartucho no tiene etiqueta. Soplas la ranura por costumbre y el plástico se calienta solo.",
+        "ash": [
+          "Ash: Un cartucho sin nombre es alguien que se quedó sin que lo contaran.",
+          "Ash: Yo vengo de fuera y traigo algo que aquí falta: tiempo para escuchar.",
+          "Ash: Cuéntamelo. Yo me quedo hasta el final."
+        ],
+        "despues": [
+          "Soplas, soplas otra vez, y la consola arranca con un sonido limpio.",
+          "En la pantalla aparece un título que nadie escribió: «VUELVE A CASA».",
+          "El plástico recupera su color, y con él, el resto de la habitación."
+        ],
+        "paz": "El cartucho ya tiene etiqueta, escrita a mano y torcida. Pone: «Gracias por terminarlo»."
+      },
+      "pobladores": [
+        {
+          "sprite": "trchar026",
+          "nombre": "El coleccionista",
+          "gris": "Coleccionista: Tengo todos menos éste. Y éste es el único que se enciende solo.",
+          "color": "Coleccionista: Ya lo he terminado. Ahora puedo ponerlo en la estantería con los demás."
+        },
+        {
+          "sprite": "trchar011",
+          "nombre": "La niña del cartucho",
+          "gris": "Niña: Lo encontré en el rastro. Se enciende cuando me duermo. No sé qué quiere.",
+          "color": "Niña: Ya lo sé: quería que alguien lo terminara. Se lo he dejado a mi hermano pequeño."
+        }
+      ]
+    }
+  ],
+  "pazTotal": {
+    "titulo": "Las siete emisiones en paz",
+    "lineas": [
+      "Siete mundos rotos han vuelto a su tarde.",
+      "No los has purgado: los has dejado descansar.",
+      "Arriba, en la cumbre, el Campeón Silencioso ya no espera sólo para pelear."
+    ]
+  },
+  "registroAgente": {
+    "mapa": 2021,
+    "sprite": "trchar028",
+    "lineas": [
+      "Registro del Agente: Ash Ketchum, procedente de un mundo que estas emisiones no conocen.",
+      "No es un entrenador de aquí. Por eso puede tocar los nexos sin que el gris se le pegue.",
+      "Su encargo es simple y difícil: purgar lo que duele y, después, devolver el color."
+    ]
+  }
+}

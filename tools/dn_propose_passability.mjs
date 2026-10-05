@@ -180,8 +180,28 @@ else entries = entries.filter((m) => [2041, 2088, 2120].includes(m.id));
 
 for (const [id, value] of Object.entries(existing.maps ?? {})) result.maps[id] = value; // conserva lo no reprocesado
 let differences = 0;
+const pendientes = [];
+/**
+ * Mundos cuya «referencia» es una hoja sintetizada por
+ * dn_create_world_sheets.mjs a partir de mapas donantes (mapping.json apunta a
+ * un `origen_*.png`). Esas hojas sirven para que el plano esté completo, pero
+ * no son el material del autor: reproponer los muros de esos mapas a partir de
+ * un sustituto los estropearía. Se conserva lo instalado.
+ */
+const sinteticas = (() => {
+  const mappingPath = path.join(ROOT, "reference", "dimensional_nightmare", "mapping.json");
+  if (!fs.existsSync(mappingPath)) return new Set();
+  const mapping = JSON.parse(fs.readFileSync(mappingPath, "utf8"));
+  return new Set(Object.entries(mapping)
+    .filter(([, file]) => typeof file === "string" && path.basename(file).startsWith("origen_"))
+    .map(([key]) => key));
+})();
 for (const entry of entries) {
   const group = catalog.groups.find((g) => g.key === entry.primary.key);
+  // Un mundo sin mosaico depositado no tiene catálogo, y uno cuya referencia
+  // es una hoja sintetizada no debe reproponerse: en ambos casos se conserva
+  // la pasabilidad instalada, en vez de tirar abajo la de los demás mapas.
+  if (!group || sinteticas.has(entry.primary.key)) { pendientes.push(entry.id); continue; }
   const ficha = group.maps.find((m) => keyOf(entry) === `${group.key}/${path.basename(m.slice)}`);
   if (!ficha) throw new Error(`Ficha ausente en el catálogo: ${keyOf(entry)}`);
   const { features } = await featuresOf(group.key, group.tileset);
@@ -380,6 +400,11 @@ for (const entry of entries) {
     fs.writeFileSync(out, canvas.toBuffer("image/png"));
     console.log(`  overlay → ${path.relative(ROOT, out)} (verde transitable · azul abierto a mano · rojo muro · recuadro = podada)`);
   }
+}
+
+if (pendientes.length) {
+  console.log(`\nAviso: ${pendientes.length} mapa(s) sin mosaico de referencia (${pendientes.join(", ")}).`);
+  console.log("Se conserva la pasabilidad ya instalada. Deposita el mosaico y re-ejecuta.");
 }
 
 if (VERIFY) {
