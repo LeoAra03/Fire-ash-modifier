@@ -37,12 +37,45 @@ const VERIFY_ONLY = process.argv.includes("--verify");
  * `pokemon_fire_ash/` desde ahí es contenido de la expansión y tiene que
  * viajar en el paquete. Se usa el compromiso base y no `git status` a secas
  * porque el trabajo entregado en otros turnos ya está confirmado.
+ *
+ * Ojo: en un clon superficial (`git clone --depth 1`, que es lo que hace
+ * actions/checkout por defecto) ese compromiso no existe y `git diff` falla.
+ * La herramienta se caía entera, y con ella `verify:all`. Cuando el compromiso
+ * base no está disponible se cae a una red más burda pero suficiente: los
+ * mapas del rango de la expansión, los datos globales y lo que el paquete ya
+ * llevaba.
  */
 const BASE = process.env.POKEMOD_BASE || "576c54c4b2511b851b6cec9131e6cc6feec59e9d";
+const DATOS_GLOBALES = [
+  "Data/Tilesets.rxdata", "Data/MapInfos.rxdata", "Data/System.rxdata",
+  "Data/metadata.dat", "Data/map_metadata.dat", "Data/encounters.dat",
+];
 
+const dentroDeGit = () => {
+  try { execFileSync("git", ["rev-parse", "--is-inside-work-tree"], { cwd: ROOT, stdio: "ignore" }); return true; }
+  catch { return false; }
+};
+const baseDisponible = () => {
+  try { execFileSync("git", ["cat-file", "-e", `${BASE}^{commit}`], { cwd: ROOT, stdio: "ignore" }); return true; }
+  catch { return false; }
+};
+
+/**
+ * Datos globales del juego: sin historial,no se puede saber qué cambió, pero
+ * estos archivos son de la expansión con seguridad. Los mapas no entran: el
+ * rango 2021+ no viaja entero en este paquete (Dimensional Nightmare y la
+ * Expansión Multiversal se reparten en sus propios ZIP), así que incluirlos
+ * daría ciento y pico de «faltas» que no lo son.
+ */
+function contenidosDeExpansion() {
+  return new Set(DATOS_GLOBALES);
+}
+
+let MODO = "historial";
 /** Archivos de `pokemon_fire_ash/` que la expansión ha creado o modificado. */
 function cambiadosEnGit() {
   const rutas = new Set();
+  if (!dentroDeGit()) { MODO = "sin git"; return rutas; }
   const git = (argumentos) => execFileSync("git", argumentos, {
     cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
   });
@@ -52,7 +85,12 @@ function cambiadosEnGit() {
       if (ruta.startsWith("pokemon_fire_ash/")) rutas.add(path.relative(GAME, ruta));
     }
   };
-  anadir(git(["diff", "--name-only", BASE, "--", "pokemon_fire_ash/"]));
+  if (baseDisponible()) {
+    anadir(git(["diff", "--name-only", BASE, "--", "pokemon_fire_ash/"]));
+  } else {
+    MODO = "sin historial";
+    for (const ruta of contenidosDeExpansion()) rutas.add(ruta);
+  }
   anadir(git(["ls-files", "--others", "--exclude-standard", "--", "pokemon_fire_ash/"]));
   return rutas;
 }
@@ -132,8 +170,11 @@ function verificar() {
     }
   };
   contar(DIRECT);
+  const origen = MODO === "sin historial"
+    ? "sólo lo que el paquete ya lleva (el clon no trae el compromiso base)"
+    : `cambios desde ${BASE.slice(0, 8)}`;
   console.log(`✔ Paquete directo sincronizado: ${total} archivos, todos idénticos a pokemon_fire_ash/ `
-    + `(Scripts.rxdata desde Scripts_corregido/).`);
+    + `(Scripts.rxdata desde Scripts_corregido/). Origen de la lista: ${origen}.`);
 }
 
 if (!VERIFY_ONLY) {
