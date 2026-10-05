@@ -149,7 +149,9 @@
     "verify:disfraz": "node tools/apply_rocket_disfraz.mjs --verify",
     "sync:paquete": "node tools/sync_paquete_directo.mjs",
     "verify:paquete": "node tools/sync_paquete_directo.mjs --verify",
-    "build:paquete:zip": "node tools/build_direct_package.mjs"
+    "build:paquete:zip": "node tools/build_direct_package.mjs",
+    "atlas:check": "node tools/atlas_ingest_reference.mjs --check",
+    "atlas:ingest": "node tools/atlas_ingest_reference.mjs"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.10",

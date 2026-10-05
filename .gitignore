@@ -77,3 +77,6 @@ roms pokemon/
 
 # Paquete TIMPS Swarm: se guarda el zip, no el contenido descomprimido
 agents/timps-swarm-main/
+
+# Referencia de Atlas Mil (generada por tools/atlas_ingest_reference.mjs)
+reference/atlas/
