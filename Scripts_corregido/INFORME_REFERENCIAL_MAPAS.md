@@ -1,6 +1,6 @@
 # Informe referencial de mapas — 1.022 fichas
 
-**Generado:** 2026-10-04
+**Generado:** 2026-10-05
 **Alcance:** Atlas Mil (Map1021–Map2020) y 22 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
@@ -5107,17 +5107,17 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map997 — Mirror Island - Atrium
 - **Categoría:** Isla Espejo.
 - **Referencia:** Atrio de llegada de Isla Espejo: concentra el acceso a la isla, la orientación inicial y el ferry de retorno.
-- **Datos compilados:** 56×48 tiles; 16 eventos; tileset 1.
+- **Datos compilados:** 56×48 tiles; 18 eventos; tileset 1.
 
 ### Map998 — Mirror Island - Gallery of Legends
 - **Categoría:** Isla Espejo.
 - **Referencia:** Galería de Leyendas: sala de enfrentamientos con reflejos de entrenadores y líneas alternativas del multiverso.
-- **Datos compilados:** 56×52 tiles; 14 eventos; tileset 1.
+- **Datos compilados:** 56×52 tiles; 16 eventos; tileset 1.
 
 ### Map999 — Mirror Island - Zero Archive
 - **Categoría:** Isla Espejo.
 - **Referencia:** Archivo Cero: cámara final de Isla Espejo, con su encuentro de cierre y una vía de regreso al exterior.
-- **Datos compilados:** 56×52 tiles; 14 eventos; tileset 1.
+- **Datos compilados:** 56×52 tiles; 17 eventos; tileset 1.
 
 ## Panteón Pokégod
 
