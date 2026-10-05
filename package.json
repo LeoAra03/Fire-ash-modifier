@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
   "scripts": {
-    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs",
+    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && node tools/gba_multipart_extract.test.mjs",
     "test:ui": "node --experimental-vm-modules web/js/ui.test.mjs",
     "verify:tier2:macro04": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro04.json --backup atlas_tier2_macro04_originals --verify",
     "verify:tier2:macro05": "node tools/apply_tier2_routes.mjs --input content/atlas_tier2_blueprints_macro05.json --backup atlas_tier2_macro05_originals --verify",
@@ -22,6 +22,7 @@
     "rom:unpack": "node tools/unpack_guest_rom.mjs",
     "rom:inspect": "node tools/inspect_guest_rom.mjs",
     "rom:inspect:gba": "node tools/inspect_gba_rom.mjs",
+    "rom:unpack:gba:parts": "node tools/unpack_gba_parts.mjs",
     "rom:mapas": "node tools/gba_maps_events.mjs",
     "verify:rom:inspect": "node tools/inspect_guest_rom.mjs --selftest",
     "render:atlas:macro02": "node tools/render_atlas_visual_reference.mjs --macro 02",

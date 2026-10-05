@@ -64,7 +64,11 @@ python tools/download_game.py --full        # completo 3.7 + parche 3.7.1 (verif
 python tools/download_game.py --audioless   # ligero, sin audio
 python tools/kirin_check.py game            # chequeo de compatibilidad
 python tools/backup.py game                 # backup a ZIP
+node tools/unpack_gba_parts.mjs --entrada reference/roms_invitadas/entrada --salida "reference/roms_invitadas/entrada/gba roms" --clave 12345678
 ```
+
+Para ese desempaquetado coloca exactamente `gba.part01`, `gba.part02`,
+`gba.part03` y `gba.part04` dentro de `reference/roms_invitadas/entrada/`.
 
 ## Estructura
 

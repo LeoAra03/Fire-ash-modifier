@@ -36,16 +36,20 @@ Formatos, de mejor a peor:
 
 1. **Carpeta ya descomprimida** con `Data/`, `Graphics/` y `Audio/`. Es lo ideal.
 2. **ZIP** — se abre sin problema en este entorno (`unzip`, con o sin clave).
-3. **RAR de varias partes** — **no se puede abrir aquí**: el entorno no tiene
-   `unrar`, `unar`, `7z` ni `bsdtar`, `apt` no tiene red y `libunrar` no está
-   disponible. Si llega en RAR, hay que descomprimirlo en el PC y subir la
-   carpeta, o recomprimirlo como ZIP.
+3. **Multipart GBA protegido** con los cuatro archivos `gba.part01`,
+   `gba.part02`, `gba.part03` y `gba.part04` — se abre con
+   `node tools/unpack_gba_parts.mjs` (requiere `7z`, `7za` o `7zr`).
+4. **RAR de varias partes** distinto del caso anterior — sigue dependiendo de
+   que exista `unrar`, `unar`, `7z` o `bsdtar`; si no, hay que descomprimirlo en
+   el PC y subir la carpeta, o recomprimirlo como ZIP.
 
 Preparación automática:
 
 ```bash
 node tools/unpack_guest_rom.mjs --entrada reference/roms_invitadas/entrada --slug team_rocket
 node tools/unpack_guest_rom.mjs --entrada reference/roms_invitadas/entrada --slug glazed --clave 12345678
+node tools/unpack_gba_parts.mjs --entrada reference/roms_invitadas/entrada --salida "reference/roms_invitadas/entrada/gba roms" --clave 12345678
+npm run rom:unpack:gba:parts -- --entrada reference/roms_invitadas/entrada --salida "reference/roms_invitadas/entrada/gba roms" --clave 12345678
 ```
 
 Busca el contenedor, prueba contraseñas (las que pases con `--clave` y la serie
@@ -53,6 +57,10 @@ numérica típica: 1, 12, 123, …, 12345678), descomprime en
 `reference/roms_invitadas/<slug>/juego/` y te imprime el comando siguiente. Si
 el contenedor es un RAR y no hay herramienta, lo dice y te propone las dos
 alternativas.
+
+Para el caso multipart (`gba.part01`…`gba.part04`) el comando crea la carpeta
+`gba roms` si no existe, usa `gba.part01` como parte inicial y copia al destino
+solo rutas válidas dentro de esa carpeta.
 
 El ROM invitado debe conservar la estructura de RPG Maker XP:
 
