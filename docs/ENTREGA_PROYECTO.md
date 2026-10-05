@@ -133,6 +133,37 @@ También se auditaron y repararon los **1000 mapas de Atlas Mil** con
 `tools/atlas_tile_audit.mjs` y `tools/atlas_tile_repair.mjs`: 25 mapas
 salían en negro y ya no queda ninguno. Informe: `docs/atlas_tile_audit.md`.
 
+## 6 ter. Novedad de esta entrega: Arceus como Omega Flowey, dobles coreografiados y la Vía de las Nueve Eras
+
+Tres frentes, y con una regla dura por delante: **sin tocar el contenido
+original de Fire Ash**. Todo lo nuevo son mapas, entrenadores y objetos en
+identificadores nuevos.
+
+1. **Arceus se escribe como un dios que manda sobre conceptos y sabe que está
+   dentro de un juego.** Cada fase borra una palabra del combate (OBJETO,
+   CIELO, TALENTO, VELOCIDAD, TIPO, REGLA), lo anuncia en un cartel y lo
+   explica antes de pegar. El módulo `CanonArceus::Meta` hace que se dirija a
+   su retador por su nombre completo, **Ash Ketchum**, hable del archivo de
+   guardado, de la mano que pulsa los botones y de las partidas que el jugador
+   ha apagado. Detalle: `docs/CANON_ARCEUS.md` §6.
+2. **Los combates dobles no se rompen y sostienen la cinemática.** Un
+   verificador dedicado audita el montaje de cada 2 vs 1 directamente sobre
+   `Scripts.rxdata`: entrenadores declarados, evento de batalla apuntando al
+   `pbArceusCinematicCpuBattle` correcto, variables inicializadas y `rescue`
+   en cada escena. **25 de 25 comprobaciones en verde.**
+3. **Mapas que no se repiten y un gimnasio nuevo de verdad.** La **Vía de las
+   Nueve Eras** (Map2195, 106×106) reúne nueve distritos de 30×30, cada uno
+   una ventana real de una ciudad canónica de Kanto, Johto, Hoenn, Sinnoh,
+   Unova, Kalos, Alola, Galar y Glazed, unidos en serpentina: 1 079 tiles
+   distintos, 68 % andable, **0 celdas vacías y 0 inalcanzables**. Y el
+   **Gimnasio Atlas · Las Nueve Eras** (Map2196, 46×42, tileset 14) estrena
+   nueve entrenadores de era, la Líder Vera y la **Medalla Era**, con puerta
+   en el hub de Atlas Mil (Map1001, 35,30) cerrada hasta el duelo de Arceus.
+   Detalle: `docs/VIA_NUEVE_ERAS.md`.
+
+Verificación nueva: `npm run verify:arceus:cinematics` y `npm run verify:eras`,
+ambos ya encadenados en `npm run verify:all`.
+
 ## 7. Siguiente paso
 
 Con el proyecto jugable, el objetivo abierto es la **fusión de Glazed, Light

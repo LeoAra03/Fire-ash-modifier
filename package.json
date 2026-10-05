@@ -71,7 +71,7 @@
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
     "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify",
     "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify",
-    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:expansion:package && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:rom:inspect && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all && npm run verify:canon:arceus && npm run verify:atlas:tiles",
+    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:expansion:package && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:rom:inspect && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all && npm run verify:canon:arceus && npm run verify:atlas:tiles && npm run verify:arceus:cinematics && npm run verify:eras",
     "dn:sheets": "node tools/dn_render_sheets.mjs --all",
     "dn:sheets:ep": "node tools/dn_render_sheets.mjs --episode",
     "dn:mosaicos": "node tools/dn_render_recreacion.mjs --all",
@@ -128,7 +128,10 @@
     "verify:canon:arceus": "node tools/apply_canon_arceus.mjs --verify",
     "audit:atlas:tiles": "node tools/atlas_tile_audit.mjs",
     "repair:atlas:tiles": "node tools/atlas_tile_repair.mjs",
-    "verify:atlas:tiles": "node tools/atlas_tile_repair.mjs --verify"
+    "verify:atlas:tiles": "node tools/atlas_tile_repair.mjs --verify",
+    "build:eras": "node tools/apply_atlas_eras_map.mjs",
+    "verify:eras": "node tools/apply_atlas_eras_map.mjs --verify",
+    "verify:arceus:cinematics": "node tools/verify_arceus_cinematics.mjs"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

@@ -1,7 +1,7 @@
-# Informe referencial de mapas — 1.022 fichas
+# Informe referencial de mapas — 1.024 fichas
 
 **Generado:** 2026-10-05
-**Alcance:** Atlas Mil (Map1021–Map2020) y 22 mapas complementarios en `Otros_Mapas_16.png`.
+**Alcance:** Atlas Mil (Map1021–Map2020) y 24 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
 
@@ -13,6 +13,7 @@
 - **Monte Silver:** Falda Map2021, Gruta de los Testigos Map2030 y Cumbre Map2022.
 - **Multiverso Creepypasta:** siete emisiones, Map2023–Map2029.
 - **La Ruta de Dios:** siete pisos Map2031–Map2037 y aproximación celestial Map2038.
+- **Vía de las Nueve Eras:** Map2195 (vía de nueve distritos) y Map2196 (Gimnasio Atlas · Las Nueve Eras).
 
 **Colisión evitada:** Map2030 sigue siendo la Gruta de los Testigos. La aproximación de La Ruta de Dios está en Map2038; los pisos permanecen en Map2031–Map2037.
 
@@ -5100,7 +5101,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 - **Referencia:** Eco dimensional de Selva Prismática (Map1006). Anomalía documentada: Los nombres de Selva Prismática cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Llamar por señas — Eco 1000. Primer contrajuego: Saludar al lugar con gestos.
 - **Datos compilados:** 70×50 tiles; 4 eventos; tileset 1.
 
-## Mapas complementarios — 22 fichas
+## Mapas complementarios — 24 fichas
 
 ## Isla Espejo
 
@@ -5221,6 +5222,18 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 7F, Cima del Génesis: altar de Arceus y desenlace de La Ruta de Dios.
 - **Datos compilados:** 46×46 tiles; 9 eventos; tileset 1.
+
+## Vía de las Nueve Eras
+
+### Map2195 — Atlas Mil · Vía de las Nueve Eras
+- **Categoría:** Vía de las Nueve Eras.
+- **Referencia:** Vía de las Nueve Eras: nueve distritos de 30×30, cada uno tomado de una ciudad canónica de Kanto, Johto, Hoenn, Sinnoh, Unova, Kalos, Alola, Galar y Glazed, unidos por avenidas en serpentina.
+- **Datos compilados:** 106×106 tiles; 13 eventos; tileset 1.
+
+### Map2196 — Gimnasio Atlas · Las Nueve Eras
+- **Categoría:** Vía de las Nueve Eras.
+- **Referencia:** Gimnasio Atlas · Las Nueve Eras: recinto de la Líder Vera, nueve entrenadores de era y la Medalla Era.
+- **Datos compilados:** 46×42 tiles; 11 eventos; tileset 14.
 
 ## Límites de esta referencia
 

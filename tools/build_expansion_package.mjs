@@ -43,6 +43,7 @@ const maps = new Set([
   PLAN.atlas.captainMap, PLAN.atlas.dock.mapId,        // Ciudad Carmín y muelle
   PLAN.mirror.mansionMap, PLAN.mirror.basement.mapId, PLAN.mirror.islandMap,
   998, 999,                                            // resto de la Isla Espejo
+  2195, 2196,                                          // Vía de las Nueve Eras y su gimnasio
 ]);
 
 /** Archivos del arco, siempre relativos a la raíz del juego. */
@@ -50,7 +51,9 @@ function fileList() {
   const files = [
     "Data/MapInfos.rxdata",     // nombres de los mapas nuevos
     "Data/map_metadata.dat",    // metadatos de los mapas nuevos
-    "Data/trainers.dat",        // los cinco combates de la Liga Oscura
+    "Data/trainers.dat",        // los cinco combates de la Liga Oscura y los diez del Gimnasio de las Eras
+    "Data/trainer_types.dat",   // tipos del Gimnasio de las Eras
+    "Data/items.dat",           // Medalla Era
     "Data/species.dat",         // los doce Pokégods
   ];
   for (const id of [...maps].sort((a, b) => a - b)) files.push(`Data/${mapFile(id)}`);

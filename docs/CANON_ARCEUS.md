@@ -137,3 +137,69 @@ porque mover uno rompería el manifiesto de servicios de Atlas Mil.
 **Resultado:** de 975 mapas limpios a **1000 de 1000**.
 
 El informe completo está en `docs/atlas_tile_audit.md`.
+
+---
+
+## 6. Arceus como Omega Flowey: el dios que sabe que es un archivo
+
+La capa anterior lo presentaba como un dios poderoso. Esta lo escribe como lo
+que tiene que ser: **un dios que manda sobre conceptos y que sabe que está
+dentro de un juego**. No reparte poder: **borra las palabras** con las que el
+combate se entiende, y se dirige a su retador por su nombre completo,
+**Ash Ketchum**, porque lo ha visto desde fuera de la pantalla.
+
+### 6.1 Conceptos, no estadísticas
+
+Cada fase borra un concepto y lo anuncia en un cartel a pantalla completa.
+El contenido vive en `content/canon_arceus.json` (`fases_dios`) y lo emite
+`tools/apply_canon_arceus.mjs`:
+
+| Fase | Concepto borrado | Cartel | Efecto |
+|---|---|---|---|
+| 1 | OBJETO | ARCEUS BORRA EL CONCEPTO DE «OBJETO» | sello (`EMBARGO`, `MAGICROOM`) |
+| 2 | CIELO | ARCEUS BORRA EL CONCEPTO DE «CIELO» | clima |
+| 3 | TALENTO | ARCEUS BORRA EL CONCEPTO DE «TALENTO» | talento (`GASTROACID`, `COREENFORCER`) |
+| 4 | VELOCIDAD | ARCEUS BORRA EL CONCEPTO DE «VELOCIDAD» | velocidad (`TRICKROOM`, `WONDERROOM`) |
+| 5 | TIPO | ARCEUS BORRA EL CONCEPTO DE «TIPO» | tipo (`JUDGMENT`, `RECOVER`, `TAILWIND`) |
+| 6 | REGLA | ARCEUS BORRA EL CONCEPTO DE «REGLA» | regla (`JUDGMENT`, `EXTREMESPEED`, `PERISHSONG`, `RECOVER`) |
+
+Cada fase lleva además una `linea_meta` que Arceus pronuncia **antes** de
+pegar: la regla se explica, no se sufre a ciegas.
+
+### 6.2 Conciencia de estar dentro de un juego (`CanonArceus::Meta`)
+
+`tools/apply_canon_arceus.mjs` instala un módulo nuevo, `CanonArceus::Meta`,
+con cinco bloques y un método `hablar` que los recorre. Arceus nombra el
+archivo de guardado, la mano que pulsa los botones y las partidas que el
+jugador ha apagado; y recuerda entre una y otra:
+
+- **INTRO** — «_Ash Ketchum. Déjame decir tu nombre entero: es lo único de esta
+  sala que no escribí yo._» / «_Saliste de Pueblo Paleta un martes. Tienes diez
+  años desde hace veinte años._» / «_Esa mano pulsando A… la veo. Siempre la he
+  visto._»
+- **REMATCH** — «_¿Cuántas veces has apagado la consola ya?_»
+- **DERROTA** — «_Cárgalo. Vuelve. Para ti es volver a empezar. Para mí es la
+  misma tarde._»
+- **CAPTURADO** — «_Así que has metido a un dios en una bola. Ahora, desde
+  dentro, veo el menú._»
+- **VICTORIA** — «_El niño que no crece le ha ganado al que no muere._»
+
+El módulo se apoya en alias de `pbStartBattleSendOut` y `pbEndOfBattle`
+(`ArceusMeta` a nivel superior) para que el cartel de fase y la línea meta
+salgan **dentro** del combate, sin duplicar la escena.
+
+### 6.3 Los dobles no se rompen y están coreografiados
+
+El montaje de los combates 2 vs 1 se audita solo, leyendo `Scripts.rxdata`
+sección `PokeMod_RutaDeDios`:
+
+```bash
+node tools/verify_arceus_cinematics.mjs   # 25 comprobaciones
+npm run verify:arceus:cinematics
+```
+
+Comprueba que cada enfrentamiento cinematográfico tiene sus dos
+entrenadores declarados, que el evento de batalla existe y apunta al
+`pbArceusCinematicCpuBattle` correcto, que las variables de resultado están
+inicializadas y que hay un `rescue` por si algo falla — **un doble mal montado
+no puede tumbar la escena**. Resultado: **25/25 en verde**.

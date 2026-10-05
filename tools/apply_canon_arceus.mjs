@@ -60,11 +60,29 @@ function respaldo(archivo) {
 
 /* ────────────────────────────────── Ruby ───────────────────────────────── */
 
+const rubyStr = (texto) => String(texto).replace(/\\/g, "\\\\").replace(/"/g, "'");
+
 const FASES_RUBY = Object.entries(CFG.fases_dios)
   .map(([fase, datos]) => {
     const movs = (datos.movimientos || []).map((m) => `:${m}`).join(", ");
-    const mensaje = String(datos.mensaje).replace(/\\/g, "\\\\").replace(/"/g, "'");
-    return `    ${fase} => { :movs => [${movs}], :efecto => :${datos.efecto}, :msg => "${mensaje}" },`;
+    const partes = [
+      `:movs => [${movs}]`,
+      `:efecto => :${datos.efecto}`,
+      `:msg => "${rubyStr(datos.mensaje)}"`,
+      `:concepto => "${rubyStr(datos.concepto)}"`,
+      `:cartel => "${rubyStr(datos.cartel)}"`,
+      `:linea => "${rubyStr(datos.linea_meta)}"`,
+    ];
+    return `    ${fase} => { ${partes.join(", ")} },`;
+  })
+  .join("\n");
+
+/** Bloques de diálogo de la cuarta pared, como constantes Ruby. */
+const DIALOGO_RUBY = Object.entries(CFG.meta)
+  .filter(([, valor]) => Array.isArray(valor))
+  .map(([clave, lineas]) => {
+    const items = lineas.map((l) => `    "${rubyStr(l)}",`).join("\n");
+    return `  ${clave.toUpperCase()} = [\n${items}\n  ]`;
   })
   .join("\n");
 
@@ -84,7 +102,8 @@ module CanonArceus
   SW_SELLO      = ${SW.SELLO_MOCHILA}
 
   # Cada fase doblega una regla distinta del combate: el dios no solo pega,
-  # reescribe el sistema.
+  # reescribe el sistema. Y cada fase BORRA UN CONCEPTO: no cambia el terreno,
+  # cambia lo que significa jugar.
   FASES = {
 ${FASES_RUBY}
   }
@@ -143,9 +162,35 @@ ${FASES_RUBY}
 
   # Efectos de "dios" sobre la propia partida: el combate deja de ser un sitio
   # seguro y pasa a ser una habitacion donde las reglas las pone otro.
+  # Arceus habla como quien sabe que esto es un juego: porque lo sabe.
+  module Meta
+${DIALOGO_RUBY}
+
+    def self.hablar(lineas, battle = nil)
+      (lineas || []).each do |linea|
+        begin
+          if battle && battle.respond_to?(:pbDisplayPaused)
+            battle.pbDisplayPaused(_INTL(linea.to_s))
+          else
+            pbMessage(_INTL(linea.to_s))
+          end
+        rescue StandardError
+        end
+      end
+    end
+  end
+
   def self.efecto_fase(battle, battler, fase)
     datos = FASES[fase]
     return if !datos
+    # 1. El cartel: el dios anuncia qué concepto deja de existir.
+    begin
+      battle.pbDisplay(_INTL("\\n" + datos[:cartel].to_s)) if battle && battle.respond_to?(:pbDisplay)
+    rescue StandardError
+    end
+    # 2. La voz: se lo dice a Ash mirando al jugador, no al Pokémon.
+    Meta.hablar([datos[:linea]], battle)
+    # 3. El efecto clásico de la fase.
     begin
       battle.pbDisplay(_INTL(datos[:msg].to_s)) if battle && battle.respond_to?(:pbDisplay)
     rescue StandardError
@@ -153,28 +198,33 @@ ${FASES_RUBY}
     begin
       case datos[:efecto]
       when :sello
-        # La mochila deja de existir dentro de esta habitacion.
+        # Concepto borrado: OBJETO. La mochila deja de existir aqui dentro.
         $game_switches[SW_SELLO] = true if $game_switches
         campo(battle, :MagicRoom, 5)
       when :clima
+        # Concepto borrado: CIELO (y, con el, el de volar).
         batalla_clima(battle, fase)
         campo(battle, :Gravity, 5)
-      when :tono
-        # Las habilidades callan: el dios apaga el nombre de cada talento.
+      when :talento
+        # Concepto borrado: TALENTO y SUERTE. Sin habilidades y sin criticos.
         silenciar_habilidades(battle, battler)
         campo(battle, :MagicRoom, 5)
+        canto_de_suerte(battle, battler)
         $game_screen.start_tone_change(Tone.new(-70, -70, -70, 0), 20) if $game_screen
-      when :sacudida
-        # Lo rapido sera lento y lo lento, letal.
+      when :velocidad
+        # Concepto borrado: VELOCIDAD (y, con ella, el de resistencia).
         campo(battle, :TrickRoom, 5)
         campo(battle, :WonderRoom, 5)
         $game_screen.start_shake(8, 6, 20) if $game_screen
-      when :destello
+      when :tipo
+        # Concepto borrado: TIPO.
         cambiar_tablero(battler, fase)
         $game_screen.start_flash(Color.new(255, 255, 255, 200), 12) if $game_screen
-      when :final
+      when :regla
+        # Concepto borrado: REGLA. Ya no queda nada que respetar.
         cambiar_tablero(battler, fase)
         batalla_clima(battle, fase)
+        canto_de_suerte(battle, battler)
         $game_screen.start_flash(Color.new(255, 240, 200, 255), 20) if $game_screen
         $game_screen.start_tone_change(Tone.new(60, -40, -40, 0), 30) if $game_screen
       end
@@ -201,6 +251,26 @@ ${FASES_RUBY}
       next if !otro.respond_to?(:ability=)
       otro.ability = nil
     end
+  rescue StandardError
+  end
+
+  # "Borra el concepto de suerte": nadie golpea a Arceus en el punto debil.
+  # El velo sagrado es un efecto real por lado del motor de combate.
+  def self.canto_de_suerte(battle, battler)
+    return if !battle || !defined?(PBEffects)
+    constante = PBEffects.const_get(:LuckyChant) rescue nil
+    return if !constante
+    indice = nil
+    begin
+      indice = battler.index if battler && battler.respond_to?(:index)
+    rescue StandardError
+    end
+    return if !indice
+    lado = (indice % 2)
+    arreglo = battle.respond_to?(:sides) ? battle.sides[lado] : nil
+    arreglo = battle.field if !arreglo || !arreglo.respond_to?(:effects)
+    return if !arreglo || !arreglo.respond_to?(:effects)
+    arreglo.effects[constante] = 5
   rescue StandardError
   end
 
@@ -256,6 +326,90 @@ if defined?(RUTA_ARCEUS_MOVE_SETS)
       set.uniq!
     end
   rescue StandardError
+  end
+end
+
+# ------------------------------------------------------------------------------
+# ArceusMeta: la cuarta pared. Arceus sabe que esto es un juego, conoce el
+# archivo de guardado, ve la mano que pulsa los botones y se lo dice a Ash
+# Ketchum por su nombre completo. No es un adorno: cada linea va acompanada de
+# un concepto que deja de existir de verdad en el combate.
+# ------------------------------------------------------------------------------
+module ArceusMeta
+  def self.lineas(clave)
+    CanonArceus::Meta.const_defined?(clave.to_s.upcase) ? CanonArceus::Meta.const_get(clave.to_s.upcase) : []
+  rescue StandardError
+    []
+  end
+
+  def self.decir(clave, battle = nil)
+    CanonArceus::Meta.hablar(lineas(clave), battle)
+  end
+
+  # Apertura: se muestra una sola vez por combate, antes de sacar al Pokémon.
+  def self.intro(battle)
+    return if !battle
+    battle.instance_variable_set(:@arceus_meta_ya_hablo, true)
+    if CanonArceus.sw(CanonArceus::SW_COMPLETADO)
+      decir("rematch", battle)
+    else
+      decir("intro", battle)
+    end
+  end
+
+  # Cierre: el dios se despide como quien sabe que el archivo se puede volver
+  # a cargar. 1 = victoria, 2 = derrota, 4 = captura. Se usa pbMessage de mapa
+  # (sin ventana de combate) para no depender de que la escena siga viva.
+  def self.cierre(battle, decision)
+    return if !battle
+    case decision
+    when 1 then decir("victoria")
+    when 2 then decir("derrota")
+    when 4 then decir("capturado")
+    end
+  end
+end
+
+["PokeBattle_Battle", "Battle"].each do |nombre_clase|
+  next if !Object.const_defined?(nombre_clase)
+  clase = Object.const_get(nombre_clase)
+  next if !clase
+
+  # Apertura de la cuarta pared, solo en el combate divino.
+  if clase.method_defined?(:pbStartBattleSendOut) && !clase.method_defined?(:arceus_meta_send_out_original)
+    clase.class_eval do
+      alias arceus_meta_send_out_original pbStartBattleSendOut
+
+      def pbStartBattleSendOut(*args)
+        begin
+          divino = respond_to?(:arceus_divine?) && arceus_divine?
+          ya = instance_variable_get(:@arceus_meta_ya_hablo)
+          if divino && !ya
+            salvaje = !respond_to?(:wildBattle?) || wildBattle?
+            ArceusMeta.intro(self) if salvaje
+          end
+        rescue StandardError
+        end
+        arceus_meta_send_out_original(*args)
+      end
+    end
+  end
+
+  # Despedida: "carga la partida, yo sigo aqui".
+  if clase.method_defined?(:pbEndOfBattle) && !clase.method_defined?(:arceus_meta_end_original)
+    clase.class_eval do
+      alias arceus_meta_end_original pbEndOfBattle
+
+      def pbEndOfBattle(*args)
+        begin
+          if respond_to?(:arceus_divine?) && arceus_divine?
+            ArceusMeta.cierre(self, args[0])
+          end
+        rescue StandardError
+        end
+        arceus_meta_end_original(*args)
+      end
+    end
   end
 end
 

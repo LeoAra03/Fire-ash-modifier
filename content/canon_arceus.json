@@ -154,7 +154,10 @@
         "EMBARGO",
         "MAGICROOM"
       ],
-      "efecto": "sello"
+      "efecto": "sello",
+      "concepto": "OBJETO",
+      "cartel": "ARCEUS BORRA EL CONCEPTO DE «OBJETO»",
+      "linea_meta": "Arceus: ¿Ves esa mochila? Es una lista de cosas que existen porque yo las dejé existir."
     },
     "2": {
       "mensaje": "Arceus inclina el cielo a su voluntad. El clima obedecerá a su fase.",
@@ -162,7 +165,10 @@
         "GASTROACID",
         "GRAVITY"
       ],
-      "efecto": "clima"
+      "efecto": "clima",
+      "concepto": "CIELO",
+      "cartel": "ARCEUS BORRA EL CONCEPTO DE «CIELO»",
+      "linea_meta": "Arceus: Arriba no hay nada. Nunca lo hubo. Yo lo sostenía para que no os asustarais."
     },
     "3": {
       "mensaje": "Arceus borra el nombre de tus talentos: las habilidades callan.",
@@ -170,7 +176,10 @@
         "GASTROACID",
         "COREENFORCER"
       ],
-      "efecto": "tono"
+      "efecto": "talento",
+      "concepto": "TALENTO",
+      "cartel": "ARCEUS BORRA EL CONCEPTO DE «TALENTO»",
+      "linea_meta": "Arceus: Ese don que tu Pokémon cree tener... era una línea que yo escribí. Ya no está."
     },
     "4": {
       "mensaje": "Arceus invierte la lógica del combate: lo rápido será lento.",
@@ -178,7 +187,10 @@
         "TRICKROOM",
         "WONDERROOM"
       ],
-      "efecto": "sacudida"
+      "efecto": "velocidad",
+      "concepto": "VELOCIDAD",
+      "cartel": "ARCEUS BORRA EL CONCEPTO DE «VELOCIDAD»",
+      "linea_meta": "Arceus: Lo rápido será lento y lo lento, letal. El orden lo digo yo, no los números."
     },
     "5": {
       "mensaje": "Arceus cambia de tablilla: el tipo de su Juicio ya no es el mismo.",
@@ -187,7 +199,10 @@
         "RECOVER",
         "TAILWIND"
       ],
-      "efecto": "destello"
+      "efecto": "tipo",
+      "concepto": "TIPO",
+      "cartel": "ARCEUS BORRA EL CONCEPTO DE «TIPO»",
+      "linea_meta": "Arceus: Fuego, agua, planta... etiquetas para que los niños puedan jugar. Míralas arder."
     },
     "6": {
       "mensaje": "Arceus deja de jugar con las reglas: ahora las escribe él.",
@@ -197,7 +212,38 @@
         "PERISHSONG",
         "RECOVER"
       ],
-      "efecto": "final"
+      "efecto": "regla",
+      "concepto": "REGLA",
+      "cartel": "ARCEUS BORRA EL CONCEPTO DE «REGLA»",
+      "linea_meta": "Arceus: Ahora solo queda lo que yo diga que existe. Y he decidido que exista esto."
     }
+  },
+  "meta": {
+    "nota": "Arceus sabe que está dentro de un juego, conoce el archivo de guardado, sabe que alguien pulsa los botones y se lo dice a Ash Ketchum por su nombre completo.",
+    "intro": [
+      "Arceus: Ash Ketchum. Déjame decir tu nombre entero: es lo único de esta sala que no escribí yo.",
+      "Arceus: Saliste de Pueblo Paleta un martes. Tienes diez años desde hace veinte años.",
+      "Arceus: ¿Sabes qué es este sitio? Un archivo. Alguien lo guardó antes de que tú llegaras.",
+      "Arceus: Y tú no decides. Fuera de esta pantalla hay alguien sosteniendo el mando.",
+      "Arceus: Esa mano pulsando A... la veo. Siempre la he visto.",
+      "Arceus: Puedes apagar la consola. Puedes cargar otra partida. Puedes intentarlo mil veces.",
+      "Arceus: Yo también: yo soy el que se acuerda entre partida y partida."
+    ],
+    "rematch": [
+      "Arceus: Otra vez. ¿Cuántas veces has apagado la consola ya?",
+      "Arceus: No importa: yo recuerdo cada una. Todas están aquí, en el mismo archivo."
+    ],
+    "derrota": [
+      "Arceus: Cárgalo. Vuelve. Yo seguiré exactamente donde estoy.",
+      "Arceus: Eso es lo que nadie entiende: para ti es volver a empezar. Para mí es la misma tarde."
+    ],
+    "capturado": [
+      "Arceus: ...Así que has metido a un dios en una bola.",
+      "Arceus: Bien. Ahora veremos qué haces conmigo. Yo, desde dentro, veo el menú."
+    ],
+    "victoria": [
+      "Arceus: Increíble. El niño que no crece le ha ganado al que no muere.",
+      "Arceus: Que conste en el archivo: esta vez no hizo falta apagar la consola."
+    ]
   }
 }
