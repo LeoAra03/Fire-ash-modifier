@@ -1,0 +1,203 @@
+{
+  "esquema": "canon_arceus/1.0",
+  "titulo": "El duelo de La Ruta de Dios como origen de todas las dimensiones",
+  "nota": "Sin el duelo contra Arceus resuelto, ninguna dimensión posterior existe: ni el mundo creepypasta, ni Atlas Mil, ni la Isla Espejo con los Pokégods, ni Glazed, Light Platinum o Team Rocket.",
+  "interruptores": {
+    "DUELO_RESUELTO": 873,
+    "ARCEUS_CAPTURADO": 874,
+    "EVENTO_COMPLETADO": 876,
+    "FRAGMENTO_GENESIS": 882,
+    "ROTOM_TIEMPO": 883,
+    "SELLO_MOCHILA": 884
+  },
+  "fragmento": {
+    "mapa": 2037,
+    "cerca_de": [
+      23,
+      10
+    ],
+    "nombre": "Fragmento del Génesis",
+    "item": "FRAGMENTODELGÉNESIS",
+    "texto": [
+      "En el suelo, donde Arceus se dobló por primera vez, queda una astilla",
+      "de luz que no termina de apagarse.",
+      "Al recogerla, el aire se ordena: algo empieza a sostener las grietas",
+      "que él abrió al caer.",
+      "\\bObtuviste el Fragmento del Génesis.",
+      "El Rotom del Tiempo acaba de despertar."
+    ]
+  },
+  "rotom": {
+    "sprite": "ROTOM",
+    "puntos": [
+      {
+        "lugar": "la Isla Espejo",
+        "mapa": 2194,
+        "cerca_de": [
+          19,
+          24
+        ]
+      },
+      {
+        "lugar": "Atlas Mil",
+        "mapa": 108,
+        "cerca_de": [
+          34,
+          36
+        ]
+      },
+      {
+        "lugar": "el mundo creepypasta",
+        "mapa": 143,
+        "cerca_de": [
+          12,
+          18
+        ]
+      }
+    ],
+    "lineas": {
+      "sin_duelo": [
+        "El Rotom del Tiempo gira sobre sí mismo sin llegar a ninguna parte.",
+        "Arceus aún no ha caído. Todo lo que vendrá después de él sigue siendo",
+        "una posibilidad que nadie ha escrito.",
+        "Vuelve a La Ruta de Dios. Nada de esto existe mientras él no caiga."
+      ],
+      "sin_fragmento": [
+        "El Rotom del Tiempo te reconoce, pero sus engranajes están vacíos.",
+        "Le falta el Fragmento del Génesis: la astilla que Arceus soltó al caer.",
+        "Está en la cumbre de La Ruta de Dios, donde cayó."
+      ],
+      "activo": [
+        "El Rotom del Tiempo se ilumina y el aire se ordena a tu alrededor.",
+        "Sostiene la grieta para que puedas cruzar y volver cuando quieras.",
+        "Nada de aquí te va a atrapar: la herida se cerrará si tú la sueltas."
+      ]
+    }
+  },
+  "puertas": [
+    {
+      "lugar": "Isla Espejo",
+      "mapa": 2194,
+      "patron": "PokeMod Espejo: Espejo$",
+      "nota": "el espejo del Sótano Sellado de la Mansión"
+    },
+    {
+      "lugar": "Isla Espejo",
+      "mapa": 192,
+      "patron": "PokeMod Espejo: Escotilla",
+      "nota": "la escotilla de la Mansión Pokémon"
+    },
+    {
+      "lugar": "Atlas Mil",
+      "mapa": 108,
+      "patron": "PokeMod Expedición: Capitán",
+      "nota": "el capitán del puerto de Ciudad Carmín"
+    },
+    {
+      "lugar": "Puerto Horizonte",
+      "mapa": 43,
+      "patron": "PokeMod: Guardabosques Horizontes",
+      "nota": "el guardabosques que abre la ruta al puerto"
+    },
+    {
+      "lugar": "Mundo creepypasta",
+      "mapa": 143,
+      "patron": "PokeMod Grieta: Punto de colapso",
+      "nota": "la grieta del mundo creepypasta"
+    }
+  ],
+  "oak": {
+    "mapa": 48,
+    "patron": "^Oak$",
+    "texto": [
+      "\\bProfesor Oak: ¿Sabes? Todo lo que estás viendo nació de una sola",
+      "caída. Arceus cayó en La Ruta de Dios y, al caer, partió el mundo en",
+      "pedazos que no terminan de encajar.",
+      "Las grietas, Atlas Mil, la Isla Espejo con esas criaturas imposibles,",
+      "los Fragmentos de dimensión que has empezado a cruzar: todos son",
+      "astillas del mismo golpe.",
+      "Por eso el Rotom del Tiempo te acompaña: mientras sostenga la herida,",
+      "podrás entrar y salir. Si te pierdes, suéltala y vuelve."
+    ],
+    "texto_arceus": [
+      "Una luz blanca, sin calor, llena el laboratorio un instante.",
+      "\\bArceus: No he venido a juzgarte. He venido a ver cómo se usa lo que",
+      "se rompió por mi culpa.",
+      "\\bProfesor Oak: ...Entonces sigues aquí. Después de todo.",
+      "\\bArceus: Me atrapaste, así que me quedo a mirar. Es lo menos que",
+      "puedo hacer por haber partido el mundo.",
+      "\\bProfesor Oak: Pues siéntate lejos de la máquina de café y mira bien."
+    ]
+  },
+  "mad_pikachu": {
+    "mapa": 2142,
+    "patron": "LIGA_MPIKA",
+    "cerca_de": [
+      14,
+      11
+    ],
+    "texto": [
+      "Antes de que el Pikachu desencajado salte, una silueta blanca se",
+      "interpone en el centro del Coliseo. No ataca: ocupa el sitio exacto",
+      "del golpe, como quien se planta delante de una ventana abierta.",
+      "\\bArceus: Ese no es un Pikachu furioso. Es un agujero con forma de",
+      "recuerdo, y se alimenta de que le tengas miedo.",
+      "\\bArceus: Miralo como lo que es: una grieta con orejas.",
+      "El Pikachu duda. Por un instante, algo en el recuerda su propio nombre.",
+      "\\bArceus: Ya esta. Ahora pega tu primero."
+    ]
+  },
+  "fases_dios": {
+    "1": {
+      "mensaje": "Arceus sella tu mochila: «Aquí no hay nada que puedas llevarte».",
+      "movimientos": [
+        "EMBARGO",
+        "MAGICROOM"
+      ],
+      "efecto": "sello"
+    },
+    "2": {
+      "mensaje": "Arceus inclina el cielo a su voluntad. El clima obedecerá a su fase.",
+      "movimientos": [
+        "GASTROACID",
+        "GRAVITY"
+      ],
+      "efecto": "clima"
+    },
+    "3": {
+      "mensaje": "Arceus borra el nombre de tus talentos: las habilidades callan.",
+      "movimientos": [
+        "GASTROACID",
+        "COREENFORCER"
+      ],
+      "efecto": "tono"
+    },
+    "4": {
+      "mensaje": "Arceus invierte la lógica del combate: lo rápido será lento.",
+      "movimientos": [
+        "TRICKROOM",
+        "WONDERROOM"
+      ],
+      "efecto": "sacudida"
+    },
+    "5": {
+      "mensaje": "Arceus cambia de tablilla: el tipo de su Juicio ya no es el mismo.",
+      "movimientos": [
+        "JUDGMENT",
+        "RECOVER",
+        "TAILWIND"
+      ],
+      "efecto": "destello"
+    },
+    "6": {
+      "mensaje": "Arceus deja de jugar con las reglas: ahora las escribe él.",
+      "movimientos": [
+        "JUDGMENT",
+        "EXTREMESPEED",
+        "PERISHSONG",
+        "RECOVER"
+      ],
+      "efecto": "final"
+    }
+  }
+}

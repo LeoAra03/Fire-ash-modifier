@@ -44,6 +44,8 @@ desajuste entre lo que se prueba y lo que se entrega.
 | `verify:tier3:rules` · `verify:grandeur:bag` | ✔ |
 | Autoría externa | ✔ 107 pruebas OK, 0 fallos |
 | Seguridad de tono (Kirin/Android) | ✔ recuperación String→Tone y transiciones |
+| **`verify:canon:arceus`** (el duelo como origen) | ✔ 5 puertas cerradas, Fragmento, 3 Rotom, Oak y Mad Pikachu |
+| **`verify:atlas:tiles`** (auditoría de tiles) | ✔ **1000 de 1000 mapas sin defectos** (eran 975) |
 
 ## 3. Cómo trabajó el equipo
 
@@ -116,6 +118,20 @@ El espacio de trabajo purgó el arte de referencia de Dimensional Nightmare
 juego está completo y se construye bien**; lo único que no se puede regenerar
 aquí es el censo de recortes de `dn:plan:check`, que queda en rojo por la falta
 de esas imágenes. Subiendo de nuevo esas referencias se pone en verde.
+
+## 6 bis. Novedad de esta entrega: el canon de Arceus
+
+Desde aquí, **todo el contenido extra nace del duelo de La Ruta de Dios**:
+el mundo creepypasta, Atlas Mil, la Isla Espejo con los Pokégods y los tres
+Fragmentos de dimensión. Sin el duelo resuelto no se abre nada; al derrotar a
+Arceus suelta el Fragmento del Génesis, que despierta al Rotom del Tiempo; y
+si lo capturaste, aparece en los diálogos de Oak y antes del Mad Pikachu.
+Además el combate dobla una regla distinta del juego en cada una de sus seis
+fases. Detalle completo: `docs/CANON_ARCEUS.md`.
+
+También se auditaron y repararon los **1000 mapas de Atlas Mil** con
+`tools/atlas_tile_audit.mjs` y `tools/atlas_tile_repair.mjs`: 25 mapas
+salían en negro y ya no queda ninguno. Informe: `docs/atlas_tile_audit.md`.
 
 ## 7. Siguiente paso
 
