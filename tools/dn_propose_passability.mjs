@@ -180,8 +180,12 @@ else entries = entries.filter((m) => [2041, 2088, 2120].includes(m.id));
 
 for (const [id, value] of Object.entries(existing.maps ?? {})) result.maps[id] = value; // conserva lo no reprocesado
 let differences = 0;
+const pendientes = [];
 for (const entry of entries) {
   const group = catalog.groups.find((g) => g.key === entry.primary.key);
+  // Un mundo sin mosaico depositado no tiene catálogo: se deja como está y se
+  // avisa, en vez de tirar abajo la verificación de los otros 149 mapas.
+  if (!group) { pendientes.push(entry.id); continue; }
   const ficha = group.maps.find((m) => keyOf(entry) === `${group.key}/${path.basename(m.slice)}`);
   if (!ficha) throw new Error(`Ficha ausente en el catálogo: ${keyOf(entry)}`);
   const { features } = await featuresOf(group.key, group.tileset);
@@ -380,6 +384,11 @@ for (const entry of entries) {
     fs.writeFileSync(out, canvas.toBuffer("image/png"));
     console.log(`  overlay → ${path.relative(ROOT, out)} (verde transitable · azul abierto a mano · rojo muro · recuadro = podada)`);
   }
+}
+
+if (pendientes.length) {
+  console.log(`\nAviso: ${pendientes.length} mapa(s) sin mosaico de referencia (${pendientes.join(", ")}).`);
+  console.log("Se conserva la pasabilidad ya instalada. Deposita el mosaico y re-ejecuta.");
 }
 
 if (VERIFY) {
