@@ -6,7 +6,9 @@
 > Todo número de aquí está **medido sobre el árbol real**, no recordado de memoria.
 >
 > Generado: 2026-10-05 · rama `arena/01a106d1-fire-ash-modifier` · HEAD `7ccb26d0`
-> Censo: 2210 mapas · 23 591 eventos · 2741 eventos del DLC · 16/16 verificadores en verde.
+> Censo de esa instantánea: 2210 mapas · 23 591 eventos · 2741 eventos del DLC · 16/16 verificadores en verde.
+>
+> **Aviso de vigencia:** esa cabecera corresponde a otra rama/commit y no describe el checkout actual. En la rama actual el `MapInfos.rxdata` y los mapas coinciden en **2229** entradas; la auditoría vigente de los archivos, ROMs y herramientas está en [`AUDITORIA_REPOSITORIO_Y_RECURSOS.md`](AUDITORIA_REPOSITORIO_Y_RECURSOS.md).
 
 ---
 

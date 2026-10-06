@@ -1,0 +1,269 @@
+{
+  "toolkit_version": "FireAsh_Absorption_v1.1",
+  "auditado_en": "2026-10-05",
+  "estado_global": "auditoria_completa_absorcion_externa_bloqueada_por_insumos",
+  "extraccion_de_paquetes_completada": false,
+  "resumen": {
+    "archivos_git_versionados_base": 24184,
+    "tamano_workspace_sin_git_aprox_mib": 1088,
+    "zip_archivos_en_repositorio": 11,
+    "zip_archivos_con_integridad_unzip_t_verificada": 11,
+    "roms_o_parches_en_archivos_zip": 0,
+    "paquetes_zip_fuente_de_herramientas": 7,
+    "paquete_zip_scripts_fire_ash_adicional": 1,
+    "copias_extraidas_de_herramientas_presentes_en_checkout": 0,
+    "rar_archivos_volumen_detectados": 20,
+    "roms_gb_gbc_gba_presentes_en_arbol": 0,
+    "mapas_fire_ash_registrados": 2229,
+    "tiled_y_porymap_extraidos": false,
+    "paquetes_maestros_generados": false,
+    "motivo_absorcion_rom_pendiente": "No hay ROM invitada ni proyecto invitado en este checkout. Los RAR de Tiled/Porymap no pueden extraerse con el entorno disponible; el resto de fuentes de herramientas permanece en sus ZIP originales."
+  },
+  "politica": {
+    "insumos_y_assets_rom": "Mantenerlos localmente en reference/roms_invitadas/ (ignorado por Git); no subir ni redistribuir ROMs o recursos protegidos.",
+    "cache_toolkit": "Las copias de código fuente extraído en toolkit/ son regenerables y se ignoran por Git. En el checkout auditado solo permanecen README.md e INDICE_HERRAMIENTAS.json.",
+    "zip_integridad": "Los 11 ZIP pasaron unzip -t. Los 11 fueron inspeccionados por extensión de sus entradas y ninguno contiene nombres .gba/.gb/.gbc/.nds ni parches .ips/.ups/.bps/.xdelta.",
+    "rar_integridad": "Se verificaron nombres, tamaños y cabeceras RAR5 de los 20 volúmenes; el contenido interno no se pudo listar ni extraer sin herramienta RAR."
+  },
+  "inventario_repositorio": {
+    "juego_base": {
+      "ruta": "pokemon_fire_ash/",
+      "archivos_versionados": 22804,
+      "data_archivos": 2293,
+      "mapas_numericos_rxdata": 2229,
+      "mapinfos_registros": 2229,
+      "mapas_faltantes_o_sin_registrar": 0,
+      "archivos_mapa_no_canonicos": ["Map341 2.rxdata (distinto de Map341.rxdata, sin ID independiente en MapInfos)", "Map813b.rxdata (distinto de Map813.rxdata, sin ID independiente en MapInfos)"],
+      "archivos_backup_mapa": ["Map081.BAK (se conserva intacto)"],
+      "graphics_archivos": 15829,
+      "graphics_png": 15822,
+      "graphics_xcf": 6,
+      "graphics_bmp": 1,
+      "audio_archivos": 4650,
+      "audio_ogg": 2714,
+      "audio_wav": 1834,
+      "audio_mp3": 61,
+      "audio_mid": 40,
+      "ejecutable": "pokemon_fire_ash/Game.exe (PE/Windows; 16378368 bytes)",
+      "nota": "Incluye los datos, gráficos y audio del juego Fire Ash que ya se modifica; no incluye ROMs invitadas GBA/GB/GBC."
+    },
+    "entregables_mod": {
+      "ruta": "Scripts_corregido/",
+      "archivos_versionados": 887,
+      "bytes_aproximados": 103049518,
+      "paquete_directo": {
+        "ruta": "Scripts_corregido/Paquete_directo/",
+        "archivos": 297,
+        "bytes": 11595689
+      },
+      "paquetes_zip": [
+        "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+        "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+        "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip"
+      ],
+      "paquete_directo_verificado": "npm test verificó que Fire_Ash_Paquete_Directo.zip está actualizado. Fire-Ash-Scripts-Corregidos.zip coincide byte por byte con Paquete_directo/ (297 archivos)."
+    },
+    "contenido": {
+      "ruta": "content/",
+      "archivos": 68,
+      "json": 66,
+      "pkregion": 1,
+      "ruby": 1,
+      "horizontes": "500 registros de aventura, 20 reinos",
+      "atlas_mil": "1000 mapas, 500 sugerencias, 40 sectores",
+      "tier1": 40,
+      "tier2": 120,
+      "tier3_reglas": 420,
+      "calificador": "Son registros/blueprints/reglas; la cantidad no demuestra por sí sola que cada aventura sea única, esté equilibrada y haya pasado QA dentro del motor."
+    },
+    "herramientas_y_docs": {
+      "tools": {
+        "archivos": 136,
+        "mjs": 131,
+        "py": 3,
+        "sh": 1,
+        "txt": 1
+      },
+      "docs": {
+        "archivos_workspace": 174,
+        "markdown": 71,
+        "png": 102,
+        "json": 1
+      },
+      "web": 24,
+      "android": 9,
+      "reference": 20,
+      "Mapas": 27,
+      "agents": 3
+    },
+    "guardados_raiz": {
+      "archivos": ["Game1.rxdata", "Game2.rxdata"],
+      "tipo_detectado": "Ruby Marshal/RPG Maker; contienen estructura de Player, probablemente partidas guardadas de prueba",
+      "estado_git": "Ya están versionados y no se modificaron ni desversionaron. Se añadió Game[0-9]*.rxdata a .gitignore para prevenir nuevos slots sin seguimiento; la regla no desversiona los archivos actuales. También se añadió *.BAK como regla futura, sin retirar del versionado pokemon_fire_ash/Data/Map081.BAK."
+    },
+    "roms_invitadas": {
+      "carpetas_esperadas": ["reference/roms_invitadas/entrada/", "roms pokemon/"],
+      "carpetas_presentes": false,
+      "archivos_rom_o_parche_encontrados": 0,
+      "contenido_json_de_mons_invitados": "content/mons_invitados.json está vacío ([]).",
+      "advertencia_documental": "docs/ROMS_POKEMON_FORENSE.md y docs/ROM_INVITADO_EXTRACCION.md conservan resultados/informes históricos. No implican que las ROMs originales o sus salidas estén en este checkout."
+    }
+  },
+  "entorno": {
+    "node": "v22.22.3",
+    "npm": "10.9.8",
+    "python3": "disponible",
+    "make": "disponible",
+    "unzip_zip": "disponible",
+    "convert_imagemagick": "disponible",
+    "rar_tools_disponibles": [],
+    "java_gradle_android_sdk": "no disponibles",
+    "ffmpeg": "no disponible",
+    "cargo_rustc": "no disponibles",
+    "go": "no disponible",
+    "rgbasm_rgbds": "no disponibles",
+    "wine": "no disponible",
+    "node_modules": "no está instalado"
+  },
+  "paquetes_fuente": {
+    "tiled_linux": {
+      "estado": "rar_multipart_presente_sin_extractor",
+      "partes": 4,
+      "bytes_comprimidos": 46406094,
+      "archivos": [
+        "Tiled-1.12.2_Linux_x86_64.part1.rar",
+        "Tiled-1.12.2_Linux_x86_64.part2.rar",
+        "Tiled-1.12.2_Linux_x86_64.part3.rar",
+        "Tiled-1.12.2_Linux_x86_64.part4.rar"
+      ],
+      "destino_local_previsto": "toolkit/editores/tiled/"
+    },
+    "porymap": {
+      "estado": "rar_multipart_presente_sin_extractor",
+      "partes": 15,
+      "bytes_comprimidos": 151055931,
+      "destino_local_previsto": "toolkit/editores/porymap/"
+    },
+    "pokecrystal": {
+      "estado": "zip_fuente_presente_sin_extraer_en_checkout",
+      "archivo": "pokecrystal-master.zip",
+      "entradas": 5012,
+      "archivos": 4612,
+      "destino_local_previsto": "toolkit/descompilaciones/crystal/pokecrystal-master/",
+      "limitacion": "Es fuente/disassembly de Crystal, no una ROM. Falta RGBDS para compilarla."
+    },
+    "pokered": {
+      "estado": "zip_fuente_presente_sin_extraer_en_checkout",
+      "archivo": "pokered-master.zip",
+      "entradas": 2958,
+      "archivos": 2875,
+      "destino_local_previsto": "toolkit/descompilaciones/red/pokered-master/",
+      "limitacion": "Es fuente/disassembly de Red, no una ROM. Falta RGBDS para compilarla."
+    },
+    "pokeemerald": {
+      "estado": "no_presente",
+      "nota": "No se encontró un proyecto/ZIP pokeemerald. Porymap no tendría aquí el proyecto Emerald esperado para editar."
+    },
+    "porygion": {
+      "estado": "zip_y_rar_fuente_presentes_sin_binario",
+      "archivos": ["porygion-master.zip", "porygion-master.rar"],
+      "entradas_zip": 12,
+      "archivos_zip": 10,
+      "destino_local_previsto": "toolkit/editores/porygion/porygion-master/",
+      "capacidad": "Biblioteca generadora de mapas regionales procedurales de estilo Gen 3; no es un conversor a Essentials.",
+      "limitacion": "Go no está instalado y no se probó compilación."
+    },
+    "timps_swarm": {
+      "estado": "zip_con_definiciones_sin_runtime_ni_extraccion_persistida",
+      "archivo": "agents/timps-swarm-main.zip",
+      "entradas": 592,
+      "archivos": 557,
+      "definiciones_agent_md": 161,
+      "destino_local_previsto": "toolkit/agentes/timps_swarm/timps-swarm-main/",
+      "limitacion": "Perfiles Markdown; no hay runner, proveedor LLM ni servidor configurado."
+    },
+    "pokemon_agent": {
+      "estado": "zip_fuente_presente_sin_extraer_en_checkout",
+      "archivo": "pokemon-agent-main.zip",
+      "entradas": 41,
+      "archivos": 34,
+      "destino_local_previsto": "toolkit/agentes/coordenadores/pokemon-agent-main/",
+      "capacidad": "Agente/API de gameplay por emulador; no es extractor ROM ni coordinador general. Requiere dependencias/ROM; soporte GBA se indica como fase futura en su README."
+    },
+    "rvpacker_txt_rs": {
+      "estado": "zip_fuente_presente_sin_extraer_en_checkout",
+      "archivo": "rvpacker-txt-rs-main.zip",
+      "entradas": 15,
+      "archivos": 10,
+      "destino_local_previsto": "toolkit/extractores/scripts/rvpacker-txt-rs-main/",
+      "capacidad": "Exporta/importa texto y JSON de formatos RPG Maker compatibles, incluido XP; no traduce ASM a eventos.",
+      "limitacion": "Rust/Cargo no está instalado."
+    },
+    "swablu": {
+      "estado": "zip_fuente_presente_sin_extraer_en_checkout",
+      "archivo": "swablu (3).zip",
+      "entradas": 2437,
+      "archivos": 2160,
+      "destino_local_previsto": "toolkit/extractores/mapas/swablu/",
+      "capacidad": "Creador de mapas de mazmorras para Pokémon Mystery Dungeon: Explorers of Sky; no extrae audio ni mapas GBA/RMXP.",
+      "limitacion": "No se instaló ni probó el runtime Python y sus dependencias."
+    },
+    "fire_ash_scripts_corregidos": {
+      "estado": "zip_fuente_presente_y_verificado_con_directorio_tracked",
+      "archivo": "Fire-Ash-Scripts-Corregidos.zip",
+      "archivos": 297,
+      "bytes": 11595689,
+      "comparacion": "Coincide byte por byte con Scripts_corregido/Paquete_directo/."
+    },
+    "paquetes_de_entrega": {
+      "estado": "tres_zip_validos_presentes",
+      "archivos": [
+        "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+        "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+        "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip"
+      ],
+      "entradas_rom_en_zip": 0
+    }
+  },
+  "herramientas_nativas_del_repositorio": {
+    "xp_essentials": {
+      "estado": "disponible_y_autoprobado",
+      "archivos": ["tools/inspect_guest_rom.mjs", "web/js/marshal.js", "web/js/rmxp.js"],
+      "capacidad": "Analiza proyectos RPG Maker XP/Essentials: mapas, eventos, textos, flags, entrenadores y catálogos compatibles.",
+      "prueba": "npm run verify:rom:inspect: 40 mapas, 337 eventos, 1215 líneas de texto, 876 switches nombrados, 7970 entrenadores y 50 eventos comunes."
+    },
+    "gba": {
+      "estado": "codigo_disponible_sin_rom_invitada_para_validar",
+      "archivos": ["tools/inspect_gba_rom.mjs", "tools/gba_maps_events.mjs", "tools/forense/gba.mjs", "tools/unpack_assets.mjs", "tools/forense_roms.mjs"],
+      "capacidad": "Reconoce algunas cabeceras/tablas, LZ77/RLE, paletas BGR555 y gráficos 4bpp/8bpp; busca layouts, NPCs y eventos con heurísticas.",
+      "limite": "No es una descompilación universal; hacks repunterizados pueden producir omisiones/falsos positivos y no generan un port jugable automáticamente."
+    },
+    "gb_gbc": {
+      "estado": "codigo_disponible_sin_rom_invitada_para_validar",
+      "archivos": ["tools/forense/gb.mjs", "tools/unpack_assets.mjs", "tools/unpack_gba_mons.mjs"],
+      "capacidad": "Tiene rutinas para ciertas cabeceras/textos y sprites Gen 1/RLE reconocidos.",
+      "limite": "No se halló una ROM GB/GBC en el checkout para certificar extracción."
+    },
+    "audio_rom": {
+      "estado": "sin_extractor_universal_verificado",
+      "limite": "No se verificó extracción/conversión universal de música/efectos GBA/GBC a OGG."
+    }
+  },
+  "estado_de_verificacion": {
+    "npm_test": "pasó; cubre Marshal, integración núcleo, authoring externo, tone safety, integridad de paquetes y soporte runtime DN.",
+    "verify_rom_inspect": "pasó como autoprueba sobre Fire Ash; no usa ROM invitada.",
+    "unzip_t": "pasó en los 11 ZIP.",
+    "zip_rom_entries": "0 en los 11 ZIP.",
+    "paquete_directo": "coincidencia exacta entre Fire-Ash-Scripts-Corregidos.zip y Scripts_corregido/Paquete_directo/.",
+    "verify_all": "no ejecutado en esta auditoría; no hubo cambios de contenido del juego.",
+    "qa_en_game_exe_o_kirin": "no ejecutado en este entorno."
+  },
+  "conclusion": {
+    "para_seguir_modificando_fire_ash": "Sí: están el proyecto/base, datos, gráficos/audio, paquetes del mod, contenido y scripts/verificadores.",
+    "para_crear_mas_aventuras_originales": "Hay infraestructura y catálogos amplios; cada aventura nueva aún necesita autoría, integración y QA.",
+    "para_absorber_una_rom_invitada_especifica": "No todavía: falta la ROM/proyecto invitado y sus materiales extraídos; las herramientas de GBA/GB son parciales y deben probarse contra una entrada real.",
+    "para_compilar_tiled_porymap_o_descompilaciones": "Bloqueado por extractor RAR/compiladores y, para Porymap, falta una fuente pokeemerald compatible.",
+    "para_compilar_apk_localmente": "Bloqueado por Java/Gradle/Android SDK; el workflow de GitHub Actions instala esos componentes.",
+    "para_probar_game_exe_localmente": "Bloqueado porque Game.exe es PE/Windows y no hay Wine en el entorno."
+  }
+}

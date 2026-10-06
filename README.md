@@ -26,7 +26,9 @@ Mapas, eventos, diálogos, flags, NPCs y Pokémon — compatible con **Kirin** y
 
 | Documento | Para qué sirve |
 |---|---|
-| **`docs/PROMPT_MAESTRO_Y_ESTADO.md`** | **Empieza aquí.** El prompt completo del juego (pegable en cualquier agente) + el inventario medido de lo que hay y lo que falta. |
+| **`docs/PROMPT_MAESTRO_Y_ESTADO.md`** | Prompt/canon del juego y snapshot de estado del 2026-10-05; para el censo actual usa la auditoría del repositorio. |
+| **`docs/PROMPT_ORGANIZADOR_ABSORCION.md`** | Toolkit forense, pipeline por formato de ROM y límites reales de absorción; índice en `toolkit/INDICE_HERRAMIENTAS.json`. |
+| **`docs/AUDITORIA_REPOSITORIO_Y_RECURSOS.md`** | Censo completo del proyecto, paquetes, ROMs ausentes, toolchain y qué está listo/bloqueado. |
 | `docs/DLC_TOTAL.md` | El acta narrativa del DLC: los seis pilares contados. |
 | `docs/ENTREGA_PROYECTO.md` | La entrega, punto por punto. |
 | `docs/AUDITORIA_TOTAL_FLAGS.md` | Qué switch y qué variable está libre. |

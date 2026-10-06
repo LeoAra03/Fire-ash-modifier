@@ -13,8 +13,10 @@ game/
 # Saves y backups (protegidos, locales)
 Save*.rxdata
 Game.rxdata
+Game[0-9]*.rxdata
 *.sav
 *.bak
+*.BAK
 PokeModBackups/
 backups/
 
@@ -80,3 +82,10 @@ agents/timps-swarm-main/
 
 # Referencia de Atlas Mil (generada por tools/atlas_ingest_reference.mjs)
 reference/atlas/
+
+# Extracciones locales del toolkit de terceros: se regeneran desde los ZIP/RAR fuente.
+# Solo se versionan el índice y la guía; código fuente duplicado y assets quedan fuera.
+/toolkit/*
+!/toolkit/README.md
+!/toolkit/INDICE_HERRAMIENTAS.json
+/temporal_extraccion/

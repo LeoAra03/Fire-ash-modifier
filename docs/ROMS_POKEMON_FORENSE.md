@@ -1,8 +1,13 @@
 # Extracción forense de las ROMs invitadas
 
-Las cuatro ROMs viven en **`roms pokemon/`** (carpeta ignorada por Git: los
-binarios con derechos de terceros no entran nunca en el repositorio) y ahí
-mismo se vuelca todo lo que se puede reconstruir de cada juego.
+La herramienta procesa los archivos que el usuario coloca en **`roms pokemon/`**
+(carpeta ignorada por Git). Los resultados por juego que aparecen más abajo son
+registros de análisis anteriores, no prueba de que esas ROMs estén en el clon actual.
+
+> **Estado del checkout auditado el 2026-10-05:** `roms pokemon/` no existe y no se
+> encontraron ROMs `.gba`, `.gb` o `.gbc` en el árbol ni en ninguno de los 11 ZIP
+> comprobados. La auditoría actual está en
+> [`AUDITORIA_REPOSITORIO_Y_RECURSOS.md`](AUDITORIA_REPOSITORIO_Y_RECURSOS.md).
 
 ```bash
 node tools/forense_roms.mjs                       # las cuatro

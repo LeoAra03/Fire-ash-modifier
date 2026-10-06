@@ -3,6 +3,12 @@
 Este documento explica qué se extrae de un ROM de referencia, cómo se hace en
 este repositorio y —lo más importante— **qué no se copia nunca**.
 
+> **Estado del checkout auditado el 2026-10-05:** no hay ROMs invitadas ni una
+> carpeta de resultados `reference/roms_invitadas/` en este árbol. Las cifras de
+> partidas anteriores que aparecen más abajo son documentación histórica, no
+> materiales actualmente presentes/reproducibles. Consulta
+> [`AUDITORIA_REPOSITORIO_Y_RECURSOS.md`](AUDITORIA_REPOSITORIO_Y_RECURSOS.md).
+
 ## Qué se extrae (metadatos) y qué no (recursos)
 
 | Se extrae | No se extrae |
