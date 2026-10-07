@@ -12,6 +12,9 @@ QUÉ INSTALA
 - Punto de colapso en la Torre Pokémon 1F y Liga Oscura (dos mapas, cinco
   combates que se pueden perder).
 - Expedición a Atlas Mil: capitán en el puerto de Ciudad Carmín y muelle propio.
+- Cinco ROMs reinterpretadas como dimensiones separadas: Glazed, Light
+  Platinum, Liquid Crystal, TFOH y Factory Adventure; Ash entra como visitante
+  y cada orilla conserva un barco de retorno libre.
 - Sótano sellado de la Mansión Pokémon con el espejo que abre la Isla Espejo.
 - Los doce Pokégods con sus tres Formas de Anomalía.
 
