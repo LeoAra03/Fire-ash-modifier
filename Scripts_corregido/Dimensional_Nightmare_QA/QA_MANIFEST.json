@@ -1387,8 +1387,8 @@
     },
     {
       "path": "Data/trainers.dat",
-      "bytes": 1416440,
-      "sha256": "a6c0acd0694b3f2cfb77a839baa94ee54dcf5cf90e98b33c6b56422f8117bfd6"
+      "bytes": 1423271,
+      "sha256": "a1c3e7d2f6dbeabb0e7391719584cd502e3aba7242fb6485b2f6d95ee376e46f"
     },
     {
       "path": "Data/trainertypes.dat",

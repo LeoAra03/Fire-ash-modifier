@@ -169,12 +169,23 @@ El uniforme es una entrada de jugador nueva: `player_A` y `player_B`, los origin
 En la **información del jugador** (Tarjeta de Entrenador) las medallas ya no enseñan solo la región actual: con **◀ / ▶** se recorren 15 regiones, cada una con sus 8 huecos de medalla, igual que las regiones base de Fire Ash:
 
 1. Las nueve regiones base del juego (Kanto, Johto, Hoenn, Sinnoh, Unova, Kalos, Alola, Galar y Orange), con el cableado de medallas que ya tenía el juego.
-2. **Glazed**, **Light Platinum** y **Liquid Crystal**: sus 8 medallas se encienden al tenerlas en la Mochila (las de Glazed, Light Platinum y Liquid Crystal nuevas se registran como objetos: `GLAZEDBADGE2`…`GLAZEDBADGE8`, `PLATINUMBADGE2`…, `CRYSTALBADGE2`…).
+2. **Glazed**, **Light Platinum** y **Liquid Crystal**: sus 8 medallas se encienden al tenerlas en la Mochila. Ya se pueden ganar en el juego: cada campaña coloca 8 líderes de gimnasio (ver «Líderes de las campañas») que entregan su medalla al vencerlos.
 3. **Creepypastas**: los 8 huecos se encienden con los sellos de los jefes del multiverso (switches 940-947, incluido el campeón de Monte Silver).
 4. **Dimensión Atlas**: las 8 medallas de elemento (Bruma, Veta, Duna, Fragua, Marea, Venta, Flora y Chispa).
 5. **Ciudad Teckel**: la Medalla Pata de Duna.
 
 La hoja `Graphics/Pictures/Trainer Card/icon_badges.png` crece de 9 a 15 filas con emblemas nuevos por región (escarcha Glazed, platino, cristal, púrpura creepypasta, oro Atlas y hueso Teckel). Los huecos sin medalla obtenida quedan vacíos, como en las regiones base.
+
+## Líderes de las campañas (Glazed, Light Platinum, Liquid Crystal y Team Rocket)
+
+Las cuatro campañas completas adaptadas (`content/rom_campaigns_complete.json`: 807 mapas, 5516 NPC, 3252 warps y 1059 combates) ya vivían en el juego desde los mapas 3000-3949, pero ninguna entregaba medallas. Ahora cada campaña tiene **8 líderes de gimnasio** repartidos a lo largo de su recorrido, con equipo temático de nivel 85-120 y página de revancha sellada:
+
+- **Glazed** — Celsa, Nivia, Boreas, Crisal, Viska, Polar, Nevara y Albor entregan las 8 medallas Glazed.
+- **Light Platinum** — Lumen, Ondina, Farón, Alba, Céfiro, Coral, Brillo y Aurora entregan las 8 medallas Platinum.
+- **Liquid Crystal** — Crista, Prisma, Faceta, Cuarzo, Jade, Ámbar, Ópalo y Zafira entregan las 8 medallas Crystal.
+- **TFOH (Team Rocket)** — ocho ejecutivos (Kuro, Vex, Mal, Nox, Umbra, Lis, Grajo y el Jefe Sombra) cierran la campaña de infiltración; no sueltan medalla, sueltan ruta.
+
+Cada victoria queda registrada en los switches 850-881 y, en las campañas de medallas, el objeto-medalla entra a la Mochila y enciende su hueco en el visor de la Tarjeta de Entrenador.
 
 ## Opción de solo scripts
 
