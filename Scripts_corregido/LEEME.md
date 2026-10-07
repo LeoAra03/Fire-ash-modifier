@@ -1,5 +1,32 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Corrección de arranque del 2026-10-07 (error «undefined class/module RPG::MapMetadata»)
+
+Si al abrir el juego veías este cuadro:
+
+```text
+Script '<internal:marshal>' line 34: ArgumentError occurred.
+undefined class/module RPG::MapMetadata
+```
+
+la causa era que los `map_metadata.dat` distribuidos hasta ahora traían 829
+entradas serializadas como `RPG::MapMetadata` (clase de Essentials v16 que los
+scripts de Fire Ash, modelo v19 con `GameData::MapMetadata`, nunca definen).
+Ruby abortaba al hacer `load_data` en el arranque, antes del título.
+
+Los ZIP de esta carpeta ya incluyen la corrección (`tools/repair_map_metadata_classes.mjs`
+convierte cada entrada a `GameData::MapMetadata`, y `tools/validate_boot_classes.mjs`
+verifica que ninguna clase serializada de ningún `.dat`/`.rxdata` distribuido
+quede sin definir en los scripts).
+
+**Si ya tenías instalado un paquete anterior:** vuelve a extraer el ZIP encima
+de la raíz del juego, o como mínimo reemplaza `Data/map_metadata.dat` y
+`Data/Scripts.rxdata` por los del ZIP nuevo. No toques tus partidas.
+
+Además, desde esta versión los movimientos de campo (Corte, Flash, Surf…)
+**no piden medalla ni MO**: si el Pokémon conoce el movimiento por MT, funciona
+(`BADGE_FOR_* = -1` en los tres `Scripts.rxdata`).
+
 Esta carpeta contiene estas opciones listas para reemplazar sobre una copia de Pokémon Fire Ash 3.7.1:
 
 - `Dimensional_Nightmare_QA.zip`: **paquete integral todo-en-uno (100 % teórico)**. Incluye `Scripts.rxdata` corregido con `PokeMod_RutaDeDios` y `DN_RuntimeSupport`, además de todos los mapas y recursos de Isla Espejo (`Map2001`–`Map2020`), Monte Silver (`Map2021`–`Map2030`), La Ruta de Dios (`Map513`, `Map625`, `Map2031`–`Map2038`) y **Dimensional Nightmare / Protector de la Ceniza** (`Map2040`–`Map2190`, 148 tilesets `DN_*`, sprites originales, 11 temas MIDI `DN_*.mid`, 142 NPCs con estados/memoria, 151 memorias, 151 estatuas/relieves, 13 Centros Pokémon y 13 Tiendas contextuales, 10 decisiones y combates de jefes con espejo real en EP05 y forma final en EP06).
