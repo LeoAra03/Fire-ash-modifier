@@ -132,6 +132,22 @@ Atlas Mil y el espejo del sótano de la Mansión Pokémon que abre la Isla Espej
 sus doce Pokégods. El laboratorio de Oak solo conserva sus transportadores
 originales y Oak actúa como consejero: [`docs/EXPANSION_MULTIVERSAL.md`](docs/EXPANSION_MULTIVERSAL.md).
 
+## Cuatro campañas ROM completas post–Ruta de Dios
+
+Glazed, Light Platinum, Liquid Crystal y TFOH ya no están representados sólo
+por un mapa-resumen: el compilador reconstruye los **807 mapas detectados**, sus
+**5.516 NPC**, **3.252 warps** y **1.059 combates** como campañas separadas.
+Ash entra como visitante después del switch 876 y dispone de retorno libre en
+cada mapa. El plano versionado no copia diálogos ni assets de las ROMs; conserva
+la estructura forense y la reinterpreta con recursos de Fire Ash.
+
+```bash
+npm run verify:rom:campaigns:plan
+npm run verify:rom:campaigns
+```
+
+Diseño, rangos de mapas y límites: [`docs/CAMPANAS_ROM_COMPLETAS.md`](docs/CAMPANAS_ROM_COMPLETAS.md).
+
 ## Tests
 
 ```bash

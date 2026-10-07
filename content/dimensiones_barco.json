@@ -1,16 +1,28 @@
 {
-  "esquema": "dimensiones_barco/1.0",
-  "titulo": "Dos dimensiones invitadas navegables: Glazed y Light Platinum",
-  "nota": "Se llega en barco desde Puerto Horizonte, como a Atlas Mil: un capitán por dimensión y, en cada orilla, el mismo barco esperando para volver. Son Fragmentos de dimensión sostenidos por el Rotom del Tiempo, así que ninguna se abre antes del duelo de Arceus y de todas se puede volver cuando se quiera.",
+  "esquema": "dimensiones_barco/2.0",
+  "titulo": "Cinco ROMs invitadas convertidas en dimensiones visitables por Ash",
+  "nota": "Cada ROM se conserva como un Fragmento independiente: Ash llega como visitante después del duelo de Arceus, conoce su cultura y siempre puede volver por barco. Los binarios sólo alimentan el análisis forense local; el juego integra mapas y narrativa reinterpretados con recursos compatibles de Fire Ash.",
   "interruptores": {
     "DUELO_RESUELTO": 873,
     "GLAZED_ABIERTA": 960,
-    "LIGHT_PLATINUM_ABIERTA": 961
+    "LIGHT_PLATINUM_ABIERTA": 961,
+    "LIQUID_CRYSTAL_ABIERTA": 962,
+    "TFOH_ABIERTA": 963,
+    "FACTORY_ADVENTURE_ABIERTA": 964
   },
   "puerto": {
     "mapa": 1001,
     "nombre": "Puerto Horizonte",
-    "pistas": [[6, 40], [10, 44]]
+    "pistas": [
+      [
+        6,
+        40
+      ],
+      [
+        10,
+        44
+      ]
+    ]
   },
   "dimensiones": [
     {
@@ -43,19 +55,38 @@
         "volver": "Capitán Ferrán: ¿De vuelta? Sube. Puerto Horizonte nos espera."
       },
       "distritos": [
-        { "sourceId": 7, "label": "Cedolán" },
-        { "sourceId": 23, "label": "Lerucean" },
-        { "sourceId": 35, "label": "Meseta Ingido" },
-        { "sourceId": 21, "label": "Ruta costera" },
-        { "sourceId": 31, "label": "Ruta alta" },
-        { "sourceId": 28, "label": "Parque natural" }
+        {
+          "sourceId": 7,
+          "label": "Cedolán"
+        },
+        {
+          "sourceId": 23,
+          "label": "Lerucean"
+        },
+        {
+          "sourceId": 35,
+          "label": "Meseta Ingido"
+        },
+        {
+          "sourceId": 21,
+          "label": "Ruta costera"
+        },
+        {
+          "sourceId": 31,
+          "label": "Ruta alta"
+        },
+        {
+          "sourceId": 28,
+          "label": "Parque natural"
+        }
       ],
       "cronista": {
         "sprite": "trchar028",
         "lineas": [
           "Cronista de Glazed: Este Fragmento se sostuvo porque alguien se empeñó en que Cedolán siguiera en pie.",
           "Cronista de Glazed: Míralo bien: las mismas calles de siempre, pero sin nadie que las cierre por la noche.",
-          "Cronista de Glazed: Si quieres la Medalla Glazed, el Líder Ámbar te espera en el gimnasio del norte."
+          "Cronista de Glazed: Si quieres la Medalla Glazed, el Líder Ámbar te espera en el gimnasio del norte.",
+          "Cronista de Glazed: Ash, aquí eres visitante, no elegido: escucha a la bahía antes de intentar cambiarla."
         ]
       },
       "lider": {
@@ -64,7 +95,14 @@
         "mostrado": "Líder Ámbar",
         "sprite": "trchar048",
         "nivel": 100,
-        "equipo": ["ABOMASNOW", "GLACEON", "MAMOSWINE", "LAPRAS", "WEAVILE", "KYUREM"],
+        "equipo": [
+          "ABOMASNOW",
+          "GLACEON",
+          "MAMOSWINE",
+          "LAPRAS",
+          "WEAVILE",
+          "KYUREM"
+        ],
         "intro": [
           "Líder Ámbar: Glazed no es una región: es una costumbre que se negó a morir.",
           "Líder Ámbar: Si vienes de fuera, enséñame cómo se pelea cuando no hace frío."
@@ -73,15 +111,70 @@
         "derrota": "Líder Ámbar: Vuelve cuando hayas entendido que el frío también se entrena."
       },
       "entrenadores": [
-        { "nombre": "GLA_01", "sprite": "trchar005", "equipo": ["SNORUNT", "SNEASEL", "FROSLASS"], "frase": "El frío no es un problema: es una herramienta." },
-        { "nombre": "GLA_02", "sprite": "trchar009", "equipo": ["SWINUB", "PILOSWINE", "MAMOSWINE"], "frase": "Cava hondo y encontrarás hielo con memoria." },
-        { "nombre": "GLA_03", "sprite": "trchar016", "equipo": ["SPHEAL", "SEALEO", "WALREIN"], "frase": "La bahía cría Pokémon que no conocen el invierno." },
-        { "nombre": "GLA_04", "sprite": "trchar021", "equipo": ["SNOM", "FROSMOTH", "ABOMASNOW"], "frase": "La escarcha de Cedolán se queda en la ropa." }
+        {
+          "nombre": "GLA_01",
+          "sprite": "trchar005",
+          "equipo": [
+            "SNORUNT",
+            "SNEASEL",
+            "FROSLASS"
+          ],
+          "frase": "El frío no es un problema: es una herramienta."
+        },
+        {
+          "nombre": "GLA_02",
+          "sprite": "trchar009",
+          "equipo": [
+            "SWINUB",
+            "PILOSWINE",
+            "MAMOSWINE"
+          ],
+          "frase": "Cava hondo y encontrarás hielo con memoria."
+        },
+        {
+          "nombre": "GLA_03",
+          "sprite": "trchar016",
+          "equipo": [
+            "SPHEAL",
+            "SEALEO",
+            "WALREIN"
+          ],
+          "frase": "La bahía cría Pokémon que no conocen el invierno."
+        },
+        {
+          "nombre": "GLA_04",
+          "sprite": "trchar021",
+          "equipo": [
+            "SNOM",
+            "FROSMOTH",
+            "ABOMASNOW"
+          ],
+          "frase": "La escarcha de Cedolán se queda en la ropa."
+        }
       ],
       "pobladores": [
-        { "sprite": "trchar033", "lineas": ["Vecina: Aquí nunca nieva en la misma calle dos días seguidos. Nos hemos acostumbrado a adivinar dónde."] },
-        { "sprite": "trchar013", "lineas": ["Marinero: El barco de Ferrán es el único que entra y sale de esta bahía sin permiso de nadie."] }
-      ]
+        {
+          "sprite": "trchar033",
+          "lineas": [
+            "Vecina: Aquí nunca nieva en la misma calle dos días seguidos. Nos hemos acostumbrado a adivinar dónde."
+          ]
+        },
+        {
+          "sprite": "trchar013",
+          "lineas": [
+            "Marinero: El barco de Ferrán es el único que entra y sale de esta bahía sin permiso de nadie."
+          ]
+        }
+      ],
+      "rom": {
+        "archivo": "GlazedESPB6.gba",
+        "base": "Esmeralda",
+        "mapasDetectados": 111,
+        "npcsDetectados": 770,
+        "dialogosDetectados": 552
+      },
+      "tipoEntrenador": "GLAZED_TRAINER",
+      "variableCombate": 314
     },
     {
       "id": "lightplatinum",
@@ -113,19 +206,38 @@
         "volver": "Capitana Ñuke: ¿Ya? Sube, que la marea está de nuestro lado."
       },
       "distritos": [
-        { "sourceId": 33, "label": "Pueblo costero" },
-        { "sourceId": 43, "label": "Ciudad verde" },
-        { "sourceId": 41, "label": "Senda larga" },
-        { "sourceId": 44, "label": "Ruta del bosque" },
-        { "sourceId": 180, "label": "Zona safari" },
-        { "sourceId": 167, "label": "Frente de batalla" }
+        {
+          "sourceId": 33,
+          "label": "Pueblo costero"
+        },
+        {
+          "sourceId": 43,
+          "label": "Ciudad verde"
+        },
+        {
+          "sourceId": 41,
+          "label": "Senda larga"
+        },
+        {
+          "sourceId": 44,
+          "label": "Ruta del bosque"
+        },
+        {
+          "sourceId": 180,
+          "label": "Zona safari"
+        },
+        {
+          "sourceId": 167,
+          "label": "Frente de batalla"
+        }
       ],
       "cronista": {
         "sprite": "trchar030",
         "lineas": [
           "Cronista de Light Platinum: Este Fragmento se sostuvo porque alguien decidió que la luz no se acabara nunca.",
           "Cronista de Light Platinum: No es perfecto: es luminoso, y eso ya es mucho.",
-          "Cronista de Light Platinum: El Líder Resplandor pelea en el gimnasio del este. Ve cuando quieras."
+          "Cronista de Light Platinum: El Líder Resplandor pelea en el gimnasio del este. Ve cuando quieras.",
+          "Cronista de Light Platinum: Ash, vienes como visitante. Nuestra luz no necesita salvador; necesita un buen rival."
         ]
       },
       "lider": {
@@ -134,7 +246,14 @@
         "mostrado": "Líder Resplandor",
         "sprite": "trchar049",
         "nivel": 100,
-        "equipo": ["LUXRAY", "MAGNEZONE", "ROTOM", "BRAVIARY", "VOLCARONA", "ZACIAN"],
+        "equipo": [
+          "LUXRAY",
+          "MAGNEZONE",
+          "ROTOM",
+          "BRAVIARY",
+          "VOLCARONA",
+          "ZACIAN"
+        ],
         "intro": [
           "Líder Resplandor: En Light Platinum nadie apaga la luz. Ni de noche, ni al perder.",
           "Líder Resplandor: Enséñame cómo brilla alguien que viene de fuera."
@@ -143,17 +262,526 @@
         "derrota": "Líder Resplandor: Te ha faltado brillo. Vuelve cuando te sobre."
       },
       "entrenadores": [
-        { "nombre": "LPL_01", "sprite": "trchar007", "equipo": ["SHINX", "LUXIO", "LUXRAY"], "frase": "¿Ves la chispa? Eso es entrenar en serio." },
-        { "nombre": "LPL_02", "sprite": "trchar011", "equipo": ["MAGNEMITE", "MAGNETON", "MAGNEZONE"], "frase": "El campo magnético de la costa lo mueve todo." },
-        { "nombre": "LPL_03", "sprite": "trchar018", "equipo": ["RUFFLET", "BRAVIARY", "STARAPTOR"], "frase": "Vuelo alto porque aquí el cielo no se acaba." },
-        { "nombre": "LPL_04", "sprite": "trchar024", "equipo": ["LARVESTA", "VOLCARONA", "TALONFLAME"], "frase": "El sol de Lappet cría alas que no se cansan." }
+        {
+          "nombre": "LPL_01",
+          "sprite": "trchar007",
+          "equipo": [
+            "SHINX",
+            "LUXIO",
+            "LUXRAY"
+          ],
+          "frase": "¿Ves la chispa? Eso es entrenar en serio."
+        },
+        {
+          "nombre": "LPL_02",
+          "sprite": "trchar011",
+          "equipo": [
+            "MAGNEMITE",
+            "MAGNETON",
+            "MAGNEZONE"
+          ],
+          "frase": "El campo magnético de la costa lo mueve todo."
+        },
+        {
+          "nombre": "LPL_03",
+          "sprite": "trchar018",
+          "equipo": [
+            "RUFFLET",
+            "BRAVIARY",
+            "STARAPTOR"
+          ],
+          "frase": "Vuelo alto porque aquí el cielo no se acaba."
+        },
+        {
+          "nombre": "LPL_04",
+          "sprite": "trchar024",
+          "equipo": [
+            "LARVESTA",
+            "VOLCARONA",
+            "TALONFLAME"
+          ],
+          "frase": "El sol de Lappet cría alas que no se cansan."
+        }
       ],
       "pobladores": [
-        { "sprite": "trchar026", "lineas": ["Pescador: El mar aquí es de un azul que no se ve en ningún otro Fragmento. Lo he comprobado."] },
-        { "sprite": "trchar003", "lineas": ["Niña: Dicen que la Capitana Ñuke conoce todas las corrientes. Yo sólo sé que siempre vuelve."] }
+        {
+          "sprite": "trchar026",
+          "lineas": [
+            "Pescador: El mar aquí es de un azul que no se ve en ningún otro Fragmento. Lo he comprobado."
+          ]
+        },
+        {
+          "sprite": "trchar003",
+          "lineas": [
+            "Niña: Dicen que la Capitana Ñuke conoce todas las corrientes. Yo sólo sé que siempre vuelve."
+          ]
+        }
+      ],
+      "rom": {
+        "archivo": "LightPlatinumEsp.gba",
+        "base": "Rubí",
+        "mapasDetectados": 19,
+        "npcsDetectados": 188,
+        "dialogosDetectados": 87
+      },
+      "tipoEntrenador": "PLATINUM_TRAINER",
+      "variableCombate": 315
+    },
+    {
+      "id": "liquidcrystal",
+      "slug": "Liquid Crystal",
+      "rom": {
+        "archivo": "LiquidCrystalESP.gba",
+        "base": "Rojo Fuego",
+        "mapasDetectados": 432,
+        "npcsDetectados": 2457,
+        "dialogosDetectados": 1920
+      },
+      "mapaId": 2240,
+      "gimnasioId": 2241,
+      "padre": 1001,
+      "abierta": 962,
+      "tipoEntrenador": "LIQUIDCRYSTAL_TRAINER",
+      "variableCombate": 316,
+      "medalla": "CRYSTALBADGE",
+      "nombreMedalla": "Medalla Cristal",
+      "titulo": "Liquid Crystal — Santuario de Johto",
+      "tituloGimnasio": "Dojo Liquid Crystal — Guardiana Suicune",
+      "tileset": 1,
+      "lado": 30,
+      "columnas": 3,
+      "musica": "",
+      "capitan": {
+        "sprite": "trchar064",
+        "nombre": "Capitana Marina",
+        "saludo": [
+          "Capitana Marina: El Fragmento Liquid Crystal guarda un Johto distinto: lluvia, ruinas y caminos que recuerdan.",
+          "Capitana Marina: Ash entra como visitante. Mi barco seguirá en la orilla para traerlo de vuelta."
+        ],
+        "ir": "Capitana Marina: ¡Rumbo al cristal! Mira, escucha y no des por hecho que ésta es tu historia.",
+        "quedarse": "Capitana Marina: El santuario sabe esperar. Yo también."
+      },
+      "muelle": {
+        "saludo": "El vapor de Marina descansa junto a un embarcadero cubierto de lluvia.",
+        "volver": "Capitana Marina: Cuando quieras, Ash. Puerto Horizonte sigue al otro lado."
+      },
+      "distritos": [
+        {
+          "sourceId": 251,
+          "label": "Pueblo Primavera alterno"
+        },
+        {
+          "sourceId": 254,
+          "label": "Sendero de lluvia"
+        },
+        {
+          "sourceId": 295,
+          "label": "Ruinas cristalinas"
+        },
+        {
+          "sourceId": 299,
+          "label": "Ciudad del eco"
+        },
+        {
+          "sourceId": 306,
+          "label": "Ruta del faro"
+        },
+        {
+          "sourceId": 308,
+          "label": "Puerto de Johto"
+        }
+      ],
+      "cronista": {
+        "sprite": "trchar031",
+        "lineas": [
+          "Cronista del Cristal: Este Johto no reemplaza al que conoces; creció al otro lado de una decisión.",
+          "Cronista del Cristal: Ash, aquí eres huésped. Pregunta antes de juzgar y pelea sólo cuando te reten.",
+          "Cronista del Cristal: La Guardiana Suicune custodia la memoria de este Fragmento."
+        ]
+      },
+      "lider": {
+        "tipo": "LIQUIDCRYSTAL_LEADER",
+        "nombre": "NEREA",
+        "mostrado": "Guardiana Nerea",
+        "sprite": "trchar050",
+        "nivel": 108,
+        "equipo": [
+          "MEGANIUM",
+          "TYPHLOSION",
+          "FERALIGATR",
+          "AMPHAROS",
+          "UMBREON",
+          "SUICUNE"
+        ],
+        "intro": [
+          "Nerea: El cristal muestra lo que una región pudo ser.",
+          "Nerea: Ash de Pueblo Paleta, hoy no eres protagonista. Eres el visitante que debe aprender."
+        ],
+        "victoria": "Nerea: Has escuchado antes de atacar. Lleva la Medalla Cristal como recuerdo, no como conquista.",
+        "derrota": "Nerea: La prisa empaña hasta el cristal más limpio."
+      },
+      "entrenadores": [
+        {
+          "nombre": "LCR_01",
+          "sprite": "trchar006",
+          "equipo": [
+            "CHIKORITA",
+            "BAYLEEF",
+            "MEGANIUM"
+          ],
+          "frase": "La lluvia alimenta raíces que conocen dos Johto."
+        },
+        {
+          "nombre": "LCR_02",
+          "sprite": "trchar012",
+          "equipo": [
+            "MAREEP",
+            "FLAAFFY",
+            "AMPHAROS"
+          ],
+          "frase": "Nuestro faro guía barcos entre posibilidades."
+        },
+        {
+          "nombre": "LCR_03",
+          "sprite": "trchar017",
+          "equipo": [
+            "WOOPER",
+            "QUAGSIRE",
+            "POLITOED"
+          ],
+          "frase": "El agua guarda recuerdos mejor que nosotros."
+        },
+        {
+          "nombre": "LCR_04",
+          "sprite": "trchar022",
+          "equipo": [
+            "MISDREAVUS",
+            "NOCTOWL",
+            "UMBREON"
+          ],
+          "frase": "Las ruinas hablan cuando baja el sol."
+        }
+      ],
+      "pobladores": [
+        {
+          "sprite": "trchar034",
+          "lineas": [
+            "Arqueóloga: No saques nada de las ruinas, Ash. Visitar también significa dejar intacto."
+          ]
+        },
+        {
+          "sprite": "trchar014",
+          "lineas": [
+            "Farero: Tu Pikachu reconoce la tormenta, pero ésta pertenece a nuestro cielo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tfoh",
+      "slug": "TFOH",
+      "rom": {
+        "archivo": "Pokémon TFOH-Beta3.gba",
+        "base": "Rojo Fuego",
+        "mapasDetectados": 245,
+        "npcsDetectados": 2101,
+        "dialogosDetectados": 1352
+      },
+      "mapaId": 2242,
+      "gimnasioId": 2243,
+      "padre": 1001,
+      "abierta": 963,
+      "tipoEntrenador": "TFOH_TRAINER",
+      "variableCombate": 317,
+      "medalla": "ORIGINBADGE",
+      "nombreMedalla": "Sello del Origen",
+      "titulo": "TFOH — Frontera del Origen",
+      "tituloGimnasio": "TFOH — Cámara de la Primera Huella",
+      "tileset": 1,
+      "lado": 30,
+      "columnas": 3,
+      "musica": "",
+      "capitan": {
+        "sprite": "trchar065",
+        "nombre": "Capitán Orión",
+        "saludo": [
+          "Capitán Orión: TFOH es una frontera incompleta que decidió seguir respirando.",
+          "Capitán Orión: Ash irá como visitante; una beta también merece que respeten lo que sí llegó a ser."
+        ],
+        "ir": "Capitán Orión: ¡A la Primera Huella! Nada de corregir a su gente: primero hay que conocerla.",
+        "quedarse": "Capitán Orión: Ninguna aventura se estropea por empezar mañana."
+      },
+      "muelle": {
+        "saludo": "El carguero de Orión mantiene una luz encendida frente a la frontera.",
+        "volver": "Capitán Orión: La salida nunca se bloquea. ¿Regresamos, Ash?"
+      },
+      "distritos": [
+        {
+          "sourceId": 209,
+          "label": "Isla de la primera huella"
+        },
+        {
+          "sourceId": 211,
+          "label": "Costa de los pioneros"
+        },
+        {
+          "sourceId": 228,
+          "label": "Archipiélago beta"
+        },
+        {
+          "sourceId": 236,
+          "label": "Puesto fronterizo"
+        },
+        {
+          "sourceId": 245,
+          "label": "Meseta inacabada"
+        },
+        {
+          "sourceId": 491,
+          "label": "Puerto metálico"
+        }
+      ],
+      "cronista": {
+        "sprite": "trchar032",
+        "lineas": [
+          "Archivista TFOH: No confundas incompleto con vacío. Aquí cada camino conserva una intención.",
+          "Archivista TFOH: Ash, eres visitante de una historia que no necesita parecerse a la tuya.",
+          "Archivista TFOH: La Custodia de la Primera Huella espera en la cámara."
+        ]
+      },
+      "lider": {
+        "tipo": "TFOH_LEADER",
+        "nombre": "ALBA",
+        "mostrado": "Custodia Alba",
+        "sprite": "trchar051",
+        "nivel": 112,
+        "equipo": [
+          "VENUSAUR",
+          "CHARIZARD",
+          "BLASTOISE",
+          "RAICHU",
+          "DRAGONITE",
+          "MEWTWO"
+        ],
+        "intro": [
+          "Alba: Custodiamos lo primero que sobrevivió al olvido.",
+          "Alba: Ash, demuestra que sabes visitar una aventura sin absorber su voz."
+        ],
+        "victoria": "Alba: No borraste nuestros bordes. Acepta el Sello del Origen.",
+        "derrota": "Alba: Aún miras esta frontera como un borrador y no como un hogar."
+      },
+      "entrenadores": [
+        {
+          "nombre": "TFO_01",
+          "sprite": "trchar004",
+          "equipo": [
+            "BULBASAUR",
+            "IVYSAUR",
+            "VENUSAUR"
+          ],
+          "frase": "Toda historia empieza con una elección."
+        },
+        {
+          "nombre": "TFO_02",
+          "sprite": "trchar010",
+          "equipo": [
+            "CHARMANDER",
+            "CHARMELEON",
+            "CHARIZARD"
+          ],
+          "frase": "Lo inacabado también puede arder."
+        },
+        {
+          "nombre": "TFO_03",
+          "sprite": "trchar019",
+          "equipo": [
+            "SQUIRTLE",
+            "WARTORTLE",
+            "BLASTOISE"
+          ],
+          "frase": "Una frontera necesita puertos, no paredes."
+        },
+        {
+          "nombre": "TFO_04",
+          "sprite": "trchar025",
+          "equipo": [
+            "PIKACHU",
+            "RAICHU",
+            "ELECTABUZZ"
+          ],
+          "frase": "La primera chispa todavía recorre estas islas."
+        }
+      ],
+      "pobladores": [
+        {
+          "sprite": "trchar027",
+          "lineas": [
+            "Cartógrafa: Dejamos huecos en el mapa para recordar que el mundo puede crecer."
+          ]
+        },
+        {
+          "sprite": "trchar002",
+          "lineas": [
+            "Niño pionero: ¿Tú eres Ash? Aquí también tenemos aventuras. Te presto una si la devuelves."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "factoryadventure",
+      "slug": "Factory Adventure",
+      "rom": {
+        "archivo": "FactoryAdventure.gb",
+        "base": "Game Boy / aventura Pokégod",
+        "mapasDetectados": 0,
+        "npcsDetectados": 0,
+        "dialogosDetectados": 0
+      },
+      "mapaId": 2244,
+      "gimnasioId": 2245,
+      "padre": 1001,
+      "abierta": 964,
+      "tipoEntrenador": "FACTORY_TRAINER",
+      "variableCombate": 318,
+      "medalla": "FACTORYSEAL",
+      "nombreMedalla": "Sello Fábrica",
+      "titulo": "Factory Adventure — Distrito Primigenio",
+      "tituloGimnasio": "Factory Adventure — Núcleo de Ensamblaje",
+      "tileset": 1,
+      "lado": 30,
+      "columnas": 3,
+      "musica": "",
+      "capitan": {
+        "sprite": "trchar066",
+        "nombre": "Ingeniera Ada",
+        "saludo": [
+          "Ingeniera Ada: Factory Adventure nació en una máquina pequeña y aprendió a soñar en cuatro tonos.",
+          "Ingeniera Ada: Ash entra como visitante. Sus Pokégods no son piezas para llevarse."
+        ],
+        "ir": "Ingeniera Ada: Sincronizando compuertas. Mira con cuidado: esta fábrica fabrica mitos.",
+        "quedarse": "Ingeniera Ada: Pausa aceptada. Las máquinas también descansan."
+      },
+      "muelle": {
+        "saludo": "La barcaza-taller de Ada permanece conectada a una compuerta de retorno.",
+        "volver": "Ingeniera Ada: El enlace a Puerto Horizonte está estable. ¿Volvemos?"
+      },
+      "distritos": [
+        {
+          "sourceId": 440,
+          "label": "Planta de energía viva"
+        },
+        {
+          "sourceId": 450,
+          "label": "Central de ensamblaje"
+        },
+        {
+          "sourceId": 369,
+          "label": "Barrio de bobinas"
+        },
+        {
+          "sourceId": 394,
+          "label": "Patio magnético"
+        },
+        {
+          "sourceId": 437,
+          "label": "Observatorio de prototipos"
+        },
+        {
+          "sourceId": 491,
+          "label": "Muelle de metal"
+        }
+      ],
+      "cronista": {
+        "sprite": "trchar029",
+        "lineas": [
+          "Técnica de archivo: El original tenía límites de Game Boy; aquí los tratamos como estilo, no como defecto.",
+          "Técnica de archivo: Ash, observa a los Pokégods sin convertirlos en trofeos. Eres nuestro invitado.",
+          "Técnica de archivo: El Maestro Ensamble protege el núcleo y el derecho de esta dimensión a seguir extraña."
+        ]
+      },
+      "lider": {
+        "tipo": "FACTORY_LEADER",
+        "nombre": "ENSAMBLE",
+        "mostrado": "Maestro Ensamble",
+        "sprite": "trchar052",
+        "nivel": 115,
+        "equipo": [
+          "PORYGON",
+          "MAGNEZONE",
+          "ROTOM",
+          "METAGROSS",
+          "GENESECT",
+          "MEW"
+        ],
+        "intro": [
+          "Ensamble: Una máquina puede copiar formas, pero no el significado de una aventura.",
+          "Ensamble: Ash, pelea sin intentar poseer aquello que todavía no comprendes."
+        ],
+        "victoria": "Ensamble: Supiste distinguir memoria de materia. El Sello Fábrica abre puertas, no jaulas.",
+        "derrota": "Ensamble: Quisiste absorber antes de escuchar. Reinicia tu mirada."
+      },
+      "entrenadores": [
+        {
+          "nombre": "FAC_01",
+          "sprite": "trchar008",
+          "equipo": [
+            "MAGNEMITE",
+            "MAGNETON",
+            "MAGNEZONE"
+          ],
+          "frase": "Estas bobinas afinan el pulso del distrito."
+        },
+        {
+          "nombre": "FAC_02",
+          "sprite": "trchar015",
+          "equipo": [
+            "PORYGON",
+            "PORYGON2",
+            "PORYGONZ"
+          ],
+          "frase": "Una copia puede desarrollar una identidad."
+        },
+        {
+          "nombre": "FAC_03",
+          "sprite": "trchar020",
+          "equipo": [
+            "KLINK",
+            "KLANG",
+            "KLINKLANG"
+          ],
+          "frase": "Cada engranaje recuerda quién lo instaló."
+        },
+        {
+          "nombre": "FAC_04",
+          "sprite": "trchar023",
+          "equipo": [
+            "ELEKID",
+            "ELECTABUZZ",
+            "ELECTIVIRE"
+          ],
+          "frase": "La corriente de cuatro tonos sigue viva."
+        }
+      ],
+      "pobladores": [
+        {
+          "sprite": "trchar035",
+          "lineas": [
+            "Mecánica: No pulimos los bordes cuadrados: son la firma de nuestro mundo."
+          ]
+        },
+        {
+          "sprite": "trchar001",
+          "lineas": [
+            "Aprendiz: Los Pokégods tienen nombres raros porque nacieron sin pedir permiso."
+          ]
+        }
       ]
     }
   ],
   "donanteGimnasio": 10,
-  "gimnasio": { "ancho": 46, "alto": 42, "tileset": 14 }
+  "gimnasio": {
+    "ancho": 46,
+    "alto": 42,
+    "tileset": 14
+  }
 }

@@ -119,18 +119,26 @@ npm run build:circuito
 npm run verify:circuito
 ```
 
-### 3.2 Glazed y Light Platinum: dos dimensiones de barco
+### 3.2 Cinco ROMs como dimensiones de barco
 
 Se llega **en barco desde Puerto Horizonte**, igual que a Atlas: un capitán por
-dimensión y, en cada orilla, el mismo barco esperando para volver.
+dimensión y, en cada orilla, el mismo barco esperando para volver. Ash entra
+como visitante y no reemplaza al protagonista ni reclama la historia local.
 
-| Dimensión | Mapa | Gimnasio | Líder | Medalla |
+| Dimensión | Mapa | Gimnasio | Líder | Medalla/sello |
 |---|---|---|---|---|
 | Glazed | Map2200 «Bahía de Cedolán» | Map2201 | Ámbar | GLAZEDBADGE |
 | Light Platinum | Map2210 «Costa de Lappet» | Map2211 | Resplandor | PLATINUMBADGE |
+| Liquid Crystal | Map2240 «Santuario de Johto» | Map2241 | Nerea | CRYSTALBADGE |
+| TFOH | Map2242 «Frontera del Origen» | Map2243 | Alba | ORIGINBADGE |
+| Factory Adventure | Map2244 «Distrito Primigenio» | Map2245 | Ensamble | FACTORYSEAL |
 
-Cada una tiene seis distritos tomados de mapas reales del juego, cronista,
-cuatro entrenadores y dos pobladores. La vuelta nunca está cerrada.
+Cada embarcadero tiene seis distritos, seis balizas de orientación, cronista,
+cuatro entrenadores y dos pobladores. La vuelta nunca está cerrada. Además, los
+cuatro ROM GBA abren desde allí sus campañas completas: Glazed Map3000–3110,
+Light Platinum Map3120–3138, Liquid Crystal Map3200–3631 y TFOH Map3700–3944.
+En conjunto son 807 mapas, 5.516 NPC, 3.252 warps y 1.059 combates adaptados.
+Los IDs 2220–2221 siguen reservados a Team Rocket y Map2230 al circuito Atlas.
 
 ```bash
 npm run build:dimensiones

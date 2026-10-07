@@ -1,44 +1,194 @@
 {
-  "esquema": "dlc_ambience/1.0",
-  "titulo": "Ambientación del DLC: música y encuentros de los mapas nuevos",
-  "nota": "Los diecisiete mapas nuevos salieron del compositor sin banda sonora ni encuentros: eran mundos mudos. Aquí se les asigna música real del juego (ningún archivo inventado) y, a los que tienen terreno compatible, tablas de encuentros temáticas.",
+  "esquema": "dlc_ambience/2.0",
+  "titulo": "Ambientación del DLC: música y encuentros de 23 mapas nuevos",
+  "nota": "Los 23 mapas compuestos reciben música existente de Fire Ash. Las dimensiones exteriores compatibles conservan tablas de encuentros temáticas.",
   "musica": [
-    { "mapId": 2195, "bgm": "route.mid", "nota": "Vía de las Nueve Eras: música de ruta, como un camino largo entre ciudades." },
-    { "mapId": 2196, "bgm": "gymleader-stadium.ogg", "nota": "Gimnasio de las Nueve Eras." },
-    { "mapId": 2200, "bgm": "DN_SnowSilver.mid", "nota": "Glazed: bahía fría, nieve de plata." },
-    { "mapId": 2201, "bgm": "gymsinnoh.ogg", "nota": "Gimnasio Glazed." },
-    { "mapId": 2210, "bgm": "Sinnoh Route.ogg", "nota": "Light Platinum: costa luminosa." },
-    { "mapId": 2211, "bgm": "gymleader-8.ogg", "nota": "Gimnasio Light Platinum." },
-    { "mapId": 2220, "bgm": "TeamRocket.ogg", "nota": "Base Subterránea del Sindicato." },
-    { "mapId": 2221, "bgm": "Team Rocket OW Kanto.ogg", "nota": "Núcleo del Mando." },
-    { "mapId": 2230, "bgm": "Kalos Town.ogg", "nota": "Avenida de los Ocho Gimnasios." },
-    { "mapId": 2250, "bgm": "gym.ogg", "nota": "Gimnasio de Atlas · Bruma." },
-    { "mapId": 2251, "bgm": "gymleader-1.ogg", "nota": "Gimnasio de Atlas · Veta." },
-    { "mapId": 2252, "bgm": "gymleader-2.ogg", "nota": "Gimnasio de Atlas · Duna." },
-    { "mapId": 2253, "bgm": "gymleader-3.ogg", "nota": "Gimnasio de Atlas · Fragua." },
-    { "mapId": 2254, "bgm": "gymleader-4.ogg", "nota": "Gimnasio de Atlas · Marea." },
-    { "mapId": 2255, "bgm": "gymleader-5.ogg", "nota": "Gimnasio de Atlas · Vendaval." },
-    { "mapId": 2256, "bgm": "gymleader-6.ogg", "nota": "Gimnasio de Atlas · Invernadero." },
-    { "mapId": 2257, "bgm": "Battle Gym Leader.mid", "nota": "Gimnasio de Atlas · Cumbre, la octava medalla." }
+    {
+      "mapId": 2195,
+      "bgm": "route.mid",
+      "nota": "Vía de las Nueve Eras: música de ruta, como un camino largo entre ciudades."
+    },
+    {
+      "mapId": 2196,
+      "bgm": "gymleader-stadium.ogg",
+      "nota": "Gimnasio de las Nueve Eras."
+    },
+    {
+      "mapId": 2200,
+      "bgm": "DN_SnowSilver.mid",
+      "nota": "Glazed: bahía fría, nieve de plata."
+    },
+    {
+      "mapId": 2201,
+      "bgm": "gymsinnoh.ogg",
+      "nota": "Gimnasio Glazed."
+    },
+    {
+      "mapId": 2210,
+      "bgm": "Sinnoh Route.ogg",
+      "nota": "Light Platinum: costa luminosa."
+    },
+    {
+      "mapId": 2211,
+      "bgm": "gymleader-8.ogg",
+      "nota": "Gimnasio Light Platinum."
+    },
+    {
+      "mapId": 2220,
+      "bgm": "TeamRocket.ogg",
+      "nota": "Base Subterránea del Sindicato."
+    },
+    {
+      "mapId": 2221,
+      "bgm": "Team Rocket OW Kanto.ogg",
+      "nota": "Núcleo del Mando."
+    },
+    {
+      "mapId": 2230,
+      "bgm": "Kalos Town.ogg",
+      "nota": "Avenida de los Ocho Gimnasios."
+    },
+    {
+      "mapId": 2240,
+      "bgm": "Johto Route.ogg",
+      "nota": "Liquid Crystal: santuario lluvioso de Johto."
+    },
+    {
+      "mapId": 2241,
+      "bgm": "secretjohto.ogg",
+      "nota": "Dojo Liquid Crystal."
+    },
+    {
+      "mapId": 2242,
+      "bgm": "Kanto Route.ogg",
+      "nota": "TFOH: frontera del origen."
+    },
+    {
+      "mapId": 2243,
+      "bgm": "Battle Gym Leader.mid",
+      "nota": "Cámara de la Primera Huella."
+    },
+    {
+      "mapId": 2244,
+      "bgm": "Team Rocket OW Journeys.ogg",
+      "nota": "Factory Adventure: distrito industrial."
+    },
+    {
+      "mapId": 2245,
+      "bgm": "gym.mid",
+      "nota": "Núcleo de Ensamblaje."
+    },
+    {
+      "mapId": 2250,
+      "bgm": "gym.ogg",
+      "nota": "Gimnasio de Atlas · Bruma."
+    },
+    {
+      "mapId": 2251,
+      "bgm": "gymleader-1.ogg",
+      "nota": "Gimnasio de Atlas · Veta."
+    },
+    {
+      "mapId": 2252,
+      "bgm": "gymleader-2.ogg",
+      "nota": "Gimnasio de Atlas · Duna."
+    },
+    {
+      "mapId": 2253,
+      "bgm": "gymleader-3.ogg",
+      "nota": "Gimnasio de Atlas · Fragua."
+    },
+    {
+      "mapId": 2254,
+      "bgm": "gymleader-4.ogg",
+      "nota": "Gimnasio de Atlas · Marea."
+    },
+    {
+      "mapId": 2255,
+      "bgm": "gymleader-5.ogg",
+      "nota": "Gimnasio de Atlas · Vendaval."
+    },
+    {
+      "mapId": 2256,
+      "bgm": "gymleader-6.ogg",
+      "nota": "Gimnasio de Atlas · Invernadero."
+    },
+    {
+      "mapId": 2257,
+      "bgm": "Battle Gym Leader.mid",
+      "nota": "Gimnasio de Atlas · Cumbre, la octava medalla."
+    }
   ],
   "zonas": [
     {
       "mapId": 2195,
       "label": "Vía de las Nueve Eras",
       "note": "Un paseo entre nueve épocas: la Vía entera está viva y en cualquier paso puede salir algo de cualquiera de ellas.",
-      "step_chances": { "Cave": 14 },
+      "step_chances": {
+        "Cave": 14
+      },
       "types": {
         "Cave": [
-          [16, "PIKACHU", 88, 96],
-          [14, "EEVEE", 88, 96],
-          [12, "MEOWTH", 86, 94],
-          [11, "PSYDUCK", 86, 94],
-          [10, "MACHOP", 88, 96],
-          [10, "GEODUDE", 88, 96],
-          [9, "ZUBAT", 86, 94],
-          [8, "GRIMER", 86, 94],
-          [6, "DROWZEE", 86, 94],
-          [4, "JIGGLYPUFF", 86, 94]
+          [
+            16,
+            "PIKACHU",
+            88,
+            96
+          ],
+          [
+            14,
+            "EEVEE",
+            88,
+            96
+          ],
+          [
+            12,
+            "MEOWTH",
+            86,
+            94
+          ],
+          [
+            11,
+            "PSYDUCK",
+            86,
+            94
+          ],
+          [
+            10,
+            "MACHOP",
+            88,
+            96
+          ],
+          [
+            10,
+            "GEODUDE",
+            88,
+            96
+          ],
+          [
+            9,
+            "ZUBAT",
+            86,
+            94
+          ],
+          [
+            8,
+            "GRIMER",
+            86,
+            94
+          ],
+          [
+            6,
+            "DROWZEE",
+            86,
+            94
+          ],
+          [
+            4,
+            "JIGGLYPUFF",
+            86,
+            94
+          ]
         ]
       }
     },
@@ -46,18 +196,65 @@
       "mapId": 2200,
       "label": "Glazed — Bahía de Cedolán",
       "note": "La bahía fría: hielo y nieve en los pastos de la costa.",
-      "step_chances": { "Land": 14 },
+      "step_chances": {
+        "Land": 14
+      },
       "types": {
         "Land": [
-          [18, "SNORUNT", 88, 96],
-          [16, "SWINUB", 88, 96],
-          [14, "SPHEAL", 88, 96],
-          [12, "SNEASEL", 90, 98],
-          [11, "SNOM", 88, 96],
-          [10, "CUBCHOO", 88, 96],
-          [9, "VANILLITE", 88, 96],
-          [6, "GLACEON", 92, 100],
-          [4, "MAMOSWINE", 94, 100]
+          [
+            18,
+            "SNORUNT",
+            88,
+            96
+          ],
+          [
+            16,
+            "SWINUB",
+            88,
+            96
+          ],
+          [
+            14,
+            "SPHEAL",
+            88,
+            96
+          ],
+          [
+            12,
+            "SNEASEL",
+            90,
+            98
+          ],
+          [
+            11,
+            "SNOM",
+            88,
+            96
+          ],
+          [
+            10,
+            "CUBCHOO",
+            88,
+            96
+          ],
+          [
+            9,
+            "VANILLITE",
+            88,
+            96
+          ],
+          [
+            6,
+            "GLACEON",
+            92,
+            100
+          ],
+          [
+            4,
+            "MAMOSWINE",
+            94,
+            100
+          ]
         ]
       }
     },
@@ -65,18 +262,65 @@
       "mapId": 2210,
       "label": "Light Platinum — Costa de Lappet",
       "note": "La costa luminosa: chispas, imanes y alas que no se cansan.",
-      "step_chances": { "Land": 14 },
+      "step_chances": {
+        "Land": 14
+      },
       "types": {
         "Land": [
-          [17, "SHINX", 88, 96],
-          [15, "MAGNEMITE", 88, 96],
-          [13, "ELEKID", 88, 96],
-          [12, "FLETCHLING", 88, 96],
-          [11, "RUFFLET", 88, 96],
-          [10, "VOLTORB", 86, 94],
-          [9, "LARVESTA", 90, 98],
-          [8, "SOLOSIS", 88, 96],
-          [5, "LUXRAY", 94, 100]
+          [
+            17,
+            "SHINX",
+            88,
+            96
+          ],
+          [
+            15,
+            "MAGNEMITE",
+            88,
+            96
+          ],
+          [
+            13,
+            "ELEKID",
+            88,
+            96
+          ],
+          [
+            12,
+            "FLETCHLING",
+            88,
+            96
+          ],
+          [
+            11,
+            "RUFFLET",
+            88,
+            96
+          ],
+          [
+            10,
+            "VOLTORB",
+            86,
+            94
+          ],
+          [
+            9,
+            "LARVESTA",
+            90,
+            98
+          ],
+          [
+            8,
+            "SOLOSIS",
+            88,
+            96
+          ],
+          [
+            5,
+            "LUXRAY",
+            94,
+            100
+          ]
         ]
       }
     },
@@ -84,18 +328,65 @@
       "mapId": 2220,
       "label": "Team Rocket — Base Subterránea",
       "note": "En los pasillos de la base también hay Pokémon sueltos: los que el Sindicato dejó atrás.",
-      "step_chances": { "Cave": 16 },
+      "step_chances": {
+        "Cave": 16
+      },
       "types": {
         "Cave": [
-          [18, "RATTATA", 86, 94],
-          [16, "ZUBAT", 86, 94],
-          [14, "KOFFING", 88, 96],
-          [12, "GRIMER", 88, 96],
-          [11, "MURKROW", 88, 96],
-          [10, "HOOTHOOT", 86, 94],
-          [9, "MEOWTH", 86, 94],
-          [6, "PERSIAN", 92, 100],
-          [4, "HOUNDOUR", 90, 98]
+          [
+            18,
+            "RATTATA",
+            86,
+            94
+          ],
+          [
+            16,
+            "ZUBAT",
+            86,
+            94
+          ],
+          [
+            14,
+            "KOFFING",
+            88,
+            96
+          ],
+          [
+            12,
+            "GRIMER",
+            88,
+            96
+          ],
+          [
+            11,
+            "MURKROW",
+            88,
+            96
+          ],
+          [
+            10,
+            "HOOTHOOT",
+            86,
+            94
+          ],
+          [
+            9,
+            "MEOWTH",
+            86,
+            94
+          ],
+          [
+            6,
+            "PERSIAN",
+            92,
+            100
+          ],
+          [
+            4,
+            "HOUNDOUR",
+            90,
+            98
+          ]
         ]
       }
     },
@@ -103,19 +394,71 @@
       "mapId": 2230,
       "label": "Atlas — Avenida de los Ocho Gimnasios",
       "note": "Seis plazas de ciudades distintas: lo que merodea por ellas tampoco se pone de acuerdo.",
-      "step_chances": { "Cave": 15 },
+      "step_chances": {
+        "Cave": 15
+      },
       "types": {
         "Cave": [
-          [14, "MEOWTH", 88, 96],
-          [13, "RATTATA", 86, 94],
-          [12, "ZUBAT", 86, 94],
-          [11, "MACHOP", 90, 98],
-          [10, "GEODUDE", 90, 98],
-          [10, "PSYDUCK", 88, 96],
-          [9, "DROWZEE", 88, 96],
-          [8, "JIGGLYPUFF", 86, 94],
-          [8, "GRIMER", 86, 94],
-          [5, "EEVEE", 92, 100]
+          [
+            14,
+            "MEOWTH",
+            88,
+            96
+          ],
+          [
+            13,
+            "RATTATA",
+            86,
+            94
+          ],
+          [
+            12,
+            "ZUBAT",
+            86,
+            94
+          ],
+          [
+            11,
+            "MACHOP",
+            90,
+            98
+          ],
+          [
+            10,
+            "GEODUDE",
+            90,
+            98
+          ],
+          [
+            10,
+            "PSYDUCK",
+            88,
+            96
+          ],
+          [
+            9,
+            "DROWZEE",
+            88,
+            96
+          ],
+          [
+            8,
+            "JIGGLYPUFF",
+            86,
+            94
+          ],
+          [
+            8,
+            "GRIMER",
+            86,
+            94
+          ],
+          [
+            5,
+            "EEVEE",
+            92,
+            100
+          ]
         ]
       }
     }
