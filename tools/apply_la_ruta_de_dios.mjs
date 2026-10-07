@@ -446,6 +446,153 @@ RUTA_ARCEUS_CAUGHT_SWITCH = 874
 RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH = 869
 RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH = 881
 
+# Transacción de memoria para la batalla divina. Arceus puede aparentar reescribir
+# reglas, equipo, bolsa y mundo, pero esos cambios no cruzan el límite del encuentro.
+# map_factory/game_player se excluyen de la recarga porque el intérprete que llamó al
+# combate conserva referencias a ellos; la batalla nunca tiene permiso para mutarlos.
+module ArceusSaveSandbox
+  PROTECTED_IDS = [
+    :player, :frame_count, :game_system, :pokemon_system, :switches, :variables,
+    :self_switches, :game_screen, :global_metadata, :map_metadata, :bag,
+    :storage_system
+  ]
+  @depth = 0
+  @blocked_writes = 0
+
+  def self.active?
+    return @depth > 0
+  end
+
+  def self.blocked_writes
+    return @blocked_writes
+  end
+
+  def self.deep_copy(value)
+    return Marshal.load(Marshal.dump(value))
+  end
+
+  def self.begin!
+    raise "Arceus sandbox already active" if active?
+    compiled = SaveData.compile_save_hash
+    snapshot = {}
+    PROTECTED_IDS.each do |id|
+      snapshot[id] = deep_copy(compiled[id]) if compiled.has_key?(id)
+    end
+    disk = nil
+    disk_existed = false
+    begin
+      disk_existed = File.file?(SaveData::FILE_PATH)
+      disk = File.open(SaveData::FILE_PATH, "rb") { |f| f.read } if disk_existed
+    rescue StandardError
+      # La protección primaria es bloquear SaveData.save_to_file. La copia de disco
+      # añade defensa frente a escritores ajenos, pero nunca impide iniciar la escena.
+    end
+    @depth = 1
+    @blocked_writes = 0
+    return { :snapshot => snapshot, :disk => disk, :disk_existed => disk_existed }
+  end
+
+  def self.restore_values(snapshot)
+    errors = []
+    values = SaveData.instance_variable_get(:@values)
+    values.each do |value|
+      id = value.id
+      next if !snapshot.has_key?(id)
+      begin
+        value.load(deep_copy(snapshot[id]))
+      rescue StandardError => error
+        # Un valor defectuoso no debe impedir que se intenten restaurar todos los
+        # demás. Se informa al final, una vez agotado el rollback completo.
+        errors.push("#{id}: #{error.class}: #{error.message}")
+      end
+    end
+    return errors
+  end
+
+  def self.restore_disk!(transaction)
+    return nil if transaction[:disk].nil? && !transaction[:disk_existed]
+    path = SaveData::FILE_PATH
+    if transaction[:disk_existed]
+      current = nil
+      current = File.open(path, "rb") { |f| f.read } if File.file?(path)
+      if current != transaction[:disk]
+        File.open(path, "wb") { |f| f.write(transaction[:disk]) }
+      end
+    elsif File.file?(path)
+      File.delete(path)
+    end
+    return nil
+  rescue StandardError => error
+    message = "disk: #{error.class}: #{error.message}"
+    echoln("[ArceusSaveSandbox] #{message}")
+    return message
+  end
+
+  def self.finish!(transaction, captured_pokemon, caught, prelude_seen)
+    return if !transaction
+    errors = []
+    begin
+      errors.concat(restore_values(transaction[:snapshot]))
+      # Nunca se hace commit parcial: si una clave no pudo volver a su estado
+      # inicial, la captura tampoco se inserta sobre un mundo incoherente.
+      if errors.empty?
+        begin
+          $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true if caught && $game_switches
+          $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH] = true if prelude_seen && $game_switches
+          if caught && captured_pokemon
+            pbArceusNormalizeCaptured(captured_pokemon)
+            unless pbAddPokemonSilent(captured_pokemon)
+              raise "Unable to commit canonical Arceus capture"
+            end
+          end
+        rescue StandardError => error
+          errors.push("canonical commit: #{error.class}: #{error.message}")
+        end
+      end
+    ensure
+      # La restauración física y la liberación del candado se ejecutan aunque
+      # fallen tanto una clave individual como el commit de la captura.
+      disk_error = restore_disk!(transaction)
+      errors.push(disk_error) if disk_error
+      @depth = 0
+    end
+    if !errors.empty?
+      raise "Arceus sandbox rollback failed: #{errors.join(' | ')}"
+    end
+  end
+
+  def self.note_blocked_write(path)
+    @blocked_writes += 1
+    echoln("[ArceusSaveSandbox] blocked save write to #{path}")
+    return false
+  end
+end
+
+# Barrera global y deliberadamente estrecha: fuera del encuentro llama al método
+# original sin cambiar el sistema normal de guardado.
+module SaveData
+  class << self
+    unless method_defined?(:arceus_unrestricted_save_to_file)
+      alias arceus_unrestricted_save_to_file save_to_file
+      def save_to_file(file_path)
+        if defined?(ArceusSaveSandbox) && ArceusSaveSandbox.active?
+          return ArceusSaveSandbox.note_blocked_write(file_path)
+        end
+        return arceus_unrestricted_save_to_file(file_path)
+      end
+    end
+    unless method_defined?(:arceus_unrestricted_delete_file)
+      alias arceus_unrestricted_delete_file delete_file
+      def delete_file
+        if defined?(ArceusSaveSandbox) && ArceusSaveSandbox.active?
+          return ArceusSaveSandbox.note_blocked_write(SaveData::FILE_PATH)
+        end
+        return arceus_unrestricted_delete_file
+      end
+    end
+  end
+end
+
 # Cada sello es una orden de escena, no un umbral que se pueda cruzar por HP.
 # La fase se deriva de los sellos rotos: 1 (inicio) → 2 → 3 → 4 → 5 → 6.
 RUTA_ARCEUS_PHASE_PLATES = [
@@ -1568,6 +1715,10 @@ rescue StandardError
 end
 
 def pbStartArceusDivineBattle
+  transaction = ArceusSaveSandbox.begin!
+  canonical_capture = nil
+  canonical_caught = false
+  begin
   $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = false if $game_switches
   pkmn = Pokemon.new(:ARCEUS, GameData::GrowthRate.max_level)
   pkmn.personalID = 0xA2CE0200 if pkmn.respond_to?(:personalID=)
@@ -1610,8 +1761,11 @@ def pbStartArceusDivineBattle
     snapshot = $Trainer.party.map { |p| [p, p.hp, p.status] }
     decision = pbWildBattleCore(pkmn)
     if decision == 4
-      $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true if $game_switches
-      pbArceusNormalizeCaptured(pkmn)
+      # La captura es el único objeto complejo autorizado a cruzar la transacción.
+      # Se clona antes del rollback porque el motor ya insertó esta instancia en
+      # equipo/PC; después se restaura el estado inicial y se inserta una sola vez.
+      canonical_capture = ArceusSaveSandbox.deep_copy(pkmn)
+      canonical_caught = true
       return decision
     end
     return decision if decision == 1
@@ -1651,6 +1805,10 @@ def pbStartArceusDivineBattle
       return 5
     end
     return decision if decision == 3
+  end
+  ensure
+    prelude_seen = ($game_switches && $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH]) ? true : false
+    ArceusSaveSandbox.finish!(transaction, canonical_capture, canonical_caught, prelude_seen)
   end
 end
 `;
@@ -3381,6 +3539,14 @@ function verify() {
       ["pbArceusVoloRest", "descanso antes del duelo con Volo (R6)"],
       ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
       ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
+      ["module ArceusSaveSandbox", "límite transaccional integral del encuentro"],
+      ["SaveData.compile_save_hash", "snapshot de todos los valores persistentes"],
+      ["alias arceus_unrestricted_save_to_file save_to_file", "barrera de escritura de guardado"],
+      ["errors.concat(restore_values(transaction[:snapshot]))", "rollback exhaustivo aunque falle una clave individual"],
+      ["disk_error = restore_disk!(transaction)", "restauración física dentro del ensure final"],
+      ["alias arceus_unrestricted_delete_file delete_file", "bloqueo de borrado de partida durante el encuentro"],
+      ["canonical_capture = ArceusSaveSandbox.deep_copy(pkmn)", "captura canónica aislada del estado transitorio"],
+      ["ensure\n    prelude_seen", "finalización transaccional garantizada"],
     ];
     for (const [needle, label] of guarantees) {
       if (ruby && !ruby.includes(needle)) errors.push(`Falta una garantía de la batalla: ${label}`);

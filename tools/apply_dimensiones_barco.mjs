@@ -4,13 +4,10 @@
  *
  * «Atlas, Glazed y Light Platinum son lugares a explorar accesibles desde
  * barco.» Atlas ya tenía su capitán; faltaban las otras dos. Esta herramienta
- * crea las dos dimensiones invitadas navegables:
- *
- *   · **Glazed** (Map2200 + gimnasio 2201) — bahía fría, seis distritos
- *     tomados de Cedolán, Lerucean, la Meseta Ingido y sus rutas.
- *   · **Light Platinum** (Map2210 + gimnasio 2211) — costa luminosa, seis
- *     distritos tomados del pueblo costero, la ciudad verde, las sendas, la
- *     zona safari y el frente de batalla.
+ * crea cinco dimensiones invitadas navegables: Glazed, Light Platinum,
+ * Liquid Crystal, TFOH y Factory Adventure. Cada ROM conserva su propio
+ * Fragmento y Ash llega expresamente como visitante, nunca como sustituto de
+ * su protagonista ni como dueño de sus criaturas.
  *
  * Cada dimensión se construye con ventanas reales de mapas del juego, se une
  * con avenidas en serpentina y se comprueba que **no quede una sola celda
@@ -47,6 +44,9 @@ const PUERTO = PLAN.puerto.mapa;
 const REGRESO = PLAN.puerto.pistas[0];
 const BACKUP = "dimensiones_barco";
 const MARKER = "PokeMod Barco:";
+const REQUIRED_DIMENSIONS = ["glazed", "lightplatinum", "liquidcrystal", "tfoh", "factoryadventure"];
+const trainerType = (dim) => dim.tipoEntrenador ?? (dim.id === "glazed" ? "GLAZED_TRAINER" : "PLATINUM_TRAINER");
+const battleVariable = (dim) => Number(dim.variableCombate ?? (dim.id === "glazed" ? 314 : 315));
 
 /** Aplana bloques anidados dentro de una lista de comandos. */
 const plano = (lista) => lista.flat(Infinity).filter(Boolean);
@@ -112,7 +112,7 @@ function instalarDatos() {
   const entrenadores = [];
   const medallas = [];
   for (const dim of PLAN.dimensiones) {
-    const tipoBase = dim.id === "glazed" ? "GLAZED_TRAINER" : "PLATINUM_TRAINER";
+    const tipoBase = trainerType(dim);
     tipos.push({ id: tipoBase, base: "GENTLEMAN", nombre: dim.slug });
     tipos.push({ id: dim.lider.tipo, base: "LEADER_Brock", nombre: dim.lider.mostrado });
     for (const t of dim.entrenadores) {
@@ -164,7 +164,9 @@ function capitanEvent(dim, cell) {
 }
 
 function eventosDimension(dim) {
-  const total = 4 + dim.entrenadores.length + dim.pobladores.length;
+  // Una baliza por distrito evita que el gran mapa compuesto se sienta vacío:
+  // identifica cada zona y recuerda el papel de Ash como visitante.
+  const total = 3 + dim.distritos.length + dim.entrenadores.length + dim.pobladores.length;
   const celdas = spread(celdasLibres(dim.mapaId), total);
   let i = 0;
   const siguiente = () => celdas[i++];
@@ -215,9 +217,26 @@ function eventosDimension(dim) {
     }),
   ]));
 
+  // Balizas diegéticas: cada distrito tiene identidad y una pauta de visita.
+  dim.distritos.forEach((distrito, index) => {
+    const celda = siguiente();
+    eventos.push(event(0, `${MARKER} Baliza ${index + 1} — ${distrito.label}`, celda[0], celda[1], [
+      page({
+        gfx: graphic("", 2, 1, {}),
+        list: plano([
+          ...texts([
+            `${dim.slug} · Distrito ${index + 1}/${dim.distritos.length}: ${distrito.label}.`,
+            `Ash visita este Fragmento como huésped. Explora, escucha y deja siempre abierto el camino de vuelta.`,
+          ]),
+          endEvent(),
+        ]),
+      }),
+    ]));
+  });
+
   // Entrenadores: se puede perder, nunca bloquean el paso.
-  const tipoBase = dim.id === "glazed" ? "GLAZED_TRAINER" : "PLATINUM_TRAINER";
-  const variable = dim.id === "glazed" ? 314 : 315;
+  const tipoBase = trainerType(dim);
+  const variable = battleVariable(dim);
   for (const t of dim.entrenadores) {
     const celda = siguiente();
     eventos.push(event(0, `${MARKER} Entrenador — ${t.nombre}`, celda[0], celda[1], [
@@ -308,8 +327,16 @@ function instalar() {
 
 function verify() {
   const check = makeChecker("Dimensiones de barco");
+  const ids = new Set(PLAN.dimensiones.map((dim) => dim.id));
+  const mapIds = PLAN.dimensiones.flatMap((dim) => [dim.mapaId, dim.gimnasioId]);
+  for (const required of REQUIRED_DIMENSIONS) check.ok(ids.has(required), `falta la dimensión ROM ${required}`);
+  check.ok(ids.size === PLAN.dimensiones.length, "hay ids de dimensión repetidos");
+  check.ok(new Set(mapIds).size === mapIds.length, "hay ids de mapa repetidos entre dimensiones");
 
   for (const dim of PLAN.dimensiones) {
+    check.ok(!!dim.rom?.archivo, `${dim.slug}: falta la procedencia forense del ROM`);
+    check.ok(Number.isInteger(dim.rom?.mapasDetectados), `${dim.slug}: falta el conteo forense de mapas`);
+    check.ok(dim.cronista.lineas.some((linea) => /Ash/i.test(linea)), `${dim.slug}: Ash no está presentado como visitante`);
     const arranques = [LLEGADA];
 
     // — el mapa de la dimensión es jugable
@@ -356,8 +383,16 @@ function verify() {
         `${dim.slug}: el líder no entrega la medalla ${dim.medalla}`);
     }
 
-    // — entrenadores
-    const tipoBase = dim.id === "glazed" ? "GLAZED_TRAINER" : "PLATINUM_TRAINER";
+    // — distritos señalizados y entrenadores
+    const balizas = eventsOf(dim.mapaId).filter((e) => e.name.startsWith(`${MARKER} Baliza `));
+    check.ok(balizas.length === dim.distritos.length,
+      `${dim.slug}: se esperaban ${dim.distritos.length} balizas y hay ${balizas.length}`);
+    for (const baliza of balizas) {
+      const lineas = pagesOf(baliza)[0].list.map((c) => String(c.params?.[0] ?? "")).join(" ");
+      check.ok(/Ash/.test(lineas) && /huésped/.test(lineas), `${dim.slug}: una baliza no explica el rol visitante de Ash`);
+    }
+
+    const tipoBase = trainerType(dim);
     const peleas = eventsOf(dim.mapaId).filter((e) => e.name.startsWith(`${MARKER} Entrenador —`));
     check.ok(peleas.length === dim.entrenadores.length,
       `${dim.slug}: se esperaban ${dim.entrenadores.length} entrenadores y hay ${peleas.length}`);
