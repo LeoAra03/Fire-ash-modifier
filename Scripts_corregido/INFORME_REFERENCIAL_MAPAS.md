@@ -5222,7 +5222,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2037 — La Ruta de Dios — 7F: Cima del Génesis
 - **Categoría:** La Ruta de Dios.
 - **Referencia:** Piso 7F, Cima del Génesis: altar de Arceus y desenlace de La Ruta de Dios.
-- **Datos compilados:** 46×46 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 46×46 tiles; 8 eventos; tileset 1.
 
 ## Vía de las Nueve Eras
 
