@@ -47,6 +47,7 @@ const maps = new Set([
   2200, 2201, 2210, 2211,                              // Glazed y Light Platinum
   2220, 2221,                                          // dimensión Team Rocket
   2230,                                                // Avenida de los Ocho Gimnasios
+  2240, 2241, 2242, 2243, 2244, 2245,                  // Liquid Crystal, TFOH y Factory Adventure
   ...Array.from({ length: 8 }, (_, i) => 2250 + i),     // los ocho gimnasios de Atlas
 ]);
 
@@ -86,6 +87,9 @@ QUÉ INSTALA
 - Punto de colapso en la Torre Pokémon 1F y Liga Oscura (dos mapas, cinco
   combates que se pueden perder).
 - Expedición a Atlas Mil: capitán en el puerto de Ciudad Carmín y muelle propio.
+- Cinco ROMs reinterpretadas como dimensiones separadas: Glazed, Light
+  Platinum, Liquid Crystal, TFOH y Factory Adventure; Ash entra como visitante
+  y cada orilla conserva un barco de retorno libre.
 - Sótano sellado de la Mansión Pokémon con el espejo que abre la Isla Espejo.
 - Los doce Pokégods con sus tres Formas de Anomalía.
 
