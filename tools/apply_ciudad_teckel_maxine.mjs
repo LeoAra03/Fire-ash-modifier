@@ -422,6 +422,7 @@ async function apply() {
     "Graphics/Pokemon/Front/MAXINE.png", "Graphics/Pokemon/Back/MAXINE.png",
     "Graphics/Pokemon/Icons/MAXINE.png", "Graphics/Characters/MAXINE.png",
     "Graphics/Characters/ALTAR_MAXINE.png",
+    "Graphics/Pictures/Trainer Card/icon_badges.png",
     "Audio/SE/MAXINE.ogg",
   ]);
   console.log("OK: Ciudad Teckel, Gimnasio, Afueras, Isla Paraíso y MAXINE instalados");

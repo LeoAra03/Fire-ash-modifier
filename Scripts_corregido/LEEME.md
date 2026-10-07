@@ -164,6 +164,18 @@ En la base, Ash no pasea: se infiltra. Habla con el **Intendente Norbert** (en l
 
 El uniforme es una entrada de jugador nueva: `player_A` y `player_B`, los originales, siguen exactamente igual.
 
+## Visor de medallas región por región
+
+En la **información del jugador** (Tarjeta de Entrenador) las medallas ya no enseñan solo la región actual: con **◀ / ▶** se recorren 15 regiones, cada una con sus 8 huecos de medalla, igual que las regiones base de Fire Ash:
+
+1. Las nueve regiones base del juego (Kanto, Johto, Hoenn, Sinnoh, Unova, Kalos, Alola, Galar y Orange), con el cableado de medallas que ya tenía el juego.
+2. **Glazed**, **Light Platinum** y **Liquid Crystal**: sus 8 medallas se encienden al tenerlas en la Mochila (las de Glazed, Light Platinum y Liquid Crystal nuevas se registran como objetos: `GLAZEDBADGE2`…`GLAZEDBADGE8`, `PLATINUMBADGE2`…, `CRYSTALBADGE2`…).
+3. **Creepypastas**: los 8 huecos se encienden con los sellos de los jefes del multiverso (switches 940-947, incluido el campeón de Monte Silver).
+4. **Dimensión Atlas**: las 8 medallas de elemento (Bruma, Veta, Duna, Fragua, Marea, Venta, Flora y Chispa).
+5. **Ciudad Teckel**: la Medalla Pata de Duna.
+
+La hoja `Graphics/Pictures/Trainer Card/icon_badges.png` crece de 9 a 15 filas con emblemas nuevos por región (escarcha Glazed, platino, cristal, púrpura creepypasta, oro Atlas y hueso Teckel). Los huecos sin medalla obtenida quedan vacíos, como en las regiones base.
+
 ## Opción de solo scripts
 
 Si únicamente quieres la corrección de colisiones y guardado, copia:

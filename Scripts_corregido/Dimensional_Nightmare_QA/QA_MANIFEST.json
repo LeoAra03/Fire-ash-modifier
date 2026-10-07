@@ -1337,13 +1337,13 @@
     },
     {
       "path": "Data/MapInfos.rxdata",
-      "bytes": 202567,
-      "sha256": "7f8be9e5c9568c765ed8d71011a4f11540e213531aea043dd01c6b04e2d76241"
+      "bytes": 202573,
+      "sha256": "fdd691763fc96b6af1fa1ca1c3f0bc12906473e94a91a87fc5e08669fe4adaf2"
     },
     {
       "path": "Data/Scripts.rxdata",
-      "bytes": 1112429,
-      "sha256": "49c2d72d9daa919696717995507b94cdf157832dae285f227da83a538b8eab3b"
+      "bytes": 1113273,
+      "sha256": "3e7367e8b5dbbcf836169382423e1f3f18cea7aecee64e0007e606c13f610120"
     },
     {
       "path": "Data/System.rxdata",
@@ -1362,13 +1362,13 @@
     },
     {
       "path": "Data/items.dat",
-      "bytes": 204094,
-      "sha256": "485054488d2ac05153f6225c01b3bd1c58fc448af0bbb81504cff53e96eb1caf"
+      "bytes": 206507,
+      "sha256": "b28073716d98ced2691c5b2a9b030ebe20cb150000b5eb206e30983809f75ae8"
     },
     {
       "path": "Data/map_metadata.dat",
-      "bytes": 502375,
-      "sha256": "74dd526b314e03f7ae0ec0aa3f02737c57a139e46d5241d99463d558bb5c5ad1"
+      "bytes": 502423,
+      "sha256": "87eb7f147d0a22577802f45e92c45737a155e9e927159aa9489d79084f5bf95a"
     },
     {
       "path": "Data/trainer_lists.dat",
@@ -1377,8 +1377,8 @@
     },
     {
       "path": "Data/trainer_types.dat",
-      "bytes": 59619,
-      "sha256": "c709199e9d0fd7e15aa0da8f2aab73aff9a1a315d5ee067ce09e1b66a97c53a1"
+      "bytes": 59706,
+      "sha256": "203e380becd2ae3fe0f7fdb021287f8b63b6b8bb808ee3680aaab12de26e7f87"
     },
     {
       "path": "Data/trainerlists.dat",
@@ -1387,8 +1387,8 @@
     },
     {
       "path": "Data/trainers.dat",
-      "bytes": 1416236,
-      "sha256": "51b5940b663b42121474bda2fd04a6de5420a6d286571a4edda4552062d3cbc3"
+      "bytes": 1416440,
+      "sha256": "a6c0acd0694b3f2cfb77a839baa94ee54dcf5cf90e98b33c6b56422f8117bfd6"
     },
     {
       "path": "Data/trainertypes.dat",
@@ -1639,6 +1639,11 @@
       "path": "Graphics/Pictures/DN_WHITE_HAND.png",
       "bytes": 5072,
       "sha256": "1d5a97a996109c85707d8d524b25637fea5a6ca4b4a359c2a8d9cf557f7646d1"
+    },
+    {
+      "path": "Graphics/Pictures/Trainer Card/icon_badges.png",
+      "bytes": 22127,
+      "sha256": "67f0d87aea324bd6dd0e82d9a5f7ddf1b3249ad32ef5d8e8fb2cff7ff8ce372c"
     },
     {
       "path": "Graphics/Pokemon/Front/DN_KINGGUS.png",

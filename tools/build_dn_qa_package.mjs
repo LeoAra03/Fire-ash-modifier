@@ -51,6 +51,7 @@ const POSTGAME_ASSETS = [
   "Graphics/Characters/SECRET_Volo.png",
   "Graphics/Characters/SQUIRTLE.png",
   "Audio/BGM/Legend Sinnoh.ogg",
+  "Graphics/Pictures/Trainer Card/icon_badges.png",
   "Audio/BGM/secretvolo.ogg",
 ];
 const COPY_GRAPHIC_DIRS = [
