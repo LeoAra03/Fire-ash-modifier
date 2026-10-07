@@ -493,15 +493,24 @@ module ArceusSaveSandbox
   end
 
   def self.restore_values(snapshot)
+    errors = []
     values = SaveData.instance_variable_get(:@values)
     values.each do |value|
       id = value.id
-      value.load(deep_copy(snapshot[id])) if snapshot.has_key?(id)
+      next if !snapshot.has_key?(id)
+      begin
+        value.load(deep_copy(snapshot[id]))
+      rescue StandardError => error
+        # Un valor defectuoso no debe impedir que se intenten restaurar todos los
+        # demás. Se informa al final, una vez agotado el rollback completo.
+        errors.push("#{id}: #{error.class}: #{error.message}")
+      end
     end
+    return errors
   end
 
   def self.restore_disk!(transaction)
-    return if transaction[:disk].nil? && !transaction[:disk_existed]
+    return nil if transaction[:disk].nil? && !transaction[:disk_existed]
     path = SaveData::FILE_PATH
     if transaction[:disk_existed]
       current = nil
@@ -512,25 +521,43 @@ module ArceusSaveSandbox
     elsif File.file?(path)
       File.delete(path)
     end
+    return nil
   rescue StandardError => error
-    echoln("[ArceusSaveSandbox] disk restore failed: #{error.class}: #{error.message}")
+    message = "disk: #{error.class}: #{error.message}"
+    echoln("[ArceusSaveSandbox] #{message}")
+    return message
   end
 
   def self.finish!(transaction, captured_pokemon, caught, prelude_seen)
     return if !transaction
+    errors = []
     begin
-      restore_values(transaction[:snapshot])
-      $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true if caught && $game_switches
-      $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH] = true if prelude_seen && $game_switches
-      if caught && captured_pokemon
-        pbArceusNormalizeCaptured(captured_pokemon)
-        unless pbAddPokemonSilent(captured_pokemon)
-          raise "Unable to commit canonical Arceus capture"
+      errors.concat(restore_values(transaction[:snapshot]))
+      # Nunca se hace commit parcial: si una clave no pudo volver a su estado
+      # inicial, la captura tampoco se inserta sobre un mundo incoherente.
+      if errors.empty?
+        begin
+          $game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true if caught && $game_switches
+          $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH] = true if prelude_seen && $game_switches
+          if caught && captured_pokemon
+            pbArceusNormalizeCaptured(captured_pokemon)
+            unless pbAddPokemonSilent(captured_pokemon)
+              raise "Unable to commit canonical Arceus capture"
+            end
+          end
+        rescue StandardError => error
+          errors.push("canonical commit: #{error.class}: #{error.message}")
         end
       end
-      restore_disk!(transaction)
     ensure
+      # La restauración física y la liberación del candado se ejecutan aunque
+      # fallen tanto una clave individual como el commit de la captura.
+      disk_error = restore_disk!(transaction)
+      errors.push(disk_error) if disk_error
       @depth = 0
+    end
+    if !errors.empty?
+      raise "Arceus sandbox rollback failed: #{errors.join(' | ')}"
     end
   end
 
@@ -552,6 +579,15 @@ module SaveData
           return ArceusSaveSandbox.note_blocked_write(file_path)
         end
         return arceus_unrestricted_save_to_file(file_path)
+      end
+    end
+    unless method_defined?(:arceus_unrestricted_delete_file)
+      alias arceus_unrestricted_delete_file delete_file
+      def delete_file
+        if defined?(ArceusSaveSandbox) && ArceusSaveSandbox.active?
+          return ArceusSaveSandbox.note_blocked_write(SaveData::FILE_PATH)
+        end
+        return arceus_unrestricted_delete_file
       end
     end
   end
@@ -3506,7 +3542,9 @@ function verify() {
       ["module ArceusSaveSandbox", "límite transaccional integral del encuentro"],
       ["SaveData.compile_save_hash", "snapshot de todos los valores persistentes"],
       ["alias arceus_unrestricted_save_to_file save_to_file", "barrera de escritura de guardado"],
-      ["restore_values(transaction[:snapshot])", "rollback incluso durante excepciones"],
+      ["errors.concat(restore_values(transaction[:snapshot]))", "rollback exhaustivo aunque falle una clave individual"],
+      ["disk_error = restore_disk!(transaction)", "restauración física dentro del ensure final"],
+      ["alias arceus_unrestricted_delete_file delete_file", "bloqueo de borrado de partida durante el encuentro"],
       ["canonical_capture = ArceusSaveSandbox.deep_copy(pkmn)", "captura canónica aislada del estado transitorio"],
       ["ensure\n    prelude_seen", "finalización transaccional garantizada"],
     ];

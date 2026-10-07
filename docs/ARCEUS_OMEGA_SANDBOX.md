@@ -10,11 +10,12 @@ Arceus puede aparentar cambiar reglas, equipo, bolsa, interruptores, color, mús
 
 1. compila y clona en memoria los valores persistentes registrados por `SaveData`;
 2. conserva una imagen defensiva del archivo de guardado existente;
-3. bloquea `SaveData.save_to_file` mientras el encuentro está activo;
+3. bloquea `SaveData.save_to_file` y `SaveData.delete_file` mientras el encuentro está activo;
 4. ejecuta prólogo, seis etapas, reintentos y captura dentro del límite;
-5. en `ensure`, también ante una excepción controlable, restaura jugador, sistemas, switches, variables, self-switches, pantalla, metadatos, bolsa y almacenamiento;
-6. restaura cualquier deriva detectada del archivo físico;
-7. aplica exclusivamente los resultados canónicos permitidos.
+5. en `ensure`, también ante una excepción controlable, intenta restaurar **todas** las claves aunque una restauración individual falle;
+6. restaura cualquier deriva detectada del archivo físico antes de liberar el candado;
+7. rehúsa hacer un commit canónico parcial cuando el rollback notificó un error;
+8. aplica exclusivamente los resultados canónicos permitidos.
 
 `map_factory` y `game_player` no se recargan porque el intérprete de evento llamante mantiene referencias vivas. El combate no recibe permiso para mutarlos. Reemplazarlos durante el retorno podría dejar al intérprete apuntando a un mapa obsoleto.
 
@@ -49,5 +50,7 @@ npm run verify:ruta_de_dios
 npm run verify:arceus:cinematics
 python3 tools/kirin_check.py pokemon_fire_ash
 ```
+
+Los instaladores del canon reutilizan la coordenada de cada Rotom, Fragmento y eco del Génesis ya existente. Se comprobó la idempotencia aplicando el canon dos veces y comparando hashes de `Map108`, `Map143`, `Map2037`, `Map2142`, `Map2194` y `Scripts.rxdata`: la segunda aplicación no modifica ningún byte.
 
 La validación visual final de ritmo, animaciones, clipping y audio requiere `Game.exe` o Kirin. El entorno Linux de automatización no incluye Wine/Kirin, por lo que las pruebas aquí son estáticas y simuladas, no una afirmación de ejecución visual real.

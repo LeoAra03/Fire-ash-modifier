@@ -469,11 +469,23 @@ function inyectarRuby() {
 
 /* ─────────────────────────── Rotom del Tiempo ──────────────────────────── */
 
+// La búsqueda de celda considera eventos sólidos. Si primero buscáramos y luego
+// hiciéramos upsert, cada reaplicación vería al propio evento como obstáculo y lo
+// desplazaría una casilla. Reutilizar su coordenada vuelve el instalador idempotente.
+function existingEventCell(mapId, name) {
+  const map = readMap(mapId);
+  for (const [, ev] of map.getIvar("@events").pairs) {
+    if (txt(ev.getIvar("@name")) !== name) continue;
+    return [Number(ev.getIvar("@x")), Number(ev.getIvar("@y"))];
+  }
+  return null;
+}
+
 function colocarRotom(punto) {
-  const g = grid(punto.mapa);
-  const celda = nearestFreeCell(g, punto.cerca_de, { maxDistance: 6 });
-  if (!celda) return { punto, error: "sin celda libre" };
   const nombre = `${MARKER} Rotom del Tiempo — ${punto.lugar}`;
+  const g = grid(punto.mapa);
+  const celda = existingEventCell(punto.mapa, nombre) || nearestFreeCell(g, punto.cerca_de, { maxDistance: 6 });
+  if (!celda) return { punto, error: "sin celda libre" };
   const resumen = upsertEvents(punto.mapa, [nombre], (baseId) => [
     event(baseId, nombre, celda[0], celda[1], [
       page({
@@ -489,10 +501,10 @@ function colocarRotom(punto) {
 /** El Fragmento del Génesis, en la cumbre donde Arceus cayó. */
 function colocarFragmento() {
   const mapa = CFG.fragmento.mapa;
-  const g = grid(mapa);
-  const celda = nearestFreeCell(g, CFG.fragmento.cerca_de, { maxDistance: 5 });
-  if (!celda) throw new Error(`sin celda libre para el fragmento en el mapa ${mapa}`);
   const nombre = `${MARKER} Fragmento del Génesis`;
+  const g = grid(mapa);
+  const celda = existingEventCell(mapa, nombre) || nearestFreeCell(g, CFG.fragmento.cerca_de, { maxDistance: 5 });
+  if (!celda) throw new Error(`sin celda libre para el fragmento en el mapa ${mapa}`);
   const resumen = upsertEvents(mapa, [nombre], (baseId) => [
     event(baseId, nombre, celda[0], celda[1], [
       // Página 1: solo aparece si el duelo está resuelto.
@@ -594,7 +606,7 @@ function intervencionMadPikachu() {
   const objetivo = g.events.find((e) => re.test(e.name));
   if (!objetivo) return { mapa, error: "no encuentro al Mad Pikachu" };
   const nombre = `${MARKER} eco del Génesis`;
-  const celda = nearestFreeCell(g, CFG.mad_pikachu.cerca_de, { maxDistance: 6 });
+  const celda = existingEventCell(mapa, nombre) || nearestFreeCell(g, CFG.mad_pikachu.cerca_de, { maxDistance: 6 });
   if (!celda) return { mapa, juntoA: objetivo.name, error: "sin celda libre" };
   const resumen = upsertEvents(mapa, [nombre], (baseId) => [
     event(baseId, nombre, celda[0], celda[1], [
