@@ -27,7 +27,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1021 — Santuario de la Última Campana
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Lappet Town (Map2). Identidad del lugar: Santuario de radio abandonado construido alrededor de una campana que absorbe sonidos. Episodio: Una emisión imposible obliga al jugador a decidir si un recuerdo doloroso merece conservarse aunque nadie pueda volver a escucharlo.
-- **Datos compilados:** 32×21 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 32×21 tiles; 10 eventos; tileset 1.
 
 ### Map1022 — Atlas 0002 - \PN's house
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
@@ -154,7 +154,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1046 — La Copa del Huevo Vacío
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Pokémon Day Care (Map27). Identidad del lugar: Guardería convertida en patio de torneo, con gradas pequeñas y una incubadora apagada. Episodio: Una campeona escolar intenta renunciar a un premio vivo antes de que el torneo convierta una elección compasiva en una derrota pública.
-- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 3.
 
 ### Map1047 — Atlas 0027 - National Park
 - **Categoría:** Atlas Mil · Cuenca Celeste · Tier 3 · eco dimensional.
@@ -281,7 +281,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1071 — El Campeón de Fecha Imposible
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Battle Frontier Poké Center (Map53). Identidad del lugar: Centro Pokémon convertido en archivo provisional de una Liga que aún no debería existir. Episodio: Un expediente anterior a la Liga obliga a decidir si una institución nació de un héroe borrado o de una falsificación creada para unir Kanto.
-- **Datos compilados:** 20×15 tiles; 14 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
 
 ### Map1072 — Atlas 0052 - Battle Frontier Mart
 - **Categoría:** Atlas Mil · Frontera Carmesí · Tier 3 · eco dimensional.
@@ -408,7 +408,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1096 — El Gremio de la Camilla Vacía
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Viridian Pokémon Center (Map78). Identidad del lugar: Centro Pokémon adaptado como gremio de expedición con tablón, camillas y mapas de túneles. Episodio: Un gremio recibe encargos firmados por exploradores desaparecidos y descubre que las misiones fueron enviadas por sus versiones futuras para impedir un rescate equivocado.
-- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 16 eventos; tileset 4.
 
 ### Map1097 — Atlas 0077 - Gate
 - **Categoría:** Atlas Mil · Distrito Cuarzo · Tier 3 · eco dimensional.
@@ -535,7 +535,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1121 — Operación Rescate Demasiado Perfecto
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 24 Pokémon Center (Map103). Identidad del lugar: Centro de coordinación Ranger rodeado por un corredor ecológico inexplicablemente vacío. Episodio: Una patrulla que evacuó cada Pokémon de un incendio descubre que salvar individuos puede destruir un hábitat si nadie pregunta quién debe regresar.
-- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 16 eventos; tileset 4.
 
 ### Map1122 — Atlas 0102 - Route 25
 - **Categoría:** Atlas Mil · Órbita Esmeralda · Tier 3 · eco dimensional.
@@ -662,7 +662,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1146 — La Sombra que Eligió Quedarse
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 8 (Map128). Identidad del lugar: Paso desértico convertido en refugio de rehabilitación, con una cámara de purificación clausurada. Episodio: Los Pokémon oscuros de un refugio impiden que su antigua purificadora sea sometida a una máquina capaz de borrar dolor y también afecto.
-- **Datos compilados:** 86×41 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 86×41 tiles; 11 eventos; tileset 1.
 
 ### Map1147 — Atlas 0127 - Laverre Scarf Shop
 - **Categoría:** Atlas Mil · Paso Boreal · Tier 3 · eco dimensional.
@@ -789,7 +789,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1171 — El Jardín de los Dos Juramentos
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Celadon House (Map153). Identidad del lugar: Casa ceremonial abierta a un jardín índigo dividido por dos estandartes. Episodio: Dos clanes aliados preparan una guerra porque cada uno conserva solo la mitad de un juramento pronunciado ante el mismo árbol.
-- **Datos compilados:** 40×40 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 40×40 tiles; 11 eventos; tileset 3.
 
 ### Map1172 — Atlas 0152 - Celadon Pokémon Center
 - **Categoría:** Atlas Mil · Jardín Índigo · Tier 3 · eco dimensional.
@@ -916,7 +916,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1196 — La Persona Fuera del Encuadre
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Fuchsia Gym (Map178). Identidad del lugar: Gimnasio transformado en observatorio fotográfico con paneles móviles y escondites de fauna. Episodio: Una fotografía muestra a una niña que nunca estuvo en la expedición, mientras cada nueva toma borra al fotógrafo que intenta demostrarlo.
-- **Datos compilados:** 20×35 tiles; 10 eventos; tileset 14.
+- **Datos compilados:** 20×35 tiles; 11 eventos; tileset 14.
 
 ### Map1197 — Atlas 0177 - Safari Zone
 - **Categoría:** Atlas Mil · Costa Prisma · Tier 3 · eco dimensional.
@@ -1043,7 +1043,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1221 — El Festival que Olvidó su Motivo
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Indigo Stadium (Map203). Identidad del lugar: Estadio convertido en feria luminosa con puestos atendidos por costumbre. Episodio: Una feria continúa cada noche con juegos impecables, aunque organizadores y visitantes ya no recuerdan a quién prometieron esperar.
-- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 14.
+- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 14.
 
 ### Map1222 — Atlas 0202 - Kanto
 - **Categoría:** Atlas Mil · Dominio Solar · Tier 3 · eco dimensional.
@@ -1170,7 +1170,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1246 — La Carta que Recuerda a su Jugador
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Seven Grapefruit Islands (Map228). Identidad del lugar: Islas conectadas por mesas rituales donde una única carta pasa de mano en mano. Episodio: Una carta cambia su ilustración para mostrar al primer compañero que cada persona cree haber decepcionado, convirtiendo un duelo ritual en confesión involuntaria.
-- **Datos compilados:** 135×110 tiles; 12 eventos; tileset 1.
+- **Datos compilados:** 135×110 tiles; 13 eventos; tileset 1.
 
 ### Map1247 — Atlas 0227 - Grapefruit Pokémon Center
 - **Categoría:** Atlas Mil · Velo Lunar · Tier 3 · eco dimensional.
@@ -1297,7 +1297,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1271 — El Compañero del Minuto Cero
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Professor Elm's Lab (Map253). Identidad del lugar: Laboratorio de sincronía cubierto por relojes detenidos, cápsulas de sueño y dos plataformas enlazadas. Episodio: Un laboratorio sueña una pareja compi procedente de un mañana descartado, pero solo puede estabilizarla si sus dos integrantes aceptan dejar de ser imprescindibles.
-- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 13 eventos; tileset 3.
 
 ### Map1272 — Atlas 0252 - Route 29
 - **Categoría:** Atlas Mil · Nexo Onírico · Tier 3 · eco dimensional.
@@ -1424,7 +1424,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1296 — El Punto que Nadie Quiso Marcar
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Pokémon Swap Meet (Map278). Identidad del lugar: Mercado de intercambio transformado en cancha, con puestos como bases y un marcador magnético suspendido. Episodio: Dos equipos descubren que su estadio premia en secreto cada pase que evita el aro, y deben decidir si competir aún tiene sentido cuando cuidar al rival vale más que vencer.
-- **Datos compilados:** 55×52 tiles; 11 eventos; tileset 1.
+- **Datos compilados:** 55×52 tiles; 12 eventos; tileset 1.
 
 ### Map1297 — Atlas 0277 - Swap Meet Pokémon Center
 - **Categoría:** Atlas Mil · Valle Magnético · Tier 3 · eco dimensional.
@@ -1551,7 +1551,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1321 — La Señal Hecha de Ausencias
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Burned Tower (Map303). Identidad del lugar: Torre quemada convertida en estación comunitaria, con antenas de madera y señales dibujadas sobre ceniza. Episodio: Miles de brújulas apuntan a una parada que nunca existió, donde una comunidad descubre que su supuesto punto de encuentro fue construido con avisos de personas que no lograron regresar.
-- **Datos compilados:** 30×25 tiles; 10 eventos; tileset 14.
+- **Datos compilados:** 30×25 tiles; 11 eventos; tileset 14.
 
 ### Map1322 — Atlas 0302 - Kimono Dance Theater
 - **Categoría:** Atlas Mil · Arco Fósil · Tier 3 · eco dimensional.
@@ -1678,7 +1678,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1346 — La Ciudad a la que Dieron Cuerda
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Olivine Gym (Map330). Identidad del lugar: Gimnasio de acero convertido en ciudad de juguete, con calles de cuerda, casas huecas y una gran llave pública. Episodio: Los juguetes conscientes de una ciudad celeste imitan cada gesto de sus dueños hasta temer que la última vuelta de llave los convierta en copias capaces de reemplazarlos.
-- **Datos compilados:** 20×25 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 20×25 tiles; 11 eventos; tileset 1.
 
 ### Map1347 — Atlas 0327 - Route 42
 - **Categoría:** Atlas Mil · Mar de Nubes · Tier 3 · eco dimensional.
@@ -1805,7 +1805,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1371 — El Mosaico de los Nombres Imposibles
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Hoenn (Map355). Identidad del lugar: Región en miniatura cubierta por una cuadrícula de piedra, placas móviles y senderos de hierro. Episodio: Un mosaico completa los nombres borrados del mapa, pero cada respuesta correcta expone un refugio que sus habitantes habían escondido para sobrevivir.
-- **Datos compilados:** 27×15 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 27×15 tiles; 11 eventos; tileset 1.
 
 ### Map1372 — Atlas 0352 - Hoenn
 - **Categoría:** Atlas Mil · Bosque de Hierro · Tier 3 · eco dimensional.
@@ -1932,7 +1932,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1396 — La Receta que Lloraba por Otros
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Dewford House (Map380). Identidad del lugar: Casa costera convertida en café comunitario, con cocina abierta y mesas unidas por canales de vapor. Episodio: Un café sirve una receta capaz de reproducir el consuelo de una cocinera ausente, hasta que el barrio descubre que también está heredando un duelo que nunca eligió.
-- **Datos compilados:** 40×30 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 11 eventos; tileset 3.
 
 ### Map1397 — Atlas 0377 - Dewford Pokémon Center
 - **Categoría:** Atlas Mil · Canal Estelar · Tier 3 · eco dimensional.
@@ -2059,7 +2059,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1421 — El Caso de las Cuatro Mediasnoches
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Fallarbor Pokémon Center (Map405). Identidad del lugar: Centro de descanso convertido en oficina detectivesca, con relojes acústicos y una campana ausente. Episodio: Tres testigos describen con precisión el robo de una campana, aunque cada uno lo vio a una hora distinta porque el centro está atrapado en cuatro versiones verdaderas de la misma noche.
-- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 16 eventos; tileset 4.
 
 ### Map1422 — Atlas 0402 - Route 10
 - **Categoría:** Atlas Mil · Páramo Sonoro · Tier 3 · eco dimensional.
@@ -2186,7 +2186,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1446 — El Museo de lo Todavía No Perdido
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Weather Institute (Map430). Identidad del lugar: Instituto meteorológico convertido en museo provisional de objetos prematuros. Episodio: Una distorsión devuelve brújulas, diarios y emblemas días antes de que sus dueños los extravíen, empujando a una expedición a representar pérdidas que quizá nunca debieron ocurrir.
-- **Datos compilados:** 30×35 tiles; 11 eventos; tileset 3.
+- **Datos compilados:** 30×35 tiles; 12 eventos; tileset 3.
 
 ### Map1447 — Atlas 0427 - Lilycove Dept. 1F
 - **Categoría:** Atlas Mil · Islas del Viento · Tier 3 · eco dimensional.
@@ -2313,7 +2313,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1471 — El Arrecife que Llegó Después
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Sootopolis House (Map455). Identidad del lugar: Casa lacustre abierta a un vivero abisal con piscinas concéntricas y coral de colores temporales. Episodio: Una criatura procedente de un océano futuro reconstruye un arrecife muerto con especies que todavía no existen, mientras los habitantes deciden si una cura imposible puede convertirse en nueva invasión.
-- **Datos compilados:** 40×30 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 11 eventos; tileset 3.
 
 ### Map1472 — Atlas 0452 - Sootopolis Pokémon Center
 - **Categoría:** Atlas Mil · Anillo Abisal · Tier 3 · eco dimensional.
@@ -2440,7 +2440,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1496 — Los Dos Nombres del Cometa
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 12 Breeding Center (Map481). Identidad del lugar: Centro de crianza transformado en clínica de convergencia, con dos habitaciones unidas por una franja de luz. Episodio: Una fusión estable pide conservar los dos nombres de quienes la formaron, mientras el centro de crianza insiste en registrarla como una criatura nueva o como un accidente que debe revertirse.
-- **Datos compilados:** 20×15 tiles; 11 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 12 eventos; tileset 3.
 
 ### Map1497 — Atlas 0477 - Route 13
 - **Categoría:** Atlas Mil · Ruta del Cometa · Tier 3 · eco dimensional.
@@ -2567,7 +2567,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1521 — La Central de las Cenizas Vivas
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 202 (Map506). Identidad del lugar: Ruta abierta ocupada por una central plegable, humedales de decantación y cintas de papel indicador. Episodio: Una central celebrada por no emitir humo esconde residuos que aprenden rutas de evacuación y piden no ser tratados como contaminación ni como milagro energético.
-- **Datos compilados:** 55×35 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 55×35 tiles; 10 eventos; tileset 1.
 
 ### Map1522 — Atlas 0502 - Sandgem Town
 - **Categoría:** Atlas Mil · Territorio Origami · Tier 3 · eco dimensional.
@@ -2694,7 +2694,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1546 — La Profecía Escrita Después
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Ravaged Path (Map531). Identidad del lugar: Sendero devastado convertido en santuario de cristal, imprenta clandestina y sala de testimonios. Episodio: Una facción recluta jóvenes con profecías privadas que siempre aciertan porque sus redactores observan primero la crisis y luego falsifican la fecha del augurio.
-- **Datos compilados:** 40×40 tiles; 9 eventos; tileset 6.
+- **Datos compilados:** 40×40 tiles; 10 eventos; tileset 6.
 
 ### Map1547 — Atlas 0527 - Floaroma Town
 - **Categoría:** Atlas Mil · Delta de Cristal · Tier 3 · eco dimensional.
@@ -2821,7 +2821,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1571 — La Ciudad que Pagaba con Recuerdos
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Hearthome Contest (Map556). Identidad del lugar: Salón de concursos convertido en asamblea urbana, rodeado por fachadas reconstruidas y solares recordados a medias. Episodio: Una reconstrucción vuelve más segura y hermosa la ciudad usando memorias vecinales como planos, pero cada calle terminada deja a sus habitantes sin saber por qué querían regresar.
-- **Datos compilados:** 20×15 tiles; 9 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 10 eventos; tileset 3.
 
 ### Map1572 — Atlas 0552 - Battle Hall
 - **Categoría:** Atlas Mil · Llanura Meteoro · Tier 3 · eco dimensional.
@@ -2948,7 +2948,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1596 — Las Cartas de una Familia Incompatible
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Veilstone Dept. 5F (Map581). Identidad del lugar: Piso de almacén transformado en hogar provisional, oficina postal y corredor de buzones temporales. Episodio: Una familia recibe cartas de tres futuros mutuamente excluyentes y empieza a juzgar cada decisión presente por hijos, separaciones y reconciliaciones que quizá nunca existirán.
-- **Datos compilados:** 20×18 tiles; 9 eventos; tileset 10.
+- **Datos compilados:** 20×18 tiles; 10 eventos; tileset 10.
 
 ### Map1597 — Atlas 0577 - Veilstone Dept. Rooftop
 - **Categoría:** Atlas Mil · Cordillera Coral · Tier 3 · eco dimensional.
@@ -3075,7 +3075,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1621 — El Mercado de los Umbrales Pequeños
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 210 (Map606). Identidad del lugar: Ruta montañosa ocupada por puestos fronterizos, marcos portátiles y almacenes divididos entre dos climas. Episodio: Una red de portales diminutos abastece barrios olvidados por las rutas oficiales, pero cada envío clandestino transfiere frío, hambre y riesgo a una comunidad invisible al otro lado.
-- **Datos compilados:** 112×119 tiles; 9 eventos; tileset 2.
+- **Datos compilados:** 112×119 tiles; 10 eventos; tileset 2.
 
 ### Map1622 — Atlas 0602 - Celestic Town
 - **Categoría:** Atlas Mil · Ciudad del Eclipse · Tier 3 · eco dimensional.
@@ -3202,7 +3202,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1646 — La Estatua que Ensayaba Ciudades
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 222 House (Map631). Identidad del lugar: Casa de ruta convertida en taller arqueológico costero, con una estatua central, archivos y herramientas de restauración. Episodio: Una estatua arqueológica talla cada noche una civilización futura distinta y obliga al pueblo a decidir si sus habitantes son profecías, propuestas o personas usadas como argumentos.
-- **Datos compilados:** 80×30 tiles; 10 eventos; tileset 3.
+- **Datos compilados:** 80×30 tiles; 11 eventos; tileset 3.
 
 ### Map1647 — Atlas 0627 - Sunnyshore City
 - **Categoría:** Atlas Mil · Archipiélago Vapor · Tier 3 · eco dimensional.
@@ -3329,7 +3329,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1671 — La Mina de las Decisiones Sólidas
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Accumula House (Map656). Identidad del lugar: Casa comunal sobre una mina prismática, con balanzas, turnos obreros y vetas que forman bifurcaciones. Episodio: Una mina produce gemas nacidas de decisiones irreversibles y convierte cada renuncia del pueblo en riqueza, hasta que los túneles empiezan a exigir elecciones cada vez más crueles.
-- **Datos compilados:** 40×30 tiles; 9 eventos; tileset 3.
+- **Datos compilados:** 40×30 tiles; 10 eventos; tileset 3.
 
 ### Map1672 — Atlas 0652 - Accumula Pokémon Center
 - **Categoría:** Atlas Mil · Santuario de Polen · Tier 3 · eco dimensional.
@@ -3456,7 +3456,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1696 — El Peaje de los Sueños Prestados
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Castelia Gym (Map681). Identidad del lugar: Gimnasio convertido en terminal de sueño, con camas-andén, ventanillas de niebla y puertas pintadas. Episodio: Una estación onírica conecta dimensiones cobrando recuerdos tranquilos como peaje, y sus viajeros despiertan a salvo pero incapaces de descansar en sus propias vidas.
-- **Datos compilados:** 40×65 tiles; 9 eventos; tileset 14.
+- **Datos compilados:** 40×65 tiles; 10 eventos; tileset 14.
 
 ### Map1697 — Atlas 0677 - Route 4
 - **Categoría:** Atlas Mil · Cañón Espejo · Tier 3 · eco dimensional.
@@ -3583,7 +3583,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1721 — El Campeón de las Dos Banderas
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Chargestone Cave B2F (Map706). Identidad del lugar: Caverna magnética transformada en cámara neutral, con dos podios, banderas y un campo sin emblemas. Episodio: Dos ligas pacíficas reclaman al mismo campeón como fundamento legal y deben negociar una legitimidad que no convierta a una persona en trofeo diplomático.
-- **Datos compilados:** 70×70 tiles; 9 eventos; tileset 6.
+- **Datos compilados:** 70×70 tiles; 10 eventos; tileset 6.
 
 ### Map1722 — Atlas 0702 - Mistralton City
 - **Categoría:** Atlas Mil · Bahía Relámpago · Tier 3 · eco dimensional.
@@ -3710,7 +3710,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1746 — La Academia del Error Permitido
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Route 9 (Map731). Identidad del lugar: Ruta elevada convertida en academia táctica al aire libre, con aulas-campo, paneles de análisis y estaciones de curación. Episodio: Una academia presume de dificultad perfecta mientras castiga la experimentación, hasta que sus mejores alumnos demuestran que un desafío justo debe enseñar por qué se perdió y permitir volver con otra estrategia.
-- **Datos compilados:** 55×40 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 55×40 tiles; 11 eventos; tileset 1.
 
 ### Map1747 — Atlas 0727 - Shopping Mall Nine 1F
 - **Categoría:** Atlas Mil · Meseta de Tinta · Tier 3 · eco dimensional.
@@ -3837,7 +3837,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1771 — La Frecuencia que Pide Permiso
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Opelucid Pokémon Center (Map756). Identidad del lugar: Centro Pokémon convertido en archivo acústico de acceso voluntario, con cabinas aisladas, luces de consentimiento y una sala central que permanece en silencio. Episodio: Una melodía inquietante solo existe para quien acepta escucharla, pero una restauradora descubre que el santuario llevaba años registrando el silencio de quienes eligieron no participar.
-- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 16 eventos; tileset 4.
 
 ### Map1772 — Atlas 0752 - Vetress City
 - **Categoría:** Atlas Mil · Reserva de Engranajes · Tier 3 · eco dimensional.
@@ -3964,7 +3964,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1796 — El Héroe que Pidió un Nombre Pequeño
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Littleroot Town-Sapphire (Map781). Identidad del lugar: Pueblo de ceniza convertido en memorial abierto, con pedestales vacíos, objetos domésticos y un sendero que evita el monumento central. Episodio: Un pueblo intenta reconstruir a su héroe olvidado a partir de una leyenda incompleta, pero el eco que dejaron sus objetos pide conservar un nombre cotidiano y no otra estatua invencible.
-- **Datos compilados:** 40×35 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 40×35 tiles; 10 eventos; tileset 1.
 
 ### Map1797 — Atlas 0777 - Battle Tower-Emerald
 - **Categoría:** Atlas Mil · Círculo de Ceniza · Tier 3 · eco dimensional.
@@ -4091,7 +4091,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1821 — La Victoria que Nadie Ganó
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Camphrier Pokémon Center (Map806). Identidad del lugar: Centro de descanso convertido en oficina de resultados, con trofeos sin reflejo, terminales de actas y un campo de revancha abierto. Episodio: Un registro fantasmal concede victorias perfectas a quienes aceptan borrar la derrota de otra persona, hasta que los propios campeones exigen devolver resultados que nunca merecieron.
-- **Datos compilados:** 20×15 tiles; 15 eventos; tileset 4.
+- **Datos compilados:** 20×15 tiles; 16 eventos; tileset 4.
 
 ### Map1822 — Atlas 0802 - Route 6
 - **Categoría:** Atlas Mil · Labertino Boreal · Tier 3 · eco dimensional.
@@ -4218,7 +4218,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1846 — La Excavación que Fabricó su Pasado
 - **Categoría:** Atlas Mil · República de Musgo · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Coumarine Gym (Map831). Identidad del lugar: Gimnasio abierto convertido en excavación pública, con moldes teatrales, estratos numerados y un recinto seguro para la criatura ensamblada. Episodio: Una expedición construye deliberadamente un monstruo fósil para salvar su financiación, pero la criatura ensamblada despierta y exige que la verdad sobre su origen no decida si merece seguir viviendo.
-- **Datos compilados:** 50×40 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 50×40 tiles; 10 eventos; tileset 1.
 
 ### Map1847 — Atlas 0827 - Route 13
 - **Categoría:** Atlas Mil · República de Musgo · Tier 3 · eco dimensional.
@@ -4345,7 +4345,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1871 — El Refugio que Contestaba Solo
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Couriway Town (Map856). Identidad del lugar: Pueblo nevado convertido en base de rescate, con panel meteorológico, depósitos visibles, balizas numeradas y una ruta cálida de regreso. Episodio: Una baliza continúa enviando reportes perfectos desde una cordillera aislada, aunque el equipo de rescate real abandonó la voz sintética para conservar batería y espera ayuda en un refugio que el sistema no reconoce.
-- **Datos compilados:** 60×64 tiles; 10 eventos; tileset 2.
+- **Datos compilados:** 60×64 tiles; 11 eventos; tileset 2.
 
 ### Map1872 — Atlas 0852 - Couriway House
 - **Categoría:** Atlas Mil · Cinturón Aurora · Tier 3 · eco dimensional.
@@ -4472,7 +4472,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1896 — El Registro que No Pudo Clasificarte
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Driftveil Battle House (Map881). Identidad del lugar: Casa de combate convertida en aduana de datos, con filas de fichas incompletas, paneles de checksum y una salida blanca que no exige categoría. Episodio: Un clasificador averiado intenta decidir si cada visitante es héroe, intruso o error, hasta que sus técnicos descubren que la corrupción nació de obligar a personas contradictorias a caber en una sola casilla.
-- **Datos compilados:** 60×70 tiles; 15 eventos; tileset 3.
+- **Datos compilados:** 60×70 tiles; 16 eventos; tileset 3.
 
 ### Map1897 — Atlas 0877 - Safari Zone Unova
 - **Categoría:** Atlas Mil · Trinchera de Luz · Tier 3 · eco dimensional.
@@ -5106,20 +5106,20 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 
 ## Isla Espejo
 
-### Map997 — Mirror Island - Atrium
+### Map997 — Ciudad Teckel
 - **Categoría:** Isla Espejo.
 - **Referencia:** Atrio de llegada de Isla Espejo: concentra el acceso a la isla, la orientación inicial y el ferry de retorno.
-- **Datos compilados:** 56×48 tiles; 18 eventos; tileset 1.
+- **Datos compilados:** 60×50 tiles; 13 eventos; tileset 1.
 
-### Map998 — Mirror Island - Gallery of Legends
+### Map998 — Gimnasio Teckel
 - **Categoría:** Isla Espejo.
 - **Referencia:** Galería de Leyendas: sala de enfrentamientos con reflejos de entrenadores y líneas alternativas del multiverso.
-- **Datos compilados:** 56×52 tiles; 16 eventos; tileset 1.
+- **Datos compilados:** 20×15 tiles; 3 eventos; tileset 3.
 
-### Map999 — Mirror Island - Zero Archive
+### Map999 — Afueras Teckel
 - **Categoría:** Isla Espejo.
 - **Referencia:** Archivo Cero: cámara final de Isla Espejo, con su encuentro de cierre y una vía de regreso al exterior.
-- **Datos compilados:** 56×52 tiles; 17 eventos; tileset 1.
+- **Datos compilados:** 50×45 tiles; 3 eventos; tileset 1.
 
 ## Panteón Pokégod
 

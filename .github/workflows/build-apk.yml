@@ -32,6 +32,10 @@ jobs:
         # igual que a los recortes de referencia): se construye aquí para que la auditoría
         # pueda compararlo con el juego. La carpeta Expansion_Multiversal/ sí está versionada.
         run: npm run build:expansion:package
+      - name: Construir el paquete de Ciudad Teckel / Isla Paraíso
+        # Fire_Ash_Ciudad_Teckel_Paraiso.zip también es artefacto ignorado por git:
+        # verify:teckel lo audita, así que se regenera aquí antes de verify:all.
+        run: npm run build:teckel
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas

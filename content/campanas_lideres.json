@@ -1,0 +1,230 @@
+{
+  "generatedBy": "tools/apply_lideres_campanas.mjs",
+  "switches": "850-881",
+  "colocados": [
+    {
+      "map": 3000,
+      "lider": "Celsa",
+      "sw": 700,
+      "x": 6,
+      "y": 5
+    },
+    {
+      "map": 3016,
+      "lider": "Nivia",
+      "sw": 701,
+      "x": 11,
+      "y": 5
+    },
+    {
+      "map": 3031,
+      "lider": "Boreas",
+      "sw": 702,
+      "x": 8,
+      "y": 4
+    },
+    {
+      "map": 3047,
+      "lider": "Crisal",
+      "sw": 703,
+      "x": 4,
+      "y": 4
+    },
+    {
+      "map": 3063,
+      "lider": "Viska",
+      "sw": 704,
+      "x": 20,
+      "y": 5
+    },
+    {
+      "map": 3079,
+      "lider": "Polar",
+      "sw": 705,
+      "x": 19,
+      "y": 18
+    },
+    {
+      "map": 3094,
+      "lider": "Nevara",
+      "sw": 706,
+      "x": 9,
+      "y": 5
+    },
+    {
+      "map": 3110,
+      "lider": "Albor",
+      "sw": 707,
+      "x": 10,
+      "y": 11
+    },
+    {
+      "map": 3120,
+      "lider": "Lumen",
+      "sw": 708,
+      "x": 21,
+      "y": 23
+    },
+    {
+      "map": 3123,
+      "lider": "Ondina",
+      "sw": 709,
+      "x": 17,
+      "y": 24
+    },
+    {
+      "map": 3125,
+      "lider": "Farón",
+      "sw": 710,
+      "x": 32,
+      "y": 16
+    },
+    {
+      "map": 3128,
+      "lider": "Alba",
+      "sw": 711,
+      "x": 7,
+      "y": 7
+    },
+    {
+      "map": 3130,
+      "lider": "Céfiro",
+      "sw": 712,
+      "x": 6,
+      "y": 3
+    },
+    {
+      "map": 3133,
+      "lider": "Coral",
+      "sw": 713,
+      "x": 7,
+      "y": 4
+    },
+    {
+      "map": 3135,
+      "lider": "Brillo",
+      "sw": 714,
+      "x": 7,
+      "y": 4
+    },
+    {
+      "map": 3138,
+      "lider": "Aurora",
+      "sw": 715,
+      "x": 8,
+      "y": 5
+    },
+    {
+      "map": 3200,
+      "lider": "Crista",
+      "sw": 716,
+      "x": 6,
+      "y": 4
+    },
+    {
+      "map": 3262,
+      "lider": "Prisma",
+      "sw": 717,
+      "x": 13,
+      "y": 12
+    },
+    {
+      "map": 3323,
+      "lider": "Faceta",
+      "sw": 718,
+      "x": 19,
+      "y": 11
+    },
+    {
+      "map": 3385,
+      "lider": "Cuarzo",
+      "sw": 719,
+      "x": 15,
+      "y": 8
+    },
+    {
+      "map": 3446,
+      "lider": "Jade",
+      "sw": 720,
+      "x": 18,
+      "y": 15
+    },
+    {
+      "map": 3508,
+      "lider": "Ámbar",
+      "sw": 721,
+      "x": 15,
+      "y": 12
+    },
+    {
+      "map": 3569,
+      "lider": "Ópalo",
+      "sw": 722,
+      "x": 21,
+      "y": 30
+    },
+    {
+      "map": 3631,
+      "lider": "Zafira",
+      "sw": 723,
+      "x": 54,
+      "y": 22
+    },
+    {
+      "map": 3700,
+      "lider": "Ejecutivo Kuro",
+      "sw": 724,
+      "x": 7,
+      "y": 6
+    },
+    {
+      "map": 3735,
+      "lider": "Ejecutiva Vex",
+      "sw": 725,
+      "x": 15,
+      "y": 8
+    },
+    {
+      "map": 3770,
+      "lider": "Ejecutivo Mal",
+      "sw": 726,
+      "x": 12,
+      "y": 9
+    },
+    {
+      "map": 3805,
+      "lider": "Ejecutiva Nox",
+      "sw": 727,
+      "x": 9,
+      "y": 9
+    },
+    {
+      "map": 3839,
+      "lider": "Ejecutivo Umbra",
+      "sw": 728,
+      "x": 24,
+      "y": 21
+    },
+    {
+      "map": 3874,
+      "lider": "Ejecutiva Lis",
+      "sw": 729,
+      "x": 30,
+      "y": 11
+    },
+    {
+      "map": 3909,
+      "lider": "Ejecutivo Grajo",
+      "sw": 730,
+      "x": 6,
+      "y": 4
+    },
+    {
+      "map": 3944,
+      "lider": "Jefe Sombra",
+      "sw": 731,
+      "x": 5,
+      "y": 3
+    }
+  ]
+}

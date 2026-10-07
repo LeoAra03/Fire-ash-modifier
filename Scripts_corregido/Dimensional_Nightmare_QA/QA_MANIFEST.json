@@ -378,7 +378,7 @@
     {
       "path": "Data/Map033.rxdata",
       "bytes": 65630,
-      "sha256": "22251d1dede965883e5c7e9f9bc8920c94ae6f619560eb6594a216754adae16a"
+      "sha256": "f894e5157a39e92e5cae4f31b235d283cc748da405c16891a1815542f4765610"
     },
     {
       "path": "Data/Map2001.rxdata",
@@ -438,12 +438,12 @@
     {
       "path": "Data/Map2012.rxdata",
       "bytes": 8924,
-      "sha256": "baaf619bccdf5fbe03bd5f20d64a33bb594e1fcb7d32f542e7ab45734f6654e3"
+      "sha256": "cb00574edcfcea16e44122624e3baa8dbda32d53a17f04099b7d6566512a566e"
     },
     {
       "path": "Data/Map2013.rxdata",
       "bytes": 8909,
-      "sha256": "a0ec4be4fc028cd9ce51439e012f4e5497a4a8cfeaaf850d61f9cae39c7ba7f0"
+      "sha256": "6352fb05d7bc2525d87cff9b3d4107e5f4e2a7f33401bab4be745eb8d3ff02be"
     },
     {
       "path": "Data/Map2014.rxdata",
@@ -492,38 +492,38 @@
     },
     {
       "path": "Data/Map2023.rxdata",
-      "bytes": 12245,
-      "sha256": "48d0642e287d1e0cf64bac1431a65a94d851880546a10b0172ee923cecee768c"
+      "bytes": 12172,
+      "sha256": "c95e343f60801b4217b77d347ee6753a2fc9075e0b94002de4c944e7ff692f7b"
     },
     {
       "path": "Data/Map2024.rxdata",
-      "bytes": 10413,
-      "sha256": "65759eeca5cf30d5f3570fe649ab2789a7fff69e77026c9b8a6a36a28a7a4439"
+      "bytes": 10340,
+      "sha256": "601174258382567dc829be6e7292e13b58a961e462266d0618c40ac09102b9ee"
     },
     {
       "path": "Data/Map2025.rxdata",
-      "bytes": 12965,
-      "sha256": "e41787a67db823e2ac43c8c5cb8c51aff1eff08b1f57dd2beac0cf7be2b6ab6b"
+      "bytes": 12892,
+      "sha256": "9a2c60aea2be6558eb2539ea72a3a33ebd497ad1d7c5b4d98be978b5a5ae2dc6"
     },
     {
       "path": "Data/Map2026.rxdata",
-      "bytes": 15696,
-      "sha256": "6a4275ccf38e2819e18b591871bff103ea6358caa2ff2d58b438b0dced4228cd"
+      "bytes": 15623,
+      "sha256": "a085faeeac286bf77c840ea8769a6a2ea710614d2886d4b3c87aac4f25cfee53"
     },
     {
       "path": "Data/Map2027.rxdata",
-      "bytes": 17864,
-      "sha256": "b1a1a177c2779e09dcc4195ac0ab2dfdac7c75b09add442cee632e7dc9898bbb"
+      "bytes": 17791,
+      "sha256": "2477cc97fd74feb9a6ebae46c2547903777577c3945d1c7f623ecb06ef6256dd"
     },
     {
       "path": "Data/Map2028.rxdata",
-      "bytes": 13004,
-      "sha256": "69c6d4adc759abe025f3af29dae2dcc036a98a35834c3d9b610e1a4731447698"
+      "bytes": 12931,
+      "sha256": "06586032d764d96d3e99d367ed7036c8326ffab13f3aee1e972db909a7ac0549"
     },
     {
       "path": "Data/Map2029.rxdata",
-      "bytes": 15678,
-      "sha256": "4049fb65f9e26f6d8291937eec1ae0ab63ae5baf337546fc9805a9a51ab187b5"
+      "bytes": 15605,
+      "sha256": "41e458f2c29d2c1c21fc7005ba7874db5a0090560d0aa18bc452ecf4ff662e10"
     },
     {
       "path": "Data/Map2030.rxdata",
@@ -573,7 +573,7 @@
     {
       "path": "Data/Map2040.rxdata",
       "bytes": 27000,
-      "sha256": "9b43072301cabb9bc2903e1a7e6e3374b08f8e452d4418aec44121f1ec64b527"
+      "sha256": "024e833fb8d367b8ee6fe079af3065af00434d1240bcb581328eac10b597d3c9"
     },
     {
       "path": "Data/Map2041.rxdata",
@@ -1082,8 +1082,8 @@
     },
     {
       "path": "Data/Map2142.rxdata",
-      "bytes": 17919,
-      "sha256": "90641c5ac26612906b8f8d758fdcedc2cb08651c124bfabeb756ca16c9bc2a2d"
+      "bytes": 18199,
+      "sha256": "837767397fe6bc6fabc5f1424b851432a92b9d1b1136d539e6464530b06d7f90"
     },
     {
       "path": "Data/Map2143.rxdata",
@@ -1337,38 +1337,38 @@
     },
     {
       "path": "Data/MapInfos.rxdata",
-      "bytes": 139741,
-      "sha256": "394daef1aa2e98dfec0e01739804fb5ffeb31c88904ac337a21584118dd33955"
+      "bytes": 202573,
+      "sha256": "1a4d709534f660ac2442225564e639ce17fe36d28c764955ed63425286657880"
     },
     {
       "path": "Data/Scripts.rxdata",
-      "bytes": 1110639,
-      "sha256": "9fdf93243e4fc7a09ffa188d218f3c69fae290cc02ed2388ed733b02a1d4c0b5"
+      "bytes": 1113273,
+      "sha256": "3e7367e8b5dbbcf836169382423e1f3f18cea7aecee64e0007e606c13f610120"
     },
     {
       "path": "Data/System.rxdata",
-      "bytes": 27463,
-      "sha256": "2e6c4e842997234b7c51c00e9fbd09f7f6d17e846971df8442b8a7a80e00d642"
+      "bytes": 27494,
+      "sha256": "f1318394364deb58be526d2618a81e6efe403af562d090c46b992bf3292ab941"
     },
     {
       "path": "Data/Tilesets.rxdata",
-      "bytes": 761717,
-      "sha256": "2bcc6a4e0fcf524c7efdf8dcbb691be6e07a3fad3954e8988349bfeb077931f9"
+      "bytes": 762248,
+      "sha256": "29cdf39ef44841cbeb0f0d8af3c6b05554506ba12cb89dde147864d4a5dcbabb"
     },
     {
       "path": "Data/encounters.dat",
-      "bytes": 53230,
-      "sha256": "6c533058e9ce5c991b4eb0187de5a0b5941fb66895fd95a1dff23a0aaed24828"
+      "bytes": 54601,
+      "sha256": "0c84b96f64b018aa8b5ca239e9e97bef02106c66d6d5c3aed9974dbae5e48d41"
     },
     {
       "path": "Data/items.dat",
-      "bytes": 203802,
-      "sha256": "adf05b0d84bd3ba3fcb0d8a0e63830c19278b933361f494acafffbe4f91969e7"
+      "bytes": 206507,
+      "sha256": "b28073716d98ced2691c5b2a9b030ebe20cb150000b5eb206e30983809f75ae8"
     },
     {
       "path": "Data/map_metadata.dat",
-      "bytes": 484734,
-      "sha256": "5f26063c971c1a94a202dd9eefbfd86fe58ed0d2a86d335d631b7fe464e4289f"
+      "bytes": 502423,
+      "sha256": "c4c5a47b99540677da970e75299ec83c6d996c10612e3dfcb3c891c4a4c2dc15"
     },
     {
       "path": "Data/trainer_lists.dat",
@@ -1377,8 +1377,8 @@
     },
     {
       "path": "Data/trainer_types.dat",
-      "bytes": 58822,
-      "sha256": "f1fc22f8b0832cc845c6ec1c64f628fcd70686e7b3df95d0a925b3c1f9a16366"
+      "bytes": 59706,
+      "sha256": "203e380becd2ae3fe0f7fdb021287f8b63b6b8bb808ee3680aaab12de26e7f87"
     },
     {
       "path": "Data/trainerlists.dat",
@@ -1387,8 +1387,8 @@
     },
     {
       "path": "Data/trainers.dat",
-      "bytes": 1204075,
-      "sha256": "fc601d3215293e7bf946fcd13c4f54548e10fa4f77fbeb2e5be910ab809feb67"
+      "bytes": 1423271,
+      "sha256": "a1c3e7d2f6dbeabb0e7391719584cd502e3aba7242fb6485b2f6d95ee376e46f"
     },
     {
       "path": "Data/trainertypes.dat",
@@ -1417,8 +1417,8 @@
     },
     {
       "path": "Graphics/Characters/ARC_Steven.png",
-      "bytes": 7264,
-      "sha256": "5b125555c661a61d21fd2123443d13285fb7623ec6ee296d39bca76f7b90970f"
+      "bytes": 3070,
+      "sha256": "442425713042c19bc7decc9f3605d7d89caed308ddda06f4f6892f246b2fac92"
     },
     {
       "path": "Graphics/Characters/DIALGA.png",
@@ -1639,6 +1639,11 @@
       "path": "Graphics/Pictures/DN_WHITE_HAND.png",
       "bytes": 5072,
       "sha256": "1d5a97a996109c85707d8d524b25637fea5a6ca4b4a359c2a8d9cf557f7646d1"
+    },
+    {
+      "path": "Graphics/Pictures/Trainer Card/icon_badges.png",
+      "bytes": 22127,
+      "sha256": "67f0d87aea324bd6dd0e82d9a5f7ddf1b3249ad32ef5d8e8fb2cff7ff8ce372c"
     },
     {
       "path": "Graphics/Pokemon/Front/DN_KINGGUS.png",

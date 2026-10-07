@@ -31,6 +31,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marshalLoad, RSymbol } from "../web/js/marshal.js";
 import { DATA, ROOT } from "./lib/fire_ash_registry.mjs";
+import { freeCells, nearest } from "./lib/dlc_helpers.mjs";
 
 const CHECK_ONLY = process.argv.includes("--check");
 const OUT = path.join(ROOT, "content", "expansion_multiversal.json");
@@ -331,7 +332,10 @@ const MIRROR = {
     battleBackdrop: "indoor3",
   },
   islandMap: 997,
-  islandArrival: [14, 10],
+  // Ciudad Teckel rediseñó el atrio: la llegada del espejo es la celda abierta
+  // más cercana a la coordenada histórica, calculada sobre el mapa vivo para
+  // que generador e instalador coincidan siempre.
+  islandArrival: nearest(freeCells(997), [14, 10]),
   hatch: "Una escotilla que no figuraba en los planos de la mansión. Alguien la abrió desde dentro.",
   lines: [
     "El sótano no aparecía en ningún plano y, sin embargo, siempre estuvo aquí.",

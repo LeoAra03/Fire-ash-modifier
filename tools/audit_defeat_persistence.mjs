@@ -111,9 +111,9 @@ function analyze(event) {
 
 const zones = [
   { name: "Torre Grandeur Club (141/151/214) — etapas de entrenamiento del juego base", maps: [141, 151, 214], vanilla: true },
-  { name: "Isla Espejo (997-999)", maps: [997, 998, 999], wild: true },
+  { name: "Isla Espejo / Ciudad Teckel (997-999)", maps: [997, 998, 999], wild: true },
   { name: "Bosque/Hypno + Horizontes (1000-1020)", maps: Array.from({ length: 21 }, (_, i) => 1000 + i) },
-  { name: "Atlas Mil (1021-2020)", maps: Array.from({ length: 1000 }, (_, i) => 1021 + i) },
+  { name: "Atlas Mil (1021-2020)", maps: Array.from({ length: 1000 }, (_, i) => 1021 + i), atlasPokegods: true },
   { name: "Monte Silver — Emisiones (2021-2029)", maps: Array.from({ length: 9 }, (_, i) => 2021 + i) },
   { name: "Expansión Multiversal (2191-2194)", maps: [2191, 2192, 2193, 2194] },
 ];
@@ -147,13 +147,21 @@ for (const zone of zones) {
   console.log(`  ${events.length} eventos con batalla | derrota permanente: ${persistent.length} | revancha opcional (menú): ${rematches.length} | canLose: ${events.length - noLose.length}/${events.length}`);
   for (const entry of repeats) {
     // Los Pokégods son encuentros salvajes con tres Formas de Anomalía: se
-    // repiten a propósito, igual que el resto de la fauna de la isla.
+    // repiten a propósito, igual que el resto de la fauna de la isla. En el
+    // Atlas Mil los Pokégods repartidos por la dimensión conservan ese mismo
+    // diseño (fauna anómala repetible), y la fauna errante de Ciudad Teckel
+    // también. Un líder con revancha pedida por menú (opcional) no es anomalía.
     const wild = zone.wild ?? false;
-    const pokégod = wild && /PokeMod Pokégod:/.test(entry.name);
+    const pokégod = (wild || zone.atlasPokegods) && /PokeMod Pokégod:/.test(entry.name);
+    const faunaTeckel = wild && /errante/.test(entry.name);
+    const revanchaOpcional = entry.optionalRematch;
     const label = zone.vanilla ? "repetible por diseño del club base"
-      : pokégod ? "salvaje repetible (Pokégod)" : "¡ANOMALÍA!";
+      : pokégod ? "salvaje repetible (Pokégod)"
+      : faunaTeckel ? "fauna errante repetible (Teckel)"
+      : revanchaOpcional ? "revancha opcional por menú"
+      : "¡ANOMALÍA!";
     console.log(`  [${label}] Map${entry.mapId} ev${entry.id} ${JSON.stringify(entry.name)}`);
-    if (!zone.vanilla && !pokégod) anomalies.push({ mapId: entry.mapId, ...entry });
+    if (!zone.vanilla && !pokégod && !faunaTeckel && !revanchaOpcional) anomalies.push({ mapId: entry.mapId, ...entry });
   }
   for (const entry of noLose) {
     console.log(`  [sin canLose] Map${entry.mapId} ev${entry.id} ${JSON.stringify(entry.name)}`);

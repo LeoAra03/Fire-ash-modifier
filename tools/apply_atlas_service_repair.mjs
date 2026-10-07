@@ -22,6 +22,7 @@ const REPORT_PATH = path.join(ROOT, "content", "atlas_service_repair_report.json
 const BACKUP_DIR = path.join(GAME, "PokeModBackups", "atlas_service_repair_originals");
 const VERIFY_ONLY = process.argv.includes("--verify");
 const PLAN_ONLY = process.argv.includes("--plan");
+const DRIFT_ONLY = process.argv.includes("--drift");
 const WRITE = !VERIFY_ONLY && !PLAN_ONLY;
 const pad = (id) => String(id).padStart(3, "0");
 const keyOf = (x, y) => `${x},${y}`;
@@ -574,17 +575,26 @@ function verify(report = loadPreviousReport()) {
   if (respawnNote?.copiedEvents !== expectedNurseCount || !String(respawnNote?.effect || "").includes("Kernel.pbSetPokemonCenter")) {
     errors.push("el informe no documenta el efecto de Nurse/Mirror Nurse sobre el centro de reaparición Atlas");
   }
-  const recorded = report.services || [];
+  const recordedAll = report.services || [];
+  // Servicios cuya fuente original fue rediseñada por un proyecto posterior
+  // aprobado (p. ej. Isla Espejo 997-999 → Ciudad Teckel). El clon instalado se
+  // sigue auditando por hash/ubicación/pasabilidad; la fuente ya no existe.
+  const repurposed = recordedAll.filter((service) => service.sourceRepurposed);
+  const recorded = recordedAll.filter((service) => !service.sourceRepurposed);
   const expectedKeys = new Set(expected.map((entry) => `${entry.mapId}:${entry.sourceEventId}`));
   const recordedKeys = new Set(recorded.map((entry) => `${entry.mapId}:${entry.sourceEventId}`));
   for (const key of expectedKeys) if (!recordedKeys.has(key)) errors.push(`falta servicio esperado ${key}`);
   for (const key of recordedKeys) if (!expectedKeys.has(key)) errors.push(`servicio no esperado en informe ${key}`);
   if (recorded.length !== expected.length) errors.push(`informe contiene ${recorded.length}/${expected.length} servicios`);
+  const repurposedNurses = repurposed.filter((service) => ["nurse", "mirror nurse"].includes(normalizedName(service.name))).length;
+  if ((respawnNote?.repurposedMirrorNurses || 0) !== repurposedNurses) {
+    errors.push(`el informe documenta ${respawnNote?.repurposedMirrorNurses || 0} enfermeras repurposed y el manifiesto tiene ${repurposedNurses}`);
+  }
 
   const sourceCache = new Map();
   const targetCache = new Map();
   const eventsByMap = new Map();
-  for (const service of recorded) {
+  for (const service of recordedAll) {
     const map = mapByAtlas.get(Number(service.mapId));
     if (!map) { errors.push(`mapa Atlas desconocido ${service.mapId}`); continue; }
     const targetMap = readMap(service.mapId);
@@ -597,6 +607,14 @@ function verify(report = loadPreviousReport()) {
     if (text(iv(targetEvent, "name")) !== service.name) errors.push(`Map${service.mapId}#${service.targetEventId}: nombre desincronizado`);
     if (Number(iv(targetEvent, "x")) !== Number(service.targetPosition?.[0]) || Number(iv(targetEvent, "y")) !== Number(service.targetPosition?.[1])) {
       errors.push(`Map${service.mapId}#${service.targetEventId}: ubicación distinta al manifiesto`);
+    }
+    if (service.sourceRepurposed) {
+      const reparsed = parseMap(targetMap);
+      const repurposedPass = passabilityOf(reparsed, reparsed.tilesetId);
+      if (!openCell(repurposedPass, service.targetPosition[0], service.targetPosition[1]) || !hasClearUpperLayers(reparsed, service.targetPosition[0], service.targetPosition[1])) {
+        errors.push(`Map${service.mapId}#${service.targetEventId}: servicio con fuente repurposed en celda bloqueada o tapada`);
+      }
+      continue;
     }
     const sourceId = Number(service.sourceId);
     if (!sourceCache.has(sourceId)) sourceCache.set(sourceId, readMap(sourceId));
@@ -625,7 +643,7 @@ function verify(report = loadPreviousReport()) {
 
   for (const [mapId, eventPairs] of eventsByMap) {
     const occupancy = mapOccupancy(eventPairs);
-    const serviceIds = new Set(recorded.filter((service) => service.mapId === mapId).map((service) => Number(service.targetEventId)));
+    const serviceIds = new Set(recordedAll.filter((service) => service.mapId === mapId).map((service) => Number(service.targetEventId)));
     for (const [position, occupants] of occupancy) {
       const copied = occupants.filter((occupant) => serviceIds.has(occupant.id));
       if (copied.length && occupants.length > 1) errors.push(`Map${mapId}: servicio restaurado superpuesto en ${position}`);
@@ -634,7 +652,7 @@ function verify(report = loadPreviousReport()) {
     if (new Set(ids).size !== ids.length) errors.push(`Map${mapId}: hay IDs de evento duplicados`);
   }
   const incomingSpawns = collectIncomingSpawns();
-  for (const service of recorded) {
+  for (const service of recordedAll) {
     const entryCells = incomingSpawns.get(Number(service.mapId));
     if (entryCells?.has(keyOf(service.targetPosition[0], service.targetPosition[1]))) {
       errors.push(`Map${service.mapId}#${service.targetEventId}: el servicio ocupa una coordenada de entrada Atlas`);
@@ -658,10 +676,55 @@ function verify(report = loadPreviousReport()) {
     errors.push("el informe registra escrituras fuera de los mapas Atlas autorizados");
   }
   if (errors.length) throw new Error(`Verificación Atlas servicios fallida (${errors.length}):\n- ${errors.slice(0, 100).join("\n- ")}`);
-  console.log(`Verificación OK: ${recorded.length} eventos de servicio en ${new Set(recorded.map((entry) => entry.mapId)).size} mapas; ${report.relocations?.length || 0} colisiones resueltas; transferencias Atlas, scripts y flags fuente intactos.`);
+  console.log(`Verificación OK: ${recordedAll.length} eventos de servicio (${repurposed.length} con fuente repurposed) en ${new Set(recordedAll.map((entry) => entry.mapId)).size} mapas; ${report.relocations?.length || 0} colisiones resueltas; transferencias Atlas, scripts y flags fuente intactos.`);
 }
 
 function main() {
+  if (DRIFT_ONLY) {
+    const inventory = candidateInventory();
+    const report = loadPreviousReport();
+    const expected = new Set(inventory.serviceEvents.map((entry) => `${entry.mapId}:${entry.sourceEventId}`));
+    const recorded = new Set((report?.services || []).map((entry) => `${entry.mapId}:${entry.sourceEventId}`));
+    const soloInforme = [...recorded].filter((key) => !expected.has(key));
+    const soloVivo = [...expected].filter((key) => !recorded.has(key));
+    console.log(JSON.stringify({ esperado: expected.size, informe: recorded.size, soloInforme, soloVivo }, null, 2));
+    const porFuente = {};
+    for (const service of report?.services || []) {
+      porFuente[service.sourceId] = (porFuente[service.sourceId] || 0) + 1;
+    }
+    console.log("servicios por fuente:", JSON.stringify(porFuente));
+    const nurses = inventory.serviceEvents.filter((entry) => ["nurse", "mirror nurse"].includes(normalizedName(entry.name))).length;
+    console.log("nurses vivas esperadas:", nurses);
+    return;
+  }
+  if (process.argv.includes("--heal")) {
+    // Reubica servicios con fuente repurposed cuya celda quedó bloqueada o
+    // tapada por arte posterior (p. ej. el pulido DN), y sincroniza el informe.
+    const report = loadPreviousReport();
+    let moved = 0;
+    for (const service of report.services || []) {
+      if (!service.sourceRepurposed) continue;
+      const mapObject = readMap(service.mapId);
+      const parsed = parseMap(mapObject);
+      const pairs = mapEventPairs(mapObject);
+      const pair = pairs.find(([id]) => Number(id) === Number(service.targetEventId));
+      if (!pair) continue;
+      const [px, py] = service.targetPosition;
+      const pass = passabilityOf(parsed, parsed.tilesetId);
+      if (openCell(pass, px, py) && hasClearUpperLayers(parsed, px, py)) continue;
+      const spot = nearestFreeReachableCell(parsed, pairs, [px, py], new Set());
+      pair[1].setIvar("@x", spot.x);
+      pair[1].setIvar("@y", spot.y);
+      service.targetPosition = [spot.x, spot.y];
+      service.targetHash = eventHash(pair[1]);
+      writeMap(service.mapId, mapObject);
+      moved += 1;
+      console.log(`Map${service.mapId}#${service.targetEventId} (${service.name}) reubicada a (${spot.x},${spot.y})`);
+    }
+    fs.writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`);
+    console.log(`--heal: ${moved} servicios reubicados`);
+    return;
+  }
   if (VERIFY_ONLY) return verify();
   let oldReport = loadPreviousReport();
   if (oldReport?.status === "complete") {

@@ -30041,7 +30041,11 @@
       "targetHash": "f4ab24fb01390fe53062765375d49e7f69b4ebe2b31e3b8623e48469c70a5da7",
       "pages": 1,
       "transferRemaps": [],
-      "stateReferencesPreserved": true
+      "stateReferencesPreserved": true,
+      "sourceRepurposed": {
+        "project": "ciudad_teckel_isla_paraiso",
+        "reason": "Las fuentes originales 997-999 (Isla Espejo) fueron rediseñadas como Ciudad Teckel / Gimnasio Teckel / Afueras por un proyecto posterior aprobado; el clon instalado permanece operativo y se audita por hash, ubicación y pasabilidad."
+      }
     },
     {
       "mapId": 2012,
@@ -30056,13 +30060,17 @@
       ],
       "targetPosition": [
         18,
-        12
+        4
       ],
       "sourceHash": "38a612e833b088fcdc7edecda1b9c476d11ec129dd39b0b5587ebc64551bd53c",
-      "targetHash": "ffc3c5a7ccc168b9c99519ac75c5a52f7c7d96bfac8e914b72e22ae784dd15b0",
+      "targetHash": "43ac6af7acdd4acb504eb6508513eb846aef6025b013c247f206e89da61a9deb",
       "pages": 1,
       "transferRemaps": [],
-      "stateReferencesPreserved": true
+      "stateReferencesPreserved": true,
+      "sourceRepurposed": {
+        "project": "ciudad_teckel_isla_paraiso",
+        "reason": "Las fuentes originales 997-999 (Isla Espejo) fueron rediseñadas como Ciudad Teckel / Gimnasio Teckel / Afueras por un proyecto posterior aprobado; el clon instalado permanece operativo y se audita por hash, ubicación y pasabilidad."
+      }
     },
     {
       "mapId": 2013,
@@ -30077,13 +30085,17 @@
       ],
       "targetPosition": [
         18,
-        12
+        4
       ],
       "sourceHash": "38a612e833b088fcdc7edecda1b9c476d11ec129dd39b0b5587ebc64551bd53c",
-      "targetHash": "ffc3c5a7ccc168b9c99519ac75c5a52f7c7d96bfac8e914b72e22ae784dd15b0",
+      "targetHash": "43ac6af7acdd4acb504eb6508513eb846aef6025b013c247f206e89da61a9deb",
       "pages": 1,
       "transferRemaps": [],
-      "stateReferencesPreserved": true
+      "stateReferencesPreserved": true,
+      "sourceRepurposed": {
+        "project": "ciudad_teckel_isla_paraiso",
+        "reason": "Las fuentes originales 997-999 (Isla Espejo) fueron rediseñadas como Ciudad Teckel / Gimnasio Teckel / Afueras por un proyecto posterior aprobado; el clon instalado permanece operativo y se audita por hash, ubicación y pasabilidad."
+      }
     }
   ],
   "relocations": [
@@ -34182,9 +34194,10 @@
   "appliedAt": "2026-10-03T03:09:56.252Z",
   "knownBehaviors": {
     "nurseRespawnCenter": {
-      "copiedEvents": 115,
+      "copiedEvents": 112,
       "effect": "Nurse/Mirror Nurse conservan Kernel.pbSetPokemonCenter; al usarlas en Atlas, el mapa Atlas actual queda como centro de reaparición, igual que un Centro Pokémon normal.",
-      "manualQa": "Comprobar en Game.exe que la reaparición ocurre en el centro Atlas esperado y que el evento de salida permite volver al circuito Atlas."
+      "manualQa": "Comprobar en Game.exe que la reaparición ocurre en el centro Atlas esperado y que el evento de salida permite volver al circuito Atlas.",
+      "repurposedMirrorNurses": 3
     }
   }
 }
