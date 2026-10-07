@@ -706,7 +706,7 @@ function registrar() {
   for (const id of [MAPA_VIA, MAPA_GIMNASIO]) {
     const meta = plantilla
       ? new RObject(plantilla.className, plantilla.ivars.map(([k, v]) => [k, v]))
-      : new RObject("RPG::MapMetadata", []);
+      : new RObject("GameData::MapMetadata", [["@id", id]]);
     meta.setIvar("town_map_position", [9, 0, 0]);
     md.pairs.push([id, meta]);
   }

@@ -237,11 +237,20 @@ export function installMetadata(specs, dirName = "dlc_total") {
   for (const spec of specs) {
     let entry = metadata.pairs.find(([key]) => Number(key) === Number(spec.mapId));
     if (!entry) {
-      const clone = new RObject("RPG::MapMetadata", []);
+      // Los scripts de Fire Ash (Essentials v19) definen GameData::MapMetadata;
+      // RPG::MapMetadata NO existe y su solo presence en el .dat rompe el
+      // arranque con "undefined class/module RPG::MapMetadata".
+      const clone = new RObject("GameData::MapMetadata", [["@id", Number(spec.mapId)]]);
       entry = [Number(spec.mapId), clone];
       metadata.pairs.push(entry);
     }
-    const object = entry[1];
+    let object = entry[1];
+    if (object.className === "RPG::MapMetadata") {
+      const sane = new RObject("GameData::MapMetadata", [["@id", Number(spec.mapId)]]);
+      for (const [k, v] of object.ivars) sane.setIvar(k, v);
+      object = sane;
+      entry[1] = object;
+    }
     if (spec.parentId !== undefined) object.setIvar("@parent_map_id", Number(spec.parentId));
     if (spec.battleBackdrop) object.setIvar("@battle_background", S(spec.battleBackdrop));
   }

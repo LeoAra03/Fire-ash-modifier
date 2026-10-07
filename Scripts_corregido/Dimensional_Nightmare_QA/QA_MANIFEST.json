@@ -573,7 +573,7 @@
     {
       "path": "Data/Map2040.rxdata",
       "bytes": 27000,
-      "sha256": "9b43072301cabb9bc2903e1a7e6e3374b08f8e452d4418aec44121f1ec64b527"
+      "sha256": "024e833fb8d367b8ee6fe079af3065af00434d1240bcb581328eac10b597d3c9"
     },
     {
       "path": "Data/Map2041.rxdata",
@@ -1082,8 +1082,8 @@
     },
     {
       "path": "Data/Map2142.rxdata",
-      "bytes": 17919,
-      "sha256": "90641c5ac26612906b8f8d758fdcedc2cb08651c124bfabeb756ca16c9bc2a2d"
+      "bytes": 18199,
+      "sha256": "837767397fe6bc6fabc5f1424b851432a92b9d1b1136d539e6464530b06d7f90"
     },
     {
       "path": "Data/Map2143.rxdata",
@@ -1337,38 +1337,38 @@
     },
     {
       "path": "Data/MapInfos.rxdata",
-      "bytes": 139741,
-      "sha256": "394daef1aa2e98dfec0e01739804fb5ffeb31c88904ac337a21584118dd33955"
+      "bytes": 202567,
+      "sha256": "7f8be9e5c9568c765ed8d71011a4f11540e213531aea043dd01c6b04e2d76241"
     },
     {
       "path": "Data/Scripts.rxdata",
-      "bytes": 1110639,
-      "sha256": "9fdf93243e4fc7a09ffa188d218f3c69fae290cc02ed2388ed733b02a1d4c0b5"
+      "bytes": 1112429,
+      "sha256": "49c2d72d9daa919696717995507b94cdf157832dae285f227da83a538b8eab3b"
     },
     {
       "path": "Data/System.rxdata",
-      "bytes": 27463,
-      "sha256": "2e6c4e842997234b7c51c00e9fbd09f7f6d17e846971df8442b8a7a80e00d642"
+      "bytes": 27494,
+      "sha256": "f1318394364deb58be526d2618a81e6efe403af562d090c46b992bf3292ab941"
     },
     {
       "path": "Data/Tilesets.rxdata",
-      "bytes": 761717,
-      "sha256": "2bcc6a4e0fcf524c7efdf8dcbb691be6e07a3fad3954e8988349bfeb077931f9"
+      "bytes": 762248,
+      "sha256": "29cdf39ef44841cbeb0f0d8af3c6b05554506ba12cb89dde147864d4a5dcbabb"
     },
     {
       "path": "Data/encounters.dat",
-      "bytes": 53230,
-      "sha256": "6c533058e9ce5c991b4eb0187de5a0b5941fb66895fd95a1dff23a0aaed24828"
+      "bytes": 54601,
+      "sha256": "0c84b96f64b018aa8b5ca239e9e97bef02106c66d6d5c3aed9974dbae5e48d41"
     },
     {
       "path": "Data/items.dat",
-      "bytes": 203802,
-      "sha256": "adf05b0d84bd3ba3fcb0d8a0e63830c19278b933361f494acafffbe4f91969e7"
+      "bytes": 204094,
+      "sha256": "485054488d2ac05153f6225c01b3bd1c58fc448af0bbb81504cff53e96eb1caf"
     },
     {
       "path": "Data/map_metadata.dat",
-      "bytes": 484734,
-      "sha256": "5f26063c971c1a94a202dd9eefbfd86fe58ed0d2a86d335d631b7fe464e4289f"
+      "bytes": 502375,
+      "sha256": "74dd526b314e03f7ae0ec0aa3f02737c57a139e46d5241d99463d558bb5c5ad1"
     },
     {
       "path": "Data/trainer_lists.dat",
@@ -1377,8 +1377,8 @@
     },
     {
       "path": "Data/trainer_types.dat",
-      "bytes": 58822,
-      "sha256": "f1fc22f8b0832cc845c6ec1c64f628fcd70686e7b3df95d0a925b3c1f9a16366"
+      "bytes": 59619,
+      "sha256": "c709199e9d0fd7e15aa0da8f2aab73aff9a1a315d5ee067ce09e1b66a97c53a1"
     },
     {
       "path": "Data/trainerlists.dat",
@@ -1387,8 +1387,8 @@
     },
     {
       "path": "Data/trainers.dat",
-      "bytes": 1204075,
-      "sha256": "fc601d3215293e7bf946fcd13c4f54548e10fa4f77fbeb2e5be910ab809feb67"
+      "bytes": 1416236,
+      "sha256": "51b5940b663b42121474bda2fd04a6de5420a6d286571a4edda4552062d3cbc3"
     },
     {
       "path": "Data/trainertypes.dat",
@@ -1417,8 +1417,8 @@
     },
     {
       "path": "Graphics/Characters/ARC_Steven.png",
-      "bytes": 7264,
-      "sha256": "5b125555c661a61d21fd2123443d13285fb7623ec6ee296d39bca76f7b90970f"
+      "bytes": 3070,
+      "sha256": "442425713042c19bc7decc9f3605d7d89caed308ddda06f4f6892f246b2fac92"
     },
     {
       "path": "Graphics/Characters/DIALGA.png",
