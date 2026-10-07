@@ -1,7 +1,7 @@
-# Informe referencial de mapas — 1.039 fichas
+# Informe referencial de mapas — 1045 fichas
 
-**Generado:** 2026-10-05
-**Alcance:** Atlas Mil (Map1021–Map2020) y 39 mapas complementarios en `Otros_Mapas_16.png`.
+**Generado:** 2026-10-07
+**Alcance:** Atlas Mil (Map1021–Map2020) y 45 mapas complementarios en Otros_Mapas_16.png.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
 
@@ -14,7 +14,7 @@
 - **Multiverso Creepypasta:** siete emisiones, Map2023–Map2029.
 - **La Ruta de Dios:** siete pisos Map2031–Map2037 y aproximación celestial Map2038.
 - **Vía de las Nueve Eras:** Map2195 (vía de nueve distritos) y Map2196 (Gimnasio Atlas · Las Nueve Eras).
-- **Dimensiones del DLC:** Map2200–Map2201 (Glazed), Map2210–Map2211 (Light Platinum), Map2220–Map2221 (Team Rocket), Map2230 (Avenida) y Map2250–Map2257 (ocho gimnasios de Atlas).
+- **Dimensiones del DLC:** Map2200–2201 (Glazed), Map2210–2211 (Light Platinum), Map2220–2221 (Team Rocket), Map2230 (Avenida), Map2240–2241 (Liquid Crystal), Map2242–2243 (TFOH), Map2244–2245 (Factory Adventure) y Map2250–2257 (ocho gimnasios de Atlas).
 
 **Colisión evitada:** Map2030 sigue siendo la Gruta de los Testigos. La aproximación de La Ruta de Dios está en Map2038; los pisos permanecen en Map2031–Map2037.
 
@@ -5102,7 +5102,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 - **Referencia:** Eco dimensional de Selva Prismática (Map1006). Anomalía documentada: Los nombres de Selva Prismática cambian de asiento: la etiqueta de un lugar se pasea al vecino. Regla local: Llamar por señas — Eco 1000. Primer contrajuego: Saludar al lugar con gestos.
 - **Datos compilados:** 70×50 tiles; 4 eventos; tileset 1.
 
-## Mapas complementarios — 39 fichas
+## Mapas complementarios — 45 fichas
 
 ## Isla Espejo
 
@@ -5241,7 +5241,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2200 — Glazed — Bahía de Cedolán
 - **Categoría:** Dimensiones del DLC.
 - **Referencia:** Glazed — Bahía de Cedolán: dimensión navegable con seis distritos tomados de Cedolán, Lerucean, la Meseta Ingido y sus rutas.
-- **Datos compilados:** 106×72 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 106×72 tiles; 17 eventos; tileset 1.
 
 ### Map2201 — Gimnasio Glazed — Líder Ámbar
 - **Categoría:** Dimensiones del DLC.
@@ -5251,7 +5251,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map2210 — Light Platinum — Costa de Lappet
 - **Categoría:** Dimensiones del DLC.
 - **Referencia:** Light Platinum — Costa de Lappet: dimensión navegable con seis distritos de costa, sendas, safari y frente de batalla.
-- **Datos compilados:** 106×72 tiles; 10 eventos; tileset 1.
+- **Datos compilados:** 106×72 tiles; 17 eventos; tileset 1.
 
 ### Map2211 — Gimnasio Light Platinum — Líder Resplandor
 - **Categoría:** Dimensiones del DLC.
@@ -5272,6 +5272,36 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 - **Categoría:** Dimensiones del DLC.
 - **Referencia:** Atlas — Avenida de los Ocho Gimnasios: seis plazas canónicas, ocho puertas, tres rivales y cuatro cuadrillas.
 - **Datos compilados:** 106×72 tiles; 18 eventos; tileset 1.
+
+### Map2240 — Liquid Crystal — Santuario de Johto
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Liquid Crystal — Santuario de Johto: seis distritos de lluvia, ruinas, faro y puerto donde Ash llega como visitante.
+- **Datos compilados:** 106×72 tiles; 16 eventos; tileset 1.
+
+### Map2241 — Dojo Liquid Crystal — Guardiana Suicune
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Dojo Liquid Crystal: sala de la Guardiana Nerea y la Medalla Cristal.
+- **Datos compilados:** 46×42 tiles; 2 eventos; tileset 14.
+
+### Map2242 — TFOH — Frontera del Origen
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** TFOH — Frontera del Origen: seis distritos que celebran una aventura incompleta sin borrar su identidad.
+- **Datos compilados:** 106×72 tiles; 16 eventos; tileset 1.
+
+### Map2243 — TFOH — Cámara de la Primera Huella
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Cámara de la Primera Huella: sala de la Custodia Alba y el Sello del Origen.
+- **Datos compilados:** 46×42 tiles; 2 eventos; tileset 14.
+
+### Map2244 — Factory Adventure — Distrito Primigenio
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Factory Adventure — Distrito Primigenio: seis sectores industriales que conservan la estética de cuatro tonos como memoria.
+- **Datos compilados:** 106×72 tiles; 15 eventos; tileset 1.
+
+### Map2245 — Factory Adventure — Núcleo de Ensamblaje
+- **Categoría:** Dimensiones del DLC.
+- **Referencia:** Núcleo de Ensamblaje: sala del Maestro Ensamble y el Sello Fábrica.
+- **Datos compilados:** 46×42 tiles; 2 eventos; tileset 14.
 
 ### Map2250 — Gimnasio de Atlas · Bruma
 - **Categoría:** Dimensiones del DLC.

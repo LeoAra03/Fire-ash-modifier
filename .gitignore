@@ -75,6 +75,10 @@ reference/pokegods/concepto/
 # ROMs invitadas y su material extraído (no se versiona)
 roms pokemon/
 
+# Toolkit local desempaquetado (reproducible desde los archivos fuente)
+toolkit/
+temporal_extraccion/
+
 # Paquete TIMPS Swarm: se guarda el zip, no el contenido descomprimido
 agents/timps-swarm-main/
 

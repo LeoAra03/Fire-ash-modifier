@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Genera el catálogo visual referencial de los 1.039 mapas solicitados:
- * Atlas Mil (1021–2020) en 15 mosaicos y 39 mapas complementarios en el 16.
+ * Genera el catálogo visual referencial de los mapas solicitados:
+ * Atlas Mil (1021–2020) en 15 mosaicos y mapas complementarios en el 16.
  *
  * Usa exclusivamente los mapas, tilesets, gráficos y catálogos del proyecto.
  * Los PNG son vistas estáticas de referencia; no sustituyen una prueba dentro
@@ -46,6 +46,7 @@ const OTHER_GROUPS = [
     2210, 2211,                                        // Light Platinum y su gimnasio
     2220, 2221,                                        // Team Rocket: base y núcleo
     2230,                                              // Avenida de los Ocho Gimnasios
+    2240, 2241, 2242, 2243, 2244, 2245,               // Liquid Crystal, TFOH y Factory Adventure
     ...Array.from({ length: 8 }, (_, i) => 2250 + i),   // los ocho gimnasios de Atlas
   ] },
 ];
@@ -98,6 +99,12 @@ const EXTRA_DESCRIPTIONS = new Map([
   [2220, "Team Rocket — Base Subterránea: la infiltración de Ash, cinco misiones encadenadas por rango y tres heridos que socorrer."],
   [2221, "Team Rocket — Núcleo del Mando: despacho donde Ash toma el control de la dimensión al llegar a Jefe Supremo."],
   [2230, "Atlas — Avenida de los Ocho Gimnasios: seis plazas canónicas, ocho puertas, tres rivales y cuatro cuadrillas."],
+  [2240, "Liquid Crystal — Santuario de Johto: seis distritos de lluvia, ruinas, faro y puerto donde Ash llega como visitante."],
+  [2241, "Dojo Liquid Crystal: sala de la Guardiana Nerea y la Medalla Cristal."],
+  [2242, "TFOH — Frontera del Origen: seis distritos que celebran una aventura incompleta sin borrar su identidad."],
+  [2243, "Cámara de la Primera Huella: sala de la Custodia Alba y el Sello del Origen."],
+  [2244, "Factory Adventure — Distrito Primigenio: seis sectores industriales que conservan la estética de cuatro tonos como memoria."],
+  [2245, "Núcleo de Ensamblaje: sala del Maestro Ensamble y el Sello Fábrica."],
   [2250, "Gimnasio de Atlas · Bruma (FANTASMA): Líder Néboa y la Medalla Bruma, primera del circuito."],
   [2251, "Gimnasio de Atlas · Veta (ROCA): Líder Canto y la Medalla Veta."],
   [2252, "Gimnasio de Atlas · Duna (TIERRA): Líder Ágata y la Medalla Duna."],
@@ -165,8 +172,8 @@ function loadMapIndex() {
   if (hierarchy.maps.length !== 1000 || atlasCatalog.maps.length !== 1000) {
     throw new Error(`Los catálogos de Atlas no contienen 1.000 filas (${hierarchy.maps.length}/${atlasCatalog.maps.length})`);
   }
-  if (OTHER_IDS.length !== 39 || new Set(REQUESTED_IDS).size !== 1039) {
-    throw new Error(`La selección solicitada no es de 1.039 mapas únicos (${REQUESTED_IDS.length})`);
+  if (new Set(REQUESTED_IDS).size !== REQUESTED_IDS.length) {
+    throw new Error(`La selección contiene IDs repetidos (${REQUESTED_IDS.length})`);
   }
   assertIdTitles(byId);
   return byId;
@@ -245,10 +252,10 @@ function mapFactLine(summary) {
 
 function buildReport(summaries) {
   const lines = [
-    "# Informe referencial de mapas — 1.039 fichas",
+    `# Informe referencial de mapas — ${REQUESTED_IDS.length.toLocaleString("es-ES")} fichas`,
     "",
     `**Generado:** ${new Date().toISOString().slice(0, 10)}`,
-    "**Alcance:** Atlas Mil (Map1021–Map2020) y 39 mapas complementarios en `Otros_Mapas_16.png`.",
+    `**Alcance:** Atlas Mil (Map1021–Map2020) y ${OTHER_IDS.length} mapas complementarios en Otros_Mapas_16.png.`,
     "",
     "> Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.",
     "",
@@ -261,7 +268,7 @@ function buildReport(summaries) {
     "- **Multiverso Creepypasta:** siete emisiones, Map2023–Map2029.",
     "- **La Ruta de Dios:** siete pisos Map2031–Map2037 y aproximación celestial Map2038.",
     "- **Vía de las Nueve Eras:** Map2195 (vía de nueve distritos) y Map2196 (Gimnasio Atlas · Las Nueve Eras).",
-    "- **Dimensiones del DLC:** Map2200–Map2201 (Glazed), Map2210–Map2211 (Light Platinum), Map2220–Map2221 (Team Rocket), Map2230 (Avenida) y Map2250–Map2257 (ocho gimnasios de Atlas).",
+    "- **Dimensiones del DLC:** Map2200–2201 (Glazed), Map2210–2211 (Light Platinum), Map2220–2221 (Team Rocket), Map2230 (Avenida), Map2240–2241 (Liquid Crystal), Map2242–2243 (TFOH), Map2244–2245 (Factory Adventure) y Map2250–2257 (ocho gimnasios de Atlas).",
     "",
     "**Colisión evitada:** Map2030 sigue siendo la Gruta de los Testigos. La aproximación de La Ruta de Dios está en Map2038; los pisos permanecen en Map2031–Map2037.",
     "",
@@ -294,7 +301,7 @@ function buildReport(summaries) {
     }
   }
 
-  lines.push("## Mapas complementarios — 39 fichas", "");
+  lines.push(`## Mapas complementarios — ${OTHER_IDS.length} fichas`, "");
   for (const group of OTHER_GROUPS) {
     lines.push(`## ${group.name}`, "");
     for (const id of group.ids) {
@@ -550,7 +557,7 @@ function verifyReport(summaries) {
   const withoutDate = (text) => text.replace(/^\*\*Generado:\*\* .*$/m, "**Generado:**");
   if (withoutDate(report) !== withoutDate(buildReport(summaries))) throw new Error("El informe está desactualizado respecto a los mapas/catálogos: ejecuta --refresh-report");
   const headings = [...report.matchAll(/^### Map\d+ —/gm)].length;
-  if (headings !== 1039) throw new Error(`El informe contiene ${headings} fichas, se esperaban 1.039`);
+  if (headings !== REQUESTED_IDS.length) throw new Error(`El informe contiene ${headings} fichas, se esperaban ${REQUESTED_IDS.length}`);
   for (const required of [
     "Map2030 sigue siendo la Gruta de los Testigos",
     "Map2038",
@@ -587,24 +594,24 @@ function verifyZip() {
 async function verifyAll() {
   const mapInfoById = loadMapIndex();
   const summaries = summarizeMaps(mapInfoById);
-  if (summaries.size !== 1039) throw new Error(`Se leyeron ${summaries.size} mapas, no 1.039`);
+  if (summaries.size !== REQUESTED_IDS.length) throw new Error(`Se leyeron ${summaries.size} mapas, no ${REQUESTED_IDS.length}`);
   verifyReport(summaries);
   await verifyImages();
   verifyZip();
-  console.log("Verificación referencial OK: 1.000 mapas de Atlas Mil + 39 mapas complementarios. No es una prueba en Game.exe/Kirin.");
+  console.log(`Verificación referencial OK: 1.000 mapas de Atlas Mil + ${OTHER_IDS.length} mapas complementarios. No es una prueba en Game.exe/Kirin.`);
 }
 
 async function createMissing() {
   const mapInfoById = loadMapIndex();
   const summaries = summarizeMaps(mapInfoById);
-  if (summaries.size !== 1039) throw new Error(`Se leyeron ${summaries.size} mapas, no 1.039`);
+  if (summaries.size !== REQUESTED_IDS.length) throw new Error(`Se leyeron ${summaries.size} mapas, no ${REQUESTED_IDS.length}`);
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   let updated = false;
   if (FORCE || REFRESH_REPORT || !fs.existsSync(REPORT_PATH)) {
     updated = true;
     fs.writeFileSync(REPORT_PATH, buildReport(summaries), "utf8");
-    console.log(`Informe ${path.relative(ROOT, REPORT_PATH)} · 1.039 fichas`);
+    console.log(`Informe ${path.relative(ROOT, REPORT_PATH)} · ${REQUESTED_IDS.length.toLocaleString("es-ES")} fichas`);
   } else {
     console.log(`Conservo el informe existente: ${path.relative(ROOT, REPORT_PATH)}`);
   }
@@ -628,7 +635,7 @@ async function createMissing() {
     updated = true;
     const entries = OTHER_GROUPS.flatMap((group) => group.ids);
     await renderSheet(entries, "MAPAS COMPLEMENTARIOS · MOSAICO 16 / 16",
-      "39 mapas · Isla Espejo · Panteón Pokégod · Monte Silver · Multiverso Creepypasta · La Ruta de Dios · Vía de las Nueve Eras · Dimensiones del DLC",
+      `${OTHER_IDS.length} mapas · Isla Espejo · Panteón Pokégod · Monte Silver · Multiverso Creepypasta · La Ruta de Dios · Vía de las Nueve Eras · Dimensiones del DLC`,
       otherOutput, summaries, mapInfoById);
   } else {
     console.log(`Conservo el mosaico existente: ${path.relative(ROOT, otherOutput)}`);

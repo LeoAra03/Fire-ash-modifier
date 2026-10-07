@@ -231,7 +231,13 @@ function leerEventos(data, eventsPtr) {
     for (let i = 0; i < numWarps; i += 1) {
       const o = base + i * 8;
       if (o + 8 > data.length) break;
-      warps.push({ x: s16(data, o), y: s16(data, o + 2), destino: data[o + 5], salida: data[o + 6] });
+      // WarpEvent Gen III: x, y, elevation, warpId, mapNum, mapGroup.
+      // Antes estos dos últimos bytes se publicaban como «destino/salida», lo
+      // que impedía reconstruir el grafo completo entre bancos.
+      warps.push({
+        x: s16(data, o), y: s16(data, o + 2), elevation: data[o + 4],
+        warpId: data[o + 5], mapaDestino: data[o + 6], bancoDestino: data[o + 7],
+      });
     }
   }
   return { numNpcs, numWarps, numTriggers, numSigns, npcs, warps, npcPtr, warpPtr };
@@ -341,7 +347,8 @@ function analizar(file) {
 
   const mapas = [];
   let vistos = 0;
-  for (const banco of bancos) {
+  for (let bancoId = 0; bancoId < bancos.length; bancoId += 1) {
+    const banco = bancos[bancoId];
     for (let i = 0; i < banco.length; i += 1) {
       const h = banco[i].header;
       const eventos = leerEventos(data, h.events) || { npcs: [], warps: [] };
@@ -360,7 +367,7 @@ function analizar(file) {
         if (npc.flag) flags.add(npc.flag);
       }
       mapas.push({
-        banco: mapas.length ? undefined : undefined,
+        banco: bancoId,
         indice: i,
         header: h.off,
         ancho: h.layout.width,
@@ -370,7 +377,8 @@ function analizar(file) {
         tipo: h.mapType,
         npcs: (eventos.npcs || []).length,
         warps: (eventos.warps || []).length,
-        npcsDetalle: (eventos.npcs || []).slice(0, 8),
+        warpsDetalle: eventos.warps || [],
+        npcsDetalle: eventos.npcs || [],
         scripts,
         flags: [...flags],
         variables: [...variables],
