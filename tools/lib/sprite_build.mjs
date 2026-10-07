@@ -86,14 +86,14 @@ function medianCut(rgbList, size) {
     Math.round(box.reduce((sum, px) => sum + px[c], 0) / box.length)));
 }
 
-function quantize(data, width, height, alpha) {
+function quantize(data, width, height, alpha, paletteSize = PALETTE_SIZE) {
   const opaque = [];
   for (let i = 0; i < width * height; i++) {
     if (!alpha[i]) continue;
     const p = i * 4;
     opaque.push([data[p], data[p + 1], data[p + 2]]);
   }
-  const palette = medianCut(opaque, PALETTE_SIZE);
+  const palette = paletteSize > 0 ? medianCut(opaque, paletteSize) : [];
   const out = new Uint8ClampedArray(data.length);
   out.set(data);
   if (!palette.length) return out;
@@ -114,7 +114,7 @@ function quantize(data, width, height, alpha) {
   return out;
 }
 
-function finalize(source, width, height) {
+function finalize(source, width, height, paletteSize = PALETTE_SIZE) {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext("2d");
   ctx.imageSmoothingEnabled = true;
@@ -123,7 +123,7 @@ function finalize(source, width, height) {
   const pixels = ctx.getImageData(0, 0, width, height);
   const mask = new Uint8Array(width * height);
   for (let i = 0; i < mask.length; i++) mask[i] = pixels.data[i * 4 + 3] > 8 ? 1 : 0;
-  const quantized = quantize(pixels.data, width, height, mask);
+  const quantized = quantize(pixels.data, width, height, mask, paletteSize);
   const image = ctx.createImageData(width, height);
   image.data.set(quantized);
   ctx.putImageData(image, 0, 0);
@@ -131,7 +131,7 @@ function finalize(source, width, height) {
 }
 
 /** Genera Front/Back/Icons/Characters de `id` a partir de un concepto PNG. */
-export async function buildPokemonSprites(conceptFile, id) {
+export async function buildPokemonSprites(conceptFile, id, { paletteSize = PALETTE_SIZE } = {}) {
   const image = await loadImage(conceptFile);
   const raw = pixelsOf(image);
   const alpha = keyBackground(raw);
@@ -173,7 +173,7 @@ export async function buildPokemonSprites(conceptFile, id) {
   };
   for (const d of Object.values(dirs)) fs.mkdirSync(d, { recursive: true });
 
-  const front = finalize(canvas, FW, FH);
+  const front = finalize(canvas, FW, FH, paletteSize);
   fs.writeFileSync(path.join(dirs.front, `${id}.png`), front.toBuffer("image/png"));
 
   const backRaw = createCanvas(FW, FH);
@@ -182,14 +182,14 @@ export async function buildPokemonSprites(conceptFile, id) {
   backCtx.globalCompositeOperation = "source-atop";
   backCtx.fillStyle = "rgba(18,14,32,0.34)";
   backCtx.fillRect(0, 0, FW, FH);
-  fs.writeFileSync(path.join(dirs.back, `${id}.png`), finalize(backRaw, FW, FH).toBuffer("image/png"));
+  fs.writeFileSync(path.join(dirs.back, `${id}.png`), finalize(backRaw, FW, FH, paletteSize).toBuffer("image/png"));
 
   const iconRaw = createCanvas(IW, IH);
   const iconCtx = iconRaw.getContext("2d");
   iconCtx.imageSmoothingEnabled = true;
   iconCtx.drawImage(canvas, 0, 0, 64, 64);
   iconCtx.drawImage(canvas, 65, 0, 63, 64);
-  fs.writeFileSync(path.join(dirs.icon, `${id}.png`), finalize(iconRaw, IW, IH).toBuffer("image/png"));
+  fs.writeFileSync(path.join(dirs.icon, `${id}.png`), finalize(iconRaw, IW, IH, paletteSize).toBuffer("image/png"));
 
   const sheetRaw = createCanvas(CW, CH);
   const sheetCtx = sheetRaw.getContext("2d");
@@ -200,6 +200,6 @@ export async function buildPokemonSprites(conceptFile, id) {
       sheetCtx.drawImage(canvas, step * 64, row * 64 + bob, 64, 64);
     }
   }
-  fs.writeFileSync(path.join(dirs.char, `${id}.png`), finalize(sheetRaw, CW, CH).toBuffer("image/png"));
+  fs.writeFileSync(path.join(dirs.char, `${id}.png`), finalize(sheetRaw, CW, CH, paletteSize).toBuffer("image/png"));
   return Object.values(dirs).map((d) => path.relative(path.join(GAME, ".."), path.join(d, `${id}.png`)).split(path.sep).slice(1).join("/"));
 }

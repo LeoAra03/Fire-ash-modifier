@@ -169,6 +169,11 @@ function outskirtsEvents() {
 
 function paradiseEvents() {
   const events = [];
+  events.push(event(499, "Paraíso: Altar de MAXINE", 10, 8, [page({
+    gfx: graphic("ALTAR_MAXINE"),
+    through: true,
+    list: [...texts(["Un altar de piedra musgosa, cubierto de flores moradas.", "Huele a siglo y a pelaje mojado."]), endEvent()],
+  })]));
   events.push(event(500, "Paraíso: Guardiana Nira", 10, 22, [
     page({
       list: [
@@ -196,7 +201,7 @@ function paradiseEvents() {
       ],
     }),
   ]));
-  events.push(event(501, "Paraíso: MAXINE", 10, 8, [
+  events.push(event(501, "Paraíso: MAXINE", 10, 7, [
     page({
       gfx: graphic("MAXINE"),
       list: [...texts(["El altar de flores duerme. Un osito pequeño descansa sobre una huella cálida."]), endEvent()],
@@ -384,8 +389,8 @@ async function apply() {
     { mapId: CITY, exterior: true },
     { mapId: GYM },
     { mapId: OUTSKIRTS, exterior: true },
-    { mapId: PARADISE, exterior: true },
-  ].map((s) => ({ mapId: s.mapId, parentId: s.exterior ? 1001 : CITY })), "teckel_maxine");
+    { mapId: PARADISE, exterior: true, battleBackdrop: "forest" },
+  ].map((s) => ({ mapId: s.mapId, parentId: s.exterior ? 1001 : CITY, battleBackdrop: s.battleBackdrop })), "teckel_maxine");
 
   installEncounters();
   installItems([
@@ -404,8 +409,11 @@ async function apply() {
   const crySrc = path.join(GAME, "Audio", "SE", "NIDOGOD.ogg");
   const cryDst = path.join(GAME, "Audio", "SE", "MAXINE.ogg");
   if (!fs.existsSync(cryDst)) fs.copyFileSync(crySrc, cryDst);
+  // Sprites fieles a las fotos generadas: sin reducción de paleta.
   const concept = path.join(ROOT, "reference", "pokegods", "concept", "MAXINE.png");
-  await buildPokemonSprites(concept, "MAXINE");
+  await buildPokemonSprites(concept, "MAXINE", { paletteSize: 0 });
+  const altar = path.join(ROOT, "reference", "maxine", "ALTAR_maxine_gb.png");
+  await buildPokemonSprites(altar, "ALTAR_MAXINE", { paletteSize: 0 });
 
   saveManifest([
     mapPath(CITY), mapPath(GYM), mapPath(OUTSKIRTS), mapPath(PARADISE), mapPath(1001),
@@ -413,6 +421,7 @@ async function apply() {
     "Data/items.dat", "Data/trainers.dat", "Data/trainer_types.dat", "Data/species.dat",
     "Graphics/Pokemon/Front/MAXINE.png", "Graphics/Pokemon/Back/MAXINE.png",
     "Graphics/Pokemon/Icons/MAXINE.png", "Graphics/Characters/MAXINE.png",
+    "Graphics/Characters/ALTAR_MAXINE.png",
     "Audio/SE/MAXINE.ogg",
   ]);
   console.log("OK: Ciudad Teckel, Gimnasio, Afueras, Isla Paraíso y MAXINE instalados");
@@ -425,6 +434,8 @@ function verify() {
   check.ok(names(CITY).filter((n) => /errante/.test(n)).length >= 6, "faltan perros errantes");
   check.ok(names(GYM).some((n) => n.includes("Líder Duna")), "falta Duna");
   check.ok(names(PARADISE).some((n) => n.includes("MAXINE")), "falta MAXINE");
+  check.ok(names(PARADISE).some((n) => n.includes("Altar de MAXINE")), "falta el altar");
+  check.ok(fs.existsSync(path.join(GAME, "Graphics/Characters/ALTAR_MAXINE.png")), "falta el sprite del altar");
   check.ok(names(PARADISE).some((n) => n.includes("Guardiana Nira")), "falta la guardiana");
   check.ok(names(1001).includes("Teckel: Profesor Atlas"), "falta el Profesor Atlas");
   const items = readData("items.dat");
@@ -436,7 +447,7 @@ function verify() {
     check.ok(fs.existsSync(path.join(GAME, f)), `falta ${f}`);
   }
   const maxinePage = readMapRaw(PARADISE).getIvar("@events").pairs
-    .map(([, e]) => e).find((e) => txt(iv(e, "@name")).includes("MAXINE"));
+    .map(([, e]) => e).find((e) => txt(iv(e, "@name")) === "Paraíso: MAXINE");
   check.ok(maxinePage && iv(maxinePage, "@pages").length === 3, "MAXINE debe tener 3 páginas");
   check.done();
 }
