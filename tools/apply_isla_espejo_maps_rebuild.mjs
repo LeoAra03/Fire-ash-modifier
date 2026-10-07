@@ -991,6 +991,31 @@ function verify() {
     const ts = Number(iv(map, "tileset_id"));
     const events = iv(map, "events").pairs;
 
+    // Ciudad Teckel / Gimnasio / Afueras rediseñaron estos mapas por mandato
+    // posterior del usuario: se auditan los equivalentes de seguridad (retorno
+    // al continente, Abra de emergencia, curación y conexiones) en vez del
+    // trazado original de la isla.
+    const names = events.map(([, ev]) => txt(iv(ev, "name")));
+    if (names.some((n) => n.startsWith("Teckel:"))) {
+      const transfers = events.flatMap(([, ev]) => (iv(ev, "pages") || []).flatMap((p) => (p.getIvar("@list") || [])))
+        .filter((c) => iv(c, "@code") === 201).map((c) => Number(iv(c, "@parameters")[1]));
+      if (id === 997) {
+        if (!names.includes("Return Ferry") || !transfers.includes(33)) errors.push(`${file}: el retorno al continente (mapa 33) no existe`);
+        if (!names.some((n) => n.includes("Abra de emergencia"))) errors.push(`${file}: missing Abra de emergencia`);
+        if (!transfers.includes(999)) errors.push(`${file}: la ciudad no conecta con las afueras`);
+        if (!transfers.includes(2194)) errors.push(`${file}: falta el espejo de vuelta al sótano`);
+        if (!names.some((n) => /Veterinaria/.test(n))) errors.push(`${file}: falta curación en la ciudad`);
+        const nurse2011 = iv(readRx("Map2011.rxdata"), "events").pairs.some(([, ev]) => txt(iv(ev, "name")).includes("Mirror Nurse"));
+        if (!nurse2011) errors.push("Map2011.rxdata: la Mirror Nurse del atrio no se conservó en su copia DN");
+      }
+      if (id === 998 && !transfers.includes(997)) errors.push(`${file}: el gimnasio no vuelve a la ciudad`);
+      if (id === 999) {
+        if (!names.some((n) => n.includes("Abra de emergencia"))) errors.push(`${file}: missing Abra de emergencia`);
+        if (!transfers.includes(997)) errors.push(`${file}: las afueras no vuelven a la ciudad`);
+      }
+      continue;
+    }
+
     if (w < 50 || h < 45) {
       errors.push(`${file}: map dimensions too small (${w}x${h})`);
     }

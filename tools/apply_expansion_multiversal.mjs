@@ -717,6 +717,11 @@ function installMirror() {
   installMapInfos([{ ...mirror.basement, parentId: mirror.mansionMap }]);
   installMetadata([mirror.basement]);
 
+  // Ciudad Teckel rediseñó el atrio de la antigua Isla Espejo: la llegada del
+  // espejo debe ser una celda abierta del mapa actual, no la coordenada vieja.
+  mirror.islandArrival = nearest(freeCells(mirror.islandMap), mirror.islandArrival);
+  fs.writeFileSync(path.join(ROOT, "content", "expansion_multiversal.json"), `${JSON.stringify(PLAN, null, 2)}\n`);
+
   // Sótano: se limpia y se reparten las celdas antes de colocar nada.
   upsert(mirror.basement.mapId, [MIRROR_MARKER], () => []);
   const basementCells = spread(freeCells(mirror.basement.mapId), 3);
