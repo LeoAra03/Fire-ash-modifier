@@ -21,8 +21,10 @@
  *     (`ensure`), para no dejar reglas pegadas al siguiente combate.
  *   · **El equipo de Ash se restaura** al terminar: HP, estado y Pokérus.
  *   · **PRNG determinista**: la escena sale igual siempre.
- *   · **Arceus no se debilita** en estas escenas: cada golpe retira un aliado,
- *     nunca al dios.
+ *   · **Arceus se regenera y se burla** cuando un golpe lo lleva al rojo o
+ *     parece derrotarlo; cada ataque suyo sigue retirando un aliado.
+ *   · **Las entradas son físicas:** Cynthia/Steven caminan al altar, se alejan
+ *     tras perder y Red/Gold recorren después la misma ruta.
  *   · **Todo va envuelto en `begin/rescue`** para que un error del motor no
  *     tire el juego.
  *
@@ -113,14 +115,45 @@ check(/RUTA_ARCEUS_CINEMATIC_RNG_SEED/.test(ruby),
 check(/arceus_cinematic\?\s*\?\s*RUTA_ARCEUS_CINEMATIC_RNG_SEED\s*:\s*RUTA_ARCEUS_MAIN_RNG_SEED/.test(ruby),
   "cada modalidad usa su propia semilla, sin mezclarlas");
 
-// ------------------------------------------------- el dios no cae en la escena
-const daño = cuerpo("def pbArceusCinematicDamage") ?? ruby;
-check(/arceus_cinematic/.test(ruby), "existe el modo cinemático consultable desde la batalla");
-const bloqueDanio = ruby.slice(ruby.indexOf("def check_arceus_seal"), ruby.indexOf("def check_arceus_phase"));
-check(/arceus_cinematic\?/.test(bloqueDanio) || /@ruta_arceus_cinematic_mode/.test(ruby),
-  "el daño consulta el modo cinemático antes de debilitar al dios");
-check(/hp\s*=\s*1|hp\s*>\s*1|no_debilita|1\s*PS/.test(ruby),
-  "hay una red que impide que Arceus se debilite en las escenas");
+// ----------------------------------- regeneración previa al duelo de Ash
+check(/arceus_cinematic\?/.test(ruby), "existe el modo cinemático consultable desde la batalla");
+const cinematicDamage = cuerpo("def arceus_cinematic_damage") ?? "";
+check(/predicted_hp/.test(cinematicDamage) && /ruta_arceus_cinematic_rebirth/.test(cinematicDamage),
+  "el daño que lleva a Arceus al rojo o a cero activa la resurrección cinemática");
+const rebirth = cuerpo("def pbArceusCinematicRebirth") ?? "";
+check(/battler\.hp = battler\.totalhp/.test(rebirth) && /se burla/.test(rebirth),
+  "Arceus recupera toda su vida y se burla tras parecer derrotado");
+check(/return battler\.hp if arceus_cinematic_source\?/.test(cinematicDamage),
+  "los golpes de Arceus todavía retiran por completo a cada aliado activo");
+const barDamage = cuerpo("def arceus_before_damage") ?? "";
+const barTransition = cuerpo("def pbArceusDepleteBar") ?? "";
+check(/ruta_arceus_stage_break/.test(barDamage) && /battler\.hp = 0/.test(barTransition) &&
+  /RUTA_ARCEUS_STAGE_COUNT/.test(barTransition),
+  "el combate principal sólo avanza al agotar la barra completa, no por umbrales parciales");
+check(/@ruta_arceus_bars_depleted/.test(ruby) && /RUTA_ARCEUS_STAGE_COUNT = 6/.test(ruby),
+  "el contador persistente exige seis barras completas antes del desenlace");
+
+// --------------------------------------------------------- entradas físicas
+const preludeStart = ruby.indexOf("def pbArceusCinematicPrelude");
+const preludeEnd = ruby.indexOf("# 4. Capture gate", preludeStart);
+const prelude = preludeStart >= 0 && preludeEnd > preludeStart ? ruby.slice(preludeStart, preludeEnd) : "";
+const firstWalkIn = prelude.indexOf("pbArceusCinematicWalkIn(ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH");
+const firstBattle = prelude.indexOf("pbArceusCinematicCpuBattle([", firstWalkIn);
+const firstWalkAway = prelude.indexOf("pbArceusCinematicWalkAway(ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH", firstBattle);
+const secondWalkIn = prelude.indexOf("pbArceusCinematicWalkIn(ARCEUS_ALLIES_GOLD_RED_SWITCH", firstWalkAway);
+const secondBattle = prelude.indexOf("pbArceusCinematicCpuBattle([", secondWalkIn);
+const secondWalkAway = prelude.indexOf("pbArceusCinematicWalkAway(ARCEUS_ALLIES_GOLD_RED_SWITCH", secondBattle);
+check(firstWalkIn >= 0 && firstBattle > firstWalkIn && firstWalkAway > firstBattle &&
+  secondWalkIn > firstWalkAway && secondBattle > secondWalkIn && secondWalkAway > secondBattle,
+  "Cynthia/Steven caminan y se retiran antes de que Red/Gold entren y disputen su batalla");
+check(/pbMoveRoute\(event, route\)/.test(ruby) && /event\.move_route_forcing/.test(ruby) && /pbWait\(1\)/.test(ruby),
+  "las rutas de llegada/salida esperan de forma segura hasta que terminan de caminar");
+check(/\[4, 19, 16, 2,/.test(prelude) && /\[5, 27, 16, 2,/.test(prelude) &&
+  /\[6, 18, 22, 2,/.test(prelude) && /\[7, 28, 22, 2,/.test(prelude),
+  "los eventos de ambos equipos parten de sus coordenadas reales del mapa 2037");
+check(/:ARC_Cynthia/.test(prelude) && /:ARC_Steven/.test(prelude) &&
+  /:ARC_Ethan/.test(prelude) && /:SECRET_Red/.test(prelude),
+  "la escena de batalla conserva los sprites de Cynthia/Steven y luego Red/Gold");
 
 // ------------------------------------------------------ sustituciones seguras
 check(/def pbSwitchInBetween/.test(ruby) && /arceus_cinematic\?/.test(ruby),

@@ -248,16 +248,16 @@ Sin errores ni avisos: gráficos, transferencias, tilesets, audio, objetos, trai
 | S2 | El parche de `Pokemon#level=` permitía **nivel 200 a cualquier Arceus** | el 200 exige `@ruta_arceus_divine`; la instancia divina nace al máximo normal y sube después |
 | S2b | El helper cinemático construía un Arceus nv 200 sin marcar como divino (habría fallado con S2) | `pbArceusCinematicPokemon` nace al tope normal, se marca divino y sólo entonces sube a 200 |
 | S3 | `minimum_exp_for_level` recortaba a 200 en global | se mantiene el recorte (necesario para la curva del 200) pero ya sólo alcanzable por la instancia divina |
-| S4 | Con el último sello roto, si el jugador seguía atacando podía **matar a Arceus** (y el guion se rompía) | con la captura abierta el daño se retiene: el desenlace es la captura |
+| S4 | Con la sexta barra agotada, si el jugador seguía atacando podía **matar a Arceus** (y el guion se rompía) | con la captura abierta el daño se retiene: el desenlace es la captura |
 | S5 | `pbReduceHP` consultaba fase en **todas** las batallas | la rama divina se comprueba una vez (`arceus_divine?`) y el resto va directo al motor |
 | S6 | El pseudo-PC podía ofrecer **huevos** | se filtran (`!pkmn.egg?`) |
 | S7 | Rendirse salía del combate sin limpiar reglas | se limpian `cannotRun`/`canLose` y se marca `RUTA_DE_DIOS_ARCEUS_RESOLVED` |
 | S8 | Sin balls, la captura determinista era inalcanzable | `pbArceusEnsureCaptureBall`: el Rotom materializa una Bola del Testigo y avisa |
-| S9 | El desenlace dependía de bajar la vida paso a paso | **sellos del Génesis**: cada golpe conectado rompe 1 de 5 sellos y fija el vigor al umbral (72/55/38/22 % y 1 PS); el quinto abre la captura al 100 % |
+| S9 | El desenlace dependía de bajar la vida paso a paso | **seis barras completas**: una por etapa; cada transición exige vaciar una barra entera, y la sexta abre la captura al 100 % |
 | S10 | Los ecos invocados (Mew, Giratina) nacían al nivel 200 | `pbArceusSummon` usa el nivel máximo legal (150) y compensa con un empuje divino ×1,25 |
 | S11 | Un empate cerraba el evento en silencio | `decision == 5` restaura el estado previo, explica el empate y deja la cima abierta para reintentar |
 | S12 | Sin candidatos en el PC, el pseudo-PC no tenía salida | `pbArceusRotomMercy`: el Rotom sostiene al equipo una sola vez (35 %); nunca deja al jugador sin opciones |
-| S13 | Arceus se curaba 3 veces al completo | quedan **2** Restaura Todo divinos, sólo en fase 4+ y por debajo del 30 %; los sellos rotos no se restauran |
+| S13 | Arceus se curaba 3 veces al completo sin relación clara con el combate | se desactivan los Restaura Todo aleatorios; ahora cura toda su barra cuando entra en rojo, como máximo una vez por etapa, sin borrar las barras ya agotadas |
 | S14 | El duelo con Volo llegaba con el equipo agotado | `pbArceusVoloRest`: descanso explícito antes del reto (y en cada reintento) |
 | S15 | El prólogo cinemático (3 combates CPU) se repetía entero en cada reintento | switch 881 `RUTA_DE_DIOS_PRELUDE_SEEN`: se ve una vez y en los reintentos se resume en una línea |
 

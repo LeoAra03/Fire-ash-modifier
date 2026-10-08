@@ -184,7 +184,7 @@ check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes(
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
   "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
 check(rutaScript.includes("pbStartArceusDivineBattle") &&
-  rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS") && rutaScript.includes("pbArceusPseudoPC") &&
+  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") && rutaScript.includes("pbArceusPseudoPC") &&
   rutaScript.includes("pbArceusSurrenderSequence") && rutaScript.includes("pbArceusCopyActive") &&
   rutaScript.includes("pbArceusCinematicPrelude") && rutaScript.includes("PokemonSprite"),
   "Arceus conserva batalla por fases, pseudo-PC, copia del activo, rendición y prólogo cinematográfico");
@@ -229,18 +229,36 @@ check(rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") 
 check(rutaScript.includes("return 0") && rutaScript.includes("return 4") &&
   rutaScript.includes("if arceus_capture_ready?") &&
   rutaScript.includes("if ArceusSaveSandbox.capture_room?") &&
-  rutaScript.includes("100%") && rutaScript.includes("Master Ball"),
+  rutaScript.includes("100 %") && rutaScript.includes("Master Ball"),
   "la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después");
 check(rutaScript.includes("RUTA_ARCEUS_PHASE_PLATES") && rutaScript.includes("pbArceusRotateType") &&
-  rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS = [0.72, 0.55, 0.38, 0.22]") &&
-  rutaScript.includes("target_phase = [@arceus_seals + 1, 6].min") &&
-  rutaScript.includes("@ruta_arceus_seal_move_key") &&
+  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") &&
+  rutaScript.includes("@ruta_arceus_bars_depleted") &&
+  rutaScript.includes("def pbArceusDepleteBar") && rutaScript.includes("def check_arceus_phase(battler)") &&
+  rutaScript.includes("check_arceus_phase(battler)") && rutaScript.includes("battler.hp = 0") &&
+  rutaScript.includes("return :ruta_arceus_stage_break if amount.to_i >= battler.hp") &&
+  !rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS") &&
+  rutaScript.includes("def pbArceusPlateRouletteAnimation") && rutaScript.includes("ItemIconSprite.new(0, 0, plate, viewport)") &&
+  rutaScript.includes("Effectiveness.calculate(type, types[0], types[1], types[2])") &&
+  rutaScript.includes("def pbArceusBestAttackIds") && rutaScript.includes("GameData::Move.each do |move_data|") &&
+  rutaScript.includes("def pbArceusControlLevels") &&
+  rutaScript.includes("def pbCanInflictStatus?") && rutaScript.includes("def pbArceusRedlineHeal") &&
   !rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") &&
   rutaScript.includes("pbArceusSummon") && rutaScript.includes(":MEW") &&
   rutaScript.includes(":GIRATINA") && rutaScript.includes("pbArceusScaleSprite") &&
   rutaScript.includes("def pbStartBattleSendOut(sendOuts)") &&
   rutaScript.includes("class PokeBattle_Scene"),
-  "Arceus avanza por cinco sellos fijos, una fase por golpe y con apariciones/efectos personalizados");
+  "Arceus exige seis barras completas, rueda las 17 Tablas, es inmune a estados y adapta niveles/ataques");
+check(rutaScript.includes("finish_angle = (2.0 * Math::PI * 4.0) - (Math::PI / 2.0) - (selected_index * step)"),
+  "la ruleta termina con la Tabla elegida arriba, no a la derecha");
+check(rutaScript.includes("def pbArceusCinematicWalkIn") &&
+  rutaScript.includes("def pbArceusCinematicWalkAway") &&
+  rutaScript.includes("pbArceusCinematicWalkIn(ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH") &&
+  rutaScript.includes("pbArceusCinematicWalkIn(ARCEUS_ALLIES_GOLD_RED_SWITCH") &&
+  rutaScript.includes("pbArceusCinematicRebirth") &&
+  rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") &&
+  rutaScript.includes(":ARC_Ethan") && rutaScript.includes(":SECRET_Red"),
+  "las caminatas de Cynthia/Máximo y Red/Gold anteceden a sus retratos/batallas y Arceus se regenera en el prólogo");
 const summitRaw = readMarshalData("Map2037.rxdata");
 const summitBoss = summitRaw.getIvar("events").pairs.find(([, event]) =>
   (event.getIvar("name")?.text ?? "").includes("Arceus Creador"))?.[1];

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Regression audit for Arceus's move cap and NPC-vs-NPC battle owners. */
+/** Regression audit for Arceus stages, adaptive battle rules and NPC-vs-NPC owners. */
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -100,7 +100,20 @@ for (const file of scriptFiles) {
   assert(route.includes("valid = pbArceusMoveIds(move_ids, @arceus_phase)"), `${path.relative(ROOT, file)} does not cap phase transitions`);
   assert(route.includes("pkmn.moves = pbArceusMoveIds(RUTA_ARCEUS_MOVE_SETS[0], 1).map"), `${path.relative(ROOT, file)} does not cap the initial boss moveset`);
   assert(route.includes(".take(Pokemon::MAX_MOVES)"), `${path.relative(ROOT, file)} does not cap the cinematic boss moveset`);
+  assert(route.includes("RUTA_ARCEUS_STAGE_COUNT = 6"), `${path.relative(ROOT, file)} does not set six full-HP stages`);
+  assert(route.includes("@ruta_arceus_bars_depleted"), `${path.relative(ROOT, file)} does not persist full-bar depletions`);
+  assert(route.includes("def pbArceusDepleteBar") && route.includes("battler.hp = 0"), `${path.relative(ROOT, file)} does not animate a completely empty bar`);
+  assert(route.includes("return :ruta_arceus_stage_break if amount.to_i >= battler.hp"), `${path.relative(ROOT, file)} does not intercept a full-bar KO for the next stage`);
+  assert(!route.includes("RUTA_ARCEUS_SEAL_FLOORS") && !route.includes("@ruta_arceus_seals"), `${path.relative(ROOT, file)} still uses partial seal thresholds`);
+  assert(route.includes("def pbArceusPlateRouletteAnimation") && route.includes("ItemIconSprite.new(0, 0, plate, viewport)"), `${path.relative(ROOT, file)} has no animated 17-plate roulette`);
+  assert(route.includes("Effectiveness.calculate(type, types[0], types[1], types[2])"), `${path.relative(ROOT, file)} does not choose a plate against the active rival`);
+  assert(route.includes("def pbArceusBestAttackIds") && route.includes("GameData::Move.each do |move_data|"), `${path.relative(ROOT, file)} does not score the complete attack catalog`);
+  assert(route.includes("def pbArceusControlLevels") && route.includes("@ruta_arceus_effective_level"), `${path.relative(ROOT, file)} does not alter levels by stage`);
+  assert(route.includes("def pbCanInflictStatus?") && route.includes("def pbCanLowerStatStage?"), `${path.relative(ROOT, file)} does not protect Arceus from statuses and stat drops`);
+  assert(route.includes("def pbArceusRedlineHeal"), `${path.relative(ROOT, file)} is missing the red-HP full heal`);
+  assert(route.includes("def pbArceusCinematicRebirth") && route.includes("se restaura por completo y se burla"), `${path.relative(ROOT, file)} is missing pre-Ash healing and taunts`);
   assert(canonRuby.includes("set.replace(seleccion.take(Pokemon::MAX_MOVES))"), `${path.relative(ROOT, file)} leaves oversized canon phase lists`);
+  assert(canonRuby.includes("respond_to?(:pbArceusBestPlateIndex)"), `${path.relative(ROOT, file)} can overwrite the adaptive type roulette with a fixed phase plate`);
 }
 
-console.log("OK: seis fases respetan los cuatro movimientos y los tres paquetes protegen badge_count en combates NPC vs NPC.");
+console.log("OK: seis barras completas, reglas adaptativas, inmunidades y límite de cuatro movimientos; los tres paquetes protegen badge_count en combates NPC vs NPC.");
