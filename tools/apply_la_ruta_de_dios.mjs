@@ -833,6 +833,14 @@ RUTA_ARCEUS_MOVE_SETS = [
 ]
 RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_BOSS_LEVELS = [150, 175, 185, 195, 200, 200]
+# R8 - el duelo final es jugable de verdad. Ash aprendió mirando cada batalla
+# del prólogo, así que sus ataques cuentan contra las barras divinas (nunca
+# menos de media barra por impacto) y Arceus no puede derribar de un solo golpe
+# a un Pokémon suyo: cada acción enemiga deja al objetivo, como mínimo, al 30 %
+# de su vida máxima (si ya estaba por debajo de ese umbral, el golpe sí remata).
+RUTA_ARCEUS_ASH_BAR_POWER = 4.0
+RUTA_ARCEUS_ASH_BAR_MIN_RATIO = 0.5
+RUTA_ARCEUS_OHKO_FLOOR_RATIO = 0.30
 RUTA_ARCEUS_RESTORES = 0
 RUTA_ARCEUS_MAIN_RNG_SEED = 0xA2CE05
 RUTA_ARCEUS_CINEMATIC_RNG_SEED = 0xC1A0A7
@@ -1393,6 +1401,12 @@ class PokeBattle_Move
       target.damageState.hpLost = hp_to_remove
       target.damageState.totalHPLost = total_lost_before + hp_to_remove
       target.effects[PBEffects::Substitute] = 0 if target.effects[PBEffects::Substitute].to_i > 0
+    end
+    # R8: la guardia anti-KO vive en la batalla; desde el movimiento se llama a
+    # través de @battle (la clase PokeBattle_Move no define esos ayudantes).
+    if @battle && @battle.respond_to?(:ruta_arceus_apply_ohko_guard) && target &&
+       target.respond_to?(:damageState)
+      @battle.ruta_arceus_apply_ohko_guard(user, target)
     end
     return result
   end
@@ -2271,6 +2285,119 @@ class PokeBattle_Battle
   rescue StandardError
   end
 
+  #---------------------------------------------------------------------------
+  # R8 · Duelo final jugable
+  #---------------------------------------------------------------------------
+  # Ash no pelea con guion: elige sus comandos en el bucle normal del motor
+  # (pbCommandPhaseLoop sólo guioniza el lado de Arceus). Aquí se garantizan las
+  # tres reglas del duelo: el lado de Ash abre cada ronda, sus golpes mueven las
+  # barras de verdad y Arceus jamás derriba a un Pokémon suyo de un solo golpe.
+
+  def ruta_arceus_ash_side?(battler)
+    return false if !battler
+    return true if battler.respond_to?(:pbOwnedByPlayer?) && battler.pbOwnedByPlayer?
+    boss = arceus_battler
+    return false if !boss || boss.index == battler.index
+    return false if !battler.respond_to?(:opposes?)
+    return battler.opposes?(boss.index)
+  rescue StandardError
+    false
+  end
+
+  # La iniciativa es de Ash: su lado abre cada ronda del duelo divino, incluso
+  # con el Espacio Raro de la Etapa 4 activo. Protect, Quick Claw y los cambios
+  # de prioridad siguen resolviéndose dentro de cada lado.
+  def ruta_arceus_ash_first_active?
+    return false if !arceus_divine?
+    return false if @arceus_capture_ready == true
+    boss = arceus_battler
+    return false if !boss || boss.fainted?
+    return true
+  rescue StandardError
+    false
+  end
+
+  alias _ruta_arceus_original_calculate_priority pbCalculatePriority unless method_defined?(:_ruta_arceus_original_calculate_priority)
+  def pbCalculatePriority(fullCalc = false, indexArray = nil)
+    result = _ruta_arceus_original_calculate_priority(fullCalc, indexArray)
+    return result if !ruta_arceus_ash_first_active?
+    return result if !@priority || !@priority.respond_to?(:sort!)
+    @priority.sort! do |a, b|
+      next 0 if !a || !b || !a[0] || !b[0]
+      ash_a = ruta_arceus_ash_side?(a[0])
+      ash_b = ruta_arceus_ash_side?(b[0])
+      if ash_a != ash_b
+        ash_a ? -1 : 1
+      elsif a[3] != b[3]
+        b[3] <=> a[3]
+      elsif a[2] != b[2]
+        b[2] <=> a[2]
+      elsif @priorityTrickRoom
+        (a[1] == b[1]) ? b[4] <=> a[4] : a[1] <=> b[1]
+      else
+        (a[1] == b[1]) ? b[4] <=> a[4] : b[1] <=> a[1]
+      end
+    end
+    return result
+  rescue StandardError
+    result
+  end
+
+  # Ni un turno de Arceus derriba a un Pokémon de Ash. El cálculo usa el daño
+  # acumulado del movimiento (totalHPLost) para que los ataques de varios
+  # impactos tampoco cierren la acción con un KO: como mínimo el Pokémon termina
+  # la acción al 30 % de su vida máxima, y sólo puede caer si ya entró al turno
+  # por debajo de ese umbral.
+  def ruta_arceus_apply_ohko_guard(user, target)
+    return false if !arceus_divine? || !target || !target.pokemon || target.fainted?
+    return false if !ruta_arceus_ash_side?(target)
+    return false if target.damageState.substitute == true
+    return false if !user || !user.respond_to?(:pokemon) || !user.pokemon
+    return false if ruta_arceus_ash_side?(user)
+    lost = target.damageState.hpLost.to_i
+    return false if lost <= 0
+    total = target.totalhp.to_i
+    return false if total <= 0
+    lost_before = [target.damageState.totalHPLost.to_i - lost, 0].max
+    hp_start = target.hp.to_i + lost_before
+    floor = (total * RUTA_ARCEUS_OHKO_FLOOR_RATIO).round
+    floor = 1 if floor < 1
+    floor = 0 if hp_start <= floor
+    allowance = [hp_start - floor, 0].max
+    allowed = [allowance - lost_before, 0].max
+    return false if lost <= allowed
+    lethal = lost >= target.hp.to_i
+    target.damageState.hpLost = allowed
+    target.damageState.totalHPLost = lost_before + allowed
+    target.damageState.endured = true
+    announce_key = arceus_action_key
+    if lethal && @ruta_arceus_ohko_announced_key != announce_key
+      @ruta_arceus_ohko_announced_key = announce_key
+      begin
+        nombre = target.respond_to?(:name) ? target.name : target.pbThis
+        pbDisplay(_INTL("¡{1} se niega a caer! El vínculo que Ash forjó observando al Creador sostiene el golpe mortal.", nombre))
+      rescue StandardError
+      end
+    end
+    return true
+  rescue StandardError
+    false
+  end
+
+  # El daño que Ash hace a las seis barras vale por lo que aprendió mirando
+  # cada batalla del prólogo: cada impacto multiplica su fuerza y nunca baja de
+  # media barra, para que la victoria dependa de pelear bien y no del desgaste.
+  def ruta_arceus_ash_bar_damage(battler, amount)
+    return amount if !battler || amount.to_i <= 0
+    return amount if !arceus_player_action?(battler)
+    boosted = (amount.to_i * RUTA_ARCEUS_ASH_BAR_POWER).round
+    minimum = (battler.totalhp.to_i * RUTA_ARCEUS_ASH_BAR_MIN_RATIO).ceil
+    boosted = minimum if boosted < minimum
+    return boosted
+  rescue StandardError
+    amount
+  end
+
   def pbArceusAnimateHP(battler, old_hp)
     if @scene && @scene.respond_to?(:pbHPChanged)
       @scene.pbHPChanged(battler, old_hp, true)
@@ -2286,6 +2413,9 @@ class PokeBattle_Battle
   # etapa ni derrotar al dios. Devuelve el daño real que se aplicará.
   def pbArceusDivineBarDamage(battler, amount)
     return 0 if !arceus_divine? || !battler || amount.to_i <= 0
+    # R8: el daño del lado de Ash vale por el vínculo que forjó en el prólogo y
+    # nunca baja de media barra, así que cada turno del jugador avanza el duelo.
+    amount = ruta_arceus_ash_bar_damage(battler, amount)
     resolved = arceus_before_damage(battler, amount)
     if resolved == :ruta_arceus_stage_break
       pbArceusDepleteBar(battler)
@@ -2569,14 +2699,18 @@ class PokeBattle_Battle
     return false
   end
 
+  # R8: el duelo es reñido, no una humillación. El Juicio del Vínculo (etapa 4)
+  # frena a los Pokémon de Ash, pero ya no los apaga: el nivel 1 de la versión
+  # anterior los dejaba sin opciones y rompía la premisa de que Ash aprendió a
+  # pelear. El resto de etapas conserva su lectura canónica.
   def pbArceusRivalLevel(base_level, phase)
     case phase.to_i
     when 1 then base_level.to_i
     when 2 then [base_level.to_i - 20, 1].max
     when 3 then [base_level.to_i + 20, 200].min
-    when 4 then 1
+    when 4 then [base_level.to_i - 20, 1].max
     when 5 then [base_level.to_i + 35, 200].min
-    else 200
+    else [base_level.to_i + 50, 200].min
     end
   end
 
@@ -3428,13 +3562,27 @@ def pbStartArceusDivineBattle
 
   # R7: el prólogo son tres combates CPU completos. Repetirlo en cada reintento castiga
   # al jugador que ya lo vio: se muestra una vez y luego se resume en una línea.
+  # R8: además, en el primer arranque se puede saltar el prólogo e ir directo al
+  # duelo. Ash ya estudió esas batallas; quien quiera pelear de inmediato, puede.
   primera_vez = !($game_switches && $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH])
+  saltar_prologo = false
   if primera_vez
-    pbArceusCinematicPrelude
+    eleccion = pbMessage(_INTL("El prólogo repasa las tres batallas que Ash estudió contra Arceus: Cynthia y Máximo, Gold y Red, y Volus con Giratina."),
+                         [_INTL("Ver el prólogo completo"),
+                          _INTL("Ir directo al duelo con Arceus")], 0)
+    saltar_prologo = (eleccion == 1)
     $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH] = true if $game_switches
+  end
+  if primera_vez && !saltar_prologo
+    pbArceusCinematicPrelude
   else
     pbArceusCinematicImpact(Tone.new(120, 120, 200, 0))
-    pbMessage(_INTL("Cynthia, Steven, Gold, Red y Volus ya cayeron aquí. Nadie más puede ganar tiempo: es el turno de Ash."))
+    if saltar_prologo
+      pbMessage(_INTL("Ash ya conoce cada movimiento de Arceus: los combates de Cynthia, Máximo, Gold, Red y Volus le enseñaron a leerlo. La cima no espera más."))
+      pbMessage(_INTL("Sin prólogo y sin testigos: Ash sube al altar y da el primer paso hacia el Creador."))
+    else
+      pbMessage(_INTL("Cynthia, Steven, Gold, Red y Volus ya cayeron aquí. Nadie más puede ganar tiempo: es el turno de Ash."))
+    end
   end
   active = $Trainer.party.find { |p| p && p.able? }
   pbMessage(_INTL("Arceus toma a {1}, lo observa con la calma de un dios y dice: Con mi creación {1} pretendes hacerme frente, humano?", active ? active.name : $Trainer.name))
@@ -5370,6 +5518,11 @@ function verify() {
       ["pbArceusVoloRest", "descanso antes del duelo con Volo (R6)"],
       ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
       ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
+      ["Ir directo al duelo con Arceus", "el prólogo se puede saltar desde el primer arranque (R8)"],
+      ["RUTA_ARCEUS_OHKO_FLOOR_RATIO", "Arceus no derriba de un solo golpe a los Pokémon de Ash (R8)"],
+      ["def ruta_arceus_apply_ohko_guard", "guardia anti-KO sobre la ruta real de daño del duelo (R8)"],
+      ["def ruta_arceus_ash_bar_damage", "el daño de Ash a las seis barras se pondera con el vínculo (R8)"],
+      ["def pbCalculatePriority(fullCalc = false, indexArray = nil)", "el lado de Ash abre cada ronda del duelo (R8)"],
       ["def pbCountArceusPlates", "helper de conteo de Tablas para el evento de Volus"],
       ["def pbHasAllArceusPlates?", "helper de comprobación de las 17 Tablas del Génesis"],
       ["def pbGrantAllArceusPlates", "helper de concesión de las Tablas del Génesis"],

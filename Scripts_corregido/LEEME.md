@@ -1,5 +1,37 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-08 (3) — El duelo final contra Arceus ahora se juega de verdad
+
+Si el combate final de la Cima del Génesis se sentía como una derrota anunciada
+(Arceus actuaba primero, tus Pokémon podían quedar a nivel 1 y un solo golpe suyo
+derribaba de un turno), este paquete cambia el duelo para que **Ash pelee en
+persona**:
+
+- **Tú juegas el combate.** El duelo ya no se resuelve por guion: eliges los
+  movimientos de siempre y cada golpe mueve las seis barras del dios. La fuerza
+  que Ash ganó mirando las batallas del prólogo multiplica el daño que hace a
+  cada barra y garantiza que ningún impacto quede en nada (mínimo, media barra).
+- **Tu lado abre cada ronda.** Dentro del duelo divino la iniciativa es de Ash:
+  Arceus responde después, incluso con el Espacio Raro de la Etapa 4 activo.
+- **Arceus no puede noquear de un solo golpe.** Cada turno suyo deja a tu Pokémon
+  activo, como mínimo, al 30 % de su vida máxima. Si un Pokémon ya entró al turno
+  por debajo de ese umbral, sí puede caer: la pelea es reñida, no invulnerable.
+- **El Juicio del Vínculo ya no te apaga.** La Etapa 4 dejó de bajar a nivel 1 a
+  tus Pokémon: ahora aplica un castigo real, pero jugable.
+- **Opción de saltar el prólogo.** Al llegar por primera vez a la cima aparece la
+  pregunta «Ver el prólogo completo / Ir directo al duelo con Arceus». La segunda
+  opción abre el combate de inmediato, sin las tres cinemáticas.
+
+El resto sigue intacto: los tres combates del prólogo, la inmunidad de Arceus en
+esas escenas, las seis barras, la captura garantizada y el pseudo-PC de
+continuación.
+
+**Instalación:** vuelve a copiar `Data/Scripts.rxdata` de este paquete sobre tu
+juego (o extrae otra vez `Fire_Ash_Paquete_Directo.zip`) y carga tu partida. No
+toques tus guardados: todo el arreglo va en los scripts. Si ya empezaste el duelo
+final, sal y vuelve a entrar a la Cima para que el combate se monte con las
+reglas nuevas.
+
 ## Arreglo 2026-10-08 (2) — Ball Breaker ya no congela el combate con «undefined method 'selfProtected?'»
 
 Si al pelear contra **Steven (Máximo) y su Metagross** viste el cuadro de error:

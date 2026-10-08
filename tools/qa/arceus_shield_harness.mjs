@@ -96,7 +96,10 @@ WANTED = {
                            "pbArceusCinematicRebirth", "arceus_state", "save_arceus_state",
                            "arceus_player_action?", "arceus_action_key", "arceus_before_damage",
                            "pbArceusDivineBarDamage", "pbArceusDepleteBar", "pbArceusRedlineHeal",
-                           "check_arceus_phase", "pbArceusAnimateHP"],
+                           "check_arceus_phase", "pbArceusAnimateHP",
+                           "ruta_arceus_ash_side?", "ruta_arceus_ash_first_active?",
+                           "ruta_arceus_apply_ohko_guard", "ruta_arceus_ash_bar_damage",
+                           "pbCalculatePriority"],
   "PokeBattle_Move"    => ["ruta_arceus_cinematic_boss_target?", "ruta_arceus_divine_boss_target?",
                            "pbInflictHPDamage"]
 }

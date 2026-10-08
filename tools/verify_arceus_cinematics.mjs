@@ -208,6 +208,20 @@ check(/def pbSwitchInBetween/.test(ruby) && /arceus_cinematic\?/.test(ruby),
 check(/def pbArceusScriptedAction/.test(ruby),
   "las acciones de los aliados están guionadas (no decididas al azar)");
 
+// ------------------------------------------------ duelo final jugable (R8)
+check(ruby.includes("RUTA_ARCEUS_OHKO_FLOOR_RATIO") && /def ruta_arceus_apply_ohko_guard/.test(ruby),
+  "el duelo final limita el daño de Arceus: ningún turno suyo derriba de un golpe a un Pokémon de Ash");
+check(ruby.includes("def ruta_arceus_ash_bar_damage") && ruby.includes("RUTA_ARCEUS_ASH_BAR_MIN_RATIO") &&
+  ruby.includes("RUTA_ARCEUS_ASH_BAR_POWER"),
+  "los golpes de Ash mueven las seis barras con el vínculo que forjó en el prólogo");
+check(/def pbCalculatePriority\(fullCalc = false, indexArray = nil\)/.test(ruby) &&
+  ruby.includes("ruta_arceus_ash_first_active?"),
+  "el lado de Ash abre cada ronda del duelo, también con el Espacio Raro activo");
+check(ruby.includes("Ir directo al duelo con Arceus") && ruby.includes("saltar_prologo"),
+  "el prólogo se puede saltar desde el primer arranque e ir directo al combate");
+check(/when 4 then \[base_level\.to_i - 20, 1\]\.max/.test(ruby) && !/when 4 then 1\r?\n/.test(ruby),
+  "el Juicio del Vínculo ya no apaga a los Pokémon de Ash a nivel 1");
+
 // ------------------------------------------------------------ blindaje global
 const rescues = (ruby.match(/rescue StandardError/g) || []).length;
 check(rescues >= 8, `hay ${rescues} bloques rescue StandardError blindando la escena`);

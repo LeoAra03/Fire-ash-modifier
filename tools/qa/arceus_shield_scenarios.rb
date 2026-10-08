@@ -30,6 +30,10 @@ RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_PHASE_TYPES = [:NORMAL].freeze
 RUTA_ARCEUS_TYPE_FORMS = {}.freeze
 RUTA_ARCEUS_MOVE_SETS = [[:JUDGMENT]].freeze
+# R8 · duelo jugable (los mismos valores que la sección instalada).
+RUTA_ARCEUS_ASH_BAR_POWER = 4.0
+RUTA_ARCEUS_ASH_BAR_MIN_RATIO = 0.5
+RUTA_ARCEUS_OHKO_FLOOR_RATIO = 0.30
 
 # El motor define PBEffects como un módulo de índices; aquí los efectos del
 # battler de prueba son un Hash, así que los nombres actúan de clave.
@@ -155,7 +159,7 @@ class PokeBattle_TwoTurnMove < PokeBattle_Move
 end
 
 class PokeBattle_Battle
-  attr_accessor :battlers, :scene, :turnCount, :lastMoveUser, :lastMoveUsed, :messages
+  attr_accessor :battlers, :scene, :turnCount, :lastMoveUser, :lastMoveUsed, :messages, :priority
   attr_reader :field
   def initialize(battlers = [])
     @battlers = battlers
@@ -167,6 +171,19 @@ class PokeBattle_Battle
     @lastMoveUsed = nil
     @messages = []
     @endOfRound = false
+    @priority = []
+    @priorityTrickRoom = false
+  end
+  # R8: el motor real construye @priority en pbCalculatePriority; aquí se imita
+  # esa tabla para poder probar la iniciativa de Ash dentro del duelo.
+  def _ruta_arceus_original_calculate_priority(fullCalc = false, indexArray = nil)
+    @priority = @battlers.each_with_index.map do |b, i|
+      [b, b.instance_variable_get(:@ruta_fake_speed) || 100, 0, 0, i]
+    end
+    return @priority
+  end
+  def pbPriority(onlySpeedSort = false)
+    return @priority.reject { |entrada| entrada[0].fainted? }.map { |entrada| entrada[0] }
   end
   def pbDisplay(msg, &block)
     @messages.push(msg.to_s)
@@ -420,6 +437,74 @@ check(normal.pbReduceHP(120) == 120 && normal.hp == 280,
       "el Arceus capturado o de un equipo cualquiera recibe daño normal")
 normal.hp = 0
 check(normal.hp == 0, "y puede debilitarse como cualquier Pokémon")
+
+log ""
+log "== Duelo jugable (R8): iniciativa de Ash, barras que sí se mueven y cero KOs de un golpe =="
+battle, ash, boss = divine_battle
+ash.instance_variable_set(:@ruta_fake_speed, 5)
+boss.instance_variable_set(:@ruta_fake_speed, 9999)
+battle.pbCalculatePriority(true)
+order = battle.pbPriority
+check(order.first.equal?(ash) && order.last.equal?(boss),
+      "el lado de Ash abre la ronda aunque Arceus sea mil veces más rápido")
+battle.instance_variable_set(:@priorityTrickRoom, true)
+battle.pbCalculatePriority(false)
+order = battle.pbPriority
+check(order.first.equal?(ash),
+      "la iniciativa de Ash sobrevive al Espacio Raro de la Etapa 4")
+battle.instance_variable_set(:@priorityTrickRoom, false)
+battle.instance_variable_set(:@arceus_capture_ready, true)
+check(battle.ruta_arceus_ash_first_active? == false,
+      "con la sexta barra agotada la regla de iniciativa se apaga")
+battle.instance_variable_set(:@arceus_capture_ready, false)
+check(battle.ruta_arceus_ash_first_active? == true,
+      "mientras el duelo siga vivo, Ash conserva la iniciativa")
+
+battle, ash, boss = divine_battle
+ash.instance_variable_set(:@totalhp, 500)
+ash.instance_variable_set(:@hp, 500)
+battle.messages.clear
+ash.damageState.hpLost = 9999
+ash.damageState.totalHPLost = 9999
+check(battle.ruta_arceus_apply_ohko_guard(boss, ash) == true,
+      "la guardia anti-KO reconoce el golpe letal de Arceus")
+check(ash.damageState.hpLost == 350 && ash.damageState.endured == true,
+      "el golpe deja a Ash al 30 % de su vida máxima: nunca un KO de un solo turno")
+check(battle.messages.any? { |m| m.include?("se niega a caer") },
+      "el vínculo de Ash se narra cuando el golpe mortal es detenido")
+
+ash.instance_variable_set(:@hp, 500 - ash.damageState.hpLost)
+ash.damageState.hpLost = 9999
+ash.damageState.totalHPLost = 350 + 9999
+battle.ruta_arceus_apply_ohko_guard(boss, ash)
+check(ash.damageState.hpLost == 0,
+      "el segundo impacto de la misma acción (multigolpe) tampoco remata")
+
+ash.damageState.hpLost = 9999
+ash.damageState.totalHPLost = 9999
+battle.ruta_arceus_apply_ohko_guard(boss, ash)
+check(ash.damageState.hpLost == 150,
+      "un Pokémon que ya entró al turno al 30 % sí puede ser derribado")
+check(battle.ruta_arceus_apply_ohko_guard(boss, boss) == false,
+      "la guardia nunca protege al propio Arceus")
+cinematica, ash_cine, boss_cine = cinematic_battle
+check(cinematica.ruta_arceus_apply_ohko_guard(boss_cine, ash_cine) == false,
+      "las cinemáticas de apoyo no usan la guardia del duelo")
+
+battle, ash, boss = divine_battle(1000)
+move = PokeBattle_Move.new(battle, :METEORMASH)
+battle.turnCount = 21
+battle.lastMoveUser = 0
+battle.lastMoveUsed = :METEORMASH
+check(battle.ruta_arceus_ash_bar_damage(boss, 40) >= 500,
+      "un golpe flojo de Ash vale al menos media barra por el vínculo del prólogo")
+boss.damageState.hpLost = 40
+move.pbInflictHPDamage(boss)
+check(boss.hp == 500,
+      "ese mismo golpe mueve de verdad la primera barra del dios")
+battle.lastMoveUser = 1
+check(battle.ruta_arceus_ash_bar_damage(boss, 40) == 40,
+      "el daño que no sale de Ash (retroceso, clima) no recibe el vínculo")
 
 log ""
 log "Resultado: #{$ok} comprobaciones OK, #{$fail} fallos"
