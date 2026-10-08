@@ -265,6 +265,13 @@ check(rutaScript.includes("def pbArceusCinematicWalkIn") &&
   rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") &&
   rutaScript.includes(":ARC_Ethan") && rutaScript.includes(":SECRET_Red"),
   "las caminatas de Cynthia/Máximo y Red/Gold anteceden a sus retratos/batallas y Arceus se regenera en el prólogo");
+check(rutaScript.includes("def ruta_arceus_cinematic_boss?") &&
+  rutaScript.includes("def pbInflictHPDamage(target)") &&
+  rutaScript.includes("nonlethal_limit = [target.hp.to_i - 1, 0].max") &&
+  rutaScript.includes("target.damageState.hpLost = limited_damage") &&
+  rutaScript.includes("def pbFaint(showMessage = true)") &&
+  rutaScript.includes("@battle.pbArceusCinematicRebirth(self)"),
+  "los movimientos no pueden derrotar al Arceus cinematográfico y pbFaint tiene un respaldo de resurrección");
 const summitRaw = readMarshalData("Map2037.rxdata");
 const summitBoss = summitRaw.getIvar("events").pairs.find(([, event]) =>
   (event.getIvar("name")?.text ?? "").includes("Arceus Creador"))?.[1];
@@ -357,13 +364,15 @@ for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.
 }
 const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
 const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*175\b/.test(settingsSource) &&
-  rutaScript.includes("max = (@species == :ARCEUS && @ruta_arceus_divine == true) ? 200 : GameData::GrowthRate.max_level") &&
+  rutaScript.includes("if @species == :ARCEUS && @ruta_arceus_divine == true") &&
+  rutaScript.includes("elsif @species == :ARCEUS && @ruta_arceus_captured_god == true && pbRutaArceusGodWorldAllowed?") &&
   rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
   explicitNonArceusLevel200.length === 0 &&
   rutaScript.includes("pkmn.instance_variable_set(:@ruta_arceus_divine, false)") &&
+  rutaScript.includes("@ruta_arceus_captured_god") &&
   rutaScript.includes("divine ? normal_cap : safe_level");
 check(levelCapIsArceusOnly,
-  "el nivel 200 queda reservado al Arceus divino (equipos, encuentros y scripts sin otro caso), y el Arceus normal no pasa del techo de 175");
+  "el nivel 200 queda reservado al Arceus jefe o al capturado dentro de la whitelist; todo Arceus normal queda bajo el techo de 175");
 check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
   rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
   "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");

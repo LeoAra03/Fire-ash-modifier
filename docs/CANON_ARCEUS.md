@@ -58,6 +58,48 @@ puertas de **vuelta** nunca se tocan: entrar y salir sigue siendo libre.
   el «eco del Génesis» solo si Arceus fue capturado. No pelea: se planta
   delante del golpe y le quita el miedo al asunto.
 
+### Modo divino de la instancia capturada: whitelist cerrada
+
+El Arceus capturado usa un marcador distinto al jefe de La Ruta de Dios:
+`@ruta_arceus_captured_god` no equivale a `@ruta_arceus_divine`. La whitelist
+se deriva de `content/canon_arceus.json` y cualquier mapa que no figure aquí
+usa las reglas de un Arceus normal:
+
+| Mundo autorizado | Mapas habilitados |
+|---|---|
+| Fire Ash | 1–142, 144–992, 994–999 y 2031–2038 (La Ruta de Dios) |
+| Atlas | 1021–2020, 2191, 2195–2196, 2230 y 2250–2257 |
+| Liquid Crystal | 2240–2241 y 3200–3631 (campaña completa; 432 mapas) |
+| Pokémon Team Rocket | 2220–2221 y 2280–2286 |
+
+La exclusión es deliberadamente estricta: el mapa 143 (ancla de la grieta
+creepypasta), 993 (`Alternate Universe`), 1000–1020 (Bosque/Horizontes),
+2021–2030 (Monte Silver), 2039–2190 (emisiones y otras dimensiones),
+2192–2194, 2200–2211, 2231, 2242–2245, 2258–2279, 2287–2999,
+Glazed (3000–3110), Light Platinum (3120–3138) y TFOH (3700–3944) no activan
+el modo. Los IDs futuros desconocidos tampoco lo activan. La campaña Liquid
+Crystal termina en el mapa 3631; los IDs posteriores quedan apagados. Los
+mundos creepypasta, incluidos los mapas 2023–2029 y 2040–2190, mantienen a
+Arceus normal.
+
+Dentro de la whitelist, el Arceus capturado queda en nivel 200, considera las
+17 Tablas activas a la vez, obtiene STAB universal y cambia defensivamente a
+una inmunidad o resistencia al ataque rival cuando existe. Judgment/Sentencia
+elige el tipo más eficaz y garantiza el KO incluso ante protección, sustituto,
+Sturdy o Focus Sash. Al entrar, limpia hazards, pantallas, clima y terreno de
+ambos lados, y bloquea estados; sus PP son infinitos. Al terminar cada combate
+recupera PS y PP completos **sólo él**, nunca cura al resto del equipo.
+
+En los combates cinematográficos de apoyo contra Cynthia/Máximo y Red/Gold, el
+Arceus jefe tampoco puede ser derrotado: el motor limita el daño directo de
+cada movimiento para dejarlo con al menos 1 PS y lo resucita si una ruta
+especial intenta marcarlo como debilitado. Se cura y habla antes de sus
+acciones; el equipo de Ash no recibe curación.
+
+El modo se suspende fuera de la whitelist: nivel normal, tipo/placas y estados
+normales, PP finitos y sin curación divina. El jefe y sus curaciones de combate
+no usan este marcador ni dependen del mapa de la partida.
+
 ---
 
 ## 2. El combate: seis fases, seis reglas rotas

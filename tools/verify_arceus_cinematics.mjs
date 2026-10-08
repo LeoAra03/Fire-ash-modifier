@@ -123,6 +123,16 @@ check(/predicted_hp/.test(cinematicDamage) && /ruta_arceus_cinematic_rebirth/.te
 const rebirth = cuerpo("def pbArceusCinematicRebirth") ?? "";
 check(/battler\.hp = battler\.totalhp/.test(rebirth) && /se burla/.test(rebirth),
   "Arceus recupera toda su vida y se burla tras parecer derrotado");
+const cinematicMoveDamage = cuerpo("def pbInflictHPDamage(target)") ?? "";
+check(/ruta_arceus_cinematic_boss_target\?\(target\)/.test(cinematicMoveDamage) &&
+  /nonlethal_limit\s*=\s*\[target\.hp\.to_i\s*-\s*1,\s*0\]\.max/.test(cinematicMoveDamage) &&
+  /target\.damageState\.hpLost\s*=\s*limited_damage/.test(cinematicMoveDamage) &&
+  /_ruta_arceus_original_inflict_hp_damage\(target\)/.test(cinematicMoveDamage),
+  "el daño directo de movimientos se limita a 1 PS antes de que Essentials reste HP");
+check(ruby.includes("def pbFaint(showMessage = true)") &&
+  ruby.includes("if ruta_arceus_cinematic_boss? && fainted?") &&
+  ruby.includes("@battle.pbArceusCinematicRebirth(self)"),
+  "un respaldo en pbFaint restaura al jefe si una ruta especial salta el límite de daño");
 check(/return battler\.hp if arceus_cinematic_source\?/.test(cinematicDamage),
   "los golpes de Arceus todavía retiran por completo a cada aliado activo");
 const barDamage = cuerpo("def arceus_before_damage") ?? "";
