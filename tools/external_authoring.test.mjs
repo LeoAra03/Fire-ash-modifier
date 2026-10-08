@@ -226,7 +226,9 @@ check(rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") 
   rutaScript.includes("\"single\"") && rutaScript.includes(":GIRATINA") &&
   rutaScript.includes("pbArceusCinematicPokemon(:ARCEUS, 200"),
   "Cynthia/Steven, Gold/Eco/Red y Volus/Giratina tienen equipos reales y Arceus de apoyo nivel 200");
-check(rutaScript.includes("return 0") && rutaScript.includes("return 4 if arceus_capture_ready?") &&
+check(rutaScript.includes("return 0") && rutaScript.includes("return 4") &&
+  rutaScript.includes("if arceus_capture_ready?") &&
+  rutaScript.includes("if ArceusSaveSandbox.capture_room?") &&
   rutaScript.includes("100%") && rutaScript.includes("Master Ball"),
   "la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después");
 check(rutaScript.includes("RUTA_ARCEUS_PHASE_PLATES") && rutaScript.includes("pbArceusRotateType") &&

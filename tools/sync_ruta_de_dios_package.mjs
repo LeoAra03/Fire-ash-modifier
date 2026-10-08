@@ -43,6 +43,12 @@ const ASSET_FILES = [
   ["Graphics/Characters/SECRET_Red.png", "Graphics/Characters/SECRET_Red.png"],
   ["Graphics/Characters/SECRET_Volo.png", "Graphics/Characters/SECRET_Volo.png"],
   ["Graphics/Characters/SQUIRTLE.png", "Graphics/Characters/SQUIRTLE.png"],
+  ["Graphics/Trainers/ARC_Cynthia_back.png", "Graphics/Trainers/ARC_Cynthia_back.png"],
+  ["Graphics/Trainers/ARC_Steven_back.png", "Graphics/Trainers/ARC_Steven_back.png"],
+  ["Graphics/Trainers/ARC_Ethan_back.png", "Graphics/Trainers/ARC_Ethan_back.png"],
+  ["Graphics/Trainers/ARC_Ethan.png", "Graphics/Trainers/ARC_Ethan.png"],
+  ["Graphics/Trainers/SECRET_Red_back.png", "Graphics/Trainers/SECRET_Red_back.png"],
+  ["Graphics/Trainers/SECRET_Volo_back.png", "Graphics/Trainers/SECRET_Volo_back.png"],
   ["Audio/BGM/Legend Sinnoh.ogg", "Audio/BGM/Legend Sinnoh.ogg"],
   ["Audio/BGM/secretvolo.ogg", "Audio/BGM/secretvolo.ogg"],
 ];

@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
   "scripts": {
-    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres",
+    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:canon:arceus && npm run verify:ruta_de_dios",
+    "pretest": "npm run build:teckel",
     "verify:visor": "node tools/apply_badge_viewer.mjs --verify",
     "verify:lideres": "node tools/apply_lideres_campanas.mjs --verify",
     "build:teckel": "node tools/build_teckel_package.mjs",
