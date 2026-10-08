@@ -684,12 +684,52 @@ RUTA_ARCEUS_RESTORES = 0
 RUTA_ARCEUS_MAIN_RNG_SEED = 0xA2CE05
 RUTA_ARCEUS_CINEMATIC_RNG_SEED = 0xC1A0A7
 
+# El motor reserva exactamente cuatro ranuras de movimiento por Pokémon. El
+# canon añade movimientos temáticos a las fases, así que nunca se copian listas
+# sin límite al objeto Pokémon: se priorizan dos movimientos del canon y se
+# completan las ranuras restantes con el set de la fase.
+def pbArceusMoveIds(move_ids, phase = nil)
+  max_moves = Pokemon::MAX_MOVES
+  valid = (move_ids || []).select { |id| GameData::Move.exists?(id) }.uniq
+  return valid if valid.length <= max_moves
+  canonical = []
+  if phase && defined?(CanonArceus) && CanonArceus.respond_to?(:movimientos_para)
+    canonical = (CanonArceus.movimientos_para(phase) || []).select { |id| valid.include?(id) }.uniq
+  end
+  selected = canonical.first([2, max_moves].min)
+  valid.each do |id|
+    next if canonical.include?(id) || selected.include?(id)
+    selected.push(id)
+    break if selected.length >= max_moves
+  end
+  valid.each do |id|
+    next if selected.include?(id)
+    selected.push(id)
+    break if selected.length >= max_moves
+  end
+  return selected.take(max_moves)
+rescue StandardError
+  return (move_ids || []).select { |id| GameData::Move.exists?(id) }.uniq.take(Pokemon::MAX_MOVES)
+end
+
 # La Ruta de Dios ejecuta combates CPU vs CPU con NPCTrainer también en el
 # lado que el motor llama @player. En Essentials v19, pbPlayer devuelve
 # @player[0], que allí es un NPCTrainer sin Pokédex. En v20/v21 el dueño real
 # es $player; en este build de Fire Ash es $Trainer. Resolver el dex desde el
 # jugador global evita el NoMethodError sin cambiar la composición 2v1.
 class PokeBattle_Battle
+  # Las escenas CPU usan NPCTrainer en @player[0] para controlar sus equipos,
+  # pero varias rutinas del motor (velocidad y escalado por medallas) esperan
+  # un Player real. En esas escenas, delega esas consultas al dueño global.
+  alias _ruta_arceus_original_pb_player pbPlayer unless method_defined?(:_ruta_arceus_original_pb_player)
+  def pbPlayer
+    battle_player = _ruta_arceus_original_pb_player
+    return battle_player if battle_player && battle_player.respond_to?(:badge_count)
+    return $player if defined?($player) && $player && $player.respond_to?(:badge_count)
+    return $Trainer if defined?($Trainer) && $Trainer && $Trainer.respond_to?(:badge_count)
+    return battle_player
+  end
+
   def ruta_arceus_pokedex
     owners = []
     owners.push($player) if defined?($player) && $player
@@ -1161,7 +1201,7 @@ class PokeBattle_Battle
   end
 
   def pbArceusSetMoves(battler, move_ids)
-    valid = move_ids.select { |id| GameData::Move.exists?(id) }
+    valid = pbArceusMoveIds(move_ids, @arceus_phase)
     return if valid.empty?
     battler.pokemon.moves = valid.map { |id| Pokemon::Move.new(id) }
     battler.moves.clear
@@ -1449,7 +1489,7 @@ end
 def pbArceusCinematicBoss(moves)
   # Rock Slide es un golpe de área sin inmunidades; el PRNG local fija su 95%
   # de precisión para que el 2v1 avance en el mismo orden cada vez.
-  cinematic_moves = [:ROCKSLIDE] + moves.reject { |move| move == :ROCKSLIDE }
+  cinematic_moves = ([:ROCKSLIDE] + moves.reject { |move| move == :ROCKSLIDE }).take(Pokemon::MAX_MOVES)
   boss = pbArceusCinematicPokemon(:ARCEUS, 200, cinematic_moves, :LEGENDPLATE)
   boss.instance_variable_set(:@ruta_arceus_cinematic_boss, true)
   boss.ev[:HP] = 6
@@ -1841,7 +1881,7 @@ def pbStartArceusDivineBattle
   pkmn.instance_variable_set(:@ruta_arceus_seals, 0)
   GameData::Stat.each_main { |s| pkmn.iv[s.id] = 31 }
   pkmn.item = :LEGENDPLATE if GameData::Item.exists?(:LEGENDPLATE)
-  pkmn.moves = RUTA_ARCEUS_MOVE_SETS[0].select { |id| GameData::Move.exists?(id) }.map { |id| Pokemon::Move.new(id) }
+  pkmn.moves = pbArceusMoveIds(RUTA_ARCEUS_MOVE_SETS[0], 1).map { |id| Pokemon::Move.new(id) }
   pkmn.calc_stats
 
   $PokemonGlobal.nextBattleBGM = "Legend Sinnoh"
@@ -3721,6 +3761,11 @@ function verify() {
       ["target_phase = [@arceus_seals + 1, 6].min", "una fase por sello, sin saltos por daño masivo"],
       ["@ruta_arceus_seal_move_key", "un solo sello por acción, incluso ante ataques de varios impactos"],
       ["def pbArceusScriptedAction", "selección de movimientos y objetivos coreografiada"],
+      ["alias _ruta_arceus_original_pb_player pbPlayer", "respaldo de pbPlayer antes de las escenas NPC contra NPC"],
+      ["return $Trainer if defined?($Trainer) && $Trainer && $Trainer.respond_to?(:badge_count)", "las escenas automáticas consultan un Player real para sus insignias"],
+      ["def pbArceusMoveIds(move_ids, phase = nil)", "máximo de cuatro movimientos por fase para respetar el motor"],
+      ["pkmn.moves = pbArceusMoveIds(RUTA_ARCEUS_MOVE_SETS[0], 1).map", "set inicial de Arceus limitado a cuatro movimientos"],
+      ["valid = pbArceusMoveIds(move_ids, @arceus_phase)", "transiciones de fase limitadas a cuatro movimientos"],
       ["RUTA_ARCEUS_CINEMATIC_RNG_SEED", "azar local reproducible en los combates de apoyo"],
       ["class PokeBattle_Move", "Arceus no falla ataques durante las escenas de apoyo"],
       ["_ruta_arceus_original_accuracy_check", "la precisión normal se conserva fuera de la cinemática"],

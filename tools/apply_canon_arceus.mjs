@@ -322,8 +322,13 @@ if defined?(RUTA_ARCEUS_MOVE_SETS)
     RUTA_ARCEUS_MOVE_SETS.each_with_index do |set, i|
       extra = CanonArceus.movimientos_para(i + 1)
       next if !extra || extra.empty?
-      set.concat(extra)
-      set.uniq!
+      base = set.dup
+      canon = extra.select { |move| GameData::Move.exists?(move) }.uniq
+      # Pokémon::MAX_MOVES es cuatro. Combinar más rompe las estructuras del
+      # menú y de la batalla, así que cada fase usa dos movimientos base y dos
+      # temáticos (rellenando con el resto si alguno no existe).
+      seleccion = (base.first(2) + canon.first(2) + base.drop(2) + canon.drop(2)).uniq
+      set.replace(seleccion.take(Pokemon::MAX_MOVES))
     end
   rescue StandardError
   end
@@ -631,7 +636,7 @@ function verificar() {
   if (!seccion) fallos.push("falta la sección Ruby PokeMod_CanonArceus");
   else {
     const ruby = zlib.inflateSync(Buffer.from(seccion[2].bytes)).toString("utf-8");
-    for (const nombre of ["module CanonArceus", "def self.puerta", "def self.entregar_fragmento", "check_arceus_phase", "RUTA_ARCEUS_MOVE_SETS"]) {
+    for (const nombre of ["module CanonArceus", "def self.puerta", "def self.entregar_fragmento", "check_arceus_phase", "RUTA_ARCEUS_MOVE_SETS", "set.replace(seleccion.take(Pokemon::MAX_MOVES))"]) {
       if (!ruby.includes(nombre)) fallos.push(`el Ruby no define ${nombre}`);
     }
     const corregido = path.join(ROOT, "Scripts_corregido", "Scripts.rxdata");
