@@ -57,6 +57,11 @@
  * Uso:
  *   node tools/apply_la_ruta_de_dios.mjs
  *   node tools/apply_la_ruta_de_dios.mjs --verify
+ *
+ * ORDEN: esta herramienta reconstruye los mapas 2031-2038 desde cero. Si se
+ * aplica después de tools/apply_canon_arceus.mjs, el evento del Fragmento del
+ * Génesis (mapa 2037) desaparece: ejecutar siempre la ruta primero y el canon
+ * después (npm run verify:canon:arceus lo comprueba).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -164,7 +169,12 @@ function cinematicTrainerEvent(id, name, x, y, switchId, characterName) {
 }
 function textCommands(lines, indent = 0) {
   const arr = Array.isArray(lines) ? lines : [lines];
-  return [cmd(101, [S("")], indent), ...arr.map((l) => cmd(401, [S(l)], indent))];
+  // "Maya: ..." -> "\bMaya: ...": el nombre del hablante se resalta en color
+  // (el motor convierte \b en una etiqueta <c3=...>), así los diálogos de la
+  // ruta se diferencian entre sí en lugar de parecer todos iguales.
+  const conHablante = (l) =>
+    /^([A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚÑáéíóúñ]{0,15}):\s/.test(l) ? "\\b" + l : l;
+  return [cmd(101, [S("")], indent), ...arr.map((l) => cmd(401, [S(conHablante(l))], indent))];
 }
 function script(line, indent = 0) { return cmd(355, [S(line)], indent); }
 function transfer(map, x, y, dir = 2, indent = 0) {
@@ -188,7 +198,7 @@ function transferEvent(id, name, x, y, targetMap, targetX, targetY, targetDir = 
 function sealedRelicEvent(id, name, x, y, sealSwitch, itemSym, itemName) {
   const p1 = page({
     cond: condition({ sw: sealSwitch }),
-    gfx: graphic("Item ball", 2),
+    gfx: graphic("Object ball special", 2),
     list: [
       cmd(101, [S(`¡La reliquia sellada cede! Encontraste ${itemName}.\\1`)]),
       script(`pbReceiveItem(:${itemSym}, 1)`),
@@ -346,7 +356,7 @@ function installPilgrims(cv, map, floorKey, start, relic) {
 
 function hiddenItemEvent(id, name, x, y, itemSym, itemName) {
   const p1 = page({
-    gfx: graphic("Item ball", 2),
+    gfx: graphic("Object ball special", 2),
     list: [
       cmd(101, [S(`¡Encontraste un ${itemName}!\\1`)]),
       script(`pbReceiveItem(:${itemSym}, 1)`),
@@ -443,8 +453,40 @@ ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH = 878
 ARCEUS_ALLIES_GOLD_RED_SWITCH = 879
 ARCEUS_ALLIES_VOLUS_SWITCH = 880
 RUTA_ARCEUS_CAUGHT_SWITCH = 874
+RUTA_DE_DIOS_ARCEUS_RESOLVED = 873
 RUTA_DE_DIOS_ARCEUS_MERCY_SWITCH = 869
 RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH = 881
+
+# Helpers del evento de Volus (Map 513). El evento lee el número de Tablas a
+# través de la variable de juego 1 (el diálogo usa \\v[1]) y comprueba si Ash
+# reúne las 17 Tablas del Génesis antes de abrir la ruta. RUTA_ARCEUS_PHASE_PLATES
+# se define más abajo en esta misma sección; Ruby resuelve la constante en
+# tiempo de ejecución, cuando el evento ya la necesita.
+def pbCountArceusPlates
+  count = 0
+  return count if !$PokemonBag || !$PokemonBag.respond_to?(:pbHasItem?)
+  RUTA_ARCEUS_PHASE_PLATES.each do |plate|
+    count += 1 if GameData::Item.exists?(plate) && $PokemonBag.pbHasItem?(plate)
+  end
+  $game_variables[1] = count if $game_variables
+  return count
+end
+
+def pbHasAllArceusPlates?
+  return false if !$PokemonBag || !$PokemonBag.respond_to?(:pbHasItem?)
+  return RUTA_ARCEUS_PHASE_PLATES.all? { |plate| $PokemonBag.pbHasItem?(plate) }
+end
+
+def pbGrantAllArceusPlates
+  granted = 0
+  return granted if !$PokemonBag || !$PokemonBag.respond_to?(:pbStoreItem)
+  RUTA_ARCEUS_PHASE_PLATES.each do |plate|
+    next if !GameData::Item.exists?(plate)
+    next if $PokemonBag.respond_to?(:pbHasItem?) && $PokemonBag.pbHasItem?(plate)
+    granted += 1 if $PokemonBag.pbStoreItem(plate, 1, false)
+  end
+  return granted
+end
 
 # Transacción de memoria para la batalla divina. Arceus puede aparentar reescribir
 # reglas, equipo, bolsa y mundo, pero esos cambios no cruzan el límite del encuentro.
@@ -489,7 +531,22 @@ module ArceusSaveSandbox
     end
     @depth = 1
     @blocked_writes = 0
-    return { :snapshot => snapshot, :disk => disk, :disk_existed => disk_existed }
+    @transaction = { :snapshot => snapshot, :disk => disk, :disk_existed => disk_existed }
+    return @transaction
+  end
+
+  # ¿Cabe un Pokémon más en el estado al que se revierte el mundo? La captura se
+  # inserta tras el rollback, sobre el equipo previo al combate (no sobre el
+  # equipo swappeado por el pseudo-PC), así que la comprobación usa la snapshot.
+  def self.capture_room?
+    return true if !active? || @transaction.nil?
+    snapshot = @transaction[:snapshot]
+    return true if !snapshot
+    player = snapshot[:player]
+    storage = snapshot[:storage_system]
+    party_full = player && player.respond_to?(:party_full?) ? player.party_full? : true
+    boxes_full = storage && storage.respond_to?(:full?) ? storage.full? : true
+    return !(party_full && boxes_full)
   end
 
   def self.restore_values(snapshot)
@@ -555,6 +612,7 @@ module ArceusSaveSandbox
       disk_error = restore_disk!(transaction)
       errors.push(disk_error) if disk_error
       @depth = 0
+      @transaction = nil
     end
     if !errors.empty?
       raise "Arceus sandbox rollback failed: #{errors.join(' | ')}"
@@ -702,6 +760,14 @@ class PokeBattle_Battler
         @battle.check_arceus_phase(self)
         return 0
       end
+      if amt == :ruta_arceus_seal_only
+        # Golpe conectado cuyo daño quedó absorbido por el umbral del sello
+        # (p.ej. porque el daño de clima o de estado ya dejó el HP en el
+        # umbral): el sello cuenta igualmente, si no la batalla se atascaría.
+        @battle.check_arceus_seal(self, 1)
+        @battle.check_arceus_phase(self)
+        return 0
+      end
       ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
       @battle.check_arceus_seal(self, amt) if registerDamage
       @battle.check_arceus_phase(self)
@@ -721,6 +787,24 @@ class PokeBattle_Move
       return true
     end
     return _ruta_arceus_original_accuracy_check(user, target)
+  end
+end
+
+# Las escenas cinematográficas pueden involucrar entrenadores cuyo sprite trasero
+# no está cargado; el motor da por hecho que hay bitmap al seguir la mano del
+# entrenador (ballTracksHand lee traSprite.bitmap.width) y abortaría el combate
+# con "undefined method 'width' for nil". Sin sprite visible, la bola simplemente
+# sale desde el borde de la pantalla.
+module PokeBattle_BallAnimationMixin
+  unless method_defined?(:_ruta_arceus_original_ball_tracks_hand)
+    alias _ruta_arceus_original_ball_tracks_hand ballTracksHand
+  end
+
+  def ballTracksHand(ball, traSprite, safariThrow = false)
+    if !traSprite || !traSprite.bitmap || traSprite.bitmap.disposed?
+      return [-6, 202]
+    end
+    return _ruta_arceus_original_ball_tracks_hand(ball, traSprite, safariThrow)
   end
 end
 
@@ -976,18 +1060,26 @@ class PokeBattle_Battle
                  end
     return :ruta_arceus_hold_at_one if battler.hp <= next_floor && battler.hp <= 1
     max_damage = [battler.hp - next_floor, 0].max
-    return :ruta_arceus_no_damage if max_damage <= 0
+    return :ruta_arceus_seal_only if max_damage <= 0
     return [amount.to_i, max_damage].min
   end
 
   # Red de seguridad de la captura final: si el jugador llega sin ninguna ball, el Rotom
   # materializa una Bola del Testigo. Sin esto la fase final podía quedar sin salida.
+  # Se reintenta en cada fase de comandos del jugador mientras la captura siga
+  # abierta: si la Mochila está llena, el jugador puede liberar espacio usando un
+  # objeto y la bola aparece en el siguiente turno.
   def pbArceusEnsureCaptureBall
     return if !$PokemonBag || !$PokemonBag.respond_to?(:pbHasItem?)
     balls = [:POKEBALL, :GREATBALL, :ULTRABALL, :MASTERBALL]
     return if balls.any? { |ball| $PokemonBag.pbHasItem?(ball) }
-    $PokemonBag.pbStoreItem(:POKEBALL, 1) if $PokemonBag.respond_to?(:pbStoreItem)
-    pbDisplay(_INTL("El Rotom vibra y materializa una Bola del Testigo: «No vas a dejar el trabajo a medias.»"))
+    return if !$PokemonBag.respond_to?(:pbStoreItem)
+    if $PokemonBag.pbStoreItem(:POKEBALL, 1, false)
+      pbDisplay(_INTL("El Rotom vibra y materializa una Bola del Testigo: «No vas a dejar el trabajo a medias.»"))
+    elsif !@ruta_arceus_ball_warned
+      @ruta_arceus_ball_warned = true
+      pbDisplay(_INTL("Tu Mochila está llena: usa o guarda objetos para hacer hueco a la Bola del Testigo."))
+    end
   rescue StandardError
   end
 
@@ -1247,6 +1339,10 @@ class PokeBattle_Battle
       end
       return
     end
+    # Mientras la captura esté abierta, reintenta materializar la bola: si la
+    # Mochila se llenó en el turno del quinto sello, el jugador puede liberar
+    # espacio usando un objeto y la bola aparecerá en el siguiente turno.
+    pbArceusEnsureCaptureBall if isPlayer && arceus_divine? && arceus_capture_ready?
     return _ruta_arceus_original_command_loop(isPlayer)
   end
 
@@ -1490,7 +1586,7 @@ def pbArceusCinematicPrelude
   pbArceusCinematicStage(ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH)
   pbArceusCinematicImpact
   pbMessage(_INTL("Una grieta se abre detrás de Ash. Cynthia y Steven llegan juntos para ganar tiempo frente al Creador."))
-  pbMessage(_INTL("Cynthia: Mis seis Pokémon están listos. Steven: los míos también. Ninguno de nosotros tocará un comando; dejaremos que el combate hable."))
+  pbMessage(_INTL("\\bCynthia: Mis seis Pokémon están listos. Steven: los míos también. Ninguno de nosotros tocará un comando; dejaremos que el combate hable."))
   cynthia = [
     pbArceusCinematicPokemon(:SPIRITOMB, 145, [:SHADOWBALL, :DARKPULSE, :WILLOWISP, :PAINSPLIT], :LEFTOVERS),
     pbArceusCinematicPokemon(:TOGEKISS, 145, [:AIRSLASH, :DAZZLINGGLEAM, :ROOST, :THUNDERWAVE], :LEFTOVERS),
@@ -1555,11 +1651,11 @@ def pbArceusCinematicPrelude
   ], [:JUDGMENT, :SHADOWFORCE, :ROAROFTIME, :SPACIALREND], "single")
   pbArceusCinematicImpact(Tone.new(120, 10, 180, 0))
   pbMessage(_INTL("Giratina es derrotado antes de poder prolongar la batalla. Volus cae de rodillas: ni siquiera su obsesión puede entrar en la guerra de Ash."))
-  pbMessage(_INTL("Arceus: Tú no eres un aliado, Volus. Eres otro mortal intentando apropiarse de Mi creación."))
+  pbMessage(_INTL("\\bArceus: Tú no eres un aliado, Volus. Eres otro mortal intentando apropiarse de Mi creación."))
 
   pbArceusCinematicStage(nil)
   pbArceusAshWill
-  pbMessage(_INTL("Ash: Ya fue suficiente. Ahora llegó el momento de luchar personalmente contra Arceus."))
+  pbMessage(_INTL("\\bAsh: Ya fue suficiente. Ahora llegó el momento de luchar personalmente contra Arceus."))
   pbArceusCinematicImpact(Tone.new(255, 255, 255, 0))
 end
 
@@ -1570,7 +1666,18 @@ module PokeBattle_BattleCommon
   def pbCaptureCalc(pkmn, battler, catch_rate, ball)
     if battler && battler.pokemon && battler.pokemon.species == :ARCEUS &&
        respond_to?(:arceus_divine?) && arceus_divine?
-      return 4 if arceus_capture_ready?
+      if arceus_capture_ready?
+        # La captura se inserta tras el rollback, sobre el equipo previo al
+        # combate. Si ni el equipo ni las cajas tienen hueco, la bola no se
+        # tira en falso: se avisa una vez y el jugador puede rendirse,
+        # liberar espacio y volver. Nunca se genera un commit imposible.
+        if ArceusSaveSandbox.capture_room?
+          return 4
+        elsif !@ruta_arceus_room_warned
+          @ruta_arceus_room_warned = true
+          pbDisplay(_INTL("No hay espacio en tu equipo ni en las cajas: libera un Pokémon antes de capturar a Arceus."))
+        end
+      end
       return 0
     end
     return _ruta_arceus_original_capture_calc(pkmn, battler, catch_rate, ball)
@@ -1667,7 +1774,7 @@ def pbArceusPseudoPC
 end
 
 def pbArceusSurrenderSequence
-  pbMessage(_INTL("Ash: ¡Me rindo! ¡Todos, retiraos!"))
+  pbMessage(_INTL("\\bAsh: ¡Me rindo! ¡Todos, retiraos!"))
   begin
     3.times do |i|
       pbShake(10 + i * 3, 10, 12)
@@ -1700,7 +1807,7 @@ end
 def pbArceusVoloRest
   $Trainer.heal_party if $Trainer.respond_to?(:heal_party)
   pbMessage(_INTL("El altar del Génesis devuelve las fuerzas a todo el equipo antes del duelo."))
-  pbMessage(_INTL("Volo: Tómate tu tiempo, Ash. Quiero vencerte en tu mejor momento."))
+  pbMessage(_INTL("\\bVolo: Tómate tu tiempo, Ash. Quiero vencerte en tu mejor momento."))
 rescue StandardError
 end
 
@@ -1759,6 +1866,11 @@ def pbStartArceusDivineBattle
 
   loop do
     snapshot = $Trainer.party.map { |p| [p, p.hp, p.status] }
+    # pbBattleAnimation limpia nextBattleBGM/nextBattleBack tras cada combate del
+    # prólogo cinemático; se reasignan aquí para que el duelo divino conserve su
+    # música y su fondo nevado en todos los intentos.
+    $PokemonGlobal.nextBattleBGM = "Legend Sinnoh"
+    $PokemonGlobal.nextBattleBack = "snow"
     decision = pbWildBattleCore(pkmn)
     if decision == 4
       # La captura es el único objeto complejo autorizado a cruzar la transacción.
@@ -2629,7 +2741,7 @@ export function buildFloor1() {
       "Dicen que el Gran Uno dejó las Tablas para que el universo tuviera forma, pero si alguien osa pisar esta senda sin la debida reverencia... ¡el castigo será absoluto!",
       "¡Déjame ver si tu espíritu está preparado para encarar lo que aguarda en la cumbre!",
     ]),
-    script("pbTrainerBattle(:SECRET_Dawn, \"Dawn\", nil, false, 0, true)"),
+    cmd(111, [12, S('pbTrainerBattle(:SECRET_Dawn, "Dawn", nil, false, 0, true)')]),
     ...textCommands([
       "Maya: ¡Increíble! Esa fuerza... es la misma que salvó a Sinnoh en el pasado.",
       "Sigue adelante, Ash. El destino de todo este mundo está sobre tus hombros.",
@@ -2638,6 +2750,11 @@ export function buildFloor1() {
     script("pbReceiveItem(:RARECANDY, 1)", 1),
     cmd(123, [S("A"), 0], 1),
     cmd(121, [SW_RELIC_GUIDE_1, SW_RELIC_GUIDE_1, 0], 1),   // R8: el sello del piso se rompe con el guía
+    cmd(411),
+    ...textCommands([
+      "Maya: Todavía no alcanzas la cima, Ash. Vuelve cuando tu espíritu arda con más fuerza.",
+    ], 1),
+    cmd(412),
     cmd(0),
   ];
   addEventToMap(map, event(3, "Maya de la Ruta", 20, 20, [
@@ -2704,7 +2821,7 @@ export function buildFloor2() {
       "Palmer: Silencio, hijo. Observa la piedra bajo tus pies. Esta es la materia primigenia anterior al nacimiento de los astros.",
       "Palmer: Quienquiera que more arriba no es un rival común. Como As del Frente de Batalla, debo comprobar tu maestría antes de permitirte avanzar hacia la tormenta.",
     ]),
-    script("pbTrainerBattle(:SECRET_Palmer, \"Palmer\", nil, false, 0, true)"),
+    cmd(111, [12, S('pbTrainerBattle(:SECRET_Palmer, "Palmer", nil, false, 0, true)')]),
     ...textCommands([
       "Palmer: Majestuoso. Tu determinación resuena más fuerte que el trueno divino.",
       "Barry: ¡Uau! ¡Sabía que podías hacerlo, Ash! ¡Ahora ve y demuestra de qué estamos hechos los entrenadores!",
@@ -2713,6 +2830,12 @@ export function buildFloor2() {
     script("pbReceiveItem(:MAXREVIVE, 1)", 1),
     cmd(123, [S("A"), 0], 1),
     cmd(121, [SW_RELIC_GUIDE_2, SW_RELIC_GUIDE_2, 0], 1),   // R8: el sello del piso se rompe con el guía
+    cmd(411),
+    ...textCommands([
+      "Palmer: Aún no demuestras la maestría de un As del Frente de Batalla.",
+      "Barry: ¡No te rindas, Ash! ¡Vuelve cuando puedas con mi padre!",
+    ], 1),
+    cmd(412),
     cmd(0),
   ];
   addEventToMap(map, event(3, "Palmer del Frente", 20, 20, [
@@ -2792,7 +2915,7 @@ export function buildFloor3() {
       "La energía de las Tablas fluye como un río cósmico por cada piedra de este templo.",
       "¡Permíteme conectar mi aura con la tuya para templar tu concentración!",
     ]),
-    script("pbTrainerBattle(:SECRET_Riley, \"Riley\", nil, false, 0, true)"),
+    cmd(111, [12, S('pbTrainerBattle(:SECRET_Riley, "Riley", nil, false, 0, true)')]),
     ...textCommands([
       "Quinoa: Un aura verdaderamente formidable. Has trascendido los límites ordinarios de la comunión con los Pokémon.",
       "Lleva este obsequio. Que tu energía jamás se agote en el combate que se avecina.",
@@ -2800,6 +2923,11 @@ export function buildFloor3() {
     script("pbReceiveItem(:PPMAX, 1)", 1),
     cmd(123, [S("A"), 0], 1),
     cmd(121, [SW_RELIC_GUIDE_3, SW_RELIC_GUIDE_3, 0], 1),   // R8: el sello del piso se rompe con el guía
+    cmd(411),
+    ...textCommands([
+      "Quinoa: Tu aura aún no está a la altura de este templo. Regresa cuando la comunión con tus Pokémon sea absoluta.",
+    ], 1),
+    cmd(412),
     cmd(0),
   ];
   addEventToMap(map, event(3, "Quinoa de la Isla", 21, 21, [
@@ -2872,7 +3000,7 @@ export function buildFloor4() {
       "Como Campeona de la Liga Sinnoh, tengo el deber de ser tu última prueba terrenal.",
       "¡Demuéstrame que tu lazo con tus Pokémon puede doblegar las leyes del mismísimo cosmos!",
     ]),
-    script("pbTrainerBattle(:SECRET_Cynthia, \"Cynthia\", nil, false, 0, true)"),
+    cmd(111, [12, S('pbTrainerBattle(:SECRET_Cynthia, "Cynthia", nil, false, 0, true)')]),
     ...textCommands([
       "Cintia: Sublime... Una batalla que quedará grabada en las leyendas de nuestro tiempo.",
       "Lleva contigo esta reliquia de los templos de antaño. Si tus Pokémon caen ante el poder divino, esto les otorgará una segunda oportunidad.",
@@ -2880,6 +3008,11 @@ export function buildFloor4() {
     script("pbReceiveItem(:SACREDASH, 1)", 1),
     cmd(123, [S("A"), 0], 1),
     cmd(121, [SW_RELIC_GUIDE_4, SW_RELIC_GUIDE_4, 0], 1),   // R8: el sello del piso se rompe con el guía
+    cmd(411),
+    ...textCommands([
+      "Cintia: El cosmos aún no está listo para tu victoria, Ash. Vuelve cuando tu vínculo con tus Pokémon sea inquebrantable.",
+    ], 1),
+    cmd(412),
     cmd(0),
   ];
   addEventToMap(map, event(3, "Cintia Campeona", 21, 21, [
@@ -2944,7 +3077,7 @@ export function buildFloor5() {
     cmd(101, [S("¡GYYYROOOHHH!\\1")]),
     cmd(101, [S("El señor del tiempo emite un rugido que desgarra el tejido de los segundos. ¡Una distorsión temporal envuelve el altar!")]),
     script("pbWildBattle(:DIALGA, 150)"),
-    cmd(111, [12, S("$Trainer.party.any? { |p| p.hp > 0 }")]),
+    cmd(111, [12, S("$game_variables[1] == 1 || $game_variables[1] == 4")]),
     cmd(121, [SW_DIALGA_DEFEATED, SW_DIALGA_DEFEATED, 0]),
     cmd(101, [S("La figura de Dialga se disuelve en una cascada de luz cósmica, abriendo el paso hacia el santuario espacial...")]),
     cmd(412),
@@ -3012,7 +3145,7 @@ export function buildFloor6() {
     cmd(101, [S("¡GRAAAGHHH!\\1")]),
     cmd(101, [S("El amo del espacio emite un alarido desgarrador. Las dimensiones tiemblan bajo el peso de su presencia.")]),
     script("pbWildBattle(:PALKIA, 150)"),
-    cmd(111, [12, S("$Trainer.party.any? { |p| p.hp > 0 }")]),
+    cmd(111, [12, S("$game_variables[1] == 1 || $game_variables[1] == 4")]),
     cmd(121, [SW_PALKIA_DEFEATED, SW_PALKIA_DEFEATED, 0]),
     cmd(101, [S("Palkia canaliza su esencia hacia las dimensiones lejanas. El portal hacia la Cima del Génesis ha sido despejado.")]),
     cmd(412),
@@ -3427,12 +3560,72 @@ function backupOriginals() {
   }
 }
 
+// Sprites de los aliados cinematográficos (Cynthia, Steven, Ethan, Red, Volus).
+// El motor necesita sus sprites traseros para seguir la mano del entrenador al
+// lanzar la Poké Ball (PokeBattle_BallAnimationMixin#ballTracksHand lee
+// traSprite.bitmap.width sin comprobar nil): si falta el gráfico, la batalla
+// cinemática aborta con "undefined method 'width' for nil" antes de empezar.
+// Si el sprite existe pero es un placeholder totalmente transparente (la base
+// del juego los usa para los entrenadores SECRET), se sustituye por arte real
+// del mismo personaje para que los aliados se vean en las cinemáticas.
+const CINEMATIC_BACK_SPRITES = [
+  ["ARC_Cynthia_back.png", ["CHAMPION_Cynthia_back.png", "SECRET_Cynthia.png"]],
+  ["ARC_Steven_back.png", ["ARC_Steven.png", "SECRET_Steven.png"]],
+  ["ARC_Ethan_back.png", ["SECRET_Ethan.png"]],
+  ["SECRET_Red_back.png", ["SECRET_Red.png"]],
+  ["SECRET_Volo_back.png", ["SECRET_Volo.png"]],
+];
+const CINEMATIC_FRONT_SPRITES = [
+  ["ARC_Ethan.png", ["SECRET_Ethan.png"]],
+];
+
+// PNG cuyo contenido descomprimido es todo ceros: placeholder transparente.
+function isBlankPng(file) {
+  try {
+    const data = fs.readFileSync(file);
+    let offset = 8;
+    const idat = [];
+    while (offset + 12 <= data.length) {
+      const length = data.readUInt32BE(offset);
+      const type = data.toString("ascii", offset + 4, offset + 8);
+      if (type === "IDAT") idat.push(data.subarray(offset + 8, offset + 8 + length));
+      offset += 12 + length;
+      if (type === "IEND") break;
+    }
+    if (idat.length === 0) return false;
+    const raw = zlib.inflateSync(Buffer.concat(idat));
+    for (const byte of raw) if (byte !== 0) return false;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function ensureCinematicTrainerSprites() {
+  const dir = path.join(GAME, "Graphics", "Trainers");
+  let updated = 0;
+  const ensure = (target, sources) => {
+    const dst = path.join(dir, target);
+    if (fs.existsSync(dst) && !isBlankPng(dst)) return;
+    const src = sources.map((s) => path.join(dir, s)).find((p) => fs.existsSync(p) && !isBlankPng(p));
+    if (!src) throw new Error(`Falta un sprite visible para ${target} (buscado en ${sources.join(", ")})`);
+    fs.copyFileSync(src, dst);
+    updated++;
+  };
+  for (const [target, sources] of CINEMATIC_BACK_SPRITES) ensure(target, sources);
+  for (const [target, sources] of CINEMATIC_FRONT_SPRITES) ensure(target, sources);
+  console.log(`OK: sprites de aliados cinematográficos asegurados (${updated} actualizados).`);
+}
+
 function install() {
   backupOriginals();
 
   console.log("Installing Scripts and System Switches...");
   installScriptSection();
   installSwitches();
+
+  console.log("Ensuring cinematic trainer sprites...");
+  ensureCinematicTrainerSprites();
 
   console.log("Installing Volus, the celestial avenue, and the portal in Snowpoint City...");
   installTwinleafVolo();
@@ -3539,6 +3732,15 @@ function verify() {
       ["pbArceusVoloRest", "descanso antes del duelo con Volo (R6)"],
       ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
       ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
+      ["def pbCountArceusPlates", "helper de conteo de Tablas para el evento de Volus"],
+      ["def pbHasAllArceusPlates?", "helper de comprobación de las 17 Tablas del Génesis"],
+      ["def pbGrantAllArceusPlates", "helper de concesión de las Tablas del Génesis"],
+      ["RUTA_DE_DIOS_ARCEUS_RESOLVED = 873", "constante del switch de Arceus resuelto usada en la rendición"],
+      ["def ballTracksHand(ball, traSprite, safariThrow = false)", "guarda de nil en el seguimiento de la mano del entrenador (crash 'width' for nil)"],
+      ["return :ruta_arceus_seal_only if max_damage <= 0", "golpe conectado absorbido por el umbral rompe el sello (sin atascos por daño de clima/estado)"],
+      ["pbArceusEnsureCaptureBall if isPlayer && arceus_divine? && arceus_capture_ready?", "la bola de captura se reintenta cada turno mientras haya captura abierta"],
+      ["def self.capture_room?", "comprobación de espacio en el estado de rollback antes de la captura garantizada"],
+      ["if ArceusSaveSandbox.capture_room?", "la captura garantizada no se ofrece si no cabe el Pokémon (commit siempre posible)"],
       ["module ArceusSaveSandbox", "límite transaccional integral del encuentro"],
       ["SaveData.compile_save_hash", "snapshot de todos los valores persistentes"],
       ["alias arceus_unrestricted_save_to_file save_to_file", "barrera de escritura de guardado"],
@@ -3596,6 +3798,18 @@ function verify() {
     if (!cierre) { errors.push(`${nombre} (Map${id}) no desaparece tras RUTA_DE_DIOS_COMPLETED`); continue; }
     const oculto = txt(iv(iv(cierre, "graphic"), "character_name")) === "" && (iv(cierre, "list") ?? []).length <= 1;
     if (!oculto) errors.push(`${nombre} (Map${id}) sigue visible o activo tras completar el evento`);
+    // La recompensa sólo puede entregarse al vencer: la batalla debe ir como
+    // condición de rama (cmd 111 tipo script) y existir rama de derrota.
+    const cmdsGuia = iv(pages[0], "list") ?? [];
+    const batallaCondicional = cmdsGuia.some((c) => {
+      if (Number(iv(c, "code")) !== 111) return false;
+      const params = iv(c, "parameters") ?? [];
+      return Number(params[0]) === 12 && txt(params[1]).includes("pbTrainerBattle");
+    });
+    if (!batallaCondicional) errors.push(`${nombre} (Map${id}) no condiciona la recompensa al resultado del combate`);
+    const tieneRamaDerrota = cmdsGuia.some((c) => Number(iv(c, "code")) === 411) &&
+                             cmdsGuia.some((c) => Number(iv(c, "code")) === 412);
+    if (!tieneRamaDerrota) errors.push(`${nombre} (Map${id}) no tiene rama de derrota tras el combate`);
   }
   for (const [id, guardian, swId] of [[2035, "Guardián Dialga", SW_DIALGA_DEFEATED], [2036, "Guardián Palkia", SW_PALKIA_DEFEATED]]) {
     const file = path.join(DATA, `Map${id}.rxdata`);
@@ -3608,6 +3822,50 @@ function verify() {
       return Number(iv(cond, "switch1_id")) === swId || Number(iv(cond, "switch2_id")) === swId;
     });
     if (!usaSwitch) errors.push(`El guardián ${guardian} (Map${id}) no se apaga con su switch`);
+    // El guardián sólo se desvanece al derrotarlo o capturarlo: la condición
+    // post-batalla debe leer la variable de resultado, no sólo los PS del equipo.
+    const cmdsGuardia = iv((iv(ev[1], "pages") ?? [])[0], "list") ?? [];
+    const resultadoCombate = cmdsGuardia.some((c) => {
+      if (Number(iv(c, "code")) !== 111) return false;
+      const params = iv(c, "parameters") ?? [];
+      return Number(params[0]) === 12 && txt(params[1]).includes("$game_variables[1]");
+    });
+    if (!resultadoCombate) errors.push(`El guardián ${guardian} (Map${id}) no comprueba el resultado del combate (victoria o captura)`);
+  }
+
+  // 2d. Sprites traseros de los aliados cinematográficos: el motor los usa al
+  // lanzar la Poké Ball (ballTracksHand lee traSprite.bitmap.width sin comprobar
+  // nil) y la batalla aborta con "undefined method 'width' for nil" si faltan.
+  // Tampoco pueden ser placeholders transparentes: los aliados dejarían de verse.
+  for (const sprite of ["ARC_Cynthia_back.png", "ARC_Steven_back.png", "ARC_Ethan_back.png", "SECRET_Red_back.png", "SECRET_Volo_back.png"]) {
+    const spritePath = path.join(GAME, "Graphics", "Trainers", sprite);
+    if (!fs.existsSync(spritePath)) {
+      errors.push(`Falta el sprite trasero del aliado cinemático ${sprite}`);
+    } else if (isBlankPng(spritePath)) {
+      errors.push(`El sprite trasero del aliado cinemático ${sprite} es un placeholder transparente`);
+    }
+  }
+
+  // 2e. Gráficos de los objetos de la ruta y diálogos diferenciados por hablante.
+  const patronHablante = /^([A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚÑáéíóúñ]{0,15}):\s/;
+  for (const id of [2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038]) {
+    const file = path.join(DATA, `Map${id}.rxdata`);
+    if (!fs.existsSync(file)) continue;
+    const map = readRx(`Map${id}.rxdata`);
+    for (const [, ev] of iv(map, "events").pairs) {
+      const evName = txt(iv(ev, "name"));
+      for (const page of iv(ev, "pages") ?? []) {
+        const gfxName = txt(iv(iv(page, "graphic"), "character_name"));
+        if (gfxName === "Item ball") errors.push(`Map${id} ev "${evName}" usa el gráfico inexistente "Item ball"`);
+        for (const c of iv(page, "list") ?? []) {
+          if (Number(iv(c, "code")) !== 401) continue;
+          const texto = txt((iv(c, "parameters") ?? [])[0]);
+          if (patronHablante.test(texto) && !texto.startsWith("\\b")) {
+            errors.push(`Map${id} ev "${evName}": diálogo con hablante sin \\b -> "${texto.slice(0, 40)}..."`);
+          }
+        }
+      }
+    }
   }
 
   // 3. Verify Volo in Map 513
