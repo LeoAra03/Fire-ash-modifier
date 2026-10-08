@@ -1115,17 +1115,23 @@ class PokeBattle_Battle
 
   def pbArceusAttackScore(move_data, power, battler, targets)
     return 0.0 if !move_data || !move_data.type || targets.empty?
+    attack_type = move_data.type
+    # Judgment follows Arceus's currently selected Plate, not its database type.
+    if move_data.id == :JUDGMENT
+      plate_index = RUTA_ARCEUS_PHASE_PLATES.index(battler.item)
+      attack_type = RUTA_ARCEUS_PHASE_TYPES[plate_index] if plate_index
+    end
     accuracy = move_data.respond_to?(:accuracy) ? move_data.accuracy.to_i : 100
     accuracy = 100 if accuracy <= 0
     accuracy = [accuracy, 100].min
     best_score = 0.0
     targets.each do |target|
       types = target.pbTypes(true)
-      effectiveness = Effectiveness.calculate(move_data.type, types[0], types[1], types[2])
+      effectiveness = Effectiveness.calculate(attack_type, types[0], types[1], types[2])
       multiplier = effectiveness.to_f / Effectiveness::NORMAL_EFFECTIVE
       next if multiplier <= 0
       score = power.to_f * multiplier * (accuracy.to_f / 100.0)
-      score *= 1.5 if battler.pbHasType?(move_data.type)
+      score *= 1.5 if battler.pbHasType?(attack_type)
       score += move_data.priority.to_i * 8 if move_data.respond_to?(:priority)
       best_score = score if score > best_score
     end
@@ -1136,20 +1142,34 @@ class PokeBattle_Battle
     return 0.0
   end
 
-  # Examina el catálogo de ataques cargado por el juego y conserva los cuatro
-  # con mejor daño esperado contra el equipo activo de Ash.
+  # Recalcula el repertorio desde el catálogo real y busca cuatro ataques de
+  # tipos distintos; Judgment siempre conserva un lugar y sigue a la Tabla.
   def pbArceusBestAttackIds(battler)
     targets = @battlers.select do |target|
       target && !target.fainted? && target.opposes? != battler.opposes?
     end
     scored = pbArceusAttackCatalog.map do |move_data, power|
       score = pbArceusAttackScore(move_data, power, battler, targets)
-      [score, move_data.id.to_s, move_data.id]
+      [score, move_data.id.to_s, move_data.id, move_data.type]
     end
     scored.select! { |row| row[0] > 0 }
     scored.sort_by! { |row| [-row[0], row[1]] }
-    ids = scored.first(Pokemon::MAX_MOVES).map { |row| row[2] }
     phase_index = [[(@arceus_phase || 1) - 1, 0].max, RUTA_ARCEUS_MOVE_SETS.length - 1].min
+    ids = []
+    signature = :JUDGMENT
+    ids.push(signature) if GameData::Move.exists?(signature)
+    used_types = []
+    scored.each do |row|
+      next if ids.include?(row[2]) || used_types.include?(row[3])
+      ids.push(row[2])
+      used_types.push(row[3])
+      break if ids.length >= Pokemon::MAX_MOVES
+    end
+    scored.each do |row|
+      next if ids.include?(row[2])
+      ids.push(row[2])
+      break if ids.length >= Pokemon::MAX_MOVES
+    end
     ids = RUTA_ARCEUS_MOVE_SETS[phase_index] if ids.empty?
     return pbArceusMoveIds(ids, phase_index + 1)
   rescue StandardError
@@ -1157,22 +1177,147 @@ class PokeBattle_Battle
     return pbArceusMoveIds(RUTA_ARCEUS_MOVE_SETS[phase_index], phase_index + 1)
   end
 
+  # The engine's high-skill trainer scorer evaluates real damage, accuracy,
+  # immunities, effects and targets for each attack Arceus has prepared.
+  def pbArceusScoreMove(battler, move_index)
+    move = battler.moves[move_index]
+    return nil if !move || !move.damagingMove?
+    choices = []
+    if @battleAI && @battleAI.respond_to?(:pbRegisterMoveTrainer)
+      skill = PBTrainerAI.highSkill
+      @battleAI.pbRegisterMoveTrainer(battler, move_index, choices, skill)
+    end
+    if choices.empty?
+      move_data = GameData::Move.get(move.id) rescue nil
+      targets = @battlers.select do |target|
+        target && !target.fainted? && target.opposes? != battler.opposes?
+      end
+      best_score = 0.0
+      best_target = -1
+      targets.each do |target|
+        score = pbArceusAttackScore(move_data, move_data ? move_data.base_damage.to_i : 0,
+                                   battler, [target])
+        if score > best_score
+          best_score = score
+          best_target = target.index
+        end
+      end
+      return [move_index, best_score, best_target, move.id]
+    end
+    choices.sort! { |a, b| b[1] <=> a[1] }
+    row = choices[0]
+    return [move_index, row[1].to_f, row[2], move.id]
+  rescue StandardError
+    return [move_index, 0.0, -1, move ? move.id : nil]
+  end
+
+  def pbArceusChooseSmartMove(options)
+    return nil if !options || options.empty?
+    history = @ruta_arceus_move_history || []
+    last_move = history[-1]
+    fresh = options.reject { |option| option[3] == last_move }
+    options = fresh if !fresh.empty?
+    recent = history.last(3)
+    fresh = options.reject { |option| recent.include?(option[3]) }
+    options = fresh if !fresh.empty?
+    options.sort! do |a, b|
+      if a[1].to_f == b[1].to_f
+        a[3].to_s <=> b[3].to_s
+      else
+        b[1].to_f <=> a[1].to_f
+      end
+    end
+    return options[0]
+  end
+
+  def pbArceusRememberMove(move_id)
+    @ruta_arceus_move_history ||= []
+    @ruta_arceus_move_history.push(move_id)
+    @ruta_arceus_move_history.shift while @ruta_arceus_move_history.length > 4
+  end
+
+  def pbArceusBattleCommentary(battler, move, target)
+    return if !move
+    phase = [[(@arceus_phase || 1).to_i, 1].max, RUTA_ARCEUS_STAGE_COUNT].min
+    line = nil
+    if target && target.totalhp > 0 && target.hp * 3 <= target.totalhp
+      line = _INTL("Tu equipo ya siente el peso de este combate. {1} decidirá cuánto resiste.", move.name)
+    elsif target && move.type
+      types = target.pbTypes(true)
+      effect = Effectiveness.calculate(move.type, types[0], types[1], types[2])
+      if effect.to_f / Effectiveness::NORMAL_EFFECTIVE >= 2.0
+        line = _INTL("Ya encontré la grieta en la defensa de {1}. No hay azar en {2}.", target.name, move.name)
+      end
+    end
+    if !line && target && target.lastMoveUsed
+      last_name = GameData::Move.get(target.lastMoveUsed).name rescue target.lastMoveUsed.to_s
+      line = _INTL("He analizado {1}. Mi respuesta ya estaba calculada.", last_name)
+    end
+    if !line
+      speeches = {
+        1 => ["Ya observé tus decisiones. Ahora responderé antes que tú.", "Tu primer plan ya forma parte de mis cálculos."],
+        2 => ["He medido cada resistencia; no existe una defensa que no pueda leer.", "Tu estrategia cambia. Mi juicio se adelanta."],
+        3 => ["Cada golpe me enseña cómo vencerte con el siguiente.", "No confundas mi silencio con incertidumbre."],
+        4 => ["Ya conozco la forma de tu compañero y también sus límites.", "Tu vínculo no puede ocultarme la próxima decisión."],
+        5 => ["Cada estrategia que inventas ya existe en mi memoria.", "Tu siguiente movimiento ya dejó de ser un secreto."],
+        6 => ["No queda azar. Sólo el último paso que te permito dar.", "He calculado el final; aún te concedo un turno."],
+      }
+      lines = speeches[phase]
+      line = lines[(@turnCount.to_i + phase) % lines.length]
+      line = _INTL("{1} Ahora observa cómo respondo con {2}.", line, move.name)
+    end
+    pbDisplayPaused(_INTL("Arceus: «{1}»", line))
+  rescue StandardError
+    pbDisplay(_INTL("Arceus: «Tu siguiente movimiento ya está calculado.»")) rescue nil
+  end
+
+  def pbArceusSmartAction(idxBattler, battler)
+    boss = arceus_battler || battler
+    arceus_state(boss)
+    pbArceusRedlineHeal(boss, true)
+    pbArceusAdaptTypeToRival(boss)
+    phase_index = [[(@arceus_phase || 1) - 1, 0].max, RUTA_ARCEUS_MOVE_SETS.length - 1].min
+    repertoire = pbArceusBestAttackIds(battler)
+    pbArceusSetMoves(battler, repertoire)
+    options = []
+    battler.moves.each_with_index do |move, index|
+      next if !move || !move.damagingMove?
+      next if !pbCanChooseMove?(idxBattler, index, false)
+      option = pbArceusScoreMove(battler, index)
+      options.push(option) if option && option[1].to_f > 0
+    end
+    selected = pbArceusChooseSmartMove(options)
+    if !selected
+      pbDisplayPaused(_INTL("Arceus: «Si mis ataques se han agotado, aún puedo convertir la presión en fuerza.»"))
+      pbAutoChooseMove(idxBattler, false)
+      return true
+    end
+    move_index = selected[0]
+    return false if !pbRegisterMove(idxBattler, move_index, false)
+    pbRegisterTarget(idxBattler, selected[2]) if selected[2] && selected[2] >= 0
+    move = battler.moves[move_index]
+    target = @battlers[selected[2]] if selected[2] && selected[2] >= 0
+    target ||= @battlers.find { |candidate| candidate && !candidate.fainted? && candidate.opposes? != battler.opposes? }
+    pbArceusRememberMove(move.id)
+    pbArceusBattleCommentary(battler, move, target)
+    return true
+  rescue StandardError
+    pbAutoChooseMove(idxBattler, false) rescue nil
+    return true
+  end
+
   def pbArceusScriptedAction(idxBattler, mainEncounter = false)
     battler = @battlers[idxBattler]
     return false if !battler || battler.fainted?
+    if mainEncounter && battler.pokemon && battler.pokemon.species == :ARCEUS
+      return pbArceusSmartAction(idxBattler, battler)
+    end
     preferred = []
     if battler.pokemon && battler.pokemon.species == :ARCEUS
-      if mainEncounter
-        boss = arceus_battler
-        arceus_state(boss) if boss
-        phase_index = [[(@arceus_phase || 1) - 1, 0].max, RUTA_ARCEUS_MOVE_SETS.length - 1].min
-        preferred = pbArceusBestAttackIds(battler)
-        pbArceusSetMoves(battler, preferred)
-        start = (@turnCount.to_i + phase_index) % [preferred.length, 1].max
-        preferred = preferred.rotate(start)
-      else
-        preferred = [:ROCKSLIDE, :AEROBLAST, :JUDGMENT]
+      battler.moves.each do |move|
+        preferred.push(move.id) if move && move.damagingMove?
       end
+      preferred = preferred.rotate(@turnCount.to_i % preferred.length) if preferred.length > 1
     else
       battler.moves.each do |move|
         preferred.push(move.id) if move && move.damagingMove?
@@ -1201,7 +1346,7 @@ class PokeBattle_Battle
     return false if !pbRegisterMove(idxBattler, chosen, false)
     move = battler.moves[chosen]
     target_data = move.pbTarget(battler)
-    if !singleBattle? && target_data.num_targets > 0
+    if target_data.num_targets > 0
       target = nil
       @battlers.each_with_index do |candidate, index|
         next if !candidate || candidate.fainted?
@@ -1210,6 +1355,10 @@ class PokeBattle_Battle
         break
       end
       pbRegisterTarget(idxBattler, target.index) if target
+    end
+    if battler.pokemon && battler.pokemon.species == :ARCEUS
+      target ||= @battlers.find { |candidate| candidate && !candidate.fainted? && candidate.opposes? != battler.opposes? }
+      pbArceusBattleCommentary(battler, move, target)
     end
     return true
   end
@@ -1356,22 +1505,28 @@ class PokeBattle_Battle
     battler.pbUpdate if battler && battler.respond_to?(:pbUpdate)
   end
 
-  # Arceus puede restaurarse cuando su barra cae a rojo, una vez por etapa.
+  # Sólo Arceus se restaura: la curación sucede al cruzar el umbral rojo y
+  # vuelve a comprobarse antes de su turno, incluso si el motor marca fin de ronda.
   def pbArceusRedlineHeal(battler, force = false)
-    return if !arceus_divine? || !battler || !battler.pokemon || battler.pokemon.species != :ARCEUS
-    return if @endOfRound || (!force && !arceus_player_action?(battler))
+    return false if !arceus_divine? || !battler || !battler.pokemon || battler.pokemon.species != :ARCEUS
+    return false if @endOfRound && !force
+    return false if !force && !arceus_player_action?(battler)
     arceus_state(battler)
-    return if @arceus_capture_ready || battler.hp <= 0
+    return false if @arceus_capture_ready || battler.hp <= 0
     redline = [battler.totalhp / 4, 1].max
-    return if battler.hp > redline || @arceus_redline_healed_phase == @arceus_phase
+    return false if battler.hp > redline || @arceus_redline_healed_phase == @arceus_phase
     @arceus_redline_healed_phase = @arceus_phase
     old_hp = battler.hp
-    pbDisplayPaused(_INTL("La barra de Arceus entra en rojo. Con un gesto, restaura toda su vida."))
+    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. La vida que le has quitado desaparece: su barra se restaura por completo."))
     battler.hp = battler.totalhp
     pbArceusAnimateHP(battler, old_hp)
-    pbDisplayPaused(_INTL("Arceus: «Aún no has llegado al final de esta etapa, Ash.»"))
+    pbDisplayPaused(_INTL("Arceus: «He medido el límite de esta etapa. No lo alcanzarás con un solo golpe, Ash.»"))
     save_arceus_state(battler)
+    @ruta_arceus_last_heal_phase = @arceus_phase
+    @ruta_arceus_last_heal_turn = @turnCount.to_i
+    return true
   rescue StandardError
+    return false
   end
 
   # Red de seguridad de la captura final: si el jugador llega sin ninguna ball, el Rotom
@@ -1406,11 +1561,22 @@ class PokeBattle_Battle
   def pbArceusSetMoves(battler, move_ids)
     valid = pbArceusMoveIds(move_ids, @arceus_phase)
     return if valid.empty?
-    battler.pokemon.moves = valid.map { |id| Pokemon::Move.new(id) }
+    old_moves = battler.pokemon.moves || []
+    old_ids = old_moves.map { |move| move.id }
+    return if old_ids == valid && battler.moves.length == valid.length &&
+              battler.moves.all? { |move| move && move.pp.to_i > 0 }
+    # Reuse each existing Pokemon::Move object when possible, so adaptive
+    # selection never silently resets PP or rebuilds the same move every turn.
+    updated = valid.map do |id|
+      old = old_moves.find { |move| move.id == id && move.pp.to_i > 0 }
+      old || Pokemon::Move.new(id)
+    end
+    battler.pokemon.moves = updated
     battler.moves.clear
     battler.pokemon.moves.each_with_index do |move, i|
       battler.moves[i] = PokeBattle_Move.from_pokemon_move(self, move)
     end
+  rescue StandardError
   end
 
   def pbArceusBestPlateIndex(battler, phase)
@@ -1508,18 +1674,37 @@ class PokeBattle_Battle
     end
   end
 
-  def pbArceusRotateType(battler, phase)
-    index = pbArceusBestPlateIndex(battler, phase)
+  def pbArceusRotateType(battler, phase, selected_index = nil)
+    index = selected_index.nil? ? pbArceusBestPlateIndex(battler, phase) : selected_index
     plate = RUTA_ARCEUS_PHASE_PLATES[index]
     type = RUTA_ARCEUS_PHASE_TYPES[index]
     pbArceusPlateRouletteAnimation(index)
     battler.item = plate if GameData::Item.exists?(plate)
     battler.pbChangeTypes([type])
+    battler.instance_variable_set(:@ruta_arceus_plate_index, index)
     targets = @battlers.select { |target| target && !target.fainted? && target.opposes? != battler.opposes? }
     rival = targets.empty? ? _INTL("el combate") : targets[0].name
     plate_name = GameData::Item.exists?(plate) ? GameData::Item.get(plate).name : plate.to_s
     pbDisplayPaused(_INTL("La ruleta se detiene en {1}: Arceus adopta el tipo {2} para ganar ventaja contra {3}.",
                           plate_name, RUTA_ARCEUS_TYPE_NAMES[index], rival))
+  end
+
+  # If Ash changes the active Pokémon, recalculate the best Plate before
+  # Arceus chooses its next attack. The full roulette only replays if the
+  # strategic type actually changes.
+  def pbArceusAdaptTypeToRival(battler)
+    return false if !battler
+    index = pbArceusBestPlateIndex(battler, @arceus_phase || 1)
+    plate = RUTA_ARCEUS_PHASE_PLATES[index]
+    type = RUTA_ARCEUS_PHASE_TYPES[index]
+    active_types = battler.pbTypes(true)
+    current_index = battler.instance_variable_get(:@ruta_arceus_plate_index)
+    return false if current_index == index && battler.item == plate && active_types[0] == type
+    pbDisplayPaused(_INTL("Arceus observa tu cambio y vuelve a calcular la respuesta más ventajosa."))
+    pbArceusRotateType(battler, @arceus_phase || 1, index)
+    return true
+  rescue StandardError
+    return false
   end
 
   def pbArceusRivalLevel(base_level, phase)
@@ -1650,28 +1835,6 @@ class PokeBattle_Battle
     battler.pbOnAbilityChanged(copied_ability) if battler.respond_to?(:pbOnAbilityChanged)
   end
 
-  def pbArceusRealityControl
-    party = pbParty(0)
-    active_party = []
-    @battlers.each do |b|
-      active_party.push(b.pokemon) if b && b.pbOwnedByPlayer?
-    end
-    # Never alter the HP of an active battler directly: the battle object keeps
-    # its own fainted flag. Reality control therefore targets a reserve first.
-    fallen = party.find { |p| p && p.hp <= 0 && !active_party.include?(p) }
-    if fallen
-      fallen.hp = [fallen.totalhp / 2, 1].max
-      fallen.heal_status
-      pbDisplay(_INTL("¡Arceus reescribe la realidad y revive a {1} con la mitad de sus fuerzas!", fallen.name))
-    else
-      target = party.find { |p| p && p.hp < p.totalhp && !active_party.include?(p) }
-      if target
-        target.hp = [target.hp + target.totalhp / 3, target.totalhp].min
-        pbDisplay(_INTL("¡Arceus cura a {1} sólo para demostrar que controla su destino!", target.name))
-      end
-    end
-  end
-
   def pbArceusScaleSprite(battler, from, to, frames)
     return if !@scene || !@scene.respond_to?(:sprites)
     sprite = @scene.sprites["pokemon_#{battler.index}"]
@@ -1703,11 +1866,9 @@ class PokeBattle_Battle
     when 2
       pbDisplayPaused(_INTL("ETAPA 2/6 — CORONA DEL GÉNESIS: Arceus se recompone con una barra completa."))
       pbArceusScaleSprite(battler, 0.92, 1.08, 18)
-      pbArceusRealityControl
     when 3
       pbDisplayPaused(_INTL("ETAPA 3/6 — GIGANTE DEL GÉNESIS: la silueta se expande y el campo se pliega."))
       pbArceusScaleSprite(battler, 1.08, 1.22, 22)
-      pbArceusRealityControl
     when 4
       pbDisplayPaused(_INTL("ETAPA 4/6 — JUICIO DEL VÍNCULO: Arceus reproduce la silueta de tu Pokémon activo."))
       pbArceusCopyActive(battler)
@@ -4252,6 +4413,13 @@ function verify() {
       ["def pbArceusRedlineHeal", "curación completa de Arceus en rojo una vez por etapa"],
       ["def pbArceusBestAttackIds", "catálogo de ataques puntuado contra el equipo activo"],
       ["GameData::Move.each do |move_data|", "arsenal extraído de todos los ataques del juego"],
+      ["@battleAI.pbRegisterMoveTrainer", "puntuación táctica de la IA de alto nivel del motor"],
+      ["def pbArceusChooseSmartMove", "memoria para no repetir movimientos mientras haya alternativas"],
+      ["@ruta_arceus_move_history", "historial de acciones de Arceus"],
+      ["def pbArceusBattleCommentary", "diálogo contextual en cada turno de Arceus"],
+      ["def pbArceusAdaptTypeToRival", "Arceus reevalúa la Tabla al cambiar el Pokémon rival"],
+      ["pbArceusRedlineHeal(boss, true)", "curación garantizada antes de la acción de Arceus"],
+      ["return false if @endOfRound && !force", "la fase de fin de ronda no bloquea la curación forzada"],
       ["def pbArceusPlateRouletteAnimation", "ruleta animada con las 17 Tablas"],
       ["ItemIconSprite.new(0, 0, plate, viewport)", "iconos reales de Tablas en la ruleta"],
       ["def pbArceusControlLevels", "Arceus ajusta su nivel y el del rival por etapa"],
@@ -4298,8 +4466,9 @@ function verify() {
       if (ruby && !ruby.includes(needle)) errors.push(`Falta una garantía de la batalla: ${label}`);
     }
     if (ruby.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") || ruby.includes("RUTA_ARCEUS_SEAL_FLOORS") ||
-        ruby.includes("def check_arceus_seal") || ruby.includes("@ruta_arceus_seals")) {
-      errors.push("La progresión aún usa sellos parciales en vez de seis barras completas");
+        ruby.includes("def check_arceus_seal") || ruby.includes("@ruta_arceus_seals") ||
+        ruby.includes("def pbArceusRealityControl")) {
+      errors.push("La progresión usa sellos parciales o Arceus está curando reservas del equipo rival");
     }
     for (const species of ["SPIRITOMB", "TOGEKISS", "MILOTIC", "LUCARIO", "ROSERADE", "GARCHOMP"]) {
       if (!ruby.includes(`:${species}`)) errors.push(`La escena o el dex ya no incluye ${species}`);

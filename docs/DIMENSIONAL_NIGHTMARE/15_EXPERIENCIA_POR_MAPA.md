@@ -257,7 +257,7 @@ Sin errores ni avisos: gráficos, transferencias, tilesets, audio, objetos, trai
 | S10 | Los ecos invocados (Mew, Giratina) nacían al nivel 200 | `pbArceusSummon` usa el nivel máximo legal (150) y compensa con un empuje divino ×1,25 |
 | S11 | Un empate cerraba el evento en silencio | `decision == 5` restaura el estado previo, explica el empate y deja la cima abierta para reintentar |
 | S12 | Sin candidatos en el PC, el pseudo-PC no tenía salida | `pbArceusRotomMercy`: el Rotom sostiene al equipo una sola vez (35 %); nunca deja al jugador sin opciones |
-| S13 | Arceus se curaba 3 veces al completo sin relación clara con el combate | se desactivan los Restaura Todo aleatorios; ahora cura toda su barra cuando entra en rojo, como máximo una vez por etapa, sin borrar las barras ya agotadas |
+| S13 | Arceus no se curaba al entrar en rojo y la transición curaba reservas de Ash | sólo Arceus restaura toda su barra una vez por etapa al cruzar el umbral rojo; la acción tiene animación y diálogo, y no cura ni revive al equipo del jugador |
 | S14 | El duelo con Volo llegaba con el equipo agotado | `pbArceusVoloRest`: descanso explícito antes del reto (y en cada reintento) |
 | S15 | El prólogo cinemático (3 combates CPU) se repetía entero en cada reintento | switch 881 `RUTA_DE_DIOS_PRELUDE_SEEN`: se ve una vez y en los reintentos se resume en una línea |
 

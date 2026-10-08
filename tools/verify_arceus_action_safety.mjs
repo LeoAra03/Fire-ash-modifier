@@ -108,6 +108,11 @@ for (const file of scriptFiles) {
   assert(route.includes("def pbArceusPlateRouletteAnimation") && route.includes("ItemIconSprite.new(0, 0, plate, viewport)"), `${path.relative(ROOT, file)} has no animated 17-plate roulette`);
   assert(route.includes("Effectiveness.calculate(type, types[0], types[1], types[2])"), `${path.relative(ROOT, file)} does not choose a plate against the active rival`);
   assert(route.includes("def pbArceusBestAttackIds") && route.includes("GameData::Move.each do |move_data|"), `${path.relative(ROOT, file)} does not score the complete attack catalog`);
+  assert(route.includes("@battleAI.pbRegisterMoveTrainer") && route.includes("def pbArceusChooseSmartMove"), `${path.relative(ROOT, file)} does not use the engine's high-skill tactical move scorer`);
+  assert(route.includes("@ruta_arceus_move_history") && route.includes("def pbArceusBattleCommentary"), `${path.relative(ROOT, file)} repeats attacks without memory or battle dialogue`);
+  assert(route.includes("def pbArceusAdaptTypeToRival"), `${path.relative(ROOT, file)} does not react to a rival switch`);
+  assert(!route.includes("def pbArceusRealityControl"), `${path.relative(ROOT, file)} heals Ash's reserves instead of Arceus`);
+  assert(route.includes("pbArceusRedlineHeal(boss, true)") && route.includes("return false if @endOfRound && !force"), `${path.relative(ROOT, file)} may skip Arceus's redline heal before its action`);
   assert(route.includes("def pbArceusControlLevels") && route.includes("@ruta_arceus_effective_level"), `${path.relative(ROOT, file)} does not alter levels by stage`);
   assert(route.includes("def pbCanInflictStatus?") && route.includes("def pbCanLowerStatStage?"), `${path.relative(ROOT, file)} does not protect Arceus from statuses and stat drops`);
   assert(route.includes("def pbArceusRedlineHeal"), `${path.relative(ROOT, file)} is missing the red-HP full heal`);

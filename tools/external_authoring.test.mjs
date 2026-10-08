@@ -241,8 +241,14 @@ check(rutaScript.includes("RUTA_ARCEUS_PHASE_PLATES") && rutaScript.includes("pb
   rutaScript.includes("def pbArceusPlateRouletteAnimation") && rutaScript.includes("ItemIconSprite.new(0, 0, plate, viewport)") &&
   rutaScript.includes("Effectiveness.calculate(type, types[0], types[1], types[2])") &&
   rutaScript.includes("def pbArceusBestAttackIds") && rutaScript.includes("GameData::Move.each do |move_data|") &&
+  rutaScript.includes("@battleAI.pbRegisterMoveTrainer") && rutaScript.includes("def pbArceusChooseSmartMove") &&
+  rutaScript.includes("@ruta_arceus_move_history") && rutaScript.includes("def pbArceusBattleCommentary") &&
+  rutaScript.includes("def pbArceusAdaptTypeToRival") &&
   rutaScript.includes("def pbArceusControlLevels") &&
   rutaScript.includes("def pbCanInflictStatus?") && rutaScript.includes("def pbArceusRedlineHeal") &&
+  rutaScript.includes("pbArceusRedlineHeal(boss, true)") &&
+  rutaScript.includes("return false if @endOfRound && !force") &&
+  !rutaScript.includes("def pbArceusRealityControl") &&
   !rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") &&
   rutaScript.includes("pbArceusSummon") && rutaScript.includes(":MEW") &&
   rutaScript.includes(":GIRATINA") && rutaScript.includes("pbArceusScaleSprite") &&
