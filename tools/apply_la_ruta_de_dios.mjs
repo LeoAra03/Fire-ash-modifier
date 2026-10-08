@@ -843,6 +843,19 @@ RUTA_ARCEUS_MEGA_GRITOS = [
   "¡Cada brazo recuerda una batalla del prólogo; hoy cobran juntas!",
   "¡La multitud de brazos cierra el anillo: no queda esquina sin dios!"
 ]
+# R11 — FORMA PRIMIGENIA: el rostro verdadero detrás de los mil brazos. Cuando
+# la última barra cruza el umbral rojo, los brazos se desploman y queda lo que
+# había ANTES de la creación: Arceus primigenio, sin Tabla (su Juicio vuelve al
+# tipo original, así que los espectros pueden negarlo) y con un pool de golpes
+# anteriores a las reglas. El tope de un tercio por acción de R9 no cambia: la
+# forma es espectáculo y estrategia, no dificultad nueva.
+RUTA_ARCEUS_PRIMIGENIA_MOVES = [:JUDGMENT, :EXTREMESPEED, :SHADOWFORCE, :GIGAIMPACT]
+RUTA_ARCEUS_PRIMIGENIA_GRITOS = [
+  "Arceus primigenio golpea como antes de que existir fuera una costumbre.",
+  "Sin brazos, sin Tabla, sin testigos: sólo el primer puño del Génesis.",
+  "Arceus primigenio no apunta: recuerda dónde estabas y allí apareces.",
+  "El vacío original cierra el anillo: Ash, tú también fuiste idea mía."
+]
 RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_BOSS_LEVELS = [150, 175, 185, 195, 200, 200]
 # R8/R9 - el duelo final es jugable de verdad. Ash aprendió mirando cada batalla
@@ -2398,16 +2411,56 @@ class PokeBattle_Battle
   rescue StandardError
   end
 
+  # R11 — La Forma Primigenia: lo que había antes de que hubiera algo.
+  def ruta_arceus_primigenia?
+    return false if !arceus_divine? || @arceus_capture_ready
+    @ruta_arceus_primigenia_visto == true
+  end
+
+  def ruta_arceus_primigenia_aparicion(battler = nil)
+    return if !arceus_divine? || @ruta_arceus_primigenia_visto
+    return if @arceus_phase.to_i < RUTA_ARCEUS_STAGE_COUNT
+    @ruta_arceus_primigenia_visto = true
+    pbDisplayPaused(_INTL("Los mil brazos se desploman como nieve negra. Detrás no queda un dios armado: queda lo que había ANTES de que hubiera algo."))
+    pbDisplayPaused(_INTL("ARCEUS PRIMIGENIO, LA FORMA PRIMIGENIA, SE PONE EN PIE SOBRE LA CIMA."))
+    pbDisplayPaused(_INTL("Arceus: «¿Mil brazos? Eran adornos. Yo no necesito manos para cerrar lo que abrí.»"))
+    pbDisplayPaused(_INTL("Suelta su Tabla: el Juicio vuelve a su tipo original y sólo los espectros podrán negarlo."))
+    begin
+      pbFlash(Color.new(255, 255, 255, 255), 30)
+      pbShake(14, 12, 18)
+      pbToneChangeAll(Tone.new(-40, -40, -40, 60), 5)
+      pbToneChangeAll(Tone.new(0, 0, 0, 0), 8)
+    rescue StandardError
+    end
+    begin
+      battler.item = nil if battler && battler.respond_to?(:item=)
+    rescue StandardError
+    end
+    begin
+      pbArceusSetMoves(battler, RUTA_ARCEUS_PRIMIGENIA_MOVES) if battler && respond_to?(:pbArceusSetMoves)
+    rescue StandardError
+    end
+    save_arceus_state(battler) if battler && respond_to?(:save_arceus_state)
+  rescue StandardError
+  end
+
   def ruta_arceus_apply_ohko_guard(user, target)
     return false if !arceus_divine? || !target || !target.pokemon || target.fainted?
     return false if !ruta_arceus_ash_side?(target)
     return false if target.damageState.substitute == true
     return false if !user || !user.respond_to?(:pokemon) || !user.pokemon
     return false if ruta_arceus_ash_side?(user)
-    if ruta_arceus_mega? && @ruta_arceus_mega_grito_key != arceus_action_key
+    if ruta_arceus_mega? && !ruta_arceus_primigenia? && @ruta_arceus_mega_grito_key != arceus_action_key
       @ruta_arceus_mega_grito_key = arceus_action_key
       begin
         pbDisplay(_INTL(RUTA_ARCEUS_MEGA_GRITOS[@turnCount.to_i % RUTA_ARCEUS_MEGA_GRITOS.length]))
+      rescue StandardError
+      end
+    end
+    if ruta_arceus_primigenia? && @ruta_arceus_primigenia_grito_key != arceus_action_key
+      @ruta_arceus_primigenia_grito_key = arceus_action_key
+      begin
+        pbDisplay(_INTL(RUTA_ARCEUS_PRIMIGENIA_GRITOS[@turnCount.to_i % RUTA_ARCEUS_PRIMIGENIA_GRITOS.length]))
       rescue StandardError
       end
     end
@@ -2538,11 +2591,18 @@ class PokeBattle_Battle
     arceus_state(battler)
     return false if @arceus_capture_ready || battler.hp <= 0
     redline = [battler.totalhp / 4, 1].max
+    # R11: al cruzar el umbral rojo de la última barra caen los mil brazos y
+    # despierta la Forma Primigenia, incluso si el altar ya no va a curar.
+    if battler.hp <= redline && @arceus_phase.to_i >= RUTA_ARCEUS_STAGE_COUNT &&
+       @ruta_arceus_primigenia_visto != true
+      ruta_arceus_primigenia_aparicion(battler)
+    end
     return false if battler.hp > redline || @arceus_redline_healed_phase == @arceus_phase
     @arceus_redline_healed_phase = @arceus_phase
     old_hp = battler.hp
     restored = [(battler.totalhp * RUTA_ARCEUS_REDLINE_HEAL_RATIO).round, 1].max
-    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. El altar le devuelve media barra, pero el avance de Ash no se borra."))
+    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. El altar le devuelve media barra, pero el avance de Ash no se borra.")) if !ruta_arceus_primigenia?
+    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. La Forma Primigenia se recuerda a sí misma: media barra vuelve, y no habrá otra.")) if ruta_arceus_primigenia?
     battler.ruta_arceus_scripted_hp_write { battler.hp = [battler.hp + restored, battler.totalhp].min }
     pbArceusAnimateHP(battler, old_hp)
     pbDisplayPaused(_INTL("Arceus: «Toda herida me enseña. Aun así, Ash, este aliento no detiene tu camino.»"))
@@ -5582,6 +5642,9 @@ function verify() {
       ["def ruta_arceus_apply_ohko_guard", "tope de daño por acción sobre la ruta real del duelo (R8/R9)"],
       ["def ruta_arceus_mega?", "Mega Arceus activo durante la última barra (R10)"],
       ["def ruta_arceus_mega_aparicion", "megaevolución de los Mil Brazos al agotar la quinta barra (R10)"],
+      ["def ruta_arceus_primigenia?", "Forma Primigenia activa en el tramo final (R11)"],
+      ["def ruta_arceus_primigenia_aparicion", "la Forma Primigenia despierta en el umbral rojo de la última barra (R11)"],
+      ["RUTA_ARCEUS_PRIMIGENIA_MOVES = [:JUDGMENT", "pool del dios sin Tabla ni reglas (R11)"],
       ["RUTA_ARCEUS_MIL_BRAZOS = [:FURYSWIPES", "pool multigolpe de la última barra (R10)"],
       ["@ruta_arceus_mega_grito_key", "un grito de los Mil Brazos por acción enemiga (R10)"],
       ["def ruta_arceus_ash_bar_damage", "el daño de Ash a las seis barras se pondera con el vínculo (R8)"],

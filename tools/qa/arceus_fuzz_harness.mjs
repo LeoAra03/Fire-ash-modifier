@@ -115,6 +115,7 @@ WANTED = {
                            "ruta_arceus_ash_side?", "ruta_arceus_ash_first_active?",
                            "ruta_arceus_apply_ohko_guard", "ruta_arceus_ash_bar_damage",
                            "ruta_arceus_mega?", "ruta_arceus_mega_aparicion",
+                           "ruta_arceus_primigenia?", "ruta_arceus_primigenia_aparicion",
                            "pbArceusSetMoves", "pbArceusMoveIds", "pbArceusEnsureCaptureBall",
                            "pbArceusDistortion", "pbCalculatePriority"],
   "PokeBattle_Move"    => ["ruta_arceus_cinematic_boss_target?", "ruta_arceus_divine_boss_target?",
@@ -211,6 +212,27 @@ const FAMILIAS = [
 ];
 
 const modulo = await WebAssembly.compile(fs.readFileSync(wasm));
+
+// Modo sonda: un solo VM que corre el guion alternativo tal cual (depuración).
+if (process.env.FUZZ_SCENARIO && process.env.FUZZ_PROBE) {
+  const { vm: vmP } = await DefaultRubyVM(modulo);
+  let out = "";
+  let err = null;
+  try {
+    vmP.eval(boot);
+    out = vmP.eval(scenarios).toString();
+  } catch (e) {
+    err = String(e && e.message ? e.message : e);
+  }
+  console.log(out);
+  if (err) {
+    console.log("ERROR DE SONDA:");
+    console.log(err.split("\n").slice(0, 10).join("\n"));
+    process.exit(1);
+  }
+  process.exit(0);
+}
+
 const lineas = ["FUZZ R10 sobre el código instalado (semillas 0xA2CE11..4):"];
 const fallosTodos = [];
 let total = 0;
@@ -228,7 +250,8 @@ for (const fam of FAMILIAS) {
         `fallos = []
 rng = Random.new(0xA2CE10 + ${fam.id})
 resultado = Array(${fam.llamada}).flatten
-(resultado[0].to_i.to_s) + "|" + (resultado[1] ? resultado[1].to_i.to_s : "0") + "|" + fallos.join("~")`,
+(resultado[0].to_i.to_s) + "|" + (resultado[1] ? resultado[1].to_i.to_s : "0") + "|" +
+          (resultado[2] ? resultado[2].to_i.to_s : "0") + "|" + fallos.join("~")`,
       )
       .toString();
   } catch (e) {
@@ -240,13 +263,13 @@ resultado = Array(${fam.llamada}).flatten
     console.log(error.split("\n").slice(0, 12).join("\n"));
     process.exit(1);
   }
-  const [nStr, vStr, fallosStr] = crudo.split("|");
+  const [nStr, vStr, vStr2, fallosStr] = crudo.split("|");
   const n = Number(nStr);
   victorias += Number(vStr);
   const fallos = fallosStr ? fallosStr.split("~").filter(Boolean) : [];
   fallosTodos.push(...fallos);
   total += n;
-  const extra = fam.id === 3 ? ` (${victorias} victorias)` : "";
+  const extra = fam.id === 3 ? ` (${victorias} victorias, ${Number(vStr2)} Forma Primigenia)` : "";
   lineas.push(`  ${fam.rotulo} ${n} escenarios, ${fallos.length} fallos${extra}`);
 }
 

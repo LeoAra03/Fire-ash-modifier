@@ -251,6 +251,23 @@ check(canon.includes("MEGA ARCEUS, EL DE LOS MIL BRAZOS, ESCRIBE LA ÚLTIMA REGL
   canon.includes(":movs => [:FURYSWIPES, :COMETPUNCH, :PINMISSILE, :ARMTHRUST]"),
   "la fase 6 del canon anuncia a Mega Arceus y arma su pool de mil brazos");
 
+// --------------------------------------------- R11: fases que no revientan y Primigenia
+check(canon.includes("def self.paso") && canon.includes("paso { campo(battle, :MagicRoom, 5) }") &&
+  canon.includes("def self.verificar_fase"),
+  "cada sub-efecto de cada fase corre con su propio escudo y la fase cierra saneando el campo");
+check(ruby.includes("RUTA_ARCEUS_PRIMIGENIA_MOVES = [:JUDGMENT") &&
+  /def ruta_arceus_primigenia_aparicion/.test(ruby) && /def ruta_arceus_primigenia\?/.test(ruby),
+  "la Forma Primigenia existe: pool del dios sin Tabla y métodos de aparición");
+check(ruby.includes("ARCEUS PRIMIGENIO, LA FORMA PRIMIGENIA, SE PONE EN PIE SOBRE LA CIMA") &&
+  ruby.includes("battler.item = nil if battler && battler.respond_to?(:item=)"),
+  "la Forma Primigenia despierta en el umbral rojo de la última barra y suelta la Tabla (Juicio al tipo original)");
+check(ruby.includes("RUTA_ARCEUS_PRIMIGENIA_GRITOS") &&
+  ruby.includes("ruta_arceus_primigenia? && @ruta_arceus_primigenia_grito_key != arceus_action_key"),
+  "la Forma Primigenia tiene una voz por acción enemiga, sin pisar los gritos de los Mil Brazos");
+check(ruby.includes("La Forma Primigenia se recuerda a sí misma") &&
+  ruby.includes("El altar le devuelve media barra, pero el avance de Ash no se borra"),
+  "el umbral rojo conserva su media barra de R9 con mensaje propio en la Forma Primigenia");
+
 // ------------------------------------------------------------ blindaje global
 const rescues = (ruby.match(/rescue StandardError/g) || []).length;
 check(rescues >= 8, `hay ${rescues} bloques rescue StandardError blindando la escena`);

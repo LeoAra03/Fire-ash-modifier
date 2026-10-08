@@ -39,6 +39,7 @@ def fuzz_divine_battle(party_n, boss_hp = 1000)
   boss.pokemon.instance_variable_set(:@ruta_arceus_bars_depleted, 0)
   boss.pokemon.instance_variable_set(:@ruta_arceus_redline_healed_phase, 0)
   party = (0...party_n).map { |i| FuzzMon.new(0, 0, :METAGROSS, 400 + (i * 37) % 200) }
+  boss.item = :LEGENDPLATE # el jefe divino real porta la Tabla Leyenda
   battle = PokeBattle_Battle.new(party + [boss])
   battle.instance_variable_set(:@arceus_divine, true)
   battle.turnCount = 1
@@ -119,6 +120,7 @@ def fuzz_f3(rng, fallos)
   notar = lambda { |m| fallos << m if fallos.length < 30 }
   f3 = 0
   victorias = 0
+  primigenias = 0
   6_000.times do
     party_n = 1 + rng.rand(6)
     prop = [0.05, 0.09, 0.12, 0.2, 0.35][rng.rand(5)]
@@ -132,6 +134,7 @@ def fuzz_f3(rng, fallos)
     gano = false
     mega = false
     mega_pool = false
+    prim = false
     erro = nil
     begin
       60.times do |i|
@@ -157,6 +160,7 @@ def fuzz_f3(rng, fallos)
           battle.pbArceusSetMoves(boss, RUTA_ARCEUS_MOVE_SETS[5])
         end
         mega = true if battle.instance_variable_get(:@ruta_arceus_mega_visto)
+        prim = true if battle.instance_variable_get(:@ruta_arceus_primigenia_visto)
         cur = party[idx]
         break if !cur
         if !cur.fainted?
@@ -178,6 +182,9 @@ def fuzz_f3(rng, fallos)
           end
         end
         battle.pbArceusRedlineHeal(boss)
+        # La Primigenia despierta dentro del umbral rojo de fin de turno: se
+        # lee aquí, porque el turno siguiente puede cerrar con la captura.
+        prim = true if battle.instance_variable_get(:@ruta_arceus_primigenia_visto)
         break if idx >= party.length
       end
     rescue StandardError => e
@@ -190,17 +197,23 @@ def fuzz_f3(rng, fallos)
         notar.call("F3 duelo ganable perdido (#{turno} turnos, #{bajas} bajas, prop=#{prop})") if !gano
         notar.call("F3 demasiadas bajas: #{bajas}") if bajas > 4
       end
+      primigenias += 1 if prim
       if gano
         victorias += 1
         notar.call("F3 victoria sin megaevolución visible") if !mega
         ids = (boss.pokemon.moves || []).map { |m| m.id }
-        notar.call("F3 última barra sin pool de mil brazos: #{ids.inspect}") if (ids & MIL_BRAZOS).empty?
+        if prim
+          notar.call("F3 Forma Primigenia sin la Tabla soltada") if !boss.item.nil?
+          notar.call("F3 Forma Primigenia sin pool primigenio: #{ids.inspect}") if (ids & RUTA_ARCEUS_PRIMIGENIA_MOVES).empty?
+        else
+          notar.call("F3 última barra sin pool de mil brazos: #{ids.inspect}") if (ids & MIL_BRAZOS).empty?
+        end
       end
     end
     f3 += 1
     GC.start if (f3 % 1_000).zero?
   end
-  [f3, victorias]
+  [f3, victorias, primigenias]
 end
 
 # ── F4 · barrido de fases del canon sobre campos sucios ─────────────────────
@@ -219,6 +232,24 @@ def fuzz_f4(rng, fallos)
       notar.call("F4 clima inválido tras la fase #{fase}: #{battle4.field.weather.inspect}") if GameData::BattleWeather.try_get(battle4.field.weather).nil?
       notar.call("F4 terreno inválido tras la fase #{fase}") if GameData::Terrain.try_get(battle4.field.terrain).nil?
       notar.call("F4 PS negativos del jefe") if boss4.hp < 0
+      # R11: cada fase debe dejar SUS efectos visibles; un sub-efecto abortado
+      # en silencio (rescue que se traga la mitad de la fase) ahora es un fallo.
+      fx = battle4.field.effects
+      case fase
+      when 1
+        notar.call("F4 fase 1 sin sello de mochila o Sala Mágica") if $game_switches[CanonArceus::SW_SELLO] != true || fx[:MagicRoom].to_i <= 0
+      when 2
+        notar.call("F4 fase 2 sin clima sembrado o sin Gravedad") if battle4.field.weather == :None || fx[:Gravity].to_i <= 0
+      when 3
+        notar.call("F4 fase 3 sin silencio de talentos") if party4[0].effects[:GastroAcid] != true || fx[:MagicRoom].to_i <= 0
+        notar.call("F4 fase 3 sin velo de la suerte") if battle4.sides[1].effects[:LuckyChant].to_i <= 0
+      when 4
+        notar.call("F4 fase 4 sin salas invertidas") if fx[:TrickRoom].to_i <= 0 || fx[:WonderRoom].to_i <= 0
+      when 5
+        notar.call("F4 fase 5 sin tablilla puesta") if boss4.item.nil?
+      when 6
+        notar.call("F4 fase 6 sin cartel de los Mil Brazos") if !battle4.messages.any? { |m| m.to_s.include?("MIL BRAZOS") }
+      end
     rescue StandardError => e
       notar.call("F4 excepción #{e.class}: #{e.message.to_s[0, 70]}")
     end

@@ -1,5 +1,46 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-08 (6) — Ninguna fase revienta a medias, y Arceus Primigenio
+
+Revisión fase por fase contra las firmas reales del motor (las 405 secciones
+instaladas), más el diseño de la forma verdadera del dios:
+
+- **Cada fase termina entera o no termina.** Antes, un solo error dentro de una
+  fase (clima, salas, silencio, tablilla…) abortaba en silencio **todos** los
+  sub-efectos que venían después: la fase quedaba a medias sin que nadie lo
+  viera. Ahora cada sub-efecto corre con su propio escudo (`CanonArceus.paso`)
+  y la fase cierra con `verificar_fase`: campo saneado (clima/terreno válidos)
+  y PS de todos los combatientes dentro de rango, pase lo que pase en cada
+  paso.
+- **Auditoría de firmas ("expected mal firmados").** Se comparó cada llamada
+  que nuestras fases hacen al motor contra las firmas reales: objetivos de
+  efectos de campo y de lado (`battle.field.effects`, `sides[i].effects`),
+  constantes `PBEffects`, setters `item=`/`ability=`, la IA
+  (`pbRegisterMoveTrainer` con sus 4 argumentos), los helpers de pantalla
+  (`pbFlash`/`pbShake`/`pbToneChangeAll` globales), `from_pokemon_move`,
+  `GrowthRate.max_level` y la firma v19 de `pbStartWeather`. No quedan
+  llamadas con argumentos de tipo u orden equivocados; el auditor estático de
+  patrones de campo sigue en **0 hallazgos sobre 405 secciones**.
+- **ARCEUS PRIMIGENIO, LA FORMA PRIMIGENIA.** Cuando la última barra cruza el
+  umbral rojo, los mil brazos se desploman y queda lo que había *antes* de la
+  creación: cartel y flash propios, **suelta su Tabla** (el Juicio vuelve a su
+  tipo original, así que un Pokémon espectro puede negarlo: esa es la puerta
+  estratégica), pool primigenio (`Juicio, Velocidad Extrema, Golpe Umbrío,
+  Giga Impacto`) y una voz por acción distinta de la de los Mil Brazos. El
+  tope de R9 (un tercio de la vida máxima por acción) no cambia: la forma es
+  espectáculo y lectura, no dificultad nueva.
+- **La QA ahora nota las fases mudas.** El millón de escenarios
+  (`npm run verify:arceus:fuzz`) exige que cada fase deje sus efectos visibles
+  (mochila sellada + Sala Mágica, clima + Gravedad, silencio + velo de suerte,
+  salas invertidas, tablilla, cartel de los Mil Brazos) y que la Forma
+  Primigenia suelte la Tabla y rearme su pool: en la muestra corren **593
+  duelos con Primigenia**, todos coherentes. Total: **1 000 000 de escenarios,
+  0 fallos**.
+
+Instalación idéntica: copia `Scripts_corregido/Scripts.rxdata` sobre
+`Data/Scripts.rxdata` (o descomprime el ZIP del paquete directo). Si tenías el
+duelo a medias, sal de la Cima y vuelve a entrar.
+
 ## Arreglo 2026-10-08 (5) — Cero errores de script en batalla y Mega Arceus de los Mil Brazos
 
 Este arreglo ataca el cartel de error que aparecía **en plena batalla**

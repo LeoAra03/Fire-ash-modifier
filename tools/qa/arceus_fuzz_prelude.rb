@@ -108,7 +108,7 @@ module GameData
              :PERISHSONG, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE, :AEROBLAST,
              :PRECIPICEBLADES, :ORIGINPULSE, :MOONBLAST, :EARTHPOWER,
              :DARKVOID, :PSYCHOBOOST, :DRACOMETEOR, :SACREDSWORD,
-             :VCREATE, :METEORMASH].freeze
+             :VCREATE, :METEORMASH, :GIGAIMPACT, :COSMICPOWER].freeze
     Dato = Struct.new(:id, :power)
     def self.exists?(id); KNOWN.include?(id); end
     def self.get(id)

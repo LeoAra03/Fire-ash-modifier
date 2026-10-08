@@ -199,37 +199,40 @@ ${DIALOGO_RUBY}
       case datos[:efecto]
       when :sello
         # Concepto borrado: OBJETO. La mochila deja de existir aqui dentro.
-        $game_switches[SW_SELLO] = true if $game_switches
-        campo(battle, :MagicRoom, 5)
+        paso { $game_switches[SW_SELLO] = true if $game_switches }
+        paso { campo(battle, :MagicRoom, 5) }
       when :clima
         # Concepto borrado: CIELO (y, con el, el de volar).
-        batalla_clima(battle, fase)
-        campo(battle, :Gravity, 5)
+        paso { batalla_clima(battle, fase) }
+        paso { campo(battle, :Gravity, 5) }
       when :talento
         # Concepto borrado: TALENTO y SUERTE. Sin habilidades y sin criticos.
-        silenciar_habilidades(battle, battler)
-        campo(battle, :MagicRoom, 5)
-        canto_de_suerte(battle, battler)
-        $game_screen.start_tone_change(Tone.new(-70, -70, -70, 0), 20) if $game_screen
+        paso { silenciar_habilidades(battle, battler) }
+        paso { campo(battle, :MagicRoom, 5) }
+        paso { canto_de_suerte(battle, battler) }
+        paso { $game_screen.start_tone_change(Tone.new(-70, -70, -70, 0), 20) if $game_screen }
       when :velocidad
         # Concepto borrado: VELOCIDAD (y, con ella, el de resistencia).
-        campo(battle, :TrickRoom, 5)
-        campo(battle, :WonderRoom, 5)
-        $game_screen.start_shake(8, 6, 20) if $game_screen
+        paso { campo(battle, :TrickRoom, 5) }
+        paso { campo(battle, :WonderRoom, 5) }
+        paso { $game_screen.start_shake(8, 6, 20) if $game_screen }
       when :tipo
         # Concepto borrado: TIPO.
-        cambiar_tablero(battler, fase)
-        $game_screen.start_flash(Color.new(255, 255, 255, 200), 12) if $game_screen
+        paso { cambiar_tablero(battler, fase) }
+        paso { $game_screen.start_flash(Color.new(255, 255, 255, 200), 12) if $game_screen }
       when :regla
         # Concepto borrado: REGLA. Ya no queda nada que respetar.
-        cambiar_tablero(battler, fase)
-        batalla_clima(battle, fase)
-        canto_de_suerte(battle, battler)
-        $game_screen.start_flash(Color.new(255, 240, 200, 255), 20) if $game_screen
-        $game_screen.start_tone_change(Tone.new(60, -40, -40, 0), 30) if $game_screen
+        paso { cambiar_tablero(battler, fase) }
+        paso { batalla_clima(battle, fase) }
+        paso { canto_de_suerte(battle, battler) }
+        paso { $game_screen.start_flash(Color.new(255, 240, 200, 255), 20) if $game_screen }
+        paso { $game_screen.start_tone_change(Tone.new(60, -40, -40, 0), 30) if $game_screen }
       end
     rescue StandardError
     end
+    # R11: la fase termina con el campo saneado pase lo que pase en cada paso:
+    # ninguna fase puede dejar clima/terreno inválidos ni PS imposibles.
+    paso { verificar_fase(battle, battler) }
     # El dios se recompone un poco al romper cada regla: no se gana por desgaste.
     begin
       if battler && battler.respond_to?(:totalhp) && battler.hp < battler.totalhp
@@ -315,6 +318,35 @@ ${DIALOGO_RUBY}
       battler.battle.pbDisplay(_INTL(battle_msg)) if battler.battle.respond_to?(:pbDisplay)
     rescue StandardError
     end
+  end
+
+  # R11 — Cada sub-efecto de una fase corre con su propio escudo: un error en
+  # un paso ya no aborta el resto de la fase (antes un solo raise dejaba la
+  # fase entera a medias y en silencio).
+  def self.paso
+    yield
+  rescue StandardError
+    nil
+  end
+
+  # R11 — Cierre de fase: el campo queda saneado y los PS en rangos posibles,
+  # aunque alguno de los pasos haya fallado o algún mod externo escriba basura.
+  def self.verificar_fase(battle, battler)
+    return if !battle
+    RutaCampoSeguro.sanitizar!(battle)
+    return if !battle.respond_to?(:battlers)
+    (battle.battlers || []).each do |otro|
+      next if !otro || !otro.respond_to?(:totalhp) || !otro.respond_to?(:hp)
+      total = otro.totalhp.to_i
+      next if total <= 0
+      if otro.hp.to_i < 0
+        otro.ruta_arceus_scripted_hp_write { otro.hp = 0 } if otro.respond_to?(:ruta_arceus_scripted_hp_write)
+      elsif otro.hp.to_i > total
+        otro.ruta_arceus_scripted_hp_write { otro.hp = total } if otro.respond_to?(:ruta_arceus_scripted_hp_write)
+      end
+    end
+  rescue StandardError
+    nil
   end
 
   def self.batalla_clima(battle, fase)
