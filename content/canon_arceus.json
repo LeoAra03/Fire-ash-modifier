@@ -245,5 +245,96 @@
       "Arceus: Increíble. El niño que no crece le ha ganado al que no muere.",
       "Arceus: Que conste en el archivo: esta vez no hizo falta apagar la consola."
     ]
+  },
+  "modo_divino_capturado": {
+    "mapas_permitidos": {
+      "fire_ash": [
+        [
+          1,
+          142
+        ],
+        [
+          144,
+          992
+        ],
+        [
+          994,
+          999
+        ],
+        [
+          2031,
+          2038
+        ]
+      ],
+      "atlas": [
+        [
+          1021,
+          2020
+        ],
+        [
+          2191,
+          2191
+        ],
+        [
+          2195,
+          2196
+        ],
+        [
+          2230,
+          2230
+        ],
+        [
+          2250,
+          2257
+        ]
+      ],
+      "liquid_crystal": [
+        [
+          2240,
+          2241
+        ],
+        [
+          3200,
+          3631
+        ]
+      ],
+      "team_rocket": [
+        [
+          2220,
+          2221
+        ],
+        [
+          2280,
+          2286
+        ]
+      ]
+    },
+    "mapas_excluidos_conocidos": {
+      "143": "Punto de acceso a la grieta creepypasta; se mantiene como Arceus normal.",
+      "993": "Alternate Universe.",
+      "1000-1020": "Bosque/Horizontes y Panteón Pokégod.",
+      "2192-2194": "Liga Oscura y Sótano Sellado; no pertenecen a la whitelist.",
+      "2200-2211": "Glazed y Light Platinum.",
+      "2231-2231": "TFOH.",
+      "2242-2245": "TFOH y Factory Adventure.",
+      "2021-2030": "Monte Silver y mapas asociados; no pertenecen a la whitelist.",
+      "2039-2190": "Emisiones creepypasta y dimensiones no autorizadas.",
+      "2258-2279": "Glazed y Light Platinum.",
+      "3000-3110": "Campaña completa Glazed.",
+      "3120-3138": "Campaña completa Light Platinum.",
+      "3632-3699": "Fuera de la campaña Liquid Crystal y sin autorización explícita.",
+      "3700-3944": "Campaña completa TFOH.",
+      "2287-2999": "Fuera de los mapas Team Rocket expresamente autorizados; mundos posteriores se validan por su whitelist propia."
+    },
+    "fuera_de_whitelist": "Arceus conserva nivel, tipo, estados, PP y recuperación normales; no recibe ventajas divinas.",
+    "efectos": {
+      "nivel": 200,
+      "tablas": "Las 17 Tablas activas virtualmente a la vez; STAB universal.",
+      "defensa": "Antes del cálculo real de cada ataque rival, cambia a una Tabla que otorgue inmunidad o resistencia cuando exista; si no, elige la menor debilidad.",
+      "sentencia": "Judgment selecciona el tipo con mayor efectividad contra el rival y garantiza el KO, incluso ante protección, sustituto, Sturdy o Focus Sash.",
+      "entrada": "Elimina hazards, pantallas, clima y terreno para ambos lados; inmunidad a estados.",
+      "pp": "PP infinitos durante el combate.",
+      "fin_de_combate": "Restaura completamente los PS y PP del Arceus capturado, sin curar al resto del equipo."
+    }
   }
 }

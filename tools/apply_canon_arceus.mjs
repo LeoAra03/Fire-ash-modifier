@@ -288,6 +288,11 @@ ${DIALOGO_RUBY}
   # Arceus cambia de tablilla: su Juicio cambia de tipo sin previo aviso.
   def self.cambiar_tablero(battler, fase)
     return if !battler
+    # La ruleta adaptativa de la Ruta de Dios ya asignó el tipo y el objeto
+    # ventajosos en pantalla; no la pises con la tablilla fija del canon.
+    if battler.respond_to?(:battle) && battler.battle && battler.battle.respond_to?(:pbArceusBestPlateIndex)
+      return
+    end
     tablillas = [:FLAMEPLATE, :SPLASHPLATE, :ZAPPLATE, :MEADOWPLATE, :ICICLEPLATE,
                  :FISTPLATE, :TOXICPLATE, :EARTHPLATE, :SKYPLATE, :MINDPLATE,
                  :INSECTPLATE, :STONEPLATE, :SPOOKYPLATE, :DRACOPLATE, :DREADPLATE,
@@ -322,8 +327,13 @@ if defined?(RUTA_ARCEUS_MOVE_SETS)
     RUTA_ARCEUS_MOVE_SETS.each_with_index do |set, i|
       extra = CanonArceus.movimientos_para(i + 1)
       next if !extra || extra.empty?
-      set.concat(extra)
-      set.uniq!
+      base = set.dup
+      canon = extra.select { |move| GameData::Move.exists?(move) }.uniq
+      # Pokémon::MAX_MOVES es cuatro. Combinar más rompe las estructuras del
+      # menú y de la batalla, así que cada fase usa dos movimientos base y dos
+      # temáticos (rellenando con el resto si alguno no existe).
+      seleccion = (base.first(2) + canon.first(2) + base.drop(2) + canon.drop(2)).uniq
+      set.replace(seleccion.take(Pokemon::MAX_MOVES))
     end
   rescue StandardError
   end
@@ -413,7 +423,7 @@ end
   end
 end
 
-# Cada vez que se rompe un sello, el dios reescribe una regla del combate.
+# Cada vez que una barra completa agota una etapa, el dios reescribe una regla del combate.
 ["PokeBattle_Battle", "Battle"].each do |nombre_clase|
   next if !Object.const_defined?(nombre_clase)
   clase = Object.const_get(nombre_clase)
@@ -623,15 +633,28 @@ function intervencionMadPikachu() {
 
 /* ─────────────────────────────── verificación ──────────────────────────── */
 
+function tieneHookDeFase(scripts) {
+  const rutaIdx = scripts.findIndex(([, t]) => t && t.text === "PokeMod_RutaDeDios");
+  const canonIdx = scripts.findIndex(([, t]) => t && t.text === "PokeMod_CanonArceus");
+  if (rutaIdx < 0 || canonIdx < 0 || rutaIdx >= canonIdx) return false;
+  try {
+    const ruby = zlib.inflateSync(Buffer.from(scripts[rutaIdx][2].bytes)).toString("utf-8");
+    return ruby.includes("def check_arceus_phase(battler)") && ruby.includes("check_arceus_phase(battler)");
+  } catch (error) {
+    return false;
+  }
+}
+
 function verificar() {
   const fallos = [];
 
   const scripts = readData("Scripts.rxdata");
+  if (!tieneHookDeFase(scripts)) fallos.push("PokeMod_RutaDeDios debe definir el hook de fase antes de cargar PokeMod_CanonArceus");
   const seccion = scripts.find(([, t]) => t && t.text === "PokeMod_CanonArceus");
   if (!seccion) fallos.push("falta la sección Ruby PokeMod_CanonArceus");
   else {
     const ruby = zlib.inflateSync(Buffer.from(seccion[2].bytes)).toString("utf-8");
-    for (const nombre of ["module CanonArceus", "def self.puerta", "def self.entregar_fragmento", "check_arceus_phase", "RUTA_ARCEUS_MOVE_SETS"]) {
+    for (const nombre of ["module CanonArceus", "def self.puerta", "def self.entregar_fragmento", "check_arceus_phase", "RUTA_ARCEUS_MOVE_SETS", "set.replace(seleccion.take(Pokemon::MAX_MOVES))"]) {
       if (!ruby.includes(nombre)) fallos.push(`el Ruby no define ${nombre}`);
     }
     const corregido = path.join(ROOT, "Scripts_corregido", "Scripts.rxdata");
@@ -641,6 +664,8 @@ function verificar() {
         fallos.push(`Scripts_corregido/Scripts.rxdata tiene ${descargable.length} secciones y el juego ${scripts.length}`);
       } else if (!descargable.some(([, t]) => t && t.text === "PokeMod_CanonArceus")) {
         fallos.push("al Scripts_corregido/Scripts.rxdata le falta el canon de Arceus");
+      } else if (!tieneHookDeFase(descargable)) {
+        fallos.push("el Scripts_corregido/Scripts.rxdata no conserva el hook de fase previo al canon");
       }
     }
   }

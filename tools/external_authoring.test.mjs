@@ -184,7 +184,7 @@ check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes(
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
   "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
 check(rutaScript.includes("pbStartArceusDivineBattle") &&
-  rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS") && rutaScript.includes("pbArceusPseudoPC") &&
+  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") && rutaScript.includes("pbArceusPseudoPC") &&
   rutaScript.includes("pbArceusSurrenderSequence") && rutaScript.includes("pbArceusCopyActive") &&
   rutaScript.includes("pbArceusCinematicPrelude") && rutaScript.includes("PokemonSprite"),
   "Arceus conserva batalla por fases, pseudo-PC, copia del activo, rendición y prólogo cinematográfico");
@@ -229,18 +229,49 @@ check(rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") 
 check(rutaScript.includes("return 0") && rutaScript.includes("return 4") &&
   rutaScript.includes("if arceus_capture_ready?") &&
   rutaScript.includes("if ArceusSaveSandbox.capture_room?") &&
-  rutaScript.includes("100%") && rutaScript.includes("Master Ball"),
+  rutaScript.includes("100 %") && rutaScript.includes("Master Ball"),
   "la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después");
 check(rutaScript.includes("RUTA_ARCEUS_PHASE_PLATES") && rutaScript.includes("pbArceusRotateType") &&
-  rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS = [0.72, 0.55, 0.38, 0.22]") &&
-  rutaScript.includes("target_phase = [@arceus_seals + 1, 6].min") &&
-  rutaScript.includes("@ruta_arceus_seal_move_key") &&
+  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") &&
+  rutaScript.includes("@ruta_arceus_bars_depleted") &&
+  rutaScript.includes("def pbArceusDepleteBar") && rutaScript.includes("def check_arceus_phase(battler)") &&
+  rutaScript.includes("check_arceus_phase(battler)") && rutaScript.includes("battler.hp = 0") &&
+  rutaScript.includes("return :ruta_arceus_stage_break if amount.to_i >= battler.hp") &&
+  !rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS") &&
+  rutaScript.includes("def pbArceusPlateRouletteAnimation") && rutaScript.includes("ItemIconSprite.new(0, 0, plate, viewport)") &&
+  rutaScript.includes("Effectiveness.calculate(type, types[0], types[1], types[2])") &&
+  rutaScript.includes("def pbArceusBestAttackIds") && rutaScript.includes("GameData::Move.each do |move_data|") &&
+  rutaScript.includes("@battleAI.pbRegisterMoveTrainer") && rutaScript.includes("def pbArceusChooseSmartMove") &&
+  rutaScript.includes("@ruta_arceus_move_history") && rutaScript.includes("def pbArceusBattleCommentary") &&
+  rutaScript.includes("def pbArceusAdaptTypeToRival") &&
+  rutaScript.includes("def pbArceusControlLevels") &&
+  rutaScript.includes("def pbCanInflictStatus?") && rutaScript.includes("def pbArceusRedlineHeal") &&
+  rutaScript.includes("pbArceusRedlineHeal(boss, true)") &&
+  rutaScript.includes("return false if @endOfRound && !force") &&
+  !rutaScript.includes("def pbArceusRealityControl") &&
   !rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") &&
   rutaScript.includes("pbArceusSummon") && rutaScript.includes(":MEW") &&
   rutaScript.includes(":GIRATINA") && rutaScript.includes("pbArceusScaleSprite") &&
   rutaScript.includes("def pbStartBattleSendOut(sendOuts)") &&
   rutaScript.includes("class PokeBattle_Scene"),
-  "Arceus avanza por cinco sellos fijos, una fase por golpe y con apariciones/efectos personalizados");
+  "Arceus exige seis barras completas, rueda las 17 Tablas, es inmune a estados y adapta niveles/ataques");
+check(rutaScript.includes("finish_angle = (2.0 * Math::PI * 4.0) - (Math::PI / 2.0) - (selected_index * step)"),
+  "la ruleta termina con la Tabla elegida arriba, no a la derecha");
+check(rutaScript.includes("def pbArceusCinematicWalkIn") &&
+  rutaScript.includes("def pbArceusCinematicWalkAway") &&
+  rutaScript.includes("pbArceusCinematicWalkIn(ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH") &&
+  rutaScript.includes("pbArceusCinematicWalkIn(ARCEUS_ALLIES_GOLD_RED_SWITCH") &&
+  rutaScript.includes("pbArceusCinematicRebirth") &&
+  rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") &&
+  rutaScript.includes(":ARC_Ethan") && rutaScript.includes(":SECRET_Red"),
+  "las caminatas de Cynthia/Máximo y Red/Gold anteceden a sus retratos/batallas y Arceus se regenera en el prólogo");
+check(rutaScript.includes("def ruta_arceus_cinematic_boss?") &&
+  rutaScript.includes("def pbInflictHPDamage(target)") &&
+  rutaScript.includes("nonlethal_limit = [target.hp.to_i - 1, 0].max") &&
+  rutaScript.includes("target.damageState.hpLost = limited_damage") &&
+  rutaScript.includes("def pbFaint(showMessage = true)") &&
+  rutaScript.includes("@battle.pbArceusCinematicRebirth(self)"),
+  "los movimientos no pueden derrotar al Arceus cinematográfico y pbFaint tiene un respaldo de resurrección");
 const summitRaw = readMarshalData("Map2037.rxdata");
 const summitBoss = summitRaw.getIvar("events").pairs.find(([, event]) =>
   (event.getIvar("name")?.text ?? "").includes("Arceus Creador"))?.[1];
@@ -333,13 +364,15 @@ for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.
 }
 const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
 const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*175\b/.test(settingsSource) &&
-  rutaScript.includes("max = (@species == :ARCEUS && @ruta_arceus_divine == true) ? 200 : GameData::GrowthRate.max_level") &&
+  rutaScript.includes("if @species == :ARCEUS && @ruta_arceus_divine == true") &&
+  rutaScript.includes("elsif @species == :ARCEUS && @ruta_arceus_captured_god == true && pbRutaArceusGodWorldAllowed?") &&
   rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
   explicitNonArceusLevel200.length === 0 &&
   rutaScript.includes("pkmn.instance_variable_set(:@ruta_arceus_divine, false)") &&
+  rutaScript.includes("@ruta_arceus_captured_god") &&
   rutaScript.includes("divine ? normal_cap : safe_level");
 check(levelCapIsArceusOnly,
-  "el nivel 200 queda reservado al Arceus divino (equipos, encuentros y scripts sin otro caso), y el Arceus normal no pasa del techo de 175");
+  "el nivel 200 queda reservado al Arceus jefe o al capturado dentro de la whitelist; todo Arceus normal queda bajo el techo de 175");
 check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
   rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
   "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");

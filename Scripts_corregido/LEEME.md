@@ -128,7 +128,7 @@ Antes de que Ash tome el control, la cima muestra tres combates Pokémon reales 
 La batalla de `Map2037` no es un combate salvaje normal:
 
 - Arceus bloquea la huida y rompe visualmente el comando de escape con temblor y destello.
-- Tiene seis fases persistentes. La ruleta de las 17 Tablas cambia su tipo y sus conjuntos de movimientos con distorsiones de pantalla.
+- Tiene seis fases persistentes. La ruleta de las 17 Tablas cambia su tipo y sus conjuntos de movimientos con distorsiones de pantalla; cada fase conserva el máximo de cuatro movimientos que soporta el motor (incluido el set inicial y el jefe de las escenas automáticas), evitando estados inválidos durante las acciones.
 - Sus fases incluyen poderes de Mega Evolución, Gigamax y Movimiento Z adaptados a las APIs disponibles en esta versión de Fire Ash, además de copiar temporalmente al Pokémon activo e invocar ecos legendarios como Mew y Giratina.
 - Puede curar o revivir Pokémon del jugador como parte de su control de la realidad. También usa hasta tres Restaura Todo durante el desgaste.
 - La captura vale exactamente 0%, incluso con Master Ball, hasta que termina la animación del último debilitamiento. Después de esa animación vale exactamente 100% y Arceus queda a 1 HP para que el lanzamiento tenga un objetivo válido.
