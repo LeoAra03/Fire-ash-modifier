@@ -124,6 +124,32 @@ Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
      El fuzz exige ahora que cada fase deje sus efectos visibles y que la
      Primigenia suelte la Tabla: 593 duelos con Primigenia en la muestra de
      6 000, **1 000 000 de escenarios totales, 0 fallos**.
+   - **El dios jugador (R12):** el duelo deja de ser un patrón fijo. El daño
+     de Arceus **varía por acción** (`ruta_arceus_divine_ratio`: 12%-33% de la
+     vida máxima, más pesado en fases tardías y en Mega, determinista por
+     clave de acción para la QA; el tope de R9 sigue siendo techo absoluto).
+     Los diálogos salen de **mazos por categoría** (`ruta_arceus_dialogo`) que
+     no repiten ninguna línea hasta agotarse y se muestran con pausa. La
+     apertura es **acción con sprites**: Arceus alza al Pokémon de Ash en
+     pantalla (`ruta_arceus_sprite_y`) y dice «Podría matarte ahora mismo, a
+     ti y a tus Pokémon... pero veamos de qué son capaces»; cada tres turnos
+     señala al activo y lo nombra. Dentro del combate corren **minijuegos**
+     (Juicio Ciego con ventana de elección: acierto = dos golpes enemigos a la
+     mitad; Ruleta del Génesis siempre a favor del jugador), **invocaciones
+     del lore** (el Trío de la Creación ejecuta la Orden Divina sin rematar
+     nunca —mínimo 1 PS—, Groudon/Kyogre traen clima real, los lagos bajan
+     stats, Mew/Celebi interceden curando, Rayquaza/Zygarde aquietan el
+     campo), la **copia del equipo** (en la fase 4 Arceus toma hasta tres
+     golpes que Ash enseñó a sus Pokémon) y **la merced del último Pokémon**
+     (con uno solo en pie, una vez por batalla, ofrece curar vida, estado y PP
+     de todo el equipo; el jugador acepta o rechaza por ventana). La **música
+     cambia por fase** con siete pistas reales verificadas contra
+     `Audio/BGM`. Todo cuelga de `ruta_arceus_turno_divino`, aislado dentro
+     del alias de `pbCalculatePriority`: si un sistema fallara, la ronda
+     sigue. QA: familia nueva F5 (200 600 escenarios de mazos, ratio, música,
+     invocaciones, juegos, merced y copia), F3 con el turno divino completo
+     (3 000 duelos: 1 764 victorias, 333 Primigenias) y **1 000 000 de
+     escenarios totales, 0 fallos**; cinemáticas en **69 invariantes**.
    - **Camino único de daño:** el motor aplica el daño de los movimientos con `target.hp -= hpLost` (sin pasar por `pbReduceHP`); ese camino también pasa por las barras y por el setter de PS protegido. Un Metagross, el granizo del mapa o cualquier escritura externa de PS no pueden saltarse una etapa ni derrotar a Arceus: el KO se convierte siempre en transición de barra. El duelo se inicia sin el clima heredado de la cumbre (`recordBattleRule("weather", "None")`).
    - **Ecos legales (R2/S10):** las invocaciones de Mew y Giratina nacen al nivel máximo legal del juego (150) y reciben un empuje divino ×1,25; el nivel 200 queda reservado al Arceus divino.
    - **Azar reproducible:** los combates principales y de apoyo usan semillas locales; la selección de etapa, ventajas de tipo y ataques se basa en el estado visible del rival.
@@ -155,7 +181,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 ## 8. Verificación automatizada y límites
 - `npm run verify:ruta_de_dios` revisa switches, recorrido, equipos y el código instalado de las seis barras, la ruleta animada, los ataques/niveles adaptativos, inmunidad a estados, caminatas y curaciones.
 - `npm run verify:ruta_de_dios:package` y `npm run verify:package` comparan los datos/scripts del paquete directo y su ZIP.
-- `npm run verify:arceus:cinematics` audita la escena 2v1 (menús, huida, `canLose`, PRNG, entradas físicas) y ahora exige que el daño cinemático sea absorbido sin mover la barra, que el setter de PS rechace escrituras externas, que ni el prólogo ni el duelo hereden el clima de la cumbre y, desde R8/R9, que existan la guardia anti-KO, el vínculo de las barras, la iniciativa de Ash, la opción de saltar el prólogo, el Juicio del Vínculo jugable y el umbral rojo que no borra el avance (58 invariantes).
+- `npm run verify:arceus:cinematics` audita la escena 2v1 (menús, huida, `canLose`, PRNG, entradas físicas) y ahora exige que el daño cinemático sea absorbido sin mover la barra, que el setter de PS rechace escrituras externas, que ni el prólogo ni el duelo hereden el clima de la cumbre y, desde R8/R9, que existan la guardia anti-KO, el vínculo de las barras, la iniciativa de Ash, la opción de saltar el prólogo, el Juicio del Vínculo jugable y el umbral rojo que no borra el avance (69 invariantes).
 - `npm run verify:arceus:shield` (opcional, requiere `npm i --no-save @ruby/3.3-wasm-wasi`) ejecuta los métodos reales de la sección instalada dentro de un CRuby compilado a WebAssembly sobre clases que imitan las rutas de daño del motor: 69 comprobaciones entre granizo, Metagross, escrituras directas, `pbFaint`, las seis barras, la captura final, la guardia que topa cada acción de Arceus en un tercio de la vida máxima (incluido el multigolpe que no puede rematar), la iniciativa de Ash con Espacio Raro, el vínculo que mueve al menos media barra, la **simulación del ritmo del duelo** (turnos y bajas hasta la sexta barra, con jugador flojo, fuerte y descuidado) y Ball Breaker (la clase real de «Despacito Despair» corriendo con los ayudantes restaurados), más una regresión que confirma que un Arceus normal del jugador no lleva escudo.
 - `npm run verify:scripts:calls` (dentro de `npm test`) descomprime las 405 secciones y marca cualquier llamada `objeto.metodo` que no exista en ningún script ni en el núcleo de Ruby; es la red de seguridad que habría detectado el fallo de `selfProtected?` antes de jugarlo.
 - `npm run build:corregido:zip` / `npm run verify:corregido:zip` reconstruyen y comprueban el ZIP descargable de la raíz (`Fire-Ash-Scripts-Corregidos.zip`) a partir de `Paquete_directo/` y `LEEME.md`, conservando el orden y el método de compresión de sus entradas (7,8 MB).

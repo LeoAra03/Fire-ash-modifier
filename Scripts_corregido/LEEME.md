@@ -1,5 +1,68 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-08 (7) — Pelear contra un dios: daño variable, diálogos que no se repiten, música por fase y los juegos del Génesis
+
+El duelo final deja de ser un patrón fijo y se siente como pelear contra un
+dios que **juega** contigo, sin dejar de ser un duelo Pokémon:
+
+- **El % de vida que te quita VARÍA por acción.** Ya no es un porcentaje fijo:
+  cada golpe de Arceus pesa entre un **12 % y un 33 %** de la vida máxima del
+  objetivo, más pesado en las fases tardías y en la Forma Mega, y el bonus de
+  sus juegos lo parte a la mitad. Nunca supera el tercio de R9: siguen siendo
+  necesarias al menos tres acciones para derribar a un Pokémon sano, pero ya
+  no puedes contarlas de memoria. Puedes perder si te confías.
+- **Ningún diálogo se repite.** Todos los textos del dios (burlas, juegos,
+  invocaciones, la copia de tu equipo, su merced, sus comentarios de turno)
+  salen de **mazos por categoría** que se barajan y se sacan sin reposición:
+  una línea sólo puede volver a salir cuando ya salieron todas las demás. Y
+  van **con calma**: cada frase espera tu confirmación.
+- **La cinemática es ACCIÓN, no texto.** Al abrir el duelo, Arceus desciende
+  cara a cara y **alza literalmente el sprite de tu Pokémon en pantalla**
+  (sube, queda suspendido, flash, temblor, y vuelve a caer) mientras dice:
+  «Podría matarte ahora mismo, a ti y a tus Pokémon... pero veamos de qué son
+  capaces». Cada tres turnos señala el sprite del Pokémon que tengas activo y
+  te habla **de él por su nombre** («¿Charizard? Yo lo soñé antes de que
+  existiera su primer ancestro»).
+- **Minijuegos dentro de la batalla.** El **Juicio Ciego**: eliges dónde
+  esconderte (tras el fuego, el agua o la tierra) y si adivinas, sus próximos
+  dos golpes pesan la mitad. La **Ruleta del Génesis**: gira a tu favor (cura,
+  ataque, velocidad, limpieza del campo o la sonrisa del dios). Los juegos
+  nunca te ponen peor que la batalla normal: el premio ayuda, el fallo no
+  castiga de más.
+- **Invocaciones del lore: la Orden Divina.** Si Arceus ordenara el
+  apocalipsis, sus creaciones lo ejecutarían: el **Trío de la Creación**
+  (Dialga congela el tiempo, Palkia rasga el espacio, Giratina arrastra su
+  antimateria) golpea **sin rematar jamás** (siempre te deja al menos 1 PS:
+  «No lo remato. Todavía no. Eso me lo guardo»); **Groudon y Kyogre** traen su
+  clima real de diluvio y sequía; **Uxie, Mesprit y Azelf** apagan la mente
+  (bajan stats); **Mew y Celebi** —la Resistencia Imposible— se interponen y
+  te curan; **Rayquaza y Zygarde** someten el equilibrio y aquietan el campo.
+  Nunca se repite la misma leyenda dos veces seguidas.
+- **Copia de tu equipo.** En el Juicio del Vínculo, Arceus te recuerda que él
+  soñó a tus Pokémon primero: te roba hasta tres golpes que tú mismo les
+  enseñaste (más el Juicio) y pelea con ellos.
+- **La merced del último Pokémon.** Cuando te queda **uno solo** en pie, una
+  única vez por batalla, Arceus detiene el cielo y te pregunta en una ventana
+  de elección: ¿quieres que cure a todo tu equipo (vida, estado y PP) para que
+  sea parejo? Tú decides; si la rechazas, sonríe: «Orgullo. Bien. Terminemos
+  esto».
+- **La música cambia en cada fase.** Seis pistas reales del juego, una por
+  fase (`Legend Sinnoh` → `Legend Creation Trio` → `Battle! Legendary Raid` →
+  `Battle! Eternatus - Phase 1` → `Phase 2` → `Battle! Ultra Necrozma`), más
+  `Battle! Eternatus - Phase 3` para la Forma Primigenia. La QA verifica que
+  cada pista exista de verdad en `Audio/BGM`.
+- **Nada de esto puede reventar.** El turno divino cuelga del cálculo de
+  prioridad **aislado** (si algo fallara, la ronda sigue intacta) y cada
+  sistema (música, apertura, merced, juegos, invocaciones, copia) tiene su
+  propio escudo. QA: **1 000 000 de escenarios, 0 fallos**, con una familia
+  nueva (F5 · 200 600) dedicada a estos sistemas y 3 000 duelos completos con
+  todo activado (1 764 victorias, 333 Formas Primigenias); el verificador de
+  cinemáticas sube a **69 invariantes**.
+
+Instalación idéntica: copia `Scripts_corregido/Scripts.rxdata` sobre
+`Data/Scripts.rxdata` (o descomprime el ZIP del paquete directo). Si tenías el
+duelo a medias, sal de la Cima y vuelve a entrar.
+
 ## Arreglo 2026-10-08 (6) — Ninguna fase revienta a medias, y Arceus Primigenio
 
 Revisión fase por fase contra las firmas reales del motor (las 405 secciones

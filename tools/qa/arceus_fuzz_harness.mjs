@@ -117,7 +117,13 @@ WANTED = {
                            "ruta_arceus_mega?", "ruta_arceus_mega_aparicion",
                            "ruta_arceus_primigenia?", "ruta_arceus_primigenia_aparicion",
                            "pbArceusSetMoves", "pbArceusMoveIds", "pbArceusEnsureCaptureBall",
-                           "pbArceusDistortion", "pbCalculatePriority"],
+                           "pbArceusDistortion", "ruta_arceus_divine_ratio", "ruta_arceus_dialogo", "ruta_arceus_decir",
+                           "ruta_arceus_musica_fase", "ruta_arceus_sprite_y",
+                           "ruta_arceus_senalar_sprite", "ruta_arceus_cinematica_apertura",
+                           "ruta_arceus_turno_divino", "ruta_arceus_jugar",
+                           "ruta_arceus_juicio_ciego", "ruta_arceus_ruleta",
+                           "ruta_arceus_invocar", "ruta_arceus_copiar_equipo",
+                           "ruta_arceus_ofrenda", "pbCalculatePriority"],
   "PokeBattle_Move"    => ["ruta_arceus_cinematic_boss_target?", "ruta_arceus_divine_boss_target?",
                            "pbInflictHPDamage", "pbReduceDamage"]
 }
@@ -209,6 +215,7 @@ const FAMILIAS = [
   { id: 2, rotulo: "F2 clima/terreno + fin de ronda:", llamada: "fuzz_f2(rng, fallos)" },
   { id: 3, rotulo: "F3 duelos completos aleatorios: ", llamada: "fuzz_f3(rng, fallos)" },
   { id: 4, rotulo: "F4 barrido de fases del canon:  ", llamada: "fuzz_f4(rng, fallos)" },
+  { id: 5, rotulo: "F5 sistemas R12 del dios:       ", llamada: "fuzz_f5(rng, fallos)" },
 ];
 
 const modulo = await WebAssembly.compile(fs.readFileSync(wasm));

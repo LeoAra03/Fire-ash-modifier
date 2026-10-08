@@ -268,6 +268,52 @@ check(ruby.includes("La Forma Primigenia se recuerda a sí misma") &&
   ruby.includes("El altar le devuelve media barra, pero el avance de Ash no se borra"),
   "el umbral rojo conserva su media barra de R9 con mensaje propio en la Forma Primigenia");
 
+// --------------------------------------------- R12: el dios jugador (variable, sin guion repetido)
+check(/def ruta_arceus_divine_ratio/.test(ruby) && ruby.includes("RUTA_ARCEUS_HIT_CAP_MIN = 0.12") &&
+  ruby.includes("cap = (total * ruta_arceus_divine_ratio).round"),
+  "el daño de Arceus varía por acción (12%-33%) en vez de ser un porcentaje fijo");
+check(/def ruta_arceus_dialogo/.test(ruby) && ruby.includes("RUTA_ARCEUS_DIALOGOS = {") &&
+  ruby.includes("mazo.shift"),
+  "los diálogos salen de mazos que no repiten ninguna línea hasta agotarse");
+check(/def ruta_arceus_musica_fase/.test(ruby) && ruby.includes("RUTA_ARCEUS_BGM_POR_FASE = {") &&
+  ruby.includes("pbBGMPlay(pista)"),
+  "cada fase del duelo estrena su propia música");
+{
+  // Las pistas del mapa existen de verdad en Audio/BGM (con cualquier extensión).
+  const bgmDir = path.join(ROOT, "pokemon_fire_ash", "Audio", "BGM");
+  const pistasInstaladas = new Set(
+    fs.existsSync(bgmDir)
+      ? fs.readdirSync(bgmDir).map((f) => f.replace(/\.[^.]+$/, ""))
+      : []
+  );
+  const bloque = ruby.slice(ruby.indexOf("RUTA_ARCEUS_BGM_POR_FASE = {"));
+  const nombres = [...bloque.slice(0, bloque.indexOf("}") + 1).matchAll(/=>\s*"([^"]+)"/g)].map((m) => m[1]);
+  const primigenia = (ruby.match(/RUTA_ARCEUS_BGM_PRIMIGENIA = "([^"]+)"/) || [])[1];
+  if (primigenia) nombres.push(primigenia);
+  const faltantes = nombres.filter((n) => !pistasInstaladas.has(n));
+  check(nombres.length >= 7 && faltantes.length === 0,
+    `las ${nombres.length} pistas del duelo existen en Audio/BGM${faltantes.length ? ` (faltan: ${faltantes.join(", ")})` : ""}`);
+}
+check(/def ruta_arceus_turno_divino/.test(ruby) &&
+  /ruta_arceus_turno_divino\s*\n\s*rescue StandardError/.test(ruby),
+  "el turno divino (música, juegos, merced, invocaciones) corre aislado: si falla, la ronda sigue");
+check(ruby.includes("RUTA_ARCEUS_INVOCACIONES = [") && ruby.includes(":DIALGA") &&
+  ruby.includes(":PALKIA") && ruby.includes(":GIRATINA") && ruby.includes(":UXIE"),
+  "Arceus invoca al Trío de la Creación, a los lagos y al resto del lore para ejecutar su orden");
+check(ruby.includes("danio = [danio, objetivo.hp.to_i - 1].min"),
+  "las invocaciones presionan pero jamás rematan: siempre dejan al menos 1 PS");
+check(/def ruta_arceus_copiar_equipo/.test(ruby) && ruby.includes("ruta_arceus_copiar_equipo(battler) if phase == 4"),
+  "Arceus copia los golpes del equipo de Ash en el Juicio del Vínculo");
+check(/def ruta_arceus_ofrenda/.test(ruby) && ruby.includes("@ruta_ofrenda_hecha = true") &&
+  ruby.includes("pkmn.heal") && ruby.includes("RUTA_ARCEUS_OFRENDA_ELECCIONES"),
+  "si a Ash le queda un Pokémon, Arceus ofrece una vez por batalla curar todo el equipo (vida, estado y PP)");
+check(/def ruta_arceus_cinematica_apertura/.test(ruby) && ruby.includes("ruta_arceus_sprite_y(objetivo, 46, 14)") &&
+  ruby.includes("Podría matarte ahora mismo, a ti y a tus Pokémon"),
+  "la apertura es acción con sprites en pantalla: Arceus alza al Pokémon de Ash, no sólo lo narra");
+check(/def ruta_arceus_jugar/.test(ruby) && ruby.includes("@ruta_juego_bono_acciones = 2") &&
+  ruby.includes("cap = [(cap / 2.0).round, 1].max"),
+  "los minijuegos divinos premian adivinando el juicio: los golpes siguientes pesan la mitad");
+
 // ------------------------------------------------------------ blindaje global
 const rescues = (ruby.match(/rescue StandardError/g) || []).length;
 check(rescues >= 8, `hay ${rescues} bloques rescue StandardError blindando la escena`);

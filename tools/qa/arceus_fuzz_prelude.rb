@@ -35,6 +35,18 @@ class Pokemon
     @moves = []
   end
   def level=(value); @level = value; end
+  attr_accessor :totalhp, :status
+  def fainted?; @hp.to_i <= 0; end
+  def egg?; false; end
+  # Pokemon#heal del motor: vida + estado + PP (la merced de Arceus lo usa).
+  def heal
+    heal_HP
+    heal_status
+    heal_PP
+  end
+  def heal_HP; @hp = @totalhp.to_i if @totalhp; end
+  def heal_status; @status = 0; end
+  def heal_PP; (@moves || []).each { |m| m.pp = m.total_pp if m }; end
 
   class Move
     attr_accessor :id, :pp, :total_pp
@@ -47,6 +59,22 @@ class Pokemon
 end
 
 module GameData
+  module Species
+    KNOWN_SPECIES = [:ARCEUS, :METAGROSS, :MEW, :GIRATINA, :DIALGA, :PALKIA,
+                     :CHARIZARD, :PIKACHU, :REGIGIGAS, :GROUDON, :KYOGRE,
+                     :UXIE, :MESPRIT, :AZELF, :CELEBI, :RAYQUAZA, :ZYGARDE].freeze
+    Dato = Struct.new(:id, :name)
+    def self.exists?(sym)
+      KNOWN_SPECIES.include?(sym.to_s.to_sym)
+    rescue StandardError
+      false
+    end
+    def self.get(sym)
+      raise "Unknown species #{sym.inspect}" if !exists?(sym)
+      Dato.new(sym.to_s.to_sym, sym.to_s.capitalize)
+    end
+  end
+
   class GrowthRate
     def minimum_exp_for_level(level); level.to_i * 10; end
   end
@@ -108,7 +136,9 @@ module GameData
              :PERISHSONG, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE, :AEROBLAST,
              :PRECIPICEBLADES, :ORIGINPULSE, :MOONBLAST, :EARTHPOWER,
              :DARKVOID, :PSYCHOBOOST, :DRACOMETEOR, :SACREDSWORD,
-             :VCREATE, :METEORMASH, :GIGAIMPACT, :COSMICPOWER].freeze
+                                       :VCREATE, :METEORMASH, :GIGAIMPACT, :COSMICPOWER, :PSYCHIC,
+             :AURASPHERE, :HEALPULSE, :DRAGONASCENT, :LANDSWRATH, :TRANSFORM,
+             :SING].freeze
     Dato = Struct.new(:id, :power)
     def self.exists?(id); KNOWN.include?(id); end
     def self.get(id)
@@ -354,6 +384,26 @@ class PokeBattle_Battle
   def pbRun(*args); 0; end
   def pbSwitchInBetween(*args); end
   def pbCalculatePriority(*args); []; end
+  # R12: ventanas de elección, música y party dentro del combate.
+  attr_accessor :comando_script, :comando_log, :bgm_log
+  def pbShowCommands(msg, commands, canCancel = true)
+    @comando_log ||= []
+    @comando_log << (commands || []).dup
+    c = @comando_script
+    c = c.call(commands) if c.respond_to?(:call)
+    c.nil? ? 0 : c.to_i
+  end
+  def pbBGMPlay(param, volume = nil, pitch = nil)
+    @bgm_log ||= []
+    @bgm_log << param
+    nil
+  end
+  def pbParty(idxBattler = 0)
+    # En el motor pbParty devuelve objetos Pokemon (no battlers): la merced de
+    # Arceus usa .species/.fainted?/.heal de Pokemon.
+    lado = idxBattler.to_i == pbPlayer ? @battlers[0...(@battlers.length - 1)] : [@battlers.last]
+    lado.compact.map { |b| b.pokemon }.compact
+  end
   # Réplica fiel de PokeBattle_Battle#pbStartWeather (730380:679): escribe el
   # clima y LO LEE con GameData::BattleWeather.try_get en la misma llamada.
   def pbStartWeather(user, newWeather, fixedDuration = false, showAnim = true, customDuration = 5)

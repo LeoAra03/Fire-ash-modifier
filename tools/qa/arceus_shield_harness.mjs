@@ -101,6 +101,13 @@ WANTED = {
                            "ruta_arceus_apply_ohko_guard", "ruta_arceus_ash_bar_damage",
                            "ruta_arceus_mega?", "ruta_arceus_mega_aparicion",
                            "ruta_arceus_primigenia?", "ruta_arceus_primigenia_aparicion",
+                           "ruta_arceus_divine_ratio", "ruta_arceus_dialogo", "ruta_arceus_decir",
+                           "ruta_arceus_musica_fase", "ruta_arceus_sprite_y",
+                           "ruta_arceus_senalar_sprite", "ruta_arceus_cinematica_apertura",
+                           "ruta_arceus_turno_divino", "ruta_arceus_jugar",
+                           "ruta_arceus_juicio_ciego", "ruta_arceus_ruleta",
+                           "ruta_arceus_invocar", "ruta_arceus_copiar_equipo",
+                           "ruta_arceus_ofrenda",
                            "pbCalculatePriority"],
   "PokeBattle_Move"    => ["ruta_arceus_cinematic_boss_target?", "ruta_arceus_divine_boss_target?",
                            "pbInflictHPDamage"]
