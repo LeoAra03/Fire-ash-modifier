@@ -1224,6 +1224,89 @@ class PokeBattle_Battler
   end
 end
 
+# --- Compatibilidad del motor: Ball Breaker y los ayudantes de protección ----
+# La sección "Despacito Despair" define PokeBattle_Move_DF08 (Ball Breaker, el
+# movimiento de dos turnos de acero del Metagross de Steven) y allí se consulta
+# target.selfProtected? / target.sideProtected?. Esos dos métodos no existen en
+# este motor, así que cualquier uso del movimiento abortaba el combate con
+# "undefined method 'selfProtected?' for an instance of PokeBattle_Battler"
+# (visto en la cima contra el Metagross de las cinemáticas). Se restauran aquí
+# con la misma semántica que el motor usa en PokeBattle_Move_0CD (Phantom
+# Force/Shadow Force, que también anula las protecciones) y se vuelve a escribir
+# el efecto del movimiento para que nunca dependa de métodos ausentes.
+module RutaDeDiosBallBreaker
+  SELF_FLAGS = [:BanefulBunker, :KingsShield, :Protect, :SpikyShield, :Obstruct].freeze
+  SIDE_FLAGS = [:CraftyShield, :MatBlock, :QuickGuard, :WideGuard].freeze
+
+  def self.flag_active?(holder, names)
+    return false if !holder || !holder.respond_to?(:effects)
+    efectos = holder.effects
+    return false if !efectos
+    return names.any? { |nombre| efectos[PBEffects.const_get(nombre)] }
+  rescue StandardError
+    return false
+  end
+
+  def self.clear_protections!(target)
+    return false if !target
+    if target.respond_to?(:effects)
+      SELF_FLAGS.each { |nombre| target.effects[PBEffects.const_get(nombre)] = false }
+    end
+    side = target.respond_to?(:pbOwnSide) ? target.pbOwnSide : nil
+    if side && side.respond_to?(:effects)
+      SIDE_FLAGS.each { |nombre| side.effects[PBEffects.const_get(nombre)] = false }
+    end
+    return true
+  rescue StandardError
+    return false
+  end
+end
+
+class PokeBattle_Battler
+  unless method_defined?(:selfProtected?)
+    # ¿Lo protege un movimiento propio (Protect, King's Shield, Obstruct…)?
+    def selfProtected?
+      return RutaDeDiosBallBreaker.flag_active?(self, RutaDeDiosBallBreaker::SELF_FLAGS)
+    end
+  end
+
+  unless method_defined?(:sideProtected?)
+    # ¿Lo protege un movimiento de su lado (Wide Guard, Crafty Shield…)?
+    def sideProtected?
+      side = respond_to?(:pbOwnSide) ? pbOwnSide : nil
+      return RutaDeDiosBallBreaker.flag_active?(side, RutaDeDiosBallBreaker::SIDE_FLAGS)
+    end
+  end
+end
+
+if defined?(PokeBattle_Move_DF08) && PokeBattle_Move_DF08.is_a?(Class)
+  class PokeBattle_Move_DF08
+    # Igual que PokeBattle_Move_0CD, pero sin depender de ayudantes ausentes: si
+    # existen se aprovechan para el texto y, en cualquier caso, se retiran todas
+    # las protecciones del objetivo (Ball Breaker las atraviesa).
+    def pbAttackingTurnEffect(user, target)
+      return if !target
+      self_prot = target.respond_to?(:selfProtected?) ? target.selfProtected? : false
+      side_prot = target.respond_to?(:sideProtected?) ? target.sideProtected? : false
+      if (self_prot || side_prot) && @battle && @battle.respond_to?(:pbDisplay) && target.respond_to?(:pbThis)
+        nombre = target.pbThis
+        if self_prot && side_prot
+          @battle.pbDisplay(_INTL("All protections on {1} and its side ended!", nombre))
+        elsif self_prot
+          @battle.pbDisplay(_INTL("{1}'s protection ended!", nombre))
+        else
+          @battle.pbDisplay(_INTL("All protections on {1}'s side ended!", nombre))
+        end
+      end
+      RutaDeDiosBallBreaker.clear_protections!(target)
+      return true
+    rescue StandardError
+      RutaDeDiosBallBreaker.clear_protections!(target) if target
+      return false
+    end
+  end
+end
+
 # En las escenas cinematográficas, Arceus no falla su golpe de guion. El Arceus
 # capturado activo obtiene precisión, efectividad y KO garantizados en Judgment.
 class PokeBattle_Move
@@ -5234,6 +5317,12 @@ function verify() {
       ['recordBattleRule("weather", "None")', "el duelo divino no hereda el granizo del mapa"],
       ['setBattleRule("weather", "None")', "las cinemáticas no heredan el clima de la cumbre"],
       ["def pbFaint(showMessage = true)", "respaldo contra rutas de daño especiales que intenten finalizar la escena"],
+      ["module RutaDeDiosBallBreaker", "compatibilidad del motor para Ball Breaker y las protecciones"],
+      ["def self.flag_active?(holder, names)", "consulta de efectos protectores individuales y de lado"],
+      ["def self.clear_protections!(target)", "Ball Breaker vuelve a retirar todas las protecciones del objetivo"],
+      ["def selfProtected?", "restaura el ayudante que la sección Despacito Despair da por existente"],
+      ["def sideProtected?", "restaura el ayudante de protecciones de lado que Ball Breaker consulta"],
+      ["class PokeBattle_Move_DF08", "Ball Breaker reescrito para no abortar el combate con NoMethodError"],
       ["arceus_cinematic_adaptive?", "la IA táctica nueva se limita a Cynthia/Máximo y Red/Gold"],
       ["def pbArceusCapturedPlateRotation", "las 17 Tablas giran antes del cambio de tipo"],
       ["def pbArceusTypeShiftVisual", "cambio visual de color tras la ruleta"],

@@ -155,6 +155,17 @@ check(/ruta_arceus_cinematic_boss\?/.test(hpSetter) &&
   /ruta_arceus_divine_boss\? && value\.to_i < @hp\.to_i/.test(hpSetter) &&
   /_ruta_arceus_original_set_hp\(value\)/.test(hpSetter),
   "el setter de PS rechaza cualquier daño externo contra los Arceus de la cima");
+// ------------------------------------------- Ball Breaker (compatibilidad)
+const df08Effect = cuerpo("def pbAttackingTurnEffect(user, target)") ?? "";
+check(/module RutaDeDiosBallBreaker/.test(ruby) &&
+  /unless method_defined\?\(:selfProtected\?\)/.test(ruby) &&
+  /unless method_defined\?\(:sideProtected\?\)/.test(ruby),
+  "selfProtected? y sideProtected? existen para la sección Despacito Despair (Ball Breaker)");
+check(/class PokeBattle_Move_DF08/.test(ruby) &&
+  /target\.respond_to\?\(:selfProtected\?\)/.test(df08Effect) &&
+  /RutaDeDiosBallBreaker\.clear_protections!\(target\)/.test(df08Effect) &&
+  /rescue StandardError/.test(df08Effect),
+  "Ball Breaker ya no aborta el combate si faltan los ayudantes y siempre retira las protecciones");
 check(/recordBattleRule\("weather", "None"\)/.test(ruby) &&
   /setBattleRule\("weather", "None"\)/.test(ruby) &&
   /battle\.field\.weather = :None/.test(montaje),

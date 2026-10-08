@@ -31,6 +31,27 @@ RUTA_ARCEUS_PHASE_TYPES = [:NORMAL].freeze
 RUTA_ARCEUS_TYPE_FORMS = {}.freeze
 RUTA_ARCEUS_MOVE_SETS = [[:JUDGMENT]].freeze
 
+# El motor define PBEffects como un módulo de índices; aquí los efectos del
+# battler de prueba son un Hash, así que los nombres actúan de clave.
+module PBEffects
+  BanefulBunker = :BanefulBunker
+  KingsShield = :KingsShield
+  Protect = :Protect
+  SpikyShield = :SpikyShield
+  Obstruct = :Obstruct
+  CraftyShield = :CraftyShield
+  MatBlock = :MatBlock
+  QuickGuard = :QuickGuard
+  WideGuard = :WideGuard
+end
+
+class FakeSide
+  attr_accessor :effects
+  def initialize
+    @effects = {}
+  end
+end
+
 class FakeDamageState
   attr_accessor :hpLost, :totalHPLost, :substitute, :disguise, :iceface,
                 :endured, :sturdy, :sturdyLegend, :focusSash, :focusBand,
@@ -106,6 +127,9 @@ class PokeBattle_Battler
   def pbUpdate; end
   def pbItemHPHealCheck; end
   def level; 200; end
+  def pbOwnSide; @ownSide; end
+  def ownSide; @ownSide; end
+  def ownSide=(side); @ownSide = side; end
 end
 
 class PokeBattle_Move
@@ -124,6 +148,10 @@ class PokeBattle_Move
       target.hp -= target.damageState.hpLost
     end
   end
+end
+
+# Ball Breaker (PokeBattle_Move_DF08) hereda de PokeBattle_TwoTurnMove.
+class PokeBattle_TwoTurnMove < PokeBattle_Move
 end
 
 class PokeBattle_Battle
@@ -327,6 +355,62 @@ move = PokeBattle_Move.new(battle, :METEORMASH)
 move.pbInflictHPDamage(boss)
 check(battle.instance_variable_get(:@arceus_bars_depleted) == 1,
       "aunque nadie marque la batalla, el daño sigue pasando por las barras")
+
+log ""
+log "== Ball Breaker (DF08): el movimiento de Metagross ya no aborta el combate =="
+# Se ejecuta la clase REAL del juego (sección Despacito Despair) con los
+# ayudantes que restaura PokeMod_RutaDeDios. Sin ellos, esta misma llamada
+# lanzaba NoMethodError: undefined method 'selfProtected?' for an instance of
+# PokeBattle_Battler.
+battle = PokeBattle_Battle.new([])
+target = mk_battler(0, 0, :RATTATA, 300)
+target.ownSide = FakeSide.new
+target.effects = {}
+check(target.respond_to?(:selfProtected?) && target.respond_to?(:sideProtected?),
+      "los ayudantes selfProtected? y sideProtected? existen en PokeBattle_Battler")
+check(target.selfProtected? == false && target.sideProtected? == false,
+      "sin protecciones activas ambos ayudantes devuelven false")
+
+target.effects[PBEffects::Protect] = true
+check(target.selfProtected? == true, "selfProtected? detecta Protect")
+check(target.sideProtected? == false, "sideProtected? no inventa protecciones de lado")
+
+ball_breaker = PokeBattle_Move_DF08.new(battle)
+battle.messages.clear
+ball_breaker.pbAttackingTurnEffect(nil, target)
+check(battle.messages.any? { |m| m.include?("protection ended") },
+      "Ball Breaker avisa de que la protección terminó")
+check(target.effects[PBEffects::Protect] == false,
+      "Ball Breaker retira la protección individual (Protect, King's Shield…)")
+check(target.effects[PBEffects::Obstruct] == false, "y no deja restos de otros escudos")
+
+target.effects[PBEffects::Protect] = true
+target.pbOwnSide.effects[PBEffects::WideGuard] = true
+check(target.sideProtected? == true, "sideProtected? detecta Wide Guard del lado")
+battle.messages.clear
+ball_breaker.pbAttackingTurnEffect(nil, target)
+check(battle.messages.any? { |m| m.include?("its side ended") },
+      "con protección doble avisa al mismo tiempo del escudo y del lado")
+check(target.effects[PBEffects::Protect] == false && target.pbOwnSide.effects[PBEffects::WideGuard] == false,
+      "Ball Breaker limpia también las protecciones de lado")
+
+battle.messages.clear
+ball_breaker.pbAttackingTurnEffect(nil, target)
+check(battle.messages.empty?, "sin protecciones no muestra ningún mensaje")
+
+# Ahora la versión blindada que viaja instalada (renombrada por el arnés).
+blindada = PokeBattle_Move_DF08Ruta.new(battle)
+target.effects[PBEffects::Protect] = true
+target.pbOwnSide.effects[PBEffects::QuickGuard] = true
+battle.messages.clear
+blindada.pbAttackingTurnEffect(nil, target)
+check(battle.messages.any? { |m| m.include?("its side ended") },
+      "la versión instalada avisa igual del escudo y del lado")
+check(target.effects[PBEffects::Protect] == false && target.pbOwnSide.effects[PBEffects::QuickGuard] == false,
+      "la versión instalada retira todas las protecciones")
+battle.messages.clear
+blindada.pbAttackingTurnEffect(nil, nil)
+check(battle.messages.empty?, "la versión instalada tolera un objetivo nulo sin lanzar excepción")
 
 log ""
 log "== Regresión: un Arceus normal del jugador no lleva escudo =="
