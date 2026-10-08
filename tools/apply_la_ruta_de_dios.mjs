@@ -1050,6 +1050,50 @@ class PokeBattle_Battler
     return @battle && @battle.respond_to?(:arceus_cinematic?) && @battle.arceus_cinematic?
   end
 
+  # Sólo el guion de la cima puede escribir los PS del Arceus divino (barras,
+  # captura y curaciones). Cualquier otra ruta queda bloqueada por el setter.
+  def ruta_arceus_scripted_hp_write
+    @ruta_arceus_scripted_hp_write = true
+    begin
+      yield
+    ensure
+      @ruta_arceus_scripted_hp_write = false
+    end
+  end
+
+  # Arceus divino = el jefe real del duelo de Ash (nivel 200, seis barras). No se
+  # confunde con el Arceus temporal de las cinemáticas ni con el capturado.
+  def ruta_arceus_divine_boss?
+    return false if !@pokemon || @pokemon.species != :ARCEUS
+    return false if @pokemon.instance_variable_get(:@ruta_arceus_divine) != true
+    return false if !@battle || !@battle.respond_to?(:arceus_divine?)
+    battlers = @battle.instance_variable_get(:@battlers)
+    return false if !battlers || battlers.empty?
+    return @battle.arceus_divine? == true
+  rescue StandardError
+    return false
+  end
+
+  # Ninguna ruta externa (clima, retroceso, habilidades, movimientos custom,
+  # plugins o una escritura directa de PS) puede lastimar a los Arceus de La Ruta
+  # de Dios. El daño legítimo entra por pbReduceHP/pbInflictHPDamage, y el daño
+  # del duelo real mueve las seis barras a través del guion.
+  alias _ruta_arceus_original_set_hp hp= unless method_defined?(:_ruta_arceus_original_set_hp)
+  def hp=(value)
+    if !@ruta_arceus_scripted_hp_write
+      if ruta_arceus_cinematic_boss?
+        if value.to_i < @hp.to_i && @battle && @battle.respond_to?(:pbArceusCinematicAbsorb)
+          @battle.pbArceusCinematicAbsorb(self, @hp.to_i - value.to_i)
+        end
+        return
+      end
+      if ruta_arceus_divine_boss? && value.to_i < @hp.to_i
+        return
+      end
+    end
+    _ruta_arceus_original_set_hp(value)
+  end
+
   alias _ruta_arceus_original_reduce_hp pbReduceHP unless method_defined?(:_ruta_arceus_original_reduce_hp)
   def pbReduceHP(amt, anim = true, registerDamage = true, anyAnim = true)
     if @battle && @battle.respond_to?(:arceus_cinematic?) && @battle.arceus_cinematic?
@@ -1058,7 +1102,13 @@ class PokeBattle_Battler
         @battle.pbArceusCinematicRebirth(self)
         return 0
       end
-      return 0 if amt == :ruta_arceus_hold_at_one
+      if amt == :ruta_arceus_cinematic_absorb || amt == :ruta_arceus_hold_at_one
+        if @battle.respond_to?(:pbArceusCinematicAbsorb)
+          pending = @battle.instance_variable_get(:@ruta_arceus_cinematic_pending_damage).to_i
+          @battle.pbArceusCinematicAbsorb(self, pending)
+        end
+        return 0
+      end
     end
     if @battle && @battle.respond_to?(:arceus_divine?) && @battle.arceus_divine?
       amt = @battle.arceus_before_damage(self, amt)
@@ -1067,25 +1117,32 @@ class PokeBattle_Battler
         return 0
       end
       return 0 if amt == :ruta_arceus_hold_at_one || amt == :ruta_arceus_no_damage
-      ret = _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
+      ret = ruta_arceus_scripted_hp_write { _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim) }
       if registerDamage && !@battle.instance_variable_get(:@endOfRound)
         @battle.pbArceusRedlineHeal(self)
       end
       return ret
     end
-    return _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim)
+    return ruta_arceus_scripted_hp_write { _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim) }
   end
 
   # Respaldo ante cualquier movimiento/plugin que salte las rutas normales de
-  # daño: el Arceus de apoyo no puede cerrar la escena como derrotado.
+  # daño: ni el Arceus de las cinemáticas ni el del duelo real pueden ser
+  # derrotados y cerrar la escena como una derrota.
   alias _ruta_arceus_original_cinematic_faint pbFaint unless method_defined?(:_ruta_arceus_original_cinematic_faint)
   def pbFaint(showMessage = true)
-    if ruta_arceus_cinematic_boss? && fainted?
-      if @battle.respond_to?(:pbArceusCinematicRebirth)
-        @battle.pbArceusCinematicRebirth(self)
-      else
-        self.hp = [totalhp, 1].max
-      end
+    if ruta_arceus_cinematic_boss?
+      # El jefe de apoyo jamás cae: se restaura por completo y se burla, aunque
+      # una ruta externa haya declarado su derrota.
+      ruta_arceus_scripted_hp_write { _ruta_arceus_original_set_hp(totalhp) }
+      @battle.pbArceusCinematicRebirth(self) if @battle && @battle.respond_to?(:pbArceusCinematicRebirth)
+      return
+    end
+    if ruta_arceus_divine_boss? && fainted?
+      # Red de seguridad del duelo real: sólo la sexta barra deja a Arceus a
+      # 1 PS para la captura; nunca se registra una derrota del dios.
+      ruta_arceus_scripted_hp_write { _ruta_arceus_original_set_hp([totalhp, 1].max) }
+      @battle.pbArceusRedlineHeal(self, true) if @battle && @battle.respond_to?(:pbArceusRedlineHeal)
       return
     end
     return _ruta_arceus_original_cinematic_faint(showMessage)
@@ -1262,26 +1319,53 @@ class PokeBattle_Move
            target.ruta_arceus_cinematic_boss?
   end
 
-  # Essentials applies attack damage with target.hp -= hpLost, bypassing
-  # PokeBattle_Battler#pbReduceHP. Clamp that central move path as well, so
-  # Cynthia/Steven/Red/Gold can never faint the cinematic boss.
+  def ruta_arceus_divine_boss_target?(target)
+    return target && target.respond_to?(:ruta_arceus_divine_boss?) &&
+           target.ruta_arceus_divine_boss?
+  end
+
+  # Essentials aplica el daño de los movimientos con target.hp -= hpLost, una
+  # ruta que no pasa por pbReduceHP. Aquí se cubren los dos Arceus de la cima:
+  # el de las cinemáticas absorbe todo sin perder PS y el del duelo divino mueve
+  # sus seis barras, así que ni el clima ni un Metagross pueden derrotarlos.
   alias _ruta_arceus_original_inflict_hp_damage pbInflictHPDamage unless method_defined?(:_ruta_arceus_original_inflict_hp_damage)
   def pbInflictHPDamage(target)
     if ruta_arceus_cinematic_boss_target?(target) &&
        !target.damageState.substitute && !target.damageState.disguise && !target.damageState.iceface
       attempted_damage = target.damageState.hpLost.to_i
-      nonlethal_limit = [target.hp.to_i - 1, 0].max
-      limited_damage = [attempted_damage, nonlethal_limit].min
-      if limited_damage < attempted_damage
-        target.damageState.hpLost = limited_damage
-        target.damageState.totalHPLost = [target.damageState.totalHPLost.to_i -
-                                          (attempted_damage - limited_damage), 0].max
+      target.damageState.hpLost = 0
+      target.damageState.totalHPLost = [target.damageState.totalHPLost.to_i - attempted_damage, 0].max
+      target.damageState.endured = false
+      target.damageState.sturdy = false
+      target.damageState.sturdyLegend = false
+      target.damageState.focusSash = false
+      target.damageState.focusBand = false
+      if attempted_damage > 0 && @battle && @battle.respond_to?(:pbArceusCinematicAbsorb)
+        @battle.pbArceusCinematicAbsorb(target, attempted_damage)
+      end
+      return _ruta_arceus_original_inflict_hp_damage(target)
+    end
+    if ruta_arceus_divine_boss_target?(target) && @battle &&
+       @battle.respond_to?(:pbArceusDivineBarDamage)
+      attempted_damage = target.damageState.hpLost.to_i
+      applied = @battle.pbArceusDivineBarDamage(target, attempted_damage).to_i
+      target.damageState.hpLost = applied
+      target.damageState.totalHPLost = [target.damageState.totalHPLost.to_i -
+                                        (attempted_damage - applied), 0].max
+      if applied <= 0
         target.damageState.endured = false
         target.damageState.sturdy = false
         target.damageState.sturdyLegend = false
         target.damageState.focusSash = false
         target.damageState.focusBand = false
       end
+      result = target.ruta_arceus_scripted_hp_write do
+        _ruta_arceus_original_inflict_hp_damage(target)
+      end
+      if applied > 0 && @battle.respond_to?(:pbArceusRedlineHeal)
+        @battle.pbArceusRedlineHeal(target)
+      end
+      return result
     end
     return _ruta_arceus_original_inflict_hp_damage(target)
   end
@@ -1671,65 +1755,72 @@ class PokeBattle_Battle
     return source && source.pokemon && source.pokemon.species == :ARCEUS
   end
 
-  # En los combates previos a Ash, un golpe que llevaría a Arceus a la zona
-  # roja o lo derrotaría inicia una resurrección completa y una burla.
+  # En los combates previos a Ash el Creador es intocable: ningún golpe, clima o
+  # efecto mueve sus PS. El aura dorada absorbe el ataque y, si el intento
+  # habría sido letal, se juega la burla del dios en lugar de una derrota.
   def arceus_cinematic_damage(battler, amount)
     return amount if !battler || amount.to_i <= 0
     if battler.pokemon && battler.pokemon.species == :ARCEUS
-      predicted_hp = [battler.hp - amount.to_i, 0].max
-      redline = [battler.totalhp / 4, 1].max
-      if predicted_hp <= redline
-        @ruta_arceus_cinematic_pending_hp = predicted_hp
-        @ruta_arceus_cinematic_pending_damage = amount.to_i
-        return :ruta_arceus_cinematic_rebirth
-      end
-      return [amount.to_i, battler.hp - 1].min
+      @ruta_arceus_cinematic_pending_hp = battler.hp.to_i
+      @ruta_arceus_cinematic_pending_damage = amount.to_i
+      return :ruta_arceus_cinematic_absorb
     end
     return battler.hp if arceus_cinematic_source?
     return amount
   end
 
+  # Narración del escudo cinemático: los PS de Arceus nunca cambian. Se avisa
+  # una vez por turno y, ante un intento letal, se reutiliza la burla del
+  # Creador (pbArceusCinematicRebirth) sin mostrar una barra vacía.
+  def pbArceusCinematicAbsorb(battler, amount = 0)
+    return false if !battler || !battler.pokemon || battler.pokemon.species != :ARCEUS
+    if battler.hp < battler.totalhp
+      old_hp = battler.hp
+      battler.ruta_arceus_scripted_hp_write { battler.hp = battler.totalhp }
+      pbArceusAnimateHP(battler, old_hp) if respond_to?(:pbArceusAnimateHP)
+    end
+    lethal = amount.to_i >= battler.hp.to_i
+    key = [@turnCount.to_i, @lastMoveUser]
+    if lethal || @ruta_arceus_cinematic_absorb_key != key
+      @ruta_arceus_cinematic_absorb_key = key
+      if lethal
+        pbArceusCinematicRebirth(battler)
+      else
+        pbDisplay(_INTL("El aura dorada de Arceus absorbe el golpe: sus PS permanecen intactos."))
+      end
+    end
+    return true
+  rescue StandardError
+    return false
+  end
+
+  # El Creador de las cinemáticas se burla de sus rivales sin perder vida: la
+  # "resurrección" ya no vacía la barra, sólo confirma que su luz sigue intacta
+  # y devuelve una línea distinta en cada intento.
   def pbArceusCinematicRebirth(battler)
     return if !battler
-    old_hp = battler.hp
-    fallen_hp = @ruta_arceus_cinematic_pending_hp
-    fallen_hp = [old_hp - @ruta_arceus_cinematic_pending_damage.to_i, 0].max if fallen_hp.nil?
     @ruta_arceus_cinematic_rebirths = @ruta_arceus_cinematic_rebirths.to_i + 1
     begin
-      battler.hp = fallen_hp
-      if @scene && @scene.respond_to?(:pbHPChanged)
-        @scene.pbHPChanged(battler, old_hp, true)
-      else
-        battler.pbUpdate if battler.respond_to?(:pbUpdate)
+      if battler.hp < battler.totalhp
+        old_hp = battler.hp
+        battler.ruta_arceus_scripted_hp_write { battler.hp = battler.totalhp }
+        pbArceusAnimateHP(battler, old_hp) if respond_to?(:pbArceusAnimateHP)
       end
-      if fallen_hp <= 0
-        pbDisplayPaused(_INTL("Arceus cae por un instante. La luz del Creador todavía no se ha extinguido."))
-      else
-        pbDisplayPaused(_INTL("La vida de Arceus entra en la zona roja; la creación se niega a terminar."))
-      end
+      pbDisplayPaused(_INTL("La luz del Creador sigue intacta: ningún golpe ha logrado lastimarlo."))
       pbArceusCinematicImpact(Tone.new(180, 180, 255, 0)) if defined?(pbArceusCinematicImpact)
     rescue StandardError
-    ensure
-      down_hp = battler.hp
-      battler.hp = battler.totalhp
-      if @scene && @scene.respond_to?(:pbHPChanged)
-        @scene.pbHPChanged(battler, down_hp, true) rescue battler.pbUpdate
-      else
-        battler.pbUpdate if battler.respond_to?(:pbUpdate)
-      end
     end
     taunts = [
       "¿De verdad creyeron que podían arrebatarme la vida?",
       "Eso apenas fue un destello. Vuelvan a intentarlo, mortales.",
       "Cada caída sólo me recuerda quién escribió las reglas.",
     ]
-    pbDisplayPaused(_INTL("Arceus se restaura por completo y se burla: «{1}»",
+    pbDisplayPaused(_INTL("Arceus se burla: «{1}»",
                           taunts[(@ruta_arceus_cinematic_rebirths - 1) % taunts.length]))
     @ruta_arceus_cinematic_pending_hp = nil
     @ruta_arceus_cinematic_pending_damage = nil
   rescue StandardError
-    battler.hp = battler.totalhp if battler
-    battler.pbUpdate if battler && battler.respond_to?(:pbUpdate)
+    battler.ruta_arceus_scripted_hp_write { battler.hp = battler.totalhp } if battler && battler.respond_to?(:ruta_arceus_scripted_hp_write)
   end
 
   def pbArceusAttackCatalog
@@ -2107,8 +2198,28 @@ class PokeBattle_Battle
     battler.pbUpdate if battler && battler.respond_to?(:pbUpdate)
   end
 
+  # El daño de los movimientos del motor (target.hp -= hpLost) también pasa por
+  # las seis barras: ningún ataque, clima o efecto externo puede saltarse una
+  # etapa ni derrotar al dios. Devuelve el daño real que se aplicará.
+  def pbArceusDivineBarDamage(battler, amount)
+    return 0 if !arceus_divine? || !battler || amount.to_i <= 0
+    resolved = arceus_before_damage(battler, amount)
+    if resolved == :ruta_arceus_stage_break
+      pbArceusDepleteBar(battler)
+      return 0
+    end
+    return 0 if resolved == :ruta_arceus_hold_at_one || resolved == :ruta_arceus_no_damage
+    applied = [resolved.to_i, amount.to_i].min
+    applied = 0 if applied < 0
+    return applied
+  rescue StandardError
+    return 0
+  end
+
   # Agotar por completo una barra mueve exactamente una fase. La sexta barra
-  # llega visualmente a cero antes de dejar a Arceus a 1 PS para la captura final.
+  # llega visualmente a cero antes de dejar a Arceus a 1 PS para la captura
+  # final. Estas escrituras de PS son del guion: el setter protegido las deja
+  # pasar sólo dentro de ruta_arceus_scripted_hp_write.
   def pbArceusDepleteBar(battler)
     return if !arceus_divine? || !battler || !battler.pokemon || battler.pokemon.species != :ARCEUS
     arceus_state(battler)
@@ -2116,19 +2227,19 @@ class PokeBattle_Battle
     @ruta_arceus_last_bar_action_key = arceus_action_key
     @arceus_bars_depleted = [@arceus_bars_depleted.to_i + 1, RUTA_ARCEUS_STAGE_COUNT].min
     old_hp = battler.hp
-    battler.hp = 0
+    battler.ruta_arceus_scripted_hp_write { battler.hp = 0 }
     pbArceusAnimateHP(battler, old_hp)
     pbArceusDistortion
     if @arceus_bars_depleted < RUTA_ARCEUS_STAGE_COUNT
       pbDisplayPaused(_INTL("Ash ha vaciado por completo la barra {1}/{2} de Arceus.",
                             @arceus_bars_depleted, RUTA_ARCEUS_STAGE_COUNT))
       pbDisplayPaused(_INTL("Arceus se alza entre la luz: «¿Pensaste que la creación cabía en una sola barra?»"))
-      battler.hp = battler.totalhp
+      battler.ruta_arceus_scripted_hp_write { battler.hp = battler.totalhp }
       pbArceusAnimateHP(battler, 0)
       check_arceus_phase(battler)
     else
       @arceus_phase = RUTA_ARCEUS_STAGE_COUNT
-      battler.hp = 1
+      battler.ruta_arceus_scripted_hp_write { battler.hp = 1 }
       pbArceusAnimateHP(battler, 0)
       @arceus_capture_ready = true
       pbArceusEnsureCaptureBall
@@ -2142,7 +2253,9 @@ class PokeBattle_Battle
     end
     save_arceus_state(battler)
   rescue StandardError
-    battler.hp = [battler.totalhp, 1].max if battler
+    if battler && battler.respond_to?(:ruta_arceus_scripted_hp_write)
+      battler.ruta_arceus_scripted_hp_write { battler.hp = [battler.totalhp, 1].max }
+    end
     battler.pbUpdate if battler && battler.respond_to?(:pbUpdate)
   end
 
@@ -2824,6 +2937,9 @@ def pbArceusCinematicCpuBattle(trainer_specs, boss_moves, battle_size)
     setBattleRule("noMoney")
     setBattleRule("setStyle")
     setBattleRule("anims")
+    # La nieve de la cumbre (map_metadata de los pisos) no debe convertirse en
+    # granizo dentro de la escena: la vida de Arceus no depende del clima.
+    setBattleRule("weather", "None")
 
     scene = pbNewBattleScene
     battle = PokeBattle_Battle.new(scene, player_party, boss_party,
@@ -2839,6 +2955,13 @@ def pbArceusCinematicCpuBattle(trainer_specs, boss_moves, battle_size)
     battle.endSpeechesWin = [_INTL("Los mortales aún no comprenden el peso de la creación.")]
     battle.controlPlayer = true
     pbPrepareBattle(battle)
+    # Doble seguro: aunque una regla ajena vuelva a fijar el clima heredado, el
+    # campo de la escena arranca limpio antes de que empiece el combate.
+    if battle.respond_to?(:field) && battle.field
+      battle.field.weather = :None if battle.field.respond_to?(:weather=)
+      battle.field.defaultWeather = :None if battle.field.respond_to?(:defaultWeather=)
+      battle.field.weatherDuration = 0 if battle.field.respond_to?(:weatherDuration=)
+    end
     # pbPrepareBattle reads the standard rules; these assignments are the final
     # guard against a menu, escape or replacement prompt in this special scene.
     battle.controlPlayer = true
@@ -3216,6 +3339,9 @@ def pbStartArceusDivineBattle
   $PokemonTemp.clearBattleRules
   $PokemonTemp.recordBattleRule("cannotRun")
   $PokemonTemp.recordBattleRule("canLose")
+  # El duelo se decide con las seis barras: la nieve del mapa (categoría granizo)
+  # no entra al combate y no puede lastimar a nadie en la cima.
+  $PokemonTemp.recordBattleRule("weather", "None")
 
   # R7: el prólogo son tres combates CPU completos. Repetirlo en cada reintento castiga
   # al jugador que ya lo vio: se muestra una vez y luego se resume en una línea.
@@ -3260,11 +3386,13 @@ def pbStartArceusDivineBattle
         $PokemonTemp.clearBattleRules
         $PokemonTemp.recordBattleRule("cannotRun")
         $PokemonTemp.recordBattleRule("canLose")
+        $PokemonTemp.recordBattleRule("weather", "None")
         next
       elsif pbArceusRotomMercy
         $PokemonTemp.clearBattleRules
         $PokemonTemp.recordBattleRule("cannotRun")
         $PokemonTemp.recordBattleRule("canLose")
+        $PokemonTemp.recordBattleRule("weather", "None")
         next
       end
       pbArceusSurrenderSequence
@@ -5097,7 +5225,14 @@ function verify() {
       ["def pbArceusCinematicHeal", "el Arceus jefe se cura antes de las acciones de Cynthia/Máximo y Red/Gold"],
       ["def ruta_arceus_cinematic_boss?", "marcador exclusivo para proteger al Arceus temporal de las cinemáticas"],
       ["def pbInflictHPDamage(target)", "protección en la ruta real de daño por movimiento del motor"],
-      ["nonlethal_limit = [target.hp.to_i - 1, 0].max", "los ataques nunca pueden derrotar al Arceus cinematográfico"],
+      ["def ruta_arceus_scripted_hp_write", "sólo el guion puede escribir los PS del Arceus divino"],
+      ["def ruta_arceus_divine_boss?", "el jefe del duelo real se distingue del Arceus capturado"],
+      ["def hp=(value)", "el setter de PS bloquea el daño externo contra los Arceus de la cima"],
+      ["return :ruta_arceus_cinematic_absorb", "los ataques de las cinemáticas se absorben sin mover la barra"],
+      ["def pbArceusCinematicAbsorb", "el aura dorada narra la absorción; el Creador nunca pierde PS"],
+      ["def pbArceusDivineBarDamage", "el daño de movimientos del motor pasa por las seis barras"],
+      ['recordBattleRule("weather", "None")', "el duelo divino no hereda el granizo del mapa"],
+      ['setBattleRule("weather", "None")', "las cinemáticas no heredan el clima de la cumbre"],
       ["def pbFaint(showMessage = true)", "respaldo contra rutas de daño especiales que intenten finalizar la escena"],
       ["arceus_cinematic_adaptive?", "la IA táctica nueva se limita a Cynthia/Máximo y Red/Gold"],
       ["def pbArceusCapturedPlateRotation", "las 17 Tablas giran antes del cambio de tipo"],

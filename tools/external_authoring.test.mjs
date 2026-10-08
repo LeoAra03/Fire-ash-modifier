@@ -267,11 +267,14 @@ check(rutaScript.includes("def pbArceusCinematicWalkIn") &&
   "las caminatas de Cynthia/Máximo y Red/Gold anteceden a sus retratos/batallas y Arceus se regenera en el prólogo");
 check(rutaScript.includes("def ruta_arceus_cinematic_boss?") &&
   rutaScript.includes("def pbInflictHPDamage(target)") &&
-  rutaScript.includes("nonlethal_limit = [target.hp.to_i - 1, 0].max") &&
-  rutaScript.includes("target.damageState.hpLost = limited_damage") &&
+  rutaScript.includes("return :ruta_arceus_cinematic_absorb") &&
+  rutaScript.includes("def pbArceusCinematicAbsorb") &&
+  rutaScript.includes("def ruta_arceus_divine_boss?") &&
+  rutaScript.includes("def pbArceusDivineBarDamage") &&
+  rutaScript.includes("def ruta_arceus_scripted_hp_write") &&
   rutaScript.includes("def pbFaint(showMessage = true)") &&
   rutaScript.includes("@battle.pbArceusCinematicRebirth(self)"),
-  "los movimientos no pueden derrotar al Arceus cinematográfico y pbFaint tiene un respaldo de resurrección");
+  "ni los movimientos ni el clima pueden derrotar a los Arceus de la cima: el cinemático absorbe y el divino mueve sus barras");
 const summitRaw = readMarshalData("Map2037.rxdata");
 const summitBoss = summitRaw.getIvar("events").pairs.find(([, event]) =>
   (event.getIvar("name")?.text ?? "").includes("Arceus Creador"))?.[1];

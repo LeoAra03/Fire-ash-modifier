@@ -1,5 +1,25 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-08 — Arceus ya no puede ser derrotado por el granizo ni por Metagross
+
+Si en tu partida el **granizo** o un **Metagross** seguían derrotando a Arceus (en el
+prólogo de Cynthia/Máximo, en el de Red/Gold o en el duelo final), vuelve a copiar
+`Data/Scripts.rxdata` de este paquete sobre tu juego (o extrae otra vez el ZIP
+`Fire_Ash_Paquete_Directo.zip`). No toques tus partidas: el arreglo va en los scripts.
+
+- **Prólogo:** Arceus es intocable. Ningún ataque, crítico, clima, retroceso,
+  habilidad, movimiento custom ni escritura directa de PS mueve su barra: el aura
+  dorada absorbe el golpe con un mensaje y sólo un intento que habría sido letal
+  provoca su burla. Un setter de PS protegido y un respaldo en `pbFaint` impiden
+  cualquier derrota del Creador.
+- **Sin granizo heredado:** la nieve de la cumbre (`map_metadata`) ya no entra a los
+  combates de la cima como granizo (`setBattleRule("weather", "None")` en las
+  escenas y `recordBattleRule("weather", "None")` en el duelo divino).
+- **Duelo de Ash:** el daño de los movimientos —que el motor aplica con
+  `target.hp -= hpLost`, sin pasar por `pbReduceHP`— también pasa por las seis
+  barras. Un Metagross ya no puede tumbar a Arceus de un golpe: el KO se convierte
+  en transición de etapa y las bolas siguen bloqueadas hasta agotar la sexta barra.
+
 ## Corrección de arranque del 2026-10-07 (error «undefined class/module RPG::MapMetadata»)
 
 Si al abrir el juego veías este cuadro:

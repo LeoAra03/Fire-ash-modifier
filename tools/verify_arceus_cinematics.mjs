@@ -118,21 +118,47 @@ check(/arceus_cinematic\?\s*\?\s*RUTA_ARCEUS_CINEMATIC_RNG_SEED\s*:\s*RUTA_ARCEU
 // ----------------------------------- regeneración previa al duelo de Ash
 check(/arceus_cinematic\?/.test(ruby), "existe el modo cinemático consultable desde la batalla");
 const cinematicDamage = cuerpo("def arceus_cinematic_damage") ?? "";
-check(/predicted_hp/.test(cinematicDamage) && /ruta_arceus_cinematic_rebirth/.test(cinematicDamage),
-  "el daño que lleva a Arceus al rojo o a cero activa la resurrección cinemática");
+check(/ruta_arceus_cinematic_absorb/.test(cinematicDamage) &&
+  /@ruta_arceus_cinematic_pending_damage/.test(cinematicDamage) &&
+  !ruby.includes("predicted_hp"),
+  "el Creador de las cinemáticas absorbe el golpe: su barra no se mueve ni un punto");
+const absorb = cuerpo("def pbArceusCinematicAbsorb") ?? "";
+check(/pbArceusCinematicRebirth\(battler\)/.test(absorb) && /absorbe el golpe/.test(absorb) &&
+  /battler\.totalhp/.test(absorb),
+  "el aura dorada narra la absorción y sólo se burla cuando el intento habría sido letal");
 const rebirth = cuerpo("def pbArceusCinematicRebirth") ?? "";
-check(/battler\.hp = battler\.totalhp/.test(rebirth) && /se burla/.test(rebirth),
-  "Arceus recupera toda su vida y se burla tras parecer derrotado");
+check(/battler\.hp = battler\.totalhp/.test(rebirth) && /se burla/.test(rebirth) &&
+  !ruby.includes("fallen_hp"),
+  "Arceus conserva toda su vida y se burla sin mostrar una barra vacía");
 const cinematicMoveDamage = cuerpo("def pbInflictHPDamage(target)") ?? "";
 check(/ruta_arceus_cinematic_boss_target\?\(target\)/.test(cinematicMoveDamage) &&
-  /nonlethal_limit\s*=\s*\[target\.hp\.to_i\s*-\s*1,\s*0\]\.max/.test(cinematicMoveDamage) &&
-  /target\.damageState\.hpLost\s*=\s*limited_damage/.test(cinematicMoveDamage) &&
+  /target\.damageState\.hpLost = 0/.test(cinematicMoveDamage) &&
+  /pbArceusCinematicAbsorb\(target, attempted_damage\)/.test(cinematicMoveDamage) &&
   /_ruta_arceus_original_inflict_hp_damage\(target\)/.test(cinematicMoveDamage),
-  "el daño directo de movimientos se limita a 1 PS antes de que Essentials reste HP");
+  "el daño directo de movimientos se anula antes de que Essentials reste HP");
+const divineMoveDamage = cuerpo("def ruta_arceus_divine_boss_target?(target)") ?? "";
+check(/ruta_arceus_divine_boss_target\?\(target\)/.test(divineMoveDamage) &&
+  /pbArceusDivineBarDamage/.test(cinematicMoveDamage) &&
+  /ruta_arceus_scripted_hp_write do/.test(cinematicMoveDamage),
+  "el mismo camino central lleva el daño del duelo real a las seis barras");
+const barShield = cuerpo("def pbArceusDivineBarDamage") ?? "";
+check(/arceus_before_damage\(battler, amount\)/.test(barShield) &&
+  /pbArceusDepleteBar\(battler\)/.test(barShield),
+  "ningún movimiento puede saltarse una etapa: el KO se transforma en transición");
 check(ruby.includes("def pbFaint(showMessage = true)") &&
-  ruby.includes("if ruta_arceus_cinematic_boss? && fainted?") &&
-  ruby.includes("@battle.pbArceusCinematicRebirth(self)"),
-  "un respaldo en pbFaint restaura al jefe si una ruta especial salta el límite de daño");
+  ruby.includes("if ruta_arceus_cinematic_boss?") &&
+  ruby.includes("@battle.pbArceusCinematicRebirth(self)") &&
+  ruby.includes("ruta_arceus_divine_boss? && fainted?"),
+  "un respaldo en pbFaint restaura a los dos Arceus si una ruta especial intenta cerrar la escena");
+const hpSetter = cuerpo("def hp=(value)") ?? "";
+check(/ruta_arceus_cinematic_boss\?/.test(hpSetter) &&
+  /ruta_arceus_divine_boss\? && value\.to_i < @hp\.to_i/.test(hpSetter) &&
+  /_ruta_arceus_original_set_hp\(value\)/.test(hpSetter),
+  "el setter de PS rechaza cualquier daño externo contra los Arceus de la cima");
+check(/recordBattleRule\("weather", "None"\)/.test(ruby) &&
+  /setBattleRule\("weather", "None"\)/.test(ruby) &&
+  /battle\.field\.weather = :None/.test(montaje),
+  "ni el duelo divino ni las cinemáticas heredan el granizo de la cumbre");
 check(/return battler\.hp if arceus_cinematic_source\?/.test(cinematicDamage),
   "los golpes de Arceus todavía retiran por completo a cada aliado activo");
 const barDamage = cuerpo("def arceus_before_damage") ?? "";
