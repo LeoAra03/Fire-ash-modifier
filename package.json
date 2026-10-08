@@ -150,6 +150,7 @@
     "verify:eras": "node tools/apply_atlas_eras_map.mjs --verify",
     "verify:arceus:cinematics": "node tools/verify_arceus_cinematics.mjs",
     "verify:arceus:shield": "node tools/qa/arceus_shield_harness.mjs",
+    "verify:arceus:fuzz": "node tools/qa/arceus_fuzz_harness.mjs",
     "verify:scripts:calls": "node tools/qa/scripts_dangling_calls.mjs",
     "generate:arceus:omega:qa": "node tools/generate_arceus_omega_qa_matrix.mjs",
     "verify:arceus:omega:qa": "node tools/verify_arceus_omega_matrix.mjs",

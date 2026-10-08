@@ -244,12 +244,22 @@ ${DIALOGO_RUBY}
   # Pokemon sabian hacer ya no esta escrito en ninguna parte.
   def self.silenciar_habilidades(battle, battler)
     return if !battle || !battle.respond_to?(:battlers)
+    # R10: el silencio de talentos usa el efecto real del motor (Bilis Negra /
+    # Gastro Acid) en vez de borrar el talento del battler: asi el silencio es
+    # temporal, visible y respetado por todas las rutas de habilidad del motor.
+    constante = nil
+    begin
+      constante = PBEffects.const_get(:GastroAcid) if defined?(PBEffects)
+    rescue StandardError
+      constante = nil
+    end
+    return if !constante
     (battle.battlers || []).each do |otro|
       next if !otro || !otro.respond_to?(:fainted?)
       next if otro.fainted?
       next if !otro.respond_to?(:opposes?) || !otro.opposes?(battler)
-      next if !otro.respond_to?(:ability=)
-      otro.ability = nil
+      next if !otro.respond_to?(:effects)
+      otro.effects[constante] = true
     end
   rescue StandardError
   end
@@ -309,14 +319,27 @@ ${DIALOGO_RUBY}
 
   def self.batalla_clima(battle, fase)
     return if !battle
-    clima = [:RAINDANCE, :SUNNYDAY, :SANDSTORM, :HAIL, :FOG][fase % 5]
+    # R10: el clima de v19 es un simbolo de GameData::BattleWeather, nunca un
+    # movimiento ni una duracion. La llamada antigua pasaba el simbolo de un
+    # movimiento como usuario y el numero 5 como clima: el campo quedaba con
+    # weather = 5 y el fin de ronda reventaba con ArgumentError en Kirin
+    # ("Expected 5 to be one of [Symbol, GameData::BattleWeather, String]").
+    campo = battle.respond_to?(:field) ? battle.field : nil
+    return if !campo || !campo.respond_to?(:weather=)
+    climas = [:Rain, :Sun, :Sandstorm, :Hail, :Fog]
+    clima = climas[fase.to_i % climas.length]
+    return if !RutaCampoSeguro.clima_valido?(clima)
     if battle.respond_to?(:pbStartWeather)
-      battle.pbStartWeather(clima, 5)
-    elsif battle.respond_to?(:weather=)
-      battle.weather = clima
-      battle.weatherduration = 5 if battle.respond_to?(:weatherduration=)
+      battle.pbStartWeather(nil, clima, true, true, 5)
+    else
+      campo.weather = clima
+      campo.weatherDuration = 5 if campo.respond_to?(:weatherDuration=)
     end
   rescue StandardError
+    begin
+      RutaCampoSeguro.sanitizar!(battle)
+    rescue StandardError
+    end
   end
 end
 
@@ -442,6 +465,114 @@ end
       return if battler.pokemon.species != :ARCEUS
       CanonArceus.efecto_fase(self, battler, fase)
     rescue StandardError
+    end
+  end
+end
+
+# ─────────────────────────────────────────────────────────────────────────────
+# R10 — Red anti-error sobre el campo de batalla.
+#
+# El duelo reescribe reglas (clima, terreno, salas, talentos) y cualquier valor
+# que el motor no conozca se convierte en un ArgumentError visible en plena
+# batalla: el fin de ronda lee el campo con GameData::BattleWeather.try_get y
+# un entero o un simbolo inexistente tumban el combate. Estos parches hacen
+# que esa clase de fallo sea imposible, venga de donde venga:
+#
+#   1. Nada escribe un clima o terreno invalido: pbStartWeather y
+#      defaultWeather= validan antes de tocar el campo.
+#   2. Nada lee un campo sucio: cada fin de ronda sanitiza weather/terrain
+#      antes de que el motor los consulte.
+#   3. Si aun asi algo inesperado revienta dentro del fin de ronda, el error
+#      se absorbe aqui (sanitizando otra vez) en vez de llegar al jugador.
+# ─────────────────────────────────────────────────────────────────────────────
+module RutaCampoSeguro
+  def self.clima_invalido?(campo)
+    return false if !campo || !campo.respond_to?(:weather)
+    return false if !defined?(GameData::BattleWeather)
+    GameData::BattleWeather.try_get(campo.weather).nil?
+  rescue StandardError
+    true
+  end
+
+  def self.terreno_invalido?(campo)
+    return false if !campo || !campo.respond_to?(:terrain)
+    return false if !defined?(GameData::Terrain)
+    GameData::Terrain.try_get(campo.terrain).nil?
+  rescue StandardError
+    true
+  end
+
+  def self.clima_valido?(valor)
+    return true if !defined?(GameData::BattleWeather)
+    !GameData::BattleWeather.try_get(valor).nil?
+  rescue StandardError
+    false
+  end
+
+  def self.terreno_valido?(valor)
+    return true if !defined?(GameData::Terrain)
+    !GameData::Terrain.try_get(valor).nil?
+  rescue StandardError
+    false
+  end
+
+  def self.sanitizar!(battle)
+    return if !battle
+    campo = battle.respond_to?(:field) ? battle.field : nil
+    return if !campo
+    if clima_invalido?(campo)
+      campo.weather = :None if campo.respond_to?(:weather=)
+      campo.weatherDuration = 0 if campo.respond_to?(:weatherDuration=)
+    end
+    if terreno_invalido?(campo)
+      campo.terrain = :None if campo.respond_to?(:terrain=)
+    end
+  rescue StandardError
+  end
+end
+
+["PokeBattle_Battle", "Battle"].each do |nombre_clase|
+  next if !Object.const_defined?(nombre_clase)
+  clase = Object.const_get(nombre_clase)
+  next if !clase
+  next if clase.method_defined?(:ruta_clima_validado)
+  clase.class_eval do
+    def ruta_clima_validado
+      true
+    end
+    if method_defined?(:pbStartWeather)
+      alias ruta_pbStartWeather_original pbStartWeather
+      def pbStartWeather(user, newWeather, fixedDuration = false, showAnim = true, customDuration = 5)
+        return if !RutaCampoSeguro.clima_valido?(newWeather)
+        ruta_pbStartWeather_original(user, newWeather, fixedDuration, showAnim, customDuration)
+      end
+    end
+    if method_defined?(:defaultWeather=)
+      alias ruta_default_weather_original defaultWeather=
+      def defaultWeather=(value)
+        return if !RutaCampoSeguro.clima_valido?(value)
+        ruta_default_weather_original(value)
+      end
+    end
+  end
+end
+
+if Object.const_defined?(:Battle_Phase_EndOfRound)
+  clase_fin = Object.const_get(:Battle_Phase_EndOfRound)
+  if clase_fin && clase_fin.method_defined?(:start_phase) && !clase_fin.method_defined?(:ruta_fin_ronda_seguro)
+    clase_fin.class_eval do
+      def ruta_fin_ronda_seguro
+        true
+      end
+      alias ruta_fin_ronda_original start_phase
+      def start_phase
+        RutaCampoSeguro.sanitizar!(@battle)
+        ruta_fin_ronda_original
+      rescue StandardError
+        # Ultimo muro: el fin de ronda nunca llega al jugador como cartel de
+        # error. Se sanitiza el campo y la ronda siguiente arranca limpia.
+        RutaCampoSeguro.sanitizar!(@battle)
+      end
     end
   end
 end

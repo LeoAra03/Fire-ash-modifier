@@ -829,7 +829,19 @@ RUTA_ARCEUS_MOVE_SETS = [
   [:JUDGMENT, :MOONBLAST, :EARTHPOWER, :DARKVOID],
   [:JUDGMENT, :PSYCHOBOOST, :DRACOMETEOR, :SACREDSWORD],
   [:JUDGMENT, :EXTREMESPEED, :VCREATE, :PRECIPICEBLADES],
-  [:JUDGMENT, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE]
+  [:JUDGMENT, :FURYSWIPES, :COMETPUNCH, :PINMISSILE]
+]
+# R10 — Fase 6: MEGA ARCEUS, EL DE LOS MIL BRAZOS. Al vaciar la quinta barra el
+# dios megaevoluciona y la última barra se pelea contra una multitud: su pool
+# pasa a movimientos multigolpe (cada acción son muchos brazos) y cada golpe
+# sigue topado por RUTA_ARCEUS_HIT_CAP_RATIO, así que el espectáculo no rompe
+# el equilibrio de R9: cuatro acciones suyas por Pokémon sano, igual que antes.
+RUTA_ARCEUS_MIL_BRAZOS = [:FURYSWIPES, :COMETPUNCH, :PINMISSILE, :ARMTHRUST]
+RUTA_ARCEUS_MEGA_GRITOS = [
+  "¡Mil brazos descienden a la vez: ninguno golpea solo!",
+  "¡Los brazos tejen un cielo de golpes sobre Ash!",
+  "¡Cada brazo recuerda una batalla del prólogo; hoy cobran juntas!",
+  "¡La multitud de brazos cierra el anillo: no queda esquina sin dios!"
 ]
 RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_BOSS_LEVELS = [150, 175, 185, 195, 200, 200]
@@ -2352,12 +2364,53 @@ class PokeBattle_Battle
   # acción con un KO: un Pokémon sano aguanta cuatro acciones enemigas y sólo
   # puede caer cuando entra al turno ya por debajo del tope, así el duelo se
   # gana peleando y administrando el equipo, no aguantando un solo turno.
+  # R10 — Fase 6: la última barra la pelea MEGA ARCEUS, EL DE LOS MIL BRAZOS.
+  # La transformación no cambia el equilibrio de R9 (el tope por acción sigue
+  # siendo un tercio de la vida máxima): cambia el espectáculo y el pool, que
+  # pasa a multigolpes para que cada acción enemiga sean muchos brazos.
+  def ruta_arceus_mega?
+    return false if !arceus_divine? || @arceus_capture_ready
+    @arceus_phase.to_i >= RUTA_ARCEUS_STAGE_COUNT
+  end
+
+  def ruta_arceus_mega_aparicion(battler = nil)
+    return if !arceus_divine? || @ruta_arceus_mega_visto
+    @ruta_arceus_mega_visto = true
+    pbDisplayPaused(_INTL("¡La quinta barra se quiebra por dentro! El canon cruje: MEGA EVOLUCIÓN."))
+    pbDisplayPaused(_INTL("MEGA ARCEUS, EL DE LOS MIL BRAZOS, DESCIENDE SOBRE LA CIMA."))
+    pbDisplayPaused(_INTL("Arceus: «¿Contarlos? Imposible. Cada brazo es una regla que rompí para llegar hasta ti.»"))
+    pbDisplayPaused(_INTL("¡Mil brazos se despliegan! La última barra será un duelo contra una multitud."))
+    begin
+      pbFlash(Color.new(255, 255, 255, 255), 25)
+      pbShake(12, 12, 15)
+      pbToneChangeAll(Tone.new(120, 60, 160, 0), 4)
+      pbToneChangeAll(Tone.new(0, 0, 0, 0), 6)
+    rescue StandardError
+    end
+    begin
+      if battler && respond_to?(:pbAnimation) && defined?(GameData::Move) &&
+         GameData::Move.exists?(:THOUSANDARROWS)
+        pbAnimation(GameData::Move.get(:THOUSANDARROWS).id, battler, [])
+      end
+    rescue StandardError
+    end
+    save_arceus_state(battler) if battler && respond_to?(:save_arceus_state)
+  rescue StandardError
+  end
+
   def ruta_arceus_apply_ohko_guard(user, target)
     return false if !arceus_divine? || !target || !target.pokemon || target.fainted?
     return false if !ruta_arceus_ash_side?(target)
     return false if target.damageState.substitute == true
     return false if !user || !user.respond_to?(:pokemon) || !user.pokemon
     return false if ruta_arceus_ash_side?(user)
+    if ruta_arceus_mega? && @ruta_arceus_mega_grito_key != arceus_action_key
+      @ruta_arceus_mega_grito_key = arceus_action_key
+      begin
+        pbDisplay(_INTL(RUTA_ARCEUS_MEGA_GRITOS[@turnCount.to_i % RUTA_ARCEUS_MEGA_GRITOS.length]))
+      rescue StandardError
+      end
+    end
     lost = target.damageState.hpLost.to_i
     return false if lost <= 0
     total = target.totalhp.to_i
@@ -2452,6 +2505,8 @@ class PokeBattle_Battle
       battler.ruta_arceus_scripted_hp_write { battler.hp = battler.totalhp }
       pbArceusAnimateHP(battler, 0)
       check_arceus_phase(battler)
+      # R10: al quedar una sola barra desciende Mega Arceus, el de los Mil Brazos.
+      ruta_arceus_mega_aparicion(battler) if @arceus_bars_depleted == RUTA_ARCEUS_STAGE_COUNT - 1
     else
       @arceus_phase = RUTA_ARCEUS_STAGE_COUNT
       battler.ruta_arceus_scripted_hp_write { battler.hp = 1 }
@@ -5525,6 +5580,10 @@ function verify() {
       ["RUTA_ARCEUS_HIT_CAP_RATIO", "Arceus no derriba de un solo golpe a los Pokémon de Ash (R8/R9)"],
       ["RUTA_ARCEUS_REDLINE_HEAL_RATIO", "el umbral rojo no borra el avance de Ash: media barra (R9)"],
       ["def ruta_arceus_apply_ohko_guard", "tope de daño por acción sobre la ruta real del duelo (R8/R9)"],
+      ["def ruta_arceus_mega?", "Mega Arceus activo durante la última barra (R10)"],
+      ["def ruta_arceus_mega_aparicion", "megaevolución de los Mil Brazos al agotar la quinta barra (R10)"],
+      ["RUTA_ARCEUS_MIL_BRAZOS = [:FURYSWIPES", "pool multigolpe de la última barra (R10)"],
+      ["@ruta_arceus_mega_grito_key", "un grito de los Mil Brazos por acción enemiga (R10)"],
       ["def ruta_arceus_ash_bar_damage", "el daño de Ash a las seis barras se pondera con el vínculo (R8)"],
       ["def pbCalculatePriority(fullCalc = false, indexArray = nil)", "el lado de Ash abre cada ronda del duelo (R8)"],
       ["def pbCountArceusPlates", "helper de conteo de Tablas para el evento de Volus"],

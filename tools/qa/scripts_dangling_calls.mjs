@@ -147,6 +147,33 @@ for (const { title, code } of sections) {
   });
 }
 
+// ── R10: patrones de campo que revientan con ArgumentError en plena batalla ──
+// El clima y el terreno de v19 son símbolos validados por GameData; un entero,
+// un nil o un símbolo inexistente escritos en el campo tumban el fin de ronda
+// ("Expected 5 to be one of [Symbol, GameData::BattleWeather, String]"). Estos
+// patrones detectan la clase de error antes de jugarlo:
+const PATRONES_CAMPO = [
+  ["pbStartWeather con símbolo de usuario o movimiento como 1er argumento", /pbStartWeather\(\s*:/],
+  ["pbStartWeather con número como clima (2.º argumento)", /pbStartWeather\([^,\n(]+,\s*\d+/],
+  ["escritura de .weather con literal no simbólico", /\.weather\s*=\s*(\d+|nil|true|false|["'])/],
+  ["escritura de .terrain con literal no simbólico", /\.terrain\s*=\s*(\d+|nil|true|false|["'])/],
+  ["setter inexistente weatherduration (minúsculas)", /weatherduration\s*=/],
+];
+const hallazgosCampo = new Map();
+for (const { title, code } of sections) {
+  if (!code) continue;
+  const lines = code.split("\n");
+  lines.forEach((line, index) => {
+    if (/^\s*#/.test(line)) return; // comentarios: documentan el fallo, no lo cometen
+    for (const [nota, re] of PATRONES_CAMPO) {
+      if (!re.test(line)) continue;
+      if (!hallazgosCampo.has(nota)) hallazgosCampo.set(nota, []);
+      const lista = hallazgosCampo.get(nota);
+      if (lista.length < 5) lista.push(`${title}:${index + 1}`);
+    }
+  });
+}
+
 const ordenadas = [...findings.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 console.log(`Secciones analizadas: ${sections.length}`);
 console.log(`Métodos definidos en el juego: ${defined.size}`);
@@ -154,10 +181,20 @@ console.log(`Llamadas sin definición conocida: ${ordenadas.length}`);
 for (const [name, where] of ordenadas) {
   console.log(`  FALLO  ${name}  (${where.join(", ")})`);
 }
-if (ordenadas.length > 0) {
+console.log(`Patrones de campo peligrosos (R10): ${hallazgosCampo.size}`);
+for (const [nota, where] of hallazgosCampo) {
+  console.log(`  FALLO  ${nota}  (${where.join(", ")})`);
+}
+if (ordenadas.length > 0 || hallazgosCampo.size > 0) {
   console.log("");
-  console.log("Cada nombre de la lista se llama sobre un objeto y no lo define ningún script:");
-  console.log("el juego fallará con NoMethodError la primera vez que se ejecute ese camino.");
+  if (ordenadas.length > 0) {
+    console.log("Cada nombre de la primera lista se llama sobre un objeto y no lo define ningún script:");
+    console.log("el juego fallará con NoMethodError la primera vez que se ejecute ese camino.");
+  }
+  if (hallazgosCampo.size > 0) {
+    console.log("La segunda lista escribe en el campo valores que GameData rechazará con ArgumentError en plena batalla.");
+  }
   process.exit(1);
 }
 console.log("OK: ninguna llamada apunta a un método inexistente en los scripts instalados.");
+console.log("OK: ningún script escribe clima, terreno o talentos que el motor rechace (R10).");

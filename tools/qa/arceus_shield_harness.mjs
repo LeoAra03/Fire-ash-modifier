@@ -99,6 +99,7 @@ WANTED = {
                            "check_arceus_phase", "pbArceusAnimateHP",
                            "ruta_arceus_ash_side?", "ruta_arceus_ash_first_active?",
                            "ruta_arceus_apply_ohko_guard", "ruta_arceus_ash_bar_damage",
+                           "ruta_arceus_mega?", "ruta_arceus_mega_aparicion",
                            "pbCalculatePriority"],
   "PokeBattle_Move"    => ["ruta_arceus_cinematic_boss_target?", "ruta_arceus_divine_boss_target?",
                            "pbInflictHPDamage"]

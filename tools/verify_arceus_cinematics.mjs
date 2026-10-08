@@ -48,6 +48,12 @@ if (!entrada) {
 }
 const ruby = zlib.inflateSync(Buffer.from(entrada[2].bytes)).toString("utf8");
 
+const SECCION_CANON = "PokeMod_CanonArceus";
+const entradaCanon = scripts.find(([, t]) => t && t.text === SECCION_CANON);
+const canon = entradaCanon
+  ? zlib.inflateSync(Buffer.from(entradaCanon[2].bytes)).toString("utf8")
+  : "";
+
 /** Recorta el cuerpo de una función Ruby por su cabecera. */
 function cuerpo(de) {
   const ini = ruby.indexOf(de);
@@ -225,6 +231,25 @@ check(ruby.includes("Ir directo al duelo con Arceus") && ruby.includes("saltar_p
   "el prólogo se puede saltar desde el primer arranque e ir directo al combate");
 check(/when 4 then \[base_level\.to_i - 20, 1\]\.max/.test(ruby) && !/when 4 then 1\r?\n/.test(ruby),
   "el Juicio del Vínculo ya no apaga a los Pokémon de Ash a nivel 1");
+
+// ------------------------------------------- R10: cero errores de script visibles
+check(/def ruta_arceus_mega\?/.test(ruby) && /def ruta_arceus_mega_aparicion/.test(ruby) &&
+  ruby.includes("RUTA_ARCEUS_MIL_BRAZOS = [:FURYSWIPES"),
+  "la última barra es la fase de Mega Arceus, el de los Mil Brazos, con pool multigolpe");
+check(ruby.includes("MEGA ARCEUS, EL DE LOS MIL BRAZOS, DESCIENDE SOBRE LA CIMA") &&
+  ruby.includes("ruta_arceus_mega_aparicion(battler) if @arceus_bars_depleted == RUTA_ARCEUS_STAGE_COUNT - 1"),
+  "la megaevolución de los Mil Brazos desciende al agotar la quinta barra");
+check(canon.includes("battle.pbStartWeather(nil, clima, true, true, 5)") &&
+  !canon.includes("pbStartWeather(clima, 5)"),
+  "el clima de las fases usa la firma correcta de v19 (símbolo de clima, no un entero)");
+check(canon.includes("module RutaCampoSeguro") && canon.includes("def self.sanitizar!(battle)") &&
+  canon.includes("alias ruta_fin_ronda_original start_phase"),
+  "la red anti-error sanitiza el campo antes de cada fin de ronda y valida todo clima escrito");
+check(!/^\s*otro\.ability = nil/m.test(canon) && canon.includes("PBEffects.const_get(:GastroAcid)"),
+  "el silencio de talentos usa el efecto real del motor en vez de borrar el talento");
+check(canon.includes("MEGA ARCEUS, EL DE LOS MIL BRAZOS, ESCRIBE LA ÚLTIMA REGLA") &&
+  canon.includes(":movs => [:FURYSWIPES, :COMETPUNCH, :PINMISSILE, :ARMTHRUST]"),
+  "la fase 6 del canon anuncia a Mega Arceus y arma su pool de mil brazos");
 
 // ------------------------------------------------------------ blindaje global
 const rescues = (ruby.match(/rescue StandardError/g) || []).length;

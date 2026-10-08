@@ -1,5 +1,48 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-08 (5) — Cero errores de script en batalla y Mega Arceus de los Mil Brazos
+
+Este arreglo ataca el cartel de error que aparecía **en plena batalla**
+(`ArgumentError: Invalid argument passed to method. Expected 5 to be one of
+[Symbol, GameData::BattleWeather, String], but got Integer`, con el fin de
+ronda en la traza) y añade la fase nueva que pediste:
+
+- **La causa exacta del cartel.** Cada fase del duelo reescribe una regla del
+  combate; la fase del cielo sembraba su clima con una llamada mal firmada:
+  pasaba el *símbolo de un movimiento* como usuario y el *número 5* como clima.
+  El campo quedaba con `weather = 5` y, al cerrar el turno, el motor consultaba
+  `GameData::BattleWeather.try_get(5)` y reventaba. Ahora el clima se escribe
+  con la firma correcta de v19 (`pbStartWeather(nil, clima, true, true, 5)`) y
+  con símbolos reales de clima (`:Rain`, `:Sun`, `:Sandstorm`, `:Hail`, `:Fog`).
+- **Red anti-error sobre el campo (R10).** Aunque otro mod o una partida vieja
+  escriban basura, ya no puede verse un cartel: `pbStartWeather` y
+  `defaultWeather=` **validan antes de escribir**; cada fin de ronda
+  **sanitiza** clima y terreno antes de que el motor los lea; y si algo
+  inesperado revienta dentro del fin de ronda, el error se absorbe y sanitiza
+  ahí mismo en vez de llegar al jugador. El silencio de talentos de la fase 3
+  ahora usa el efecto real del motor (Bilis Negra) en vez de borrar el talento.
+- **Auditoría de cada fase y cada script.** El auditor estático
+  (`npm run verify:scripts:calls`) revisa las 405 secciones instaladas también
+  contra patrones de campo peligrosos (clima/terreno escritos con enteros o
+  nil, firmas mal puestas): **0 hallazgos**.
+- **Fase 6 nueva: MEGA ARCEUS, EL DE LOS MIL BRAZOS.** Al vaciar la quinta
+  barra el dios megaevoluciona: cartel y flash propios, animación de mil
+  proyectiles, un grito por acción («¡Mil brazos descienden a la vez…!») y un
+  pool de movimientos multigolpe (Furia Golpes, Puño Cometa, Pin Misil…).
+  El equilibrio de R9 no se toca: cada acción suya sigue topada en un tercio de
+  la vida máxima, así que el espectáculo no vuelve imposible el duelo.
+- **Un millón de escenarios de QA.** `npm run verify:arceus:fuzz` ejecuta el
+  código instalado dentro de Ruby 3.3 (WebAssembly) sobre un motor de prueba
+  que replica las validaciones reales de GameData: 800 000 micro-escenarios de
+  la guardia anti-KO, 150 000 de clima/terreno sucios con fin de ronda, 6 000
+  duelos completos aleatorios (seis barras, umbral rojo, megaevolución y
+  captura) y 44 000 barridos de las seis fases: **1 000 000 de escenarios,
+  0 fallos**.
+
+Instalación idéntica a la de siempre: copia `Scripts_corregido/Scripts.rxdata`
+sobre `Data/Scripts.rxdata` (o descomprime el ZIP del paquete directo). Si
+tenías el duelo a medias, sal de la Cima y vuelve a entrar.
+
 ## Arreglo 2026-10-08 (4) — Reajuste de dificultad: el duelo final se gana con estrategia
 
 El duelo de la Cima quedó demasiado duro: aunque ya se jugaba y tus golpes

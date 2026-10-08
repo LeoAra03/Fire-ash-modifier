@@ -80,6 +80,33 @@ Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
    - **Barras del Génesis:** un ataque multigolpe no puede agotar más de una barra en la misma acción. Los golpes críticos no saltan etapas: deben agotarse seis barras completas. Tras vaciar la sexta, Arceus queda visualmente a 1 PS y habilita una captura determinista del 100%; las bolas están bloqueadas antes de ese punto.
    - **Duelo jugable (R8/R9):** el combate final ya no es una derrota anunciada. Ash elige sus comandos en el bucle normal del motor (sólo el lado de Arceus está guionizado) y **su lado abre cada ronda**: `pbCalculatePriority` reordena `@priority` poniendo primero a los Pokémon del jugador dentro del duelo divino, incluso con el Espacio Raro de la Etapa 4 activo. **Arceus no puede derribar de un solo golpe a un Pokémon de Ash:** `ruta_arceus_apply_ohko_guard` topa cada acción enemiga en **un tercio de la vida máxima** del objetivo (multi-impactos y movimientos de KO incluidas, porque todos pasan por `pbReduceDamage`), de modo que un Pokémon sano aguanta **cuatro acciones** de Arceus; si el Pokémon ya entró al turno por debajo de ese tercio, sí puede caer. **Los golpes de Ash cuentan de verdad:** `ruta_arceus_ash_bar_damage` multiplica por 4 el daño del lado del jugador contra las barras y garantiza un mínimo de media barra por impacto, mientras las barras siguen avanzando una por acción. **El umbral rojo no castiga al jugador:** `pbArceusRedlineHeal` ya no restaura la barra completa, sólo media barra y una vez por etapa, así que pegar más fuerte nunca alarga el duelo. El Juicio del Vínculo (etapa 4) no baja a nivel 1 a los Pokémon de Ash (`pbArceusRivalLevel`), y las etapas 5 y 6 suben menos el nivel del rival (`base + 25` y `base + 35`).
    - **Ritmo verificado del duelo (R9):** `npm run verify:arceus:shield` simula el duelo completo sobre los métodos reales y mide turnos y bajas. Con sólo el daño mínimo del vínculo las seis barras caen en **12 turnos y 2 bajas**; un golpe fuerte por turno da el mismo resultado (pegar más nunca alarga la pelea); y un jugador que pierde un turno de cada tres (inmunidades, fallos de precisión, cambios, objetos) igual cierra el duelo en **17 turnos con 4 bajas**. Arceus sigue derribando a un Pokémon cada cuatro turnos: el duelo se gana administrando el equipo, no aguantando.
+   - **Cero errores de script y Mega Arceus (R10):** el cartel de `ArgumentError`
+     que aparecía en plena batalla venía de la fase del cielo: `batalla_clima`
+     sembraba el clima con la firma antigua (`pbStartWeather(clima, 5)`: el
+     símbolo de un movimiento como usuario y el número 5 como clima), así que
+     el campo quedaba con `weather = 5` y el fin de ronda reventaba en
+     `GameData::BattleWeather.try_get(5)`. Ahora el clima usa la firma v19 con
+     símbolos reales, y la red anti-error `RutaCampoSeguro` hace imposible que
+     un campo sucio llegue al jugador: `pbStartWeather`/`defaultWeather=`
+     validan antes de escribir, cada `Battle_Phase_EndOfRound#start_phase`
+     sanitiza clima y terreno antes de leerlos, y cualquier error residual del
+     fin de ronda se absorbe sanitizando en vez de mostrarse. El silencio de
+     talentos de la fase 3 usa el efecto real `PBEffects::GastroAcid`. La
+     **fase 6 es ahora MEGA ARCEUS, EL DE LOS MIL BRAZOS**: al agotar la quinta
+     barra desciende con cartel, flash, animación de mil proyectiles y un grito
+     por acción, y su pool pasa a multigolpes (`RUTA_ARCEUS_MIL_BRAZOS`), sin
+     tocar el tope de un tercio por acción de R9.
+   - **QA de un millón de escenarios (R10):** `npm run verify:arceus:fuzz`
+     ejecuta el código instalado (secciones `PokeMod_RutaDeDios` y
+     `PokeMod_CanonArceus`) dentro de CRuby 3.3 en WebAssembly sobre un motor
+     de prueba que replica las validaciones de GameData: 800 000 micro-escenarios
+     de la guardia anti-KO, 150 000 escrituras sucias de clima/terreno con fin
+     de ronda parcheado, 6 000 duelos completos aleatorios y 44 000 barridos de
+     las seis fases del canon. Cada familia corre en su propio VM porque el
+     heap de WASM no tolera las tandas acumuladas. Resultado: **1 000 000 de
+     escenarios, 0 fallos**. El auditor estático añade patrones de campo
+     (clima/terreno con literales inválidos, firmas mal puestas) sobre las 405
+     secciones: 0 hallazgos.
    - **Camino único de daño:** el motor aplica el daño de los movimientos con `target.hp -= hpLost` (sin pasar por `pbReduceHP`); ese camino también pasa por las barras y por el setter de PS protegido. Un Metagross, el granizo del mapa o cualquier escritura externa de PS no pueden saltarse una etapa ni derrotar a Arceus: el KO se convierte siempre en transición de barra. El duelo se inicia sin el clima heredado de la cumbre (`recordBattleRule("weather", "None")`).
    - **Ecos legales (R2/S10):** las invocaciones de Mew y Giratina nacen al nivel máximo legal del juego (150) y reciben un empuje divino ×1,25; el nivel 200 queda reservado al Arceus divino.
    - **Azar reproducible:** los combates principales y de apoyo usan semillas locales; la selección de etapa, ventajas de tipo y ataques se basa en el estado visible del rival.
@@ -111,7 +138,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 ## 8. Verificación automatizada y límites
 - `npm run verify:ruta_de_dios` revisa switches, recorrido, equipos y el código instalado de las seis barras, la ruleta animada, los ataques/niveles adaptativos, inmunidad a estados, caminatas y curaciones.
 - `npm run verify:ruta_de_dios:package` y `npm run verify:package` comparan los datos/scripts del paquete directo y su ZIP.
-- `npm run verify:arceus:cinematics` audita la escena 2v1 (menús, huida, `canLose`, PRNG, entradas físicas) y ahora exige que el daño cinemático sea absorbido sin mover la barra, que el setter de PS rechace escrituras externas, que ni el prólogo ni el duelo hereden el clima de la cumbre y, desde R8/R9, que existan la guardia anti-KO, el vínculo de las barras, la iniciativa de Ash, la opción de saltar el prólogo, el Juicio del Vínculo jugable y el umbral rojo que no borra el avance (47 invariantes).
+- `npm run verify:arceus:cinematics` audita la escena 2v1 (menús, huida, `canLose`, PRNG, entradas físicas) y ahora exige que el daño cinemático sea absorbido sin mover la barra, que el setter de PS rechace escrituras externas, que ni el prólogo ni el duelo hereden el clima de la cumbre y, desde R8/R9, que existan la guardia anti-KO, el vínculo de las barras, la iniciativa de Ash, la opción de saltar el prólogo, el Juicio del Vínculo jugable y el umbral rojo que no borra el avance (53 invariantes).
 - `npm run verify:arceus:shield` (opcional, requiere `npm i --no-save @ruby/3.3-wasm-wasi`) ejecuta los métodos reales de la sección instalada dentro de un CRuby compilado a WebAssembly sobre clases que imitan las rutas de daño del motor: 69 comprobaciones entre granizo, Metagross, escrituras directas, `pbFaint`, las seis barras, la captura final, la guardia que topa cada acción de Arceus en un tercio de la vida máxima (incluido el multigolpe que no puede rematar), la iniciativa de Ash con Espacio Raro, el vínculo que mueve al menos media barra, la **simulación del ritmo del duelo** (turnos y bajas hasta la sexta barra, con jugador flojo, fuerte y descuidado) y Ball Breaker (la clase real de «Despacito Despair» corriendo con los ayudantes restaurados), más una regresión que confirma que un Arceus normal del jugador no lleva escudo.
 - `npm run verify:scripts:calls` (dentro de `npm test`) descomprime las 405 secciones y marca cualquier llamada `objeto.metodo` que no exista en ningún script ni en el núcleo de Ruby; es la red de seguridad que habría detectado el fallo de `selfProtected?` antes de jugarlo.
 - `npm run build:corregido:zip` / `npm run verify:corregido:zip` reconstruyen y comprueban el ZIP descargable de la raíz (`Fire-Ash-Scripts-Corregidos.zip`) a partir de `Paquete_directo/` y `LEEME.md`, conservando el orden y el método de compresión de sus entradas (7,8 MB).
