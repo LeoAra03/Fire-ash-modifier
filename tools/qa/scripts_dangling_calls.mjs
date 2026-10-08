@@ -158,6 +158,7 @@ const PATRONES_CAMPO = [
   ["escritura de .weather con literal no simbólico", /\.weather\s*=\s*(\d+|nil|true|false|["'])/],
   ["escritura de .terrain con literal no simbólico", /\.terrain\s*=\s*(\d+|nil|true|false|["'])/],
   ["setter inexistente weatherduration (minúsculas)", /weatherduration\s*=/],
+  ["pbShowCommands con booleano como valor por defecto (la escena exige entero: defaultValue>=0)", /pbShowCommands\([^)\n]*,\s*(?:true|false)\s*\)/],
 ];
 const hallazgosCampo = new Map();
 for (const { title, code } of sections) {

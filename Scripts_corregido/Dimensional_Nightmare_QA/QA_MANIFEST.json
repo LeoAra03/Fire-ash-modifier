@@ -562,8 +562,8 @@
     },
     {
       "path": "Data/Map2037.rxdata",
-      "bytes": 20009,
-      "sha256": "f5303238ab3fc46c560f42c7295558c27a51c02821ac928a602e61701b98ac7f"
+      "bytes": 20846,
+      "sha256": "2212d34b9c04f3cc8ac7b34d3709f40aed08d063fc5b1a1ddc7db9981cd438a9"
     },
     {
       "path": "Data/Map2038.rxdata",
@@ -1342,8 +1342,8 @@
     },
     {
       "path": "Data/Scripts.rxdata",
-      "bytes": 1144638,
-      "sha256": "b844445fd488e88751bebc80de1475b2d4566b232cfeee89b87206a54912bcff"
+      "bytes": 1144662,
+      "sha256": "8ee8f9e1ffd78463d206fb8ac2edcf21e0195da461682b341e1d1f2108370ddc"
     },
     {
       "path": "Data/System.rxdata",

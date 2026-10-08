@@ -387,6 +387,11 @@ class PokeBattle_Battle
   # R12: ventanas de elección, música y party dentro del combate.
   attr_accessor :comando_script, :comando_log, :bgm_log
   def pbShowCommands(msg, commands, canCancel = true)
+    # Réplica fiel del contrato de la escena (Scene_Battle:203): el 3er
+    # argumento se usa como `defaultValue>=0`, así que DEBE ser entero. Un
+    # booleano aquí lanza NoMethodError en el juego real; lo reproducimos para
+    # que ninguna firma mal puesta vuelva a pasar la QA.
+    raise NoMethodError, "undefined method `>=' for #{canCancel.inspect}" if !canCancel.is_a?(Integer)
     @comando_log ||= []
     @comando_log << (commands || []).dup
     c = @comando_script

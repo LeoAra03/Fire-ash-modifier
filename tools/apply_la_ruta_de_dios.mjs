@@ -2736,7 +2736,7 @@ class PokeBattle_Battle
     pbDisplayPaused(_INTL("Arceus alza una esfera de juicio sobre {1}. «Elige dónde esconderte. Si me adivinas, mis próximos dos golpes pesan la mitad.»", nombre))
     eleccion = -1
     begin
-      eleccion = pbShowCommands(nil, RUTA_ARCEUS_JUEGO_REFUGIOS, false)
+      eleccion = pbShowCommands(_INTL("¿Dónde te escondes?"), RUTA_ARCEUS_JUEGO_REFUGIOS, -1)
     rescue StandardError
       eleccion = -1
     end
@@ -2917,7 +2917,7 @@ class PokeBattle_Battle
     ruta_arceus_decir(:ofrenda)
     eleccion = -1
     begin
-      eleccion = pbShowCommands(nil, RUTA_ARCEUS_OFRENDA_ELECCIONES, false) if respond_to?(:pbShowCommands)
+      eleccion = pbShowCommands(_INTL("¿Aceptas la merced del Génesis?"), RUTA_ARCEUS_OFRENDA_ELECCIONES, -1) if respond_to?(:pbShowCommands)
     rescue StandardError
       eleccion = -1
     end

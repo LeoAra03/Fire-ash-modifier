@@ -150,6 +150,16 @@ Al alcanzar el Altar del Origen en la Cima del Génesis (`Map2037`, 23, 10):
      invocaciones, juegos, merced y copia), F3 con el turno divino completo
      (3 000 duelos: 1 764 victorias, 333 Primigenias) y **1 000 000 de
      escenarios totales, 0 fallos**; cinemáticas en **69 invariantes**.
+     `verify:arceus:recursos` audita además los ARCHIVOS del juego contra lo
+     que el duelo nombra: 44 movimientos en `moves.dat`, 37 especies en
+     `species.dat` con sprite frontal (18 formas de Arceus incluidas), 18
+     Tablas + Poké Ball en `items.dat`, 7 pistas en `Audio/BGM` y 5 sprites de
+     personaje: **0 recursos faltantes** (el juego no trae animaciones
+     «Common:» de clima y el motor las salta en silencio, sin romper nada).
+     De paso se cazó y corrigió una firma mal puesta: las ventanas de elección
+     pasaban `false` donde la escena del motor exige un entero
+     (`defaultValue>=0`); ahora usan `-1` como el propio motor, el stub de QA
+     reproduce el contrato y el auditor estático lo vigila.
    - **Camino único de daño:** el motor aplica el daño de los movimientos con `target.hp -= hpLost` (sin pasar por `pbReduceHP`); ese camino también pasa por las barras y por el setter de PS protegido. Un Metagross, el granizo del mapa o cualquier escritura externa de PS no pueden saltarse una etapa ni derrotar a Arceus: el KO se convierte siempre en transición de barra. El duelo se inicia sin el clima heredado de la cumbre (`recordBattleRule("weather", "None")`).
    - **Ecos legales (R2/S10):** las invocaciones de Mew y Giratina nacen al nivel máximo legal del juego (150) y reciben un empuje divino ×1,25; el nivel 200 queda reservado al Arceus divino.
    - **Azar reproducible:** los combates principales y de apoyo usan semillas locales; la selección de etapa, ventajas de tipo y ataques se basa en el estado visible del rival.

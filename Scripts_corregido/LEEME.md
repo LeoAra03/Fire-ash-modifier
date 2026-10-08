@@ -54,7 +54,18 @@ dios que **juega** contigo, sin dejar de ser un duelo Pokémon:
 - **Nada de esto puede reventar.** El turno divino cuelga del cálculo de
   prioridad **aislado** (si algo fallara, la ronda sigue intacta) y cada
   sistema (música, apertura, merced, juegos, invocaciones, copia) tiene su
-  propio escudo. QA: **1 000 000 de escenarios, 0 fallos**, con una familia
+  propio escudo. Las ventanas de elección usan la firma exacta del motor
+  (`pbShowCommands` con valor por defecto entero, como el propio motor las
+  llama): la B siempre responde bien.
+- **Auditoría de recursos reales.** Un verificador nuevo
+  (`npm run verify:arceus:recursos`) comprueba que TODO lo que el duelo nombra
+  exista en los archivos del juego: los 44 movimientos referenciados en
+  `moves.dat`, las 37 especies en `species.dat` con su sprite frontal (y las
+  18 formas de Arceus), las 18 Tablas + Poké Ball en `items.dat`, las 7 pistas
+  en `Audio/BGM` y los 5 sprites de personaje del prólogo. Resultado: **nada
+  falta**. Lo único que el juego no trae son animaciones «Common:» de clima
+  (este Fire Ash no las usa en batalla): el motor las salta en silencio y el
+  clima funciona igual a nivel mecánico. QA: **1 000 000 de escenarios, 0 fallos**, con una familia
   nueva (F5 · 200 600) dedicada a estos sistemas y 3 000 duelos completos con
   todo activado (1 764 victorias, 333 Formas Primigenias); el verificador de
   cinemáticas sube a **69 invariantes**.
