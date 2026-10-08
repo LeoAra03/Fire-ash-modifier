@@ -30,10 +30,11 @@ RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_PHASE_TYPES = [:NORMAL].freeze
 RUTA_ARCEUS_TYPE_FORMS = {}.freeze
 RUTA_ARCEUS_MOVE_SETS = [[:JUDGMENT]].freeze
-# R8 · duelo jugable (los mismos valores que la sección instalada).
+# R8/R9 · duelo jugable (los mismos valores que la sección instalada).
 RUTA_ARCEUS_ASH_BAR_POWER = 4.0
 RUTA_ARCEUS_ASH_BAR_MIN_RATIO = 0.5
-RUTA_ARCEUS_OHKO_FLOOR_RATIO = 0.30
+RUTA_ARCEUS_HIT_CAP_RATIO = 0.33
+RUTA_ARCEUS_REDLINE_HEAL_RATIO = 0.5
 
 # El motor define PBEffects como un módulo de índices; aquí los efectos del
 # battler de prueba son un Hash, así que los nombres actúan de clave.
@@ -321,7 +322,8 @@ move.pbInflictHPDamage(boss)
 check(battle.instance_variable_get(:@arceus_bars_depleted) == 1,
       "un multigolpe no puede saltar dos barras en la misma acción")
 check(boss.hp >= 1 && !boss.fainted?, "el impacto extra de la misma acción no puede derrotarlo")
-check(boss.hp == boss.totalhp, "la curación de umbral rojo devuelve la barra nueva a su sitio")
+check(boss.hp == 1 + (boss.totalhp * RUTA_ARCEUS_REDLINE_HEAL_RATIO).round,
+      "la curación de umbral rojo devuelve media barra y no borra el avance")
 
 battle.turnCount = 8
 battle.lastMoveUsed = :ZENHEADBUTT
@@ -468,23 +470,39 @@ ash.damageState.hpLost = 9999
 ash.damageState.totalHPLost = 9999
 check(battle.ruta_arceus_apply_ohko_guard(boss, ash) == true,
       "la guardia anti-KO reconoce el golpe letal de Arceus")
-check(ash.damageState.hpLost == 350 && ash.damageState.endured == true,
-      "el golpe deja a Ash al 30 % de su vida máxima: nunca un KO de un solo turno")
+tope = (500 * RUTA_ARCEUS_HIT_CAP_RATIO).round
+check(ash.damageState.hpLost == tope && ash.damageState.endured == true,
+      "un golpe mortal de Arceus sólo quita un tercio de la vida máxima: nunca un KO de un solo turno")
 check(battle.messages.any? { |m| m.include?("se niega a caer") },
       "el vínculo de Ash se narra cuando el golpe mortal es detenido")
 
 ash.instance_variable_set(:@hp, 500 - ash.damageState.hpLost)
 ash.damageState.hpLost = 9999
-ash.damageState.totalHPLost = 350 + 9999
+ash.damageState.totalHPLost = tope + 9999
 battle.ruta_arceus_apply_ohko_guard(boss, ash)
 check(ash.damageState.hpLost == 0,
       "el segundo impacto de la misma acción (multigolpe) tampoco remata")
 
+ash.instance_variable_set(:@hp, 500 - tope)
 ash.damageState.hpLost = 9999
 ash.damageState.totalHPLost = 9999
 battle.ruta_arceus_apply_ohko_guard(boss, ash)
-check(ash.damageState.hpLost == 150,
-      "un Pokémon que ya entró al turno al 30 % sí puede ser derribado")
+check(ash.damageState.hpLost == tope && ash.instance_variable_get(:@hp) - ash.damageState.hpLost == 500 - 2 * tope,
+      "cada acción de Arceus vuelve a toparse: hacen falta cuatro para tumbar a un Pokémon sano")
+
+ash.instance_variable_set(:@hp, 500)
+ash.damageState.hpLost = 300
+ash.damageState.totalHPLost = 300
+ash.damageState.endured = false
+battle.ruta_arceus_apply_ohko_guard(boss, ash)
+check(ash.damageState.hpLost == tope && ash.damageState.endured == false,
+      "un golpe fuerte no mortal se recorta al tope sin gastar el relato de aguante")
+
+ash.instance_variable_set(:@hp, tope)
+ash.damageState.hpLost = 9999
+ash.damageState.totalHPLost = 9999
+check(battle.ruta_arceus_apply_ohko_guard(boss, ash) == false && ash.damageState.hpLost == 9999,
+      "un Pokémon ya debilitado por debajo del tope sí puede ser derribado: el duelo no se estanca")
 check(battle.ruta_arceus_apply_ohko_guard(boss, boss) == false,
       "la guardia nunca protege al propio Arceus")
 cinematica, ash_cine, boss_cine = cinematic_battle
@@ -505,6 +523,64 @@ check(boss.hp == 500,
 battle.lastMoveUser = 1
 check(battle.ruta_arceus_ash_bar_damage(boss, 40) == 40,
       "el daño que no sale de Ash (retroceso, clima) no recibe el vínculo")
+
+log ""
+log "== Ritmo del duelo (R9): seis barras contra un equipo de seis Pokémon =="
+# Simulación determinista sobre los métodos reales: cada turno Ash golpea con
+# un daño bruto (antes del vínculo) y Arceus responde con su mejor golpe. Se
+# cuentan los turnos hasta vaciar las seis barras y las bajas que aguanta un
+# equipo de seis Pokémon sanos. Sirve para demostrar que el duelo se puede
+# ganar jugando bien y que el umbral rojo no castiga al jugador que pega fuerte.
+def simular_duelo(proporcion_golpe, cada_cuanto_falla = nil, max_turnos = 80)
+  battle, ash, boss = divine_battle(1000)
+  move = PokeBattle_Move.new(battle, :METEORMASH)
+  bajas = 0
+  max_turnos.times do |indice|
+    turno = indice + 1
+    battle.turnCount = turno
+    battle.lastMoveUser = 0
+    battle.lastMoveUsed = :METEORMASH
+    desperdiciado = cada_cuanto_falla && (turno % cada_cuanto_falla).zero?
+    boss.damageState.hpLost = desperdiciado ? 0 : (boss.totalhp * proporcion_golpe).round
+    boss.damageState.totalHPLost = boss.damageState.hpLost
+    move.pbInflictHPDamage(boss)
+    return [turno, bajas, true] if battle.instance_variable_get(:@arceus_capture_ready) == true
+    # Turno de Arceus: su mejor golpe contra el Pokémon activo, ya topeado.
+    battle.lastMoveUser = boss.index
+    battle.lastMoveUsed = :JUDGMENT
+    battle.pbArceusRedlineHeal(boss, true)
+    ash.damageState.hpLost = ash.totalhp * 4
+    ash.damageState.totalHPLost = ash.damageState.hpLost
+    battle.ruta_arceus_apply_ohko_guard(boss, ash)
+    ash.instance_variable_set(:@hp, [ash.hp - ash.damageState.hpLost, 0].max)
+    if ash.hp <= 0
+      bajas += 1
+      return [turno, bajas, false] if bajas >= 6
+      ash.instance_variable_set(:@hp, ash.totalhp)
+      ash.pokemon.hp = ash.totalhp
+    end
+  end
+  return [max_turnos, bajas, false]
+end
+
+turnos_peor, bajas_peor, gano_peor = simular_duelo(0.01)
+check(gano_peor == true && turnos_peor <= 12,
+      "con los golpes más flojos posibles (sólo el vínculo) las seis barras caen en #{turnos_peor} turnos")
+check(bajas_peor <= 3,
+      "ese mismo duelo deja a Ash con media plantilla en pie (#{bajas_peor} bajas)")
+turnos_fuerte, bajas_fuerte, gano_fuerte = simular_duelo(0.20)
+check(gano_fuerte == true && turnos_fuerte <= 12 && bajas_fuerte <= 3,
+      "un golpe fuerte por turno cierra el duelo en #{turnos_fuerte} turnos y #{bajas_fuerte} bajas")
+check(turnos_fuerte <= turnos_peor,
+      "hacer más daño nunca alarga el duelo: el umbral rojo no castiga al jugador")
+check(bajas_peor < 6 && bajas_fuerte < 6,
+      "Arceus no barre el equipo antes de que Ash vacíe las seis barras")
+
+# Jugador descuidado: pierde un turno de cada tres (inmunidades, fallos de
+# precisión, cambio de Pokémon, curación con objetos). El duelo sigue ganándose.
+turnos_perdidos, bajas_perdidas, gano_perdido = simular_duelo(0.01, 3)
+check(gano_perdido == true && bajas_perdidas <= 5,
+      "un jugador que pierde uno de cada tres turnos igual cierra las seis barras (#{turnos_perdidos} turnos, #{bajas_perdidas} bajas)")
 
 log ""
 log "Resultado: #{$ok} comprobaciones OK, #{$fail} fallos"

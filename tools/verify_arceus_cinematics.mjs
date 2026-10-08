@@ -208,9 +208,13 @@ check(/def pbSwitchInBetween/.test(ruby) && /arceus_cinematic\?/.test(ruby),
 check(/def pbArceusScriptedAction/.test(ruby),
   "las acciones de los aliados están guionadas (no decididas al azar)");
 
-// ------------------------------------------------ duelo final jugable (R8)
-check(ruby.includes("RUTA_ARCEUS_OHKO_FLOOR_RATIO") && /def ruta_arceus_apply_ohko_guard/.test(ruby),
+// ------------------------------------------------ duelo final jugable (R8/R9)
+check(ruby.includes("RUTA_ARCEUS_HIT_CAP_RATIO") && /def ruta_arceus_apply_ohko_guard/.test(ruby),
   "el duelo final limita el daño de Arceus: ningún turno suyo derriba de un golpe a un Pokémon de Ash");
+check(ruby.includes("RUTA_ARCEUS_REDLINE_HEAL_RATIO") &&
+  ruby.includes("El altar le devuelve media barra") &&
+  !ruby.includes("su barra se restaura por completo"),
+  "el umbral rojo de Arceus ya no borra el avance de Ash: recupera media barra por etapa");
 check(ruby.includes("def ruta_arceus_ash_bar_damage") && ruby.includes("RUTA_ARCEUS_ASH_BAR_MIN_RATIO") &&
   ruby.includes("RUTA_ARCEUS_ASH_BAR_POWER"),
   "los golpes de Ash mueven las seis barras con el vínculo que forjó en el prólogo");

@@ -1,5 +1,29 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-08 (4) — Reajuste de dificultad: el duelo final se gana con estrategia
+
+El duelo de la Cima quedó demasiado duro: aunque ya se jugaba y tus golpes
+movían las barras, la presión de Arceus ganaba casi siempre la carrera de
+desgaste. Este paquete lo reajusta (nada más cambia):
+
+- **Su golpe pesa un tercio.** Ninguna acción de Arceus quita más de un tercio de
+  la vida máxima de tu Pokémon activo, multigolpes y movimientos de KO incluidos:
+  hacen falta **cuatro acciones suyas** para tumbar a un Pokémon sano. Si un
+  Pokémon ya está muy bajo (por debajo de ese tercio), sí puede caer.
+- **El umbral rojo ya no borra tu avance.** Cuando Arceus cruza el umbral rojo ya
+  no restaura la barra completa: recupera **media barra**, una vez por etapa.
+- **Menos castigo en las etapas finales.** Las etapas 5 y 6 suben menos el nivel
+  del rival, así que tus Pokémon dejan de pelear cuesta arriba.
+- Lo demás sigue igual: tú eliges los comandos, tu lado abre cada ronda, tus
+  golpes mueven las seis barras (×4, mínimo media barra por impacto) y la captura
+  garantizada de la sexta barra no cambia.
+
+**Ritmo verificado:** `npm run verify:arceus:shield` ahora simula el duelo completo
+sobre el código real y da **12 turnos con 2 bajas** incluso en el peor caso (sólo
+el daño mínimo del vínculo), y **17 turnos con 4 bajas** si el jugador pierde un
+turno de cada tres (inmunidades, fallos, cambios, objetos). Se gana administrando
+el equipo, pero Arceus sigue derribando a un Pokémon cada cuatro turnos.
+
 ## Arreglo 2026-10-08 (3) — El duelo final contra Arceus ahora se juega de verdad
 
 Si el combate final de la Cima del Génesis se sentía como una derrota anunciada
@@ -13,9 +37,8 @@ persona**:
   cada barra y garantiza que ningún impacto quede en nada (mínimo, media barra).
 - **Tu lado abre cada ronda.** Dentro del duelo divino la iniciativa es de Ash:
   Arceus responde después, incluso con el Espacio Raro de la Etapa 4 activo.
-- **Arceus no puede noquear de un solo golpe.** Cada turno suyo deja a tu Pokémon
-  activo, como mínimo, al 30 % de su vida máxima. Si un Pokémon ya entró al turno
-  por debajo de ese umbral, sí puede caer: la pelea es reñida, no invulnerable.
+- **Arceus no puede noquear de un solo golpe.** El daño de cada turno suyo está
+  topeado y repartido: mira el Arreglo 4, arriba, para los valores vigentes.
 - **El Juicio del Vínculo ya no te apaga.** La Etapa 4 dejó de bajar a nivel 1 a
   tus Pokémon: ahora aplica un castigo real, pero jugable.
 - **Opción de saltar el prólogo.** Al llegar por primera vez a la cima aparece la

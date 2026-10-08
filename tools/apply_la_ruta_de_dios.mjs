@@ -833,14 +833,17 @@ RUTA_ARCEUS_MOVE_SETS = [
 ]
 RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_BOSS_LEVELS = [150, 175, 185, 195, 200, 200]
-# R8 - el duelo final es jugable de verdad. Ash aprendió mirando cada batalla
+# R8/R9 - el duelo final es jugable de verdad. Ash aprendió mirando cada batalla
 # del prólogo, así que sus ataques cuentan contra las barras divinas (nunca
-# menos de media barra por impacto) y Arceus no puede derribar de un solo golpe
-# a un Pokémon suyo: cada acción enemiga deja al objetivo, como mínimo, al 30 %
-# de su vida máxima (si ya estaba por debajo de ese umbral, el golpe sí remata).
+# menos de media barra por impacto) y Arceus no derriba a un Pokémon suyo en un
+# solo turno: cada acción enemiga quita como máximo un tercio de la vida máxima
+# (cuatro acciones para tumbar a un Pokémon sano) y un Pokémon ya debilitado, por
+# debajo de ese tope, sí puede caer. Al cruzar el umbral rojo Arceus ya no borra
+# el avance del jugador: sólo recupera media barra, una vez por etapa.
 RUTA_ARCEUS_ASH_BAR_POWER = 4.0
 RUTA_ARCEUS_ASH_BAR_MIN_RATIO = 0.5
-RUTA_ARCEUS_OHKO_FLOOR_RATIO = 0.30
+RUTA_ARCEUS_HIT_CAP_RATIO = 0.33
+RUTA_ARCEUS_REDLINE_HEAL_RATIO = 0.5
 RUTA_ARCEUS_RESTORES = 0
 RUTA_ARCEUS_MAIN_RNG_SEED = 0xA2CE05
 RUTA_ARCEUS_CINEMATIC_RNG_SEED = 0xC1A0A7
@@ -2343,11 +2346,12 @@ class PokeBattle_Battle
     result
   end
 
-  # Ni un turno de Arceus derriba a un Pokémon de Ash. El cálculo usa el daño
-  # acumulado del movimiento (totalHPLost) para que los ataques de varios
-  # impactos tampoco cierren la acción con un KO: como mínimo el Pokémon termina
-  # la acción al 30 % de su vida máxima, y sólo puede caer si ya entró al turno
-  # por debajo de ese umbral.
+  # Ninguna acción de Arceus quita más de un tercio de la vida máxima de un
+  # Pokémon de Ash (R9). El cálculo usa el daño acumulado del movimiento
+  # (totalHPLost) para que los ataques de varios impactos tampoco cierren la
+  # acción con un KO: un Pokémon sano aguanta cuatro acciones enemigas y sólo
+  # puede caer cuando entra al turno ya por debajo del tope, así el duelo se
+  # gana peleando y administrando el equipo, no aguantando un solo turno.
   def ruta_arceus_apply_ohko_guard(user, target)
     return false if !arceus_divine? || !target || !target.pokemon || target.fainted?
     return false if !ruta_arceus_ash_side?(target)
@@ -2358,18 +2362,16 @@ class PokeBattle_Battle
     return false if lost <= 0
     total = target.totalhp.to_i
     return false if total <= 0
+    cap = (total * RUTA_ARCEUS_HIT_CAP_RATIO).round
+    cap = 1 if cap < 1
+    return false if target.hp.to_i <= cap
     lost_before = [target.damageState.totalHPLost.to_i - lost, 0].max
-    hp_start = target.hp.to_i + lost_before
-    floor = (total * RUTA_ARCEUS_OHKO_FLOOR_RATIO).round
-    floor = 1 if floor < 1
-    floor = 0 if hp_start <= floor
-    allowance = [hp_start - floor, 0].max
-    allowed = [allowance - lost_before, 0].max
+    allowed = [cap - lost_before, 0].max
     return false if lost <= allowed
     lethal = lost >= target.hp.to_i
     target.damageState.hpLost = allowed
     target.damageState.totalHPLost = lost_before + allowed
-    target.damageState.endured = true
+    target.damageState.endured = true if lethal
     announce_key = arceus_action_key
     if lethal && @ruta_arceus_ohko_announced_key != announce_key
       @ruta_arceus_ohko_announced_key = announce_key
@@ -2484,10 +2486,11 @@ class PokeBattle_Battle
     return false if battler.hp > redline || @arceus_redline_healed_phase == @arceus_phase
     @arceus_redline_healed_phase = @arceus_phase
     old_hp = battler.hp
-    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. La vida que le has quitado desaparece: su barra se restaura por completo."))
-    battler.hp = battler.totalhp
+    restored = [(battler.totalhp * RUTA_ARCEUS_REDLINE_HEAL_RATIO).round, 1].max
+    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. El altar le devuelve media barra, pero el avance de Ash no se borra."))
+    battler.ruta_arceus_scripted_hp_write { battler.hp = [battler.hp + restored, battler.totalhp].min }
     pbArceusAnimateHP(battler, old_hp)
-    pbDisplayPaused(_INTL("Arceus: «He medido el límite de esta etapa. No lo alcanzarás con un solo golpe, Ash.»"))
+    pbDisplayPaused(_INTL("Arceus: «Toda herida me enseña. Aun así, Ash, este aliento no detiene tu camino.»"))
     save_arceus_state(battler)
     @ruta_arceus_last_heal_phase = @arceus_phase
     @ruta_arceus_last_heal_turn = @turnCount.to_i
@@ -2709,8 +2712,8 @@ class PokeBattle_Battle
     when 2 then [base_level.to_i - 20, 1].max
     when 3 then [base_level.to_i + 20, 200].min
     when 4 then [base_level.to_i - 20, 1].max
-    when 5 then [base_level.to_i + 35, 200].min
-    else [base_level.to_i + 50, 200].min
+    when 5 then [base_level.to_i + 25, 200].min
+    else [base_level.to_i + 35, 200].min
     end
   end
 
@@ -5519,8 +5522,9 @@ function verify() {
       ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
       ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
       ["Ir directo al duelo con Arceus", "el prólogo se puede saltar desde el primer arranque (R8)"],
-      ["RUTA_ARCEUS_OHKO_FLOOR_RATIO", "Arceus no derriba de un solo golpe a los Pokémon de Ash (R8)"],
-      ["def ruta_arceus_apply_ohko_guard", "guardia anti-KO sobre la ruta real de daño del duelo (R8)"],
+      ["RUTA_ARCEUS_HIT_CAP_RATIO", "Arceus no derriba de un solo golpe a los Pokémon de Ash (R8/R9)"],
+      ["RUTA_ARCEUS_REDLINE_HEAL_RATIO", "el umbral rojo no borra el avance de Ash: media barra (R9)"],
+      ["def ruta_arceus_apply_ohko_guard", "tope de daño por acción sobre la ruta real del duelo (R8/R9)"],
       ["def ruta_arceus_ash_bar_damage", "el daño de Ash a las seis barras se pondera con el vínculo (R8)"],
       ["def pbCalculatePriority(fullCalc = false, indexArray = nil)", "el lado de Ash abre cada ronda del duelo (R8)"],
       ["def pbCountArceusPlates", "helper de conteo de Tablas para el evento de Volus"],
