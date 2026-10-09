@@ -70,7 +70,7 @@ def fuzz_f1(rng, fallos)
   battle1, party1, boss1 = fuzz_divine_battle(2, 1000)
   objetivo = party1[0]
   f1 = 0
-  582_400.times do
+  581_400.times do
     total = 1 + rng.rand(3000)
     hp0 = 1 + rng.rand(total)
     lost = 1 + rng.rand(total + 100)
@@ -546,6 +546,33 @@ def fuzz_f7(rng, fallos)
     f7 += 1
     GC.start if (f7 % 500).zero?
   end
+  # R15d: el relevo divino probado de verdad sobre el motor extraído: un divino
+  # caído cede su hueco al siguiente de la cola (especie, PS llenos, sin
+  # excepción), y con la cola vacía no pasa nada.
+  1_000.times do |k|
+    especies = RUTA_ARCEUS_SEQUITO.map { |fila| fila[0] }
+    orden = especies.dup
+    orden.sort_by! { |_e| rng.rand(1000) } if rng.rand(2) == 0
+    boss = FuzzMon.new(1, 1, :ARCEUS, 1000)
+    boss.pokemon.instance_variable_set(:@ruta_arceus_divine, true)
+    en_campo = FuzzMon.new(3, 1, orden[0], 800)
+    en_campo.hp = 0
+    battle = PokeBattle_Battle.new([FuzzMon.new(0, 0, :PIKACHU, 400), boss, en_campo])
+    battle.instance_variable_set(:@arceus_divine, true)
+    cola = [Pokemon.new(orden[1], 100), Pokemon.new(orden[2], 100)]
+    cola.each { |m| m.calc_stats }
+    $ruta_arceus_relevo_cola = cola
+    battle.pbArceusRelevoDivino
+    notar.call("F7 relevo #{k}: el hueco no cambió de especie (#{en_campo.pokemon.species})") if en_campo.pokemon.species != orden[1]
+    notar.call("F7 relevo #{k}: entró con PS #{en_campo.hp}/#{en_campo.totalhp}") if en_campo.hp != en_campo.totalhp || en_campo.fainted?
+    notar.call("F7 relevo #{k}: la cola no avanzó") if $ruta_arceus_relevo_cola.length != 1
+    # con la cola vacía, un segundo caído no debe hacer nada ni levantar errores
+    en_campo.hp = 0
+    $ruta_arceus_relevo_cola = []
+    battle.pbArceusRelevoDivino
+    notar.call("F7 relevo #{k}: con cola vacía tocó al battler") if en_campo.hp != 0
+    f7 += 1
+  end
   f7
 end
 
@@ -583,6 +610,10 @@ class RutaTrainerStub
 end
 
 def pbWildBattleCore(*args)
+  # R15d: el duelo presenta exactamente dos Pokémon salvajes (el Creador y un
+  # divino). Con cuatro, el motor apila paneles y funde sprites: se exige aquí
+  # para que ningún regreso al 4v4 vuelva a pasar el fuzz.
+  raise "F6: el duelo presentó #{args.length} Pokémon salvajes y deben ser 2 (el Creador y un divino)" if args.length != 2
   cola = $ruta_f6_cola
   raise "F6: cola de decisiones vacía" if cola.empty?
   return cola.shift

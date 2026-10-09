@@ -407,3 +407,42 @@ QA R15c: fuzz 1 000 000/0 (F1 582 400 · F2 150 000 · F3 3 000 · F4 44 000 · 
 cinemáticas 77/77 · recursos 27/27 · alcance AST 228+47 · npm test verde ·
 artefactos reconstruidos y verificados (ZIP raíz 1157/33,7 MB · directo
 1157/50,2 MB · DN QA 422/20,9 MB).
+
+## 13. Addendum R15d — Cuatro paneles apilados: el bando salvaje no tiene reservas
+
+La captura de partida con ARCEUS ORIGEN + Dialga + Palkia + Giratina a la vez
+(cuatro info-boxes apilados y los sprites fundidos en una posición) reveló el
+último supuesto falso de R14: que el motor enviaría a los divinos «de a dos y
+repondría caídas». Eso es cierto para el bando de ENTRENADORES; en el bando
+SALVAJE, `pbSetUpSides` (sección 183:120-128) crea un batallador por cada
+Pokémon de `pbParty(1)` y los considera en campo a todos: índices 1,3,5,7 para
+cuatro divinos, sin consultar `@sideSizes`. Consecuencias encadenadas: paneles
+apilados, sprites en posiciones solapadas, panel de objetivos sin índices
+válidos (raíz del TypeError de R15c) y targeting corrupto para ataques
+monobjetivo.
+
+1. **Presentación 2v2.** El starter construye el séquito completo pero sólo
+   entrega `[Arceus, primer divino]` a `pbWildBattleCore`: doble real, dos
+   paneles por lado, targeting nativo intacto y cosmos/mega/barras como siempre.
+2. **`pbArceusRelevoDivino` (nuevo método de `PokeBattle_Battle`).** Cada ronda
+   (gancho de `pbCalculatePriority`, aislado en su propio begin/rescue) busca un
+   batallador del séquito caído; si la cola `$ruta_arceus_relevo_cola` ( armada
+   por el starter y limpiada en el `ensure` de la transacción) tiene siguiente,
+   lo sustituye en SU hueco: `battler.pokemon = siguiente`, PS al completo vía
+   `ruta_arceus_scripted_hp_write`, anuncio pausado y `pbArceusRedibujar` para
+   el sprite/tipos/golpes. Es el mid-battle switch que el motor reserva a
+   entrenadores, adaptado al salvaje sin experiencia ni capturas parciales.
+3. **Candados.** El `pbWildBattleCore` instrumentalizado de F6 exige exactamente
+   2 Pokémon salvajes (cualquier 4v4 aborta los 10 000 arranques con mensaje
+   explícito). F7 suma 1 000 variantes que ejercutan el relevo contra el motor
+   extraído: especie sustituida, PS llenos, cola avanzada, y cola vacía
+   inofensiva ante un segundo caído.
+4. **Coherencia con el lore y la referencia.** Los tres dioses siguen presentes
+   en el duelo (uno en campo + relevos + posesiones de `pbArceusOrdenDivina`),
+   la captura 100 % por barras y la merced única no se tocan, y la escena queda
+   en el régimen visual de la referencia: un panel por combatiente en campo.
+
+QA R15d: fuzz 1 000 000/0 (F1 581 400 · F2 150 000 · F3 3 000 · F4 44 000 · F5
+200 600 · F6 10 000 arranques · F7 11 000) · escudos 69/0 · cinemáticas 77/77 ·
+recursos 27/27 · alcance AST 229+47 · npm test verde · artefactos verificados
+(ZIP raíz 1157/33,7 MB · directo 1157/50,2 MB · DN QA 422/20,9 MB).

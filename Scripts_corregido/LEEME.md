@@ -1,5 +1,36 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-09 (12) — R15d: ni un panel de más — el duelo sale 2v2 y la Orden entra por relevos
+
+Tu captura de las cuatro barras apiladas (Arceus + Dialga + Palkia + Giratina a
+la vez, con los sprites fundidos en una posición) tenía una causa de motor
+concreta: en los combates **salvajes**, `pbSetUpSides` crea un batallador por
+cada Pokémon del bando y los saca TODOS de una vez, sin mirar el tamaño del
+campo. Con la Orden completa (4) la escena apilaba 4 paneles, superponía los
+sprites y dejaba al panel de objetivos sin índices válidos (el mismo origen del
+TypeError de R15c).
+
+- **El duelo ahora presenta 2 Pokémon salvajes:** el Creador y un divino
+  (doble 2v2 real, como en tu referencia). El campo, los paneles y el
+  targeting quedan exactamente en el régimen que el motor domina.
+- **Relevo divino (switch de mitad de batalla):** los otros dos dioses esperan
+  en una cola; cuando el divino del campo cae, el siguiente ocupa SU hueco con
+  especie, sprite, tipos, golpes y PS al completo, con su anuncio
+  («La Orden no conoce ausencias…»). Es la mecánica de reservas que el motor
+  sólo ofrece a entrenadores, adaptada al bando salvaje sin tocar su
+  maquinaria de send-out. La captura, las seis barras y la merced siguen
+  intactas.
+- **Candado nuevo en el fuzz:** el `pbWildBattleCore` instrumentalizado de F6
+  ahora EXIGE que el duelo presente exactamente 2 Pokémon salvajes; cualquier
+  regreso al 4v4 aborta los 10 000 arranques. F7 añade 1 000 variantes que
+  ejercutan el relevo sobre el motor extraído (especie sustituida, PS llenos,
+  cola vacía inofensiva).
+- Totales: **1 000 000 de escenarios, 0 fallos** (F1 581 400 · F7 11 000).
+
+**Instalación:** idéntica a R15b/R15c — descomprime el ZIP encima de la carpeta
+del juego y acepta los reemplazos (`Data/`, `Graphics/`, `Audio/`, `LEEME.txt`
+en la raíz del archivo).
+
 ## Arreglo 2026-10-09 (11) — R15c: el campo 4v4 que reventaba el panel de objetivos
 
 Tu tercera captura (`TypeError: nil can't be coerced into Integer` en

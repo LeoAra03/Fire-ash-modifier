@@ -2533,6 +2533,34 @@ class PokeBattle_Battle
     false
   end
 
+  # R15d — Relevo divino: si el dios del campo que acompaña al Creador cae, el
+  # siguiente de la cola toma SU hueco (especie, sprite, tipos, golpes y PS al
+  # completo) con mensaje y redibujado. Es el switch de mitad de batalla que el
+  # motor sólo ofrece al bando de entrenadores; aquí se adapta al salvaje sin
+  # tocar la maquinaria de send-out (y sinExperience: la captura sigue siendo
+  # del duelo completo, no de cada relevo).
+  def pbArceusRelevoDivino
+    return if !arceus_divine? || !wildBattle?
+    cola = $ruta_arceus_relevo_cola
+    return if !cola.is_a?(Array) || cola.empty?
+    idx = @battlers.index do |b|
+      b && b.fainted? && !ruta_arceus_ash_side?(b) && b.pokemon &&
+        RUTA_ARCEUS_SEQUITO.any? { |fila| fila[0] == b.pokemon.species }
+    end
+    return if idx.nil?
+    siguiente = cola.shift
+    return if !siguiente
+    battler = @battlers[idx]
+    caido = battler.pokemon.species
+    battler.pokemon = siguiente
+    battler.ruta_arceus_scripted_hp_write { battler.hp = battler.totalhp }
+    pbDisplayPaused(_INTL("La Orden no conoce ausencias: ¡{1} ocupa el lugar de {2}!", siguiente.name, caido.to_s))
+    pbArceusRedibujar(battler) if respond_to?(:pbArceusRedibujar)
+    return true
+  rescue StandardError
+    return false
+  end
+
   alias _ruta_arceus_original_calculate_priority pbCalculatePriority unless method_defined?(:_ruta_arceus_original_calculate_priority)
   def pbCalculatePriority(fullCalc = false, indexArray = nil)
     # R12: el turno divino (música por fase, apertura, merced, juegos e
@@ -2540,6 +2568,10 @@ class PokeBattle_Battle
     # Ash y el resto de la ronda siguen intactos.
     begin
       ruta_arceus_turno_divino
+    rescue StandardError
+    end
+    begin
+      pbArceusRelevoDivino
     rescue StandardError
     end
     result = _ruta_arceus_original_calculate_priority(fullCalc, indexArray)
@@ -4406,7 +4438,17 @@ def pbStartArceusDivineBattle
   rescue StandardError
   end
   nivel_base = [[nivel_base, GameData::GrowthRate.max_level].min, 1].max
-  sequito = RUTA_ARCEUS_SEQUITO.map { |fila| pbArceusBuildLegendario(fila[0], fila[1], nivel_base) }
+  sequito_completo = RUTA_ARCEUS_SEQUITO.map { |fila| pbArceusBuildLegendario(fila[0], fila[1], nivel_base) }
+  # R15d — El motor SACA AL CAMPO TODO el bando salvaje de una vez (la rama wild
+  # de pbSetUpSides crea un battler por Pokémon, sin mirar @sideSizes): con los
+  # cuatro divinos la escena apilaba cuatro paneles, fundía los sprites en una
+  # posición y reventaba el panel de objetivos. El duelo presenta al Creador más
+  # UN divino (doble 2v2 real, como pide la referencia) y los otros dos esperan
+  # en la cola de relevo: entran por el hueco de su predecesor caído con
+  # pbArceusRelevoDivino, el switch de mitad de batalla nativo adaptado al bando
+  # salvaje (que no tiene reserva automática en el motor).
+  sequito = sequito_completo[0, 1]
+  $ruta_arceus_relevo_cola = sequito_completo[1..-1].to_a
 
   $PokemonGlobal.nextBattleBGM = "Legend Sinnoh"
   $PokemonGlobal.nextBattleBack = "genesis1"
@@ -4499,6 +4541,7 @@ def pbStartArceusDivineBattle
   end
   ensure
     prelude_seen = ($game_switches && $game_switches[RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH]) ? true : false
+    $ruta_arceus_relevo_cola = nil
     ArceusSaveSandbox.finish!(transaction, canonical_capture, canonical_caught, prelude_seen)
   end
 end

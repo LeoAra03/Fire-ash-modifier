@@ -117,6 +117,7 @@ WANTED = {
                            "ruta_arceus_mega?", "ruta_arceus_mega_aparicion",
                            "ruta_arceus_primigenia?", "ruta_arceus_primigenia_aparicion",
                            "pbArceusSetMoves", "pbArceusEnsureCaptureBall", "pbAbleTeamCounts",
+                           "pbArceusRelevoDivino",
                            "pbArceusDistortion", "ruta_arceus_divine_ratio", "ruta_arceus_dialogo", "ruta_arceus_decir",
                            "ruta_arceus_musica_fase", "ruta_arceus_sprite_y",
                            "ruta_arceus_senalar_sprite", "ruta_arceus_cinematica_apertura",
