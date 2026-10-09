@@ -18,6 +18,38 @@ end
 def pbMessage(msg); nil; end
 def pbWait(frames); end
 
+# R14b: rutas de movimiento de las caminatas cinemáticas (constantes del motor).
+class PBMoveRoute
+  Up = 1
+  Down = 2
+  Left = 3
+  Right = 4
+  TurnRight = 5
+  TurnLeft = 6
+  ChangeSpeed = 7
+end
+
+def pbMoveRoute(event, route)
+  event.move_route_forcing = false if event.respond_to?(:move_route_forcing=)
+  true
+end
+
+# R15: en el juego real Graphics existe; en el sandbox se define SIN width ni
+# height para que las guardias de las cinemáticas (`!Graphics.respond_to?(:width)`)
+# salgan antes de tocar Viewport/Bitmap. La lógica (barras, fases, mega, merced)
+# sigue corriendo intacta: sólo se apaga el dibujo.
+unless defined?(Graphics)
+  module Graphics
+    def self.update; nil; end
+    def self.frame_count; 0; end
+    def self.frame_rate; 60; end
+    def self.freeze; nil; end
+    def self.transition(*_args); nil; end
+    def self.brightness; 255; end
+    def self.brightness=(_v); nil; end
+  end
+end
+
 class Tone
   def initialize(*args); end
 end
@@ -47,6 +79,37 @@ class Pokemon
   def heal_HP; @hp = @totalhp.to_i if @totalhp; end
   def heal_status; @status = 0; end
   def heal_PP; (@moves || []).each { |m| m.pp = m.total_pp if m }; end
+  # R14b: el starter arma al Creador y al séquito con la superficie completa del
+  # Pokemon del motor (IVs, EVs, naturaleza, stats, nombre y forma).
+  def iv; @iv ||= Hash.new(0); end
+  def ev; @ev ||= Hash.new(0); end
+  def nature; @nature || :HARDY; end
+  def nature=(value); @nature = value; end
+  # R15: el prólogo cinematográfico enseña golpes con learn_move (motor:
+  # Pokemon#learn_move ignora los ya conocidos y reemplaza el más antiguo si
+  # el mazo está lleno) y arma a Giratina con form_simple=.
+  def learn_move(move_id)
+    @moves ||= []
+    return if move_id.nil?
+    return if @moves.any? { |m| m && m.id == move_id }
+    @moves.shift if @moves.length >= MAX_MOVES
+    @moves << Pokemon::Move.new(move_id)
+  end
+  def form_simple=(value); @form_simple = value; end
+  def form_simple; @form_simple.to_i; end
+  def personalID=(value); @personalID = value; end
+  def ability_index=(value); @ability_index = value; end
+  def calc_stats
+    @totalhp = @totalhp.to_i > 0 ? @totalhp : 100 + @level.to_i * 2
+    @hp = @totalhp if @hp.nil? || @hp.to_i > @totalhp
+    @hp = @totalhp if @hp.nil?
+  end
+  def name=(value); @name = value; end
+  def name; @name || @species.to_s; end
+  def nicknamed?; !@name.nil?; end
+  def form; @form || 0; end
+  def form=(value); @form = value; end
+  def able?; @hp.to_i > 0; end
 
   class Move
     attr_accessor :id, :pp, :total_pp
@@ -77,6 +140,22 @@ module GameData
 
   class GrowthRate
     def minimum_exp_for_level(level); level.to_i * 10; end
+    # R14b: el starter y las invocaciones leen el tope de nivel legal del motor.
+    def self.max_level; 100; end
+  end
+
+  # R14b: el séquito y el Arceus divino reparten IVs con el iterador real de stats.
+  module Stat
+    Dato = Struct.new(:id)
+    MAIN = [:HP, :ATTACK, :DEFENSE, :SPECIAL_ATTACK, :SPECIAL_DEFENSE, :SPEED].map { |i| Dato.new(i) }.freeze
+    BATTLE = [:ATTACK, :DEFENSE, :SPECIAL_ATTACK, :SPECIAL_DEFENSE, :SPEED,
+              :ACCURACY, :EVASION].map { |i| Dato.new(i) }.freeze
+    def self.each_main
+      MAIN.each { |stat| yield stat }
+    end
+    def self.each_battle
+      BATTLE.each { |stat| yield stat }
+    end
   end
 
   # Misma semántica de validación que 015:Validation / 102:GameData del juego.
@@ -350,9 +429,15 @@ end
 
 module SaveData
   FILE_PATH = "Save Files/Game.rxdata"
+  # R14b: el motor registra los valores del guardado en @values y los compila
+  # en un hash; el sandbox de Arceus (begin!/finish!) los lee de verdad, así que
+  # el stub debe tener ambos o finish! revienta con NoMethodError sobre nil.
+  @values = []
   class << self
     def save_to_file(path); true; end
     def delete_file; true; end
+    def compile_save_hash; {}; end
+    def values; @values; end
   end
 end
 

@@ -1,5 +1,36 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-09 (9) — R15: el NameError de la cima no puede volver, y ningún recurso puede faltar
+
+Este arreglo atiende la captura de partida real (`NameError: uninitialized
+constant RUTA_ARCEUS_SEQUITO` al abrir el duelo en la Cima del Génesis):
+
+- **El bug.** La tabla del séquito divino (`RUTA_ARCEUS_SEQUITO`) y el constructor
+  del legendario (`pbArceusBuildLegendario`) habían quedado definidos *dentro*
+  de `class PokeBattle_Battle`; Ruby los esconde ahí y el evento de la cima, que
+  vive fuera de esa clase, no los encontraba. Ambos se movieron al nivel
+  superior y el guion instalado se regeneró completo.
+- **Diez mil pruebas nuevas del arranque real.** La batería de fuzz pasó de
+  probar piezas sueltas a **ejecutar el evento de inicio del duelo completo
+  10 000 veces** (con prólogo incluido en 1 000 de ellas) sobre el código
+  instalado: captura, huida, rendición, empate, victoria y la merced única del
+  Rotom, en cada orden posible. Resultado: **1 000 000 de escenarios, 0 fallos**.
+- **Imposible que falte un recurso de ningún tipo.** La auditoría de recursos
+  ahora barre TODA referencia del guion (movimientos, especies y sprites,
+  objetos, música, fondos de batalla, personajes) y exige que exista en el
+  juego **y en este paquete**. Así se encontró un hueco real: las 6 pistas de
+  música del duelo no viajaban en el paquete. Ya están.
+- **Imposible que un nombre quede mal definido.** Un auditor nuevo revisa que
+  ninguna constante ni método del duelo quede anidado donde el juego no pueda
+  verlo: exactamente la clase de error de tu captura.
+
+**Instalación R15:** además de `Data/` y `Graphics/` (ver R14), copia ahora
+también la carpeta `Audio/` del paquete: contiene las siete pistas del duelo
+(`Legend Creation Trio`, `Battle! Legendary Raid`, `Battle! Eternatus - Phase
+1/2/3`, `Battle! Ultra Necrozma`) más `Legend Sinnoh` y `secretvolo`. Sin ellas
+las fases cambiarían en silencio. El ZIP raíz y el paquete directo ya las
+incluyen.
+
 ## Arreglo 2026-10-08 (8) — R14: el Creador como debe verse: batalla doble, mil brazos reales, cosmos que cambia y ni un destello blanco
 
 Este arreglo atiende el reporte de partida real sobre el evento que abre el

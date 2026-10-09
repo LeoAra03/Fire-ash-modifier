@@ -59,6 +59,15 @@ const ASSET_FILES = [
   ["Graphics/Battlebacks/genesis1_base1.png", "Graphics/Battlebacks/genesis1_base1.png"],
   ["Graphics/Pokemon/Front/ARCEUS_18.png", "Graphics/Pokemon/Front/ARCEUS_18.png"],
   ["Graphics/Pokemon/Back/ARCEUS_18.png", "Graphics/Pokemon/Back/ARCEUS_18.png"],
+  // R15: las siete pistas del duelo (una por fase + Primigenia) viajaban sólo en
+  // la carpeta del juego; sin ellas el Paquete_directo sonaba en silencio. La
+  // auditoría de recursos ahora exige que el distributable tenga cada pista.
+  ["Audio/BGM/Legend Creation Trio.ogg", "Audio/BGM/Legend Creation Trio.ogg"],
+  ["Audio/BGM/Battle! Legendary Raid.ogg", "Audio/BGM/Battle! Legendary Raid.ogg"],
+  ["Audio/BGM/Battle! Eternatus - Phase 1.ogg", "Audio/BGM/Battle! Eternatus - Phase 1.ogg"],
+  ["Audio/BGM/Battle! Eternatus - Phase 2.ogg", "Audio/BGM/Battle! Eternatus - Phase 2.ogg"],
+  ["Audio/BGM/Battle! Eternatus - Phase 3.ogg", "Audio/BGM/Battle! Eternatus - Phase 3.ogg"],
+  ["Audio/BGM/Battle! Ultra Necrozma.ogg", "Audio/BGM/Battle! Ultra Necrozma.ogg"],
 ];
 
 function readScripts(file) {

@@ -267,3 +267,59 @@ QA R14: fuzz 1 000 000/0 (F1 602 400 · F2 150 000 · F3 3 000 · F4 44 000 · F
 el árbol de Graphics), llamadas colgantes 0 y patrones de campo 0, `npm test`
 completo en verde y artefactos reconstruidos y verificados (ZIP raíz 1151
 archivos / 8,9 MB; paquete directo 1151 / 24,8 MB; DN QA 422 / 20,9 MB).
+
+## 10. Addendum R15 — El error que llegó a la partida y la red que lo hace imposible
+
+Motivado por la captura real del juego: `NameError: uninitialized constant
+RUTA_ARCEUS_SEQUITO` en `pbStartArceusDivineBattle` (mapa 2037, evento 2), más
+la exigencia expresa de evaluar 10 000 escenarios contra esta clase de error y
+de que **sea imposible que falte un recurso de ningún tipo**.
+
+1. **Causa raíz (dos bugs reales, misma clase).** `RUTA_ARCEUS_SEQUITO` y
+   `pbArceusBuildLegendario` se generaban INDENTADOS dentro de
+   `class PokeBattle_Battle`: Ruby los define en el ámbito de la clase y el
+   starter (nivel Object) no los ve. Ambos se movieron a columna 0 en el
+   generador (`apply_la_ruta_de_dios.mjs`) y la sección instalada se regeneró
+   con su canon.
+2. **Familia F6 del fuzz: 10 000 arranques reales del duelo.** El harness
+   (`tools/qa/arceus_fuzz_harness.mjs`) ahora extrae TODAS las constantes de
+   columna 0 y los métodos de nivel Object del duelo (starter, cinemáticas,
+   merced, rendición, normalize, `pbArceusMoveIds`, `pbArceusBuildLegendario`)
+   y los evalúa dentro de `class Object`, igual que el motor. Cada escenario
+   ejecuta `pbStartArceusDivineBattle` completo contra un `pbWildBattleCore`
+   instrumentalizado con colas de decisión (captura, huida, rendición, empate,
+   victoria, merced única) y un oráculo fiel al starter (la merced ocurre una
+   vez: el segundo «2» de la cola rinde). El prólogo completo corre en 1 000 de
+   los 10 000 arranques. Por memoria del heap wasm, F6 se parte en tres tandas
+   con VMs frescos (F6a 3 334 · F6b 3 333 · F6c 3 333); F1 se rebalanceó a
+   592 400 y el total sigue siendo **1 000 000 exactos**.
+3. **Fidelidad del sandbox.** El preludio (`tools/qa/arceus_fuzz_prelude.rb`)
+   incorporó la superficie que el starter toca de verdad: `SaveData`
+   (values/compile_save_hash), `GrowthRate.max_level`, `GameData::Stat`,
+   `Pokemon` completo (iv/ev/nature/calc_stats/learn_move/form_simple/able?),
+   `PBMoveRoute` + `pbMoveRoute`, y un `Graphics` SIN width/height para que las
+   guardias visuales (`!Graphics.respond_to?(:width)`) apaguen sólo el dibujo:
+   la lógica (barras, fases, Mega, merced) corre intacta.
+4. **Auditoría de alcance (nueva, en `verify_arceus_recursos.mjs`).** Hace
+   imposible que la clase de error se redistribuya: (a) ninguna constante
+   `RUTA_*`/`ARCEUS_*` puede definirse anidada dentro de una clase; (b) toda
+   constante referenciada debe existir en columna 0; (c) todo método del duelo
+   llamado sin receptor desde un `def` de nivel superior debe estar definido en
+   columna 0 (detecta el `pbArceusBuildLegendario` anidado).
+5. **Auditoría de recursos de TODOS los tipos.** Al barrido R12 (movimientos,
+   especies+sprite, objetos, BGM por fase, personajes, battlebacks, animaciones)
+   se suma el barrido genérico: cualquier `nextBattleBack`, `nextBattleBGM`,
+   `pbBGMPlay`, `learn_move(:X)`, movimiento de `pbArceusCinematicCpuBattle` y
+   `.item = :X` nombrado en la sección instalada debe existir en el juego; y el
+   `Paquete_directo` debe distribuir los mismos recursos que la carpeta del
+   juego. **Hueco real encontrado y cerrado:** las 6 pistas del duelo
+   (Legend Creation Trio, Battle! Legendary Raid, Eternatus 1/2/3, Ultra
+   Necrozma) viajaban sólo en el juego; ahora están en el manifiesto
+   `ASSET_FILES` del sincronizador, en el paquete directo y en los dos ZIP.
+
+QA R15: fuzz **1 000 000/0** (F1 592 400 · F2 150 000 · F3 3 000 — 1 764
+victorias, 333 Primigenias · F4 44 000 · F5 200 600 · F6 10 000 arranques del
+starter), escudos 69/0, cinemáticas 77/77, recursos **27/27** (8 comprobaciones
+nuevas R15), llamadas colgantes 0, `npm test` completo en verde y artefactos
+reconstruidos y verificados (ZIP raíz 1157 archivos / 33,7 MB; paquete directo
+1157 / 50,2 MB; DN QA 422 / 20,9 MB).

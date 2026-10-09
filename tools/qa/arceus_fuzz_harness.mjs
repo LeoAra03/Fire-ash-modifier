@@ -81,7 +81,7 @@ const constantes = [];
     return balance > 0;
   };
   for (let i = 0; i < lines.length; i++) {
-    if (!/^RUTA_[A-Z0-9_]+\s*=/.test(lines[i])) continue;
+    if (!/^[A-Z][A-Z0-9_]*\s*=/.test(lines[i])) continue; // R14b: TODAS las constantes de nivel superior
     let bloque = lines[i];
     while (i + 1 < lines.length && (abierta(bloque) || /[+,\\]\s*$/.test(bloque))) {
       i += 1;
@@ -123,10 +123,20 @@ WANTED = {
                            "ruta_arceus_turno_divino", "ruta_arceus_jugar",
                            "ruta_arceus_juicio_ciego", "ruta_arceus_ruleta",
                            "ruta_arceus_invocar", "ruta_arceus_copiar_equipo",
-                           "pbArceusFondo", "pbArceusRedibujar", "pbArceusBuildLegendario",
+                           "pbArceusFondo", "pbArceusRedibujar",
                            "pbArceusPosesionFin", "pbArceusOrdenDivina",
                            "pbArceusMilibrazosDespertar", "history_resistido?",
                            "ruta_arceus_ofrenda", "pbCalculatePriority"],
+  "Object"             => ["pbRutaArceusGodWorldAllowed?", "pbRutaArceusCapturedPokemon?",
+                           "pbRutaArceusCapturedGodActive?", "pbRutaArceusRestorePokemonPP",
+                           "pbRutaArceusSyncCapturedPokemonMode", "pbArceusCinematicStage",
+                           "pbArceusCinematicWalkIn", "pbArceusCinematicWalkAway",
+                           "pbArceusCinematicImpact", "pbArceusCinematicPokemon",
+                           "pbArceusCinematicBoss", "pbArceusCinematicCpuBattle",
+                           "pbArceusAshWill", "pbArceusCinematicPrelude",
+                           "pbArceusRotomMercy", "pbArceusSurrenderSequence",
+                           "pbArceusNormalizeCaptured", "pbStartArceusDivineBattle",
+                           "pbArceusMoveIds", "pbArceusBuildLegendario"],
   "PokeBattle_Move"    => ["ruta_arceus_cinematic_boss_target?", "ruta_arceus_divine_boss_target?",
                            "pbInflictHPDamage", "pbReduceDamage"]
 }
@@ -194,6 +204,8 @@ const boot = [
   "class PokeBattle_Battle\n" + methodSources["PokeBattle_Battle"] + "\nend",
   "# ── métodos instalados: PokeBattle_Move ──",
   "class PokeBattle_Move\n" + methodSources["PokeBattle_Move"] + "\nend",
+  "# ── métodos instalados: Object (starter y cinemáticas de nivel superior) ──",
+  "class Object\n" + (methodSources["Object"] || "") + "\nend",
   "# ── sección canon completa (fases, red anti-error, parches de campo) ──",
   canonRuby,
 ].join("\n");
@@ -219,6 +231,9 @@ const FAMILIAS = [
   { id: 3, rotulo: "F3 duelos completos aleatorios: ", llamada: "fuzz_f3(rng, fallos)" },
   { id: 4, rotulo: "F4 barrido de fases del canon:  ", llamada: "fuzz_f4(rng, fallos)" },
   { id: 5, rotulo: "F5 sistemas R12 del dios:       ", llamada: "fuzz_f5(rng, fallos)" },
+  { id: 6, rotulo: "F6a arranque del duelo (1/3):   ", llamada: "fuzz_f6a(rng, fallos)" },
+  { id: 7, rotulo: "F6b arranque del duelo (2/3):   ", llamada: "fuzz_f6b(rng, fallos)" },
+  { id: 8, rotulo: "F6c arranque del duelo (3/3):   ", llamada: "fuzz_f6c(rng, fallos)" },
 ];
 
 const modulo = await WebAssembly.compile(fs.readFileSync(wasm));

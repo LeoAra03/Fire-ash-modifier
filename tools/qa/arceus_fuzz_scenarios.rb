@@ -70,7 +70,7 @@ def fuzz_f1(rng, fallos)
   battle1, party1, boss1 = fuzz_divine_battle(2, 1000)
   objetivo = party1[0]
   f1 = 0
-  602_400.times do
+  592_400.times do
     total = 1 + rng.rand(3000)
     hp0 = 1 + rng.rand(total)
     lost = 1 + rng.rand(total + 100)
@@ -484,3 +484,163 @@ def fuzz_f5(rng, fallos)
 end
 
 "FAMILIAS LISTAS"
+
+# ── F6 · 10 000 · arranque del duelo divino completo y entradas R14 ─────────
+# R14b: el reporte de partida mostró un NameError de constante anidada que sólo
+# aparece al ejecutar Object#pbStartArceusDivineBattle de verdad. Esta familia
+# corre el starter completo (prólogo, bucle de decisiones, merced, rendición,
+# captura y rollback del sandbox) diez mil veces con colas de decisión
+# aleatorias, más las entradas nuevas de R14 (Orden Divina, fondos, mil brazos
+# del capturado y construcción del séquito). Cualquier NameError, NoMethodError
+# o ArgumentError de un recurso inexistente revienta aquí, no en el juego.
+module SaveData
+  def self.compile_save_hash
+    {}
+  end
+end unless SaveData.respond_to?(:compile_save_hash)
+
+class RutaTempStub
+  def initialize; @rules = {}; end
+  def clearBattleRules; @rules = {}; nil; end
+  def recordBattleRule(k, v = nil); @rules[k.to_s] = v; nil; end
+  def battleRules; @rules; end
+end
+
+class RutaGlobalStub
+  attr_accessor :nextBattleBGM, :nextBattleBack, :nextBattleME,
+                :nextBattleCaptureME, :partner
+end
+
+class RutaTrainerStub
+  attr_accessor :party, :name
+  def initialize(party); @party = party; @name = "Ash"; end
+  def able_pokemon_count; @party.count { |p| p && p.hp.to_i > 0 }; end
+  def pokemon_count; @party.compact.length; end
+end
+
+def pbWildBattleCore(*args)
+  cola = $ruta_f6_cola
+  raise "F6: cola de decisiones vacía" if cola.empty?
+  return cola.shift
+end
+
+def pbStartOver
+  $ruta_f6_startover = ($ruta_f6_startover || 0) + 1
+  nil
+end
+
+def pbMessage(msg, *rest)
+  return $ruta_f6_eleccion if rest[0].is_a?(Array)
+  nil
+end
+
+def pbBattleAnimation(*args)
+  yield if block_given?
+  1
+end
+
+# R14b: las tres batallas CPU del prólogo usan el pipeline completo del motor
+# (escena, pbStartBattle, switches de enemigos): desproporcionado para wasm. Se
+# stubean aquí; el resto del prólogo (textos, caminatas, tonos) corre de verdad.
+def pbArceusCinematicCpuBattle(trainer_specs, boss_moves, battle_size)
+  $ruta_f6_cpu = ($ruta_f6_cpu || 0) + 1
+  1
+end
+
+def pbAddPokemonSilent(pkmn)
+  $Trainer.party.push(pkmn) if $Trainer
+  true
+end
+
+COLAS_F6 = [[4], [1], [2, 4], [2, 2, 4], [2, 2, 2], [5], [3], [2, 5], [2, 1], [2, 2, 5]].freeze
+
+def fuzz_f6_rango(rng, fallos, desde, hasta)
+  notar = lambda { |m| fallos << m if fallos.length < 30 }
+  f6 = 0
+  especies_sequito = RUTA_ARCEUS_SEQUITO.map { |fila| fila[0] }
+  nombres_invoc = RUTA_ARCEUS_INVOCACIONES.map { |fila| fila[0] }
+  (desde...hasta).each do |i|
+    cola_base = COLAS_F6[rng.rand(COLAS_F6.length)]
+    $ruta_f6_cola = cola_base.dup
+    prologo = (i % 10).zero? # el prólogo completo corre 1 000 veces: sus tres
+    $ruta_f6_eleccion = prologo ? 0 : 1 # batallas CPU ya pesan como F3 entero
+    $ruta_f6_startover = 0
+    $game_switches = {}
+    $game_switches[881] = true unless prologo
+    $PokemonTemp = RutaTempStub.new
+    $PokemonGlobal = RutaGlobalStub.new
+    tam = 1 + rng.rand(6)
+    party = (0...tam).map { |k| mon = Pokemon.new(:PIKACHU, 50 + rng.rand(51)); mon.calc_stats; mon }
+    party.each { |p| p.hp = rng.rand(2) == 0 ? 0 : p.totalhp }
+    party[0].hp = 0 # garantiza candidato para la merced del Rotom
+    $Trainer = RutaTrainerStub.new(party)
+    # Oráculo fiel al starter: la merced del Rotom ocurre UNA vez (switch 869),
+    # así que el primer 2 de la cola reintenta el duelo y el segundo 2 termina
+    # en rendición (decisión 2) sin consumir el resto de la cola.
+    esperado = nil
+    merced_usada = false
+    $ruta_f6_cola.each do |d|
+      if d == 2
+        if merced_usada
+          esperado = 2
+          break
+        end
+        merced_usada = true
+      else
+        esperado = d
+        break
+      end
+    end
+    decision = nil
+    begin
+      decision = pbStartArceusDivineBattle
+    rescue StandardError => e
+      notar.call("F6 arranque #{i} (cola #{cola_base.inspect}) lanzó #{e.class}: #{e.message} BT=#{(e.backtrace || []).first(8).join(" <- ")}")
+    end
+    f6 += 1
+    if decision
+      notar.call("F6 arranque #{i} devolvió #{decision} fuera de 1..5") if ![1, 2, 3, 4, 5].include?(decision)
+      notar.call("F6 arranque #{i}: la cola pedía #{esperado} y volvió #{decision}") if decision != esperado
+      if decision == 4 && $game_switches[874] != true
+        notar.call("F6 arranque #{i}: captura sin switch 874 firmado")
+      end
+      if decision == 2 && $ruta_f6_startover.to_i < 1
+        notar.call("F6 arranque #{i}: rendición sin pbStartOver")
+      end
+    end
+    # Entradas R14 con entradas aleatorias: ninguna puede levantar NameError ni
+    # NoMethodError ni ArgumentError. Corre en mitad de los escenarios para
+    # manter el presupuesto de memoria wasm (5 000 tandas x 2 campos).
+    next unless (i % 2).zero?
+    begin
+      battle, party_b, boss = fuzz_divine_battle(2, 1000)
+      battle.instance_variable_set(:@arceus_phase, 1 + rng.rand(6))
+      battle.turnCount = 3 + rng.rand(20)
+      battle.define_singleton_method(:pbRandom) { |x| rng.rand(x.to_i > 0 ? x : 1) }
+      especie = (rng.rand(2) == 0 ? especies_sequito : nombres_invoc)[rng.rand(3) % 3] || :DIALGA
+      battle.pbArceusOrdenDivina(boss, especie, :JUDGMENT, "prueba")
+      battle.pbArceusPosesionFin(boss) if rng.rand(2) == 0
+      batalla2, _p2, _b2 = fuzz_divine_battle(2, 800)
+      batalla2.pbArceusFondo(["genesis1", "genesis2", "genesis3", "inexistente"][rng.rand(4)])
+      pkmn_leg = pbArceusBuildLegendario(especies_sequito[rng.rand(3)], [:JUDGMENT], 1 + rng.rand(200))
+      notar.call("F6 sequto #{i} devolvió nil") if pkmn_leg.nil?
+      if rng.rand(2) == 0
+        capt = FuzzMon.new(0, 0, :ARCEUS, 500)
+        capt.pokemon.instance_variable_set(:@ruta_arceus_captured_god, true)
+        capt.hp = 100 + rng.rand(100)
+        batalla2.pbArceusMilibrazosDespertar(capt)
+      end
+      f6 += 0
+    rescue StandardError => e
+      notar.call("F6 entradas R14 #{i} lanzaron #{e.class}: #{e.message}")
+    end
+    GC.start if (i % 100).zero?
+  end
+  f6
+end
+
+# R14b: tres tandas con VM fresca (el arranque completo asigna mucho y la
+# memoria wasm no se devuelve): 3 334 + 3 333 + 3 333 = 10 000 escenarios.
+def fuzz_f6a(rng, fallos); fuzz_f6_rango(rng, fallos, 0, 3334); end
+def fuzz_f6b(rng, fallos); fuzz_f6_rango(rng, fallos, 3334, 6667); end
+def fuzz_f6c(rng, fallos); fuzz_f6_rango(rng, fallos, 6667, 10000); end

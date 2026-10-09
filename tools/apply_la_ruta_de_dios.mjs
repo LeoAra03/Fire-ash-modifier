@@ -963,6 +963,15 @@ RUTA_ARCEUS_INVOCACIONES = [
   [:RAYQUAZA,  :DRAGONASCENT,   :orden,   "Rayquaza baja del cielo: el equilibrio se somete a la Orden Divina y el campo se aquieta."],
   [:ZYGARDE,   :LANDSWRATH,    :orden,   "Zygarde reúne sus células y calla: cuando el creador ordena el fin, el equilibrio obedece."]
 ]
+# R14 — Séquito de la Orden Divina (batalla doble real): Dialga, Palkia y
+# Giratina flanquean al Creador desde el primer turno; cuando uno cae, el motor
+# envía al siguiente. Constante de nivel superior: la lee tanto el starter
+# (Object#pbStartArceusDivineBattle) como los métodos de PokeBattle_Battle.
+RUTA_ARCEUS_SEQUITO = [
+  [:DIALGA, [:ROAROFTIME, :FLASHCANNON, :AURASPHERE, :EARTHPOWER]],
+  [:PALKIA, [:SPACIALREND, :HYDROPUMP, :DRAGONPULSE, :THUNDERBOLT]],
+  [:GIRATINA, [:SHADOWFORCE, :DRAGONCLAW, :SHADOWSNEAK, :WILLOWISP]],
+]
 RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_BOSS_LEVELS = [150, 175, 185, 195, 200, 200]
 # R8/R9 - el duelo final es jugable de verdad. Ash aprendió mirando cada batalla
@@ -3306,27 +3315,29 @@ class PokeBattle_Battle
   # DOBLE real. Dialga, Palkia y Giratina flanquean a Arceus desde el primer
   # turno; cuando uno cae, el motor envía al siguiente. Sólo el bando de Arceus
   # recibe refuerzos: los Pokémon de Ash nunca se modifican.
-  RUTA_ARCEUS_SEQUITO = [
-    [:DIALGA, [:ROAROFTIME, :FLASHCANNON, :AURASPHERE, :EARTHPOWER]],
-    [:PALKIA, [:SPACIALREND, :HYDROPUMP, :DRAGONPULSE, :THUNDERBOLT]],
-    [:GIRATINA, [:SHADOWFORCE, :DRAGONCLAW, :SHADOWSNEAK, :WILLOWISP]],
-  ]
+  # (La constante vive al nivel superior, junto a RUTA_ARCEUS_INVOCACIONES: el
+  # starter pbStartArceusDivineBattle es un método de Object y no la vería si
+  # quedara anidada dentro de PokeBattle_Battle.)
 
-  def pbArceusBuildLegendario(species, move_ids, level)
-    pkmn = Pokemon.new(species, level)
-    pkmn.personalID = 0xA2CE0301 if pkmn.respond_to?(:personalID=)
-    pkmn.ability_index = 0 if pkmn.respond_to?(:ability_index=)
-    pkmn.instance_variable_set(:@shiny, false)
-    pkmn.instance_variable_set(:@square_shiny, false)
-    pkmn.nature = :HARDY if pkmn.respond_to?(:nature=)
-    GameData::Stat.each_main { |s| pkmn.iv[s.id] = 31 }
-    pkmn.moves = pbArceusMoveIds(move_ids, nil).map { |id| Pokemon::Move.new(id) }
-    pkmn.calc_stats
-    pkmn.hp = pkmn.totalhp
-    return pkmn
-  rescue StandardError
-    return Pokemon.new(species, level)
-  end
+# R14b — Método de nivel superior (como el starter que lo llama): construye un
+# legendario del séquito listo para batalla. Si viviera dentro de
+# PokeBattle_Battle, Object#pbStartArceusDivineBattle no lo vería (NameError/
+# NoMethodError en partida): el fuzz F6 existe exactamente para cazar esto.
+def pbArceusBuildLegendario(species, move_ids, level)
+  pkmn = Pokemon.new(species, level)
+  pkmn.personalID = 0xA2CE0301 if pkmn.respond_to?(:personalID=)
+  pkmn.ability_index = 0 if pkmn.respond_to?(:ability_index=)
+  pkmn.instance_variable_set(:@shiny, false)
+  pkmn.instance_variable_set(:@square_shiny, false)
+  pkmn.nature = :HARDY if pkmn.respond_to?(:nature=)
+  GameData::Stat.each_main { |s| pkmn.iv[s.id] = 31 }
+  pkmn.moves = pbArceusMoveIds(move_ids, nil).map { |id| Pokemon::Move.new(id) }
+  pkmn.calc_stats
+  pkmn.hp = pkmn.totalhp
+  return pkmn
+rescue StandardError
+  return Pokemon.new(species, level)
+end
 
   # R14 — Fin de la posesión: Arceus retoma su cuerpo verdadero (sprite, tipos,
   # estadísticas y repertorio de la etapa). La posesión usa el Transform del
