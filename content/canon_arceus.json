@@ -205,17 +205,17 @@
       "linea_meta": "Arceus: Fuego, agua, planta... etiquetas para que los niños puedan jugar. Míralas arder."
     },
     "6": {
-      "mensaje": "Arceus deja de jugar con las reglas: ahora las escribe él.",
+      "mensaje": "Mega Arceus despliega mil brazos: cada golpe es una multitud, y todos te conocen.",
       "movimientos": [
-        "JUDGMENT",
-        "EXTREMESPEED",
-        "PERISHSONG",
-        "RECOVER"
+        "FURYSWIPES",
+        "COMETPUNCH",
+        "PINMISSILE",
+        "ARMTHRUST"
       ],
       "efecto": "regla",
       "concepto": "REGLA",
-      "cartel": "ARCEUS BORRA EL CONCEPTO DE «REGLA»",
-      "linea_meta": "Arceus: Ahora solo queda lo que yo diga que existe. Y he decidido que exista esto."
+      "cartel": "MEGA ARCEUS, EL DE LOS MIL BRAZOS, ESCRIBE LA ÚLTIMA REGLA",
+      "linea_meta": "Arceus: ¿Contarlos? Imposible. Cada brazo es una regla que rompí para llegar hasta ti."
     }
   },
   "meta": {

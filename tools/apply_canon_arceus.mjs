@@ -199,37 +199,40 @@ ${DIALOGO_RUBY}
       case datos[:efecto]
       when :sello
         # Concepto borrado: OBJETO. La mochila deja de existir aqui dentro.
-        $game_switches[SW_SELLO] = true if $game_switches
-        campo(battle, :MagicRoom, 5)
+        paso { $game_switches[SW_SELLO] = true if $game_switches }
+        paso { campo(battle, :MagicRoom, 5) }
       when :clima
         # Concepto borrado: CIELO (y, con el, el de volar).
-        batalla_clima(battle, fase)
-        campo(battle, :Gravity, 5)
+        paso { batalla_clima(battle, fase) }
+        paso { campo(battle, :Gravity, 5) }
       when :talento
         # Concepto borrado: TALENTO y SUERTE. Sin habilidades y sin criticos.
-        silenciar_habilidades(battle, battler)
-        campo(battle, :MagicRoom, 5)
-        canto_de_suerte(battle, battler)
-        $game_screen.start_tone_change(Tone.new(-70, -70, -70, 0), 20) if $game_screen
+        paso { silenciar_habilidades(battle, battler) }
+        paso { campo(battle, :MagicRoom, 5) }
+        paso { canto_de_suerte(battle, battler) }
+        paso { $game_screen.start_tone_change(Tone.new(-70, -70, -70, 0), 20) if $game_screen }
       when :velocidad
         # Concepto borrado: VELOCIDAD (y, con ella, el de resistencia).
-        campo(battle, :TrickRoom, 5)
-        campo(battle, :WonderRoom, 5)
-        $game_screen.start_shake(8, 6, 20) if $game_screen
+        paso { campo(battle, :TrickRoom, 5) }
+        paso { campo(battle, :WonderRoom, 5) }
+        paso { $game_screen.start_shake(8, 6, 20) if $game_screen }
       when :tipo
         # Concepto borrado: TIPO.
-        cambiar_tablero(battler, fase)
-        $game_screen.start_flash(Color.new(255, 255, 255, 200), 12) if $game_screen
+        paso { cambiar_tablero(battler, fase) }
+        paso { $game_screen.start_flash(Color.new(255, 255, 255, 200), 12) if $game_screen }
       when :regla
         # Concepto borrado: REGLA. Ya no queda nada que respetar.
-        cambiar_tablero(battler, fase)
-        batalla_clima(battle, fase)
-        canto_de_suerte(battle, battler)
-        $game_screen.start_flash(Color.new(255, 240, 200, 255), 20) if $game_screen
-        $game_screen.start_tone_change(Tone.new(60, -40, -40, 0), 30) if $game_screen
+        paso { cambiar_tablero(battler, fase) }
+        paso { batalla_clima(battle, fase) }
+        paso { canto_de_suerte(battle, battler) }
+        paso { $game_screen.start_flash(Color.new(255, 240, 200, 255), 20) if $game_screen }
+        paso { $game_screen.start_tone_change(Tone.new(60, -40, -40, 0), 30) if $game_screen }
       end
     rescue StandardError
     end
+    # R11: la fase termina con el campo saneado pase lo que pase en cada paso:
+    # ninguna fase puede dejar clima/terreno inválidos ni PS imposibles.
+    paso { verificar_fase(battle, battler) }
     # El dios se recompone un poco al romper cada regla: no se gana por desgaste.
     begin
       if battler && battler.respond_to?(:totalhp) && battler.hp < battler.totalhp
@@ -244,12 +247,22 @@ ${DIALOGO_RUBY}
   # Pokemon sabian hacer ya no esta escrito en ninguna parte.
   def self.silenciar_habilidades(battle, battler)
     return if !battle || !battle.respond_to?(:battlers)
+    # R10: el silencio de talentos usa el efecto real del motor (Bilis Negra /
+    # Gastro Acid) en vez de borrar el talento del battler: asi el silencio es
+    # temporal, visible y respetado por todas las rutas de habilidad del motor.
+    constante = nil
+    begin
+      constante = PBEffects.const_get(:GastroAcid) if defined?(PBEffects)
+    rescue StandardError
+      constante = nil
+    end
+    return if !constante
     (battle.battlers || []).each do |otro|
       next if !otro || !otro.respond_to?(:fainted?)
       next if otro.fainted?
       next if !otro.respond_to?(:opposes?) || !otro.opposes?(battler)
-      next if !otro.respond_to?(:ability=)
-      otro.ability = nil
+      next if !otro.respond_to?(:effects)
+      otro.effects[constante] = true
     end
   rescue StandardError
   end
@@ -307,16 +320,58 @@ ${DIALOGO_RUBY}
     end
   end
 
-  def self.batalla_clima(battle, fase)
+  # R11 — Cada sub-efecto de una fase corre con su propio escudo: un error en
+  # un paso ya no aborta el resto de la fase (antes un solo raise dejaba la
+  # fase entera a medias y en silencio).
+  def self.paso
+    yield
+  rescue StandardError
+    nil
+  end
+
+  # R11 — Cierre de fase: el campo queda saneado y los PS en rangos posibles,
+  # aunque alguno de los pasos haya fallado o algún mod externo escriba basura.
+  def self.verificar_fase(battle, battler)
     return if !battle
-    clima = [:RAINDANCE, :SUNNYDAY, :SANDSTORM, :HAIL, :FOG][fase % 5]
-    if battle.respond_to?(:pbStartWeather)
-      battle.pbStartWeather(clima, 5)
-    elsif battle.respond_to?(:weather=)
-      battle.weather = clima
-      battle.weatherduration = 5 if battle.respond_to?(:weatherduration=)
+    RutaCampoSeguro.sanitizar!(battle)
+    return if !battle.respond_to?(:battlers)
+    (battle.battlers || []).each do |otro|
+      next if !otro || !otro.respond_to?(:totalhp) || !otro.respond_to?(:hp)
+      total = otro.totalhp.to_i
+      next if total <= 0
+      if otro.hp.to_i < 0
+        otro.ruta_arceus_scripted_hp_write { otro.hp = 0 } if otro.respond_to?(:ruta_arceus_scripted_hp_write)
+      elsif otro.hp.to_i > total
+        otro.ruta_arceus_scripted_hp_write { otro.hp = total } if otro.respond_to?(:ruta_arceus_scripted_hp_write)
+      end
     end
   rescue StandardError
+    nil
+  end
+
+  def self.batalla_clima(battle, fase)
+    return if !battle
+    # R10: el clima de v19 es un simbolo de GameData::BattleWeather, nunca un
+    # movimiento ni una duracion. La llamada antigua pasaba el simbolo de un
+    # movimiento como usuario y el numero 5 como clima: el campo quedaba con
+    # weather = 5 y el fin de ronda reventaba con ArgumentError en Kirin
+    # ("Expected 5 to be one of [Symbol, GameData::BattleWeather, String]").
+    campo = battle.respond_to?(:field) ? battle.field : nil
+    return if !campo || !campo.respond_to?(:weather=)
+    climas = [:Rain, :Sun, :Sandstorm, :Hail, :Fog]
+    clima = climas[fase.to_i % climas.length]
+    return if !RutaCampoSeguro.clima_valido?(clima)
+    if battle.respond_to?(:pbStartWeather)
+      battle.pbStartWeather(nil, clima, true, true, 5)
+    else
+      campo.weather = clima
+      campo.weatherDuration = 5 if campo.respond_to?(:weatherDuration=)
+    end
+  rescue StandardError
+    begin
+      RutaCampoSeguro.sanitizar!(battle)
+    rescue StandardError
+    end
   end
 end
 
@@ -445,6 +500,139 @@ end
     end
   end
 end
+
+# ─────────────────────────────────────────────────────────────────────────────
+# R10 — Red anti-error sobre el campo de batalla.
+#
+# El duelo reescribe reglas (clima, terreno, salas, talentos) y cualquier valor
+# que el motor no conozca se convierte en un ArgumentError visible en plena
+# batalla: el fin de ronda lee el campo con GameData::BattleWeather.try_get y
+# un entero o un simbolo inexistente tumban el combate. Estos parches hacen
+# que esa clase de fallo sea imposible, venga de donde venga:
+#
+#   1. Nada escribe un clima o terreno invalido: pbStartWeather y
+#      defaultWeather= validan antes de tocar el campo.
+#   2. Nada lee un campo sucio: cada fin de ronda sanitiza weather/terrain
+#      antes de que el motor los consulte.
+#   3. Si aun asi algo inesperado revienta dentro del fin de ronda, el error
+#      se absorbe aqui (sanitizando otra vez) en vez de llegar al jugador.
+# ─────────────────────────────────────────────────────────────────────────────
+module RutaCampoSeguro
+  def self.clima_invalido?(campo)
+    return false if !campo || !campo.respond_to?(:weather)
+    return false if !defined?(GameData::BattleWeather)
+    GameData::BattleWeather.try_get(campo.weather).nil?
+  rescue StandardError
+    true
+  end
+
+  def self.terreno_invalido?(campo)
+    return false if !campo || !campo.respond_to?(:terrain)
+    return false if !defined?(GameData::Terrain)
+    GameData::Terrain.try_get(campo.terrain).nil?
+  rescue StandardError
+    true
+  end
+
+  def self.clima_valido?(valor)
+    return true if !defined?(GameData::BattleWeather)
+    !GameData::BattleWeather.try_get(valor).nil?
+  rescue StandardError
+    false
+  end
+
+  def self.terreno_valido?(valor)
+    return true if !defined?(GameData::Terrain)
+    !GameData::Terrain.try_get(valor).nil?
+  rescue StandardError
+    false
+  end
+
+  def self.sanitizar!(battle)
+    return if !battle
+    campo = battle.respond_to?(:field) ? battle.field : nil
+    return if !campo
+    if clima_invalido?(campo)
+      campo.weather = :None if campo.respond_to?(:weather=)
+      campo.weatherDuration = 0 if campo.respond_to?(:weatherDuration=)
+    end
+    if terreno_invalido?(campo)
+      campo.terrain = :None if campo.respond_to?(:terrain=)
+    end
+  rescue StandardError
+  end
+end
+
+["PokeBattle_Battle", "Battle"].each do |nombre_clase|
+  next if !Object.const_defined?(nombre_clase)
+  clase = Object.const_get(nombre_clase)
+  next if !clase
+  next if clase.method_defined?(:ruta_clima_validado)
+  clase.class_eval do
+    def ruta_clima_validado
+      true
+    end
+    if method_defined?(:pbStartWeather)
+      alias ruta_pbStartWeather_original pbStartWeather
+      def pbStartWeather(user, newWeather, fixedDuration = false, showAnim = true, customDuration = 5)
+        return if !RutaCampoSeguro.clima_valido?(newWeather)
+        ruta_pbStartWeather_original(user, newWeather, fixedDuration, showAnim, customDuration)
+      end
+    end
+    if method_defined?(:defaultWeather=)
+      alias ruta_default_weather_original defaultWeather=
+      def defaultWeather=(value)
+        return if !RutaCampoSeguro.clima_valido?(value)
+        ruta_default_weather_original(value)
+      end
+    end
+  end
+end
+
+if Object.const_defined?(:Battle_Phase_EndOfRound)
+  clase_fin = Object.const_get(:Battle_Phase_EndOfRound)
+  if clase_fin && clase_fin.method_defined?(:start_phase) && !clase_fin.method_defined?(:ruta_fin_ronda_seguro)
+    clase_fin.class_eval do
+      def ruta_fin_ronda_seguro
+        true
+      end
+      alias ruta_fin_ronda_original start_phase
+      def start_phase
+        RutaCampoSeguro.sanitizar!(@battle)
+        ruta_fin_ronda_original
+      rescue StandardError
+        # Ultimo muro: el fin de ronda nunca llega al jugador como cartel de
+        # error. Se sanitiza el campo y la ronda siguiente arranca limpia.
+        RutaCampoSeguro.sanitizar!(@battle)
+      end
+    end
+  end
+end
+
+#===============================================================================
+# R15c — Cinturón de la escena de objetivos: ningún combate (ni una manada de
+# cuatro salvajes, ni cualquier redimensionado futuro) puede reventar el panel
+# de objetivos. PokeBattle_SceneMenus:485 indexa [0,82,166][numButtons-1] y sóo
+# sostiene hasta 3 botones por lado; con 4 devolvía nil y el resto era
+# «nil can't be coerced into Integer». Se topa el tamaño visual a 3 botones.
+#===============================================================================
+if defined?(TargetMenuDisplay)
+  class TargetMenuDisplay
+    if !method_defined?(:ruta_safe_side_sizes_init)
+      alias ruta_safe_side_sizes_init initialize
+      def initialize(viewport, z, sideSizes)
+        seguros = (sideSizes || [1, 1]).map do |n|
+          n = n.to_i
+          n = 3 if n > 3
+          n = 1 if n < 1
+          n
+        end
+        ruta_safe_side_sizes_init(viewport, z, seguros)
+      end
+    end
+  end
+end
+
 `;
 
 /* ───────────────────────────────── inyección ───────────────────────────── */

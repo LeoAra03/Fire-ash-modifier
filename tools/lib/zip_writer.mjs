@@ -79,18 +79,36 @@ const STORED_EXTENSIONS = new Set([".png", ".ogg", ".jpg", ".jpeg", ".zip", ".rx
  * @returns {{ entries: string[], size: number }}
  */
 export function writeZip({ root, destination, extraFiles = {}, timestamp = new Date(Date.UTC(2024, 0, 1)) }) {
-  const { time, date } = dosDateTime(timestamp);
   const files = listFiles(root);
+  const byName = new Map();
+  for (const name of files) byName.set(name, fs.readFileSync(path.join(root, name)));
+  for (const [name, content] of Object.entries(extraFiles)) {
+    byName.set(name, Buffer.isBuffer(content) ? content : Buffer.from(content, "utf8"));
+  }
+  return writeZipEntries({ entries: [...byName].map(([name, content]) => ({ name, content })), destination, timestamp });
+}
+
+/**
+ * Escribe un ZIP a partir de una lista explícita de entradas (nombre + bytes),
+ * aplicando las mismas convenciones deterministas: carpetas implícitas primero,
+ * archivos ordenados, marca de tiempo fija y sin comprimir los formatos ya
+ * comprimidos. Se usa para reconstruir archivos existentes preservando su orden
+ * y, si se indica, el método de compresión original de cada entrada
+ * (`method`: 0 = sin comprimir, 8 = deflate).
+ *
+ * @param {object} options
+ * @param {{name: string, content: Buffer, method?: number}[]} options.entries
+ * @param {string} options.destination
+ * @param {Date}   [options.timestamp]
+ * @returns {{ entries: string[], size: number }}
+ */
+export function writeZipEntries({ entries, destination, timestamp = new Date(Date.UTC(2024, 0, 1)) }) {
+  const { time, date } = dosDateTime(timestamp);
   const records = [];
   const extras = [];
 
-  for (const [name, content] of Object.entries(extraFiles)) {
-    extras.push({ name, buffer: Buffer.isBuffer(content) ? content : Buffer.from(content, "utf8") });
-  }
-  const byName = new Map(extras.map((entry) => [entry.name, entry.buffer]));
-  for (const name of files) {
-    if (!byName.has(name)) byName.set(name, fs.readFileSync(path.join(root, name)));
-  }
+  const byName = new Map(entries.map((entry) => [entry.name, entry.content]));
+  const forced = new Map(entries.filter((entry) => entry.method !== undefined).map((entry) => [entry.name, entry.method]));
 
   const chunks = [];
   let offset = 0;
@@ -100,11 +118,12 @@ export function writeZip({ root, destination, extraFiles = {}, timestamp = new D
   for (const name of names) {
     const isDirectory = name.endsWith("/");
     const buffer = isDirectory ? Buffer.alloc(0) : byName.get(name);
-    const store = isDirectory || (buffer.length > 0 && STORED_EXTENSIONS.has(path.extname(name).toLowerCase()));
+    const preferido = forced.get(name);
+    const store = isDirectory ||
+      (preferido !== undefined ? preferido === 0 : buffer.length > 0 && STORED_EXTENSIONS.has(path.extname(name).toLowerCase()));
     const deflated = store ? buffer : zlib.deflateRawSync(buffer, { level: 9 });
-    const method = store ? 0 : 8;
-    const payload = deflated.length < buffer.length || store ? (store ? buffer : deflated) : buffer;
-    const useStore = store || payload === buffer;
+    const payload = store ? buffer : deflated;
+    const useStore = store;
     const nameBytes = Buffer.from(name, "utf8");
     const crc = crc32(buffer);
 

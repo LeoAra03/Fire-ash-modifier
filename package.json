@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
   "scripts": {
-    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/verify_arceus_action_safety.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:canon:arceus && npm run verify:ruta_de_dios",
+    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:canon:arceus && npm run verify:ruta_de_dios",
     "pretest": "npm run build:teckel",
     "verify:visor": "node tools/apply_badge_viewer.mjs --verify",
     "verify:lideres": "node tools/apply_lideres_campanas.mjs --verify",
@@ -59,6 +59,8 @@
     "sync:ruta_de_dios:package": "node tools/sync_ruta_de_dios_package.mjs",
     "build:package": "node tools/build_direct_package.mjs",
     "verify:package": "node tools/build_direct_package.mjs --verify",
+    "build:corregido:zip": "node tools/refresh_corregido_zip.mjs",
+    "verify:corregido:zip": "node tools/refresh_corregido_zip.mjs --verify",
     "build:dn:qa": "node tools/build_dn_qa_package.mjs",
     "verify:dn:qa": "node tools/build_dn_qa_package.mjs --verify",
     "verify:ruta_de_dios:package": "node tools/sync_ruta_de_dios_package.mjs --verify",
@@ -86,7 +88,7 @@
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
     "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify",
     "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify",
-    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:expansion:package && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:rom:inspect && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all && npm run verify:canon:arceus && npm run verify:atlas:tiles && npm run verify:arceus:cinematics && npm run verify:arceus:sandbox && npm run verify:arceus:actions && npm run verify:arceus:omega:qa && npm run verify:arceus:assets && npm run verify:eras && npm run verify:restauracion && npm run verify:dimensiones && npm run verify:rocket && npm run verify:circuito && npm run verify:ambience && npm run verify:wild && npm run verify:regiones && npm run verify:disfraz && npm run verify:rom:campaigns:plan && npm run verify:rom:campaigns && npm run verify:paquete",
+    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:expansion:plan && npm run verify:expansion && npm run verify:expansion:package && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:map-reference && npm run verify:rom:inspect && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety && npm run dn:verify:all && npm run verify:canon:arceus && npm run verify:atlas:tiles && npm run verify:arceus:cinematics && npm run verify:arceus:sandbox && npm run verify:arceus:actions && npm run verify:arceus:omega:qa && npm run verify:arceus:assets && npm run verify:arceus:recursos && npm run verify:eras && npm run verify:restauracion && npm run verify:dimensiones && npm run verify:rocket && npm run verify:circuito && npm run verify:ambience && npm run verify:wild && npm run verify:regiones && npm run verify:disfraz && npm run verify:rom:campaigns:plan && npm run verify:rom:campaigns && npm run verify:paquete",
     "dn:sheets": "node tools/dn_render_sheets.mjs --all",
     "dn:sheets:ep": "node tools/dn_render_sheets.mjs --episode",
     "dn:mosaicos": "node tools/dn_render_recreacion.mjs --all",
@@ -147,6 +149,10 @@
     "build:eras": "node tools/apply_atlas_eras_map.mjs",
     "verify:eras": "node tools/apply_atlas_eras_map.mjs --verify",
     "verify:arceus:cinematics": "node tools/verify_arceus_cinematics.mjs",
+    "verify:arceus:shield": "node tools/qa/arceus_shield_harness.mjs",
+    "verify:arceus:fuzz": "node tools/qa/arceus_fuzz_harness.mjs",
+    "verify:arceus:recursos": "node tools/verify_arceus_recursos.mjs",
+    "verify:scripts:calls": "node tools/qa/scripts_dangling_calls.mjs",
     "generate:arceus:omega:qa": "node tools/generate_arceus_omega_qa_matrix.mjs",
     "verify:arceus:omega:qa": "node tools/verify_arceus_omega_matrix.mjs",
     "verify:arceus:sandbox": "node tools/verify_arceus_sandbox.mjs",
@@ -171,10 +177,13 @@
     "verify:paquete": "node tools/sync_paquete_directo.mjs --verify",
     "build:paquete:zip": "node tools/build_direct_package.mjs",
     "atlas:check": "node tools/atlas_ingest_reference.mjs --check",
-    "atlas:ingest": "node tools/atlas_ingest_reference.mjs"
+    "atlas:ingest": "node tools/atlas_ingest_reference.mjs",
+    "verify:arceus:scope": "node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.10",
+    "@ruby/3.3-wasm-wasi": "2.10.1",
+    "@ruby/wasm-wasi": "2.10.1",
     "jsdom": "27.0.0"
   }
 }

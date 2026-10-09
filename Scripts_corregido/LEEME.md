@@ -1,5 +1,454 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-09 (12) — R15d: ni un panel de más — el duelo sale 2v2 y la Orden entra por relevos
+
+Tu captura de las cuatro barras apiladas (Arceus + Dialga + Palkia + Giratina a
+la vez, con los sprites fundidos en una posición) tenía una causa de motor
+concreta: en los combates **salvajes**, `pbSetUpSides` crea un batallador por
+cada Pokémon del bando y los saca TODOS de una vez, sin mirar el tamaño del
+campo. Con la Orden completa (4) la escena apilaba 4 paneles, superponía los
+sprites y dejaba al panel de objetivos sin índices válidos (el mismo origen del
+TypeError de R15c).
+
+- **El duelo ahora presenta 2 Pokémon salvajes:** el Creador y un divino
+  (doble 2v2 real, como en tu referencia). El campo, los paneles y el
+  targeting quedan exactamente en el régimen que el motor domina.
+- **Relevo divino (switch de mitad de batalla):** los otros dos dioses esperan
+  en una cola; cuando el divino del campo cae, el siguiente ocupa SU hueco con
+  especie, sprite, tipos, golpes y PS al completo, con su anuncio
+  («La Orden no conoce ausencias…»). Es la mecánica de reservas que el motor
+  sólo ofrece a entrenadores, adaptada al bando salvaje sin tocar su
+  maquinaria de send-out. La captura, las seis barras y la merced siguen
+  intactas.
+- **Candado nuevo en el fuzz:** el `pbWildBattleCore` instrumentalizado de F6
+  ahora EXIGE que el duelo presente exactamente 2 Pokémon salvajes; cualquier
+  regreso al 4v4 aborta los 10 000 arranques. F7 añade 1 000 variantes que
+  ejercutan el relevo sobre el motor extraído (especie sustituida, PS llenos,
+  cola vacía inofensiva).
+- Totales: **1 000 000 de escenarios, 0 fallos** (F1 581 400 · F7 11 000).
+
+**Instalación:** idéntica a R15b/R15c — descomprime el ZIP encima de la carpeta
+del juego y acepta los reemplazos (`Data/`, `Graphics/`, `Audio/`, `LEEME.txt`
+en la raíz del archivo).
+
+## Arreglo 2026-10-09 (11) — R15c: el campo 4v4 que reventaba el panel de objetivos
+
+Tu tercera captura (`TypeError: nil can't be coerced into Integer` en
+`PokeBattle_SceneMenus:485`) tenía una causa mecánica concreta:
+
+- **Causa raíz.** La Orden Divina alinea CUATRO Pokémon en el bando salvaje
+  (Arceus + Dialga + Palkia + Giratina). Al arrancar un combate salvaje, el
+  motor redimensiona el campo con el conteo de Pokémon hábiles del bando
+  (`Battle_StartAndEnd:36` → `@sideSizes = [4,4]`), y el panel de objetivos de
+  la escena sólo sabe dibujar hasta 3 botones por lado:
+  `[0,82,166][numButtons-1]` devolvía `nil` con 4 y el resto era
+  `170 - nil` → el cartel que viste.
+- **Fix 1 (semántica):** en el duelo divino los conteos del bando salvaje se
+  topan al tamaño declarado del duelo (`pbAbleTeamCounts` parcheado): el campo
+  queda 2v2 como siempre debió ser y la cola divina espera dentro de la Ball —
+  el propio motor la envía cuando cae uno, que es el diseño R14.
+- **Fix 2 (cinturón):** el canon topa a 3 cualquier tamaño que llegue al panel
+  de objetivos (`TargetMenuDisplay`): ninguna batalla futura —ni una manada de
+  4 salvajes— puede volver a producir ese `nil`.
+- **Fix 3 (prueba):** familia nueva **F7** del fuzz: 10 000 variantes de la
+  aritmética exacta de la escena (todos los modos 1v1…3v3, bandos de 1-6 con
+  bajas mezcladas, redimensionado salvaje y cinturón) afirmando que ningún
+  botón sale `nil` y ningún lado pasa de 3. Probada en negativo: sin el tope,
+  F7 denuncia exactamente «un lado mayor a 3 revienta SceneMenus:485».
+- El total del fuzz sigue clavado en **1 000 000 de escenarios, 0 fallos**
+  (F1 rebalanceada a 582 400 para hacer sitio a F7).
+
+**Instalación:** igual que R15b — descomprime el ZIP encima de la carpeta del
+juego y acepta los reemplazos (`Data/`, `Graphics/`, `Audio/` y `LEEME.txt`
+viajan en la raíz del archivo).
+
+## Arreglo 2026-10-09 (10) — R15b: el NoMethodError de la Cima, cazado de raíz y con candado
+
+Tu segunda captura (`NoMethodError: undefined method 'pbArceusBuildLegendario'
+for an instance of Interpreter`) reveló que el arreglo R15 había movido la
+*indentación* del constructor del séquito pero no su **ámbito real**: seguía
+escrito dentro de `class PokeBattle_Battle`, y en Ruby la indentación no define
+ámbito — sólo las palabras `class`/`end`. El evento de la cima (nivel Object)
+seguía sin verlo.
+
+- **Fix estructural:** el generador ahora CIERRA `PokeBattle_Battle` antes del
+  constructor y la REABRE después: `pbArceusBuildLegendario` vive de verdad al
+  nivel superior, junto al starter que lo llama. El guion instalado se
+  regeneró completo (con su canon y el Fragmento del Génesis de la cima).
+- **Auditor nuevo en `npm test` (`verify:arceus:scope`):** compara la intención
+  (escrito en columna 0) con el ámbito REAL que ve Ruby (árbol de sintaxis) en
+  las dos secciones del duelo. Si un nombre queda atrapado dentro de una clase,
+  la QA falla antes de empaquetar. Probado en negativo: contra el paquete
+  anterior el auditor y el fuzz fallan señalando exactamente este método.
+- **Fuzz con candado anti-ocultamiento:** el harness ya no re-envuelve
+  cualquier `def` en la clase de prueba: exige que cada método viva
+  EXACTAMENTE donde el juego lo necesita (Object para el starter y sus
+  helpers; su clase para los de batalla). Con el guion anterior, el millón de
+  escenarios se niega a correr y denuncia el anidamiento.
+- **Todo en uno para sustituir:** el ZIP de la raíz (`Fire-Ash-Scripts-
+  Corregidos.zip`) trae en su raíz `Data/` (957 archivos, con el guion
+  corregido), `Graphics/` (197), `Audio/` (34, con las siete pistas del duelo)
+  y `LEEME.txt`: se descomprime encima de la carpeta del juego y se aceptan
+  los reemplazos. No hay paso intermedio ni archivo suelto.
+
+QA R15b: alcance 227+46 defs/constantes verificados contra el árbol de sintaxis
+· fuzz 1 000 000/0 (con los 10 000 arranques reales del duelo) · escudos 69/0 ·
+cinemáticas 77/77 · recursos 27/27 · `npm test` verde · artefactos
+reconstruidos y verificados (ZIP raíz 1157/33,7 MB · directo 1157/50,2 MB ·
+DN QA 422/20,9 MB).
+
+## Arreglo 2026-10-09 (9) — R15: el NameError de la cima no puede volver, y ningún recurso puede faltar
+
+Este arreglo atiende la captura de partida real (`NameError: uninitialized
+constant RUTA_ARCEUS_SEQUITO` al abrir el duelo en la Cima del Génesis):
+
+- **El bug.** La tabla del séquito divino (`RUTA_ARCEUS_SEQUITO`) y el constructor
+  del legendario (`pbArceusBuildLegendario`) habían quedado definidos *dentro*
+  de `class PokeBattle_Battle`; Ruby los esconde ahí y el evento de la cima, que
+  vive fuera de esa clase, no los encontraba. Ambos se movieron al nivel
+  superior y el guion instalado se regeneró completo.
+- **Diez mil pruebas nuevas del arranque real.** La batería de fuzz pasó de
+  probar piezas sueltas a **ejecutar el evento de inicio del duelo completo
+  10 000 veces** (con prólogo incluido en 1 000 de ellas) sobre el código
+  instalado: captura, huida, rendición, empate, victoria y la merced única del
+  Rotom, en cada orden posible. Resultado: **1 000 000 de escenarios, 0 fallos**.
+- **Imposible que falte un recurso de ningún tipo.** La auditoría de recursos
+  ahora barre TODA referencia del guion (movimientos, especies y sprites,
+  objetos, música, fondos de batalla, personajes) y exige que exista en el
+  juego **y en este paquete**. Así se encontró un hueco real: las 6 pistas de
+  música del duelo no viajaban en el paquete. Ya están.
+- **Imposible que un nombre quede mal definido.** Un auditor nuevo revisa que
+  ninguna constante ni método del duelo quede anidado donde el juego no pueda
+  verlo: exactamente la clase de error de tu captura.
+
+**Instalación R15:** además de `Data/` y `Graphics/` (ver R14), copia ahora
+también la carpeta `Audio/` del paquete: contiene las siete pistas del duelo
+(`Legend Creation Trio`, `Battle! Legendary Raid`, `Battle! Eternatus - Phase
+1/2/3`, `Battle! Ultra Necrozma`) más `Legend Sinnoh` y `secretvolo`. Sin ellas
+las fases cambiarían en silencio. El ZIP raíz y el paquete directo ya las
+incluyen.
+
+## Arreglo 2026-10-08 (8) — R14: el Creador como debe verse: batalla doble, mil brazos reales, cosmos que cambia y ni un destello blanco
+
+Este arreglo atiende el reporte de partida real sobre el evento que abre el
+DLC, y además incorpora la referencia visual del duelo (sprite de mil brazos,
+fondo cósmico y nombre verdadero del Creador):
+
+- **La batalla ya no se repite.** La causa era el pseudo-PC: su error mataba el
+  evento antes de marcar la cima como resuelta y la página sin condición volvía
+  a lanzar el duelo. El pseudo-PC **se eliminó por completo** (como pediste):
+  si cae todo el equipo queda la merced única del Rotom (35 %, una vez) y, si
+  no, la rendición cierra el evento por el flujo normal. Al resolver el duelo
+  (captura, victoria o empate) los interruptores 873/874/875 y el de evento
+  completado quedan firmados y la cima permite **moverse libremente**.
+- **Sin curas antes de Volo.** El descanso del altar que curaba al equipo antes
+  del duelo con Volo desaparece: Volo te espera tal como quedaste en la cima
+  (y también en la revancha de la página 2).
+- **Nunca más los mismos ataques.** El repertorio de Arceus se fija por etapa y
+  por objetivos vivos (ya no se recalcula idéntico cada turno) y dentro de él
+  elige con **azar divino ponderado por el puntaje real del motor** (daño,
+  precisión, tipo, objetivo), castigando el golpe que acabas de resistir y sin
+  repetir el reciente: amenaza de verdad y distinto cada turno.
+- **Tus Pokémon ya no se modifican.** Sólo se escala el bando de Arceus; los
+  niveles, stats y movimientos del equipo de Ash quedan intactos siempre.
+- **Batalla doble real con la Orden Divina.** Dialga, Palkia y Giratina
+  flanquean al Creador desde el primer turno (su nivel sale del equipo de Ash,
+  +8, y sólo escala el bando divino); cuando uno cae, el motor envía al
+  siguiente. Y cuando Arceus **nombra** a un legendario, éste se hace presente:
+  si sigue en pie ejecuta la orden él mismo (se fortalece y golpea); si cayó,
+  **reemplaza el cuerpo de Arceus** dos turnos con su sprite, tipos y ataques
+  reales (posesión revertible: al terminar, el Creador retoma su forma).
+- **La Mega se VE.** Al agotar la quinta barra, Arceus cambia de sprite a la
+  **Forma Origen de los mil brazos** (frente y espalda nuevos, rueda dorada y
+  halo de brazos) con temblor, tono y escala — y el **fondo de la batalla es el
+  cosmos de la Cima**, que cambia con el duelo: `genesis1` (calma estelar),
+  `genesis2` (tormenta violeta) y `genesis3` (apocalipsis carmesí), con las
+  plataformas de mármol y oro del altar. La Forma Primigenia devuelve el corpo
+  al Arceus base sobre la tormenta oscura.
+- **Cero pantallas blancas.** No queda ni un `pbFlash` en el código de la Ruta:
+  todos los clímax son cinemáticas de tono, sacudida, escala, sprite y fondo.
+- **Tu Arceus capturado hereda la Mega.** Una vez por combate, al caer por
+  debajo de la mitad de sus PS, despliega los mil brazos (sprite real, +2 de
+  ataque, ataque especial y velocidad) y al terminar el combate vuelve a su
+  forma base. Sigue teniendo Tabla giratoria, Juicio con STAB universal y modo
+  divino en los cuatro mundos autorizados.
+- **Nombre verdadero.** El marcador del duelo muestra **ARCEUS ORIGEN**: porque
+  siempre, en toda forma y en todo bando, es el dios de los Pokémon.
+
+**Instalación R14:** además de `Data/`, copia ahora las carpetas `Graphics/`
+del paquete (`Graphics/Battlebacks/genesis*.png` y
+`Graphics/Pokemon/Front|Back/ARCEUS_18.png`): sin ellas el motor seguiría
+peleando con los fondos y sprites antiguos. El ZIP raíz y el paquete directo
+ya las incluyen.
+
+## Arreglo 2026-10-08 (7) — Pelear contra un dios: daño variable, diálogos que no se repiten, música por fase y los juegos del Génesis
+
+El duelo final deja de ser un patrón fijo y se siente como pelear contra un
+dios que **juega** contigo, sin dejar de ser un duelo Pokémon:
+
+- **El % de vida que te quita VARÍA por acción.** Ya no es un porcentaje fijo:
+  cada golpe de Arceus pesa entre un **12 % y un 33 %** de la vida máxima del
+  objetivo, más pesado en las fases tardías y en la Forma Mega, y el bonus de
+  sus juegos lo parte a la mitad. Nunca supera el tercio de R9: siguen siendo
+  necesarias al menos tres acciones para derribar a un Pokémon sano, pero ya
+  no puedes contarlas de memoria. Puedes perder si te confías.
+- **Ningún diálogo se repite.** Todos los textos del dios (burlas, juegos,
+  invocaciones, la copia de tu equipo, su merced, sus comentarios de turno)
+  salen de **mazos por categoría** que se barajan y se sacan sin reposición:
+  una línea sólo puede volver a salir cuando ya salieron todas las demás. Y
+  van **con calma**: cada frase espera tu confirmación.
+- **La cinemática es ACCIÓN, no texto.** Al abrir el duelo, Arceus desciende
+  cara a cara y **alza literalmente el sprite de tu Pokémon en pantalla**
+  (sube, queda suspendido, flash, temblor, y vuelve a caer) mientras dice:
+  «Podría matarte ahora mismo, a ti y a tus Pokémon... pero veamos de qué son
+  capaces». Cada tres turnos señala el sprite del Pokémon que tengas activo y
+  te habla **de él por su nombre** («¿Charizard? Yo lo soñé antes de que
+  existiera su primer ancestro»).
+- **Minijuegos dentro de la batalla.** El **Juicio Ciego**: eliges dónde
+  esconderte (tras el fuego, el agua o la tierra) y si adivinas, sus próximos
+  dos golpes pesan la mitad. La **Ruleta del Génesis**: gira a tu favor (cura,
+  ataque, velocidad, limpieza del campo o la sonrisa del dios). Los juegos
+  nunca te ponen peor que la batalla normal: el premio ayuda, el fallo no
+  castiga de más.
+- **Invocaciones del lore: la Orden Divina.** Si Arceus ordenara el
+  apocalipsis, sus creaciones lo ejecutarían: el **Trío de la Creación**
+  (Dialga congela el tiempo, Palkia rasga el espacio, Giratina arrastra su
+  antimateria) golpea **sin rematar jamás** (siempre te deja al menos 1 PS:
+  «No lo remato. Todavía no. Eso me lo guardo»); **Groudon y Kyogre** traen su
+  clima real de diluvio y sequía; **Uxie, Mesprit y Azelf** apagan la mente
+  (bajan stats); **Mew y Celebi** —la Resistencia Imposible— se interponen y
+  te curan; **Rayquaza y Zygarde** someten el equilibrio y aquietan el campo.
+  Nunca se repite la misma leyenda dos veces seguidas.
+- **Copia de tu equipo.** En el Juicio del Vínculo, Arceus te recuerda que él
+  soñó a tus Pokémon primero: te roba hasta tres golpes que tú mismo les
+  enseñaste (más el Juicio) y pelea con ellos.
+- **La merced del último Pokémon.** Cuando te queda **uno solo** en pie, una
+  única vez por batalla, Arceus detiene el cielo y te pregunta en una ventana
+  de elección: ¿quieres que cure a todo tu equipo (vida, estado y PP) para que
+  sea parejo? Tú decides; si la rechazas, sonríe: «Orgullo. Bien. Terminemos
+  esto».
+- **La música cambia en cada fase.** Seis pistas reales del juego, una por
+  fase (`Legend Sinnoh` → `Legend Creation Trio` → `Battle! Legendary Raid` →
+  `Battle! Eternatus - Phase 1` → `Phase 2` → `Battle! Ultra Necrozma`), más
+  `Battle! Eternatus - Phase 3` para la Forma Primigenia. La QA verifica que
+  cada pista exista de verdad en `Audio/BGM`.
+- **Nada de esto puede reventar.** El turno divino cuelga del cálculo de
+  prioridad **aislado** (si algo fallara, la ronda sigue intacta) y cada
+  sistema (música, apertura, merced, juegos, invocaciones, copia) tiene su
+  propio escudo. Las ventanas de elección usan la firma exacta del motor
+  (`pbShowCommands` con valor por defecto entero, como el propio motor las
+  llama): la B siempre responde bien.
+- **Auditoría de recursos reales.** Un verificador nuevo
+  (`npm run verify:arceus:recursos`) comprueba que TODO lo que el duelo nombra
+  exista en los archivos del juego: los 44 movimientos referenciados en
+  `moves.dat`, las 37 especies en `species.dat` con su sprite frontal (y las
+  18 formas de Arceus), las 18 Tablas + Poké Ball en `items.dat`, las 7 pistas
+  en `Audio/BGM` y los 5 sprites de personaje del prólogo. Resultado: **nada
+  falta**. Lo único que el juego no trae son animaciones «Common:» de clima
+  (este Fire Ash no las usa en batalla): el motor las salta en silencio y el
+  clima funciona igual a nivel mecánico. QA: **1 000 000 de escenarios, 0 fallos**, con una familia
+  nueva (F5 · 200 600) dedicada a estos sistemas y 3 000 duelos completos con
+  todo activado (1 764 victorias, 333 Formas Primigenias); el verificador de
+  cinemáticas sube a **69 invariantes**.
+
+Instalación idéntica: copia `Scripts_corregido/Scripts.rxdata` sobre
+`Data/Scripts.rxdata` (o descomprime el ZIP del paquete directo). Si tenías el
+duelo a medias, sal de la Cima y vuelve a entrar.
+
+## Arreglo 2026-10-08 (6) — Ninguna fase revienta a medias, y Arceus Primigenio
+
+Revisión fase por fase contra las firmas reales del motor (las 405 secciones
+instaladas), más el diseño de la forma verdadera del dios:
+
+- **Cada fase termina entera o no termina.** Antes, un solo error dentro de una
+  fase (clima, salas, silencio, tablilla…) abortaba en silencio **todos** los
+  sub-efectos que venían después: la fase quedaba a medias sin que nadie lo
+  viera. Ahora cada sub-efecto corre con su propio escudo (`CanonArceus.paso`)
+  y la fase cierra con `verificar_fase`: campo saneado (clima/terreno válidos)
+  y PS de todos los combatientes dentro de rango, pase lo que pase en cada
+  paso.
+- **Auditoría de firmas ("expected mal firmados").** Se comparó cada llamada
+  que nuestras fases hacen al motor contra las firmas reales: objetivos de
+  efectos de campo y de lado (`battle.field.effects`, `sides[i].effects`),
+  constantes `PBEffects`, setters `item=`/`ability=`, la IA
+  (`pbRegisterMoveTrainer` con sus 4 argumentos), los helpers de pantalla
+  (`pbFlash`/`pbShake`/`pbToneChangeAll` globales), `from_pokemon_move`,
+  `GrowthRate.max_level` y la firma v19 de `pbStartWeather`. No quedan
+  llamadas con argumentos de tipo u orden equivocados; el auditor estático de
+  patrones de campo sigue en **0 hallazgos sobre 405 secciones**.
+- **ARCEUS PRIMIGENIO, LA FORMA PRIMIGENIA.** Cuando la última barra cruza el
+  umbral rojo, los mil brazos se desploman y queda lo que había *antes* de la
+  creación: cartel y flash propios, **suelta su Tabla** (el Juicio vuelve a su
+  tipo original, así que un Pokémon espectro puede negarlo: esa es la puerta
+  estratégica), pool primigenio (`Juicio, Velocidad Extrema, Golpe Umbrío,
+  Giga Impacto`) y una voz por acción distinta de la de los Mil Brazos. El
+  tope de R9 (un tercio de la vida máxima por acción) no cambia: la forma es
+  espectáculo y lectura, no dificultad nueva.
+- **La QA ahora nota las fases mudas.** El millón de escenarios
+  (`npm run verify:arceus:fuzz`) exige que cada fase deje sus efectos visibles
+  (mochila sellada + Sala Mágica, clima + Gravedad, silencio + velo de suerte,
+  salas invertidas, tablilla, cartel de los Mil Brazos) y que la Forma
+  Primigenia suelte la Tabla y rearme su pool: en la muestra corren **593
+  duelos con Primigenia**, todos coherentes. Total: **1 000 000 de escenarios,
+  0 fallos**.
+
+Instalación idéntica: copia `Scripts_corregido/Scripts.rxdata` sobre
+`Data/Scripts.rxdata` (o descomprime el ZIP del paquete directo). Si tenías el
+duelo a medias, sal de la Cima y vuelve a entrar.
+
+## Arreglo 2026-10-08 (5) — Cero errores de script en batalla y Mega Arceus de los Mil Brazos
+
+Este arreglo ataca el cartel de error que aparecía **en plena batalla**
+(`ArgumentError: Invalid argument passed to method. Expected 5 to be one of
+[Symbol, GameData::BattleWeather, String], but got Integer`, con el fin de
+ronda en la traza) y añade la fase nueva que pediste:
+
+- **La causa exacta del cartel.** Cada fase del duelo reescribe una regla del
+  combate; la fase del cielo sembraba su clima con una llamada mal firmada:
+  pasaba el *símbolo de un movimiento* como usuario y el *número 5* como clima.
+  El campo quedaba con `weather = 5` y, al cerrar el turno, el motor consultaba
+  `GameData::BattleWeather.try_get(5)` y reventaba. Ahora el clima se escribe
+  con la firma correcta de v19 (`pbStartWeather(nil, clima, true, true, 5)`) y
+  con símbolos reales de clima (`:Rain`, `:Sun`, `:Sandstorm`, `:Hail`, `:Fog`).
+- **Red anti-error sobre el campo (R10).** Aunque otro mod o una partida vieja
+  escriban basura, ya no puede verse un cartel: `pbStartWeather` y
+  `defaultWeather=` **validan antes de escribir**; cada fin de ronda
+  **sanitiza** clima y terreno antes de que el motor los lea; y si algo
+  inesperado revienta dentro del fin de ronda, el error se absorbe y sanitiza
+  ahí mismo en vez de llegar al jugador. El silencio de talentos de la fase 3
+  ahora usa el efecto real del motor (Bilis Negra) en vez de borrar el talento.
+- **Auditoría de cada fase y cada script.** El auditor estático
+  (`npm run verify:scripts:calls`) revisa las 405 secciones instaladas también
+  contra patrones de campo peligrosos (clima/terreno escritos con enteros o
+  nil, firmas mal puestas): **0 hallazgos**.
+- **Fase 6 nueva: MEGA ARCEUS, EL DE LOS MIL BRAZOS.** Al vaciar la quinta
+  barra el dios megaevoluciona: cartel y flash propios, animación de mil
+  proyectiles, un grito por acción («¡Mil brazos descienden a la vez…!») y un
+  pool de movimientos multigolpe (Furia Golpes, Puño Cometa, Pin Misil…).
+  El equilibrio de R9 no se toca: cada acción suya sigue topada en un tercio de
+  la vida máxima, así que el espectáculo no vuelve imposible el duelo.
+- **Un millón de escenarios de QA.** `npm run verify:arceus:fuzz` ejecuta el
+  código instalado dentro de Ruby 3.3 (WebAssembly) sobre un motor de prueba
+  que replica las validaciones reales de GameData: 800 000 micro-escenarios de
+  la guardia anti-KO, 150 000 de clima/terreno sucios con fin de ronda, 6 000
+  duelos completos aleatorios (seis barras, umbral rojo, megaevolución y
+  captura) y 44 000 barridos de las seis fases: **1 000 000 de escenarios,
+  0 fallos**.
+
+Instalación idéntica a la de siempre: copia `Scripts_corregido/Scripts.rxdata`
+sobre `Data/Scripts.rxdata` (o descomprime el ZIP del paquete directo). Si
+tenías el duelo a medias, sal de la Cima y vuelve a entrar.
+
+## Arreglo 2026-10-08 (4) — Reajuste de dificultad: el duelo final se gana con estrategia
+
+El duelo de la Cima quedó demasiado duro: aunque ya se jugaba y tus golpes
+movían las barras, la presión de Arceus ganaba casi siempre la carrera de
+desgaste. Este paquete lo reajusta (nada más cambia):
+
+- **Su golpe pesa un tercio.** Ninguna acción de Arceus quita más de un tercio de
+  la vida máxima de tu Pokémon activo, multigolpes y movimientos de KO incluidos:
+  hacen falta **cuatro acciones suyas** para tumbar a un Pokémon sano. Si un
+  Pokémon ya está muy bajo (por debajo de ese tercio), sí puede caer.
+- **El umbral rojo ya no borra tu avance.** Cuando Arceus cruza el umbral rojo ya
+  no restaura la barra completa: recupera **media barra**, una vez por etapa.
+- **Menos castigo en las etapas finales.** Las etapas 5 y 6 suben menos el nivel
+  del rival, así que tus Pokémon dejan de pelear cuesta arriba.
+- Lo demás sigue igual: tú eliges los comandos, tu lado abre cada ronda, tus
+  golpes mueven las seis barras (×4, mínimo media barra por impacto) y la captura
+  garantizada de la sexta barra no cambia.
+
+**Ritmo verificado:** `npm run verify:arceus:shield` ahora simula el duelo completo
+sobre el código real y da **12 turnos con 2 bajas** incluso en el peor caso (sólo
+el daño mínimo del vínculo), y **17 turnos con 4 bajas** si el jugador pierde un
+turno de cada tres (inmunidades, fallos, cambios, objetos). Se gana administrando
+el equipo, pero Arceus sigue derribando a un Pokémon cada cuatro turnos.
+
+## Arreglo 2026-10-08 (3) — El duelo final contra Arceus ahora se juega de verdad
+
+Si el combate final de la Cima del Génesis se sentía como una derrota anunciada
+(Arceus actuaba primero, tus Pokémon podían quedar a nivel 1 y un solo golpe suyo
+derribaba de un turno), este paquete cambia el duelo para que **Ash pelee en
+persona**:
+
+- **Tú juegas el combate.** El duelo ya no se resuelve por guion: eliges los
+  movimientos de siempre y cada golpe mueve las seis barras del dios. La fuerza
+  que Ash ganó mirando las batallas del prólogo multiplica el daño que hace a
+  cada barra y garantiza que ningún impacto quede en nada (mínimo, media barra).
+- **Tu lado abre cada ronda.** Dentro del duelo divino la iniciativa es de Ash:
+  Arceus responde después, incluso con el Espacio Raro de la Etapa 4 activo.
+- **Arceus no puede noquear de un solo golpe.** El daño de cada turno suyo está
+  topeado y repartido: mira el Arreglo 4, arriba, para los valores vigentes.
+- **El Juicio del Vínculo ya no te apaga.** La Etapa 4 dejó de bajar a nivel 1 a
+  tus Pokémon: ahora aplica un castigo real, pero jugable.
+- **Opción de saltar el prólogo.** Al llegar por primera vez a la cima aparece la
+  pregunta «Ver el prólogo completo / Ir directo al duelo con Arceus». La segunda
+  opción abre el combate de inmediato, sin las tres cinemáticas.
+
+El resto sigue intacto: los tres combates del prólogo, la inmunidad de Arceus en
+esas escenas, las seis barras, la captura garantizada y el pseudo-PC de
+continuación.
+
+**Instalación:** vuelve a copiar `Data/Scripts.rxdata` de este paquete sobre tu
+juego (o extrae otra vez `Fire_Ash_Paquete_Directo.zip`) y carga tu partida. No
+toques tus guardados: todo el arreglo va en los scripts. Si ya empezaste el duelo
+final, sal y vuelve a entrar a la Cima para que el combate se monte con las
+reglas nuevas.
+
+## Arreglo 2026-10-08 (2) — Ball Breaker ya no congela el combate con «undefined method 'selfProtected?'»
+
+Si al pelear contra **Steven (Máximo) y su Metagross** viste el cuadro de error:
+
+```text
+Exception: NoMethodError
+Message: undefined method 'selfProtected?' for an instance of PokeBattle_Battler
+Backtrace: ... 'PokeBattle_Move_DF08#pbAttackingTurnEffect' ...
+```
+
+no era un fallo de tus partidas ni del escudo de Arceus: el movimiento **Ball Breaker**
+(el ataque de acero de dos turnos que el juego llama «empezó a cargar su bola de
+acero») consultaba dos métodos que Fire Ash 3.7 nunca define
+(`selfProtected?` y `sideProtected?`). Al usarlo, el combate se detenía ahí.
+
+El paquete ya lo arregla:
+
+- **Ayudantes restaurados:** `PokeBattle_Battler#selfProtected?` y
+  `#sideProtected?` vuelven a existir con la misma lógica que usa el motor en
+  otros movimientos que atraviesan protecciones (Protect, King's Shield, Spiky
+  Shield, Baneful Bunker, Obstruct y, de lado, Crafty Shield, Mat Block, Wide
+  Guard y Quick Guard). Si algún día tu copia los define, se respetan los suyos.
+- **Movimiento blindado:** el efecto de Ball Breaker se reescribió para que,
+  aunque falten esos ayudantes, siempre avise y retire las protecciones en lugar
+  de abortar el combate (también tolera un objetivo nulo).
+- **Auditoría nueva:** `npm run verify:scripts:calls` recorre las 405 secciones
+  de `Scripts.rxdata` y avisa si algún script llama a un método que no existe,
+  que es exactamente el tipo de error que provocaba este cuadro. Ya corre dentro
+  de `npm test`.
+
+**Instalación:** vuelve a copiar `Data/Scripts.rxdata` de este paquete sobre tu
+juego (o extrae otra vez `Fire_Ash_Paquete_Directo.zip`) y carga tu partida. El
+error aparecerá una sola vez más si lo tenías en pantalla: cierra el juego,
+reemplaza el archivo y continúa desde tu último guardado.
+
+## Arreglo 2026-10-08 — Arceus ya no puede ser derrotado por el granizo ni por Metagross
+
+Si en tu partida el **granizo** o un **Metagross** seguían derrotando a Arceus (en el
+prólogo de Cynthia/Máximo, en el de Red/Gold o en el duelo final), vuelve a copiar
+`Data/Scripts.rxdata` de este paquete sobre tu juego (o extrae otra vez el ZIP
+`Fire_Ash_Paquete_Directo.zip`). No toques tus partidas: el arreglo va en los scripts.
+
+- **Prólogo:** Arceus es intocable. Ningún ataque, crítico, clima, retroceso,
+  habilidad, movimiento custom ni escritura directa de PS mueve su barra: el aura
+  dorada absorbe el golpe con un mensaje y sólo un intento que habría sido letal
+  provoca su burla. Un setter de PS protegido y un respaldo en `pbFaint` impiden
+  cualquier derrota del Creador.
+- **Sin granizo heredado:** la nieve de la cumbre (`map_metadata`) ya no entra a los
+  combates de la cima como granizo (`setBattleRule("weather", "None")` en las
+  escenas y `recordBattleRule("weather", "None")` en el duelo divino).
+- **Duelo de Ash:** el daño de los movimientos —que el motor aplica con
+  `target.hp -= hpLost`, sin pasar por `pbReduceHP`— también pasa por las seis
+  barras. Un Metagross ya no puede tumbar a Arceus de un golpe: el KO se convierte
+  en transición de etapa y las bolas siguen bloqueadas hasta agotar la sexta barra.
+
 ## Corrección de arranque del 2026-10-07 (error «undefined class/module RPG::MapMetadata»)
 
 Si al abrir el juego veías este cuadro:
@@ -54,7 +503,7 @@ Esta carpeta contiene estas opciones listas para reemplazar sobre una copia de P
 
 - `Dimensional_Nightmare_QA.zip`: **paquete integral todo-en-uno (100 % teórico)**. Incluye `Scripts.rxdata` corregido con `PokeMod_RutaDeDios` y `DN_RuntimeSupport`, además de todos los mapas y recursos de Isla Espejo (`Map2001`–`Map2020`), Monte Silver (`Map2021`–`Map2030`), La Ruta de Dios (`Map513`, `Map625`, `Map2031`–`Map2038`) y **Dimensional Nightmare / Protector de la Ceniza** (`Map2040`–`Map2190`, 148 tilesets `DN_*`, sprites originales, 11 temas MIDI `DN_*.mid`, 142 NPCs con estados/memoria, 151 memorias, 151 estatuas/relieves, 13 Centros Pokémon y 13 Tiendas contextuales, 10 decisiones y combates de jefes con espejo real en EP05 y forma final en EP06).
 - `Fire_Ash_Paquete_Directo.zip`: **paquete directo de La Ruta de Dios + correcciones base** listo para descomprimir sobre la carpeta del juego.
-- `Scripts.rxdata`: archivo corregido de scripts base. Incluye las colisiones de sprites, la interacción con NPCs, la corrección de guardado para Android/Kirin, `La Ruta de Dios` y la corrección de Grandeur Club. También repara tonos serializados como texto (`Tone.new(...)`) antes de interpolarlos en pantalla o imágenes, evitando el `NoMethodError` de Kirin y conservando el efecto original cuando el tono se puede recuperar. Si un guardado antiguo deja `transition_name` en `nil`, usa la transición predeterminada al cambiar de mapa en lugar de generar un `TypeError`.
+- `Scripts.rxdata`: archivo corregido de scripts base. Incluye las colisiones de sprites, la interacción con NPCs, la corrección de guardado para Android/Kirin, `La Ruta de Dios`, la corrección de Grandeur Club y la compatibilidad de **Ball Breaker** (`selfProtected?`/`sideProtected?` restaurados, para que el movimiento de Metagross no cierre el combate con `NoMethodError`). También repara tonos serializados como texto (`Tone.new(...)`) antes de interpolarlos en pantalla o imágenes, evitando el `NoMethodError` de Kirin y conservando el efecto original cuando el tono se puede recuperar. Si un guardado antiguo deja `transition_name` en `nil`, usa la transición predeterminada al cambiar de mapa en lugar de generar un `TypeError`.
 - `Fire_Ash_Expansion_Multiversal.zip`: **Expansión Multiversal**, el arco posterior a La Ruta de Dios. Siete grietas purgables en Kanto y Johto, punto de colapso en la Torre Pokémon, Liga Oscura (mapas 2192 y 2193), expedición a Atlas Mil desde el puerto de Ciudad Carmín y el espejo del sótano de la Mansión Pokémon que abre la Isla Espejo con sus doce Pokégods. Incluye sus mapas (`Map2191`–`Map2194`), los mapas de Kanto y Johto con grietas, las salidas nuevas del Monte Silver, `trainers.dat`, `species.dat`, los sprites y gritos de los Pokégods y el laboratorio de Oak sin la cápsula nueva.
 - `Expansion_Multiversal/`: paquete de la Expansión Multiversal sin comprimir.
 - `Paquete_directo/`: paquete directo sin comprimir.
