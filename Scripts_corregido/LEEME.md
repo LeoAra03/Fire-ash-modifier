@@ -1,5 +1,40 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-09 (10) — R15b: el NoMethodError de la Cima, cazado de raíz y con candado
+
+Tu segunda captura (`NoMethodError: undefined method 'pbArceusBuildLegendario'
+for an instance of Interpreter`) reveló que el arreglo R15 había movido la
+*indentación* del constructor del séquito pero no su **ámbito real**: seguía
+escrito dentro de `class PokeBattle_Battle`, y en Ruby la indentación no define
+ámbito — sólo las palabras `class`/`end`. El evento de la cima (nivel Object)
+seguía sin verlo.
+
+- **Fix estructural:** el generador ahora CIERRA `PokeBattle_Battle` antes del
+  constructor y la REABRE después: `pbArceusBuildLegendario` vive de verdad al
+  nivel superior, junto al starter que lo llama. El guion instalado se
+  regeneró completo (con su canon y el Fragmento del Génesis de la cima).
+- **Auditor nuevo en `npm test` (`verify:arceus:scope`):** compara la intención
+  (escrito en columna 0) con el ámbito REAL que ve Ruby (árbol de sintaxis) en
+  las dos secciones del duelo. Si un nombre queda atrapado dentro de una clase,
+  la QA falla antes de empaquetar. Probado en negativo: contra el paquete
+  anterior el auditor y el fuzz fallan señalando exactamente este método.
+- **Fuzz con candado anti-ocultamiento:** el harness ya no re-envuelve
+  cualquier `def` en la clase de prueba: exige que cada método viva
+  EXACTAMENTE donde el juego lo necesita (Object para el starter y sus
+  helpers; su clase para los de batalla). Con el guion anterior, el millón de
+  escenarios se niega a correr y denuncia el anidamiento.
+- **Todo en uno para sustituir:** el ZIP de la raíz (`Fire-Ash-Scripts-
+  Corregidos.zip`) trae en su raíz `Data/` (957 archivos, con el guion
+  corregido), `Graphics/` (197), `Audio/` (34, con las siete pistas del duelo)
+  y `LEEME.txt`: se descomprime encima de la carpeta del juego y se aceptan
+  los reemplazos. No hay paso intermedio ni archivo suelto.
+
+QA R15b: alcance 227+46 defs/constantes verificados contra el árbol de sintaxis
+· fuzz 1 000 000/0 (con los 10 000 arranques reales del duelo) · escudos 69/0 ·
+cinemáticas 77/77 · recursos 27/27 · `npm test` verde · artefactos
+reconstruidos y verificados (ZIP raíz 1157/33,7 MB · directo 1157/50,2 MB ·
+DN QA 422/20,9 MB).
+
 ## Arreglo 2026-10-09 (9) — R15: el NameError de la cima no puede volver, y ningún recurso puede faltar
 
 Este arreglo atiende la captura de partida real (`NameError: uninitialized

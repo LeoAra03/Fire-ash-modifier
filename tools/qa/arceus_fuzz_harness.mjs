@@ -116,7 +116,7 @@ WANTED = {
                            "ruta_arceus_apply_ohko_guard", "ruta_arceus_ash_bar_damage",
                            "ruta_arceus_mega?", "ruta_arceus_mega_aparicion",
                            "ruta_arceus_primigenia?", "ruta_arceus_primigenia_aparicion",
-                           "pbArceusSetMoves", "pbArceusMoveIds", "pbArceusEnsureCaptureBall",
+                           "pbArceusSetMoves", "pbArceusEnsureCaptureBall",
                            "pbArceusDistortion", "ruta_arceus_divine_ratio", "ruta_arceus_dialogo", "ruta_arceus_decir",
                            "ruta_arceus_musica_fase", "ruta_arceus_sprite_y",
                            "ruta_arceus_senalar_sprite", "ruta_arceus_cinematica_apertura",
@@ -144,18 +144,46 @@ WANTED = {
 lines = SRC.split("\n")
 found = {}
 modulos = {}
+pila = []
 walk = nil
 walk = lambda do |node|
   next if !node.is_a?(RubyVM::AbstractSyntaxTree::Node)
-  if node.type == :DEFN
-    found[node.children[0].to_s] = [node.first_lineno, node.last_lineno]
-  elsif node.type == :MODULE
-    nombre = lines[node.first_lineno - 1].to_s[/\A\s*module\s+([A-Za-z_][A-Za-z0-9_:]*)/, 1]
-    modulos[nombre] = [node.first_lineno, node.last_lineno] if nombre
+  case node.type
+  when :CLASS, :MODULE
+    nombre = node.children[0]
+    etiqueta = nombre.is_a?(RubyVM::AbstractSyntaxTree::Node) ? nombre.children.compact.map(&:to_s).join("::") : nombre.to_s
+    if node.type == :MODULE
+      registro = lines[node.first_lineno - 1].to_s[/\A\s*module\s+([A-Za-z_][A-Za-z0-9_:]*)/, 1]
+      modulos[registro] = [node.first_lineno, node.last_lineno] if registro
+    end
+    pila.push(etiqueta)
+    node.children.each { |child| walk.call(child) }
+    pila.pop
+    next
+  when :SCLASS
+    pila.push("<sclass>")
+    node.children.each { |child| walk.call(child) }
+    pila.pop
+    next
+  when :DEFN
+    # R15b: se guarda el ámbito REAL (pila de class/module). La indentación no
+    # define ámbito en Ruby: un def "col 0" dentro de class PokeBattle_Battle
+    # es un método de esa clase y Object NO lo ve (NoMethodError en partida).
+    found[node.children[0].to_s] = [node.first_lineno, node.last_lineno, pila.dup]
   end
   node.children.each { |child| walk.call(child) }
 end
 walk.call(RubyVM::AbstractSyntaxTree.parse(SRC))
+
+# Candado anti-ocultamiento: cada método exigido debe vivir EXACTAMENTE en la
+# clase que el sandbox usa para envolverlo. Si un def quedó anidado donde no
+# debe, el fuzz aborta en vez de re-envolverlo y disimular el bug.
+AMBITO_ESPERADO = {
+  "Object" => [],
+  "PokeBattle_Battle" => ["PokeBattle_Battle"],
+  "PokeBattle_Battler" => ["PokeBattle_Battler"],
+  "PokeBattle_Move" => ["PokeBattle_Move"],
+}
 
 missing = []
 sources = {}
@@ -164,6 +192,12 @@ WANTED.each do |klass, names|
     range = found[name]
     if range.nil?
       missing.push("#{klass}##{name}")
+      next nil
+    end
+    ambito = range[2] || []
+    esperado = AMBITO_ESPERADO[klass] || []
+    if ambito != esperado
+      missing.push("#{klass}##{name} (definido en [#{ambito.join(" > ")}] pero exigido en [#{esperado.join(" > ")}]: el juego real no lo vería ahí)")
       next nil
     end
     lines[(range[0] - 1)..(range[1] - 1)].join("\n")

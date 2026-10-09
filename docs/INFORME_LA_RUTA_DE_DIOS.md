@@ -323,3 +323,45 @@ starter), escudos 69/0, cinemáticas 77/77, recursos **27/27** (8 comprobaciones
 nuevas R15), llamadas colgantes 0, `npm test` completo en verde y artefactos
 reconstruidos y verificados (ZIP raíz 1157 archivos / 33,7 MB; paquete directo
 1157 / 50,2 MB; DN QA 422 / 20,9 MB).
+
+## 11. Addendum R15b — El ámbito real contra la indentación (y el candado que lo vigila)
+
+La segunda captura de partida (`NoMethodError: undefined method
+'pbArceusBuildLegendario' for an instance of Interpreter`) demostró que R15
+había movido la columna del texto pero no el ámbito: el `def` seguía escrito
+entre `class PokeBattle_Battle` y su `end`, y Ruby define el ámbito con
+palabras clave, no con espacios. El Interpreter del evento (nivel Object) no
+ve métodos de otra clase: de ahí el error.
+
+1. **Fix estructural en el generador.** `apply_la_ruta_de_dios.mjs` cierra
+   `PokeBattle_Battle` inmediatamente antes del comentario R14b y la reabre
+   justo después del `end` de `pbArceusBuildLegendario`. Verificado con árbol
+   de sintaxis: `scope=[]` para la constante del séquito, el constructor y el
+   starter.
+2. **`tools/qa/arceus_scope_map.mjs` (+ `npm run verify:arceus:scope`, dentro
+   de `npm test`).** Recorre el AST de `PokeMod_RutaDeDios` y
+   `PokeMod_CanonArceus` con pila de `class/module` y denuncia (a) todo def o
+   constante escrito en columna 0 pero anidado de verdad, y (b) la ausencia o
+   anidamiento de los once nombres que el nivel superior exige
+   (`pbStartArceusDivineBattle`, `pbArceusBuildLegendario`, `pbArceusMoveIds`,
+   merced, rendición, normalize, prólogo, CpuBattle y las tres tablas).
+   Prueba en negativo: contra el Scripts.rxdata entregado en R15 el auditor
+   sale 1 señalando `pbArceusBuildLegendario` dentro de `PokeBattle_Battle`.
+3. **Candado anti-ocultamiento en el fuzz.** El extractor AST del harness
+   guarda ahora el ámbito real de cada `def` y compara contra el ámbito
+   esperado del grupo que lo envuelve (`Object` → top-level; `PokeBattle_Battle`
+   /`_Battler`/`_Move` → su clase). Cualquier desvío aborta el millón de
+   escenarios con el nombre y el ámbito exactos: re-envolver y disimular ya no
+   es posible. Con el guion R15 entregado, el harness falla citando
+   `Object#pbArceusBuildLegendario (definido en [PokeBattle_Battle]...)`.
+   Ajuste derivado: `pbArceusMoveIds` vive al nivel superior (lo llaman starter
+   y constructor) y por tanto pertenece al grupo Object, no al de Battle.
+4. **Entrega todo-en-uno verificada.** El ZIP raíz abre con `Data/`,
+   `Graphics/`, `Audio/` y `LEEME.txt` en su raíz: sustitución directa sobre la
+   carpeta del juego, sin pasos intermedios. El manifiesto del sincronizador y
+   la auditoría de paridad mantienen las siete pistas, los fondos y los sprites
+   dentro de todos los distribuíbles.
+
+QA R15b: alcance AST 227+46 · fuzz 1 000 000/0 · escudos 69/0 · cinemáticas
+77/77 · recursos 27/27 · npm test verde · ZIP raíz 1157/33,7 MB · paquete
+directo 1157/50,2 MB · DN QA 422/20,9 MB.

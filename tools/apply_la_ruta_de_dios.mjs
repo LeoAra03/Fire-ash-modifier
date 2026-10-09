@@ -3319,6 +3319,12 @@ class PokeBattle_Battle
   # starter pbStartArceusDivineBattle es un método de Object y no la vería si
   # quedara anidada dentro de PokeBattle_Battle.)
 
+end
+
+# R15b: aquí se CIERRA PokeBattle_Battle y se reabre después del
+# constructor del séquito: pbArceusBuildLegendario debe vivir al nivel
+# superior (Object), exactamente como el starter que lo llama.
+
 # R14b — Método de nivel superior (como el starter que lo llama): construye un
 # legendario del séquito listo para batalla. Si viviera dentro de
 # PokeBattle_Battle, Object#pbStartArceusDivineBattle no lo vería (NameError/
@@ -3338,6 +3344,8 @@ def pbArceusBuildLegendario(species, move_ids, level)
 rescue StandardError
   return Pokemon.new(species, level)
 end
+
+class PokeBattle_Battle
 
   # R14 — Fin de la posesión: Arceus retoma su cuerpo verdadero (sprite, tipos,
   # estadísticas y repertorio de la etapa). La posesión usa el Transform del
