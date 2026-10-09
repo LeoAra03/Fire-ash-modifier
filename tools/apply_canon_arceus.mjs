@@ -608,6 +608,31 @@ if Object.const_defined?(:Battle_Phase_EndOfRound)
     end
   end
 end
+
+#===============================================================================
+# R15c — Cinturón de la escena de objetivos: ningún combate (ni una manada de
+# cuatro salvajes, ni cualquier redimensionado futuro) puede reventar el panel
+# de objetivos. PokeBattle_SceneMenus:485 indexa [0,82,166][numButtons-1] y sóo
+# sostiene hasta 3 botones por lado; con 4 devolvía nil y el resto era
+# «nil can't be coerced into Integer». Se topa el tamaño visual a 3 botones.
+#===============================================================================
+if defined?(TargetMenuDisplay)
+  class TargetMenuDisplay
+    if !method_defined?(:ruta_safe_side_sizes_init)
+      alias ruta_safe_side_sizes_init initialize
+      def initialize(viewport, z, sideSizes)
+        seguros = (sideSizes || [1, 1]).map do |n|
+          n = n.to_i
+          n = 3 if n > 3
+          n = 1 if n < 1
+          n
+        end
+        ruta_safe_side_sizes_init(viewport, z, seguros)
+      end
+    end
+  end
+end
+
 `;
 
 /* ───────────────────────────────── inyección ───────────────────────────── */

@@ -365,3 +365,45 @@ ve métodos de otra clase: de ahí el error.
 QA R15b: alcance AST 227+46 · fuzz 1 000 000/0 · escudos 69/0 · cinemáticas
 77/77 · recursos 27/27 · npm test verde · ZIP raíz 1157/33,7 MB · paquete
 directo 1157/50,2 MB · DN QA 422/20,9 MB.
+
+## 12. Addendum R15c — El campo 4v4 y el panel de objetivos (TypeError nil→Integer)
+
+Tercera captura real: `TypeError: nil can't be coerced into Integer`,
+backtrace `208:PokeBattle_SceneMenus:485 in Integer#-`.
+
+1. **Causa raíz mecánica.** `TargetMenuDisplay#initialize` (sección 208) coloca
+   los botones de objetivo con `[0,82,166][numButtons-1]` (botones pequeños) o
+   `[0,116][numButtons-1]`: sólo sostiene 1-3 batalladores por lado. El arranque
+   de combates salvajes (sección 183, `Battle_StartAndEnd:33-40`) redimensiona
+   el campo con `pbAbleTeamCounts(1)`: con la Orden Divina completa (4 Pokémon
+   salvajes) volvía `@sideSizes = [4,4]` y el índice 3 del arreglo devolvía
+   `nil` → `self.x+170-nil` → TypeError dentro del `Array.new(maxIndex+1)` del
+   panel. El duelo divino es salvaje para el motor (pbWildBattleCore), de ahí
+   que el redimensionado aplicara.
+2. **Tope semántico (generador).** `PokeBattle_Battle#pbAbleTeamCounts` queda
+   parcheado en `PokeMod_RutaDeDios`: en duelo divino, cada conteo del bando se
+   topa a `@sideSizes[lado]`. El campo se queda 2v2 (doble declarado) y la cola
+   de la Orden espera en la Ball: el motor repone caídas vía send-out estándar,
+   que es exactamente el comportamiento R14 («cuando uno cae, el motor envía al
+   siguiente»). El alias original viaja con guarda `unless method_defined?`.
+3. **Cinturón de escena (canon).** `TargetMenuDisplay#initialize` se envuelve
+   para topar cualquier `sideSizes` a [1..3] por lado antes de construir
+   sprites: ninguna batalla futura (manadas de 4 salvajes incluidos) puede
+   volver a indexar fuera. Las batallas triples reales (3 botones) no se tocan.
+4. **Familia F7 del fuzz (10 000 variantes).** Replica la aritmética exacta de
+   SceneMenus:463-489 y el redimensionado de Battle_StartAndEnd:33-40 sobre
+   configuraciones aleatorias: modos [1,1]…[3,3], bandos de 1-6 Pokémon con
+   bajas mezcladas, `ruta_side_split` para bando rival múltiple en el sandbox y
+   réplica fiel de `pbAbleTeamCounts`/`pbPartyStarts` del motor en el preludio
+   (más el alias que el extractor no viaja). Afirmaciones: conteos divinos ≤
+   lado declarado; campo redimensionado ≤ 3; cinturón eficaz; ningún `x` de
+   botón `nil`. **Prueba en negativo:** sin el parche de conteos, F7 falla con
+   «campo redimensionado a [5,5]: un lado mayor a 3 revienta SceneMenus:485».
+5. **Presupuesto.** F1 pasa a 582 400 y el total del fuzz sigue siendo
+   1 000 000 exactos (F7 = 10 000).
+
+QA R15c: fuzz 1 000 000/0 (F1 582 400 · F2 150 000 · F3 3 000 · F4 44 000 · F5
+200 600 · F6 10 000 arranques · F7 10 000 variantes de escena) · escudos 69/0 ·
+cinemáticas 77/77 · recursos 27/27 · alcance AST 228+47 · npm test verde ·
+artefactos reconstruidos y verificados (ZIP raíz 1157/33,7 MB · directo
+1157/50,2 MB · DN QA 422/20,9 MB).

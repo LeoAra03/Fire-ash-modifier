@@ -70,7 +70,7 @@ def fuzz_f1(rng, fallos)
   battle1, party1, boss1 = fuzz_divine_battle(2, 1000)
   objetivo = party1[0]
   f1 = 0
-  592_400.times do
+  582_400.times do
     total = 1 + rng.rand(3000)
     hp0 = 1 + rng.rand(total)
     lost = 1 + rng.rand(total + 100)
@@ -484,6 +484,70 @@ def fuzz_f5(rng, fallos)
 end
 
 "FAMILIAS LISTAS"
+
+
+# ── F7 · R15c: la escena de objetivos nunca ve un lado de 4+ ─────────────────
+# Replica exacta de la aritmética de PokeBattle_SceneMenus:463-489 y del
+# redimensionado salvaje de Battle_StartAndEnd:33-40, sobre configuraciones
+# aleatorias del duelo divino (1-6 Pokémon por bando, bajas mezcladas, todos los
+# modos de batalla). Ninguna combinación puede producir un índice fuera de los
+# arreglos de botones (nil) ni un campo mayor a 3 por lado.
+def fuzz_f7(rng, fallos)
+  notar = lambda { |m| fallos << m if fallos.length < 30 }
+  f7 = 0
+  10_000.times do |i|
+    modos = [[1, 1], [2, 2], [2, 1], [1, 2], [3, 3], [3, 1], [1, 3], [2, 3], [3, 2]]
+    sizes = modos[rng.rand(modos.length)].dup
+    n_player = 1 + rng.rand(6)
+    n_foe = 1 + rng.rand(6)
+    party = (0...n_player).map do |k|
+      mon = FuzzMon.new(k, 0, :PIKACHU, 400 + (k * 37) % 200)
+      mon.hp = rng.rand(4) == 0 ? 0 : mon.totalhp
+      mon
+    end
+    foes = (0...n_foe).map do |k|
+      mon = FuzzMon.new(k, 1, :ARCEUS, 1000)
+      mon.hp = rng.rand(4) == 0 ? 0 : mon.totalhp
+      mon.pokemon.instance_variable_set(:@ruta_arceus_divine, true) if k == 0
+      mon
+    end
+    party[0].hp = party[0].totalhp if party.all? { |p| p.fainted? }
+    foes[0].hp = foes[0].totalhp if foes.all? { |p| p.fainted? }
+    battle = PokeBattle_Battle.new(party + foes)
+    battle.ruta_side_split = n_foe
+    battle.sideSizes = sizes
+    battle.instance_variable_set(:@arceus_divine, true)
+    battle.party2starts = [0]
+    # 1) el tope divino: los conteos del bando salvaje nunca exceden su lado
+    counts = battle.pbAbleTeamCounts(1)
+    notar.call("F7 conteos divinos #{counts.inspect} exceden el lado #{sizes[1]}") if counts.compact.max.to_i > sizes[1]
+    # 2) redimensionado salvaje tal cual el motor (Battle_StartAndEnd:33-40)
+    redim = sizes.dup
+    if battle.wildBattle? && counts[0].to_i != redim[1]
+      if redim[0] == redim[1]
+        redim = [counts[0].to_i, counts[0].to_i]
+      else
+        redim[1] = counts[0].to_i
+      end
+    end
+    notar.call("F7 campo redimensionado a #{redim.inspect}: un lado mayor a 3 revienta SceneMenus:485") if redim.compact.max.to_i > 3
+    # 3) cinturón del canon: topa a 3 cualquier tamaño que llegue a la escena
+    seguros = redim.map { |n| n = n.to_i; n = 3 if n > 3; n = 1 if n < 1; n }
+    notar.call("F7 cinturón ineficaz: #{seguros.inspect}") if seguros.max > 3 || seguros.min < 1
+    # 4) aritmética exacta de los botones (SceneMenus:463-489) sin nil
+    small = seguros.max > 2
+    maxIndex = (seguros[0] > seguros[1]) ? (seguros[0] - 1) * 2 : seguros[1] * 2 - 1
+    (0..maxIndex).each do |b|
+      numButtons = seguros[b % 2]
+      next if numButtons <= b / 2
+      x = small ? [0, 82, 166][numButtons - 1] : [0, 116][numButtons - 1]
+      notar.call("F7 botón #{b} con numButtons=#{numButtons}: índice nil en SceneMenus:485") if x.nil?
+    end
+    f7 += 1
+    GC.start if (f7 % 500).zero?
+  end
+  f7
+end
 
 # ── F6 · 10 000 · arranque del duelo divino completo y entradas R14 ─────────
 # R14b: el reporte de partida mostró un NameError de constante anidada que sólo

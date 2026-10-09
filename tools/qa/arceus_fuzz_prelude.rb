@@ -443,9 +443,12 @@ end
 
 class PokeBattle_Battle
   attr_accessor :battlers, :turnCount, :lastMoveUser, :lastMoveUsed, :messages,
-                :field, :sides, :battleAI, :endOfRound
+                :field, :sides, :battleAI, :endOfRound, :sideSizes,
+                :ruta_side_split, :party1starts, :party2starts
   def initialize(battlers = [])
     @battlers = battlers
+    @sideSizes = [1, 1]
+    @ruta_side_split = 1
     @turnCount = 1
     @lastMoveUser = 0
     @lastMoveUsed = :METEORMASH
@@ -490,10 +493,41 @@ class PokeBattle_Battle
   end
   def pbParty(idxBattler = 0)
     # En el motor pbParty devuelve objetos Pokemon (no battlers): la merced de
-    # Arceus usa .species/.fainted?/.heal de Pokemon.
-    lado = idxBattler.to_i == pbPlayer ? @battlers[0...(@battlers.length - 1)] : [@battlers.last]
+    # Arceus usa .species/.fainted?/.heal de Pokemon. R15c: ruta_side_split
+    # permite bando rival de varios Pokémon (la Orden Divina alinea cuatro).
+    split = @ruta_side_split.to_i
+    split = 1 if split < 1
+    split = @battlers.length - 1 if split > @battlers.length - 1
+    lado = idxBattler.to_i == pbPlayer ? @battlers[0...(@battlers.length - split)] : @battlers[(@battlers.length - split)..-1].to_a
     lado.compact.map { |b| b.pokemon }.compact
   end
+  # R15c — réplica fiel de PokeBattle_Battle#pbPartyStarts / pbAbleTeamCounts
+  # (sección 182:354 del motor): el redimensionado salvaje de Battle_StartAndEnd
+  # lee estos conteos y con 4 divinos volvía el campo 4v4.
+  def pbPartyStarts(side)
+    side.to_i == pbPlayer ? (@party1starts || [0]) : (@party2starts || [0])
+  end
+  def pbAbleTeamCounts(side)
+    party = pbParty(side)
+    partyStarts = pbPartyStarts(side)
+    ret = []
+    idxTeam = -1
+    nextStart = 0
+    party.each_with_index do |pkmn, i|
+      if i >= nextStart
+        idxTeam += 1
+        nextStart = (idxTeam < partyStarts.length - 1) ? partyStarts[idxTeam + 1] : party.length
+      end
+      next if !pkmn || !pkmn.able?
+      ret[idxTeam] = 0 if !ret[idxTeam]
+      ret[idxTeam] += 1
+    end
+    ret
+  end
+  # El override del guion (R15c) llama a _ruta_arceus_original_able_team_counts;
+  # en el sandbox la línea `alias` del generador no se extrae (sólo viajan los
+  # def), así que el preludio deja el alias listo.
+  alias _ruta_arceus_original_able_team_counts pbAbleTeamCounts unless method_defined?(:_ruta_arceus_original_able_team_counts)
   # Réplica fiel de PokeBattle_Battle#pbStartWeather (730380:679): escribe el
   # clima y LO LEE con GameData::BattleWeather.try_get en la misma llamada.
   def pbStartWeather(user, newWeather, fixedDuration = false, showAnim = true, customDuration = 5)

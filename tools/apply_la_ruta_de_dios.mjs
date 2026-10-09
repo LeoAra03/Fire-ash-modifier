@@ -3884,6 +3884,22 @@ class PokeBattle_Battle
     end
   end
 
+  # R15c — La Orden Divina alinea CUATRO Pokémon en el bando salvaje. El motor
+  # redimensiona los combates salvajes con pbAbleTeamCounts(1) (@sideSizes =
+  # [n,n] en Battle_StartAndEnd:36) y SceneMenus sólo dibuja hasta 3 botones por
+  # lado ([0,82,166][numButtons-1] → nil con 4): TypeError «nil can't be coerced
+  # into Integer» en PokeBattle_SceneMenus:485. La cola divina espera dentro de
+  # la Ball: el campo se queda en el tamaño declarado del duelo y el propio
+  # motor repone caídas, que es justo el diseño R14.
+  alias _ruta_arceus_original_able_team_counts pbAbleTeamCounts unless method_defined?(:_ruta_arceus_original_able_team_counts)
+  def pbAbleTeamCounts(side)
+    counts = _ruta_arceus_original_able_team_counts(side)
+    return counts if !arceus_divine? || !counts.is_a?(Array)
+    limit = @sideSizes[side.to_i].to_i
+    return counts if limit <= 0
+    counts.map { |c| c.nil? ? c : [c, limit].min }
+  end
+
   alias _ruta_arceus_original_pbRun pbRun unless method_defined?(:_ruta_arceus_original_pbRun)
   def pbRun(idxBattler, duringBattle = false)
     if arceus_divine?

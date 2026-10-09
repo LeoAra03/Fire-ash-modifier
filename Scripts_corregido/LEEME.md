@@ -1,5 +1,36 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-09 (11) — R15c: el campo 4v4 que reventaba el panel de objetivos
+
+Tu tercera captura (`TypeError: nil can't be coerced into Integer` en
+`PokeBattle_SceneMenus:485`) tenía una causa mecánica concreta:
+
+- **Causa raíz.** La Orden Divina alinea CUATRO Pokémon en el bando salvaje
+  (Arceus + Dialga + Palkia + Giratina). Al arrancar un combate salvaje, el
+  motor redimensiona el campo con el conteo de Pokémon hábiles del bando
+  (`Battle_StartAndEnd:36` → `@sideSizes = [4,4]`), y el panel de objetivos de
+  la escena sólo sabe dibujar hasta 3 botones por lado:
+  `[0,82,166][numButtons-1]` devolvía `nil` con 4 y el resto era
+  `170 - nil` → el cartel que viste.
+- **Fix 1 (semántica):** en el duelo divino los conteos del bando salvaje se
+  topan al tamaño declarado del duelo (`pbAbleTeamCounts` parcheado): el campo
+  queda 2v2 como siempre debió ser y la cola divina espera dentro de la Ball —
+  el propio motor la envía cuando cae uno, que es el diseño R14.
+- **Fix 2 (cinturón):** el canon topa a 3 cualquier tamaño que llegue al panel
+  de objetivos (`TargetMenuDisplay`): ninguna batalla futura —ni una manada de
+  4 salvajes— puede volver a producir ese `nil`.
+- **Fix 3 (prueba):** familia nueva **F7** del fuzz: 10 000 variantes de la
+  aritmética exacta de la escena (todos los modos 1v1…3v3, bandos de 1-6 con
+  bajas mezcladas, redimensionado salvaje y cinturón) afirmando que ningún
+  botón sale `nil` y ningún lado pasa de 3. Probada en negativo: sin el tope,
+  F7 denuncia exactamente «un lado mayor a 3 revienta SceneMenus:485».
+- El total del fuzz sigue clavado en **1 000 000 de escenarios, 0 fallos**
+  (F1 rebalanceada a 582 400 para hacer sitio a F7).
+
+**Instalación:** igual que R15b — descomprime el ZIP encima de la carpeta del
+juego y acepta los reemplazos (`Data/`, `Graphics/`, `Audio/` y `LEEME.txt`
+viajan en la raíz del archivo).
+
 ## Arreglo 2026-10-09 (10) — R15b: el NoMethodError de la Cima, cazado de raíz y con candado
 
 Tu segunda captura (`NoMethodError: undefined method 'pbArceusBuildLegendario'

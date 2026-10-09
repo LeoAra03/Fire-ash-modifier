@@ -116,7 +116,7 @@ WANTED = {
                            "ruta_arceus_apply_ohko_guard", "ruta_arceus_ash_bar_damage",
                            "ruta_arceus_mega?", "ruta_arceus_mega_aparicion",
                            "ruta_arceus_primigenia?", "ruta_arceus_primigenia_aparicion",
-                           "pbArceusSetMoves", "pbArceusEnsureCaptureBall",
+                           "pbArceusSetMoves", "pbArceusEnsureCaptureBall", "pbAbleTeamCounts",
                            "pbArceusDistortion", "ruta_arceus_divine_ratio", "ruta_arceus_dialogo", "ruta_arceus_decir",
                            "ruta_arceus_musica_fase", "ruta_arceus_sprite_y",
                            "ruta_arceus_senalar_sprite", "ruta_arceus_cinematica_apertura",
@@ -268,6 +268,7 @@ const FAMILIAS = [
   { id: 6, rotulo: "F6a arranque del duelo (1/3):   ", llamada: "fuzz_f6a(rng, fallos)" },
   { id: 7, rotulo: "F6b arranque del duelo (2/3):   ", llamada: "fuzz_f6b(rng, fallos)" },
   { id: 8, rotulo: "F6c arranque del duelo (3/3):   ", llamada: "fuzz_f6c(rng, fallos)" },
+  { id: 9, rotulo: "F7 escena de objetivos (R15c):  ", llamada: "fuzz_f7(rng, fallos)" },
 ];
 
 const modulo = await WebAssembly.compile(fs.readFileSync(wasm));
