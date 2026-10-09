@@ -1,5 +1,58 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-08 (8) — R14: el Creador como debe verse: batalla doble, mil brazos reales, cosmos que cambia y ni un destello blanco
+
+Este arreglo atiende el reporte de partida real sobre el evento que abre el
+DLC, y además incorpora la referencia visual del duelo (sprite de mil brazos,
+fondo cósmico y nombre verdadero del Creador):
+
+- **La batalla ya no se repite.** La causa era el pseudo-PC: su error mataba el
+  evento antes de marcar la cima como resuelta y la página sin condición volvía
+  a lanzar el duelo. El pseudo-PC **se eliminó por completo** (como pediste):
+  si cae todo el equipo queda la merced única del Rotom (35 %, una vez) y, si
+  no, la rendición cierra el evento por el flujo normal. Al resolver el duelo
+  (captura, victoria o empate) los interruptores 873/874/875 y el de evento
+  completado quedan firmados y la cima permite **moverse libremente**.
+- **Sin curas antes de Volo.** El descanso del altar que curaba al equipo antes
+  del duelo con Volo desaparece: Volo te espera tal como quedaste en la cima
+  (y también en la revancha de la página 2).
+- **Nunca más los mismos ataques.** El repertorio de Arceus se fija por etapa y
+  por objetivos vivos (ya no se recalcula idéntico cada turno) y dentro de él
+  elige con **azar divino ponderado por el puntaje real del motor** (daño,
+  precisión, tipo, objetivo), castigando el golpe que acabas de resistir y sin
+  repetir el reciente: amenaza de verdad y distinto cada turno.
+- **Tus Pokémon ya no se modifican.** Sólo se escala el bando de Arceus; los
+  niveles, stats y movimientos del equipo de Ash quedan intactos siempre.
+- **Batalla doble real con la Orden Divina.** Dialga, Palkia y Giratina
+  flanquean al Creador desde el primer turno (su nivel sale del equipo de Ash,
+  +8, y sólo escala el bando divino); cuando uno cae, el motor envía al
+  siguiente. Y cuando Arceus **nombra** a un legendario, éste se hace presente:
+  si sigue en pie ejecuta la orden él mismo (se fortalece y golpea); si cayó,
+  **reemplaza el cuerpo de Arceus** dos turnos con su sprite, tipos y ataques
+  reales (posesión revertible: al terminar, el Creador retoma su forma).
+- **La Mega se VE.** Al agotar la quinta barra, Arceus cambia de sprite a la
+  **Forma Origen de los mil brazos** (frente y espalda nuevos, rueda dorada y
+  halo de brazos) con temblor, tono y escala — y el **fondo de la batalla es el
+  cosmos de la Cima**, que cambia con el duelo: `genesis1` (calma estelar),
+  `genesis2` (tormenta violeta) y `genesis3` (apocalipsis carmesí), con las
+  plataformas de mármol y oro del altar. La Forma Primigenia devuelve el corpo
+  al Arceus base sobre la tormenta oscura.
+- **Cero pantallas blancas.** No queda ni un `pbFlash` en el código de la Ruta:
+  todos los clímax son cinemáticas de tono, sacudida, escala, sprite y fondo.
+- **Tu Arceus capturado hereda la Mega.** Una vez por combate, al caer por
+  debajo de la mitad de sus PS, despliega los mil brazos (sprite real, +2 de
+  ataque, ataque especial y velocidad) y al terminar el combate vuelve a su
+  forma base. Sigue teniendo Tabla giratoria, Juicio con STAB universal y modo
+  divino en los cuatro mundos autorizados.
+- **Nombre verdadero.** El marcador del duelo muestra **ARCEUS ORIGEN**: porque
+  siempre, en toda forma y en todo bando, es el dios de los Pokémon.
+
+**Instalación R14:** además de `Data/`, copia ahora las carpetas `Graphics/`
+del paquete (`Graphics/Battlebacks/genesis*.png` y
+`Graphics/Pokemon/Front|Back/ARCEUS_18.png`): sin ellas el motor seguiría
+peleando con los fondos y sprites antiguos. El ZIP raíz y el paquete directo
+ya las incluyen.
+
 ## Arreglo 2026-10-08 (7) — Pelear contra un dios: daño variable, diálogos que no se repiten, música por fase y los juegos del Génesis
 
 El duelo final deja de ser un patrón fijo y se siente como pelear contra un

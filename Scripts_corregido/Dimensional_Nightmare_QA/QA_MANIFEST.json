@@ -562,8 +562,8 @@
     },
     {
       "path": "Data/Map2037.rxdata",
-      "bytes": 20846,
-      "sha256": "2212d34b9c04f3cc8ac7b34d3709f40aed08d063fc5b1a1ddc7db9981cd438a9"
+      "bytes": 20875,
+      "sha256": "e0b300c3d1d8a4f5ef4cb9c83c6ac5977bdec91c916880a95ae8ae1f6b248e59"
     },
     {
       "path": "Data/Map2038.rxdata",
@@ -1342,8 +1342,8 @@
     },
     {
       "path": "Data/Scripts.rxdata",
-      "bytes": 1144662,
-      "sha256": "8ee8f9e1ffd78463d206fb8ac2edcf21e0195da461682b341e1d1f2108370ddc"
+      "bytes": 1147436,
+      "sha256": "580c1a335ad07d07c3f793c71dfaa25050ae054f8cfcca302b60a9b00d12a135"
     },
     {
       "path": "Data/System.rxdata",
@@ -1367,8 +1367,8 @@
     },
     {
       "path": "Data/map_metadata.dat",
-      "bytes": 502423,
-      "sha256": "c4c5a47b99540677da970e75299ec83c6d996c10612e3dfcb3c891c4a4c2dc15"
+      "bytes": 502455,
+      "sha256": "445e40b563053005690acb3aaa8b425c8eae8a63c0a52296a156d0c65617f7b5"
     },
     {
       "path": "Data/trainer_lists.dat",

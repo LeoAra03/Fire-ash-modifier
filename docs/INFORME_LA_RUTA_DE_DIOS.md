@@ -177,7 +177,7 @@ Tras concluir el combate contra Arceus (derrota o captura):
 - Volus sube apresuradamente la escalinata del Altar y felicita a Ash por haber detenido la aniquilación universal.
 - **Si el jugador capturó a Arceus:**
   - Volus palidece y su expresión se transforma en locura y fanatismo: *«Espera... ¿Has... has CAPTURADO a Arceus? ¡¿Cómo te atreves?! ¡Ese poder me corresponde a mí para moldear un nuevo mundo sin dolor! ¡Si no me lo entregas por las buenas, te lo arrebataré en batalla!»*.
-  - Comienza el duelo decisivo contra **Volus** con su tema musical exclusivo (`secretvolo.ogg`) y el equipo registrado de la versión 4 de `SECRET_Volo` (Spiritomb, Giratina y Giratina Forma Origen, Nv. 100). Antes del reto, el altar concede un descanso explícito que cura al equipo (**R6/S14**), y se repite en cada reintento. Si Ash pierde, el duelo queda disponible para volver a intentarlo; solo una victoria cierra la historia.
+  - Comienza el duelo decisivo contra **Volus** con su tema musical exclusivo (`secretvolo.ogg`) y el equipo registrado de la versión 4 de `SECRET_Volo` (Spiritomb, Giratina y Giratina Forma Origen, Nv. 100). **R14:** el descanso del altar que curaba al equipo antes de este duelo se eliminó por petición expresa: Volo espera al equipo tal como quedó en la cima, también en cada reintento. Si Ash pierde, el duelo queda disponible para volver a intentarlo; solo una victoria cierra la historia.
   - *Sin castigo de bloqueo:* Si el jugador es derrotado por Volus, puede volver a subir a la cima cuantas veces necesite para enfrentarlo de nuevo.
   - Al vencer a Volus, este se arrodilla, admite que Arceus no fue dominado sino que eligió a Ash por su corazón puro, entrega 5 Caramelos Raros y se disuelve pacíficamente en la niebla del tiempo.
 - **Fin del Evento Temporal:**
@@ -198,3 +198,72 @@ Tras concluir el combate contra Arceus (derrota o captura):
 - `npm test` y `npm run test:ui` pasan en este checkout.
 - El modo completo de verificación del Dimensional Nightmare sigue bloqueado al inicio por las fichas de referencia ausentes bajo `reference/dimensional_nightmare/slices/`; la limpieza de rótulos tiene verificador propio y no depende de ellas.
 - No hay Ruby, RGSS ni `Game.exe` en el entorno, por lo que esta entrega tiene QA estática/estructural, no una prueba dentro del juego. La entrada animada, los tonos y el orden de comandos deben confirmarse en una copia de QA de Fire Ash.
+
+---
+
+## 9. Addendum R14 — El Creador como debe verse (reporte de partida + referencia visual)
+
+Motivado por el reporte directo de quien jugó el evento que abre el DLC y por la
+captura de referencia del duelo (sprite de mil brazos, cosmos y nombre
+verdadero). Cambios instalados en `PokeMod_RutaDeDios` y en los assets del jogo:
+
+1. **Batalla que no se repite.** La repetición nacía del pseudo-PC: su interfaz
+   levantaba una excepción en partida que mataba el evento antes de firmar el
+   interruptor 873, dejando viva la página sin condición del evento de la cima.
+   R14 elimina `pbArceusPseudoPC` (y sus helpers de cajas) por completo; la red
+   de seguridad pasa a ser la merced única del Rotom y, tras ella, la rendición
+   con flujo oficial. Con 873/874/875 y el switch de completado firmados, la
+   página 3 del evento queda vacía: movimiento libre sin re-encuentros.
+2. **Sin cura previa a Volo.** Se elimina `pbArceusVoloRest` y sus dos llamadas
+   de evento (página 1 y página 2 de la cima).
+3. **IA que varía y amenaza.** El repertorio ya no se recalcula idéntico cada
+   turno: se fija al cambiar de etapa o de objetivos vivos
+   (`pbArceusBestAttackIds` con azar entre candidatos >=85 % del mejor puntaje)
+   y la elección por turno reparte probabilidad entre los candidatos >=75 % del
+   óptimo real del motor (`pbArceusChooseSmartMove`), con memoria que castiga el
+   golpe resistido y veta el golpe recién usado. Se acabó el bucle A-B-A-B.
+4. **Sólo se modifica el bando de Arceus.** `pbArceusControlLevels` ya no escribe
+   niveles efectivos sobre los Pokémon del jugador (y desaparece
+   `pbArceusRivalLevel`); el anuncio de etapa sólo habla del nivel del Creador.
+5. **Orden Divina con presencia.** `pbArceusOrdenDivina`: si el legendario
+   nombrado pelea junto al Creador (séquito), ejecuta la orden en persona
+   (curación parcial, +1 a dos stats, animación de su golpe); si no,
+   `pbArceusSummon` + `pbArceusRedibujar` hacen que el legendario **reemplaza el
+   cuerpo de Arceus** dos turnos (sprite por especie visual, tipos y ataques
+   reales vía Transform del motor), con reversa limpia en
+   `pbArceusPosesionFin`. Las fases 5 y 6 pasan por el mismo camino.
+6. **Duelo doble real.** `pbStartArceusDivineBattle` arma `foeParty` con Arceus
+   más `RUTA_ARCEUS_SEQUITO` (Dialga, Palkia y Giratina al nivel del equipo de
+   Ash +8, topado al máximo legal): el motor los envía de a dos y repone caídas;
+   la IA de los acompañantes es la del motor (`pbDefaultChooseEnemyCommand`), y
+   las barras, la guardia anti-KO y la captura siguen ancladas al objeto Pokémon
+   de Arceus.
+7. **Mega visible y fondo que cambia.** La quinta barra aplica
+   `pbChangeForm(18)` (sprite nuevo de mil brazos, frente y espalda) más escala,
+   tono, sacudida y cambio de fondo; `pbArceusFondo` reutiliza los sprites vivos
+   de la escena (`battle_bg`, `battle_bg2`, `base_0`, `base_1`) para cambiar entre
+   las familias nuevas `genesis1/2/3` sin recrear la escena. La Forma Primigenia
+   devuelve la forma 0 sobre la tormenta oscura. El metadata de la cima también
+   declara `genesis1` como battleback.
+8. **Cero destellos.** No queda ninguna llamada `pbFlash` en la sección (ni en
+   eventos: los `cmd(223)` blancos de la cima se volvieron tono púrpura y
+   sacudida). El auditor estático `PATRONES_RUTA` lo exige en cada `npm test`.
+9. **Mega del capturado.** `pbArceusMilibrazosDespertar`: una vez por combate,
+   con el Arceus capturado por debajo de la mitad de sus PS, despliega la forma
+   18 con +2 a ataque, ataque especial y velocidad y la cinemática de tono y
+   sacudida; `pbRutaArceusRestoreCapturedAfterBattle` la repliega al terminar.
+10. **Assets nuevos distribuidos.** `Graphics/Battlebacks/genesis{1,2,3}_bg.png`,
+    `genesis1_base0/base1.png` y `Graphics/Pokemon/{Front,Back}/ARCEUS_18.png`
+    viajan en el paquete directo y en el ZIP raíz (manifiesto `ASSET_FILES` y
+    adopción de novedades en `refresh_corregido_zip`); el LEEME documenta la
+    copia de `Graphics/` en la instalación.
+11. **Nombre verdadero.** El Pokémon del duelo se presenta como «ARCEUS ORIGEN»
+    (`pkmn.name`), coherente con la referencia: siempre es el dios de los
+    Pokémon, en el bando que sea.
+
+QA R14: fuzz 1 000 000/0 (F1 602 400 · F2 150 000 · F3 3 000 · F4 44 000 · F5
+200 600), escudos 69/0, cinemáticas 77/77 (8 invariantes R14 nuevas), recursos
+19/19 (séquito, Forma Origen y fondos auditados contra moves.dat/species.dat y
+el árbol de Graphics), llamadas colgantes 0 y patrones de campo 0, `npm test`
+completo en verde y artefactos reconstruidos y verificados (ZIP raíz 1151
+archivos / 8,9 MB; paquete directo 1151 / 24,8 MB; DN QA 422 / 20,9 MB).

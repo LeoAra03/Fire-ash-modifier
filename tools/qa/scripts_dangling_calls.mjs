@@ -160,13 +160,27 @@ const PATRONES_CAMPO = [
   ["setter inexistente weatherduration (minúsculas)", /weatherduration\s*=/],
   ["pbShowCommands con booleano como valor por defecto (la escena exige entero: defaultValue>=0)", /pbShowCommands\([^)\n]*,\s*(?:true|false)\s*\)/],
 ];
+// R14: prohibiciones exclusivas de la sección de la Ruta de Dios (otros mods
+// pueden usar pbFlash con criterio propio; la Cima del Génesis, no).
+const PATRONES_RUTA = [
+  ["destello de pantalla pbFlash en la Ruta (R14: prohibido, se usan cinemáticas de tono/sprite/fondo)", /pbFlash\s*\(/],
+  ["llamada a pseudo-PC o descanso de Volo en la Ruta (R14: eliminados)", /pbArceusPseudoPC|pbArceusVoloRest/],
+];
 const hallazgosCampo = new Map();
 for (const { title, code } of sections) {
   if (!code) continue;
   const lines = code.split("\n");
+  const esRuta = /RutaDeDios/.test(title);
   lines.forEach((line, index) => {
     if (/^\s*#/.test(line)) return; // comentarios: documentan el fallo, no lo cometen
     for (const [nota, re] of PATRONES_CAMPO) {
+      if (!re.test(line)) continue;
+      if (!hallazgosCampo.has(nota)) hallazgosCampo.set(nota, []);
+      const lista = hallazgosCampo.get(nota);
+      if (lista.length < 5) lista.push(`${title}:${index + 1}`);
+    }
+    if (!esRuta) return;
+    for (const [nota, re] of PATRONES_RUTA) {
       if (!re.test(line)) continue;
       if (!hallazgosCampo.has(nota)) hallazgosCampo.set(nota, []);
       const lista = hallazgosCampo.get(nota);

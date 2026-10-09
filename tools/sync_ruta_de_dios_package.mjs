@@ -51,6 +51,14 @@ const ASSET_FILES = [
   ["Graphics/Trainers/SECRET_Volo_back.png", "Graphics/Trainers/SECRET_Volo_back.png"],
   ["Audio/BGM/Legend Sinnoh.ogg", "Audio/BGM/Legend Sinnoh.ogg"],
   ["Audio/BGM/secretvolo.ogg", "Audio/BGM/secretvolo.ogg"],
+  // R14: el cosmos de la Cima y la Forma Origen de mil brazos viajan con el paquete.
+  ["Graphics/Battlebacks/genesis1_bg.png", "Graphics/Battlebacks/genesis1_bg.png"],
+  ["Graphics/Battlebacks/genesis2_bg.png", "Graphics/Battlebacks/genesis2_bg.png"],
+  ["Graphics/Battlebacks/genesis3_bg.png", "Graphics/Battlebacks/genesis3_bg.png"],
+  ["Graphics/Battlebacks/genesis1_base0.png", "Graphics/Battlebacks/genesis1_base0.png"],
+  ["Graphics/Battlebacks/genesis1_base1.png", "Graphics/Battlebacks/genesis1_base1.png"],
+  ["Graphics/Pokemon/Front/ARCEUS_18.png", "Graphics/Pokemon/Front/ARCEUS_18.png"],
+  ["Graphics/Pokemon/Back/ARCEUS_18.png", "Graphics/Pokemon/Back/ARCEUS_18.png"],
 ];
 
 function readScripts(file) {

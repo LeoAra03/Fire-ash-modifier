@@ -42,16 +42,19 @@ function currentMethods() {
   return methods;
 }
 
-/** Lista de entradas del ZIP: la existente o, si no hay, el paquete completo. */
+/** Lista de entradas del ZIP: la existente o, si no hay, el paquete completo.
+ *  R14: además adopta los archivos nuevos de Paquete_directo/ (los cosmos de la
+ *  Cima y la Forma Origen) sin perder el orden ni los métodos de compresión. */
 function entryNames() {
   if (fs.existsSync(ZIP)) {
     const order = [];
     const zip = readZipIndex(ZIP);
     for (const name of zip.entries.keys()) order.push(name);
+    const actuales = [...new Set([...order, ...listFiles(DIRECT)])];
     // readZipIndex no conserva el orden del índice: se reordena igual que lo
     // escribe zip_writer (carpetas primero, luego archivos alfabéticos).
     const dirs = new Set();
-    for (const name of order) {
+    for (const name of actuales) {
       const parts = name.split("/");
       parts.pop();
       let current = "";
@@ -60,7 +63,7 @@ function entryNames() {
         dirs.add(`${current}/`);
       }
     }
-    return [...new Set([...dirs].sort().concat(order.sort()))];
+    return [...new Set([...dirs].sort().concat(actuales.sort()))];
   }
   return [...new Set([...listFiles(DIRECT), README_TXT].sort())];
 }

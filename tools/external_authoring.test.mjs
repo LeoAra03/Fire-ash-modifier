@@ -184,10 +184,12 @@ check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes(
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
   "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
 check(rutaScript.includes("pbStartArceusDivineBattle") &&
-  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") && rutaScript.includes("pbArceusPseudoPC") &&
+  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") &&
+  !rutaScript.includes("pbArceusPseudoPC") && !rutaScript.includes("pbArceusVoloRest") &&
+  rutaScript.includes("pbArceusRotomMercy") && rutaScript.includes("RUTA_ARCEUS_SEQUITO = [") &&
   rutaScript.includes("pbArceusSurrenderSequence") && rutaScript.includes("pbArceusCopyActive") &&
   rutaScript.includes("pbArceusCinematicPrelude") && rutaScript.includes("PokemonSprite"),
-  "Arceus conserva batalla por fases, pseudo-PC, copia del activo, rendición y prólogo cinematográfico");
+  "Arceus conserva batalla por fases, merced única del Rotom (sin pseudo-PC ni curas, R14), séquito doble, copia del activo, rendición y prólogo cinematográfico");
 check(rutaScript.includes("def ruta_arceus_pokedex") &&
   rutaScript.includes("defined?($player)") && rutaScript.includes("defined?($Trainer)") &&
   rutaScript.includes("owner.respond_to?(:pokedex)") &&

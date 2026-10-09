@@ -35,7 +35,7 @@ import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 import { marshalLoad } from "../web/js/marshal.js";
-import { ROOT, DATA } from "./lib/fire_ash_registry.mjs";
+import { ROOT, GAME, DATA } from "./lib/fire_ash_registry.mjs";
 
 const SCRIPTS = path.join(ROOT, "pokemon_fire_ash", "Data", "Scripts.rxdata");
 const SECCION = "PokeMod_RutaDeDios";
@@ -229,8 +229,10 @@ check(/def pbCalculatePriority\(fullCalc = false, indexArray = nil\)/.test(ruby)
   "el lado de Ash abre cada ronda del duelo, también con el Espacio Raro activo");
 check(ruby.includes("Ir directo al duelo con Arceus") && ruby.includes("saltar_prologo"),
   "el prólogo se puede saltar desde el primer arranque e ir directo al combate");
-check(/when 4 then \[base_level\.to_i - 20, 1\]\.max/.test(ruby) && !/when 4 then 1\r?\n/.test(ruby),
-  "el Juicio del Vínculo ya no apaga a los Pokémon de Ash a nivel 1");
+check(!ruby.includes("target.instance_variable_set(:@ruta_arceus_effective_level") &&
+  !/def pbArceusRivalLevel/.test(ruby) &&
+  ruby.includes("Tus Pokémon siguen siendo exactamente quienes son"),
+  "R14: ningún nivel de los Pokémon de Ash se modifica jamás (sólo se escala el bando de Arceus)");
 
 // ------------------------------------------- R10: cero errores de script visibles
 check(/def ruta_arceus_mega\?/.test(ruby) && /def ruta_arceus_mega_aparicion/.test(ruby) &&
@@ -313,6 +315,33 @@ check(/def ruta_arceus_cinematica_apertura/.test(ruby) && ruby.includes("ruta_ar
 check(/def ruta_arceus_jugar/.test(ruby) && ruby.includes("@ruta_juego_bono_acciones = 2") &&
   ruby.includes("cap = [(cap / 2.0).round, 1].max"),
   "los minijuegos divinos premian adivinando el juicio: los golpes siguientes pesan la mitad");
+
+// ------------------------------------------------------------- R14: el Creador
+check(!/pbFlash\(Color\.new\(255, 255, 255/.test(ruby) && !/pbFlash\(/.test(ruby),
+  "R14: ni un solo destello de pantalla (blanca o de cualquier color) en el código de la Ruta");
+check(!ruby.includes("def pbArceusPseudoPC") && !ruby.includes("pbArceusPseudoPC") &&
+  !ruby.includes("def pbArceusVoloRest") && !ruby.includes("pbArceusVoloRest"),
+  "R14: el pseudo-PC y la cura previa al duelo con Volo desaparecen por completo");
+check(ruby.includes("decision = pbWildBattleCore(pkmn, *sequito)") &&
+  ruby.includes("RUTA_ARCEUS_SEQUITO = [") && ruby.includes("[:DIALGA,") &&
+  ruby.includes("[:PALKIA,") && ruby.includes("[:GIRATINA,"),
+  "R14: el duelo divino es una batalla doble real con el Trío de la Creación de séquito");
+check(ruby.includes("def pbArceusOrdenDivina") && ruby.includes("def pbArceusPosesionFin") &&
+  ruby.includes("@ruta_posesion_turnos = 2"),
+  "R14: los legendarios reemplazan a Arceus en el campo (posesión de dos turnos) o ejecutan la orden en persona");
+check(ruby.includes("battler.pbChangeForm(18") && ruby.includes("def pbArceusRedibujar") &&
+  fs.existsSync(path.join(GAME, "Graphics/Pokemon/Front/ARCEUS_18.png")) &&
+  fs.existsSync(path.join(GAME, "Graphics/Pokemon/Back/ARCEUS_18.png")),
+  "R14: la Mega cambia el sprite de verdad (Forma Origen de mil brazos, frente y espalda)");
+check(["genesis1_bg", "genesis2_bg", "genesis3_bg", "genesis1_base0", "genesis1_base1"].every(
+    (f) => fs.existsSync(path.join(GAME, `Graphics/Battlebacks/${f}.png`))) &&
+  ruby.includes("def pbArceusFondo") && ruby.includes('pbArceusFondo(phase >= 5 ? "genesis3"'),
+  "R14: el cosmos de la Cima existe como batalla-backs reales y cambia con cada etapa");
+check(ruby.includes("def pbArceusMilibrazosDespertar") &&
+  ruby.includes("@ruta_arceus_captured_god) != true"),
+  "R14: el Arceus capturado puede desplegar la Mega de los Mil Brazos en cualquier combate");
+check(!/pbWildBattleCore\(pkmn\)\r?$/.test(ruby) && ruby.includes('pkmn.name = "ARCEUS ORIGEN"'),
+  "R14: el marcador del duelo muestra el nombre verdadero del Creador (ARCEUS ORIGEN)");
 
 // ------------------------------------------------------------ blindaje global
 const rescues = (ruby.match(/rescue StandardError/g) || []).length;

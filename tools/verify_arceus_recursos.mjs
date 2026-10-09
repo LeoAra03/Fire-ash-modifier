@@ -109,6 +109,43 @@ const grupos = [
     grupos.push(["invocaciones del lore", movs]);
   }
 }
+// 2b) séquito de la Orden Divina (R14): movimientos y especies del duelo doble
+{
+  const inicio = ambas.indexOf("RUTA_ARCEUS_SEQUITO = [");
+  if (inicio >= 0) {
+    let i = ambas.indexOf("[", inicio);
+    let depth = 0;
+    for (; i < ambas.length; i += 1) {
+      if (ambas[i] === "[") depth += 1;
+      else if (ambas[i] === "]") {
+        depth -= 1;
+        if (depth === 0) break;
+      }
+    }
+    const trozo = ambas.slice(inicio, i + 1);
+    const filas = trozo.split("\n").filter((l) => l.includes("[:"));
+    grupos.push(["séquito de la Orden Divina",
+      filas.flatMap((l) => {
+        const inner = (l.match(/\[:[A-Z_]+,\s*\[([^\]]*)\]/) || [])[1] || "";
+        return [...inner.matchAll(/:([A-Z][A-Z0-9_]*)/g)].map((m) => m[1]);
+      })]);
+    const especies = filas.map((l) => (l.match(/\[:([A-Z_]+),/) || [])[1]).filter(Boolean);
+    const faltanEspecies = especies.filter((sp) => !existeEspecie(sp));
+    check(especies.length === 3 && faltanEspecies.length === 0,
+      `las tres especies del séquito existen en species.dat (${especies.join(", ")})`);
+    const sinSprite = especies.filter(
+      (sp) => !fs.existsSync(path.join(GAME, "Graphics/Pokemon/Front", `${sp}.png`)));
+    check(sinSprite.length === 0,
+      `el séquito tiene sprite frontal en el distribuable${sinSprite.length ? `; FALTAN: ${sinSprite.join(", ")}` : ""}`);
+  }
+}
+// 2c) sprites de la Forma Origen (mil brazos) y fondos del cosmos (R14)
+check(fs.existsSync(path.join(GAME, "Graphics/Pokemon/Front/ARCEUS_18.png")) &&
+  fs.existsSync(path.join(GAME, "Graphics/Pokemon/Back/ARCEUS_18.png")),
+  "la Forma Origen de mil brazos tiene sprite frontal y trasero en el distribuable");
+check(["genesis1_bg", "genesis2_bg", "genesis3_bg", "genesis1_base0", "genesis1_base1"].every(
+  (f) => fs.existsSync(path.join(GAME, "Graphics/Battlebacks", `${f}.png`))),
+  "los fondos cósmicos de la Cima (genesis1/2/3 + plataformas) existen como Battlebacks reales");
 // 3) llamadas directas pbAnimation(:X)
 grupos.push(["animaciones de movimientos citadas", [...ambas.matchAll(/pbAnimation\(:([A-Z][A-Z0-9_]*)/g)].map((m) => m[1])]);
 
