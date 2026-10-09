@@ -182,6 +182,8 @@
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.10",
+    "@ruby/3.3-wasm-wasi": "2.10.1",
+    "@ruby/wasm-wasi": "2.10.1",
     "jsdom": "27.0.0"
   }
 }
