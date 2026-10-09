@@ -123,6 +123,10 @@ WANTED = {
                            "ruta_arceus_senalar_sprite", "ruta_arceus_cinematica_apertura",
                            "ruta_arceus_turno_divino", "ruta_arceus_jugar",
                            "ruta_arceus_juicio_ciego", "ruta_arceus_ruleta",
+                           "ruta_arceus_eco", "ruta_arceus_memoria",
+                           "ruta_arceus_adaptacion", "ruta_arceus_regreso_divino",
+                           "ruta_arceus_fondo_sostenido", "pbArceusRetiradaOrden",
+                           "trainerBattle?", "wildBattle?", "pbThrowPokeBall",
                            "ruta_arceus_invocar", "ruta_arceus_copiar_equipo",
                            "pbArceusFondo", "pbArceusRedibujar",
                            "pbArceusPosesionFin", "pbArceusOrdenDivina",
@@ -263,7 +267,9 @@ if (bootError) {
 const FAMILIAS = [
   { id: 1, rotulo: "F1 guardia anti-KO:           ", llamada: "fuzz_f1(rng, fallos)" },
   { id: 2, rotulo: "F2 clima/terreno + fin de ronda:", llamada: "fuzz_f2(rng, fallos)" },
-  { id: 3, rotulo: "F3 duelos completos aleatorios: ", llamada: "fuzz_f3(rng, fallos)" },
+  { id: 3, rotulo: "F3a duelos completos (1/3):     ", llamada: "fuzz_f3a(rng, fallos)" },
+  { id: 30, rotulo: "F3b duelos completos (2/3):    ", llamada: "fuzz_f3b(rng, fallos)" },
+  { id: 31, rotulo: "F3c duelos completos (3/3):    ", llamada: "fuzz_f3c(rng, fallos)" },
   { id: 4, rotulo: "F4 barrido de fases del canon:  ", llamada: "fuzz_f4(rng, fallos)" },
   { id: 5, rotulo: "F5 sistemas R12 del dios:       ", llamada: "fuzz_f5(rng, fallos)" },
   { id: 6, rotulo: "F6a arranque del duelo (1/3):   ", llamada: "fuzz_f6a(rng, fallos)" },
@@ -330,7 +336,7 @@ resultado = Array(${fam.llamada}).flatten
   const fallos = fallosStr ? fallosStr.split("~").filter(Boolean) : [];
   fallosTodos.push(...fallos);
   total += n;
-  const extra = fam.id === 3 ? ` (${victorias} victorias, ${Number(vStr2)} Forma Primigenia)` : "";
+  const extra = fam.rotulo.startsWith("F3") ? ` (${victorias} victorias acum., ${Number(vStr2)} Forma Primigenia)` : "";
   lineas.push(`  ${fam.rotulo} ${n} escenarios, ${fallos.length} fallos${extra}`);
 }
 

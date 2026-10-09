@@ -451,7 +451,10 @@ end
           ya = instance_variable_get(:@arceus_meta_ya_hablo)
           if divino && !ya
             salvaje = !respond_to?(:wildBattle?) || wildBattle?
-            ArceusMeta.intro(self) if salvaje
+            # R16: el duelo divino ahora es batalla de entrenador (wildBattle?
+            # es false fuera de la ventana de captura): la cuarta pared se abre
+            # igual, porque divino ya fue comprobado arriba.
+            ArceusMeta.intro(self) if salvaje || divino
           end
         rescue StandardError
         end

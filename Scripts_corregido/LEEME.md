@@ -1,5 +1,54 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Arreglo 2026-10-09 (13) — R16: invocaciones de verdad con retirada del dios, seis barras que duran un duelo entero y la Memoria del Génesis
+
+Tus pedidos de esta ronda, uno por uno, ya están en los scripts instalados:
+
+- **Los poderes legendarios son invocaciones reales y Arceus se retira.**
+  Cuando el Creador llama a un dios de la Orden al campo, Arceus hace un
+  **cambio de mitad de batalla real** (`pbRecallAndReplace` nativo del motor,
+  el mismo que usa cualquier entrenador): sale sin recibir daño, el divino
+  ocupa su lugar y, cerrado el encargo, Arceus regresa. También corregimos de
+  raíz un filtro de bando traicionero: la comprobación antigua
+  `b.opposes? == boss.opposes?` era vacuamente cierta (comparaba al
+  batallador consigo mismo) y habría podido retirar —o encantar con la Orden
+  Divina— a los POKÉMON DEL PROPIO ASH. Ahora el filtro es explícito:
+  `!ruta_arceus_ash_side?(b)`, y el shield lo bloquea con oráculos de bando.
+- **El jefe ya no cae en dos golpes.** Cada golpe letal está topado al
+  **15 %–40 % variable** de la vida total del Creador (nunca un porcentaje
+  fijo: la proporción se sortea por acción entre los mínimos y máximos
+  instalados, con bonos de golpe tardío 0.22 y de Mega 0.05), y el umbral rojo
+  se cura solo UNA vez por fase (+50 %). Matemática verificada por el shield:
+  con 1000 PS el techo por golpe letal es 450, cada una de las seis barras
+  exige 4 golpes letales (6 con daño débil) y el duelo completo dura 24–36
+  turnos o más — imposible de cerrar en dos impactos.
+- **Daño que se siente, Juicio impredecible.** El mismo sorteo variable rige
+  el daño de la Orden: dos duelos idénticos no repiten porcentajes. El
+  dispensador de juegos (`ruta_arceus_jugar`) reparte por semilla: <30 Juicio
+  Ciego, <55 Ruleta del Génesis, <78 Eco y el resto cae en el juego nuevo.
+- **Minijuego nuevo: la Memoria del Génesis.** Una estrella se esconde bajo
+  una de tres tablas y Arceus las mezcla a velocidad divina. Acertar restaura
+  TODO el PP de los movimientos del activo y sube una estadística al azar un
+  nivel; fallar no cuesta absolutamente nada (los juegos del Génesis nunca
+  castigan). La estrella se oculta ANTES del diálogo: el mazo de diálogos sin
+  repeticiones (R12) baraja con el mismo generador aleatorio y no debe tocar
+  el sorteo del juego.
+- **Mega visible, fondos por fase y 2v2 con reserva nativa.** La
+  megaevolución sigue apareciendo con su sprite a la vista, los fondos cambian
+  por familia de fase y se sostienen (redibujado sin destello blanco), y el
+  duelo sale 2v2 contra el Creador con el Trío como reserva nativa por
+  relevos. Las 77 invariantes de cinemáticas lo verifican línea a línea.
+- **Ganable con estrategia (R9).** El fuzz de duelos completos ahora modela
+  un jugador que se cura por debajo del 40 % de vida (presupuesto de 40 usos):
+  2135 victorias sobre 3000 duelos aleatorios, y ningún duelo exigente se
+  pierde. Sin estrategia, el equipo se agota antes de las seis barras: difícil
+  no es imposible, e imposible no es difícil.
+- **Pruebas de esta tanda:** fuzz **1 000 000 de escenarios, 0 fallos** (F3
+  parte sus 3000 duelos en tres VM frescos: con el duelo más largo el heap de
+  WASM no toleraba la tanda acumulada), shield **83 OK / 0 fallos**,
+  cinemáticas **77/77**, recursos **27/27**, alcance **239 defs** auditadas y
+  `npm test` completo en verde.
+
 ## Arreglo 2026-10-09 (12) — R15d: ni un panel de más — el duelo sale 2v2 y la Orden entra por relevos
 
 Tu captura de las cuatro barras apiladas (Arceus + Dialga + Palkia + Giratina a

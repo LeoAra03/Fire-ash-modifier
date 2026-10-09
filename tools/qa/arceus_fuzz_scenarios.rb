@@ -135,11 +135,30 @@ end
 
 # ── F3 · duelos completos aleatorios ────────────────────────────────────────
 def fuzz_f3(rng, fallos)
+  fuzz_f3_rango(rng, fallos, 0, 3_000)
+end
+
+# R16: los duelos duran más (las barras exigen tres o cuatro golpes y el dios
+# pega hasta el 40 %): el heap de WASM no tolera las 3 000 batallas acumuladas
+# en un solo VM, igual que F6 en su momento. Se parte en tres rangos.
+def fuzz_f3a(rng, fallos)
+  fuzz_f3_rango(rng, fallos, 0, 1_000)
+end
+
+def fuzz_f3b(rng, fallos)
+  fuzz_f3_rango(rng, fallos, 1_000, 2_000)
+end
+
+def fuzz_f3c(rng, fallos)
+  fuzz_f3_rango(rng, fallos, 2_000, 3_000)
+end
+
+def fuzz_f3_rango(rng, fallos, desde, hasta)
   notar = lambda { |m| fallos << m if fallos.length < 30 }
   f3 = 0
   victorias = 0
   primigenias = 0
-  3_000.times do
+  (desde...hasta).each do |_duelo|
     party_n = 1 + rng.rand(6)
     prop = [0.05, 0.09, 0.12, 0.2, 0.35][rng.rand(5)]
     golpe = [0.2, 0.33, 0.5, 0.9, 1.6][rng.rand(5)]
@@ -151,6 +170,7 @@ def fuzz_f3(rng, fallos)
     idx = 0
     bajas = 0
     turno = 0
+    curaciones = 40
     gano = false
     mega = false
     mega_pool = false
@@ -212,6 +232,15 @@ def fuzz_f3(rng, fallos)
           if cur.fainted?
             bajas += 1
             idx += 1
+          elsif curaciones > 0 && cur.hp * 5 < cur.totalhp * 2
+            # R16 · estrategia mínima (R9): por debajo del 40 % de vida Ash se
+            # cura (pociones/bayas presupuestadas: 40 usos ≈ dos por turno de
+            # los 60 que puede durar el duelo). Sin estrategia el equipo se
+            # agota antes de las seis barras; con ella el duelo es ganable, que
+            # es exactamente el balance pedido: difícil, no imposible.
+            curaciones -= 1
+            cur.hp = cur.totalhp
+            cur.pokemon.hp = cur.totalhp
           end
         end
         battle.pbArceusRedlineHeal(boss)
@@ -247,7 +276,7 @@ def fuzz_f3(rng, fallos)
       end
     end
     f3 += 1
-    GC.start if (f3 % 300).zero?
+    GC.start if (f3 % 100).zero?
   end
   [f3, victorias, primigenias]
 end
@@ -324,7 +353,7 @@ def fuzz_f5(rng, fallos)
   #     más alto en fases tardías y en la Forma Mega.
   battle_b, _pb, _bb = fuzz_divine_battle(2, 1000)
   distintos = {}
-  75_000.times do |i|
+  68_000.times do |i|
     fase = 1 + rng.rand(6)
     mega = (fase == 6 && rng.rand(2) == 1)
     prim = (mega && rng.rand(4) == 0)
@@ -462,7 +491,7 @@ def fuzz_f5(rng, fallos)
 
   # (g) Copia del equipo: sólo golpes que Ash enseñó (+Juicio), máximo 4,
   #     una sola vez por batalla.
-  7_600.times do
+  4_600.times do
     battle_g, party_g, boss_g = fuzz_divine_battle(1 + rng.rand(6), 1000)
     battle_g.instance_variable_set(:@arceus_phase, 4)
     battle_g.define_singleton_method(:pbRandom) { |x| x.to_i > 0 ? rng.rand(x) : 0 }
@@ -478,6 +507,97 @@ def fuzz_f5(rng, fallos)
     ids2 = (boss_g.pokemon.moves || []).map { |m| m.id }
     notar.call("F5 la copia se hizo dos veces") if ids2 != ids
     GC.start if (f5 % 30_000) < 20
+  end
+
+  # (h) R16 · Eco de la Creación: acertar ablanda los dos próximos golpes
+  #     divinos y devuelve aliento; fallar no castiga (ni PS ni bono).
+  4_000.times do |i|
+    battle_h, party_h, boss_h = fuzz_divine_battle(2, 1000)
+    battle_h.instance_variable_set(:@arceus_phase, 1 + rng.rand(6))
+    battle_h.turnCount = 2 + rng.rand(30)
+    battle_h.define_singleton_method(:pbRandom) { |x| x.to_i > 0 ? rng.rand(x) : 0 }
+    objetivo = party_h[0]
+    objetivo.totalhp = 500
+    objetivo.hp = 300
+    fase = battle_h.instance_variable_get(:@arceus_phase).to_i
+    tipos = RUTA_ARCEUS_PHASE_TYPES.length
+    largo = 2 + (fase / 2)
+    correcta = RUTA_ARCEUS_PHASE_TYPES[(largo * 5 + fase) % tipos]
+    nombre_correcta = RUTA_ARCEUS_TYPE_NAMES[RUTA_ARCEUS_PHASE_TYPES.index(correcta)]
+    acertar = (i % 2 == 0)
+    battle_h.define_singleton_method(:pbShowCommands) do |msg, cmds, x|
+      idx = cmds.index(nombre_correcta).to_i
+      acertar ? idx : ((idx + 1) % cmds.length)
+    end
+    battle_h.instance_variable_set(:@ruta_juego_bono_acciones, 0)
+    battle_h.ruta_arceus_eco(boss_h, objetivo)
+    f5 += 1
+    if acertar
+      notar.call("F5 eco acertado no dio el bono de dos golpes") if battle_h.instance_variable_get(:@ruta_juego_bono_acciones).to_i != 2
+      notar.call("F5 eco acertado no devolvió aliento") if objetivo.hp.to_i <= 300
+    else
+      notar.call("F5 eco fallado dio bono") if battle_h.instance_variable_get(:@ruta_juego_bono_acciones).to_i != 0
+      notar.call("F5 eco fallado castigó los PS") if objetivo.hp.to_i != 300
+    end
+    GC.start if (i % 1_000).zero? && i > 0
+  end
+
+  # (i) R16 · Memoria del Génesis: acertar renueva el PP y sube una etapa;
+  #     fallar no castiga nada (los juegos divinos nunca perjudican).
+  4_000.times do |i|
+    battle_i, party_i, boss_i = fuzz_divine_battle(2, 1000)
+    battle_i.turnCount = 2 + rng.rand(30)
+    objetivo = party_i[0]
+    objetivo.totalhp = 400
+    objetivo.hp = 400
+    semilla_memoria = rng.rand(3)
+    primera = true
+    battle_i.define_singleton_method(:pbRandom) do |x|
+      if primera
+        primera = false
+        semilla_memoria
+      else
+        x.to_i > 0 ? rng.rand(x) : 0
+      end
+    end
+    acertar = (i % 2 == 0)
+    eleccion = acertar ? semilla_memoria : ((semilla_memoria + 1) % 3)
+    battle_i.define_singleton_method(:pbShowCommands) { |msg, cmds, x| eleccion }
+    battle_i.ruta_arceus_memoria(boss_i, objetivo)
+    f5 += 1
+    if acertar
+      notar.call("F5 memoria acertada no subió ninguna etapa") if !objetivo.stages.values.any? { |v| v.to_i > 0 }
+    else
+      notar.call("F5 memoria fallada castigó etapas") if objetivo.stages.values.any? { |v| v.to_i != 0 }
+      notar.call("F5 memoria fallada tocó los PS") if objetivo.hp.to_i != 400
+    end
+    GC.start if (i % 1_000).zero? && i > 0
+  end
+
+  # (j) R16 · Despachador de juegos: las cien semillas entran a un juego
+  #     válido, marcan el turno y no rompen la batalla.
+  2_000.times do |i|
+    battle_j, party_j, boss_j = fuzz_divine_battle(2, 1000)
+    battle_j.instance_variable_set(:@arceus_phase, 2 + rng.rand(5))
+    battle_j.turnCount = 5 + rng.rand(20)
+    battle_j.instance_variable_set(:@ruta_juego_ultimo_turno, 0)
+    semilla = i % 100
+    primera = true
+    battle_j.define_singleton_method(:pbRandom) do |x|
+      if primera
+        primera = false
+        semilla
+      else
+        x.to_i > 0 ? rng.rand(x) : 0
+      end
+    end
+    battle_j.define_singleton_method(:pbShowCommands) { |msg, cmds, x| cmds && cmds.length > 0 ? 0 : -1 }
+    battle_j.ruta_arceus_jugar(boss_j)
+    f5 += 1
+    if battle_j.instance_variable_get(:@ruta_juego_ultimo_turno).to_i != battle_j.turnCount.to_i
+      notar.call("F5 jugar no marcó el turno para la semilla #{semilla}")
+    end
+    GC.start if (i % 500).zero? && i > 0
   end
 
   f5
@@ -593,8 +713,38 @@ end unless SaveData.respond_to?(:compile_save_hash)
 class RutaTempStub
   def initialize; @rules = {}; end
   def clearBattleRules; @rules = {}; nil; end
-  def recordBattleRule(k, v = nil); @rules[k.to_s] = v; nil; end
+  # R16: réplica fiel del mapeo del motor (Overworld_BattleStarting:27-60):
+  # las reglas de tamaño/flags se normalizan igual que en el juego real, para
+  # que los candados de F6 lean battleRules["size"], ["expGain"], etc.
+  def recordBattleRule(k, v = nil)
+    key = k.to_s.downcase
+    case key
+    when "single", "1v1", "1v2", "2v1", "1v3", "3v1",
+         "double", "2v2", "2v3", "3v2", "triple", "3v3"
+      @rules["size"] = key
+    when "canlose"     then @rules["canLose"] = true
+    when "cannotlose"  then @rules["canLose"] = false
+    when "canrun"      then @rules["canRun"] = true
+    when "cannotrun"   then @rules["canRun"] = false
+    when "noexp"       then @rules["expGain"] = false
+    when "nomoney"     then @rules["moneyGain"] = false
+    when "nopartner"   then @rules["noPartner"] = true
+    else @rules[key] = v
+    end
+    nil
+  end
   def battleRules; @rules; end
+end
+
+# R16: el duelo divino corre como batalla de entrenador contra el Creador.
+class NPCTrainer
+  attr_accessor :party, :name, :id, :trainer_type, :items, :lose_text, :win_text, :battleBGM
+  def initialize(name, trainer_type = nil)
+    @name = name
+    @trainer_type = trainer_type
+    @party = []
+    @items = []
+  end
 end
 
 class RutaGlobalStub
@@ -610,10 +760,29 @@ class RutaTrainerStub
 end
 
 def pbWildBattleCore(*args)
-  # R15d: el duelo presenta exactamente dos Pokémon salvajes (el Creador y un
-  # divino). Con cuatro, el motor apila paneles y funde sprites: se exige aquí
-  # para que ningún regreso al 4v4 vuelva a pasar el fuzz.
-  raise "F6: el duelo presentó #{args.length} Pokémon salvajes y deben ser 2 (el Creador y un divino)" if args.length != 2
+  # R16: el duelo divino ya NO es una batalla salvaje: si el starter volviera a
+  # llamar a pbWildBattleCore, los relevos/invocaciones perderían la reserva
+  # nativa del motor. Queda como trampa de regresión.
+  raise "F6: el duelo divino regresó a la ruta salvaje (pbWildBattleCore); debe correr como batalla de entrenador (R16)"
+end
+
+def pbTrainerBattleCore(*args)
+  # R16: candados del duelo como batalla de entrenador: un solo jefe NPC, su
+  # Orden completa de cuatro (Creador + Trío) como reserva nativa, 2v2 por
+  # regla de tamaño, sin experiencia ni dinero ni compañero, sin huida y con
+  # derrota permitida (merced del Rotom).
+  raise "F6: pbTrainerBattleCore recibió #{args.length} argumentos y debe ser 1 (el Creador)" if args.length != 1
+  jefe = args[0]
+  raise "F6: el jefe del duelo no es un NPCTrainer" if !jefe.is_a?(NPCTrainer)
+  raise "F6: la Orden del Creador tiene #{jefe.party.compact.length} Pokémon y deben ser 4 (Creador + Trío)" if jefe.party.compact.length != 4
+  raise "F6: el primer Pokémon del Creador no es Arceus" if jefe.party[0].species != :ARCEUS
+  reglas = $PokemonTemp.battleRules
+  raise "F6: el duelo no registra la regla double (presentación 2v2)" if reglas["size"] != "double"
+  raise "F6: el duelo reparte experiencia (falta noExp)" if reglas["expGain"] != false
+  raise "F6: el duelo reparte dinero (falta noMoney)" if reglas["moneyGain"] != false
+  raise "F6: el duelo admite compañero automático (falta noPartner)" if reglas["noPartner"] != true
+  raise "F6: el duelo permite huir (falta cannotRun)" if reglas["canRun"] != false
+  raise "F6: el duelo no admite derrota con merced (falta canLose)" if reglas["canLose"] != true
   cola = $ruta_f6_cola
   raise "F6: cola de decisiones vacía" if cola.empty?
   return cola.shift

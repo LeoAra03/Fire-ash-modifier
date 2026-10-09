@@ -271,9 +271,9 @@ check(ruby.includes("La Forma Primigenia se recuerda a sí misma") &&
   "el umbral rojo conserva su media barra de R9 con mensaje propio en la Forma Primigenia");
 
 // --------------------------------------------- R12: el dios jugador (variable, sin guion repetido)
-check(/def ruta_arceus_divine_ratio/.test(ruby) && ruby.includes("RUTA_ARCEUS_HIT_CAP_MIN = 0.12") &&
+check(/def ruta_arceus_divine_ratio/.test(ruby) && ruby.includes("RUTA_ARCEUS_HIT_CAP_MIN = 0.15") &&
   ruby.includes("cap = (total * ruta_arceus_divine_ratio).round"),
-  "el daño de Arceus varía por acción (12%-33%) en vez de ser un porcentaje fijo");
+  "el daño de Arceus varía por acción (15%-40% en R16) en vez de ser un porcentaje fijo");
 check(/def ruta_arceus_dialogo/.test(ruby) && ruby.includes("RUTA_ARCEUS_DIALOGOS = {") &&
   ruby.includes("mazo.shift"),
   "los diálogos salen de mazos que no repiten ninguna línea hasta agotarse");
@@ -322,10 +322,12 @@ check(!/pbFlash\(Color\.new\(255, 255, 255/.test(ruby) && !/pbFlash\(/.test(ruby
 check(!ruby.includes("def pbArceusPseudoPC") && !ruby.includes("pbArceusPseudoPC") &&
   !ruby.includes("def pbArceusVoloRest") && !ruby.includes("pbArceusVoloRest"),
   "R14: el pseudo-PC y la cura previa al duelo con Volo desaparecen por completo");
-check(ruby.includes("decision = pbWildBattleCore(pkmn, *sequito)") &&
+check(ruby.includes("decision = pbTrainerBattleCore(jefe)") &&
+  ruby.includes("jefe.party = [pkmn] + sequito_completo") &&
+  ruby.includes('recordBattleRule("double")') &&
   ruby.includes("RUTA_ARCEUS_SEQUITO = [") && ruby.includes("[:DIALGA,") &&
   ruby.includes("[:PALKIA,") && ruby.includes("[:GIRATINA,"),
-  "R14: el duelo divino es una batalla doble real con el Trío de la Creación de séquito");
+  "R16: el duelo divino es una batalla de entrenador 2v2 contra el Creador con el Trío como reserva nativa");
 check(ruby.includes("def pbArceusOrdenDivina") && ruby.includes("def pbArceusPosesionFin") &&
   ruby.includes("@ruta_posesion_turnos = 2"),
   "R14: los legendarios reemplazan a Arceus en el campo (posesión de dos turnos) o ejecutan la orden en persona");

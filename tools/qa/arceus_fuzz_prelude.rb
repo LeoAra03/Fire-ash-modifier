@@ -459,6 +459,19 @@ class PokeBattle_Battle
   end
   def pbPlayer; 0; end
   def wildBattle?; true; end
+  # R16: el duelo divino real es batalla de entrenador; el sandbox mantiene la
+  # semántica salvaje por defecto y la ventana de captura la voltea igual que
+  # la sección instalada (alias sobre estos stubs).
+  def trainerBattle?; false; end
+  def pbThrowPokeBall(*args); 0; end
+  # El extractor de WANTED carga los cuerpos DEFN sin sus líneas `alias` (sólo
+  # extrae métodos), así que los sobreescritos de la ventana de captura deben
+  # encontrar aquí los destinos originales, igual que el resto del sandbox:
+  def _ruta_arceus_original_wild_battle_flag; true; end
+  def _ruta_arceus_original_trainer_battle_flag; false; end
+  def _ruta_arceus_original_throw_poke_ball(*args); 0; end
+  def pbRecallAndReplace(*args); nil; end
+  def pbParty(side); []; end
   def pbDisplay(msg); @messages << msg; nil; end
   def pbDisplayPaused(msg); pbDisplay(msg); end
   def pbCommonAnimation(*args); end
