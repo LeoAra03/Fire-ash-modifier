@@ -116,7 +116,7 @@ const moveClasses = new Set();
 for (const row of scripts) {
   try {
     const text = zlib.inflateSync(Buffer.from(row[2].bytes)).toString("utf8");
-    for (const match of text.matchAll(/class\s+PokeBattle_Move_([0-9A-F]{3})\b/g)) moveClasses.add(match[1]);
+    for (const match of text.matchAll(/class\s+PokeBattle_Move_([0-9A-F]{3,4})\b/g)) moveClasses.add(match[1]);
   } catch {
     // Algunas secciones pueden no ser Ruby/zlib; no forman parte del dispatcher.
   }
