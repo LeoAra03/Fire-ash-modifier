@@ -14,16 +14,16 @@ module PokeModAtavios
   ATA = {
     0 => { "c" => "trchar000", "p" => 0 },
     1 => { "c" => "ash_outfit_atlas", "p" => nil },
-    2 => { "c" => "ash_outfit_creep", "p" => nil },
+    2 => { "o" => 11 },
     3 => { "c" => "ash_outfit_glazed", "p" => nil },
     4 => { "c" => "ash_outfit_lp", "p" => nil },
     5 => { "c" => "ash_outfit_lc", "p" => nil },
     6 => { "c" => "ash_outfit_tfoh", "p" => nil },
     7 => { "c" => "trchar001", "p" => 1 },
     8 => { "c" => "trainer_TEAMROCKET_M", "p" => 3 },
-    # R17 — Atuendo de Maestro: entregado por Oak al completar La Ruta de Dios.
-    # El charset es propio ("o" = outfit de batalla 8: trainers POKEMONTRAINER_Red_8).
-    9 => { "c" => "ash_outfit_maestro", "p" => nil, "o" => 8 },
+    # R17 — kit completo por slot de outfit del motor ("o"): caminar, correr,
+    # bici, surf y pesca resuelven *_N solos (mismo sistema que Red_1..7).
+    9 => { "o" => 8 },
   }
 
   DIM = {
@@ -58,6 +58,25 @@ module PokeModAtavios
     end
   end
 
+  # Aplica un slot de outfit del motor: walk/bike/surf/run/fish resuelven *_N
+  # solos (pbGetPlayerCharset) y la batalla usa POKEMONTRAINER_Red_N.
+  def self.aplicarOutfit(n)
+    return false if !$Trainer
+    $Trainer.outfit = n.to_i
+    if $game_player
+      $game_player.charsetData = nil
+      begin
+        meta = GameData::Metadata.get_player($Trainer.character_ID)
+        if meta
+          nombre = pbGetPlayerCharset(meta, 1, nil, true)
+          $game_player.character_name = nombre if nombre && nombre != ""
+        end
+      rescue StandardError
+      end
+    end
+    true
+  end
+
   def self.poner(id, fijo = false)
     a = ATA[id]
     return false if a.nil?
@@ -66,9 +85,12 @@ module PokeModAtavios
       $Trainer.outfit = 0 if $Trainer rescue nil
     else
       identidadBase
-      $game_player.character_name = a["c"] if $game_player
-      # R17: el atuendo de Maestro también viste la batalla (outfit 8).
-      $Trainer.outfit = a["o"] || 0 if $Trainer rescue nil
+      if a["o"]
+        aplicarOutfit(a["o"])
+      else
+        $game_player.character_name = a["c"] if $game_player && a["c"]
+        $Trainer.outfit = 0 if $Trainer rescue nil
+      end
     end
     if $game_variables
       $game_variables[VAR_ATAVIO] = id
@@ -84,9 +106,13 @@ module PokeModAtavios
   def self.vestirCharset(id)
     a = ATA[id]
     return false if a.nil? || a["p"]
-    $Trainer.outfit = a["o"] || 0 if $Trainer rescue nil
     identidadBase
-    $game_player.character_name = a["c"] if $game_player
+    if a["o"]
+      aplicarOutfit(a["o"])
+    else
+      $game_player.character_name = a["c"] if $game_player && a["c"]
+      $Trainer.outfit = 0 if $Trainer rescue nil
+    end
     $game_variables[VAR_ATAVIO] = id if $game_variables
     true
   end

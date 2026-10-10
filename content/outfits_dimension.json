@@ -28,10 +28,10 @@
     {
       "id": 2,
       "clave": "creep",
-      "charset": "ash_outfit_creep",
-      "nombre": "Abrigo Creepypasta",
+      "charset": "trchar000_11",
+      "nombre": "Viajero 1ª Gen",
       "player": null,
-      "frase": "Linterna lista. Las pesadillas no se exploran solas."
+      "frase": "Traje de las primeras generaciones: los mundos crepypasta se visten de origen."
     },
     {
       "id": 3,
@@ -84,7 +84,7 @@
     {
       "id": 9,
       "clave": "maestro",
-      "charset": "ash_outfit_maestro",
+      "charset": "trchar000_8",
       "nombre": "Atuendo de Maestro",
       "player": null,
       "frase": "Entregado por Oak al completar La Ruta de Dios. ¡Hora de enseñarlo al mundo!"

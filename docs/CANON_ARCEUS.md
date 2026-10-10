@@ -339,3 +339,32 @@ Generado con IA y ensamblado con `tools/assemble_r17_art.py` desde `assets_raw/`
 - Integrado con el vestidor de la casa: atavio 9 de `PokeModAtavios` (modo fijo
   al recibirlo) + outfit de batalla 8 del motor (mismo sistema que las variantes
   `Red_1..7`).
+
+## 9. Kits de atuendos por dimensión (hojas de referencia del usuario)
+
+Cada atuendo tiene un **kit completo** para que se sienta como si siempre
+hubiera estado en el juego (nunca falta un sprite ni una animación):
+
+| Recurso | Origen |
+|---|---|
+| `trchar000_N` (caminar 128×192) | 3 poses IA por atuendo → pasos derivados |
+| `boy_run_N` (correr) | derivado del caminar (avance inclinado) |
+| `boy_bike_N`, `boy_surf_N`, `boy_fish_offset_N` | originales del motor recoloreados con la paleta del atuendo |
+| `POKEMONTRAINER_Red_N` / `_N_back` | batalla frente/espalda (tira de lanzamiento) |
+
+El sistema de outfits del motor (mismo mecanismo que las variantes `Red_1..7`)
+resuelve los `*_N` automáticamente: caminar, correr, bici, surf, pesca y batalla
+siguen al atuendo sin más código. `PokeModAtavios` ahora vía slots de outfit
+(`aplicarOutfit`).
+
+| Slot | Atuendo | Estilo de referencia |
+|---|---|---|
+| 8 | Atuendo de Maestro (regalo de Oak) | Campeón del Mundo que derrotó a Arceus |
+| 11 | Viajero 1ª Gen | Rojo/Azul — mundos crepypasta con sabor a los primeros juegos |
+| 12 | Glazed (Tunod) | Pokémon Glazed |
+| 13 | Light Platinum (Zhery/Lauren) | Pokémon Light Platinum |
+| 14 | Liquid Crystal (Johto) | Pokémon Liquid Crystal |
+
+Crudos en `assets_raw/` (`maestro_*`, `creep_*`); ensamblador:
+`tools/assemble_atuendos.py`. (Las hojas de referencia incluían texto de
+«dar créditos» generado por IA: el usuario confirmó que puede ignorarse.)

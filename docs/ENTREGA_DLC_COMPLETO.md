@@ -83,3 +83,17 @@ para la implementación. Cadena completa verificada: `npm test` en verde.
 
 Ver `docs/CANON_ARCEUS.md` §8 y `tools/assemble_r17_art.py`. Cadena completa
 verificada: `npm test` en verde.
+
+
+## Kits de atuendos por dimensión (referencias del usuario)
+
+- [x] Kit completo del Atuendo de Maestro (caminar/correr/bici/surf/pesca/batalla)
+      según el diseño «Campeón del Mundo que derrotó a Arceus».
+- [x] Kit completo «Viajero 1ª Gen» para los mundos crepypasta (sabor Rojo/Azul).
+- [x] Recoloreado de bici/surf/pesca con la paleta de cada atuendo (sin sprites
+      huérfanos al montar la bici o pescar).
+- [ ] Kits Glazed (slot 12), Light Platinum (13) y Liquid Crystal (14): arte en
+      cola de generación (máx. 10 imágenes por turno); el ensamblador ya los
+      monta solos en cuanto existen los crudos.
+
+Ver `docs/CANON_ARCEUS.md` §9. `npm test` en verde.
