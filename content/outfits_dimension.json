@@ -1,0 +1,213 @@
+{
+  "descripcion": "Atavios de Ash por dimensión. Charset-only para dimensiones (identidad de entrenador intacta); Clásico/Leaf/Rocket pasan por pbChangePlayer (slots de metadata 0/1/3).",
+  "variables": {
+    "atavio": 316,
+    "modo": 317
+  },
+  "nombresVariables": {
+    "316": "POKEMOD ATAVIO ACTUAL",
+    "317": "POKEMOD ATAVIO MODO (0 auto, 1 fijo)"
+  },
+  "atavios": [
+    {
+      "id": 0,
+      "clave": "clasico",
+      "charset": "trchar000",
+      "nombre": "Clásico",
+      "player": 0,
+      "frase": "El traje de siempre. Pueblo Paleta manda."
+    },
+    {
+      "id": 1,
+      "clave": "atlas",
+      "charset": "ash_outfit_atlas",
+      "nombre": "Explorador Atlas",
+      "player": null,
+      "frase": "Listo para el Circuito y los ocho gimnasios."
+    },
+    {
+      "id": 2,
+      "clave": "creep",
+      "charset": "ash_outfit_creep",
+      "nombre": "Abrigo Creepypasta",
+      "player": null,
+      "frase": "Linterna lista. Las pesadillas no se exploran solas."
+    },
+    {
+      "id": 3,
+      "clave": "glazed",
+      "charset": "ash_outfit_glazed",
+      "nombre": "Playera Glazed",
+      "player": null,
+      "frase": "Brisa de Cedolán lista para navegar."
+    },
+    {
+      "id": 4,
+      "clave": "lp",
+      "charset": "ash_outfit_lp",
+      "nombre": "Abrigo Invernal",
+      "player": null,
+      "frase": "El norte de Lappet no perdona el frío."
+    },
+    {
+      "id": 5,
+      "clave": "lc",
+      "charset": "ash_outfit_lc",
+      "nombre": "Chamarra Náutica",
+      "player": null,
+      "frase": "Rumbo al Santuario de Johto."
+    },
+    {
+      "id": 6,
+      "clave": "tfoh",
+      "charset": "ash_outfit_tfoh",
+      "nombre": "Capa del Viajero",
+      "player": null,
+      "frase": "El Origen espera detrás de la niebla."
+    },
+    {
+      "id": 7,
+      "clave": "leaf",
+      "charset": "trchar001",
+      "nombre": "Uniforme (chica)",
+      "player": 1,
+      "frase": "Atavio alternativo clásico."
+    },
+    {
+      "id": 8,
+      "clave": "rocket",
+      "charset": "trainer_TEAMROCKET_M",
+      "nombre": "Uniforme Rocket",
+      "player": 3,
+      "frase": "Infiltración en la base. No rompas personaje."
+    }
+  ],
+  "dimensiones": [
+    {
+      "clave": "atlas",
+      "atavio": 1,
+      "rangos": [
+        [
+          1021,
+          2020
+        ],
+        [
+          2191,
+          2191
+        ],
+        [
+          2195,
+          2196
+        ],
+        [
+          2230,
+          2230
+        ],
+        [
+          2250,
+          2257
+        ]
+      ]
+    },
+    {
+      "clave": "creep",
+      "atavio": 2,
+      "rangos": [
+        [
+          2023,
+          2029
+        ],
+        [
+          2058,
+          2190
+        ],
+        [
+          2192,
+          2194
+        ]
+      ]
+    },
+    {
+      "clave": "glazed",
+      "atavio": 3,
+      "rangos": [
+        [
+          2200,
+          2201
+        ],
+        [
+          3000,
+          3110
+        ]
+      ]
+    },
+    {
+      "clave": "lp",
+      "atavio": 4,
+      "rangos": [
+        [
+          2210,
+          2211
+        ],
+        [
+          3120,
+          3138
+        ]
+      ]
+    },
+    {
+      "clave": "lc",
+      "atavio": 5,
+      "rangos": [
+        [
+          2240,
+          2241
+        ],
+        [
+          3200,
+          3631
+        ]
+      ]
+    },
+    {
+      "clave": "tfoh",
+      "atavio": 6,
+      "rangos": [
+        [
+          2231,
+          2231
+        ],
+        [
+          2242,
+          2245
+        ],
+        [
+          3700,
+          3944
+        ]
+      ]
+    }
+  ],
+  "excluidos": [
+    [
+      2220,
+      2221
+    ],
+    [
+      2281,
+      2281
+    ]
+  ],
+  "vestidor": {
+    "mapa": 3,
+    "prefijo": "PokeMod Vestidor:",
+    "preferida": [
+      8,
+      5
+    ]
+  },
+  "seccionScripts": {
+    "id": 999903,
+    "titulo": "PokeMod_Atavios"
+  }
+}

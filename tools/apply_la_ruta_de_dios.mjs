@@ -2911,10 +2911,11 @@ class PokeBattle_Battle
       pbToneChangeAll(Tone.new(120, 60, 160, 0), 4)
       pbToneChangeAll(Tone.new(0, 0, 0, 0), 6)
       # R14: la Mega es un cambio REAL de apariencia: el sprite pasa a la Forma
-      # Origen de mil brazos (ARCEUS_18) y el cosmos se rompe en crimson.
+      # Origen de mil brazos (ARCEUS_19, la Forma Origen) y el cosmos se rompe
+      # en crimson.
       pbArceusFondo("genesis3")
       if battler
-        battler.pbChangeForm(18, _INTL("¡El cuerpo de Arceus se abre: FORMA ORIGEN, LOS MIL BRAZOS!"))
+        battler.pbChangeForm(19, _INTL("¡El cuerpo de Arceus se abre: FORMA ORIGEN, LOS MIL BRAZOS!"))
         plate_index = battler.instance_variable_get(:@ruta_arceus_plate_index)
         if plate_index && RUTA_ARCEUS_PHASE_TYPES[plate_index]
           battler.item = RUTA_ARCEUS_PHASE_PLATES[plate_index]
@@ -3766,7 +3767,7 @@ class PokeBattle_Battle
     @ruta_milibrazos_usado = true
     pbDisplayPaused(_INTL("¡La Tabla del Génesis de {1} arde: MEGA EVOLUCIÓN DE LOS MIL BRAZOS!", battler.name))
     begin
-      battler.pbChangeForm(18, _INTL("¡{1} despliega mil brazos sobre el campo!", battler.name))
+      battler.pbChangeForm(19, _INTL("¡{1} despliega mil brazos sobre el campo!", battler.name))
       pbArceusRedibujar(battler)
       pbShake(10, 10, 14)
       pbToneChangeAll(Tone.new(60, 30, 110, 0), 6)
@@ -4973,6 +4974,18 @@ function installScriptSection() {
 
   writeRx("Scripts.rxdata", scripts);
   console.log("OK: PokeMod_RutaDeDios installed in Scripts.rxdata.");
+
+  // El paquete descargable lleva su propio Scripts.rxdata (con las nueve
+  // correcciones de estabilidad): el duelo tiene que viajar también ahí.
+  const corregido = path.join(ROOT, "Scripts_corregido", "Scripts.rxdata");
+  if (fs.existsSync(corregido)) {
+    const copy = marshalLoad(fs.readFileSync(corregido));
+    const idx = copy.findIndex(([id, title]) => title.text === "PokeMod_RutaDeDios");
+    if (idx !== -1) copy[idx][2] = rstr;
+    else copy.splice(copy.length - 1, 0, [999901, S("PokeMod_RutaDeDios"), rstr]);
+    fs.writeFileSync(corregido, Buffer.from(marshalDump(copy)));
+    console.log("OK: PokeMod_RutaDeDios installed in Scripts_corregido/Scripts.rxdata.");
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -6830,7 +6843,7 @@ function verify() {
       ["def pbArceusMilibrazosDespertar", "el Arceus capturado usa la Mega de los Mil Brazos (R14)"],
       ["pkmn.name = \"ARCEUS ORIGEN\"", "el marcador del duelo muestra el nombre verdadero del Creador (R14)"],
       ["pbArceusRedibujar(battler)", "sprite real de Arceus y del legendario durante la invocación (R14)"],
-      ["battler.pbChangeForm(18", "la Mega cambia el sprite a la Forma Origen de mil brazos (R14)"],
+      ["battler.pbChangeForm(19", "la Mega cambia el sprite a la Forma Origen de mil brazos (R14)"],
       ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
       ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
       ["Ir directo al duelo con Arceus", "el prólogo se puede saltar desde el primer arranque (R8)"],

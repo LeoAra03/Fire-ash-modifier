@@ -451,7 +451,8 @@
           ]
         ]
       }
-    ]
+    ],
+    "finalSwitch": 948
   },
   "atlas": {
     "captainMap": 108,
