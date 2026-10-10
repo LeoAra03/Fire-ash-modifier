@@ -301,3 +301,41 @@ contradiga al capítulo 2, manda este rediseño.
 - El fondo totalmente negro venía de un **screen tone filtrado desde el evento**
   de la Cima. El evento ahora resetea el tone (`Tone(0,0,0,0)`) al entrar y al
   reconstruirse.
+
+## 8. Pack de arte R17 (sprites, fondos y atuendo)
+
+Generado con IA y ensamblado con `tools/assemble_r17_art.py` desde `assets_raw/`
+(los crudos son la fuente; los PNG finales viven en `pokemon_fire_ash/Graphics/`).
+
+### 8.1 Sprites de Arceus Origen por fase
+
+- Fases 1-5 del duelo muestran sprites propios: `Pokemon/Front/ARCEUS_F1..F5.png`
+  (96×96), uno por regla: Cielo (celeste), Talento (dorado), Velocidad (cian),
+  Tipo (prismático) y Regla (carmesí).
+- La **fase 6 usa la forma primigenia** (sprite clásico `ARCEUS`): por eso sólo
+  se crearon cinco sprites nuevos.
+- El cableado vive en `pbArceusFaseSprite` (sección `PokeMod_RutaDeDios`), que
+  cambia el bitmap del jefe en cada cambio de fase.
+
+### 8.2 Fondos de batalla
+
+| Archivo | Uso |
+|---|---|
+| `Battlebacks/genesis1_bg` | Calma Estelar — fase 1 del duelo |
+| `Battlebacks/genesis2_bg` | Tormenta Violeta — fases medias |
+| `Battlebacks/genesis3_bg` | Apocalipsis Carmesí — fases tardías |
+| `Battlebacks/olas_bg` | Ritual de invocación — las 3 oleadas |
+| `Battlebacks/volus_bg` | Puerta del ocaso — pelea con Volus |
+
+### 8.3 Atuendo de Maestro (regalo de Oak)
+
+- Diseño tipo hoja GBA: gorra roja, abrigo crema con detalles dorados, capa azul
+  marino con emblema dorado, pantalón oscuro y botas marrones.
+- Oak lo entrega en el laboratorio (Map 48) al completar La Ruta de Dios
+  (switch 876 → regalo con switch 885 + self-switch A; una sola vez).
+- Se compone de: `Characters/ash_outfit_maestro.png` (overworld 128×192),
+  `Trainers/POKEMONTRAINER_Red_8.png` (batalla frente) y
+  `Trainers/POKEMONTRAINER_Red_8_back.png` (batalla espalda, tira de 4 poses).
+- Integrado con el vestidor de la casa: atavio 9 de `PokeModAtavios` (modo fijo
+  al recibirlo) + outfit de batalla 8 del motor (mismo sistema que las variantes
+  `Red_1..7`).

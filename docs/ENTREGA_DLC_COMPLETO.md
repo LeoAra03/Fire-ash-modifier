@@ -66,3 +66,20 @@ Sobre lo entregado arriba, la revisión jugada pidió y se aplicó:
 
 Ver `docs/CANON_ARCEUS.md` §7 para el detalle y `tools/apply_la_ruta_de_dios.mjs`
 para la implementación. Cadena completa verificada: `npm test` en verde.
+
+
+## Pack de arte R17 — sprites, fondos y atuendo
+
+- [x] Sprites propios para las fases 1-5 de Arceus Origen (`ARCEUS_F1..F5`); la
+      fase 6 usa la forma primigenia (sprite clásico).
+- [x] Fondos de batalla nuevos: Calma Estelar, Tormenta Violeta, Apocalipsis
+      Carmesí, Ritual de Invocación (oleadas) y Puerta del Ocaso (Volus).
+- [x] Sin huida en el evento: `cannotRun` en oleadas y 1v1 + guardia `pbRun`
+      para todo combate en los mapas 2031-2038.
+- [x] Atuendo de Maestro para Ash (tipo hoja GBA: gorra roja, abrigo crema con
+      dorado, capa azul marino con emblema dorado), entregado por Oak al
+      completar La Ruta de Dios (switch 885), con sprites de overworld y de
+      batalla (frente y espalda), integrado con el vestidor (atavio 9).
+
+Ver `docs/CANON_ARCEUS.md` §8 y `tools/assemble_r17_art.py`. Cadena completa
+verificada: `npm test` en verde.
