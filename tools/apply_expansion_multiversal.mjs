@@ -425,7 +425,13 @@ function installDarkLeagueTrainers() {
   return added;
 }
 
-function bossEvent(boss, cell) {
+function bossEvent(boss, cell, esFinal = false) {
+  const marca = PLAN.darkLeague.finalSwitch
+    ? [cmd(121, [PLAN.darkLeague.finalSwitch, PLAN.darkLeague.finalSwitch, 0], 1)]
+    : [];
+  const marca2 = PLAN.darkLeague.finalSwitch
+    ? [cmd(121, [PLAN.darkLeague.finalSwitch, PLAN.darkLeague.finalSwitch, 0], 2)]
+    : [];
   const call = `pbTrainerBattle(:${boss.type},"${boss.name}",nil,false,0,true)`;
   const first = [
     ...texts(boss.intro),
@@ -434,6 +440,7 @@ function bossEvent(boss, cell) {
     ...texts([boss.win], 1),
     script(`pbReceiveItem(:${boss.reward})`, 1),
     cmd(123, [S("A"), 0], 1),
+    ...(esFinal ? marca : []),
     cmd(411),
     ...texts([boss.loss], 1),
     cmd(412),
@@ -447,6 +454,7 @@ function bossEvent(boss, cell) {
     script(`pbTrainerIntro(:${boss.type})`, 1),
     branch(111, [12, S(call)], 1),
     ...texts([boss.win], 2),
+    ...(esFinal ? marca2 : []),
     cmd(411, [], 1),
     ...texts([boss.loss], 2),
     cmd(412, [], 1),
@@ -598,7 +606,7 @@ function installDarkLeague(collapseCell) {
   ]);
 
   upsert(arena.mapId, [MARKER], () => {
-    const battles = PLAN.darkLeague.battles.map((boss, index) => bossEvent(boss, arenaCells[index]));
+    const battles = PLAN.darkLeague.battles.map((boss, index) => bossEvent(boss, arenaCells[index], index === PLAN.darkLeague.battles.length - 1));
     return [
       ...battles,
       returnEvent(`${MARKER} Volver al umbral`, arenaCells[battles.length], umbral.mapId, umbralCells[0],
