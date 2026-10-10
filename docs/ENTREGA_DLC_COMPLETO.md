@@ -92,8 +92,10 @@ verificada: `npm test` en verde.
 - [x] Kit completo «Viajero 1ª Gen» para los mundos crepypasta (sabor Rojo/Azul).
 - [x] Recoloreado de bici/surf/pesca con la paleta de cada atuendo (sin sprites
       huérfanos al montar la bici o pescar).
-- [ ] Kits Glazed (slot 12), Light Platinum (13) y Liquid Crystal (14): arte en
-      cola de generación (máx. 10 imágenes por turno); el ensamblador ya los
-      monta solos en cuanto existen los crudos.
+- [x] Kits Glazed (slot 12), Light Platinum (13) y Liquid Crystal (14):
+      completos (caminar/correr/bici/surf/pesca/batalla) y cableados a las
+      dimensiones vía `PokeModAtavios` (ATA 3/4/5 → outfits 12/13/14).
+- [x] Todos los kits con transparencia RGBA y estilo pixel-art GBA de Ash
+      (marcos 32×48 y batalla 158×158/812×196, como los originales del motor).
 
 Ver `docs/CANON_ARCEUS.md` §9. `npm test` en verde.

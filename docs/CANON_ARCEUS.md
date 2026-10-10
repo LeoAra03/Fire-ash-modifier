@@ -365,6 +365,18 @@ siguen al atuendo sin más código. `PokeModAtavios` ahora vía slots de outfit
 | 13 | Light Platinum (Zhery/Lauren) | Pokémon Light Platinum |
 | 14 | Liquid Crystal (Johto) | Pokémon Liquid Crystal |
 
-Crudos en `assets_raw/` (`maestro_*`, `creep_*`); ensamblador:
-`tools/assemble_atuendos.py`. (Las hojas de referencia incluían texto de
-«dar créditos» generado por IA: el usuario confirmó que puede ignorarse.)
+Crudos en `assets_raw/` (`ash_maestro_*`, `creep_*`, `glazed_*`, `lp_*`,
+`lc_*`); ensamblador: `tools/assemble_atuendos.py`. (Las hojas de referencia
+incluían texto de «dar créditos» generado por IA: el usuario confirmó que
+puede ignorarse.)
+
+### 9.1 Estilo y transparencia (requisito del usuario)
+
+Los crudos son pixel-art estilo GBA de **Ash** (mismo rostro/pelo que el
+protagonista) con cada atuendo, y los tamaños finales son los del motor de
+primera/tercera generación en RMXP: marco de caminar 32×48 (hoja 128×192),
+batalla frente 158×158 y espalda en tira 812×196 — idénticos a los originales
+`trchar000`/`POKEMONTRAINER_Red`. El ensamblador quita el fondo con flood-fill
+desde los bordes (alfa 0), recorta al personaje y conserva RGBA en todos los
+PNG, para que nada desentone en el juego. La pose quieta de espalda en batalla
+se deriva de la espalda de caminar cuando no hay crudo propio.

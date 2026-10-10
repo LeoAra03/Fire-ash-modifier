@@ -36,7 +36,7 @@
     {
       "id": 3,
       "clave": "glazed",
-      "charset": "ash_outfit_glazed",
+      "charset": "trchar000_12",
       "nombre": "Playera Glazed",
       "player": null,
       "frase": "Brisa de Cedolán lista para navegar."
@@ -44,7 +44,7 @@
     {
       "id": 4,
       "clave": "lp",
-      "charset": "ash_outfit_lp",
+      "charset": "trchar000_13",
       "nombre": "Abrigo Invernal",
       "player": null,
       "frase": "El norte de Lappet no perdona el frío."
@@ -52,7 +52,7 @@
     {
       "id": 5,
       "clave": "lc",
-      "charset": "ash_outfit_lc",
+      "charset": "trchar000_14",
       "nombre": "Chamarra Náutica",
       "player": null,
       "frase": "Rumbo al Santuario de Johto."
