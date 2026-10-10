@@ -217,10 +217,10 @@ check(/def pbArceusScriptedAction/.test(ruby),
 // ------------------------------------------------ duelo final jugable (R8/R9)
 check(ruby.includes("RUTA_ARCEUS_HIT_CAP_RATIO") && /def ruta_arceus_apply_ohko_guard/.test(ruby),
   "el duelo final limita el daño de Arceus: ningún turno suyo derriba de un golpe a un Pokémon de Ash");
-check(ruby.includes("RUTA_ARCEUS_REDLINE_HEAL_RATIO") &&
-  ruby.includes("El altar le devuelve media barra") &&
+check(ruby.includes("RUTA_ARCEUS_REDLINE_HEAL_RATIO = 0.25") &&
+  ruby.includes("El altar le devuelve un cuarto de barra") &&
   !ruby.includes("su barra se restaura por completo"),
-  "el umbral rojo de Arceus ya no borra el avance de Ash: recupera media barra por etapa");
+  "el umbral rojo devuelve un cuarto de barra sin borrar el avance de Ash");
 check(ruby.includes("def ruta_arceus_ash_bar_damage") && ruby.includes("RUTA_ARCEUS_ASH_BAR_MIN_RATIO") &&
   ruby.includes("RUTA_ARCEUS_ASH_BAR_POWER"),
   "los golpes de Ash mueven las seis barras con el vínculo que forjó en el prólogo");
@@ -267,13 +267,18 @@ check(ruby.includes("RUTA_ARCEUS_PRIMIGENIA_GRITOS") &&
   ruby.includes("ruta_arceus_primigenia? && @ruta_arceus_primigenia_grito_key != arceus_action_key"),
   "la Forma Primigenia tiene una voz por acción enemiga, sin pisar los gritos de los Mil Brazos");
 check(ruby.includes("La Forma Primigenia se recuerda a sí misma") &&
-  ruby.includes("El altar le devuelve media barra, pero el avance de Ash no se borra"),
-  "el umbral rojo conserva su media barra de R9 con mensaje propio en la Forma Primigenia");
+  ruby.includes("un cuarto de barra vuelve, y no habrá otra"),
+  "la Forma Primigenia conserva la cura de un cuarto de barra con mensaje propio");
 
 // --------------------------------------------- R12: el dios jugador (variable, sin guion repetido)
-check(/def ruta_arceus_divine_ratio/.test(ruby) && ruby.includes("RUTA_ARCEUS_HIT_CAP_MIN = 0.12") &&
+check(/def ruta_arceus_divine_ratio/.test(ruby) &&
+  ruby.includes("RUTA_ARCEUS_HIT_CAP_MIN = 0.22") &&
+  ruby.includes("RUTA_ARCEUS_HIT_CAP_MIN_TARDIO = 0.34") &&
+  ruby.includes("RUTA_ARCEUS_HIT_CAP_MEGA_EXTRA = 0.04") &&
+  ruby.includes("RUTA_ARCEUS_HIT_CAP_RATIO = 0.48") &&
+  ruby.includes("ratio = lo + ((hi - lo) * (h % 1000)) / 1000.0") &&
   ruby.includes("cap = (total * ruta_arceus_divine_ratio).round"),
-  "el daño de Arceus varía por acción (12%-33%) en vez de ser un porcentaje fijo");
+  "el daño de Arceus varía por acción entre 22% y 48%, y escala en fases tardías y Mega" );
 check(/def ruta_arceus_dialogo/.test(ruby) && ruby.includes("RUTA_ARCEUS_DIALOGOS = {") &&
   ruby.includes("mazo.shift"),
   "los diálogos salen de mazos que no repiten ninguna línea hasta agotarse");
@@ -302,8 +307,12 @@ check(/def ruta_arceus_turno_divino/.test(ruby) &&
 check(ruby.includes("RUTA_ARCEUS_INVOCACIONES = [") && ruby.includes(":DIALGA") &&
   ruby.includes(":PALKIA") && ruby.includes(":GIRATINA") && ruby.includes(":UXIE"),
   "Arceus invoca al Trío de la Creación, a los lagos y al resto del lore para ejecutar su orden");
-check(ruby.includes("danio = [danio, objetivo.hp.to_i - 1].min"),
-  "las invocaciones presionan pero jamás rematan: siempre dejan al menos 1 PS");
+check(/def pbArceusSummon\(/.test(ruby) && /def pbArceusInvocationAction\(/.test(ruby) &&
+  /def pbArceusDismissInvocation\(/.test(ruby) &&
+  ruby.includes("pbRegisterMove(idxBattler, move_index, false)") &&
+  ruby.includes("pbArceusSelfDamagingMove?(move.id)") &&
+  ruby.includes("@ruta_arceus_retired_for_summon, true"),
+  "las invocaciones ejecutan un ataque real y seguro, protegen a Arceus y restauran el hueco aliado");
 check(/def ruta_arceus_copiar_equipo/.test(ruby) && ruby.includes("ruta_arceus_copiar_equipo(battler) if phase == 4"),
   "Arceus copia los golpes del equipo de Ash en el Juicio del Vínculo");
 check(/def ruta_arceus_ofrenda/.test(ruby) && ruby.includes("@ruta_ofrenda_hecha = true") &&
@@ -312,9 +321,14 @@ check(/def ruta_arceus_ofrenda/.test(ruby) && ruby.includes("@ruta_ofrenda_hecha
 check(/def ruta_arceus_cinematica_apertura/.test(ruby) && ruby.includes("ruta_arceus_sprite_y(objetivo, 46, 14)") &&
   ruby.includes("Podría matarte ahora mismo, a ti y a tus Pokémon"),
   "la apertura es acción con sprites en pantalla: Arceus alza al Pokémon de Ash, no sólo lo narra");
-check(/def ruta_arceus_jugar/.test(ruby) && ruby.includes("@ruta_juego_bono_acciones = 2") &&
+check(/def ruta_arceus_jugar/.test(ruby) &&
+  /def ruta_arceus_juicio_ciego/.test(ruby) && /def ruta_arceus_ruleta/.test(ruby) &&
+  ruby.includes("secuencia.each_with_index") &&
+  ruby.includes("Effectiveness.calculate(ataque, defensa, nil, nil)") &&
+  ruby.includes("@ruta_juego_bono_acciones = [@ruta_juego_bono_acciones.to_i + aciertos, 3].min") &&
+  ruby.includes("@ruta_juego_bono_acciones = @ruta_juego_bono_acciones.to_i - 1") &&
   ruby.includes("cap = [(cap / 2.0).round, 1].max"),
-  "los minijuegos divinos premian adivinando el juicio: los golpes siguientes pesan la mitad");
+  "los dos minijuegos exigen memoria o conocimiento de tipos y cada acierto reduce ataques futuros");
 
 // ------------------------------------------------------------- R14: el Creador
 check(!/pbFlash\(Color\.new\(255, 255, 255/.test(ruby) && !/pbFlash\(/.test(ruby),
@@ -326,17 +340,21 @@ check(ruby.includes("decision = pbWildBattleCore(pkmn, *sequito)") &&
   ruby.includes("RUTA_ARCEUS_SEQUITO = [") && ruby.includes("[:DIALGA,") &&
   ruby.includes("[:PALKIA,") && ruby.includes("[:GIRATINA,"),
   "R14: el duelo divino es una batalla doble real con el Trío de la Creación de séquito");
-check(ruby.includes("def pbArceusOrdenDivina") && ruby.includes("def pbArceusPosesionFin") &&
-  ruby.includes("@ruta_posesion_turnos = 2"),
-  "R14: los legendarios reemplazan a Arceus en el campo (posesión de dos turnos) o ejecutan la orden en persona");
+check(ruby.includes("def pbArceusOrdenDivina") && ruby.includes("pbArceusSummon(boss, especie") &&
+  ruby.includes("def pbArceusInvocationAction") && ruby.includes("def pbArceusDismissInvocation") &&
+  ruby.includes("pbArceusPosesionFin(boss)"),
+  "R14: los legendarios invocados ocupan un hueco real, ejecutan la orden y luego se retiran");
 check(ruby.includes("battler.pbChangeForm(18") && ruby.includes("def pbArceusRedibujar") &&
   fs.existsSync(path.join(GAME, "Graphics/Pokemon/Front/ARCEUS_18.png")) &&
   fs.existsSync(path.join(GAME, "Graphics/Pokemon/Back/ARCEUS_18.png")),
   "R14: la Mega cambia el sprite de verdad (Forma Origen de mil brazos, frente y espalda)");
 check(["genesis1_bg", "genesis2_bg", "genesis3_bg", "genesis1_base0", "genesis1_base1"].every(
     (f) => fs.existsSync(path.join(GAME, `Graphics/Battlebacks/${f}.png`))) &&
-  ruby.includes("def pbArceusFondo") && ruby.includes('pbArceusFondo(phase >= 5 ? "genesis3"'),
-  "R14: el cosmos de la Cima existe como batalla-backs reales y cambia con cada etapa");
+  ruby.includes("RUTA_ARCEUS_FONDO_POR_FASE = [") &&
+  ruby.includes('"genesis1", "genesis2", "genesis3", "genesis1", "genesis2", "genesis3"') &&
+  ruby.includes("pbArceusFondo(RUTA_ARCEUS_FONDO_POR_FASE[phase_index])") &&
+  ruby.includes("sprite.setBitmap(ruta)"),
+  "R14: los battlebacks y plataformas especiales se aplican realmente en las seis fases");
 check(ruby.includes("def pbArceusMilibrazosDespertar") &&
   ruby.includes("@ruta_arceus_captured_god) != true"),
   "R14: el Arceus capturado puede desplegar la Mega de los Mil Brazos en cualquier combate");

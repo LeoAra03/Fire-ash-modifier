@@ -828,16 +828,14 @@ RUTA_ARCEUS_TYPE_TONES = {
 RUTA_ARCEUS_MOVE_SETS = [
   [:JUDGMENT, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE],
   [:JUDGMENT, :AEROBLAST, :PRECIPICEBLADES, :ORIGINPULSE],
-  [:JUDGMENT, :MOONBLAST, :EARTHPOWER, :DARKVOID],
+  [:JUDGMENT, :MOONBLAST, :EARTHPOWER, :DARKPULSE],
   [:JUDGMENT, :PSYCHOBOOST, :DRACOMETEOR, :SACREDSWORD],
   [:JUDGMENT, :EXTREMESPEED, :VCREATE, :PRECIPICEBLADES],
   [:JUDGMENT, :FURYSWIPES, :COMETPUNCH, :PINMISSILE]
 ]
-# R10 — Fase 6: MEGA ARCEUS, EL DE LOS MIL BRAZOS. Al vaciar la quinta barra el
-# dios megaevoluciona y la última barra se pelea contra una multitud: su pool
-# pasa a movimientos multigolpe (cada acción son muchos brazos) y cada golpe
-# sigue topado por RUTA_ARCEUS_HIT_CAP_RATIO, así que el espectáculo no rompe
-# el equilibrio de R9: cuatro acciones suyas por Pokémon sano, igual que antes.
+# R16 — Cada fase conserva su firma, pero el repertorio rota entre todos los
+# ataques que Arceus puede aprender y que no le cuestan PS. En la última barra
+# al menos una ranura queda reservada a los movimientos de sus mil brazos.
 RUTA_ARCEUS_MIL_BRAZOS = [:FURYSWIPES, :COMETPUNCH, :PINMISSILE, :ARMTHRUST]
 RUTA_ARCEUS_MEGA_GRITOS = [
   "¡Mil brazos descienden a la vez: ninguno golpea solo!",
@@ -849,8 +847,8 @@ RUTA_ARCEUS_MEGA_GRITOS = [
 # la última barra cruza el umbral rojo, los brazos se desploman y queda lo que
 # había ANTES de la creación: Arceus primigenio, sin Tabla (su Juicio vuelve al
 # tipo original, así que los espectros pueden negarlo) y con un pool de golpes
-# anteriores a las reglas. El tope de un tercio por acción de R9 no cambia: la
-# forma es espectáculo y estrategia, no dificultad nueva.
+# anteriores a las reglas. El daño varía por acción y nunca supera el 48% de R16:
+# la forma es espectáculo y estrategia, no dificultad nueva.
 RUTA_ARCEUS_PRIMIGENIA_MOVES = [:JUDGMENT, :EXTREMESPEED, :SHADOWFORCE, :GIGAIMPACT]
 RUTA_ARCEUS_PRIMIGENIA_GRITOS = [
   "Arceus primigenio golpea como antes de que existir fuera una costumbre.",
@@ -859,13 +857,13 @@ RUTA_ARCEUS_PRIMIGENIA_GRITOS = [
   "El vacío original cierra el anillo: Ash, tú también fuiste idea mía."
 ]
 # R12 — EL DIOS JUGADOR. Cuatro sistemas nuevos, todos con escudo propio:
-# 1) daño divino VARIABLE por acción (nunca fijo, nunca sobre un tercio);
+# 1) daño divino VARIABLE por acción (22%-48%, mayor en fases tardías y Mega);
 # 2) mazos de diálogo: ninguna línea se repite hasta agotar su mazo;
 # 3) música distinta por fase (pistas reales del juego);
 # 4) juegos divinos, invocaciones del lore, copia del equipo y la merced
 #    del último Pokémon, todo DENTRO del combate y sin abrir menús externos.
-RUTA_ARCEUS_HIT_CAP_MIN = 0.12
-RUTA_ARCEUS_HIT_CAP_MIN_TARDIO = 0.18
+RUTA_ARCEUS_HIT_CAP_MIN = 0.22
+RUTA_ARCEUS_HIT_CAP_MIN_TARDIO = 0.34
 RUTA_ARCEUS_HIT_CAP_MEGA_EXTRA = 0.04
 RUTA_ARCEUS_BGM_POR_FASE = {
   1 => "Legend Sinnoh",
@@ -876,7 +874,7 @@ RUTA_ARCEUS_BGM_POR_FASE = {
   6 => "Battle! Ultra Necrozma"
 }
 RUTA_ARCEUS_BGM_PRIMIGENIA = "Battle! Eternatus - Phase 3"
-RUTA_ARCEUS_JUEGO_REFUGIOS = ["Tras el fuego", "Tras el agua", "Tras la tierra"]
+RUTA_ARCEUS_JUEGO_REFUGIOS = ["Órbita solar", "Marea azul", "Roca negra", "Vacío estelar"]
 RUTA_ARCEUS_OFRENDA_ELECCIONES = [
   "Aceptar la merced: equipo y PP al máximo",
   "Rechazarla: ganar con lo que queda"
@@ -946,8 +944,8 @@ RUTA_ARCEUS_DIALOGOS = {
   ]
 }
 # Las invocaciones del lore: quién ejecuta qué cuando Arceus da la orden.
-# El daño de las invocaciones NUNCA remata (deja al menos 1 PS): el apocalipsis
-# presiona, pero el duelo lo cierra Arceus con sus propias acciones.
+# Cada una entra como Pokémon real y usa un movimiento por el motor normal; sus
+# golpes pueden debilitar a Ash, mientras Arceus queda protegido hasta el relevo.
 RUTA_ARCEUS_INVOCACIONES = [
   [:DIALGA,    :ROAROFTIME,     :golpe,   "Dialga congela un segundo del tiempo y lo deja caer entero sobre Ash."],
   [:PALKIA,    :SPACIALREND,    :golpe,   "Palkia rasga el espacio: el golpe llega desde todas partes a la vez."],
@@ -959,7 +957,7 @@ RUTA_ARCEUS_INVOCACIONES = [
   [:MESPRIT,   :PSYCHIC,        :mente,   "Mesprit apaga los sentimientos: sin ellos, el cuerpo pesa el doble."],
   [:AZELF,     :PSYCHIC,        :mente,   "Azelf apaga la voluntad: lo que queda de Ash pelea por inercia."],
   [:MEW,       :AURASPHERE,     :merced,  "Mew, el ancestro, se interpone: hasta el Génesis le debe una chispa de piedad."],
-  [:CELEBI,    :HEALPULSE,      :merced,  "Celebi viaja un segundo al futuro y vuelve con la herida ya cerrada."],
+  [:CELEBI,    :PSYCHIC,        :merced,  "Celebi viaja un segundo al futuro y vuelve con un golpe que atraviesa el presente."],
   [:RAYQUAZA,  :DRAGONASCENT,   :orden,   "Rayquaza baja del cielo: el equilibrio se somete a la Orden Divina y el campo se aquieta."],
   [:ZYGARDE,   :LANDSWRATH,    :orden,   "Zygarde reúne sus células y calla: cuando el creador ordena el fin, el equilibrio obedece."]
 ]
@@ -974,20 +972,107 @@ RUTA_ARCEUS_SEQUITO = [
 ]
 RUTA_ARCEUS_STAGE_COUNT = 6
 RUTA_ARCEUS_BOSS_LEVELS = [150, 175, 185, 195, 200, 200]
-# R8/R9 - el duelo final es jugable de verdad. Ash aprendió mirando cada batalla
-# del prólogo, así que sus ataques cuentan contra las barras divinas (nunca
-# menos de media barra por impacto) y Arceus no derriba a un Pokémon suyo en un
-# solo turno: cada acción enemiga quita como máximo un tercio de la vida máxima
-# (cuatro acciones para tumbar a un Pokémon sano) y un Pokémon ya debilitado, por
-# debajo de ese tope, sí puede caer. Al cruzar el umbral rojo Arceus ya no borra
-# el avance del jugador: sólo recupera media barra, una vez por etapa.
-RUTA_ARCEUS_ASH_BAR_POWER = 4.0
-RUTA_ARCEUS_ASH_BAR_MIN_RATIO = 0.5
-RUTA_ARCEUS_HIT_CAP_RATIO = 0.33
-RUTA_ARCEUS_REDLINE_HEAL_RATIO = 0.5
+# R16 — El duelo usa seis barras de verdad. Ninguna acción individual puede
+# quitar más del 38% de una barra (también se acumulan los impactos múltiples),
+# y el impulso de Ash nunca cae por debajo del 12%. El umbral rojo sólo devuelve
+# un cuarto de barra por etapa; dos atacantes coordinados pueden ganar, pero
+# Arceus y su Orden Divina también pueden vencer a un equipo mal preparado.
+RUTA_ARCEUS_ASH_BAR_POWER = 1.35
+RUTA_ARCEUS_ASH_BAR_MIN_RATIO = 0.12
+RUTA_ARCEUS_ASH_BAR_MAX_RATIO = 0.38
+RUTA_ARCEUS_HIT_CAP_RATIO = 0.48
+RUTA_ARCEUS_REDLINE_HEAL_RATIO = 0.25
+RUTA_ARCEUS_SELF_DAMAGING_MOVES = [
+  :BRAVEBIRD, :DOUBLEEDGE, :FLAREBLITZ, :HEADSMASH, :HIGHJUMPKICK,
+  :JUMPKICK, :LIGHTOFRUIN, :MINDBLOWN, :MISTYEXPLOSION, :SELFDESTRUCT,
+  :EXPLOSION, :FINALGAMBIT, :STRUGGLE, :SUBMISSION, :TAKEDOWN,
+  :VOLTTACKLE, :WAVECRASH, :WILDCHARGE, :WOODHAMMER,
+  :BELLYDRUM, :CLANGOROUSSOUL, :CURSE, :MEMENTO, :HEALINGWISH,
+  :LUNARDANCE, :PERISHSONG, :STEELBEAM, :SUBSTITUTE, :PAINSPLIT
+].freeze
+RUTA_ARCEUS_SELF_DAMAGING_FUNCTIONS = %w[
+  03A 05A 0E0 0E1 0E2 0E3 0E4 0E5 0FA 0FB 0FC 0FD 0FE 10B 10C 10D
+  170 179 196 199
+].freeze
+# Estos tres efectos de retirada pueden poner fin a un wild battle o desplazar
+# al jefe de la escena. Se excluyen igual que los movimientos de autodaño para
+# mantener cerrada la ruta; Dragon Tail/Circle Throw conservan su daño, pero su
+# efecto de huida se anula sólo durante este duelo.
+RUTA_ARCEUS_SCRIPT_BREAKING_MOVES = [:TELEPORT, :ROAR, :WHIRLWIND].freeze
+RUTA_ARCEUS_SCRIPT_BREAKING_FUNCTIONS = %w[0EA 0EB].freeze
+RUTA_ARCEUS_FONDO_POR_FASE = [
+  "genesis1", "genesis2", "genesis3", "genesis1", "genesis2", "genesis3"
+].freeze
+RUTA_ARCEUS_INVOCATION_MOVES = {
+  :DIALGA => [:ROAROFTIME, :FLASHCANNON, :AURASPHERE, :EARTHPOWER],
+  :PALKIA => [:SPACIALREND, :HYDROPUMP, :DRAGONPULSE, :THUNDERBOLT],
+  :GIRATINA => [:SHADOWFORCE, :DRAGONCLAW, :SHADOWSNEAK, :EARTHPOWER],
+  :REGIGIGAS => [:GIGAIMPACT, :ZENHEADBUTT, :EARTHQUAKE, :STONEEDGE],
+  :GROUDON => [:PRECIPICEBLADES, :FIREPUNCH, :STONEEDGE, :SOLARBEAM],
+  :KYOGRE => [:ORIGINPULSE, :THUNDER, :ICEBEAM, :WATERFALL],
+  :UXIE => [:PSYCHIC, :FUTURESIGHT, :AURASPHERE, :THUNDERBOLT],
+  :MESPRIT => [:PSYCHIC, :DAZZLINGGLEAM, :AURASPHERE, :THUNDERBOLT],
+  :AZELF => [:PSYCHIC, :FLAMETHROWER, :AURASPHERE, :THUNDERBOLT],
+  :MEW => [:AURASPHERE, :PSYCHIC, :ENERGYBALL, :ICEBEAM],
+  :CELEBI => [:PSYCHIC, :ENERGYBALL, :DAZZLINGGLEAM, :FUTURESIGHT],
+  :RAYQUAZA => [:DRAGONASCENT, :EXTREMESPEED, :EARTHQUAKE, :AERIALACE],
+  :ZYGARDE => [:LANDSWRATH, :DRAGONPULSE, :EXTREMESPEED, :EARTHQUAKE]
+}.freeze
 RUTA_ARCEUS_RESTORES = 0
 RUTA_ARCEUS_MAIN_RNG_SEED = 0xA2CE05
 RUTA_ARCEUS_CINEMATIC_RNG_SEED = 0xC1A0A7
+
+# La lista se audita contra moves.dat y también se filtra en runtime para que
+# Arceus o un invocado nunca paguen PS, se debiliten a sí mismos ni se sacrifiquen.
+def pbArceusSelfDamagingMove?(move)
+  id = move.respond_to?(:id) ? move.id : move
+  return true if RUTA_ARCEUS_SELF_DAMAGING_MOVES.include?(id)
+  data = if move.respond_to?(:function_code) || move.respond_to?(:function)
+           move
+         elsif id && GameData::Move.exists?(id)
+           GameData::Move.get(id)
+         end
+  function = if data && data.respond_to?(:function_code)
+               data.function_code.to_s
+             elsif data && data.respond_to?(:function)
+               data.function.to_s
+             else
+               ""
+             end
+  return true if RUTA_ARCEUS_SELF_DAMAGING_FUNCTIONS.include?(function.upcase)
+  return true if function =~ /Recoil|UserFaints|UserLosesHP|Sacrifice|CrashDamage/i
+  return false
+rescue StandardError
+  false
+end
+
+def pbArceusScriptBreakingMove?(move)
+  id = move.respond_to?(:id) ? move.id : move
+  return true if RUTA_ARCEUS_SCRIPT_BREAKING_MOVES.include?(id)
+  data = if move.respond_to?(:function_code)
+           move
+         elsif id && GameData::Move.exists?(id)
+           GameData::Move.get(id)
+         end
+  function = data && data.respond_to?(:function_code) ? data.function_code.to_s : ""
+  return RUTA_ARCEUS_SCRIPT_BREAKING_FUNCTIONS.include?(function.upcase)
+rescue StandardError
+  false
+end
+
+def pbArceusSafeMoveIds(move_ids, damaging_only = false)
+  valid = (move_ids || []).compact.select do |id|
+    next false if !GameData::Move.exists?(id) || pbArceusSelfDamagingMove?(id)
+    next false if pbArceusScriptBreakingMove?(id)
+    next false if damaging_only && GameData::Move.get(id).base_damage.to_i <= 0
+    true
+  rescue StandardError
+    false
+  end
+  return valid.uniq
+rescue StandardError
+  []
+end
 
 # El motor reserva exactamente cuatro ranuras de movimiento por Pokémon. El
 # canon añade movimientos temáticos a las fases, así que nunca se copian listas
@@ -995,7 +1080,7 @@ RUTA_ARCEUS_CINEMATIC_RNG_SEED = 0xC1A0A7
 # completan las ranuras restantes con el set de la fase.
 def pbArceusMoveIds(move_ids, phase = nil)
   max_moves = Pokemon::MAX_MOVES
-  valid = (move_ids || []).select { |id| GameData::Move.exists?(id) }.uniq
+  valid = pbArceusSafeMoveIds(move_ids, false)
   return valid if valid.length <= max_moves
   canonical = []
   if phase && defined?(CanonArceus) && CanonArceus.respond_to?(:movimientos_para)
@@ -1263,12 +1348,8 @@ class PokeBattle_Battler
       end
     end
     if @battle && @battle.respond_to?(:arceus_divine?) && @battle.arceus_divine?
-      amt = @battle.arceus_before_damage(self, amt)
-      if amt == :ruta_arceus_stage_break
-        @battle.pbArceusDepleteBar(self)
-        return 0
-      end
-      return 0 if amt == :ruta_arceus_hold_at_one || amt == :ruta_arceus_no_damage
+      amt = @battle.pbArceusDivineBarDamage(self, amt)
+      return 0 if amt.to_i <= 0
       ret = ruta_arceus_scripted_hp_write { _ruta_arceus_original_reduce_hp(amt, anim, registerDamage, anyAnim) }
       if registerDamage && !@battle.instance_variable_get(:@endOfRound)
         @battle.pbArceusRedlineHeal(self)
@@ -1364,6 +1445,18 @@ end
 class PokeBattle_Battler
   alias _ruta_arceus_original_success_check pbSuccessCheckAgainstTarget unless method_defined?(:_ruta_arceus_original_success_check)
   def pbSuccessCheckAgainstTarget(move, user, target)
+    if target && target.respond_to?(:ruta_arceus_divine_boss?) &&
+       target.ruta_arceus_divine_boss? &&
+       target.instance_variable_get(:@ruta_arceus_retired_for_summon)
+      target.damageState.unaffected = true if target.respond_to?(:damageState) && target.damageState
+      key = @battle.arceus_action_key rescue nil
+      if @battle && @battle.instance_variable_get(:@ruta_arceus_retreat_announced_key) != key
+        @battle.instance_variable_set(:@ruta_arceus_retreat_announced_key, key)
+        @battle.pbDisplay(_INTL("Arceus se retira tras la guardia de {1}; el golpe no puede alcanzarlo.",
+                                target.respond_to?(:name) ? target.name : "la invocación"))
+      end
+      return false
+    end
     if move && move.id == :JUDGMENT && user && user.respond_to?(:ruta_arceus_captured_god_active?) &&
        user.ruta_arceus_captured_god_active? && target && !target.fainted? &&
        target.opposes? != user.opposes?
@@ -1644,6 +1737,22 @@ class PokeBattle_Move_09F
     return _ruta_arceus_original_base_type(user)
   rescue StandardError
     return _ruta_arceus_original_base_type(user)
+  end
+end
+
+# Dragon Tail y Circle Throw conservan su daño real, pero su efecto secundario
+# no puede sacar al jugador de la batalla salvaje del jefe (la ruta original del
+# motor marca decision=3 incluso cuando el objetivo es Ash).
+class PokeBattle_Move_0EC
+  alias _ruta_arceus_original_wild_knockback pbEffectAgainstTarget unless method_defined?(:_ruta_arceus_original_wild_knockback)
+  def pbEffectAgainstTarget(user, target)
+    if @battle && @battle.respond_to?(:arceus_divine?) && @battle.arceus_divine? &&
+       user && user.respond_to?(:ruta_arceus_divine_boss?) && user.ruta_arceus_divine_boss? &&
+       @battle.wildBattle?
+      @battle.pbDisplay(_INTL("El golpe de {1} alcanza a Ash, pero la Orden no permite expulsarlo de la batalla.", user.pbThis))
+      return
+    end
+    return _ruta_arceus_original_wild_knockback(user, target)
   end
 end
 
@@ -2064,15 +2173,52 @@ class PokeBattle_Battle
     battler.ruta_arceus_scripted_hp_write { battler.hp = battler.totalhp } if battler && battler.respond_to?(:ruta_arceus_scripted_hp_write)
   end
 
+  # Catálogo restringido al repertorio legal de Arceus (nivel, tutor y pools
+  # canónicos). Cada entrada debe ser un ataque de daño directo y pasar la lista
+  # negra de autolesión; los efectos de cada movimiento los resuelve el motor.
+  # Catálogo de todo lo que Arceus puede aprender (nivel, tutor, firma de fase
+  # y copia del equipo), filtrando por función los ataques que le quitan PS o lo
+  # hacen caer. El subconjunto de estado se usa para que también ejecute apoyos.
+  def pbArceusMoveCatalogIds
+    ids = []
+    species_data = GameData::Species.get(:ARCEUS)
+    if species_data.respond_to?(:moves)
+      (species_data.moves || []).each do |entry|
+        ids.push(entry[1]) if entry.is_a?(Array) && entry.length > 1
+      end
+    end
+    ids.concat(species_data.tutor_moves || []) if species_data.respond_to?(:tutor_moves)
+    ids.concat(RUTA_ARCEUS_MOVE_SETS.flatten)
+    ids.concat(RUTA_ARCEUS_MIL_BRAZOS)
+    ids.concat(RUTA_ARCEUS_PRIMIGENIA_MOVES)
+    ids.concat(@ruta_arceus_equipo_move_ids || [])
+    return pbArceusSafeMoveIds(ids, false)
+  rescue StandardError
+    []
+  end
+
+  def pbArceusStatusMoveIds
+    return @ruta_arceus_status_move_ids if @ruta_arceus_status_move_ids
+    @ruta_arceus_status_move_ids = pbArceusMoveCatalogIds.select do |id|
+      GameData::Move.get(id).base_damage.to_i <= 0
+    rescue StandardError
+      false
+    end
+    return @ruta_arceus_status_move_ids
+  rescue StandardError
+    @ruta_arceus_status_move_ids = []
+  end
+
   def pbArceusAttackCatalog
     return @ruta_arceus_attack_catalog if @ruta_arceus_attack_catalog
     attacks = []
-    GameData::Move.each do |move_data|
+    pbArceusMoveCatalogIds.each do |id|
+      move_data = GameData::Move.get(id)
       power = move_data.base_damage.to_i
-      function = move_data.function_code.to_s
-      power = 100 if power <= 0 && function =~ /OneHit|OHKO|FixedDamage|Counter|LevelDamage|UserLevelDamage|HalfTargetHP/
       next if power <= 0
       attacks.push([move_data, power])
+    rescue StandardError
+      next
     end
     @ruta_arceus_attack_catalog = attacks
     return @ruta_arceus_attack_catalog
@@ -2110,8 +2256,9 @@ class PokeBattle_Battle
     return 0.0
   end
 
-  # Recalcula el repertorio desde el catálogo real y busca cuatro ataques de
-  # tipos distintos; Judgment siempre conserva un lugar y sigue a la Tabla.
+  # Cambia cuatro ataques por turno a partir del repertorio completo de Arceus.
+  # Judgment aparece de forma variable; la sexta fase siempre conserva un golpe
+  # de los Mil Brazos y completa las ranuras con ataques seguros y efectivos.
   def pbArceusBestAttackIds(battler)
     targets = @battlers.select do |target|
       target && !target.fainted? && target.opposes? != battler.opposes?
@@ -2124,32 +2271,53 @@ class PokeBattle_Battle
     scored.sort_by! { |row| [-row[0], row[1]] }
     phase_index = [[(@arceus_phase || 1) - 1, 0].max, RUTA_ARCEUS_MOVE_SETS.length - 1].min
     ids = []
-    signature = :JUDGMENT
-    ids.push(signature) if GameData::Move.exists?(signature)
-    used_types = []
-    # R14: entre los ataques casi óptimos (>=85% del mejor puntaje) elige con azar
-    # divino: el repertorio varía de verdad entre etapas y objetivos, pero nunca
-    # regala poder (todo candidato sigue siendo de lo mejor disponible).
+    exists_scored = lambda { |id| scored.any? { |row| row[2] == id } }
+    if phase_index == RUTA_ARCEUS_STAGE_COUNT - 1
+      arms = RUTA_ARCEUS_MIL_BRAZOS.select { |id| exists_scored.call(id) }
+      ids.push(arms[pbRandom(arms.length).to_i]) if arms.any?
+    end
+    themes = (RUTA_ARCEUS_MOVE_SETS[phase_index] || []).reject do |id|
+      id == :JUDGMENT || ids.include?(id) || !exists_scored.call(id)
+    end
+    ids.push(themes[pbRandom(themes.length).to_i]) if themes.any?
+    judgment_chance = [38, 42, 34, 45, 32, 55][phase_index] || 38
+    if exists_scored.call(:JUDGMENT) && pbRandom(100).to_i < judgment_chance
+      ids.push(:JUDGMENT) if !ids.include?(:JUDGMENT)
+    end
     top = scored[0] ? scored[0][0].to_f : 0.0
-    umbral = top * 0.85
-    candidatos = scored.select { |row| row[0].to_f >= umbral }
-    candidatos = scored if candidatos.empty?
-    while ids.length < Pokemon::MAX_MOVES && candidatos.any?
-      fila = begin; candidatos[pbRandom(candidatos.length).to_i]; rescue StandardError; candidatos[0]; end
-      next_row = fila
-      if used_types.include?(fila[3])
-        libre = candidatos.reject { |row| used_types.include?(row[3]) || ids.include?(row[2]) }
-        next_row = libre.empty? ? nil : (begin; libre[pbRandom(libre.length).to_i]; rescue StandardError; libre[0]; end)
-      end
-      break if !next_row || ids.include?(next_row[2])
-      ids.push(next_row[2])
-      used_types.push(next_row[3])
-      candidatos = candidatos.reject { |row| row[2] == next_row[2] }
+    candidates = scored.select { |row| row[0].to_f >= top * 0.38 }
+    recent = (@ruta_arce_move_history || []).last(2)
+    fresh = candidates.reject { |row| recent.include?(row[2]) || ids.include?(row[2]) }
+    candidates = fresh if fresh.any?
+    until ids.length >= Pokemon::MAX_MOVES || candidates.empty?
+      index = begin; pbRandom(candidates.length).to_i; rescue StandardError; 0; end
+      index = [[index, 0].max, candidates.length - 1].min
+      selected = candidates.delete_at(index)
+      ids.push(selected[2]) if selected && !ids.include?(selected[2])
     end
     scored.each do |row|
       next if ids.include?(row[2])
       ids.push(row[2])
       break if ids.length >= Pokemon::MAX_MOVES
+    end
+    status_chance = [22, 28, 30, 34, 38, 42][phase_index] || 22
+    status_ids = pbArceusStatusMoveIds.reject { |id| ids.include?(id) }
+    if status_ids.any? && pbRandom(100).to_i < status_chance
+      status_move = status_ids[pbRandom(status_ids.length).to_i]
+      if ids.length < Pokemon::MAX_MOVES
+        ids.push(status_move)
+      else
+        protected = []
+        protected.push(:JUDGMENT) if ids.include?(:JUDGMENT)
+        signature = if phase_index == RUTA_ARCEUS_STAGE_COUNT - 1
+                      ids.find { |id| RUTA_ARCEUS_MIL_BRAZOS.include?(id) }
+                    else
+                      ids.find { |id| RUTA_ARCEUS_MOVE_SETS[phase_index].include?(id) && id != :JUDGMENT }
+                    end
+        protected.push(signature) if signature
+        replace_index = (ids.length - 1).downto(0).find { |i| !protected.include?(ids[i]) }
+        ids[replace_index || ids.length - 1] = status_move
+      end
     end
     ids = RUTA_ARCEUS_MOVE_SETS[phase_index] if ids.empty?
     return pbArceusMoveIds(ids, phase_index + 1)
@@ -2158,45 +2326,109 @@ class PokeBattle_Battle
     return pbArceusMoveIds(RUTA_ARCEUS_MOVE_SETS[phase_index], phase_index + 1)
   end
 
-  # The engine's high-skill trainer scorer evaluates real damage, accuracy,
-  # immunities, effects and targets for each attack Arceus has prepared.
+  # Fallback con criterio táctico para apoyos de Arceus si el evaluador del
+  # motor no ofrece una puntuación. Los efectos se siguen ejecutando por las
+  # rutas reales del movimiento, nunca como daño inventado por el guion.
+  def pbArceusStatusMoveScore(move, battler)
+    id = move.id
+    enemigos = @battlers.select do |target|
+      target && !target.fainted? && target.opposes? != battler.opposes?
+    end
+    case id
+    when :RECOVER, :REST
+      return [0.0, -1] if battler.hp.to_f / [battler.totalhp.to_f, 1.0].max > 0.78
+      return [64.0, -1]
+    when :CALMMIND
+      return [42.0, -1] if battler.stages[:SPECIAL_ATTACK].to_i < 5 || battler.stages[:SPECIAL_DEFENSE].to_i < 5
+    when :SWORDSDANCE
+      return [42.0, -1] if battler.stages[:ATTACK].to_i < 5
+    when :COSMICPOWER
+      return [38.0, -1] if battler.stages[:DEFENSE].to_i < 5 || battler.stages[:SPECIAL_DEFENSE].to_i < 5
+    when :IRONDEFENSE
+      return [34.0, -1] if battler.stages[:DEFENSE].to_i < 5
+    when :HONECLAWS
+      return [32.0, -1] if battler.stages[:ATTACK].to_i < 5 || battler.stages[:ACCURACY].to_i < 5
+    when :WORKUP
+      return [30.0, -1] if battler.stages[:ATTACK].to_i < 5 || battler.stages[:SPECIAL_ATTACK].to_i < 5
+    when :THUNDERWAVE, :TOXIC, :WILLOWISP
+      status = { :THUNDERWAVE => :PARALYSIS, :TOXIC => :POISON, :WILLOWISP => :BURN }[id]
+      target = enemigos.find do |foe|
+        foe.respond_to?(:pbCanInflictStatus?) && foe.pbCanInflictStatus?(status, battler, false, move)
+      end
+      return target ? [34.0, target.index] : [0.0, -1]
+    when :CONFIDE
+      target = enemigos.find do |foe|
+        foe.respond_to?(:pbCanLowerStatStage?) && foe.pbCanLowerStatStage?(:SPECIAL_ATTACK, battler, move, false)
+      end
+      return target ? [24.0, target.index] : [0.0, -1]
+    when :LIGHTSCREEN, :REFLECT
+      side = battler.pbOwnSide
+      effect = (id == :LIGHTSCREEN) ? PBEffects::LightScreen : PBEffects::Reflect
+      return [30.0, -1] if side.effects[effect].to_i <= 0
+    when :TAILWIND
+      return [28.0, -1] if battler.pbOwnSide.effects[PBEffects::Tailwind].to_i <= 0
+    when :STEALTHROCK
+      return [28.0, -1] if battler.pbOpposingSide.effects[PBEffects::StealthRock].to_i <= 0
+    when :TRICKROOM
+      return [24.0, -1] if @field.effects[PBEffects::TrickRoom].to_i <= 0
+    when :HAIL, :SANDSTORM, :RAINDANCE, :SUNNYDAY
+      weather = { :HAIL => :Hail, :SANDSTORM => :Sandstorm,
+                  :RAINDANCE => :Rain, :SUNNYDAY => :Sun }[id]
+      return [24.0, -1] if @field.weather != weather
+    when :DOUBLETEAM
+      return [22.0, -1] if battler.stages[:EVASION].to_i < 4
+    end
+    return [0.0, -1]
+  rescue StandardError
+    [0.0, -1]
+  end
+
+  # La IA de alto nivel puntúa tanto ataques como movimientos de apoyo. Si la
+  # IA no conoce una ruta concreta, los golpes usan la puntuación de daño y los
+  # apoyos usan el evaluador anterior; pbCanChooseMove? ya filtró los ilegales.
   def pbArceusScoreMove(battler, move_index)
     move = battler.moves[move_index]
-    return nil if !move || !move.damagingMove?
+    return nil if !move || pbArceusSelfDamagingMove?(move.id)
     choices = []
     if @battleAI && @battleAI.respond_to?(:pbRegisterMoveTrainer)
-      skill = PBTrainerAI.highSkill
-      @battleAI.pbRegisterMoveTrainer(battler, move_index, choices, skill)
+      begin
+        skill = PBTrainerAI.highSkill
+        @battleAI.pbRegisterMoveTrainer(battler, move_index, choices, skill)
+      rescue StandardError
+        choices.clear
+      end
     end
     if choices.empty?
-      move_data = GameData::Move.get(move.id) rescue nil
-      targets = @battlers.select do |target|
-        target && !target.fainted? && target.opposes? != battler.opposes?
-      end
-      best_score = 0.0
-      best_target = -1
-      targets.each do |target|
-        score = pbArceusAttackScore(move_data, move_data ? move_data.base_damage.to_i : 0,
-                                   battler, [target])
-        if score > best_score
-          best_score = score
-          best_target = target.index
+      if move.damagingMove?
+        move_data = GameData::Move.get(move.id) rescue nil
+        targets = @battlers.select do |target|
+          target && !target.fainted? && target.opposes? != battler.opposes?
         end
+        best_score = 0.0
+        best_target = -1
+        targets.each do |target|
+          score = pbArceusAttackScore(move_data, move_data ? move_data.base_damage.to_i : 0,
+                                     battler, [target])
+          if score > best_score
+            best_score = score
+            best_target = target.index
+          end
+        end
+        return [move_index, best_score, best_target, move.id]
       end
-      return [move_index, best_score, best_target, move.id]
+      score, target_index = pbArceusStatusMoveScore(move, battler)
+      return [move_index, score, target_index, move.id]
     end
-    choices.sort! { |a, b| b[1] <=> a[1] }
+    choices.sort! { |a, b| b[1].to_f <=> a[1].to_f }
     row = choices[0]
     return [move_index, row[1].to_f, row[2], move.id]
   rescue StandardError
     return [move_index, 0.0, -1, move ? move.id : nil]
   end
 
-  # R14 — Elección adaptativa con azar divino: ordena por el puntaje real del
-  # motor (daño, precisión, inmunidades, objetivo) pero reparte probabilidad
-  # entre todos los candidatos cercanos al óptimo (>=75%), evitando repetir el
-  # golpe reciente. Arceus sigue amenazando con lo mejor que tiene, sin caer en
-  # el bucle de "siempre los mismos ataques".
+  # Elección adaptativa con azar divino: pondera precisión, daño, inmunidades y
+  # objetivo, pero abre la selección a ataques que conservan al menos el 55% del
+  # mejor puntaje. Evita los dos últimos golpes cuando hay alternativas.
   def pbArceusChooseSmartMove(options)
     return nil if !options || options.empty?
     history = @ruta_arceus_move_history || []
@@ -2214,12 +2446,12 @@ class PokeBattle_Battle
       end
     end
     top = pool[0][1].to_f
-    candidatos = pool.take_while { |option| option[1].to_f >= top * 0.75 }
+    candidatos = pool.take_while { |option| option[1].to_f >= top * 0.55 }
     candidatos = pool[0, 1] if candidatos.empty?
-    # Castigo adaptativo: si el rival acaba de resistir un golpe, ese ataque
-    # pierde peso; si acaba de recibir uno súper eficaz, ese ataque gana peso.
+    # Pesos lineales: aun el mejor golpe conserva ventaja, pero los demás
+    # candidatos viables también aparecen con frecuencia suficiente.
     pesos = candidatos.map do |option|
-      peso = (option[1].to_f ** 1.25).round + 1
+      peso = ((option[1].to_f / [top, 1.0].max) * 100.0).round + 1
       peso = [peso / 2, 1].max if history_resistido?(option[3])
       peso
     end
@@ -2290,6 +2522,53 @@ class PokeBattle_Battle
     pbDisplay(_INTL("Arceus: «Tu siguiente movimiento ya está calculado.»")) rescue nil
   end
 
+  # Selecciona y registra un movimiento real del legendario invocado. La acción
+  # queda en la cola normal del motor; el escudo de Arceus dura hasta que termine.
+  def pbArceusInvocationAction(idxBattler, battler)
+    state = @ruta_arceus_invocation_state
+    return false if !state || state[:slot_index].to_i != idxBattler || !battler || battler.fainted?
+    indexes = []
+    preferred = state[:preferred_move]
+    battler.moves.each_with_index do |move, index|
+      next if !move || !move.damagingMove? || pbArceusSelfDamagingMove?(move.id)
+      next if !pbCanChooseMove?(idxBattler, index, false)
+      indexes.push(index)
+    end
+    move_index = indexes.find { |index| battler.moves[index].id == preferred } || indexes.first
+    if move_index.nil?
+      pbDisplayPaused(_INTL("La invocación no conserva un ataque seguro: se retira sin sacrificar PS."))
+      pbArceusDismissInvocation(@battlers[state[:boss_index].to_i])
+      return false
+    end
+    return false if !pbRegisterMove(idxBattler, move_index, false)
+    move = battler.moves[move_index]
+    targets = @battlers.select do |target|
+      target && !target.fainted? && target.opposes? != battler.opposes?
+    end
+    visibles = targets.reject { |target| target.instance_variable_get(:@ruta_arceus_retired_for_summon) }
+    targets = visibles if visibles.any?
+    target = targets.first
+    if targets.any? && move.respond_to?(:pbTarget)
+      target_data = move.pbTarget(battler) rescue nil
+      if target_data && target_data.respond_to?(:num_targets) && target_data.num_targets.to_i > 0
+        target = targets.max_by do |candidate|
+          types = candidate.pbTypes(true)
+          Effectiveness.calculate(move.type, types[0], types[1], types[2]).to_f
+        rescue StandardError
+          1.0
+        end
+        pbRegisterTarget(idxBattler, target.index) if target
+      end
+    end
+    state[:action_turn] = @turnCount.to_i
+    pbDisplayPaused(_INTL("¡{1} interviene de verdad y ejecuta {2} contra {3}!",
+                          GameData::Species.get(state[:species]).name, move.name,
+                          target ? target.name : "el campo"))
+    return true
+  rescue StandardError
+    false
+  end
+
   def pbArceusSmartAction(idxBattler, battler)
     boss = arceus_battler || battler
     arceus_state(boss)
@@ -2298,21 +2577,25 @@ class PokeBattle_Battle
     else
       pbArceusRedlineHeal(boss, true)
     end
-    pbArceusAdaptTypeToRival(boss)
-    # R14: el repertorio se recalcula sólo al cambiar de etapa o de objetivos
-    # vivos (nunca cada turno): así cada fase pelea con su propio set y la
-    # elección dentro del set la pone el azar divino, no un bucle determinista.
+    # La lista cambia en cada turno (no sólo al cambiar de fase/objetivo), de
+    # modo que Arceus recorre el repertorio legal completo y no se queda atado a
+    # los primeros cuatro ataques que recibió al entrar en combate.
     clave_objetivos = @battlers.select do |target|
       target && !target.fainted? && target.opposes? != battler.opposes?
     end.map { |target| target.pokemon ? target.pokemon.species.to_s : "?" }.sort.join(",")
-    if @ruta_repertorio_fase != @arceus_phase || @ruta_repertorio_objetivos != clave_objetivos
+    turno_repertorio = @turnCount.to_i
+    if @ruta_repertorio_fase != @arceus_phase ||
+       @ruta_repertorio_objetivos != clave_objetivos ||
+       @ruta_repertorio_turno != turno_repertorio
       @ruta_repertorio_fase = @arceus_phase
       @ruta_repertorio_objetivos = clave_objetivos
+      @ruta_repertorio_turno = turno_repertorio
       pbArceusSetMoves(battler, pbArceusBestAttackIds(battler))
     end
     options = []
     battler.moves.each_with_index do |move, index|
-      next if !move || !move.damagingMove?
+      next if !move || pbArceusSelfDamagingMove?(move.id)
+      next if !move.damagingMove? && !move.statusMove?
       next if !pbCanChooseMove?(idxBattler, index, false)
       option = pbArceusScoreMove(battler, index)
       options.push(option) if option && option[1].to_f > 0
@@ -2324,15 +2607,20 @@ class PokeBattle_Battle
       return true
     end
     move_index = selected[0]
+    move = battler.moves[move_index]
+    if move && move.id == :JUDGMENT && arceus_divine? && !ruta_arceus_primigenia?
+      pbArceusAdaptTypeToRival(boss)
+    end
     return false if !pbRegisterMove(idxBattler, move_index, false)
     pbRegisterTarget(idxBattler, selected[2]) if selected[2] && selected[2] >= 0
-    move = battler.moves[move_index]
     target = @battlers[selected[2]] if selected[2] && selected[2] >= 0
-    target ||= @battlers.find { |candidate| candidate && !candidate.fainted? && candidate.opposes? != battler.opposes? }
+    if !target && move && move.damagingMove?
+      target = @battlers.find { |candidate| candidate && !candidate.fainted? && candidate.opposes? != battler.opposes? }
+    end
     # Memoria adaptativa: si el golpe elegido acaba de ser resistido, la próxima
     # elección lo castigará; si fue eficaz, no se penaliza.
     begin
-      if target && move && move.type
+      if target && move && move.damagingMove? && move.type
         tipos = target.pbTypes(true)
         efecto = Effectiveness.calculate(move.type, tipos[0], tipos[1], tipos[2])
         @ruta_arceus_resistido_previo =
@@ -2468,22 +2756,17 @@ class PokeBattle_Battle
     return amount if !arceus_divine? || !battler || !battler.pokemon || battler.pokemon.species != :ARCEUS
     arceus_state(battler)
     return :ruta_arceus_no_damage if @endOfRound || amount.to_i <= 0
-    # El daño indirecto y el retroceso no pueden terminar una fase. Sólo un
-    # ataque del lado de Ash vacía una barra; cualquier daño propio queda en 1 PS.
-    if !arceus_player_action?(battler)
-      return :ruta_arceus_hold_at_one if battler.hp <= 1
-      return [amount.to_i, battler.hp - 1].min
-    end
+    return :ruta_arceus_no_damage if battler.instance_variable_get(:@ruta_arceus_retired_for_summon)
+    # Sólo un ataque real del lado de Ash mueve una barra: clima, retroceso,
+    # recoil, habilidades y daño residual se anulan por completo.
+    return :ruta_arceus_no_damage if !arceus_player_action?(battler)
     if @arceus_capture_ready
       return :ruta_arceus_hold_at_one if battler.hp <= 1
       return [amount.to_i, battler.hp - 1].min
     end
-    # Una acción de varios impactos puede agotar como máximo una barra, pero
-    # los impactos posteriores sí dañan la nueva barra sin poder saltar etapa.
-    if @ruta_arceus_last_bar_action_key == arceus_action_key
-      return :ruta_arceus_hold_at_one if battler.hp <= 1
-      return [amount.to_i, battler.hp - 1].min
-    end
+    # Cuando un ataque multigolpe vacía una barra, sus impactos restantes no
+    # dañan también la siguiente: cada acción puede avanzar como máximo una.
+    return :ruta_arceus_no_damage if @ruta_arceus_last_bar_action_key == arceus_action_key
     return :ruta_arceus_stage_break if amount.to_i >= battler.hp
     return amount.to_i
   end
@@ -2520,15 +2803,18 @@ class PokeBattle_Battle
     false
   end
 
-  # La iniciativa es de Ash: su lado abre cada ronda del duelo divino, incluso
-  # con el Espacio Raro de la Etapa 4 activo. Protect, Quick Claw y los cambios
-  # de prioridad siguen resolviéndose dentro de cada lado.
+  # Ash conserva la iniciativa al inicio para aprender el sistema; desde la
+  # tercera fase sólo abre algunas rondas. Las etapas finales usan la velocidad
+  # real del Creador y de su invocación, así el combate puede perderse.
   def ruta_arceus_ash_first_active?
-    return false if !arceus_divine?
-    return false if @arceus_capture_ready == true
+    return false if !arceus_divine? || @arceus_capture_ready == true
     boss = arceus_battler
     return false if !boss || boss.fainted?
-    return true
+    fase = @arceus_phase.to_i
+    return true if fase <= 2
+    return (@turnCount.to_i % 2 == 1) if fase == 3
+    return (@turnCount.to_i % 2 == 0) if fase == 4
+    return false
   rescue StandardError
     false
   end
@@ -2544,6 +2830,8 @@ class PokeBattle_Battle
     cola = $ruta_arceus_relevo_cola
     return if !cola.is_a?(Array) || cola.empty?
     idx = @battlers.index do |b|
+      next false if b && @ruta_arceus_invocation_state &&
+                    @ruta_arceus_invocation_state[:slot_index].to_i == b.index.to_i
       b && b.fainted? && !ruta_arceus_ash_side?(b) && b.pokemon &&
         RUTA_ARCEUS_SEQUITO.any? { |fila| fila[0] == b.pokemon.species }
     end
@@ -2598,16 +2886,14 @@ class PokeBattle_Battle
     result
   end
 
-  # Ninguna acción de Arceus quita más de un tercio de la vida máxima de un
-  # Pokémon de Ash (R9). El cálculo usa el daño acumulado del movimiento
-  # (totalHPLost) para que los ataques de varios impactos tampoco cierren la
-  # acción con un KO: un Pokémon sano aguanta cuatro acciones enemigas y sólo
-  # puede caer cuando entra al turno ya por debajo del tope, así el duelo se
-  # gana peleando y administrando el equipo, no aguantando un solo turno.
+  # Cada acción de Arceus tiene un tope variable que nunca supera el 48% de
+  # la vida máxima de un Pokémon de Ash. El cálculo usa el daño acumulado del
+  # movimiento (totalHPLost) para que los impactos múltiples tampoco eludan el
+  # límite: un Pokémon sano sobrevive dos golpes máximos y puede caer al tercero.
+  # Así el duelo premia preparar y administrar el equipo, pero aún permite perder.
   # R10 — Fase 6: la última barra la pelea MEGA ARCEUS, EL DE LOS MIL BRAZOS.
-  # La transformación no cambia el equilibrio de R9 (el tope por acción sigue
-  # siendo un tercio de la vida máxima): cambia el espectáculo y el pool, que
-  # pasa a multigolpes para que cada acción enemiga sean muchos brazos.
+  # La Mega conserva el tope global del 48%, aumenta el mínimo de daño y cambia
+  # el espectáculo y el pool a multigolpes: cada acción enemiga son muchos brazos.
   def ruta_arceus_mega?
     return false if !arceus_divine? || @arceus_capture_ready
     @arceus_phase.to_i >= RUTA_ARCEUS_STAGE_COUNT
@@ -2629,6 +2915,11 @@ class PokeBattle_Battle
       pbArceusFondo("genesis3")
       if battler
         battler.pbChangeForm(18, _INTL("¡El cuerpo de Arceus se abre: FORMA ORIGEN, LOS MIL BRAZOS!"))
+        plate_index = battler.instance_variable_get(:@ruta_arceus_plate_index)
+        if plate_index && RUTA_ARCEUS_PHASE_TYPES[plate_index]
+          battler.item = RUTA_ARCEUS_PHASE_PLATES[plate_index]
+          battler.pbChangeTypes([RUTA_ARCEUS_PHASE_TYPES[plate_index]])
+        end
         pbArceusRedibujar(battler)
         pbArceusScaleSprite(battler, 1.0, 1.16, 16)
       end
@@ -2683,12 +2974,11 @@ class PokeBattle_Battle
   rescue StandardError
   end
 
-  # R12 — El daño divino VARÍA por acción: nunca es el mismo porcentaje dos
-  # veces seguidas, pero jamás supera el tercio de R9. El ratio sale de una
-  # mezcla determinista de la clave de acción (turno, usuario, movimiento,
-  # fase, mega, primigenia): impredecible para el jugador, reproducible para
-  # la QA. Fases tardías pegan más fuerte; la Forma Mega añade peso; el bono
-  # de los juegos divinos lo reduce a la mitad.
+  # El daño divino VARÍA por acción dentro de un tope del 48%. El ratio sale
+  # de la clave de acción (turno, usuario, movimiento, fase, Mega y Primigenia):
+  # reproducible para la QA, difícil de anticipar durante el combate. Las fases
+  # tardías y la Mega aumentan el piso; los aciertos en los juegos divinos lo
+  # reducen a la mitad por una cantidad limitada de acciones.
   def ruta_arceus_divine_ratio
     base = "#{@turnCount}|#{@lastMoveUser}|#{@lastMoveUsed}|#{@arceus_phase}|" \
            "#{ruta_arceus_mega? ? 1 : 0}|#{ruta_arceus_primigenia? ? 1 : 0}"
@@ -2825,153 +3115,146 @@ class PokeBattle_Battle
   rescue StandardError
   end
 
-  # R12 — Juegos divinos DENTRO de la batalla: nunca la vuelven imposible
-  # (el premio ayuda o es neutro, el fallo no castiga más que el juego normal)
-  # y nunca se repiten dos turnos seguidos (enfriamiento de 3 turnos).
+  # Tres juegos a lo largo de las seis fases (2, 4 y 6), con varias decisiones
+  # reales por partida. No son regalos aleatorios: memoria y tabla de tipos,
+  # aciertos reducen ataques futuros y fallar deja a Ash expuesto.
   def ruta_arceus_jugar(boss)
-    return if !boss || boss.fainted? || @arceus_phase.to_i < 2
-    return if @ruta_juego_turno == @turnCount
-    return if @turnCount.to_i < 2
+    return if !boss || boss.fainted? || ![2, 4, 6].include?(@arceus_phase.to_i)
+    return if @ruta_juego_turno == @turnCount || @turnCount.to_i < 2
+    @ruta_juego_fases ||= []
+    return if @ruta_juego_fases.include?(@arceus_phase.to_i)
     vivos = @battlers.select { |b| b && !b.fainted? && ruta_arceus_ash_side?(b) }
     return if vivos.empty?
-    ultimo = @ruta_juego_ultimo_turno.to_i
-    return if ultimo > 0 && @turnCount.to_i - ultimo < 3
+    objetivo = vivos.min_by { |b| b.hp.to_f / [b.totalhp.to_f, 1.0].max }
     @ruta_juego_turno = @turnCount
-    semilla = begin; pbRandom(100).to_i; rescue StandardError; 50; end
-    if semilla < 45
-      @ruta_juego_ultimo_turno = @turnCount.to_i
-      ruta_arceus_juicio_ciego(boss, vivos.first)
-    elsif semilla < 70
-      @ruta_juego_ultimo_turno = @turnCount.to_i
-      ruta_arceus_ruleta(boss, vivos.first)
+    @ruta_juego_ultimo_turno = @turnCount.to_i
+    @ruta_juego_fases.push(@arceus_phase.to_i)
+    if @arceus_phase.to_i == 4
+      ruta_arceus_ruleta(boss, objetivo)
+    else
+      ruta_arceus_juicio_ciego(boss, objetivo)
     end
   rescue StandardError
   end
 
+  # Memoria de sellos: Arceus muestra una secuencia y Ash debe repetirla en
+  # orden. Cada acierto reduce a la mitad un ataque futuro (máximo tres).
   def ruta_arceus_juicio_ciego(boss, objetivo)
-    return if !objetivo || !respond_to?(:pbShowCommands)
+    return false if !objetivo || !respond_to?(:pbShowCommands)
     ruta_arceus_decir(:juego)
+    refugios = RUTA_ARCEUS_JUEGO_REFUGIOS
+    largo = @arceus_phase.to_i >= 6 ? 4 : 3
+    secuencia = []
+    largo.times do
+      indice = pbRandom(refugios.length).to_i
+      if !secuencia.empty? && indice == secuencia[-1]
+        indice = (indice + 1 + pbRandom(refugios.length - 1).to_i) % refugios.length
+      end
+      secuencia.push(indice)
+    end
     nombre = objetivo.respond_to?(:name) ? objetivo.name : "tu Pokémon"
-    pbDisplayPaused(_INTL("Arceus alza una esfera de juicio sobre {1}. «Elige dónde esconderte. Si me adivinas, mis próximos dos golpes pesan la mitad.»", nombre))
-    eleccion = -1
-    begin
-      eleccion = pbShowCommands(_INTL("¿Dónde te escondes?"), RUTA_ARCEUS_JUEGO_REFUGIOS, -1)
-    rescue StandardError
-      eleccion = -1
+    pbDisplayPaused(_INTL("Juicio de la Memoria: protege a {1}. Repite la secuencia de sellos en el mismo orden.", nombre))
+    secuencia.each_with_index do |indice, ronda|
+      pbDisplayPaused(_INTL("Sello {1}/{2}: {3}.", ronda + 1, largo, refugios[indice]))
     end
-    if !eleccion || eleccion.to_i < 0
-      pbDisplayPaused(_INTL("Arceus cierra la esfera. «Otra vez será.»"))
-      return
+    aciertos = 0
+    secuencia.each_with_index do |correcta, ronda|
+      eleccion = pbShowCommands(_INTL("Eco {1}/{2}: ¿qué sello apareció?", ronda + 1, largo), refugios, -1)
+      break if eleccion.nil? || eleccion.to_i < 0
+      aciertos += 1 if eleccion.to_i == correcta
     end
-    juicio = begin; pbRandom(RUTA_ARCEUS_JUEGO_REFUGIOS.length).to_i; rescue StandardError; 0; end
-    if juicio == eleccion.to_i
-      @ruta_juego_bono_acciones = 2
-      pbDisplayPaused(_INTL("¡El juicio pasa de largo! Los próximos dos golpes de Arceus pesan la mitad."))
+    @ruta_juego_bono_acciones = [@ruta_juego_bono_acciones.to_i + aciertos, 3].min
+    if aciertos == largo
+      pbDisplayPaused(_INTL("¡Memoria perfecta! Los próximos {1} ataques de Arceus pierden la mitad de su fuerza.", aciertos))
+    elsif aciertos > 0
+      pbDisplayPaused(_INTL("{1} sellos correctos. Ash obtiene {1} usos de guardia contra los próximos ataques.", aciertos))
     else
-      pbDisplayPaused(_INTL("«El juicio te encontraba igual.» Arceus casi parece divertirse."))
+      objetivo.stages[:SPECIAL_DEFENSE] = [objetivo.stages[:SPECIAL_DEFENSE].to_i - 1, -6].max if objetivo.respond_to?(:stages)
+      pbDisplayPaused(_INTL("La secuencia se rompe. El Juicio encuentra a {1}: su Defensa Especial baja un nivel.", nombre))
     end
+    return aciertos
   rescue StandardError
+    0
   end
 
+  # Ruleta de las Tablas: en tres rondas se muestra un tipo de ataque y Ash
+  # elige una Placa que lo resiste. El motor comprueba las relaciones de tipo.
   def ruta_arceus_ruleta(boss, objetivo)
-    return if !objetivo
+    return 0 if !objetivo || !respond_to?(:pbShowCommands)
     ruta_arceus_decir(:juego)
-    pbDisplayPaused(_INTL("Arceus hace girar una ruleta de estrellas. Lo que salga, sale a favor de Ash: hasta los juegos del Génesis tienen misericordia."))
-    giro = begin; pbRandom(5).to_i; rescue StandardError; 0; end
-    case giro
-    when 0
-      objetivo.pbRecoverHP([(objetivo.totalhp.to_i / 4).round, 1].max)
-      pbDisplayPaused(_INTL("La ruleta cae en VERDE: {1} recupera un cuarto de su vida.", objetivo.respond_to?(:name) ? objetivo.name : "tu Pokémon"))
-    when 1
-      objetivo.stages[:ATTACK] = [objetivo.stages[:ATTACK].to_i + 1, 6].min if objetivo.respond_to?(:stages) && objetivo.stages
-      pbDisplayPaused(_INTL("La ruleta cae en ROJO: el ataque de Ash sube un nivel."))
-    when 2
-      objetivo.stages[:SPEED] = [objetivo.stages[:SPEED].to_i + 1, 6].min if objetivo.respond_to?(:stages) && objetivo.stages
-      pbDisplayPaused(_INTL("La ruleta cae en AZUL: la velocidad de Ash sube un nivel."))
-    when 3
-      RutaCampoSeguro.sanitizar!(self) if Object.const_defined?(:RutaCampoSeguro)
-      pbDisplayPaused(_INTL("La ruleta cae en BLANCO: el campo se aquieta y todo efecto extraño se borra."))
+    aciertos = 0
+    3.times do |ronda|
+      ataque = RUTA_ARCEUS_PHASE_TYPES[pbRandom(RUTA_ARCEUS_PHASE_TYPES.length).to_i]
+      resistentes = RUTA_ARCEUS_PHASE_TYPES.select do |defensa|
+        Effectiveness.calculate(ataque, defensa, nil, nil).to_f < Effectiveness::NORMAL_EFFECTIVE
+      end
+      correctas = resistentes.empty? ? RUTA_ARCEUS_PHASE_TYPES : resistentes
+      correcta = correctas[pbRandom(correctas.length).to_i]
+      opciones = [correcta]
+      distractores = RUTA_ARCEUS_PHASE_TYPES.reject { |type| correctas.include?(type) }
+      while opciones.length < 4 && distractores.any?
+        opciones.push(distractores.delete_at(pbRandom(distractores.length).to_i))
+      end
+      while opciones.length < 4
+        candidato = RUTA_ARCEUS_PHASE_TYPES[pbRandom(RUTA_ARCEUS_PHASE_TYPES.length).to_i]
+        opciones.push(candidato) if !opciones.include?(candidato)
+      end
+      opciones = opciones.shuffle(random: Random.new(pbRandom(999983).to_i + ronda + 1))
+      etiquetas = opciones.map { |type| GameData::Type.get(type).name }
+      ataque_nombre = GameData::Type.get(ataque).name
+      pbDisplayPaused(_INTL("Ronda {1}/3: Arceus anuncia un ataque de tipo {2}. Elige una Tabla que lo resista.",
+                            ronda + 1, ataque_nombre))
+      eleccion = pbShowCommands(_INTL("¿Qué Tabla reduce {1}?", ataque_nombre), etiquetas, -1)
+      break if eleccion.nil? || eleccion.to_i < 0
+      aciertos += 1 if correctas.include?(opciones[eleccion.to_i])
+    end
+    @ruta_juego_bono_acciones = [@ruta_juego_bono_acciones.to_i + aciertos, 3].min
+    if aciertos == 3
+      pbDisplayPaused(_INTL("¡Las tres Tablas correctas! Los próximos ataques de Arceus pierden la mitad de su fuerza."))
+    elsif aciertos > 0
+      pbDisplayPaused(_INTL("{1} respuestas correctas: Ash consigue {1} usos de guardia.", aciertos))
     else
-      pbDisplayPaused(_INTL("La ruleta cae en DORADO: Arceus sólo sonríe. También eso es un regalo."))
+      objetivo.stages[:DEFENSE] = [objetivo.stages[:DEFENSE].to_i - 1, -6].max if objetivo.respond_to?(:stages)
+      pbDisplayPaused(_INTL("La ruleta se detiene en la Tabla equivocada. La Defensa de {1} baja un nivel.", objetivo.name))
     end
-    begin
-      pbAnimation(:SING, boss, [])
-    rescue StandardError
-    end
+    return aciertos
   rescue StandardError
+    0
   end
 
-  # R12 — Invocaciones del lore: si Arceus diera la orden divina de destruir
-  # el mundo, sus creaciones ejecutarían el apocalipsis. Aquí las presta para
-  # jugar: el Trío golpea (sin rematar jamás), Groudon/Kyogre traen su clima,
-  # los lagos apagan la mente, Mew/Celebi interceden por Ash y Rayquaza/Zygarde
-  # someten el campo. Con enfriamiento y sin repetir leyenda consecutiva.
+  # Invoca una creación por fase y, después, puede repetir la Orden cada tres
+  # turnos. No es una animación ni un daño guionizado: entra un Pokémon real en
+  # el hueco aliado, ejecuta un movimiento dañino del motor y luego se retira.
   def ruta_arceus_invocar(boss)
     return if !boss || boss.fainted? || @arceus_phase.to_i < 2
-    return if @turnCount.to_i < 3
-    return if @ruta_invocacion_turno == @turnCount
-    ultimo = @ruta_invocacion_ultimo_turno.to_i
-    return if ultimo > 0 && @turnCount.to_i - ultimo < 4
-    semilla = begin; pbRandom(100).to_i; rescue StandardError; 100; end
-    return if semilla >= 30
-    @ruta_invocacion_turno = @turnCount
-    @ruta_invocacion_ultimo_turno = @turnCount.to_i
+    return if @arceus_capture_ready || @ruta_arceus_invocation_state
+    return if @turnCount.to_i < 2 || @ruta_invocacion_turno == @turnCount
+    return if @ruta_invocacion_comprobada_turno == @turnCount
+    @ruta_invocacion_comprobada_turno = @turnCount.to_i
+    fase = @arceus_phase.to_i
+    invocacion_de_fase = (@ruta_invocacion_fase.to_i != fase)
+    unless invocacion_de_fase
+      ultimo = @ruta_invocacion_ultimo_turno.to_i
+      return if ultimo > 0 && @turnCount.to_i - ultimo < 3
+      semilla = begin; pbRandom(100).to_i; rescue StandardError; 100; end
+      return if semilla >= 45
+    end
     lista = RUTA_ARCEUS_INVOCACIONES.reject { |fila| fila[0] == @ruta_invocacion_ultima }
     lista = RUTA_ARCEUS_INVOCACIONES if lista.empty?
     fila = begin; lista[pbRandom(lista.length).to_i]; rescue StandardError; lista.first; end
     return if !fila
-    @ruta_invocacion_ultima = fila[0]
-    nombre, movimiento, clase, linea = fila
+    nombre, movimiento, _clase, linea = fila
+    datos = RUTA_ARCEUS_INVOCATION_MOVES[nombre] || []
+    ataques = pbArceusSafeMoveIds([movimiento] + datos, true)
+    id_mov = ataques.first
+    return if !id_mov
+    @ruta_invocacion_ultima = nombre
+    @ruta_invocacion_fase = fase
+    @ruta_invocacion_turno = @turnCount
+    @ruta_invocacion_ultimo_turno = @turnCount.to_i
     ruta_arceus_decir(:invocacion)
     pbDisplayPaused(_INTL("Arceus inclina la cabeza hacia el cielo roto. ¡{1} responde a la Orden Divina!", nombre.to_s))
-    objetivo = @battlers.find { |b| b && !b.fainted? && ruta_arceus_ash_side?(b) }
-    id_mov = begin
-      GameData::Move.exists?(movimiento) ? movimiento : :JUDGMENT
-    rescue StandardError
-      :JUDGMENT
-    end
-    # R14: el legendario nombrado SE HACE PRESENTE: si pelea junto al Creador en
-    # el campo, ejecuta la orden él mismo; si no, reemplaza el cuerpo de Arceus.
     pbArceusOrdenDivina(boss, nombre, id_mov, linea)
-    begin
-      pbAnimation(id_mov, boss, objetivo ? [objetivo] : [])
-    rescue StandardError
-    end
-    case clase
-    when :clima
-      begin
-        pbStartWeather(boss, nombre == :KYOGRE ? :Rain : :Sun, false, true, 5)
-      rescue StandardError
-      end
-    when :orden
-      begin
-        RutaCampoSeguro.sanitizar!(self) if Object.const_defined?(:RutaCampoSeguro)
-        pbStartWeather(boss, :None, false, true, 5)
-      rescue StandardError
-      end
-    when :mente
-      if objetivo && objetivo.respond_to?(:stages) && objetivo.stages
-        stat = [:ATTACK, :DEFENSE, :SPECIAL_ATTACK, :SPECIAL_DEFENSE, :SPEED][begin; pbRandom(5).to_i; rescue StandardError; 0; end]
-        objetivo.stages[stat] = [objetivo.stages[stat].to_i - 1, -6].max
-        pbDisplayPaused(_INTL("¡El {1} de {2} baja un nivel!", stat.to_s.downcase.tr("_", " "), objetivo.respond_to?(:name) ? objetivo.name : "Ash"))
-      end
-    when :merced
-      if objetivo
-        begin
-          objetivo.pbRecoverHP([(objetivo.totalhp.to_i / 10).round, 1].max)
-        rescue StandardError
-        end
-      end
-    else
-      if objetivo && objetivo.hp.to_i > 1
-        danio = [(objetivo.totalhp.to_i * ruta_arceus_divine_ratio * 0.6).round, 1].max
-        danio = [danio, objetivo.hp.to_i - 1].min
-        objetivo.pbReduceHP(danio) if danio > 0
-      end
-      if objetivo && objetivo.hp.to_i <= 1
-        pbDisplayPaused(_INTL("Arceus: «No lo remato. Todavía no. Eso me lo guardo.»"))
-      end
-    end
   rescue StandardError
   end
 
@@ -2995,8 +3278,11 @@ class PokeBattle_Battle
       rescue StandardError
       end
     end
-    golpes = golpes.uniq
+    golpes = pbArceusSafeMoveIds(golpes.uniq, true)
     return if golpes.empty?
+    @ruta_arceus_equipo_move_ids = golpes
+    @ruta_arceus_attack_catalog = nil
+    @ruta_arceus_status_move_ids = nil
     muestra = begin
       golpes.shuffle(random: Random.new(pbRandom(999983).to_i + 1)).first(3)
     rescue StandardError
@@ -3086,9 +3372,8 @@ class PokeBattle_Battle
     return false if lost <= 0
     total = target.totalhp.to_i
     return false if total <= 0
-    # R12: el tope VARÍA por acción (12%-33%, más pesado en fases tardías y en
-    # la Forma Mega); el bono del Juicio Ciego lo parte en dos. Sigue siendo
-    # imposible caer de un solo golpe estando sano.
+    # El tope VARÍA por acción (22%-48%, más pesado en fases tardías y Mega);
+    # el bono del Juicio Ciego lo parte en dos. Un Pokémon sano no cae de un golpe.
     cap = (total * ruta_arceus_divine_ratio).round
     cap = 1 if cap < 1
     if @ruta_juego_bono_acciones.to_i > 0
@@ -3120,16 +3405,29 @@ class PokeBattle_Battle
     false
   end
 
-  # El daño que Ash hace a las seis barras vale por lo que aprendió mirando
-  # cada batalla del prólogo: cada impacto multiplica su fuerza y nunca baja de
-  # media barra, para que la victoria dependa de pelear bien y no del desgaste.
+  # El vínculo de Ash refuerza el daño, pero el acumulado de TODOS los impactos
+  # de una acción queda topado al 38% de una barra. Evita que un multigolpe o
+  # una habilidad de varios impactos vacíe varias fases antes de que actúe el jefe.
   def ruta_arceus_ash_bar_damage(battler, amount)
     return amount if !battler || amount.to_i <= 0
     return amount if !arceus_player_action?(battler)
+    total_hp = battler.totalhp.to_i
+    return amount if total_hp <= 0
+    key = arceus_action_key
+    state = @ruta_arceus_bar_action_state
+    if !state || state[:key] != key
+      state = { :key => key, :damage => 0 }
+      @ruta_arceus_bar_action_state = state
+    end
+    cap = [(total_hp * RUTA_ARCEUS_ASH_BAR_MAX_RATIO).round, 1].max
+    remaining = [cap - state[:damage].to_i, 0].max
+    return 0 if remaining <= 0
     boosted = (amount.to_i * RUTA_ARCEUS_ASH_BAR_POWER).round
-    minimum = (battler.totalhp.to_i * RUTA_ARCEUS_ASH_BAR_MIN_RATIO).ceil
-    boosted = minimum if boosted < minimum
-    return boosted
+    minimum = [(total_hp * RUTA_ARCEUS_ASH_BAR_MIN_RATIO).ceil, 1].max
+    scaled = [[boosted, minimum].max, cap].min
+    applied = [scaled, remaining].min
+    state[:damage] = state[:damage].to_i + applied
+    return applied
   rescue StandardError
     amount
   end
@@ -3149,9 +3447,10 @@ class PokeBattle_Battle
   # etapa ni derrotar al dios. Devuelve el daño real que se aplicará.
   def pbArceusDivineBarDamage(battler, amount)
     return 0 if !arceus_divine? || !battler || amount.to_i <= 0
-    # R8: el daño del lado de Ash vale por el vínculo que forjó en el prólogo y
-    # nunca baja de media barra, así que cada turno del jugador avanza el duelo.
+    return 0 if battler.instance_variable_get(:@ruta_arceus_retired_for_summon)
+    # El vínculo de Ash potencia los impactos, con tope acumulado por acción.
     amount = ruta_arceus_ash_bar_damage(battler, amount)
+    return 0 if amount.to_i <= 0
     resolved = arceus_before_damage(battler, amount)
     if resolved == :ruta_arceus_stage_break
       pbArceusDepleteBar(battler)
@@ -3230,8 +3529,8 @@ class PokeBattle_Battle
     @arceus_redline_healed_phase = @arceus_phase
     old_hp = battler.hp
     restored = [(battler.totalhp * RUTA_ARCEUS_REDLINE_HEAL_RATIO).round, 1].max
-    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. El altar le devuelve media barra, pero el avance de Ash no se borra.")) if !ruta_arceus_primigenia?
-    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. La Forma Primigenia se recuerda a sí misma: media barra vuelve, y no habrá otra.")) if ruta_arceus_primigenia?
+    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. El altar le devuelve un cuarto de barra, pero el avance de Ash no se borra.")) if !ruta_arceus_primigenia?
+    pbDisplayPaused(_INTL("Arceus cruza el umbral rojo. La Forma Primigenia se recuerda a sí misma: un cuarto de barra vuelve, y no habrá otra.")) if ruta_arceus_primigenia?
     battler.ruta_arceus_scripted_hp_write { battler.hp = [battler.hp + restored, battler.totalhp].min }
     pbArceusAnimateHP(battler, old_hp)
     pbDisplayPaused(_INTL("Arceus: «Toda herida me enseña. Aun así, Ash, este aliento no detiene tu camino.»"))
@@ -3294,53 +3593,75 @@ class PokeBattle_Battle
     end
   end
 
-  # R14 — El fondo de la batalla divina es el cosmos de la Cima y CAMBIA con el
-  # duelo: familias genesis1 (calma estelar), genesis2 (tormenta violeta) y
-  # genesis3 (apocalipsis carmesí). Sin pantallas blancas: sólo cielo, tono y
-  # sacudida. Reutiliza los sprites vivos de la escena (sin fugas ni recreación).
+  # El cosmos y la plataforma cambian en los sprites vivos de la escena. No se
+  # guarda el ID hasta que el bitmap haya sido cargado: así un llamado temprano
+  # sin escena no bloquea todos los cambios posteriores.
   def pbArceusFondo(familia)
-    return if !familia || @ruta_arceus_fondo == familia
-    ruta = "Graphics/Battlebacks/#{familia}_bg"
-    return if !pbResolveBitmap(ruta)
-    @ruta_arceus_fondo = familia
+    return false if !familia
     escena = @scene
-    return if !escena || !escena.respond_to?(:sprites)
+    return false if !escena || !escena.respond_to?(:sprites) || !escena.sprites
     sp = escena.sprites
-    return if !sp
+    ruta = "Graphics/Battlebacks/#{familia}_bg"
+    return false if !pbResolveBitmap(ruta)
+    return true if @ruta_arceus_fondo == familia && sp["battle_bg"]
+    actualizados = 0
     ["battle_bg", "battle_bg2"].each do |key|
       sprite = sp[key]
       next if !sprite
-      sprite.setBitmap(ruta) rescue next
-      sprite.mirror = true if key == "battle_bg2"
+      begin
+        sprite.setBitmap(ruta)
+        sprite.mirror = true if key == "battle_bg2" && sprite.respond_to?(:mirror=)
+        actualizados += 1
+      rescue StandardError
+        next
+      end
     end
+    tonos = {
+      "genesis1" => [0, 0, 0, 0],
+      "genesis2" => [28, 4, 70, 0],
+      "genesis3" => [92, -20, -12, 0]
+    }
+    tono = tonos[familia] || [0, 0, 0, 0]
     [0, 1].each do |side|
       sprite = sp["base_#{side}"]
       next if !sprite
       completa = "Graphics/Battlebacks/genesis1_base#{side}"
       next if !pbResolveBitmap(completa)
-      sprite.setBitmap(completa) rescue next
-      if sprite.bitmap
-        sprite.ox = sprite.bitmap.width / 2
-        sprite.oy = (side == 0) ? sprite.bitmap.height : sprite.bitmap.height / 2
+      begin
+        sprite.setBitmap(completa)
+        sprite.ox = sprite.bitmap.width / 2 if sprite.bitmap
+        sprite.oy = (side == 0) ? sprite.bitmap.height : sprite.bitmap.height / 2 if sprite.bitmap
+        sprite.tone = Tone.new(tono[0], tono[1], tono[2], tono[3]) if sprite.respond_to?(:tone=)
+      rescue StandardError
+        next
       end
     end
+    return false if actualizados <= 0
+    @ruta_arceus_fondo = familia
+    return true
   rescue StandardError
+    false
   end
 
-  # R14 — Redibuja el sprite del combatiente con su especie visual activa. La
-  # posesión de la Orden Divina cambia cuerpo, tipos y ataques en pantalla sin
-  # tocar el objeto Pokémon real: la captura siempre devuelve a Arceus.
+  # Redibuja el Pokémon completo (sprite, sombra y caja de datos). La Forma 18
+  # usa el PNG multibrazo real; las invocaciones tienen su propio battler aliado.
   def pbArceusRedibujar(battler)
-    return if !battler || !@scene || !@scene.respond_to?(:sprites)
+    return false if !battler || !@scene || !@scene.respond_to?(:sprites) || !battler.pokemon
     sprite = @scene.sprites["pokemon_#{battler.index}"]
-    return if !sprite || !battler.pokemon
+    return false if !sprite
     especie = battler.instance_variable_get(:@ruta_arceus_poseer_especie)
     if especie && GameData::Species.exists?(especie)
-      sprite.setPokemonBitmapSpecies(battler.pokemon, especie, !battler.opposes?) rescue nil
+      sprite.setPokemonBitmapSpecies(battler.pokemon, especie, !battler.opposes?)
+    elsif @scene.respond_to?(:pbChangePokemon)
+      @scene.pbChangePokemon(battler.index, battler.pokemon)
     else
-      sprite.setPokemonBitmap(battler.pokemon, !battler.opposes?) rescue nil
+      sprite.setPokemonBitmap(battler.pokemon, !battler.opposes?)
     end
+    sprite.opacity = battler.instance_variable_get(:@ruta_arceus_retired_for_summon) ? 72 : 255 if sprite.respond_to?(:opacity=)
+    @scene.pbRefreshOne(battler.index) if @scene.respond_to?(:pbRefreshOne)
+    return true
   rescue StandardError
+    false
   end
 
   # R14 — Séquito de la Orden Divina: el duelo contra el Creador es una batalla
@@ -3379,58 +3700,56 @@ end
 
 class PokeBattle_Battle
 
-  # R14 — Fin de la posesión: Arceus retoma su cuerpo verdadero (sprite, tipos,
-  # estadísticas y repertorio de la etapa). La posesión usa el Transform del
-  # motor, así que revertirla es devolver la identidad del jefe.
-  def pbArceusPosesionFin(boss)
-    return if !boss || boss.fainted?
-    return if boss.instance_variable_get(:@ruta_arceus_poseer_especie).nil?
-    boss.instance_variable_set(:@ruta_arceus_poseer_especie, nil)
-    if boss.effects
-      boss.effects[PBEffects::Transform] = false
-      boss.effects[PBEffects::TransformSpecies] = 0
+  # Retira al invocado después de su acción y devuelve el aliado que ocupaba su
+  # hueco. El Pokémon original conserva PS, estado, objeto y PP en su propio dato.
+  def pbArceusDismissInvocation(boss)
+    state = @ruta_arceus_invocation_state
+    return false if !state
+    slot_index = state[:slot_index].to_i
+    slot = @battlers[slot_index]
+    original = state[:original_pokemon]
+    if slot && original
+      slot.pbInitialize(original, state[:original_party_index].to_i)
+      pbClearChoice(slot.index) if respond_to?(:pbClearChoice)
+      pbArceusRedibujar(slot)
     end
-    boss.pbUpdate(true) if boss.respond_to?(:pbUpdate)
-    fase = [[(@arceus_phase || 1).to_i, 1].max, RUTA_ARCEUS_STAGE_COUNT].min
-    pbArceusSetMoves(boss, RUTA_ARCEUS_MOVE_SETS[fase - 1])
-    pbArceusRedibujar(boss)
-    pbDisplayPaused(_INTL("Arceus retoma su verdadero cuerpo: la Orden vuelve a su interior."))
+    boss ||= @battlers[state[:boss_index].to_i]
+    if boss
+      boss.instance_variable_set(:@ruta_arceus_retired_for_summon, false)
+      pbArceusRedibujar(boss)
+    end
+    @ruta_arceus_invocation_state = nil
+    pbDisplayPaused(_INTL("La invocación se retira. Arceus vuelve al campo y el aliado recupera su lugar."))
+    return true
   rescue StandardError
+    @ruta_arceus_invocation_state = nil
+    if boss
+      boss.instance_variable_set(:@ruta_arceus_retired_for_summon, false)
+      pbArceusRedibujar(boss) rescue nil
+    end
+    false
   end
 
-  # R14 — La Orden Divina hecha presencia: si el legendario nombrado sigue en pie
-  # en el campo, ejecuta la orden él mismo (se fortalece y golpea); si ya cayó,
-  # Arceus le presta su cuerpo y el legendario LO REEMPLAZA dos turnos (sprite y
-  # ataques reales del legendario). Siempre es el dios de los Pokémon quien
-  # concede el cuerpo: nunca al revés.
+  # Nombre histórico conservado para el verificador: ya no se transforma el
+  # battler de Arceus; ahora la Orden usa un hueco aliado y se retira tras atacar.
+  def pbArceusPosesionFin(boss)
+    pbArceusDismissInvocation(boss)
+  end
+
   def pbArceusOrdenDivina(boss, especie, movimiento, linea)
-    return if !boss || boss.fainted?
-    aliado = @battlers.find do |b|
-      b && !b.fainted? && b != boss && b.pokemon && b.pokemon.species == especie &&
-        b.opposes? == boss.opposes?
-    end
-    if aliado
-      pbDisplayPaused(_INTL("¡{1} ejecuta la Orden Divina en persona, junto al Creador!", aliado.name))
-      begin
-        objetivo = @battlers.find { |b| b && !b.fainted? && b.opposes? != boss.opposes? }
-        pbAnimation(movimiento, aliado, objetivo ? [objetivo] : []) if movimiento
-      rescue StandardError
-      end
-      begin
-        aliado.pbRecoverHP([(aliado.totalhp.to_i * 0.3).round, 1].max)
-        2.times do
-          stat = [:ATTACK, :DEFENSE, :SPECIAL_ATTACK, :SPECIAL_DEFENSE, :SPEED][pbRandom(5).to_i]
-          aliado.stages[stat] = [aliado.stages[stat].to_i + 1, 6].min
-        end
-      rescue StandardError
-      end
-      pbDisplayPaused(_INTL(linea)) if linea
-      return
-    end
-    pbArceusSummon(boss, especie, especie.to_s)
-    @ruta_posesion_turnos = 2
+    return false if !boss || boss.fainted? || @ruta_arceus_invocation_state
+    movimientos = RUTA_ARCEUS_INVOCATION_MOVES[especie] || []
+    ataque = pbArceusSafeMoveIds([movimiento] + movimientos, true).first
+    return false if !ataque
+    invocado = pbArceusSummon(boss, especie, especie.to_s, [ataque] + movimientos)
+    return false if !invocado
+    @ruta_invocacion_fase = @arceus_phase.to_i
+    @ruta_invocacion_turno = @turnCount
+    @ruta_invocacion_ultimo_turno = @turnCount.to_i
     pbDisplayPaused(_INTL(linea)) if linea
+    return true
   rescue StandardError
+    false
   end
 
   # R14 — El Arceus capturado heredó la Mega de los Mil Brazos: una vez por
@@ -3599,18 +3918,67 @@ class PokeBattle_Battle
                           plate_name, RUTA_ARCEUS_TYPE_NAMES[index], rival))
   end
 
-  # If Ash changes the active Pokémon, recalculate the best Plate before
-  # Arceus chooses its next attack. The full roulette only replays if the
-  # strategic type actually changes.
+  # Judgment no repite siempre la respuesta perfecta: elige al azar entre las
+  # Placas que siguen siendo tácticamente fuertes, evita la elegida hace poco y
+  # muestra la ruleta justo antes del ataque para que la variación sea legible.
+  def pbArceusDivineJudgmentPlateIndex(battler)
+    targets = @battlers.select do |target|
+      target && !target.fainted? && target.opposes? != battler.opposes?
+    end
+    return pbArceusBestPlateIndex(battler, @arceus_phase || 1) if targets.empty?
+    scores = []
+    RUTA_ARCEUS_PHASE_TYPES.each_with_index do |type, index|
+      offensive = targets.map do |target|
+        types = target.pbTypes(true)
+        Effectiveness.calculate(type, types[0], types[1], types[2]).to_f /
+          Effectiveness::NORMAL_EFFECTIVE
+      end
+      next if offensive.empty? || offensive.max <= 0
+      incoming = []
+      targets.each do |target|
+        target.moves.each do |move|
+          next if !move || !move.damagingMove? || !move.type
+          incoming.push(Effectiveness.calculate(move.type, type, nil, nil).to_f /
+                        Effectiveness::NORMAL_EFFECTIVE)
+        end
+      end
+      defense = incoming.empty? ? 1.0 : incoming.inject(0.0) { |sum, value| sum + value } / incoming.length
+      score = (offensive.max * 72.0) +
+              ((offensive.inject(0.0) { |sum, value| sum + value } / offensive.length) * 20.0) +
+              ((1.0 - defense) * 8.0)
+      scores.push([score, index])
+    end
+    return pbArceusBestPlateIndex(battler, @arceus_phase || 1) if scores.empty?
+    best = scores.map { |row| row[0] }.max.to_f
+    pool = scores.select { |row| row[0] >= best * 0.68 }
+    history = @ruta_arceus_judgment_plate_history || []
+    current = battler.instance_variable_get(:@ruta_arceus_plate_index)
+    fresh = pool.reject { |row| row[1] == current || history.last(2).include?(row[1]) }
+    pool = fresh if fresh.any?
+    pool = scores.reject { |row| row[1] == current } if pool.empty?
+    pool = scores if pool.empty?
+    chosen = pool[pbRandom(pool.length).to_i]
+    index = chosen ? chosen[1] : scores[0][1]
+    history.push(index)
+    history.shift while history.length > 3
+    @ruta_arceus_judgment_plate_history = history
+    return index
+  rescue StandardError
+    pbArceusBestPlateIndex(battler, @arceus_phase || 1)
+  end
+
+  # Arceus salvaje no muestra la Tabla hasta que decide usar Judgment; el
+  # Arceus capturado conserva su lógica de rotación estándar.
   def pbArceusAdaptTypeToRival(battler)
     return false if !battler
-    index = pbArceusBestPlateIndex(battler, @arceus_phase || 1)
+    index = arceus_divine? ? pbArceusDivineJudgmentPlateIndex(battler) :
+                            pbArceusBestPlateIndex(battler, @arceus_phase || 1)
     plate = RUTA_ARCEUS_PHASE_PLATES[index]
     type = RUTA_ARCEUS_PHASE_TYPES[index]
     active_types = battler.pbTypes(true)
     current_index = battler.instance_variable_get(:@ruta_arceus_plate_index)
     return false if current_index == index && battler.item == plate && active_types[0] == type
-    pbDisplayPaused(_INTL("Arceus observa tu cambio y vuelve a calcular la respuesta más ventajosa."))
+    pbDisplayPaused(_INTL("Arceus oculta qué Tabla dictará Judgment hasta que las 17 vuelven a girar."))
     pbArceusRotateType(battler, @arceus_phase || 1, index)
     return true
   rescue StandardError
@@ -3678,63 +4046,78 @@ class PokeBattle_Battle
   rescue StandardError
   end
 
-  def pbArceusSummon(battler, species, label)
-    return if !GameData::Species.exists?(species)
-    # R2: los ecos no pueden nacer al nivel 200 (reservado al Arceus divino), pero
-    # conservan la fuerza de la aparición: nivel máximo legal y un empuje divino.
-    summon_level = GameData::GrowthRate.max_level
-    summon_level = 150 if !summon_level || summon_level < 1
-    summon = Pokemon.new(species, summon_level)
-    summon.personalID = 0xA2CE0201 if summon.respond_to?(:personalID=)
-    summon.ability_index = 0 if summon.respond_to?(:ability_index=)
-    summon.instance_variable_set(:@shiny, false)
-    summon.instance_variable_set(:@square_shiny, false)
-    summon.nature = :HARDY if summon.respond_to?(:nature=)
-    GameData::Stat.each_main { |stat| summon.iv[stat.id] = 31 }
-    summon.ev[:HP] = 6
-    summon.ev[:SPECIAL_ATTACK] = 252
-    summon.ev[:SPEED] = 252
-    summon.calc_stats
-    temp = PokeBattle_Battler.new(self, battler.index)
-    temp.pbInitialize(summon, -1)
-    [:attack, :defense, :spatk, :spdef, :speed].each do |stat|
-      value = temp.instance_variable_get(:"@#{stat}")
-      temp.instance_variable_set(:"@#{stat}", (value.to_f * 1.25).round) if value
+  def pbArceusSummon(battler, species, label, move_ids = nil)
+    return false if !battler || battler.fainted? || !GameData::Species.exists?(species)
+    return false if @ruta_arceus_invocation_state
+    slot = @battlers.find do |candidate|
+      candidate && candidate != battler && candidate.opposes? == battler.opposes?
     end
-    battler.pbTransform(temp)
-    # R14: la invocación REEMPLAZA a Arceus en pantalla: el sprite del campo pasa
-    # a ser el del legendario (especie visual), con sus tipos y ataques reales.
-    battler.instance_variable_set(:@ruta_arceus_poseer_especie, species)
+    return false if !slot || !slot.pokemon
+    attacks = pbArceusSafeMoveIds(move_ids || RUTA_ARCEUS_INVOCATION_MOVES[species], true)
+    return false if attacks.empty?
+    summon_level = GameData::GrowthRate.max_level.to_i
+    summon_level = 100 if summon_level < 1
+    summon = pbArceusBuildLegendario(species, attacks, summon_level)
+    summon.moves = attacks.map { |id| Pokemon::Move.new(id) }
+    offense = begin
+      GameData::Move.get(attacks[0]).category == :Physical ? :ATTACK : :SPECIAL_ATTACK
+    rescue StandardError
+      :SPECIAL_ATTACK
+    end
+    summon.ev[:HP] = 6 if summon.respond_to?(:ev)
+    summon.ev[offense] = 252 if summon.respond_to?(:ev)
+    summon.ev[:SPEED] = 252 if summon.respond_to?(:ev)
+    summon.calc_stats if summon.respond_to?(:calc_stats)
+    summon.hp = summon.totalhp if summon.respond_to?(:hp=)
+    state = {
+      :slot_index => slot.index,
+      :boss_index => battler.index,
+      :original_pokemon => slot.pokemon,
+      :original_party_index => slot.instance_variable_get(:@pokemonIndex).to_i,
+      :species => species,
+      :preferred_move => attacks[0],
+      :action_turn => nil
+    }
+    @ruta_arceus_invocation_state = state
+    slot.pbInitialize(summon, -1)
+    pbClearChoice(slot.index) if respond_to?(:pbClearChoice)
+    battler.instance_variable_set(:@ruta_arceus_retired_for_summon, true)
+    pbArceusRedibujar(slot)
     pbArceusRedibujar(battler)
-    pbDisplay(_INTL("¡Arceus cede su cuerpo a {1}! El legendario LO REEMPLAZA en el campo: misma voluntad divina, otra forma.", label))
+    pbDisplayPaused(_INTL("¡{1} entra como invocación real y ocupa el hueco aliado! Arceus se retira tras su guardia: no puede recibir daño mientras {1} ataque con {2}.",
+                          label, GameData::Move.get(attacks[0]).name))
+    return true
   rescue StandardError
-    pbDisplay(_INTL("¡Una silueta de {1} atraviesa la distorsión!", label))
+    pbArceusDismissInvocation(battler) if @ruta_arceus_invocation_state
+    false
   end
 
   def pbArceusCopyActive(battler)
     target = @battlers.find { |b| b && b.pbOwnedByPlayer? && !b.fainted? }
-    return if !target
-    pbDisplay(_INTL("Arceus extiende una mano de luz hacia {1} y toma a tu Pokémon activo para observarlo.", target.name))
-    pbDisplay(_INTL("Con mi creación {1} pretendes hacerme frente, humano?", target.name))
-    original_stats = {}
-    [:attack, :defense, :spatk, :spdef, :speed].each do |stat|
-      original_stats[stat] = battler.instance_variable_get(:"@#{stat}")
+    return false if !target || !target.pokemon
+    pbDisplay(_INTL("Arceus extiende una mano de luz hacia {1} y copia su silueta por un instante.", target.name))
+    pbDisplay(_INTL("«Con mi creación {1} pretendes hacerme frente, humano?»", target.name))
+    # La copia es un recurso visual, no un Transform permanente: el Transform
+    # del motor impide pbChangeForm y dejaba bloqueada la Forma de mil brazos.
+    battler.instance_variable_set(:@ruta_arceus_poseer_especie, target.pokemon.species)
+    pbArceusRedibujar(battler)
+    if @scene && @scene.respond_to?(:sprites)
+      sprite = @scene.sprites["pokemon_#{battler.index}"]
+      if sprite
+        12.times do |frame|
+          sprite.tone = Tone.new(70, 40, 120, frame.even? ? 40 : 0) if sprite.respond_to?(:tone=)
+          @scene.pbUpdate if @scene.respond_to?(:pbUpdate)
+        end
+        sprite.tone = Tone.new(0, 0, 0, 0) if sprite.respond_to?(:tone=)
+      end
     end
-    original_stages = {}
-    GameData::Stat.each_battle { |stat| original_stages[stat.id] = battler.stages[stat.id] }
-    original_ability = battler.instance_variable_get(:@ability_id)
-    original_focus = battler.effects[PBEffects::FocusEnergy]
-    original_laser = battler.effects[PBEffects::LaserFocus]
-    original_weight = battler.effects[PBEffects::WeightChange]
-    battler.pbTransform(target)
-    copied_ability = battler.instance_variable_get(:@ability_id)
-    original_stats.each { |stat, value| battler.instance_variable_set(:"@#{stat}", value) }
-    original_stages.each { |stat, value| battler.stages[stat] = value }
-    battler.effects[PBEffects::FocusEnergy] = original_focus
-    battler.effects[PBEffects::LaserFocus] = original_laser
-    battler.effects[PBEffects::WeightChange] = original_weight
-    battler.instance_variable_set(:@ability_id, original_ability)
-    battler.pbOnAbilityChanged(copied_ability) if battler.respond_to?(:pbOnAbilityChanged)
+    battler.instance_variable_set(:@ruta_arceus_poseer_especie, nil)
+    pbArceusRedibujar(battler)
+    return true
+  rescue StandardError
+    battler.instance_variable_set(:@ruta_arceus_poseer_especie, nil) if battler
+    pbArceusRedibujar(battler) if battler && respond_to?(:pbArceusRedibujar)
+    false
   end
 
   def pbArceusScaleSprite(battler, from, to, frames)
@@ -3754,6 +4137,7 @@ class PokeBattle_Battle
   def pbArceusOpeningRitual(battler, phase)
     return if !battler
     phase_index = [[phase.to_i - 1, 0].max, RUTA_ARCEUS_MOVE_SETS.length - 1].min
+    pbArceusFondo(RUTA_ARCEUS_FONDO_POR_FASE[phase_index])
     pbArceusSetMoves(battler, RUTA_ARCEUS_MOVE_SETS[phase_index])
     pbArceusApplyStageStats(battler, phase)
     pbArceusApplyStagePower(battler, phase)
@@ -3788,8 +4172,12 @@ class PokeBattle_Battle
         "El señor del Mundo Distorsión reclama su lugar: la Orden se cumple en su cuerpo.")
       pbArceusScaleSprite(battler, 1.24, 1.38, 24)
     end
-    pbArceusFondo(phase >= 5 ? "genesis3" : (phase >= 3 ? "genesis2" : "genesis1"))
     phase_index = phase - 1
+    familia = RUTA_ARCEUS_FONDO_POR_FASE[phase_index]
+    if pbArceusFondo(familia)
+      nombre_fondo = { "genesis1" => "Calma Estelar", "genesis2" => "Tormenta Violeta", "genesis3" => "Apocalipsis Carmesí" }[familia]
+      pbDisplayPaused(_INTL("El escenario de la Cima se transforma: {1} cubre el campo.", nombre_fondo || familia))
+    end
     pbArceusSetMoves(battler, RUTA_ARCEUS_MOVE_SETS[phase_index])
     pbArceusApplyStageStats(battler, phase)
     pbArceusApplyStagePower(battler, phase)
@@ -3848,11 +4236,18 @@ class PokeBattle_Battle
         pbArceusApplyStagePower(boss, @arceus_phase)
         pbArceusControlLevels(boss, @arceus_phase, false)
         pbArceusRedlineHeal(boss, true)
-        # R14: la posesión de la Orden Divina dura dos turnos y entonces Arceus
-        # retoma su cuerpo (sprite, tipos y repertorio de la etapa).
-        if @ruta_posesion_turnos.to_i > 0
-          @ruta_posesion_turnos -= 1
-          pbArceusPosesionFin(boss) if @ruta_posesion_turnos.to_i <= 0
+        # El invocado ocupa un puesto del séquito rival; el bucle enemigo de
+        # más abajo registra su acción en el motor normal. Al inicio de la
+        # siguiente ronda, se devuelve ese puesto a su Pokémon original.
+        state = @ruta_arceus_invocation_state
+        if !isPlayer && state && state[:action_turn] &&
+           @turnCount.to_i > state[:action_turn].to_i
+          pbArceusPosesionFin(boss)
+          state = nil
+        end
+        if !isPlayer && state && !state[:action_turn]
+          slot = @battlers[state[:slot_index].to_i]
+          pbArceusDismissInvocation(boss) if !slot || slot.fainted?
         end
       end
     end
@@ -3862,6 +4257,13 @@ class PokeBattle_Battle
         next if @choices[index][0] != :None || !pbCanShowCommands?(index)
         if battler.pokemon && battler.pokemon.species == :ARCEUS
           pbArceusScriptedAction(index, true)
+        elsif @ruta_arceus_invocation_state &&
+              @ruta_arceus_invocation_state[:slot_index].to_i == index
+          registered = pbArceusInvocationAction(index, battler)
+          if !registered && @ruta_arceus_invocation_state
+            pbArceusDismissInvocation(boss)
+            @battleAI.pbDefaultChooseEnemyCommand(index) if @choices[index][0] == :None && pbCanShowCommands?(index)
+          end
         else
           @battleAI.pbDefaultChooseEnemyCommand(index)
         end
@@ -4307,6 +4709,11 @@ end
 module PokeBattle_BattleCommon
   alias _ruta_arceus_original_capture_calc pbCaptureCalc unless method_defined?(:_ruta_arceus_original_capture_calc)
   def pbCaptureCalc(pkmn, battler, catch_rate, ball)
+    if battler && @ruta_arceus_invocation_state &&
+       @ruta_arceus_invocation_state[:slot_index].to_i == battler.index.to_i
+      pbDisplay(_INTL("La Orden Divina no puede convertirse en una captura: la invocación volverá a su lugar al terminar su acción."))
+      return 0
+    end
     if battler && battler.pokemon && battler.pokemon.species == :ARCEUS &&
        respond_to?(:arceus_divine?) && arceus_divine?
       if arceus_capture_ready?
@@ -6375,6 +6782,8 @@ function verify() {
       ["@species == :ARCEUS && @ruta_arceus_divine == true", "tope de nivel 200 reservado al Arceus divino"],
       ["divine ? normal_cap : safe_level", "el Arceus cinemático nace al tope normal y sube como divino"],
       ["arceus_capture_ready", "captura determinista tras agotar seis barras"],
+      ["@ruta_arceus_invocation_state[:slot_index].to_i == battler.index.to_i", "invocaciones no capturables y sin borrado de pokemonIndex -1"],
+      ["class PokeBattle_Move_0EC", "Dragon Tail/Circle Throw no termina el wild battle del jefe"],
       ["RUTA_ARCEUS_STAGE_COUNT = 6", "seis etapas y seis barras completas"],
       ["@ruta_arceus_bars_depleted", "contador de barras agotadas persistido en Arceus"],
       ["def pbArceusDepleteBar", "transición sólo cuando una barra completa llega a cero"],
@@ -6382,9 +6791,13 @@ function verify() {
       ["check_arceus_phase(battler)", "el hook canónico se ejecuta al avanzar de etapa"],
       ["return :ruta_arceus_stage_break if amount.to_i >= battler.hp", "el KO se transforma en una transición de etapa"],
       ["@ruta_arceus_last_bar_action_key", "un solo avance de barra por acción multigolpe"],
-      ["def pbArceusRedlineHeal", "curación completa de Arceus en rojo una vez por etapa"],
-      ["def pbArceusBestAttackIds", "catálogo de ataques puntuado contra el equipo activo"],
-      ["GameData::Move.each do |move_data|", "arsenal extraído de todos los ataques del juego"],
+      ["def pbArceusRedlineHeal", "curación de un cuarto de barra en rojo, una vez por etapa"],
+      ["def pbArceusMoveCatalogIds", "arsenal de nivel, tutor, fases y equipo copiado"],
+      ["def pbArceusStatusMoveIds", "subconjunto de apoyos puntuable por la IA"],
+      ["def pbArceusStatusMoveScore", "respaldo táctico para movimientos de estado"],
+      ["def pbArceusSelfDamagingMove?", "exclusión por ID y función de movimientos de autodaño"],
+      ["def pbArceusScriptBreakingMove?", "exclusión de movimientos que escaparían del combate"],
+      ["RUTA_ARCEUS_SELF_DAMAGING_FUNCTIONS", "lista auditable de funciones de autodaño"],
       ["@battleAI.pbRegisterMoveTrainer", "puntuación táctica de la IA de alto nivel del motor"],
       ["def pbArceusChooseSmartMove", "azar divino ponderado por puntaje real: amenaza variada sin bucles (R14)"],
       ["@ruta_arceus_move_history", "historial de acciones de Arceus"],
@@ -6413,16 +6826,16 @@ function verify() {
       ["pbArceusRotomMercy", "merced única del Rotom: red de seguridad sin pseudo-PC (R4/R14)"],
       ["RUTA_ARCEUS_SEQUITO = [", "séquito de la Orden Divina: duelo doble real (R14)"],
       ["def pbArceusFondo", "el cosmos de la Cima cambia con cada etapa, sin pantallas blancas (R14)"],
-      ["def pbArceusOrdenDivina", "los legendarios reemplazan a Arceus o ejecutan la orden en persona (R14)"],
+      ["def pbArceusOrdenDivina", "los legendarios ocupan un hueco real, ejecutan la orden y se retiran (R14)"],
       ["def pbArceusMilibrazosDespertar", "el Arceus capturado usa la Mega de los Mil Brazos (R14)"],
       ["pkmn.name = \"ARCEUS ORIGEN\"", "el marcador del duelo muestra el nombre verdadero del Creador (R14)"],
-      ["pbArceusRedibujar(battler)", "sprite real del legendario durante la posesión (R14)"],
+      ["pbArceusRedibujar(battler)", "sprite real de Arceus y del legendario durante la invocación (R14)"],
       ["battler.pbChangeForm(18", "la Mega cambia el sprite a la Forma Origen de mil brazos (R14)"],
       ["summon_level = GameData::GrowthRate.max_level", "los ecos invocados no usan el nivel 200 (R2)"],
       ["RUTA_DE_DIOS_PRELUDE_SEEN_SWITCH", "el prólogo sólo se ve una vez (R7)"],
       ["Ir directo al duelo con Arceus", "el prólogo se puede saltar desde el primer arranque (R8)"],
       ["RUTA_ARCEUS_HIT_CAP_RATIO", "Arceus no derriba de un solo golpe a los Pokémon de Ash (R8/R9)"],
-      ["RUTA_ARCEUS_REDLINE_HEAL_RATIO", "el umbral rojo no borra el avance de Ash: media barra (R9)"],
+      ["RUTA_ARCEUS_REDLINE_HEAL_RATIO", "el umbral rojo devuelve un cuarto de barra sin borrar el avance (R16)"],
       ["def ruta_arceus_apply_ohko_guard", "tope de daño por acción sobre la ruta real del duelo (R8/R9)"],
       ["def ruta_arceus_mega?", "Mega Arceus activo durante la última barra (R10)"],
       ["def ruta_arceus_mega_aparicion", "megaevolución de los Mil Brazos al agotar la quinta barra (R10)"],
