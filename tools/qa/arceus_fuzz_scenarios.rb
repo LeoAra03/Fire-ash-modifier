@@ -7,11 +7,10 @@
 # familia vive en su propio método: el arnés lanza un VM por familia porque el
 # heap de WASM no tolera las cuatro tandas acumuladas en un solo eval.
 #
-#   F1 · 602 400 · micro-fuzz de la guardia anti-KO (tope variable 12%-33%).
-#   F5 · ~200 000 · sistemas R12: mazos de diálogo sin repetición, ratio de
-#                   daño variable, música por fase, invocaciones del lore que
-#                   nunca rematan, bono de los juegos, merced del último
-#                   Pokémon (cura total + PP, una vez) y copia del equipo.
+#   F1 · 590 240 · micro-fuzz de la guardia anti-KO (tope variable hasta 48%).
+#   F5 · ~200 000 · sistemas R12: mazos sin repetición, daño variable, música,
+#                   invocaciones funcionales, minijuegos, merced de equipo y
+#                   copia segura de movimientos.
 #   F2 · 150 000 · clima/terreno sucios + pbStartWeather con basura + fin de
 #                  ronda parcheado + batalla_clima del canon.
 #   F3 ·   6 000 · duelos completos aleatorios: seis barras, umbral rojo,
@@ -64,13 +63,37 @@ def fuzz_divine_battle(party_n, boss_hp = 1000)
   [battle, party, boss]
 end
 
+def fuzz_invocation_battle(player_hp = 400)
+  player_a = FuzzMon.new(0, 0, :METAGROSS, 400)
+  player_b = FuzzMon.new(2, 0, :PIKACHU, 420)
+  boss = FuzzMon.new(1, 1, :ARCEUS, 1000)
+  slot = FuzzMon.new(3, 1, :GIRATINA, 600)
+  player_a.hp = player_hp
+  player_a.pokemon.moves = [Pokemon::Move.new(:METEORMASH)]
+  player_b.pokemon.moves = [Pokemon::Move.new(:EXTREMESPEED)]
+  slot.pokemon.moves = [Pokemon::Move.new(:SHADOWCLAW)]
+  slot.instance_variable_set(:@pokemonIndex, 1)
+  boss.pokemon.instance_variable_set(:@ruta_arceus_divine, true)
+  boss.pokemon.instance_variable_set(:@ruta_arceus_phase, 2)
+  boss.pokemon.instance_variable_set(:@ruta_arceus_capture_ready, false)
+  boss.pokemon.instance_variable_set(:@ruta_arceus_bars_depleted, 0)
+  boss.item = :LEGENDPLATE
+  battle = PokeBattle_Battle.new([player_a, player_b, boss, slot])
+  battle.ruta_side_split = 2
+  battle.sideSizes = [2, 2]
+  battle.instance_variable_set(:@arceus_divine, true)
+  battle.instance_variable_set(:@arceus_phase, 2)
+  battle.turnCount = 10
+  [battle, [player_a, player_b], boss, slot]
+end
+
 # ── F1 · micro-fuzz de la guardia anti-KO ───────────────────────────────────
 def fuzz_f1(rng, fallos)
   notar = lambda { |m| fallos << m if fallos.length < 30 }
   battle1, party1, boss1 = fuzz_divine_battle(2, 1000)
   objetivo = party1[0]
   f1 = 0
-  581_400.times do
+  590_240.times do
     total = 1 + rng.rand(3000)
     hp0 = 1 + rng.rand(total)
     lost = 1 + rng.rand(total + 100)
@@ -139,6 +162,9 @@ def fuzz_f3(rng, fallos)
   f3 = 0
   victorias = 0
   primigenias = 0
+  duelos_exigentes = 0
+  victorias_exigentes = 0
+  derrotas_exigentes = 0
   3_000.times do
     party_n = 1 + rng.rand(6)
     prop = [0.05, 0.09, 0.12, 0.2, 0.35][rng.rand(5)]
@@ -152,6 +178,7 @@ def fuzz_f3(rng, fallos)
     bajas = 0
     turno = 0
     gano = false
+    perdio = false
     mega = false
     mega_pool = false
     copia = false
@@ -218,7 +245,10 @@ def fuzz_f3(rng, fallos)
         # La Primigenia despierta dentro del umbral rojo de fin de turno: se
         # lee aquí, porque el turno siguiente puede cerrar con la captura.
         prim = true if battle.instance_variable_get(:@ruta_arceus_primigenia_visto)
-        break if idx >= party.length
+        if idx >= party.length
+          perdio = true
+          break
+        end
       end
     rescue StandardError => e
       erro = e
@@ -227,10 +257,16 @@ def fuzz_f3(rng, fallos)
     if !erro
       exigente = (party_n == 6 && prop >= 0.09 && falla != 2)
       if exigente
-        notar.call("F3 duelo ganable perdido (#{turno} turnos, #{bajas} bajas, prop=#{prop})") if !gano
-        # R12: las invocaciones añaden presión constante (nunca rematan) y la
-        # merced sólo llega con 5 bajas; el techo realista sube de 4 a 5.
-        notar.call("F3 demasiadas bajas: #{bajas}") if bajas > 5
+        duelos_exigentes += 1
+        if gano
+          victorias_exigentes += 1
+        elsif perdio
+          # Perder con un equipo aleatorio es un resultado permitido y buscado:
+          # la dificultad no debe convertir al jefe en una victoria automática.
+          derrotas_exigentes += 1
+        else
+          notar.call("F3 duelo exigente excedió 60 turnos sin resultado")
+        end
       end
       primigenias += 1 if prim
       if gano
@@ -249,7 +285,10 @@ def fuzz_f3(rng, fallos)
     f3 += 1
     GC.start if (f3 % 300).zero?
   end
-  [f3, victorias, primigenias]
+  notar.call("F3 no generó duelos exigentes") if duelos_exigentes.zero?
+  notar.call("F3 no hubo victorias entre equipos exigentes") if victorias_exigentes.zero?
+  notar.call("F3 no hubo derrotas posibles entre equipos exigentes") if derrotas_exigentes.zero?
+  [f3, victorias, primigenias, derrotas_exigentes]
 end
 
 # ── F4 · barrido de fases del canon sobre campos sucios ─────────────────────
@@ -320,8 +359,8 @@ def fuzz_f5(rng, fallos)
     GC.start if (f5 % 40_000) < 60
   end
 
-  # (b) Ratio divino variable: nunca fijo, nunca sobre un tercio, con piso
-  #     más alto en fases tardías y en la Forma Mega.
+  # (b) Ratio divino variable: nunca fijo ni mayor al 48%, con piso más alto
+  #     en fases tardías y en la Forma Mega.
   battle_b, _pb, _bb = fuzz_divine_battle(2, 1000)
   distintos = {}
   75_000.times do |i|
@@ -336,7 +375,7 @@ def fuzz_f5(rng, fallos)
     battle_b.instance_variable_set(:@ruta_arceus_primigenia_visto, prim)
     r = battle_b.ruta_arceus_divine_ratio
     f5 += 1
-    notar.call("F5 ratio sobre el tercio: #{r}") if r > RUTA_ARCEUS_HIT_CAP_RATIO + 0.0001
+    notar.call("F5 ratio sobre el tope del 48%: #{r}") if r > RUTA_ARCEUS_HIT_CAP_RATIO + 0.0001
     piso = fase >= 4 ? RUTA_ARCEUS_HIT_CAP_MIN_TARDIO : RUTA_ARCEUS_HIT_CAP_MIN
     piso += RUTA_ARCEUS_HIT_CAP_MEGA_EXTRA if mega
     notar.call("F5 ratio bajo su piso: #{r} < #{piso} (fase #{fase}, mega=#{mega})") if r < piso - 0.0001
@@ -364,35 +403,56 @@ def fuzz_f5(rng, fallos)
   todas = RUTA_ARCEUS_BGM_POR_FASE.values + [RUTA_ARCEUS_BGM_PRIMIGENIA]
   notar.call("F5 hay fases que comparten música") if todas.uniq.length != todas.length
 
-  # (d) Invocaciones del lore: ninguna remata (mínimo 1 PS), climas válidos,
-  #     stats nunca bajo -6, las mercedes curan y los golpes presionan.
+  # (d) Invocaciones reales: ocupan el hueco aliado, registran un movimiento
+  #     dañino en la cola normal y protegen al jefe hasta retirarse.
   filas = RUTA_ARCEUS_INVOCACIONES
-  200.times do
-    filas.each_with_index do |fila, k|
-      [1, 2, 150, 1000].each do |hp_inicial|
-        battle_d, party_d, boss_d = fuzz_divine_battle(2, 1000)
-        objetivo = party_d[0]
-        objetivo.totalhp = 1000
-        objetivo.hp = hp_inicial
-        battle_d.instance_variable_set(:@arceus_phase, 2 + rng.rand(5))
-        battle_d.turnCount = 10
-        # pbRandom sin estado: devuelve k acotado al rango pedido. El diálogo de
-        # invocación también baraja con pbRandom, así no puede desordenar la
-        # cola; semilla=k (<30, pasa la puerta) y fila=lista[k] quedan fijas.
-        kk = k % filas.length
-        battle_d.define_singleton_method(:pbRandom) { |x| [kk, x.to_i > 0 ? x - 1 : 0].min }
-        battle_d.ruta_arceus_invocar(boss_d)
+  40.times do
+    filas.each do |fila|
+      [2, 150, 1000].each do |hp_inicial|
+        battle_d, party_d, boss_d, slot_d = fuzz_invocation_battle(hp_inicial)
+        original_pokemon = slot_d.pokemon
+        original_index = slot_d.pokemonIndex
+        boss_hp = boss_d.hp
+        result = battle_d.pbArceusOrdenDivina(boss_d, fila[0], fila[1], fila[3])
         f5 += 1
-        notar.call("F5 invocación #{fila[0]} remató al objetivo") if objetivo.hp < 1
+        notar.call("F5 invocación #{fila[0]} no se materializó") if !result
+        state = battle_d.instance_variable_get(:@ruta_arceus_invocation_state)
+        if state
+          notar.call("F5 invocación #{fila[0]} no ocupó el hueco 3") if state[:slot_index].to_i != 3
+          notar.call("F5 invocación #{fila[0]} no sustituyó el sprite/battler") if slot_d.pokemon.species != fila[0]
+          notar.call("F5 invocación #{fila[0]} no marcó pokemonIndex=-1") if slot_d.pokemonIndex != -1
+          notar.call("F5 Arceus no quedó protegido durante la invocación #{fila[0]}") if !boss_d.instance_variable_get(:@ruta_arceus_retired_for_summon)
+          boss_d.damageState.hpLost = 100
+          PokeBattle_Move.new(battle_d, :METEORMASH).pbInflictHPDamage(boss_d)
+          notar.call("F5 invocación #{fila[0]} permitió daño a Arceus") if boss_d.hp != boss_hp
+          ok = battle_d.pbArceusInvocationAction(slot_d.index, slot_d)
+          notar.call("F5 invocación #{fila[0]} no registró una acción real") if !ok
+          choice = battle_d.choices[slot_d.index]
+          move = slot_d.moves[choice[1].to_i] if choice && choice[0] == :UseMove
+          notar.call("F5 invocación #{fila[0]} registró un ataque vacío") if !move || !move.damagingMove?
+          if move
+            objetivo = party_d[0]
+            objetivo.hp = hp_inicial
+            move_damage = [hp_inicial - 1, 1].max
+            objetivo.damageState.hpLost = move_damage
+            objetivo.damageState.totalHPLost = move_damage
+            before = objetivo.hp
+            move.pbInflictHPDamage(objetivo)
+            if hp_inicial > 1
+              notar.call("F5 invocación #{fila[0]} no ejecutó daño por la ruta real del motor") if objetivo.hp >= before
+            end
+          end
+          dismissed = battle_d.pbArceusDismissInvocation(boss_d)
+          notar.call("F5 invocación #{fila[0]} no se retiró") if !dismissed || battle_d.instance_variable_get(:@ruta_arceus_invocation_state)
+          notar.call("F5 invocación #{fila[0]} no devolvió el aliado original") if !slot_d.pokemon.equal?(original_pokemon)
+          notar.call("F5 invocación #{fila[0]} no restauró pokemonIndex") if slot_d.pokemonIndex != original_index
+          notar.call("F5 invocación #{fila[0]} dejó a Arceus retirado") if boss_d.instance_variable_get(:@ruta_arceus_retired_for_summon)
+        end
         notar.call("F5 invocación #{fila[0]} dejó clima inválido") if GameData::BattleWeather.try_get(battle_d.field.weather).nil?
-        objetivo.stages.each_value do |v|
-          notar.call("F5 invocación #{fila[0]} dejó un stat bajo -6") if v.to_i < -6
-        end
-        if fila[2] == :merced
-          notar.call("F5 invocación #{fila[0]} no curó") if objetivo.hp < hp_inicial
-        end
-        if fila[2] == :golpe && hp_inicial > 1
-          notar.call("F5 invocación #{fila[0]} no presionó") if objetivo.hp >= hp_inicial
+        party_d.each do |ally|
+          ally.stages.each_value do |value|
+            notar.call("F5 invocación #{fila[0]} dejó un stat bajo -6") if value.to_i < -6
+          end
         end
       end
     end

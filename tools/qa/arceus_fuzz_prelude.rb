@@ -121,6 +121,10 @@ class Pokemon
   end
 end
 
+require "base64"
+require "json"
+QA_MOVE_DATA = JSON.parse(Base64.decode64("__MOVE_DATA__"))
+
 module GameData
   module Species
     KNOWN_SPECIES = [:ARCEUS, :METAGROSS, :MEW, :GIRATINA, :DIALGA, :PALKIA,
@@ -208,21 +212,22 @@ module GameData
   end
 
   class Move
-    KNOWN = [:JUDGMENT, :FURYSWIPES, :COMETPUNCH, :PINMISSILE, :ARMTHRUST,
-             :THOUSANDARROWS, :RAINDANCE, :SUNNYDAY, :SANDSTORM, :HAIL,
-             :EMBARGO, :MAGICROOM, :GASTROACID, :GRAVITY, :COREENFORCER,
-             :TRICKROOM, :WONDERROOM, :RECOVER, :TAILWIND, :EXTREMESPEED,
-             :PERISHSONG, :ROAROFTIME, :SPACIALREND, :SHADOWFORCE, :AEROBLAST,
-             :PRECIPICEBLADES, :ORIGINPULSE, :MOONBLAST, :EARTHPOWER,
-             :DARKVOID, :PSYCHOBOOST, :DRACOMETEOR, :SACREDSWORD,
-                                       :VCREATE, :METEORMASH, :GIGAIMPACT, :COSMICPOWER, :PSYCHIC,
-             :AURASPHERE, :HEALPULSE, :DRAGONASCENT, :LANDSWRATH, :TRANSFORM,
-             :SING].freeze
-    Dato = Struct.new(:id, :power)
-    def self.exists?(id); KNOWN.include?(id); end
+    Dato = Struct.new(:id, :power, :base_damage, :function_code, :type,
+                      :accuracy, :priority, :category, :name)
+    def self.exists?(id)
+      QA_MOVE_DATA.key?(id.to_s.upcase)
+    rescue StandardError
+      false
+    end
     def self.get(id)
-      raise "Unknown ID #{id.inspect}." if !KNOWN.include?(id)
-      Dato.new(id, 100)
+      key = id.to_s.upcase
+      row = QA_MOVE_DATA[key]
+      raise "Unknown move #{id.inspect}" if !row
+      power = row["base_damage"].to_i
+      category = { 0 => :Physical, 1 => :Special, 2 => :Status }[row["category"].to_i]
+      Dato.new(key.to_sym, power, power, row["function_code"].to_s,
+               row["type"] && row["type"].to_sym, row["accuracy"].to_i,
+               row["priority"].to_i, category, row["name"].to_s)
     end
   end
 
@@ -302,6 +307,10 @@ class PokeBattle_Move
     lost
   end
   def pp; 10; end
+  def damagingMove?; GameData::Move.exists?(@id) && GameData::Move.get(@id).base_damage.to_i > 0; end
+  def statusMove?; !damagingMove?; end
+  def name; GameData::Move.get(@id).name; end
+  def type; GameData::Move.get(@id).type; end
   def self.from_pokemon_move(battle, move); new(battle, move.id); end
   def _ruta_arceus_original_reduce_damage(user, target); target.damageState.hpLost.to_i; end
   def _ruta_arceus_original_inflict_hp_damage(target)
@@ -315,7 +324,7 @@ class PokeBattle_TwoTurnMove < PokeBattle_Move; end
 class PokeBattle_Move_09F < PokeBattle_Move; end
 
 class PokeBattle_Battler
-  attr_accessor :index, :side, :pokemon, :effects, :battle, :item, :stages, :totalhp
+  attr_accessor :index, :side, :pokemon, :effects, :battle, :item, :stages, :totalhp, :pokemonIndex
   def initialize(index = 0, side = nil)
     @index = index
     @side = side
@@ -323,6 +332,7 @@ class PokeBattle_Battler
     @totalhp = 0
     @effects = Hash.new(0)
     @stages = Hash.new(0)
+    @pokemonIndex = 0
     @damageState = FakeDamageState.new
   end
   def hp; @hp; end
@@ -350,7 +360,14 @@ class PokeBattle_Battler
     amount
   end
   def pbFaint(*args); end
-  def pbInitialize(*args); end
+  def pbInitialize(pokemon, pokemonIndex = 0)
+    @pokemon = pokemon
+    @pokemonIndex = pokemonIndex
+    @totalhp = pokemon.totalhp.to_i
+    @hp = pokemon.hp.to_i
+    @moves = (pokemon.moves || []).map { |move| PokeBattle_Move.from_pokemon_move(@battle, move) }
+    self
+  end
   def pbHasType?(*args); false; end
   def pbSetPP(*args); end
   def pbReducePP(*args); 0; end
@@ -444,7 +461,7 @@ end
 class PokeBattle_Battle
   attr_accessor :battlers, :turnCount, :lastMoveUser, :lastMoveUsed, :messages,
                 :field, :sides, :battleAI, :endOfRound, :sideSizes,
-                :ruta_side_split, :party1starts, :party2starts
+                :ruta_side_split, :party1starts, :party2starts, :choices
   def initialize(battlers = [])
     @battlers = battlers
     @sideSizes = [1, 1]
@@ -453,12 +470,25 @@ class PokeBattle_Battle
     @lastMoveUser = 0
     @lastMoveUsed = :METEORMASH
     @messages = []
+    @choices = Array.new(6) { [nil, nil, nil, nil] }
     @field = PokeBattle_Field.new
     @sides = [FakeSide.new, FakeSide.new]
     battlers.each { |b| b.battle = self if b }
   end
   def pbPlayer; 0; end
   def wildBattle?; true; end
+  def pbClearChoice(index); @choices[index.to_i] = [nil, nil, nil, nil]; end
+  def pbCanChooseMove?(*_args); true; end
+  def pbRegisterMove(index, move_index, *_args)
+    @choices[index.to_i] ||= [nil, nil, nil, nil]
+    @choices[index.to_i][0] = :UseMove
+    @choices[index.to_i][1] = move_index
+    true
+  end
+  def pbRegisterTarget(index, target_index)
+    @choices[index.to_i] ||= [nil, nil, nil, nil]
+    @choices[index.to_i][2] = target_index
+  end
   def pbDisplay(msg); @messages << msg; nil; end
   def pbDisplayPaused(msg); pbDisplay(msg); end
   def pbCommonAnimation(*args); end

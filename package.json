@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
   "scripts": {
-    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:canon:arceus && npm run verify:ruta_de_dios",
+    "test": "node web/js/marshal.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:canon:arceus && npm run verify:ruta_de_dios",
     "pretest": "npm run build:teckel",
     "verify:visor": "node tools/apply_badge_viewer.mjs --verify",
     "verify:lideres": "node tools/apply_lideres_campanas.mjs --verify",
@@ -157,6 +157,7 @@
     "verify:arceus:omega:qa": "node tools/verify_arceus_omega_matrix.mjs",
     "verify:arceus:sandbox": "node tools/verify_arceus_sandbox.mjs",
     "verify:arceus:actions": "node tools/verify_arceus_action_safety.mjs",
+    "verify:arceus:moves": "node tools/qa/arceus_moves_harness.mjs",
     "verify:arceus:assets": "node tools/verify_arceus_assets.mjs",
     "build:restauracion": "node tools/apply_restauracion_cromatica.mjs",
     "verify:restauracion": "node tools/apply_restauracion_cromatica.mjs --verify",

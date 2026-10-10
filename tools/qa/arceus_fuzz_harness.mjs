@@ -8,14 +8,16 @@
  * Fire Ash (las mismas que producían el ArgumentError visible en Kirin:
  * "Expected 5 to be one of [Symbol, GameData::BattleWeather, String]").
  *
- * Corre un millón de escenarios aleatorios deterministas en cuatro familias:
+ * Corre al menos un millón de escenarios aleatorios deterministas en nueve
+ * familias, sobre el juego instalado:
  *
- *   F1 · micro-fuzz de la guardia anti-KO (tope de un tercio por acción);
- *   F2 · fuzz de clima/terreno: escrituras sucias, pbStartWeather con basura,
- *        fin de ronda parcheado y batalla_clima del canon;
- *   F3 · duelos completos aleatorios (seis barras, umbral rojo, megaevolución
- *        de los Mil Brazos, efectos de fase del canon);
- *   F4 · barrido de las seis fases del canon sobre campos contaminados.
+ *   F1 · 590 240 guardias anti-KO (daño variable hasta el 48% por acción);
+ *   F2 · 150 000 estados sucios de clima/terreno y finales de ronda;
+ *   F3 · 3 000 duelos completos aleatorios: barras, Mega, bajas y captura;
+ *   F4 · 44 000 transiciones de fase del canon sobre campos contaminados;
+ *   F5 · 191 760 diálogos, daño variable, música, invocaciones y minijuegos;
+ *   F6 · 10 000 arranques, decisiones, capturas y rollbacks del duelo;
+ *   F7 · 11 000 configuraciones de escena y relevo de legendarios.
  *
  * Uso:
  *   npm i --no-save @ruby/3.3-wasm-wasi
@@ -27,6 +29,7 @@ import zlib from "node:zlib";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import { marshalLoad } from "../../web/js/marshal.js";
+import { stringValue, symbolName, symbolicRecords } from "../lib/fire_ash_registry.mjs";
 
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -126,6 +129,8 @@ WANTED = {
                            "ruta_arceus_invocar", "ruta_arceus_copiar_equipo",
                            "pbArceusFondo", "pbArceusRedibujar",
                            "pbArceusPosesionFin", "pbArceusOrdenDivina",
+                           "pbArceusSummon", "pbArceusDismissInvocation",
+                           "pbArceusInvocationAction",
                            "pbArceusMilibrazosDespertar", "history_resistido?",
                            "ruta_arceus_ofrenda", "pbCalculatePriority"],
   "Object"             => ["pbRutaArceusGodWorldAllowed?", "pbRutaArceusCapturedPokemon?",
@@ -137,7 +142,9 @@ WANTED = {
                            "pbArceusAshWill", "pbArceusCinematicPrelude",
                            "pbArceusRotomMercy", "pbArceusSurrenderSequence",
                            "pbArceusNormalizeCaptured", "pbStartArceusDivineBattle",
-                           "pbArceusMoveIds", "pbArceusBuildLegendario"],
+                           "pbArceusMoveIds", "pbArceusBuildLegendario",
+                           "pbArceusSelfDamagingMove?", "pbArceusScriptBreakingMove?",
+                           "pbArceusSafeMoveIds"],
   "PokeBattle_Move"    => ["ruta_arceus_cinematic_boss_target?", "ruta_arceus_divine_boss_target?",
                            "pbInflictHPDamage", "pbReduceDamage"]
 }
@@ -221,7 +228,19 @@ if (extracted.startsWith("FALTAN:")) {
 }
 const { metodos: methodSources, modulos: moduleSources } = JSON.parse(extracted);
 
-const prelude = fs.readFileSync(path.join(ROOT, "tools/qa/arceus_fuzz_prelude.rb"), "utf8");
+const moveData = symbolicRecords("moves.dat").map(({ id, value }) => ({
+  id,
+  function_code: stringValue(value.getIvar("function_code")),
+  base_damage: Number(value.getIvar("base_damage") ?? 0),
+  type: symbolName(value.getIvar("type")) || null,
+  accuracy: Number(value.getIvar("accuracy") ?? 100),
+  priority: Number(value.getIvar("priority") ?? 0),
+  category: Number(value.getIvar("category") ?? 2),
+  name: stringValue(value.getIvar("name")) || id,
+}));
+const moveDataBase64 = Buffer.from(JSON.stringify(Object.fromEntries(moveData.map((row) => [row.id, row])))).toString("base64");
+const prelude = fs.readFileSync(path.join(ROOT, "tools/qa/arceus_fuzz_prelude.rb"), "utf8")
+  .replace("__MOVE_DATA__", moveDataBase64);
 const scenarioFile = process.env.FUZZ_SCENARIO
   ? path.resolve(process.env.FUZZ_SCENARIO)
   : path.join(ROOT, "tools/qa/arceus_fuzz_scenarios.rb");
@@ -257,9 +276,9 @@ if (bootError) {
   process.exit(1);
 }
 
-// Un VM por familia: el heap de WASM no tolera las cuatro tandas acumuladas
-// en un solo eval (memory access out of bounds), y así cada tanda corre con
-// la memoria acotada y el resultado agregado es el mismo.
+// Un VM por familia: el heap de WASM no tolera las tandas acumuladas en un
+// solo eval (memory access out of bounds), así cada una corre con memoria
+// acotada y el resultado agregado supera el millón de escenarios.
 const FAMILIAS = [
   { id: 1, rotulo: "F1 guardia anti-KO:           ", llamada: "fuzz_f1(rng, fallos)" },
   { id: 2, rotulo: "F2 clima/terreno + fin de ronda:", llamada: "fuzz_f2(rng, fallos)" },
@@ -294,12 +313,15 @@ if (process.env.FUZZ_SCENARIO && process.env.FUZZ_PROBE) {
   process.exit(0);
 }
 
-const lineas = ["FUZZ R10 sobre el código instalado (semillas 0xA2CE11..4):"];
+const activeFamilies = process.env.FUZZ_ONLY
+  ? FAMILIAS.filter((family) => process.env.FUZZ_ONLY.split(",").map(Number).includes(family.id))
+  : FAMILIAS;
+const lineas = ["FUZZ sobre el código instalado (semillas reproducibles):"];
 const fallosTodos = [];
 let total = 0;
 let victorias = 0;
 
-for (const fam of FAMILIAS) {
+for (const fam of activeFamilies) {
   const { vm: vmF } = await DefaultRubyVM(modulo);
   let error = null;
   let crudo = "";
@@ -312,7 +334,8 @@ for (const fam of FAMILIAS) {
 rng = Random.new(0xA2CE10 + ${fam.id})
 resultado = Array(${fam.llamada}).flatten
 (resultado[0].to_i.to_s) + "|" + (resultado[1] ? resultado[1].to_i.to_s : "0") + "|" +
-          (resultado[2] ? resultado[2].to_i.to_s : "0") + "|" + fallos.join("~")`,
+          (resultado[2] ? resultado[2].to_i.to_s : "0") + "|" +
+          (resultado[3] ? resultado[3].to_i.to_s : "0") + "|" + fallos.join("~")`,
       )
       .toString();
   } catch (e) {
@@ -324,13 +347,15 @@ resultado = Array(${fam.llamada}).flatten
     console.log(error.split("\n").slice(0, 12).join("\n"));
     process.exit(1);
   }
-  const [nStr, vStr, vStr2, fallosStr] = crudo.split("|");
+  const [nStr, vStr, vStr2, vStr3, fallosStr] = crudo.split("|");
   const n = Number(nStr);
   victorias += Number(vStr);
   const fallos = fallosStr ? fallosStr.split("~").filter(Boolean) : [];
   fallosTodos.push(...fallos);
   total += n;
-  const extra = fam.id === 3 ? ` (${victorias} victorias, ${Number(vStr2)} Forma Primigenia)` : "";
+  const extra = fam.id === 3
+    ? ` (${victorias} victorias, ${Number(vStr2)} Forma Primigenia, ${Number(vStr3)} derrotas válidas)`
+    : "";
   lineas.push(`  ${fam.rotulo} ${n} escenarios, ${fallos.length} fallos${extra}`);
 }
 

@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 import { marshalLoad } from "../web/js/marshal.js";
-import { ROOT, loadFireAshRegistry } from "./lib/fire_ash_registry.mjs";
+import { ROOT, loadFireAshRegistry, stringValue, symbolName, symbolicRecords } from "./lib/fire_ash_registry.mjs";
 
 const MAX_MOVES = 4;
 const registry = loadFireAshRegistry();
@@ -33,6 +33,18 @@ function parseBaseMoveSets(ruby) {
   return rows;
 }
 
+function parseSymbolArray(ruby, name) {
+  const match = ruby.match(new RegExp(`^${name}\\s*=\\s*\\[([^\\]]*)\\](?:\\.freeze)?`, "ms"));
+  assert(match, `${name} is missing`);
+  return [...match[1].matchAll(/:([A-Z0-9_]+)/g)].map((row) => row[1]);
+}
+
+function parseWordArray(ruby, name) {
+  const match = ruby.match(new RegExp(`^${name}\\s*=\\s*%w\\[([\\s\\S]*?)\\]\\.freeze`, "m"));
+  assert(match, `${name} is missing`);
+  return match[1].trim().split(/\s+/).filter(Boolean);
+}
+
 function unique(values) {
   return [...new Set(values)];
 }
@@ -55,9 +67,36 @@ function selectBattleMoves(ids, canonIds) {
   return selected.slice(0, MAX_MOVES);
 }
 
-const baseSets = parseBaseMoveSets(readSection(scriptFiles[0], "PokeMod_RutaDeDios"));
+const primaryRoute = readSection(scriptFiles[0], "PokeMod_RutaDeDios");
+const baseSets = parseBaseMoveSets(primaryRoute);
 const phaseCanonMoves = Object.values(canon.fases_dios).map((phase) => phase.movimientos ?? []);
 assert.equal(phaseCanonMoves.length, 6, "expected six canon phase additions");
+
+const selfDamageIds = parseSymbolArray(primaryRoute, "RUTA_ARCEUS_SELF_DAMAGING_MOVES");
+const selfDamageFunctions = parseWordArray(primaryRoute, "RUTA_ARCEUS_SELF_DAMAGING_FUNCTIONS");
+const scriptBreakingIds = parseSymbolArray(primaryRoute, "RUTA_ARCEUS_SCRIPT_BREAKING_MOVES");
+const scriptBreakingFunctions = parseWordArray(primaryRoute, "RUTA_ARCEUS_SCRIPT_BREAKING_FUNCTIONS");
+const moveData = new Map(symbolicRecords("moves.dat").map(({ id, value }) => [id, {
+  function: stringValue(value.getIvar("function_code")).toUpperCase(),
+  damage: Number(value.getIvar("base_damage") ?? 0),
+}]));
+const arceusSpecies = symbolicRecords("species.dat").find(({ id }) => id === "ARCEUS")?.value;
+assert(arceusSpecies, "species.dat has no ARCEUS row");
+const learnsetIds = (arceusSpecies.getIvar("moves") ?? []).map((row) => symbolName(row?.[1])).filter(Boolean);
+const tutorIds = (arceusSpecies.getIvar("tutor_moves") ?? []).map(symbolName).filter(Boolean);
+const selfDamageLearnset = unique([...learnsetIds, ...tutorIds]).filter((id) => {
+  const data = moveData.get(id);
+  return selfDamageIds.includes(id) || selfDamageFunctions.includes(data?.function);
+}).sort();
+assert.deepEqual(selfDamageLearnset, ["CURSE", "HEALINGWISH", "PERISHSONG", "SUBSTITUTE"],
+  "Arceus's learnset/tutor autodaño set changed; re-audit moves.dat and function routes");
+for (const [id, code] of [["TELEPORT", "0EA"], ["ROAR", "0EB"], ["WHIRLWIND", "0EB"]]) {
+  assert.equal(moveData.get(id)?.function, code, `${id} changed function code`);
+  assert(scriptBreakingIds.includes(id) && scriptBreakingFunctions.includes(code),
+    `${id} may escape/terminate the divine wild battle but is no longer filtered`);
+}
+assert.equal(moveData.get("DRAGONTAIL")?.function, "0EC");
+assert.equal(moveData.get("CIRCLETHROW")?.function, "0EC");
 
 for (let i = 0; i < baseSets.length; i++) {
   const combined = unique([...baseSets[i], ...phaseCanonMoves[i]]);
@@ -107,8 +146,14 @@ for (const file of scriptFiles) {
   assert(!route.includes("RUTA_ARCEUS_SEAL_FLOORS") && !route.includes("@ruta_arceus_seals"), `${path.relative(ROOT, file)} still uses partial seal thresholds`);
   assert(route.includes("def pbArceusPlateRouletteAnimation") && route.includes("ItemIconSprite.new(0, 0, plate, viewport)"), `${path.relative(ROOT, file)} has no animated 17-plate roulette`);
   assert(route.includes("Effectiveness.calculate(type, types[0], types[1], types[2])"), `${path.relative(ROOT, file)} does not choose a plate against the active rival`);
-  assert(route.includes("def pbArceusBestAttackIds") && route.includes("GameData::Move.each do |move_data|"), `${path.relative(ROOT, file)} does not score the complete attack catalog`);
+  assert(route.includes("def pbArceusMoveCatalogIds") && route.includes("def pbArceusBestAttackIds"), `${path.relative(ROOT, file)} does not build/score Arceus's learnable move catalog`);
+  assert(route.includes("def pbArceusStatusMoveIds") && route.includes("def pbArceusStatusMoveScore"), `${path.relative(ROOT, file)} does not score legal status/support moves`);
+  assert(route.includes("def pbArceusSelfDamagingMove?") && route.includes("def pbArceusScriptBreakingMove?"), `${path.relative(ROOT, file)} does not filter self-damage and encounter-breaking moves`);
+  assert(route.includes("next false if pbArceusScriptBreakingMove?(id)"), `${path.relative(ROOT, file)} does not apply the encounter-safety filter to copied moves`);
+  assert(route.includes("next if !move.damagingMove? && !move.statusMove?"), `${path.relative(ROOT, file)} cannot register Arceus status moves`);
   assert(route.includes("@battleAI.pbRegisterMoveTrainer") && route.includes("def pbArceusChooseSmartMove"), `${path.relative(ROOT, file)} does not use the engine's high-skill tactical move scorer`);
+  assert(route.includes("@ruta_arceus_invocation_state[:slot_index].to_i == battler.index.to_i") && route.includes("invocación volverá a su lugar"), `${path.relative(ROOT, file)} may capture an invocation at pokemonIndex -1`);
+  assert(route.includes("class PokeBattle_Move_0EC") && route.includes("_ruta_arceus_original_wild_knockback"), `${path.relative(ROOT, file)} may let Dragon Tail/Circle Throw close the divine wild battle`);
   assert(route.includes("@ruta_arceus_move_history") && route.includes("def pbArceusBattleCommentary"), `${path.relative(ROOT, file)} repeats attacks without memory or battle dialogue`);
   assert(route.includes("def pbArceusAdaptTypeToRival"), `${path.relative(ROOT, file)} does not react to a rival switch`);
   assert(!route.includes("def pbArceusRealityControl"), `${path.relative(ROOT, file)} heals Ash's reserves instead of Arceus`);
@@ -121,4 +166,4 @@ for (const file of scriptFiles) {
   assert(canonRuby.includes("respond_to?(:pbArceusBestPlateIndex)"), `${path.relative(ROOT, file)} can overwrite the adaptive type roulette with a fixed phase plate`);
 }
 
-console.log("OK: seis barras completas, reglas adaptativas, inmunidades y límite de cuatro movimientos; los tres paquetes protegen badge_count en combates NPC vs NPC.");
+console.log("OK: seis barras, catálogo real de ataques/apoyos con filtros de autodaño y huida, captura segura de invocaciones, límite de cuatro movimientos y sincronía en los tres paquetes.");
