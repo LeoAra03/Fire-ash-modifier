@@ -205,6 +205,7 @@ function volusExitEvent(id, name, x, y, targetMap, targetX, targetY, targetDir =
         "Volus: El creador te eligió... pero mi obsesión necesita saber hasta dónde llega tu vínculo.",
         "Volus: ¡La bajada está cerrada hasta que tú y yo midamos nuestras convicciones!",
       ]),
+      script('$PokemonGlobal.nextBattleBack = "volus"'),
       cmd(111, [12, S('pbTrainerBattle(:SECRET_Volo, "Volus", nil, false, 4, true)')]),
       cmd(121, [SW_VOLO_DEFEATED, SW_VOLO_DEFEATED, 0], 1),
       cmd(121, [SW_COMPLETED, SW_COMPLETED, 0], 1),
@@ -2332,6 +2333,18 @@ class PokeBattle_Battle
   # Catálogo de todo lo que Arceus puede aprender (nivel, tutor, firma de fase
   # y copia del equipo), filtrando por función los ataques que le quitan PS o lo
   # hacen caer. El subconjunto de estado se usa para que también ejecute apoyos.
+  # R17: en La Ruta de Dios no se huye de NINGUNA batalla del evento (ni las
+  # oleadas, ni el duelo, ni encuentros del ascenso): el ritual sagrado no
+  # admite retirada. El duelo con Volus ya es batalla de entrenador.
+  alias _ruta_arceus_original_pbRun pbRun unless method_defined?(:_ruta_arceus_original_pbRun)
+  def pbRun(idxBattler, duringBattle = false)
+    if $game_map && $game_map.map_id >= 2031 && $game_map.map_id <= 2038 && !trainerBattle?
+      pbDisplayPaused(_INTL("¡No se puede huir en La Ruta de Dios!"))
+      return 0
+    end
+    return _ruta_arceus_original_pbRun(idxBattler, duringBattle)
+  end
+
   def pbArceusMoveCatalogIds
     ids = []
     species_data = GameData::Species.get(:ARCEUS)
@@ -4311,6 +4324,31 @@ class PokeBattle_Battle
     pbArceusRotateType(battler, phase)
   end
 
+  # R17 (arte): cada fase del duelo muestra su propio sprite de Arceus Origen
+  # (cinco variantes nuevas de fase en la carpeta Front). La fase 6 es la forma
+  # primigenia (sprite clasico), por eso solo hicimos cinco sprites nuevos.
+  # OJO: los nombres de archivo se componen en tiempo de ejecucion porque la
+  # auditoria de recursos exige que las constantes ARCEUS_* existan de verdad.
+  def pbArceusFaseSprite(n)
+    escena = @scene
+    return false if !escena || !escena.respond_to?(:sprites) || !escena.sprites
+    sprite = escena.sprites["pokemon_1"]
+    return false if !sprite
+    carpeta = "Graphics/Pokemon/Front/"
+    nombre = "ARCEUS"
+    nombre += sprintf("_F%d", n.to_i) if n.to_i < RUTA_ARCEUS_STAGE_COUNT
+    ruta = carpeta + nombre
+    return false if !pbResolveBitmap(ruta)
+    return true if @ruta_arceus_fase_sprite == n && sprite.bitmap
+    begin
+      sprite.setBitmap(ruta)
+      @ruta_arceus_fase_sprite = n
+    rescue StandardError
+      return false
+    end
+    true
+  end
+
   def pbArceusPhase(battler, phase)
     phase = [[phase.to_i, 1].max, RUTA_ARCEUS_STAGE_COUNT].min
     pbArceusDistortion
@@ -4328,6 +4366,7 @@ class PokeBattle_Battle
       pbDisplayPaused(_INTL("ETAPA 6/6 — ARCEUS ESCRIBE LA ÚLTIMA REGLA: los movimientos GIGAMAX le obedecen como básicos."))
     end
     phase_index = phase - 1
+    pbArceusFaseSprite(phase)
     familia = RUTA_ARCEUS_FONDO_POR_FASE[phase_index]
     if pbArceusFondo(familia)
       nombre_fondo = { "genesis1" => "Calma Estelar", "genesis2" => "Tormenta Violeta", "genesis3" => "Apocalipsis Carmesí" }[familia]
@@ -5061,7 +5100,7 @@ def pbStartArceusDivineBattle
     loop do
       snapshot = $Trainer.party.map { |p| [p, p.hp, p.status] }
       $PokemonGlobal.nextBattleBGM = "Legend Sinnoh"
-      $PokemonGlobal.nextBattleBack = "genesis1"
+      $PokemonGlobal.nextBattleBack = "olas"
       $PokemonTemp.clearBattleRules
       $PokemonTemp.recordBattleRule("cannotRun")
       $PokemonTemp.recordBattleRule("canLose")
@@ -5097,6 +5136,8 @@ def pbStartArceusDivineBattle
     snapshot = $Trainer.party.map { |p| [p, p.hp, p.status] }
     $PokemonGlobal.nextBattleBGM = "Legend Sinnoh"
     $PokemonGlobal.nextBattleBack = "genesis1"
+    $PokemonTemp.clearBattleRules
+    $PokemonTemp.recordBattleRule("cannotRun")
     decision = pbWildBattleCore(pkmn)
     if decision == 4
       canonical_capture = ArceusSaveSandbox.deep_copy(pkmn)

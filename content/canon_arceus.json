@@ -8,7 +8,8 @@
     "EVENTO_COMPLETADO": 876,
     "FRAGMENTO_GENESIS": 882,
     "ROTOM_TIEMPO": 883,
-    "SELLO_MOCHILA": 884
+    "SELLO_MOCHILA": 884,
+    "ATUENDO_MAESTRO": 885
   },
   "fragmento": {
     "mapa": 2037,

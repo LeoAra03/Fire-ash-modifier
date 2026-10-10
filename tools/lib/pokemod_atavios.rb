@@ -21,6 +21,9 @@ module PokeModAtavios
     6 => { "c" => "ash_outfit_tfoh", "p" => nil },
     7 => { "c" => "trchar001", "p" => 1 },
     8 => { "c" => "trainer_TEAMROCKET_M", "p" => 3 },
+    # R17 — Atuendo de Maestro: entregado por Oak al completar La Ruta de Dios.
+    # El charset es propio ("o" = outfit de batalla 8: trainers POKEMONTRAINER_Red_8).
+    9 => { "c" => "ash_outfit_maestro", "p" => nil, "o" => 8 },
   }
 
   DIM = {
@@ -60,9 +63,12 @@ module PokeModAtavios
     return false if a.nil?
     if a["p"]
       pbChangePlayer(a["p"]) if $Trainer rescue nil
+      $Trainer.outfit = 0 if $Trainer rescue nil
     else
       identidadBase
       $game_player.character_name = a["c"] if $game_player
+      # R17: el atuendo de Maestro también viste la batalla (outfit 8).
+      $Trainer.outfit = a["o"] || 0 if $Trainer rescue nil
     end
     if $game_variables
       $game_variables[VAR_ATAVIO] = id
@@ -78,6 +84,7 @@ module PokeModAtavios
   def self.vestirCharset(id)
     a = ATA[id]
     return false if a.nil? || a["p"]
+    $Trainer.outfit = a["o"] || 0 if $Trainer rescue nil
     identidadBase
     $game_player.character_name = a["c"] if $game_player
     $game_variables[VAR_ATAVIO] = id if $game_variables

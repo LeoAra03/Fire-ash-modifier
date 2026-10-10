@@ -80,6 +80,14 @@
       "nombre": "Uniforme Rocket",
       "player": 3,
       "frase": "Infiltración en la base. No rompas personaje."
+    },
+    {
+      "id": 9,
+      "clave": "maestro",
+      "charset": "ash_outfit_maestro",
+      "nombre": "Atuendo de Maestro",
+      "player": null,
+      "frase": "Entregado por Oak al completar La Ruta de Dios. ¡Hora de enseñarlo al mundo!"
     }
   ],
   "dimensiones": [
