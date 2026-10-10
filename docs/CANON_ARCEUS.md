@@ -245,3 +245,59 @@ entrenadores declarados, que el evento de batalla existe y apunta al
 `pbArceusCinematicCpuBattle` correcto, que las variables de resultado están
 inicializadas y que hay un `rescue` por si algo falla — **un doble mal montado
 no puede tumbar la escena**. Resultado: **25/25 en verde**.
+
+## 7. Rediseño R17 de la batalla (versión vigente)
+
+Esta sección refina la batalla del capítulo 2 tras la revisión jugada. Donde algo
+contradiga al capítulo 2, manda este rediseño.
+
+### 7.1 Tres oleadas y un duelo (nada más)
+
+- El encuentro abre con **tres invocaciones totales**, resueltas como batallas
+  salvajes normales (con barra de vida visible y huida posible): 1ª Groudon y
+  Kyogre, 2ª Rayquaza y Regigigas, 3ª Zygarde.
+- El **1 vs 1 contra Arceus Origen no invoca nada**. Mientras duran las oleadas,
+  Arceus sólo observa desde el trono.
+- Motivo del cambio: el sistema anterior de invocaciones del jefe provocaba
+  errores reales (invocados sin barra de vida, saturación de escenas). Las
+  oleadas usan el bucle wild del motor y no pueden fallar así.
+- Las invocaciones no son capturables (guard en `pbCaptureCalc`); el jefe sí
+  conserva la captura canónica de la fase final.
+
+### 7.2 Arceus Origen: forma 19 desde el primer turno
+
+- El 1 vs 1 empieza ya con la forma de los mil brazos (ARCEUS_19).
+- **Nada de escalas de sprites**: Arceus ya no va creciendo durante la batalla.
+- Las apariciones de Mega y primigenia no cambian forma ni tamaño; son
+  coreografía de cámara, no transformación del sprite.
+
+### 7.3 Fase 6: los GIGAMAX son básicos
+
+- El repertorio de la fase final son movimientos Max/Gigamax usados **a libre
+  albedrío, como ataques corrientes** (sin medidor, sin Dinamax): Regla 6.
+- El PBS trae esos movimientos con potencia placeholder y sin clase de efecto
+  (usarlos reventaba el dispatcher del motor). Se instalan las clases
+  `PokeBattle_Move_D000`–`D024` como movimientos básicos con potencia de dios.
+- El resto de fases conservan sus firmas (Cielo, Talento, Velocidad, Tipo…).
+
+### 7.4 Diálogo sin repeticiones
+
+- Los mazos de diálogo se sacan **sin reposición** y sólo se rebarajan al
+  agotarse: ninguna línea se repite seguidilla.
+- El comentario de batalla tiene throttle (~1/3 de los turnos, 1 por turno):
+  acompaña, no satura.
+
+### 7.5 Volus: el guardián de la salida
+
+- La pelea con Volus ocurre **sólo si el jugador intenta salir de la zona de la
+  Cima**: Volus detiene el paso en la puerta de la 7ª planta.
+- Antes de ese momento **no hay curación automática**: el jugador se mueve libre
+  por la zona para guardar y prepararse.
+- Al derrotarlo (switch 875): desaparecen los peregrinos del camino (873) y
+  Volus de sus dos emplazamientos (Pueblo Hojaverde 513 y Puntaneva 625).
+
+### 7.6 Fondo negro: causa y arreglo
+
+- El fondo totalmente negro venía de un **screen tone filtrado desde el evento**
+  de la Cima. El evento ahora resetea el tone (`Tone(0,0,0,0)`) al entrar y al
+  reconstruirse.

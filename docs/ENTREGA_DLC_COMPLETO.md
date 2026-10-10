@@ -47,3 +47,22 @@ prueba rápida: `docs/ATAVIOS_Y_DIPLOMAS.md` §4.
 Cada instalación respalda lo que toca en `PokeModBackups/` (`arceus_mega/`,
 `cajas_dialogo/`, `atavios/`, `diplomas_planta/`, …); restaura con `cp -f` desde
 esas carpetas, según la Regla de Oro del repositorio.
+
+
+## Revisión R17 — rediseño de la batalla con Arceus Origen
+
+Sobre lo entregado arriba, la revisión jugada pidió y se aplicó:
+
+- [x] 3 invocaciones en toda la batalla (3 oleadas wild antes del 1v1); el 1v1 no invoca.
+- [x] Arceus usa los sprites de mil manos (forma 19) desde el inicio del 1v1.
+- [x] Sin crecimiento de escala innecesario durante la batalla.
+- [x] Diálogos sin repeticiones (mazos agotables) y comentario con throttle.
+- [x] Fondo negro corregido (reset de screen tone en el evento de la Cima).
+- [x] Tras derrotar a los 5 secuencialmente arranca el 1v1 (oleadas → duelo).
+- [x] Fase 6: movimientos GIGAMAX a libre albedrío como básicos (clases D000-D024).
+- [x] Volus sólo bloquea la salida de la zona; sin curación previa; victoria →
+      desaparecen los peregrinos del camino y Volus en 513/625.
+- [x] Barras de vida visibles: las oleadas son batallas wild normales.
+
+Ver `docs/CANON_ARCEUS.md` §7 para el detalle y `tools/apply_la_ruta_de_dios.mjs`
+para la implementación. Cadena completa verificada: `npm test` en verde.
