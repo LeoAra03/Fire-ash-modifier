@@ -1,0 +1,107 @@
+{
+  "descripcion": "Salón de Diplomas: extensión de la planta alta de la casa de Ash. Marco por hito del DLC; el diploma se llena al completar cada desafío. IDs nuevos: mapa 2288 y gráficos diploma_*.png.",
+  "mapaId": 2288,
+  "titulo": "Casa de Ash — Salón de Diplomas",
+  "mapaOrigen": 3,
+  "tilesetOrigen": 3,
+  "tamano": [24, 14],
+  "entrada": [12, 12],
+  "salida": [12, 13],
+  "filaDiplomas": 2,
+  "columnasDiplomas": [2, 5, 8, 11, 14, 17, 20],
+  "prefijo": "PokeMod Diplomas:",
+  "puertaSegundaPlanta": { "mapa": 3, "preferida": [25, 5] },
+  "diplomas": [
+    {
+      "clave": "ruta",
+      "nombre": "La Ruta de Dios",
+      "condicion": { "switch": 876 },
+      "vacio": [
+        "\\sp[Marco de la Ruta de Dios]Marco vacío. El duelo con Arceus aún no ha sellado este viaje.",
+        "\\sp[Marco de la Ruta de Dios]Completa La Ruta de Dios y el diploma se escribirá solo."
+      ],
+      "ganado": [
+        "\\sp[Diploma de la Ruta de Dios]«Por cruzar los ocho eras y despertar al Primigenio».",
+        "\\sp[Diploma de la Ruta de Dios]Ash de Pueblo Paleta, el duelo quedó para la historia."
+      ]
+    },
+    {
+      "clave": "oscura",
+      "nombre": "Liga Oscura",
+      "condicion": { "switch": 948 },
+      "vacio": [
+        "\\sp[Marco de la Liga Oscura]Marco vacío. La Grieta aún protege a su Campeón Silencioso.",
+        "\\sp[Marco de la Liga Oscura]Cinco victorias en la arena sellada y el diploma es tuyo."
+      ],
+      "ganado": [
+        "\\sp[Diploma de la Liga Oscura]«Por derrotar al Campeón Silencioso en la arena de Umbral».",
+        "\\sp[Diploma de la Liga Oscura]La Liga Oscura ya no tiene secretos para ti, Ash."
+      ]
+    },
+    {
+      "clave": "atlas",
+      "nombre": "Mundo Atlas",
+      "condicion": { "variable": [319, 8] },
+      "vacio": [
+        "\\sp[Marco de Atlas]Marco vacío. El Circuito pide las ocho medallas del mundo Atlas.",
+        "\\sp[Marco de Atlas]Cuando tu contador llegue a ocho, el diploma brillará."
+      ],
+      "ganado": [
+        "\\sp[Diploma de Atlas]«Por completar el Circuito de los Ocho Gimnasios de Atlas Mil».",
+        "\\sp[Diploma de Atlas]Los gimnasios de la Avenida te reconocen como maestro viajero."
+      ]
+    },
+    {
+      "clave": "glazed",
+      "nombre": "Glazed",
+      "condicion": { "switch": 990 },
+      "vacio": [
+        "\\sp[Marco de Glazed]Marco vacío. La campaña de Glazed espera en la Bahía de Cedolán.",
+        "\\sp[Marco de Glazed]Avanza hasta el final de esa dimensión invitada y vuelve aquí."
+      ],
+      "ganado": [
+        "\\sp[Diploma de Glazed]«Por recorrer la campaña completa de Glazed como visitante de honor».",
+        "\\sp[Diploma de Glazed]Cedolán guarda tu nombre junto al del barco que te trajo."
+      ]
+    },
+    {
+      "clave": "lp",
+      "nombre": "Light Platinum",
+      "condicion": { "switch": 991 },
+      "vacio": [
+        "\\sp[Marco de Light Platinum]Marco vacío. La costa de Lappet sigue tu rastro.",
+        "\\sp[Marco de Light Platinum]Completa la campaña de Light Platinum para llenarlo."
+      ],
+      "ganado": [
+        "\\sp[Diploma de Light Platinum]«Por completar la campaña de Light Platinum desde la Costa de Lappet».",
+        "\\sp[Diploma de Light Platinum]El norte recuerda al entrenador que no se echó atrás."
+      ]
+    },
+    {
+      "clave": "lc",
+      "nombre": "Liquid Crystal",
+      "condicion": { "switch": 992 },
+      "vacio": [
+        "\\sp[Marco de Liquid Crystal]Marco vacío. El Santuario de Johto aún no ha visto tu final.",
+        "\\sp[Marco de Liquid Crystal]La campaña más larga pide tu firma al terminar."
+      ],
+      "ganado": [
+        "\\sp[Diploma de Liquid Crystal]«Por completar los 432 mapas de la campaña Liquid Crystal».",
+        "\\sp[Diploma de Liquid Crystal]Johto entero firmó este diploma, Ash."
+      ]
+    },
+    {
+      "clave": "tfoh",
+      "nombre": "TFOH",
+      "condicion": { "switch": 993 },
+      "vacio": [
+        "\\sp[Marco de TFOH]Marco vacío. La Frontera del Origen aguarda tras la niebla.",
+        "\\sp[Marco de TFOH]Completa la campaña de TFOH Beta 3 y el marco te reconocerá."
+      ],
+      "ganado": [
+        "\\sp[Diploma de TFOH]«Por completar la campaña de TFOH Beta 3 desde la Frontera del Origen».",
+        "\\sp[Diploma de TFOH]El Origen ya no es una frontera: es tu puerta."
+      ]
+    }
+  ]
+}

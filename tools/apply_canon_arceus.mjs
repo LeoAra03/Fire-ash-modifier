@@ -773,7 +773,8 @@ function ampliarOak() {
       const c = p.getIvar("@condition");
       if (!c) return false;
       return (c.getIvar("@switch1_valid") && c.getIvar("@switch1_id") === SW.FRAGMENTO_GENESIS)
-        || (c.getIvar("@switch1_valid") && c.getIvar("@switch1_id") === SW.ARCEUS_CAPTURADO);
+        || (c.getIvar("@switch1_valid") && c.getIvar("@switch1_id") === SW.ARCEUS_CAPTURADO)
+        || (c.getIvar("@switch1_valid") && c.getIvar("@switch1_id") === SW.EVENTO_COMPLETADO);
     });
     const limpias = paginasActuales.filter((p) => !propias.includes(p));
     // Se insertan en la segunda posición: Oak habla de las dimensiones cuando
@@ -789,8 +790,43 @@ function ampliarOak() {
         trigger: 0,
         list: [...texts(texto_arceus), cmd(0)],
       }));
+    // R17 — ATUENDO DE MAESTRO: al completar La Ruta de Dios (EVENTO_COMPLETADO),
+    // Oak entrega a Ash su nuevo atuendo (outfit de batalla 8 + charset
+    // ash_outfit_maestro vía PokeModAtavios). Self-switch A impide que el regalo
+    // se repita. Las páginas van AL FINAL: en RMXP gana la última que cumple sus
+    // condiciones, así el regalo no queda tapado por la charla de las dimensiones.
+    limpias.push(
+      page({
+        cond: condition({ sw: SW.EVENTO_COMPLETADO }),
+        trigger: 0,
+        list: [
+          ...texts([
+            "Oak: ¡Ash! Justo a tiempo. Nadie ha vuelto jamás de La Ruta de Dios como tú.",
+            "Oak: Un entrenador que completa esa ruta merece más que un diploma: te he preparado el Atuendo de Maestro.",
+            "Oak: Es el mismo estilo con el que yo viajaba de joven. Lúcelo con orgullo, campeón.",
+          ]),
+          script("PokeModAtavios.poner(9, true) rescue nil"),
+          script("$Trainer.outfit = 8 if $Trainer"),
+          cmd(121, [SW.ATUENDO_MAESTRO, SW.ATUENDO_MAESTRO, 0]),
+          cmd(123, [S("A"), 0]),
+          ...texts([
+            "Oak: ¡Perfecto! Ese atuendo te queda como anillo al dedo. Ahora, ve y demuéstralo al mundo.",
+          ]),
+          cmd(0),
+        ],
+      }),
+      page({
+        cond: condition({ sw: SW.EVENTO_COMPLETADO, self: "A" }),
+        trigger: 0,
+        list: [
+          ...texts([
+            "Oak: El Atuendo de Maestro te sienta de maravilla, Ash. El mundo entero va a reconocerte en él.",
+          ]),
+          cmd(0),
+        ],
+      }));
     ev.setIvar("@pages", limpias);
-    paginas += 2;
+    paginas += 4;
   }
   if (paginas) writeMap(mapa, map);
   return { mapa, paginas };
@@ -906,6 +942,7 @@ function verificar() {
       });
       if (!con(SW.FRAGMENTO_GENESIS)) fallos.push("a Oak le falta el diálogo sobre las dimensiones");
       if (!con(SW.ARCEUS_CAPTURADO)) fallos.push("a Oak le falta la aparición de Arceus capturado");
+      if (!con(SW.EVENTO_COMPLETADO)) fallos.push("a Oak le falta la entrega del Atuendo de Maestro");
     }
   }
 

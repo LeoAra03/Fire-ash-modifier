@@ -8,7 +8,8 @@
     "EVENTO_COMPLETADO": 876,
     "FRAGMENTO_GENESIS": 882,
     "ROTOM_TIEMPO": 883,
-    "SELLO_MOCHILA": 884
+    "SELLO_MOCHILA": 884,
+    "ATUENDO_MAESTRO": 885
   },
   "fragmento": {
     "mapa": 2037,
@@ -205,12 +206,12 @@
       "linea_meta": "Arceus: Fuego, agua, planta... etiquetas para que los niños puedan jugar. Míralas arder."
     },
     "6": {
-      "mensaje": "Mega Arceus despliega mil brazos: cada golpe es una multitud, y todos te conocen.",
+      "mensaje": "Arceus escribe la última regla: los movimientos Gigamax le obedecen como si fueran básicos.",
       "movimientos": [
-        "FURYSWIPES",
-        "COMETPUNCH",
-        "PINMISSILE",
-        "ARMTHRUST"
+        "GMAXAURASPHERE",
+        "MAXFLARE",
+        "MAXGEYSER",
+        "MAXQUAKE"
       ],
       "efecto": "regla",
       "concepto": "REGLA",
@@ -244,6 +245,10 @@
     "victoria": [
       "Arceus: Increíble. El niño que no crece le ha ganado al que no muere.",
       "Arceus: Que conste en el archivo: esta vez no hizo falta apagar la consola."
+    ],
+    "intro_oleadas": [
+      "Arceus: No pelearé yo primero. Mis creaciones abrirán el camino: la tierra y el mar, el cielo y la piedra, el equilibrio.",
+      "Arceus: Cinco de ellos, Ash. Sólo cuando los cinco caigan, entonces sí: tú contra Mí."
     ]
   },
   "modo_divino_capturado": {
@@ -335,6 +340,63 @@
       "entrada": "Elimina hazards, pantallas, clima y terreno para ambos lados; inmunidad a estados.",
       "pp": "PP infinitos durante el combate.",
       "fin_de_combate": "Restaura completamente los PS y PP del Arceus capturado, sin curar al resto del equipo."
+    }
+  },
+  "batalla_origen": {
+    "nota": "R17 — rediseño del duelo: invocaciones en oleadas previas y 1 vs 1 final sin aliados.",
+    "oleadas": [
+      {
+        "invocacion": 1,
+        "pokemons": [
+          "GROUDON",
+          "KYOGRE"
+        ],
+        "tipo": "doble",
+        "lineas": [
+          "Groudon despierta de su letargo: todos los volcanes obedecen a la vez.",
+          "Kyogre despierta: el diluvio que anega continentes cabe en esta cima."
+        ]
+      },
+      {
+        "invocacion": 2,
+        "pokemons": [
+          "RAYQUAZA",
+          "REGIGIGAS"
+        ],
+        "tipo": "doble",
+        "lineas": [
+          "Rayquaza baja del cielo: el equilibrio se somete a la Orden Divina.",
+          "Regigigas empuja la corteza del planeta contra el campo de batalla."
+        ]
+      },
+      {
+        "invocacion": 3,
+        "pokemons": [
+          "ZYGARDE"
+        ],
+        "tipo": "individual",
+        "lineas": [
+          "Zygarde reúne sus células: cuando el creador ordena el fin, el equilibrio obedece."
+        ]
+      }
+    ],
+    "reglas": [
+      "Cada ola dura hasta que todos sus miembros son derrotados; Arceus observa como entrenador.",
+      "Tres invocaciones en todo el duelo (2-3 máximo); el 1 vs 1 no invoca a nadie.",
+      "El 1 vs 1 usa la Forma Origen de mil brazos (ARCEUS_19) desde el primer turno.",
+      "Las fases no escalan el tamaño del sprite: el multibrazo mantiene su tamaño natural.",
+      "La fase 6 usa los movimientos Gigamax libremente, como si fueran básicos.",
+      "Las invocaciones no se pueden capturar."
+    ],
+    "volus": {
+      "nota": "La pelea con Volus ocurre SÓLO al intentar bajar de la cima, una sola vez. Antes: movimiento libre, sin curaciones forzadas — el jugador guarda y se prepara.",
+      "switch_duelo": 875,
+      "switch_completado": 876,
+      "desaparece_tras": {
+        "peregrinos_ruta": 873,
+        "volus_pueblo_hojaverde": 875,
+        "volus_puntaneva": 875
+      }
     }
   }
 }

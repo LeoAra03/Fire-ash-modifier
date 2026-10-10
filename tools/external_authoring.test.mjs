@@ -410,25 +410,39 @@ function validConditionalIndents(commands) {
   return stack.length === 0;
 }
 const arceusRematchCommands = summitBoss?.getIvar("pages")?.[1]?.getIvar("list") ?? [];
-const voloBattlePages = [arceusCommands, arceusRematchCommands];
-const voloBattleCalls = voloBattlePages.flatMap((commands) => commands.flatMap((command, index) => {
+// R17: la pelea con Volus ya NO ocurre dentro del evento de la cumbre (evitaba
+// repetirse al tocar el altar). Vive en la puerta de salida de la zona: sólo al
+// intentar bajar, una sola vez, y sólo una victoria cierra la ruta (875/876).
+const summitBattleCalls = [arceusCommands, arceusRematchCommands].flatMap((commands) =>
+  commands.filter((command) => {
+    const source = command.getIvar("parameters")?.[1]?.text ?? "";
+    return Number(command.getIvar("code")) === 111 && source.includes("pbTrainerBattle");
+  }));
+const exitEvent = summitRaw.getIvar("events").pairs.find(([, event]) =>
+  /Escaleras/.test(event.getIvar("name")?.text ?? ""))?.[1];
+const exitVolusPage = exitEvent?.getIvar("pages")?.find((page) => {
+  const cond = page.getIvar("condition");
+  return cond && Number(cond.getIvar("switch1_id")?.value ?? cond.getIvar("switch1_id")) === 873;
+});
+const exitCommands = exitVolusPage?.getIvar("list") ?? [];
+const exitBattleCalls = exitCommands.flatMap((command, index) => {
   const source = command.getIvar("parameters")?.[1]?.text ?? "";
   return Number(command.getIvar("code")) === 111 && source.includes("pbTrainerBattle")
-    ? [{ commands, index, command, source }] : [];
-}));
-const voloVictoryGated = voloBattleCalls.length === 2 && voloBattleCalls.every(({ commands, index, command, source }) => {
-  const next = commands[index + 1];
-  return source === 'pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)' &&
-    Number(next?.getIvar("code")) === 121 && Number(next?.getIvar("indent")) === Number(command.getIvar("indent")) + 1 &&
-    Number(next?.getIvar("parameters")?.[0]) === 875;
+    ? [{ index, command, source }] : [];
 });
-const completionGateIndex = arceusCommands.findIndex((command) =>
-  Number(command.getIvar("code")) === 111 &&
-  (command.getIvar("parameters")?.[1]?.text ?? "").includes("!$game_switches[874] || $game_switches[875]"));
+const voloVictoryGated = summitBattleCalls.length === 0 && exitBattleCalls.length === 1 &&
+  exitBattleCalls.every(({ index, command, source }) => {
+    const after = exitCommands.slice(index + 1, index + 4);
+    const closes = after.filter((c) =>
+      Number(c.getIvar("code")) === 121 &&
+      Number(c.getIvar("indent")) === Number(command.getIvar("indent")) + 1);
+    const ids = closes.map((c) => Number(c.getIvar("parameters")?.[0]));
+    return source === 'pbTrainerBattle(:SECRET_Volo, "Volus", nil, false, 4, true)' &&
+      ids.includes(875) && ids.includes(876);
+  });
 check(validConditionalIndents(arceusCommands) && validConditionalIndents(arceusRematchCommands) &&
-  voloVictoryGated && completionGateIndex >= 0 &&
-  Number(arceusCommands[completionGateIndex + 1]?.getIvar("parameters")?.[0]) === 876,
-  "Map2037 tiene ramas RGSS válidas; Volus usa una versión válida y solo una victoria cierra la ruta");
+  voloVictoryGated,
+  "Map2037 tiene ramas RGSS válidas; Volus sólo se pelea al intentar bajar y una victoria cierra la ruta");
 
 // --- Archivo descargable corregido --------------------------------------------
 const gameScripts = readMarshalData("Scripts.rxdata");
