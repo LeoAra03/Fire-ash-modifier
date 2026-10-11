@@ -18,6 +18,8 @@ Mapas, eventos, diálogos, flags, NPCs y Pokémon — compatible con **Kirin** y
 | Crear | **Contenido nuevo estilo juego base**: 10 plantillas de evento, mapas, PBS, mapamundi visual y auditoría |
 | Mods | Chequeo Kirin, **Sala PokeMod** (viajar a todos los mapas), backups, scripts, exportar ZIP |
 
+La barra superior incorpora **deshacer/rehacer** (`Ctrl/Cmd+Z`, `Ctrl/Cmd+Y`) para los cambios de Eventos, NPCs, Flags y Pokémon/PBS. El historial se limita a 40 operaciones o 24 MiB en memoria, se borra al salir del conjunto de editores compatibles y no reemplaza los backups. Ver [el plan y los límites](docs/PLAN_MEJORA_POKEMOD.md).
+
 - **Partidas a salvo**: `Save*.rxdata`/`Game.rxdata` bloqueados contra escritura + backup automático de cada archivo antes de tocarlo.
 - **Kirin ready**: chequeo de estructura, `.rgssad`, audio y mayúsculas (lo que en PC funciona y en Android falla).
 - **Offline**: PWA + APK sin internet ni servidores; tus archivos no salen del dispositivo.
@@ -77,6 +79,7 @@ web/            PWA (la APK la empaqueta tal cual)
   js/fs.js        Acceso a archivos (APK SAF / navegador / lectura / demo)
   js/demo.js      Proyecto procedural para probar sin el juego
   js/app.js       Núcleo: proyecto, backups, Kirin, Sala PokeMod
+  js/history.js  Historial transaccional acotado para deshacer/rehacer
   js/create.js    Plantillas de evento/mapa/PBS + auditoría (verificado v19.1)
   js/ui.js + editors.js + createUI.js + helpers.js   Interfaz (8 pestañas)
 android/        APK WebView + puente SAF (Kotlin, minSdk 24)
@@ -155,7 +158,8 @@ npm ci                              # dependencias del render PNG y de la prueba
 npm run dn:preparar                 # regenera los derivados ignorados (recortes, tilesets, hojas origen)
 npm run verify:all                  # suite completa: tests, UI, mapas, seguridad y paquetes
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
-node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
+node web/js/history.test.mjs       # historial undo/redo, límites y fallos de restauración
+node web/js/integration.test.mjs   # demo, sala, kirin, PBS, crear, auditoría e historial
 node tools/external_authoring.test.mjs  # 67 pruebas: interoperabilidad, estilo, Tier 2/3, Mochila, hub, multiverso y fauna
 npm run verify:atlas               # 120 rutas Tier 2 y 840 Ecos compilados y seguros
 npm run verify:grandeur:bag        # Mochila libre en la torre del laboratorio de Oak
@@ -175,7 +179,7 @@ Los pasos de instalación y las comprobaciones pendientes dentro del juego está
 
 ## Roadmap
 
-- Pintar tiles en mapas (capas 1-3) · Deshacer/rehacer · Duplicar páginas/eventos
+- Pintar tiles en mapas (capas 1-3) · Duplicar páginas/eventos
 - Más plantillas (PC, gimnasio, concurso) · Editor de tiendas con precios
 - Vista previa de animaciones de autotiles · Importar/exportar mapas sueltos
 - Traducción EN/PT

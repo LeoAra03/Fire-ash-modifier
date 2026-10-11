@@ -3,7 +3,7 @@
 // ============================================================================
 import {
   S, log, connectDemo, connectBrowser, connectAndroid, connectFallback,
-  loadMap, getTileset, saveAll, saveMap,
+  loadMap, getTileset, saveAll, saveMap, undoEdit, redoEdit, clearEditHistory,
 } from "./app.js";
 import { FS } from "./fs.js";
 import { parseEvent, parseMap } from "./rmxp.js";
@@ -24,6 +24,7 @@ const TABS = [
   ["mods", "◆", "Mods"],
 ];
 let currentTab = "";
+const HISTORY_TABS = new Set(["events", "flags", "npcs", "pbs"]);
 
 export function boot() {
   const app = document.getElementById("app");
@@ -32,6 +33,10 @@ export function boot() {
       <div class="brand"><b>PokeMod Studio</b> <span class="tag">Fire Ash Edition</span></div>
       <div class="top-r">
         <span id="proj" class="proj">sin proyecto</span>
+        <div class="history-tools" role="group" aria-label="Historial de edición">
+          <button id="btn-undo" class="btn small history-btn" type="button" aria-label="Deshacer" title="Deshacer (Ctrl+Z)" disabled>↶</button>
+          <button id="btn-redo" class="btn small history-btn" type="button" aria-label="Rehacer" title="Rehacer (Ctrl+Y)" disabled>↷</button>
+        </div>
         <span id="dirty" class="dirty hidden" title="Hay cambios sin guardar">●</span>
         <button id="btn-save" class="btn small primary hidden">Guardar</button>
       </div>
@@ -49,6 +54,26 @@ export function boot() {
     try { await saveAll(); toast("Guardado [OK] (partidas intactas)"); refreshDirty(); if (currentTab === "home") goTab("home", true); }
     catch (e) { toast("Error al guardar: " + e.message, "error"); }
   };
+  document.getElementById("btn-undo").onclick = () => runHistoryAction("undo");
+  document.getElementById("btn-redo").onclick = () => runHistoryAction("redo");
+  document.addEventListener("pokemod-history", (e) => refreshHistoryControls(e.detail));
+  document.addEventListener("pokemod-history-applied", (e) => {
+    refreshDirty();
+    if (HISTORY_TABS.has(currentTab)) goTab(currentTab, true);
+    const action = e.detail.action === "undo" ? "Deshecho" : "Rehecho";
+    toast(`${action}: ${e.detail.label}`);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.defaultPrevented || e.isComposing || !(e.ctrlKey || e.metaKey) || e.altKey) return;
+    if (document.getElementById("modal-ov")) return;
+    const tag = e.target?.tagName?.toLowerCase();
+    if (["input", "textarea", "select"].includes(tag) || e.target?.isContentEditable) return;
+    const key = e.key.toLowerCase();
+    const action = key === "z" ? (e.shiftKey ? "redo" : "undo") : key === "y" && !e.shiftKey ? "redo" : "";
+    if (!action) return;
+    e.preventDefault();
+    runHistoryAction(action);
+  });
   document.getElementById("fallbackInput").addEventListener("change", async (e) => {
     const files = [...e.target.files];
     e.target.value = "";
@@ -65,6 +90,7 @@ export function boot() {
 
 export function goTab(name, force = false) {
   if (name === currentTab && !force) return;
+  if (name !== currentTab && (!HISTORY_TABS.has(name) || !HISTORY_TABS.has(currentTab))) clearEditHistory();
   currentTab = name;
   document.querySelectorAll("#tabs .tab").forEach((b) => b.classList.toggle("active", b.dataset.tab === name));
   const view = document.getElementById("view");
@@ -80,6 +106,26 @@ export function goTab(name, force = false) {
   else if (name === "pbs") renderPbsTab(view, { goTab });
   else if (name === "create") renderCreateTab(view, { goTab });
   else if (name === "mods") renderModsTab(view, { goTab });
+}
+
+async function runHistoryAction(action) {
+  try {
+    if (action === "undo") await undoEdit();
+    else await redoEdit();
+  } catch (e) {
+    toast(`No se pudo ${action === "undo" ? "deshacer" : "rehacer"}: ${e.message}`, "error");
+  }
+}
+
+function refreshHistoryControls(state = {}) {
+  const undo = document.getElementById("btn-undo");
+  const redo = document.getElementById("btn-redo");
+  if (!undo || !redo) return;
+  const busy = !!(state.busy || state.pending);
+  undo.disabled = busy || !state.canUndo;
+  redo.disabled = busy || !state.canRedo;
+  undo.title = state.undoLabel ? `Deshacer: ${state.undoLabel} (Ctrl+Z)` : "Deshacer (Ctrl+Z)";
+  redo.title = state.redoLabel ? `Rehacer: ${state.redoLabel} (Ctrl+Y)` : "Rehacer (Ctrl+Y)";
 }
 
 export function refreshDirty() {
