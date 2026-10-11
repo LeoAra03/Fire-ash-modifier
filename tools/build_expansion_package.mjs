@@ -19,6 +19,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { marshalLoad } from "../web/js/marshal.js";
 import { GAME, ROOT } from "./lib/fire_ash_registry.mjs";
 import { assertSameFile } from "./lib/package_integrity.mjs";
 import { readZipIndex, writeZip } from "./lib/zip_writer.mjs";
@@ -51,10 +52,47 @@ const maps = new Set([
   ...Array.from({ length: 8 }, (_, i) => 2250 + i),     // los ocho gimnasios de Atlas
 ]);
 
+/** Copias de charsets que usan los eventos verdes de los mapas incluidos. */
+function eventCharacterAssets() {
+  const names = new Set(["ash_outfit_creep"]);
+  for (const mapId of maps) {
+    const file = path.join(DATA, mapFile(mapId));
+    if (!fs.existsSync(file)) continue;
+    const map = marshalLoad(fs.readFileSync(file));
+    const events = map.getIvar("@events")?.pairs ?? [];
+    for (const [, event] of events) for (const page of event.getIvar("@pages") ?? []) {
+      const graphic = page.getIvar("@graphic");
+      const name = graphic?.getIvar("@character_name")?.text ?? "";
+      if (name.startsWith("DN_")) names.add(name);
+    }
+  }
+  return [...names].sort();
+}
+
+function greenTilesetAssets() {
+  const tilesets = marshalLoad(fs.readFileSync(path.join(DATA, "Tilesets.rxdata")));
+  const files = new Set();
+  for (const mapId of maps) {
+    const file = path.join(DATA, mapFile(mapId));
+    if (!fs.existsSync(file)) continue;
+    const map = marshalLoad(fs.readFileSync(file));
+    const tileset = tilesets[Number(map.getIvar("@tileset_id"))];
+    if (!tileset) throw new Error(`Map${mapId}: tileset ausente al construir el paquete`);
+    const name = tileset.getIvar("@tileset_name")?.text ?? "";
+    if (name.startsWith("DN_")) files.add(`Graphics/Tilesets/${name}.png`);
+    for (const auto of tileset.getIvar("@autotile_names") ?? []) {
+      const autoName = auto?.text ?? "";
+      if (autoName.startsWith("DN_")) files.add(`Graphics/Autotiles/${autoName}.png`);
+    }
+  }
+  return [...files].sort();
+}
+
 /** Archivos del arco, siempre relativos a la raíz del juego. */
 function fileList() {
   const files = [
     "Data/MapInfos.rxdata",     // nombres de los mapas nuevos
+    "Data/Tilesets.rxdata",     // copias verdes con pasabilidad original
     "Data/map_metadata.dat",    // metadatos de los mapas nuevos
     "Data/trainers.dat",        // los cinco combates de la Liga Oscura y los diez del Gimnasio de las Eras
     "Data/trainer_types.dat",   // tipos de las Eras, las dimensiones y el circuito
@@ -70,7 +108,9 @@ function fileList() {
     files.push(`Audio/SE/${entry.id}.ogg`);
   }
   files.push("Graphics/Characters/ARCEUS_GATE.png");  // sprite de las grietas
-  return files;
+  for (const name of eventCharacterAssets()) files.push(`Graphics/Characters/${name}.png`);
+  files.push(...greenTilesetAssets());
+  return [...new Set(files)];
 }
 
 const README = `PAQUETE — EXPANSIÓN MULTIVERSAL (POKÉMON FIRE ASH 3.7.1)
@@ -84,8 +124,11 @@ QUÉ INSTALA
 -----------
 - Siete grietas purgables en Torre Pokémon, Islas Espuma, Monte Moon, Torre
   Quemada, Planta de Energía, Ruinas Alfa y Mansión Pokémon.
+- Las siete emisiones y la Liga Oscura llevan arte de cuatro tonos Game Boy;
+  los tiles RMXP siguen siendo de 32 px y cada mapa respeta el límite de tres
+  personajes visibles.
 - Punto de colapso en la Torre Pokémon 1F y Liga Oscura (dos mapas, cinco
-  combates que se pueden perder).
+  combates que se pueden perder: dos en el umbral y tres en la arena).
 - Expedición a Atlas Mil: capitán en el puerto de Ciudad Carmín y muelle propio.
 - Cinco ROMs reinterpretadas como dimensiones separadas: Glazed, Light
   Platinum, Liquid Crystal, TFOH y Factory Adventure; Ash entra como visitante

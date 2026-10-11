@@ -1,7 +1,7 @@
 {
   "esquema": "restauracion_cromatica/1.0",
   "titulo": "Ash, agente externo: devolver el color a las siete emisiones",
-  "nota": "Cada emisión del Monte Silver es una dimensión rota que sigue fiel a su creepypasta. Derrotar al jefe la purga (sello), pero NO la salva: el mundo sigue en gris. Ash, que viene de fuera de estas dimensiones, toca el Nexo de Color y devuelve al mundo su momento de paz: el color vuelve, los pobladores dejan de repetir su trauma y la emisión deja de doler.",
+  "nota": "Cada emisión del Monte Silver es una dimensión rota que sigue fiel a su creepypasta. Derrotar al jefe la purga (sello), pero NO la salva: el mundo sigue en gris. Ash, que viene de fuera de estas dimensiones, toca el Nexo de Color y devuelve al mundo su momento de paz: el color vuelve, el poblador visible deja de repetir su trauma y la segunda voz permanece como recuerdo grabado en el Nexo, para respetar el máximo de tres personajes visibles por mapa.",
   "interruptores": {
     "SELLO_BASE": 940,
     "COLOR_BASE": 950,

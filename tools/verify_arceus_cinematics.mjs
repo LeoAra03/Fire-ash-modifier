@@ -250,8 +250,8 @@ check(canon.includes("module RutaCampoSeguro") && canon.includes("def self.sanit
 check(!/^\s*otro\.ability = nil/m.test(canon) && canon.includes("PBEffects.const_get(:GastroAcid)"),
   "el silencio de talentos usa el efecto real del motor en vez de borrar el talento");
 check(canon.includes("MEGA ARCEUS, EL DE LOS MIL BRAZOS, ESCRIBE LA ÚLTIMA REGLA") &&
-  canon.includes(":movs => [:FURYSWIPES, :COMETPUNCH, :PINMISSILE, :ARMTHRUST]"),
-  "la fase 6 del canon anuncia a Mega Arceus y arma su pool de mil brazos");
+  canon.includes(":movs => [:GMAXAURASPHERE, :MAXFLARE, :MAXGEYSER, :MAXQUAKE]"),
+  "la fase 6 del canon anuncia a Mega Arceus y usa el pool Gigamax aprobado");
 
 // --------------------------------------------- R11: fases que no revientan y Primigenia
 check(canon.includes("def self.paso") && canon.includes("paso { campo(battle, :MagicRoom, 5) }") &&
@@ -336,18 +336,22 @@ check(!/pbFlash\(Color\.new\(255, 255, 255/.test(ruby) && !/pbFlash\(/.test(ruby
 check(!ruby.includes("def pbArceusPseudoPC") && !ruby.includes("pbArceusPseudoPC") &&
   !ruby.includes("def pbArceusVoloRest") && !ruby.includes("pbArceusVoloRest"),
   "R14: el pseudo-PC y la cura previa al duelo con Volo desaparecen por completo");
-check(ruby.includes("decision = pbWildBattleCore(pkmn, *sequito)") &&
-  ruby.includes("RUTA_ARCEUS_SEQUITO = [") && ruby.includes("[:DIALGA,") &&
-  ruby.includes("[:PALKIA,") && ruby.includes("[:GIRATINA,"),
-  "R14: el duelo divino es una batalla doble real con el Trío de la Creación de séquito");
+const divineBattle = cuerpo("def pbStartArceusDivineBattle") ?? "";
+check(divineBattle.includes("oleadas = [") &&
+  divineBattle.includes("decision = pbWildBattleCore(*mons)") &&
+  divineBattle.includes("GROUDON") && divineBattle.includes("KYOGRE") &&
+  divineBattle.includes("RAYQUAZA") && divineBattle.includes("REGIGIGAS") &&
+  divineBattle.includes("decision = pbWildBattleCore(pkmn)") &&
+  divineBattle.includes("1 vs 1 CONTRA ARCEUS ORIGEN"),
+  "R17: las oleadas usan combates dobles reales y el duelo final queda en un 1 vs 1 sin invocaciones");
 check(ruby.includes("def pbArceusOrdenDivina") && ruby.includes("pbArceusSummon(boss, especie") &&
   ruby.includes("def pbArceusInvocationAction") && ruby.includes("def pbArceusDismissInvocation") &&
   ruby.includes("pbArceusPosesionFin(boss)"),
   "R14: los legendarios invocados ocupan un hueco real, ejecutan la orden y luego se retiran");
-check(ruby.includes("battler.pbChangeForm(18") && ruby.includes("def pbArceusRedibujar") &&
-  fs.existsSync(path.join(GAME, "Graphics/Pokemon/Front/ARCEUS_18.png")) &&
-  fs.existsSync(path.join(GAME, "Graphics/Pokemon/Back/ARCEUS_18.png")),
-  "R14: la Mega cambia el sprite de verdad (Forma Origen de mil brazos, frente y espalda)");
+check(ruby.includes("battler.pbChangeForm(19") && ruby.includes("def pbArceusRedibujar") &&
+  fs.existsSync(path.join(GAME, "Graphics/Pokemon/Front/ARCEUS_19.png")) &&
+  fs.existsSync(path.join(GAME, "Graphics/Pokemon/Back/ARCEUS_19.png")),
+  "R17: la Mega cambia el sprite de verdad (Forma Origen de mil brazos, frente y espalda)");
 check(["genesis1_bg", "genesis2_bg", "genesis3_bg", "genesis1_base0", "genesis1_base1"].every(
     (f) => fs.existsSync(path.join(GAME, `Graphics/Battlebacks/${f}.png`))) &&
   ruby.includes("RUTA_ARCEUS_FONDO_POR_FASE = [") &&

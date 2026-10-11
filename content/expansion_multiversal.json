@@ -229,7 +229,7 @@
         "battleBackdrop": "distortion",
         "lines": [
           "Umbral de la Liga Oscura. El aire aquí no circula: se repite.",
-          "Detrás de esa puerta esperan las siete voces, pero ya no por separado."
+          "Dos voces esperan en este umbral; detrás de la puerta, las otras tres guardan la arena."
         ]
       },
       {
@@ -253,6 +253,7 @@
     "battles": [
       {
         "id": "canto",
+        "room": "umbral",
         "name": "EL CANTO",
         "type": "PSYCHIC_F",
         "sprite": "MISMAGIUS",
@@ -293,6 +294,7 @@
       },
       {
         "id": "estatica",
+        "room": "umbral",
         "name": "LA ESTÁTICA",
         "type": "SCIENTIST",
         "sprite": "PORYGON",
@@ -333,6 +335,7 @@
       },
       {
         "id": "sinrostro",
+        "room": "arena",
         "name": "EL SIN ROSTRO",
         "type": "HIKER",
         "sprite": "MAROWAK",
@@ -373,6 +376,7 @@
       },
       {
         "id": "eco",
+        "room": "arena",
         "name": "EL ECO",
         "type": "SWIMMER_M",
         "sprite": "JELLICENT",
@@ -413,6 +417,7 @@
       },
       {
         "id": "convergencia",
+        "room": "arena",
         "name": "LA CONVERGENCIA",
         "type": "CHAMPION",
         "sprite": "GENGAR",
@@ -451,8 +456,7 @@
           ]
         ]
       }
-    ],
-    "finalSwitch": 948
+    ]
   },
   "atlas": {
     "captainMap": 108,

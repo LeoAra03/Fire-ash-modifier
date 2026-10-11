@@ -71,7 +71,7 @@ tone(-96,-64,-64,40); v266 = 6; huecos activos (content/dimensional_nightmare_fa
 | 2151 | El Reflejo de Red | Interdimensional | `trchar028` | Repite la última frase del jugador con la voz de Red. |
 | 2153 | El Vecino Que No Mira | Normal | `trchar070` | 5 estados; nunca mira a los ojos, siempre a la correa. |
 | 2154 | El Cuidador del Canil | Consciente | `trainer_YOUNGSTER` | Reta a duelo opcional: quiere saber si Ash también perdió a alguien. |
-| 2155 | Los Cuatro Anudados | Consciente ×4 | `trchar028` | No hablan; si el jugador se acerca al nudo, señalan el árbol. |
+| 2155 | Los Cuatro Anudados | Consciente ×3 | `trchar028` | Tres figuras visibles; la cuarta se expresa con una cinta suelta. No hablan; si Ash se acerca al nudo, señalan el árbol. |
 | 2156 | El Traductor de Cintas | Interdimensional | `trchar001` | Traduce (con Rotom Sintonía ≥4) la inscripción del árbol. |
 
 **Ejemplo de diálogos de 5 estados** (El Sepulturero del Patio, 2143):

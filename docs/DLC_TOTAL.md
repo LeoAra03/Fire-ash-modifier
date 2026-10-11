@@ -71,9 +71,13 @@ se va, los pobladores dejan de repetir su trauma y la emisión deja de doler.
 
 Cada emisión es **fiel a su creepypasta**: la torre que escuchaba, la partida
 sin guardar, la fosa, la cinta carmesí, la ciudad fallida, el eco y el cartucho
-de 1996. Cada una tiene dos pobladores que hablan distinto antes y después.
-El gris se aplica al entrar y **se limpia al salir**, así que nunca se escapa
-al mundo.
+de 1996. En cada emisión hay un poblador visible; la segunda voz se conserva
+como recuerdo en el Nexo para mantener el límite de tres personajes por mapa.
+Ambas voces cambian después de la restauración. El gris se aplica al entrar y
+**se limpia al salir**, así que nunca se escapa al mundo. La Liga Oscura
+reparte dos adversarios entre el umbral (junto a la Guardiana) y tres en la
+Arena Final: se conservan los cinco combates sin superar tres figuras visibles
+por mapa.
 
 ```bash
 npm run build:restauracion

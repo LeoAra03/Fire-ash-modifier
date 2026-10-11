@@ -39,6 +39,7 @@ const DATA_FILES = [
   "trainerlists.dat", "trainer_lists.dat",
 ];
 const POSTGAME_ASSETS = [
+  "Graphics/Characters/ash_outfit_creep.png",
   "Graphics/Characters/ARCEUS.png",
   "Graphics/Characters/ARCEUS_GATE.png",
   "Graphics/Characters/ARC_Cynthia.png",
@@ -50,12 +51,13 @@ const POSTGAME_ASSETS = [
   "Graphics/Characters/SECRET_Red.png",
   "Graphics/Characters/SECRET_Volo.png",
   "Graphics/Characters/SQUIRTLE.png",
+  "Graphics/Characters/ash_outfit_creep.png",
   "Audio/BGM/Legend Sinnoh.ogg",
   "Graphics/Pictures/Trainer Card/icon_badges.png",
   "Audio/BGM/secretvolo.ogg",
 ];
 const COPY_GRAPHIC_DIRS = [
-  "Characters", "Items", "Pictures", "Pokemon/Front", "Trainers",
+  "Autotiles", "Characters", "Items", "Pictures", "Pokemon/Front", "Trainers",
 ];
 const TITLE_GRAPHIC = "Titles/title.png";
 

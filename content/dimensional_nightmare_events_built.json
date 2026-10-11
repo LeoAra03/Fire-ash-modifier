@@ -213,8 +213,8 @@
     },
     "2055": {
       "episode": "EP01",
-      "events": 10,
-      "npcs": 4,
+      "events": 9,
+      "npcs": 3,
       "entry": [
         11,
         1
@@ -810,8 +810,8 @@
     },
     "2095": {
       "episode": "EP04",
-      "events": 9,
-      "npcs": 4,
+      "events": 8,
+      "npcs": 3,
       "entry": [
         11,
         1
@@ -1249,8 +1249,8 @@
     },
     "2124": {
       "episode": "EP06",
-      "events": 9,
-      "npcs": 5,
+      "events": 7,
+      "npcs": 3,
       "entry": [
         16,
         1
@@ -1692,8 +1692,8 @@
     },
     "2155": {
       "episode": "W7",
-      "events": 8,
-      "npcs": 4,
+      "events": 7,
+      "npcs": 3,
       "entry": [
         11,
         2
@@ -1856,8 +1856,8 @@
     },
     "2166": {
       "episode": "W8",
-      "events": 10,
-      "npcs": 5,
+      "events": 8,
+      "npcs": 3,
       "entry": [
         9,
         4
@@ -2239,226 +2239,5 @@
       12
     ],
     "distance": 0
-  },
-  "hubMap": {
-    "map": 2040,
-    "entry": [
-      15,
-      22
-    ],
-    "exit": [
-      13,
-      22
-    ],
-    "archivero": [
-      12,
-      22
-    ],
-    "progreso": [
-      18,
-      12
-    ],
-    "rifts": {
-      "EP01": {
-        "cell": [
-          0,
-          0
-        ],
-        "to": 2041,
-        "cellTo": [
-          11,
-          3
-        ]
-      },
-      "EP02": {
-        "cell": [
-          27,
-          4
-        ],
-        "to": 2057,
-        "cellTo": [
-          11,
-          1
-        ]
-      },
-      "EP03": {
-        "cell": [
-          0,
-          18
-        ],
-        "to": 2073,
-        "cellTo": [
-          7,
-          2
-        ]
-      },
-      "EP04": {
-        "cell": [
-          27,
-          19
-        ],
-        "to": 2088,
-        "cellTo": [
-          11,
-          1
-        ]
-      },
-      "EP05": {
-        "cell": [
-          16,
-          0
-        ],
-        "to": 2104,
-        "cellTo": [
-          11,
-          1
-        ]
-      },
-      "EP06": {
-        "cell": [
-          8,
-          1
-        ],
-        "to": 2120,
-        "cellTo": [
-          18,
-          3
-        ]
-      },
-      "NEXO": {
-        "cell": [
-          5,
-          22
-        ],
-        "to": 2136,
-        "cellTo": [
-          11,
-          1
-        ]
-      },
-      "W7": {
-        "cell": [
-          9,
-          18
-        ],
-        "to": 2143,
-        "cellTo": [
-          10,
-          1
-        ]
-      },
-      "W8": {
-        "cell": [
-          26,
-          11
-        ],
-        "to": 2159,
-        "cellTo": [
-          10,
-          3
-        ]
-      },
-      "W9": {
-        "cell": [
-          22,
-          7
-        ],
-        "to": 2175,
-        "cellTo": [
-          9,
-          1
-        ]
-      }
-    }
-  },
-  "hubCave": {
-    "map": 2030,
-    "arrival": [
-      36,
-      12
-    ],
-    "gate": [
-      36,
-      14,
-      2
-    ]
-  },
-  "liga": {
-    "maps": {
-      "portico": 2141,
-      "coliseo": 2142
-    },
-    "gate": {
-      "map": 2040,
-      "event": "HUB_LIGA_OSCURA",
-      "cell": [
-        18,
-        11
-      ]
-    },
-    "entry": {
-      "portico": [
-        11,
-        10
-      ],
-      "coliseo": [
-        14,
-        20
-      ]
-    },
-    "exit": {
-      "portico": [
-        8,
-        10
-      ],
-      "coliseo": [
-        14,
-        21
-      ]
-    },
-    "mpika": [
-      14,
-      11
-    ],
-    "sparks": [
-      [
-        7,
-        6
-      ],
-      [
-        20,
-        5
-      ],
-      [
-        9,
-        17
-      ],
-      [
-        27,
-        13
-      ]
-    ],
-    "switches": {
-      "ready": 917,
-      "ligaStarted": 918,
-      "arceus": 919,
-      "cleared": 920,
-      "pikaSaved": 921
-    },
-    "variables": {
-      "branch": 278,
-      "sparks": 279,
-      "medals": 280,
-      "stage": 281,
-      "battle": 282
-    },
-    "stage": {
-      "intro": 0,
-      "prueba": 1,
-      "arceus": 2,
-      "combate": 3,
-      "cierre": 4
-    },
-    "trainer": "DN_MADPIKA/MAD PIKACHU nv 175"
   }
 }
