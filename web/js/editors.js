@@ -3,7 +3,7 @@
 // ============================================================================
 import {
   S, loadMap, loadPBS, getTileset, saveMap, saveSystem, savePBS,
-  markMapDirty, scanAllMaps, kirinCheck, backupNow, listBackups, restoreBackup,
+  markMapDirty, runUndoableEdit, scanAllMaps, kirinCheck, backupNow, listBackups, restoreBackup,
   buildSalaMod, uninstallSalaMod, exportChangesZip, findSaves,
 } from "./app.js";
 import { FS } from "./fs.js";
@@ -125,40 +125,52 @@ export async function renderEventsTab(view) {
   view.querySelector("#ev-map").onclick = () => mapPickerModal("Mapa", (id) => { S.currentMap = id; S.currentEvent = null; renderEventsTab(view); });
   view.querySelector("#ev-ev").onclick = () => eventPickerModal(S.currentMap, (id) => { S.currentEvent = id; S.currentPage = 0; renderEventsTab(view); });
   view.querySelectorAll("[data-pg]").forEach((b) => (b.onclick = () => { S.currentPage = Number(b.dataset.pg); renderEventsTab(view); }));
-  view.querySelector("#f-spr").onclick = () => spritePickerModal("Sprite del NPC", pg.graphic?.charName || "", (n) => {
-    pg.graphic.obj.setIvar("character_name", RString.fromText(n));
-    pg.graphic.obj.setIvar("tile_id", 0);
-    markMapDirty(S.currentMap); dirty(); renderEventsTab(view);
+  view.querySelector("#f-spr").onclick = () => spritePickerModal("Sprite del NPC", pg.graphic?.charName || "", async (n) => {
+    const mapId = Number(S.currentMap);
+    try {
+      await runUndoableEdit(`Cambiar sprite de Ev.${ev.id}`, { kind: "map", id: mapId }, () => {
+        pg.graphic.obj.setIvar("character_name", RString.fromText(n));
+        pg.graphic.obj.setIvar("tile_id", 0);
+        markMapDirty(mapId);
+      });
+      dirty(); renderEventsTab(view);
+    } catch (e) { toast(e.message, "error"); }
   });
 
   const applyAndSave = async () => {
-    evObj.setIvar("name", RString.fromText(view.querySelector("#f-name").value));
-    evObj.setIvar("x", Number(view.querySelector("#f-x").value));
-    evObj.setIvar("y", Number(view.querySelector("#f-y").value));
-    const c = pg.condition?.obj;
-    if (c) {
-      c.setIvar("switch1_valid", view.querySelector("#c-sw1v").checked);
-      c.setIvar("switch1_id", Number(view.querySelector("#c-sw1").value));
-      c.setIvar("switch2_valid", view.querySelector("#c-sw2v").checked);
-      c.setIvar("switch2_id", Number(view.querySelector("#c-sw2").value));
-      c.setIvar("variable_valid", view.querySelector("#c-varv").checked);
-      c.setIvar("variable_id", Number(view.querySelector("#c-var").value));
-      c.setIvar("variable_value", Number(view.querySelector("#c-varval").value));
-      c.setIvar("self_switch_valid", view.querySelector("#c-selfv").checked);
-      c.setIvar("self_switch_ch", RString.fromText(view.querySelector("#c-self").value));
-    }
-    pg.obj.setIvar("trigger", Number(view.querySelector("#f-trig").value));
-    pg.obj.setIvar("move_type", Number(view.querySelector("#f-mv").value));
-    view.querySelectorAll("[data-opt]").forEach((chk) => {
-      pg.obj.setIvar(chk.dataset.opt === "walkAnime" ? "walk_anime" : chk.dataset.opt === "stepAnime" ? "step_anime" : chk.dataset.opt === "dirFix" ? "direction_fix" : chk.dataset.opt === "alwaysTop" ? "always_on_top" : "through", chk.checked);
-    });
-    if (pg.graphic) {
-      pg.graphic.obj.setIvar("direction", Number(view.querySelector("#f-dir").value));
-      pg.graphic.obj.setIvar("pattern", Number(view.querySelector("#f-pat").value));
-    }
-    markMapDirty(S.currentMap); dirty();
-    try { await saveMap(S.currentMap); toast("Evento guardado [OK]"); }
-    catch (e) { toast(e.message, "error"); }
+    const mapId = Number(S.currentMap);
+    try {
+      await runUndoableEdit(`Editar Ev.${ev.id}`, { kind: "map", id: mapId }, async () => {
+        evObj.setIvar("name", RString.fromText(view.querySelector("#f-name").value));
+        evObj.setIvar("x", Number(view.querySelector("#f-x").value));
+        evObj.setIvar("y", Number(view.querySelector("#f-y").value));
+        const c = pg.condition?.obj;
+        if (c) {
+          c.setIvar("switch1_valid", view.querySelector("#c-sw1v").checked);
+          c.setIvar("switch1_id", Number(view.querySelector("#c-sw1").value));
+          c.setIvar("switch2_valid", view.querySelector("#c-sw2v").checked);
+          c.setIvar("switch2_id", Number(view.querySelector("#c-sw2").value));
+          c.setIvar("variable_valid", view.querySelector("#c-varv").checked);
+          c.setIvar("variable_id", Number(view.querySelector("#c-var").value));
+          c.setIvar("variable_value", Number(view.querySelector("#c-varval").value));
+          c.setIvar("self_switch_valid", view.querySelector("#c-selfv").checked);
+          c.setIvar("self_switch_ch", RString.fromText(view.querySelector("#c-self").value));
+        }
+        pg.obj.setIvar("trigger", Number(view.querySelector("#f-trig").value));
+        pg.obj.setIvar("move_type", Number(view.querySelector("#f-mv").value));
+        view.querySelectorAll("[data-opt]").forEach((chk) => {
+          pg.obj.setIvar(chk.dataset.opt === "walkAnime" ? "walk_anime" : chk.dataset.opt === "stepAnime" ? "step_anime" : chk.dataset.opt === "dirFix" ? "direction_fix" : chk.dataset.opt === "alwaysTop" ? "always_on_top" : "through", chk.checked);
+        });
+        if (pg.graphic) {
+          pg.graphic.obj.setIvar("direction", Number(view.querySelector("#f-dir").value));
+          pg.graphic.obj.setIvar("pattern", Number(view.querySelector("#f-pat").value));
+        }
+        markMapDirty(mapId);
+        await saveMap(mapId);
+      });
+      toast("Evento guardado [OK]");
+      dirty();
+    } catch (e) { toast(e.message, "error"); }
   };
   view.querySelector("#ev-save").onclick = applyAndSave;
 
@@ -176,14 +188,20 @@ export async function renderEventsTab(view) {
       </div>`;
     }).join("");
     listEl.querySelectorAll(".cmdrow").forEach((row) => {
-      row.onclick = (e) => {
+      row.onclick = async (e) => {
         if (e.target.dataset.mv) {
           e.stopPropagation();
           const i = Number(row.dataset.i), j = i + Number(e.target.dataset.mv);
           if (j < 0 || j >= pg.list.length) return;
-          const [it] = pg.list.splice(i, 1);
-          pg.list.splice(j, 0, it);
-          markMapDirty(S.currentMap); dirty(); drawCmds();
+          const command = cmdOf(pg.list[i]);
+          try {
+            await runUndoableEdit(`Mover comando #${command.code}`, { kind: "map", id: S.currentMap }, () => {
+              const [it] = pg.list.splice(i, 1);
+              pg.list.splice(j, 0, it);
+              markMapDirty(S.currentMap);
+            });
+            dirty(); drawCmds();
+          } catch (error) { toast(error.message, "error"); }
           return;
         }
         openCommandEditor(view, rec, pg, Number(row.dataset.i), drawCmds);
@@ -207,7 +225,7 @@ function openInsertMenu(view, rec, pg, redraw) {
     ${T("Condición (switch)", 0)}${T("Sonido SE", 0)}${T("Tienda", 0)}
   </div><p class="muted small">Se inserta al final (antes del Fin).</p>`;
   wrap.querySelectorAll("[data-t]").forEach((b) => {
-    b.onclick = () => {
+    b.onclick = async () => {
       const cmds = [];
       const t = b.dataset.t;
       if (t.startsWith("Texto")) cmds.push(newCmd(101, [RString.fromText(""), 0, 0, 2]), newCmd(401, [RString.fromText("Nuevo diálogo…")]));
@@ -227,9 +245,14 @@ function openInsertMenu(view, rec, pg, redraw) {
       else if (t.startsWith("Tienda")) cmds.push(newCmd(302, [[]]));
       let at = pg.list.length;
       if (at > 0 && Number(pg.list[at - 1].getIvar("code")) === 0) at--;
-      pg.list.splice(at, 0, ...cmds);
-      markMapDirty(S.currentMap); dirty(); closeModal(); redraw();
-      toast("Comando añadido (guarda el mapa).");
+      try {
+        await runUndoableEdit(`Añadir comando: ${t}`, { kind: "map", id: S.currentMap }, () => {
+          pg.list.splice(at, 0, ...cmds);
+          markMapDirty(S.currentMap);
+        });
+        dirty(); closeModal(); redraw();
+        toast("Comando añadido (guarda el mapa).");
+      } catch (error) { toast(error.message, "error"); }
     };
   });
   openModal({ title: "Añadir comando", body: wrap });
@@ -257,23 +280,33 @@ function openCommandEditor(view, rec, pg, index, redraw) {
       { label: "Eliminar", cls: "danger", onClick: async (close) => {
         if (pg.list.length <= 1) { toast("No puedes borrar el único comando.", "error"); return; }
         if (await confirmDialog("Eliminar comando", "¿Borrar este comando? (se guarda con el mapa)")) {
-          pg.list.splice(index, 1);
-          markMapDirty(S.currentMap); dirty(); close(); redraw();
+          try {
+            await runUndoableEdit(`Eliminar comando #${code}`, { kind: "map", id: S.currentMap }, () => {
+              pg.list.splice(index, 1);
+              markMapDirty(S.currentMap);
+            });
+            dirty(); close(); redraw();
+          } catch (error) { toast(error.message, "error"); }
         }
       } },
-      { label: "Guardar", cls: "primary", onClick: (close) => {
+      { label: "Guardar", cls: "primary", onClick: async (close) => {
         try {
-          if (strings.length) {
-            body.querySelectorAll("textarea").forEach((ta) => {
-              strings[Number(ta.dataset.k)].rs.text = ta.value;
-            });
-          } else {
-            const j = JSON.parse(body.querySelector("#cmd-json").value);
-            o.setIvar("parameters", jsonToParams(j));
-          }
-          markMapDirty(S.currentMap); dirty(); close(); redraw();
+          await runUndoableEdit(`Editar comando #${code}`, { kind: "map", id: S.currentMap }, () => {
+            if (strings.length) {
+              body.querySelectorAll("textarea").forEach((ta) => {
+                strings[Number(ta.dataset.k)].rs.text = ta.value;
+              });
+            } else {
+              let j;
+              try { j = JSON.parse(body.querySelector("#cmd-json").value); }
+              catch (error) { throw new Error("JSON inválido: " + error.message); }
+              o.setIvar("parameters", jsonToParams(j));
+            }
+            markMapDirty(S.currentMap);
+          });
+          dirty(); close(); redraw();
           toast("Comando actualizado (guarda el mapa).");
-        } catch (e) { toast("JSON inválido: " + e.message, "error"); }
+        } catch (e) { toast(e.message, "error"); }
       } },
     ],
   });
@@ -343,9 +376,15 @@ export function renderFlagsTab(view, { goTab }) {
     listEl.innerHTML = rows.join("") || `<p class="muted">Sin resultados.</p>`;
     listEl.querySelectorAll("input[data-id]").forEach((inp) => {
       inp.onchange = async () => {
-        setSystemName(S.systemObj, flagKind, Number(inp.dataset.id), inp.value);
-        try { await saveSystem(); S.names = flagKind === "sw" || true ? S.names : S.names; toast("Nombre guardado [OK]"); }
-        catch (e) { toast(e.message, "error"); }
+        const id = Number(inp.dataset.id);
+        const kind = flagKind === "sw" ? "Interruptor" : "Variable";
+        try {
+          await runUndoableEdit(`Renombrar ${kind} ${id}`, { kind: "system" }, async () => {
+            setSystemName(S.systemObj, flagKind, id, inp.value);
+            await saveSystem();
+          });
+          toast("Nombre guardado [OK]");
+        } catch (e) { toast(e.message, "error"); }
       };
     });
     listEl.querySelectorAll("[data-uses]").forEach((b) => {
@@ -464,24 +503,36 @@ async function openNpcEditor(n, goTab) {
   };
   paint();
   wrap.querySelector("#npc-dir").onchange = paint;
-  wrap.querySelector("#npc-spr").onclick = () => spritePickerModal("Sprite", pg.graphic?.charName || "", (s) => {
-    pg.graphic.obj.setIvar("character_name", RString.fromText(s));
-    pg.graphic.obj.setIvar("tile_id", 0);
-    markMapDirty(n.mapId); dirty(); paint();
+  wrap.querySelector("#npc-spr").onclick = () => spritePickerModal("Sprite", pg.graphic?.charName || "", async (s) => {
+    try {
+      await runUndoableEdit(`Cambiar sprite de Ev.${n.evId}`, { kind: "map", id: n.mapId }, () => {
+        pg.graphic.obj.setIvar("character_name", RString.fromText(s));
+        pg.graphic.obj.setIvar("tile_id", 0);
+        markMapDirty(n.mapId);
+      });
+      dirty(); paint();
+    } catch (error) { toast(error.message, "error"); }
   });
   openModal({
     title: "Editar NPC", body: wrap,
     actions: [
       { label: "Ir al evento", onClick: (close) => { S.currentMap = n.mapId; S.currentEvent = n.evId; S.currentPage = 0; close(); goTab("events"); } },
       { label: "Guardar", cls: "primary", onClick: async (close) => {
-        evObj.setIvar("name", RString.fromText(wrap.querySelector("#npc-name").value));
-        evObj.setIvar("x", Number(wrap.querySelector("#npc-x").value));
-        evObj.setIvar("y", Number(wrap.querySelector("#npc-y").value));
-        pg.graphic.obj.setIvar("direction", Number(wrap.querySelector("#npc-dir").value));
-        markMapDirty(n.mapId); dirty();
-        try { await saveMap(n.mapId); toast("NPC guardado [OK]"); } catch (e) { toast(e.message, "error"); }
-        close();
-        n.name = ev.name; n.x = ev.x; n.y = ev.y;
+        try {
+          await runUndoableEdit(`Editar NPC Ev.${n.evId}`, { kind: "map", id: n.mapId }, async () => {
+            evObj.setIvar("name", RString.fromText(wrap.querySelector("#npc-name").value));
+            evObj.setIvar("x", Number(wrap.querySelector("#npc-x").value));
+            evObj.setIvar("y", Number(wrap.querySelector("#npc-y").value));
+            pg.graphic.obj.setIvar("direction", Number(wrap.querySelector("#npc-dir").value));
+            markMapDirty(n.mapId);
+            await saveMap(n.mapId);
+          });
+          toast("NPC guardado [OK]");
+          dirty(); close();
+          n.name = wrap.querySelector("#npc-name").value;
+          n.x = Number(wrap.querySelector("#npc-x").value);
+          n.y = Number(wrap.querySelector("#npc-y").value);
+        } catch (e) { toast(e.message, "error"); }
       } },
     ],
   });
@@ -515,8 +566,14 @@ export async function renderPbsTab(view) {
   </div></div>`;
   view.querySelector("#pbs-file").onchange = (e) => { pbsCurrent = e.target.value; renderPbsTab(view); };
   view.querySelector("#pbs-save").onclick = async () => {
-    collectPbsForm(view, rec);
-    try { await savePBS(pbsCurrent); toast("PBS guardado [OK]"); dirty(); } catch (e) { toast(e.message, "error"); }
+    const rel = pbsCurrent;
+    try {
+      await runUndoableEdit(`Editar ${rel}`, { kind: "pbs", path: rel }, async () => {
+        collectPbsForm(view, rec);
+        await savePBS(rel);
+      });
+      toast("PBS guardado [OK]"); dirty();
+    } catch (e) { toast(e.message, "error"); }
   };
   const listEl = view.querySelector("#pbs-list");
   const draw = (filter = "") => {
@@ -544,7 +601,13 @@ export async function renderPbsTab(view) {
     }
     if (sections.length > 120 && !f) listEl.innerHTML += `<p class="muted">Mostrando 120 de ${sections.length} (filtra para ver más).</p>`;
   };
-  view.querySelector("#pbs-search").oninput = debounce((e) => { collectPbsForm(view, rec); draw(e.target.value); }, 300);
+  view.querySelector("#pbs-search").oninput = debounce(async (e) => {
+    const filter = e.target.value;
+    try {
+      await runUndoableEdit(`Editar ${pbsCurrent}`, { kind: "pbs", path: pbsCurrent }, () => collectPbsForm(view, rec));
+      draw(filter);
+    } catch (error) { toast(error.message, "error"); }
+  }, 300);
   draw();
   // avisos de validación
   const issues = lintPBS(pbsCurrent, pbsToText(rec.lines));

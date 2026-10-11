@@ -1,9 +1,9 @@
 // Service worker: PokeMod funciona 100% offline (ideal en el celular).
-const CACHE = "pokemod-v3";
+const CACHE = "pokemod-v4";
 const ASSETS = [
   "./", "./index.html", "./manifest.json", "./icon.svg", "./css/style.css",
   "./js/ui.js", "./js/editors.js", "./js/helpers.js", "./js/app.js", "./js/fs.js",
-  "./js/marshal.js", "./js/rmxp.js", "./js/render.js", "./js/pbs.js",
+  "./js/marshal.js", "./js/rmxp.js", "./js/render.js", "./js/pbs.js", "./js/history.js",
   "./js/create.js", "./js/createUI.js", "./js/analyze.js", "./js/packs.js", "./packs/isla_espejo.json",
   "./js/demo.js", "./js/util.js",
 ];

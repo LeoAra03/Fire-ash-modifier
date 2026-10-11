@@ -29,7 +29,7 @@ const { FS } = await import("./fs.js");
 const App = await import("./app.js");
 const { renderMap } = await import("./render.js");
 const { pbsSections, pbsGet, pbsSet } = await import("./pbs.js");
-const { marshalLoad } = await import("./marshal.js");
+const { marshalLoad, RString } = await import("./marshal.js");
 const { zlibInflate } = await import("./util.js");
 
 let pass = 0, fail = 0;
@@ -262,6 +262,55 @@ ok(!allText(boss.pages).includes("pbNoticePlayer"), "jefe: sin aviso de proximid
 ok(allText(boss.pages).includes('pbTrainerBattle(:CAMPER,"Dave")'), "jefe: batalla intacta");
 const removed = C.removeSectionBody(added, "099");
 ok(!C.getSectionBody(removed, "099").found && C.getSectionBody(removed, "002").found, "sección borrada sin dañar vecinas");
+
+console.log("— historial integrado —");
+const historyMap = await App.loadMap(1);
+const historyEvent = historyMap.parsed.events[0].obj;
+const oldEventName = historyEvent.getIvar("name").text;
+await App.runUndoableEdit("Renombrar evento de prueba", { kind: "map", id: 1 }, () => {
+  historyEvent.setIvar("name", RString.fromText("Evento temporal"));
+  App.markMapDirty(1);
+});
+ok((await App.loadMap(1)).parsed.events[0].obj.getIvar("name").text === "Evento temporal", "transacción de mapa aplicada");
+const mapUndo = await App.undoEdit();
+ok(mapUndo?.label === "Renombrar evento de prueba" && (await App.loadMap(1)).parsed.events[0].obj.getIvar("name").text === oldEventName, "deshace mapa y restaura sus datos");
+const mapRedo = await App.redoEdit();
+ok(mapRedo?.label === "Renombrar evento de prueba" && (await App.loadMap(1)).parsed.events[0].obj.getIvar("name").text === "Evento temporal", "rehace mapa y restaura sus datos");
+let transactionFailed = false;
+try {
+  await App.runUndoableEdit("Edición fallida de prueba", { kind: "map", id: 1 }, () => {
+    App.S.maps.get(1).parsed.events[0].obj.setIvar("name", RString.fromText("No debe quedar"));
+    App.markMapDirty(1);
+    throw new Error("fallo esperado");
+  });
+} catch { transactionFailed = true; }
+ok(transactionFailed && (await App.loadMap(1)).parsed.events[0].obj.getIvar("name").text === "Evento temporal", "una transacción fallida revierte los datos parciales");
+
+const historyPbs = await App.loadPBS("PBS/pokemon.txt");
+const oldPikachuName = pbsGet(historyPbs.lines, "PIKACHU", "Name");
+await App.runUndoableEdit("Editar Pokémon de prueba", { kind: "pbs", path: "PBS/pokemon.txt" }, () => {
+  pbsSet(historyPbs.lines, "PIKACHU", "Name", "Pikachu historial");
+  historyPbs.dirty = true;
+});
+ok(pbsGet(historyPbs.lines, "PIKACHU", "Name") === "Pikachu historial", "transacción PBS aplicada");
+await App.undoEdit();
+ok(pbsGet((await App.loadPBS("PBS/pokemon.txt")).lines, "PIKACHU", "Name") === oldPikachuName, "deshace PBS");
+await App.redoEdit();
+ok(pbsGet((await App.loadPBS("PBS/pokemon.txt")).lines, "PIKACHU", "Name") === "Pikachu historial", "rehace PBS");
+
+const oldSwitchName = App.S.names.switches[1];
+await App.runUndoableEdit("Renombrar switch de prueba", { kind: "system" }, async () => {
+  const switches = App.S.systemObj.getIvar("switches");
+  switches[1].text = "Switch historial";
+  await App.saveSystem();
+});
+ok(App.S.names.switches[1] === "Switch historial", "transacción System aplicada y guardada");
+await App.undoEdit();
+const undoneSystem = marshalLoad(await FS.readBytes("Data/System.rxdata"));
+ok(App.S.names.switches[1] === oldSwitchName && undoneSystem.getIvar("switches")[1].text === oldSwitchName, "deshace flags y guarda System.rxdata");
+await App.redoEdit();
+const redoneSystem = marshalLoad(await FS.readBytes("Data/System.rxdata"));
+ok(App.S.names.switches[1] === "Switch historial" && redoneSystem.getIvar("switches")[1].text === "Switch historial", "rehace flags y guarda System.rxdata");
 
 console.log(`\nintegración: ${pass} OK, ${fail} fallos`);
 process.exit(fail ? 1 : 0);

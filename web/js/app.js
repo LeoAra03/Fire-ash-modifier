@@ -9,6 +9,7 @@ import {
 } from "./rmxp.js";
 import { parsePBS, pbsToText } from "./pbs.js";
 import { buildDemoProject } from "./demo.js";
+import { createHistory } from "./history.js";
 import { pad3, fmtBytes, fmtTime, zipStore, downloadBytes } from "./util.js";
 
 const S = {
@@ -40,6 +41,135 @@ const S = {
 };
 
 export { S };
+
+let editInProgress = false;
+function dispatchEditorEvent(name, detail = {}) {
+  if (typeof document === "undefined" || typeof CustomEvent === "undefined") return;
+  document.dispatchEvent(new CustomEvent(name, { detail }));
+}
+function dispatchHistoryState(state) {
+  dispatchEditorEvent("pokemod-history", { ...state, pending: editInProgress });
+}
+const editHistory = createHistory({ onChange: dispatchHistoryState });
+
+function emitHistoryState() {
+  dispatchHistoryState(editHistory.state);
+}
+
+function captureEditTarget(target) {
+  if (target.kind === "map") {
+    const id = Number(target.id);
+    const rec = S.maps.get(id);
+    if (!rec) throw new Error(`Mapa ${id} no está cargado.`);
+    return { payload: marshalDump(rec.parsed.obj), dirty: !!rec.dirty };
+  }
+  if (target.kind === "system") {
+    return { payload: marshalDump(S.systemObj), dirty: false };
+  }
+  if (target.kind === "pbs") {
+    const rel = String(target.path || "");
+    const rec = S.pbs.get(rel);
+    if (!rec) throw new Error(`PBS no está cargado: ${rel}`);
+    return { payload: pbsToText(rec.lines), dirty: !!rec.dirty };
+  }
+  throw new Error(`Tipo de edición no compatible con el historial: ${target.kind}`);
+}
+
+function sameEditContent(a, b) {
+  if (a.payload instanceof Uint8Array && b.payload instanceof Uint8Array) {
+    if (a.payload.length !== b.payload.length) return false;
+    for (let i = 0; i < a.payload.length; i++) if (a.payload[i] !== b.payload[i]) return false;
+    return true;
+  }
+  return a.payload === b.payload;
+}
+
+async function restoreEditTarget(target, snapshot, direction) {
+  const rollback = direction === "rollback";
+  if (target.kind === "map") {
+    const id = Number(target.id);
+    const previous = S.maps.get(id);
+    const rec = {
+      info: previous?.info || S.mapList.find((m) => m.id === id) || null,
+      parsed: parseMap(marshalLoad(snapshot.payload)),
+      dirty: rollback ? !!snapshot.dirty : true,
+    };
+    S.maps.set(id, rec);
+    touchLru(id);
+  } else if (target.kind === "pbs") {
+    const rec = S.pbs.get(target.path);
+    if (!rec) throw new Error(`PBS no está cargado: ${target.path}`);
+    rec.lines = parsePBS(snapshot.payload);
+    rec.dirty = rollback ? !!snapshot.dirty : true;
+  } else if (target.kind === "system") {
+    const previousObj = S.systemObj;
+    const previousNames = S.names;
+    S.systemObj = marshalLoad(snapshot.payload);
+    S.names = systemNames(S.systemObj);
+    if (!rollback) {
+      try { await saveSystem(); }
+      catch (error) { S.systemObj = previousObj; S.names = previousNames; throw error; }
+    }
+  }
+  dispatchEditorEvent("pokemod-dirty");
+}
+
+/** Agrupa una edición del editor como una única operación deshacer/rehacer. */
+export async function runUndoableEdit(label, target, mutate) {
+  if (editInProgress || editHistory.state.busy) throw new Error("Espera a que termine la edición actual.");
+  const normalized = target.kind === "map"
+    ? { kind: "map", id: Number(target.id) }
+    : target.kind === "pbs"
+      ? { kind: "pbs", path: String(target.path || "") }
+      : { kind: target.kind };
+  const before = captureEditTarget(normalized);
+  editInProgress = true;
+  emitHistoryState();
+  try {
+    const result = await mutate();
+    const after = captureEditTarget(normalized);
+    if (!sameEditContent(before, after)) {
+      editHistory.record({
+        label,
+        before,
+        after,
+        equals: sameEditContent,
+        measure: (snapshot) => snapshot.payload instanceof Uint8Array
+          ? snapshot.payload.byteLength
+          : new TextEncoder().encode(snapshot.payload).byteLength,
+        restore: (snapshot, direction) => restoreEditTarget(normalized, snapshot, direction),
+      });
+    }
+    return result;
+  } catch (error) {
+    try {
+      const afterFailure = captureEditTarget(normalized);
+      if (!sameEditContent(before, afterFailure)) await restoreEditTarget(normalized, before, "rollback");
+    } catch (rollbackError) { log(`No se pudo revertir la edición fallida: ${rollbackError.message}`, "error"); }
+    throw error;
+  } finally {
+    editInProgress = false;
+    emitHistoryState();
+  }
+}
+
+export function clearEditHistory() {
+  editHistory.clear();
+}
+
+export async function undoEdit() {
+  if (editInProgress) return null;
+  const entry = await editHistory.undo();
+  if (entry) dispatchEditorEvent("pokemod-history-applied", { action: "undo", label: entry.label });
+  return entry;
+}
+
+export async function redoEdit() {
+  if (editInProgress) return null;
+  const entry = await editHistory.redo();
+  if (entry) dispatchEditorEvent("pokemod-history-applied", { action: "redo", label: entry.label });
+  return entry;
+}
 
 export function log(msg, kind = "info") {
   S.log.unshift({ t: new Date(), msg, kind });
@@ -77,6 +207,7 @@ export async function connectFallback(files) {
 
 // --- Carga del proyecto ---------------------------------------------------------------
 export async function loadProject() {
+  editHistory.clear();
   S.sessionTs = fmtTime();
   S.backedUp = new Set();
   S.maps.clear(); S.lru = [];
