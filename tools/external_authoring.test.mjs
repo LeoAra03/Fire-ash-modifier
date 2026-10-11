@@ -465,8 +465,9 @@ const fastForwardChange = scriptChanges.find((change) => change.name === "Better
 const screenToneChange = scriptChanges.find((change) => change.name === "Game_Screen");
 const pictureToneChange = scriptChanges.find((change) => change.name === "Game_Picture");
 const sceneMapTransitionChange = scriptChanges.find((change) => change.name === "Scene_Map");
-check(scriptChanges.length === 9 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange && sceneMapTransitionChange,
-  "el archivo descargable corrige Grandeur Club, colisiones, guardado, tonos y transiciones");
+const rutaDeDiosChange = scriptChanges.find((change) => change.name === "PokeMod_RutaDeDios");
+check(scriptChanges.length === 10 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange && sceneMapTransitionChange && rutaDeDiosChange,
+  "el archivo descargable corrige Grandeur Club, colisiones, guardado, tonos, transiciones y la fase R18 de Arceus");
 check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
   "Grandeur Club conserva la corrección del end sobrante");
 check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
