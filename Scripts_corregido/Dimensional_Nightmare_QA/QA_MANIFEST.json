@@ -307,7 +307,9 @@
     "DN_2187",
     "DN_2188",
     "DN_2189",
-    "DN_2190"
+    "DN_2190",
+    "DN_GB_TS13",
+    "DN_GB_TS6"
   ],
   "files": [
     {
@@ -492,38 +494,38 @@
     },
     {
       "path": "Data/Map2023.rxdata",
-      "bytes": 12196,
-      "sha256": "a31836df9c406eac144350995df4f7a13d2bfc55129ab5b0147dd64ded1938c4"
+      "bytes": 12197,
+      "sha256": "b60ee06e36111328adb560418d5473a5fe0712cd743abccf229665c629c7f716"
     },
     {
       "path": "Data/Map2024.rxdata",
-      "bytes": 10367,
-      "sha256": "a64efcae8d6f7a93ce5618f8770054e93a60dc8115feed84257df1acc7d7041f"
+      "bytes": 10368,
+      "sha256": "b6d38e772f0577a7ace651f8357a4092c314edd09925f60ed68413f468400a82"
     },
     {
       "path": "Data/Map2025.rxdata",
-      "bytes": 12916,
-      "sha256": "bc0432a577d5db7cee6f549f6580c5a5471617f672c25cd825f89f401d4ff705"
+      "bytes": 12917,
+      "sha256": "a0ce39f755d711a42b1eceb121f51cc412de449751433208a9f54f85889de5db"
     },
     {
       "path": "Data/Map2026.rxdata",
-      "bytes": 15645,
-      "sha256": "bd96099e4feffbbc414b347d3e433e770f7376703cd82021d43e9c2961d9d295"
+      "bytes": 15646,
+      "sha256": "8526cc5bc286e2c3bda2697fb8613259a9fbef3ab196a01487adf726242a713c"
     },
     {
       "path": "Data/Map2027.rxdata",
-      "bytes": 17820,
-      "sha256": "22c48da064d67d2110fbc9e8fc3cc21f76f53b11c764476a6cc1abfcb2c9bb5a"
+      "bytes": 17821,
+      "sha256": "f56533f37c304285210583912cdbaab1977804775113715cfe4e87c7bdb0cbd2"
     },
     {
       "path": "Data/Map2028.rxdata",
-      "bytes": 12956,
-      "sha256": "b942dedb60ac2e26d654dc2bdd62b73d2cabb605ff580345ac76c0aa62258848"
+      "bytes": 12957,
+      "sha256": "88446771db0dbcc0df750a3f2f61bbcc630aaa164725be4addaeb93061d1773b"
     },
     {
       "path": "Data/Map2029.rxdata",
-      "bytes": 15622,
-      "sha256": "8826a27913c18e22c8c7ee2797492797764ad728d2623e952bd0858e76ac8c3b"
+      "bytes": 15623,
+      "sha256": "ce15f6d5bc343bbfde931caf43e12c2fa2547352b7c81cb087dadba876126f1a"
     },
     {
       "path": "Data/Map2030.rxdata",
@@ -572,8 +574,8 @@
     },
     {
       "path": "Data/Map2040.rxdata",
-      "bytes": 27632,
-      "sha256": "804f96f9afedb7fb09b2483fa7fef70872b01ec33d6613d2ee369e845411049c"
+      "bytes": 27633,
+      "sha256": "44de608104f3300d4501c1c4ddaa98dbd511b40dcc4c4fde8770c34c16a68e8f"
     },
     {
       "path": "Data/Map2041.rxdata",
@@ -1082,8 +1084,8 @@
     },
     {
       "path": "Data/Map2142.rxdata",
-      "bytes": 18467,
-      "sha256": "b19c8c3cac5e7d332d1e71d3a84bc796a9552d6a7de57b34d38883ea499a7c38"
+      "bytes": 18468,
+      "sha256": "6d5fde5637f8c132608bb029c4f423dfe29f0fec3817862a74985bfb043fb628"
     },
     {
       "path": "Data/Map2143.rxdata",
@@ -1352,8 +1354,8 @@
     },
     {
       "path": "Data/Tilesets.rxdata",
-      "bytes": 762248,
-      "sha256": "29cdf39ef44841cbeb0f0d8af3c6b05554506ba12cb89dde147864d4a5dcbabb"
+      "bytes": 763230,
+      "sha256": "398e28c41a1dfa9123963bab0474f6cd09637db20bd43be423de2ab137718eab"
     },
     {
       "path": "Data/encounters.dat",
@@ -1394,6 +1396,76 @@
       "path": "Data/trainertypes.dat",
       "bytes": 11316,
       "sha256": "3b83493e955ddf38b40be65153704dc14035497395724eeccb7d16a9d5966c7b"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS1_A0.png",
+      "bytes": 8215,
+      "sha256": "85457bf485aed3366560cdd364ef9ebb5e3e51594b3d91e41eddf269d12c3b18"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS1_A1.png",
+      "bytes": 7524,
+      "sha256": "fe043f13c725da8fbf70a6a0a651d5d4f3305ee75a8b216ea970f556378c40ec"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS1_A2.png",
+      "bytes": 6082,
+      "sha256": "5018288d4e567816ece9610b121ad65fd570d9bafc17255140df1f97bcb73328"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS1_A3.png",
+      "bytes": 3769,
+      "sha256": "acea24db30b075b576c67a8f3f1494c038095b79760f4b3fc811c3aab5ef71ca"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS1_A4.png",
+      "bytes": 683,
+      "sha256": "5cb4ca2ce50182b45a751797fbb6bbd714ef6a6f1f35f2d9d959b062e5989d7b"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS1_A5.png",
+      "bytes": 690,
+      "sha256": "b082d59330d573e5f34dbbb3fa4cc16449637b84cfc09be3015bf984213f7e0b"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS1_A6.png",
+      "bytes": 2802,
+      "sha256": "6d10890cf4082a21d51f07f3f46bfa6d9795819d558cc4c5004a474a526bed2c"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS3_A0.png",
+      "bytes": 2507,
+      "sha256": "617c9327b523068c11e341bb2d9d726f1e68afdb6d3ed903bd51dc81b57b39cf"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS6_A0.png",
+      "bytes": 8215,
+      "sha256": "85457bf485aed3366560cdd364ef9ebb5e3e51594b3d91e41eddf269d12c3b18"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS6_A1.png",
+      "bytes": 7524,
+      "sha256": "fe043f13c725da8fbf70a6a0a651d5d4f3305ee75a8b216ea970f556378c40ec"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS6_A2.png",
+      "bytes": 6082,
+      "sha256": "5018288d4e567816ece9610b121ad65fd570d9bafc17255140df1f97bcb73328"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS6_A4.png",
+      "bytes": 330,
+      "sha256": "fd2ed6cab7b51d51d78f439a26ff53c884036f9eb1e0585906cb8c903a3bcbcc"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS6_A5.png",
+      "bytes": 455,
+      "sha256": "37567ad195a39c39bd5708ef00e498f893e68378a6c863b1ec3eb1af94047fd6"
+    },
+    {
+      "path": "Graphics/Autotiles/DN_GB_TS6_A6.png",
+      "bytes": 260,
+      "sha256": "94f041d277a2191b21afdf6c565c53c5f8a2a7eeecf0b45925a0302ee63f91cb"
     },
     {
       "path": "Graphics/Characters/ARCEUS.png",
@@ -2634,6 +2706,16 @@
       "path": "Graphics/Tilesets/DN_2190.png",
       "bytes": 8445,
       "sha256": "8c0b1637892795406bb31325e2569c95dc2542e38e80eefc7cd55afb0c55094c"
+    },
+    {
+      "path": "Graphics/Tilesets/DN_GB_TS13.png",
+      "bytes": 8488,
+      "sha256": "5f07c242b99b4a88570a0ce843981304ad71280db201002aee00c5286ffa20cc"
+    },
+    {
+      "path": "Graphics/Tilesets/DN_GB_TS6.png",
+      "bytes": 128881,
+      "sha256": "0408e9284d57feaf593ba1c1577c764917690f70d89b5ee8cd10c6d8c091afb9"
     },
     {
       "path": "Graphics/Titles/title.png",

@@ -15,7 +15,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createCanvas, loadImage } from "@napi-rs/canvas";
-import { DATA, GAME, S, txt, iv, readMapRaw, writeMapRaw } from "./lib/dlc_helpers.mjs";
+import { DATA, GAME, RObject, S, txt, iv, readData, writeData, readMapRaw, writeMapRaw } from "./lib/dlc_helpers.mjs";
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CONTRACT_PATH = path.join(ROOT_DIR, "content", "dimensional_nightmare_visual_contract.json");
@@ -29,9 +29,9 @@ const GREEN = ["#0f380f", "#306230", "#8bac0f", "#9bbc0f"].map((hex) => [
 ]);
 const MAP_RANGES = CONTRACT.mapRanges;
 const GREEN_SHARED_PREFIX = "DN_SHARED_";
+const GREEN_TILESET_PREFIX = "DN_GB_";
 
 const fileExists = (p) => fs.existsSync(p);
-const isWithinRanges = (id) => MAP_RANGES.some(([lo, hi]) => id >= lo && id <= hi);
 const safeDecodeHex = (hex) => {
   if (!/^(?:[0-9a-f]{2})+$/i.test(hex)) return null;
   const value = Buffer.from(hex, "hex").toString("utf8");
@@ -50,6 +50,14 @@ function walkPngs(dir) {
     else if (entry.isFile() && entry.name.toLowerCase().endsWith(".png")) files.push(full);
   }
   return files;
+}
+
+function resolveGraphicPath(dir, name) {
+  const expected = path.join(dir, `${name}.png`);
+  if (fileExists(expected)) return expected;
+  const match = fs.readdirSync(dir).find((entry) => entry.toLowerCase() === `${name}.png`.toLowerCase());
+  if (match) return path.join(dir, match);
+  throw new Error(`falta el recurso gráfico ${path.join(dir, `${name}.png`)}`);
 }
 
 function eventEntriesForMap(mapId) {
@@ -79,9 +87,7 @@ function imageSourceFor(relativePath) {
   const basename = path.basename(relativePath, ".png");
   const originalSharedName = decodeSharedName(basename);
   if (originalSharedName) return path.join(CHARS, `${originalSharedName}.png`);
-  if (basename === "ash_outfit_creep") {
-    return path.join(BACKUP, "Characters", "ash_outfit_creep.png");
-  }
+  if (basename === "ash_outfit_creep") return path.join(BACKUP, "Characters", "ash_outfit_creep.png");
   return path.join(BACKUP, relativePath);
 }
 
@@ -92,6 +98,22 @@ function makeBackup(original, relativePath) {
     fs.copyFileSync(original, backupPath);
   }
   return backupPath;
+}
+
+function makeDataBackup(relativePath, sourcePath) {
+  const backupPath = path.join(BACKUP, "Data", relativePath);
+  if (!fileExists(backupPath)) {
+    fs.mkdirSync(path.dirname(backupPath), { recursive: true });
+    fs.copyFileSync(sourcePath, backupPath);
+  }
+}
+
+function makeSourceBackup(relativePath, sourcePath) {
+  const backupPath = path.join(BACKUP, "tile_sources", relativePath);
+  if (!fileExists(backupPath)) {
+    fs.mkdirSync(path.dirname(backupPath), { recursive: true });
+    fs.copyFileSync(sourcePath, backupPath);
+  }
 }
 
 function shadeFor(luminance, thresholds) {
@@ -163,6 +185,75 @@ function mapIds() {
     if (fileExists(path.join(DATA, mapFile(id)))) ids.add(id);
   }
   return [...ids].sort((a, b) => a - b);
+}
+
+async function applyGreenTilesets(ids) {
+  const tilesetPath = path.join(DATA, "Tilesets.rxdata");
+  const tilesets = readData("Tilesets.rxdata");
+  const needed = new Map();
+  const originalMapTilesets = new Map();
+  for (const mapId of ids) {
+    const map = readMapRaw(mapId);
+    const tilesetId = Number(iv(map, "@tileset_id"));
+    const tileset = tilesets[tilesetId];
+    if (!tileset) throw new Error(`Map${mapId}: falta el tileset ${tilesetId}`);
+    const name = txt(iv(tileset, "@tileset_name"));
+    if (name.startsWith("DN_")) continue;
+    needed.set(tilesetId, tileset);
+    originalMapTilesets.set(mapId, tilesetId);
+  }
+
+  let nextId = tilesets.length;
+  while (tilesets[nextId]) nextId += 1;
+  const replacementIds = new Map();
+  let cloned = 0, autotiles = 0;
+  for (const [sourceId, source] of needed) {
+    const sourceTilesetName = txt(iv(source, "@tileset_name"));
+    const outputName = `${GREEN_TILESET_PREFIX}TS${sourceId}`;
+    const outputPath = path.join(GRAPHICS, "Tilesets", `${outputName}.png`);
+    const sourcePath = resolveGraphicPath(path.join(GRAPHICS, "Tilesets"), sourceTilesetName);
+    makeSourceBackup(path.join("Tilesets", `${sourceTilesetName}.png`), sourcePath);
+    await colorizeFile(sourcePath, outputPath);
+
+    const sourceAutotiles = iv(source, "@autotile_names") ?? [];
+    const outputAutotiles = [];
+    for (let index = 0; index < sourceAutotiles.length; index += 1) {
+      const sourceAutotileName = txt(sourceAutotiles[index]);
+      if (!sourceAutotileName) { outputAutotiles.push(S("")); continue; }
+      const outputAutotileName = `${GREEN_TILESET_PREFIX}TS${sourceId}_A${index}`;
+      const autoSource = resolveGraphicPath(path.join(GRAPHICS, "Autotiles"), sourceAutotileName);
+      const autoOutput = path.join(GRAPHICS, "Autotiles", `${outputAutotileName}.png`);
+      makeSourceBackup(path.join("Autotiles", `${sourceAutotileName}.png`), autoSource);
+      await colorizeFile(autoSource, autoOutput);
+      outputAutotiles.push(S(outputAutotileName));
+      autotiles += 1;
+    }
+
+    const clone = new RObject(source.className, source.ivars.map(([key, value]) => [key, value]));
+    clone.setIvar("@id", nextId);
+    clone.setIvar("@name", S(`DN Game Boy ${sourceId}`));
+    clone.setIvar("@tileset_name", S(outputName));
+    clone.setIvar("@autotile_names", outputAutotiles);
+    tilesets[nextId] = clone;
+    replacementIds.set(sourceId, nextId);
+    nextId += 1;
+    cloned += 1;
+  }
+
+  if (cloned) {
+    makeDataBackup("Tilesets.rxdata", tilesetPath);
+    writeData("Tilesets.rxdata", tilesets);
+  }
+  let reassigned = 0;
+  for (const [mapId, oldId] of originalMapTilesets) {
+    const map = readMapRaw(mapId);
+    const file = path.join(DATA, mapFile(mapId));
+    map.setIvar("@tileset_id", replacementIds.get(oldId));
+    mapBackup(mapId, file);
+    writeMapRaw(mapId, map);
+    reassigned += 1;
+  }
+  return { cloned, autotiles, reassigned };
 }
 
 function plannedMapGraphics(ids) {
@@ -252,11 +343,31 @@ async function verifyArtwork() {
   return { files: files.length, errors };
 }
 
+function verifyTilesetCoverage(ids) {
+  const tilesets = readData("Tilesets.rxdata");
+  const errors = [];
+  for (const mapId of ids) {
+    const map = readMapRaw(mapId);
+    const tilesetId = Number(iv(map, "@tileset_id"));
+    const tileset = tilesets[tilesetId];
+    if (!tileset) { errors.push(`Map${mapId}: falta el tileset ${tilesetId}`); continue; }
+    const name = txt(iv(tileset, "@tileset_name"));
+    if (!name.startsWith("DN_")) errors.push(`Map${mapId}: tileset fuera de la paleta Game Boy (${name})`);
+    if (!fileExists(path.join(GRAPHICS, "Tilesets", `${name}.png`))) errors.push(`Map${mapId}: falta Graphics/Tilesets/${name}.png`);
+    for (const autoName of (iv(tileset, "@autotile_names") ?? []).map(txt).filter(Boolean)) {
+      if (!autoName.startsWith("DN_")) errors.push(`Map${mapId}: autotile fuera de la paleta Game Boy (${autoName})`);
+      if (!fileExists(path.join(GRAPHICS, "Autotiles", `${autoName}.png`))) errors.push(`Map${mapId}: falta Graphics/Autotiles/${autoName}.png`);
+    }
+  }
+  return errors;
+}
+
 async function verify() {
   const errors = [];
   const artwork = await verifyArtwork();
   errors.push(...artwork.errors);
   const ids = mapIds();
+  errors.push(...verifyTilesetCoverage(ids));
   for (const id of ids) {
     const { actors, balls, violations } = namesAndBallCount(id);
     errors.push(...violations.map((message) => `Map${id}: ${message}`));
@@ -273,6 +384,7 @@ async function verify() {
 
 async function apply() {
   const ids = mapIds();
+  const tilesetStats = await applyGreenTilesets(ids);
   const requested = plannedMapGraphics(ids);
   const sharedFiles = new Map();
   for (const [sourceName, sourcePath] of requested) {
@@ -288,7 +400,8 @@ async function apply() {
     recolored += 1;
   }
 
-  // Cada mapa mantiene su terreno/tileset y sus comandos. Sólo cambia el charset visual.
+  // Cada mapa conserva el mismo tileset, autotiles, pasabilidad y celdas RMXP;
+  // las copias DN cambian sólo la paleta, sin tocar la geometría del terreno.
   let patchedMaps = 0, patchedPages = 0;
   for (const mapId of ids) {
     const file = path.join(DATA, mapFile(mapId));
@@ -328,8 +441,11 @@ async function apply() {
 
   // Conserva originales de DN y del traje creep; la salida siempre se regenera
   // desde la copia sin cuantizar para que la operación sea idempotente.
-  const artwork = walkPngs(GRAPHICS).filter((file) => path.basename(file).startsWith("DN_")
-    || file === path.join(CHARS, "ash_outfit_creep.png"));
+  const artwork = walkPngs(GRAPHICS).filter((file) => {
+    const name = path.basename(file);
+    return (name.startsWith("DN_") && !name.startsWith(GREEN_TILESET_PREFIX))
+      || file === path.join(CHARS, "ash_outfit_creep.png");
+  });
   for (const outputPath of artwork) {
     const relativePath = path.relative(GRAPHICS, outputPath);
     const sourcePath = imageSourceFor(relativePath);
@@ -339,7 +455,9 @@ async function apply() {
     }
     await colorizeFile(stableSource, outputPath);
   }
-  console.log(`✔ Paleta Game Boy aplicada: ${artwork.length} recursos; ${recolored} charsets de eventos; ${patchedMaps} mapas y ${patchedPages} páginas ajustados.`);
+  const allGameboyImages = walkPngs(GRAPHICS).filter((file) => path.basename(file).startsWith("DN_")
+    || file === path.join(CHARS, "ash_outfit_creep.png"));
+  console.log(`✔ Paleta Game Boy aplicada: ${allGameboyImages.length} imágenes; ${recolored} charsets, ${tilesetStats.cloned} tilesets y ${tilesetStats.autotiles} autotiles copiados; ${tilesetStats.reassigned} mapas usan tilesets verdes, ${patchedMaps} mapas/${patchedPages} páginas de eventos ajustados.`);
   await verify();
 }
 

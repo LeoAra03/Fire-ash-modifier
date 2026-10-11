@@ -9,8 +9,11 @@ QUÉ INSTALA
 -----------
 - Siete grietas purgables en Torre Pokémon, Islas Espuma, Monte Moon, Torre
   Quemada, Planta de Energía, Ruinas Alfa y Mansión Pokémon.
+- Las siete emisiones y la Liga Oscura llevan arte de cuatro tonos Game Boy;
+  los tiles RMXP siguen siendo de 32 px y cada mapa respeta el límite de tres
+  personajes visibles.
 - Punto de colapso en la Torre Pokémon 1F y Liga Oscura (dos mapas, cinco
-  combates que se pueden perder).
+  combates que se pueden perder: dos en el umbral y tres en la arena).
 - Expedición a Atlas Mil: capitán en el puerto de Ciudad Carmín y muelle propio.
 - Cinco ROMs reinterpretadas como dimensiones separadas: Glazed, Light
   Platinum, Liquid Crystal, TFOH y Factory Adventure; Ash entra como visitante
