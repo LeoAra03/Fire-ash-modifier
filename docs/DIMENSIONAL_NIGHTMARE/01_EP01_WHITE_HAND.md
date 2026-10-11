@@ -81,7 +81,7 @@ pbSet(266, 3)                                          # v266 DN_PHASE
 | 2052 | La que Escucha la Campana | Consciente | `trchar070` | Ancla narrativa del episodio; sobrevive a todas las fases. |
 | 2053 | Guardián de las Bestias | Normal | `trainer_HIKER` | Reta a duelo opcional (canLose). |
 | 2054 | Sombra Traductora | Interdimensional | `trchar028` | Traduce inscripciones (con Sintonía, nivel 4). |
-| 2055 | Los Cuatro Encapuchados | Consciente ×4 | `trchar028` | No hablan; si el jugador se acerca al pentagrama, señalan el centro. |
+| 2055 | Los Cuatro Encapuchados | Consciente ×3 | `trchar028` | Tres figuras visibles; la cuarta queda sugerida por la huella vacía. No hablan; si Ash se acerca al pentagrama, señalan el centro. |
 
 **Ejemplo de diálogos de 5 estados** (Sepulturero Anciano, 2041):
 ```text

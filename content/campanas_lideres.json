@@ -1,6 +1,6 @@
 {
   "generatedBy": "tools/apply_lideres_campanas.mjs",
-  "switches": "850-881",
+  "switches": "700-731",
   "colocados": [
     {
       "map": 3000,
@@ -41,8 +41,8 @@
       "map": 3079,
       "lider": "Polar",
       "sw": 705,
-      "x": 19,
-      "y": 18
+      "x": 20,
+      "y": 17
     },
     {
       "map": 3094,
@@ -69,7 +69,7 @@
       "map": 3123,
       "lider": "Ondina",
       "sw": 709,
-      "x": 17,
+      "x": 19,
       "y": 24
     },
     {
@@ -153,29 +153,29 @@
       "map": 3508,
       "lider": "Ámbar",
       "sw": 721,
-      "x": 15,
-      "y": 12
+      "x": 14,
+      "y": 11
     },
     {
       "map": 3569,
       "lider": "Ópalo",
       "sw": 722,
-      "x": 21,
+      "x": 19,
       "y": 30
     },
     {
       "map": 3631,
       "lider": "Zafira",
       "sw": 723,
-      "x": 54,
-      "y": 22
+      "x": 55,
+      "y": 21
     },
     {
       "map": 3700,
       "lider": "Ejecutivo Kuro",
       "sw": 724,
-      "x": 7,
-      "y": 6
+      "x": 6,
+      "y": 7
     },
     {
       "map": 3735,
@@ -203,14 +203,14 @@
       "lider": "Ejecutivo Umbra",
       "sw": 728,
       "x": 24,
-      "y": 21
+      "y": 19
     },
     {
       "map": 3874,
       "lider": "Ejecutiva Lis",
       "sw": 729,
       "x": 30,
-      "y": 11
+      "y": 9
     },
     {
       "map": 3909,

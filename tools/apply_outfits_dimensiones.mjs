@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * apply_outfits_dimensiones.mjs — criterios 4+5:
- *  · sprites de Ash por dimensión (hojas ash_outfit_*.png construidas por
- *    tools/build_outfit_sheets.mjs desde assets_outfit/);
+ *  · sprites de Ash por dimensión (charsets ash_outfit_*.png 128×192; el de
+ *    Unbound se extrae desde ashsprites/ash_pokemon_unbound.jpg);
  *  · atavio automático al entrar a cada dimensión (sección PokeMod_Atavios);
  *  · vestidor en la casa de Ash (Map003) para cambiar de outfit a mano.
  *
@@ -125,6 +125,10 @@ function vestirEvento() {
             etiqueta: "Más atavios…",
             rama: (i) => [
               ...elegir([
+                ...PLAN.atavios.filter((a) => a.id >= 10).map((a) => ({
+                  etiqueta: a.nombre,
+                  rama: (j) => [script(`PokeModAtavios.poner(${a.id}, false)`, j), ...confirmar(a.frase, j), cmd(0, [], j)],
+                })),
                 {
                   etiqueta: "Uniforme (chica)",
                   rama: (j) => [script("PokeModAtavios.poner(7, false)", j), ...confirmar(PLAN.atavios[7].frase, j), cmd(0, [], j)],

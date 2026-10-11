@@ -209,7 +209,7 @@ const DARK_LEAGUE = {
       battleBackdrop: "distortion",
       lines: [
         "Umbral de la Liga Oscura. El aire aquí no circula: se repite.",
-        "Detrás de esa puerta esperan las siete voces, pero ya no por separado.",
+        "Dos voces esperan en este umbral; detrás de la puerta, las otras tres guardan la arena.",
       ],
     },
     {
@@ -233,6 +233,7 @@ const DARK_LEAGUE = {
   battles: [
     {
       id: "canto",
+      room: "umbral",
       name: "EL CANTO",
       type: "PSYCHIC_F",
       sprite: "MISMAGIUS",
@@ -245,6 +246,7 @@ const DARK_LEAGUE = {
     },
     {
       id: "estatica",
+      room: "umbral",
       name: "LA ESTÁTICA",
       type: "SCIENTIST",
       sprite: "PORYGON",
@@ -257,6 +259,7 @@ const DARK_LEAGUE = {
     },
     {
       id: "sinrostro",
+      room: "arena",
       name: "EL SIN ROSTRO",
       type: "HIKER",
       sprite: "MAROWAK",
@@ -269,6 +272,7 @@ const DARK_LEAGUE = {
     },
     {
       id: "eco",
+      room: "arena",
       name: "EL ECO",
       type: "SWIMMER_M",
       sprite: "JELLICENT",
@@ -281,6 +285,7 @@ const DARK_LEAGUE = {
     },
     {
       id: "convergencia",
+      room: "arena",
       name: "LA CONVERGENCIA",
       type: "CHAMPION",
       sprite: "GENGAR",
@@ -446,7 +451,12 @@ function validate() {
     if (!INSTALLED && mapExists(spec.mapId)) at(`el mapa ${spec.mapId} ya existe (IDs nuevos: 2191-2194)`);
   }
   if (!mapExists(DARK_LEAGUE.gate.mapId)) at(`la cumbre ${DARK_LEAGUE.gate.mapId} no existe`);
+  const umbralBattles = DARK_LEAGUE.battles.filter((battle) => battle.room === "umbral");
+  const arenaBattles = DARK_LEAGUE.battles.filter((battle) => battle.room === "arena");
+  if (umbralBattles.length + 1 > 3) at("el umbral excedería tres personajes visibles (incluye a la Guardiana)");
+  if (arenaBattles.length > 3) at("la arena excedería tres personajes visibles");
   for (const battle of DARK_LEAGUE.battles) {
+    if (!new Set(["umbral", "arena"]).has(battle.room)) at(`${battle.name}: habitación inválida (${battle.room})`);
     if (!trainerTypes.has(battle.type)) at(`${battle.name}: el tipo de entrenador ${battle.type} no existe`);
     if (!items.has(battle.reward)) at(`${battle.name}: la recompensa ${battle.reward} no existe`);
     if (!fs.existsSync(path.join(characterDir, `${battle.sprite}.png`))) at(`${battle.name}: falta el sprite ${battle.sprite}.png`);

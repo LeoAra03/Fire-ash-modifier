@@ -1,0 +1,21 @@
+{
+  "category": "B",
+  "name": "Dimensión creepypasta — paleta Game Boy verde",
+  "mapRanges": [
+    [2023, 2029],
+    [2040, 2190],
+    [2192, 2194]
+  ],
+  "maxVisibleCharactersPerMap": 3,
+  "maxVisiblePokeballsPerMap": 1,
+  "palette": [
+    "#0f380f",
+    "#306230",
+    "#8bac0f",
+    "#9bbc0f"
+  ],
+  "engineTileCellPx": 32,
+  "visualMicroGridPx": 16,
+  "downsampleFactor": 2,
+  "notes": "RMXP de Fire Ash conserva celdas de mapa de 32×32 px. Para no romper el motor, el arte de esta dimensión se cuantiza y dibuja en bloques internos de 16×16 px; no se cambia el tamaño global de tile. Interiores y exteriores conservan tilesets/mapas separados."
+}
