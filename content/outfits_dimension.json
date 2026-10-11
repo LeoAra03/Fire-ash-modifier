@@ -1,5 +1,5 @@
 {
-  "descripcion": "Atavios de Ash por dimensión. Charset-only para dimensiones (identidad de entrenador intacta); Clásico/Leaf/Rocket pasan por pbChangePlayer (slots de metadata 0/1/3).",
+  "descripcion": "Atavíos de Ash por dimensión. Los charsets personalizados conservan su identidad de entrenador y el tamaño RMXP 128×192; Clásico/Leaf/Rocket pasan por slots de metadata.",
   "variables": {
     "atavio": 316,
     "modo": 317
@@ -28,7 +28,7 @@
     {
       "id": 2,
       "clave": "creep",
-      "charset": "trchar000_11",
+      "charset": "ash_outfit_creep",
       "nombre": "Viajero 1ª Gen",
       "player": null,
       "frase": "Traje de las primeras generaciones: los mundos crepypasta se visten de origen."
@@ -36,7 +36,7 @@
     {
       "id": 3,
       "clave": "glazed",
-      "charset": "trchar000_12",
+      "charset": "ash_outfit_glazed",
       "nombre": "Playera Glazed",
       "player": null,
       "frase": "Brisa de Cedolán lista para navegar."
@@ -44,7 +44,7 @@
     {
       "id": 4,
       "clave": "lp",
-      "charset": "trchar000_13",
+      "charset": "ash_outfit_lp",
       "nombre": "Abrigo Invernal",
       "player": null,
       "frase": "El norte de Lappet no perdona el frío."
@@ -52,7 +52,7 @@
     {
       "id": 5,
       "clave": "lc",
-      "charset": "trchar000_14",
+      "charset": "ash_outfit_lc",
       "nombre": "Chamarra Náutica",
       "player": null,
       "frase": "Rumbo al Santuario de Johto."
@@ -88,6 +88,14 @@
       "nombre": "Atuendo de Maestro",
       "player": null,
       "frase": "Entregado por Oak al completar La Ruta de Dios. ¡Hora de enseñarlo al mundo!"
+    },
+    {
+      "id": 10,
+      "clave": "unbound",
+      "charset": "ash_outfit_unbound",
+      "nombre": "Ash de Pokémon Unbound",
+      "player": null,
+      "frase": "Listo para recorrer la frontera de Unbound sin dejar de ser Ash."
     }
   ],
   "dimensiones": [
@@ -192,6 +200,16 @@
         [
           3700,
           3944
+        ]
+      ]
+    },
+    {
+      "clave": "unbound",
+      "atavio": 10,
+      "rangos": [
+        [
+          4000,
+          4419
         ]
       ]
     }

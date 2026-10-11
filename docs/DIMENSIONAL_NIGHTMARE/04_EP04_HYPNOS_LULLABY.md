@@ -74,7 +74,7 @@ interactuar con uno silencia el canto 60 s. Es el minijuego de ritmo del episodi
 | 2091 | Abuela de la Cabaña | Consciente | `trchar070` | Cura; cuenta las 4 estrofas del canto |
 | 2092 | Guardián del Arco | Interdimensional | `trainer_PSYCHIC_M` | Fija: «Ya oíste esta canción. Ayer. Y anteayer.» |
 | 2093 | Sepulturera de Juguetes | Normal | `trchar042` | Entierra juguetes; da la pista del silenciador |
-| 2095 | Los Cuatro Dormidos | Normal ×4 | `trchar000` | Duermen; en fase 5 son 5, y el 5.º es el jugador |
+| 2095 | Los Cuatro Dormidos | Normal ×3 | `trchar000` | Tres cuerpos visibles; el cuarto se reconoce por el hueco de la cama. En fase 5 el reflejo añade al jugador. |
 | 2096 | Voz de la Cueva | Consciente | (sin sprite) | Solo texto, sin gráfico: la cueva responde |
 | 2098 | El que Duerme Abajo | Interdimensional | (imagen en el agua) | Aparece en el reflejo; no se puede hablar con él |
 | 2100 | Granjero Ausente | Normal | `trainer_HIKER` | Su granero tiene una cama; dormir = ver una visión |

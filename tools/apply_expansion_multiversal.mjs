@@ -215,10 +215,14 @@ function upsert(mapId, ownedPrefixes, build) {
   const events = iv(map, "events");
   const kept = events.pairs.filter(([, object]) => !ownedPrefixes.some((prefix) => txt(iv(object, "@name")).startsWith(prefix)));
   let nextId = Math.max(0, ...kept.map(([key]) => (typeof key === "number" ? key : 0))) + 1;
-  const added = build(nextId).map((object) => {
-    object.setIvar("@id", nextId);
-    return object;
-  }).map((object) => { const id = Number(iv(object, "@id")); nextId = id + 1; return [id, object]; });
+  const built = build(nextId);
+  const added = built.map((object, index) => {
+    // Asignar el índice ANTES de serializar el hash. Incrementar nextId dentro
+    // de un segundo .map dejaba a todos los eventos nuevos con la misma clave.
+    const id = nextId + index;
+    object.setIvar("@id", id);
+    return [id, object];
+  });
   events.pairs = [...kept, ...added];
   write(file, map);
   return added.map(([, object]) => ({ name: txt(iv(object, "@name")), x: iv(object, "@x"), y: iv(object, "@y") }));
@@ -590,23 +594,26 @@ function installDarkLeague(collapseCell) {
   // reinstalar no mueve nada.
   upsert(umbral.mapId, [MARKER], () => []);
   upsert(arena.mapId, [MARKER], () => []);
-  const umbralCells = spread(freeCells(umbral.mapId), 4);
-  const arenaCells = spread(freeCells(arena.mapId), PLAN.darkLeague.battles.length + 2);
+  const umbralBattles = PLAN.darkLeague.battles.filter((boss) => boss.room === "umbral");
+  const arenaBattles = PLAN.darkLeague.battles.filter((boss) => boss.room === "arena");
+  const umbralCells = spread(freeCells(umbral.mapId), umbralBattles.length + 4);
+  const arenaCells = spread(freeCells(arena.mapId), arenaBattles.length + 2);
 
   upsert(umbral.mapId, [MARKER], () => [
-    loreEvent(`${MARKER} Archivero`, umbralCells[0], [
-      "Archivero Prohibido: Esto no es un transportador ni una cápsula. Es una puerta, y se abre cuando las historias se acaban.",
+    loreEvent(`${MARKER} Inscripción del Archivero`, umbralCells[0], [
+      "Las palabras del Archivero quedaron grabadas en la piedra: esto no es un transportador ni una cápsula.",
       ...PLAN.darkLeague.maps[0].lines,
-    ]),
+    ], "Object rock"),
     healerEvent(umbralCells[1]),
     returnEvent(`${MARKER} Salir al mundo`, umbralCells[2], PLAN.collapse.mapId, collapseCell,
       "El aire de la torre te devuelve de una pieza.", "La grieta del mundo sigue abierta. ¿Sales?"),
     gateEvent(`${MARKER} Puerta de la arena`, umbralCells[3], arena.mapId, arenaCells[0],
-      "La puerta se abre hacia la arena.", "Al otro lado esperan las siete voces hechas una. ¿Entras?"),
+      "La puerta se abre hacia la arena.", "Al otro lado las voces ya son una. ¿Entras?"),
+    ...umbralBattles.map((boss, index) => bossEvent(boss, umbralCells[index + 4])),
   ]);
 
   upsert(arena.mapId, [MARKER], () => {
-    const battles = PLAN.darkLeague.battles.map((boss, index) => bossEvent(boss, arenaCells[index], index === PLAN.darkLeague.battles.length - 1));
+    const battles = arenaBattles.map((boss, index) => bossEvent(boss, arenaCells[index], index === arenaBattles.length - 1));
     return [
       ...battles,
       returnEvent(`${MARKER} Volver al umbral`, arenaCells[battles.length], umbral.mapId, umbralCells[0],
@@ -849,6 +856,19 @@ function eventsOf(mapId) {
     })),
   }));
 }
+function eventKeyAudit(mapId) {
+  const map = marshalLoad(fs.readFileSync(path.join(DATA, mapFile(mapId))));
+  const pairs = iv(map, "events")?.pairs ?? [];
+  const keys = new Set();
+  let unique = true, idsMatch = true;
+  for (const [key, object] of pairs) {
+    const normalized = `${typeof key}:${String(key)}`;
+    if (keys.has(normalized)) unique = false;
+    keys.add(normalized);
+    if (Number(iv(object, "@id")) !== Number(key)) idsMatch = false;
+  }
+  return { unique, idsMatch, count: pairs.length };
+}
 function transfersOf(entry) {
   const out = [];
   for (const pageObject of entry.pages) {
@@ -946,13 +966,18 @@ function verify() {
       ok(fs.existsSync(path.join(DATA, mapFile(spec.mapId))), `falta el mapa ${spec.mapId}`);
       ok(read("MapInfos.rxdata").pairs.some(([key]) => Number(key) === spec.mapId), `MapInfos no registra ${spec.mapId}`);
       ok(read("map_metadata.dat").pairs.some(([key]) => Number(key) === spec.mapId), `map_metadata no registra ${spec.mapId}`);
+      const keyAudit = eventKeyAudit(spec.mapId);
+      ok(keyAudit.unique, `${spec.title}: hay claves de evento duplicadas`);
+      ok(keyAudit.idsMatch, `${spec.title}: los @id no coinciden con las claves del hash`);
     }
-    const arena = eventsOf(PLAN.darkLeague.maps[1].mapId).filter((entry) => entry.name.startsWith(MARKER));
     for (const boss of PLAN.darkLeague.battles) {
-      const found = arena.find((entry) => entry.name === `${MARKER} ${boss.name}`);
-      ok(found, `falta el combate de ${boss.name}`);
-      if (!found) continue;
-      ok(cellOpen(PLAN.darkLeague.maps[1].mapId, found.x, found.y), `${boss.name}: sobre celda bloqueada`);
+      const room = PLAN.darkLeague.maps.find((spec) => spec.role === boss.room);
+      const hostMap = room?.mapId;
+      const occupants = hostMap ? eventsOf(hostMap).filter((entry) => entry.name.startsWith(MARKER)) : [];
+      const found = occupants.find((entry) => entry.name === `${MARKER} ${boss.name}`);
+      ok(found, `falta el combate de ${boss.name} en ${boss.room}`);
+      if (!found || !hostMap) continue;
+      ok(cellOpen(hostMap, found.x, found.y), `${boss.name}: sobre celda bloqueada`);
       const first = found.pages[0].list;
       ok(first.some((command) => command.code === 111 && Number(command.params[0]) === 12
         && txt(command.params[1]).includes(`pbTrainerBattle(:${boss.type}`)

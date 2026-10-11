@@ -40,8 +40,14 @@ const SW_PATA   = 962;   // la guardiana aceptó «la pata»
 const CANON_ARCEUS = 876;
 const MANIFEST = path.join(ROOT, "content", "teckel_manifest.json");
 
-const DOGS = ["ZIGZAGOON", "POOCHYENA", "GROWLITHE", "EEVEE", "ROCKRUFF", "LILLIPUP"];
-const DOG_CHARS = ["ZIGZAGOON", "POOCHYENA", "GROWLITHE", "EEVEE", "ZIGZAGOON_1", "POOCHYENA"];
+// Tres manadas visibles agrupan las seis especies originales en encuentros
+// alternos: Map997 conserva el repertorio sin saturar el atrio de personajes.
+const DOG_PACKS = [
+  { char: "ZIGZAGOON", species: ["ZIGZAGOON", "LILLIPUP"], level: 58 },
+  { char: "POOCHYENA", species: ["POOCHYENA", "ROCKRUFF"], level: 59 },
+  { char: "GROWLITHE", species: ["GROWLITHE", "EEVEE"], level: 60 },
+];
+const DOGS = [...new Set(DOG_PACKS.flatMap((pack) => pack.species))];
 
 function saveManifest(list) {
   const m = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : { files: [] };
@@ -56,8 +62,15 @@ const mapPath = (id) => `Data/Map${String(id).padStart(3, "0")}.rxdata`;
 function cloneTerrain() {
   for (const [target, donor] of Object.entries(DONORS)) {
     const id = Number(target);
+    const targetFile = path.join(DATA, `Map${String(id).padStart(3, "0")}.rxdata`);
+    const keptEvents = fs.existsSync(targetFile)
+      ? iv(readMapRaw(id), "@events").pairs.filter(([, object]) => !txt(iv(object, "@name")).startsWith("Teckel:"))
+      : [];
     const copy = marshalLoad(Buffer.from(marshalDump(readMapRaw(donor))));
-    copy.setIvar("@events", new RHash([]));
+    // Al refrescar el terreno, conserva eventos ajenos a Teckel (ferry, Abra,
+    // portales y contenido de otras campañas); sólo esta herramienta reemplaza
+    // sus eventos con prefijo Teckel: en el siguiente paso.
+    copy.setIvar("@events", new RHash(keptEvents));
     writeMapRaw(id, copy);
   }
 }
@@ -68,22 +81,22 @@ function cityEvents() {
   const cells = freeCells(CITY);
   const pick = (i) => cells[(i * 11 + 3) % cells.length];
   const events = [];
-  DOG_CHARS.forEach((charName, i) => {
-    const species = DOGS[i % DOGS.length];
+  DOG_PACKS.forEach((pack, i) => {
     const [x, y] = pick(i);
+    const speciesList = pack.species.map((species) => `:${species}`).join(", ");
     const p = page({
       trigger: 2,
       list: [
-        ...texts([`¡Un ${species.toLowerCase()} salvaje juega suelto y te reta!`]),
-        script(`pbWildBattle(:${species}, ${58 + i}, 1, true, true)`),
+        ...texts(["¡Una manada juguetona se acerca para retarte!" ]),
+        script(`pbWildBattle([${speciesList}].sample, ${pack.level}, 1, true, true)`),
         endEvent(),
       ],
     });
-    p.setIvar("@graphic", graphic(charName));
+    p.setIvar("@graphic", graphic(pack.char));
     p.setIvar("@move_type", 1);
     p.setIvar("@move_speed", 4);
     p.setIvar("@step_anime", true);
-    events.push(event(100 + i, `Teckel: ${species} errante ${i}`, x, y, [p]));
+    events.push(event(100 + i, `Teckel: Manada errante ${i + 1}`, x, y, [p]));
   });
   const [gx, gy] = nearest(cells, [20, 10]);
   events.push(event(200, "Teckel: Gimnasio", gx, gy, [page({
@@ -363,7 +376,7 @@ function installMaxineSpecies() {
 }
 
 async function apply() {
-  backup("teckel_maxine", ["Scripts.rxdata", "MapInfos.rxdata", "map_metadata.dat", "encounters.dat", "items.dat", "trainers.dat", "trainer_types.dat", "species.dat"]);
+  backup("teckel_maxine", ["Map997.rxdata", "Map998.rxdata", "Map999.rxdata", "Map2300.rxdata", "Map1001.rxdata", "Scripts.rxdata", "MapInfos.rxdata", "map_metadata.dat", "encounters.dat", "items.dat", "trainers.dat", "trainer_types.dat", "species.dat"]);
   cloneTerrain();
 
   const upserts = [
@@ -432,9 +445,20 @@ async function apply() {
   if (!fs.existsSync(cryDst)) fs.copyFileSync(crySrc, cryDst);
   // Sprites fieles a las fotos generadas: sin reducción de paleta.
   const concept = path.join(ROOT, "reference", "pokegods", "concept", "MAXINE.png");
-  await buildPokemonSprites(concept, "MAXINE", { paletteSize: 0 });
+  if (fs.existsSync(concept)) {
+    await buildPokemonSprites(concept, "MAXINE", { paletteSize: 0 });
+  } else {
+    const existingSprites = [
+      "Graphics/Pokemon/Front/MAXINE.png", "Graphics/Pokemon/Back/MAXINE.png",
+      "Graphics/Pokemon/Icons/MAXINE.png", "Graphics/Characters/MAXINE.png",
+    ];
+    if (existingSprites.some((file) => !fs.existsSync(path.join(GAME, file)))) {
+      throw new Error("falta reference/pokegods/concept/MAXINE.png y no están todos los sprites ya construidos");
+    }
+    console.log("· MAXINE: se conservan los sprites ya construidos; falta la referencia de origen.");
+  }
   const altar = path.join(ROOT, "reference", "maxine", "ALTAR_maxine_gb.png");
-  await buildPokemonSprites(altar, "ALTAR_MAXINE", { paletteSize: 0 });
+  if (fs.existsSync(altar)) await buildPokemonSprites(altar, "ALTAR_MAXINE", { paletteSize: 0 });
 
   saveManifest([
     mapPath(CITY), mapPath(GYM), mapPath(OUTSKIRTS), mapPath(PARADISE), mapPath(1001),
@@ -453,17 +477,25 @@ function verify() {
   const check = makeChecker("ciudad teckel + maxine");
   const names = (id) => readMapRaw(id).getIvar("@events").pairs.map(([, e]) => txt(iv(e, "@name")));
   check.ok(names(CITY).some((n) => n.startsWith("Teckel: Muelle")), "falta el muelle a Paraíso");
-  check.ok(names(CITY).filter((n) => /errante/.test(n)).length >= 6, "faltan perros errantes");
+  check.ok(names(CITY).filter((n) => /Manada errante/.test(n)).length === 3, "Ciudad Teckel debe concentrar los encuentros en tres manadas");
   const transfers = (id) => readMapRaw(id).getIvar("@events").pairs.flatMap(([, e]) =>
     (iv(e, "@pages") || []).flatMap((p) => (p.getIvar("@list") || []))
       .filter((c) => c.getIvar("@code") === 201).map((c) => Number(c.getIvar("@parameters")[1])));
   check.ok(names(CITY).includes("Teckel: Camino a Afueras") && transfers(CITY).includes(OUTSKIRTS), "la ciudad no conecta con las afueras");
   check.ok(names(OUTSKIRTS).includes("Teckel: Camino a la ciudad") && transfers(OUTSKIRTS).includes(CITY), "las afueras no conectan con la ciudad");
-  const errantes = readMapRaw(CITY).getIvar("@events").pairs.map(([, e]) => e).filter((e) => /errante/.test(txt(iv(e, "@name"))));
-  for (const e of errantes) {
+  const manadas = readMapRaw(CITY).getIvar("@events").pairs.map(([, e]) => e).filter((e) => /Manada errante/.test(txt(iv(e, "@name"))));
+  const battleLines = [];
+  for (const e of manadas) {
     const lines = iv(e, "@pages")[0].getIvar("@list").map((c) => txt(c.getIvar("parameters")?.[0] ?? "")).join("\n");
-    check.ok(/pbWildBattle\(:\w+, \d+, 1, true, true\)/.test(lines), `${txt(iv(e, "@name"))}: la batalla errante debe ser canLose (1, true, true)`);
+    check.ok(/pbWildBattle\(\[:\w+, :\w+\]\.sample, \d+, 1, true, true\)/.test(lines), `${txt(iv(e, "@name"))}: encuentro alterno debe conservar canLose`);
+    battleLines.push(lines);
   }
+  for (const species of DOGS) check.ok(battleLines.some((line) => line.includes(`:${species}`)), `falta la especie ${species} en una de las manadas`);
+  const visibleCityActors = readMapRaw(CITY).getIvar("@events").pairs.map(([, e]) => {
+    const pageObj = iv(e, "@pages")?.[0];
+    return txt(iv(iv(pageObj, "@graphic"), "@character_name"));
+  }).filter((name) => name && name !== "Object ball special");
+  check.ok(visibleCityActors.length <= 5, `Ciudad Teckel supera cinco personajes visibles (${visibleCityActors.length})`);
   check.ok(names(GYM).some((n) => n.includes("Líder Duna")), "falta Duna");
   check.ok(names(PARADISE).some((n) => n.includes("MAXINE")), "falta MAXINE");
   check.ok(names(PARADISE).some((n) => n.includes("Altar de MAXINE")), "falta el altar");

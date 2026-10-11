@@ -66,7 +66,7 @@ tone(-32,-24,-16,0); v266 = 3; v286 (aire) = 100
 | 2162 | La Niña de las Raíces | Consciente | `trchar010` | Dice qué raíz se puede cortar y cuál no. |
 | 2163 | El Sepulturero Inundado | Normal | `trchar042` | 5 estados; en fase 5 ya no está, pero su pala sí. |
 | 2166 | El Sellado Número 4 | Consciente | `trainer_PSYCHIC_M` | Sabe que hay cinco ataúdes y cuatro nombres. |
-| 2166 | Los Sellados | Consciente ×4 | `trchar028` | No hablan; cuentan con los dedos cuántos faltan. |
+| 2166 | Los Sellados | Consciente ×2 | `trchar028` | Dos figuras visibles junto al Sellado Número 4; las otras ausencias se cuentan en los ataúdes, no con más personajes. |
 | 2168 | El Alcalde Enterrado | Normal | `trchar070` | 5 estados; niega que el pueblo esté debajo. |
 | 2169 | La Campanera Boca Abajo | Consciente | `trainer_PSYCHIC_F` | Toca la campana aunque no suene. |
 | 2170 | El Cuidandero de Lápidas | Normal | `trainer_YOUNGSTER` | Duelo opcional: quiere compañía, no ganar. |

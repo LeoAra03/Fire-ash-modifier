@@ -132,7 +132,7 @@ function install() {
   const res = installTrainers(altas, "lideres_campanas");
   const fallidos = res.filter((r) => r.error);
   if (fallidos.length) throw new Error(`líderes sin equipo válido: ${fallidos.map((f) => f.nombre).join(", ")}`);
-  fs.writeFileSync(path.join(ROOT, "content/campanas_lideres.json"), `${JSON.stringify({ generatedBy: "tools/apply_lideres_campanas.mjs", switches: "850-881", colocados: placed }, null, 2)}\n`);
+  fs.writeFileSync(path.join(ROOT, "content/campanas_lideres.json"), `${JSON.stringify({ generatedBy: "tools/apply_lideres_campanas.mjs", switches: "700-731", colocados: placed }, null, 2)}\n`);
   console.log(`OK: ${placed.length} líderes colocados y ${res.filter((r) => r.added).length} equipos nuevos en trainers.dat`);
 }
 

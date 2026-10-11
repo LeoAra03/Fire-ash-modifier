@@ -74,7 +74,7 @@ end
 | 2121 | Escriba Ciego | Consciente | `trainer_SCIENTIST` | Lee el texto del suelo con los dedos |
 | 2122 | Los Dos Porteros | Normal ×2 | `trchar015` | Exigen "la primera letra"; uno miente (según fase) |
 | 2123 | Bibliotecaria del Rey | Consciente | `trchar070` | Da la letra **K**; sus libros no se pueden leer sin Sintonía |
-| 2124 | Unown Coro | Entidad ×5 | `UNOWN` (chars) | No hablan; forman palabras con su posición |
+| 2124 | Unown Coro | Entidad ×3 | `UNOWN` (chars) | Tres glifos visibles; el cuarto y el quinto se completan como ecos de luz, no como personajes. |
 | 2125 | El Ojo | Interdimensional | (evento sin sprite) | Observa; si el jugador parpadea (menú), parpadea |
 | 2126 | Escalera Parlante | Consciente | (texto) | Cada 3 escalones dice una letra |
 | 2127 | Sepulturero del Rey | Normal | `trainer_HIKER` | Da la letra **G** si se le cuenta una verdad |

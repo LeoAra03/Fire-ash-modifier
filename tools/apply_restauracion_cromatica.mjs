@@ -20,10 +20,11 @@
  *   3. **Nexo de Color.** Derrotar al jefe *purga* la emisión; no la salva.
  *      Después hay que volver y tocar el nexo: Ash habla como lo que es —alguien
  *      que viene de fuera de estas dimensiones— y le devuelve su momento de paz.
- *   4. **Pobladores.** Dos vecinos por emisión que repiten su trauma en gris y
- *      hablan distinto cuando el color vuelve. Cada mundo es fiel a su
- *      creepypasta: la torre, la partida sin guardar, la fosa, la cinta, la
- *      ciudad fallida, el eco y el cartucho de 1996.
+ *   4. **Pobladores.** Un vecino por emisión queda visible; la segunda voz
+ *      permanece grabada en el Nexo y conserva sus dos versiones de diálogo.
+ *      Así se mantiene la historia sin superar tres personajes visibles por
+ *      mapa. Cada mundo es fiel a su creepypasta: la torre, la partida sin
+ *      guardar, la fosa, la cinta, la ciudad fallida, el eco y el cartucho de 1996.
  *   5. **Salida limpia.** Las dos salidas de cada emisión devuelven la pantalla
  *      al color antes de transferir, para que el gris no se escape al mundo.
  *   6. **Censo Cromático** en la falda del Monte Silver: lleva la cuenta de los
@@ -164,8 +165,12 @@ function cenizaEvent(id, colorSwitch) {
 function nexoEvent(id, mundo, cell) {
   const sello = SELLO_BASE + mundo.zona;
   const color = COLOR_BASE + mundo.zona;
+  const eco = mundo.pobladores[1];
+  const vozEcoGris = eco ? [...texts([`El nexo conserva la voz de ${eco.nombre}:`]), ...texts([eco.gris])] : [];
+  const vozEcoColor = eco ? [...texts([`El nexo devuelve la voz de ${eco.nombre}, ya en paz:`]), ...texts([eco.color])] : [];
   const restaurar = [
     ...texts(mundo.nexo.antes),
+    ...vozEcoGris,
     ...texts(mundo.nexo.ash),
     wait(12),
     tint(...NORMAL, 60),
@@ -189,6 +194,7 @@ function nexoEvent(id, mundo, cell) {
           `El color se escapó de este sitio. Alguien lo sigue sosteniendo: ${mundo.nexo.objeto}.`,
           "Mientras la emisión siga en pie, el gris no se puede desatar.",
         ]),
+        ...vozEcoGris,
         endEvent(),
       ],
     }),
@@ -207,6 +213,7 @@ function nexoEvent(id, mundo, cell) {
           `${mundo.nexo.objeto.charAt(0).toUpperCase()}${mundo.nexo.objeto.slice(1)} ya no pesa.`,
           "El color se sostiene solo. Este mundo ha vuelto a su tarde.",
         ]),
+        ...vozEcoColor,
         endEvent(),
       ],
     }),
@@ -273,12 +280,11 @@ function registroEvent(id, cell) {
 
 function installWorld(mundo) {
   const color = COLOR_BASE + mundo.zona;
-  const solids = spread(freeCells(mundo.mapId), 3);
+  const solids = spread(freeCells(mundo.mapId), 2);
   return upsert(mundo.mapId, [MARKER], (nextId) => [
     cenizaEvent(nextId, color),
     nexoEvent(nextId + 1, mundo, solids[0]),
     pobladorEvent(nextId + 2, mundo, mundo.pobladores[0], solids[1]),
-    pobladorEvent(nextId + 3, mundo, mundo.pobladores[1], solids[2]),
   ], BACKUP_DIR);
 }
 
@@ -366,13 +372,18 @@ function verify() {
       check.ok(media.list.some((c) => c.code === 223), `${mundo.mapId}: la restauración no tiñe la pantalla`);
     }
 
-    // — pobladores
-    const vecinos = eventsOf(mundo.mapId).filter((e) =>
-      mundo.pobladores.some((p) => e.name === `${MARKER} ${p.nombre}`));
-    check.ok(vecinos.length === 2, `${mundo.mapId}: se esperaban dos pobladores y hay ${vecinos.length}`);
+    // — un poblador visible; la segunda voz se conserva en el Nexo sin sumar otro personaje
+    const visibles = eventsOf(mundo.mapId).filter((e) => e.name === `${MARKER} ${mundo.pobladores[0].nombre}`);
+    const segundaPersona = eventsOf(mundo.mapId).some((e) => e.name === `${MARKER} ${mundo.pobladores[1].nombre}`);
+    check.ok(visibles.length === 1, `${mundo.mapId}: debe haber un poblador visible y hay ${visibles.length}`);
+    check.ok(!segundaPersona, `${mundo.mapId}: la segunda voz sigue instalada como personaje separado`);
     for (const pob of mundo.pobladores) {
       check.ok(pob.gris !== pob.color, `${mundo.mapId}: ${pob.nombre} repite el mismo texto en gris y en color`);
     }
+    const textoNexo = nexo ? pagesOf(nexo).flatMap((p) => p.list)
+      .filter((c) => c.code === 401).map((c) => txt(c.params[0])).join("\\n") : "";
+    check.ok(textoNexo.includes(mundo.pobladores[1].gris) && textoNexo.includes(mundo.pobladores[1].color),
+      `${mundo.mapId}: el Nexo no conserva las dos versiones de la voz registrada`);
 
     // — las salidas devuelven el color antes de transferir
     for (const e of eventsOf(mundo.mapId)) {
@@ -431,7 +442,7 @@ if (VERIFY_ONLY) {
   console.log(`✔ Restauración cromática instalada en ${TOTAL_MUNDOS} emisiones`);
   console.log(`  · sellos migrados al bloque ${SELLO_BASE}-${SELLO_BASE + 7}: ${result.moved.length} jefes`);
   for (const mundo of result.placed) {
-    console.log(`  · mapa ${mundo.mapId} «${mundo.titulo}»: ${mundo.eventos} eventos (ceniza, nexo y dos pobladores)`);
+    console.log(`  · mapa ${mundo.mapId} «${mundo.titulo}»: ${mundo.eventos} eventos (ceniza, nexo y un poblador visible; segunda voz en el Nexo)`);
   }
   console.log(`  · salidas con tono limpio: ${result.salidas}`);
   console.log(`  · censo cromático y registro del agente en el mapa ${PLAN.censo.mapa}`);

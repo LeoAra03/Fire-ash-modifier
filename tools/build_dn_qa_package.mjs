@@ -50,6 +50,7 @@ const POSTGAME_ASSETS = [
   "Graphics/Characters/SECRET_Red.png",
   "Graphics/Characters/SECRET_Volo.png",
   "Graphics/Characters/SQUIRTLE.png",
+  "Graphics/Characters/ash_outfit_creep.png",
   "Audio/BGM/Legend Sinnoh.ogg",
   "Graphics/Pictures/Trainer Card/icon_badges.png",
   "Audio/BGM/secretvolo.ogg",

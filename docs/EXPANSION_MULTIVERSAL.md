@@ -63,8 +63,8 @@ Silencioso, sello 875) y abre dos mapas nuevos:
 
 | Mapa | Nombre | Contenido |
 |---|---|---|
-| 2192 | Liga Oscura — Umbral | Archivero Prohibido, guardiana que cura, salida al mundo y puerta a la arena |
-| 2193 | Liga Oscura — Arena Final | Los cinco combates finales, salida al umbral y salida al mundo |
+| 2192 | Liga Oscura — Umbral | Inscripción del Archivero, Guardiana que cura, EL CANTO, LA ESTÁTICA, salida al mundo y puerta a la arena |
+| 2193 | Liga Oscura — Arena Final | EL SIN ROSTRO, EL ECO y LA CONVERGENCIA; salida al umbral y salida al mundo |
 
 | Combate | Tipo | Equipo (Nv) | Recompensa |
 |---|---|---|---|

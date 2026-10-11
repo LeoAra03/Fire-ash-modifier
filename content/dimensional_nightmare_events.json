@@ -494,40 +494,30 @@
           "name": "Los Cuatro Encapuchados",
           "displayName": "Los Cuatro Encapuchados 1",
           "instance": 1,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
+          "notes": "Tres figuras visibles; la cuarta queda sugerida por la huella vacía. No hablan; si Ash se acerca al pentagrama, señalan el centro."
         },
         {
           "map": 2055,
           "name": "Los Cuatro Encapuchados",
           "displayName": "Los Cuatro Encapuchados 2",
           "instance": 2,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
+          "notes": "Tres figuras visibles; la cuarta queda sugerida por la huella vacía. No hablan; si Ash se acerca al pentagrama, señalan el centro."
         },
         {
           "map": 2055,
           "name": "Los Cuatro Encapuchados",
           "displayName": "Los Cuatro Encapuchados 3",
           "instance": 3,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
-        },
-        {
-          "map": 2055,
-          "name": "Los Cuatro Encapuchados",
-          "displayName": "Los Cuatro Encapuchados 4",
-          "instance": 4,
-          "groupCount": 4,
-          "type": "Consciente",
-          "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al pentagrama, señalan el centro."
+          "notes": "Tres figuras visibles; la cuarta queda sugerida por la huella vacía. No hablan; si Ash se acerca al pentagrama, señalan el centro."
         }
       ],
       "events": [
@@ -2458,40 +2448,30 @@
           "name": "Los Cuatro Dormidos",
           "displayName": "Los Cuatro Dormidos 1",
           "instance": 1,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Normal",
           "sprite": "trchar000",
-          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
+          "notes": "Tres cuerpos visibles; el cuarto se reconoce por el hueco de la cama. En fase 5 el reflejo añade al jugador."
         },
         {
           "map": 2095,
           "name": "Los Cuatro Dormidos",
           "displayName": "Los Cuatro Dormidos 2",
           "instance": 2,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Normal",
           "sprite": "trchar000",
-          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
+          "notes": "Tres cuerpos visibles; el cuarto se reconoce por el hueco de la cama. En fase 5 el reflejo añade al jugador."
         },
         {
           "map": 2095,
           "name": "Los Cuatro Dormidos",
           "displayName": "Los Cuatro Dormidos 3",
           "instance": 3,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Normal",
           "sprite": "trchar000",
-          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
-        },
-        {
-          "map": 2095,
-          "name": "Los Cuatro Dormidos",
-          "displayName": "Los Cuatro Dormidos 4",
-          "instance": 4,
-          "groupCount": 4,
-          "type": "Normal",
-          "sprite": "trchar000",
-          "notes": "Duermen; en fase 5 son 5, y el 5.º es el jugador"
+          "notes": "Tres cuerpos visibles; el cuarto se reconoce por el hueco de la cama. En fase 5 el reflejo añade al jugador."
         },
         {
           "map": 2096,
@@ -3870,50 +3850,30 @@
           "name": "Unown Coro",
           "displayName": "Unown Coro 1",
           "instance": 1,
-          "groupCount": 5,
+          "groupCount": 3,
           "type": "Entidad",
           "sprite": "UNOWN",
-          "notes": "No hablan; forman palabras con su posición"
+          "notes": "Tres glifos visibles; el cuarto y el quinto se completan como ecos de luz, no como personajes."
         },
         {
           "map": 2124,
           "name": "Unown Coro",
           "displayName": "Unown Coro 2",
           "instance": 2,
-          "groupCount": 5,
+          "groupCount": 3,
           "type": "Entidad",
           "sprite": "UNOWN",
-          "notes": "No hablan; forman palabras con su posición"
+          "notes": "Tres glifos visibles; el cuarto y el quinto se completan como ecos de luz, no como personajes."
         },
         {
           "map": 2124,
           "name": "Unown Coro",
           "displayName": "Unown Coro 3",
           "instance": 3,
-          "groupCount": 5,
+          "groupCount": 3,
           "type": "Entidad",
           "sprite": "UNOWN",
-          "notes": "No hablan; forman palabras con su posición"
-        },
-        {
-          "map": 2124,
-          "name": "Unown Coro",
-          "displayName": "Unown Coro 4",
-          "instance": 4,
-          "groupCount": 5,
-          "type": "Entidad",
-          "sprite": "UNOWN",
-          "notes": "No hablan; forman palabras con su posición"
-        },
-        {
-          "map": 2124,
-          "name": "Unown Coro",
-          "displayName": "Unown Coro 5",
-          "instance": 5,
-          "groupCount": 5,
-          "type": "Entidad",
-          "sprite": "UNOWN",
-          "notes": "No hablan; forman palabras con su posición"
+          "notes": "Tres glifos visibles; el cuarto y el quinto se completan como ecos de luz, no como personajes."
         },
         {
           "map": 2125,
@@ -4683,40 +4643,30 @@
           "name": "Los Cuatro Anudados",
           "displayName": "Los Cuatro Anudados 1",
           "instance": 1,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+          "notes": "Tres figuras visibles; la cuarta se expresa con una cinta suelta. No hablan; si Ash se acerca al nudo, señalan el árbol."
         },
         {
           "map": 2155,
           "name": "Los Cuatro Anudados",
           "displayName": "Los Cuatro Anudados 2",
           "instance": 2,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+          "notes": "Tres figuras visibles; la cuarta se expresa con una cinta suelta. No hablan; si Ash se acerca al nudo, señalan el árbol."
         },
         {
           "map": 2155,
           "name": "Los Cuatro Anudados",
           "displayName": "Los Cuatro Anudados 3",
           "instance": 3,
-          "groupCount": 4,
+          "groupCount": 3,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
-        },
-        {
-          "map": 2155,
-          "name": "Los Cuatro Anudados",
-          "displayName": "Los Cuatro Anudados 4",
-          "instance": 4,
-          "groupCount": 4,
-          "type": "Consciente",
-          "sprite": "trchar028",
-          "notes": "No hablan; si el jugador se acerca al nudo, señalan el árbol."
+          "notes": "Tres figuras visibles; la cuarta se expresa con una cinta suelta. No hablan; si Ash se acerca al nudo, señalan el árbol."
         },
         {
           "map": 2156,
@@ -5251,40 +5201,20 @@
           "name": "Los Sellados",
           "displayName": "Los Sellados 1",
           "instance": 1,
-          "groupCount": 4,
+          "groupCount": 2,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; cuentan con los dedos cuántos faltan."
+          "notes": "Dos figuras visibles junto al Sellado Número 4; las otras ausencias se cuentan en los ataúdes, no con más personajes."
         },
         {
           "map": 2166,
           "name": "Los Sellados",
           "displayName": "Los Sellados 2",
           "instance": 2,
-          "groupCount": 4,
+          "groupCount": 2,
           "type": "Consciente",
           "sprite": "trchar028",
-          "notes": "No hablan; cuentan con los dedos cuántos faltan."
-        },
-        {
-          "map": 2166,
-          "name": "Los Sellados",
-          "displayName": "Los Sellados 3",
-          "instance": 3,
-          "groupCount": 4,
-          "type": "Consciente",
-          "sprite": "trchar028",
-          "notes": "No hablan; cuentan con los dedos cuántos faltan."
-        },
-        {
-          "map": 2166,
-          "name": "Los Sellados",
-          "displayName": "Los Sellados 4",
-          "instance": 4,
-          "groupCount": 4,
-          "type": "Consciente",
-          "sprite": "trchar028",
-          "notes": "No hablan; cuentan con los dedos cuántos faltan."
+          "notes": "Dos figuras visibles junto al Sellado Número 4; las otras ausencias se cuentan en los ataúdes, no con más personajes."
         },
         {
           "map": 2168,

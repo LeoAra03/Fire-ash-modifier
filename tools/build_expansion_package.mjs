@@ -19,6 +19,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { marshalLoad } from "../web/js/marshal.js";
 import { GAME, ROOT } from "./lib/fire_ash_registry.mjs";
 import { assertSameFile } from "./lib/package_integrity.mjs";
 import { readZipIndex, writeZip } from "./lib/zip_writer.mjs";
@@ -51,6 +52,30 @@ const maps = new Set([
   ...Array.from({ length: 8 }, (_, i) => 2250 + i),     // los ocho gimnasios de Atlas
 ]);
 
+/** Sprites verdes/tilesets DN referenciados por los mapas de este paquete. */
+function dimensionalVisualAssets() {
+  const characterNames = new Set();
+  const tilesetNames = new Set();
+  const tilesets = marshalLoad(fs.readFileSync(path.join(DATA, "Tilesets.rxdata")));
+  for (const mapId of maps) {
+    const filename = path.join(DATA, mapFile(mapId));
+    if (!fs.existsSync(filename)) throw new Error(`falta Map${mapId}.rxdata para resolver sus gráficos`);
+    const map = marshalLoad(fs.readFileSync(filename));
+    const events = map.getIvar("@events")?.pairs ?? [];
+    for (const [, object] of events) for (const page of object.getIvar("@pages") ?? []) {
+      const name = page.getIvar("@graphic")?.getIvar("@character_name")?.text ?? "";
+      if (name.startsWith("DN_")) characterNames.add(name);
+    }
+    const tilesetId = Number(map.getIvar("@tileset_id"));
+    const tilesetName = tilesets[tilesetId]?.getIvar("@tileset_name")?.text ?? "";
+    if (tilesetName.startsWith("DN_")) tilesetNames.add(tilesetName);
+  }
+  return [
+    ...[...characterNames].sort().map((name) => `Graphics/Characters/${name}.png`),
+    ...[...tilesetNames].sort().map((name) => `Graphics/Tilesets/${name}.png`),
+  ];
+}
+
 /** Archivos del arco, siempre relativos a la raíz del juego. */
 function fileList() {
   const files = [
@@ -70,7 +95,8 @@ function fileList() {
     files.push(`Audio/SE/${entry.id}.ogg`);
   }
   files.push("Graphics/Characters/ARCEUS_GATE.png");  // sprite de las grietas
-  return files;
+  files.push(...dimensionalVisualAssets());
+  return [...new Set(files)];
 }
 
 const README = `PAQUETE — EXPANSIÓN MULTIVERSAL (POKÉMON FIRE ASH 3.7.1)
