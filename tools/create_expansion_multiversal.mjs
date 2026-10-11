@@ -230,6 +230,11 @@ const DARK_LEAGUE = {
     locked: "Las siete puertas callan, pero el umbral no se abre. Falta que el Campeón Silencioso hable.",
     open: "Red asiente y señala la pared del fondo. Detrás del silencio hay una puerta que no estaba.",
   },
+  // Switch 948 «POKEMOD LIGA OSCURA COMPLETA»: lo encienden el jefe final de la
+  // arena y su revancha. Es la condición del diploma de la Liga Oscura del Salón
+  // (Map2288). Sin esta clave el generador no emitía el comando 121 y el diploma
+  // quedaba imposible de conseguir.
+  finalSwitch: 948,
   battles: [
     {
       id: "canto",

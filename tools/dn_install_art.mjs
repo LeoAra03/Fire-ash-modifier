@@ -340,7 +340,11 @@ function verifyAssets(manifest) {
     const img = createCanvas(1, 1); // sólo para dimensiones: se lee la cabecera PNG
     const w = buf.readUInt32BE(16), h = buf.readUInt32BE(20);
     if (w !== item.w || h !== item.h) failures.push(`${item.out}: ${w}×${h} ≠ ${item.w}×${item.h}`);
-    if (sha1(buf) !== item.sha1) failures.push(`${item.out}: hash distinto al manifiesto`);
+    // `sha1` es el arte original generado; `gbSha1` la misma pieza tras el contrato
+    // Game Boy (dn:gameboy recolorea todo DN_* en el sitio). Cualquiera de los dos
+    // es un estado válido y reproducible.
+    const actual = sha1(buf);
+    if (actual !== item.sha1 && actual !== item.gbSha1) failures.push(`${item.out}: hash distinto al manifiesto`);
     if (item.colors > PALETTE_MAX) failures.push(`${item.out}: ${item.colors} colores (máx ${PALETTE_MAX})`);
     if (!item.transparent) failures.push(`${item.out}: sin transparencia (fondo no recortado)`);
     void img;
@@ -382,7 +386,7 @@ async function main() {
     const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
     const failures = [...verifyAssets(manifest), ...verifyWiring()];
     console.log(`verificación de arte (${manifest.assets.length} assets + cableado)`);
-    for (const item of manifest.assets) console.log(`  ${item.out} · ${item.w}×${item.h} · ${item.colors} colores · ${item.use}`);
+    for (const item of manifest.assets) console.log(`  ${item.out} · ${item.w}×${item.h} · ${item.colors} colores · ${item.use}${item.gbSha1 ? " · paleta GB" : ""}`);
     if (failures.length) { for (const f of failures) console.error(`  FALLA: ${f}`); process.exit(1); }
     console.log("verificación de arte OK");
     return;

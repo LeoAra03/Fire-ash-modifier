@@ -24,6 +24,20 @@ La barra superior incorpora **deshacer/rehacer** (`Ctrl/Cmd+Z`, `Ctrl/Cmd+Y`) pa
 - **Kirin ready**: chequeo de estructura, `.rgssad`, audio y mayúsculas (lo que en PC funciona y en Android falla).
 - **Offline**: PWA + APK sin internet ni servidores; tus archivos no salen del dispositivo.
 
+## Entrega final (R18, 2026-10-11)
+
+Producto cerrado y jugable. Lo último que entró:
+
+- **Un sprite por fase en el duelo de Arceus**: `ARCEUS_F1`…`ARCEUS_F5` para las
+  cinco reglas borradas y la **Forma Origen de los Mil Brazos** en la sexta; la
+  **Forma Primigenia** vuelve al Arceus clásico. `npm run verify:arceus:sprites`.
+- **Diploma de la Liga Oscura conseguible**: el jefe final marca el switch 948
+  (antes el comando no se emitía). `npm run verify:diplomas`.
+- **ZIP raíz al día**: 1 719 archivos (40,9 MB) con los sprites de fase;
+  `npm run verify:corregido:zip` dentro de `npm test`.
+- **Guía de partida**: [`docs/INSTALAR_Y_JUGAR.md`](docs/INSTALAR_Y_JUGAR.md)
+  (instalación en 5 minutos, ruta del duelo y mapa de todo el contenido extra).
+
 ## Documentación del DLC
 
 | Documento | Para qué sirve |

@@ -87,6 +87,10 @@ const CAPTURED_GOD_MODE_POLICY = JSON.parse(
   fs.readFileSync(path.join(ROOT, "content", "canon_arceus.json"), "utf8"),
 ).modo_divino_capturado;
 const VERIFY_ONLY = process.argv.includes("--verify");
+// `--solo-scripts`: reinstala únicamente la sección PokeMod_RutaDeDios (juego y
+// Scripts_corregido/) sin volver a construir los mapas. Sirve para iterar sobre
+// el guion de la batalla sin tocar Map2031..2038, 513, 625 ni los globales.
+const SCRIPTS_ONLY = process.argv.includes("--solo-scripts");
 
 const readRx = (f) => marshalLoad(fs.readFileSync(path.join(DATA, f)));
 const writeRx = (f, v) => fs.writeFileSync(path.join(DATA, f), Buffer.from(marshalDump(v)));
@@ -1157,6 +1161,16 @@ RUTA_ARCEUS_SCRIPT_BREAKING_FUNCTIONS = %w[0EA 0EB].freeze
 RUTA_ARCEUS_FONDO_POR_FASE = [
   "genesis1", "genesis2", "genesis3", "genesis1", "genesis2", "genesis3"
 ].freeze
+# R18 — UN SPRITE POR FASE. Cada una de las seis barras del duelo viste su
+# propia hoja de Arceus: las cinco fases nuevas (sufijos _F1.._F5 sobre el
+# nombre base, una por regla borrada: Cielo, Talento, Velocidad, Tipo y Regla) y
+# la sexta, que es la Forma Origen de mil brazos (sufijo _19). La Forma
+# Primigenia (última barra en rojo) vuelve al Arceus clásico, sin brazos y sin
+# Tabla. Los nombres se componen en runtime ("ARCEUS" + sufijo) para que la
+# auditoría de recursos no exija constantes Ruby que no existen y para que el
+# paquete se pueda auditar como archivos reales de Graphics/Pokemon/Front.
+RUTA_ARCEUS_SPRITE_SUFIJOS = ["_F1", "_F2", "_F3", "_F4", "_F5", "_19"].freeze
+RUTA_ARCEUS_SPRITE_PRIMIGENIA_SUFIJO = ""
 RUTA_ARCEUS_INVOCATION_MOVES = {
   :DIALGA => [:ROAROFTIME, :FLASHCANNON, :AURASPHERE, :EARTHPOWER],
   :PALKIA => [:SPACIALREND, :HYDROPUMP, :DRAGONPULSE, :THUNDERBOLT],
@@ -3087,8 +3101,8 @@ class PokeBattle_Battle
       # en crimson.
       pbArceusFondo("genesis3")
       if battler
-        # R17: la Forma Origen de mil brazos (ARCEUS_19) ya viste el combate
-        # desde el primer turno; aquí sólo se renueva la tablilla y el tipo.
+        # R18: la sexta barra se pelea con la Forma Origen de mil brazos
+        # (ARCEUS_19) — su hoja de fase — y aquí se renueva tablilla y tipo.
         plate_index = battler.instance_variable_get(:@ruta_arceus_plate_index)
         if plate_index && RUTA_ARCEUS_PHASE_TYPES[plate_index]
           battler.item = RUTA_ARCEUS_PHASE_PLATES[plate_index]
@@ -3127,6 +3141,9 @@ class PokeBattle_Battle
       pbShake(14, 12, 18)
       pbToneChangeAll(Tone.new(-70, -70, -70, 60), 5)
       pbArceusFondo("genesis2")
+      # R18: la primigenia estrena su propia hoja (el Arceus clásico, sin
+      # brazos) y la conserva aunque el motor vuelva a redibujar al jefe.
+      pbArceusPrimigeniaSprite(true)
       if battler
         pbArceusRedibujar(battler)
       end
@@ -3838,6 +3855,10 @@ class PokeBattle_Battle
     end
     sprite.opacity = battler.instance_variable_get(:@ruta_arceus_retired_for_summon) ? 72 : 255 if sprite.respond_to?(:opacity=)
     @scene.pbRefreshOne(battler.index) if @scene.respond_to?(:pbRefreshOne)
+    # R18: el redibujado borra la hoja de fase; se vuelve a aplicar la de la
+    # etapa en curso (o la primigenia) para que el sprite no parpadee al
+    # cambiar de forma, al copiar el equipo o en el relevo divino.
+    pbArceusRestaurarSpriteDeFase if respond_to?(:pbArceusRestaurarSpriteDeFase) && battler.index.to_i == 1
     return true
   rescue StandardError
     false
@@ -4316,6 +4337,9 @@ class PokeBattle_Battle
   def pbArceusOpeningRitual(battler, phase)
     return if !battler
     phase_index = [[phase.to_i - 1, 0].max, RUTA_ARCEUS_MOVE_SETS.length - 1].min
+    # R18: el 1 vs 1 abre ya con la hoja de su fase (1-5) o con los mil brazos
+    # (6). Sin esta llamada la fase 1 nunca mostraba su sprite.
+    pbArceusFaseSprite(phase, true)
     pbArceusFondo(RUTA_ARCEUS_FONDO_POR_FASE[phase_index])
     pbArceusSetMoves(battler, RUTA_ARCEUS_MOVE_SETS[phase_index])
     pbArceusApplyStageStats(battler, phase)
@@ -4324,29 +4348,83 @@ class PokeBattle_Battle
     pbArceusRotateType(battler, phase)
   end
 
-  # R17 (arte): cada fase del duelo muestra su propio sprite de Arceus Origen
-  # (cinco variantes nuevas de fase en la carpeta Front). La fase 6 es la forma
-  # primigenia (sprite clasico), por eso solo hicimos cinco sprites nuevos.
-  # OJO: los nombres de archivo se componen en tiempo de ejecucion porque la
-  # auditoria de recursos exige que las constantes ARCEUS_* existan de verdad.
-  def pbArceusFaseSprite(n)
+  # R18 (arte): cada fase del duelo muestra SU sprite. Las fases 1-5 usan las
+  # cinco hojas nuevas (sufijos _F1.._F5, una por regla borrada) y la fase 6 la
+  # Forma Origen de mil brazos (sufijo _19): la Mega deja de ser sólo
+  # coreografía y se ve DE VERDAD. La Forma Primigenia usa el Arceus clásico
+  # (sin brazos). OJO: los nombres de archivo se componen en tiempo de ejecución
+  # ("ARCEUS" + sufijo) porque la auditoría de recursos exige que toda constante
+  # ARCEUS_* citada en el guion exista de verdad.
+  def pbArceusSpriteDeFase(n)
+    sufijos = defined?(RUTA_ARCEUS_SPRITE_SUFIJOS) ? RUTA_ARCEUS_SPRITE_SUFIJOS : nil
+    return nil if !sufijos || sufijos.empty? || !sufijos.respond_to?(:[])
+    indice = [[n.to_i, 1].max, sufijos.length].min - 1
+    sufijo = sufijos[indice]
+    return nil if !sufijo
+    "Graphics/Pokemon/Front/ARCEUS" + sufijo.to_s
+  rescue StandardError
+    nil
+  end
+
+  # El sprite de batalla ancla su origen en el centro-abajo del bitmap: al
+  # cambiar de hoja (96x96 de fase ↔ 280x156 de la Forma Origen) hay que
+  # recalcularlo o el jefe queda flotando sobre el campo.
+  def pbArceusFijarOrigen(sprite)
+    return false if !sprite || !sprite.respond_to?(:bitmap) || !sprite.bitmap
+    sprite.ox = sprite.bitmap.width / 2 if sprite.respond_to?(:ox=)
+    sprite.oy = sprite.bitmap.height if sprite.respond_to?(:oy=)
+    true
+  rescue StandardError
+    false
+  end
+
+  def pbArceusFaseSprite(n, forzar = false)
     escena = @scene
     return false if !escena || !escena.respond_to?(:sprites) || !escena.sprites
     sprite = escena.sprites["pokemon_1"]
     return false if !sprite
-    carpeta = "Graphics/Pokemon/Front/"
-    nombre = "ARCEUS"
-    nombre += sprintf("_F%d", n.to_i) if n.to_i < RUTA_ARCEUS_STAGE_COUNT
-    ruta = carpeta + nombre
-    return false if !pbResolveBitmap(ruta)
-    return true if @ruta_arceus_fase_sprite == n && sprite.bitmap
+    ruta = pbArceusSpriteDeFase(n)
+    return false if !ruta || !pbResolveBitmap(ruta)
+    return true if !forzar && @ruta_arceus_fase_sprite == n && sprite.bitmap
     begin
       sprite.setBitmap(ruta)
+      pbArceusFijarOrigen(sprite)
       @ruta_arceus_fase_sprite = n
     rescue StandardError
       return false
     end
     true
+  end
+
+  # La Forma Primigenia (R11): lo que había antes de la creación. Su hoja es el
+  # Arceus clásico, sin brazos.
+  def pbArceusPrimigeniaSprite(forzar = false)
+    escena = @scene
+    return false if !escena || !escena.respond_to?(:sprites) || !escena.sprites
+    sprite = escena.sprites["pokemon_1"]
+    return false if !sprite
+    sufijo = defined?(RUTA_ARCEUS_SPRITE_PRIMIGENIA_SUFIJO) ? RUTA_ARCEUS_SPRITE_PRIMIGENIA_SUFIJO.to_s : ""
+    ruta = "Graphics/Pokemon/Front/ARCEUS" + sufijo
+    return false if !pbResolveBitmap(ruta)
+    return true if !forzar && @ruta_arceus_fase_sprite == :primigenia && sprite.bitmap
+    begin
+      sprite.setBitmap(ruta)
+      pbArceusFijarOrigen(sprite)
+      @ruta_arceus_fase_sprite = :primigenia
+    rescue StandardError
+      return false
+    end
+    true
+  end
+
+  # Cualquier redibujado del motor (cambio de forma, posesión, relevo divino)
+  # devuelve el bitmap por defecto: se restaura la hoja de la fase en curso para
+  # que el duelo nunca pierda su sprite.
+  def pbArceusRestaurarSpriteDeFase
+    return pbArceusPrimigeniaSprite if @ruta_arceus_primigenia_visto == true
+    pbArceusFaseSprite(@arceus_phase.to_i)
+  rescue StandardError
+    false
   end
 
   def pbArceusPhase(battler, phase)
@@ -7375,6 +7453,11 @@ function verify() {
 }
 
 if (!VERIFY_ONLY) {
-  install();
+  if (SCRIPTS_ONLY) {
+    console.log("Installing Scripts only (--solo-scripts)...");
+    installScriptSection();
+  } else {
+    install();
+  }
 }
 verify();

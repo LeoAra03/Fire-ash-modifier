@@ -35,6 +35,7 @@ const WIDTH = 30, HEIGHT = 24; // tamaño de diseño del GDD
 // para repartir las seis grietas del hub en el perímetro.
 const DEFAULT_WINDOW = [38, 20];
 const TITLE = "Antesala de las Grietas";
+const GREEN_TILESET_PREFIX = "DN_GB_";
 
 const argv = process.argv.slice(2);
 const FIND = argv.includes("--find");
@@ -218,7 +219,14 @@ if (VERIFY) {
   if (fs.existsSync(file)) {
     const parsed = parseMap(marshalLoad(fs.readFileSync(file)));
     ok(parsed.width === WIDTH && parsed.height === HEIGHT, `tamaño ${parsed.width}×${parsed.height} ≠ ${WIDTH}×${HEIGHT}`);
-    ok(parsed.tilesetId === source.tilesetId, `tileset ${parsed.tilesetId} ≠ ${source.tilesetId}`);
+    // El contrato Game Boy clona el tileset del hub a `DN_GB_<original>` y reasigna el
+    // mapa a esa copia verde; se aceptan ambos estados (con o sin `dn:gameboy`).
+    const tilesets = read("Tilesets.rxdata");
+    const nameOf = (id) => tilesets[id]?.getIvar("@tileset_name")?.text ?? "";
+    const greenCloneName = `${GREEN_TILESET_PREFIX}TS${source.tilesetId}`;
+    const greenClone = parsed.tilesetId !== source.tilesetId && nameOf(parsed.tilesetId) === greenCloneName;
+    ok(parsed.tilesetId === source.tilesetId || greenClone,
+      `tileset ${parsed.tilesetId} ≠ ${source.tilesetId} (ni su copia ${greenCloneName})`);
     const hubPass = passabilityOf(parsed, parsed.tilesetId);
     let walkable = 0;
     let entry = null;

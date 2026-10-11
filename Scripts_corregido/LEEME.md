@@ -1,5 +1,76 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Entrega final 2026-10-11 (R18) — terminado y jugable: un sprite por fase, diplomas conseguibles y las cuatro campañas dentro
+
+Esta es la entrega de cierre. Todo lo que pediste está instalado, verificado y **en este paquete**;
+sólo faltan tus dedos en el mando.
+
+**1. Arceus cambia de sprite en CADA fase.** El duelo tiene seis barras y cada una viste su propia
+hoja de arte: las cinco nuevas (Cielo celeste, Talento dorado, Velocidad cian, Tipo prismático y
+Regla carmesí) y, en la sexta, la **Forma Origen de los Mil Brazos**. La **Forma Primigenia** (cuando
+la última barra entra en rojo) vuelve al Arceus clásico, sin brazos y sin Tabla. El sprite se reaplica
+solo tras cada redibujado del motor (cambio de forma, copia del equipo, relevo divino) y el origen se
+recalcula para que el jefe nunca quede flotando. Auditoría propia: `npm run verify:arceus:sprites`.
+
+**2. El diploma de la Liga Oscura ya se puede conseguir.** El jefe final de la arena (`LA CONVERGENCIA`)
+marca ahora el switch 948 al ganar y en la revancha; antes el comando no se emitía y el séptimo marco
+del Salón de Diplomas quedaba imposible. `npm run verify:diplomas` lo vigila.
+
+**3. Cinco campañas ROM completas, jugables desde el barco y el puerto.** Glazed (111 mapas,
+Map3000-3110), Light Platinum (19, Map3120-3138), Liquid Crystal (432, Map3200-3631) y TFOH (245,
+Map3700-3944) salen desde las dársenas 2200/2210/2240/2242; **Pokémon Unbound (420 mapas,
+Map4000-4419)** entra por el portal de Puerto Horizonte (Map1001). Entre las cuatro primeras:
+**807 mapas, 5 516 NPC, 3 252 warps y 1 059 combates**, con 8 líderes cada una, medallas propias y
+retorno libre; la verificación estructural conjunta da **5 campañas · 1 227 mapas · 3 625 actores
+adaptados · 5 061 warps · 794 combates** (`npm run verify:rom:campaigns:plan`). Se suman a
+**Atlas Mil** (1 000 mapas del circuito con 8 gimnasios nuevos), los
+**500 Horizontes** (20 reinos), **Dimensional Nightmare** (149 mapas), los **siete mundos creepypasta**
+con su Liga Oscura, la **infiltración Team Rocket** y las **Islas Espejo** con sus 19 Pokégods.
+
+**4. Los atavíos de Ash se consiguen jugando.** En la casa de Ash (Map003, junto a la cama) está el
+**vestidor**: siete atavíos de dimensión (Atlas, Creepypasta, Glazed, Light Platinum, Liquid Crystal,
+TFOH y Unbound), el clásico, el uniforme de chica y el **disfraz Rocket**, con modo automático (te vistes al
+entrar a cada dimensión) o fijo. El **Atuendo de Maestro** lo regala Oak al completar La Ruta de Dios
+(switch 885). Variables 316 (atavío actual) y 317 (modo). Verificación: `npm run verify:atavios`.
+
+**5. El ZIP de la raíz dejó de quedar viejo.** `Fire-Ash-Scripts-Corregidos.zip` se reconstruye
+siempre con `npm run build:corregido:zip` y su verificación (`npm run verify:corregido:zip`) falla si
+algún archivo no coincide con `Paquete_directo/`. Ahora lleva **1 720 archivos (41,0 MB)** y los seis
+sprites de fase.
+
+### Cómo jugar (5 minutos)
+
+1. Cierra el juego. Copia tu carpeta de Fire Ash a un lado (por si acaso) y **conserva tus partidas**.
+2. Descomprime `Fire_Ash_Paquete_Directo.zip` **dentro de la carpeta del juego** (la que tiene
+   `Game.exe`), aceptando reemplazar. Opcional pero recomendado, encima:
+   `Dimensional_Nightmare_QA.zip` y `Fire_Ash_Expansion_Multiversal.zip`.
+3. Abre el juego y **carga tu partida**. Si estabas dentro de Ciudad Puntaneva, sal y vuelve a entrar.
+4. Camino del duelo: **Pueblo Hojaverde → Volus → Canalizar resonancia** (17 Tablas) → portal de
+   Ciudad Puntaneva → avenida celeste → siete pisos → Cima del Génesis. Al ganar/capturar a Arceus
+   se enciende el switch 873 y se desbloquea **todo** el contenido extra.
+5. Después: grietas creepypasta en Kanto y Johto, el monte Silver, el punto de colapso de la Torre
+   Pokémon (7 purgas), la Liga Oscura en la cumbre, los barcos de Puerto Horizonte, el espejo del
+   sótano de la Mansión Pokémon y las grietas de Atlas Mil. Nada se alcanza por menú: se camina.
+
+### Verificación de esta entrega
+
+```bash
+npm test                      # cadena completa (incluye sprites por fase, diplomas y ZIP raíz)
+npm run verify:package        # el ZIP directo coincide archivo por archivo
+npm run verify:arceus:sprites # seis fases, seis sprites distintos, en juego y en el ZIP
+npm run verify:diplomas       # los siete marcos del salón tienen hito comprobable
+npm run verify:rom:campaigns:plan
+```
+
+Si algún día hay que reconstruir desde fuentes, el orden que deja todo verde es:
+`apply_expansion_multiversal` → **Dimensional Nightmare** (`npm run dn:build:all`,
+`npm run dn:hub`) → `apply_canon_arceus` → `npm run dn:gameboy` →
+`node tools/apply_dn_banner_cleanup.mjs --refresh-plan` → `npm run build:dn:qa` →
+`npm run sync:paquete` → `npm run build:package` → `npm run build:corregido:zip` →
+`npm run verify:all`. El paso Game Boy va **después** del canon a propósito: el
+Coliseo de la Liga Oscura (Map2142) se reconstruye sin el «eco del Génesis» y
+hay que volver a añadirlo antes de recolorear sus sprites.
+
 ## Arreglo 2026-10-09 (12) — R15d: ni un panel de más — el duelo sale 2v2 y la Orden entra por relevos
 
 Tu captura de las cuatro barras apiladas (Arceus + Dialga + Palkia + Giratina a

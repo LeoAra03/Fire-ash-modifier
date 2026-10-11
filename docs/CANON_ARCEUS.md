@@ -264,12 +264,26 @@ contradiga al capítulo 2, manda este rediseño.
 - Las invocaciones no son capturables (guard en `pbCaptureCalc`); el jefe sí
   conserva la captura canónica de la fase final.
 
-### 7.2 Arceus Origen: forma 19 desde el primer turno
+### 7.2 Arceus Origen: forma 19 y un sprite por fase (R18)
 
-- El 1 vs 1 empieza ya con la forma de los mil brazos (ARCEUS_19).
-- **Nada de escalas de sprites**: Arceus ya no va creciendo durante la batalla.
-- Las apariciones de Mega y primigenia no cambian forma ni tamaño; son
-  coreografía de cámara, no transformación del sprite.
+- El 1 vs 1 empieza ya con la forma de los mil brazos (forma 19); desde R18 cada
+  barra viste su propia hoja y la sexta es el despliegue completo de la Forma
+  Origen de mil brazos.
+- **Un sprite distinto por fase** (R18): `ARCEUS_F1..F5` en las reglas borradas y
+  la hoja de la Forma Origen (`_19`) en la sexta. La Forma Primigenia vuelve al
+  Arceus clásico, sin brazos y sin Tabla.
+- **Nada de escalas de sprites**: Arceus no crece durante la batalla; lo que
+  cambia entre fases es la hoja, no el zoom. `pbArceusFijarOrigen` recalcula el
+  origen (centro-abajo) cuando el bitmap cambia de tamaño, así el jefe no queda
+  flotando al pasar de 96×96 a 280×156.
+- Las apariciones de Mega y primigenia son **transformación del sprite** (R18) y
+  coreografía de cámara: cambian la hoja y el cosmos, no la dificultad.
+- `pbArceusRestaurarSpriteDeFase` reaplica la hoja de la etapa en curso tras
+  cualquier redibujado del motor (cambio de forma, copia del equipo, relevo
+  divino), de modo que el duelo nunca pierde su arte.
+- Auditoría: `node tools/verify_arceus_phase_sprites.mjs` (seis fases, seis PNG
+  distintos, presentes en el juego, en `Paquete_directo/` y en el ZIP raíz) y
+  `npm run verify:arceus:sprites`.
 
 ### 7.3 Fase 6: los GIGAMAX son básicos
 
@@ -307,15 +321,22 @@ contradiga al capítulo 2, manda este rediseño.
 Generado con IA y ensamblado con `tools/assemble_r17_art.py` desde `assets_raw/`
 (los crudos son la fuente; los PNG finales viven en `pokemon_fire_ash/Graphics/`).
 
-### 8.1 Sprites de Arceus Origen por fase
+### 8.1 Sprites de Arceus Origen por fase (R18)
 
 - Fases 1-5 del duelo muestran sprites propios: `Pokemon/Front/ARCEUS_F1..F5.png`
   (96×96), uno por regla: Cielo (celeste), Talento (dorado), Velocidad (cian),
   Tipo (prismático) y Regla (carmesí).
-- La **fase 6 usa la forma primigenia** (sprite clásico `ARCEUS`): por eso sólo
-  se crearon cinco sprites nuevos.
-- El cableado vive en `pbArceusFaseSprite` (sección `PokeMod_RutaDeDios`), que
-  cambia el bitmap del jefe en cada cambio de fase.
+- La **fase 6 usa la Forma Origen de mil brazos** (`ARCEUS_19.png`, 280×156):
+  la Mega deja de ser sólo cámara y se ve de verdad en el combate.
+- La **Forma Primigenia** (umbral rojo de la última barra) usa el Arceus clásico
+  (`ARCEUS.png`): siete apariencias distintas en total, ninguna repetida.
+- El cableado vive en `pbArceusSpriteDeFase` / `pbArceusFaseSprite` /
+  `pbArceusPrimigeniaSprite` / `pbArceusRestaurarSpriteDeFase` (sección
+  `PokeMod_RutaDeDios`); los nombres se componen en runtime para que la auditoría
+  de recursos siga exigiendo archivos reales sin inventar constantes Ruby.
+- Los seis sprites de fase viajan en `Paquete_directo/` y en
+  `Fire-Ash-Scripts-Corregidos.zip`; `verify_arceus_phase_sprites.mjs` falla si
+  falta uno o si dos fases comparten imagen.
 
 ### 8.2 Fondos de batalla
 
