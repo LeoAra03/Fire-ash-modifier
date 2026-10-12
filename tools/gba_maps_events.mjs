@@ -192,7 +192,7 @@ function buscarBancos(data, headers) {
 // ----------------------------------------------------------------- eventos
 // struct MapEvents { u8 numNPCs; u8 numWarps; u8 numTriggers; u8 numSigns;
 //                    ObjectEvent* npcs; WarpEvent* warps; CoordEvent* triggers; BgEvent* signs; }
-// struct ObjectEvent { u8 active; u8 localId; u8 graphicsId; u8 kind;
+// struct ObjectEvent (tabla estática) { u8 localId; u8 graphicsId; u8 kind; u8 pad;
 //   s16 x; s16 y; u8 elevation; u8 movementType; u8 rangeX:4/rangeY:4;
 //   u16 trainerType; u16 trainerRange; u8* script; u16 flagId; u8 filler[2]; } = 24 bytes
 const NPC_SIZE = 24;
@@ -211,8 +211,8 @@ function leerEventos(data, eventsPtr) {
       const o = base + i * NPC_SIZE;
       if (o + NPC_SIZE > data.length) break;
       npcs.push({
-        localId: data[o + 1],
-        sprite: data[o + 2],
+        localId: data[o + 0],
+        sprite: data[o + 1],
         x: s16(data, o + 4),
         y: s16(data, o + 6),
         elevation: data[o + 8],

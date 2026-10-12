@@ -49,6 +49,27 @@ Cada instalación respalda lo que toca en `PokeModBackups/` (`arceus_mega/`,
 esas carpetas, según la Regla de Oro del repositorio.
 
 
+## Entrega final R18 — terminado y jugable (2026-10-11)
+
+Cierre de producto: lo que faltaba para poder jugar sin sorpresas.
+
+- [x] **Un sprite por fase en el duelo de Arceus**: fases 1-5 con las hojas de
+      fase y la 6ª con la Forma Origen de mil brazos; la Forma Primigenia vuelve
+      al Arceus clásico. Origen del sprite recalculado al cambiar de tamaño y
+      reaplicado tras cada redibujado del motor.
+- [x] **Diploma de la Liga Oscura conseguible**: `finalSwitch: 948` en el plan y
+      en el generador; el jefe final (`LA CONVERGENCIA`) y su revancha marcan el
+      switch. `npm run verify:diplomas` en verde.
+- [x] **ZIP raíz reconstruido y bloqueado**: 1 719 archivos (40,9 MB) con los
+      sprites de fase; `npm run verify:corregido:zip` entra en `npm test` para
+      que nunca vuelva a quedar viejo.
+- [x] **`npm test` ampliado** con `verify:arceus:sprites`, `verify:diplomas` y
+      `verify:corregido:zip`: si algo de esta entrega se rompe, la cadena falla.
+- [x] **LEEME de entrega** con la guía de instalación y de partida (5 minutos) y
+      el resumen de campañas, atavíos y diplomas.
+- [x] **Campañas y atavíos confirmados en el paquete**: 807 mapas de las cuatro
+      campañas ROM, vestidor en Map003, salón de diplomas en Map2288.
+
 ## Revisión R17 — rediseño de la batalla con Arceus Origen
 
 Sobre lo entregado arriba, la revisión jugada pidió y se aplicó:

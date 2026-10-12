@@ -13,12 +13,15 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { createCanvas, loadImage } from "@napi-rs/canvas";
 import { DATA, GAME, RObject, S, txt, iv, readData, writeData, readMapRaw, writeMapRaw } from "./lib/dlc_helpers.mjs";
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CONTRACT_PATH = path.join(ROOT_DIR, "content", "dimensional_nightmare_visual_contract.json");
+const ART_MANIFEST = path.join(ROOT_DIR, "content", "dimensional_nightmare_art.json");
+const sha1 = (buf) => crypto.createHash("sha1").update(buf).digest("hex").slice(0, 12);
 const CONTRACT = JSON.parse(fs.readFileSync(CONTRACT_PATH, "utf8"));
 const GRAPHICS = path.join(GAME, "Graphics");
 const CHARS = path.join(GRAPHICS, "Characters");
@@ -177,6 +180,26 @@ async function colorizeFile(sourcePath, outputPath) {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   fs.writeFileSync(outputPath, canvas.toBuffer("image/png"));
   return { width: image.width, height: image.height };
+}
+
+/** Deja constancia en el manifiesto de arte de la huella ya recoloreada. */
+function recordArtPaletteHashes() {
+  if (!fileExists(ART_MANIFEST)) return 0;
+  const manifest = JSON.parse(fs.readFileSync(ART_MANIFEST, "utf8"));
+  let recorded = 0;
+  for (const item of manifest.assets ?? []) {
+    const abs = path.join(GAME, item.out);
+    if (!fileExists(abs)) continue;
+    const hash = sha1(fs.readFileSync(abs));
+    if (item.gbSha1 !== hash) {
+      item.gbSha1 = hash;
+      recorded += 1;
+    }
+    item.palette = "gameboy-green";
+  }
+  manifest.paletteAppliedAt = new Date().toISOString();
+  fs.writeFileSync(ART_MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`);
+  return recorded;
 }
 
 function mapIds() {
@@ -457,6 +480,7 @@ async function apply() {
   }
   const allGameboyImages = walkPngs(GRAPHICS).filter((file) => path.basename(file).startsWith("DN_")
     || file === path.join(CHARS, "ash_outfit_creep.png"));
+  recordArtPaletteHashes();
   console.log(`✔ Paleta Game Boy aplicada: ${allGameboyImages.length} imágenes; ${recolored} charsets, ${tilesetStats.cloned} tilesets y ${tilesetStats.autotiles} autotiles copiados; ${tilesetStats.reassigned} mapas usan tilesets verdes, ${patchedMaps} mapas/${patchedPages} páginas de eventos ajustados.`);
   await verify();
 }

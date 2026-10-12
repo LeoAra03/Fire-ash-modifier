@@ -250,6 +250,7 @@
       "locked": "Las siete puertas callan, pero el umbral no se abre. Falta que el Campeón Silencioso hable.",
       "open": "Red asiente y señala la pared del fondo. Detrás del silencio hay una puerta que no estaba."
     },
+    "finalSwitch": 948,
     "battles": [
       {
         "id": "canto",

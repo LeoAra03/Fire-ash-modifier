@@ -15,7 +15,9 @@
       "h": 64,
       "colors": 32,
       "transparent": true,
-      "bytes": 3390
+      "bytes": 3390,
+      "gbSha1": "bff46a84ca40",
+      "palette": "gameboy-green"
     },
     {
       "id": "kinggus_final",
@@ -28,7 +30,9 @@
       "h": 64,
       "colors": 31,
       "transparent": true,
-      "bytes": 3886
+      "bytes": 3886,
+      "gbSha1": "211b9dd95673",
+      "palette": "gameboy-green"
     },
     {
       "id": "kinggus_trainer",
@@ -41,7 +45,9 @@
       "h": 128,
       "colors": 32,
       "transparent": true,
-      "bytes": 8916
+      "bytes": 8916,
+      "gbSha1": "e45d466db5d5",
+      "palette": "gameboy-green"
     },
     {
       "id": "kinggus_over",
@@ -54,7 +60,9 @@
       "h": 128,
       "colors": 32,
       "transparent": true,
-      "bytes": 4402
+      "bytes": 4402,
+      "gbSha1": "64ce056724b3",
+      "palette": "gameboy-green"
     },
     {
       "id": "white_hand_over",
@@ -67,7 +75,9 @@
       "h": 384,
       "colors": 31,
       "transparent": true,
-      "bytes": 28228
+      "bytes": 28228,
+      "gbSha1": "9b3c7c743561",
+      "palette": "gameboy-green"
     },
     {
       "id": "white_hand_pic",
@@ -80,7 +90,9 @@
       "h": 96,
       "colors": 31,
       "transparent": true,
-      "bytes": 5072
+      "bytes": 5072,
+      "gbSha1": "a645dab1b8ca",
+      "palette": "gameboy-green"
     },
     {
       "id": "unown_fragment",
@@ -93,7 +105,10 @@
       "h": 48,
       "colors": 31,
       "transparent": true,
-      "bytes": 3060
+      "bytes": 3060,
+      "gbSha1": "9906755b4f14",
+      "palette": "gameboy-green"
     }
-  ]
+  ],
+  "paletteAppliedAt": "2026-10-11T18:15:06.071Z"
 }
