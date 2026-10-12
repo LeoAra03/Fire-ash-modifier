@@ -1,5 +1,39 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## ROMs al 100 % nativo (R19, 2026-10-12) — las cinco campañas usan el contenido de la ROM tal cual
+
+Esta entrega cumple el encargo al pie de la letra: **no se adaptó nada**, se usó lo que trae
+cada ROM (sprites, mapas, colisión y textos). Da igual que el material se vea distinto al de
+Fire Ash: es el original.
+
+**1. Los 1 227 mapas son los del ROM, célula a célula.** Se decodifican `MapLayout`, la tabla
+de metatiles de 16×16 (dos capas de tiles) y las paletas de cada tileset; cada metatile se
+reescala ×2 al bloque de 32×32 de RMXP y se indexa desde el id 384 (`BASE_ID`). La
+**pasabilidad sale de los bits 10-11 de la celda del mapa** (los hacks dejan el comportamiento
+de metatile a 0, así que el dato real está en el mapa) y la elevación se conserva en el plan.
+Salen **212 tilesets nativos** (`ROMN_<campaña>_p<n>.png`, 4,6 MB) y **1 486 028 celdas**
+verificadas, de las cuales **874 996 son sólidas (58,9 %)**.
+
+**2. Los NPC visten el sprite del ROM.** Se localiza `gObjectEventGraphicsInfoPointers[]` y
+`sObjectEventSpritePalettes[]`, se leen los 9 frames 4bpp de cada personaje (abajo, arriba y
+lado, más sus pasos) y se arma una hoja RMXP de 4 columnas × 4 filas por personaje:
+**667 personajes nativos** en `Graphics/Characters/`.
+
+**3. Los eventos hablan como en el ROM.** **3 538 eventos de campaña** muestran el personaje que
+les asigna la ROM y **759 diálogos originales** reemplazan el andamiaje en el primer mensaje.
+
+**4. Todo comprobado, todo empaquetado.** `npm run verify:rom:nativo` da **0 fallos** (dims y
+sha1 de cada PNG, `@tileset_id` de cada mapa, celdas contra el plan y eventos sobre celdas
+transitables). El ZIP de la raíz queda en **2 615 archivos (46,6 MB)**.
+
+```bash
+npm run rom:nativo:mapas -- --extract --dir "roms pokemon"   # lee las ROM y deja el plan + PNG
+npm run rom:nativo:mapas -- --install                        # mapas, tilesets, diálogos y accesos
+npm run rom:nativo:sprites -- --extract                      # hojas de personaje del ROM
+npm run rom:nativo:sprites -- --install                      # asigna cada NPC a su personaje
+npm run verify:rom:nativo                                     # auditoría completa
+```
+
 ## Entrega final 2026-10-11 (R18) — terminado y jugable: un sprite por fase, diplomas conseguibles y las cuatro campañas dentro
 
 Esta es la entrega de cierre. Todo lo que pediste está instalado, verificado y **en este paquete**;

@@ -24,6 +24,28 @@ La barra superior incorpora **deshacer/rehacer** (`Ctrl/Cmd+Z`, `Ctrl/Cmd+Y`) pa
 - **Kirin ready**: chequeo de estructura, `.rgssad`, audio y mayúsculas (lo que en PC funciona y en Android falla).
 - **Offline**: PWA + APK sin internet ni servidores; tus archivos no salen del dispositivo.
 
+## ROMs al 100 % nativo (R19, 2026-10-12)
+
+Las cinco campañas ROM ya **no se adaptan**: usan el contenido de la ROM tal cual
+(sprites, mapas, colisión y textos). La calidad distinta no importa; la fidelidad sí.
+
+- **1 227 mapas célula a célula del ROM**: se decodifican `MapLayout`, la tabla de
+  metatiles de 16×16 (dos capas) y las paletas de los tilesets; se reescalan ×2 a
+  bloques RMXP de 32×32 con los ids desde 384 (BASE_ID). La **colisión sale de los
+  bits 10-11 de la celda del mapa** (los hacks dejan el comportamiento a 0) y la
+  elevación se conserva. 212 tilesets nativos (`ROMN_<campaña>_p<n>.png`, 4,6 MB).
+  Herramienta: `npm run rom:nativo:mapas` (`--extract` · `--install` · `--verify`).
+- **667 sprites de personaje del ROM**: se localiza `gObjectEventGraphicsInfoPointers[]`
+  (structs con `paletteTag` 0x11xx) y `sObjectEventSpritePalettes[]`, se leen los
+  9 frames 4bpp (abajo/arriba/lado y sus pasos) y se arma la hoja RMXP de 4 columnas
+  × 4 filas (`$ROMN_<campaña>_g<id>.png`). Herramienta: `npm run rom:nativo:sprites`.
+- **3 538 eventos de campaña visten el personaje que les da la ROM** y **759 diálogos
+  originales** sustituyen el andamiaje en el primer mensaje del evento.
+- **Verificación**: `npm run verify:rom:nativo` → 0 fallos sobre 1 486 028 celdas
+  (874 996 sólidas = 58,9 %), cada PNG con sus dimensiones y su huella sha1, cada
+  mapa con su `@tileset_id` y cada tileset registrado en `Tilesets.rxdata`.
+- **ZIP raíz**: 2 615 archivos (46,6 MB) con todo lo anterior; `npm run verify:corregido:zip`.
+
 ## Entrega final (R18, 2026-10-11)
 
 Producto cerrado y jugable. Lo último que entró:
