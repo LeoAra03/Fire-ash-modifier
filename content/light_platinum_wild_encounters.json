@@ -1,0 +1,159 @@
+{
+  "region": "Zhery",
+  "campaign": "light_platinum",
+  "zones": [
+    {
+      "mapId": 3121,
+      "name": "Light Platinum · Cueva Central (Paso a Central City)",
+      "step_chances": { "Cave": 22 },
+      "types": {
+        "Cave": [
+          [25, "GEODUDE", 6, 10],
+          [25, "ZUBAT", 6, 10],
+          [20, "ROGGENROLA", 7, 11],
+          [15, "MACHOP", 7, 11],
+          [15, "ARON", 8, 12]
+        ]
+      }
+    },
+    {
+      "mapId": 3122,
+      "name": "Light Platinum · Costa de Marfeny Lake",
+      "step_chances": { "Water": 21, "Cave": 21 },
+      "types": {
+        "Water": [
+          [30, "TENTACOOL", 10, 15],
+          [25, "WINGULL", 10, 14],
+          [20, "MAGIKARP", 8, 13],
+          [15, "PSYDUCK", 11, 16],
+          [10, "SLOWPOKE", 11, 16]
+        ],
+        "Cave": [
+          [25, "BUIZEL", 10, 15],
+          [25, "POLIWAG", 10, 14],
+          [20, "WINGULL", 10, 15],
+          [15, "MAREEP", 11, 16],
+          [15, "SHINX", 11, 16]
+        ]
+      }
+    },
+    {
+      "mapId": 3123,
+      "name": "Light Platinum · Bosque Inhore (Inhore Woods)",
+      "step_chances": { "Cave": 22 },
+      "types": {
+        "Cave": [
+          [20, "CATERPIE", 12, 16],
+          [20, "WEEDLE", 12, 16],
+          [20, "BUDEW", 13, 17],
+          [15, "SHINX", 13, 17],
+          [15, "TAILLOW", 13, 17],
+          [10, "COMBEE", 14, 18]
+        ]
+      }
+    },
+    {
+      "mapId": 3125,
+      "name": "Light Platinum · Ciudad Esmeralda & Lab. Botánico",
+      "step_chances": { "Cave": 21 },
+      "types": {
+        "Cave": [
+          [25, "ODDISH", 18, 23],
+          [25, "BELLSPROUT", 18, 23],
+          [20, "ROSELIA", 19, 24],
+          [15, "CHERUBI", 18, 23],
+          [15, "TANGELA", 20, 25]
+        ]
+      }
+    },
+    {
+      "mapId": 3127,
+      "name": "Light Platinum · Puerto Seanport & Faro Marino",
+      "step_chances": { "Water": 22 },
+      "types": {
+        "Water": [
+          [25, "TENTACOOL", 24, 29],
+          [25, "WINGULL", 24, 28],
+          [20, "REMORAID", 25, 30],
+          [15, "CHINCHOU", 25, 30],
+          [15, "CORSOLA", 24, 29]
+        ]
+      }
+    },
+    {
+      "mapId": 3129,
+      "name": "Light Platinum · Bosque Oscuro de Dardusk",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [25, "GASTLY", 28, 33],
+          [20, "DUSKULL", 28, 34],
+          [20, "SHUPPET", 29, 34],
+          [15, "MISDREAVUS", 29, 35],
+          [10, "MURKROW", 30, 35],
+          [10, "ZUBAT", 28, 33]
+        ]
+      }
+    },
+    {
+      "mapId": 3131,
+      "name": "Light Platinum · Minas de Groment City",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [25, "ONIX", 33, 38],
+          [20, "GEODUDE", 33, 38],
+          [20, "ROGGENROLA", 34, 39],
+          [15, "RHYHORN", 34, 39],
+          [10, "STEELIX", 36, 41],
+          [10, "TRAPINCH", 35, 40]
+        ]
+      }
+    },
+    {
+      "mapId": 3133,
+      "name": "Light Platinum · Sendero de Mt. Zhery",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [20, "MAKUHITA", 38, 44],
+          [20, "MEDITITE", 38, 44],
+          [20, "MACHOP", 39, 45],
+          [15, "GLIGAR", 40, 45],
+          [15, "PHANPY", 40, 45],
+          [10, "DONPHAN", 42, 47]
+        ]
+      }
+    },
+    {
+      "mapId": 3135,
+      "name": "Light Platinum · Cordillera Mt. Icestorm",
+      "step_chances": { "Cave": 25 },
+      "types": {
+        "Cave": [
+          [25, "SWINUB", 44, 50],
+          [20, "SNORUNT", 44, 50],
+          [20, "SNOVER", 45, 51],
+          [15, "SNEASEL", 46, 52],
+          [10, "SPHEAL", 45, 50],
+          [10, "CUBCHOO", 46, 52]
+        ]
+      }
+    },
+    {
+      "mapId": 3137,
+      "name": "Light Platinum · Sendero de Mt. Draken (Altar Team Steam)",
+      "step_chances": { "Cave": 25 },
+      "types": {
+        "Cave": [
+          [25, "DRATINI", 50, 56],
+          [20, "BAGON", 50, 56],
+          [20, "DEINO", 52, 58],
+          [15, "GIBLE", 52, 58],
+          [10, "ALTARIA", 54, 60],
+          [10, "HOUNDOUR", 50, 55]
+        ]
+      }
+    }
+  ]
+}

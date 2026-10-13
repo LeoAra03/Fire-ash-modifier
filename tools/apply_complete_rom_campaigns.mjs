@@ -27,6 +27,13 @@ const MAIN_CITY_MAP = 1001;
 const LEAGUE_MAP = 643;
 const GUIDE_NAME = `${MARKER} Cynthia — Guía de la fragmentación`;
 const NORMAL_CAMPAIGNS = new Set(["glazed", "light_platinum", "liquid_crystal", "unbound"]);
+const FIRST_MAP_SPAWN = {
+  glazed: { x: 3, y: 3 },
+  light_platinum: { x: 2, y: 2 },
+  liquid_crystal: { x: 2, y: 3 },
+  tfoh: { x: 2, y: 2 },
+  unbound: { x: 10, y: 11 },
+};
 const BGM = {
   glazed: "Sinnoh Route.ogg",
   light_platinum: "Sinnoh Route.ogg",
@@ -133,9 +140,9 @@ function visitorEvent(campaign, name, npc, xy) {
   ]);
 }
 
-function navigationEvent(name, xy, target, lines, extra = []) {
+function navigationEvent(name, xy, target, lines, extra = [], targetX = 2, targetY = 2) {
   return event(0, `${MARKER} ${name}`, xy[0], xy[1], [
-    page({ list: flatten([texts(lines), extra, transfer(target, 2, 2), endEvent()]) }),
+    page({ list: flatten([texts(lines), extra, transfer(target, targetX, targetY), endEvent()]) }),
   ]);
 }
 
@@ -172,13 +179,21 @@ function compileMap(campaign, blueprint, palette) {
   // El acceso desde los portales aterriza siempre en una celda vacía y transitable.
   take(2, 2);
   const returnedTo = returnMap(campaign);
+  const portalX = campaign.cityPortal ? campaign.cityPortal.x : 34;
+  const portalY = campaign.cityPortal ? campaign.cityPortal.y + 1 : 23;
   add(navigationEvent("Retorno libre", take(1, 1), returnedTo,
-    [`Regresar a ${campaign.cityName ?? "Puerto Horizonte"}. El retorno nunca está condicionado.`]));
+    [`Regresar a ${campaign.cityName ?? "Puerto Horizonte"}. El retorno nunca está condicionado.`], [],
+    returnedTo === MAIN_CITY_MAP ? portalX : 2,
+    returnedTo === MAIN_CITY_MAP ? portalY : 2));
   add(navigationEvent("Tramo anterior", take(1, canvas.height - 2), blueprint.linearLinks.previous,
-    [blueprint.sequence === 1 ? "Volver a Puerto Horizonte." : `Volver al tramo ${blueprint.sequence - 1}.`]));
+    [blueprint.sequence === 1 ? "Volver a Puerto Horizonte." : `Volver al tramo ${blueprint.sequence - 1}.`], [],
+    blueprint.linearLinks.previous === MAIN_CITY_MAP ? portalX : 2,
+    blueprint.linearLinks.previous === MAIN_CITY_MAP ? portalY : 2));
   add(navigationEvent("Tramo siguiente", take(canvas.width - 2, canvas.height - 2), blueprint.linearLinks.next,
     [blueprint.finale ? "La ruta principal vuelve a Puerto Horizonte." : `Avanzar al tramo ${blueprint.sequence + 1} de ${campaign.mapCount}.`],
-    [script(`$game_variables[${campaign.progressVariable}] = [$game_variables[${campaign.progressVariable}], ${Math.min(campaign.mapCount, blueprint.sequence + 1)}].max`)]));
+    [script(`$game_variables[${campaign.progressVariable}] = [$game_variables[${campaign.progressVariable}], ${Math.min(campaign.mapCount, blueprint.sequence + 1)}].max`)],
+    blueprint.linearLinks.next === MAIN_CITY_MAP ? portalX : 2,
+    blueprint.linearLinks.next === MAIN_CITY_MAP ? portalY : 2));
 
   for (let i = 0; i < blueprint.warps.length; i += 1) {
     const warp = blueprint.warps[i];
@@ -222,12 +237,13 @@ function installLobbyPortal(campaign) {
     const roleText = isAshProtagonist(campaign)
       ? "Ash cruza como protagonista de una historia propia; conserva su carácter y decide cómo ayudar."
       : "Ash entra como visitante. Hay retorno libre desde cada mapa y las derrotas permiten reintentar.";
+    const spawn = FIRST_MAP_SPAWN[campaign.id] ?? { x: 2, y: 2 };
     return [event(0, `${MARKER} Acceso completo — ${campaign.title}`, x, y, [
       page({ gfx: graphic("ARCEUS_GATE", 2, 1, {}), list: [...texts(["El archivo completo permanece sellado hasta terminar La Ruta de Dios."]), endEvent()] }),
       page({ cond: condition({ sw: campaign.routeOfGodSwitch }), gfx: graphic("ARCEUS_GATE", 2, 1, {}), list: flatten([
         texts([`${campaign.title}: adaptación estructural de ${campaign.mapCount} mapas.`, roleText]),
         script(`$game_variables[${campaign.progressVariable}] = [$game_variables[${campaign.progressVariable}], 1].max`),
-        transfer(campaign.firstMapId, 2, 2), endEvent(),
+        transfer(campaign.firstMapId, spawn.x, spawn.y), endEvent(),
       ]) }),
     ])];
   }, BACKUP);
@@ -235,6 +251,7 @@ function installLobbyPortal(campaign) {
 
 function cityPortalEvent(campaign) {
   const { x, y } = campaign.cityPortal;
+  const spawn = FIRST_MAP_SPAWN[campaign.id] ?? { x: 2, y: 2 };
   const intro = {
     glazed: "Dos caminos de vida se rozan en Glazed; Ash conocerá a quienes sostienen cada uno.",
     light_platinum: "Light Platinum abre rutas nuevas y una liga viajera, con sus propios compañeros y rivales.",
@@ -248,7 +265,7 @@ function cityPortalEvent(campaign) {
     page({ cond: condition({ sw: campaign.routeOfGodSwitch }), gfx: graphic("ARCEUS_GATE", 2, 1, {}), list: flatten([
       texts([`${campaign.title}: ${intro}`, "Ash: No necesito convertirme en otra persona para vivir esta aventura. ¡Pikachu, vamos!", "¿Cruzar el portal y volver a Puerto Horizonte cuando quieras?" ]),
       script(`$game_variables[${campaign.progressVariable}] = [$game_variables[${campaign.progressVariable}], 1].max`),
-      transfer(campaign.firstMapId, 2, 2), endEvent(),
+      transfer(campaign.firstMapId, spawn.x, spawn.y), endEvent(),
     ]) }),
   ]);
 }

@@ -63,26 +63,84 @@ export const AUTOTILE_RECTS = [
 
 const TILE = 32;
 
+// Límite de lienzo de WebKit/Safari (móvil): 16 777 216 px de área y 8192 por
+// eje. Un mapa de 5 760x5 600 px son 32,3 Mpx: en el móvil el lienzo sale NEGRO
+// (o directamente no se pinta). Para esos mapas se devuelve `mode: "viewport"`:
+// el editor dibuja solo la parte visible en un lienzo pequeño.
+const MAX_CANVAS_PX = 16777216;
+const MAX_CANVAS_AXIS = 8192;
+
+// Colores del «vacío» (casilla sin ningún tile). NO es negro puro a propósito:
+// un hueco del mapa tiene que distinguirse de un tile que de verdad es negro.
+const VOID_BG = "#161a22";
+const VOID_ALT = "#1d222c";
+let _voidTile = null;
+function voidPattern(ctx) {
+  if (!_voidTile) {
+    _voidTile = document.createElement("canvas");
+    _voidTile.width = 16;
+    _voidTile.height = 16;
+    const c = _voidTile.getContext("2d");
+    if (c) {
+      c.fillStyle = VOID_BG;
+      c.fillRect(0, 0, 16, 16);
+      c.fillStyle = VOID_ALT;
+      c.fillRect(0, 0, 8, 8);
+      c.fillRect(8, 8, 8, 8);
+    }
+  }
+  try { return ctx.createPattern(_voidTile, "repeat"); } catch { return VOID_BG; }
+}
+
 /**
- * Renderiza un mapa completo a un canvas (1x = 32px por tile).
+ * Renderiza un mapa RMXP.
+ *
+ * - Mapas que caben en el límite de lienzo: un único canvas 1:1 (`mode:"static"`).
+ * - Mapas enormes (más de 16,7 Mpx): `mode:"viewport"`; se usa `paint(ctx,ox,oy,w,h)`
+ *   para dibujar la parte visible en un canvas pequeño (el llamador lo rellena al
+ *   hacer scroll). Así ningún mapa queda negro en el móvil.
+ *
  * @param {object} parsed mapa parseado (parseMap)
  * @param {object} tileset tileset parseado (parseTileset)
  * @param {object} gfx { tileset: HTMLImage/Canvas|null, autotiles: [7 imgs], characters: Map nombre->img }
- * @param {object} opts { showEvents:true, eventFilter, passageOverlay:false }
- * @returns {{canvas, eventsBelow, eventsOnTop}}
+ * @param {object} opts { showEvents:true, ghostEvents:false, passageOverlay:false, forceViewport:false }
+ * @returns {{mode, canvas, width, height, oversized, paint, eventsBelow, eventsOnTop}}
  */
 export function renderMap(parsed, tileset, gfx, opts = {}) {
-  const { table, width, height } = parsed;
+  const { width, height } = parsed;
+  const totalW = Math.max(1, width * TILE);
+  const totalH = Math.max(1, height * TILE);
+  const cabe = totalW * totalH <= MAX_CANVAS_PX && totalW <= MAX_CANVAS_AXIS && totalH <= MAX_CANVAS_AXIS;
+  const paint = (ctx, ox, oy, w, h) => paintRect(ctx, parsed, tileset, gfx, opts, ox, oy, w, h);
+  // Los eventos se dibujan entre el suelo y los tiles con prioridad (igual que
+  // el motor): `eventsBelow` los lleva todos y `eventsOnTop` va vacío.
+  const eventos = { eventsBelow: parsed.events, eventsOnTop: [] };
+
+  if (opts.forceViewport === true || !cabe) {
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.min(totalW, 1024);
+    canvas.height = Math.min(totalH, 1024);
+    return { mode: "viewport", canvas, width: totalW, height: totalH, oversized: true, paint, ...eventos };
+  }
+
   const canvas = document.createElement("canvas");
-  canvas.width = Math.max(1, width * TILE);
-  canvas.height = Math.max(1, height * TILE);
+  canvas.width = totalW;
+  canvas.height = totalH;
   const ctx = canvas.getContext("2d");
-  ctx.imageSmoothingEnabled = false;
+  if (ctx) {
+    ctx.imageSmoothingEnabled = false;
+    paint(ctx, 0, 0, totalW, totalH);
+  }
+  return { mode: "static", canvas, width: totalW, height: totalH, oversized: false, paint, ...eventos };
+}
 
-  // Fondo negro (como el juego)
-  ctx.fillStyle = "#000";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+/** Dibuja el rectángulo [ox,oy,w,h] del mapa (coordenadas del mapa, 1:1). */
+function paintRect(ctx, parsed, tileset, gfx, opts, ox, oy, w, h) {
+  const { table, width, height } = parsed;
+  const x0 = Math.max(0, Math.floor(ox / TILE) - 1);
+  const y0 = Math.max(0, Math.floor(oy / TILE) - 1);
+  const x1 = Math.min(width - 1, Math.floor((ox + w - 1) / TILE) + 1);
+  const y1 = Math.min(height - 1, Math.floor((oy + h - 1) / TILE) + 1);
   const prioOf = (tileId) => {
     if (!tileset || !tileset.priorities || tileId < 384) return 0;
     const idx = tileId - 384;
@@ -90,10 +148,17 @@ export function renderMap(parsed, tileset, gfx, opts = {}) {
     return tileset.priorities.data[idx];
   };
 
+  ctx.save();
+  ctx.setTransform(1, 0, 0, 1, -ox, -oy);
+  // Fondo de casilla vacía (cuadros oscuros, nunca negro puro)
+  const pat = voidPattern(ctx);
+  ctx.fillStyle = pat;
+  ctx.fillRect(ox, oy, w, h);
+
   // Pasada 1: tiles con prioridad 0 (suelo) en las 3 capas
   for (let z = 0; z < 3; z++) {
-    for (let y = 0; y < height; y++) {
-      for (let x = 0; x < width; x++) {
+    for (let y = y0; y <= y1; y++) {
+      for (let x = x0; x <= x1; x++) {
         const id = tableGet(table, x, y, z);
         if (id < 48) continue;
         if (id >= 384 && prioOf(id) > 0) continue; // a la pasada 2
@@ -102,18 +167,19 @@ export function renderMap(parsed, tileset, gfx, opts = {}) {
     }
   }
 
-  // Eventos (primera página visible como aproximación; todas las páginas importan igual aquí)
-  const showEvents = opts.showEvents !== false;
-  if (showEvents) {
+  // Eventos (entre el suelo y los tiles con prioridad, como el motor)
+  if (opts.showEvents !== false) {
     for (const { obj: evObj } of parsed.events) {
+      const ex = Number(evObj.getIvar("x") ?? 0), ey = Number(evObj.getIvar("y") ?? 0);
+      if (ex < x0 - 2 || ex > x1 + 2 || ey < y0 - 3 || ey > y1 + 2) continue;
       drawEvent(ctx, evObj, gfx, opts);
     }
   }
 
   // Pasada 2: tiles con prioridad > 0 (encima de eventos, como tejados)
   for (let z = 0; z < 3; z++) {
-    for (let y = 0; y < height; y++) {
-      for (let x = 0; x < width; x++) {
+    for (let y = y0; y <= y1; y++) {
+      for (let x = x0; x <= x1; x++) {
         const id = tableGet(table, x, y, z);
         if (id < 384) continue;
         if (prioOf(id) > 0) drawTile(ctx, id, x, y, gfx, tileset);
@@ -122,9 +188,9 @@ export function renderMap(parsed, tileset, gfx, opts = {}) {
   }
 
   if (opts.passageOverlay && tileset?.passages) {
-    drawPassageOverlay(ctx, parsed, tileset);
+    drawPassageOverlay(ctx, parsed, tileset, x0, y0, x1, y1);
   }
-  return { canvas };
+  ctx.restore();
 }
 
 function drawTile(ctx, id, x, y, gfx, tileset) {
@@ -174,12 +240,12 @@ function drawEvent(ctx, evObj, gfx, opts) {
     if (!gg) continue;
     const tileId = Number(gg.getIvar("tile_id") || 0);
     const name = charText(gg.getIvar("character_name"));
-    if (tileId > 0 || name) { g = gg; break; }
+    if (tileId > 0 || (name && !esInvisible(name))) { g = gg; break; }
   }
   const x = Number(evObj.getIvar("x") || 0), y = Number(evObj.getIvar("y") || 0);
   const dx = x * TILE, dy = y * TILE;
   if (!g) {
-    // Evento sin gráfico: marcador fantasma
+    // Evento sin gráfico: marcador fantasma (no es un error)
     if (opts.ghostEvents) {
       ctx.fillStyle = "rgba(124,92,255,.25)";
       ctx.fillRect(dx, dy, TILE, TILE);
@@ -192,6 +258,15 @@ function drawEvent(ctx, evObj, gfx, opts) {
     return;
   }
   const name = charText(g.getIvar("character_name"));
+  // «invisible» es una convención del juego: el evento no dibuja nada. No es un
+  // gráfico que falte, así que sale el mismo marcador fantasma y sin amarillo.
+  if (esInvisible(name)) {
+    if (opts.ghostEvents) {
+      ctx.fillStyle = "rgba(124,92,255,.25)";
+      ctx.fillRect(dx, dy, TILE, TILE);
+    }
+    return;
+  }
   const img = name && gfx.characters?.get(name.toLowerCase());
   const dir = Number(g.getIvar("direction") ?? 2);
   const pat = Math.max(0, Math.min(3, Number(g.getIvar("pattern") ?? 0)));
@@ -210,17 +285,22 @@ function drawEvent(ctx, evObj, gfx, opts) {
   ctx.drawImage(img, pat * fw, row * fh, fw, fh, dx + 16 - fw / 2, dy + TILE - fh, fw, fh);
 }
 
+/** Un nombre de gráfico «invisible» (o vacío) significa: no dibujes nada. */
+export function esInvisible(name) {
+  return !name || name.toLowerCase() === "invisible";
+}
+
 function charText(v) {
   if (v === null || v === undefined) return "";
   return typeof v === "string" ? v : (v.text ?? String(v));
 }
 
-function drawPassageOverlay(ctx, parsed, tileset) {
+function drawPassageOverlay(ctx, parsed, tileset, x0 = 0, y0 = 0, x1 = parsed.width - 1, y1 = parsed.height - 1) {
   // X roja donde ninguna capa deja pasar (4-dir), aproximado con capa 0..2
-  const { table, width, height } = parsed;
+  const { table } = parsed;
   ctx.fillStyle = "rgba(255,40,40,.28)";
-  for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
+  for (let y = y0; y <= y1; y++) {
+    for (let x = x0; x <= x1; x++) {
       let blocked = false;
       for (let z = 0; z < 3; z++) {
         const id = tableGet(table, x, y, z);

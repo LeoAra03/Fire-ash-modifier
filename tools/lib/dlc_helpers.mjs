@@ -21,7 +21,14 @@ export { S, Sym, txt, cmd, condition, graphic, grid, walkableAt, mapFile, readDa
 export const eraseEvent = (indent = 0) => cmd(126, [], indent);
 
 export const readMapRaw = (id) => marshalLoad(fs.readFileSync(path.join(DATA, mapFile(id))));
-export const writeMapRaw = (id, value) => fs.writeFileSync(path.join(DATA, mapFile(id)), Buffer.from(marshalDump(value)));
+export const writeMapRaw = (id, value) => {
+  const buf = Buffer.from(marshalDump(value));
+  fs.writeFileSync(path.join(DATA, mapFile(id)), buf);
+  const pkgPath = path.join(ROOT, "Scripts_corregido/Paquete_directo/Data", mapFile(id));
+  if (fs.existsSync(pkgPath)) {
+    fs.writeFileSync(pkgPath, buf);
+  }
+};
 export const iv = (object, name) => object?.getIvar?.(name);
 
 export function backup(dirName, files) {
@@ -344,7 +351,17 @@ export function installTrainers(altas, dirName = "dlc_total") {
   let siguiente = Math.max(-1, ...d.pairs.filter(([k]) => typeof k === "number").map(([k]) => k)) + 1;
   const resultados = [];
   for (const alta of altas) {
-    if (d.pairs.some(([k]) => Array.isArray(k) && txt(k[0]) === alta.tipo && txt(k[1]) === alta.nombre)) {
+    const existingEntry = d.pairs.find(([k]) => Array.isArray(k) && txt(k[0]) === alta.tipo && txt(k[1]) === alta.nombre);
+    if (existingEntry) {
+      if (alta.overwrite) {
+        const equipo = (alta.equipo ?? []).filter((sp) => especies.has(sp));
+        if (equipo.length) {
+          existingEntry[1].setIvar("@pokemon", equipo.map((sp) => new RHash([[Sym("species"), Sym(sp)], [Sym("level"), alta.nivel ?? 100]])));
+          if (alta.derrota) existingEntry[1].setIvar("@real_lose_text", S(alta.derrota));
+          resultados.push({ nombre: alta.nombre, added: true, updated: true, equipo: equipo.length });
+          continue;
+        }
+      }
       resultados.push({ nombre: alta.nombre, added: false });
       continue;
     }
@@ -363,6 +380,10 @@ export function installTrainers(altas, dirName = "dlc_total") {
     resultados.push({ nombre: alta.nombre, added: true, equipo: equipo.length });
   }
   writeData("trainers.dat", d);
+  const pkgTrainers = path.join(ROOT, "Scripts_corregido/Paquete_directo/Data/trainers.dat");
+  if (fs.existsSync(pkgTrainers)) {
+    fs.writeFileSync(pkgTrainers, Buffer.from(marshalDump(d)));
+  }
   return resultados;
 }
 
