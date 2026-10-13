@@ -1,0 +1,219 @@
+{
+  "region": "Johto",
+  "campaign": "liquid_crystal",
+  "zones": [
+    {
+      "mapId": 3201,
+      "name": "Liquid Crystal · Ruta 29 (Camino a Cherrygrove)",
+      "step_chances": { "Cave": 21 },
+      "types": {
+        "Cave": [
+          [20, "SENTRET", 2, 5],
+          [20, "PIDGEY", 2, 5],
+          [20, "RATTATA", 3, 5],
+          [15, "HOOTHOOT", 3, 6],
+          [15, "LEDYBA", 2, 5],
+          [10, "SPINARAK", 3, 5]
+        ]
+      }
+    },
+    {
+      "mapId": 3204,
+      "name": "Liquid Crystal · Cueva Oscura (Dark Cave)",
+      "step_chances": { "Cave": 22 },
+      "types": {
+        "Cave": [
+          [25, "GEODUDE", 4, 8],
+          [25, "ZUBAT", 4, 8],
+          [20, "DUNSPARCE", 5, 9],
+          [15, "TEDDIURSA", 5, 9],
+          [15, "ONIX", 6, 10]
+        ]
+      }
+    },
+    {
+      "mapId": 3215,
+      "name": "Liquid Crystal · Cueva Unión (Union Cave)",
+      "step_chances": { "Cave": 22 },
+      "types": {
+        "Cave": [
+          [25, "WOOPER", 8, 12],
+          [25, "GEODUDE", 8, 12],
+          [20, "ZUBAT", 8, 13],
+          [15, "SANDSHREW", 9, 13],
+          [15, "ONIX", 10, 14]
+        ]
+      }
+    },
+    {
+      "mapId": 3220,
+      "name": "Liquid Crystal · Pozo Slowpoke (Slowpoke Well)",
+      "step_chances": { "Cave": 22, "Water": 21 },
+      "types": {
+        "Cave": [
+          [35, "SLOWPOKE", 10, 14],
+          [35, "ZUBAT", 10, 14],
+          [30, "GOLDEEN", 10, 15]
+        ],
+        "Water": [
+          [40, "SLOWPOKE", 12, 16],
+          [35, "MAGIKARP", 10, 15],
+          [25, "GOLDEEN", 12, 16]
+        ]
+      }
+    },
+    {
+      "mapId": 3230,
+      "name": "Liquid Crystal · Bosque Encinar (Ilex Forest)",
+      "step_chances": { "Cave": 22 },
+      "types": {
+        "Cave": [
+          [20, "ODDISH", 11, 15],
+          [20, "CATERPIE", 10, 14],
+          [20, "WEEDLE", 10, 14],
+          [15, "PARAS", 12, 16],
+          [15, "VENONAT", 12, 16],
+          [10, "HOOTHOOT", 12, 16]
+        ]
+      }
+    },
+    {
+      "mapId": 3255,
+      "name": "Liquid Crystal · Parque Nacional de Johto",
+      "step_chances": { "Cave": 22 },
+      "types": {
+        "Cave": [
+          [25, "SUNKERN", 14, 18],
+          [20, "CATERPIE", 13, 17],
+          [20, "WEEDLE", 13, 17],
+          [15, "SCYTHER", 15, 20],
+          [10, "PINSIR", 15, 20],
+          [10, "BUTTERFREE", 15, 19]
+        ]
+      }
+    },
+    {
+      "mapId": 3260,
+      "name": "Liquid Crystal · Torre Quemada (Burned Tower)",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [30, "KOFFING", 16, 21],
+          [25, "RATTATA", 15, 20],
+          [20, "ZUBAT", 16, 21],
+          [15, "MAGMAR", 18, 23],
+          [10, "GASTLY", 17, 22]
+        ]
+      }
+    },
+    {
+      "mapId": 3310,
+      "name": "Liquid Crystal · Islas Remolino (Whirl Islands)",
+      "step_chances": { "Water": 22, "Cave": 24 },
+      "types": {
+        "Water": [
+          [30, "TENTACOOL", 22, 28],
+          [25, "SEEL", 24, 29],
+          [20, "HORSEA", 23, 28],
+          [15, "KRABBY", 22, 27],
+          [10, "CORSOLA", 24, 29]
+        ],
+        "Cave": [
+          [30, "ZUBAT", 24, 29],
+          [25, "GOLBAT", 26, 31],
+          [25, "SEEL", 25, 30],
+          [20, "KRABBY", 24, 29]
+        ]
+      }
+    },
+    {
+      "mapId": 3345,
+      "name": "Liquid Crystal · Monte Mortero (Mt. Mortar)",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [25, "MACHOP", 26, 31],
+          [25, "GEODUDE", 26, 31],
+          [20, "GRAVELER", 28, 33],
+          [15, "MARILL", 27, 32],
+          [15, "TYROGUE", 28, 33]
+        ]
+      }
+    },
+    {
+      "mapId": 3375,
+      "name": "Liquid Crystal · Lago de la Furia (Lake of Rage)",
+      "step_chances": { "Water": 22 },
+      "types": {
+        "Water": [
+          [35, "MAGIKARP", 25, 32],
+          [30, "GYARADOS", 28, 35],
+          [20, "GOLDEEN", 26, 31],
+          [15, "SEAKING", 28, 33]
+        ]
+      }
+    },
+    {
+      "mapId": 3400,
+      "name": "Liquid Crystal · Ruta Helada (Ice Path)",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [30, "SWINUB", 30, 36],
+          [25, "DELIBIRD", 31, 37],
+          [20, "JYNX", 32, 38],
+          [15, "SNEASEL", 33, 38],
+          [10, "GOLBAT", 32, 37]
+        ]
+      }
+    },
+    {
+      "mapId": 3420,
+      "name": "Liquid Crystal · Guarida Dragón (Dragon's Den)",
+      "step_chances": { "Water": 22, "Cave": 24 },
+      "types": {
+        "Water": [
+          [35, "MAGIKARP", 30, 38],
+          [30, "DRATINI", 32, 40],
+          [20, "DRAGONAIR", 36, 42],
+          [15, "HORSEA", 32, 38]
+        ],
+        "Cave": [
+          [35, "DRATINI", 34, 40],
+          [25, "DRAGONAIR", 38, 44],
+          [20, "GOLBAT", 35, 41],
+          [20, "GEODUDE", 34, 40]
+        ]
+      }
+    },
+    {
+      "mapId": 3625,
+      "name": "Liquid Crystal · Monte Plateado (Base de Mt. Silver)",
+      "step_chances": { "Cave": 25 },
+      "types": {
+        "Cave": [
+          [25, "DONPHAN", 50, 58],
+          [25, "URSARING", 50, 58],
+          [20, "PONYTA", 48, 56],
+          [15, "LARVITAR", 50, 58],
+          [15, "GOLBAT", 50, 57]
+        ]
+      }
+    },
+    {
+      "mapId": 3631,
+      "name": "Liquid Crystal · Cima del Monte Plateado",
+      "step_chances": { "Cave": 25 },
+      "types": {
+        "Cave": [
+          [20, "SNORLAX", 65, 75],
+          [20, "PIKACHU", 65, 75],
+          [15, "CHARIZARD", 68, 78],
+          [15, "BLASTOISE", 68, 78],
+          [15, "VENUSAUR", 68, 78],
+          [15, "LAPRAS", 66, 76]
+        ]
+      }
+    }
+  ]
+}

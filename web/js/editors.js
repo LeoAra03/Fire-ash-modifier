@@ -11,8 +11,10 @@ import { RString, RObject, RHash, RSymbol, RFloat, marshalLoad, marshalDump } fr
 import {
   parseEvent, cmdOf, humanizeCommand, getCommandStrings, setRstr, rstr,
   findFlagUsesInMap, TRIGGERS, MOVE_TYPES, setSystemName, tableGet,
+  messageBlockOf, messageTextOf, speakerOf, reflowMessage, wrapMessage, visibleWidth,
+  applyDialogueText, isFireAshText101,
 } from "./rmxp.js";
-import { drawCharacterPreview } from "./render.js";
+import { drawCharacterPreview, esInvisible } from "./render.js";
 import { pbsSections, pbsGet, pbsSet, schemaFor, lintPBS, parsePBS, pbsToText } from "./pbs.js";
 import { esc, fmtBytes, pad3 } from "./util.js";
 import { zlibInflate, zlibDeflate } from "./util.js";
@@ -177,9 +179,31 @@ export async function renderEventsTab(view) {
   // --- lista de comandos
   const listEl = view.querySelector("#cmdlist");
   const drawCmds = () => {
+    const seen = new Set();
     listEl.innerHTML = pg.list.map((o, i) => {
       const { code, indent, params } = cmdOf(o);
       const h = humanizeCommand(code, params);
+      // Los diálogos ocupan un bloque (101 + 401): se dibujan una sola vez, con
+      // el texto completo, para que no parezca que el texto es la "cara" del NPC.
+      if (code === 101 || code === 401) {
+        const block = messageBlockOf(pg.list, i);
+        if (block && !seen.has(block[0].i)) {
+          seen.add(block[0].i);
+          for (const b of block) seen.add(b.i);
+          const texto = messageTextOf(block);
+          const sp = speakerOf(texto);
+          const lineas = wrapMessage(sp.rest, 53);
+          return `<div class="cmdrow dlg" data-i="${block[0].i}" data-dlg="1" style="margin-left:${indent * 16}px">
+            <span class="mono muted">#101</span>
+            <span class="cmd-t"><b>Diálogo</b>${sp.name ? ` <span class="chip-n">${esc(sp.name)}</span>` : ""}
+              <span class="muted">${esc(lineas.join(" / ").slice(0, 90))}</span>
+              <span class="muted small">· ${lineas.length} línea${lineas.length === 1 ? "" : "s"}${block.length > 1 ? ` · ${block.length} comandos` : ""}</span></span>
+            <button class="iconbtn mini" data-mv="-1" title="Subir">▲</button>
+            <button class="iconbtn mini" data-mv="1" title="Bajar">▼</button>
+          </div>`;
+        }
+        if (block && seen.has(block[0].i) && block[0].i !== i) return ""; // continuación: ya dibujada
+      }
       return `<div class="cmdrow${h.known ? "" : " unknown"}" data-i="${i}" style="margin-left:${indent * 16}px">
         <span class="mono muted">#${code}</span>
         <span class="cmd-t"><b>${esc(h.title)}</b> <span class="muted">${esc(h.detail)}</span></span>
@@ -204,7 +228,8 @@ export async function renderEventsTab(view) {
           } catch (error) { toast(error.message, "error"); }
           return;
         }
-        openCommandEditor(view, rec, pg, Number(row.dataset.i), drawCmds);
+        if (row.dataset.dlg) openDialogueEditor(view, rec, pg, Number(row.dataset.i), drawCmds);
+        else openCommandEditor(view, rec, pg, Number(row.dataset.i), drawCmds);
       };
     });
   };
@@ -228,11 +253,11 @@ function openInsertMenu(view, rec, pg, redraw) {
     b.onclick = async () => {
       const cmds = [];
       const t = b.dataset.t;
-      if (t.startsWith("Texto")) cmds.push(newCmd(101, [RString.fromText(""), 0, 0, 2]), newCmd(401, [RString.fromText("Nuevo diálogo…")]));
+      if (t.startsWith("Texto")) cmds.push(newCmd(101, [RString.fromText("Nuevo diálogo…")]));
       else if (t.startsWith("Opciones")) {
         cmds.push(newCmd(102, [[RString.fromText("Sí"), RString.fromText("No")], 4]));
-        cmds.push(newCmd(402, [0, RString.fromText("Sí")], 1), newCmd(401, [RString.fromText("Elegiste SÍ")], 2), newCmd(404, [], 1));
-        cmds.push(newCmd(402, [1, RString.fromText("No")], 1), newCmd(401, [RString.fromText("Elegiste NO")], 2), newCmd(404, [], 1));
+        cmds.push(newCmd(402, [0, RString.fromText("Sí")], 1), newCmd(101, [RString.fromText("Elegiste SÍ")], 2), newCmd(404, [], 1));
+        cmds.push(newCmd(402, [1, RString.fromText("No")], 1), newCmd(101, [RString.fromText("Elegiste NO")], 2), newCmd(404, [], 1));
         cmds.push(newCmd(404, []));
       }
       else if (t.startsWith("Script")) cmds.push(newCmd(355, [RString.fromText("pbMessage(\"Hola\")")]));
@@ -256,6 +281,116 @@ function openInsertMenu(view, rec, pg, redraw) {
     };
   });
   openModal({ title: "Añadir comando", body: wrap });
+}
+
+// ============================================================================
+// EDITOR DE DIÁLOGO — Fire Ash guarda la primera línea en el comando 101 y el
+// resto en los 401 siguientes; el motor las une con un espacio. Aquí el usuario
+// edita el mensaje COMPLETO (y su caja de nombre) con vista previa de la caja
+// real, así los diálogos dejan de verse partidos o a nombre del NPC equivocado.
+// ============================================================================
+function openDialogueEditor(view, rec, pg, index, redraw) {
+  const list = pg.list;
+  const block = messageBlockOf(list, index);
+  if (!block) { openCommandEditor(view, rec, pg, index, redraw); return; }
+  const original = messageTextOf(block);
+  const sp = speakerOf(original);
+  const extras = block.slice(1).filter((b) => b.obj);
+
+  const wrap = document.createElement("div");
+  wrap.innerHTML = `
+    <div class="row wrap">
+      <label>Habla (caja del nombre) <input id="dlg-who" class="inp" value="${esc(sp.name)}" placeholder="(sin nombre)" /></label>
+      <label>Caja <select id="dlg-box" class="inp">
+        <option value="53,2">2 líneas (normal)</option>
+        <option value="53,4">4 líneas (mensaje largo)</option>
+        <option value="40,2">2 líneas estrechas</option>
+      </select></label>
+      <button class="btn small" id="dlg-fit">Ajustar a la caja</button>
+    </div>
+    <textarea id="dlg-text" class="inp mono" rows="6"></textarea>
+    <p class="muted small">Códigos del juego: <span class="mono">\n</span> salto de línea ·
+      <span class="mono">\b</span> azul · <span class="mono">\r</span> rojo ·
+      <span class="mono">\c[n]</span> color · <span class="mono">\v[n]</span> variable.
+      Si escribes mucho texto, usa <b>Ajustar a la caja</b>: la caja del juego no crece sola.</p>
+    <div class="dlgpreview" id="dlg-preview"></div>
+    <p class="muted small" id="dlg-info"></p>`;
+  const ta = wrap.querySelector("#dlg-text");
+  const who = wrap.querySelector("#dlg-who");
+  const sel = wrap.querySelector("#dlg-box");
+  ta.value = sp.rest;
+
+  let pagina = 0;
+  const opts = () => {
+    const [c, l] = sel.value.split(",").map(Number);
+    return { cols: c, lines: l };
+  };
+  const paint = () => {
+    const { cols, lines } = opts();
+    const texto = ta.value;
+    const paginas = [];
+    const all = wrapMessage(texto, cols);
+    for (let i = 0; i < all.length; i += lines) paginas.push(all.slice(i, i + lines));
+    if (!paginas.length) paginas.push([""]);
+    if (pagina >= paginas.length) pagina = paginas.length - 1;
+    const nombre = who.value.trim();
+    wrap.querySelector("#dlg-preview").innerHTML = paginas.map((pg, k) => `
+      <div class="dlgframe${k === pagina ? " sel" : ""}" data-p="${k}">
+        ${nombre ? `<div class="dlgname">${esc(nombre)}</div>` : `<div class="dlgname none">(sin nombre — el juego usará el del evento)</div>`}
+        <div class="dlgbox">${pg.map((l) => `<div class="dlgline">${esc(l) || "&nbsp;"}</div>`).join("")}</div>
+      </div>`).join("");
+    wrap.querySelectorAll(".dlgframe").forEach((f) => {
+      f.onclick = () => { pagina = Number(f.dataset.p); paint(); };
+    });
+    const largos = all.filter((l) => visibleWidth(l) > cols).length;
+    wrap.querySelector("#dlg-info").textContent =
+      `${all.length} línea(s) · ${paginas.length} caja(s) · ${texto.length} caracteres` +
+      (largos ? ` · ⚠ ${largos} línea(s) más larga(s) que la caja` : "") +
+      ` · bloque: 1 comando 101${extras.length ? ` + ${extras.length} de continuación` : ""}`;
+  };
+  ta.oninput = () => { pagina = 0; paint(); };
+  who.oninput = paint;
+  sel.onchange = () => { pagina = 0; paint(); };
+  wrap.querySelector("#dlg-fit").onclick = () => {
+    const { cols } = opts();
+    ta.value = reflowMessage(ta.value, cols).texto;
+    pagina = 0;
+    paint();
+  };
+  paint();
+
+  const guardar = async (close) => {
+    const { cols } = opts();
+    const nuevo = ta.value;
+    try {
+      await runUndoableEdit(`Editar diálogo (Ev.${S.currentEvent})`, { kind: "map", id: S.currentMap }, () => {
+        // 1) el 101 se queda con TODO el mensaje (mismo texto que unía el motor)
+        const sobrantes = applyDialogueText(block, who.value, nuevo);
+        // 2) fuera los 401 que ya no hacen falta (el motor no los necesita)
+        if (sobrantes) {
+          const quitar = new Set(block.slice(1).map((b) => b.obj));
+          for (let i = list.length - 1; i >= 0; i--) if (quitar.has(list[i])) list.splice(i, 1);
+        }
+        markMapDirty(S.currentMap);
+      });
+      dirty();
+      close();
+      redraw();
+      const { lines } = opts();
+      const largas = wrapMessage(nuevo, cols).filter((l) => visibleWidth(l) > cols).length;
+      toast(largas ? `Diálogo guardado (${largas} línea(s) se salen de la caja)` : "Diálogo guardado [OK]");
+    } catch (e) { toast(e.message, "error"); }
+  };
+
+  openModal({
+    title: `Diálogo del evento ${S.currentEvent}`,
+    body: wrap,
+    wide: true,
+    actions: [
+      { label: "Cancelar", onClick: (close) => close() },
+      { label: "Guardar diálogo", cls: "primary", onClick: (close) => guardar(close) },
+    ],
+  });
 }
 
 function openCommandEditor(view, rec, pg, index, redraw) {
@@ -433,26 +568,48 @@ export function renderNpcsTab(view, { goTab }) {
     <div id="npc-list"></div>
   </div></div>`;
   const listEl = view.querySelector("#npc-list");
+  let npcDrawToken = 0;
   const draw = (filter = "") => {
     const f = filter.trim().toLowerCase();
+    const token = ++npcDrawToken;
     const rows = npcCache.filter((n) => !f || n.name.toLowerCase().includes(f) || n.charName.toLowerCase().includes(f) || n.mapName.toLowerCase().includes(f) || String(n.mapId) === f);
-    listEl.innerHTML = rows.slice(0, 250).map((n, k) =>
-      `<button class="npcrow" data-k="${npcCache.indexOf(n)}">
-        <canvas width="40" height="40" data-spr="${esc(n.charName)}"></canvas>
-        <span><b>${esc(n.name)}</b> <span class="muted">Ev.${n.evId} · Mapa ${n.mapId} ${esc(n.mapName)} · (${n.x},${n.y})</span></span>
-      </button>`).join("") || `<p class="muted">${npcCache.length ? "Sin coincidencias." : "Pulsa «Escanear mapas»."}</p>`;
-    if (rows.length > 250) listEl.innerHTML += `<p class="muted">…${rows.length - 250} más (filtra)</p>`;
-    listEl.querySelectorAll(".npcrow").forEach((b) => {
+    const visibles = rows.slice(0, 250);
+    // Se rellena una sola vez: con `innerHTML +=` el navegador volvía a construir
+    // toda la lista y las previsualizaciones asíncronas podían acabar pintando en
+    // filas de otra búsqueda (filas duplicadas o «solapadas» en la pestaña NPCs).
+    listEl.innerHTML = "";
+    const frag = document.createDocumentFragment();
+    if (!visibles.length) {
+      const p = document.createElement("p");
+      p.className = "muted";
+      p.textContent = npcCache.length ? "Sin coincidencias." : "Pulsa «Escanear mapas».";
+      frag.appendChild(p);
+    }
+    for (const n of visibles) {
+      const b = document.createElement("button");
+      b.className = "npcrow";
+      b.dataset.k = String(npcCache.indexOf(n));
+      b.innerHTML = `<canvas width="40" height="40" data-spr="${esc(n.charName)}"></canvas>
+        <span><b>${esc(n.name)}</b> <span class="muted">Ev.${n.evId} · Mapa ${n.mapId} ${esc(n.mapName)} · (${n.x},${n.y})</span></span>`;
       b.onclick = () => openNpcEditor(npcCache[Number(b.dataset.k)], goTab);
-    });
-    // previews
+      frag.appendChild(b);
+    }
+    if (rows.length > visibles.length) {
+      const p = document.createElement("p");
+      p.className = "muted";
+      p.textContent = `…${rows.length - visibles.length} más (filtra)`;
+      frag.appendChild(p);
+    }
+    listEl.appendChild(frag);
+    // previews (solo de la lista actual: si el usuario vuelve a buscar, se cortan)
     listEl.querySelectorAll("canvas[data-spr]").forEach(async (cv) => {
       const n = cv.dataset.spr;
-      if (!n) return;
+      if (!n || esInvisible(n)) return;
       try {
         const img = await FS.readImage(`Graphics/Characters/${n}.png`);
+        if (token !== npcDrawToken || !cv.isConnected) return;
         drawCharacterPreview(cv, img, 2, 1);
-      } catch { /* noop */ }
+      } catch { /* sin vista previa */ }
     });
   };
   view.querySelector("#npc-search").oninput = debounce((e) => draw(e.target.value), 200);

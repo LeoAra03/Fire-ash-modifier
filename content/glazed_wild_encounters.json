@@ -1,0 +1,225 @@
+{
+  "region": "Tunod",
+  "campaign": "glazed",
+  "zones": [
+    {
+      "mapId": 3001,
+      "name": "Glazed · Ruta 42 (Paso Glenwood)",
+      "step_chances": { "Cave": 21 },
+      "types": {
+        "Cave": [
+          [20, "BIDOOF", 5, 8],
+          [20, "POOCHYENA", 5, 8],
+          [20, "TAILLOW", 6, 9],
+          [15, "SHINX", 6, 9],
+          [15, "MAREEP", 6, 10],
+          [10, "CATERPIE", 4, 7]
+        ]
+      }
+    },
+    {
+      "mapId": 3007,
+      "name": "Glazed · Bosque Chocovine",
+      "step_chances": { "Cave": 21 },
+      "types": {
+        "Cave": [
+          [20, "WEEDLE", 9, 13],
+          [20, "CATERPIE", 9, 13],
+          [15, "BUDEW", 10, 14],
+          [15, "SHINX", 10, 14],
+          [15, "TAILLOW", 11, 15],
+          [15, "PIKACHU", 12, 15]
+        ]
+      }
+    },
+    {
+      "mapId": 3012,
+      "name": "Glazed · Ruta 43 (Costa Oceanview)",
+      "step_chances": { "Cave": 21 },
+      "types": {
+        "Cave": [
+          [20, "ELECTRIKE", 12, 16],
+          [20, "MAREEP", 12, 16],
+          [20, "VOLTORB", 13, 17],
+          [15, "PIDGEY", 13, 17],
+          [15, "RATTATA", 12, 16],
+          [10, "MAGNEMITE", 14, 18]
+        ]
+      }
+    },
+    {
+      "mapId": 3015,
+      "name": "Glazed · Central Eléctrica de Tunod",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [25, "MAGNEMITE", 16, 21],
+          [25, "VOLTORB", 16, 21],
+          [20, "ELECTRIKE", 17, 22],
+          [15, "BLITZLE", 18, 23],
+          [15, "PIKACHU", 18, 24]
+        ]
+      }
+    },
+    {
+      "mapId": 3021,
+      "name": "Glazed · Ruta 44 (Canal Marino)",
+      "step_chances": { "Water": 21 },
+      "types": {
+        "Water": [
+          [30, "TENTACOOL", 20, 25],
+          [25, "WINGULL", 20, 24],
+          [20, "MAGIKARP", 18, 23],
+          [15, "BUIZEL", 21, 26],
+          [10, "SLOWPOKE", 22, 27]
+        ]
+      }
+    },
+    {
+      "mapId": 3027,
+      "name": "Glazed · Costa de Isla Serenidad",
+      "step_chances": { "Water": 21, "Cave": 21 },
+      "types": {
+        "Water": [
+          [25, "TENTACOOL", 22, 27],
+          [25, "WINGULL", 22, 26],
+          [20, "PSYDUCK", 23, 28],
+          [15, "SHELLDER", 22, 27],
+          [15, "MAGIKARP", 20, 25]
+        ],
+        "Cave": [
+          [25, "GLIGAR", 23, 28],
+          [25, "PHANPY", 23, 28],
+          [20, "GEODUDE", 22, 27],
+          [15, "ONIX", 24, 29],
+          [15, "TRAPINCH", 23, 28]
+        ]
+      }
+    },
+    {
+      "mapId": 3037,
+      "name": "Glazed · Cabo Azure (Sendero Costero)",
+      "step_chances": { "Water": 21, "Cave": 21 },
+      "types": {
+        "Water": [
+          [30, "TENTACOOL", 26, 31],
+          [25, "WINGULL", 26, 30],
+          [20, "BUIZEL", 27, 32],
+          [15, "POLIWAG", 26, 31],
+          [10, "GYARADOS", 28, 33]
+        ],
+        "Cave": [
+          [25, "WINGULL", 26, 30],
+          [25, "SLOWPOKE", 26, 31],
+          [20, "PSYDUCK", 27, 32],
+          [15, "MAKUHITA", 27, 32],
+          [15, "MACHOP", 27, 32]
+        ]
+      }
+    },
+    {
+      "mapId": 3050,
+      "name": "Glazed · Monte Stratus (Base y Cuevas)",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [20, "GEODUDE", 30, 35],
+          [20, "ZUBAT", 30, 35],
+          [15, "ROGGENROLA", 31, 36],
+          [15, "ARON", 31, 36],
+          [15, "MACHOP", 32, 37],
+          [15, "GLIGAR", 32, 37]
+        ]
+      }
+    },
+    {
+      "mapId": 3054,
+      "name": "Glazed · Minas de Mt. Stratus",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [20, "ARON", 34, 39],
+          [20, "ONIX", 34, 40],
+          [20, "ROGGENROLA", 35, 40],
+          [15, "MAKUHITA", 35, 39],
+          [15, "GOLBAT", 36, 41],
+          [10, "BELDUM", 36, 42]
+        ]
+      }
+    },
+    {
+      "mapId": 3060,
+      "name": "Glazed · Glaciar de Mt. Stratus",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [25, "SNOVER", 37, 42],
+          [25, "SWINUB", 37, 42],
+          [20, "SNEASEL", 38, 43],
+          [15, "SNORUNT", 38, 43],
+          [15, "CUBCHOO", 39, 44]
+        ]
+      }
+    },
+    {
+      "mapId": 3075,
+      "name": "Glazed · Pantano Haunted Swamp",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [25, "GASTLY", 39, 45],
+          [20, "DUSKULL", 40, 46],
+          [20, "SHUPPET", 40, 46],
+          [15, "MISDREAVUS", 41, 47],
+          [10, "CROAGUNK", 41, 46],
+          [10, "MURKROW", 42, 47]
+        ]
+      }
+    },
+    {
+      "mapId": 3091,
+      "name": "Glazed · Caverna Espacio-Temporal",
+      "step_chances": { "Cave": 24 },
+      "types": {
+        "Cave": [
+          [25, "BRONZOR", 46, 52],
+          [20, "GOLBAT", 47, 53],
+          [20, "DRIFLOON", 46, 52],
+          [15, "ELGYEM", 47, 53],
+          [10, "BELDUM", 48, 54],
+          [10, "GIBLE", 48, 55]
+        ]
+      }
+    },
+    {
+      "mapId": 3105,
+      "name": "Glazed · Altar de la Fusión",
+      "step_chances": { "Cave": 25 },
+      "types": {
+        "Cave": [
+          [20, "HOUNDOUR", 52, 58],
+          [20, "KOFFING", 52, 58],
+          [20, "GRIMER", 53, 59],
+          [15, "SCRAFTY", 54, 60],
+          [15, "DEINO", 55, 62],
+          [10, "DUSCLOPS", 55, 61]
+        ]
+      }
+    },
+    {
+      "mapId": 3109,
+      "name": "Glazed · Sendero de la Cumbre de Tunod",
+      "step_chances": { "Cave": 25 },
+      "types": {
+        "Cave": [
+          [20, "GLALIE", 58, 65],
+          [20, "MAMOSWINE", 58, 66],
+          [20, "WEAVILE", 60, 67],
+          [15, "BEARTIC", 60, 67],
+          [15, "LUCARIO", 62, 68],
+          [10, "DRAGONAIR", 62, 70]
+        ]
+      }
+    }
+  ]
+}

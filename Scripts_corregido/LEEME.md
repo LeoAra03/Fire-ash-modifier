@@ -734,9 +734,9 @@ La hoja `Graphics/Pictures/Trainer Card/icon_badges.png` crece de 9 a 15 filas c
 
 Las cuatro campañas completas adaptadas (`content/rom_campaigns_complete.json`: 807 mapas, 5516 NPC, 3252 warps y 1059 combates) ya vivían en el juego desde los mapas 3000-3949, pero ninguna entregaba medallas. Ahora cada campaña tiene **8 líderes de gimnasio** repartidos a lo largo de su recorrido, con equipo temático de nivel 85-120 y página de revancha sellada:
 
-- **Glazed** — Celsa, Nivia, Boreas, Crisal, Viska, Polar, Nevara y Albor entregan las 8 medallas Glazed.
-- **Light Platinum** — Lumen, Ondina, Farón, Alba, Céfiro, Coral, Brillo y Aurora entregan las 8 medallas Platinum.
-- **Liquid Crystal** — Crista, Prisma, Faceta, Cuarzo, Jade, Ámbar, Ópalo y Zafira entregan las 8 medallas Crystal.
+- **Glazed** — Sparky, Terry, Flo, Lief, Irene, Ernest, Nicole y Tyson entregan las 8 medallas Glazed en sus gimnasios canónicos de Tunod.
+- **Light Platinum** — Jessica, Esmeralda, Lucas, Thomas, Atlas, Rayner, Sophia y Wesley entregan las 8 medallas Platinum en sus gimnasios canónicos de Zhery.
+- **Liquid Crystal** — Falkner, Bugsy, Whitney, Morty, Chuck, Jasmine, Pryce y Clair entregan las 8 medallas Crystal en sus gimnasios canónicos de Johto.
 - **TFOH (Team Rocket)** — ocho ejecutivos (Kuro, Vex, Mal, Nox, Umbra, Lis, Grajo y el Jefe Sombra) cierran la campaña de infiltración; no sueltan medalla, sueltan ruta.
 
 Cada victoria queda registrada en los switches 700-731 y, en las campañas de medallas, el objeto-medalla entra a la Mochila y enciende su hueco en el visor de la Tarjeta de Entrenador.

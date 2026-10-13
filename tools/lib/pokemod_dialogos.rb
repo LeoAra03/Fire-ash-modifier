@@ -17,13 +17,17 @@ module PokeModDialogos
   end
 
   def self.entrar
-    frames = 0
-    while @@ocupado > 0 && frames < MAX_ESPERA
+    # La reserva se hace ANTES de esperar. Antes se incrementaba DESPUÉS, así que
+    # dos mensajes que llegaran en el mismo frame reservaban a la vez y el juego
+    # dibujaba dos cajas de diálogo superpuestas (los diálogos «solapados»).
+    @@ocupado += 1
+    frames = 1
+    while @@ocupado > 1 && frames < MAX_ESPERA
       Graphics.update
       Input.update
       frames += 1
     end
-    @@ocupado += 1
+    return true
   end
 
   def self.salir
@@ -128,9 +132,12 @@ module PokeModDialogos
 end
 
 # ── Caja por personaje + anti-solape en el mundo superior ──────────────────
+# Si el motor no define estas funciones (versión distinta), NO se toca nada: es
+# mejor quedarse sin caja de nombre que romper TODOS los mensajes del juego.
+if defined?(pbMessageDisplay) && defined?(pbCreateMessageWindow) && defined?(pbDisposeMessageWindow)
 begin
   class Object
-    alias pokemod_orig_pbMessageDisplay pbMessageDisplay
+    alias pokemod_orig_pbMessageDisplay pbMessageDisplay unless method_defined?(:pokemod_orig_pbMessageDisplay)
     def pbMessageDisplay(msgwindow, message, letterbyletter = true, commandProc = nil, &block)
       hablante, texto = PokeModDialogos.dividir(message, self)
       caja = PokeModDialogos.cajaDeNombre(msgwindow, hablante)
@@ -141,7 +148,7 @@ begin
       end
     end
 
-    alias pokemod_orig_pbCreateMessageWindow pbCreateMessageWindow
+    alias pokemod_orig_pbCreateMessageWindow pbCreateMessageWindow unless method_defined?(:pokemod_orig_pbCreateMessageWindow)
     def pbCreateMessageWindow(viewport = nil, skin = nil)
       PokeModDialogos.entrar
       begin
@@ -152,7 +159,7 @@ begin
       end
     end
 
-    alias pokemod_orig_pbDisposeMessageWindow pbDisposeMessageWindow
+    alias pokemod_orig_pbDisposeMessageWindow pbDisposeMessageWindow unless method_defined?(:pokemod_orig_pbDisposeMessageWindow)
     def pbDisposeMessageWindow(msgwindow)
       begin
         return pokemod_orig_pbDisposeMessageWindow(msgwindow)
@@ -163,11 +170,13 @@ begin
   end
 rescue StandardError
 end
+end
 
 # ── Combate: los mensajes de batalla también llevan caja del hablante ──────
+if defined?(PokeBattle_Scene)
 begin
   class PokeBattle_Scene
-    alias pokemod_orig_pbDisplayMessage pbDisplayMessage
+    alias pokemod_orig_pbDisplayMessage pbDisplayMessage unless method_defined?(:pokemod_orig_pbDisplayMessage)
     def pbDisplayMessage(msg, brief = false, &block)
       hablante, texto = PokeModDialogos.dividir(msg, self)
       caja = PokeModDialogos.cajaDeNombre(@sprites ? @sprites["messageWindow"] : nil, hablante)
@@ -178,7 +187,7 @@ begin
       end
     end
 
-    alias pokemod_orig_pbDisplayPausedMessage pbDisplayPausedMessage
+    alias pokemod_orig_pbDisplayPausedMessage pbDisplayPausedMessage unless method_defined?(:pokemod_orig_pbDisplayPausedMessage)
     def pbDisplayPausedMessage(msg, &block)
       hablante, texto = PokeModDialogos.dividir(msg, self)
       caja = PokeModDialogos.cajaDeNombre(@sprites ? @sprites["messageWindow"] : nil, hablante)
@@ -189,8 +198,9 @@ begin
       end
     end
 
-    alias pbDisplay pbDisplayMessage
-    alias pbDisplayPaused pbDisplayPausedMessage
+    alias pbDisplay pbDisplayMessage unless method_defined?(:pbDisplay)
+    alias pbDisplayPaused pbDisplayPausedMessage unless method_defined?(:pbDisplayPaused)
   end
 rescue StandardError
+end
 end

@@ -57,7 +57,7 @@
             "map": 0,
             "header": "0x482B64"
           },
-          "title": "Glazed · Capítulo 01 · poblado 001",
+          "title": "Glazed · Pueblo Glenwood (Lab. de Willow)",
           "chapter": 1,
           "sequence": 1,
           "dimensions": {
@@ -459,7 +459,7 @@
             "map": 1,
             "header": "0x482B80"
           },
-          "title": "Glazed · Capítulo 01 · ruta 002",
+          "title": "Glazed · Ruta 41 (Senda Costera)",
           "chapter": 1,
           "sequence": 2,
           "dimensions": {
@@ -624,7 +624,7 @@
             "map": 2,
             "header": "0x482B9C"
           },
-          "title": "Glazed · Capítulo 01 · santuario 003",
+          "title": "Glazed · Pueblo Chocovine (Santuario del Molino)",
           "chapter": 1,
           "sequence": 3,
           "dimensions": {
@@ -813,7 +813,7 @@
             "map": 3,
             "header": "0x482BB8"
           },
-          "title": "Glazed · Capítulo 01 · cueva 004",
+          "title": "Glazed · Caverna Glacial 1F",
           "chapter": 1,
           "sequence": 4,
           "dimensions": {
@@ -1086,7 +1086,7 @@
             "map": 4,
             "header": "0x482BD4"
           },
-          "title": "Glazed · Capítulo 01 · costa 005",
+          "title": "Glazed · Costa del Reloj",
           "chapter": 1,
           "sequence": 5,
           "dimensions": {
@@ -1342,7 +1342,7 @@
             "map": 5,
             "header": "0x482BF0"
           },
-          "title": "Glazed · Capítulo 01 · bosque 006",
+          "title": "Glazed · Bosque de Chocovine",
           "chapter": 1,
           "sequence": 6,
           "dimensions": {
@@ -1585,7 +1585,7 @@
             "map": 6,
             "header": "0x482C0C"
           },
-          "title": "Glazed · Capítulo 01 · instalación 007",
+          "title": "Glazed · Gimnasio Sparkfly (Medalla Jolt)",
           "chapter": 1,
           "sequence": 7,
           "dimensions": {
@@ -1856,7 +1856,7 @@
             "map": 0,
             "header": "0x482C60"
           },
-          "title": "Glazed · Capítulo 01 · meseta 008",
+          "title": "Glazed · Meseta de la Brisa",
           "chapter": 1,
           "sequence": 8,
           "dimensions": {
@@ -2270,7 +2270,7 @@
             "map": 1,
             "header": "0x482C7C"
           },
-          "title": "Glazed · Capítulo 01 · poblado 009",
+          "title": "Glazed · Casa del Guardabosques",
           "chapter": 1,
           "sequence": 9,
           "dimensions": {
@@ -2449,7 +2449,7 @@
             "map": 2,
             "header": "0x482C98"
           },
-          "title": "Glazed · Capítulo 01 · ruta 010",
+          "title": "Glazed · Ruta 41 Norte",
           "chapter": 1,
           "sequence": 10,
           "dimensions": {
@@ -2628,7 +2628,7 @@
             "map": 0,
             "header": "0x483344"
           },
-          "title": "Glazed · Capítulo 01 · bosque 011",
+          "title": "Glazed · Arboleda Oculta",
           "chapter": 1,
           "sequence": 11,
           "dimensions": {
@@ -2848,7 +2848,7 @@
             "map": 1,
             "header": "0x483360"
           },
-          "title": "Glazed · Capítulo 01 · instalación 012",
+          "title": "Glazed · Paso Fronterizo de Chocovine",
           "chapter": 1,
           "sequence": 12,
           "dimensions": {
@@ -3168,7 +3168,7 @@
             "map": 2,
             "header": "0x48337C"
           },
-          "title": "Glazed · Capítulo 02 · poblado 013",
+          "title": "Glazed · Ciudad Oceanview (Muelle & Faro)",
           "chapter": 2,
           "sequence": 13,
           "dimensions": {
@@ -3366,7 +3366,7 @@
             "map": 3,
             "header": "0x483398"
           },
-          "title": "Glazed · Capítulo 02 · bosque 014",
+          "title": "Glazed · Ruta 42 (Paso Marino)",
           "chapter": 2,
           "sequence": 14,
           "dimensions": {
@@ -3808,7 +3808,7 @@
             "map": 4,
             "header": "0x4833B4"
           },
-          "title": "Glazed · Capítulo 02 · instalación 015",
+          "title": "Glazed · Central Eléctrica de Oceanview",
           "chapter": 2,
           "sequence": 15,
           "dimensions": {
@@ -4085,7 +4085,7 @@
             "map": 0,
             "header": "0x483424"
           },
-          "title": "Glazed · Capítulo 02 · meseta 016",
+          "title": "Glazed · Parque Energético",
           "chapter": 2,
           "sequence": 16,
           "dimensions": {
@@ -4516,7 +4516,7 @@
             "map": 1,
             "header": "0x483440"
           },
-          "title": "Glazed · Capítulo 02 · poblado 017",
+          "title": "Glazed · Gimnasio Oceanview (Medalla Sprout)",
           "chapter": 2,
           "sequence": 17,
           "dimensions": {
@@ -4679,7 +4679,7 @@
             "map": 2,
             "header": "0x48345C"
           },
-          "title": "Glazed · Capítulo 02 · ruta 018",
+          "title": "Glazed · Laboratorio Marítimo",
           "chapter": 2,
           "sequence": 18,
           "dimensions": {
@@ -4911,7 +4911,7 @@
             "map": 3,
             "header": "0x483478"
           },
-          "title": "Glazed · Capítulo 02 · santuario 019",
+          "title": "Glazed · Dársena de Pescadores",
           "chapter": 2,
           "sequence": 19,
           "dimensions": {
@@ -5095,7 +5095,7 @@
             "map": 4,
             "header": "0x483494"
           },
-          "title": "Glazed · Capítulo 02 · cueva 020",
+          "title": "Glazed · Ruta 42 Este",
           "chapter": 2,
           "sequence": 20,
           "dimensions": {
@@ -5279,7 +5279,7 @@
             "map": 5,
             "header": "0x4834B0"
           },
-          "title": "Glazed · Capítulo 02 · costa 021",
+          "title": "Glazed · Almacén del Team Fusion",
           "chapter": 2,
           "sequence": 21,
           "dimensions": {
@@ -5584,7 +5584,7 @@
             "map": 6,
             "header": "0x4834CC"
           },
-          "title": "Glazed · Capítulo 02 · bosque 022",
+          "title": "Glazed · Paseo de las Palmeras",
           "chapter": 2,
           "sequence": 22,
           "dimensions": {
@@ -7283,7 +7283,7 @@
             "map": 7,
             "header": "0x4834E8"
           },
-          "title": "Glazed · Capítulo 02 · instalación 023",
+          "title": "Glazed · Mirador del Océano",
           "chapter": 2,
           "sequence": 23,
           "dimensions": {
@@ -8893,7 +8893,7 @@
             "map": 0,
             "header": "0x483654"
           },
-          "title": "Glazed · Capítulo 02 · meseta 024",
+          "title": "Glazed · Subterráneo de Oceanview",
           "chapter": 2,
           "sequence": 24,
           "dimensions": {
@@ -9153,7 +9153,7 @@
             "map": 1,
             "header": "0x483670"
           },
-          "title": "Glazed · Capítulo 03 · poblado 025",
+          "title": "Glazed · Torre de Transmisión",
           "chapter": 3,
           "sequence": 25,
           "dimensions": {
@@ -9426,7 +9426,7 @@
             "map": 2,
             "header": "0x48368C"
           },
-          "title": "Glazed · Capítulo 03 · ruta 026",
+          "title": "Glazed · Estación del Transbordador",
           "chapter": 3,
           "sequence": 26,
           "dimensions": {
@@ -9598,7 +9598,7 @@
             "map": 3,
             "header": "0x4836A8"
           },
-          "title": "Glazed · Capítulo 03 · santuario 027",
+          "title": "Glazed · Isla Serenidad (Balneario)",
           "chapter": 3,
           "sequence": 27,
           "dimensions": {
@@ -9939,7 +9939,7 @@
             "map": 4,
             "header": "0x4836C4"
           },
-          "title": "Glazed · Capítulo 03 · cueva 028",
+          "title": "Glazed · Ruta 43 (Arrecife de Coral)",
           "chapter": 3,
           "sequence": 28,
           "dimensions": {
@@ -10495,7 +10495,7 @@
             "map": 0,
             "header": "0x4837F8"
           },
-          "title": "Glazed · Capítulo 03 · costa 029",
+          "title": "Glazed · Faro de Serenidad",
           "chapter": 3,
           "sequence": 29,
           "dimensions": {
@@ -10868,7 +10868,7 @@
             "map": 1,
             "header": "0x483814"
           },
-          "title": "Glazed · Capítulo 03 · bosque 030",
+          "title": "Glazed · Gruta del Resplandor",
           "chapter": 3,
           "sequence": 30,
           "dimensions": {
@@ -11153,7 +11153,7 @@
             "map": 2,
             "header": "0x483830"
           },
-          "title": "Glazed · Capítulo 03 · instalación 031",
+          "title": "Glazed · Bahía del Sol Poniente",
           "chapter": 3,
           "sequence": 31,
           "dimensions": {
@@ -11438,7 +11438,7 @@
             "map": 3,
             "header": "0x48384C"
           },
-          "title": "Glazed · Capítulo 03 · meseta 032",
+          "title": "Glazed · Gimnasio Serenity (Medalla Pure)",
           "chapter": 3,
           "sequence": 32,
           "dimensions": {
@@ -11723,7 +11723,7 @@
             "map": 0,
             "header": "0x4839F0"
           },
-          "title": "Glazed · Capítulo 03 · poblado 033",
+          "title": "Glazed · Jardín Zen de Serenidad",
           "chapter": 3,
           "sequence": 33,
           "dimensions": {
@@ -11983,7 +11983,7 @@
             "map": 1,
             "header": "0x483A0C"
           },
-          "title": "Glazed · Capítulo 03 · ruta 034",
+          "title": "Glazed · Acantilado Tranquilo",
           "chapter": 3,
           "sequence": 34,
           "dimensions": {
@@ -12277,7 +12277,7 @@
             "map": 2,
             "header": "0x483A28"
           },
-          "title": "Glazed · Capítulo 03 · santuario 035",
+          "title": "Glazed · Cala de las Conchas",
           "chapter": 3,
           "sequence": 35,
           "dimensions": {
@@ -12685,7 +12685,7 @@
             "map": 3,
             "header": "0x483A44"
           },
-          "title": "Glazed · Capítulo 03 · cueva 036",
+          "title": "Glazed · Centro de Buceo",
           "chapter": 3,
           "sequence": 36,
           "dimensions": {
@@ -13088,7 +13088,7 @@
             "map": 0,
             "header": "0x483B78"
           },
-          "title": "Glazed · Capítulo 04 · costa 037",
+          "title": "Glazed · Banco de Arena",
           "chapter": 4,
           "sequence": 37,
           "dimensions": {
@@ -13290,7 +13290,7 @@
             "map": 1,
             "header": "0x483B94"
           },
-          "title": "Glazed · Capítulo 04 · bosque 038",
+          "title": "Glazed · Pasadizo Submarino",
           "chapter": 4,
           "sequence": 38,
           "dimensions": {
@@ -13595,7 +13595,7 @@
             "map": 2,
             "header": "0x483BB0"
           },
-          "title": "Glazed · Capítulo 04 · instalación 039",
+          "title": "Glazed · Embarcadero de Serenidad",
           "chapter": 4,
           "sequence": 39,
           "dimensions": {
@@ -14233,7 +14233,7 @@
             "map": 3,
             "header": "0x483BCC"
           },
-          "title": "Glazed · Capítulo 04 · meseta 040",
+          "title": "Glazed · Ciudad Espoir (Cabo Azure)",
           "chapter": 4,
           "sequence": 40,
           "dimensions": {
@@ -14515,7 +14515,7 @@
             "map": 4,
             "header": "0x483BE8"
           },
-          "title": "Glazed · Capítulo 04 · poblado 041",
+          "title": "Glazed · Ruta 44 (Senda de Espoir)",
           "chapter": 4,
           "sequence": 41,
           "dimensions": {
@@ -14797,7 +14797,7 @@
             "map": 5,
             "header": "0x483C04"
           },
-          "title": "Glazed · Capítulo 04 · ruta 042",
+          "title": "Glazed · Playa Esmeralda",
           "chapter": 4,
           "sequence": 42,
           "dimensions": {
@@ -15079,7 +15079,7 @@
             "map": 6,
             "header": "0x483C20"
           },
-          "title": "Glazed · Capítulo 04 · santuario 043",
+          "title": "Glazed · Acuario de Espoir",
           "chapter": 4,
           "sequence": 43,
           "dimensions": {
@@ -15357,7 +15357,7 @@
             "map": 7,
             "header": "0x483C3C"
           },
-          "title": "Glazed · Capítulo 04 · cueva 044",
+          "title": "Glazed · Gruta Costera de Azure",
           "chapter": 4,
           "sequence": 44,
           "dimensions": {
@@ -15692,7 +15692,7 @@
             "map": 8,
             "header": "0x483C58"
           },
-          "title": "Glazed · Capítulo 04 · costa 045",
+          "title": "Glazed · Cabo Azure (Mirador del Faro)",
           "chapter": 4,
           "sequence": 45,
           "dimensions": {
@@ -16403,7 +16403,7 @@
             "map": 0,
             "header": "0x483E34"
           },
-          "title": "Glazed · Capítulo 04 · costa 046",
+          "title": "Glazed · Academia de Entrenadores de Espoir",
           "chapter": 4,
           "sequence": 46,
           "dimensions": {
@@ -16721,7 +16721,7 @@
             "map": 1,
             "header": "0x483E50"
           },
-          "title": "Glazed · Capítulo 04 · instalación 047",
+          "title": "Glazed · Jardines Botánicos",
           "chapter": 4,
           "sequence": 47,
           "dimensions": {
@@ -16941,7 +16941,7 @@
             "map": 2,
             "header": "0x483E6C"
           },
-          "title": "Glazed · Capítulo 04 · meseta 048",
+          "title": "Glazed · Gimnasio Espoir (Medalla Mud)",
           "chapter": 4,
           "sequence": 48,
           "dimensions": {
@@ -17214,7 +17214,7 @@
             "map": 3,
             "header": "0x483E88"
           },
-          "title": "Glazed · Capítulo 05 · poblado 049",
+          "title": "Glazed · Puesto de Guardia",
           "chapter": 5,
           "sequence": 49,
           "dimensions": {
@@ -17526,7 +17526,7 @@
             "map": 4,
             "header": "0x483EA4"
           },
-          "title": "Glazed · Capítulo 05 · ruta 050",
+          "title": "Glazed · Cueva de la Marea",
           "chapter": 5,
           "sequence": 50,
           "dimensions": {
@@ -17953,7 +17953,7 @@
             "map": 0,
             "header": "0x484A90"
           },
-          "title": "Glazed · Capítulo 05 · santuario 051",
+          "title": "Glazed · Albergue de Montaña",
           "chapter": 5,
           "sequence": 51,
           "dimensions": {
@@ -18727,7 +18727,7 @@
             "map": 1,
             "header": "0x484AAC"
           },
-          "title": "Glazed · Capítulo 05 · cueva 052",
+          "title": "Glazed · Colina de los Vientos",
           "chapter": 5,
           "sequence": 52,
           "dimensions": {
@@ -19017,7 +19017,7 @@
             "map": 2,
             "header": "0x484AC8"
           },
-          "title": "Glazed · Capítulo 05 · costa 053",
+          "title": "Glazed · Paso hacia Mt. Stratus",
           "chapter": 5,
           "sequence": 53,
           "dimensions": {
@@ -19840,7 +19840,7 @@
             "map": 3,
             "header": "0x484AE4"
           },
-          "title": "Glazed · Capítulo 05 · bosque 054",
+          "title": "Glazed · Ciudad Stormy (Valle de Tormentas)",
           "chapter": 5,
           "sequence": 54,
           "dimensions": {
@@ -20264,7 +20264,7 @@
             "map": 4,
             "header": "0x484B00"
           },
-          "title": "Glazed · Capítulo 05 · instalación 055",
+          "title": "Glazed · Mt. Stratus (Base de la Montaña)",
           "chapter": 5,
           "sequence": 55,
           "dimensions": {
@@ -21049,7 +21049,7 @@
             "map": 5,
             "header": "0x484B1C"
           },
-          "title": "Glazed · Capítulo 05 · meseta 056",
+          "title": "Glazed · Mt. Stratus (Túneles Interiores 1F)",
           "chapter": 5,
           "sequence": 56,
           "dimensions": {
@@ -21354,7 +21354,7 @@
             "map": 6,
             "header": "0x484B38"
           },
-          "title": "Glazed · Capítulo 05 · poblado 057",
+          "title": "Glazed · Mt. Stratus (Caverna de Hielo)",
           "chapter": 5,
           "sequence": 57,
           "dimensions": {
@@ -23000,7 +23000,7 @@
             "map": 0,
             "header": "0x484C88"
           },
-          "title": "Glazed · Capítulo 05 · ruta 058",
+          "title": "Glazed · Puesto de Avanzada Team Fusion",
           "chapter": 5,
           "sequence": 58,
           "dimensions": {
@@ -23325,7 +23325,7 @@
             "map": 1,
             "header": "0x484CA4"
           },
-          "title": "Glazed · Capítulo 05 · santuario 059",
+          "title": "Glazed · Mt. Stratus (Cornisa Nevada)",
           "chapter": 5,
           "sequence": 59,
           "dimensions": {
@@ -23684,7 +23684,7 @@
             "map": 2,
             "header": "0x484CC0"
           },
-          "title": "Glazed · Capítulo 05 · cueva 060",
+          "title": "Glazed · Laboratorio Clandestino de Fusión",
           "chapter": 5,
           "sequence": 60,
           "dimensions": {
@@ -24092,7 +24092,7 @@
             "map": 3,
             "header": "0x484CDC"
           },
-          "title": "Glazed · Capítulo 06 · costa 061",
+          "title": "Glazed · Mt. Stratus (Cumbre Helada)",
           "chapter": 6,
           "sequence": 61,
           "dimensions": {
@@ -25641,7 +25641,7 @@
             "map": 4,
             "header": "0x484CF8"
           },
-          "title": "Glazed · Capítulo 06 · bosque 062",
+          "title": "Glazed · Refugio del Alpinista",
           "chapter": 6,
           "sequence": 62,
           "dimensions": {
@@ -26048,7 +26048,7 @@
             "map": 5,
             "header": "0x484D14"
           },
-          "title": "Glazed · Capítulo 06 · instalación 063",
+          "title": "Glazed · Garganta del Viento Blanco",
           "chapter": 6,
           "sequence": 63,
           "dimensions": {
@@ -26489,7 +26489,7 @@
             "map": 0,
             "header": "0x484D4C"
           },
-          "title": "Glazed · Capítulo 06 · meseta 064",
+          "title": "Glazed · Gimnasio Stormy (Medalla Coral)",
           "chapter": 6,
           "sequence": 64,
           "dimensions": {
@@ -26652,7 +26652,7 @@
             "map": 1,
             "header": "0x484D68"
           },
-          "title": "Glazed · Capítulo 06 · poblado 065",
+          "title": "Glazed · Desfiladero de las Sombras",
           "chapter": 6,
           "sequence": 65,
           "dimensions": {
@@ -26989,7 +26989,7 @@
             "map": 2,
             "header": "0x484D84"
           },
-          "title": "Glazed · Capítulo 06 · ruta 066",
+          "title": "Glazed · Pista de Aterrizaje Fusion",
           "chapter": 6,
           "sequence": 66,
           "dimensions": {
@@ -27602,7 +27602,7 @@
             "map": 3,
             "header": "0x484DA0"
           },
-          "title": "Glazed · Capítulo 06 · santuario 067",
+          "title": "Glazed · Bajada hacia Darkwood",
           "chapter": 6,
           "sequence": 67,
           "dimensions": {
@@ -27795,7 +27795,7 @@
             "map": 0,
             "header": "0x484E64"
           },
-          "title": "Glazed · Capítulo 06 · cueva 068",
+          "title": "Glazed · Pueblo Darkwood (Bosque Umbrío)",
           "chapter": 6,
           "sequence": 68,
           "dimensions": {
@@ -27988,7 +27988,7 @@
             "map": 1,
             "header": "0x484E80"
           },
-          "title": "Glazed · Capítulo 06 · costa 069",
+          "title": "Glazed · Iglesia de Pikachu (Templo del Lenguaje)",
           "chapter": 6,
           "sequence": 69,
           "dimensions": {
@@ -28181,7 +28181,7 @@
             "map": 2,
             "header": "0x484E9C"
           },
-          "title": "Glazed · Capítulo 06 · bosque 070",
+          "title": "Glazed · Bosque de las Sombras 1F",
           "chapter": 6,
           "sequence": 70,
           "dimensions": {
@@ -28374,7 +28374,7 @@
             "map": 3,
             "header": "0x484EB8"
           },
-          "title": "Glazed · Capítulo 06 · instalación 071",
+          "title": "Glazed · Bosque de las Sombras 2F (Península)",
           "chapter": 6,
           "sequence": 71,
           "dimensions": {
@@ -28567,7 +28567,7 @@
             "map": 0,
             "header": "0x484F0C"
           },
-          "title": "Glazed · Capítulo 06 · meseta 072",
+          "title": "Glazed · Cripta Sagrada de Darkwood",
           "chapter": 6,
           "sequence": 72,
           "dimensions": {
@@ -28971,7 +28971,7 @@
             "map": 1,
             "header": "0x484F28"
           },
-          "title": "Glazed · Capítulo 07 · poblado 073",
+          "title": "Glazed · Mansión Abandonada de Tunod",
           "chapter": 7,
           "sequence": 73,
           "dimensions": {
@@ -29466,7 +29466,7 @@
             "map": 2,
             "header": "0x484F44"
           },
-          "title": "Glazed · Capítulo 07 · ruta 074",
+          "title": "Glazed · Santuario Espectral",
           "chapter": 7,
           "sequence": 74,
           "dimensions": {
@@ -29898,7 +29898,7 @@
             "map": 3,
             "header": "0x484F60"
           },
-          "title": "Glazed · Capítulo 07 · santuario 075",
+          "title": "Glazed · Cementerio de las Brumas",
           "chapter": 7,
           "sequence": 75,
           "dimensions": {
@@ -30313,7 +30313,7 @@
             "map": 0,
             "header": "0x485200"
           },
-          "title": "Glazed · Capítulo 07 · cueva 076",
+          "title": "Glazed · Claro de los Espíritus",
           "chapter": 7,
           "sequence": 76,
           "dimensions": {
@@ -30752,7 +30752,7 @@
             "map": 1,
             "header": "0x48521C"
           },
-          "title": "Glazed · Capítulo 07 · costa 077",
+          "title": "Glazed · Casa de la Médium",
           "chapter": 7,
           "sequence": 77,
           "dimensions": {
@@ -31450,7 +31450,7 @@
             "map": 2,
             "header": "0x485238"
           },
-          "title": "Glazed · Capítulo 07 · costa 078",
+          "title": "Glazed · Pasaje Secreto de la Iglesia",
           "chapter": 7,
           "sequence": 78,
           "dimensions": {
@@ -31828,7 +31828,7 @@
             "map": 0,
             "header": "0x4854A0"
           },
-          "title": "Glazed · Capítulo 07 · instalación 079",
+          "title": "Glazed · Altar del Scarf Pikachu",
           "chapter": 7,
           "sequence": 79,
           "dimensions": {
@@ -32405,7 +32405,7 @@
             "map": 1,
             "header": "0x4854BC"
           },
-          "title": "Glazed · Capítulo 07 · instalación 080",
+          "title": "Glazed · Gimnasio Darkwood (Medalla Venom)",
           "chapter": 7,
           "sequence": 80,
           "dimensions": {
@@ -32952,7 +32952,7 @@
             "map": 2,
             "header": "0x4854D8"
           },
-          "title": "Glazed · Capítulo 07 · meseta 081",
+          "title": "Glazed · Camino hacia Geminite",
           "chapter": 7,
           "sequence": 81,
           "dimensions": {
@@ -33451,7 +33451,7 @@
             "map": 3,
             "header": "0x4854F4"
           },
-          "title": "Glazed · Capítulo 07 · ruta 082",
+          "title": "Glazed · Aldea Geminite (Valle de los Cristales)",
           "chapter": 7,
           "sequence": 82,
           "dimensions": {
@@ -34295,7 +34295,7 @@
             "map": 0,
             "header": "0x48559C"
           },
-          "title": "Glazed · Capítulo 07 · santuario 083",
+          "title": "Glazed · Mina de Geminite 1F",
           "chapter": 7,
           "sequence": 83,
           "dimensions": {
@@ -34718,7 +34718,7 @@
             "map": 1,
             "header": "0x4855B8"
           },
-          "title": "Glazed · Capítulo 07 · cueva 084",
+          "title": "Glazed · Mina de Geminite 2F (Galería de Gemas)",
           "chapter": 7,
           "sequence": 84,
           "dimensions": {
@@ -35374,7 +35374,7 @@
             "map": 2,
             "header": "0x4855D4"
           },
-          "title": "Glazed · Capítulo 08 · costa 085",
+          "title": "Glazed · Pozo de Excavación",
           "chapter": 8,
           "sequence": 85,
           "dimensions": {
@@ -35757,7 +35757,7 @@
             "map": 3,
             "header": "0x4855F0"
           },
-          "title": "Glazed · Capítulo 08 · bosque 086",
+          "title": "Glazed · Fundición de Geminite",
           "chapter": 8,
           "sequence": 86,
           "dimensions": {
@@ -36329,7 +36329,7 @@
             "map": 0,
             "header": "0x4857CC"
           },
-          "title": "Glazed · Capítulo 08 · instalación 087",
+          "title": "Glazed · Caverna de Cuarzo Resonante",
           "chapter": 8,
           "sequence": 87,
           "dimensions": {
@@ -36677,7 +36677,7 @@
             "map": 1,
             "header": "0x4857E8"
           },
-          "title": "Glazed · Capítulo 08 · meseta 088",
+          "title": "Glazed · Taller del Orfebre",
           "chapter": 8,
           "sequence": 88,
           "dimensions": {
@@ -36890,7 +36890,7 @@
             "map": 2,
             "header": "0x485804"
           },
-          "title": "Glazed · Capítulo 08 · poblado 089",
+          "title": "Glazed · Gruta de los Zafiros",
           "chapter": 8,
           "sequence": 89,
           "dimensions": {
@@ -37103,7 +37103,7 @@
             "map": 3,
             "header": "0x485820"
           },
-          "title": "Glazed · Capítulo 08 · ruta 090",
+          "title": "Glazed · Terraza Rocosa de Geminite",
           "chapter": 8,
           "sequence": 90,
           "dimensions": {
@@ -37316,7 +37316,7 @@
             "map": 4,
             "header": "0x48583C"
           },
-          "title": "Glazed · Capítulo 08 · santuario 091",
+          "title": "Glazed · Campamento Minero",
           "chapter": 8,
           "sequence": 91,
           "dimensions": {
@@ -37529,7 +37529,7 @@
             "map": 0,
             "header": "0x485C64"
           },
-          "title": "Glazed · Capítulo 08 · cueva 092",
+          "title": "Glazed · Fisura Subterránea",
           "chapter": 8,
           "sequence": 92,
           "dimensions": {
@@ -38354,7 +38354,7 @@
             "map": 1,
             "header": "0x485C80"
           },
-          "title": "Glazed · Capítulo 08 · costa 093",
+          "title": "Glazed · Paso Alto de Geminite",
           "chapter": 8,
           "sequence": 93,
           "dimensions": {
@@ -38660,7 +38660,7 @@
             "map": 2,
             "header": "0x485C9C"
           },
-          "title": "Glazed · Capítulo 08 · bosque 094",
+          "title": "Glazed · Almacén de Minerales",
           "chapter": 8,
           "sequence": 94,
           "dimensions": {
@@ -38962,7 +38962,7 @@
             "map": 0,
             "header": "0x482CB4"
           },
-          "title": "Glazed · Capítulo 08 · instalación 095",
+          "title": "Glazed · Gimnasio Geminite (Medalla Plain)",
           "chapter": 8,
           "sequence": 95,
           "dimensions": {
@@ -39259,7 +39259,7 @@
             "map": 1,
             "header": "0x482CD0"
           },
-          "title": "Glazed · Capítulo 08 · meseta 096",
+          "title": "Glazed · Sendero de la Liga de Tunod",
           "chapter": 8,
           "sequence": 96,
           "dimensions": {
@@ -39620,7 +39620,7 @@
             "map": 2,
             "header": "0x482CEC"
           },
-          "title": "Glazed · Capítulo 09 · poblado 097",
+          "title": "Glazed · Safari de Tunod (Entrada Principal)",
           "chapter": 9,
           "sequence": 97,
           "dimensions": {
@@ -39917,7 +39917,7 @@
             "map": 0,
             "header": "0x484470"
           },
-          "title": "Glazed · Capítulo 09 · ruta 098",
+          "title": "Glazed · Safari de Tunod (Área Pantanosa)",
           "chapter": 9,
           "sequence": 98,
           "dimensions": {
@@ -40330,7 +40330,7 @@
             "map": 1,
             "header": "0x48448C"
           },
-          "title": "Glazed · Capítulo 09 · santuario 099",
+          "title": "Glazed · Safari de Tunod (Área Rocosa)",
           "chapter": 9,
           "sequence": 99,
           "dimensions": {
@@ -40805,7 +40805,7 @@
             "map": 2,
             "header": "0x4844A8"
           },
-          "title": "Glazed · Capítulo 09 · cueva 100",
+          "title": "Glazed · Safari de Tunod (Área Pradera)",
           "chapter": 9,
           "sequence": 100,
           "dimensions": {
@@ -41112,7 +41112,7 @@
             "map": 3,
             "header": "0x4844C4"
           },
-          "title": "Glazed · Capítulo 09 · costa 101",
+          "title": "Glazed · Avenida de la Victoria de Tunod",
           "chapter": 9,
           "sequence": 101,
           "dimensions": {
@@ -41424,7 +41424,7 @@
             "map": 0,
             "header": "0x484518"
           },
-          "title": "Glazed · Capítulo 09 · poblado 102",
+          "title": "Glazed · Puerta de los Campeones de Tunod",
           "chapter": 9,
           "sequence": 102,
           "dimensions": {
@@ -41794,7 +41794,7 @@
             "map": 1,
             "header": "0x484534"
           },
-          "title": "Glazed · Capítulo 09 · costa 103",
+          "title": "Glazed · Altar de la Fusión Dimensional",
           "chapter": 9,
           "sequence": 103,
           "dimensions": {
@@ -41984,7 +41984,7 @@
             "map": 2,
             "header": "0x484550"
           },
-          "title": "Glazed · Capítulo 09 · bosque 104",
+          "title": "Glazed · Cámara del Núcleo Temporal",
           "chapter": 9,
           "sequence": 104,
           "dimensions": {
@@ -42169,7 +42169,7 @@
             "map": 3,
             "header": "0x48456C"
           },
-          "title": "Glazed · Capítulo 09 · poblado 105",
+          "title": "Glazed · Terraza de la Convergencia",
           "chapter": 9,
           "sequence": 105,
           "dimensions": {
@@ -42593,7 +42593,7 @@
             "map": 0,
             "header": "0x48472C"
           },
-          "title": "Glazed · Capítulo 09 · ruta 106",
+          "title": "Glazed · Salón de Honor de Tunod",
           "chapter": 9,
           "sequence": 106,
           "dimensions": {
@@ -43002,7 +43002,7 @@
             "map": 1,
             "header": "0x484748"
           },
-          "title": "Glazed · Capítulo 09 · santuario 107",
+          "title": "Glazed · Coliseo de la Liga de Tunod",
           "chapter": 9,
           "sequence": 107,
           "dimensions": {
@@ -43509,7 +43509,7 @@
             "map": 2,
             "header": "0x484764"
           },
-          "title": "Glazed · Capítulo 09 · cueva 108",
+          "title": "Glazed · Torre de Enlace Tunod-Rankor",
           "chapter": 9,
           "sequence": 108,
           "dimensions": {
@@ -43932,7 +43932,7 @@
             "map": 0,
             "header": "0x4847B8"
           },
-          "title": "Glazed · Capítulo 10 · costa 109",
+          "title": "Glazed · Pasarela Espacial de Rankor",
           "chapter": 10,
           "sequence": 109,
           "dimensions": {
@@ -44423,7 +44423,7 @@
             "map": 1,
             "header": "0x4847D4"
           },
-          "title": "Glazed · Capítulo 10 · bosque 110",
+          "title": "Glazed · Gimnasio Alto de Tunod (Medalla Spark)",
           "chapter": 10,
           "sequence": 110,
           "dimensions": {
@@ -45420,7 +45420,7 @@
             "map": 2,
             "header": "0x4847F0"
           },
-          "title": "Glazed · Capítulo 10 · instalación 111",
+          "title": "Glazed · Cumbre de Tunod (Duelo Final Team Fusion)",
           "chapter": 10,
           "sequence": 111,
           "dimensions": {
@@ -45805,7 +45805,7 @@
             "map": 0,
             "header": "0x3055B4"
           },
-          "title": "Light Platinum · Capítulo 01 · poblado 001",
+          "title": "Light Platinum · Yellow Town (Lab. de la Prof. Jasmine)",
           "chapter": 1,
           "sequence": 1,
           "dimensions": {
@@ -46470,7 +46470,7 @@
             "map": 1,
             "header": "0x3055D0"
           },
-          "title": "Light Platinum · Capítulo 01 · cueva 002",
+          "title": "Light Platinum · Cueva Central (Paso hacia Central City)",
           "chapter": 1,
           "sequence": 2,
           "dimensions": {
@@ -46989,7 +46989,7 @@
             "map": 2,
             "header": "0x3055EC"
           },
-          "title": "Light Platinum · Capítulo 01 · costa 003",
+          "title": "Light Platinum · Costa de Marfeny Lake",
           "chapter": 1,
           "sequence": 3,
           "dimensions": {
@@ -47474,7 +47474,7 @@
             "map": 0,
             "header": "0x3056B0"
           },
-          "title": "Light Platinum · Capítulo 01 · bosque 004",
+          "title": "Light Platinum · Bosque Inhore (Inhore Woods)",
           "chapter": 1,
           "sequence": 4,
           "dimensions": {
@@ -48009,7 +48009,7 @@
             "map": 1,
             "header": "0x3056CC"
           },
-          "title": "Light Platinum · Capítulo 01 · instalación 005",
+          "title": "Light Platinum · Gimnasio de Inhore (Jessica)",
           "chapter": 1,
           "sequence": 5,
           "dimensions": {
@@ -48468,7 +48468,7 @@
             "map": 2,
             "header": "0x3056E8"
           },
-          "title": "Light Platinum · Capítulo 01 · poblado 006",
+          "title": "Light Platinum · Ciudad Esmeralda & Lab. Botánico",
           "chapter": 1,
           "sequence": 6,
           "dimensions": {
@@ -48893,7 +48893,7 @@
             "map": 0,
             "header": "0x306A98"
           },
-          "title": "Light Platinum · Capítulo 01 · instalación 007",
+          "title": "Light Platinum · Gimnasio de Esmeralda (Esmeralda)",
           "chapter": 1,
           "sequence": 7,
           "dimensions": {
@@ -49099,7 +49099,7 @@
             "map": 1,
             "header": "0x306AB4"
           },
-          "title": "Light Platinum · Capítulo 01 · meseta 008",
+          "title": "Light Platinum · Puerto Seanport & Faro Marino",
           "chapter": 1,
           "sequence": 8,
           "dimensions": {
@@ -49305,7 +49305,7 @@
             "map": 2,
             "header": "0x306AD0"
           },
-          "title": "Light Platinum · Capítulo 01 · poblado 009",
+          "title": "Light Platinum · Gimnasio de Seanport (Lucas)",
           "chapter": 1,
           "sequence": 9,
           "dimensions": {
@@ -49511,7 +49511,7 @@
             "map": 0,
             "header": "0x307978"
           },
-          "title": "Light Platinum · Capítulo 01 · ruta 010",
+          "title": "Light Platinum · Bosque Oscuro de Dardusk",
           "chapter": 1,
           "sequence": 10,
           "dimensions": {
@@ -49664,7 +49664,7 @@
             "map": 1,
             "header": "0x307994"
           },
-          "title": "Light Platinum · Capítulo 01 · santuario 011",
+          "title": "Light Platinum · Torre Guardiana & Gimnasio Dardusk (Thomas)",
           "chapter": 1,
           "sequence": 11,
           "dimensions": {
@@ -49817,7 +49817,7 @@
             "map": 2,
             "header": "0x3079B0"
           },
-          "title": "Light Platinum · Capítulo 01 · cueva 012",
+          "title": "Light Platinum · Minas de Groment City",
           "chapter": 1,
           "sequence": 12,
           "dimensions": {
@@ -50001,7 +50001,7 @@
             "map": 3,
             "header": "0x3079CC"
           },
-          "title": "Light Platinum · Capítulo 02 · costa 013",
+          "title": "Light Platinum · Gimnasio de Groment (Atlas)",
           "chapter": 2,
           "sequence": 13,
           "dimensions": {
@@ -50154,7 +50154,7 @@
             "map": 4,
             "header": "0x3079E8"
           },
-          "title": "Light Platinum · Capítulo 02 · bosque 014",
+          "title": "Light Platinum · Sendero de Mt. Zhery",
           "chapter": 2,
           "sequence": 14,
           "dimensions": {
@@ -50389,7 +50389,7 @@
             "map": 0,
             "header": "0x307AAC"
           },
-          "title": "Light Platinum · Capítulo 02 · instalación 015",
+          "title": "Light Platinum · Central de Serenity & Gimnasio (Rayner)",
           "chapter": 2,
           "sequence": 15,
           "dimensions": {
@@ -50624,7 +50624,7 @@
             "map": 1,
             "header": "0x307AC8"
           },
-          "title": "Light Platinum · Capítulo 02 · meseta 016",
+          "title": "Light Platinum · Cordillera Mt. Icestorm (Glaciar de Zhery)",
           "chapter": 2,
           "sequence": 16,
           "dimensions": {
@@ -50859,7 +50859,7 @@
             "map": 2,
             "header": "0x307AE4"
           },
-          "title": "Light Platinum · Capítulo 02 · poblado 017",
+          "title": "Light Platinum · Gimnasio de Snowce (Sophia)",
           "chapter": 2,
           "sequence": 17,
           "dimensions": {
@@ -51094,7 +51094,7 @@
             "map": 3,
             "header": "0x307B00"
           },
-          "title": "Light Platinum · Capítulo 02 · ruta 018",
+          "title": "Light Platinum · Sendero de Mt. Draken (Altar del Team Steam)",
           "chapter": 2,
           "sequence": 18,
           "dimensions": {
@@ -51329,7 +51329,7 @@
             "map": 4,
             "header": "0x307B1C"
           },
-          "title": "Light Platinum · Capítulo 02 · santuario 019",
+          "title": "Light Platinum · Drakenbreath & Gimnasio Dragón (Wesley)",
           "chapter": 2,
           "sequence": 19,
           "dimensions": {
@@ -51610,7 +51610,7 @@
             "map": 0,
             "header": "0x34F188"
           },
-          "title": "Liquid Crystal · Capítulo 01 · poblado 001",
+          "title": "Liquid Crystal · Pueblo Primavera (Lab. del Prof. Elm)",
           "chapter": 1,
           "sequence": 1,
           "dimensions": {
@@ -51771,7 +51771,7 @@
             "map": 1,
             "header": "0x34F1A4"
           },
-          "title": "Liquid Crystal · Capítulo 01 · ruta 002",
+          "title": "Liquid Crystal · Ruta 29 (Paso hacia Cherrygrove)",
           "chapter": 1,
           "sequence": 2,
           "dimensions": {
@@ -51932,7 +51932,7 @@
             "map": 2,
             "header": "0x34F1C0"
           },
-          "title": "Liquid Crystal · Capítulo 01 · santuario 003",
+          "title": "Liquid Crystal · Ciudad Cerezo (Cherrygrove City)",
           "chapter": 1,
           "sequence": 3,
           "dimensions": {
@@ -52132,7 +52132,7 @@
             "map": 3,
             "header": "0x34F1DC"
           },
-          "title": "Liquid Crystal · Capítulo 01 · cueva 004",
+          "title": "Liquid Crystal · Ruta 30 (Casa del Sr. Pokémon)",
           "chapter": 1,
           "sequence": 4,
           "dimensions": {
@@ -52285,7 +52285,7 @@
             "map": 4,
             "header": "0x34F1F8"
           },
-          "title": "Liquid Crystal · Capítulo 01 · costa 005",
+          "title": "Liquid Crystal · Cueva Oscura (Dark Cave)",
           "chapter": 1,
           "sequence": 5,
           "dimensions": {
@@ -52575,7 +52575,7 @@
             "map": 0,
             "header": "0x3511E8"
           },
-          "title": "Liquid Crystal · Capítulo 01 · bosque 006",
+          "title": "Liquid Crystal · Ciudad Malvalona (Violet City)",
           "chapter": 1,
           "sequence": 6,
           "dimensions": {
@@ -52931,7 +52931,7 @@
             "map": 1,
             "header": "0x351204"
           },
-          "title": "Liquid Crystal · Capítulo 01 · instalación 007",
+          "title": "Liquid Crystal · Torre Bellsprout (Sprout Tower)",
           "chapter": 1,
           "sequence": 7,
           "dimensions": {
@@ -53273,7 +53273,7 @@
             "map": 2,
             "header": "0x351220"
           },
-          "title": "Liquid Crystal · Capítulo 01 · meseta 008",
+          "title": "Liquid Crystal · Gimnasio de Malvalona (Falkner)",
           "chapter": 1,
           "sequence": 8,
           "dimensions": {
@@ -53605,7 +53605,7 @@
             "map": 3,
             "header": "0x35123C"
           },
-          "title": "Liquid Crystal · Capítulo 01 · poblado 009",
+          "title": "Liquid Crystal · Ruinas Alfa (Sector 1)",
           "chapter": 1,
           "sequence": 9,
           "dimensions": {
@@ -53902,7 +53902,7 @@
             "map": 4,
             "header": "0x351258"
           },
-          "title": "Liquid Crystal · Capítulo 01 · ruta 010",
+          "title": "Liquid Crystal · Ruinas Alfa (Sector 2)",
           "chapter": 1,
           "sequence": 10,
           "dimensions": {
@@ -54242,7 +54242,7 @@
             "map": 5,
             "header": "0x351274"
           },
-          "title": "Liquid Crystal · Capítulo 01 · santuario 011",
+          "title": "Liquid Crystal · Ruinas Alfa (Sector 3)",
           "chapter": 1,
           "sequence": 11,
           "dimensions": {
@@ -54465,7 +54465,7 @@
             "map": 0,
             "header": "0x3512AC"
           },
-          "title": "Liquid Crystal · Capítulo 01 · cueva 012",
+          "title": "Liquid Crystal · Ruinas Alfa (Sector 4)",
           "chapter": 1,
           "sequence": 12,
           "dimensions": {
@@ -54860,7 +54860,7 @@
             "map": 1,
             "header": "0x3512C8"
           },
-          "title": "Liquid Crystal · Capítulo 02 · costa 013",
+          "title": "Liquid Crystal · Ruinas Alfa (Sector 5)",
           "chapter": 2,
           "sequence": 13,
           "dimensions": {
@@ -55252,7 +55252,7 @@
             "map": 2,
             "header": "0x3512E4"
           },
-          "title": "Liquid Crystal · Capítulo 02 · bosque 014",
+          "title": "Liquid Crystal · Ruinas Alfa (Sector 6)",
           "chapter": 2,
           "sequence": 14,
           "dimensions": {
@@ -55651,7 +55651,7 @@
             "map": 3,
             "header": "0x351300"
           },
-          "title": "Liquid Crystal · Capítulo 02 · instalación 015",
+          "title": "Liquid Crystal · Ruinas Alfa (Sector 7)",
           "chapter": 2,
           "sequence": 15,
           "dimensions": {
@@ -55918,7 +55918,7 @@
             "map": 0,
             "header": "0x351370"
           },
-          "title": "Liquid Crystal · Capítulo 02 · meseta 016",
+          "title": "Liquid Crystal · Cueva Unión (Union Cave)",
           "chapter": 2,
           "sequence": 16,
           "dimensions": {
@@ -56265,7 +56265,7 @@
             "map": 1,
             "header": "0x35138C"
           },
-          "title": "Liquid Crystal · Capítulo 02 · poblado 017",
+          "title": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 1)",
           "chapter": 2,
           "sequence": 17,
           "dimensions": {
@@ -56548,7 +56548,7 @@
             "map": 2,
             "header": "0x3513A8"
           },
-          "title": "Liquid Crystal · Capítulo 02 · ruta 018",
+          "title": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 2)",
           "chapter": 2,
           "sequence": 18,
           "dimensions": {
@@ -56924,7 +56924,7 @@
             "map": 3,
             "header": "0x3513C4"
           },
-          "title": "Liquid Crystal · Capítulo 02 · santuario 019",
+          "title": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 3)",
           "chapter": 2,
           "sequence": 19,
           "dimensions": {
@@ -57268,7 +57268,7 @@
             "map": 0,
             "header": "0x35154C"
           },
-          "title": "Liquid Crystal · Capítulo 02 · cueva 020",
+          "title": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 4)",
           "chapter": 2,
           "sequence": 20,
           "dimensions": {
@@ -57530,7 +57530,7 @@
             "map": 1,
             "header": "0x351568"
           },
-          "title": "Liquid Crystal · Capítulo 02 · costa 021",
+          "title": "Liquid Crystal · Pueblo Azalea (Pozo Slowpoke)",
           "chapter": 2,
           "sequence": 21,
           "dimensions": {
@@ -57844,7 +57844,7 @@
             "map": 2,
             "header": "0x351584"
           },
-          "title": "Liquid Crystal · Capítulo 02 · bosque 022",
+          "title": "Liquid Crystal · Pozo Slowpoke (Nivel Inferior)",
           "chapter": 2,
           "sequence": 22,
           "dimensions": {
@@ -58038,7 +58038,7 @@
             "map": 3,
             "header": "0x3515A0"
           },
-          "title": "Liquid Crystal · Capítulo 02 · instalación 023",
+          "title": "Liquid Crystal · Gimnasio de Azalea (Bugsy)",
           "chapter": 2,
           "sequence": 23,
           "dimensions": {
@@ -58300,7 +58300,7 @@
             "map": 0,
             "header": "0x351840"
           },
-          "title": "Liquid Crystal · Capítulo 02 · meseta 024",
+          "title": "Liquid Crystal · Encinar (Ilex Forest · Tramo 1)",
           "chapter": 2,
           "sequence": 24,
           "dimensions": {
@@ -58503,7 +58503,7 @@
             "map": 1,
             "header": "0x35185C"
           },
-          "title": "Liquid Crystal · Capítulo 03 · poblado 025",
+          "title": "Liquid Crystal · Encinar (Ilex Forest · Tramo 2)",
           "chapter": 3,
           "sequence": 25,
           "dimensions": {
@@ -58607,7 +58607,7 @@
             "map": 2,
             "header": "0x351878"
           },
-          "title": "Liquid Crystal · Capítulo 03 · ruta 026",
+          "title": "Liquid Crystal · Encinar (Ilex Forest · Tramo 3)",
           "chapter": 3,
           "sequence": 26,
           "dimensions": {
@@ -58788,7 +58788,7 @@
             "map": 3,
             "header": "0x351894"
           },
-          "title": "Liquid Crystal · Capítulo 03 · santuario 027",
+          "title": "Liquid Crystal · Encinar (Ilex Forest · Tramo 4)",
           "chapter": 3,
           "sequence": 27,
           "dimensions": {
@@ -58969,7 +58969,7 @@
             "map": 0,
             "header": "0x351A8C"
           },
-          "title": "Liquid Crystal · Capítulo 03 · cueva 028",
+          "title": "Liquid Crystal · Encinar (Ilex Forest · Tramo 5)",
           "chapter": 3,
           "sequence": 28,
           "dimensions": {
@@ -59232,7 +59232,7 @@
             "map": 1,
             "header": "0x351AA8"
           },
-          "title": "Liquid Crystal · Capítulo 03 · costa 029",
+          "title": "Liquid Crystal · Encinar (Ilex Forest · Tramo 6)",
           "chapter": 3,
           "sequence": 29,
           "dimensions": {
@@ -59629,7 +59629,7 @@
             "map": 2,
             "header": "0x351AC4"
           },
-          "title": "Liquid Crystal · Capítulo 03 · bosque 030",
+          "title": "Liquid Crystal · Encinar (Ilex Forest · Tramo 7)",
           "chapter": 3,
           "sequence": 30,
           "dimensions": {
@@ -59914,7 +59914,7 @@
             "map": 0,
             "header": "0x351B6C"
           },
-          "title": "Liquid Crystal · Capítulo 03 · instalación 031",
+          "title": "Liquid Crystal · Santuario del Encinar (Celebi)",
           "chapter": 3,
           "sequence": 31,
           "dimensions": {
@@ -60222,7 +60222,7 @@
             "map": 1,
             "header": "0x351B88"
           },
-          "title": "Liquid Crystal · Capítulo 03 · meseta 032",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 1)",
           "chapter": 3,
           "sequence": 32,
           "dimensions": {
@@ -60545,7 +60545,7 @@
             "map": 2,
             "header": "0x351BA4"
           },
-          "title": "Liquid Crystal · Capítulo 03 · poblado 033",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 2)",
           "chapter": 3,
           "sequence": 33,
           "dimensions": {
@@ -60805,7 +60805,7 @@
             "map": 0,
             "header": "0x351648"
           },
-          "title": "Liquid Crystal · Capítulo 03 · ruta 034",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 3)",
           "chapter": 3,
           "sequence": 34,
           "dimensions": {
@@ -61079,7 +61079,7 @@
             "map": 1,
             "header": "0x351664"
           },
-          "title": "Liquid Crystal · Capítulo 03 · santuario 035",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 4)",
           "chapter": 3,
           "sequence": 35,
           "dimensions": {
@@ -61339,7 +61339,7 @@
             "map": 2,
             "header": "0x351680"
           },
-          "title": "Liquid Crystal · Capítulo 03 · cueva 036",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 5)",
           "chapter": 3,
           "sequence": 36,
           "dimensions": {
@@ -61594,7 +61594,7 @@
             "map": 3,
             "header": "0x35169C"
           },
-          "title": "Liquid Crystal · Capítulo 04 · costa 037",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 6)",
           "chapter": 4,
           "sequence": 37,
           "dimensions": {
@@ -62354,7 +62354,7 @@
             "map": 4,
             "header": "0x3516B8"
           },
-          "title": "Liquid Crystal · Capítulo 04 · bosque 038",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 7)",
           "chapter": 4,
           "sequence": 38,
           "dimensions": {
@@ -62640,7 +62640,7 @@
             "map": 0,
             "header": "0xA1CB60"
           },
-          "title": "Liquid Crystal · Capítulo 04 · instalación 039",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 8)",
           "chapter": 4,
           "sequence": 39,
           "dimensions": {
@@ -63138,7 +63138,7 @@
             "map": 1,
             "header": "0xA1EEA8"
           },
-          "title": "Liquid Crystal · Capítulo 04 · meseta 040",
+          "title": "Liquid Crystal · Ruta 34 & Guardería (Sector 9)",
           "chapter": 4,
           "sequence": 40,
           "dimensions": {
@@ -63655,7 +63655,7 @@
             "map": 2,
             "header": "0xA21A04"
           },
-          "title": "Liquid Crystal · Capítulo 04 · poblado 041",
+          "title": "Liquid Crystal · Ciudad Trigal (Goldenrod City)",
           "chapter": 4,
           "sequence": 41,
           "dimensions": {
@@ -64038,7 +64038,7 @@
             "map": 3,
             "header": "0x856FE8"
           },
-          "title": "Liquid Crystal · Capítulo 04 · ruta 042",
+          "title": "Liquid Crystal · Torre Radio de Trigal (Radio Tower)",
           "chapter": 4,
           "sequence": 42,
           "dimensions": {
@@ -64377,7 +64377,7 @@
             "map": 0,
             "header": "0x34FF88"
           },
-          "title": "Liquid Crystal · Capítulo 04 · santuario 043",
+          "title": "Liquid Crystal · Gimnasio de Trigal (Whitney)",
           "chapter": 4,
           "sequence": 43,
           "dimensions": {
@@ -64724,7 +64724,7 @@
             "map": 1,
             "header": "0x34FFA4"
           },
-          "title": "Liquid Crystal · Capítulo 04 · cueva 044",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 1)",
           "chapter": 4,
           "sequence": 44,
           "dimensions": {
@@ -65286,7 +65286,7 @@
             "map": 2,
             "header": "0x34FFC0"
           },
-          "title": "Liquid Crystal · Capítulo 04 · meseta 045",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 2)",
           "chapter": 4,
           "sequence": 45,
           "dimensions": {
@@ -65920,7 +65920,7 @@
             "map": 3,
             "header": "0x34FFDC"
           },
-          "title": "Liquid Crystal · Capítulo 04 · bosque 046",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 3)",
           "chapter": 4,
           "sequence": 46,
           "dimensions": {
@@ -66130,7 +66130,7 @@
             "map": 4,
             "header": "0x34FFF8"
           },
-          "title": "Liquid Crystal · Capítulo 04 · ruta 047",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 4)",
           "chapter": 4,
           "sequence": 47,
           "dimensions": {
@@ -66849,7 +66849,7 @@
             "map": 5,
             "header": "0x350014"
           },
-          "title": "Liquid Crystal · Capítulo 04 · meseta 048",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 5)",
           "chapter": 4,
           "sequence": 48,
           "dimensions": {
@@ -67096,7 +67096,7 @@
             "map": 6,
             "header": "0x350030"
           },
-          "title": "Liquid Crystal · Capítulo 05 · poblado 049",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 6)",
           "chapter": 5,
           "sequence": 49,
           "dimensions": {
@@ -67341,7 +67341,7 @@
             "map": 7,
             "header": "0x35004C"
           },
-          "title": "Liquid Crystal · Capítulo 05 · ruta 050",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 7)",
           "chapter": 5,
           "sequence": 50,
           "dimensions": {
@@ -67511,7 +67511,7 @@
             "map": 8,
             "header": "0x350068"
           },
-          "title": "Liquid Crystal · Capítulo 05 · santuario 051",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 8)",
           "chapter": 5,
           "sequence": 51,
           "dimensions": {
@@ -67675,7 +67675,7 @@
             "map": 9,
             "header": "0x350084"
           },
-          "title": "Liquid Crystal · Capítulo 05 · cueva 052",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 9)",
           "chapter": 5,
           "sequence": 52,
           "dimensions": {
@@ -67905,7 +67905,7 @@
             "map": 10,
             "header": "0x3500A0"
           },
-          "title": "Liquid Crystal · Capítulo 05 · costa 053",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 10)",
           "chapter": 5,
           "sequence": 53,
           "dimensions": {
@@ -68290,7 +68290,7 @@
             "map": 11,
             "header": "0x3500BC"
           },
-          "title": "Liquid Crystal · Capítulo 05 · meseta 054",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 11)",
           "chapter": 5,
           "sequence": 54,
           "dimensions": {
@@ -68482,7 +68482,7 @@
             "map": 12,
             "header": "0x3500D8"
           },
-          "title": "Liquid Crystal · Capítulo 05 · instalación 055",
+          "title": "Liquid Crystal · Subterráneo de Trigal (Galería 12)",
           "chapter": 5,
           "sequence": 55,
           "dimensions": {
@@ -68768,7 +68768,7 @@
             "map": 13,
             "header": "0x3500F4"
           },
-          "title": "Liquid Crystal · Capítulo 05 · meseta 056",
+          "title": "Liquid Crystal · Parque Nacional (National Park)",
           "chapter": 5,
           "sequence": 56,
           "dimensions": {
@@ -69109,7 +69109,7 @@
             "map": 14,
             "header": "0x350110"
           },
-          "title": "Liquid Crystal · Capítulo 05 · cueva 057",
+          "title": "Liquid Crystal · Ruta 35 & Ruta 36 (Sector 1)",
           "chapter": 5,
           "sequence": 57,
           "dimensions": {
@@ -69772,7 +69772,7 @@
             "map": 15,
             "header": "0x35012C"
           },
-          "title": "Liquid Crystal · Capítulo 05 · ruta 058",
+          "title": "Liquid Crystal · Ruta 35 & Ruta 36 (Sector 2)",
           "chapter": 5,
           "sequence": 58,
           "dimensions": {
@@ -70016,7 +70016,7 @@
             "map": 16,
             "header": "0x350148"
           },
-          "title": "Liquid Crystal · Capítulo 05 · santuario 059",
+          "title": "Liquid Crystal · Ruta 35 & Ruta 36 (Sector 3)",
           "chapter": 5,
           "sequence": 59,
           "dimensions": {
@@ -70214,7 +70214,7 @@
             "map": 17,
             "header": "0x350164"
           },
-          "title": "Liquid Crystal · Capítulo 05 · instalación 060",
+          "title": "Liquid Crystal · Ruta 35 & Ruta 36 (Sector 4)",
           "chapter": 5,
           "sequence": 60,
           "dimensions": {
@@ -70584,7 +70584,7 @@
             "map": 0,
             "header": "0x35019C"
           },
-          "title": "Liquid Crystal · Capítulo 06 · costa 061",
+          "title": "Liquid Crystal · Ciudad Iris (Ecruteak City)",
           "chapter": 6,
           "sequence": 61,
           "dimensions": {
@@ -71185,7 +71185,7 @@
             "map": 1,
             "header": "0x3501B8"
           },
-          "title": "Liquid Crystal · Capítulo 06 · bosque 062",
+          "title": "Liquid Crystal · Torre Quemada (Burned Tower)",
           "chapter": 6,
           "sequence": 62,
           "dimensions": {
@@ -71516,7 +71516,7 @@
             "map": 2,
             "header": "0x3501D4"
           },
-          "title": "Liquid Crystal · Capítulo 06 · poblado 063",
+          "title": "Liquid Crystal · Gimnasio de Iris (Morty)",
           "chapter": 6,
           "sequence": 63,
           "dimensions": {
@@ -71803,7 +71803,7 @@
             "map": 3,
             "header": "0x3501F0"
           },
-          "title": "Liquid Crystal · Capítulo 06 · meseta 064",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 1)",
           "chapter": 6,
           "sequence": 64,
           "dimensions": {
@@ -72134,7 +72134,7 @@
             "map": 4,
             "header": "0x35020C"
           },
-          "title": "Liquid Crystal · Capítulo 06 · poblado 065",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 2)",
           "chapter": 6,
           "sequence": 65,
           "dimensions": {
@@ -72815,7 +72815,7 @@
             "map": 5,
             "header": "0x350228"
           },
-          "title": "Liquid Crystal · Capítulo 06 · ruta 066",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 3)",
           "chapter": 6,
           "sequence": 66,
           "dimensions": {
@@ -73196,7 +73196,7 @@
             "map": 6,
             "header": "0x350244"
           },
-          "title": "Liquid Crystal · Capítulo 06 · bosque 067",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 4)",
           "chapter": 6,
           "sequence": 67,
           "dimensions": {
@@ -73585,7 +73585,7 @@
             "map": 0,
             "header": "0x35027C"
           },
-          "title": "Liquid Crystal · Capítulo 06 · cueva 068",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 5)",
           "chapter": 6,
           "sequence": 68,
           "dimensions": {
@@ -74159,7 +74159,7 @@
             "map": 1,
             "header": "0x350298"
           },
-          "title": "Liquid Crystal · Capítulo 06 · costa 069",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 6)",
           "chapter": 6,
           "sequence": 69,
           "dimensions": {
@@ -74486,7 +74486,7 @@
             "map": 2,
             "header": "0x3502B4"
           },
-          "title": "Liquid Crystal · Capítulo 06 · bosque 070",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 7)",
           "chapter": 6,
           "sequence": 70,
           "dimensions": {
@@ -74835,7 +74835,7 @@
             "map": 0,
             "header": "0x3502EC"
           },
-          "title": "Liquid Crystal · Capítulo 06 · instalación 071",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 8)",
           "chapter": 6,
           "sequence": 71,
           "dimensions": {
@@ -75221,7 +75221,7 @@
             "map": 1,
             "header": "0x350308"
           },
-          "title": "Liquid Crystal · Capítulo 06 · meseta 072",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 9)",
           "chapter": 6,
           "sequence": 72,
           "dimensions": {
@@ -75662,7 +75662,7 @@
             "map": 2,
             "header": "0x350324"
           },
-          "title": "Liquid Crystal · Capítulo 07 · poblado 073",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 10)",
           "chapter": 7,
           "sequence": 73,
           "dimensions": {
@@ -76081,7 +76081,7 @@
             "map": 3,
             "header": "0x350340"
           },
-          "title": "Liquid Crystal · Capítulo 07 · ruta 074",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 11)",
           "chapter": 7,
           "sequence": 74,
           "dimensions": {
@@ -76420,7 +76420,7 @@
             "map": 4,
             "header": "0x35035C"
           },
-          "title": "Liquid Crystal · Capítulo 07 · santuario 075",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 12)",
           "chapter": 7,
           "sequence": 75,
           "dimensions": {
@@ -76920,7 +76920,7 @@
             "map": 5,
             "header": "0x350378"
           },
-          "title": "Liquid Crystal · Capítulo 07 · cueva 076",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 13)",
           "chapter": 7,
           "sequence": 76,
           "dimensions": {
@@ -77247,7 +77247,7 @@
             "map": 6,
             "header": "0x350394"
           },
-          "title": "Liquid Crystal · Capítulo 07 · costa 077",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 14)",
           "chapter": 7,
           "sequence": 77,
           "dimensions": {
@@ -77599,7 +77599,7 @@
             "map": 7,
             "header": "0x3503B0"
           },
-          "title": "Liquid Crystal · Capítulo 07 · bosque 078",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 15)",
           "chapter": 7,
           "sequence": 78,
           "dimensions": {
@@ -77891,7 +77891,7 @@
             "map": 8,
             "header": "0x3503CC"
           },
-          "title": "Liquid Crystal · Capítulo 07 · instalación 079",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 16)",
           "chapter": 7,
           "sequence": 79,
           "dimensions": {
@@ -78243,7 +78243,7 @@
             "map": 9,
             "header": "0x3503E8"
           },
-          "title": "Liquid Crystal · Capítulo 07 · meseta 080",
+          "title": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 17)",
           "chapter": 7,
           "sequence": 80,
           "dimensions": {
@@ -78475,7 +78475,7 @@
             "map": 10,
             "header": "0x350404"
           },
-          "title": "Liquid Crystal · Capítulo 07 · poblado 081",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 1)",
           "chapter": 7,
           "sequence": 81,
           "dimensions": {
@@ -78757,7 +78757,7 @@
             "map": 11,
             "header": "0x350420"
           },
-          "title": "Liquid Crystal · Capítulo 07 · ruta 082",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 2)",
           "chapter": 7,
           "sequence": 82,
           "dimensions": {
@@ -79105,7 +79105,7 @@
             "map": 0,
             "header": "0x350458"
           },
-          "title": "Liquid Crystal · Capítulo 07 · santuario 083",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 3)",
           "chapter": 7,
           "sequence": 83,
           "dimensions": {
@@ -79439,7 +79439,7 @@
             "map": 1,
             "header": "0x350474"
           },
-          "title": "Liquid Crystal · Capítulo 07 · bosque 084",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 4)",
           "chapter": 7,
           "sequence": 84,
           "dimensions": {
@@ -79726,7 +79726,7 @@
             "map": 2,
             "header": "0x350490"
           },
-          "title": "Liquid Crystal · Capítulo 08 · costa 085",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 5)",
           "chapter": 8,
           "sequence": 85,
           "dimensions": {
@@ -79967,7 +79967,7 @@
             "map": 3,
             "header": "0x3504AC"
           },
-          "title": "Liquid Crystal · Capítulo 08 · poblado 086",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 6)",
           "chapter": 8,
           "sequence": 86,
           "dimensions": {
@@ -80480,7 +80480,7 @@
             "map": 4,
             "header": "0x3504C8"
           },
-          "title": "Liquid Crystal · Capítulo 08 · ruta 087",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 7)",
           "chapter": 8,
           "sequence": 87,
           "dimensions": {
@@ -81062,7 +81062,7 @@
             "map": 5,
             "header": "0x3504E4"
           },
-          "title": "Liquid Crystal · Capítulo 08 · santuario 088",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 8)",
           "chapter": 8,
           "sequence": 88,
           "dimensions": {
@@ -81529,7 +81529,7 @@
             "map": 6,
             "header": "0x350500"
           },
-          "title": "Liquid Crystal · Capítulo 08 · cueva 089",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 9)",
           "chapter": 8,
           "sequence": 89,
           "dimensions": {
@@ -81988,7 +81988,7 @@
             "map": 0,
             "header": "0x350554"
           },
-          "title": "Liquid Crystal · Capítulo 08 · ruta 090",
+          "title": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 10)",
           "chapter": 8,
           "sequence": 90,
           "dimensions": {
@@ -82947,7 +82947,7 @@
             "map": 1,
             "header": "0x350570"
           },
-          "title": "Liquid Crystal · Capítulo 08 · santuario 091",
+          "title": "Liquid Crystal · Ciudad Olivo (Olivine City)",
           "chapter": 8,
           "sequence": 91,
           "dimensions": {
@@ -83273,7 +83273,7 @@
             "map": 2,
             "header": "0x35058C"
           },
-          "title": "Liquid Crystal · Capítulo 08 · bosque 092",
+          "title": "Liquid Crystal · Faro de Olivo (Planta 1)",
           "chapter": 8,
           "sequence": 92,
           "dimensions": {
@@ -84080,7 +84080,7 @@
             "map": 3,
             "header": "0x3505A8"
           },
-          "title": "Liquid Crystal · Capítulo 08 · costa 093",
+          "title": "Liquid Crystal · Faro de Olivo (Planta 2)",
           "chapter": 8,
           "sequence": 93,
           "dimensions": {
@@ -84721,7 +84721,7 @@
             "map": 4,
             "header": "0x3505C4"
           },
-          "title": "Liquid Crystal · Capítulo 08 · bosque 094",
+          "title": "Liquid Crystal · Faro de Olivo (Planta 3)",
           "chapter": 8,
           "sequence": 94,
           "dimensions": {
@@ -85332,7 +85332,7 @@
             "map": 5,
             "header": "0x3505E0"
           },
-          "title": "Liquid Crystal · Capítulo 08 · instalación 095",
+          "title": "Liquid Crystal · Faro de Olivo (Planta 4)",
           "chapter": 8,
           "sequence": 95,
           "dimensions": {
@@ -85837,7 +85837,7 @@
             "map": 6,
             "header": "0x3505FC"
           },
-          "title": "Liquid Crystal · Capítulo 08 · meseta 096",
+          "title": "Liquid Crystal · Gimnasio de Olivo (Jasmine)",
           "chapter": 8,
           "sequence": 96,
           "dimensions": {
@@ -86271,7 +86271,7 @@
             "map": 0,
             "header": "0x74AD10"
           },
-          "title": "Liquid Crystal · Capítulo 09 · poblado 097",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 1)",
           "chapter": 9,
           "sequence": 97,
           "dimensions": {
@@ -86536,7 +86536,7 @@
             "map": 1,
             "header": "0x7A0324"
           },
-          "title": "Liquid Crystal · Capítulo 09 · ruta 098",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 2)",
           "chapter": 9,
           "sequence": 98,
           "dimensions": {
@@ -86807,7 +86807,7 @@
             "map": 2,
             "header": "0x7A7670"
           },
-          "title": "Liquid Crystal · Capítulo 09 · costa 099",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 3)",
           "chapter": 9,
           "sequence": 99,
           "dimensions": {
@@ -87292,7 +87292,7 @@
             "map": 3,
             "header": "0x7F76AC"
           },
-          "title": "Liquid Crystal · Capítulo 09 · cueva 100",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 4)",
           "chapter": 9,
           "sequence": 100,
           "dimensions": {
@@ -87699,7 +87699,7 @@
             "map": 0,
             "header": "0x34F214"
           },
-          "title": "Liquid Crystal · Capítulo 09 · meseta 101",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 5)",
           "chapter": 9,
           "sequence": 101,
           "dimensions": {
@@ -88390,7 +88390,7 @@
             "map": 1,
             "header": "0x34F230"
           },
-          "title": "Liquid Crystal · Capítulo 09 · instalación 102",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 6)",
           "chapter": 9,
           "sequence": 102,
           "dimensions": {
@@ -89019,7 +89019,7 @@
             "map": 2,
             "header": "0x34F24C"
           },
-          "title": "Liquid Crystal · Capítulo 09 · meseta 103",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 7)",
           "chapter": 9,
           "sequence": 103,
           "dimensions": {
@@ -89603,7 +89603,7 @@
             "map": 3,
             "header": "0x34F268"
           },
-          "title": "Liquid Crystal · Capítulo 09 · poblado 104",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 8)",
           "chapter": 9,
           "sequence": 104,
           "dimensions": {
@@ -90196,7 +90196,7 @@
             "map": 4,
             "header": "0x34F284"
           },
-          "title": "Liquid Crystal · Capítulo 09 · poblado 105",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 9)",
           "chapter": 9,
           "sequence": 105,
           "dimensions": {
@@ -90533,7 +90533,7 @@
             "map": 5,
             "header": "0x34F2A0"
           },
-          "title": "Liquid Crystal · Capítulo 09 · ruta 106",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 10)",
           "chapter": 9,
           "sequence": 106,
           "dimensions": {
@@ -91043,7 +91043,7 @@
             "map": 6,
             "header": "0x34F2BC"
           },
-          "title": "Liquid Crystal · Capítulo 09 · santuario 107",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 11)",
           "chapter": 9,
           "sequence": 107,
           "dimensions": {
@@ -91336,7 +91336,7 @@
             "map": 0,
             "header": "0x34F5B0"
           },
-          "title": "Liquid Crystal · Capítulo 09 · cueva 108",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 12)",
           "chapter": 9,
           "sequence": 108,
           "dimensions": {
@@ -91542,7 +91542,7 @@
             "map": 1,
             "header": "0x34F5CC"
           },
-          "title": "Liquid Crystal · Capítulo 10 · meseta 109",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 13)",
           "chapter": 10,
           "sequence": 109,
           "dimensions": {
@@ -92098,7 +92098,7 @@
             "map": 2,
             "header": "0x34F5E8"
           },
-          "title": "Liquid Crystal · Capítulo 10 · bosque 110",
+          "title": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 14)",
           "chapter": 10,
           "sequence": 110,
           "dimensions": {
@@ -92241,7 +92241,7 @@
             "map": 3,
             "header": "0x34F604"
           },
-          "title": "Liquid Crystal · Capítulo 10 · instalación 111",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 1)",
           "chapter": 10,
           "sequence": 111,
           "dimensions": {
@@ -92363,7 +92363,7 @@
             "map": 4,
             "header": "0x34F620"
           },
-          "title": "Liquid Crystal · Capítulo 10 · meseta 112",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 2)",
           "chapter": 10,
           "sequence": 112,
           "dimensions": {
@@ -92989,7 +92989,7 @@
             "map": 5,
             "header": "0x34F63C"
           },
-          "title": "Liquid Crystal · Capítulo 10 · poblado 113",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 3)",
           "chapter": 10,
           "sequence": 113,
           "dimensions": {
@@ -93139,7 +93139,7 @@
             "map": 6,
             "header": "0x34F658"
           },
-          "title": "Liquid Crystal · Capítulo 10 · ruta 114",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 4)",
           "chapter": 10,
           "sequence": 114,
           "dimensions": {
@@ -93564,7 +93564,7 @@
             "map": 7,
             "header": "0x34F674"
           },
-          "title": "Liquid Crystal · Capítulo 10 · santuario 115",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 5)",
           "chapter": 10,
           "sequence": 115,
           "dimensions": {
@@ -94033,7 +94033,7 @@
             "map": 8,
             "header": "0x34F690"
           },
-          "title": "Liquid Crystal · Capítulo 10 · cueva 116",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 6)",
           "chapter": 10,
           "sequence": 116,
           "dimensions": {
@@ -94423,7 +94423,7 @@
             "map": 9,
             "header": "0x34F6AC"
           },
-          "title": "Liquid Crystal · Capítulo 10 · costa 117",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 7)",
           "chapter": 10,
           "sequence": 117,
           "dimensions": {
@@ -94899,7 +94899,7 @@
             "map": 10,
             "header": "0x34F6C8"
           },
-          "title": "Liquid Crystal · Capítulo 10 · bosque 118",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 8)",
           "chapter": 10,
           "sequence": 118,
           "dimensions": {
@@ -95314,7 +95314,7 @@
             "map": 11,
             "header": "0x34F6E4"
           },
-          "title": "Liquid Crystal · Capítulo 10 · instalación 119",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 9)",
           "chapter": 10,
           "sequence": 119,
           "dimensions": {
@@ -95729,7 +95729,7 @@
             "map": 12,
             "header": "0x34F700"
           },
-          "title": "Liquid Crystal · Capítulo 10 · meseta 120",
+          "title": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 10)",
           "chapter": 10,
           "sequence": 120,
           "dimensions": {
@@ -95896,7 +95896,7 @@
             "map": 0,
             "header": "0x34F738"
           },
-          "title": "Liquid Crystal · Capítulo 11 · poblado 121",
+          "title": "Liquid Crystal · Ciudad Orquídea (Cianwood City)",
           "chapter": 11,
           "sequence": 121,
           "dimensions": {
@@ -96269,7 +96269,7 @@
             "map": 1,
             "header": "0x34F754"
           },
-          "title": "Liquid Crystal · Capítulo 11 · ruta 122",
+          "title": "Liquid Crystal · Costa de Orquídea (Tramo 1)",
           "chapter": 11,
           "sequence": 122,
           "dimensions": {
@@ -96897,7 +96897,7 @@
             "map": 2,
             "header": "0x34F770"
           },
-          "title": "Liquid Crystal · Capítulo 11 · santuario 123",
+          "title": "Liquid Crystal · Costa de Orquídea (Tramo 2)",
           "chapter": 11,
           "sequence": 123,
           "dimensions": {
@@ -97519,7 +97519,7 @@
             "map": 3,
             "header": "0x34F78C"
           },
-          "title": "Liquid Crystal · Capítulo 11 · instalación 124",
+          "title": "Liquid Crystal · Gimnasio de Orquídea (Chuck)",
           "chapter": 11,
           "sequence": 124,
           "dimensions": {
@@ -97935,7 +97935,7 @@
             "map": 4,
             "header": "0x34F7A8"
           },
-          "title": "Liquid Crystal · Capítulo 11 · instalación 125",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 1)",
           "chapter": 11,
           "sequence": 125,
           "dimensions": {
@@ -98418,7 +98418,7 @@
             "map": 5,
             "header": "0x34F7C4"
           },
-          "title": "Liquid Crystal · Capítulo 11 · bosque 126",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 2)",
           "chapter": 11,
           "sequence": 126,
           "dimensions": {
@@ -98561,7 +98561,7 @@
             "map": 6,
             "header": "0x34F7E0"
           },
-          "title": "Liquid Crystal · Capítulo 11 · instalación 127",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 3)",
           "chapter": 11,
           "sequence": 127,
           "dimensions": {
@@ -98984,7 +98984,7 @@
             "map": 0,
             "header": "0x34F8F8"
           },
-          "title": "Liquid Crystal · Capítulo 11 · meseta 128",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 4)",
           "chapter": 11,
           "sequence": 128,
           "dimensions": {
@@ -99501,7 +99501,7 @@
             "map": 1,
             "header": "0x34F914"
           },
-          "title": "Liquid Crystal · Capítulo 11 · poblado 129",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 5)",
           "chapter": 11,
           "sequence": 129,
           "dimensions": {
@@ -100001,7 +100001,7 @@
             "map": 2,
             "header": "0x34F930"
           },
-          "title": "Liquid Crystal · Capítulo 11 · ruta 130",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 6)",
           "chapter": 11,
           "sequence": 130,
           "dimensions": {
@@ -100610,7 +100610,7 @@
             "map": 3,
             "header": "0x34F94C"
           },
-          "title": "Liquid Crystal · Capítulo 11 · santuario 131",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 7)",
           "chapter": 11,
           "sequence": 131,
           "dimensions": {
@@ -101177,7 +101177,7 @@
             "map": 0,
             "header": "0x34F9F4"
           },
-          "title": "Liquid Crystal · Capítulo 11 · cueva 132",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 8)",
           "chapter": 11,
           "sequence": 132,
           "dimensions": {
@@ -101802,7 +101802,7 @@
             "map": 1,
             "header": "0x34FA10"
           },
-          "title": "Liquid Crystal · Capítulo 12 · meseta 133",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 9)",
           "chapter": 12,
           "sequence": 133,
           "dimensions": {
@@ -102209,7 +102209,7 @@
             "map": 2,
             "header": "0x34FA2C"
           },
-          "title": "Liquid Crystal · Capítulo 12 · bosque 134",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 10)",
           "chapter": 12,
           "sequence": 134,
           "dimensions": {
@@ -102741,7 +102741,7 @@
             "map": 3,
             "header": "0x34FA48"
           },
-          "title": "Liquid Crystal · Capítulo 12 · instalación 135",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 11)",
           "chapter": 12,
           "sequence": 135,
           "dimensions": {
@@ -102945,7 +102945,7 @@
             "map": 4,
             "header": "0x34FA64"
           },
-          "title": "Liquid Crystal · Capítulo 12 · meseta 136",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 12)",
           "chapter": 12,
           "sequence": 136,
           "dimensions": {
@@ -103145,7 +103145,7 @@
             "map": 5,
             "header": "0x34FA80"
           },
-          "title": "Liquid Crystal · Capítulo 12 · poblado 137",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 13)",
           "chapter": 12,
           "sequence": 137,
           "dimensions": {
@@ -103345,7 +103345,7 @@
             "map": 6,
             "header": "0x34FA9C"
           },
-          "title": "Liquid Crystal · Capítulo 12 · ruta 138",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 14)",
           "chapter": 12,
           "sequence": 138,
           "dimensions": {
@@ -103692,7 +103692,7 @@
             "map": 7,
             "header": "0x34FAB8"
           },
-          "title": "Liquid Crystal · Capítulo 12 · santuario 139",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 15)",
           "chapter": 12,
           "sequence": 139,
           "dimensions": {
@@ -103977,7 +103977,7 @@
             "map": 8,
             "header": "0x34FAD4"
           },
-          "title": "Liquid Crystal · Capítulo 12 · cueva 140",
+          "title": "Liquid Crystal · Acantilados & Safari de Johto (Sector 16)",
           "chapter": 12,
           "sequence": 140,
           "dimensions": {
@@ -104162,7 +104162,7 @@
             "map": 9,
             "header": "0x34FAF0"
           },
-          "title": "Liquid Crystal · Capítulo 12 · bosque 141",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 1)",
           "chapter": 12,
           "sequence": 141,
           "dimensions": {
@@ -104745,7 +104745,7 @@
             "map": 10,
             "header": "0x34FB0C"
           },
-          "title": "Liquid Crystal · Capítulo 12 · instalación 142",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 2)",
           "chapter": 12,
           "sequence": 142,
           "dimensions": {
@@ -105209,7 +105209,7 @@
             "map": 11,
             "header": "0x34FB28"
           },
-          "title": "Liquid Crystal · Capítulo 12 · instalación 143",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 3)",
           "chapter": 12,
           "sequence": 143,
           "dimensions": {
@@ -105685,7 +105685,7 @@
             "map": 12,
             "header": "0x34FB44"
           },
-          "title": "Liquid Crystal · Capítulo 12 · meseta 144",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 4)",
           "chapter": 12,
           "sequence": 144,
           "dimensions": {
@@ -106178,7 +106178,7 @@
             "map": 13,
             "header": "0x34FB60"
           },
-          "title": "Liquid Crystal · Capítulo 13 · poblado 145",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 5)",
           "chapter": 13,
           "sequence": 145,
           "dimensions": {
@@ -106637,7 +106637,7 @@
             "map": 14,
             "header": "0x34FB7C"
           },
-          "title": "Liquid Crystal · Capítulo 13 · ruta 146",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 6)",
           "chapter": 13,
           "sequence": 146,
           "dimensions": {
@@ -107596,7 +107596,7 @@
             "map": 0,
             "header": "0x34FBB4"
           },
-          "title": "Liquid Crystal · Capítulo 13 · poblado 147",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 7)",
           "chapter": 13,
           "sequence": 147,
           "dimensions": {
@@ -108043,7 +108043,7 @@
             "map": 1,
             "header": "0x34FBD0"
           },
-          "title": "Liquid Crystal · Capítulo 13 · ruta 148",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 8)",
           "chapter": 13,
           "sequence": 148,
           "dimensions": {
@@ -108346,7 +108346,7 @@
             "map": 2,
             "header": "0x34FBEC"
           },
-          "title": "Liquid Crystal · Capítulo 13 · costa 149",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 9)",
           "chapter": 13,
           "sequence": 149,
           "dimensions": {
@@ -108664,7 +108664,7 @@
             "map": 3,
             "header": "0x34FC08"
           },
-          "title": "Liquid Crystal · Capítulo 13 · bosque 150",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 10)",
           "chapter": 13,
           "sequence": 150,
           "dimensions": {
@@ -108947,7 +108947,7 @@
             "map": 4,
             "header": "0x34FC24"
           },
-          "title": "Liquid Crystal · Capítulo 13 · instalación 151",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 11)",
           "chapter": 13,
           "sequence": 151,
           "dimensions": {
@@ -109237,7 +109237,7 @@
             "map": 5,
             "header": "0x34FC40"
           },
-          "title": "Liquid Crystal · Capítulo 13 · meseta 152",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 12)",
           "chapter": 13,
           "sequence": 152,
           "dimensions": {
@@ -109470,7 +109470,7 @@
             "map": 6,
             "header": "0x34FC5C"
           },
-          "title": "Liquid Crystal · Capítulo 13 · santuario 153",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 13)",
           "chapter": 13,
           "sequence": 153,
           "dimensions": {
@@ -109698,7 +109698,7 @@
             "map": 7,
             "header": "0x34FC78"
           },
-          "title": "Liquid Crystal · Capítulo 13 · ruta 154",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 14)",
           "chapter": 13,
           "sequence": 154,
           "dimensions": {
@@ -110135,7 +110135,7 @@
             "map": 8,
             "header": "0x34FC94"
           },
-          "title": "Liquid Crystal · Capítulo 13 · bosque 155",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 15)",
           "chapter": 13,
           "sequence": 155,
           "dimensions": {
@@ -110388,7 +110388,7 @@
             "map": 0,
             "header": "0x34FCE8"
           },
-          "title": "Liquid Crystal · Capítulo 13 · cueva 156",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 16)",
           "chapter": 13,
           "sequence": 156,
           "dimensions": {
@@ -111205,7 +111205,7 @@
             "map": 1,
             "header": "0x34FD04"
           },
-          "title": "Liquid Crystal · Capítulo 14 · costa 157",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 17)",
           "chapter": 14,
           "sequence": 157,
           "dimensions": {
@@ -111426,7 +111426,7 @@
             "map": 2,
             "header": "0x34FD20"
           },
-          "title": "Liquid Crystal · Capítulo 14 · bosque 158",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 18)",
           "chapter": 14,
           "sequence": 158,
           "dimensions": {
@@ -111862,7 +111862,7 @@
             "map": 0,
             "header": "0x34FE1C"
           },
-          "title": "Liquid Crystal · Capítulo 14 · instalación 159",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 19)",
           "chapter": 14,
           "sequence": 159,
           "dimensions": {
@@ -112248,7 +112248,7 @@
             "map": 1,
             "header": "0x34FE38"
           },
-          "title": "Liquid Crystal · Capítulo 14 · meseta 160",
+          "title": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 20)",
           "chapter": 14,
           "sequence": 160,
           "dimensions": {
@@ -112610,7 +112610,7 @@
             "map": 2,
             "header": "0x34FE54"
           },
-          "title": "Liquid Crystal · Capítulo 14 · poblado 161",
+          "title": "Liquid Crystal · Pueblo Caoba (Mahogany Town)",
           "chapter": 14,
           "sequence": 161,
           "dimensions": {
@@ -113012,7 +113012,7 @@
             "map": 3,
             "header": "0x34FE70"
           },
-          "title": "Liquid Crystal · Capítulo 14 · ruta 162",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 1)",
           "chapter": 14,
           "sequence": 162,
           "dimensions": {
@@ -113639,7 +113639,7 @@
             "map": 0,
             "header": "0x34FEE0"
           },
-          "title": "Liquid Crystal · Capítulo 14 · santuario 163",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 2)",
           "chapter": 14,
           "sequence": 163,
           "dimensions": {
@@ -113929,7 +113929,7 @@
             "map": 1,
             "header": "0x34FEFC"
           },
-          "title": "Liquid Crystal · Capítulo 14 · cueva 164",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 3)",
           "chapter": 14,
           "sequence": 164,
           "dimensions": {
@@ -114216,7 +114216,7 @@
             "map": 2,
             "header": "0x34FF18"
           },
-          "title": "Liquid Crystal · Capítulo 14 · costa 165",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 4)",
           "chapter": 14,
           "sequence": 165,
           "dimensions": {
@@ -114574,7 +114574,7 @@
             "map": 3,
             "header": "0x34FF34"
           },
-          "title": "Liquid Crystal · Capítulo 14 · meseta 166",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 5)",
           "chapter": 14,
           "sequence": 166,
           "dimensions": {
@@ -114892,7 +114892,7 @@
             "map": 0,
             "header": "0x8A85D8"
           },
-          "title": "Liquid Crystal · Capítulo 14 · instalación 167",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 6)",
           "chapter": 14,
           "sequence": 167,
           "dimensions": {
@@ -115062,7 +115062,7 @@
             "map": 1,
             "header": "0x8A5CD0"
           },
-          "title": "Liquid Crystal · Capítulo 14 · ruta 168",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 7)",
           "chapter": 14,
           "sequence": 168,
           "dimensions": {
@@ -115398,7 +115398,7 @@
             "map": 2,
             "header": "0x8A96C4"
           },
-          "title": "Liquid Crystal · Capítulo 15 · poblado 169",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 8)",
           "chapter": 15,
           "sequence": 169,
           "dimensions": {
@@ -115828,7 +115828,7 @@
             "map": 0,
             "header": "0x98AF28"
           },
-          "title": "Liquid Crystal · Capítulo 15 · cueva 170",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 9)",
           "chapter": 15,
           "sequence": 170,
           "dimensions": {
@@ -116114,7 +116114,7 @@
             "map": 1,
             "header": "0x992EE8"
           },
-          "title": "Liquid Crystal · Capítulo 15 · santuario 171",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 10)",
           "chapter": 15,
           "sequence": 171,
           "dimensions": {
@@ -116299,7 +116299,7 @@
             "map": 2,
             "header": "0x9933A0"
           },
-          "title": "Liquid Crystal · Capítulo 15 · cueva 172",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 11)",
           "chapter": 15,
           "sequence": 172,
           "dimensions": {
@@ -116514,7 +116514,7 @@
             "map": 3,
             "header": "0x993858"
           },
-          "title": "Liquid Crystal · Capítulo 15 · costa 173",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 12)",
           "chapter": 15,
           "sequence": 173,
           "dimensions": {
@@ -116789,7 +116789,7 @@
             "map": 4,
             "header": "0x8CADDC"
           },
-          "title": "Liquid Crystal · Capítulo 15 · bosque 174",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 13)",
           "chapter": 15,
           "sequence": 174,
           "dimensions": {
@@ -117028,7 +117028,7 @@
             "map": 5,
             "header": "0x7FD37C"
           },
-          "title": "Liquid Crystal · Capítulo 15 · instalación 175",
+          "title": "Liquid Crystal · Guarida Rocket de Caoba (Nivel 14)",
           "chapter": 15,
           "sequence": 175,
           "dimensions": {
@@ -117324,7 +117324,7 @@
             "map": 6,
             "header": "0x8F74E8"
           },
-          "title": "Liquid Crystal · Capítulo 15 · meseta 176",
+          "title": "Liquid Crystal · Lago de la Furia (Lake of Rage)",
           "chapter": 15,
           "sequence": 176,
           "dimensions": {
@@ -117563,7 +117563,7 @@
             "map": 7,
             "header": "0x98A054"
           },
-          "title": "Liquid Crystal · Capítulo 15 · poblado 177",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 1)",
           "chapter": 15,
           "sequence": 177,
           "dimensions": {
@@ -117814,7 +117814,7 @@
             "map": 8,
             "header": "0x98A394"
           },
-          "title": "Liquid Crystal · Capítulo 15 · ruta 178",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 2)",
           "chapter": 15,
           "sequence": 178,
           "dimensions": {
@@ -118145,7 +118145,7 @@
             "map": 0,
             "header": "0x3500D8"
           },
-          "title": "Liquid Crystal · Capítulo 15 · santuario 179",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 3)",
           "chapter": 15,
           "sequence": 179,
           "dimensions": {
@@ -118431,7 +118431,7 @@
             "map": 1,
             "header": "0x3500F4"
           },
-          "title": "Liquid Crystal · Capítulo 15 · cueva 180",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 4)",
           "chapter": 15,
           "sequence": 180,
           "dimensions": {
@@ -118772,7 +118772,7 @@
             "map": 2,
             "header": "0x350110"
           },
-          "title": "Liquid Crystal · Capítulo 16 · meseta 181",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 5)",
           "chapter": 16,
           "sequence": 181,
           "dimensions": {
@@ -119435,7 +119435,7 @@
             "map": 3,
             "header": "0x35012C"
           },
-          "title": "Liquid Crystal · Capítulo 16 · bosque 182",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 6)",
           "chapter": 16,
           "sequence": 182,
           "dimensions": {
@@ -119679,7 +119679,7 @@
             "map": 4,
             "header": "0x350148"
           },
-          "title": "Liquid Crystal · Capítulo 16 · instalación 183",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 7)",
           "chapter": 16,
           "sequence": 183,
           "dimensions": {
@@ -119877,7 +119877,7 @@
             "map": 5,
             "header": "0x350164"
           },
-          "title": "Liquid Crystal · Capítulo 16 · santuario 184",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 8)",
           "chapter": 16,
           "sequence": 184,
           "dimensions": {
@@ -120247,7 +120247,7 @@
             "map": 0,
             "header": "0x35019C"
           },
-          "title": "Liquid Crystal · Capítulo 16 · poblado 185",
+          "title": "Liquid Crystal · Alrededores del Lago de la Furia (Sector 9)",
           "chapter": 16,
           "sequence": 185,
           "dimensions": {
@@ -120848,7 +120848,7 @@
             "map": 1,
             "header": "0x3501B8"
           },
-          "title": "Liquid Crystal · Capítulo 16 · ruta 186",
+          "title": "Liquid Crystal · Gimnasio de Caoba (Pryce)",
           "chapter": 16,
           "sequence": 186,
           "dimensions": {
@@ -121179,7 +121179,7 @@
             "map": 2,
             "header": "0x3501D4"
           },
-          "title": "Liquid Crystal · Capítulo 16 · costa 187",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 1)",
           "chapter": 16,
           "sequence": 187,
           "dimensions": {
@@ -121466,7 +121466,7 @@
             "map": 3,
             "header": "0x3501F0"
           },
-          "title": "Liquid Crystal · Capítulo 16 · cueva 188",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 2)",
           "chapter": 16,
           "sequence": 188,
           "dimensions": {
@@ -121797,7 +121797,7 @@
             "map": 4,
             "header": "0x35020C"
           },
-          "title": "Liquid Crystal · Capítulo 16 · costa 189",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 3)",
           "chapter": 16,
           "sequence": 189,
           "dimensions": {
@@ -122478,7 +122478,7 @@
             "map": 5,
             "header": "0x350228"
           },
-          "title": "Liquid Crystal · Capítulo 16 · bosque 190",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 4)",
           "chapter": 16,
           "sequence": 190,
           "dimensions": {
@@ -122859,7 +122859,7 @@
             "map": 6,
             "header": "0x350244"
           },
-          "title": "Liquid Crystal · Capítulo 16 · ruta 191",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 5)",
           "chapter": 16,
           "sequence": 191,
           "dimensions": {
@@ -123248,7 +123248,7 @@
             "map": 0,
             "header": "0x35027C"
           },
-          "title": "Liquid Crystal · Capítulo 16 · meseta 192",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 6)",
           "chapter": 16,
           "sequence": 192,
           "dimensions": {
@@ -123822,7 +123822,7 @@
             "map": 1,
             "header": "0x350298"
           },
-          "title": "Liquid Crystal · Capítulo 17 · poblado 193",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 7)",
           "chapter": 17,
           "sequence": 193,
           "dimensions": {
@@ -124149,7 +124149,7 @@
             "map": 2,
             "header": "0x3502B4"
           },
-          "title": "Liquid Crystal · Capítulo 17 · ruta 194",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 8)",
           "chapter": 17,
           "sequence": 194,
           "dimensions": {
@@ -124498,7 +124498,7 @@
             "map": 0,
             "header": "0x3502EC"
           },
-          "title": "Liquid Crystal · Capítulo 17 · santuario 195",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 9)",
           "chapter": 17,
           "sequence": 195,
           "dimensions": {
@@ -124884,7 +124884,7 @@
             "map": 1,
             "header": "0x350308"
           },
-          "title": "Liquid Crystal · Capítulo 17 · cueva 196",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 10)",
           "chapter": 17,
           "sequence": 196,
           "dimensions": {
@@ -125325,7 +125325,7 @@
             "map": 2,
             "header": "0x350324"
           },
-          "title": "Liquid Crystal · Capítulo 17 · costa 197",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 11)",
           "chapter": 17,
           "sequence": 197,
           "dimensions": {
@@ -125744,7 +125744,7 @@
             "map": 3,
             "header": "0x350340"
           },
-          "title": "Liquid Crystal · Capítulo 17 · bosque 198",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 12)",
           "chapter": 17,
           "sequence": 198,
           "dimensions": {
@@ -126083,7 +126083,7 @@
             "map": 4,
             "header": "0x35035C"
           },
-          "title": "Liquid Crystal · Capítulo 17 · instalación 199",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 13)",
           "chapter": 17,
           "sequence": 199,
           "dimensions": {
@@ -126583,7 +126583,7 @@
             "map": 5,
             "header": "0x350378"
           },
-          "title": "Liquid Crystal · Capítulo 17 · meseta 200",
+          "title": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 14)",
           "chapter": 17,
           "sequence": 200,
           "dimensions": {
@@ -126910,7 +126910,7 @@
             "map": 6,
             "header": "0x350394"
           },
-          "title": "Liquid Crystal · Capítulo 17 · poblado 201",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 1)",
           "chapter": 17,
           "sequence": 201,
           "dimensions": {
@@ -127262,7 +127262,7 @@
             "map": 7,
             "header": "0x3503B0"
           },
-          "title": "Liquid Crystal · Capítulo 17 · ruta 202",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 2)",
           "chapter": 17,
           "sequence": 202,
           "dimensions": {
@@ -127554,7 +127554,7 @@
             "map": 8,
             "header": "0x3503CC"
           },
-          "title": "Liquid Crystal · Capítulo 17 · santuario 203",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 3)",
           "chapter": 17,
           "sequence": 203,
           "dimensions": {
@@ -127906,7 +127906,7 @@
             "map": 9,
             "header": "0x3503E8"
           },
-          "title": "Liquid Crystal · Capítulo 17 · cueva 204",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 4)",
           "chapter": 17,
           "sequence": 204,
           "dimensions": {
@@ -128138,7 +128138,7 @@
             "map": 10,
             "header": "0x350404"
           },
-          "title": "Liquid Crystal · Capítulo 18 · costa 205",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 5)",
           "chapter": 18,
           "sequence": 205,
           "dimensions": {
@@ -128420,7 +128420,7 @@
             "map": 11,
             "header": "0x350420"
           },
-          "title": "Liquid Crystal · Capítulo 18 · bosque 206",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 6)",
           "chapter": 18,
           "sequence": 206,
           "dimensions": {
@@ -128768,7 +128768,7 @@
             "map": 0,
             "header": "0x350458"
           },
-          "title": "Liquid Crystal · Capítulo 18 · instalación 207",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 7)",
           "chapter": 18,
           "sequence": 207,
           "dimensions": {
@@ -129102,7 +129102,7 @@
             "map": 1,
             "header": "0x350474"
           },
-          "title": "Liquid Crystal · Capítulo 18 · ruta 208",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 8)",
           "chapter": 18,
           "sequence": 208,
           "dimensions": {
@@ -129389,7 +129389,7 @@
             "map": 2,
             "header": "0x350490"
           },
-          "title": "Liquid Crystal · Capítulo 18 · poblado 209",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 9)",
           "chapter": 18,
           "sequence": 209,
           "dimensions": {
@@ -129630,7 +129630,7 @@
             "map": 3,
             "header": "0x3504AC"
           },
-          "title": "Liquid Crystal · Capítulo 18 · costa 210",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 10)",
           "chapter": 18,
           "sequence": 210,
           "dimensions": {
@@ -130143,7 +130143,7 @@
             "map": 4,
             "header": "0x3504C8"
           },
-          "title": "Liquid Crystal · Capítulo 18 · bosque 211",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 11)",
           "chapter": 18,
           "sequence": 211,
           "dimensions": {
@@ -130725,7 +130725,7 @@
             "map": 5,
             "header": "0x3504E4"
           },
-          "title": "Liquid Crystal · Capítulo 18 · instalación 212",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 12)",
           "chapter": 18,
           "sequence": 212,
           "dimensions": {
@@ -131192,7 +131192,7 @@
             "map": 6,
             "header": "0x350500"
           },
-          "title": "Liquid Crystal · Capítulo 18 · meseta 213",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 13)",
           "chapter": 18,
           "sequence": 213,
           "dimensions": {
@@ -131651,7 +131651,7 @@
             "map": 0,
             "header": "0x350554"
           },
-          "title": "Liquid Crystal · Capítulo 18 · bosque 214",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 14)",
           "chapter": 18,
           "sequence": 214,
           "dimensions": {
@@ -132610,7 +132610,7 @@
             "map": 1,
             "header": "0x350570"
           },
-          "title": "Liquid Crystal · Capítulo 18 · instalación 215",
+          "title": "Liquid Crystal · Ruta Helada (Ice Path · Galería 15)",
           "chapter": 18,
           "sequence": 215,
           "dimensions": {
@@ -132936,7 +132936,7 @@
             "map": 2,
             "header": "0x35058C"
           },
-          "title": "Liquid Crystal · Capítulo 18 · ruta 216",
+          "title": "Liquid Crystal · Ciudad Endrino (Blackthorn City)",
           "chapter": 18,
           "sequence": 216,
           "dimensions": {
@@ -133743,7 +133743,7 @@
             "map": 3,
             "header": "0x3505A8"
           },
-          "title": "Liquid Crystal · Capítulo 19 · poblado 217",
+          "title": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 1)",
           "chapter": 19,
           "sequence": 217,
           "dimensions": {
@@ -134384,7 +134384,7 @@
             "map": 4,
             "header": "0x3505C4"
           },
-          "title": "Liquid Crystal · Capítulo 19 · ruta 218",
+          "title": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 2)",
           "chapter": 19,
           "sequence": 218,
           "dimensions": {
@@ -134995,7 +134995,7 @@
             "map": 5,
             "header": "0x3505E0"
           },
-          "title": "Liquid Crystal · Capítulo 19 · santuario 219",
+          "title": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 3)",
           "chapter": 19,
           "sequence": 219,
           "dimensions": {
@@ -135500,7 +135500,7 @@
             "map": 6,
             "header": "0x3505FC"
           },
-          "title": "Liquid Crystal · Capítulo 19 · cueva 220",
+          "title": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 4)",
           "chapter": 19,
           "sequence": 220,
           "dimensions": {
@@ -135934,7 +135934,7 @@
             "map": 0,
             "header": "0x74AD10"
           },
-          "title": "Liquid Crystal · Capítulo 19 · costa 221",
+          "title": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 5)",
           "chapter": 19,
           "sequence": 221,
           "dimensions": {
@@ -136199,7 +136199,7 @@
             "map": 1,
             "header": "0x7A0324"
           },
-          "title": "Liquid Crystal · Capítulo 19 · bosque 222",
+          "title": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 6)",
           "chapter": 19,
           "sequence": 222,
           "dimensions": {
@@ -136470,7 +136470,7 @@
             "map": 2,
             "header": "0x7A7670"
           },
-          "title": "Liquid Crystal · Capítulo 19 · poblado 223",
+          "title": "Liquid Crystal · Gimnasio de Endrino (Clair)",
           "chapter": 19,
           "sequence": 223,
           "dimensions": {
@@ -136955,7 +136955,7 @@
             "map": 3,
             "header": "0x7F76AC"
           },
-          "title": "Liquid Crystal · Capítulo 19 · meseta 224",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 1)",
           "chapter": 19,
           "sequence": 224,
           "dimensions": {
@@ -137362,7 +137362,7 @@
             "map": 0,
             "header": "0x7FA588"
           },
-          "title": "Liquid Crystal · Capítulo 19 · poblado 225",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 2)",
           "chapter": 19,
           "sequence": 225,
           "dimensions": {
@@ -137696,7 +137696,7 @@
             "map": 1,
             "header": "0x85C99C"
           },
-          "title": "Liquid Crystal · Capítulo 19 · cueva 226",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 3)",
           "chapter": 19,
           "sequence": 226,
           "dimensions": {
@@ -138239,7 +138239,7 @@
             "map": 2,
             "header": "0x85DC08"
           },
-          "title": "Liquid Crystal · Capítulo 19 · santuario 227",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 4)",
           "chapter": 19,
           "sequence": 227,
           "dimensions": {
@@ -138601,7 +138601,7 @@
             "map": 3,
             "header": "0x85E730"
           },
-          "title": "Liquid Crystal · Capítulo 19 · costa 228",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 5)",
           "chapter": 19,
           "sequence": 228,
           "dimensions": {
@@ -139137,7 +139137,7 @@
             "map": 4,
             "header": "0x85F840"
           },
-          "title": "Liquid Crystal · Capítulo 20 · bosque 229",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 6)",
           "chapter": 20,
           "sequence": 229,
           "dimensions": {
@@ -139713,7 +139713,7 @@
             "map": 5,
             "header": "0x7FA894"
           },
-          "title": "Liquid Crystal · Capítulo 20 · bosque 230",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 7)",
           "chapter": 20,
           "sequence": 230,
           "dimensions": {
@@ -140042,7 +140042,7 @@
             "map": 0,
             "header": "0x863020"
           },
-          "title": "Liquid Crystal · Capítulo 20 · instalación 231",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 8)",
           "chapter": 20,
           "sequence": 231,
           "dimensions": {
@@ -140490,7 +140490,7 @@
             "map": 1,
             "header": "0x34FFA4"
           },
-          "title": "Liquid Crystal · Capítulo 20 · meseta 232",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 9)",
           "chapter": 20,
           "sequence": 232,
           "dimensions": {
@@ -141052,7 +141052,7 @@
             "map": 2,
             "header": "0x34FFC0"
           },
-          "title": "Liquid Crystal · Capítulo 20 · cueva 233",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 10)",
           "chapter": 20,
           "sequence": 233,
           "dimensions": {
@@ -141686,7 +141686,7 @@
             "map": 3,
             "header": "0x34FFDC"
           },
-          "title": "Liquid Crystal · Capítulo 20 · ruta 234",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 11)",
           "chapter": 20,
           "sequence": 234,
           "dimensions": {
@@ -141896,7 +141896,7 @@
             "map": 4,
             "header": "0x34FFF8"
           },
-          "title": "Liquid Crystal · Capítulo 20 · bosque 235",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 12)",
           "chapter": 20,
           "sequence": 235,
           "dimensions": {
@@ -142615,7 +142615,7 @@
             "map": 5,
             "header": "0x350014"
           },
-          "title": "Liquid Crystal · Capítulo 20 · cueva 236",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 13)",
           "chapter": 20,
           "sequence": 236,
           "dimensions": {
@@ -142862,7 +142862,7 @@
             "map": 6,
             "header": "0x350030"
           },
-          "title": "Liquid Crystal · Capítulo 20 · costa 237",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 14)",
           "chapter": 20,
           "sequence": 237,
           "dimensions": {
@@ -143107,7 +143107,7 @@
             "map": 7,
             "header": "0x35004C"
           },
-          "title": "Liquid Crystal · Capítulo 20 · bosque 238",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 15)",
           "chapter": 20,
           "sequence": 238,
           "dimensions": {
@@ -143277,7 +143277,7 @@
             "map": 8,
             "header": "0x350068"
           },
-          "title": "Liquid Crystal · Capítulo 20 · instalación 239",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 16)",
           "chapter": 20,
           "sequence": 239,
           "dimensions": {
@@ -143441,7 +143441,7 @@
             "map": 9,
             "header": "0x350084"
           },
-          "title": "Liquid Crystal · Capítulo 20 · meseta 240",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 17)",
           "chapter": 20,
           "sequence": 240,
           "dimensions": {
@@ -143671,7 +143671,7 @@
             "map": 10,
             "header": "0x3500A0"
           },
-          "title": "Liquid Crystal · Capítulo 21 · poblado 241",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 18)",
           "chapter": 21,
           "sequence": 241,
           "dimensions": {
@@ -144056,7 +144056,7 @@
             "map": 11,
             "header": "0x3500BC"
           },
-          "title": "Liquid Crystal · Capítulo 21 · cueva 242",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 19)",
           "chapter": 21,
           "sequence": 242,
           "dimensions": {
@@ -144248,7 +144248,7 @@
             "map": 0,
             "header": "0x76D1B4"
           },
-          "title": "Liquid Crystal · Capítulo 21 · santuario 243",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 20)",
           "chapter": 21,
           "sequence": 243,
           "dimensions": {
@@ -144563,7 +144563,7 @@
             "map": 1,
             "header": "0x79B2A8"
           },
-          "title": "Liquid Crystal · Capítulo 21 · cueva 244",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 21)",
           "chapter": 21,
           "sequence": 244,
           "dimensions": {
@@ -144900,7 +144900,7 @@
             "map": 2,
             "header": "0x7A88E4"
           },
-          "title": "Liquid Crystal · Capítulo 21 · costa 245",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 22)",
           "chapter": 21,
           "sequence": 245,
           "dimensions": {
@@ -145206,7 +145206,7 @@
             "map": 3,
             "header": "0x7D0024"
           },
-          "title": "Liquid Crystal · Capítulo 21 · bosque 246",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 23)",
           "chapter": 21,
           "sequence": 246,
           "dimensions": {
@@ -145552,7 +145552,7 @@
             "map": 4,
             "header": "0x7FB000"
           },
-          "title": "Liquid Crystal · Capítulo 21 · instalación 247",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 24)",
           "chapter": 21,
           "sequence": 247,
           "dimensions": {
@@ -146003,7 +146003,7 @@
             "map": 5,
             "header": "0x84D384"
           },
-          "title": "Liquid Crystal · Capítulo 21 · santuario 248",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 25)",
           "chapter": 21,
           "sequence": 248,
           "dimensions": {
@@ -146359,7 +146359,7 @@
             "map": 6,
             "header": "0x86B5CC"
           },
-          "title": "Liquid Crystal · Capítulo 21 · cueva 249",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 26)",
           "chapter": 21,
           "sequence": 249,
           "dimensions": {
@@ -146685,7 +146685,7 @@
             "map": 7,
             "header": "0x8F256C"
           },
-          "title": "Liquid Crystal · Capítulo 21 · ruta 250",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 27)",
           "chapter": 21,
           "sequence": 250,
           "dimensions": {
@@ -146922,7 +146922,7 @@
             "map": 8,
             "header": "0x86E7A8"
           },
-          "title": "Liquid Crystal · Capítulo 21 · santuario 251",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 28)",
           "chapter": 21,
           "sequence": 251,
           "dimensions": {
@@ -147345,7 +147345,7 @@
             "map": 0,
             "header": "0x9752AC"
           },
-          "title": "Liquid Crystal · Capítulo 21 · instalación 252",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 29)",
           "chapter": 21,
           "sequence": 252,
           "dimensions": {
@@ -147858,7 +147858,7 @@
             "map": 1,
             "header": "0x867600"
           },
-          "title": "Liquid Crystal · Capítulo 22 · costa 253",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 30)",
           "chapter": 22,
           "sequence": 253,
           "dimensions": {
@@ -148092,7 +148092,7 @@
             "map": 2,
             "header": "0x8F98F0"
           },
-          "title": "Liquid Crystal · Capítulo 22 · bosque 254",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 31)",
           "chapter": 22,
           "sequence": 254,
           "dimensions": {
@@ -148284,7 +148284,7 @@
             "map": 3,
             "header": "0xA39B20"
           },
-          "title": "Liquid Crystal · Capítulo 22 · instalación 255",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 32)",
           "chapter": 22,
           "sequence": 255,
           "dimensions": {
@@ -148518,7 +148518,7 @@
             "map": 4,
             "header": "0xA46388"
           },
-          "title": "Liquid Crystal · Capítulo 22 · ruta 256",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 33)",
           "chapter": 22,
           "sequence": 256,
           "dimensions": {
@@ -148752,7 +148752,7 @@
             "map": 5,
             "header": "0xA48514"
           },
-          "title": "Liquid Crystal · Capítulo 22 · santuario 257",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 34)",
           "chapter": 22,
           "sequence": 257,
           "dimensions": {
@@ -148986,7 +148986,7 @@
             "map": 6,
             "header": "0xA48AEC"
           },
-          "title": "Liquid Crystal · Capítulo 22 · cueva 258",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 35)",
           "chapter": 22,
           "sequence": 258,
           "dimensions": {
@@ -149220,7 +149220,7 @@
             "map": 7,
             "header": "0xA51A0C"
           },
-          "title": "Liquid Crystal · Capítulo 22 · costa 259",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 36)",
           "chapter": 22,
           "sequence": 259,
           "dimensions": {
@@ -149454,7 +149454,7 @@
             "map": 8,
             "header": "0xA5B794"
           },
-          "title": "Liquid Crystal · Capítulo 22 · bosque 260",
+          "title": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 37)",
           "chapter": 22,
           "sequence": 260,
           "dimensions": {
@@ -149688,7 +149688,7 @@
             "map": 9,
             "header": "0xA5D7F4"
           },
-          "title": "Liquid Crystal · Capítulo 22 · instalación 261",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 1)",
           "chapter": 22,
           "sequence": 261,
           "dimensions": {
@@ -149922,7 +149922,7 @@
             "map": 10,
             "header": "0xA60DDC"
           },
-          "title": "Liquid Crystal · Capítulo 22 · meseta 262",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 2)",
           "chapter": 22,
           "sequence": 262,
           "dimensions": {
@@ -150156,7 +150156,7 @@
             "map": 11,
             "header": "0xA7F75C"
           },
-          "title": "Liquid Crystal · Capítulo 22 · poblado 263",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 3)",
           "chapter": 22,
           "sequence": 263,
           "dimensions": {
@@ -150390,7 +150390,7 @@
             "map": 12,
             "header": "0xA601A4"
           },
-          "title": "Liquid Crystal · Capítulo 22 · ruta 264",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 4)",
           "chapter": 22,
           "sequence": 264,
           "dimensions": {
@@ -150624,7 +150624,7 @@
             "map": 13,
             "header": "0xA6077C"
           },
-          "title": "Liquid Crystal · Capítulo 23 · santuario 265",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 5)",
           "chapter": 23,
           "sequence": 265,
           "dimensions": {
@@ -150858,7 +150858,7 @@
             "map": 14,
             "header": "0xA901C0"
           },
-          "title": "Liquid Crystal · Capítulo 23 · cueva 266",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 6)",
           "chapter": 23,
           "sequence": 266,
           "dimensions": {
@@ -151092,7 +151092,7 @@
             "map": 15,
             "header": "0xA90798"
           },
-          "title": "Liquid Crystal · Capítulo 23 · costa 267",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 7)",
           "chapter": 23,
           "sequence": 267,
           "dimensions": {
@@ -151326,7 +151326,7 @@
             "map": 16,
             "header": "0xAA0978"
           },
-          "title": "Liquid Crystal · Capítulo 23 · bosque 268",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 8)",
           "chapter": 23,
           "sequence": 268,
           "dimensions": {
@@ -151560,7 +151560,7 @@
             "map": 17,
             "header": "0xAA9E2C"
           },
-          "title": "Liquid Crystal · Capítulo 23 · instalación 269",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 9)",
           "chapter": 23,
           "sequence": 269,
           "dimensions": {
@@ -151794,7 +151794,7 @@
             "map": 18,
             "header": "0xAAA404"
           },
-          "title": "Liquid Crystal · Capítulo 23 · meseta 270",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 10)",
           "chapter": 23,
           "sequence": 270,
           "dimensions": {
@@ -152028,7 +152028,7 @@
             "map": 19,
             "header": "0xAB7720"
           },
-          "title": "Liquid Crystal · Capítulo 23 · poblado 271",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 11)",
           "chapter": 23,
           "sequence": 271,
           "dimensions": {
@@ -152262,7 +152262,7 @@
             "map": 20,
             "header": "0xABA8D8"
           },
-          "title": "Liquid Crystal · Capítulo 23 · ruta 272",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 12)",
           "chapter": 23,
           "sequence": 272,
           "dimensions": {
@@ -152496,7 +152496,7 @@
             "map": 21,
             "header": "0xABAEB0"
           },
-          "title": "Liquid Crystal · Capítulo 23 · santuario 273",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 13)",
           "chapter": 23,
           "sequence": 273,
           "dimensions": {
@@ -152730,7 +152730,7 @@
             "map": 22,
             "header": "0xA8DF90"
           },
-          "title": "Liquid Crystal · Capítulo 23 · cueva 274",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 14)",
           "chapter": 23,
           "sequence": 274,
           "dimensions": {
@@ -152964,7 +152964,7 @@
             "map": 23,
             "header": "0xA8E568"
           },
-          "title": "Liquid Crystal · Capítulo 23 · costa 275",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 15)",
           "chapter": 23,
           "sequence": 275,
           "dimensions": {
@@ -153198,7 +153198,7 @@
             "map": 24,
             "header": "0xACC9E0"
           },
-          "title": "Liquid Crystal · Capítulo 23 · bosque 276",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 16)",
           "chapter": 23,
           "sequence": 276,
           "dimensions": {
@@ -153432,7 +153432,7 @@
             "map": 25,
             "header": "0xAD359C"
           },
-          "title": "Liquid Crystal · Capítulo 24 · instalación 277",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 17)",
           "chapter": 24,
           "sequence": 277,
           "dimensions": {
@@ -153666,7 +153666,7 @@
             "map": 26,
             "header": "0xAD5198"
           },
-          "title": "Liquid Crystal · Capítulo 24 · meseta 278",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 18)",
           "chapter": 24,
           "sequence": 278,
           "dimensions": {
@@ -153900,7 +153900,7 @@
             "map": 27,
             "header": "0xAE04E8"
           },
-          "title": "Liquid Crystal · Capítulo 24 · poblado 279",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 19)",
           "chapter": 24,
           "sequence": 279,
           "dimensions": {
@@ -154134,7 +154134,7 @@
             "map": 28,
             "header": "0xAE3358"
           },
-          "title": "Liquid Crystal · Capítulo 24 · ruta 280",
+          "title": "Liquid Crystal · Cataratas Tohjo (Paso hacia Kanto · Nivel 20)",
           "chapter": 24,
           "sequence": 280,
           "dimensions": {
@@ -154368,7 +154368,7 @@
             "map": 29,
             "header": "0xAE3930"
           },
-          "title": "Liquid Crystal · Capítulo 24 · santuario 281",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 1)",
           "chapter": 24,
           "sequence": 281,
           "dimensions": {
@@ -154602,7 +154602,7 @@
             "map": 0,
             "header": "0x9E3298"
           },
-          "title": "Liquid Crystal · Capítulo 24 · cueva 282",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 2)",
           "chapter": 24,
           "sequence": 282,
           "dimensions": {
@@ -154837,7 +154837,7 @@
             "map": 1,
             "header": "0x9E349C"
           },
-          "title": "Liquid Crystal · Capítulo 24 · costa 283",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 3)",
           "chapter": 24,
           "sequence": 283,
           "dimensions": {
@@ -155064,7 +155064,7 @@
             "map": 2,
             "header": "0x9E434C"
           },
-          "title": "Liquid Crystal · Capítulo 24 · bosque 284",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 4)",
           "chapter": 24,
           "sequence": 284,
           "dimensions": {
@@ -155287,7 +155287,7 @@
             "map": 3,
             "header": "0x9EB28C"
           },
-          "title": "Liquid Crystal · Capítulo 24 · instalación 285",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 5)",
           "chapter": 24,
           "sequence": 285,
           "dimensions": {
@@ -155510,7 +155510,7 @@
             "map": 4,
             "header": "0x9EB510"
           },
-          "title": "Liquid Crystal · Capítulo 24 · meseta 286",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 6)",
           "chapter": 24,
           "sequence": 286,
           "dimensions": {
@@ -155733,7 +155733,7 @@
             "map": 5,
             "header": "0x9EB794"
           },
-          "title": "Liquid Crystal · Capítulo 24 · poblado 287",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 7)",
           "chapter": 24,
           "sequence": 287,
           "dimensions": {
@@ -155956,7 +155956,7 @@
             "map": 6,
             "header": "0x9EBA18"
           },
-          "title": "Liquid Crystal · Capítulo 24 · ruta 288",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 8)",
           "chapter": 24,
           "sequence": 288,
           "dimensions": {
@@ -156179,7 +156179,7 @@
             "map": 7,
             "header": "0x9F28A8"
           },
-          "title": "Liquid Crystal · Capítulo 25 · santuario 289",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 9)",
           "chapter": 25,
           "sequence": 289,
           "dimensions": {
@@ -156550,7 +156550,7 @@
             "map": 8,
             "header": "0x87C838"
           },
-          "title": "Liquid Crystal · Capítulo 25 · ruta 290",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 10)",
           "chapter": 25,
           "sequence": 290,
           "dimensions": {
@@ -156888,7 +156888,7 @@
             "map": 9,
             "header": "0x76696C"
           },
-          "title": "Liquid Crystal · Capítulo 25 · santuario 291",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 11)",
           "chapter": 25,
           "sequence": 291,
           "dimensions": {
@@ -157017,7 +157017,7 @@
             "map": 0,
             "header": "0xC2A180"
           },
-          "title": "Liquid Crystal · Capítulo 25 · cueva 292",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 12)",
           "chapter": 25,
           "sequence": 292,
           "dimensions": {
@@ -157346,7 +157346,7 @@
             "map": 1,
             "header": "0xC2A688"
           },
-          "title": "Liquid Crystal · Capítulo 25 · costa 293",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 13)",
           "chapter": 25,
           "sequence": 293,
           "dimensions": {
@@ -157685,7 +157685,7 @@
             "map": 2,
             "header": "0xC2AAC8"
           },
-          "title": "Liquid Crystal · Capítulo 25 · bosque 294",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 14)",
           "chapter": 25,
           "sequence": 294,
           "dimensions": {
@@ -157992,7 +157992,7 @@
             "map": 3,
             "header": "0xC2D55C"
           },
-          "title": "Liquid Crystal · Capítulo 25 · instalación 295",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 15)",
           "chapter": 25,
           "sequence": 295,
           "dimensions": {
@@ -158299,7 +158299,7 @@
             "map": 0,
             "header": "0x350DC0"
           },
-          "title": "Liquid Crystal · Capítulo 25 · meseta 296",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 16)",
           "chapter": 25,
           "sequence": 296,
           "dimensions": {
@@ -158554,7 +158554,7 @@
             "map": 1,
             "header": "0x350DDC"
           },
-          "title": "Liquid Crystal · Capítulo 25 · poblado 297",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 17)",
           "chapter": 25,
           "sequence": 297,
           "dimensions": {
@@ -158871,7 +158871,7 @@
             "map": 2,
             "header": "0x350DF8"
           },
-          "title": "Liquid Crystal · Capítulo 25 · ruta 298",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 18)",
           "chapter": 25,
           "sequence": 298,
           "dimensions": {
@@ -159071,7 +159071,7 @@
             "map": 0,
             "header": "0x8F7C9C"
           },
-          "title": "Liquid Crystal · Capítulo 25 · santuario 299",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 19)",
           "chapter": 25,
           "sequence": 299,
           "dimensions": {
@@ -159295,7 +159295,7 @@
             "map": 1,
             "header": "0xA1D50C"
           },
-          "title": "Liquid Crystal · Capítulo 25 · cueva 300",
+          "title": "Liquid Crystal · Calle Victoria de Johto (Nivel 20)",
           "chapter": 25,
           "sequence": 300,
           "dimensions": {
@@ -159791,7 +159791,7 @@
             "map": 2,
             "header": "0xA08318"
           },
-          "title": "Liquid Crystal · Capítulo 26 · costa 301",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 1)",
           "chapter": 26,
           "sequence": 301,
           "dimensions": {
@@ -160274,7 +160274,7 @@
             "map": 0,
             "header": "0x8F990C"
           },
-          "title": "Liquid Crystal · Capítulo 26 · meseta 302",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 2)",
           "chapter": 26,
           "sequence": 302,
           "dimensions": {
@@ -160508,7 +160508,7 @@
             "map": 1,
             "header": "0xACBD58"
           },
-          "title": "Liquid Crystal · Capítulo 26 · poblado 303",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 3)",
           "chapter": 26,
           "sequence": 303,
           "dimensions": {
@@ -160742,7 +160742,7 @@
             "map": 2,
             "header": "0xACC330"
           },
-          "title": "Liquid Crystal · Capítulo 26 · ruta 304",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 4)",
           "chapter": 26,
           "sequence": 304,
           "dimensions": {
@@ -160976,7 +160976,7 @@
             "map": 3,
             "header": "0xAF649C"
           },
-          "title": "Liquid Crystal · Capítulo 26 · santuario 305",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 5)",
           "chapter": 26,
           "sequence": 305,
           "dimensions": {
@@ -161210,7 +161210,7 @@
             "map": 4,
             "header": "0xAF6A74"
           },
-          "title": "Liquid Crystal · Capítulo 26 · cueva 306",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 6)",
           "chapter": 26,
           "sequence": 306,
           "dimensions": {
@@ -161444,7 +161444,7 @@
             "map": 5,
             "header": "0xAF8D70"
           },
-          "title": "Liquid Crystal · Capítulo 26 · costa 307",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 7)",
           "chapter": 26,
           "sequence": 307,
           "dimensions": {
@@ -161678,7 +161678,7 @@
             "map": 6,
             "header": "0xAFD4E4"
           },
-          "title": "Liquid Crystal · Capítulo 26 · bosque 308",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 8)",
           "chapter": 26,
           "sequence": 308,
           "dimensions": {
@@ -161912,7 +161912,7 @@
             "map": 7,
             "header": "0xAFDABC"
           },
-          "title": "Liquid Crystal · Capítulo 26 · costa 309",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 9)",
           "chapter": 26,
           "sequence": 309,
           "dimensions": {
@@ -162297,7 +162297,7 @@
             "map": 8,
             "header": "0x772538"
           },
-          "title": "Liquid Crystal · Capítulo 26 · bosque 310",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 10)",
           "chapter": 26,
           "sequence": 310,
           "dimensions": {
@@ -162478,7 +162478,7 @@
             "map": 9,
             "header": "0x7F9A3C"
           },
-          "title": "Liquid Crystal · Capítulo 26 · instalación 311",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 11)",
           "chapter": 26,
           "sequence": 311,
           "dimensions": {
@@ -162663,7 +162663,7 @@
             "map": 10,
             "header": "0x84A020"
           },
-          "title": "Liquid Crystal · Capítulo 26 · meseta 312",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 12)",
           "chapter": 26,
           "sequence": 312,
           "dimensions": {
@@ -162914,7 +162914,7 @@
             "map": 0,
             "header": "0xB278B8"
           },
-          "title": "Liquid Crystal · Capítulo 27 · poblado 313",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 13)",
           "chapter": 27,
           "sequence": 313,
           "dimensions": {
@@ -163742,7 +163742,7 @@
             "map": 1,
             "header": "0x7F94D4"
           },
-          "title": "Liquid Crystal · Capítulo 27 · ruta 314",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 14)",
           "chapter": 27,
           "sequence": 314,
           "dimensions": {
@@ -163931,7 +163931,7 @@
             "map": 2,
             "header": "0x8430BC"
           },
-          "title": "Liquid Crystal · Capítulo 27 · santuario 315",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 15)",
           "chapter": 27,
           "sequence": 315,
           "dimensions": {
@@ -164124,7 +164124,7 @@
             "map": 3,
             "header": "0x882070"
           },
-          "title": "Liquid Crystal · Capítulo 27 · cueva 316",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 16)",
           "chapter": 27,
           "sequence": 316,
           "dimensions": {
@@ -164419,7 +164419,7 @@
             "map": 0,
             "header": "0x801134"
           },
-          "title": "Liquid Crystal · Capítulo 27 · costa 317",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 17)",
           "chapter": 27,
           "sequence": 317,
           "dimensions": {
@@ -164571,7 +164571,7 @@
             "map": 1,
             "header": "0x7D7848"
           },
-          "title": "Liquid Crystal · Capítulo 27 · bosque 318",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 18)",
           "chapter": 27,
           "sequence": 318,
           "dimensions": {
@@ -164751,7 +164751,7 @@
             "map": 2,
             "header": "0x88BAA4"
           },
-          "title": "Liquid Crystal · Capítulo 27 · instalación 319",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 19)",
           "chapter": 27,
           "sequence": 319,
           "dimensions": {
@@ -164976,7 +164976,7 @@
             "map": 0,
             "header": "0xC04B60"
           },
-          "title": "Liquid Crystal · Capítulo 27 · meseta 320",
+          "title": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 20)",
           "chapter": 27,
           "sequence": 320,
           "dimensions": {
@@ -165155,7 +165155,7 @@
             "map": 1,
             "header": "0xC0A3A4"
           },
-          "title": "Liquid Crystal · Capítulo 27 · poblado 321",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (1)",
           "chapter": 27,
           "sequence": 321,
           "dimensions": {
@@ -165307,7 +165307,7 @@
             "map": 2,
             "header": "0xC050FC"
           },
-          "title": "Liquid Crystal · Capítulo 27 · ruta 322",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (2)",
           "chapter": 27,
           "sequence": 322,
           "dimensions": {
@@ -165515,7 +165515,7 @@
             "map": 3,
             "header": "0xC0A51C"
           },
-          "title": "Liquid Crystal · Capítulo 27 · santuario 323",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (3)",
           "chapter": 27,
           "sequence": 323,
           "dimensions": {
@@ -165723,7 +165723,7 @@
             "map": 4,
             "header": "0xC08CB4"
           },
-          "title": "Liquid Crystal · Capítulo 27 · cueva 324",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (4)",
           "chapter": 27,
           "sequence": 324,
           "dimensions": {
@@ -165931,7 +165931,7 @@
             "map": 5,
             "header": "0xC1174C"
           },
-          "title": "Liquid Crystal · Capítulo 28 · costa 325",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (5)",
           "chapter": 28,
           "sequence": 325,
           "dimensions": {
@@ -166534,7 +166534,7 @@
             "map": 0,
             "header": "0xC0B374"
           },
-          "title": "Liquid Crystal · Capítulo 28 · bosque 326",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (6)",
           "chapter": 28,
           "sequence": 326,
           "dimensions": {
@@ -166830,7 +166830,7 @@
             "map": 1,
             "header": "0xC0B7A0"
           },
-          "title": "Liquid Crystal · Capítulo 28 · instalación 327",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (7)",
           "chapter": 28,
           "sequence": 327,
           "dimensions": {
@@ -167028,7 +167028,7 @@
             "map": 2,
             "header": "0xC0B918"
           },
-          "title": "Liquid Crystal · Capítulo 28 · meseta 328",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (8)",
           "chapter": 28,
           "sequence": 328,
           "dimensions": {
@@ -167180,7 +167180,7 @@
             "map": 3,
             "header": "0xC0BA90"
           },
-          "title": "Liquid Crystal · Capítulo 28 · poblado 329",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (9)",
           "chapter": 28,
           "sequence": 329,
           "dimensions": {
@@ -167332,7 +167332,7 @@
             "map": 4,
             "header": "0xC0BC08"
           },
-          "title": "Liquid Crystal · Capítulo 28 · ruta 330",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (10)",
           "chapter": 28,
           "sequence": 330,
           "dimensions": {
@@ -167484,7 +167484,7 @@
             "map": 5,
             "header": "0xC185DC"
           },
-          "title": "Liquid Crystal · Capítulo 28 · santuario 331",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (11)",
           "chapter": 28,
           "sequence": 331,
           "dimensions": {
@@ -167801,7 +167801,7 @@
             "map": 6,
             "header": "0xC1BD1C"
           },
-          "title": "Liquid Crystal · Capítulo 28 · cueva 332",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (12)",
           "chapter": 28,
           "sequence": 332,
           "dimensions": {
@@ -168130,7 +168130,7 @@
             "map": 7,
             "header": "0xC22A40"
           },
-          "title": "Liquid Crystal · Capítulo 28 · costa 333",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (13)",
           "chapter": 28,
           "sequence": 333,
           "dimensions": {
@@ -168479,7 +168479,7 @@
             "map": 8,
             "header": "0xC288FC"
           },
-          "title": "Liquid Crystal · Capítulo 28 · bosque 334",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (14)",
           "chapter": 28,
           "sequence": 334,
           "dimensions": {
@@ -168828,7 +168828,7 @@
             "map": 0,
             "header": "0x350618"
           },
-          "title": "Liquid Crystal · Capítulo 28 · ruta 335",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (15)",
           "chapter": 28,
           "sequence": 335,
           "dimensions": {
@@ -169250,7 +169250,7 @@
             "map": 1,
             "header": "0x350634"
           },
-          "title": "Liquid Crystal · Capítulo 28 · ruta 336",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (16)",
           "chapter": 28,
           "sequence": 336,
           "dimensions": {
@@ -169859,7 +169859,7 @@
             "map": 2,
             "header": "0x350650"
           },
-          "title": "Liquid Crystal · Capítulo 29 · santuario 337",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (17)",
           "chapter": 29,
           "sequence": 337,
           "dimensions": {
@@ -170436,7 +170436,7 @@
             "map": 3,
             "header": "0x35066C"
           },
-          "title": "Liquid Crystal · Capítulo 29 · ruta 338",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (18)",
           "chapter": 29,
           "sequence": 338,
           "dimensions": {
@@ -171204,7 +171204,7 @@
             "map": 4,
             "header": "0x350688"
           },
-          "title": "Liquid Crystal · Capítulo 29 · costa 339",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (19)",
           "chapter": 29,
           "sequence": 339,
           "dimensions": {
@@ -171758,7 +171758,7 @@
             "map": 5,
             "header": "0x3506A4"
           },
-          "title": "Liquid Crystal · Capítulo 29 · bosque 340",
+          "title": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (20)",
           "chapter": 29,
           "sequence": 340,
           "dimensions": {
@@ -172525,7 +172525,7 @@
             "map": 6,
             "header": "0x3506C0"
           },
-          "title": "Liquid Crystal · Capítulo 29 · costa 341",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (1)",
           "chapter": 29,
           "sequence": 341,
           "dimensions": {
@@ -173123,7 +173123,7 @@
             "map": 7,
             "header": "0x3506DC"
           },
-          "title": "Liquid Crystal · Capítulo 29 · meseta 342",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (2)",
           "chapter": 29,
           "sequence": 342,
           "dimensions": {
@@ -173871,7 +173871,7 @@
             "map": 8,
             "header": "0x3506F8"
           },
-          "title": "Liquid Crystal · Capítulo 29 · poblado 343",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (3)",
           "chapter": 29,
           "sequence": 343,
           "dimensions": {
@@ -174236,7 +174236,7 @@
             "map": 9,
             "header": "0x350714"
           },
-          "title": "Liquid Crystal · Capítulo 29 · ruta 344",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (4)",
           "chapter": 29,
           "sequence": 344,
           "dimensions": {
@@ -174470,7 +174470,7 @@
             "map": 10,
             "header": "0x350730"
           },
-          "title": "Liquid Crystal · Capítulo 29 · santuario 345",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (5)",
           "chapter": 29,
           "sequence": 345,
           "dimensions": {
@@ -175235,7 +175235,7 @@
             "map": 11,
             "header": "0x35074C"
           },
-          "title": "Liquid Crystal · Capítulo 29 · cueva 346",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (6)",
           "chapter": 29,
           "sequence": 346,
           "dimensions": {
@@ -175556,7 +175556,7 @@
             "map": 0,
             "header": "0x350784"
           },
-          "title": "Liquid Crystal · Capítulo 29 · santuario 347",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (7)",
           "chapter": 29,
           "sequence": 347,
           "dimensions": {
@@ -176227,7 +176227,7 @@
             "map": 1,
             "header": "0x3507A0"
           },
-          "title": "Liquid Crystal · Capítulo 29 · bosque 348",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (8)",
           "chapter": 29,
           "sequence": 348,
           "dimensions": {
@@ -176826,7 +176826,7 @@
             "map": 2,
             "header": "0x3507BC"
           },
-          "title": "Liquid Crystal · Capítulo 30 · costa 349",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (9)",
           "chapter": 30,
           "sequence": 349,
           "dimensions": {
@@ -177610,7 +177610,7 @@
             "map": 3,
             "header": "0x3507D8"
           },
-          "title": "Liquid Crystal · Capítulo 30 · meseta 350",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (10)",
           "chapter": 30,
           "sequence": 350,
           "dimensions": {
@@ -178073,7 +178073,7 @@
             "map": 4,
             "header": "0x3507F4"
           },
-          "title": "Liquid Crystal · Capítulo 30 · instalación 351",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (11)",
           "chapter": 30,
           "sequence": 351,
           "dimensions": {
@@ -178776,7 +178776,7 @@
             "map": 5,
             "header": "0x350810"
           },
-          "title": "Liquid Crystal · Capítulo 30 · ruta 352",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (12)",
           "chapter": 30,
           "sequence": 352,
           "dimensions": {
@@ -179312,7 +179312,7 @@
             "map": 6,
             "header": "0x35082C"
           },
-          "title": "Liquid Crystal · Capítulo 30 · santuario 353",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (13)",
           "chapter": 30,
           "sequence": 353,
           "dimensions": {
@@ -179806,7 +179806,7 @@
             "map": 7,
             "header": "0x350848"
           },
-          "title": "Liquid Crystal · Capítulo 30 · cueva 354",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (14)",
           "chapter": 30,
           "sequence": 354,
           "dimensions": {
@@ -180666,7 +180666,7 @@
             "map": 8,
             "header": "0x350864"
           },
-          "title": "Liquid Crystal · Capítulo 30 · costa 355",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (15)",
           "chapter": 30,
           "sequence": 355,
           "dimensions": {
@@ -181111,7 +181111,7 @@
             "map": 9,
             "header": "0x350880"
           },
-          "title": "Liquid Crystal · Capítulo 30 · bosque 356",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (16)",
           "chapter": 30,
           "sequence": 356,
           "dimensions": {
@@ -181522,7 +181522,7 @@
             "map": 10,
             "header": "0x35089C"
           },
-          "title": "Liquid Crystal · Capítulo 30 · costa 357",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (17)",
           "chapter": 30,
           "sequence": 357,
           "dimensions": {
@@ -182140,7 +182140,7 @@
             "map": 11,
             "header": "0x3508B8"
           },
-          "title": "Liquid Crystal · Capítulo 30 · meseta 358",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (18)",
           "chapter": 30,
           "sequence": 358,
           "dimensions": {
@@ -182677,7 +182677,7 @@
             "map": 12,
             "header": "0x3508D4"
           },
-          "title": "Liquid Crystal · Capítulo 30 · poblado 359",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (19)",
           "chapter": 30,
           "sequence": 359,
           "dimensions": {
@@ -183009,7 +183009,7 @@
             "map": 13,
             "header": "0x3508F0"
           },
-          "title": "Liquid Crystal · Capítulo 30 · ruta 360",
+          "title": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (20)",
           "chapter": 30,
           "sequence": 360,
           "dimensions": {
@@ -183501,7 +183501,7 @@
             "map": 14,
             "header": "0x35090C"
           },
-          "title": "Liquid Crystal · Capítulo 31 · santuario 361",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (1)",
           "chapter": 31,
           "sequence": 361,
           "dimensions": {
@@ -183955,7 +183955,7 @@
             "map": 15,
             "header": "0x350928"
           },
-          "title": "Liquid Crystal · Capítulo 31 · cueva 362",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (2)",
           "chapter": 31,
           "sequence": 362,
           "dimensions": {
@@ -184766,7 +184766,7 @@
             "map": 16,
             "header": "0x350944"
           },
-          "title": "Liquid Crystal · Capítulo 31 · costa 363",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (3)",
           "chapter": 31,
           "sequence": 363,
           "dimensions": {
@@ -185203,7 +185203,7 @@
             "map": 17,
             "header": "0x350960"
           },
-          "title": "Liquid Crystal · Capítulo 31 · bosque 364",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (4)",
           "chapter": 31,
           "sequence": 364,
           "dimensions": {
@@ -186104,7 +186104,7 @@
             "map": 18,
             "header": "0x35097C"
           },
-          "title": "Liquid Crystal · Capítulo 31 · instalación 365",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (5)",
           "chapter": 31,
           "sequence": 365,
           "dimensions": {
@@ -186536,7 +186536,7 @@
             "map": 19,
             "header": "0x350998"
           },
-          "title": "Liquid Crystal · Capítulo 31 · meseta 366",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (6)",
           "chapter": 31,
           "sequence": 366,
           "dimensions": {
@@ -187174,7 +187174,7 @@
             "map": 20,
             "header": "0x3509B4"
           },
-          "title": "Liquid Crystal · Capítulo 31 · poblado 367",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (7)",
           "chapter": 31,
           "sequence": 367,
           "dimensions": {
@@ -187603,7 +187603,7 @@
             "map": 21,
             "header": "0x3509D0"
           },
-          "title": "Liquid Crystal · Capítulo 31 · ruta 368",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (8)",
           "chapter": 31,
           "sequence": 368,
           "dimensions": {
@@ -187990,7 +187990,7 @@
             "map": 22,
             "header": "0x3509EC"
           },
-          "title": "Liquid Crystal · Capítulo 31 · santuario 369",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (9)",
           "chapter": 31,
           "sequence": 369,
           "dimensions": {
@@ -188999,7 +188999,7 @@
             "map": 0,
             "header": "0x350A24"
           },
-          "title": "Liquid Crystal · Capítulo 31 · cueva 370",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (10)",
           "chapter": 31,
           "sequence": 370,
           "dimensions": {
@@ -189616,7 +189616,7 @@
             "map": 1,
             "header": "0x350A40"
           },
-          "title": "Liquid Crystal · Capítulo 31 · costa 371",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (11)",
           "chapter": 31,
           "sequence": 371,
           "dimensions": {
@@ -190045,7 +190045,7 @@
             "map": 2,
             "header": "0x350A5C"
           },
-          "title": "Liquid Crystal · Capítulo 31 · bosque 372",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (12)",
           "chapter": 31,
           "sequence": 372,
           "dimensions": {
@@ -190655,7 +190655,7 @@
             "map": 3,
             "header": "0x350A78"
           },
-          "title": "Liquid Crystal · Capítulo 32 · instalación 373",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (13)",
           "chapter": 32,
           "sequence": 373,
           "dimensions": {
@@ -191217,7 +191217,7 @@
             "map": 4,
             "header": "0x350A94"
           },
-          "title": "Liquid Crystal · Capítulo 32 · meseta 374",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (14)",
           "chapter": 32,
           "sequence": 374,
           "dimensions": {
@@ -191552,7 +191552,7 @@
             "map": 5,
             "header": "0x350AB0"
           },
-          "title": "Liquid Crystal · Capítulo 32 · poblado 375",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (15)",
           "chapter": 32,
           "sequence": 375,
           "dimensions": {
@@ -192905,7 +192905,7 @@
             "map": 6,
             "header": "0x350ACC"
           },
-          "title": "Liquid Crystal · Capítulo 32 · meseta 376",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (16)",
           "chapter": 32,
           "sequence": 376,
           "dimensions": {
@@ -193162,7 +193162,7 @@
             "map": 7,
             "header": "0x350AE8"
           },
-          "title": "Liquid Crystal · Capítulo 32 · santuario 377",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (17)",
           "chapter": 32,
           "sequence": 377,
           "dimensions": {
@@ -193714,7 +193714,7 @@
             "map": 8,
             "header": "0x350B04"
           },
-          "title": "Liquid Crystal · Capítulo 32 · cueva 378",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (18)",
           "chapter": 32,
           "sequence": 378,
           "dimensions": {
@@ -194103,7 +194103,7 @@
             "map": 9,
             "header": "0x350B20"
           },
-          "title": "Liquid Crystal · Capítulo 32 · santuario 379",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (19)",
           "chapter": 32,
           "sequence": 379,
           "dimensions": {
@@ -194550,7 +194550,7 @@
             "map": 10,
             "header": "0x350B3C"
           },
-          "title": "Liquid Crystal · Capítulo 32 · bosque 380",
+          "title": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (20)",
           "chapter": 32,
           "sequence": 380,
           "dimensions": {
@@ -195224,7 +195224,7 @@
             "map": 11,
             "header": "0x350B58"
           },
-          "title": "Liquid Crystal · Capítulo 32 · instalación 381",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (1)",
           "chapter": 32,
           "sequence": 381,
           "dimensions": {
@@ -195577,7 +195577,7 @@
             "map": 12,
             "header": "0x350B74"
           },
-          "title": "Liquid Crystal · Capítulo 32 · meseta 382",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (2)",
           "chapter": 32,
           "sequence": 382,
           "dimensions": {
@@ -196684,7 +196684,7 @@
             "map": 13,
             "header": "0x350B90"
           },
-          "title": "Liquid Crystal · Capítulo 32 · poblado 383",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (3)",
           "chapter": 32,
           "sequence": 383,
           "dimensions": {
@@ -197693,7 +197693,7 @@
             "map": 14,
             "header": "0x350BAC"
           },
-          "title": "Liquid Crystal · Capítulo 32 · ruta 384",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (4)",
           "chapter": 32,
           "sequence": 384,
           "dimensions": {
@@ -198076,7 +198076,7 @@
             "map": 15,
             "header": "0x350BC8"
           },
-          "title": "Liquid Crystal · Capítulo 33 · santuario 385",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (5)",
           "chapter": 33,
           "sequence": 385,
           "dimensions": {
@@ -198499,7 +198499,7 @@
             "map": 16,
             "header": "0x350BE4"
           },
-          "title": "Liquid Crystal · Capítulo 33 · cueva 386",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (6)",
           "chapter": 33,
           "sequence": 386,
           "dimensions": {
@@ -199532,7 +199532,7 @@
             "map": 0,
             "header": "0x350C1C"
           },
-          "title": "Liquid Crystal · Capítulo 33 · costa 387",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (7)",
           "chapter": 33,
           "sequence": 387,
           "dimensions": {
@@ -199921,7 +199921,7 @@
             "map": 1,
             "header": "0x350C38"
           },
-          "title": "Liquid Crystal · Capítulo 33 · cueva 388",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (8)",
           "chapter": 33,
           "sequence": 388,
           "dimensions": {
@@ -200522,7 +200522,7 @@
             "map": 2,
             "header": "0x350C54"
           },
-          "title": "Liquid Crystal · Capítulo 33 · costa 389",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (9)",
           "chapter": 33,
           "sequence": 389,
           "dimensions": {
@@ -200920,7 +200920,7 @@
             "map": 3,
             "header": "0x350C70"
           },
-          "title": "Liquid Crystal · Capítulo 33 · bosque 390",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (10)",
           "chapter": 33,
           "sequence": 390,
           "dimensions": {
@@ -201467,7 +201467,7 @@
             "map": 4,
             "header": "0x350C8C"
           },
-          "title": "Liquid Crystal · Capítulo 33 · instalación 391",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (11)",
           "chapter": 33,
           "sequence": 391,
           "dimensions": {
@@ -201976,7 +201976,7 @@
             "map": 0,
             "header": "0x350CC4"
           },
-          "title": "Liquid Crystal · Capítulo 33 · ruta 392",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (12)",
           "chapter": 33,
           "sequence": 392,
           "dimensions": {
@@ -202588,7 +202588,7 @@
             "map": 1,
             "header": "0x350CE0"
           },
-          "title": "Liquid Crystal · Capítulo 33 · santuario 393",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (13)",
           "chapter": 33,
           "sequence": 393,
           "dimensions": {
@@ -203420,7 +203420,7 @@
             "map": 2,
             "header": "0x350CFC"
           },
-          "title": "Liquid Crystal · Capítulo 33 · ruta 394",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (14)",
           "chapter": 33,
           "sequence": 394,
           "dimensions": {
@@ -203982,7 +203982,7 @@
             "map": 3,
             "header": "0x350D18"
           },
-          "title": "Liquid Crystal · Capítulo 33 · costa 395",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (15)",
           "chapter": 33,
           "sequence": 395,
           "dimensions": {
@@ -204568,7 +204568,7 @@
             "map": 4,
             "header": "0x350D34"
           },
-          "title": "Liquid Crystal · Capítulo 33 · bosque 396",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (16)",
           "chapter": 33,
           "sequence": 396,
           "dimensions": {
@@ -205502,7 +205502,7 @@
             "map": 5,
             "header": "0x8498EC"
           },
-          "title": "Liquid Crystal · Capítulo 34 · costa 397",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (17)",
           "chapter": 34,
           "sequence": 397,
           "dimensions": {
@@ -206019,7 +206019,7 @@
             "map": 6,
             "header": "0x856880"
           },
-          "title": "Liquid Crystal · Capítulo 34 · bosque 398",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (18)",
           "chapter": 34,
           "sequence": 398,
           "dimensions": {
@@ -207115,7 +207115,7 @@
             "map": 7,
             "header": "0x8772B0"
           },
-          "title": "Liquid Crystal · Capítulo 34 · poblado 399",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (19)",
           "chapter": 34,
           "sequence": 399,
           "dimensions": {
@@ -207561,7 +207561,7 @@
             "map": 8,
             "header": "0x879D30"
           },
-          "title": "Liquid Crystal · Capítulo 34 · meseta 400",
+          "title": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (20)",
           "chapter": 34,
           "sequence": 400,
           "dimensions": {
@@ -208921,7 +208921,7 @@
             "map": 9,
             "header": "0x878B2C"
           },
-          "title": "Liquid Crystal · Capítulo 34 · santuario 401",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (1)",
           "chapter": 34,
           "sequence": 401,
           "dimensions": {
@@ -209446,7 +209446,7 @@
             "map": 0,
             "header": "0x8E7AF8"
           },
-          "title": "Liquid Crystal · Capítulo 34 · ruta 402",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (2)",
           "chapter": 34,
           "sequence": 402,
           "dimensions": {
@@ -209706,7 +209706,7 @@
             "map": 1,
             "header": "0x95E050"
           },
-          "title": "Liquid Crystal · Capítulo 34 · costa 403",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (3)",
           "chapter": 34,
           "sequence": 403,
           "dimensions": {
@@ -210032,7 +210032,7 @@
             "map": 2,
             "header": "0x9666F0"
           },
-          "title": "Liquid Crystal · Capítulo 34 · bosque 404",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (4)",
           "chapter": 34,
           "sequence": 404,
           "dimensions": {
@@ -210557,7 +210557,7 @@
             "map": 0,
             "header": "0x9D621C"
           },
-          "title": "Liquid Crystal · Capítulo 34 · costa 405",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (5)",
           "chapter": 34,
           "sequence": 405,
           "dimensions": {
@@ -211268,7 +211268,7 @@
             "map": 1,
             "header": "0x9C8FE8"
           },
-          "title": "Liquid Crystal · Capítulo 34 · meseta 406",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (6)",
           "chapter": 34,
           "sequence": 406,
           "dimensions": {
@@ -211798,7 +211798,7 @@
             "map": 2,
             "header": "0xA05634"
           },
-          "title": "Liquid Crystal · Capítulo 34 · instalación 407",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (7)",
           "chapter": 34,
           "sequence": 407,
           "dimensions": {
@@ -212164,7 +212164,7 @@
             "map": 3,
             "header": "0xA0565C"
           },
-          "title": "Liquid Crystal · Capítulo 34 · santuario 408",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (8)",
           "chapter": 34,
           "sequence": 408,
           "dimensions": {
@@ -212638,7 +212638,7 @@
             "map": 4,
             "header": "0x9DF5FC"
           },
-          "title": "Liquid Crystal · Capítulo 35 · santuario 409",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (9)",
           "chapter": 35,
           "sequence": 409,
           "dimensions": {
@@ -212984,7 +212984,7 @@
             "map": 5,
             "header": "0xA0A590"
           },
-          "title": "Liquid Crystal · Capítulo 35 · cueva 410",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (10)",
           "chapter": 35,
           "sequence": 410,
           "dimensions": {
@@ -213424,7 +213424,7 @@
             "map": 6,
             "header": "0xA0DBA8"
           },
-          "title": "Liquid Crystal · Capítulo 35 · costa 411",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (11)",
           "chapter": 35,
           "sequence": 411,
           "dimensions": {
@@ -213840,7 +213840,7 @@
             "map": 7,
             "header": "0xA18464"
           },
-          "title": "Liquid Crystal · Capítulo 35 · bosque 412",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (12)",
           "chapter": 35,
           "sequence": 412,
           "dimensions": {
@@ -214411,7 +214411,7 @@
             "map": 8,
             "header": "0xA1C2B0"
           },
-          "title": "Liquid Crystal · Capítulo 35 · costa 413",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (13)",
           "chapter": 35,
           "sequence": 413,
           "dimensions": {
@@ -214773,7 +214773,7 @@
             "map": 9,
             "header": "0x91450C"
           },
-          "title": "Liquid Crystal · Capítulo 35 · bosque 414",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (14)",
           "chapter": 35,
           "sequence": 414,
           "dimensions": {
@@ -215913,7 +215913,7 @@
             "map": 10,
             "header": "0xA54C8C"
           },
-          "title": "Liquid Crystal · Capítulo 35 · instalación 415",
+          "title": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (15)",
           "chapter": 35,
           "sequence": 415,
           "dimensions": {
@@ -216320,7 +216320,7 @@
             "map": 11,
             "header": "0xA26D1C"
           },
-          "title": "Liquid Crystal · Capítulo 35 · meseta 416",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (1)",
           "chapter": 35,
           "sequence": 416,
           "dimensions": {
@@ -216768,7 +216768,7 @@
             "map": 12,
             "header": "0xAD23C0"
           },
-          "title": "Liquid Crystal · Capítulo 35 · santuario 417",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (2)",
           "chapter": 35,
           "sequence": 417,
           "dimensions": {
@@ -217194,7 +217194,7 @@
             "map": 13,
             "header": "0xA1DD88"
           },
-          "title": "Liquid Crystal · Capítulo 35 · meseta 418",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (3)",
           "chapter": 35,
           "sequence": 418,
           "dimensions": {
@@ -217634,7 +217634,7 @@
             "map": 14,
             "header": "0xAF86BC"
           },
-          "title": "Liquid Crystal · Capítulo 35 · costa 419",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (4)",
           "chapter": 35,
           "sequence": 419,
           "dimensions": {
@@ -218133,7 +218133,7 @@
             "map": 15,
             "header": "0xB19EE0"
           },
-          "title": "Liquid Crystal · Capítulo 35 · bosque 420",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (5)",
           "chapter": 35,
           "sequence": 420,
           "dimensions": {
@@ -218760,7 +218760,7 @@
             "map": 16,
             "header": "0xB18970"
           },
-          "title": "Liquid Crystal · Capítulo 36 · costa 421",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (6)",
           "chapter": 36,
           "sequence": 421,
           "dimensions": {
@@ -219356,7 +219356,7 @@
             "map": 17,
             "header": "0xB1E89C"
           },
-          "title": "Liquid Crystal · Capítulo 36 · bosque 422",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (7)",
           "chapter": 36,
           "sequence": 422,
           "dimensions": {
@@ -219884,7 +219884,7 @@
             "map": 18,
             "header": "0xB29130"
           },
-          "title": "Liquid Crystal · Capítulo 36 · poblado 423",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (8)",
           "chapter": 36,
           "sequence": 423,
           "dimensions": {
@@ -220379,7 +220379,7 @@
             "map": 19,
             "header": "0xB30B88"
           },
-          "title": "Liquid Crystal · Capítulo 36 · meseta 424",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (9)",
           "chapter": 36,
           "sequence": 424,
           "dimensions": {
@@ -220852,7 +220852,7 @@
             "map": 20,
             "header": "0xB4A100"
           },
-          "title": "Liquid Crystal · Capítulo 36 · poblado 425",
+          "title": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (10)",
           "chapter": 36,
           "sequence": 425,
           "dimensions": {
@@ -221516,7 +221516,7 @@
             "map": 21,
             "header": "0xB11A30"
           },
-          "title": "Liquid Crystal · Capítulo 36 · cueva 426",
+          "title": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 1)",
           "chapter": 36,
           "sequence": 426,
           "dimensions": {
@@ -221936,7 +221936,7 @@
             "map": 22,
             "header": "0xC0C90C"
           },
-          "title": "Liquid Crystal · Capítulo 36 · santuario 427",
+          "title": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 2)",
           "chapter": 36,
           "sequence": 427,
           "dimensions": {
@@ -222439,7 +222439,7 @@
             "map": 23,
             "header": "0xC0DF9C"
           },
-          "title": "Liquid Crystal · Capítulo 36 · bosque 428",
+          "title": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 3)",
           "chapter": 36,
           "sequence": 428,
           "dimensions": {
@@ -222958,7 +222958,7 @@
             "map": 24,
             "header": "0xC15B28"
           },
-          "title": "Liquid Crystal · Capítulo 36 · instalación 429",
+          "title": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 4)",
           "chapter": 36,
           "sequence": 429,
           "dimensions": {
@@ -223400,7 +223400,7 @@
             "map": 25,
             "header": "0xC24978"
           },
-          "title": "Liquid Crystal · Capítulo 36 · bosque 430",
+          "title": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 5)",
           "chapter": 36,
           "sequence": 430,
           "dimensions": {
@@ -223873,7 +223873,7 @@
             "map": 26,
             "header": "0xC26134"
           },
-          "title": "Liquid Crystal · Capítulo 36 · instalación 431",
+          "title": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 6)",
           "chapter": 36,
           "sequence": 431,
           "dimensions": {
@@ -224447,7 +224447,7 @@
             "map": 27,
             "header": "0xC2FC0C"
           },
-          "title": "Liquid Crystal · Capítulo 36 · meseta 432",
+          "title": "Liquid Crystal · Cima del Monte Plateado (Duelo contra Red)",
           "chapter": 36,
           "sequence": 432,
           "dimensions": {

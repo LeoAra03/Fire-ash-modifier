@@ -175,8 +175,8 @@ const DIR_NAMES = { 2: "abajo", 4: "izq.", 6: "der.", 8: "arriba" };
 
 // Tabla de comandos RMXP → español. detail(params) devuelve texto corto.
 export const COMMANDS = {
-  101: { t: "Mostrar texto", d: (p) => faceInfo(p) },
-  401: { t: "Texto", d: (p) => trunc(rstr(p[0])) },
+  101: { t: "Mostrar texto", d: (p) => (isFireAshText101(p) ? "diálogo: " + trunc(rstr(p[0]), 58) : faceInfo(p)) },
+  401: { t: "Texto (misma caja)", d: (p) => trunc(rstr(p[0]), 58) },
   102: { t: "Mostrar opciones", d: (p) => (p[0] || []).map(rstr).join(" / ") },
   402: { t: "Cuando: …", d: (p) => trunc(rstr(p[1] ?? p[0])) },
   403: { t: "Cuando se cancela", d: () => "" },
@@ -277,6 +277,149 @@ function trunc(s, n = 60) {
   s = String(s ?? "");
   return s.length > n ? s.slice(0, n) + "…" : s;
 }
+/**
+ * Fire Ash usa Pokémon Essentials v19: el comando 101 lleva UN parámetro que es
+ * la primera línea del diálogo y los 401 siguientes se le añaden con un espacio
+ * (Data/Scripts → Interpreter_Commands#command_101). El formato RMXP clásico
+ * (4 parámetros: cara, índice, lado, fondo) casi no aparece en este juego.
+ * Antes el editor mostraba esa línea como si fuera la CARA del NPC, así que los
+ * diálogos parecían salir a nombre del NPC equivocado.
+ */
+export function isFireAshText101(params) {
+  const p = params || [];
+  if (p.length === 1) return true;
+  // 4+ params: si el primero no es una cara conocida y el cuarto es un número
+  // de fondo (0..2), sigue siendo formato RMXP.
+  return false;
+}
+
+/** El mensaje completo de un diálogo: 101 + sus 401 de continuación. */
+export function messageBlockOf(list, index) {
+  const first = list[index];
+  if (!first) return null;
+  const code = Number(first.getIvar ? first.getIvar("code") : first.code);
+  if (code !== 101 && code !== 401) return null;
+  // Un bloque = el 101 más los 401 que le siguen. Un 101 nuevo abre OTRA caja
+  // (en el motor pone message_end = "\1" y el texto sale en otra ventana).
+  let start = index;
+  const codeAt = (k) => Number(list[k].getIvar ? list[k].getIvar("code") : list[k].code);
+  if (codeAt(index) === 401) {
+    while (start > 0 && codeAt(start) === 401) start--;
+  }
+  const out = [];
+  for (let i = start; i < list.length; i++) {
+    const o = list[i];
+    const c = codeAt(i);
+    if (c === 401 && !out.length) continue;
+    if (c !== 401 && c !== 101) break;
+    if (c === 101 && out.length) break; // nueva caja
+    const params = o.getIvar ? o.getIvar("parameters") : o.parameters;
+    out.push({ i, obj: o, code: c, params, rs: params?.[0] instanceof RString ? params[0] : null });
+  }
+  return out.length ? out : null;
+}
+
+/** Junta el texto del bloque con el MISMO algoritmo que el motor del juego. */
+export function messageTextOf(block) {
+  let msg = "";
+  const head = block[0];
+  if (head?.code === 101) {
+    if (isFireAshText101(head.params)) msg = rstr(head.params[0]);
+    else {
+      // formato RMXP: la primera línea real está en el 401 siguiente
+      msg = "";
+    }
+  }
+  for (const part of block) {
+    if (part.code !== 401) continue;
+    const t = rstr(part.params[0]);
+    if (msg !== "" && t !== "" && !msg.endsWith(" ")) msg += " ";
+    msg += t;
+  }
+  return msg;
+}
+
+/** ¿El texto lleva un nombre de personaje («Nombre: …» o «\sp[Nombre]»)? */
+export function speakerOf(text) {
+  const s = String(text ?? "");
+  const sp = s.match(/^\\sp\[([^\]]{1,28})\]\s*/);
+  if (sp) return { name: sp[1], rest: s.slice(sp[0].length) };
+  const m = s.match(/^\s*([^:\n]{2,28}?)\s*[:—]\s+/);
+  if (m && !/^[0-9]/.test(m[1]) && m[1].split(/\s+/).length <= 4) {
+    return { name: m[1].trim(), rest: s.slice(m[0].length) };
+  }
+  return { name: "", rest: s };
+}
+
+/**
+ * Ancho visible de un texto de Essentials (los códigos \b \r \c[n] \v[n] \PN
+ * no ocupan lugar en la caja).
+ */
+export function visibleWidth(text) {
+  return String(text ?? "")
+    .replace(/\\sp\[[^\]]*\]/g, "")
+    .replace(/\\[cv]\[\d+\]/g, "")
+    .replace(/\\[a-zA-Z]+/g, "").length;
+}
+
+/**
+ * Envuelve el texto como lo hará la caja del juego (ancho en caracteres).
+ * Devuelve las líneas que se verán, respetando los saltos explícitos (\n).
+ */
+export function wrapMessage(text, cols = 53, maxLines = Infinity) {
+  const out = [];
+  for (const raw of String(text ?? "").split(/\\n/)) {
+    const words = raw.split(/ +/);
+    let line = "";
+    for (const w of words) {
+      if (!line.length) { line = w; continue; }
+      if (visibleWidth(line) + 1 + visibleWidth(w) <= cols) line += " " + w;
+      else { out.push(line); line = w; }
+    }
+    out.push(line);
+  }
+  return maxLines === Infinity ? out : out.slice(0, maxLines);
+}
+
+/**
+ * Reajusta el texto a la caja con saltos explícitos (\n), de forma que el juego
+ * muestre exactamente lo que enseña la vista previa del editor. Devuelve
+ * { texto, lineas, paginas }.
+ */
+export function reflowMessage(text, cols = 53, linesPerBox = 2) {
+  const lines = wrapMessage(text, cols);
+  const paginas = [];
+  for (let i = 0; i < lines.length; i += linesPerBox) paginas.push(lines.slice(i, i + linesPerBox));
+  return { texto: lines.join("\\n"), lineas: lines, paginas };
+}
+
+/**
+ * Escribe el diálogo de vuelta al mapa.
+ * Fire Ash une el parámetro 0 del 101 con los 401 siguientes: por eso el editor
+ * guarda TODO el mensaje en el 101 y retira los 401 sobrantes (mismo texto, sin
+ * riesgo de que el motor añada espacios raros). Devuelve cuántos comandos quitó.
+ */
+export function applyDialogueText(block, speaker, body) {
+  if (!block?.length) return 0;
+  const name = String(speaker ?? "").trim();
+  const full = (name ? `\\sp[${name}]` : "") + String(body ?? "");
+  const head = block[0];
+  const params = head.params;
+  if (params?.[0] instanceof RString) params[0].text = full;
+  else if (params) params[0] = RString.fromText(full);
+  else return 0;
+  const extras = block.slice(1).map((b) => b.obj).filter(Boolean);
+  return extras.length;
+}
+
+/** Texto troceado en líneas de caja (lo que el jugador verá, "\n" incluidos). */
+export function pageMessage(text, cols = 53, linesPerBox = 2) {
+  const lines = wrapMessage(text, cols);
+  const pages = [];
+  for (let i = 0; i < lines.length; i += linesPerBox) pages.push(lines.slice(i, i + linesPerBox));
+  return pages;
+}
+
 function faceInfo(p) {
   const bits = [];
   if (rstr(p[0])) bits.push("cara: " + rstr(p[0]));
@@ -361,7 +504,7 @@ function condBranchText(p) {
 }
 
 // --- Texto editable de un comando -----------------------------------------------
-export const EDITABLE_TEXT = new Set([401, 102, 402, 108, 408, 355, 655, 118, 119, 320, 122]);
+export const EDITABLE_TEXT = new Set([101, 401, 102, 402, 108, 408, 355, 655, 118, 119, 320, 122]);
 export function getCommandStrings(code, params) {
   // Devuelve lista de {i, sub, rstring} editables dentro de params (normalmente 1)
   const out = [];
@@ -370,6 +513,10 @@ export function getCommandStrings(code, params) {
     if (v instanceof RString) out.push({ i, sub, rs: v });
   };
   switch (code) {
+    case 101:
+      // Fire Ash: el parámetro 0 es la PRIMERA LÍNEA del diálogo (editable).
+      if (isFireAshText101(params)) push(0);
+      break;
     case 401: case 108: case 408: case 355: case 655: case 118: case 119: case 320:
       push(code === 320 ? 2 : 0); break;
     case 102:

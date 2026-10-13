@@ -3,172 +3,172 @@
   "switches": "700-731",
   "colocados": [
     {
-      "map": 3000,
-      "lider": "Celsa",
+      "map": 3011,
+      "lider": "Sparky",
       "sw": 700,
-      "x": 6,
+      "x": 18,
       "y": 5
     },
     {
-      "map": 3016,
-      "lider": "Nivia",
+      "map": 3025,
+      "lider": "Terry",
       "sw": 701,
-      "x": 11,
+      "x": 5,
       "y": 5
     },
     {
-      "map": 3031,
-      "lider": "Boreas",
+      "map": 3036,
+      "lider": "Flo",
       "sw": 702,
-      "x": 8,
+      "x": 9,
       "y": 4
     },
     {
-      "map": 3047,
-      "lider": "Crisal",
+      "map": 3046,
+      "lider": "Lief",
       "sw": 703,
-      "x": 4,
-      "y": 4
-    },
-    {
-      "map": 3063,
-      "lider": "Viska",
-      "sw": 704,
-      "x": 20,
-      "y": 5
-    },
-    {
-      "map": 3079,
-      "lider": "Polar",
-      "sw": 705,
-      "x": 20,
-      "y": 17
-    },
-    {
-      "map": 3094,
-      "lider": "Nevara",
-      "sw": 706,
       "x": 9,
       "y": 5
     },
     {
-      "map": 3110,
-      "lider": "Albor",
-      "sw": 707,
-      "x": 10,
+      "map": 3056,
+      "lider": "Irene",
+      "sw": 704,
+      "x": 8,
+      "y": 81
+    },
+    {
+      "map": 3071,
+      "lider": "Ernest",
+      "sw": 705,
+      "x": 16,
       "y": 11
     },
     {
-      "map": 3120,
-      "lider": "Lumen",
+      "map": 3086,
+      "lider": "Nicole",
+      "sw": 706,
+      "x": 10,
+      "y": 10
+    },
+    {
+      "map": 3101,
+      "lider": "Tyson",
+      "sw": 707,
+      "x": 28,
+      "y": 15
+    },
+    {
+      "map": 3124,
+      "lider": "Jessica",
       "sw": 708,
-      "x": 21,
-      "y": 23
+      "x": 18,
+      "y": 18
     },
     {
-      "map": 3123,
-      "lider": "Ondina",
+      "map": 3126,
+      "lider": "Esmeralda",
       "sw": 709,
-      "x": 19,
-      "y": 24
-    },
-    {
-      "map": 3125,
-      "lider": "Farón",
-      "sw": 710,
-      "x": 32,
-      "y": 16
-    },
-    {
-      "map": 3128,
-      "lider": "Alba",
-      "sw": 711,
       "x": 7,
       "y": 7
     },
     {
+      "map": 3128,
+      "lider": "Lucas",
+      "sw": 710,
+      "x": 6,
+      "y": 6
+    },
+    {
       "map": 3130,
-      "lider": "Céfiro",
+      "lider": "Thomas",
+      "sw": 711,
+      "x": 5,
+      "y": 4
+    },
+    {
+      "map": 3132,
+      "lider": "Atlas",
       "sw": 712,
       "x": 6,
-      "y": 3
+      "y": 4
     },
     {
-      "map": 3133,
-      "lider": "Coral",
+      "map": 3134,
+      "lider": "Rayner",
       "sw": 713,
-      "x": 7,
-      "y": 4
+      "x": 8,
+      "y": 5
     },
     {
-      "map": 3135,
-      "lider": "Brillo",
+      "map": 3136,
+      "lider": "Sophia",
       "sw": 714,
-      "x": 7,
-      "y": 4
+      "x": 8,
+      "y": 5
     },
     {
       "map": 3138,
-      "lider": "Aurora",
+      "lider": "Wesley",
       "sw": 715,
       "x": 8,
       "y": 5
     },
     {
-      "map": 3200,
-      "lider": "Crista",
+      "map": 3207,
+      "lider": "Falkner",
       "sw": 716,
       "x": 6,
-      "y": 4
+      "y": 5
+    },
+    {
+      "map": 3222,
+      "lider": "Bugsy",
+      "sw": 717,
+      "x": 6,
+      "y": 5
+    },
+    {
+      "map": 3242,
+      "lider": "Whitney",
+      "sw": 718,
+      "x": 6,
+      "y": 10
     },
     {
       "map": 3262,
-      "lider": "Prisma",
-      "sw": 717,
-      "x": 13,
-      "y": 12
-    },
-    {
-      "map": 3323,
-      "lider": "Faceta",
-      "sw": 718,
-      "x": 19,
-      "y": 11
-    },
-    {
-      "map": 3385,
-      "lider": "Cuarzo",
+      "lider": "Morty",
       "sw": 719,
-      "x": 15,
-      "y": 8
-    },
-    {
-      "map": 3446,
-      "lider": "Jade",
-      "sw": 720,
-      "x": 18,
+      "x": 13,
       "y": 15
     },
     {
-      "map": 3508,
-      "lider": "Ámbar",
-      "sw": 721,
-      "x": 14,
+      "map": 3323,
+      "lider": "Chuck",
+      "sw": 720,
+      "x": 22,
       "y": 11
     },
     {
-      "map": 3569,
-      "lider": "Ópalo",
-      "sw": 722,
-      "x": 19,
-      "y": 30
+      "map": 3295,
+      "lider": "Jasmine",
+      "sw": 721,
+      "x": 20,
+      "y": 12
     },
     {
-      "map": 3631,
-      "lider": "Zafira",
+      "map": 3385,
+      "lider": "Pryce",
+      "sw": 722,
+      "x": 18,
+      "y": 8
+    },
+    {
+      "map": 3422,
+      "lider": "Clair",
       "sw": 723,
-      "x": 55,
-      "y": 21
+      "x": 19,
+      "y": 9
     },
     {
       "map": 3700,
@@ -181,8 +181,8 @@
       "map": 3735,
       "lider": "Ejecutiva Vex",
       "sw": 725,
-      "x": 15,
-      "y": 8
+      "x": 16,
+      "y": 9
     },
     {
       "map": 3770,
@@ -195,28 +195,28 @@
       "map": 3805,
       "lider": "Ejecutiva Nox",
       "sw": 727,
-      "x": 9,
-      "y": 9
+      "x": 8,
+      "y": 10
     },
     {
       "map": 3839,
       "lider": "Ejecutivo Umbra",
       "sw": 728,
-      "x": 24,
-      "y": 19
+      "x": 23,
+      "y": 20
     },
     {
       "map": 3874,
       "lider": "Ejecutiva Lis",
       "sw": 729,
-      "x": 30,
-      "y": 9
+      "x": 29,
+      "y": 11
     },
     {
       "map": 3909,
       "lider": "Ejecutivo Grajo",
       "sw": 730,
-      "x": 6,
+      "x": 4,
       "y": 4
     },
     {

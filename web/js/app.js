@@ -5,7 +5,7 @@ import { FS } from "./fs.js";
 import { marshalLoad, marshalDump, RString, RObject, RHash } from "./marshal.js";
 import {
   parseMap, parseEvent, parseTileset, mapListFromInfos, mapTree,
-  systemNames, setSystemName, tableGet, cmdOf,
+  systemNames, setSystemName, tableGet, cmdOf, rstr,
 } from "./rmxp.js";
 import { parsePBS, pbsToText } from "./pbs.js";
 import { buildDemoProject } from "./demo.js";
@@ -38,6 +38,9 @@ const S = {
   log: [],
   scanning: false,
   scanCancel: false,
+  missingMaps: new Set(), // MapInfos sin archivo Data/MapXXX.rxdata (el juego truena al entrar)
+  brokenTilesets: new Map(), // tilesetId -> motivo ("" = el slot existe pero no tiene PNG)
+  voidMaps: new Map(), // mapId -> fracción de celdas vacías (negro en el juego)
 };
 
 export { S };
@@ -255,7 +258,17 @@ export async function loadMap(id) {
     touchLru(id);
     return S.maps.get(id);
   }
-  const raw = await FS.readBytes(`Data/Map${pad3(id)}.rxdata`);
+  let raw;
+  try {
+    raw = await FS.readBytes(`Data/Map${pad3(id)}.rxdata`);
+  } catch (e) {
+    // Caso real de Fire Ash: MapInfos tiene el mapa 2231 pero el archivo no
+    // existe. El juego truena al entrar; PokeMod lo marca y no vuelve a fallar.
+    S.missingMaps.add(Number(id));
+    const err = new Error(`El mapa ${id} está en la lista pero falta Data/Map${pad3(id)}.rxdata (el juego daría error al entrar).`);
+    err.code = "MISSING_MAP_FILE";
+    throw err;
+  }
   const parsed = parseMap(marshalLoad(raw));
   const info = S.mapList.find((m) => m.id === id);
   const rec = { info, parsed, dirty: false };
@@ -277,7 +290,19 @@ function touchLru(id) {
 }
 
 export function getTileset(tilesetId) {
-  return S.tilesets.get(Number(tilesetId)) || S.tilesets.values().next().value || null;
+  const id = Number(tilesetId);
+  const ts = S.tilesets.get(id);
+  if (ts) return ts;
+  // Sin fallback silencioso: devolver otro tileset dibujaba basura (parecía un mapa negro).
+  if (!S.brokenTilesets.has(id)) {
+    const slot = S.tilesetsRaw?.[id];
+    const reason = !slot ? "no existe el indicador de tileset"
+      : !rstr(slot.getIvar("tileset_name")) ? "el tileset no tiene imagen asignada"
+      : "el tileset no se pudo leer";
+    S.brokenTilesets.set(id, reason);
+    log(`Aviso: mapa con tileset ${id} roto (${reason}).`, "warn");
+  }
+  return null;
 }
 
 export async function loadPBS(rel) {
@@ -504,32 +529,112 @@ export async function kirinCheck(deep = false, onProgress = null) {
 }
 
 // --- Caminabilidad (para warps seguros) --------------------------------------------------------------
-export function findWalkable(parsed, tileset, cx, cy, maxR = 40) {
+// Un mapa RMXP dibuja negro todo lo que no tenga tile. Muchos mapas de Fire Ash
+// son grandes con el decorado en el centro: el resto es vacío. Antes se buscaba
+// la casilla caminable más cercana al centro y la Sala PokeMod (y cualquier
+// warp) podía dejar al jugador en mitad del negro.
+const VOID_CODES = new Set([48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]);
+
+/** Cuenta las celdas sin ningún tile (negro garantizado en el juego). */
+export function emptyCellStats(parsed) {
+  const t = parsed.table;
+  let empty = 0;
+  for (let i = 0; i < t.x * t.y; i++) {
+    const z = i * t.z;
+    if (!t.data[z] && !t.data[z + 1] && !t.data[z + 2]) empty++;
+  }
+  const total = Math.max(1, t.x * t.y);
+  return { empty, total, pct: 100 * empty / total };
+}
+
+/**
+ * ID de tile que hace de «fondo» del mapa (el vacío/negro o el suelo dominante).
+ * Sirve para saber si una casilla aporta algo visible.
+ */
+function dominantTile(parsed) {
+  const t = parsed.table;
+  const hist = new Map();
+  for (let i = 0; i < t.data.length; i++) {
+    const v = t.data[i];
+    if (!v) continue;
+    hist.set(v, (hist.get(v) || 0) + 1);
+  }
+  let best = 0, bestN = -1;
+  for (const [v, n] of hist) if (n > bestN) { best = v; bestN = n; }
+  return { id: best, count: bestN, different: hist.size };
+}
+
+/**
+ * Busca una casilla donde el jugador se vea y pueda andar.
+ * @param {object} parsed mapa parseado
+ * @param {object} tileset tileset parseado (passages)
+ * @param {number} cx centro de búsqueda
+ * @param {number} cy centro de búsqueda
+ * @param {object} opts { maxR, avoidVoid }
+ */
+export function findWalkable(parsed, tileset, cx, cy, maxR = 40, opts = {}) {
   const { table, width, height } = parsed;
-  const ok = (x, y) => {
+  const avoidVoid = opts.avoidVoid !== false;
+  const { id: background, different } = dominantTile(parsed);
+  const prio = tileset?.priorities?.data;
+  const pas = tileset?.passages?.data;
+  const tileAt = (x, y, z) => tableGet(table, x, y, z);
+
+  const solid = (x, y) => {
     if (x < 0 || y < 0 || x >= width || y >= height) return false;
     let anyTile = false;
     for (let z = 0; z < 3; z++) {
-      const id = tableGet(table, x, y, z);
-      if (id < 48) continue;
+      const id = tileAt(x, y, z);
+      if (id < 8) continue;
+      // id 48..63 sin autotile asignado es el «vacío» clásico de RMXP
+      if (id >= 48 && id < 384) {
+        const a = tileset?.autotiles?.[Math.floor(id / 48) - 1];
+        if (!a) continue;
+      }
       anyTile = true;
-      if (id >= 384 && tileset?.passages) {
-        const idx = id - 384;
-        if (idx < tileset.passages.data.length && (tileset.passages.data[idx] & 0x0f) === 0x0f) return false;
+      if (id >= 384 && pas && id - 384 < pas.length) {
+        const p = pas[id - 384];
+        if ((p & 0x0f) === 0x0f) return false; // bloqueada
+        if (prio && id - 384 < prio.length && prio[id - 384] > 4) return false; // techo
       }
     }
     return anyTile;
   };
-  if (ok(cx, cy)) return { x: cx, y: cy };
-  for (let r = 1; r <= maxR; r++) {
-    for (let dx = -r; dx <= r; dx++) {
-      for (const dy of [-r, r]) { if (ok(cx + dx, cy + dy)) return { x: cx + dx, y: cy + dy }; }
-      for (let dy = -r + 1; dy <= r - 1; dy++) {
-        for (const ddx of [-r, r]) { if (ok(cx + ddx, cy + dy)) return { x: cx + ddx, y: cy + dy }; }
+
+  // ¿La casilla aporta algo visible o está rodeada de fondo/negro?
+  const visible = (x, y) => {
+    if (different <= 1) return true; // mapa de un solo tile: no hay con qué comparar
+    for (let dy = -1; dy <= 1; dy++) {
+      for (let dx = -1; dx <= 1; dx++) {
+        const nx = x + dx, ny = y + dy;
+        if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+        for (let z = 0; z < 3; z++) {
+          const id = tileAt(nx, ny, z);
+          if (id && id !== background) return true;
+        }
       }
     }
+    return false;
+  };
+
+  const rings = [];
+  for (let r = 0; r <= maxR; r++) {
+    if (r === 0) { rings.push([cx, cy]); continue; }
+    for (let dx = -r; dx <= r; dx++) {
+      for (const dy of [-r, r]) rings.push([cx + dx, cy + dy]);
+    }
+    for (let dy = -r + 1; dy <= r - 1; dy++) {
+      for (const ddx of [-r, r]) rings.push([cx + ddx, cy + dy]);
+    }
   }
-  return null;
+  let firstWalkable = null;
+  for (const [x, y] of rings) {
+    if (x < 0 || y < 0 || x >= width || y >= height) continue;
+    if (!solid(x, y)) continue;
+    if (!firstWalkable) firstWalkable = { x, y };
+    if (!avoidVoid || visible(x, y)) return { x, y };
+  }
+  return firstWalkable;
 }
 
 // --- MOD: Sala PokeMod (acceso total a mapas, 100% datos, reversible) ---------------------------------
@@ -578,9 +683,14 @@ export async function buildSalaMod({ entryMapId, doorX, doorY, doorGraphic, onPr
     if (onProgress) onProgress(i, S.mapList.length, m);
     try {
       const rec = await loadMap(m.id);
-      const spot = findWalkable(rec.parsed, getTileset(rec.parsed.tilesetId), rec.parsed.width >> 1, rec.parsed.height >> 1);
-      if (spot) targets.push({ id: m.id, name: m.name, x: spot.x, y: spot.y });
-      else omitted.push({ id: m.id, name: m.name, reason: "sin casilla caminable" });
+      const ts = getTileset(rec.parsed.tilesetId);
+      const spot = findWalkable(rec.parsed, ts, rec.parsed.width >> 1, rec.parsed.height >> 1, 40, { avoidVoid: true });
+      const stats = emptyCellStats(rec.parsed);
+      if (spot) {
+        // Nunca llevar al jugador a un mapa que es todo negro.
+        if (stats.pct >= 99.5) omitted.push({ id: m.id, name: m.name, reason: "el mapa está vacío (todo negro)" });
+        else targets.push({ id: m.id, name: m.name, x: spot.x, y: spot.y });
+      } else omitted.push({ id: m.id, name: m.name, reason: "sin casilla caminable" });
     } catch (e) {
       omitted.push({ id: m.id, name: m.name, reason: e.message });
     }
