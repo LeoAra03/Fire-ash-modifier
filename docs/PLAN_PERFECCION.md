@@ -52,12 +52,13 @@ Las otras ~39 000 son **derivadas**: el mismo comando emite la lista completa, u
 por fase, en el formato de los tres documentos anteriores, cuando se le pide:
 
 ```bash
-node tools/plan900/cobertura.mjs --json   # censo, familias y totales — ya funciona
+npm run cobertura          # censo, familias y total de fases — ya funciona
+npm run cobertura:plan     # reescribe el listado completo de fases (42 633 líneas)
 ```
 
-La emisión automática de las ~42 800 líneas numeradas (una fase por unidad de trabajo, en
-el mismo formato de los tres documentos anteriores) es la **fase 2765** de este documento:
-todavía no existe, y por eso no se promete aquí como si existiera.
+La emisión de las 42 633 líneas numeradas (una fase por cada 150 unidades de cobertura, en
+el mismo formato de los tres documentos anteriores) es la **fase 2765** de este documento y
+ya está construida: su salida vive en `docs/PLAN_COBERTURA_FASES.md`.
 
 Por eso "no importa cuántas sean": el plan se **autoextiende** con el contenido. Lo que
 hay que escribir a mano son los **sistemas** que hacen posible esa cobertura, y esos son

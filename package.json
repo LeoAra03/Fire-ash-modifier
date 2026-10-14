@@ -203,7 +203,9 @@
     "verify:diplomas": "node tools/apply_diplomas_planta.mjs --verify",
     "verify:arceus:sprites": "node tools/verify_arceus_phase_sprites.mjs",
     "apply:atlas:sector01": "node tools/apply_atlas_sector01_redesign.mjs && node tools/apply_atlas_sector01_floor_layout.mjs",
-    "verify:atlas:sector01": "node tools/apply_atlas_sector01_redesign.mjs --verify && node tools/apply_atlas_sector01_floor_layout.mjs --verify"
+    "verify:atlas:sector01": "node tools/apply_atlas_sector01_redesign.mjs --verify && node tools/apply_atlas_sector01_floor_layout.mjs --verify",
+    "cobertura": "node tools/plan900/cobertura.mjs",
+    "cobertura:plan": "node tools/plan900/emitir_fases.mjs --md docs/PLAN_COBERTURA_FASES.md"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.10",

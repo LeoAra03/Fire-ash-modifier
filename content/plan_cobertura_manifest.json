@@ -1,0 +1,227 @@
+{
+ "schema": "fire_ash_plan_cobertura/1.0",
+ "generado": "2026-10-14",
+ "generadoPor": "tools/plan900/emitir_fases.mjs",
+ "formula": {
+  "unidadesPorFase": 150,
+  "pesoJuicioHumano": 4,
+  "numeracionDesde": 3601
+ },
+ "censo": {
+  "mapas": 3465,
+  "eventos": 36147,
+  "paginas": 55499,
+  "comandos": 444284,
+  "celdas": 5493642,
+  "switches": 874,
+  "variables": 240,
+  "graficos": 1726,
+  "bgms": 105,
+  "tablasEncuentro": 340,
+  "slotsEncuentro": 3329
+ },
+ "totales": {
+  "lineas": 42633,
+  "unidades": 6426480,
+  "desde": 3601,
+  "hasta": 46233
+ },
+ "familias": [
+  {
+   "familia": "checklist de mapa (10 puntos)",
+   "lineas": 231,
+   "unidades": 34650,
+   "desde": 3601,
+   "hasta": 3831
+  },
+  {
+   "familia": "ejecución de evento (página inicial)",
+   "lineas": 241,
+   "unidades": 36147,
+   "desde": 3832,
+   "hasta": 4072
+  },
+  {
+   "familia": "ejecución de evento (página final)",
+   "lineas": 241,
+   "unidades": 36147,
+   "desde": 4073,
+   "hasta": 4313
+  },
+  {
+   "familia": "salida garantizada por evento",
+   "lineas": 241,
+   "unidades": 36147,
+   "desde": 4314,
+   "hasta": 4554
+  },
+  {
+   "familia": "diálogo mostrado y comprobado",
+   "lineas": 1673,
+   "unidades": 286173,
+   "desde": 4555,
+   "hasta": 6227
+  },
+  {
+   "familia": "elección con cada rama tomada",
+   "lineas": 70,
+   "unidades": 10416,
+   "desde": 6228,
+   "hasta": 6297
+  },
+  {
+   "familia": "condición probada en verdadero y falso",
+   "lineas": 226,
+   "unidades": 33862,
+   "desde": 6298,
+   "hasta": 6523
+  },
+  {
+   "familia": "switch comprobado en ambos estados",
+   "lineas": 12,
+   "unidades": 1748,
+   "desde": 6524,
+   "hasta": 6535
+  },
+  {
+   "familia": "variable comprobada en valores límite",
+   "lineas": 5,
+   "unidades": 720,
+   "desde": 6536,
+   "hasta": 6540
+  },
+  {
+   "familia": "self-switch comprobado en ambos estados",
+   "lineas": 114,
+   "unidades": 16968,
+   "desde": 6541,
+   "hasta": 6654
+  },
+  {
+   "familia": "transferencia recorrida en ambos sentidos",
+   "lineas": 255,
+   "unidades": 38128,
+   "desde": 6655,
+   "hasta": 6909
+  },
+  {
+   "familia": "combate ejecutado y comprobado",
+   "lineas": 5,
+   "unidades": 680,
+   "desde": 6910,
+   "hasta": 6914
+  },
+  {
+   "familia": "rutina de movimiento completada",
+   "lineas": 57,
+   "unidades": 8444,
+   "desde": 6915,
+   "hasta": 6971
+  },
+  {
+   "familia": "espera medida (ni corte ni lentitud)",
+   "lineas": 53,
+   "unidades": 7838,
+   "desde": 6972,
+   "hasta": 7024
+  },
+  {
+   "familia": "script de evento ejecutado sin error",
+   "lineas": 260,
+   "unidades": 38996,
+   "desde": 7025,
+   "hasta": 7284
+  },
+  {
+   "familia": "estado de progreso (7 regiones + 5 campañas + 6 dimensiones)",
+   "lineas": 1748,
+   "unidades": 262144,
+   "desde": 7285,
+   "hasta": 9032
+  },
+  {
+   "familia": "reserva de mapas fuera de rango",
+   "lineas": 24,
+   "unidades": 3465,
+   "desde": 9033,
+   "hasta": 9056
+  },
+  {
+   "familia": "encuentro salvaje (tabla × slot)",
+   "lineas": 23,
+   "unidades": 3329,
+   "desde": 9057,
+   "hasta": 9079
+  },
+  {
+   "familia": "tablas de encuentro",
+   "lineas": 3,
+   "unidades": 340,
+   "desde": 9080,
+   "hasta": 9082
+  },
+  {
+   "familia": "gráficos de personaje referenciados",
+   "lineas": 24,
+   "unidades": 1726,
+   "desde": 9083,
+   "hasta": 9106
+  },
+  {
+   "familia": "pistas de música referenciadas",
+   "lineas": 1,
+   "unidades": 105,
+   "desde": 9107,
+   "hasta": 9107
+  },
+  {
+   "familia": "mapas con BGM",
+   "lineas": 24,
+   "unidades": 3465,
+   "desde": 9108,
+   "hasta": 9131
+  },
+  {
+   "familia": "tiles de mapa (celdas)",
+   "lineas": 36625,
+   "unidades": 5493642,
+   "desde": 9132,
+   "hasta": 45756
+  },
+  {
+   "familia": "fuzz de eventos (semillas)",
+   "lineas": 134,
+   "unidades": 20000,
+   "desde": 45757,
+   "hasta": 45890
+  },
+  {
+   "familia": "mutación de mapas (celdas alteradas)",
+   "lineas": 334,
+   "unidades": 50000,
+   "desde": 45891,
+   "hasta": 46224
+  },
+  {
+   "familia": "partida interrumpida en guardado (puntos de corte)",
+   "lineas": 4,
+   "unidades": 500,
+   "desde": 46225,
+   "hasta": 46228
+  },
+  {
+   "familia": "límites de sistema (mochila, caja, dinero, nivel, nombre)",
+   "lineas": 3,
+   "unidades": 400,
+   "desde": 46229,
+   "hasta": 46231
+  },
+  {
+   "familia": "sesiones humanas de playtest con cuota de cobertura",
+   "lineas": 2,
+   "unidades": 300,
+   "desde": 46232,
+   "hasta": 46233
+  }
+ ]
+}
