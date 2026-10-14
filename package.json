@@ -14,6 +14,8 @@
     "verify:tier2:macro04-05": "npm run verify:tier2:macro04 && npm run verify:tier2:macro05",
     "verify:tier2:macro06-07": "npm run verify:tier2:macro06 && npm run verify:tier2:macro07",
     "verify:tier3:rules": "node tools/apply_atlas_tier3_rules.mjs --verify",
+    "apply:atlas:sector01": "node tools/apply_atlas_sector01_redesign.mjs",
+    "verify:atlas:sector01": "node tools/apply_atlas_sector01_redesign.mjs --verify",
     "verify:grandeur:bag": "node tools/apply_grandeur_bag_freedom.mjs --verify",
     "verify:abra:tower": "node tools/apply_emergency_abra_and_free_tower.mjs --verify",
     "verify:oak:hub": "node tools/apply_oak_lab_postgame_hub.mjs --verify",
@@ -44,7 +46,7 @@
     "verify:arceus-portal": "node tools/apply_arceus_portal_recovery.mjs --verify",
     "verify:tone-safety": "node tools/apply_tone_safety_fix.mjs --verify",
     "verify:transition-safety": "node tools/apply_transition_safety_fix.mjs --verify",
-    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:ruta_de_dios:package && npm run verify:map-reference && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety"
+    "verify:all": "npm test && npm run test:ui && npm run verify:atlas && npm run verify:atlas:sector01 && npm run verify:grandeur:bag && npm run verify:abra:tower && npm run verify:oak:hub && npm run verify:defeats && npm run verify:multiverse && npm run verify:event-collision && npm run verify:save-path && npm run verify:wild && npm run verify:monte_silver && npm run verify:isla_espejo && npm run verify:ruta_de_dios && npm run verify:ruta_de_dios:package && npm run verify:map-reference && npm run verify:arceus-portal && npm run verify:tone-safety && npm run verify:transition-safety"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",

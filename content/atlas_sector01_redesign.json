@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "sector": 1,
+  "sectorName": "Meridiano Ámbar",
+  "designNote": "Piloto gradual y acotado: mapas 1021–1025. Se conserva la geometría original mientras se valida la nueva identidad regional, los objetos de escena y el encuentro de Auralume.",
+  "maps": [
+    {
+      "id": 1021,
+      "name": "Pueblo Campanario"
+    },
+    {
+      "id": 1022,
+      "name": "Refugio de los Ecos"
+    },
+    {
+      "id": 1023,
+      "name": "Laboratorio de Resonancia"
+    },
+    {
+      "id": 1024,
+      "name": "Ruta del Zumbido Dorado"
+    },
+    {
+      "id": 1025,
+      "name": "Taller de Conchas de Viento"
+    }
+  ],
+  "species": {
+    "id": "AURALUME",
+    "number": 1296,
+    "name": "Auralume",
+    "category": "Pokémon Campanilla",
+    "types": [
+      "ELECTRIC",
+      "PSYCHIC"
+    ],
+    "abilities": [
+      "LEVITATE"
+    ],
+    "hiddenAbilities": [
+      "SYNCHRONIZE"
+    ],
+    "baseStats": {
+      "HP": 50,
+      "ATTACK": 40,
+      "DEFENSE": 50,
+      "SPECIAL_ATTACK": 80,
+      "SPECIAL_DEFENSE": 65,
+      "SPEED": 90
+    },
+    "level": 35,
+    "height": 3,
+    "weight": 6,
+    "pokedexEntry": "El aro de su frente vibra con el viento y revela caminos ocultos. Auralume guía a los viajeros perdidos, pero se aleja de las campanas que imitan voces humanas."
+  },
+  "interactions": [
+    {
+      "mapId": 1021,
+      "eventId": 250,
+      "kind": "scene-prop",
+      "name": "Campana de Alba",
+      "sprite": "Atlas Bell 01",
+      "position": [
+        16,
+        8
+      ],
+      "dialogue": [
+        "La Campana de Alba no marca las horas.",
+        "Su vibración mantiene sincronizadas las balizas del Meridiano Ámbar.",
+        "Hoy responde a un tintineo que viene de la Ruta del Zumbido Dorado.",
+        "La señal coincide con Auralume, registrada aquí por primera vez."
+      ]
+    },
+    {
+      "mapId": 1024,
+      "eventId": 250,
+      "kind": "optional-wild-encounter",
+      "species": "AURALUME",
+      "level": 35,
+      "position": [
+        23,
+        7
+      ],
+      "sprite": "AURALUME",
+      "dialogue": [
+        "Un tintineo suave llega desde la hierba alta.",
+        "Una Auralume asoma: parece seguir el pulso de la Campana de Alba."
+      ]
+    }
+  ],
+  "assets": {
+    "eventSprites": [
+      "Atlas Gate Home",
+      "Atlas Gate Previous",
+      "Atlas Gate Next",
+      "Atlas Gate Sector 01",
+      "Atlas Wayfinder 01",
+      "Atlas Bell 01",
+      "Atlas Echo Stone 01",
+      "Atlas Echo Shard 01"
+    ],
+    "pokemon": "AURALUME"
+  },
+  "pilotMapIds": [
+    1021,
+    1022,
+    1023,
+    1024,
+    1025
+  ]
+}

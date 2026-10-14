@@ -13,6 +13,8 @@ const text=(v)=>v instanceof RString?v.text:String(v??"");
 const symbol=(v)=>v instanceof RSymbol?v.name:String(v??"");
 const pad3=(n)=>String(n).padStart(3,"0");
 const oldCatalog=JSON.parse(fs.readFileSync(path.join(ROOT,"content","horizontes_500.json"),"utf8"));
+const sector01Redesign=JSON.parse(fs.readFileSync(path.join(ROOT,"content","atlas_sector01_redesign.json"),"utf8"));
+const sectorMapNames=new Map(sector01Redesign.maps.map((entry)=>[Number(entry.id),entry.name]));
 
 const sectorNames=[
   "Meridiano Ámbar","Cuenca Celeste","Frontera Carmesí","Distrito Cuarzo","Órbita Esmeralda",
@@ -91,7 +93,7 @@ if(sources.length!==1000)throw new Error(`Solo se hallaron ${sources.length}/100
 const maps=sources.map((sourceId,i)=>({
   index:i+1,newId:1021+i,sourceId,sourceName:nameById.get(sourceId)||`Mapa ${sourceId}`,
   sector:Math.floor(i/25)+1,sectorName:sectorNames[Math.floor(i/25)],
-  name:`Atlas ${String(i+1).padStart(4,"0")} - ${nameById.get(sourceId)||`Mapa ${sourceId}`}`,
+  name:sectorMapNames.get(1021+i)||`Atlas ${String(i+1).padStart(4,"0")} - ${nameById.get(sourceId)||`Mapa ${sourceId}`}`,
 }));
 
 function records(file){
@@ -133,7 +135,7 @@ for(let i=0;i<500;i++){
   suggestions.push({
     id:i+1,mapId:map.newId,mapName:map.name,sector:map.sector,sectorName:map.sectorName,
     title:`${motifs[slot]} — ${map.name}`,category,npc:`${roles[slot]} de ${map.sectorName}`,
-    hook,pokemon:pk.id,pokemonName:display,item,level:86+((i*13)%15),
+    hook,pokemon:pk.id,pokemonName:display,pokemonSprite:pk.base||pk.id,item,level:86+((i*13)%15),
     trainerType:trainer[0],trainerSprite:trainer[1],trainerName:trName,team,
     doubleBattle:category==="combate_doble",moves:Array.from({length:4},(_,k)=>moves[(i+5*k)%moves.length]),
     flag:`Mapa ${map.newId} / evento 100 / self-switch A`,implemented:true,

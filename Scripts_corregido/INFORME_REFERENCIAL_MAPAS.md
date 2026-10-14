@@ -1,6 +1,6 @@
 # Informe referencial de mapas — 1.022 fichas
 
-**Generado:** 2026-09-30
+**Generado:** 2026-10-13
 **Alcance:** Atlas Mil (Map1021–Map2020) y 22 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
@@ -22,27 +22,27 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 
 ## Sector 01 — Meridiano Ámbar (Vigías Ámbar) · Map1021–Map1045
 
-### Map1021 — Santuario de la Última Campana
+### Map1021 — Pueblo Campanario
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 1 · ancla artesanal.
 - **Referencia:** Ancla artesanal basada en Lappet Town (Map2). Identidad del lugar: Santuario de radio abandonado construido alrededor de una campana que absorbe sonidos. Episodio: Una emisión imposible obliga al jugador a decidir si un recuerdo doloroso merece conservarse aunque nadie pueda volver a escucharlo.
-- **Datos compilados:** 32×21 tiles; 9 eventos; tileset 1.
+- **Datos compilados:** 32×21 tiles; 10 eventos; tileset 1.
 
-### Map1022 — Atlas 0002 - \PN's house
+### Map1022 — Refugio de los Ecos
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de \PN's house (Map3) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
 - **Datos compilados:** 31×15 tiles; 5 eventos; tileset 3.
 
-### Map1023 — Atlas 0003 - Pokémon Lab
+### Map1023 — Laboratorio de Resonancia
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pokémon Lab (Map4) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
 - **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
 
-### Map1024 — Atlas 0004 - Route 1
+### Map1024 — Ruta del Zumbido Dorado
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Route 1 (Map5) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 36×24 tiles; 5 eventos; tileset 1.
+- **Datos compilados:** 36×24 tiles; 6 eventos; tileset 1.
 
-### Map1025 — Atlas 0005 - Kurt's house
+### Map1025 — Taller de Conchas de Viento
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Kurt's house (Map6) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
 - **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.

@@ -24,6 +24,20 @@ const iv=(o,n)=>o?.getIvar?.(n),txt=(v)=>v instanceof RString?v.text:String(v??"
 const pad3=(n)=>String(n).padStart(3,"0"),readRx=(f)=>marshalLoad(fs.readFileSync(path.join(DATA,f)));
 const writeRx=(f,v)=>fs.writeFileSync(path.join(DATA,f),Buffer.from(marshalDump(v)));
 const cloneMarshal=(v)=>marshalLoad(Buffer.from(marshalDump(v)));
+const CHARACTER_DIR=path.join(GAME,"Graphics","Characters");
+const speciesRecords=readRx("species.dat");
+function speciesCharacterName(id){
+  const record=speciesRecords.pairs.find(([key])=>key instanceof RSymbol&&key.name===id)?.[1];
+  const base=sym(iv(record,"species"));
+  for(const candidate of [id,base])if(candidate&&fs.existsSync(path.join(CHARACTER_DIR,`${candidate}.png`)))return candidate;
+  return "Atlas Echo Shard 01";
+}
+function portalSprite(name){
+  if(name.startsWith("Return"))return "Atlas Gate Home";
+  if(name.startsWith("Previous"))return "Atlas Gate Previous";
+  if(name.startsWith("Next"))return "Atlas Gate Next";
+  return "Atlas Gate Sector 01";
+}
 
 function backupAffected(){
   fs.mkdirSync(BACKUP,{recursive:true});
@@ -59,24 +73,24 @@ function largestComponent(mapObj){const p=parseMap(mapObj),t=tilesets.get(p.tile
 function spreadPositions(mapObj,count,excluded=[]){const cells=largestComponent(mapObj),ban=new Set(excluded.map((p)=>p.join(",")));if(cells.filter((c)=>!ban.has(c.join(","))).length<count)throw new Error(`Mapa sin ${count} posiciones libres`);const available=cells.filter((c)=>!ban.has(c.join(","))),chosen=[available[Math.floor(available.length/2)]],used=new Set([chosen[0].join(",")]);while(chosen.length<count){let best,bestScore=-1;for(const cell of available){if(used.has(cell.join(",")))continue;const score=Math.min(...chosen.map(([x,y])=>(x-cell[0])**2+(y-cell[1])**2));if(score>bestScore){bestScore=score;best=cell;}}chosen.push(best);used.add(best.join(","));}return chosen;}
 
 function installSystem(){const s=readRx("System.rxdata"),sw=iv(s,"switches")||[],v=iv(s,"variables")||[];sw[ATLAS_OPEN]=S("POKEMOD ATLAS MIL OPEN");sw[ATLAS_COMPLETE]=S("POKEMOD ATLAS MIL 500 COMPLETE");v[ATLAS_COUNT]=S("POKEMOD ATLAS MIL COMPLETED");s.setIvar("switches",sw);s.setIvar("variables",v);writeRx("System.rxdata",s);}
-function portal(id,name,x,y,target,spawn,message,cond=condition()){return event(id,name,x,y,[page({cond,gfx:graphic("Object ball special"),list:[...textCommands([message]),cmd(102,[[S("Viajar"),S("Quedarme")],2]),cmd(402,[0,S("Viajar")]),transfer(target,spawn[0],spawn[1],2,1),cmd(402,[1,S("Quedarme")]),cmd(404),cmd(0)]})]);}
+function portal(id,name,x,y,target,spawn,message,cond=condition()){return event(id,name,x,y,[page({cond,gfx:graphic(portalSprite(name)),list:[...textCommands([message]),cmd(102,[[S("Viajar"),S("Quedarme")],2]),cmd(402,[0,S("Viajar")]),transfer(target,spawn[0],spawn[1],2,1),cmd(402,[1,S("Quedarme")]),cmd(404),cmd(0)]})]);}
 function completion(indent=0){return[...scriptCommands([`$game_variables[${ATLAS_COUNT}]=[$game_variables[${ATLAS_COUNT}].to_i+1,500].min`,`$game_switches[${ATLAS_COMPLETE}]=true if $game_variables[${ATLAS_COUNT}]>=500`],indent),selfOn("A",indent)];}
 function eliteSetup(s){return[`p=Pokemon.new(:${s.pokemon},${s.level})`,`GameData::Stat.each_main { |stat| p.iv[stat.id]=31 }`,`p.ev[:HP]=252; p.ev[:SPECIAL_ATTACK]=252; p.ev[:SPEED]=6`,`p.nature=:MODEST; p.moves=[]`,`[${s.moves.map((m)=>`:${m}`).join(",")}].each { |m| p.learn_move(m) }`,`p.calc_stats`,`setBattleRule(\"cannotRun\"); setBattleRule(\"canLose\")`,`d=pbWildBattleCore(p)`];}
 function suggestionEvent(s,x,y){const first=[...textCommands([s.title,s.hook])];let g=s.trainerSprite;
-  if(s.category==="pokemon_elite"){g="Object ball special";first.push(...scriptCommands(eliteSetup(s)),cmd(111,[12,S("d==1 || d==4")]),...completion(1),cmd(411),...textCommands(["La señal sigue activa. Puedes recuperarte y repetir el encuentro."],1),cmd(412));}
+  if(s.category==="pokemon_elite"){g=speciesCharacterName(s.pokemonSprite||s.pokemon);first.push(...scriptCommands(eliteSetup(s)),cmd(111,[12,S("d==1 || d==4")]),...completion(1),cmd(411),...textCommands(["La señal sigue activa. Puedes recuperarte y repetir el encuentro."],1),cmd(412));}
   else if(s.category.startsWith("evento_")){first.push(cmd(102,[[S("Resolver con cooperación"),S("Examinar otra vez")],2]),cmd(402,[0,S("Resolver con cooperación")]),...scriptCommands([`pbReceiveItem(:${s.item})`],1),...completion(1),cmd(402,[1,S("Examinar otra vez")]),...textCommands(["El evento queda pendiente y no consume su flag."],1),cmd(404));}
   else {const dbl=s.doubleBattle?"true":"false",call=`pbTrainerBattle(:${s.trainerType},${JSON.stringify(s.trainerName)},nil,${dbl},0,true)`;
     if(s.doubleBattle){first.push(cmd(111,[12,S("!pbCanDoubleBattle?")]),...textCommands(["Necesitas al menos dos Pokémon utilizables para esta pelea doble."],1),cmd(115,[],1),cmd(412));}
     first.push(...scriptCommands([`pbTrainerIntro(:${s.trainerType})`]),cmd(111,[12,S(call)]),...completion(1),cmd(411),...textCommands(["La pelea puede repetirse después de curar al equipo."],1),cmd(412),...scriptCommands(["pbTrainerEnd"]));
   }
   first.push(cmd(0));const gfx=()=>graphic(g);return event(100,`Atlas desafío ${String(s.id).padStart(3,"0")}`,x,y,[page({gfx:gfx(),list:first}),page({cond:condition({self:"A"}),gfx:gfx(),list:[...textCommands([`Registro Atlas ${s.id}/500 completado: ${s.title}.`]),cmd(0)]})]);}
-function beaconEvent(map,x,y){return event(10,`Baliza Atlas ${map.index}`,x,y,[page({gfx:graphic("Object ball special"),list:[...textCommands([`${map.name}. Sector ${map.sector}: ${map.sectorName}.`,`Esta geografía deriva de ${map.sourceName}, pero pertenece a una ruta postgame independiente.`]),cmd(0)]})]);}
+function beaconEvent(map,x,y){return event(10,`Baliza Atlas ${map.index}`,x,y,[page({gfx:graphic("Atlas Wayfinder 01"),list:[...textCommands([`Terminal de ruta — ${map.name}.`,`Sector ${map.sector}: ${map.sectorName}.`,`La red de señales enlaza pueblos, Pokémon y senderos.`,`El retorno y la salida siguiente permanecen disponibles.`]),cmd(0)]})]);}
 
 function sourcePositions(){const result=new Map();for(const map of maps){const obj=readRx(`Map${pad3(map.sourceId)}.rxdata`);result.set(map.newId,spreadPositions(obj,6));}return result;}
 function installMaps(){const pos=sourcePositions();for(let i=0;i<maps.length;i++){const m=maps[i],obj=readRx(`Map${pad3(m.sourceId)}.rxdata`),p=pos.get(m.newId),events=[];
-    events.push(portal(1,"Return to Puerto Horizonte",p[1][0],p[1][1],HUB,[34,23],"La baliza regresa inmediatamente a Puerto Horizonte."));
-    if(i>0){const prev=maps[i-1],sp=pos.get(prev.newId)[0];events.push(portal(2,"Previous Atlas Map",p[2][0],p[2][1],prev.newId,sp,"La senda vuelve al mapa anterior del Atlas."));}
-    if(i<maps.length-1){const next=maps[i+1],sp=pos.get(next.newId)[0];events.push(portal(3,"Next Atlas Map",p[3][0],p[3][1],next.newId,sp,"La senda continúa al siguiente mapa del Atlas."));}
+    events.push(portal(1,"Return to Puerto Horizonte",p[1][0],p[1][1],HUB,[34,23],`El arco de retorno conecta ${m.name} con Puerto Horizonte.`));
+    if(i>0){const prev=maps[i-1],sp=pos.get(prev.newId)[0];events.push(portal(2,"Previous Atlas Map",p[2][0],p[2][1],prev.newId,sp,`El umbral enlaza ${m.name} con ${prev.name}.`));}
+    if(i<maps.length-1){const next=maps[i+1],sp=pos.get(next.newId)[0];events.push(portal(3,"Next Atlas Map",p[3][0],p[3][1],next.newId,sp,`El sendero continúa desde ${m.name} hacia ${next.name}.`));}
     events.push(beaconEvent(m,p[4][0],p[4][1]));const s=suggestions.find((x)=>x.mapId===m.newId);if(s)events.push(suggestionEvent(s,p[5][0],p[5][1]));
     iv(obj,"events").pairs=events.map((ev)=>[Number(iv(ev,"id")),ev]);writeRx(`Map${pad3(m.newId)}.rxdata`,obj);
   }}
