@@ -1,0 +1,61 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "input": {
+    "maxFileSize": 1048576
+  },
+  "output": {
+    "filePath": "repomix-output.xml",
+    "style": "xml",
+    "parsableStyle": true,
+    "compress": false,
+    "fileSummary": true,
+    "directoryStructure": true,
+    "topFilesLength": 25,
+    "truncateBase64": true,
+    "includeFullDirectoryStructure": true,
+    "removeComments": false,
+    "removeEmptyLines": false,
+    "showLineNumbers": false,
+    "headerText": "PokeMod Studio — Fire Ash Edition. Paquete de código, docs y definiciones de contenido. Excluye binarios, audio, ROMs, archivos comprimidos, copias duplicadas del juego y dumps generados de más de 1 MB."
+  },
+  "include": [
+    "tools/**",
+    "web/**",
+    "docs/**",
+    "android/**",
+    "content/**",
+    "REPO_ORDENADOR/**",
+    "agents/**",
+    ".github/**",
+    "Scripts_corregido/**/*.md",
+    "Scripts_corregido/**/*.txt",
+    "Scripts_corregido/**/*.json",
+    "pokemon_fire_ash/*.md",
+    "pokemon_fire_ash/*.txt",
+    "pokemon_fire_ash/*.json",
+    "README.md",
+    "AGENTS_INTEGRATION.md",
+    "package.json",
+    "package-lock.json",
+    "setup_toolkit.sh",
+    ".gitignore",
+    "repomix.config.json"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "repomix-output.xml",
+      "repomix-output*.xml",
+      "**/*.{png,jpg,jpeg,gif,webp,ogg,wav,mp3,mid,rxdata,zip,rar,7z,exe,dll,ttf,bmp,xcf,sf2,apk,aab,pdf}",
+      "**/*.dat",
+      "content/arceus_omega_qa_matrix.jsonl",
+      "content/rom_campaigns_complete.json",
+      "content/rom_nativo.json",
+      "pokemon_fire_ash/Helpful Notes/**"
+    ]
+  },
+  "security": {
+    "enableSecurityCheck": true
+  }
+}

@@ -84,3 +84,7 @@ agents/timps-swarm-main/
 
 # Referencia de Atlas Mil (generada por tools/atlas_ingest_reference.mjs)
 reference/atlas/
+
+# Empaquetado Repomix (generado con `npx repomix@latest`)
+repomix-output.xml
+repomix-output*.xml
