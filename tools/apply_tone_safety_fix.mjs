@@ -7,6 +7,9 @@
  * The source game scripts remain untouched. This updates the distributable
  * corrected Scripts.rxdata and keeps the direct package/ZIP reproducible.
  *
+ * Idempotente: si Game_Screen/Game_Picture ya contienen el módulo y el ZIP y
+ * Paquete_directo coinciden byte a byte, no reescribe ni regenera el paquete.
+ *
  * Usage:
  *   node tools/apply_tone_safety_fix.mjs
  *   node tools/apply_tone_safety_fix.mjs --verify
@@ -102,28 +105,43 @@ function inspect() {
   return { scripts, screen, picture, screenCode, pictureCode, fixed };
 }
 
-if (VERIFY_ONLY) {
+function artifactsMatch(correctedBytes = fs.readFileSync(CORRECTED)) {
+  if (!fs.existsSync(DIRECT) || !correctedBytes.equals(fs.readFileSync(DIRECT))) return false;
+  try {
+    return correctedBytes.equals(readZipEntry(readZipIndex(ZIP), "Data/Scripts.rxdata"));
+  } catch {
+    return false;
+  }
+}
+
+function verifyArtifacts() {
   const state = inspect();
   if (!state.fixed) throw new Error("Scripts_corregido/Scripts.rxdata no contiene la protección de Tone");
-  const correctedBytes = fs.readFileSync(CORRECTED);
-  if (!fs.existsSync(DIRECT) || !correctedBytes.equals(fs.readFileSync(DIRECT))) {
-    throw new Error("Paquete_directo/Data/Scripts.rxdata no coincide con Scripts_corregido/Scripts.rxdata");
-  }
-  const zip = readZipIndex(ZIP);
-  const packagedBytes = readZipEntry(zip, "Data/Scripts.rxdata");
-  if (!correctedBytes.equals(packagedBytes)) {
+  if (!artifactsMatch()) {
+    if (!fs.existsSync(DIRECT) || !fs.readFileSync(CORRECTED).equals(fs.readFileSync(DIRECT))) {
+      throw new Error("Paquete_directo/Data/Scripts.rxdata no coincide con Scripts_corregido/Scripts.rxdata");
+    }
     throw new Error("Fire_Ash_Paquete_Directo.zip no incluye la protección de Tone actualizada");
   }
   console.log("OK: Game_Screen y Game_Picture recuperan tonos guardados como String");
   console.log("OK: Scripts_corregido, Paquete_directo y ZIP contienen la misma corrección");
+}
+
+if (VERIFY_ONLY) {
+  verifyArtifacts();
 } else {
   const state = inspect();
-  const screenCode = patchScreen(state.screenCode);
-  const pictureCode = patchPicture(state.pictureCode);
-  compress(state.screen, screenCode);
-  compress(state.picture, pictureCode);
-  fs.writeFileSync(CORRECTED, Buffer.from(marshalDump(state.scripts)));
-  fs.copyFileSync(CORRECTED, DIRECT);
-  execFileSync(process.execPath, [path.join(ROOT, "tools", "build_direct_package.mjs")], { stdio: "inherit" });
-  console.log("Protección de tonos aplicada a Game_Screen y Game_Picture.");
+  if (state.fixed && artifactsMatch()) {
+    console.log("Protección de tonos ya aplicada; no se reescribe (idempotente).");
+  } else {
+    const screenCode = patchScreen(state.screenCode);
+    const pictureCode = patchPicture(state.pictureCode);
+    compress(state.screen, screenCode);
+    compress(state.picture, pictureCode);
+    fs.writeFileSync(CORRECTED, Buffer.from(marshalDump(state.scripts)));
+    fs.copyFileSync(CORRECTED, DIRECT);
+    execFileSync(process.execPath, [path.join(ROOT, "tools", "build_direct_package.mjs")], { stdio: "inherit" });
+    console.log("Protección de tonos aplicada a Game_Screen y Game_Picture.");
+  }
+  verifyArtifacts();
 }

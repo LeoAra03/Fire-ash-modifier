@@ -4,6 +4,9 @@
  * Older saves/events can leave transition_name unset; in that case use the
  * engine's default transition just as for an empty name.
  *
+ * Idempotente: si Scene_Map ya usa transition_name.to_s y el ZIP y
+ * Paquete_directo coinciden byte a byte, no reescribe ni regenera el paquete.
+ *
  * Usage:
  *   node tools/apply_transition_safety_fix.mjs
  *   node tools/apply_transition_safety_fix.mjs --verify
@@ -53,15 +56,23 @@ function inspect() {
   return { scripts, row, code, fixed: code.includes(NEW_BLOCK) };
 }
 
+function artifactsInSync(correctedBytes = fs.readFileSync(CORRECTED)) {
+  if (!fs.existsSync(DIRECT) || !correctedBytes.equals(fs.readFileSync(DIRECT))) return false;
+  try {
+    return correctedBytes.equals(readZipEntry(readZipIndex(ZIP), "Data/Scripts.rxdata"));
+  } catch {
+    return false;
+  }
+}
+
 function verifyArtifacts() {
   const state = inspect();
   if (!state.fixed) throw new Error("Scene_Map todavía concatena transition_name sin convertirlo a String");
   const correctedBytes = fs.readFileSync(CORRECTED);
-  if (!fs.existsSync(DIRECT) || !correctedBytes.equals(fs.readFileSync(DIRECT))) {
-    throw new Error("Paquete_directo/Data/Scripts.rxdata no coincide con Scripts_corregido/Scripts.rxdata");
-  }
-  const zip = readZipIndex(ZIP);
-  if (!correctedBytes.equals(readZipEntry(zip, "Data/Scripts.rxdata"))) {
+  if (!artifactsInSync(correctedBytes)) {
+    if (!fs.existsSync(DIRECT) || !correctedBytes.equals(fs.readFileSync(DIRECT))) {
+      throw new Error("Paquete_directo/Data/Scripts.rxdata no coincide con Scripts_corregido/Scripts.rxdata");
+    }
     throw new Error("El ZIP no contiene la corrección de transition_name");
   }
   console.log("OK: Scene_Map usa la transición predeterminada cuando transition_name es nil/vacío");
@@ -72,12 +83,16 @@ if (VERIFY_ONLY) {
   verifyArtifacts();
 } else {
   const state = inspect();
-  if (!state.fixed) {
-    if (!state.code.includes(OLD_BLOCK)) throw new Error("Scene_Map: no se encontró el bloque de transición esperado");
-    state.row[2].bytes = new Uint8Array(zlib.deflateSync(Buffer.from(state.code.replace(OLD_BLOCK, NEW_BLOCK), "utf8")));
-    fs.writeFileSync(CORRECTED, Buffer.from(marshalDump(state.scripts)));
+  if (state.fixed && artifactsInSync()) {
+    console.log("Corrección de transition_name ya aplicada; no se reescribe (idempotente).");
+  } else {
+    if (!state.fixed) {
+      if (!state.code.includes(OLD_BLOCK)) throw new Error("Scene_Map: no se encontró el bloque de transición esperado");
+      state.row[2].bytes = new Uint8Array(zlib.deflateSync(Buffer.from(state.code.replace(OLD_BLOCK, NEW_BLOCK), "utf8")));
+      fs.writeFileSync(CORRECTED, Buffer.from(marshalDump(state.scripts)));
+    }
+    fs.copyFileSync(CORRECTED, DIRECT);
+    execFileSync(process.execPath, [path.join(ROOT, "tools", "build_direct_package.mjs")], { stdio: "inherit" });
   }
-  fs.copyFileSync(CORRECTED, DIRECT);
-  execFileSync(process.execPath, [path.join(ROOT, "tools", "build_direct_package.mjs")], { stdio: "inherit" });
   verifyArtifacts();
 }
