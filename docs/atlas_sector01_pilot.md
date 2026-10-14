@@ -28,3 +28,5 @@ npm run verify:atlas:sector01
 ```
 
 Los originales compilados se guardan en `pokemon_fire_ash/PokeModBackups/atlas_sector01_redesign_originals/` (directorio ignorado por Git).
+
+El plan por fases, sus compuertas legales/técnicas y la definición verificable de 10/10 están en [`PLAN_MIGRACION_ATLAS_10_10.md`](PLAN_MIGRACION_ATLAS_10_10.md).
