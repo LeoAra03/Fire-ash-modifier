@@ -84,3 +84,6 @@ agents/timps-swarm-main/
 
 # Referencia de Atlas Mil (generada por tools/atlas_ingest_reference.mjs)
 reference/atlas/
+
+# Salida suelta de Repomix en la raíz. El paquete versionado vive en xml/.
+/repomix-output.xml

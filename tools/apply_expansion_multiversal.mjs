@@ -25,6 +25,9 @@
  * puede quedarse sin slots. Toda transferencia termina en una celda abierta y
  * todo destino tiene retorno: se verifica al final.
  *
+ * Idempotente: al reemplazar un evento propio se conserva su ID. Si no, cada
+ * reaplicación (y el canon, que numera después) hacía crecer el ID para siempre.
+ *
  * Uso:
  *   node tools/apply_expansion_multiversal.mjs           # instala y verifica
  *   node tools/apply_expansion_multiversal.mjs --verify  # solo verifica
@@ -207,32 +210,62 @@ function spread(cells, count) {
   return chosen;
 }
 
+function captureOwnedIds(mapId, ownedPrefixes) {
+  const map = marshalLoad(fs.readFileSync(path.join(DATA, mapFile(mapId))));
+  const byName = new Map();
+  for (const [key, object] of iv(map, "events")?.pairs ?? []) {
+    const name = txt(iv(object, "@name"));
+    if (ownedPrefixes.some((prefix) => name.startsWith(prefix)) && typeof key === "number" && !byName.has(name)) {
+      byName.set(name, key);
+    }
+  }
+  return byName;
+}
+
 /** Alta idempotente: sustituye los eventos de esta herramienta y añade los nuevos. */
-function upsert(mapId, ownedPrefixes, build) {
+function upsert(mapId, ownedPrefixes, build, preserved = new Map()) {
   const file = mapFile(mapId);
   backup([file]);
   const map = marshalLoad(fs.readFileSync(path.join(DATA, file)));
   const events = iv(map, "events");
+  const remembered = new Map(preserved);
+  for (const [key, object] of events.pairs ?? []) {
+    const name = txt(iv(object, "@name"));
+    if (ownedPrefixes.some((prefix) => name.startsWith(prefix)) && typeof key === "number" && !remembered.has(name)) {
+      remembered.set(name, key);
+    }
+  }
   const kept = events.pairs.filter(([, object]) => !ownedPrefixes.some((prefix) => txt(iv(object, "@name")).startsWith(prefix)));
-  let nextId = Math.max(0, ...kept.map(([key]) => (typeof key === "number" ? key : 0))) + 1;
+  const used = new Set(kept.map(([key]) => key).filter((key) => typeof key === "number"));
+  let nextId = Math.max(0, ...used, ...remembered.values()) + 1;
   const built = build(nextId);
-  const added = built.map((object, index) => {
+  const added = built.map((object) => {
+    const name = txt(iv(object, "@name"));
     // Asignar el índice ANTES de serializar el hash. Incrementar nextId dentro
     // de un segundo .map dejaba a todos los eventos nuevos con la misma clave.
-    const id = nextId + index;
+    // El ID previo del mismo nombre se conserva: si no, cada pasada lo subía.
+    let id = remembered.get(name);
+    if (typeof id !== "number" || used.has(id)) {
+      while (used.has(nextId)) nextId++;
+      id = nextId++;
+    }
+    used.add(id);
     object.setIvar("@id", id);
     return [id, object];
   });
   events.pairs = [...kept, ...added];
-  write(file, map);
+  const dumped = Buffer.from(marshalDump(map));
+  const currentPath = path.join(DATA, file);
+  if (!dumped.equals(fs.readFileSync(currentPath))) fs.writeFileSync(currentPath, dumped);
   return added.map(([, object]) => ({ name: txt(iv(object, "@name")), x: iv(object, "@x"), y: iv(object, "@y") }));
 }
 
 /** Reparte varios eventos propios: limpia antes para que las celdas no bailen. */
 function placeMany(mapId, owned, count, build) {
+  const preserved = captureOwnedIds(mapId, owned);
   upsert(mapId, owned, () => []);
   const cells = spread(freeCells(mapId), count);
-  upsert(mapId, owned, () => build(cells));
+  upsert(mapId, owned, () => build(cells), preserved);
   return cells;
 }
 
@@ -242,9 +275,10 @@ function placeMany(mapId, owned, count, build) {
  * celda y la nueva nace un tile más allá en cada ejecución.
  */
 function place(mapId, owned, hint, build) {
+  const preserved = captureOwnedIds(mapId, owned);
   upsert(mapId, owned, () => []);
   const cell = nearest(freeCells(mapId), hint);
-  upsert(mapId, owned, () => [build(cell)]);
+  upsert(mapId, owned, () => [build(cell)], preserved);
   return cell;
 }
 

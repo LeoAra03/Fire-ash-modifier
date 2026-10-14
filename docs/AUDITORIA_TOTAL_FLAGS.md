@@ -1,16 +1,16 @@
 # Auditoría total de flags de Fire Ash
 
-Generada: 2026-10-02T19:49:29.948Z
+Generada: 2026-10-14T17:11:35.043Z
 
 ## Cobertura
 
-- 2189 mapas.
+- 3465 mapas.
 - 50 eventos comunes.
-- 403 secciones de script.
-- 939 slots de switch (875 con nombre).
-- 288 slots de variable (279 con nombre).
-- 6181 claves de self-switch observadas.
-- 81 expresiones dinámicas distintas.
+- 409 secciones de script.
+- 994 slots de switch (882 con nombre).
+- 354 slots de variable (306 con nombre).
+- 8037 claves de self-switch observadas.
+- 89 expresiones dinámicas distintas.
 
 La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby puede calcular índices en ejecución. Por eso las expresiones dinámicas se conservan en el JSON completo.
 
@@ -313,12 +313,12 @@ La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby 
 
 Conflictos de reserva: **0**.
 
-## Switches 1–939
+## Switches 1–994
 
 | ID | Nombre | Lecturas | ON | OFF | Script | Estado |
 |---:|---|---:|---:|---:|---:|---|
-| 1 | Starting over | 151 | 0 | 121 | 0 | used |
-| 2 | Seen Pokérus in Poké Center | 0 | 113 | 0 | 0 | write only/static |
+| 1 | Starting over | 269 | 0 | 239 | 0 | used |
+| 2 | Seen Pokérus in Poké Center | 0 | 226 | 0 | 0 | write only/static |
 | 3 | Choosing starter | 12 | 2 | 4 | 0 | used |
 | 4 | Defeated Gym 1 | 11 | 2 | 0 | 0 | used |
 | 5 | Defeated Gym 2 | 10 | 2 | 0 | 0 | used |
@@ -327,7 +327,7 @@ Conflictos de reserva: **0**.
 | 8 | Defeated Gym 5 | 19 | 1 | 0 | 0 | used |
 | 9 | Defeated Gym 6 | 17 | 1 | 0 | 0 | used |
 | 10 | Defeated Gym 7 | 17 | 1 | 0 | 0 | used |
-| 11 | Defeated Gym 8 | 45 | 1 | 0 | 0 | used |
+| 11 | Defeated Gym 8 | 46 | 1 | 0 | 0 | used |
 | 12 | Defeated Elite Four | 1 | 1 | 0 | 0 | used |
 | 13 | Fossil revival in progress | 2 | 3 | 3 | 0 | used |
 | 14 | s:PBDayNight.isDay? | 4 | 0 | 0 | 0 | read/access only |
@@ -338,7 +338,7 @@ Conflictos de reserva: **0**.
 | 19 | s:pbIsWeekday(-1,2,4,6) | 1 | 0 | 0 | 0 | read/access only |
 | 20 | s:!pbIsWeekday(-1,2,4,6) | 1 | 0 | 0 | 0 | read/access only |
 | 21 | s:tsOn?("A") | 199 | 0 | 0 | 0 | read/access only |
-| 22 | s:tsOff?("A") | 970 | 0 | 0 | 0 | read/access only |
+| 22 | s:tsOff?("A") | 1215 | 0 | 0 | 0 | read/access only |
 | 23 | s:cooledDown?(86400) | 7 | 0 | 0 | 0 | read/access only |
 | 24 | s:cooledDownDays?(1) | 9 | 0 | 0 | 0 | read/access only |
 | 25 | s:pbInSafari? | 2 | 0 | 0 | 0 | read/access only |
@@ -454,7 +454,7 @@ Conflictos de reserva: **0**.
 | 135 | Ever Grande over | 11 | 1 | 1 | 0 | used |
 | 136 | Doubles 1.1 | 2 | 2 | 2 | 0 | used |
 | 137 | Doubles 1.2 | 2 | 2 | 1 | 0 | used |
-| 138 | Frontier Start | 67 | 1 | 0 | 0 | used |
+| 138 | Frontier Start | 68 | 1 | 0 | 0 | used |
 | 139 | Beat Factory | 7 | 1 | 0 | 0 | used |
 | 140 | Beat Arena | 6 | 1 | 0 | 0 | used |
 | 141 | Beat Dome | 2 | 1 | 0 | 0 | used |
@@ -601,7 +601,7 @@ Conflictos de reserva: **0**.
 | 282 | Met Tracey | 1 | 1 | 0 | 0 | used |
 | 283 | Met Elm | 3 | 1 | 0 | 0 | used |
 | 284 | Mirage Kingdom | 2 | 1 | 0 | 0 | used |
-| 285 | Alola Start | 27 | 1 | 0 | 0 | used |
+| 285 | Alola Start | 28 | 1 | 0 | 0 | used |
 | 286 | Earth Badge | 1 | 1 | 0 | 0 | used |
 | 287 | Alola Mom | 3 | 1 | 0 | 0 | used |
 | 288 | Egg Delivered | 4 | 1 | 0 | 0 | used |
@@ -610,15 +610,15 @@ Conflictos de reserva: **0**.
 | 291 | Rotom Over | 1 | 1 | 1 | 0 | used |
 | 292 | First Lesson | 4 | 1 | 0 | 0 | used |
 | 293 | Melemele Forest Done | 8 | 1 | 0 | 0 | used |
-| 294 | Classmate Battle 1 | 8 | 4 | 0 | 0 | used |
-| 295 | Start Lana | 5 | 1 | 0 | 0 | used |
-| 296 | Classmate Switch | 15 | 21 | 16 | 0 | used |
-| 297 | Lana Gyarados | 9 | 1 | 0 | 0 | used |
-| 298 | Start Sophocles | 7 | 1 | 0 | 0 | used |
+| 294 | Classmate Battle 1 | 9 | 4 | 0 | 0 | used |
+| 295 | Start Lana | 5 | 2 | 0 | 0 | used |
+| 296 | Classmate Switch | 15 | 33 | 26 | 0 | used |
+| 297 | Lana Gyarados | 10 | 1 | 0 | 0 | used |
+| 298 | Start Sophocles | 7 | 2 | 0 | 0 | used |
 | 299 | Beat Mall | 16 | 2 | 0 | 0 | used |
 | 300 | Start Llillie | 5 | 1 | 0 | 0 | used |
-| 301 | Beat Hobbes | 8 | 1 | 0 | 0 | used |
-| 302 | Bridge Open | 9 | 1 | 0 | 0 | used |
+| 301 | Beat Hobbes | 9 | 1 | 0 | 0 | used |
+| 302 | Bridge Open | 9 | 2 | 0 | 0 | used |
 | 303 | Met Hala | 4 | 1 | 0 | 0 | used |
 | 304 | Beat Trial 1 | 5 | 1 | 0 | 0 | used |
 | 305 | Beat Trial 2 | 5 | 1 | 0 | 0 | used |
@@ -626,66 +626,66 @@ Conflictos de reserva: **0**.
 | 307 | Beat Trial 4 | 8 | 1 | 0 | 0 | used |
 | 308 | Beat Trial 5 | 0 | 0 | 0 | 0 | no literal use |
 | 309 | Beat Trial 6 | 0 | 0 | 0 | 0 | no literal use |
-| 310 | Beat Grand Trial 1 | 7 | 1 | 0 | 0 | used |
-| 311 | Beat Grand Trial 2 | 5 | 1 | 0 | 0 | used |
-| 312 | Beat Grand Trial 3 | 7 | 1 | 0 | 0 | used |
-| 313 | Beat Grand Trial 4 | 9 | 1 | 0 | 0 | used |
-| 314 | Start Lillie 2 | 9 | 1 | 0 | 0 | used |
+| 310 | Beat Grand Trial 1 | 8 | 1 | 0 | 0 | used |
+| 311 | Beat Grand Trial 2 | 6 | 1 | 0 | 0 | used |
+| 312 | Beat Grand Trial 3 | 8 | 1 | 0 | 0 | used |
+| 313 | Beat Grand Trial 4 | 10 | 1 | 0 | 0 | used |
+| 314 | Start Lillie 2 | 9 | 2 | 0 | 0 | used |
 | 315 | Beat Lillie | 3 | 1 | 0 | 0 | used |
-| 316 | Beat Kiawe | 10 | 1 | 0 | 0 | used |
-| 317 | Start Mallow | 7 | 1 | 0 | 0 | used |
+| 316 | Beat Kiawe | 11 | 1 | 0 | 0 | used |
+| 317 | Start Mallow | 7 | 2 | 0 | 0 | used |
 | 318 | Got Nectar | 3 | 1 | 0 | 0 | used |
-| 319 | Beat Mallow | 6 | 1 | 0 | 0 | used |
-| 320 | Start Gladion | 7 | 1 | 0 | 0 | used |
-| 321 | Beat Gladion | 3 | 1 | 0 | 0 | used |
-| 322 | Start Akala | 14 | 1 | 0 | 0 | used |
+| 319 | Beat Mallow | 7 | 1 | 0 | 0 | used |
+| 320 | Start Gladion | 7 | 2 | 0 | 0 | used |
+| 321 | Beat Gladion | 4 | 1 | 0 | 0 | used |
+| 322 | Start Akala | 14 | 2 | 0 | 0 | used |
 | 323 | Go to Akala | 21 | 1 | 0 | 0 | used |
 | 324 | Finished Lana | 1 | 1 | 1 | 0 | used |
 | 325 | Wela Volcano | 4 | 1 | 0 | 0 | used |
-| 326 | Sophocles.1 | 6 | 1 | 0 | 0 | used |
-| 327 | Beat Sophocles.1 | 3 | 1 | 0 | 0 | used |
-| 328 | Return to Kanto | 11 | 1 | 0 | 0 | used |
+| 326 | Sophocles.1 | 6 | 2 | 0 | 0 | used |
+| 327 | Beat Sophocles.1 | 4 | 1 | 0 | 0 | used |
+| 328 | Return to Kanto | 11 | 2 | 0 | 0 | used |
 | 329 | Kanto Go | 20 | 1 | 0 | 0 | used |
 | 330 | Beat Misty | 1 | 1 | 0 | 0 | used |
 | 331 | Beat Brock | 1 | 1 | 0 | 0 | used |
-| 332 | Return to School | 17 | 1 | 0 | 0 | used |
+| 332 | Return to School | 18 | 1 | 0 | 0 | used |
 | 333 | Rocket Return Kanto | 5 | 1 | 0 | 0 | used |
-| 334 | Find Nebby | 3 | 1 | 0 | 0 | used |
+| 334 | Find Nebby | 3 | 2 | 0 | 0 | used |
 | 335 | Found Nebby | 4 | 1 | 0 | 0 | used |
 | 336 | Nebby Over | 1 | 1 | 1 | 0 | used |
-| 337 | Named Nebby | 3 | 1 | 0 | 0 | used |
-| 338 | To Aether | 13 | 1 | 0 | 0 | used |
+| 337 | Named Nebby | 4 | 1 | 0 | 0 | used |
+| 338 | To Aether | 13 | 2 | 0 | 0 | used |
 | 339 | Go To Aether | 3 | 1 | 0 | 0 | used |
-| 340 | Finished Aether | 12 | 1 | 0 | 0 | used |
-| 341 | Ten Carat Hill | 4 | 1 | 0 | 0 | used |
-| 342 | Beat Gladion 2 | 6 | 1 | 0 | 0 | used |
-| 343 | Visit Faba | 12 | 1 | 0 | 0 | used |
+| 340 | Finished Aether | 13 | 1 | 0 | 0 | used |
+| 341 | Ten Carat Hill | 4 | 2 | 0 | 0 | used |
+| 342 | Beat Gladion 2 | 7 | 1 | 0 | 0 | used |
+| 343 | Visit Faba | 12 | 2 | 0 | 0 | used |
 | 344 | Cosmoem | 5 | 1 | 0 | 0 | used |
 | 345 | To Poni Island | 7 | 1 | 0 | 0 | used |
 | 346 | Beat Lusamine | 7 | 1 | 0 | 0 | used |
-| 347 | Saved Lusamine | 10 | 1 | 0 | 0 | used |
-| 348 | Begin Snow Mnt | 10 | 1 | 0 | 0 | used |
+| 347 | Saved Lusamine | 11 | 1 | 0 | 0 | used |
+| 348 | Begin Snow Mnt | 10 | 2 | 0 | 0 | used |
 | 349 | Go To Lanakila | 2 | 1 | 0 | 0 | used |
-| 350 | Lillie Lanakila | 6 | 1 | 0 | 0 | used |
-| 351 | Start UB | 16 | 1 | 0 | 0 | used |
+| 350 | Lillie Lanakila | 7 | 1 | 0 | 0 | used |
+| 351 | Start UB | 16 | 2 | 0 | 0 | used |
 | 352 | Find Buzzwole | 4 | 1 | 0 | 0 | used |
-| 353 | Found Buzzwole | 5 | 1 | 0 | 0 | used |
-| 354 | Go Royal Avenue | 7 | 1 | 0 | 0 | used |
+| 353 | Found Buzzwole | 6 | 1 | 0 | 0 | used |
+| 354 | Go Royal Avenue | 7 | 2 | 0 | 0 | used |
 | 355 | Beat Masked Royal | 21 | 4 | 0 | 0 | used |
 | 356 | Remove Kiawe | 1 | 4 | 1 | 0 | used |
 | 357 | Remove Sophocles | 1 | 2 | 1 | 0 | used |
-| 358 | Find Poipole | 5 | 1 | 0 | 0 | used |
-| 359 | Found Poipole | 6 | 2 | 0 | 0 | used |
+| 358 | Find Poipole | 5 | 2 | 0 | 0 | used |
+| 359 | Found Poipole | 7 | 2 | 0 | 0 | used |
 | 360 | Paul remove Chimchar | 1 | 1 | 0 | 0 | used |
-| 361 | Celesteela | 6 | 1 | 0 | 0 | used |
+| 361 | Celesteela | 6 | 2 | 0 | 0 | used |
 | 362 | Kiawe Farm | 3 | 1 | 0 | 0 | used |
 | 363 | Lana Dewpider | 3 | 1 | 0 | 0 | used |
 | 364 | Mallow Shop | 4 | 1 | 0 | 0 | used |
-| 365 | Day done | 4 | 1 | 0 | 0 | used |
-| 366 | UlaUla Island | 6 | 1 | 0 | 0 | used |
+| 365 | Day done | 5 | 1 | 0 | 0 | used |
+| 366 | UlaUla Island | 6 | 2 | 0 | 0 | used |
 | 367 | Met Nanu | 7 | 1 | 0 | 0 | used |
 | 368 | Tapu Bulu | 10 | 1 | 0 | 0 | used |
-| 369 | UB 1 and 2 | 4 | 1 | 0 | 0 | used |
+| 369 | UB 1 and 2 | 4 | 2 | 0 | 0 | used |
 | 370 | Blacephalon | 1 | 1 | 0 | 0 | used |
 | 371 | UB done | 2 | 1 | 0 | 0 | used |
 | 372 | Hokulani Observatory | 1 | 1 | 0 | 0 | used |
@@ -693,34 +693,34 @@ Conflictos de reserva: **0**.
 | 374 | Beat Lillie Lanakila | 6 | 1 | 0 | 0 | used |
 | 375 | Masked Royal 2 | 2 | 1 | 0 | 0 | used |
 | 376 | Remove Masked Royal | 1 | 2 | 1 | 0 | used |
-| 377 | Won Battle Dome | 4 | 3 | 0 | 0 | used |
+| 377 | Won Battle Dome | 5 | 3 | 0 | 0 | used |
 | 378 | Xurkitree | 1 | 1 | 0 | 0 | used |
 | 379 | Stakataka | 6 | 1 | 0 | 0 | used |
-| 380 | Got Stakataka | 3 | 1 | 0 | 0 | used |
-| 381 | Lunala | 21 | 1 | 0 | 0 | used |
-| 382 | Necrozma | 20 | 1 | 0 | 0 | used |
-| 383 | Find Hau | 5 | 1 | 0 | 0 | used |
+| 380 | Got Stakataka | 4 | 1 | 0 | 0 | used |
+| 381 | Lunala | 21 | 2 | 0 | 0 | used |
+| 382 | Necrozma | 21 | 1 | 0 | 0 | used |
+| 383 | Find Hau | 5 | 2 | 0 | 0 | used |
 | 384 | Beat Hau | 3 | 1 | 0 | 0 | used |
 | 385 | Guzzlord | 14 | 1 | 0 | 0 | used |
 | 386 | Beat Alola Misty | 2 | 1 | 0 | 0 | used |
-| 387 | Beat Alola Brock | 3 | 1 | 0 | 0 | used |
-| 388 | Start Poni | 11 | 1 | 0 | 0 | used |
+| 387 | Beat Alola Brock | 4 | 1 | 0 | 0 | used |
+| 388 | Start Poni | 11 | 2 | 0 | 0 | used |
 | 389 | Go Poni | 8 | 1 | 0 | 0 | used |
 | 390 | Beat Hapu | 2 | 1 | 0 | 0 | used |
 | 391 | Beat Poni Lillie | 5 | 1 | 0 | 0 | used |
 | 392 | Beat Poni Sophocles | 5 | 1 | 0 | 0 | used |
 | 393 | Beat Poni Lana | 5 | 1 | 0 | 0 | used |
-| 394 | Meltan Go | 4 | 1 | 0 | 0 | used |
+| 394 | Meltan Go | 4 | 2 | 0 | 0 | used |
 | 395 | Meltan Got | 1 | 2 | 0 | 0 | used |
 | 396 | TR Meltan | 5 | 1 | 0 | 0 | used |
 | 397 | Pheramosa | 3 | 1 | 0 | 0 | used |
 | 398 | Guzma | 4 | 1 | 0 | 0 | used |
-| 399 | Beat Guzma | 5 | 1 | 0 | 0 | used |
-| 400 | Malie Go | 10 | 1 | 0 | 0 | used |
+| 399 | Beat Guzma | 6 | 1 | 0 | 0 | used |
+| 400 | Malie Go | 10 | 2 | 0 | 0 | used |
 | 401 | Malie Start | 6 | 1 | 0 | 0 | used |
-| 402 | Beat Kantonian Gym | 15 | 1 | 0 | 0 | used |
-| 403 | Kartana | 8 | 2 | 0 | 0 | used |
-| 404 | Manalo Concept | 12 | 1 | 0 | 0 | used |
+| 402 | Beat Kantonian Gym | 16 | 1 | 0 | 0 | used |
+| 403 | Kartana | 8 | 4 | 0 | 0 | used |
+| 404 | Manalo Concept | 13 | 1 | 0 | 0 | used |
 | 405 | Manalo Go | 3 | 1 | 0 | 0 | used |
 | 406 | Manalo Start | 1 | 1 | 1 | 0 | used |
 | 407 | Manalo Royal 1 | 9 | 8 | 0 | 0 | used |
@@ -731,7 +731,7 @@ Conflictos de reserva: **0**.
 | 412 | Manalo Finals | 26 | 1 | 1 | 0 | used |
 | 413 | Guzzlord League | 58 | 1 | 0 | 0 | used |
 | 414 | Guzzlord Defeat | 25 | 1 | 0 | 0 | used |
-| 415 | Kukui Fight | 25 | 1 | 0 | 0 | used |
+| 415 | Kukui Fight | 26 | 1 | 0 | 0 | used |
 | 416 | Beat Gym 11.2 | 1 | 1 | 0 | 0 | used |
 | 417 | Lugia Over | 4 | 1 | 0 | 0 | used |
 | 418 | Devon Aqua | 2 | 1 | 0 | 0 | used |
@@ -743,10 +743,10 @@ Conflictos de reserva: **0**.
 | 424 | Frontier Pass | 2 | 1 | 0 | 0 | used |
 | 425 | Kanto Grand Festival | 2 | 1 | 0 | 0 | used |
 | 426 | Jubilife Contest | 4 | 1 | 0 | 0 | used |
-| 427 | Last Classroom | 12 | 1 | 0 | 0 | used |
-| 428 | Alola Done | 12 | 1 | 0 | 0 | used |
-| 429 | Postgame | 393 | 1 | 3 | 0 | used |
-| 430 | Galar Start | 58 | 1 | 0 | 0 | used |
+| 427 | Last Classroom | 12 | 2 | 0 | 0 | used |
+| 428 | Alola Done | 13 | 1 | 0 | 0 | used |
+| 429 | Postgame | 427 | 1 | 4 | 0 | used |
+| 430 | Galar Start | 59 | 1 | 0 | 0 | used |
 | 431 | Galactic Veilstone | 10 | 1 | 0 | 0 | used |
 | 432 | Valor Contest | 3 | 1 | 0 | 0 | used |
 | 433 | Finished Cynthia | 1 | 1 | 1 | 0 | used |
@@ -757,32 +757,32 @@ Conflictos de reserva: **0**.
 | 438 | Sinnoh Grand Festival | 1 | 1 | 0 | 0 | used |
 | 439 | Kalos Start | 1 | 1 | 0 | 0 | used |
 | 440 | First Skull | 2 | 1 | 0 | 0 | used |
-| 441 | Met Ilima | 13 | 1 | 0 | 0 | used |
-| 442 | Find Mina | 7 | 1 | 0 | 0 | used |
+| 441 | Met Ilima | 14 | 1 | 0 | 0 | used |
+| 442 | Find Mina | 7 | 2 | 0 | 0 | used |
 | 443 | Poni Skull | 2 | 1 | 0 | 0 | used |
 | 444 | Manalo Skull | 16 | 1 | 0 | 0 | used |
-| 445 | Learnt Z Move | 3 | 1 | 0 | 0 | used |
+| 445 | Learnt Z Move | 4 | 1 | 0 | 0 | used |
 | 446 | Mr Mime | 2 | 2 | 0 | 0 | used |
 | 447 | Lugia Vermilion | 7 | 1 | 0 | 0 | used |
-| 448 | Luigia Vermilion Done | 10 | 3 | 0 | 0 | used |
-| 449 | Venusuar JN | 41 | 2 | 0 | 1 | used |
-| 450 | Begin Galar | 31 | 1 | 0 | 1 | used |
+| 448 | Luigia Vermilion Done | 12 | 3 | 0 | 0 | used |
+| 449 | Venusuar JN | 41 | 4 | 0 | 1 | used |
+| 450 | Begin Galar | 33 | 1 | 0 | 1 | used |
 | 451 | Flute Cup | 19 | 1 | 0 | 1 | used |
 | 452 | Flute Cup Over | 23 | 1 | 0 | 1 | used |
 | 453 | Dragonite Island | 0 | 0 | 0 | 0 | no literal use |
 | 454 | Galar Champion | 22 | 1 | 0 | 1 | used |
 | 455 | Unova Ruins | 15 | 1 | 0 | 1 | used |
 | 456 | WCS Start | 17 | 1 | 0 | 1 | used |
-| 457 | WCS Oliver | 6 | 1 | 0 | 1 | used |
-| 458 | WCS Hayden | 11 | 1 | 0 | 1 | used |
+| 457 | WCS Oliver | 7 | 1 | 0 | 1 | used |
+| 458 | WCS Hayden | 12 | 1 | 0 | 1 | used |
 | 459 | Resort Area | 8 | 1 | 0 | 1 | used |
 | 460 | WCS Korrina | 14 | 1 | 0 | 1 | used |
 | 461 | Raihan/Sonia | 17 | 1 | 0 | 1 | used |
-| 462 | Sonia | 1 | 1 | 0 | 0 | used |
-| 463 | Raihan | 1 | 1 | 0 | 0 | used |
-| 464 | WCS Tony | 6 | 1 | 0 | 1 | used |
-| 465 | WCS Kricketina Kylie | 14 | 1 | 0 | 1 | used |
-| 466 | Goh Heracross | 5 | 1 | 0 | 1 | used |
+| 462 | Sonia | 2 | 1 | 0 | 0 | used |
+| 463 | Raihan | 2 | 1 | 0 | 0 | used |
+| 464 | WCS Tony | 7 | 2 | 0 | 1 | used |
+| 465 | WCS Kricketina Kylie | 15 | 1 | 0 | 1 | used |
+| 466 | Goh Heracross | 6 | 1 | 0 | 1 | used |
 | 467 | WCS Bea | 6 | 1 | 0 | 1 | used |
 | 468 | WCS Wrap | 5 | 1 | 0 | 1 | used |
 | 469 | WCS Bind | 2 | 1 | 0 | 1 | used |
@@ -791,7 +791,7 @@ Conflictos de reserva: **0**.
 | 472 | Alola Battle | 6 | 2 | 0 | 0 | used |
 | 473 | WCS Carmo | 12 | 4 | 0 | 1 | used |
 | 474 | WCS Bea 2 | 3 | 1 | 0 | 1 | used |
-| 475 | Zapdos | 9 | 1 | 0 | 1 | used |
+| 475 | Zapdos | 10 | 1 | 0 | 1 | used |
 | 476 | Finished Goh | 4 | 2 | 1 | 0 | used |
 | 477 | Team Rocket PP | 6 | 1 | 0 | 0 | used |
 | 478 | Darkest Day Start | 8 | 1 | 0 | 1 | used |
@@ -812,7 +812,7 @@ Conflictos de reserva: **0**.
 | 493 | Riolu Switch | 1 | 2 | 0 | 0 | used |
 | 494 | Max Raid Switch | 0 | 0 | 0 | 0 | no literal use |
 | 495 | Hard Mode Raid | 0 | 0 | 0 | 0 | no literal use |
-| 496 | No Fly | 1 | 24 | 37 | 2 | used |
+| 496 | No Fly | 1 | 25 | 37 | 2 | used |
 | 497 | No Ultra Burst | 0 | 0 | 0 | 0 | no literal use |
 | 498 | No Dynamax | 0 | 0 | 0 | 0 | no literal use |
 | 499 | No PBL | 0 | 0 | 0 | 0 | no literal use |
@@ -826,27 +826,27 @@ Conflictos de reserva: **0**.
 | 507 | Wikstrom | 4 | 1 | 0 | 1 | used |
 | 508 | WCS Rinto | 6 | 1 | 0 | 1 | used |
 | 509 | WCS Iris | 11 | 1 | 0 | 1 | used |
-| 510 | Moltres | 17 | 1 | 0 | 1 | used |
+| 510 | Moltres | 18 | 1 | 0 | 1 | used |
 | 511 | Alolan Ninetales | 18 | 1 | 0 | 1 | used |
 | 512 | Cressila/Darkrai | 15 | 1 | 0 | 1 | used |
 | 513 | Goh Battle | 17 | 1 | 0 | 1 | used |
 | 514 | WCS Volkner | 13 | 1 | 0 | 1 | used |
-| 515 | PM Volcarona | 19 | 1 | 0 | 1 | used |
+| 515 | PM Volcarona | 20 | 1 | 0 | 1 | used |
 | 516 | Opal | 13 | 1 | 0 | 1 | used |
-| 517 | WCS Bea 3 | 15 | 1 | 0 | 1 | used |
+| 517 | WCS Bea 3 | 16 | 1 | 0 | 1 | used |
 | 518 | Dialga/Palkia | 26 | 1 | 0 | 1 | used |
 | 519 | Max Soup | 54 | 2 | 0 | 1 | used |
-| 520 | TG Hisui | 16 | 1 | 0 | 1 | used |
+| 520 | TG Hisui | 17 | 1 | 0 | 1 | used |
 | 521 | TG Brock | 7 | 1 | 0 | 1 | used |
 | 522 | TG Heatran | 24 | 1 | 0 | 1 | used |
 | 523 | JN Sophocles | 34 | 1 | 0 | 1 | used |
 | 524 | WCS Marnie | 12 | 1 | 0 | 1 | used |
 | 525 | Piers | 8 | 1 | 0 | 1 | used |
-| 526 | PM Articuno | 10 | 1 | 0 | 1 | used |
-| 527 | JN Clemont | 24 | 1 | 0 | 1 | used |
+| 526 | PM Articuno | 11 | 1 | 0 | 1 | used |
+| 527 | JN Clemont | 25 | 1 | 0 | 1 | used |
 | 528 | Drasna | 6 | 1 | 0 | 1 | used |
-| 529 | JN Wallace | 26 | 1 | 0 | 1 | used |
-| 530 | JN Serena | 4 | 1 | 3 | 1 | used |
+| 529 | JN Wallace | 27 | 1 | 0 | 1 | used |
+| 530 | JN Serena | 5 | 1 | 3 | 1 | used |
 | 531 | WCS Raihan | 23 | 1 | 3 | 1 | used |
 | 532 | Crown Tundra | 5 | 1 | 0 | 1 | used |
 | 533 | Alola Battle Royal | 30 | 1 | 0 | 1 | used |
@@ -866,9 +866,9 @@ Conflictos de reserva: **0**.
 | 547 | WCS Cynthia | 15 | 1 | 0 | 1 | used |
 | 548 | TR Break | 14 | 1 | 0 | 1 | used |
 | 549 | WCS Leon | 15 | 1 | 0 | 1 | used |
-| 550 | Beat Leon | 15 | 1 | 0 | 2 | used |
+| 550 | Beat Leon | 16 | 1 | 0 | 2 | used |
 | 551 | WCS Master Start | 1 | 1 | 0 | 0 | used |
-| 552 | Lugia battle | 11 | 1 | 0 | 1 | used |
+| 552 | Lugia battle | 12 | 1 | 0 | 1 | used |
 | 553 | Leave Cerise Lab | 8 | 1 | 0 | 1 | used |
 | 554 | Find Latias | 22 | 1 | 0 | 0 | used |
 | 555 | Find Misty/Clauncher | 11 | 1 | 0 | 0 | used |
@@ -877,8 +877,8 @@ Conflictos de reserva: **0**.
 | 558 | Squirtle | 16 | 1 | 0 | 0 | used |
 | 559 | Lapras/Wailmer | 14 | 1 | 0 | 0 | used |
 | 560 | Banette | 11 | 1 | 0 | 0 | used |
-| 561 | Found Banette Trainer | 1 | 1 | 0 | 0 | used |
-| 562 | Jessie/James | 9 | 1 | 0 | 0 | used |
+| 561 | Found Banette Trainer | 2 | 1 | 0 | 0 | used |
+| 562 | Jessie/James | 10 | 2 | 0 | 0 | used |
 | 563 | Jessie/James Blastoff | 5 | 2 | 0 | 0 | used |
 | 564 | Return Home | 7 | 1 | 0 | 0 | used |
 | 565 | — | 0 | 0 | 0 | 0 | no literal use |
@@ -918,7 +918,7 @@ Conflictos de reserva: **0**.
 | 599 | Spawn Postgame Lunala | 1 | 1 | 1 | 0 | used |
 | 600 | Spawn Postgame Calyrex | 1 | 1 | 1 | 0 | used |
 | 601 | LOUNGE BGM | 3 | 2 | 0 | 0 | used |
-| 602 | To Cerise Lab | 2 | 23 | 24 | 1 | used |
+| 602 | To Cerise Lab | 2 | 24 | 24 | 1 | used |
 | 603 | s:visitedCianwood? | 2 | 3 | 0 | 1 | used |
 | 604 | — | 0 | 0 | 0 | 1 | read/access only; unnamed |
 | 605 | — | 0 | 0 | 0 | 0 | no literal use |
@@ -943,7 +943,7 @@ Conflictos de reserva: **0**.
 | 624 | — | 0 | 0 | 0 | 0 | no literal use |
 | 625 | — | 0 | 0 | 0 | 0 | no literal use |
 | 626 | PWC Registered | 5 | 1 | 11 | 0 | used |
-| 627 | Is PWC Champion | 6 | 1 | 1 | 0 | used |
+| 627 | Is PWC Champion | 7 | 1 | 1 | 0 | used |
 | 628 | — | 0 | 0 | 0 | 0 | no literal use |
 | 629 | — | 0 | 0 | 0 | 0 | no literal use |
 | 630 | — | 0 | 0 | 0 | 0 | no literal use |
@@ -1016,38 +1016,38 @@ Conflictos de reserva: **0**.
 | 697 | GAUNTLET | 1 | 1 | 10 | 1 | used |
 | 698 | CLUB | 1 | 1 | 10 | 1 | used |
 | 699 | PRACTICE | 1 | 1 | 10 | 1 | used |
-| 700 | ARCEUS | 2 | 1 | 4 | 1 | used |
-| 701 | POKEMOD HYPNO RESCUE STARTED | 9 | 1 | 0 | 0 | used |
-| 702 | POKEMOD HYPNO SUBDUED | 7 | 0 | 0 | 1 | used |
-| 703 | POKEMOD CHILDREN RESCUED | 2 | 1 | 0 | 0 | used |
-| 704 | POKEMOD HORIZONS OPEN | 2 | 2 | 0 | 0 | used |
-| 705 | POKEMOD HORIZONS 500 COMPLETE | 1 | 0 | 0 | 0 | used |
-| 706 | POKEMOD ATLAS MIL OPEN | 42 | 1 | 0 | 0 | used |
-| 707 | POKEMOD ATLAS MIL 500 COMPLETE | 1 | 0 | 0 | 0 | used |
-| 708 | POKEMOD ATLAS SEAL 01 BELL | 4 | 1 | 0 | 0 | used |
-| 709 | POKEMOD ATLAS SEAL 02 | 4 | 1 | 0 | 0 | used |
-| 710 | POKEMOD ATLAS SEAL 03 | 4 | 1 | 0 | 0 | used |
-| 711 | POKEMOD ATLAS SEAL 04 | 4 | 1 | 0 | 0 | used |
-| 712 | POKEMOD ATLAS SEAL 05 | 4 | 1 | 0 | 0 | used |
-| 713 | POKEMOD ATLAS SEAL 06 | 4 | 1 | 0 | 0 | used |
-| 714 | POKEMOD ATLAS SEAL 07 | 4 | 1 | 0 | 0 | used |
-| 715 | POKEMOD ATLAS SEAL 08 | 4 | 1 | 0 | 0 | used |
-| 716 | POKEMOD ATLAS SEAL 09 | 4 | 1 | 0 | 0 | used |
-| 717 | POKEMOD ATLAS SEAL 10 | 4 | 1 | 0 | 0 | used |
-| 718 | POKEMOD ATLAS SEAL 11 | 4 | 1 | 0 | 0 | used |
-| 719 | POKEMOD ATLAS SEAL 12 | 4 | 1 | 0 | 0 | used |
-| 720 | POKEMOD ATLAS SEAL 13 | 4 | 1 | 0 | 0 | used |
-| 721 | POKEMOD ATLAS SEAL 14 | 4 | 1 | 0 | 0 | used |
-| 722 | POKEMOD ATLAS SEAL 15 | 4 | 1 | 0 | 0 | used |
-| 723 | POKEMOD ATLAS SEAL 16 | 4 | 1 | 0 | 0 | used |
-| 724 | POKEMOD ATLAS SEAL 17 | 4 | 1 | 0 | 0 | used |
-| 725 | POKEMOD ATLAS SEAL 18 | 4 | 1 | 0 | 0 | used |
-| 726 | POKEMOD ATLAS SEAL 19 | 4 | 1 | 0 | 0 | used |
-| 727 | POKEMOD ATLAS SEAL 20 | 4 | 1 | 0 | 0 | used |
-| 728 | POKEMOD ATLAS SEAL 21 | 4 | 1 | 0 | 0 | used |
-| 729 | POKEMOD ATLAS SEAL 22 | 4 | 1 | 0 | 0 | used |
-| 730 | POKEMOD ATLAS SEAL 23 | 4 | 1 | 0 | 0 | used |
-| 731 | POKEMOD ATLAS SEAL 24 | 4 | 1 | 0 | 0 | used |
+| 700 | ARCEUS | 2 | 2 | 4 | 1 | used |
+| 701 | POKEMOD HYPNO RESCUE STARTED | 8 | 2 | 0 | 0 | used |
+| 702 | POKEMOD HYPNO SUBDUED | 7 | 1 | 0 | 1 | used |
+| 703 | POKEMOD CHILDREN RESCUED | 3 | 2 | 0 | 0 | used |
+| 704 | POKEMOD HORIZONS OPEN | 1 | 3 | 0 | 0 | used |
+| 705 | POKEMOD HORIZONS 500 COMPLETE | 1 | 1 | 0 | 0 | used |
+| 706 | POKEMOD ATLAS MIL OPEN | 42 | 2 | 0 | 0 | used |
+| 707 | POKEMOD ATLAS MIL 500 COMPLETE | 1 | 1 | 0 | 0 | used |
+| 708 | POKEMOD ATLAS SEAL 01 BELL | 4 | 2 | 0 | 0 | used |
+| 709 | POKEMOD ATLAS SEAL 02 | 4 | 2 | 0 | 0 | used |
+| 710 | POKEMOD ATLAS SEAL 03 | 4 | 2 | 0 | 0 | used |
+| 711 | POKEMOD ATLAS SEAL 04 | 4 | 3 | 0 | 0 | used |
+| 712 | POKEMOD ATLAS SEAL 05 | 4 | 3 | 0 | 0 | used |
+| 713 | POKEMOD ATLAS SEAL 06 | 4 | 2 | 0 | 0 | used |
+| 714 | POKEMOD ATLAS SEAL 07 | 4 | 2 | 0 | 0 | used |
+| 715 | POKEMOD ATLAS SEAL 08 | 4 | 2 | 0 | 0 | used |
+| 716 | POKEMOD ATLAS SEAL 09 | 4 | 2 | 0 | 0 | used |
+| 717 | POKEMOD ATLAS SEAL 10 | 4 | 3 | 0 | 0 | used |
+| 718 | POKEMOD ATLAS SEAL 11 | 4 | 3 | 0 | 0 | used |
+| 719 | POKEMOD ATLAS SEAL 12 | 4 | 3 | 0 | 0 | used |
+| 720 | POKEMOD ATLAS SEAL 13 | 4 | 2 | 0 | 0 | used |
+| 721 | POKEMOD ATLAS SEAL 14 | 4 | 2 | 0 | 0 | used |
+| 722 | POKEMOD ATLAS SEAL 15 | 4 | 2 | 0 | 0 | used |
+| 723 | POKEMOD ATLAS SEAL 16 | 4 | 2 | 0 | 0 | used |
+| 724 | POKEMOD ATLAS SEAL 17 | 4 | 2 | 0 | 0 | used |
+| 725 | POKEMOD ATLAS SEAL 18 | 4 | 2 | 0 | 0 | used |
+| 726 | POKEMOD ATLAS SEAL 19 | 4 | 2 | 0 | 0 | used |
+| 727 | POKEMOD ATLAS SEAL 20 | 4 | 2 | 0 | 0 | used |
+| 728 | POKEMOD ATLAS SEAL 21 | 4 | 2 | 0 | 0 | used |
+| 729 | POKEMOD ATLAS SEAL 22 | 4 | 2 | 0 | 0 | used |
+| 730 | POKEMOD ATLAS SEAL 23 | 4 | 2 | 0 | 0 | used |
+| 731 | POKEMOD ATLAS SEAL 24 | 4 | 2 | 0 | 0 | used |
 | 732 | POKEMOD ATLAS SEAL 25 | 4 | 1 | 0 | 0 | used |
 | 733 | POKEMOD ATLAS SEAL 26 | 4 | 1 | 0 | 0 | used |
 | 734 | POKEMOD ATLAS SEAL 27 | 4 | 1 | 0 | 0 | used |
@@ -1184,34 +1184,34 @@ Conflictos de reserva: **0**.
 | 865 | POKEMOD ATLAS T2 ROUTE 118 | 2 | 1 | 0 | 0 | used |
 | 866 | POKEMOD ATLAS T2 ROUTE 119 | 2 | 1 | 0 | 0 | used |
 | 867 | POKEMOD ATLAS T2 ROUTE 120 | 2 | 1 | 0 | 0 | used |
-| 868 | — | 0 | 1 | 0 | 0 | write only/static; unnamed |
-| 869 | RUTA_DE_DIOS_ARCEUS_MERCY | 0 | 1 | 0 | 0 | write only/static |
-| 870 | RUTA_DE_DIOS_UNLOCKED | 2 | 3 | 0 | 0 | used |
-| 871 | RUTA_DE_DIOS_DIALGA_DEFEATED | 2 | 2 | 0 | 0 | used |
-| 872 | RUTA_DE_DIOS_PALKIA_DEFEATED | 2 | 2 | 0 | 0 | used |
-| 873 | RUTA_DE_DIOS_ARCEUS_RESOLVED | 1 | 2 | 0 | 0 | used |
-| 874 | RUTA_DE_DIOS_ARCEUS_CAUGHT | 1 | 1 | 0 | 2 | used |
-| 875 | RUTA_DE_DIOS_VOLO_DEFEATED | 0 | 3 | 0 | 1 | used |
-| 876 | RUTA_DE_DIOS_COMPLETED | 8 | 2 | 0 | 0 | used |
+| 868 | — | 0 | 0 | 0 | 0 | no literal use |
+| 869 | RUTA_DE_DIOS_ARCEUS_MERCY | 0 | 0 | 0 | 0 | no literal use |
+| 870 | RUTA_DE_DIOS_UNLOCKED | 2 | 2 | 0 | 0 | used |
+| 871 | RUTA_DE_DIOS_DIALGA_DEFEATED | 2 | 1 | 0 | 0 | used |
+| 872 | RUTA_DE_DIOS_PALKIA_DEFEATED | 2 | 1 | 0 | 0 | used |
+| 873 | RUTA_DE_DIOS_ARCEUS_RESOLVED | 33 | 1 | 0 | 0 | used |
+| 874 | RUTA_DE_DIOS_ARCEUS_CAUGHT | 4 | 0 | 0 | 1 | read/access only |
+| 875 | RUTA_DE_DIOS_VOLO_DEFEATED | 3 | 1 | 0 | 0 | used |
+| 876 | RUTA_DE_DIOS_COMPLETED | 24 | 1 | 0 | 0 | used |
 | 877 | SNOWPOINT_TEMPORARY_TREE_PASS | 0 | 1 | 0 | 0 | write only/static |
 | 878 | ARCEUS_CINEMATIC_CYNTHIA_STEVEN | 2 | 0 | 0 | 0 | read/access only |
 | 879 | ARCEUS_CINEMATIC_GOLD_RED | 2 | 0 | 0 | 0 | read/access only |
 | 880 | ARCEUS_CINEMATIC_VOLUS | 1 | 0 | 0 | 0 | read/access only |
 | 881 | RUTA_DE_DIOS_PRELUDE_SEEN | 0 | 0 | 0 | 0 | no literal use |
-| 882 | DN_UNLOCKED | 0 | 0 | 0 | 0 | no literal use |
-| 883 | DN_SELLO_EP01_WHITE_HAND | 3 | 2 | 0 | 0 | used |
-| 884 | DN_SELLO_EP02_LOST_SILVER | 3 | 2 | 0 | 0 | used |
-| 885 | DN_SELLO_EP03_SNOW_MT_SILVER | 3 | 1 | 0 | 0 | used |
-| 886 | DN_SELLO_EP04_HYPNOS_LULLABY | 3 | 2 | 0 | 0 | used |
-| 887 | DN_SELLO_EP05_POKEMON_BLACK | 3 | 2 | 0 | 0 | used |
-| 888 | DN_SELLO_EP06_KING_UNOWN | 3 | 2 | 0 | 0 | used |
-| 889 | DN_NEXO_CLEARED | 2 | 0 | 0 | 1 | read/access only |
-| 890 | DN_GRIETA_EP01 | 0 | 1 | 0 | 0 | write only/static |
-| 891 | DN_GRIETA_EP02 | 0 | 0 | 0 | 0 | no literal use |
-| 892 | DN_GRIETA_EP03 | 0 | 2 | 0 | 0 | write only/static |
-| 893 | DN_GRIETA_EP04 | 0 | 1 | 0 | 0 | write only/static |
-| 894 | DN_GRIETA_EP05 | 0 | 0 | 0 | 0 | no literal use |
-| 895 | DN_GRIETA_EP06 | 0 | 0 | 0 | 0 | no literal use |
+| 882 | DN_UNLOCKED | 3 | 0 | 0 | 0 | read/access only |
+| 883 | DN_SELLO_EP01_WHITE_HAND | 4 | 1 | 0 | 17 | used |
+| 884 | DN_SELLO_EP02_LOST_SILVER | 4 | 1 | 0 | 17 | used |
+| 885 | DN_SELLO_EP03_SNOW_MT_SILVER | 4 | 4 | 0 | 17 | used |
+| 886 | DN_SELLO_EP04_HYPNOS_LULLABY | 4 | 1 | 0 | 17 | used |
+| 887 | DN_SELLO_EP05_POKEMON_BLACK | 4 | 1 | 0 | 17 | used |
+| 888 | DN_SELLO_EP06_KING_UNOWN | 5 | 2 | 0 | 10 | used |
+| 889 | DN_NEXO_CLEARED | 1 | 0 | 0 | 1 | used |
+| 890 | DN_GRIETA_EP01 | 1 | 1 | 0 | 0 | used |
+| 891 | DN_GRIETA_EP02 | 1 | 1 | 0 | 0 | used |
+| 892 | DN_GRIETA_EP03 | 1 | 1 | 0 | 0 | used |
+| 893 | DN_GRIETA_EP04 | 1 | 1 | 0 | 0 | used |
+| 894 | DN_GRIETA_EP05 | 1 | 1 | 0 | 0 | used |
+| 895 | DN_GRIETA_EP06 | 1 | 2 | 0 | 0 | used |
 | 896 | DN_CUOTA_EP01 | 0 | 0 | 0 | 0 | write only/static |
 | 897 | DN_CUOTA_EP02 | 0 | 0 | 0 | 0 | write only/static |
 | 898 | DN_CUOTA_EP03 | 0 | 0 | 0 | 0 | write only/static |
@@ -1219,15 +1219,15 @@ Conflictos de reserva: **0**.
 | 900 | DN_CUOTA_EP05 | 0 | 0 | 0 | 0 | write only/static |
 | 901 | DN_CUOTA_EP06 | 0 | 0 | 0 | 0 | write only/static |
 | 902 | DN_ROTOM_OBTAINED | 0 | 0 | 0 | 0 | no literal use |
-| 903 | DN_JEFE_EP01_FASE_A | 1 | 1 | 0 | 0 | used |
-| 904 | DN_JEFE_EP02_FASE_A | 1 | 1 | 0 | 0 | used |
-| 905 | DN_JEFE_EP03_FASE_A | 1 | 1 | 0 | 0 | used |
-| 906 | DN_JEFE_EP04_FASE_A | 1 | 1 | 0 | 0 | used |
-| 907 | DN_JEFE_EP05_FASE_A | 1 | 1 | 0 | 0 | used |
-| 908 | DN_JEFE_EP06_FASE_A | 1 | 1 | 0 | 0 | used |
-| 909 | DN_JEFE_NEXO_FASE_A | 1 | 1 | 0 | 0 | used |
-| 910 | DN_BOSS_EP01_PASO_1 | 1 | 1 | 0 | 0 | used |
-| 911 | DN_BOSS_EP02_PASO_1 | 1 | 1 | 0 | 0 | used |
+| 903 | DN_JEFE_EP01_FASE_A | 9 | 2 | 0 | 0 | used |
+| 904 | DN_JEFE_EP02_FASE_A | 9 | 2 | 0 | 0 | used |
+| 905 | DN_JEFE_EP03_FASE_A | 9 | 2 | 0 | 0 | used |
+| 906 | DN_JEFE_EP04_FASE_A | 9 | 2 | 0 | 0 | used |
+| 907 | DN_JEFE_EP05_FASE_A | 9 | 2 | 0 | 0 | used |
+| 908 | DN_JEFE_EP06_FASE_A | 5 | 2 | 0 | 0 | used |
+| 909 | DN_JEFE_NEXO_FASE_A | 0 | 0 | 0 | 0 | no literal use |
+| 910 | DN_BOSS_EP01_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
+| 911 | DN_BOSS_EP02_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
 | 912 | DN_BOSS_EP03_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
 | 913 | DN_BOSS_EP04_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
 | 914 | DN_BOSS_EP05_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
@@ -1236,38 +1236,93 @@ Conflictos de reserva: **0**.
 | 917 | DN_MEDALS_READY | 2 | 0 | 0 | 0 | used |
 | 918 | DN_LIGA_STARTED | 0 | 0 | 0 | 0 | write only/static |
 | 919 | DN_LIGA_ARCEUS | 0 | 0 | 0 | 0 | write only/static |
-| 920 | DN_LIGA_CLEARED | 4 | 0 | 0 | 0 | used |
-| 921 | DN_MADPIKA_SAVED | 0 | 0 | 0 | 0 | write only/static |
-| 922 | DN_SELLO_W7_STRANGLED_RED | 3 | 1 | 0 | 0 | used |
-| 923 | DN_SELLO_W8_BURIED_ALIVE | 3 | 3 | 0 | 0 | used |
-| 924 | DN_SELLO_W9_LAVENDER_SYNDROME | 3 | 1 | 0 | 0 | used |
-| 925 | DN_GRIETA_W7 | 0 | 1 | 0 | 0 | write only/static |
-| 926 | DN_GRIETA_W8 | 0 | 2 | 0 | 0 | write only/static |
+| 920 | DN_LIGA_CLEARED | 3 | 0 | 0 | 0 | used |
+| 921 | DN_MADPIKA_SAVED | 1 | 0 | 0 | 0 | used |
+| 922 | DN_SELLO_W7_STRANGLED_RED | 4 | 1 | 0 | 10 | used |
+| 923 | DN_SELLO_W8_BURIED_ALIVE | 4 | 1 | 0 | 10 | used |
+| 924 | DN_SELLO_W9_LAVENDER_SYNDROME | 4 | 1 | 0 | 10 | used |
+| 925 | DN_GRIETA_W7 | 1 | 1 | 0 | 0 | used |
+| 926 | DN_GRIETA_W8 | 1 | 1 | 0 | 0 | used |
 | 927 | DN_GRIETA_W9 | 0 | 1 | 0 | 0 | write only/static |
-| 928 | DN_JEFE_W7_FASE_A | 0 | 0 | 0 | 0 | no literal use |
-| 929 | DN_JEFE_W8_FASE_A | 0 | 0 | 0 | 0 | no literal use |
-| 930 | DN_JEFE_W9_FASE_A | 0 | 0 | 0 | 0 | no literal use |
-| 931 | DN_TESTIGO_LISTO | 1 | 0 | 0 | 0 | read/access only |
+| 928 | DN_JEFE_W7_FASE_A | 9 | 2 | 0 | 0 | used |
+| 929 | DN_JEFE_W8_FASE_A | 10 | 2 | 0 | 0 | used |
+| 930 | DN_JEFE_W9_FASE_A | 9 | 2 | 0 | 0 | used |
+| 931 | DN_TESTIGO_LISTO | 1 | 0 | 0 | 0 | used |
 | 932 | DN_CUOTA_W7 | 0 | 0 | 0 | 0 | write only/static |
 | 933 | DN_CUOTA_W8 | 0 | 0 | 0 | 0 | write only/static |
 | 934 | DN_CUOTA_W9 | 0 | 0 | 0 | 0 | write only/static |
-| 935 | — | 0 | 0 | 0 | 0 | no literal use |
+| 935 | DN_NEXO_RESOLVED | 1 | 0 | 0 | 3 | used |
 | 936 | RUTA_DE_DIOS_RELIQUIA_1F | 1 | 1 | 0 | 0 | used |
 | 937 | RUTA_DE_DIOS_RELIQUIA_2F | 1 | 1 | 0 | 0 | used |
 | 938 | RUTA_DE_DIOS_RELIQUIA_3F | 1 | 1 | 0 | 0 | used |
 | 939 | RUTA_DE_DIOS_RELIQUIA_4F | 1 | 1 | 0 | 0 | used |
+| 940 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 941 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 942 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 943 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 944 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 945 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 946 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 947 | — | 0 | 1 | 0 | 0 | write only/static; unnamed |
+| 948 | POKEMOD LIGA OSCURA COMPLETA | 1 | 2 | 0 | 0 | used |
+| 949 | — | 0 | 0 | 0 | 0 | no literal use |
+| 950 | — | 5 | 1 | 0 | 0 | used; unnamed |
+| 951 | — | 5 | 1 | 0 | 0 | used; unnamed |
+| 952 | — | 5 | 1 | 0 | 0 | used; unnamed |
+| 953 | — | 5 | 1 | 0 | 0 | used; unnamed |
+| 954 | — | 5 | 1 | 0 | 0 | used; unnamed |
+| 955 | — | 5 | 1 | 0 | 0 | used; unnamed |
+| 956 | — | 5 | 1 | 0 | 0 | used; unnamed |
+| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |
+| 958 | — | 0 | 0 | 0 | 0 | no literal use |
+| 959 | — | 0 | 0 | 0 | 0 | no literal use |
+| 960 | — | 3 | 2 | 0 | 0 | used; unnamed |
+| 961 | — | 2 | 1 | 0 | 0 | used; unnamed |
+| 962 | — | 3 | 3 | 0 | 0 | used; unnamed |
+| 963 | — | 1 | 2 | 0 | 0 | used; unnamed |
+| 964 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 965 | — | 0 | 0 | 0 | 0 | no literal use |
+| 966 | — | 0 | 0 | 0 | 0 | no literal use |
+| 967 | — | 0 | 0 | 0 | 0 | no literal use |
+| 968 | — | 0 | 0 | 0 | 0 | no literal use |
+| 969 | — | 0 | 0 | 0 | 0 | no literal use |
+| 970 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 971 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 972 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 973 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 974 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 975 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 976 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 977 | — | 0 | 1 | 0 | 0 | write only/static; unnamed |
+| 978 | — | 0 | 0 | 0 | 0 | no literal use |
+| 979 | — | 0 | 0 | 0 | 0 | no literal use |
+| 980 | — | 0 | 0 | 0 | 0 | no literal use |
+| 981 | — | 0 | 0 | 0 | 0 | no literal use |
+| 982 | — | 0 | 0 | 0 | 0 | no literal use |
+| 983 | — | 0 | 0 | 0 | 0 | no literal use |
+| 984 | — | 0 | 0 | 0 | 0 | no literal use |
+| 985 | — | 0 | 0 | 0 | 0 | no literal use |
+| 986 | — | 0 | 0 | 0 | 0 | no literal use |
+| 987 | — | 0 | 0 | 0 | 0 | no literal use |
+| 988 | — | 0 | 0 | 0 | 0 | no literal use |
+| 989 | — | 0 | 0 | 0 | 0 | no literal use |
+| 990 | POKEMOD GLAZED COMPLETADA | 1 | 1 | 0 | 0 | used |
+| 991 | POKEMOD LIGHT_PLATINUM COMPLETADA | 1 | 0 | 0 | 0 | used |
+| 992 | POKEMOD LIQUID_CRYSTAL COMPLETADA | 1 | 0 | 0 | 0 | used |
+| 993 | POKEMOD TFOH COMPLETADA | 1 | 1 | 0 | 0 | used |
+| 994 | POKEMOD UNBOUND COMPLETADA | 0 | 1 | 0 | 0 | write only/static |
 | NaN | — | 4 | 0 | 0 | 0 | read/access only; unnamed |
 
-## Variables 1–288
+## Variables 1–354
 
 | ID | Nombre | Lecturas | Escrituras | Script | Estado |
 |---:|---|---:|---:|---:|---|
-| 1 | Temp Pokemon Choice | 3795 | 85 | 7 | used |
+| 1 | Temp Pokemon Choice | 3857 | 88 | 10 | used |
 | 2 | Temp Move Choice | 78 | 36 | 2 | used |
 | 3 | Temp Pokemon Name | 33 | 20 | 0 | used |
 | 4 | Temp Move Name | 75 | 4 | 38 | used |
 | 5 | Temp Text Entry | 65 | 29 | 2 | used |
-| 6 | Poké Center healing ball count | 1344 | 225 | 0 | used |
+| 6 | Poké Center healing ball count | 2688 | 450 | 0 | used |
 | 7 | Starter choice | 10 | 4 | 0 | used |
 | 8 | Apricorn being converted | 3 | 2 | 0 | used |
 | 9 | Fossil being revived | 3 | 2 | 0 | used |
@@ -1312,8 +1367,8 @@ Conflictos de reserva: **0**.
 | 48 | GALAR ACH | 2 | 2 | 0 | used |
 | 49 | ACTIVE ENEMY BUFFS | 0 | 0 | 0 | no literal use |
 | 50 | SYNC ENEMY BUFFS | 0 | 0 | 0 | no literal use |
-| 51 | follower_iterator | 54 | 108 | 0 | used |
-| 52 | follower_count | 54 | 1 | 0 | used |
+| 51 | follower_iterator | 69 | 138 | 0 | used |
+| 52 | follower_count | 69 | 1 | 0 | used |
 | 53 | CLUB TEAM | 0 | 2 | 0 | write only/static |
 | 54 | TRAINER BAG | 0 | 0 | 0 | no literal use |
 | 55 | TRAINER OUTFIT | 0 | 0 | 0 | no literal use |
@@ -1525,31 +1580,97 @@ Conflictos de reserva: **0**.
 | 261 | POKEMOD ATLAS T2 DECISION 118 | 0 | 2 | 0 | write only/static |
 | 262 | POKEMOD ATLAS T2 DECISION 119 | 0 | 2 | 0 | write only/static |
 | 263 | POKEMOD ATLAS T2 DECISION 120 | 0 | 2 | 0 | write only/static |
-| 264 | DN_PROGRESO_EPISODIOS | 10 | 8 | 8 | used |
-| 265 | DN_RESONANCIA | 0 | 147 | 148 | used |
-| 266 | DN_FASE_CORRUPCION | 104 | 50 | 50 | used |
+| 264 | DN_PROGRESO_EPISODIOS | 5 | 8 | 15 | used |
+| 265 | DN_RESONANCIA | 0 | 123 | 739 | used |
+| 266 | DN_FASE_CORRUPCION | 669 | 473 | 0 | used |
 | 267 | DN_EPISODIO_ACTUAL | 0 | 0 | 0 | no literal use |
-| 268 | DN_ANOMALIAS_EP01 | 0 | 0 | 52 | read/access only |
-| 269 | DN_ANOMALIAS_EP02 | 0 | 0 | 56 | read/access only |
+| 268 | DN_ANOMALIAS_EP01 | 0 | 0 | 48 | read/access only |
+| 269 | DN_ANOMALIAS_EP02 | 0 | 0 | 52 | read/access only |
 | 270 | DN_ANOMALIAS_EP03 | 0 | 0 | 48 | read/access only |
-| 271 | DN_ANOMALIAS_EP04 | 0 | 0 | 60 | read/access only |
+| 271 | DN_ANOMALIAS_EP04 | 0 | 0 | 52 | read/access only |
 | 272 | DN_ANOMALIAS_EP05 | 0 | 0 | 52 | read/access only |
 | 273 | DN_ANOMALIAS_EP06 | 0 | 0 | 56 | read/access only |
-| 274 | DN_ANOMALIAS_TOTAL | 0 | 122 | 123 | used |
-| 275 | DN_ROTOM_NIVEL | 0 | 0 | 1 | read/access only |
-| 276 | DN_FINAL_CHOICE | 0 | 0 | 0 | no literal use |
-| 277 | DN_SELLOS_Y_CONTADOR | 1 | 11 | 42 | used |
+| 274 | DN_ANOMALIAS_TOTAL | 0 | 112 | 113 | used |
+| 275 | DN_ROTOM_NIVEL | 1 | 738 | 1 | used |
+| 276 | DN_FINAL_CHOICE | 0 | 2 | 3 | used |
+| 277 | DN_SELLOS_Y_CONTADOR | 1 | 2 | 2 | used |
 | 278 | DN_LIGA_RAMA_MADPIKA | 0 | 2 | 0 | write only/static |
 | 279 | DN_LIGA_CHISPAS | 0 | 4 | 8 | used |
 | 280 | DN_MEDALLAS_CONTADAS | 0 | 0 | 0 | no literal use |
 | 281 | DN_LIGA_ETAPA | 5 | 7 | 0 | used |
 | 282 | DN_LIGA_COMBATE_RESULTADO | 0 | 2 | 0 | write only/static |
-| 283 | DN_ANOMALIAS_W7 | 0 | 0 | 56 | read/access only |
-| 284 | DN_ANOMALIAS_W8 | 0 | 0 | 52 | read/access only |
-| 285 | DN_ANOMALIAS_W9 | 0 | 0 | 56 | read/access only |
+| 283 | DN_ANOMALIAS_W7 | 0 | 0 | 48 | read/access only |
+| 284 | DN_ANOMALIAS_W8 | 0 | 0 | 44 | read/access only |
+| 285 | DN_ANOMALIAS_W9 | 0 | 0 | 48 | read/access only |
 | 286 | DN_W8_AIRE | 0 | 0 | 0 | no literal use |
 | 287 | DN_W9_CANTO | 0 | 0 | 0 | no literal use |
 | 288 | DN_W7_CORREAS | 0 | 0 | 0 | no literal use |
+| 289 | DN_BOSS_STEPS_EP01 | 8 | 2 | 4 | used |
+| 290 | DN_BOSS_STEPS_EP02 | 8 | 2 | 4 | used |
+| 291 | DN_BOSS_STEPS_EP03 | 8 | 2 | 4 | used |
+| 292 | DN_BOSS_STEPS_EP04 | 8 | 2 | 4 | used |
+| 293 | DN_BOSS_STEPS_EP05 | 8 | 2 | 4 | used |
+| 294 | DN_BOSS_STEPS_EP06 | 6 | 7 | 7 | used |
+| 295 | DN_BOSS_STEPS_W7 | 8 | 2 | 4 | used |
+| 296 | DN_BOSS_STEPS_W8 | 9 | 2 | 5 | used |
+| 297 | DN_BOSS_STEPS_W9 | 8 | 2 | 4 | used |
+| 298 | DN_DECISION_EP01 | 0 | 20 | 4 | used |
+| 299 | DN_DECISION_EP02 | 0 | 6 | 5 | used |
+| 300 | DN_DECISION_EP03 | 0 | 2 | 4 | used |
+| 301 | DN_DECISION_EP04 | 0 | 2 | 4 | used |
+| 302 | DN_DECISION_EP05 | 0 | 2 | 4 | used |
+| 303 | DN_DECISION_EP06 | 0 | 2 | 4 | used |
+| 304 | DN_DECISION_W7 | 0 | 2 | 4 | used |
+| 305 | DN_DECISION_W8 | 0 | 2 | 4 | used |
+| 306 | DN_DECISION_W9 | 0 | 2 | 4 | used |
+| 307 | DN_DECISION_LIGA | 0 | 2 | 4 | used |
+| 308 | — | 0 | 0 | 0 | no literal use |
+| 309 | — | 0 | 0 | 0 | no literal use |
+| 310 | — | 7 | 7 | 0 | used; unnamed |
+| 311 | — | 7 | 5 | 0 | used; unnamed |
+| 312 | — | 0 | 5 | 0 | write only/static; unnamed |
+| 313 | — | 0 | 3 | 0 | write only/static; unnamed |
+| 314 | PM_ROCKET_DISFRAZ | 0 | 4 | 0 | write only/static |
+| 315 | — | 6 | 8 | 0 | used; unnamed |
+| 316 | POKEMOD ATAVIO ACTUAL | 0 | 4 | 0 | write only/static |
+| 317 | POKEMOD ATAVIO MODO (0 auto, 1 fijo) | 0 | 4 | 0 | write only/static |
+| 318 | — | 0 | 8 | 0 | write only/static; unnamed |
+| 319 | — | 1 | 8 | 0 | used; unnamed |
+| 320 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 321 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 322 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 323 | — | 0 | 0 | 0 | no literal use |
+| 324 | — | 0 | 0 | 0 | no literal use |
+| 325 | — | 0 | 0 | 0 | no literal use |
+| 326 | — | 0 | 0 | 0 | no literal use |
+| 327 | — | 0 | 0 | 0 | no literal use |
+| 328 | — | 0 | 0 | 0 | no literal use |
+| 329 | — | 0 | 0 | 0 | no literal use |
+| 330 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 331 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 332 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 333 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 334 | — | 0 | 0 | 0 | no literal use |
+| 335 | — | 0 | 0 | 0 | no literal use |
+| 336 | — | 0 | 0 | 0 | no literal use |
+| 337 | — | 0 | 0 | 0 | no literal use |
+| 338 | — | 0 | 0 | 0 | no literal use |
+| 339 | — | 0 | 0 | 0 | no literal use |
+| 340 | — | 0 | 0 | 0 | no literal use |
+| 341 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 342 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 343 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 344 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 345 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 346 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 347 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 348 | — | 0 | 2 | 0 | write only/static; unnamed |
+| 349 | — | 0 | 0 | 0 | no literal use |
+| 350 | POKEMOD GLAZED PROGRESO | 0 | 113 | 113 | used |
+| 351 | POKEMOD LIGHT_PLATINUM PROGRESO | 0 | 21 | 21 | used |
+| 352 | POKEMOD LIQUID_CRYSTAL PROGRESO | 0 | 434 | 434 | used |
+| 353 | POKEMOD TFOH PROGRESO | 0 | 246 | 246 | used |
+| 354 | POKEMOD UNBOUND PROGRESO | 0 | 421 | 421 | used |
 
 ## Switches críticos revisados
 
@@ -1564,9 +1685,9 @@ Conflictos de reserva: **0**.
 
 ## Indicadores que requieren cautela
 
-- Switches con nombre sin uso literal: 28.
-- Switches usados sin nombre: 3.
-- Switches con escritura estática sin lectura literal: 32.
+- Switches con nombre sin uso literal: 25.
+- Switches usados sin nombre: 31.
+- Switches con escritura estática sin lectura literal: 27.
 - Switches con lectura/acceso sin escritura estática: 25.
 
 El detalle de ubicaciones (hasta 30 por ID), self-switches y expresiones dinámicas está en:

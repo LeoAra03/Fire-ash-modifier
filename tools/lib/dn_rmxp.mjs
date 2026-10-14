@@ -120,14 +120,38 @@ export function upsertEvents(mapId, ownedNames, build, { dry = false, verbose = 
   const map = readMap(mapId);
   const hash = map.getIvar("@events");
   const pairs = hash?.pairs ?? [];
+  // Reutilizar el ID del evento del mismo nombre. Si no, cada reaplicación
+  // numeraba por encima del máximo restante y el ID crecía para siempre.
+  const previousIds = new Map();
+  for (const [key, obj] of pairs) {
+    const name = txt(obj.getIvar("@name"));
+    if (ownedNames.includes(name) && typeof key === "number" && !previousIds.has(name)) previousIds.set(name, key);
+  }
   const kept = pairs.filter(([, obj]) => !ownedNames.includes(txt(obj.getIvar("@name"))));
   const removed = pairs.length - kept.length;
-  const baseId = Math.max(0, ...kept.map(([key]) => (typeof key === "number" ? key : 0))) + 1;
+  const used = new Set(kept.map(([key]) => key).filter((key) => typeof key === "number"));
+  let nextId = Math.max(0, ...used, ...previousIds.values()) + 1;
+  const baseId = nextId;
   const added = build(baseId).filter(Boolean);
-  map.setIvar("@events", new RHash([...kept, ...added.map((e) => [e.getIvar("@id"), e])]));
-  if (!dry) writeMap(mapId, map);
-  if (verbose) console.log(`Map${mapId}: ${added.length} eventos (${removed} reemplazados)`);
-  return { removed, added: added.map((e) => ({ name: txt(e.getIvar("@name")), x: e.getIvar("@x"), y: e.getIvar("@y") })) };
+  const placed = added.map((eventObject) => {
+    const name = txt(eventObject.getIvar("@name"));
+    let id = previousIds.get(name);
+    if (typeof id !== "number" || used.has(id)) {
+      while (used.has(nextId)) nextId++;
+      id = nextId++;
+    }
+    used.add(id);
+    eventObject.setIvar("@id", id);
+    return [id, eventObject];
+  });
+  map.setIvar("@events", new RHash([...kept, ...placed]));
+  if (!dry) {
+    const dumped = Buffer.from(marshalDump(map));
+    const current = fs.readFileSync(path.join(DATA, file));
+    if (!dumped.equals(current)) fs.writeFileSync(path.join(DATA, file), dumped);
+  }
+  if (verbose) console.log(`Map${mapId}: ${placed.length} eventos (${removed} reemplazados)`);
+  return { removed, added: placed.map(([, eventObject]) => ({ name: txt(eventObject.getIvar("@name")), x: eventObject.getIvar("@x"), y: eventObject.getIvar("@y") })) };
 }
 
 /** Alta de objetos en items.dat con el mismo formato que usó E4 (bolsillo 8 = objetos clave). */
