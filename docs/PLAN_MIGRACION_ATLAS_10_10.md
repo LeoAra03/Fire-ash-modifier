@@ -8,13 +8,14 @@ No se guardarán archivos ROM ni dumps en Git. Si un recurso no tiene autorizaci
 
 **«Sin margen de error» no se puede garantizar literalmente.** El método de abajo reduce el riesgo con compuertas *fail-closed*: si falla una comprobación, no se instala ni se avanza de lote. Solo se declara 10/10 después de las verificaciones automáticas y manuales enumeradas aquí.
 
-## Situación real al abrir este plan
+## Situación real del piloto (actualización)
 
-- El PR #33 añade un **piloto parcial** a los mapas 1021–1025: nombres regionales, objetos de orientación contextuales, la Campana de Alba y Auralume como especie original con encuentro opcional.
-- El piloto **no redibuja todavía la geometría del terreno** y no equivale a una transferencia completa de la región.
+- El PR #33 contiene el **piloto parcial** de los mapas 1021–1025: nombres regionales, accesos contextuales, Campana de Alba, Dial de Resonancia y Concha de Brisa interactuables, y Auralume como especie original con encuentro opcional.
+- El paso ejecutado al preparar esta continuación rellenó 609 celdas de suelo en los interiores 1022, 1023 y 1025 usando tiles ya existentes. Los exteriores 1021/1024 y el mobiliario aún conservan su composición base; esto no equivale a un rediseño completo ni a una transferencia de ROM.
+- Una verificación estática confirma 5/5 entradas enlazadas, todos los eventos alcanzables, portales/retornos con llegada transitable y todas las habilidades/movimientos de Auralume válidos contra `abilities.dat`/`moves.dat`; `npm run verify:all` pasa con este incremento.
 - Los mapas 1026–1045 no forman parte de este piloto. El Atlas compilado completo ocupa 1021–2020 (1.000 mapas/40 sectores), pero que exista un mapa compilado no significa que esté rediseñado o revisado.
-- No se importó ningún recurso de Pokémon Reloaded ni de otro ROM externo. El arte nuevo del piloto se creó para este proyecto y usa herramientas/formatos del juego.
-- El juego debe probarse todavía dentro de `Game.exe` y Kirin; los renderizados PNG no sustituyen esa prueba.
+- No se importó ningún recurso de Pokémon Reloaded ni de otro ROM externo. El arte nuevo se creó para este proyecto y los suelos se reutilizaron de `Interior general`.
+- Sigue pendiente recorrer los cinco mapas en `Game.exe` y Kirin; los renders y la búsqueda estática de caminos no sustituyen esa prueba.
 
 ## Definición medible de «10/10»
 
@@ -52,11 +53,11 @@ Para cada lote aprobado, todos estos puntos deben estar en verde; un solo fallo 
 
 ### Fase 2 — Cerrar primero el piloto 1021–1025
 
-- Conservar el trabajo del PR #33 como base, pero completar la composición visual de los cinco mapas con materiales nativos compatibles con Fire Ash y una identidad local consistente.
-- Revisar la Campana de Alba, la navegación, todos los encuentros y el flujo de Auralume; auditar que cada transición y evento sea accesible.
-- Producir antes/después, un informe por mapa y resultado de pruebas en `Game.exe`/Kirin.
+- Conservar el trabajo del PR #33 como base y completar gradualmente la composición visual con materiales nativos compatibles con Fire Ash e identidad local consistente.
+- **Hecho en este incremento:** se rellenaron 609 celdas de suelo de 1022, 1023 y 1025 sin mover eventos; se añadieron el Dial de Resonancia y la Concha de Brisa; se amplió la verificación de habilidades/movimientos y de conectividad de 5/5 mapas; el rollback de suelo se probó y volvió a aplicar correctamente.
+- **Pendiente:** rehacer las composiciones exteriores 1021/1024 y el mobiliario que aún procede de plantillas; revisar Campana/Dial/Concha y el flujo completo de encuentros dentro de `Game.exe` y Kirin; producir el informe visual antes/después y obtener revisión humana.
 
-**Salida:** 5/5 mapas con todas las diez compuertas en verde. El estado actual es **parcial**, no aprobado como 10/10.
+**Salida:** 5/5 mapas con todas las diez compuertas en verde. El piloto sigue **parcial**, no aprobado como 10/10 ni como transferencia completa.
 
 ### Fase 3 — Terminar Meridiano Ámbar en lotes de cinco
 

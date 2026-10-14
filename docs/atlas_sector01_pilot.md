@@ -1,24 +1,29 @@
 # Piloto gradual — Sector 1: Meridiano Ámbar
 
-Este es el primer incremento pequeño del rediseño Atlas; no pretende rehacer de una vez los mil mapas ni reemplazar las baldosas originales del juego.
+Este primer incremento sigue acotado a los mapas 1021–1025; no rehace de una vez los mil mapas ni importa datos de otros ROMs.
 
-## Qué cambia en esta entrega
+## Qué cambia en el piloto
 
-- Los cinco nombres del piloto (mapas 1021–1025) pasan a topónimos propios de **Meridiano Ámbar**; MapInfos, el catálogo y la jerarquía quedan sincronizados.
-- Retornos, puertas de sector, balizas y Ecos dejan de usar `Object ball special`. Ahora son umbrales, señales de dirección, una terminal cartográfica, una piedra de resonancia y un fragmento de Eco dibujados para este piloto.
-- Los encuentros Atlas cuyo protagonista es un Pokémon muestran el sprite de campo del Pokémon en vez de una Poké Ball.
-- **Pueblo Campanario** recibe una Campana de Alba interactuable que enlaza su historia con la Ruta del Zumbido Dorado.
-- La ruta incorpora a **Auralume**, una especie original de tipo Eléctrico/Psíquico, con datos de especie, sprites frontal/trasero, iconos, huella, sprite de campo y encuentro salvaje opcional de nivel 35.
-- No se descargaron ni reutilizaron gráficos de Pokémon Reloaded; la inspiración se limita al objetivo de dar a la región una identidad propia.
+- Los cinco mapas reciben topónimos propios de **Meridiano Ámbar**; MapInfos, el catálogo Atlas y la jerarquía quedan sincronizados.
+- Retornos, puertas, balizas, Ecos y encuentros Pokémon usan gráficos contextuales/originales, no `Object ball special` como marcador genérico.
+- **Pueblo Campanario** tiene una Campana de Alba interactuable que enlaza la historia con la Ruta del Zumbido Dorado.
+- El **Laboratorio de Resonancia** incorpora el Dial de Resonancia y diálogo; el **Taller de Conchas de Viento**, una Concha de Brisa interactuable.
+- **Auralume** es una especie original Eléctrico/Psíquico, con sprites de campo/combate/ícono/huella y encuentro opcional de nivel 35.
+- Se rellenaron **609 celdas que se renderizaban vacías** en los interiores 1022, 1023 y 1025 con tiles de piso ya presentes en `Interior general`. No se alteraron capas superiores ni se movieron eventos.
+- La verificación estática confirma que las cinco llegadas, todos los eventos del piloto y los portales/retornos son alcanzables/transitables; también comprueba habilidades y movimientos de Auralume contra los datos instalados.
+- No se descargaron ni reutilizaron gráficos de Pokémon Reloaded ni de otro ROM externo. Los sprites añadidos se dibujaron para este proyecto.
 
-## Qué sigue pendiente a propósito
+## Límites que siguen pendientes
 
-La geometría y el terreno de estos cinco mapas todavía usan sus plantillas gráficas de Fire Ash. Los otros veinte mapas del sector quedan intactos. Este primer paso verifica la identidad regional, los objetos interactuables y el flujo del encuentro antes de reconstruir el terreno mapa por mapa. Tampoco se añaden todavía más entrenadores o especies.
+Este **no** es un rediseño completo de la topografía: Pueblo Campanario y la Ruta del Zumbido Dorado todavía conservan sus diseños exteriores base; el mobiliario de los tres interiores también parte de plantillas de Fire Ash. Los otros veinte mapas del Sector 1 siguen intactos. Falta recorrer el lote en `Game.exe` y Kirin; los PNG y BFS estáticos no sustituyen esa prueba.
 
 ## Vistas previas
 
 - `docs/atlas_sector01_pilot/map1021_pueblo_campanario.png`
+- `docs/atlas_sector01_pilot/map1022_refugio_de_los_ecos.png`
+- `docs/atlas_sector01_pilot/map1023_laboratorio_de_resonancia.png`
 - `docs/atlas_sector01_pilot/map1024_ruta_zumbido_dorado.png`
+- `docs/atlas_sector01_pilot/map1025_taller_conchas_viento.png`
 
 ## Aplicar y verificar
 
@@ -27,6 +32,8 @@ npm run apply:atlas:sector01
 npm run verify:atlas:sector01
 ```
 
-Los originales compilados se guardan en `pokemon_fire_ash/PokeModBackups/atlas_sector01_redesign_originals/` (directorio ignorado por Git).
+El aplicador es idempotente y limita el relleno a la capa 0 de 1022, 1023 y 1025. `node tools/apply_atlas_sector01_floor_layout.mjs --restore` revierte únicamente esos suelos, conserva otros campos/eventos actuales y se niega a sobrescribir geometría que haya cambiado después.
 
-El plan por fases, sus compuertas legales/técnicas y la definición verificable de 10/10 están en [`PLAN_MIGRACION_ATLAS_10_10.md`](PLAN_MIGRACION_ATLAS_10_10.md).
+Los originales se guardan en `pokemon_fire_ash/PokeModBackups/` (directorio ignorado por Git): `atlas_sector01_redesign_originals/` y `atlas_sector01_floor_layout_originals/`.
+
+El plan por fases, las compuertas de procedencia/licencia y la definición verificable de 10/10 están en [`PLAN_MIGRACION_ATLAS_10_10.md`](PLAN_MIGRACION_ATLAS_10_10.md).

@@ -16,8 +16,7 @@ const VERIFY_ONLY = process.argv.includes("--verify");
 const CONFIG = JSON.parse(fs.readFileSync(CONFIG_FILE, "utf8"));
 const MAPS = new Map(CONFIG.maps.map((entry) => [Number(entry.id), entry.name]));
 const SPECIES_ID = CONFIG.species.id;
-const ENCOUNTER = CONFIG.interactions.find((entry) => entry.kind === "optional-wild-encounter");
-const BELL = CONFIG.interactions.find((entry) => entry.kind === "scene-prop");
+const SCENE_PROPS = CONFIG.interactions.filter((entry) => entry.kind === "scene-prop");
 const EVENT_ASSETS = new Set(CONFIG.assets.eventSprites);
 const CHARACTER_DIR = path.join(GAME, "Graphics", "Characters");
 const ORIGINAL_ATLAS_MAP_NAMES = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_mil_500.json"), "utf8")).maps.map((entry) => [Number(entry.newId), entry.name]));
@@ -362,13 +361,14 @@ function installMapEvents(mapId, speciesData, challengeByMap) {
       }
     }
   }
-  if (mapId === Number(BELL.mapId)) installInteraction(mapObject, BELL);
-  if (mapId === Number(ENCOUNTER.mapId)) installInteraction(mapObject, ENCOUNTER);
+  for (const interaction of CONFIG.interactions) {
+    if (mapId === Number(interaction.mapId)) installInteraction(mapObject, interaction);
+  }
   writeRx(filename, mapObject);
 }
 function installInteraction(mapObject, interaction) {
   const eventsHash = iv(mapObject, "events");
-  const marker = interaction.kind === "scene-prop" ? "Campana de Alba" : "Auralume";
+  const marker = interaction.kind === "scene-prop" ? interaction.name : CONFIG.species.name;
   const eventName = `PokeMod Meridiano Ámbar: ${marker}`;
   const sameId = eventsHash.pairs.find(([id]) => Number(id) === Number(interaction.eventId));
   if (sameId && txt(iv(sameId[1], "name")) !== eventName) throw new Error(`El id ${interaction.eventId} ya pertenece a ${txt(iv(sameId[1], "name"))} en el mapa ${interaction.mapId}.`);
@@ -453,7 +453,18 @@ function verify() {
   ok(Number(iv(auralume, "base_stats")?.get?.(Sym("SPEED"), (a, b) => sym(a) === sym(b))) === 90, "estadística de velocidad de AURALUME incorrecta");
   ok(Boolean(numericRecord) && sym(iv(numericRecord, "id")) === SPECIES_ID, "species.dat no enlaza el número 1296 con AURALUME");
   const moves = new Set(readRx("moves.dat").pairs.filter(([key]) => key instanceof RSymbol).map(([key]) => key.name));
-  for (const [, move] of iv(auralume, "moves") || []) ok(moves.has(sym(move)), `movimiento inexistente en AURALUME: ${sym(move)}`);
+  const abilities = new Set(readRx("abilities.dat").pairs.filter(([key]) => key instanceof RSymbol).map(([key]) => key.name));
+  const moveGroups = [
+    ["learnset", (iv(auralume, "moves") || []).map(([, move]) => move)],
+    ["tutor", iv(auralume, "tutor_moves") || []],
+    ["huevo", iv(auralume, "egg_moves") || []],
+  ];
+  for (const [kind, entries] of moveGroups) {
+    for (const move of entries) ok(moves.has(sym(move)), `movimiento inexistente en AURALUME (${kind}): ${sym(move)}`);
+  }
+  for (const [kind, entries] of [["normal", iv(auralume, "abilities") || []], ["oculta", iv(auralume, "hidden_abilities") || []]]) {
+    for (const ability of entries) ok(abilities.has(sym(ability)), `habilidad inexistente en AURALUME (${kind}): ${sym(ability)}`);
+  }
 
   for (const [relative, dimensions] of [
     ["Graphics/Characters/AURALUME.png", [256, 256]],
@@ -507,11 +518,6 @@ function verify() {
       const sprite = txt(iv(iv((iv(event, "pages") || [])[0], "graphic"), "character_name"));
       ok(Boolean(event) && sprite !== "Object ball special" && sprite !== "", `${mapId}: encuentro de Pokémon sin sprite`);
     }
-    if (mapId === 1021) {
-      const bell = namedEvents.get("PokeMod Meridiano Ámbar: Campana de Alba");
-      ok(Boolean(bell), "Pueblo Campanario no incluye la Campana de Alba interactuable");
-      if (bell) ok(txt(iv(iv((iv(bell, "pages") || [])[0], "graphic"), "character_name")) === "Atlas Bell 01", "Campana de Alba no tiene su sprite de escena");
-    }
     if (mapId === 1024) {
       const encounter = namedEvents.get("PokeMod Meridiano Ámbar: Auralume");
       ok(Boolean(encounter), "Ruta del Zumbido Dorado no incluye el encuentro de Auralume");
@@ -526,6 +532,23 @@ function verify() {
         ok((pages[1]?.getIvar("condition")?.getIvar("self_switch_valid")) === true, "página posterior de Auralume no está condicionada por self-switch A");
       }
     }
+  }
+  for (const interaction of SCENE_PROPS) {
+    const mapId = Number(interaction.mapId);
+    const filename = `Map${pad(mapId)}.rxdata`;
+    const parsed = parseMap(readRx(filename));
+    const eventName = `PokeMod Meridiano Ámbar: ${interaction.name}`;
+    const event = parsed.events.map(({ obj }) => obj).find((entry) => txt(iv(entry, "name")) === eventName);
+    ok(Boolean(event), `${mapId}: falta la interacción ${interaction.name}`);
+    if (!event) continue;
+    const pages = iv(event, "pages") || [];
+    const page = pages[0];
+    const graphic = txt(iv(iv(page, "graphic"), "character_name"));
+    ok(graphic === interaction.sprite, `${mapId}: ${interaction.name} usa el sprite ${graphic}, esperado ${interaction.sprite}`);
+    ok(Number(iv(event, "x")) === Number(interaction.position[0]) && Number(iv(event, "y")) === Number(interaction.position[1]), `${mapId}: ${interaction.name} cambió de coordenadas`);
+    ok(openCell(parsed, Number(interaction.position[0]), Number(interaction.position[1])), `${mapId}: ${interaction.name} está en una celda no transitable`);
+    const transcript = (iv(page, "list") || []).filter((command) => Number(iv(command, "code")) === 401).map((command) => txt(iv(command, "parameters")?.[0])).join(" ").replace(/\s+/g, " ").trim();
+    for (const line of interaction.dialogue) ok(transcript.includes(String(line).replace(/\s+/g, " ").trim()), `${mapId}: diálogo incompleto en ${interaction.name}`);
   }
   const hub = readRx("Map1001.rxdata");
   const sectorDoor = iv(hub, "events").pairs.find(([, event]) => txt(iv(event, "name")) === "PokeMod Atlas Mil: Sector 1")?.[1];

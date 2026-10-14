@@ -1,6 +1,6 @@
 # Informe referencial de mapas — 1.022 fichas
 
-**Generado:** 2026-10-13
+**Generado:** 2026-10-14
 **Alcance:** Atlas Mil (Map1021–Map2020) y 22 mapas complementarios en `Otros_Mapas_16.png`.
 
 > Este informe y sus mosaicos son referencias estáticas elaboradas a partir de MapInfos, datos RMXP, catálogos de contenido y gráficos del proyecto. No equivalen a una prueba dentro de Kirin ni de Game.exe; no se afirma aquí que se haya ejecutado el juego.
@@ -35,7 +35,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1023 — Laboratorio de Resonancia
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Pokémon Lab (Map4) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1024 — Ruta del Zumbido Dorado
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
@@ -45,7 +45,7 @@ Cada ficha conserva el título registrado en `MapInfos.rxdata`, la categoría/se
 ### Map1025 — Taller de Conchas de Viento
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 3 · eco dimensional.
 - **Referencia:** Eco dimensional de Kurt's house (Map6) en el sector Meridiano Ámbar. La ficha de jerarquía lo ubica en Tier 3; conserva un evento de desafío Atlas, junto con la navegación y el retorno de referencia del Atlas.
-- **Datos compilados:** 20×15 tiles; 5 eventos; tileset 3.
+- **Datos compilados:** 20×15 tiles; 6 eventos; tileset 3.
 
 ### Map1026 — El Semáforo de las Promesas Tardías
 - **Categoría:** Atlas Mil · Meridiano Ámbar · Tier 2 · ruta estable.

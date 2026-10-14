@@ -193,6 +193,43 @@ function drawProp(ctx, kind, ox, oy, pattern = 0, direction = 0) {
     rect(ctx, "#4A3828", 15, 25, 3, 4);
     rect(ctx, "#EE7892", 16, 27, 1, 2);
     rect(ctx, "#273145", 4, 29, 24, 2);
+  } else if (kind === "Atlas Resonance Dial 01") {
+    // Resonance bench: four audible bands surround a glowing, original crystal.
+    rect(ctx, "#26354D", 4, 28, 24, 2);
+    rect(ctx, "#26354D", 6, 12, 20, 15);
+    rect(ctx, "#708398", 8, 13, 16, 12);
+    rect(ctx, "#243B53", 9, 14, 14, 9);
+    rect(ctx, "#78D8D3", 10, 16, 12, 1);
+    rect(ctx, "#4B5C91", 10, 19, 12, 1);
+    rect(ctx, "#EE7892", 10, 22, 12, 1);
+    rect(ctx, "#F4B647", 12, 15, 2, 3);
+    rect(ctx, "#FFF1C2", 17, 18, 2, 2);
+    rect(ctx, "#26354D", 8, 26, 3, 3);
+    rect(ctx, "#26354D", 21, 26, 3, 3);
+    ellipse(ctx, "#26354D", 10, 2, 12, 12);
+    ellipse(ctx, "#F4B647", 12, 4, 8, 8);
+    ellipse(ctx, "#78D8D3", 14, 6, 4, 4);
+    rect(ctx, "#FFF1C2", 15, 5, 2, 2);
+    rect(ctx, "#EE7892", 17, 10, 2, 2);
+  } else if (kind === "Atlas Wind Shell 01") {
+    // A shell chime in an open timber frame, with spiral and three hanging reeds.
+    rect(ctx, "#26354D", 5, 27, 22, 3);
+    rect(ctx, "#795D3D", 8, 7, 3, 20);
+    rect(ctx, "#795D3D", 21, 7, 3, 20);
+    rect(ctx, "#A57943", 6, 5, 20, 4);
+    rect(ctx, "#FFF1C2", 8, 6, 16, 1);
+    polygon(ctx, "#503B2C", [[10, 9], [14, 8], [18, 9], [22, 12], [23, 16], [21, 20], [17, 22], [12, 21], [9, 18], [8, 14]]);
+    polygon(ctx, "#EE7892", [[11, 10], [14, 9], [18, 10], [21, 13], [21, 16], [19, 19], [16, 20], [12, 19], [10, 17], [10, 14]]);
+    polygon(ctx, "#FFF1C2", [[12, 11], [14, 10], [17, 11], [19, 13], [19, 16], [17, 18], [14, 18], [12, 16], [11, 14]]);
+    rect(ctx, "#F4B647", 14, 12, 2, 2);
+    rect(ctx, "#A57943", 15, 14, 2, 2);
+    rect(ctx, "#F4B647", 13, 16, 3, 1);
+    rect(ctx, "#26354D", 11, 21, 1, 2);
+    rect(ctx, "#26354D", 16, 21, 1, 3);
+    rect(ctx, "#26354D", 20, 20, 1, 3);
+    rect(ctx, "#78D8D3", 10, 23, 3, 4);
+    rect(ctx, "#F4B647", 15, 24, 3, 3);
+    rect(ctx, "#EE7892", 19, 23, 3, 4);
   } else if (kind === "Atlas Echo Stone 01") {
     polygon(ctx, "#26354D", [[10, 5], [21, 5], [25, 11], [24, 26], [7, 26], [6, 11]]);
     polygon(ctx, "#687C91", [[11, 7], [20, 7], [23, 12], [22, 24], [9, 24], [8, 12]]);
@@ -278,6 +315,8 @@ export function generateAtlasSector01Assets() {
     "Atlas Gate Sector 01",
     "Atlas Wayfinder 01",
     "Atlas Bell 01",
+    "Atlas Resonance Dial 01",
+    "Atlas Wind Shell 01",
     "Atlas Echo Stone 01",
     "Atlas Echo Shard 01",
   ];

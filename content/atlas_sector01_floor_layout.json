@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "sector": 1,
+  "sectorName": "Meridiano Ámbar",
+  "tilesetId": 3,
+  "tilesetName": "Interior general",
+  "layer": 0,
+  "voidTile": 542,
+  "method": "Rellenar celdas interiores que renderizaban como vacío con el suelo ya presente en el mismo mapa; sin descargar recursos ni alterar eventos.",
+  "maps": [
+    {
+      "mapId": 1022,
+      "name": "Refugio de los Ecos",
+      "width": 31,
+      "height": 15,
+      "floorTile": 760,
+      "voidCellsBefore": 258,
+      "floorCellsBefore": 115,
+      "floorCellsAfter": 373,
+      "entry": {
+        "fromMapId": 1021,
+        "eventName": "Next Atlas Map"
+      }
+    },
+    {
+      "mapId": 1023,
+      "name": "Laboratorio de Resonancia",
+      "width": 20,
+      "height": 15,
+      "floorTile": 624,
+      "voidCellsBefore": 131,
+      "floorCellsBefore": 111,
+      "floorCellsAfter": 242,
+      "entry": {
+        "fromMapId": 1022,
+        "eventName": "Next Atlas Map"
+      }
+    },
+    {
+      "mapId": 1025,
+      "name": "Taller de Conchas de Viento",
+      "width": 20,
+      "height": 15,
+      "floorTile": 1048,
+      "voidCellsBefore": 220,
+      "floorCellsBefore": 45,
+      "floorCellsAfter": 265,
+      "entry": {
+        "fromMapId": 1024,
+        "eventName": "Next Atlas Map"
+      }
+    }
+  ],
+  "entryHub": {
+    "mapId": 1001,
+    "eventName": "PokeMod Atlas Mil: Sector 1"
+  },
+  "scope": "Solo la capa 0 de los mapas 1022, 1023 y 1025. Se conservan dimensiones, capas 1–2, tilesets, eventos y demás mapas."
+}
