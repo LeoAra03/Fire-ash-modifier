@@ -1,16 +1,16 @@
 # Auditoría total de flags de Fire Ash
 
-Generada: 2026-09-28T03:36:04.087Z
+Generada: 2026-10-02T19:49:29.948Z
 
 ## Cobertura
 
-- 2020 mapas.
+- 2189 mapas.
 - 50 eventos comunes.
-- 402 secciones de script.
-- 832 slots de switch (770 con nombre).
-- 228 slots de variable (219 con nombre).
-- 5714 claves de self-switch observadas.
-- 73 expresiones dinámicas distintas.
+- 403 secciones de script.
+- 939 slots de switch (875 con nombre).
+- 288 slots de variable (279 con nombre).
+- 6181 claves de self-switch observadas.
+- 81 expresiones dinámicas distintas.
 
 La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby puede calcular índices en ejecución. Por eso las expresiones dinámicas se conservan en el JSON completo.
 
@@ -150,6 +150,41 @@ La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby 
 | 830 | POKEMOD ATLAS T2 ROUTE 83 | used |
 | 831 | POKEMOD ATLAS T2 ROUTE 84 | used |
 | 832 | POKEMOD ATLAS T2 ROUTE 85 | used |
+| 833 | POKEMOD ATLAS T2 ROUTE 86 | used |
+| 834 | POKEMOD ATLAS T2 ROUTE 87 | used |
+| 835 | POKEMOD ATLAS T2 ROUTE 88 | used |
+| 836 | POKEMOD ATLAS T2 ROUTE 89 | used |
+| 837 | POKEMOD ATLAS T2 ROUTE 90 | used |
+| 838 | POKEMOD ATLAS T2 ROUTE 91 | used |
+| 839 | POKEMOD ATLAS T2 ROUTE 92 | used |
+| 840 | POKEMOD ATLAS T2 ROUTE 93 | used |
+| 841 | POKEMOD ATLAS T2 ROUTE 94 | used |
+| 842 | POKEMOD ATLAS T2 ROUTE 95 | used |
+| 843 | POKEMOD ATLAS T2 ROUTE 96 | used |
+| 844 | POKEMOD ATLAS T2 ROUTE 97 | used |
+| 845 | POKEMOD ATLAS T2 ROUTE 98 | used |
+| 846 | POKEMOD ATLAS T2 ROUTE 99 | used |
+| 847 | POKEMOD ATLAS T2 ROUTE 100 | used |
+| 848 | POKEMOD ATLAS T2 ROUTE 101 | used |
+| 849 | POKEMOD ATLAS T2 ROUTE 102 | used |
+| 850 | POKEMOD ATLAS T2 ROUTE 103 | used |
+| 851 | POKEMOD ATLAS T2 ROUTE 104 | used |
+| 852 | POKEMOD ATLAS T2 ROUTE 105 | used |
+| 853 | POKEMOD ATLAS T2 ROUTE 106 | used |
+| 854 | POKEMOD ATLAS T2 ROUTE 107 | used |
+| 855 | POKEMOD ATLAS T2 ROUTE 108 | used |
+| 856 | POKEMOD ATLAS T2 ROUTE 109 | used |
+| 857 | POKEMOD ATLAS T2 ROUTE 110 | used |
+| 858 | POKEMOD ATLAS T2 ROUTE 111 | used |
+| 859 | POKEMOD ATLAS T2 ROUTE 112 | used |
+| 860 | POKEMOD ATLAS T2 ROUTE 113 | used |
+| 861 | POKEMOD ATLAS T2 ROUTE 114 | used |
+| 862 | POKEMOD ATLAS T2 ROUTE 115 | used |
+| 863 | POKEMOD ATLAS T2 ROUTE 116 | used |
+| 864 | POKEMOD ATLAS T2 ROUTE 117 | used |
+| 865 | POKEMOD ATLAS T2 ROUTE 118 | used |
+| 866 | POKEMOD ATLAS T2 ROUTE 119 | used |
+| 867 | POKEMOD ATLAS T2 ROUTE 120 | used |
 
 ## Variables PokeMod Tier 2 reservadas
 
@@ -240,10 +275,45 @@ La ausencia de una referencia literal no demuestra que una flag sea libre: Ruby 
 | 226 | POKEMOD ATLAS T2 DECISION 83 | write only/static |
 | 227 | POKEMOD ATLAS T2 DECISION 84 | write only/static |
 | 228 | POKEMOD ATLAS T2 DECISION 85 | write only/static |
+| 229 | POKEMOD ATLAS T2 DECISION 86 | write only/static |
+| 230 | POKEMOD ATLAS T2 DECISION 87 | write only/static |
+| 231 | POKEMOD ATLAS T2 DECISION 88 | write only/static |
+| 232 | POKEMOD ATLAS T2 DECISION 89 | write only/static |
+| 233 | POKEMOD ATLAS T2 DECISION 90 | write only/static |
+| 234 | POKEMOD ATLAS T2 DECISION 91 | write only/static |
+| 235 | POKEMOD ATLAS T2 DECISION 92 | write only/static |
+| 236 | POKEMOD ATLAS T2 DECISION 93 | write only/static |
+| 237 | POKEMOD ATLAS T2 DECISION 94 | write only/static |
+| 238 | POKEMOD ATLAS T2 DECISION 95 | write only/static |
+| 239 | POKEMOD ATLAS T2 DECISION 96 | write only/static |
+| 240 | POKEMOD ATLAS T2 DECISION 97 | write only/static |
+| 241 | POKEMOD ATLAS T2 DECISION 98 | write only/static |
+| 242 | POKEMOD ATLAS T2 DECISION 99 | write only/static |
+| 243 | POKEMOD ATLAS T2 DECISION 100 | write only/static |
+| 244 | POKEMOD ATLAS T2 DECISION 101 | write only/static |
+| 245 | POKEMOD ATLAS T2 DECISION 102 | write only/static |
+| 246 | POKEMOD ATLAS T2 DECISION 103 | write only/static |
+| 247 | POKEMOD ATLAS T2 DECISION 104 | write only/static |
+| 248 | POKEMOD ATLAS T2 DECISION 105 | write only/static |
+| 249 | POKEMOD ATLAS T2 DECISION 106 | write only/static |
+| 250 | POKEMOD ATLAS T2 DECISION 107 | write only/static |
+| 251 | POKEMOD ATLAS T2 DECISION 108 | write only/static |
+| 252 | POKEMOD ATLAS T2 DECISION 109 | write only/static |
+| 253 | POKEMOD ATLAS T2 DECISION 110 | write only/static |
+| 254 | POKEMOD ATLAS T2 DECISION 111 | write only/static |
+| 255 | POKEMOD ATLAS T2 DECISION 112 | write only/static |
+| 256 | POKEMOD ATLAS T2 DECISION 113 | write only/static |
+| 257 | POKEMOD ATLAS T2 DECISION 114 | write only/static |
+| 258 | POKEMOD ATLAS T2 DECISION 115 | write only/static |
+| 259 | POKEMOD ATLAS T2 DECISION 116 | write only/static |
+| 260 | POKEMOD ATLAS T2 DECISION 117 | write only/static |
+| 261 | POKEMOD ATLAS T2 DECISION 118 | write only/static |
+| 262 | POKEMOD ATLAS T2 DECISION 119 | write only/static |
+| 263 | POKEMOD ATLAS T2 DECISION 120 | write only/static |
 
 Conflictos de reserva: **0**.
 
-## Switches 1–832
+## Switches 1–939
 
 | ID | Nombre | Lecturas | ON | OFF | Script | Estado |
 |---:|---|---:|---:|---:|---:|---|
@@ -444,7 +514,7 @@ Conflictos de reserva: **0**.
 | 195 | Lily Paul | 3 | 1 | 1 | 0 | used |
 | 196 | Lily Tobias | 4 | 1 | 1 | 0 | used |
 | 197 | Lily Done | 14 | 1 | 1 | 0 | used |
-| 198 | Unova Start | 23 | 1 | 0 | 0 | used |
+| 198 | Unova Start | 22 | 1 | 0 | 0 | used |
 | 199 | Met Juniper | 9 | 1 | 0 | 0 | used |
 | 200 | Beat Gym 33 | 7 | 1 | 0 | 0 | used |
 | 201 | Beat Gym 34 | 8 | 1 | 0 | 0 | used |
@@ -675,7 +745,7 @@ Conflictos de reserva: **0**.
 | 426 | Jubilife Contest | 4 | 1 | 0 | 0 | used |
 | 427 | Last Classroom | 12 | 1 | 0 | 0 | used |
 | 428 | Alola Done | 12 | 1 | 0 | 0 | used |
-| 429 | Postgame | 388 | 1 | 3 | 0 | used |
+| 429 | Postgame | 393 | 1 | 3 | 0 | used |
 | 430 | Galar Start | 58 | 1 | 0 | 0 | used |
 | 431 | Galactic Veilstone | 10 | 1 | 0 | 0 | used |
 | 432 | Valor Contest | 3 | 1 | 0 | 0 | used |
@@ -920,7 +990,7 @@ Conflictos de reserva: **0**.
 | 671 | DUET WIN | 1 | 0 | 0 | 0 | read/access only |
 | 672 | DUET PARTNER SELECTED | 7 | 3 | 2 | 0 | used |
 | 673 | MAYHEM LOCK | 53 | 54 | 221 | 0 | used |
-| 674 | NO ITEM INBATT | 0 | 8 | 10 | 1 | used |
+| 674 | NO ITEM INBATT | 0 | 8 | 10 | 0 | write only/static |
 | 675 | NO ITEM OUTBATT | 0 | 8 | 11 | 3 | used |
 | 676 | ROOKIE | 31 | 7 | 10 | 2 | used |
 | 677 | VETERAN | 28 | 7 | 10 | 5 | used |
@@ -947,12 +1017,12 @@ Conflictos de reserva: **0**.
 | 698 | CLUB | 1 | 1 | 10 | 1 | used |
 | 699 | PRACTICE | 1 | 1 | 10 | 1 | used |
 | 700 | ARCEUS | 2 | 1 | 4 | 1 | used |
-| 701 | POKEMOD HYPNO RESCUE STARTED | 8 | 1 | 0 | 0 | used |
+| 701 | POKEMOD HYPNO RESCUE STARTED | 9 | 1 | 0 | 0 | used |
 | 702 | POKEMOD HYPNO SUBDUED | 7 | 0 | 0 | 1 | used |
 | 703 | POKEMOD CHILDREN RESCUED | 2 | 1 | 0 | 0 | used |
-| 704 | POKEMOD HORIZONS OPEN | 1 | 2 | 0 | 0 | used |
+| 704 | POKEMOD HORIZONS OPEN | 2 | 2 | 0 | 0 | used |
 | 705 | POKEMOD HORIZONS 500 COMPLETE | 1 | 0 | 0 | 0 | used |
-| 706 | POKEMOD ATLAS MIL OPEN | 41 | 1 | 0 | 0 | used |
+| 706 | POKEMOD ATLAS MIL OPEN | 42 | 1 | 0 | 0 | used |
 | 707 | POKEMOD ATLAS MIL 500 COMPLETE | 1 | 0 | 0 | 0 | used |
 | 708 | POKEMOD ATLAS SEAL 01 BELL | 4 | 1 | 0 | 0 | used |
 | 709 | POKEMOD ATLAS SEAL 02 | 4 | 1 | 0 | 0 | used |
@@ -1014,13 +1084,13 @@ Conflictos de reserva: **0**.
 | 765 | POKEMOD ATLAS T2 ROUTE 18 | 2 | 1 | 0 | 0 | used |
 | 766 | POKEMOD ATLAS T2 ROUTE 19 | 2 | 1 | 0 | 0 | used |
 | 767 | POKEMOD ATLAS T2 ROUTE 20 | 2 | 1 | 0 | 0 | used |
-| 768 | POKEMOD ATLAS T2 ROUTE 21 | 2 | 1 | 0 | 0 | used |
-| 769 | POKEMOD ATLAS T2 ROUTE 22 | 2 | 1 | 0 | 0 | used |
-| 770 | POKEMOD ATLAS T2 ROUTE 23 | 2 | 1 | 0 | 0 | used |
-| 771 | POKEMOD ATLAS T2 ROUTE 24 | 2 | 1 | 0 | 0 | used |
-| 772 | POKEMOD ATLAS T2 ROUTE 25 | 2 | 1 | 0 | 0 | used |
-| 773 | POKEMOD ATLAS T2 ROUTE 26 | 2 | 1 | 0 | 0 | used |
-| 774 | POKEMOD ATLAS T2 ROUTE 27 | 2 | 1 | 0 | 0 | used |
+| 768 | POKEMOD ATLAS T2 ROUTE 21 | 5 | 1 | 0 | 0 | used |
+| 769 | POKEMOD ATLAS T2 ROUTE 22 | 3 | 1 | 0 | 0 | used |
+| 770 | POKEMOD ATLAS T2 ROUTE 23 | 3 | 1 | 0 | 0 | used |
+| 771 | POKEMOD ATLAS T2 ROUTE 24 | 3 | 1 | 0 | 0 | used |
+| 772 | POKEMOD ATLAS T2 ROUTE 25 | 3 | 1 | 0 | 0 | used |
+| 773 | POKEMOD ATLAS T2 ROUTE 26 | 3 | 1 | 0 | 0 | used |
+| 774 | POKEMOD ATLAS T2 ROUTE 27 | 3 | 1 | 0 | 0 | used |
 | 775 | POKEMOD ATLAS T2 ROUTE 28 | 2 | 1 | 0 | 0 | used |
 | 776 | POKEMOD ATLAS T2 ROUTE 29 | 2 | 1 | 0 | 0 | used |
 | 777 | POKEMOD ATLAS T2 ROUTE 30 | 2 | 1 | 0 | 0 | used |
@@ -1079,12 +1149,120 @@ Conflictos de reserva: **0**.
 | 830 | POKEMOD ATLAS T2 ROUTE 83 | 2 | 1 | 0 | 0 | used |
 | 831 | POKEMOD ATLAS T2 ROUTE 84 | 2 | 1 | 0 | 0 | used |
 | 832 | POKEMOD ATLAS T2 ROUTE 85 | 2 | 1 | 0 | 0 | used |
+| 833 | POKEMOD ATLAS T2 ROUTE 86 | 2 | 1 | 0 | 0 | used |
+| 834 | POKEMOD ATLAS T2 ROUTE 87 | 2 | 1 | 0 | 0 | used |
+| 835 | POKEMOD ATLAS T2 ROUTE 88 | 2 | 1 | 0 | 0 | used |
+| 836 | POKEMOD ATLAS T2 ROUTE 89 | 2 | 1 | 0 | 0 | used |
+| 837 | POKEMOD ATLAS T2 ROUTE 90 | 2 | 1 | 0 | 0 | used |
+| 838 | POKEMOD ATLAS T2 ROUTE 91 | 2 | 1 | 0 | 0 | used |
+| 839 | POKEMOD ATLAS T2 ROUTE 92 | 2 | 1 | 0 | 0 | used |
+| 840 | POKEMOD ATLAS T2 ROUTE 93 | 2 | 1 | 0 | 0 | used |
+| 841 | POKEMOD ATLAS T2 ROUTE 94 | 2 | 1 | 0 | 0 | used |
+| 842 | POKEMOD ATLAS T2 ROUTE 95 | 2 | 1 | 0 | 0 | used |
+| 843 | POKEMOD ATLAS T2 ROUTE 96 | 2 | 1 | 0 | 0 | used |
+| 844 | POKEMOD ATLAS T2 ROUTE 97 | 2 | 1 | 0 | 0 | used |
+| 845 | POKEMOD ATLAS T2 ROUTE 98 | 2 | 1 | 0 | 0 | used |
+| 846 | POKEMOD ATLAS T2 ROUTE 99 | 2 | 1 | 0 | 0 | used |
+| 847 | POKEMOD ATLAS T2 ROUTE 100 | 2 | 1 | 0 | 0 | used |
+| 848 | POKEMOD ATLAS T2 ROUTE 101 | 2 | 1 | 0 | 0 | used |
+| 849 | POKEMOD ATLAS T2 ROUTE 102 | 2 | 1 | 0 | 0 | used |
+| 850 | POKEMOD ATLAS T2 ROUTE 103 | 2 | 1 | 0 | 0 | used |
+| 851 | POKEMOD ATLAS T2 ROUTE 104 | 2 | 1 | 0 | 0 | used |
+| 852 | POKEMOD ATLAS T2 ROUTE 105 | 2 | 1 | 0 | 0 | used |
+| 853 | POKEMOD ATLAS T2 ROUTE 106 | 2 | 1 | 0 | 0 | used |
+| 854 | POKEMOD ATLAS T2 ROUTE 107 | 2 | 1 | 0 | 0 | used |
+| 855 | POKEMOD ATLAS T2 ROUTE 108 | 2 | 1 | 0 | 0 | used |
+| 856 | POKEMOD ATLAS T2 ROUTE 109 | 2 | 1 | 0 | 0 | used |
+| 857 | POKEMOD ATLAS T2 ROUTE 110 | 2 | 1 | 0 | 0 | used |
+| 858 | POKEMOD ATLAS T2 ROUTE 111 | 2 | 1 | 0 | 0 | used |
+| 859 | POKEMOD ATLAS T2 ROUTE 112 | 2 | 1 | 0 | 0 | used |
+| 860 | POKEMOD ATLAS T2 ROUTE 113 | 2 | 1 | 0 | 0 | used |
+| 861 | POKEMOD ATLAS T2 ROUTE 114 | 2 | 1 | 0 | 0 | used |
+| 862 | POKEMOD ATLAS T2 ROUTE 115 | 2 | 1 | 0 | 0 | used |
+| 863 | POKEMOD ATLAS T2 ROUTE 116 | 2 | 1 | 0 | 0 | used |
+| 864 | POKEMOD ATLAS T2 ROUTE 117 | 2 | 1 | 0 | 0 | used |
+| 865 | POKEMOD ATLAS T2 ROUTE 118 | 2 | 1 | 0 | 0 | used |
+| 866 | POKEMOD ATLAS T2 ROUTE 119 | 2 | 1 | 0 | 0 | used |
+| 867 | POKEMOD ATLAS T2 ROUTE 120 | 2 | 1 | 0 | 0 | used |
+| 868 | — | 0 | 1 | 0 | 0 | write only/static; unnamed |
+| 869 | RUTA_DE_DIOS_ARCEUS_MERCY | 0 | 1 | 0 | 0 | write only/static |
+| 870 | RUTA_DE_DIOS_UNLOCKED | 2 | 3 | 0 | 0 | used |
+| 871 | RUTA_DE_DIOS_DIALGA_DEFEATED | 2 | 2 | 0 | 0 | used |
+| 872 | RUTA_DE_DIOS_PALKIA_DEFEATED | 2 | 2 | 0 | 0 | used |
+| 873 | RUTA_DE_DIOS_ARCEUS_RESOLVED | 1 | 2 | 0 | 0 | used |
+| 874 | RUTA_DE_DIOS_ARCEUS_CAUGHT | 1 | 1 | 0 | 2 | used |
+| 875 | RUTA_DE_DIOS_VOLO_DEFEATED | 0 | 3 | 0 | 1 | used |
+| 876 | RUTA_DE_DIOS_COMPLETED | 8 | 2 | 0 | 0 | used |
+| 877 | SNOWPOINT_TEMPORARY_TREE_PASS | 0 | 1 | 0 | 0 | write only/static |
+| 878 | ARCEUS_CINEMATIC_CYNTHIA_STEVEN | 2 | 0 | 0 | 0 | read/access only |
+| 879 | ARCEUS_CINEMATIC_GOLD_RED | 2 | 0 | 0 | 0 | read/access only |
+| 880 | ARCEUS_CINEMATIC_VOLUS | 1 | 0 | 0 | 0 | read/access only |
+| 881 | RUTA_DE_DIOS_PRELUDE_SEEN | 0 | 0 | 0 | 0 | no literal use |
+| 882 | DN_UNLOCKED | 0 | 0 | 0 | 0 | no literal use |
+| 883 | DN_SELLO_EP01_WHITE_HAND | 3 | 2 | 0 | 0 | used |
+| 884 | DN_SELLO_EP02_LOST_SILVER | 3 | 2 | 0 | 0 | used |
+| 885 | DN_SELLO_EP03_SNOW_MT_SILVER | 3 | 1 | 0 | 0 | used |
+| 886 | DN_SELLO_EP04_HYPNOS_LULLABY | 3 | 2 | 0 | 0 | used |
+| 887 | DN_SELLO_EP05_POKEMON_BLACK | 3 | 2 | 0 | 0 | used |
+| 888 | DN_SELLO_EP06_KING_UNOWN | 3 | 2 | 0 | 0 | used |
+| 889 | DN_NEXO_CLEARED | 2 | 0 | 0 | 1 | read/access only |
+| 890 | DN_GRIETA_EP01 | 0 | 1 | 0 | 0 | write only/static |
+| 891 | DN_GRIETA_EP02 | 0 | 0 | 0 | 0 | no literal use |
+| 892 | DN_GRIETA_EP03 | 0 | 2 | 0 | 0 | write only/static |
+| 893 | DN_GRIETA_EP04 | 0 | 1 | 0 | 0 | write only/static |
+| 894 | DN_GRIETA_EP05 | 0 | 0 | 0 | 0 | no literal use |
+| 895 | DN_GRIETA_EP06 | 0 | 0 | 0 | 0 | no literal use |
+| 896 | DN_CUOTA_EP01 | 0 | 0 | 0 | 0 | write only/static |
+| 897 | DN_CUOTA_EP02 | 0 | 0 | 0 | 0 | write only/static |
+| 898 | DN_CUOTA_EP03 | 0 | 0 | 0 | 0 | write only/static |
+| 899 | DN_CUOTA_EP04 | 0 | 0 | 0 | 0 | write only/static |
+| 900 | DN_CUOTA_EP05 | 0 | 0 | 0 | 0 | write only/static |
+| 901 | DN_CUOTA_EP06 | 0 | 0 | 0 | 0 | write only/static |
+| 902 | DN_ROTOM_OBTAINED | 0 | 0 | 0 | 0 | no literal use |
+| 903 | DN_JEFE_EP01_FASE_A | 1 | 1 | 0 | 0 | used |
+| 904 | DN_JEFE_EP02_FASE_A | 1 | 1 | 0 | 0 | used |
+| 905 | DN_JEFE_EP03_FASE_A | 1 | 1 | 0 | 0 | used |
+| 906 | DN_JEFE_EP04_FASE_A | 1 | 1 | 0 | 0 | used |
+| 907 | DN_JEFE_EP05_FASE_A | 1 | 1 | 0 | 0 | used |
+| 908 | DN_JEFE_EP06_FASE_A | 1 | 1 | 0 | 0 | used |
+| 909 | DN_JEFE_NEXO_FASE_A | 1 | 1 | 0 | 0 | used |
+| 910 | DN_BOSS_EP01_PASO_1 | 1 | 1 | 0 | 0 | used |
+| 911 | DN_BOSS_EP02_PASO_1 | 1 | 1 | 0 | 0 | used |
+| 912 | DN_BOSS_EP03_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
+| 913 | DN_BOSS_EP04_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
+| 914 | DN_BOSS_EP05_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
+| 915 | DN_BOSS_EP06_PASO_1 | 0 | 0 | 0 | 0 | no literal use |
+| 916 | DN_BOSS_RESERVA | 0 | 0 | 0 | 0 | no literal use |
+| 917 | DN_MEDALS_READY | 2 | 0 | 0 | 0 | used |
+| 918 | DN_LIGA_STARTED | 0 | 0 | 0 | 0 | write only/static |
+| 919 | DN_LIGA_ARCEUS | 0 | 0 | 0 | 0 | write only/static |
+| 920 | DN_LIGA_CLEARED | 4 | 0 | 0 | 0 | used |
+| 921 | DN_MADPIKA_SAVED | 0 | 0 | 0 | 0 | write only/static |
+| 922 | DN_SELLO_W7_STRANGLED_RED | 3 | 1 | 0 | 0 | used |
+| 923 | DN_SELLO_W8_BURIED_ALIVE | 3 | 3 | 0 | 0 | used |
+| 924 | DN_SELLO_W9_LAVENDER_SYNDROME | 3 | 1 | 0 | 0 | used |
+| 925 | DN_GRIETA_W7 | 0 | 1 | 0 | 0 | write only/static |
+| 926 | DN_GRIETA_W8 | 0 | 2 | 0 | 0 | write only/static |
+| 927 | DN_GRIETA_W9 | 0 | 1 | 0 | 0 | write only/static |
+| 928 | DN_JEFE_W7_FASE_A | 0 | 0 | 0 | 0 | no literal use |
+| 929 | DN_JEFE_W8_FASE_A | 0 | 0 | 0 | 0 | no literal use |
+| 930 | DN_JEFE_W9_FASE_A | 0 | 0 | 0 | 0 | no literal use |
+| 931 | DN_TESTIGO_LISTO | 1 | 0 | 0 | 0 | read/access only |
+| 932 | DN_CUOTA_W7 | 0 | 0 | 0 | 0 | write only/static |
+| 933 | DN_CUOTA_W8 | 0 | 0 | 0 | 0 | write only/static |
+| 934 | DN_CUOTA_W9 | 0 | 0 | 0 | 0 | write only/static |
+| 935 | — | 0 | 0 | 0 | 0 | no literal use |
+| 936 | RUTA_DE_DIOS_RELIQUIA_1F | 1 | 1 | 0 | 0 | used |
+| 937 | RUTA_DE_DIOS_RELIQUIA_2F | 1 | 1 | 0 | 0 | used |
+| 938 | RUTA_DE_DIOS_RELIQUIA_3F | 1 | 1 | 0 | 0 | used |
+| 939 | RUTA_DE_DIOS_RELIQUIA_4F | 1 | 1 | 0 | 0 | used |
+| NaN | — | 4 | 0 | 0 | 0 | read/access only; unnamed |
 
-## Variables 1–228
+## Variables 1–288
 
 | ID | Nombre | Lecturas | Escrituras | Script | Estado |
 |---:|---|---:|---:|---:|---|
-| 1 | Temp Pokemon Choice | 3776 | 85 | 4 | used |
+| 1 | Temp Pokemon Choice | 3795 | 85 | 7 | used |
 | 2 | Temp Move Choice | 78 | 36 | 2 | used |
 | 3 | Temp Pokemon Name | 33 | 20 | 0 | used |
 | 4 | Temp Move Name | 75 | 4 | 38 | used |
@@ -1312,6 +1490,66 @@ Conflictos de reserva: **0**.
 | 226 | POKEMOD ATLAS T2 DECISION 83 | 0 | 2 | 0 | write only/static |
 | 227 | POKEMOD ATLAS T2 DECISION 84 | 0 | 2 | 0 | write only/static |
 | 228 | POKEMOD ATLAS T2 DECISION 85 | 0 | 2 | 0 | write only/static |
+| 229 | POKEMOD ATLAS T2 DECISION 86 | 0 | 2 | 0 | write only/static |
+| 230 | POKEMOD ATLAS T2 DECISION 87 | 0 | 2 | 0 | write only/static |
+| 231 | POKEMOD ATLAS T2 DECISION 88 | 0 | 2 | 0 | write only/static |
+| 232 | POKEMOD ATLAS T2 DECISION 89 | 0 | 2 | 0 | write only/static |
+| 233 | POKEMOD ATLAS T2 DECISION 90 | 0 | 2 | 0 | write only/static |
+| 234 | POKEMOD ATLAS T2 DECISION 91 | 0 | 2 | 0 | write only/static |
+| 235 | POKEMOD ATLAS T2 DECISION 92 | 0 | 2 | 0 | write only/static |
+| 236 | POKEMOD ATLAS T2 DECISION 93 | 0 | 2 | 0 | write only/static |
+| 237 | POKEMOD ATLAS T2 DECISION 94 | 0 | 2 | 0 | write only/static |
+| 238 | POKEMOD ATLAS T2 DECISION 95 | 0 | 2 | 0 | write only/static |
+| 239 | POKEMOD ATLAS T2 DECISION 96 | 0 | 2 | 0 | write only/static |
+| 240 | POKEMOD ATLAS T2 DECISION 97 | 0 | 2 | 0 | write only/static |
+| 241 | POKEMOD ATLAS T2 DECISION 98 | 0 | 2 | 0 | write only/static |
+| 242 | POKEMOD ATLAS T2 DECISION 99 | 0 | 2 | 0 | write only/static |
+| 243 | POKEMOD ATLAS T2 DECISION 100 | 0 | 2 | 0 | write only/static |
+| 244 | POKEMOD ATLAS T2 DECISION 101 | 0 | 2 | 0 | write only/static |
+| 245 | POKEMOD ATLAS T2 DECISION 102 | 0 | 2 | 0 | write only/static |
+| 246 | POKEMOD ATLAS T2 DECISION 103 | 0 | 2 | 0 | write only/static |
+| 247 | POKEMOD ATLAS T2 DECISION 104 | 0 | 2 | 0 | write only/static |
+| 248 | POKEMOD ATLAS T2 DECISION 105 | 0 | 2 | 0 | write only/static |
+| 249 | POKEMOD ATLAS T2 DECISION 106 | 0 | 2 | 0 | write only/static |
+| 250 | POKEMOD ATLAS T2 DECISION 107 | 0 | 2 | 0 | write only/static |
+| 251 | POKEMOD ATLAS T2 DECISION 108 | 0 | 2 | 0 | write only/static |
+| 252 | POKEMOD ATLAS T2 DECISION 109 | 0 | 2 | 0 | write only/static |
+| 253 | POKEMOD ATLAS T2 DECISION 110 | 0 | 2 | 0 | write only/static |
+| 254 | POKEMOD ATLAS T2 DECISION 111 | 0 | 2 | 0 | write only/static |
+| 255 | POKEMOD ATLAS T2 DECISION 112 | 0 | 2 | 0 | write only/static |
+| 256 | POKEMOD ATLAS T2 DECISION 113 | 0 | 2 | 0 | write only/static |
+| 257 | POKEMOD ATLAS T2 DECISION 114 | 0 | 2 | 0 | write only/static |
+| 258 | POKEMOD ATLAS T2 DECISION 115 | 0 | 2 | 0 | write only/static |
+| 259 | POKEMOD ATLAS T2 DECISION 116 | 0 | 2 | 0 | write only/static |
+| 260 | POKEMOD ATLAS T2 DECISION 117 | 0 | 2 | 0 | write only/static |
+| 261 | POKEMOD ATLAS T2 DECISION 118 | 0 | 2 | 0 | write only/static |
+| 262 | POKEMOD ATLAS T2 DECISION 119 | 0 | 2 | 0 | write only/static |
+| 263 | POKEMOD ATLAS T2 DECISION 120 | 0 | 2 | 0 | write only/static |
+| 264 | DN_PROGRESO_EPISODIOS | 10 | 8 | 8 | used |
+| 265 | DN_RESONANCIA | 0 | 147 | 148 | used |
+| 266 | DN_FASE_CORRUPCION | 104 | 50 | 50 | used |
+| 267 | DN_EPISODIO_ACTUAL | 0 | 0 | 0 | no literal use |
+| 268 | DN_ANOMALIAS_EP01 | 0 | 0 | 52 | read/access only |
+| 269 | DN_ANOMALIAS_EP02 | 0 | 0 | 56 | read/access only |
+| 270 | DN_ANOMALIAS_EP03 | 0 | 0 | 48 | read/access only |
+| 271 | DN_ANOMALIAS_EP04 | 0 | 0 | 60 | read/access only |
+| 272 | DN_ANOMALIAS_EP05 | 0 | 0 | 52 | read/access only |
+| 273 | DN_ANOMALIAS_EP06 | 0 | 0 | 56 | read/access only |
+| 274 | DN_ANOMALIAS_TOTAL | 0 | 122 | 123 | used |
+| 275 | DN_ROTOM_NIVEL | 0 | 0 | 1 | read/access only |
+| 276 | DN_FINAL_CHOICE | 0 | 0 | 0 | no literal use |
+| 277 | DN_SELLOS_Y_CONTADOR | 1 | 11 | 42 | used |
+| 278 | DN_LIGA_RAMA_MADPIKA | 0 | 2 | 0 | write only/static |
+| 279 | DN_LIGA_CHISPAS | 0 | 4 | 8 | used |
+| 280 | DN_MEDALLAS_CONTADAS | 0 | 0 | 0 | no literal use |
+| 281 | DN_LIGA_ETAPA | 5 | 7 | 0 | used |
+| 282 | DN_LIGA_COMBATE_RESULTADO | 0 | 2 | 0 | write only/static |
+| 283 | DN_ANOMALIAS_W7 | 0 | 0 | 56 | read/access only |
+| 284 | DN_ANOMALIAS_W8 | 0 | 0 | 52 | read/access only |
+| 285 | DN_ANOMALIAS_W9 | 0 | 0 | 56 | read/access only |
+| 286 | DN_W8_AIRE | 0 | 0 | 0 | no literal use |
+| 287 | DN_W9_CANTO | 0 | 0 | 0 | no literal use |
+| 288 | DN_W7_CORREAS | 0 | 0 | 0 | no literal use |
 
 ## Switches críticos revisados
 
@@ -1322,14 +1560,14 @@ Conflictos de reserva: **0**.
 - **708–747:** 40 sellos narrativos Tier 1 aprobados, verificados sin colisión.
 - **Variables 101–103:** contadores separados de Horizontes, Atlas Mil y sellos narrativos.
 - **Variables 104–143:** decisiones persistentes de los 40 episodios Tier 1.
-- **Switches 748–832 y variables 144–228:** progreso y decisiones persistentes de las primeras 85 rutas Tier 2.
+- **Switches 748–867 y variables 144–263:** progreso y decisiones persistentes de las primeras 120 rutas Tier 2.
 
 ## Indicadores que requieren cautela
 
-- Switches con nombre sin uso literal: 14.
-- Switches usados sin nombre: 1.
-- Switches con escritura estática sin lectura literal: 10.
-- Switches con lectura/acceso sin escritura estática: 19.
+- Switches con nombre sin uso literal: 28.
+- Switches usados sin nombre: 3.
+- Switches con escritura estática sin lectura literal: 32.
+- Switches con lectura/acceso sin escritura estática: 25.
 
 El detalle de ubicaciones (hasta 30 por ID), self-switches y expresiones dinámicas está en:
 

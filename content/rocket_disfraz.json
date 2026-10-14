@@ -1,0 +1,102 @@
+{
+  "titulo": "Team Rocket — El disfraz y la atmósfera industrial",
+  "nota": "P6. Ash no es un turista en la dimensión del Team Rocket: es un infiltrado. Para moverse por la base necesita el uniforme, y la base misma tiene que oler a industria: polvo en suspensión, luz roja de alarma, tuberías. Aquí se instalan las tres piezas que faltaban: el disfraz jugable (metadata player_D + pbChangePlayer), la niebla de polvo sobre los dos mapas de la base, y los NPC que reaccionan a si Ash va o no de uniforme.",
+  "marcador": "PokeMod Disfraz:",
+  "variable": 315,
+  "nombreVariable": "PM_ROCKET_DISFRAZ",
+  "jugador": {
+    "id": 3,
+    "ivan": "@player_D",
+    "tipo": "TEAMROCKET_M",
+    "charset": "trainer_TEAMROCKET_M",
+    "nota": "get_player(3) devuelve metadata.dat @player_D. pbChangePlayer(3) cambia a la vez el tipo de entrenador (música y sprites de batalla del Team Rocket) y el charset del mundo."
+  },
+  "niebla": {
+    "origen": 3,
+    "nuevo": 179,
+    "nombre": "polvo_rocket",
+    "opacidad": 44,
+    "zoom": 200,
+    "sx": 0,
+    "sy": 0,
+    "mapas": [2220, 2221],
+    "nota": "No se toca el tileset 3 original: se clona a 179 y sólo los dos mapas de la base cambian de tileset."
+  },
+  "textos": {
+    "ponerse": [
+      "Norbert abre la taquilla de un tirón. Dentro huele a grasa y a tabaco frío.",
+      "\\b«¿Nuevo? No te han dado uniforme, claro. A los de fuera nunca se lo dan.»",
+      "\\b«Toma. Talla única, como todo lo que hace el Equipo. Póntelo y nadie te preguntará nada.»"
+    ],
+    "puesto": [
+      "\\bAsh se quita la chaqueta y se enfunda el uniforme negro.",
+      "La R bordada le queda grande. Se le ve... distinto.",
+      "\\b«Camarada.» Norbert le hace un saludo vago, de los que no se molestan en llegar a la frente. «Ahora eres uno de los nuestros. No lo estropees.»"
+    ],
+    "rechazo": [
+      "\\bAsh mira el uniforme y niega con la cabeza.",
+      "\\b«Como quieras.» Norbert cierra la taquilla. «Pero sin la R eres un civil. Y aquí los civiles estorban.»"
+    ],
+    "yaPuesto": [
+      "El uniforme de recluta, ahora con el nombre de Ash cosido a mano sobre el bolsillo.",
+      "Norbert lo mira de reojo cada vez que pasa. No dice nada."
+    ],
+    "quitarse": [
+      "\\bAsh se quita el uniforme y lo dobla sobre la taquilla.",
+      "\\b«Guárdalo.» dice Norbert. «Si vuelves a necesitarlo, aquí estará.»"
+    ],
+    "seguirPuesto": [
+      "\\bAsh se ajusta el cuello de la chaqueta.",
+      "Sigue siendo un recluta. Sigue siendo lo que necesita ser para llegar hasta el fondo."
+    ],
+    "violeta": [
+      "Violeta, la armera, revisa un cargador sin mirar a Ash.",
+      "\\b«¿Uniforme? Lo mismo da dónde te lo des. El polvo de esta base se te mete igual.»"
+    ]
+  },
+  "intendentes": [
+    {
+      "mapa": 2220,
+      "nombre": "Intendente Norbert",
+      "charset": "trainer_TEAMROCKET_M",
+      "pista": [3, 3]
+    },
+    {
+      "mapa": 2281,
+      "nombre": "Armera Violeta",
+      "charset": "trainer_TEAMROCKET_F",
+      "pista": [3, 3],
+      "textos": "violeta"
+    }
+  ],
+  "centinelas": [
+    {
+      "mapa": 2220,
+      "nombre": "Centinela Rocket",
+      "charset": "trainer_TEAMROCKET_M",
+      "conDisfraz": [
+        "\\b«Camarada.» El centinela se aparta sin mirarle siquiera.",
+        "Detrás de él, la puerta de servicio se queda abierta un segundo de más."
+      ],
+      "sinDisfraz": [
+        "\\b«Alto. Zona restringida.»",
+        "El centinela bloquea el paso con el bastón. Mira a Ash de arriba abajo.",
+        "\\b«No llevas la R. Civil. Da media vuelta antes de que te la ponga yo.»"
+      ]
+    },
+    {
+      "mapa": 2221,
+      "nombre": "Centinela del Núcleo",
+      "charset": "trainer_TEAMROCKET_M",
+      "conDisfraz": [
+        "\\b«El Núcleo está al fondo, camarada.»",
+        "El centinela sonríe por primera vez en todo el día.",
+        "\\b«Si vas a ver al Jefe... ponte cómodo. Nadie sale corriendo de esa sala.»"
+      ],
+      "sinDisfraz": [
+        "\\b«Ésta es la antesala del Núcleo del Mando.»",
+        "\\b«Sólo entra personal autorizado. Y tú... tú tienes cara de haber venido nadando.»"
+      ]
+    }
+  ]
+}

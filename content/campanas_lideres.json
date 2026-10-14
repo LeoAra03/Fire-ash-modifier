@@ -1,0 +1,230 @@
+{
+  "generatedBy": "tools/apply_lideres_campanas.mjs",
+  "switches": "700-731",
+  "colocados": [
+    {
+      "map": 3011,
+      "lider": "Sparky",
+      "sw": 700,
+      "x": 18,
+      "y": 5
+    },
+    {
+      "map": 3025,
+      "lider": "Terry",
+      "sw": 701,
+      "x": 5,
+      "y": 5
+    },
+    {
+      "map": 3036,
+      "lider": "Flo",
+      "sw": 702,
+      "x": 9,
+      "y": 4
+    },
+    {
+      "map": 3046,
+      "lider": "Lief",
+      "sw": 703,
+      "x": 9,
+      "y": 5
+    },
+    {
+      "map": 3056,
+      "lider": "Irene",
+      "sw": 704,
+      "x": 8,
+      "y": 81
+    },
+    {
+      "map": 3071,
+      "lider": "Ernest",
+      "sw": 705,
+      "x": 16,
+      "y": 11
+    },
+    {
+      "map": 3086,
+      "lider": "Nicole",
+      "sw": 706,
+      "x": 10,
+      "y": 10
+    },
+    {
+      "map": 3101,
+      "lider": "Tyson",
+      "sw": 707,
+      "x": 28,
+      "y": 15
+    },
+    {
+      "map": 3124,
+      "lider": "Jessica",
+      "sw": 708,
+      "x": 18,
+      "y": 18
+    },
+    {
+      "map": 3126,
+      "lider": "Esmeralda",
+      "sw": 709,
+      "x": 7,
+      "y": 7
+    },
+    {
+      "map": 3128,
+      "lider": "Lucas",
+      "sw": 710,
+      "x": 6,
+      "y": 6
+    },
+    {
+      "map": 3130,
+      "lider": "Thomas",
+      "sw": 711,
+      "x": 5,
+      "y": 4
+    },
+    {
+      "map": 3132,
+      "lider": "Atlas",
+      "sw": 712,
+      "x": 6,
+      "y": 4
+    },
+    {
+      "map": 3134,
+      "lider": "Rayner",
+      "sw": 713,
+      "x": 8,
+      "y": 5
+    },
+    {
+      "map": 3136,
+      "lider": "Sophia",
+      "sw": 714,
+      "x": 8,
+      "y": 5
+    },
+    {
+      "map": 3138,
+      "lider": "Wesley",
+      "sw": 715,
+      "x": 8,
+      "y": 5
+    },
+    {
+      "map": 3207,
+      "lider": "Falkner",
+      "sw": 716,
+      "x": 6,
+      "y": 5
+    },
+    {
+      "map": 3222,
+      "lider": "Bugsy",
+      "sw": 717,
+      "x": 6,
+      "y": 5
+    },
+    {
+      "map": 3242,
+      "lider": "Whitney",
+      "sw": 718,
+      "x": 6,
+      "y": 10
+    },
+    {
+      "map": 3262,
+      "lider": "Morty",
+      "sw": 719,
+      "x": 13,
+      "y": 15
+    },
+    {
+      "map": 3323,
+      "lider": "Chuck",
+      "sw": 720,
+      "x": 22,
+      "y": 11
+    },
+    {
+      "map": 3295,
+      "lider": "Jasmine",
+      "sw": 721,
+      "x": 20,
+      "y": 12
+    },
+    {
+      "map": 3385,
+      "lider": "Pryce",
+      "sw": 722,
+      "x": 18,
+      "y": 8
+    },
+    {
+      "map": 3422,
+      "lider": "Clair",
+      "sw": 723,
+      "x": 19,
+      "y": 9
+    },
+    {
+      "map": 3700,
+      "lider": "Ejecutivo Kuro",
+      "sw": 724,
+      "x": 6,
+      "y": 7
+    },
+    {
+      "map": 3735,
+      "lider": "Ejecutiva Vex",
+      "sw": 725,
+      "x": 16,
+      "y": 9
+    },
+    {
+      "map": 3770,
+      "lider": "Ejecutivo Mal",
+      "sw": 726,
+      "x": 12,
+      "y": 9
+    },
+    {
+      "map": 3805,
+      "lider": "Ejecutiva Nox",
+      "sw": 727,
+      "x": 8,
+      "y": 10
+    },
+    {
+      "map": 3839,
+      "lider": "Ejecutivo Umbra",
+      "sw": 728,
+      "x": 23,
+      "y": 20
+    },
+    {
+      "map": 3874,
+      "lider": "Ejecutiva Lis",
+      "sw": 729,
+      "x": 29,
+      "y": 11
+    },
+    {
+      "map": 3909,
+      "lider": "Ejecutivo Grajo",
+      "sw": 730,
+      "x": 4,
+      "y": 4
+    },
+    {
+      "map": 3944,
+      "lider": "Jefe Sombra",
+      "sw": 731,
+      "x": 5,
+      "y": 3
+    }
+  ]
+}

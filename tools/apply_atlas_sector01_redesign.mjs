@@ -11,7 +11,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
 const DATA = path.join(GAME, "Data");
 const CONFIG_FILE = path.join(ROOT, "content", "atlas_sector01_redesign.json");
-const BACKUP = path.join(GAME, "PokeModBackups", "atlas_sector01_redesign_originals");
+const BACKUP = path.join(GAME, "PokeModBackups", "atlas_sector01_redesign_main_4763ec19_originals");
 const VERIFY_ONLY = process.argv.includes("--verify");
 const CONFIG = JSON.parse(fs.readFileSync(CONFIG_FILE, "utf8"));
 const MAPS = new Map(CONFIG.maps.map((entry) => [Number(entry.id), entry.name]));
@@ -458,7 +458,7 @@ function verify() {
   ok(Number(iv(auralume, "id_number")) === CONFIG.species.number, "id_number de AURALUME no coincide con el catálogo");
   ok(sym(iv(auralume, "type1")) === "ELECTRIC" && sym(iv(auralume, "type2")) === "PSYCHIC", "tipos de AURALUME incorrectos");
   ok(Number(iv(auralume, "base_stats")?.get?.(Sym("SPEED"), (a, b) => sym(a) === sym(b))) === 90, "estadística de velocidad de AURALUME incorrecta");
-  ok(Boolean(numericRecord) && sym(iv(numericRecord, "id")) === SPECIES_ID, "species.dat no enlaza el número 1296 con AURALUME");
+  ok(Boolean(numericRecord) && sym(iv(numericRecord, "id")) === SPECIES_ID, `species.dat no enlaza el número ${CONFIG.species.number} con ${SPECIES_ID}`);
   const moves = new Set(readRx("moves.dat").pairs.filter(([key]) => key instanceof RSymbol).map(([key]) => key.name));
   const abilities = new Set(readRx("abilities.dat").pairs.filter(([key]) => key instanceof RSymbol).map(([key]) => key.name));
   const moveGroups = [

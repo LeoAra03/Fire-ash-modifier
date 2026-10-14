@@ -184,36 +184,100 @@ check(rutaScript.includes("SNOWPOINT_PASS_SWITCH = 877") && rutaScript.includes(
   rutaScript.includes("class Game_Map") && rutaScript.includes("class Game_Player"),
   "el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa");
 check(rutaScript.includes("pbStartArceusDivineBattle") &&
-  rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") && rutaScript.includes("pbArceusPseudoPC") &&
+  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") &&
+  !rutaScript.includes("pbArceusPseudoPC") && !rutaScript.includes("pbArceusVoloRest") &&
+  rutaScript.includes("pbArceusRotomMercy") && rutaScript.includes("RUTA_ARCEUS_SEQUITO = [") &&
   rutaScript.includes("pbArceusSurrenderSequence") && rutaScript.includes("pbArceusCopyActive") &&
   rutaScript.includes("pbArceusCinematicPrelude") && rutaScript.includes("PokemonSprite"),
-  "Arceus conserva batalla por fases, pseudo-PC, copia del activo, rendición y prólogo cinematográfico");
+  "Arceus conserva batalla por fases, merced única del Rotom (sin pseudo-PC ni curas, R14), séquito doble, copia del activo, rendición y prólogo cinematográfico");
+check(rutaScript.includes("def ruta_arceus_pokedex") &&
+  rutaScript.includes("defined?($player)") && rutaScript.includes("defined?($Trainer)") &&
+  rutaScript.includes("owner.respond_to?(:pokedex)") &&
+  rutaScript.includes("pokedex.register_battled") && !rutaScript.includes("pbPlayer.pokedex"),
+  "pbSetSeen/pbSetBattled resuelven la Pokédex global en v19–v21 sin invocarla sobre NPCTrainer");
+const mirrorIsland = JSON.parse(fs.readFileSync(path.join(ROOT, "web", "packs", "isla_espejo.json"), "utf8"));
+const ancestralCynthia = mirrorIsland.bosses.find((trainer) => trainer.id === "cintia_anc");
+const requiredSeenTeam = ["SPIRITOMB", "TOGEKISS", "MILOTIC", "LUCARIO", "ROSERADE", "GARCHOMP"];
+check(ancestralCynthia?.team?.length === 6 &&
+  requiredSeenTeam.every((species) => ancestralCynthia.team.some((pokemon) => pokemon.species === species)) &&
+  rutaScript.includes("party = pbParty(battler.index)") &&
+  rutaScript.includes("pokedex.register(species, gender, form)"),
+  "el equipo de Cintia registra como vistos sus seis Pokémon al aparecer el primer rival");
 const cpuBattleCount = (rutaScript.match(/pbArceusCinematicCpuBattle\(\[/g) || []).length;
 check(cpuBattleCount === 3 &&
   rutaScript.includes("PokeBattle_Battle.new(scene, player_party, boss_party,\n                                   player_trainers, [boss_trainer])") &&
+  rutaScript.includes("battle.instance_variable_set(:@ruta_arceus_cinematic_mode, true)") &&
   rutaScript.includes("battle.controlPlayer = true") &&
   rutaScript.includes("battle.canRun = false") &&
   rutaScript.includes("battle.expGain = false") &&
   rutaScript.includes("battle.moneyGain = false") &&
   rutaScript.includes("pbBattleAnimation(pbGetTrainerBattleBGM([boss_trainer])") &&
-  rutaScript.includes("pbDefaultChooseNewEnemy(idxBattler, pbParty(idxBattler))") &&
+  rutaScript.includes("pbArceusScriptedAction(index, false)") &&
+  rutaScript.includes("RUTA_ARCEUS_CINEMATIC_RNG_SEED") &&
+  rutaScript.includes("@ruta_arceus_rng_state * 1103515245 + 12345") &&
+  rutaScript.includes("_ruta_arceus_original_accuracy_check") &&
+  rutaScript.includes("arceus_cinematic_damage(self, amt)") &&
+  rutaScript.includes("@ruta_arceus_cinematic_boss, true") &&
   rutaScript.includes("ash_party_state") &&
   rutaScript.includes("old_rules.each { |key, value| $PokemonTemp.battleRules[key] = value }") &&
   !rutaScript.includes("$Trainer.party = player_party"),
-  "los tres apoyos usan combates reales CPU vs CPU, con escena normal, sin huida, objetos, cambios ni intervención");
+  "los tres apoyos conservan la escena de combate, pero sus comandos, azar y desenlace están coreografiados" );
 check(rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") &&
   rutaScript.includes(":ARC_Ethan") && rutaScript.includes(":SECRET_Red") &&
   rutaScript.includes(":SECRET_Volo") && rutaScript.includes("\"2v1\"") &&
   rutaScript.includes("\"single\"") && rutaScript.includes(":GIRATINA") &&
   rutaScript.includes("pbArceusCinematicPokemon(:ARCEUS, 200"),
   "Cynthia/Steven, Gold/Eco/Red y Volus/Giratina tienen equipos reales y Arceus de apoyo nivel 200");
-check(rutaScript.includes("return 0") && rutaScript.includes("return 4 if arceus_capture_ready?") &&
-  rutaScript.includes("100%") && rutaScript.includes("Master Ball"),
+check(rutaScript.includes("return 0") && rutaScript.includes("return 4") &&
+  rutaScript.includes("if arceus_capture_ready?") &&
+  rutaScript.includes("if ArceusSaveSandbox.capture_room?") &&
+  rutaScript.includes("100 %") && rutaScript.includes("Master Ball"),
   "la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después");
 check(rutaScript.includes("RUTA_ARCEUS_PHASE_PLATES") && rutaScript.includes("pbArceusRotateType") &&
+  rutaScript.includes("RUTA_ARCEUS_STAGE_COUNT = 6") &&
+  rutaScript.includes("@ruta_arceus_bars_depleted") &&
+  rutaScript.includes("def pbArceusDepleteBar") && rutaScript.includes("def check_arceus_phase(battler)") &&
+  rutaScript.includes("check_arceus_phase(battler)") && rutaScript.includes("battler.hp = 0") &&
+  rutaScript.includes("return :ruta_arceus_stage_break if amount.to_i >= battler.hp") &&
+  !rutaScript.includes("RUTA_ARCEUS_SEAL_FLOORS") &&
+  rutaScript.includes("def pbArceusPlateRouletteAnimation") && rutaScript.includes("ItemIconSprite.new(0, 0, plate, viewport)") &&
+  rutaScript.includes("Effectiveness.calculate(type, types[0], types[1], types[2])") &&
+  rutaScript.includes("def pbArceusBestAttackIds") && rutaScript.includes("def pbArceusMoveCatalogIds") &&
+  rutaScript.includes("species_data.tutor_moves") && rutaScript.includes("def pbArceusAttackCatalog") &&
+  rutaScript.includes("@battleAI.pbRegisterMoveTrainer") && rutaScript.includes("def pbArceusChooseSmartMove") &&
+  rutaScript.includes("@ruta_arceus_move_history") && rutaScript.includes("def pbArceusBattleCommentary") &&
+  rutaScript.includes("def pbArceusAdaptTypeToRival") &&
+  rutaScript.includes("def pbArceusControlLevels") &&
+  rutaScript.includes("def pbCanInflictStatus?") && rutaScript.includes("def pbArceusRedlineHeal") &&
+  rutaScript.includes("pbArceusRedlineHeal(boss, true)") &&
+  rutaScript.includes("return false if @endOfRound && !force") &&
+  !rutaScript.includes("def pbArceusRealityControl") &&
+  !rutaScript.includes("RUTA_ARCEUS_PHASE_THRESHOLDS") &&
   rutaScript.includes("pbArceusSummon") && rutaScript.includes(":MEW") &&
-  rutaScript.includes(":GIRATINA"),
-  "la batalla instala ruleta de tipos, movimientos rotativos y aliados legendarios");
+  rutaScript.includes(":GIRATINA") && rutaScript.includes("pbArceusScaleSprite") &&
+  rutaScript.includes("def pbStartBattleSendOut(sendOuts)") &&
+  rutaScript.includes("class PokeBattle_Scene"),
+  "Arceus exige seis barras completas, rueda las 17 Tablas, es inmune a estados y adapta niveles/ataques");
+check(rutaScript.includes("finish_angle = (2.0 * Math::PI * 4.0) - (Math::PI / 2.0) - (selected_index * step)"),
+  "la ruleta termina con la Tabla elegida arriba, no a la derecha");
+check(rutaScript.includes("def pbArceusCinematicWalkIn") &&
+  rutaScript.includes("def pbArceusCinematicWalkAway") &&
+  rutaScript.includes("pbArceusCinematicWalkIn(ARCEUS_ALLIES_CINTHIA_STEVEN_SWITCH") &&
+  rutaScript.includes("pbArceusCinematicWalkIn(ARCEUS_ALLIES_GOLD_RED_SWITCH") &&
+  rutaScript.includes("pbArceusCinematicRebirth") &&
+  rutaScript.includes(":ARC_Cynthia") && rutaScript.includes(":ARC_Steven") &&
+  rutaScript.includes(":ARC_Ethan") && rutaScript.includes(":SECRET_Red"),
+  "las caminatas de Cynthia/Máximo y Red/Gold anteceden a sus retratos/batallas y Arceus se regenera en el prólogo");
+check(rutaScript.includes("def ruta_arceus_cinematic_boss?") &&
+  rutaScript.includes("def pbInflictHPDamage(target)") &&
+  rutaScript.includes("return :ruta_arceus_cinematic_absorb") &&
+  rutaScript.includes("def pbArceusCinematicAbsorb") &&
+  rutaScript.includes("def ruta_arceus_divine_boss?") &&
+  rutaScript.includes("def pbArceusDivineBarDamage") &&
+  rutaScript.includes("def ruta_arceus_scripted_hp_write") &&
+  rutaScript.includes("def pbFaint(showMessage = true)") &&
+  rutaScript.includes("@battle.pbArceusCinematicRebirth(self)"),
+  "ni los movimientos ni el clima pueden derrotar a los Arceus de la cima: el cinemático absorbe y el divino mueve sus barras");
 const summitRaw = readMarshalData("Map2037.rxdata");
 const summitBoss = summitRaw.getIvar("events").pairs.find(([, event]) =>
   (event.getIvar("name")?.text ?? "").includes("Arceus Creador"))?.[1];
@@ -305,12 +369,16 @@ for (const file of fs.readdirSync(gameDataDirectory).filter((name) => /^Map\d+\.
   }
 }
 const settingsSource = zlib.inflateSync(Buffer.from(gameScriptRows.find((row) => row[1].text === "Settings")[2].bytes)).toString("utf8");
-const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*150\b/.test(settingsSource) &&
-  rutaScript.includes("max = (@species == :ARCEUS) ? 200 : GameData::GrowthRate.max_level") &&
+const levelCapIsArceusOnly = /MAXIMUM_LEVEL\s*=\s*175\b/.test(settingsSource) &&
+  rutaScript.includes("if @species == :ARCEUS && @ruta_arceus_divine == true") &&
+  rutaScript.includes("elsif @species == :ARCEUS && @ruta_arceus_captured_god == true && pbRutaArceusGodWorldAllowed?") &&
   rutaScript.includes("if value < 1 || value > max") && nonArceusLevel200Entries.length === 0 &&
-  explicitNonArceusLevel200.length === 0;
+  explicitNonArceusLevel200.length === 0 &&
+  rutaScript.includes("pkmn.instance_variable_set(:@ruta_arceus_divine, false)") &&
+  rutaScript.includes("@ruta_arceus_captured_god") &&
+  rutaScript.includes("divine ? normal_cap : safe_level");
 check(levelCapIsArceusOnly,
-  "Arceus es la única especie autorizada al nivel 200 en el tope global, equipos, encuentros y scripts del juego");
+  "el nivel 200 queda reservado al Arceus jefe o al capturado dentro de la whitelist; todo Arceus normal queda bajo el techo de 175");
 check(rutaScript.includes("$game_switches[RUTA_ARCEUS_CAUGHT_SWITCH] = true") &&
   rutaScript.includes("return :ruta_arceus_hold_at_one") && rutaScript.includes("amt == :ruta_arceus_hold_at_one"),
   "capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable");
@@ -342,25 +410,39 @@ function validConditionalIndents(commands) {
   return stack.length === 0;
 }
 const arceusRematchCommands = summitBoss?.getIvar("pages")?.[1]?.getIvar("list") ?? [];
-const voloBattlePages = [arceusCommands, arceusRematchCommands];
-const voloBattleCalls = voloBattlePages.flatMap((commands) => commands.flatMap((command, index) => {
+// R17: la pelea con Volus ya NO ocurre dentro del evento de la cumbre (evitaba
+// repetirse al tocar el altar). Vive en la puerta de salida de la zona: sólo al
+// intentar bajar, una sola vez, y sólo una victoria cierra la ruta (875/876).
+const summitBattleCalls = [arceusCommands, arceusRematchCommands].flatMap((commands) =>
+  commands.filter((command) => {
+    const source = command.getIvar("parameters")?.[1]?.text ?? "";
+    return Number(command.getIvar("code")) === 111 && source.includes("pbTrainerBattle");
+  }));
+const exitEvent = summitRaw.getIvar("events").pairs.find(([, event]) =>
+  /Escaleras/.test(event.getIvar("name")?.text ?? ""))?.[1];
+const exitVolusPage = exitEvent?.getIvar("pages")?.find((page) => {
+  const cond = page.getIvar("condition");
+  return cond && Number(cond.getIvar("switch1_id")?.value ?? cond.getIvar("switch1_id")) === 873;
+});
+const exitCommands = exitVolusPage?.getIvar("list") ?? [];
+const exitBattleCalls = exitCommands.flatMap((command, index) => {
   const source = command.getIvar("parameters")?.[1]?.text ?? "";
   return Number(command.getIvar("code")) === 111 && source.includes("pbTrainerBattle")
-    ? [{ commands, index, command, source }] : [];
-}));
-const voloVictoryGated = voloBattleCalls.length === 2 && voloBattleCalls.every(({ commands, index, command, source }) => {
-  const next = commands[index + 1];
-  return source === 'pbTrainerBattle(:SECRET_Volo, "Volo", nil, false, 4, true)' &&
-    Number(next?.getIvar("code")) === 121 && Number(next?.getIvar("indent")) === Number(command.getIvar("indent")) + 1 &&
-    Number(next?.getIvar("parameters")?.[0]) === 875;
+    ? [{ index, command, source }] : [];
 });
-const completionGateIndex = arceusCommands.findIndex((command) =>
-  Number(command.getIvar("code")) === 111 &&
-  (command.getIvar("parameters")?.[1]?.text ?? "").includes("!$game_switches[874] || $game_switches[875]"));
+const voloVictoryGated = summitBattleCalls.length === 0 && exitBattleCalls.length === 1 &&
+  exitBattleCalls.every(({ index, command, source }) => {
+    const after = exitCommands.slice(index + 1, index + 4);
+    const closes = after.filter((c) =>
+      Number(c.getIvar("code")) === 121 &&
+      Number(c.getIvar("indent")) === Number(command.getIvar("indent")) + 1);
+    const ids = closes.map((c) => Number(c.getIvar("parameters")?.[0]));
+    return source === 'pbTrainerBattle(:SECRET_Volo, "Volus", nil, false, 4, true)' &&
+      ids.includes(875) && ids.includes(876);
+  });
 check(validConditionalIndents(arceusCommands) && validConditionalIndents(arceusRematchCommands) &&
-  voloVictoryGated && completionGateIndex >= 0 &&
-  Number(arceusCommands[completionGateIndex + 1]?.getIvar("parameters")?.[0]) === 876,
-  "Map2037 tiene ramas RGSS válidas; Volus usa una versión válida y solo una victoria cierra la ruta");
+  voloVictoryGated,
+  "Map2037 tiene ramas RGSS válidas; Volus sólo se pelea al intentar bajar y una victoria cierra la ruta");
 
 // --- Archivo descargable corregido --------------------------------------------
 const gameScripts = readMarshalData("Scripts.rxdata");
@@ -444,14 +526,20 @@ const towerLocks = [141, 151, 214].flatMap((mapId) => parseMap(readMarshalData(`
   .filter((command) => command.getIvar("code") === 121 && Number(command.getIvar("parameters")?.[2]) === 0 && Number(command.getIvar("parameters")?.[0]) <= 674 && Number(command.getIvar("parameters")?.[1]) >= 674);
 check(towerLocks.length === 8, `la torre conserva sus 8 activaciones originales del switch 674 (${towerLocks.length})`);
 const oakLab = parseMap(readMarshalData("Map048.rxdata")).events.map(({ obj }) => parseEvent(obj));
+// La Expansión Multiversal retiró la cápsula central: el laboratorio vuelve a
+// tener solo sus transportadores originales y Oak como consejero.
 const hubEvents = oakLab.filter((event) => event.name.startsWith("PokeMod Hub:"));
-check(hubEvents.length === 5, `el laboratorio de Oak tiene ${hubEvents.length}/5 eventos del hub postgame`);
-check(hubEvents.every((event) => event.pages.length === 2 && event.pages[1].condition?.switch1 === 429), "todo el hub del laboratorio depende del switch 429 de postgame");
-const hubPod = hubEvents.find((event) => event.name.endsWith("Transportador"));
-const hubTransfers = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 201).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
-check(hubTransfers.join() === "997,1000,1001,1021,2021", `la cápsula nueva enlaza Isla Espejo, Bosque, Horizontes, Atlas y Monte Silver (${hubTransfers.join()})`);
-const hubGates = hubPod ? hubPod.pages[1].list.filter((command) => command.getIvar("code") === 111 && Number(command.getIvar("parameters")?.[0]) === 0).map((command) => Number(command.getIvar("parameters")?.[1])) : [];
-check([701, 704, 706].every((flag) => hubGates.includes(flag)), "las señales del hub se calibran con los switches 701/704/706 de la progresión real");
+check(hubEvents.length === 0, `el laboratorio de Oak conserva ${hubEvents.length} cápsulas del hub (debe ser 0)`);
+const labMenus = oakLab.filter((event) => event.name.startsWith("PokeMod"))
+  .filter((event) => event.pages.some((page) => new Set(page.list
+    .filter((command) => command.getIvar("code") === 201)
+    .map((command) => Number(command.getIvar("parameters")?.[1]))).size > 1));
+check(labMenus.length === 0, `el laboratorio no debe ofrecer menús de destinos (${labMenus.map((event) => event.name).join(", ")})`);
+const oakAdvisor = oakLab.find((event) => event.name === "PokeMod Oak: Registro de Grietas");
+check(Boolean(oakAdvisor), "Oak aconseja sobre las lecturas de las grietas en el laboratorio");
+check(Boolean(oakAdvisor) && oakAdvisor.pages[1]?.condition?.switch1 === 429, "el Oak consejero depende del switch 429 de postgame");
+check(Boolean(oakAdvisor) && !oakAdvisor.pages.some((page) => page.list.some((command) => command.getIvar("code") === 201)), "Oak no teletransporta: solo aconseja");
+check(Boolean(oakAdvisor) && oakAdvisor.pages[1].list.some((command) => command.getIvar("code") === 401 && String(command.getIvar("parameters")?.[0] ?? "").includes("\\v[264]")), "Oak lee el contador de purgas (\\v[264])");
 const originalDoors = oakLab.filter((event) => [15, 16].includes(event.id));
 check(originalDoors.length === 2 && originalDoors.every((event) => event.pages[1]?.condition?.switch1 === 429 && event.pages[1].list.some((command) => command.getIvar("code") === 201)), "los transportadores originales siguen intactos y condicionados por el postgame");
 const towerDoor = originalDoors.find((event) => event.id === 16);
@@ -463,7 +551,7 @@ check(multiverse.maps.length === 9 && multiverse.bosses.length === 7 && multiver
 check(multiverse.guarantees.reinterpretedHomagesOnly && multiverse.guarantees.existingAssetsOnly && multiverse.guarantees.canLoseEveryBattle && multiverse.guarantees.permanentDefeat && multiverse.guarantees.optionalRematchByMenu && multiverse.guarantees.freeReturn, "el multiverso declara homenajes reinterpretados, canLose, derrota permanente, revancha por menú y retorno libre");
 const multiverseRoster = [...multiverse.bosses, multiverse.champion];
 check(new Set(multiverseRoster.map((entry) => entry.reward)).size === multiverseRoster.length, "las recompensas del multiverso son únicas");
-check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 150)), "los equipos del multiverso respetan 6 Pokémon y nivel 150");
+check(multiverseRoster.every((entry) => entry.team.length <= 6 && entry.team.every(([, level]) => level <= 175)), "los equipos del multiverso respetan 6 Pokémon y el techo de 175");
 check(multiverseRoster.every((entry) => {
   const events = parseMap(readMarshalData(`Map${entry.mapId}.rxdata`)).events.map(({ obj }) => parseEvent(obj));
   const battle = events.find((event) => event.name.includes(entry.name));
@@ -474,8 +562,8 @@ check(multiverseRoster.every((entry) => {
 
 // --- Zonas salvajes -----------------------------------------------------------
 const wild = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "wild_zones.json"), "utf8"));
-check(wild.zones.length === 13, `el catálogo define ${wild.zones.length}/13 zonas salvajes`);
-check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 150))), "las tablas salvajes respetan niveles 1-150");
+check(wild.zones.length >= 13, `el catálogo define ${wild.zones.length} zonas salvajes (mínimo 13)`);
+check(wild.zones.every((zone) => Object.values(zone.types).every((slots) => slots.every(([, species, min, max]) => min >= 1 && max >= min && max <= 175))), "las tablas salvajes respetan niveles 1-175");
 check(wild.zones.some((zone) => zone.mapId === 2021) && wild.zones.some((zone) => zone.mapId === 1000) && wild.zones.some((zone) => zone.types.Water), "hay Monte Silver, Bosque Susurrante y encuentros de agua (surf)");
 {
   const species = new Set();
@@ -489,6 +577,15 @@ check(wild.zones.some((zone) => zone.mapId === 2021) && wild.zones.some((zone) =
     return Boolean(entry) && Object.keys(zone.types).every((type) => (entry.getIvar("@types").pairs.some(([key]) => key.name === type)));
   }), "las 13 tablas están instaladas en encounters.dat");
 }
+
+const dnPolish = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "dimensional_nightmare_map_polish.json"), "utf8"));
+check(dnPolish.auditedMapCount === 151 && dnPolish.auditedMaps.length === 151 &&
+  new Set(dnPolish.auditedMaps.map((map) => map.id)).size === 151 &&
+  JSON.stringify(dnPolish.cleanupTargets.map((entry) => [entry.id, entry.rows])) ===
+    JSON.stringify([[2073, 2], [2074, 2], [2075, 3], [2076, 2], [2077, 3]]) &&
+  dnPolish.cleanupTargets.every((entry) => entry.baseline?.eventsSha256 && entry.baseline?.collisionSha256 &&
+    entry.baseline?.atlasPixelSha256 && entry.baseline?.outsideBandTileSha256),
+  "la depuración DN audita los 151 mapas y limita el artefacto de rótulos a cinco bandas con huellas de integridad");
 
 console.log(`\nExternal authoring: ${passed} OK, ${failed} fallos.`);
 if (failed) process.exitCode = 1;

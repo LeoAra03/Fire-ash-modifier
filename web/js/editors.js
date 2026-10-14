@@ -3,7 +3,7 @@
 // ============================================================================
 import {
   S, loadMap, loadPBS, getTileset, saveMap, saveSystem, savePBS,
-  markMapDirty, scanAllMaps, kirinCheck, backupNow, listBackups, restoreBackup,
+  markMapDirty, runUndoableEdit, scanAllMaps, kirinCheck, backupNow, listBackups, restoreBackup,
   buildSalaMod, uninstallSalaMod, exportChangesZip, findSaves,
 } from "./app.js";
 import { FS } from "./fs.js";
@@ -11,8 +11,10 @@ import { RString, RObject, RHash, RSymbol, RFloat, marshalLoad, marshalDump } fr
 import {
   parseEvent, cmdOf, humanizeCommand, getCommandStrings, setRstr, rstr,
   findFlagUsesInMap, TRIGGERS, MOVE_TYPES, setSystemName, tableGet,
+  messageBlockOf, messageTextOf, speakerOf, reflowMessage, wrapMessage, visibleWidth,
+  applyDialogueText, isFireAshText101,
 } from "./rmxp.js";
-import { drawCharacterPreview } from "./render.js";
+import { drawCharacterPreview, esInvisible } from "./render.js";
 import { pbsSections, pbsGet, pbsSet, schemaFor, lintPBS, parsePBS, pbsToText } from "./pbs.js";
 import { esc, fmtBytes, pad3 } from "./util.js";
 import { zlibInflate, zlibDeflate } from "./util.js";
@@ -125,49 +127,83 @@ export async function renderEventsTab(view) {
   view.querySelector("#ev-map").onclick = () => mapPickerModal("Mapa", (id) => { S.currentMap = id; S.currentEvent = null; renderEventsTab(view); });
   view.querySelector("#ev-ev").onclick = () => eventPickerModal(S.currentMap, (id) => { S.currentEvent = id; S.currentPage = 0; renderEventsTab(view); });
   view.querySelectorAll("[data-pg]").forEach((b) => (b.onclick = () => { S.currentPage = Number(b.dataset.pg); renderEventsTab(view); }));
-  view.querySelector("#f-spr").onclick = () => spritePickerModal("Sprite del NPC", pg.graphic?.charName || "", (n) => {
-    pg.graphic.obj.setIvar("character_name", RString.fromText(n));
-    pg.graphic.obj.setIvar("tile_id", 0);
-    markMapDirty(S.currentMap); dirty(); renderEventsTab(view);
+  view.querySelector("#f-spr").onclick = () => spritePickerModal("Sprite del NPC", pg.graphic?.charName || "", async (n) => {
+    const mapId = Number(S.currentMap);
+    try {
+      await runUndoableEdit(`Cambiar sprite de Ev.${ev.id}`, { kind: "map", id: mapId }, () => {
+        pg.graphic.obj.setIvar("character_name", RString.fromText(n));
+        pg.graphic.obj.setIvar("tile_id", 0);
+        markMapDirty(mapId);
+      });
+      dirty(); renderEventsTab(view);
+    } catch (e) { toast(e.message, "error"); }
   });
 
   const applyAndSave = async () => {
-    evObj.setIvar("name", RString.fromText(view.querySelector("#f-name").value));
-    evObj.setIvar("x", Number(view.querySelector("#f-x").value));
-    evObj.setIvar("y", Number(view.querySelector("#f-y").value));
-    const c = pg.condition?.obj;
-    if (c) {
-      c.setIvar("switch1_valid", view.querySelector("#c-sw1v").checked);
-      c.setIvar("switch1_id", Number(view.querySelector("#c-sw1").value));
-      c.setIvar("switch2_valid", view.querySelector("#c-sw2v").checked);
-      c.setIvar("switch2_id", Number(view.querySelector("#c-sw2").value));
-      c.setIvar("variable_valid", view.querySelector("#c-varv").checked);
-      c.setIvar("variable_id", Number(view.querySelector("#c-var").value));
-      c.setIvar("variable_value", Number(view.querySelector("#c-varval").value));
-      c.setIvar("self_switch_valid", view.querySelector("#c-selfv").checked);
-      c.setIvar("self_switch_ch", RString.fromText(view.querySelector("#c-self").value));
-    }
-    pg.obj.setIvar("trigger", Number(view.querySelector("#f-trig").value));
-    pg.obj.setIvar("move_type", Number(view.querySelector("#f-mv").value));
-    view.querySelectorAll("[data-opt]").forEach((chk) => {
-      pg.obj.setIvar(chk.dataset.opt === "walkAnime" ? "walk_anime" : chk.dataset.opt === "stepAnime" ? "step_anime" : chk.dataset.opt === "dirFix" ? "direction_fix" : chk.dataset.opt === "alwaysTop" ? "always_on_top" : "through", chk.checked);
-    });
-    if (pg.graphic) {
-      pg.graphic.obj.setIvar("direction", Number(view.querySelector("#f-dir").value));
-      pg.graphic.obj.setIvar("pattern", Number(view.querySelector("#f-pat").value));
-    }
-    markMapDirty(S.currentMap); dirty();
-    try { await saveMap(S.currentMap); toast("Evento guardado [OK]"); }
-    catch (e) { toast(e.message, "error"); }
+    const mapId = Number(S.currentMap);
+    try {
+      await runUndoableEdit(`Editar Ev.${ev.id}`, { kind: "map", id: mapId }, async () => {
+        evObj.setIvar("name", RString.fromText(view.querySelector("#f-name").value));
+        evObj.setIvar("x", Number(view.querySelector("#f-x").value));
+        evObj.setIvar("y", Number(view.querySelector("#f-y").value));
+        const c = pg.condition?.obj;
+        if (c) {
+          c.setIvar("switch1_valid", view.querySelector("#c-sw1v").checked);
+          c.setIvar("switch1_id", Number(view.querySelector("#c-sw1").value));
+          c.setIvar("switch2_valid", view.querySelector("#c-sw2v").checked);
+          c.setIvar("switch2_id", Number(view.querySelector("#c-sw2").value));
+          c.setIvar("variable_valid", view.querySelector("#c-varv").checked);
+          c.setIvar("variable_id", Number(view.querySelector("#c-var").value));
+          c.setIvar("variable_value", Number(view.querySelector("#c-varval").value));
+          c.setIvar("self_switch_valid", view.querySelector("#c-selfv").checked);
+          c.setIvar("self_switch_ch", RString.fromText(view.querySelector("#c-self").value));
+        }
+        pg.obj.setIvar("trigger", Number(view.querySelector("#f-trig").value));
+        pg.obj.setIvar("move_type", Number(view.querySelector("#f-mv").value));
+        view.querySelectorAll("[data-opt]").forEach((chk) => {
+          pg.obj.setIvar(chk.dataset.opt === "walkAnime" ? "walk_anime" : chk.dataset.opt === "stepAnime" ? "step_anime" : chk.dataset.opt === "dirFix" ? "direction_fix" : chk.dataset.opt === "alwaysTop" ? "always_on_top" : "through", chk.checked);
+        });
+        if (pg.graphic) {
+          pg.graphic.obj.setIvar("direction", Number(view.querySelector("#f-dir").value));
+          pg.graphic.obj.setIvar("pattern", Number(view.querySelector("#f-pat").value));
+        }
+        markMapDirty(mapId);
+        await saveMap(mapId);
+      });
+      toast("Evento guardado [OK]");
+      dirty();
+    } catch (e) { toast(e.message, "error"); }
   };
   view.querySelector("#ev-save").onclick = applyAndSave;
 
   // --- lista de comandos
   const listEl = view.querySelector("#cmdlist");
   const drawCmds = () => {
+    const seen = new Set();
     listEl.innerHTML = pg.list.map((o, i) => {
       const { code, indent, params } = cmdOf(o);
       const h = humanizeCommand(code, params);
+      // Los diálogos ocupan un bloque (101 + 401): se dibujan una sola vez, con
+      // el texto completo, para que no parezca que el texto es la "cara" del NPC.
+      if (code === 101 || code === 401) {
+        const block = messageBlockOf(pg.list, i);
+        if (block && !seen.has(block[0].i)) {
+          seen.add(block[0].i);
+          for (const b of block) seen.add(b.i);
+          const texto = messageTextOf(block);
+          const sp = speakerOf(texto);
+          const lineas = wrapMessage(sp.rest, 53);
+          return `<div class="cmdrow dlg" data-i="${block[0].i}" data-dlg="1" style="margin-left:${indent * 16}px">
+            <span class="mono muted">#101</span>
+            <span class="cmd-t"><b>Diálogo</b>${sp.name ? ` <span class="chip-n">${esc(sp.name)}</span>` : ""}
+              <span class="muted">${esc(lineas.join(" / ").slice(0, 90))}</span>
+              <span class="muted small">· ${lineas.length} línea${lineas.length === 1 ? "" : "s"}${block.length > 1 ? ` · ${block.length} comandos` : ""}</span></span>
+            <button class="iconbtn mini" data-mv="-1" title="Subir">▲</button>
+            <button class="iconbtn mini" data-mv="1" title="Bajar">▼</button>
+          </div>`;
+        }
+        if (block && seen.has(block[0].i) && block[0].i !== i) return ""; // continuación: ya dibujada
+      }
       return `<div class="cmdrow${h.known ? "" : " unknown"}" data-i="${i}" style="margin-left:${indent * 16}px">
         <span class="mono muted">#${code}</span>
         <span class="cmd-t"><b>${esc(h.title)}</b> <span class="muted">${esc(h.detail)}</span></span>
@@ -176,17 +212,24 @@ export async function renderEventsTab(view) {
       </div>`;
     }).join("");
     listEl.querySelectorAll(".cmdrow").forEach((row) => {
-      row.onclick = (e) => {
+      row.onclick = async (e) => {
         if (e.target.dataset.mv) {
           e.stopPropagation();
           const i = Number(row.dataset.i), j = i + Number(e.target.dataset.mv);
           if (j < 0 || j >= pg.list.length) return;
-          const [it] = pg.list.splice(i, 1);
-          pg.list.splice(j, 0, it);
-          markMapDirty(S.currentMap); dirty(); drawCmds();
+          const command = cmdOf(pg.list[i]);
+          try {
+            await runUndoableEdit(`Mover comando #${command.code}`, { kind: "map", id: S.currentMap }, () => {
+              const [it] = pg.list.splice(i, 1);
+              pg.list.splice(j, 0, it);
+              markMapDirty(S.currentMap);
+            });
+            dirty(); drawCmds();
+          } catch (error) { toast(error.message, "error"); }
           return;
         }
-        openCommandEditor(view, rec, pg, Number(row.dataset.i), drawCmds);
+        if (row.dataset.dlg) openDialogueEditor(view, rec, pg, Number(row.dataset.i), drawCmds);
+        else openCommandEditor(view, rec, pg, Number(row.dataset.i), drawCmds);
       };
     });
   };
@@ -207,14 +250,14 @@ function openInsertMenu(view, rec, pg, redraw) {
     ${T("Condición (switch)", 0)}${T("Sonido SE", 0)}${T("Tienda", 0)}
   </div><p class="muted small">Se inserta al final (antes del Fin).</p>`;
   wrap.querySelectorAll("[data-t]").forEach((b) => {
-    b.onclick = () => {
+    b.onclick = async () => {
       const cmds = [];
       const t = b.dataset.t;
-      if (t.startsWith("Texto")) cmds.push(newCmd(101, [RString.fromText(""), 0, 0, 2]), newCmd(401, [RString.fromText("Nuevo diálogo…")]));
+      if (t.startsWith("Texto")) cmds.push(newCmd(101, [RString.fromText("Nuevo diálogo…")]));
       else if (t.startsWith("Opciones")) {
         cmds.push(newCmd(102, [[RString.fromText("Sí"), RString.fromText("No")], 4]));
-        cmds.push(newCmd(402, [0, RString.fromText("Sí")], 1), newCmd(401, [RString.fromText("Elegiste SÍ")], 2), newCmd(404, [], 1));
-        cmds.push(newCmd(402, [1, RString.fromText("No")], 1), newCmd(401, [RString.fromText("Elegiste NO")], 2), newCmd(404, [], 1));
+        cmds.push(newCmd(402, [0, RString.fromText("Sí")], 1), newCmd(101, [RString.fromText("Elegiste SÍ")], 2), newCmd(404, [], 1));
+        cmds.push(newCmd(402, [1, RString.fromText("No")], 1), newCmd(101, [RString.fromText("Elegiste NO")], 2), newCmd(404, [], 1));
         cmds.push(newCmd(404, []));
       }
       else if (t.startsWith("Script")) cmds.push(newCmd(355, [RString.fromText("pbMessage(\"Hola\")")]));
@@ -227,12 +270,127 @@ function openInsertMenu(view, rec, pg, redraw) {
       else if (t.startsWith("Tienda")) cmds.push(newCmd(302, [[]]));
       let at = pg.list.length;
       if (at > 0 && Number(pg.list[at - 1].getIvar("code")) === 0) at--;
-      pg.list.splice(at, 0, ...cmds);
-      markMapDirty(S.currentMap); dirty(); closeModal(); redraw();
-      toast("Comando añadido (guarda el mapa).");
+      try {
+        await runUndoableEdit(`Añadir comando: ${t}`, { kind: "map", id: S.currentMap }, () => {
+          pg.list.splice(at, 0, ...cmds);
+          markMapDirty(S.currentMap);
+        });
+        dirty(); closeModal(); redraw();
+        toast("Comando añadido (guarda el mapa).");
+      } catch (error) { toast(error.message, "error"); }
     };
   });
   openModal({ title: "Añadir comando", body: wrap });
+}
+
+// ============================================================================
+// EDITOR DE DIÁLOGO — Fire Ash guarda la primera línea en el comando 101 y el
+// resto en los 401 siguientes; el motor las une con un espacio. Aquí el usuario
+// edita el mensaje COMPLETO (y su caja de nombre) con vista previa de la caja
+// real, así los diálogos dejan de verse partidos o a nombre del NPC equivocado.
+// ============================================================================
+function openDialogueEditor(view, rec, pg, index, redraw) {
+  const list = pg.list;
+  const block = messageBlockOf(list, index);
+  if (!block) { openCommandEditor(view, rec, pg, index, redraw); return; }
+  const original = messageTextOf(block);
+  const sp = speakerOf(original);
+  const extras = block.slice(1).filter((b) => b.obj);
+
+  const wrap = document.createElement("div");
+  wrap.innerHTML = `
+    <div class="row wrap">
+      <label>Habla (caja del nombre) <input id="dlg-who" class="inp" value="${esc(sp.name)}" placeholder="(sin nombre)" /></label>
+      <label>Caja <select id="dlg-box" class="inp">
+        <option value="53,2">2 líneas (normal)</option>
+        <option value="53,4">4 líneas (mensaje largo)</option>
+        <option value="40,2">2 líneas estrechas</option>
+      </select></label>
+      <button class="btn small" id="dlg-fit">Ajustar a la caja</button>
+    </div>
+    <textarea id="dlg-text" class="inp mono" rows="6"></textarea>
+    <p class="muted small">Códigos del juego: <span class="mono">\n</span> salto de línea ·
+      <span class="mono">\b</span> azul · <span class="mono">\r</span> rojo ·
+      <span class="mono">\c[n]</span> color · <span class="mono">\v[n]</span> variable.
+      Si escribes mucho texto, usa <b>Ajustar a la caja</b>: la caja del juego no crece sola.</p>
+    <div class="dlgpreview" id="dlg-preview"></div>
+    <p class="muted small" id="dlg-info"></p>`;
+  const ta = wrap.querySelector("#dlg-text");
+  const who = wrap.querySelector("#dlg-who");
+  const sel = wrap.querySelector("#dlg-box");
+  ta.value = sp.rest;
+
+  let pagina = 0;
+  const opts = () => {
+    const [c, l] = sel.value.split(",").map(Number);
+    return { cols: c, lines: l };
+  };
+  const paint = () => {
+    const { cols, lines } = opts();
+    const texto = ta.value;
+    const paginas = [];
+    const all = wrapMessage(texto, cols);
+    for (let i = 0; i < all.length; i += lines) paginas.push(all.slice(i, i + lines));
+    if (!paginas.length) paginas.push([""]);
+    if (pagina >= paginas.length) pagina = paginas.length - 1;
+    const nombre = who.value.trim();
+    wrap.querySelector("#dlg-preview").innerHTML = paginas.map((pg, k) => `
+      <div class="dlgframe${k === pagina ? " sel" : ""}" data-p="${k}">
+        ${nombre ? `<div class="dlgname">${esc(nombre)}</div>` : `<div class="dlgname none">(sin nombre — el juego usará el del evento)</div>`}
+        <div class="dlgbox">${pg.map((l) => `<div class="dlgline">${esc(l) || "&nbsp;"}</div>`).join("")}</div>
+      </div>`).join("");
+    wrap.querySelectorAll(".dlgframe").forEach((f) => {
+      f.onclick = () => { pagina = Number(f.dataset.p); paint(); };
+    });
+    const largos = all.filter((l) => visibleWidth(l) > cols).length;
+    wrap.querySelector("#dlg-info").textContent =
+      `${all.length} línea(s) · ${paginas.length} caja(s) · ${texto.length} caracteres` +
+      (largos ? ` · ⚠ ${largos} línea(s) más larga(s) que la caja` : "") +
+      ` · bloque: 1 comando 101${extras.length ? ` + ${extras.length} de continuación` : ""}`;
+  };
+  ta.oninput = () => { pagina = 0; paint(); };
+  who.oninput = paint;
+  sel.onchange = () => { pagina = 0; paint(); };
+  wrap.querySelector("#dlg-fit").onclick = () => {
+    const { cols } = opts();
+    ta.value = reflowMessage(ta.value, cols).texto;
+    pagina = 0;
+    paint();
+  };
+  paint();
+
+  const guardar = async (close) => {
+    const { cols } = opts();
+    const nuevo = ta.value;
+    try {
+      await runUndoableEdit(`Editar diálogo (Ev.${S.currentEvent})`, { kind: "map", id: S.currentMap }, () => {
+        // 1) el 101 se queda con TODO el mensaje (mismo texto que unía el motor)
+        const sobrantes = applyDialogueText(block, who.value, nuevo);
+        // 2) fuera los 401 que ya no hacen falta (el motor no los necesita)
+        if (sobrantes) {
+          const quitar = new Set(block.slice(1).map((b) => b.obj));
+          for (let i = list.length - 1; i >= 0; i--) if (quitar.has(list[i])) list.splice(i, 1);
+        }
+        markMapDirty(S.currentMap);
+      });
+      dirty();
+      close();
+      redraw();
+      const { lines } = opts();
+      const largas = wrapMessage(nuevo, cols).filter((l) => visibleWidth(l) > cols).length;
+      toast(largas ? `Diálogo guardado (${largas} línea(s) se salen de la caja)` : "Diálogo guardado [OK]");
+    } catch (e) { toast(e.message, "error"); }
+  };
+
+  openModal({
+    title: `Diálogo del evento ${S.currentEvent}`,
+    body: wrap,
+    wide: true,
+    actions: [
+      { label: "Cancelar", onClick: (close) => close() },
+      { label: "Guardar diálogo", cls: "primary", onClick: (close) => guardar(close) },
+    ],
+  });
 }
 
 function openCommandEditor(view, rec, pg, index, redraw) {
@@ -257,23 +415,33 @@ function openCommandEditor(view, rec, pg, index, redraw) {
       { label: "Eliminar", cls: "danger", onClick: async (close) => {
         if (pg.list.length <= 1) { toast("No puedes borrar el único comando.", "error"); return; }
         if (await confirmDialog("Eliminar comando", "¿Borrar este comando? (se guarda con el mapa)")) {
-          pg.list.splice(index, 1);
-          markMapDirty(S.currentMap); dirty(); close(); redraw();
+          try {
+            await runUndoableEdit(`Eliminar comando #${code}`, { kind: "map", id: S.currentMap }, () => {
+              pg.list.splice(index, 1);
+              markMapDirty(S.currentMap);
+            });
+            dirty(); close(); redraw();
+          } catch (error) { toast(error.message, "error"); }
         }
       } },
-      { label: "Guardar", cls: "primary", onClick: (close) => {
+      { label: "Guardar", cls: "primary", onClick: async (close) => {
         try {
-          if (strings.length) {
-            body.querySelectorAll("textarea").forEach((ta) => {
-              strings[Number(ta.dataset.k)].rs.text = ta.value;
-            });
-          } else {
-            const j = JSON.parse(body.querySelector("#cmd-json").value);
-            o.setIvar("parameters", jsonToParams(j));
-          }
-          markMapDirty(S.currentMap); dirty(); close(); redraw();
+          await runUndoableEdit(`Editar comando #${code}`, { kind: "map", id: S.currentMap }, () => {
+            if (strings.length) {
+              body.querySelectorAll("textarea").forEach((ta) => {
+                strings[Number(ta.dataset.k)].rs.text = ta.value;
+              });
+            } else {
+              let j;
+              try { j = JSON.parse(body.querySelector("#cmd-json").value); }
+              catch (error) { throw new Error("JSON inválido: " + error.message); }
+              o.setIvar("parameters", jsonToParams(j));
+            }
+            markMapDirty(S.currentMap);
+          });
+          dirty(); close(); redraw();
           toast("Comando actualizado (guarda el mapa).");
-        } catch (e) { toast("JSON inválido: " + e.message, "error"); }
+        } catch (e) { toast(e.message, "error"); }
       } },
     ],
   });
@@ -343,9 +511,15 @@ export function renderFlagsTab(view, { goTab }) {
     listEl.innerHTML = rows.join("") || `<p class="muted">Sin resultados.</p>`;
     listEl.querySelectorAll("input[data-id]").forEach((inp) => {
       inp.onchange = async () => {
-        setSystemName(S.systemObj, flagKind, Number(inp.dataset.id), inp.value);
-        try { await saveSystem(); S.names = flagKind === "sw" || true ? S.names : S.names; toast("Nombre guardado [OK]"); }
-        catch (e) { toast(e.message, "error"); }
+        const id = Number(inp.dataset.id);
+        const kind = flagKind === "sw" ? "Interruptor" : "Variable";
+        try {
+          await runUndoableEdit(`Renombrar ${kind} ${id}`, { kind: "system" }, async () => {
+            setSystemName(S.systemObj, flagKind, id, inp.value);
+            await saveSystem();
+          });
+          toast("Nombre guardado [OK]");
+        } catch (e) { toast(e.message, "error"); }
       };
     });
     listEl.querySelectorAll("[data-uses]").forEach((b) => {
@@ -394,26 +568,48 @@ export function renderNpcsTab(view, { goTab }) {
     <div id="npc-list"></div>
   </div></div>`;
   const listEl = view.querySelector("#npc-list");
+  let npcDrawToken = 0;
   const draw = (filter = "") => {
     const f = filter.trim().toLowerCase();
+    const token = ++npcDrawToken;
     const rows = npcCache.filter((n) => !f || n.name.toLowerCase().includes(f) || n.charName.toLowerCase().includes(f) || n.mapName.toLowerCase().includes(f) || String(n.mapId) === f);
-    listEl.innerHTML = rows.slice(0, 250).map((n, k) =>
-      `<button class="npcrow" data-k="${npcCache.indexOf(n)}">
-        <canvas width="40" height="40" data-spr="${esc(n.charName)}"></canvas>
-        <span><b>${esc(n.name)}</b> <span class="muted">Ev.${n.evId} · Mapa ${n.mapId} ${esc(n.mapName)} · (${n.x},${n.y})</span></span>
-      </button>`).join("") || `<p class="muted">${npcCache.length ? "Sin coincidencias." : "Pulsa «Escanear mapas»."}</p>`;
-    if (rows.length > 250) listEl.innerHTML += `<p class="muted">…${rows.length - 250} más (filtra)</p>`;
-    listEl.querySelectorAll(".npcrow").forEach((b) => {
+    const visibles = rows.slice(0, 250);
+    // Se rellena una sola vez: con `innerHTML +=` el navegador volvía a construir
+    // toda la lista y las previsualizaciones asíncronas podían acabar pintando en
+    // filas de otra búsqueda (filas duplicadas o «solapadas» en la pestaña NPCs).
+    listEl.innerHTML = "";
+    const frag = document.createDocumentFragment();
+    if (!visibles.length) {
+      const p = document.createElement("p");
+      p.className = "muted";
+      p.textContent = npcCache.length ? "Sin coincidencias." : "Pulsa «Escanear mapas».";
+      frag.appendChild(p);
+    }
+    for (const n of visibles) {
+      const b = document.createElement("button");
+      b.className = "npcrow";
+      b.dataset.k = String(npcCache.indexOf(n));
+      b.innerHTML = `<canvas width="40" height="40" data-spr="${esc(n.charName)}"></canvas>
+        <span><b>${esc(n.name)}</b> <span class="muted">Ev.${n.evId} · Mapa ${n.mapId} ${esc(n.mapName)} · (${n.x},${n.y})</span></span>`;
       b.onclick = () => openNpcEditor(npcCache[Number(b.dataset.k)], goTab);
-    });
-    // previews
+      frag.appendChild(b);
+    }
+    if (rows.length > visibles.length) {
+      const p = document.createElement("p");
+      p.className = "muted";
+      p.textContent = `…${rows.length - visibles.length} más (filtra)`;
+      frag.appendChild(p);
+    }
+    listEl.appendChild(frag);
+    // previews (solo de la lista actual: si el usuario vuelve a buscar, se cortan)
     listEl.querySelectorAll("canvas[data-spr]").forEach(async (cv) => {
       const n = cv.dataset.spr;
-      if (!n) return;
+      if (!n || esInvisible(n)) return;
       try {
         const img = await FS.readImage(`Graphics/Characters/${n}.png`);
+        if (token !== npcDrawToken || !cv.isConnected) return;
         drawCharacterPreview(cv, img, 2, 1);
-      } catch { /* noop */ }
+      } catch { /* sin vista previa */ }
     });
   };
   view.querySelector("#npc-search").oninput = debounce((e) => draw(e.target.value), 200);
@@ -464,24 +660,36 @@ async function openNpcEditor(n, goTab) {
   };
   paint();
   wrap.querySelector("#npc-dir").onchange = paint;
-  wrap.querySelector("#npc-spr").onclick = () => spritePickerModal("Sprite", pg.graphic?.charName || "", (s) => {
-    pg.graphic.obj.setIvar("character_name", RString.fromText(s));
-    pg.graphic.obj.setIvar("tile_id", 0);
-    markMapDirty(n.mapId); dirty(); paint();
+  wrap.querySelector("#npc-spr").onclick = () => spritePickerModal("Sprite", pg.graphic?.charName || "", async (s) => {
+    try {
+      await runUndoableEdit(`Cambiar sprite de Ev.${n.evId}`, { kind: "map", id: n.mapId }, () => {
+        pg.graphic.obj.setIvar("character_name", RString.fromText(s));
+        pg.graphic.obj.setIvar("tile_id", 0);
+        markMapDirty(n.mapId);
+      });
+      dirty(); paint();
+    } catch (error) { toast(error.message, "error"); }
   });
   openModal({
     title: "Editar NPC", body: wrap,
     actions: [
       { label: "Ir al evento", onClick: (close) => { S.currentMap = n.mapId; S.currentEvent = n.evId; S.currentPage = 0; close(); goTab("events"); } },
       { label: "Guardar", cls: "primary", onClick: async (close) => {
-        evObj.setIvar("name", RString.fromText(wrap.querySelector("#npc-name").value));
-        evObj.setIvar("x", Number(wrap.querySelector("#npc-x").value));
-        evObj.setIvar("y", Number(wrap.querySelector("#npc-y").value));
-        pg.graphic.obj.setIvar("direction", Number(wrap.querySelector("#npc-dir").value));
-        markMapDirty(n.mapId); dirty();
-        try { await saveMap(n.mapId); toast("NPC guardado [OK]"); } catch (e) { toast(e.message, "error"); }
-        close();
-        n.name = ev.name; n.x = ev.x; n.y = ev.y;
+        try {
+          await runUndoableEdit(`Editar NPC Ev.${n.evId}`, { kind: "map", id: n.mapId }, async () => {
+            evObj.setIvar("name", RString.fromText(wrap.querySelector("#npc-name").value));
+            evObj.setIvar("x", Number(wrap.querySelector("#npc-x").value));
+            evObj.setIvar("y", Number(wrap.querySelector("#npc-y").value));
+            pg.graphic.obj.setIvar("direction", Number(wrap.querySelector("#npc-dir").value));
+            markMapDirty(n.mapId);
+            await saveMap(n.mapId);
+          });
+          toast("NPC guardado [OK]");
+          dirty(); close();
+          n.name = wrap.querySelector("#npc-name").value;
+          n.x = Number(wrap.querySelector("#npc-x").value);
+          n.y = Number(wrap.querySelector("#npc-y").value);
+        } catch (e) { toast(e.message, "error"); }
       } },
     ],
   });
@@ -515,8 +723,14 @@ export async function renderPbsTab(view) {
   </div></div>`;
   view.querySelector("#pbs-file").onchange = (e) => { pbsCurrent = e.target.value; renderPbsTab(view); };
   view.querySelector("#pbs-save").onclick = async () => {
-    collectPbsForm(view, rec);
-    try { await savePBS(pbsCurrent); toast("PBS guardado [OK]"); dirty(); } catch (e) { toast(e.message, "error"); }
+    const rel = pbsCurrent;
+    try {
+      await runUndoableEdit(`Editar ${rel}`, { kind: "pbs", path: rel }, async () => {
+        collectPbsForm(view, rec);
+        await savePBS(rel);
+      });
+      toast("PBS guardado [OK]"); dirty();
+    } catch (e) { toast(e.message, "error"); }
   };
   const listEl = view.querySelector("#pbs-list");
   const draw = (filter = "") => {
@@ -544,7 +758,13 @@ export async function renderPbsTab(view) {
     }
     if (sections.length > 120 && !f) listEl.innerHTML += `<p class="muted">Mostrando 120 de ${sections.length} (filtra para ver más).</p>`;
   };
-  view.querySelector("#pbs-search").oninput = debounce((e) => { collectPbsForm(view, rec); draw(e.target.value); }, 300);
+  view.querySelector("#pbs-search").oninput = debounce(async (e) => {
+    const filter = e.target.value;
+    try {
+      await runUndoableEdit(`Editar ${pbsCurrent}`, { kind: "pbs", path: pbsCurrent }, () => collectPbsForm(view, rec));
+      draw(filter);
+    } catch (error) { toast(error.message, "error"); }
+  }, 300);
   draw();
   // avisos de validación
   const issues = lintPBS(pbsCurrent, pbsToText(rec.lines));

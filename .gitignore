@@ -7,6 +7,8 @@ game/
 *.7z
 *.rar
 !Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip
+!Scripts_corregido/Fire_Ash_Paquete_Directo.zip
+!Scripts_corregido/Dimensional_Nightmare_QA.zip
 
 # Saves y backups (protegidos, locales)
 Save*.rxdata
@@ -28,7 +30,9 @@ android/local.properties
 
 # Web dev
 web/demo-out/
+reference/roms_invitadas/
 node_modules/
+
 .DS_Store
 
 # Python
@@ -41,3 +45,42 @@ tools/.cache/
 .vscode/
 .idea/
 *.swp
+
+# Dimensional Nightmare: los recortes se regeneran con `npm run dn:ingest`
+# y los mosaicos de terceros no se redistribuyen en el repo
+reference/dimensional_nightmare/recursos/
+reference/dimensional_nightmare/slices/
+reference/dimensional_nightmare/_fixtures/
+reference/dimensional_nightmare/tilesets/
+reference/dimensional_nightmare/index.json
+reference/dimensional_nightmare/selftest.png
+content/dimensional_nightmare_tiles.json
+content/dimensional_nightmare_tiles_2x.json
+reference/dimensional_nightmare/preview_*.png
+docs/dn_referencia/detalle/
+docs/dn_referencia/recreacion/detalle/
+Mapas/*
+!Mapas/crepypasta/
+Mapas/crepypasta/*
+!Mapas/crepypasta/README.md
+
+# Overlays de pasajes por mapa: se regeneran con `npm run dn:pasajes:*` (--render).
+# La evidencia versionada son las hojas por episodio de docs/dn_referencia/lotes/.
+docs/dn_referencia/pasajes/
+
+# Arte conceptual sin procesar (pesado; los assets derivados sí se versionan)
+reference/pokegods/concept/
+reference/pokegods/concepto/
+
+# ROMs invitadas y su material extraído (no se versiona)
+roms pokemon/
+
+# Toolkit local desempaquetado (reproducible desde los archivos fuente)
+toolkit/
+temporal_extraccion/
+
+# Paquete TIMPS Swarm: se guarda el zip, no el contenido descomprimido
+agents/timps-swarm-main/
+
+# Referencia de Atlas Mil (generada por tools/atlas_ingest_reference.mjs)
+reference/atlas/

@@ -17,7 +17,7 @@ import { passabilityOf, reachableCells } from "./lib/map_painter.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
 const DATA = path.join(GAME, "Data");
-const BACKUP = path.join(GAME, "PokeModBackups", "atlas_sector01_floor_layout_originals");
+const BACKUP = path.join(GAME, "PokeModBackups", "atlas_sector01_floor_layout_main_4763ec19_originals");
 const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "atlas_sector01_floor_layout.json"), "utf8"));
 const VERIFY_ONLY = process.argv.includes("--verify");
 const RESTORE = process.argv.includes("--restore");
@@ -90,6 +90,17 @@ function expectedEntry(mapId) {
   if (mapId >= 1022 && mapId <= 1025) return { sourceMapId: mapId - 1, eventName: "Next Atlas Map" };
   throw new Error(`No se definió punto de entrada para el mapa ${mapId}.`);
 }
+function eventAccessibleFromReachableCell(event, reachable, width, height) {
+  if (reachable.has(`${event.x},${event.y}`)) return true;
+  // RMXP action-button events on wall-mounted objects (for example a PC tile)
+  // are activated while facing the event from an adjacent walkable square.
+  if (!event.pages.some((page) => Number(page.trigger) === 0)) return false;
+  return [[0, -1], [1, 0], [0, 1], [-1, 0]].some(([dx, dy]) => {
+    const x = event.x + dx;
+    const y = event.y + dy;
+    return x >= 0 && y >= 0 && x < width && y < height && reachable.has(`${x},${y}`);
+  });
+}
 function auditPilotReachability() {
   const pilotMaps = [1021, 1022, 1023, 1024, 1025];
   for (const mapId of pilotMaps) {
@@ -106,7 +117,7 @@ function auditPilotReachability() {
     ok(reachable.size > 1, `${mapId}: punto de entrada bloqueado o sin salida (${spawn.x},${spawn.y}).`);
     for (const { obj } of parsed.events) {
       const event = parseEvent(obj);
-      ok(reachable.has(`${event.x},${event.y}`), `${mapId}: evento inalcanzable «${event.name}» (${event.x},${event.y}).`);
+      ok(eventAccessibleFromReachableCell(event, reachable, parsed.width, parsed.height), `${mapId}: evento inalcanzable «${event.name}» (${event.x},${event.y}).`);
     }
 
     const exits = [

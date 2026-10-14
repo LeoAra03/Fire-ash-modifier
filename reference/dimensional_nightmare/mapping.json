@@ -1,0 +1,13 @@
+{
+  "$comment": "Asignación verificada por CONTENIDO (no por nombre) de los 7 mosaicos del autor. Los archivos viven en Mapas/Crepypastas/ (ignorada por git). tools/dn_ingest_reference.mjs usa este archivo con prioridad absoluta sobre los tokens del nombre.",
+  "r1_glitch_city": "Mapas/Crepypastas/Glitch city and Missigno.jpg",
+  "r2_dark_forest": "Mapas/Crepypastas/watermarked_img_14805715178216967331.jpg",
+  "r3_king_unown": "Mapas/Crepypastas/watermarked_img_18296478822738041319.jpg",
+  "r4_trono_unown": "Mapas/Crepypastas/Crepypasta rey unown.jpg",
+  "r5_pueblos_tumbas": "Mapas/Crepypastas/Pokemon Black GHOST.jpg",
+  "r6_snowy_mountain": "Mapas/Crepypastas/Gold Lost Silver.jpg",
+  "r7_catacumbas": "Mapas/Crepypastas/BURIED LIVE and White HAND crepypastas.jpg",
+  "r8_strangled_red": "Mapas/Crepypastas/origen_W7_STRANGLED_RED.png",
+  "r9_buried_alive": "Mapas/Crepypastas/origen_W8_BURIED_ALIVE.png",
+  "r10_lavender_syndrome": "Mapas/Crepypastas/origen_W9_LAVENDER_SYNDROME.png"
+}

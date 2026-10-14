@@ -24,9 +24,11 @@ de la Ruta 216 y el Monte Lanakila (árbol nevado, montaña, cueva de hielo).
   «siete emisiones callaron» se activa con el sello 768 (las 7 zonas).
 - **Siete interrupciones sellables**: sw768–774. La página 2 de cada puerta Unown
   se activa con su sello y cambia el texto («esta historia tiene testigo»).
-- **Transferencias re-apuntadas**: el hub del laboratorio (mapa 48) entra por la
-  puerta nueva de la falda; las 7 emisiones vuelven a la **gruta** (2030), no a la
-  cumbre.
+- **Transferencias re-apuntadas**: la falda ya no baja al laboratorio (la cápsula
+  del hub se retiró); su salida vuelve al mundo por la **Torre Pokémon 1F** (143),
+  donde la Expansión Multiversal abre el punto de colapso con las siete purgas.
+  Las 7 emisiones vuelven a la **gruta** (2030), no a la cumbre, y además cada una
+  tiene un «Volver al mundo» hacia su propia grieta.
 - **Música**: campo `Johto Route` (falda), `PkmRS-MtPyre` (gruta), `secretred`
   (cumbre, el tema de Red); batallas Deluxe Johto en exteriores.
 - **Metadatos**: nieve en falda, borrizón en cumbre, cueva en gruta; sin lluvia

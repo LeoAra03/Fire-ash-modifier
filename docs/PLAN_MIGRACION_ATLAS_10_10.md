@@ -2,17 +2,19 @@
 
 ## Decisión de alcance y límites
 
-Este plan convierte la petición de «transferir todo» en una migración trazable y por etapas. **No promete una extracción masiva ni copia ciegamente un ROM completo.** El repositorio no contiene un inventario de ROMs de origen ni permisos/licencias de sus recursos; además, la guía de autoría del proyecto prohíbe incorporar sprites o imágenes externos sin comprobar sus licencias. Por ello, cualquier importación de gráficos, mapas, música, textos o datos extraídos de un juego de terceros queda bloqueada hasta documentar autorización suficiente para incorporarlos y redistribuirlos.
+Este plan convierte la petición de «transferir todo» en una migración trazable y por etapas. **No promete una extracción masiva ni copia ciegamente un ROM completo.** La rama `main` ya incluye archivos de archivo relacionados con ROMs (entre ellos `ROMS (1–3).rar` y los volúmenes `Pokemon unbound gba.part1/2.rar`), pero no se ha validado un inventario fiable de sus versiones, procedencia ni permisos/licencias de redistribución. No se extrajeron ni se usaron para este piloto. Además, la guía de autoría del proyecto prohíbe incorporar sprites o imágenes externos sin comprobar sus licencias. Por ello, cualquier importación de gráficos, mapas, música, textos o datos extraídos de un juego de terceros queda bloqueada hasta documentar autorización suficiente para incorporarlos y redistribuirlos.
 
-No se guardarán archivos ROM ni dumps en Git. Si un recurso no tiene autorización clara, se reemplazará por arte original o por materiales que ya estén disponibles legítimamente en Fire Ash. Ser propietario de una copia de un juego no se considerará, por sí solo, permiso para publicar sus recursos extraídos.
+Este piloto no añade ROMs, dumps ni recursos extraídos a Git. La presencia de archivos comprimidos en `main` no acredita por sí sola derechos de uso o redistribución y esos archivos se dejan intactos. Si un recurso no tiene autorización clara, se reemplazará por arte original o por materiales que ya estén disponibles legítimamente en Fire Ash. Ser propietario de una copia de un juego no se considerará, por sí solo, permiso para publicar sus recursos extraídos.
 
 **«Sin margen de error» no se puede garantizar literalmente.** El método de abajo reduce el riesgo con compuertas *fail-closed*: si falla una comprobación, no se instala ni se avanza de lote. Solo se declara 10/10 después de las verificaciones automáticas y manuales enumeradas aquí.
 
 ## Situación real del piloto (actualización)
 
-- El PR #33 contiene el **piloto parcial** de los mapas 1021–1025: nombres regionales, accesos contextuales, Campana de Alba, Dial de Resonancia y Concha de Brisa interactuables, y Auralume como especie original con encuentro opcional.
-- El paso ejecutado al preparar esta continuación rellenó 609 celdas de suelo en los interiores 1022, 1023 y 1025 usando tiles ya existentes. Los exteriores 1021/1024 y el mobiliario aún conservan su composición base; esto no equivale a un rediseño completo ni a una transferencia de ROM.
-- Una verificación estática confirma 5/5 entradas enlazadas, todos los eventos alcanzables, portales/retornos con llegada transitable y todas las habilidades/movimientos de Auralume válidos contra `abilities.dat`/`moves.dat`; `npm run verify:all` pasa con este incremento.
+- El PR #33 contiene el **piloto parcial** de los mapas 1021–1025: nombres regionales, accesos contextuales, Campana de Alba, Dial de Resonancia y Concha de Brisa interactuables, y Auralume como especie original con encuentro opcional. Su rama ya integra el `main` actualizado y conserva los eventos que este añadió a los mapas 1021–1022.
+- El estado del piloto repara 609 celdas de suelo en los interiores 1022, 1023 y 1025 respecto del ancestro común. El `main` actualizado ya incluía las reparaciones de 131 celdas en 1023 y 220 en 1025; este PR las conserva y aplica las 258 pendientes en 1022 con tiles ya existentes. Los exteriores 1021/1024 y el mobiliario aún conservan su composición base; esto no equivale a un rediseño completo ni a una transferencia de ROM.
+- Auralume usa el ID libre **1317** en el `main` actualizado; el ID 1296 pertenece allí a Mewthree. El instalador elimina únicamente un alias numérico previo de Auralume y aborta si el nuevo ID ya pertenece a otra especie.
+- Tras reaplicar sobre el `main` actualizado, `npm run verify:atlas:sector01` pasa: 5/5 mapas enlazados, eventos accesibles (incluido el PC de pared activable desde una casilla vecina), portales/retornos transitables y habilidades/movimientos válidos. Se regeneraron las cinco vistas previas y el mosaico/informe referencial.
+- La suite completa del `main` no queda verde: después de `npm run dn:preparar`, `npm run verify:all` llega a `verify:rom:campaigns` y falla por Map3000/Map3200 con NPC incompletos y por el final de campaña Glazed ausente. `npm run verify:paquete` separado informa 384 archivos ausentes/desincronizados del paquete directo. No se ejecutó una sincronización masiva porque excede el piloto y afectaría contenido ajeno; la importación ROM sigue bloqueada por procedencia/licencias.
 - Los mapas 1026–1045 no forman parte de este piloto. El Atlas compilado completo ocupa 1021–2020 (1.000 mapas/40 sectores), pero que exista un mapa compilado no significa que esté rediseñado o revisado.
 - No se importó ningún recurso de Pokémon Reloaded ni de otro ROM externo. El arte nuevo se creó para este proyecto y los suelos se reutilizaron de `Interior general`.
 - Sigue pendiente recorrer los cinco mapas en `Game.exe` y Kirin; los renders y la búsqueda estática de caminos no sustituyen esa prueba.
@@ -38,7 +40,7 @@ Para cada lote aprobado, todos estos puntos deben estar en verde; un solo fallo 
 
 - Confirmar si «todo» significa el rediseño del Atlas (mapas 1021–2020) o también contenidos de otros juegos/ROMs. Este plan asume Atlas Mil; una petición más amplia requiere una matriz de destino aparte.
 - Crear un manifiesto de origen/destino antes de tocar datos: ID de fuente, ID de Fire Ash, categoría, transformación prevista, licencia, hash de origen y estado de revisión.
-- Mantener fuera del repositorio los ROMs y datos binarios de origen. Registrar solo la información necesaria para auditar la procedencia.
+- No añadir nuevos ROMs/dumps ni datos binarios de origen al repositorio. Los archivos comprimidos ya presentes en `main` se conservan sin extraer; registrar solo la información necesaria para auditar la procedencia y los permisos.
 - **No-go:** si no hay permiso/licencia clara para redistribuir un recurso, excluirlo y dibujar/autorizar un reemplazo original. Ningún lote supera esta fase con un recurso externo sin procedencia.
 
 **Salida:** alcance firmado y manifiesto sin recursos de estado «desconocido».
@@ -53,8 +55,8 @@ Para cada lote aprobado, todos estos puntos deben estar en verde; un solo fallo 
 
 ### Fase 2 — Cerrar primero el piloto 1021–1025
 
-- Conservar el trabajo del PR #33 como base y completar gradualmente la composición visual con materiales nativos compatibles con Fire Ash e identidad local consistente.
-- **Hecho en este incremento:** se rellenaron 609 celdas de suelo de 1022, 1023 y 1025 sin mover eventos; se añadieron el Dial de Resonancia y la Concha de Brisa; se amplió la verificación de habilidades/movimientos y de conectividad de 5/5 mapas; el rollback de suelo se probó y volvió a aplicar correctamente.
+- Conservar el trabajo del PR #33 y reaplicarlo sobre la versión más reciente de `main`, sin perder los eventos incorporados allí a 1021–1022; completar gradualmente la composición visual con materiales nativos compatibles con Fire Ash e identidad local consistente.
+- **Hecho en el piloto:** el resultado repara 609 celdas de suelo frente al ancestro común (131 en 1023, 220 en 1025 ya presentes en `main`, y 258 aplicadas aquí en 1022) sin mover eventos; se añadieron el Dial de Resonancia y la Concha de Brisa; se verifican habilidades/movimientos y conectividad de 5/5 mapas; el rollback de suelo se probó y volvió a aplicar correctamente.
 - **Pendiente:** rehacer las composiciones exteriores 1021/1024 y el mobiliario que aún procede de plantillas; revisar Campana/Dial/Concha y el flujo completo de encuentros dentro de `Game.exe` y Kirin; producir el informe visual antes/después y obtener revisión humana.
 
 **Salida:** 5/5 mapas con todas las diez compuertas en verde. El piloto sigue **parcial**, no aprobado como 10/10 ni como transferencia completa.
@@ -97,7 +99,7 @@ Para cada lote aprobado, todos estos puntos deben estar en verde; un solo fallo 
 ## Bloqueos pendientes para empezar la transferencia amplia
 
 - Alcance inequívoco: Atlas Mil completo u otra colección concreta.
-- Fuente de cada recurso y permiso/licencia que autorice su uso y redistribución. No añadir ROMs al repo.
+- Fuente/versión verificable de cada recurso y permiso/licencia que autorice su uso y redistribución. Los RAR existentes en `main` no se han extraído ni se consideran autorización; no añadir ROMs/dumps nuevos al repo.
 - Aprobación de la identidad visual y del primer redibujo del terreno de 1021–1025.
 - Pruebas dentro de `Game.exe` y Kirin del piloto actual.
 

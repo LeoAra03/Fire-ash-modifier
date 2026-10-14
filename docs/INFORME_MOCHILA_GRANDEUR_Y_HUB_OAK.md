@@ -1,4 +1,4 @@
-# Informe: Mochila libre en la torre del Grandeur Club y hub postgame del laboratorio de Oak
+# Informe: Mochila libre en la torre del Grandeur Club y laboratorio de Oak
 
 Fecha: 28 de septiembre de 2026
 Estado: instalado en los datos compilados de Pokémon Fire Ash 3.7.1
@@ -49,29 +49,43 @@ Verificación OK: la Mochila funciona dentro de la torre del laboratorio de Oak
 conservadas pero inofensivas; 0 secciones de script consultan el switch 674.
 ```
 
-## 4. Hub postgame en el laboratorio de Oak (cierre de continuidad)
+## 4. La cápsula del hub, retirada (cierre de continuidad)
 
-Para que la expansión se sienta parte del juego base, `tools/apply_oak_lab_postgame_hub.mjs` instala un tercer transportador en el mismo sótano, con la misma condición (switch 429) y las mismas piezas gráficas de las cápsulas originales (tiles 1827/1828/1829/1839):
+El sótano del laboratorio tuvo un tercer transportador instalado por
+`tools/apply_oak_lab_postgame_hub.mjs`: una cápsula central con menú de destinos
+(Isla Espejo, Bosque Susurrante, Puerto Horizonte, Atlas Mil) y un ayudante que
+lo explicaba.
 
-| Elemento | Función |
+**Ese transportador se retiró.** La dirección de diseño cambió: el viaje
+multiversal no se elige en un menú de laboratorio, se descubre andando. La
+herramienta sigue existiendo, pero ahora solo **retira los restos** de la cápsula
+en instalaciones antiguas y verifica el estado correcto del laboratorio:
+
+| Estado actual del mapa 48 | |
 |---|---|
-| Cápsula central (evento 302) | Menú de destinos: Isla Espejo, Bosque Susurrante, Puerto Horizonte, Atlas Mil |
-| Cápsulas laterales (301/303/304) | Piezas visuales, idénticas al par original |
-| Ayudante de Oak (evento 305) | Explica el dispositivo y la Mochila libre |
+| Transportadores | Solo los dos originales (eventos 15 y 16: holders y torre) |
+| Oak | `PokeMod Oak: Registro de Grietas`: lee `\v[264]`, aconseja y no teletransporta |
+| Menús de destinos | Ninguno |
+| Eventos | 26 originales + el Oak consejero |
 
-Las señales se calibran con la progresión real de cada bloque: Isla Espejo siempre está disponible; Bosque Susurrante requiere la misión del guardabosques (`701`); Puerto Horizonte requiere `704`; Atlas Mil requiere `706`. Si falta calibración, la cápsula explica qué paso falta y no teletransporta. Las llegadas son celdas transitables verificadas y todos los accesos originales (Pueblo Paleta, Ciudad Verde) permanecen intactos. No se toca ningún evento original del laboratorio.
+El relevo lo toma la **Expansión Multiversal** (`tools/apply_expansion_multiversal.mjs`):
+siete grietas purgables en Kanto y Johto, punto de colapso en la Torre Pokémon,
+Liga Oscura en la cumbre del Monte Silver, capitán de Ciudad Carmín hacia Atlas
+Mil y espejo del sótano de la Mansión Pokémon hacia Isla Espejo. Todo con retorno
+libre y sin crear ni un switch ni una variable nueva. Detalle en
+[`EXPANSION_MULTIVERSAL.md`](EXPANSION_MULTIVERSAL.md).
 
 ```bash
-node tools/apply_oak_lab_postgame_hub.mjs
-node tools/apply_oak_lab_postgame_hub.mjs --verify
+node tools/apply_oak_lab_postgame_hub.mjs          # retira los restos de la cápsula
+node tools/apply_oak_lab_postgame_hub.mjs --verify # verifica el laboratorio
 ```
 
 Resultado:
 
 ```text
-Verificación OK: tercer transportador en el laboratorio de Oak (mapa 48) con
-4 destinos condicionados por el switch 429, 26 eventos originales intactos y
-llegadas transitables.
+Verificación OK: el laboratorio de Oak (mapa 48) conserva sus 26 eventos
+originales, sus dos transportadores de siempre, ningún menú de destinos y Oak
+como consejero.
 ```
 
 ## 5. Backups
@@ -87,7 +101,8 @@ Restaurar cada archivo sobre `Data/` revierte su cambio sin afectar al otro.
 
 ```text
 node tools/apply_grandeur_bag_freedom.mjs --verify    OK
-node tools/apply_oak_lab_postgame_hub.mjs --verify    OK
+node tools/apply_oak_lab_postgame_hub.mjs --verify    OK (cápsula retirada)
+node tools/apply_expansion_multiversal.mjs --verify   OK
 node tools/apply_isla_espejo_expansion.mjs --verify   OK
 npm test (51 + 114 + 57)                              OK
 ```

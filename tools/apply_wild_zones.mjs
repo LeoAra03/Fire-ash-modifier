@@ -15,6 +15,9 @@ import { parseMap, parseTileset, tableGet } from "../web/js/rmxp.js";
 import { DATA, GAME, ROOT } from "./lib/fire_ash_registry.mjs";
 
 const VERIFY_ONLY = process.argv.includes("--verify");
+// Techo de nivel de la expansión: 175. Arceus (200) y Mad Pikachu (???) viven fuera
+// de las tablas salvajes y se controlan desde sus propios eventos.
+const MAX_LEVEL = 175;
 const BACKUP = path.join(GAME, "PokeModBackups", "wild_zones_originals");
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "wild_zones.json"), "utf8"));
 const TERRAIN_OK = {
@@ -79,7 +82,7 @@ function validate() {
       for (const [weight, sp, min, max] of slots) {
         if (!species.has(sp)) errors.push(`${zone.mapId}: especie inexistente ${sp}`);
         if (!(weight > 0)) errors.push(`${zone.mapId}: peso inválido en ${sp}`);
-        if (!(min >= 1 && max >= min && max <= 150)) errors.push(`${zone.mapId}: niveles inválidos en ${sp} (${min}-${max})`);
+        if (!(min >= 1 && max >= min && max <= MAX_LEVEL)) errors.push(`${zone.mapId}: niveles inválidos en ${sp} (${min}-${max})`);
       }
     }
   }
@@ -117,7 +120,7 @@ function verify() {
   }
   if (errors.length) throw new Error(`Zonas salvajes inválidas (${errors.length}):\n- ${errors.join("\n- ")}`);
   const slots = CATALOG.zones.reduce((sum, zone) => sum + Object.values(zone.types).reduce((s, t) => s + t.length, 0), 0);
-  console.log(`Verificación OK: ${CATALOG.zones.length} zonas salvajes con ${slots} slots en encounters.dat (especies existentes, niveles ≤ 150, terrenos compatibles).`);
+  console.log(`Verificación OK: ${CATALOG.zones.length} zonas salvajes con ${slots} slots en encounters.dat (especies existentes, niveles ≤ ${MAX_LEVEL}, terrenos compatibles).`);
 }
 
 if (!VERIFY_ONLY) { install(); console.log("Zonas salvajes instaladas en encounters.dat. Backup en " + path.relative(ROOT, BACKUP)); }

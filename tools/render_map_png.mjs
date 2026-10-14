@@ -11,6 +11,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { createCanvas, loadImage } from "@napi-rs/canvas";
 import { marshalLoad } from "../web/js/marshal.js";
 import { parseEvent, parseMap, parseTileset, tableGet } from "../web/js/rmxp.js";
@@ -27,8 +28,10 @@ for (let i = 0; i < args.length; i++) {
   if (args[i].startsWith("--")) { i++; continue; }
   if (/^\d+$/.test(args[i])) mapIds.push(Number(args[i]));
 }
-if (!mapIds.length && !explicitFile) { console.error("Indica al menos un id de mapa."); process.exit(1); }
-fs.mkdirSync(outDir, { recursive: true });
+// El modo CLI solo actúa si el archivo se ejecuta directamente: así otros
+// herramientas (mosaicos de recreación) pueden importar `renderMapBuffer`.
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+let gridOverride = null;   // fuerza la rejilla por llamada cuando se usa como librería
 
 export const autotileParts = [
   [27,28,33,34],[5,28,33,34],[27,6,33,34],[5,6,33,34],
@@ -107,7 +110,7 @@ export async function renderMapBuffer(buffer) {
     ctx.drawImage(img, col * fw, row * fh, fw, fh, ev.x * 32 + (32 - fw) / 2, ev.y * 32 + 32 - fh, fw, fh);
     ctx.globalAlpha = 1;
   }
-  if (grid) {
+  if (gridOverride ?? grid) {
     ctx.strokeStyle = "rgba(255,255,255,0.25)"; ctx.lineWidth = 1;
     for (let x = 0; x <= map.width; x++) { ctx.beginPath(); ctx.moveTo(x * 32, 0); ctx.lineTo(x * 32, canvas.height); ctx.stroke(); }
     for (let y = 0; y <= map.height; y++) { ctx.beginPath(); ctx.moveTo(0, y * 32); ctx.lineTo(canvas.width, y * 32); ctx.stroke(); }
@@ -128,5 +131,19 @@ async function output(buffer, name) {
   fs.writeFileSync(file, final.toBuffer("image/png"));
   console.log(`${file}  (${map.width}x${map.height}, tileset ${map.tilesetId}, ${map.events.length} eventos)`);
 }
-if (explicitFile) await output(fs.readFileSync(path.resolve(explicitFile)), path.basename(explicitFile, ".rxdata"));
-for (const id of mapIds) await output(fs.readFileSync(path.join(DATA, `Map${String(id).padStart(3, "0")}.rxdata`)), `Map${String(id).padStart(3, "0")}`);
+const mapFile = (id) => path.join(DATA, `Map${String(id).padStart(3, "0")}.rxdata`);
+export async function renderMapId(id, { grid: withGrid = false } = {}) {
+  const previous = grid;
+  gridOverride = withGrid;
+  try {
+    return await renderMapBuffer(fs.readFileSync(mapFile(id)));
+  } finally {
+    gridOverride = previous;
+  }
+}
+if (isMain) {
+  if (!mapIds.length && !explicitFile) { console.error("Indica al menos un id de mapa."); process.exit(1); }
+  fs.mkdirSync(outDir, { recursive: true });
+  if (explicitFile) await output(fs.readFileSync(path.resolve(explicitFile)), path.basename(explicitFile, ".rxdata"));
+  for (const id of mapIds) await output(fs.readFileSync(mapFile(id)), `Map${String(id).padStart(3, "0")}`);
+}

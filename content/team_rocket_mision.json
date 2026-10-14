@@ -1,0 +1,217 @@
+{
+  "esquema": "team_rocket_mision/1.0",
+  "titulo": "La dimensión Team Rocket: Ash, infiltrado",
+  "nota": "Ash no entra aquí como viajero: entra como infiltrado. Se pone el uniforme, hace las misiones que le ordenan y asciende. Pero cada misión la aprovecha para lo que de verdad ha venido a hacer: salvaguardar la vida de los que estánlastimados. Y cuando por fin manda, manda para bien: la dimensión pasa a cuidar a los suyos en lugar de usarlos.",
+  "interruptores": {
+    "DUELO_RESUELTO": 873,
+    "ROCKET_ABIERTA": 962,
+    "ROCKET_CONTROL": 963
+  },
+  "variables": {
+    "RANGO": 311,
+    "MISIONES": 312,
+    "HERIDOS": 313
+  },
+  "rangos": [
+    "Recluta",
+    "Agente",
+    "Oficial",
+    "Teniente",
+    "Comandante",
+    "Jefe Supremo"
+  ],
+  "puerto": {
+    "mapa": 1001,
+    "pista": [12, 44]
+  },
+  "dimension": {
+    "id": "rocket",
+    "mapaId": 2220,
+    "nucleoId": 2221,
+    "padre": 1001,
+    "abierta": 962,
+    "tileset": 3,
+    "lado": 30,
+    "columnas": 3,
+    "titulo": "Team Rocket — Base Subterránea",
+    "tituloNucleo": "Team Rocket — Núcleo del Mando",
+    "distritos": [
+      { "sourceId": 79, "label": "Puerta de control" },
+      { "sourceId": 109, "label": "Barracones" },
+      { "sourceId": 139, "label": "Almacén" },
+      { "sourceId": 42, "label": "Oficinas" },
+      { "sourceId": 77, "label": "Sala de guardias" },
+      { "sourceId": 138, "label": "Subsuelo" }
+    ],
+    "contacto": {
+      "sprite": "trainer_TEAMROCKET_M",
+      "nombre": "Contacto Gris",
+      "lineas": [
+        "Contacto Gris: Nadie entra en esta dimensión sin uniforme. El tuyo está planchado y te queda bien: eso ya es raro.",
+        "Contacto Gris: Escucha. Aquí dentro haces lo que te manden y asciendes. Pero nadie te va a pedir que seas cruel.",
+        "Contacto Gris: Eso lo decides tú. Y por cómo miras a los de la enfermería, ya sé por dónde vas a ir."
+      ]
+    },
+    "tablon": {
+      "sprite": "trainer_TEAMROCKET_F",
+      "lineas": [
+        "TABLÓN DE MANDO",
+        "Rango: \\v[311] · Misiones cumplidas: \\v[312] · Heridos socorridos: \\v[313]",
+        "Asciendes cumpliendo misiones. Socorrer no puntúa: socorrer es lo que harás cuando nadie te vea."
+      ]
+    },
+    "enfermeria": {
+      "sprite": "trchar033",
+      "lineas": [
+        "Enfermera: No soy del Sindicato. Me quedé porque alguien tiene que vendar a los que se caen.",
+        "Enfermera: Tú no pareces de los suyos. Si ves a alguien tirado, no pases de largo: eso aquí vale más que un ascenso."
+      ]
+    },
+    "barco": {
+      "saludo": "Un barco negro sin bandera espera amarrado a la escollera interior.",
+      "volver": "El patrón no pregunta nada. Sube y vuelve a Puerto Horizonte."
+    },
+    "centinela": {
+      "sprite": "trainer_TEAMROCKET_F",
+      "lineas": [
+        "Centinela: Rango \\v[311]. Recuerda que el uniforme no te hace de aquí: lo que hagas con él, sí."
+      ]
+    }
+  },
+  "misiones": [
+    {
+      "rango": 0,
+      "titulo": "Entrega en el almacén",
+      "sprite": "trainer_TEAMROCKET_M",
+      "orden": [
+        "Oficial de intendencia: Recluta. Lleva esta caja al almacén del ala este. No la abras.",
+        "Oficial de intendencia: Si alguien te pregunta, no has visto nada. Es la primera regla y la última."
+      ],
+      "hecho": [
+        "Dejas la caja donde te dijeron. Dentro suena a comida, no a armas.",
+        "Oficial de intendencia: Bien. Ya eres Agente. No te acostumbres a obedecer sin mirar."
+      ],
+      "ascenso": "Ascenso: Agente."
+    },
+    {
+      "rango": 1,
+      "titulo": "Ronda de los tres guardias",
+      "sprite": "trainer_TEAMROCKET_F",
+      "orden": [
+        "Sargento: Agente. Ronda completa: habla con los tres guardias del perímetro y vuelve.",
+        "Sargento: Si ves a alguien tirado, anótalo. Aquí nadie anota nada y por eso nadie sabe cuántos caen."
+      ],
+      "hecho": [
+        "Vuelves con los tres informes. En dos de ellos has escrito el nombre de un herido.",
+        "Sargento: Has hecho la ronda y algo más. Oficial. No te lo voy a reprochar."
+      ],
+      "ascenso": "Ascenso: Oficial."
+    },
+    {
+      "rango": 2,
+      "titulo": "El interrogatorio",
+      "sprite": "trainer_TEAMROCKET_M",
+      "orden": [
+        "Inspector: Oficial. Tenemos a un tipo que dice que viene de otra dimensión. Quiero que lo pongas a prueba.",
+        "Inspector: Pelea con él. Si es de los nuestros, ganarás. Si no, ya sabremos algo."
+      ],
+      "hecho": [
+        "El prisionero se levanta despacio. No era un espía: era un vecino.",
+        "Inspector: Has ganado sin ensañarte. Teniente. Eso también es una forma de mandar."
+      ],
+      "ascenso": "Ascenso: Teniente.",
+      "batalla": { "tipo": "ROCKET_AGENT", "nombre": "RK_RIVAL" }
+    },
+    {
+      "rango": 3,
+      "titulo": "Sabotaje del generador",
+      "sprite": "trainer_TEAMROCKET_F",
+      "orden": [
+        "Ingeniera jefe: Teniente. El generador del subsuelo alimenta las celdas. Me piden que lo suba.",
+        "Ingeniera jefe: Yo te pido que lo bajes. Dentro hay gente. Tú verás a quién obedeces."
+      ],
+      "hecho": [
+        "Bajas la palanca. Las celdas se quedan sin luz y las puertas se abren solas.",
+        "Ingeniera jefe: Gracias. Sabía que no te habías puesto ese uniforme para esto. Comandante."
+      ],
+      "ascenso": "Ascenso: Comandante."
+    },
+    {
+      "rango": 4,
+      "titulo": "El juicio del Comandante",
+      "sprite": "trainer_ROCKETBOSS",
+      "orden": [
+        "Comandante Negro: Así que quieres mi silla. Siéntate cuando me la quites.",
+        "Comandante Negro: Mientras tanto, demuestra que sabes lo que es dar una orden."
+      ],
+      "hecho": [
+        "El Comandante Negro se apoya en la mesa, y por una vez no sonríe.",
+        "Comandante Negro: Bien. La silla es tuya. Úsala mejor que yo: yo la usé para que me obedecieran, no para que estuvieran bien."
+      ],
+      "ascenso": "Ascenso: Jefe Supremo.",
+      "batalla": { "tipo": "ROCKET_BOSS", "nombre": "COMANDANTE_NEGRO" }
+    }
+  ],
+  "heridos": [
+    {
+      "sprite": "trchar003",
+      "nombre": "Recluta herido",
+      "antes": "Recluta herido: Me caí en el subsuelo. Me han dicho que no pare, que ya vendrán.",
+      "despues": "Recluta herido: Te has parado. Llevo dos turnos aquí tirado y eres el primero que se para."
+    },
+    {
+      "sprite": "trchar013",
+      "nombre": "Guardia con fiebre",
+      "antes": "Guardia: No es nada. Si me siento, me descuentan el turno.",
+      "despues": "Guardia: Me has dejado tu capa. No hace falta, pero gracias. De verdad."
+    },
+    {
+      "sprite": "trchar033",
+      "nombre": "La que cuida",
+      "antes": "Cuidadora: Yo no estoy herida. Estoy cansada. Eso no cuenta.",
+      "despues": "Cuidadora: Has curado a mi equipo para que pueda seguir cuidando a los demás. Eso sí que cuenta."
+    }
+  ],
+  "nucleo": {
+    "sprite": "trainer_ROCKETBOSS",
+    "cerrado": [
+      "El Núcleo del Mando está cerrado con llave de rango.",
+      "Aún no eres Jefe Supremo: no puedes entrar a dar la primera orden."
+    ],
+    "toma": [
+      "Ash se queda de pie delante del mapa de la base. No levanta la voz: no hace falta.",
+      "Ash: Primera orden. Ningún herido se queda tirado hasta que acabe el turno.",
+      "Ash: Segunda. Las celdas del subsuelo se vacían hoy. Aquí no se encierra a nadie por tener miedo.",
+      "Ash: Tercera. Esta dimensión se queda abierta. Quien quiera irse, se va; quien quiera quedarse, se queda bien.",
+      "Un Rocket viejo anota las tres órdenes sin decir nada. Luego asiente. Así empieza todo."
+    ],
+    "despues": [
+      "Las órdenes siguen colgadas en la pared. Nadie las ha quitado.",
+      "La base sigue siendo la base, pero ya no da miedo entrar."
+    ]
+  },
+  "entrenadores": [
+    { "nombre": "RK_01", "sprite": "trainer_TEAMROCKET_M", "equipo": ["RATICATE", "ARBOK", "MUK"], "frase": "Uniforme nuevo. A ver de qué estás hecho." },
+    { "nombre": "RK_02", "sprite": "trainer_TEAMROCKET_F", "equipo": ["ZUBAT", "GOLBAT", "CROBAT"], "frase": "No hagas ruido en los pasillos. El eco delata." },
+    { "nombre": "RK_03", "sprite": "trainer_TEAMROCKET_M", "equipo": ["KOFFING", "WEEZING", "SKUNTANK"], "frase": "El gas no es para la gente. Es para las cerraduras." },
+    { "nombre": "RK_04", "sprite": "trainer_TEAMROCKET_F", "equipo": ["HOUNDOUR", "HOUNDOOM", "MIGHTYENA"], "frase": "Huelo a quien viene de fuera. Y a quien viene a quedarse." }
+  ],
+  "rival": {
+    "tipo": "ROCKET_RIVAL",
+    "nombre": "RIVAL_ROCKET",
+    "sprite": "trainer_ROCKETBOSS",
+    "nivel": 100,
+    "equipo": ["PERSIAN", "NIDOKING", "NIDOQUEEN", "DRAPION", "TOXICROAK", "BISHARP"],
+    "intro": [
+      "Un tipo con el uniforme impecable espera apoyado en la pared.",
+      "Rival: Yo subí más rápido que tú. Y no me paré a curar a nadie."
+    ],
+    "victoria": "Rival: Me has ganado… y has subido igual. Entonces era mentira lo de que hay que pisar a alguien.",
+    "derrota": "Rival: Ya hablaremos cuando te decidas a ser duro. Yo sigo esperando."
+  },
+  "medalla": {
+    "id": "ROCKETINSIGNIA",
+    "nombre": "Insignia del Infiltrado",
+    "base": "BOULDERBADGE"
+  }
+}

@@ -171,7 +171,7 @@
           }
         ],
         "passabilityRatio": 0.1867,
-        "eventCount": 10
+        "eventCount": 11
       },
       "source": {
         "width": 20,
@@ -203,7 +203,7 @@
         "tileSimilarity": 0.99,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": 7
+        "eventDelta": 8
       },
       "assets": {
         "tileset": "Interior general",
@@ -249,7 +249,7 @@
           }
         ],
         "passabilityRatio": 0.2733,
-        "eventCount": 10
+        "eventCount": 14
       },
       "source": {
         "width": 20,
@@ -281,7 +281,7 @@
         "tileSimilarity": 0.9889,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": 3
+        "eventDelta": 7
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -327,7 +327,7 @@
           }
         ],
         "passabilityRatio": 0.2733,
-        "eventCount": 10
+        "eventCount": 15
       },
       "source": {
         "width": 20,
@@ -359,7 +359,7 @@
         "tileSimilarity": 0.99,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -2
+        "eventDelta": 3
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -405,7 +405,7 @@
           }
         ],
         "passabilityRatio": 0.2733,
-        "eventCount": 10
+        "eventCount": 15
       },
       "source": {
         "width": 20,
@@ -437,7 +437,7 @@
         "tileSimilarity": 0.99,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": 0
+        "eventDelta": 5
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -795,7 +795,7 @@
           }
         ],
         "passabilityRatio": 0.0977,
-        "eventCount": 10
+        "eventCount": 12
       },
       "source": {
         "width": 135,
@@ -827,7 +827,7 @@
         "tileSimilarity": 0.9998,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -39
+        "eventDelta": -37
       },
       "assets": {
         "tileset": "Outside",
@@ -873,7 +873,7 @@
           }
         ],
         "passabilityRatio": 0.3667,
-        "eventCount": 10
+        "eventCount": 12
       },
       "source": {
         "width": 20,
@@ -905,7 +905,7 @@
         "tileSimilarity": 0.9867,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": 0
+        "eventDelta": 2
       },
       "assets": {
         "tileset": "Interior general",
@@ -951,7 +951,7 @@
           }
         ],
         "passabilityRatio": 0.3566,
-        "eventCount": 10
+        "eventCount": 11
       },
       "source": {
         "width": 55,
@@ -983,7 +983,7 @@
         "tileSimilarity": 0.999,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -30
+        "eventDelta": -29
       },
       "assets": {
         "tileset": "Outside",
@@ -1055,13 +1055,13 @@
           }
         ],
         "passabilityRatio": 0.1893,
-        "eventCount": 9
+        "eventCount": 10
       },
       "comparison": {
         "tileSimilarity": 0.996,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": 1
+        "eventDelta": 0
       },
       "assets": {
         "tileset": "Gyms interior",
@@ -1341,7 +1341,7 @@
           }
         ],
         "passabilityRatio": 0.2733,
-        "eventCount": 10
+        "eventCount": 15
       },
       "source": {
         "width": 20,
@@ -1373,7 +1373,7 @@
         "tileSimilarity": 0.9911,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -1
+        "eventDelta": 4
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -1419,7 +1419,7 @@
           }
         ],
         "passabilityRatio": 0.16,
-        "eventCount": 10
+        "eventCount": 11
       },
       "source": {
         "width": 30,
@@ -1451,7 +1451,7 @@
         "tileSimilarity": 0.9965,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -4
+        "eventDelta": -3
       },
       "assets": {
         "tileset": "Interior general",
@@ -1575,7 +1575,7 @@
           }
         ],
         "passabilityRatio": 0.1833,
-        "eventCount": 10
+        "eventCount": 11
       },
       "source": {
         "width": 20,
@@ -1607,7 +1607,7 @@
         "tileSimilarity": 0.9911,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -19
+        "eventDelta": -18
       },
       "assets": {
         "tileset": "Interior general",
@@ -2043,7 +2043,7 @@
           }
         ],
         "passabilityRatio": 0.2362,
-        "eventCount": 9
+        "eventCount": 10
       },
       "source": {
         "width": 80,
@@ -2075,7 +2075,7 @@
         "tileSimilarity": 0.9982,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -9
+        "eventDelta": -8
       },
       "assets": {
         "tileset": "Interior general",
@@ -2355,7 +2355,7 @@
           }
         ],
         "passabilityRatio": 0.2841,
-        "eventCount": 9
+        "eventCount": 10
       },
       "source": {
         "width": 55,
@@ -2387,7 +2387,7 @@
         "tileSimilarity": 0.9988,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -10
+        "eventDelta": -9
       },
       "assets": {
         "tileset": "Outside",
@@ -2433,7 +2433,7 @@
           }
         ],
         "passabilityRatio": 0.27,
-        "eventCount": 9
+        "eventCount": 15
       },
       "source": {
         "width": 20,
@@ -2465,7 +2465,7 @@
         "tileSimilarity": 0.9844,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -1
+        "eventDelta": 5
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -2589,7 +2589,7 @@
           }
         ],
         "passabilityRatio": 0.27,
-        "eventCount": 9
+        "eventCount": 15
       },
       "source": {
         "width": 20,
@@ -2621,7 +2621,7 @@
         "tileSimilarity": 0.9889,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -3
+        "eventDelta": 3
       },
       "assets": {
         "tileset": "Poke Centre interior",
@@ -2745,7 +2745,7 @@
           }
         ],
         "passabilityRatio": 0.2669,
-        "eventCount": 9
+        "eventCount": 10
       },
       "source": {
         "width": 60,
@@ -2777,7 +2777,7 @@
         "tileSimilarity": 0.9992,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -18
+        "eventDelta": -17
       },
       "assets": {
         "tileset": "Outside",
@@ -2823,7 +2823,7 @@
           }
         ],
         "passabilityRatio": 0.2333,
-        "eventCount": 9
+        "eventCount": 15
       },
       "source": {
         "width": 60,
@@ -2855,7 +2855,7 @@
         "tileSimilarity": 0.9994,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -97
+        "eventDelta": -91
       },
       "assets": {
         "tileset": "Interior general",
@@ -2901,7 +2901,7 @@
           }
         ],
         "passabilityRatio": 0.3239,
-        "eventCount": 9
+        "eventCount": 10
       },
       "source": {
         "width": 48,
@@ -2933,7 +2933,7 @@
         "tileSimilarity": 0.9987,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -8
+        "eventDelta": -7
       },
       "assets": {
         "tileset": "Outside",
@@ -3057,7 +3057,7 @@
           }
         ],
         "passabilityRatio": 0.1719,
-        "eventCount": 9
+        "eventCount": 10
       },
       "source": {
         "width": 65,
@@ -3089,7 +3089,7 @@
         "tileSimilarity": 0.9987,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -52
+        "eventDelta": -51
       },
       "assets": {
         "tileset": "Outside",
@@ -3135,7 +3135,7 @@
           }
         ],
         "passabilityRatio": 0.1239,
-        "eventCount": 9
+        "eventCount": 10
       },
       "source": {
         "width": 60,
@@ -3167,7 +3167,7 @@
         "tileSimilarity": 0.9978,
         "exactInheritedGeometry": false,
         "passabilityDelta": 0,
-        "eventDelta": -7
+        "eventDelta": -6
       },
       "assets": {
         "tileset": "Interior general",

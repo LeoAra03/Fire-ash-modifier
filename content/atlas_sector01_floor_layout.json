@@ -28,8 +28,8 @@
       "width": 20,
       "height": 15,
       "floorTile": 624,
-      "voidCellsBefore": 131,
-      "floorCellsBefore": 111,
+      "voidCellsBefore": 0,
+      "floorCellsBefore": 242,
       "floorCellsAfter": 242,
       "entry": {
         "fromMapId": 1022,
@@ -42,8 +42,8 @@
       "width": 20,
       "height": 15,
       "floorTile": 1048,
-      "voidCellsBefore": 220,
-      "floorCellsBefore": 45,
+      "voidCellsBefore": 0,
+      "floorCellsBefore": 265,
       "floorCellsAfter": 265,
       "entry": {
         "fromMapId": 1024,

@@ -434,12 +434,50 @@ function abraEvent(id, [x, y], customIntro = null) {
   ]);
 }
 
+// Celda abierta (pasabilidad 0 y sin evento) más cercana a (hx, hy).
+function freeCellNear(map, hx, hy, taken = new Set()) {
+  const table = tableFromUserDef(iv(map, "data"));
+  const tilesets = read("Tilesets.rxdata");
+  const ts = parseTileset(tilesets[iv(map, "tileset_id")]);
+  const occ = new Set(iv(map, "events").pairs.map(([, ev]) => `${iv(ev, "x")},${iv(ev, "y")}`));
+  const open = (x, y) => {
+    if (x < 0 || y < 0 || x >= table.x || y >= table.y) return false;
+    let bits = 0;
+    for (let z = 0; z < table.z; z++) {
+      const t = tableGet(table, x, y, z);
+      if (t > 0 && t < ts.passages.data.length) bits |= ts.passages.data[t] & 15;
+    }
+    return bits === 0 && !occ.has(`${x},${y}`) && !taken.has(`${x},${y}`);
+  };
+  for (let r = 0; r < 16; r++) {
+    for (let y = Math.max(0, hy - r); y <= Math.min(table.y - 1, hy + r); y++) {
+      for (let x = Math.max(0, hx - r); x <= Math.min(table.x - 1, hx + r); x++) {
+        if (Math.max(Math.abs(x - hx), Math.abs(y - hy)) !== r) continue;
+        if (open(x, y)) return [x, y];
+      }
+    }
+  }
+  throw new Error(`Map${iv(map, "map_id") ?? "?"}: sin celda libre cerca de (${hx}, ${hy})`);
+}
+
+function ferryEvent(id, [x, y]) {
+  return event(id, "Return Ferry", [x, y], [
+    page({ gfx: graphic({ name: "trchar048", dir: 2 }), list: [
+      cmd(101, [S("\\bEl barquero: «¿Vuelves al continente? Sube, que la marea no espera.»")]),
+      cmd(201, [0, 33, 39, 23, 2, 1]),
+      cmd(0),
+    ] }),
+  ]);
+}
+
 function installMap997() {
   const map = read("Map997.rxdata");
   const events = iv(map, "events");
+  const taken = new Set();
 
-  // Corregir destino del Return Ferry: transferir a (39, 23)
-  const ferry = events.pairs.find(([, ev]) => txt(iv(ev, "name")) === "Return Ferry")?.[1];
+  // Corregir destino del Return Ferry o crearlo si el rediseño de Ciudad
+  // Teckel se lo llevó por delante: el retorno al continente es obligatorio.
+  let ferry = events.pairs.find(([, ev]) => txt(iv(ev, "name")) === "Return Ferry")?.[1];
   if (ferry) {
     const list = iv(iv(ferry, "pages")[0], "list") || [];
     const transferCmd = list.find((c) => iv(c, "@code") === 201);
@@ -449,13 +487,35 @@ function installMap997() {
       p[2] = 39;
       p[3] = 23; // Césped abierto en Pueblo Paleta
     }
+  } else {
+    const [fx, fy] = freeCellNear(map, 6, 24, taken);
+    taken.add(`${fx},${fy}`);
+    const nextFerry = Math.max(0, ...events.pairs.map(([id]) => Number(id))) + 1;
+    ferry = ferryEvent(nextFerry, [fx, fy]);
+    events.pairs.push([nextFerry, ferry]);
   }
 
   // Añadir Abra de emergencia si no está ya
   events.pairs = events.pairs.filter(([, ev]) => txt(iv(ev, "name")) !== "Abra de emergencia");
   const nextId = Math.max(0, ...events.pairs.map(([id]) => Number(id))) + 1;
-  const abra = abraEvent(nextId, [12, 10]);
+  const [ax, ay] = freeCellNear(map, 12, 10, taken);
+  taken.add(`${ax},${ay}`);
+  const abra = abraEvent(nextId, [ax, ay]);
   events.pairs.push([nextId, abra]);
+
+  // El Ayudante de Map033 debe desembarcar en celda abierta de Ciudad Teckel.
+  const [bx, by] = freeCellNear(map, ax, ay + 1, taken);
+  const map033 = read("Map033.rxdata");
+  const aide = iv(map033, "events").pairs.find(([, ev]) => txt(iv(ev, "name")) === "PokeMod: Aide Isla Espejo")?.[1];
+  if (aide) {
+    for (const c of iv(iv(aide, "pages")[0], "@list") || []) {
+      if (iv(c, "@code") === 201 && iv(c, "@parameters")[1] === 997) {
+        iv(c, "@parameters")[2] = bx;
+        iv(c, "@parameters")[3] = by;
+      }
+    }
+    write("Map033.rxdata", map033);
+  }
 
   write("Map997.rxdata", map);
 }
@@ -469,7 +529,8 @@ function installMap999() {
 
   events.pairs = events.pairs.filter(([, ev]) => txt(iv(ev, "name")) !== "Abra de emergencia");
   const nextId = Math.max(0, ...events.pairs.map(([id]) => Number(id))) + 1;
-  const abra = abraEvent(nextId, [19, 11], "Este Abra de emergencia te sacará de este archivo corrompido.");
+  const [ax, ay] = freeCellNear(map, 19, 11);
+  const abra = abraEvent(nextId, [ax, ay], "Este Abra de emergencia te sacará de este archivo corrompido.");
   events.pairs.push([nextId, abra]);
 
   write("Map999.rxdata", map);

@@ -18,9 +18,57 @@ Mapas, eventos, diálogos, flags, NPCs y Pokémon — compatible con **Kirin** y
 | Crear | **Contenido nuevo estilo juego base**: 10 plantillas de evento, mapas, PBS, mapamundi visual y auditoría |
 | Mods | Chequeo Kirin, **Sala PokeMod** (viajar a todos los mapas), backups, scripts, exportar ZIP |
 
+La barra superior incorpora **deshacer/rehacer** (`Ctrl/Cmd+Z`, `Ctrl/Cmd+Y`) para los cambios de Eventos, NPCs, Flags y Pokémon/PBS. El historial se limita a 40 operaciones o 24 MiB en memoria, se borra al salir del conjunto de editores compatibles y no reemplaza los backups. Ver [el plan y los límites](docs/PLAN_MEJORA_POKEMOD.md).
+
 - **Partidas a salvo**: `Save*.rxdata`/`Game.rxdata` bloqueados contra escritura + backup automático de cada archivo antes de tocarlo.
 - **Kirin ready**: chequeo de estructura, `.rgssad`, audio y mayúsculas (lo que en PC funciona y en Android falla).
 - **Offline**: PWA + APK sin internet ni servidores; tus archivos no salen del dispositivo.
+
+## ROMs al 100 % nativo (R19, 2026-10-12)
+
+Las cinco campañas ROM ya **no se adaptan**: usan el contenido de la ROM tal cual
+(sprites, mapas, colisión y textos). La calidad distinta no importa; la fidelidad sí.
+
+- **1 227 mapas célula a célula del ROM**: se decodifican `MapLayout`, la tabla de
+  metatiles de 16×16 (dos capas) y las paletas de los tilesets; se reescalan ×2 a
+  bloques RMXP de 32×32 con los ids desde 384 (BASE_ID). La **colisión sale de los
+  bits 10-11 de la celda del mapa** (los hacks dejan el comportamiento a 0) y la
+  elevación se conserva. 212 tilesets nativos (`ROMN_<campaña>_p<n>.png`, 4,6 MB).
+  Herramienta: `npm run rom:nativo:mapas` (`--extract` · `--install` · `--verify`).
+- **667 sprites de personaje del ROM**: se localiza `gObjectEventGraphicsInfoPointers[]`
+  (structs con `paletteTag` 0x11xx) y `sObjectEventSpritePalettes[]`, se leen los
+  9 frames 4bpp (abajo/arriba/lado y sus pasos) y se arma la hoja RMXP de 4 columnas
+  × 4 filas (`$ROMN_<campaña>_g<id>.png`). Herramienta: `npm run rom:nativo:sprites`.
+- **3 538 eventos de campaña visten el personaje que les da la ROM** y **759 diálogos
+  originales** sustituyen el andamiaje en el primer mensaje del evento.
+- **Verificación**: `npm run verify:rom:nativo` → 0 fallos sobre 1 486 028 celdas
+  (874 996 sólidas = 58,9 %), cada PNG con sus dimensiones y su huella sha1, cada
+  mapa con su `@tileset_id` y cada tileset registrado en `Tilesets.rxdata`.
+- **ZIP raíz**: 2 615 archivos (46,6 MB) con todo lo anterior; `npm run verify:corregido:zip`.
+
+## Entrega final (R18, 2026-10-11)
+
+Producto cerrado y jugable. Lo último que entró:
+
+- **Un sprite por fase en el duelo de Arceus**: `ARCEUS_F1`…`ARCEUS_F5` para las
+  cinco reglas borradas y la **Forma Origen de los Mil Brazos** en la sexta; la
+  **Forma Primigenia** vuelve al Arceus clásico. `npm run verify:arceus:sprites`.
+- **Diploma de la Liga Oscura conseguible**: el jefe final marca el switch 948
+  (antes el comando no se emitía). `npm run verify:diplomas`.
+- **ZIP raíz al día**: 1 719 archivos (40,9 MB) con los sprites de fase;
+  `npm run verify:corregido:zip` dentro de `npm test`.
+- **Guía de partida**: [`docs/INSTALAR_Y_JUGAR.md`](docs/INSTALAR_Y_JUGAR.md)
+  (instalación en 5 minutos, ruta del duelo y mapa de todo el contenido extra).
+
+## Documentación del DLC
+
+| Documento | Para qué sirve |
+|---|---|
+| **`docs/PROMPT_MAESTRO_Y_ESTADO.md`** | **Empieza aquí.** El prompt completo del juego (pegable en cualquier agente) + el inventario medido de lo que hay y lo que falta. |
+| `docs/DLC_TOTAL.md` | El acta narrativa del DLC: los seis pilares contados. |
+| `docs/ENTREGA_PROYECTO.md` | La entrega, punto por punto. |
+| `docs/AUDITORIA_TOTAL_FLAGS.md` | Qué switch y qué variable está libre. |
+| `docs/PLAN_SWARM_161.md` | El plan de producción con 161 agentes. |
 
 ## Uso rápido
 
@@ -67,6 +115,7 @@ web/            PWA (la APK la empaqueta tal cual)
   js/fs.js        Acceso a archivos (APK SAF / navegador / lectura / demo)
   js/demo.js      Proyecto procedural para probar sin el juego
   js/app.js       Núcleo: proyecto, backups, Kirin, Sala PokeMod
+  js/history.js  Historial transaccional acotado para deshacer/rehacer
   js/create.js    Plantillas de evento/mapa/PBS + auditoría (verificado v19.1)
   js/ui.js + editors.js + createUI.js + helpers.js   Interfaz (8 pestañas)
 android/        APK WebView + puente SAF (Kotlin, minSdk 24)
@@ -78,11 +127,11 @@ docs/           GUIA_KIRIN · GUIA_MODS · GUIA_CREAR · FORMATO_RXDATA
 
 ## Scripts.rxdata corregido: colisiones de eventos
 
-El archivo completo [`Scripts_corregido/Scripts.rxdata`](Scripts_corregido/Scripts.rxdata) hace sólidos los eventos con sprite: el jugador ya no puede atravesar NPCs, entrenadores, objetos ni personajes añadidos aunque sus páginas estén marcadas como `Through`, y conserva su interacción con el botón de acción. Además, repara automáticamente tonos (`Tone.new(...)`) guardados por error como texto antes de actualizarlos en pantalla o imágenes, evitando el `NoMethodError` mostrado en Kirin; y maneja nombres de transición nulos como la transición predeterminada, evitando que Kirin cierre el juego al cambiar de mapa. También desactiva archivos auxiliares de ajustes que provocaban `Errno::ENOENT` en Android/Kirin cuando no existe `Save Files`; la partida principal sigue guardándose en `Game.rxdata`, y conserva la corrección del `end` sobrante de **Grandeur Club**. Lee las [instrucciones de instalación](Scripts_corregido/LEEME.md) antes de copiarlo sobre `Data/Scripts.rxdata` de tu juego. Para instalar también el portal, la avenida de Puntaneva, la aproximación celestial y los siete pisos de Arceus, descarga el [ZIP del paquete directo](Scripts_corregido/Fire_Ash_Paquete_Directo.zip) y descomprímelo sobre la raíz del juego. La batalla de Arceus usa seis fases persistentes, ruleta de tipos, captura 0%/100%, pseudo-PC sin curación, invocaciones legendarias, distorsiones de pantalla y rendición segura. Antes del duelo de Ash se ejecutan tres combates reales CPU vs CPU en la escena normal: Cynthia/Steven 2v1, Gold/Eco/Red 2v1 y Volus con Giratina Origen en individual; el jugador no puede intervenir. El portal incluye una recuperación y ya no depende de una flag 870 perdida en partidas antiguas. Tras hablar con el primer Volus aparece un segundo Volus en la avenida para guiar el ascenso. La plaza del antiguo templo quedó despejada y un Squirtle junto al Charmeleon de la zona baja habilita temporalmente el paso entre árboles solo dentro de Ciudad Puntaneva; el permiso se borra al salir del mapa. El original permanece en `pokemon_fire_ash/Data/`. El ZIP se reconstruye de forma reproducible con `npm run build:package` y `npm run verify:package` comprueba que sus 30 archivos coinciden byte a byte con `Scripts_corregido/Paquete_directo/`, así que nunca vuelve a quedar viejo.
+El archivo completo [`Scripts_corregido/Scripts.rxdata`](Scripts_corregido/Scripts.rxdata) hace sólidos los eventos con sprite: el jugador ya no puede atravesar NPCs, entrenadores, objetos ni personajes añadidos aunque sus páginas estén marcadas como `Through`, y conserva su interacción con el botón de acción. Además, repara automáticamente tonos (`Tone.new(...)`) guardados por error como texto antes de actualizarlos en pantalla o imágenes, evitando el `NoMethodError` mostrado en Kirin; y maneja nombres de transición nulos como la transición predeterminada, evitando que Kirin cierre el juego al cambiar de mapa. También desactiva archivos auxiliares de ajustes que provocaban `Errno::ENOENT` en Android/Kirin cuando no existe `Save Files`; la partida principal sigue guardándose en `Game.rxdata`, y conserva la corrección del `end` sobrante de **Grandeur Club**. Lee las [instrucciones de instalación](Scripts_corregido/LEEME.md) antes de copiarlo sobre `Data/Scripts.rxdata` de tu juego. Para instalar también el portal, la avenida de Puntaneva, la aproximación celestial y los siete pisos de Arceus, descarga el [ZIP del paquete directo](Scripts_corregido/Fire_Ash_Paquete_Directo.zip) y descomprímelo sobre la raíz del juego. La batalla de Arceus usa seis fases persistentes, ruleta de tipos, captura 0%/100%, pseudo-PC sin curación, invocaciones legendarias, distorsiones de pantalla y rendición segura. En el prólogo Arceus es intocable (ningún ataque, clima o ruta externa mueve su barra; los intentos letales sólo provocan su burla) y el duelo final ya no hereda la nieve de la cumbre como granizo: el daño de los movimientos del motor pasa por las seis barras. La sección `PokeMod_RutaDeDios` restaura además los ayudantes `PokeBattle_Battler#selfProtected?` y `#sideProtected?` que Fire Ash no define y blinda **Ball Breaker** (el movimiento de dos turnos del Metagross de Steven), que abortaba los combates de la cima con `NoMethodError: undefined method 'selfProtected?'`; `npm run verify:scripts:calls` audita las 405 secciones para que ninguna vuelva a llamar a un método inexistente. Antes del duelo de Ash se ejecutan tres combates reales CPU vs CPU en la escena normal: Cynthia/Steven 2v1, Gold/Eco/Red 2v1 y Volus con Giratina Origen en individual; el jugador no puede intervenir. El portal incluye una recuperación y ya no depende de una flag 870 perdida en partidas antiguas. Tras hablar con el primer Volus aparece un segundo Volus en la avenida para guiar el ascenso. La plaza del antiguo templo quedó despejada y un Squirtle junto al Charmeleon de la zona baja habilita temporalmente el paso entre árboles solo dentro de Ciudad Puntaneva; el permiso se borra al salir del mapa. El original permanece en `pokemon_fire_ash/Data/`. El ZIP se reconstruye de forma reproducible con `npm run build:package` y `npm run verify:package` comprueba que sus 30 archivos coinciden byte a byte con `Scripts_corregido/Paquete_directo/`, así que nunca vuelve a quedar viejo.
 
 ## Catálogo visual referencial de mapas
 
-En [`Scripts_corregido/`](Scripts_corregido/) están los **16 mosaicos PNG** (Atlas Mil en 15 hojas y los otros 22 mapas en la hoja 16), el [informe con ficha para cada uno de los 1.022 IDs](Scripts_corregido/INFORME_REFERENCIAL_MAPAS.md) y el [ZIP descargable del paquete](Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip). Son referencias estáticas basadas en los datos del proyecto; no sustituyen una prueba dentro de Kirin ni de `Game.exe`.
+En [`Scripts_corregido/`](Scripts_corregido/) están los **16 mosaicos PNG** (Atlas Mil en 15 hojas y 45 mapas complementarios en la hoja 16), el [informe con ficha para cada uno de los 1.045 mapas](Scripts_corregido/INFORME_REFERENCIAL_MAPAS.md) y el [ZIP descargable del paquete](Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip). Son referencias estáticas basadas en los datos del proyecto; no sustituyen una prueba dentro de Kirin ni de `Game.exe`.
 
 ## Compilar la APK
 
@@ -113,20 +162,46 @@ El estado instalado, la diferencia entre infraestructura y autoría artesanal, y
 node tools/audit_content_progress.mjs
 ```
 
-Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–07 han instalado además las 120 rutas Tier 2 en 24 lotes; los bloques recientes están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md), [`docs/ATLAS_TIER2_MACRO04_05.md`](docs/ATLAS_TIER2_MACRO04_05.md) y [`docs/ATLAS_TIER2_MACRO06_07.md`](docs/ATLAS_TIER2_MACRO06_07.md). Los 840 Ecos Tier 3 cierran su capa local (420 desafíos Atlas + 420 reglas reversibles) según [`docs/ATLAS_TIER3_REGLAS.md`](docs/ATLAS_TIER3_REGLAS.md). La Mochila funciona dentro de la torre del Grandeur Club del laboratorio de Oak y el sótano tiene un transportador hacia las expansiones: [`docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md`](docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md).
+Los dos macrociclos visuales cubren ocho lotes, las 40 anclas y 397 celdas narrativas. Las comparaciones criticables antes/después —referencias estáticas, no certificaciones— están en [`docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO01.md) y [`docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md`](docs/REFERENCIA_VISUAL_ATLAS_MACRO02.md). Los macrociclos 02–07 han instalado además las 120 rutas Tier 2 en 24 lotes; los bloques recientes están documentados en [`docs/ATLAS_TIER2_MACRO03.md`](docs/ATLAS_TIER2_MACRO03.md), [`docs/ATLAS_TIER2_MACRO04_05.md`](docs/ATLAS_TIER2_MACRO04_05.md) y [`docs/ATLAS_TIER2_MACRO06_07.md`](docs/ATLAS_TIER2_MACRO06_07.md). Los 840 Ecos Tier 3 cierran su capa local (420 desafíos Atlas + 420 reglas reversibles) según [`docs/ATLAS_TIER3_REGLAS.md`](docs/ATLAS_TIER3_REGLAS.md). La Mochila funciona dentro de la torre del Grandeur Club del laboratorio de Oak: [`docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md`](docs/INFORME_MOCHILA_GRANDEUR_Y_HUB_OAK.md).
+
+El arco posterior a La Ruta de Dios —**Expansión Multiversal**— se recorre sin
+menús de viaje: siete grietas purgables en Kanto y Johto, el punto de colapso de
+la Torre Pokémon, la Liga Oscura, la expedición del capitán de Ciudad Carmín a
+Atlas Mil y el espejo del sótano de la Mansión Pokémon que abre la Isla Espejo y
+sus doce Pokégods. El laboratorio de Oak solo conserva sus transportadores
+originales y Oak actúa como consejero: [`docs/EXPANSION_MULTIVERSAL.md`](docs/EXPANSION_MULTIVERSAL.md).
+
+## Cuatro campañas ROM completas post–Ruta de Dios
+
+Glazed, Light Platinum, Liquid Crystal y TFOH ya no están representados sólo
+por un mapa-resumen: el compilador reconstruye los **807 mapas detectados**, sus
+**5.516 NPC**, **3.252 warps** y **1.059 combates** como campañas separadas.
+Ash entra como visitante después del switch 876 y dispone de retorno libre en
+cada mapa. El plano versionado no copia diálogos ni assets de las ROMs; conserva
+la estructura forense y la reinterpreta con recursos de Fire Ash.
+
+```bash
+npm run verify:rom:campaigns:plan
+npm run verify:rom:campaigns
+```
+
+Diseño, rangos de mapas y límites: [`docs/CAMPANAS_ROM_COMPLETAS.md`](docs/CAMPANAS_ROM_COMPLETAS.md).
 
 ## Tests
 
 ```bash
 npm ci                              # dependencias del render PNG y de la prueba UI
+npm run dn:preparar                 # regenera los derivados ignorados (recortes, tilesets, hojas origen)
 npm run verify:all                  # suite completa: tests, UI, mapas, seguridad y paquetes
 node web/js/marshal.test.mjs       # 51 pruebas del formato rxdata
-node web/js/integration.test.mjs   # 114 pruebas: demo, sala, kirin, PBS, crear, auditoría
+node web/js/history.test.mjs       # historial undo/redo, límites y fallos de restauración
+node web/js/integration.test.mjs   # demo, sala, kirin, PBS, crear, auditoría e historial
 node tools/external_authoring.test.mjs  # 67 pruebas: interoperabilidad, estilo, Tier 2/3, Mochila, hub, multiverso y fauna
 npm run verify:atlas               # 120 rutas Tier 2 y 840 Ecos compilados y seguros
 npm run verify:grandeur:bag        # Mochila libre en la torre del laboratorio de Oak
-npm run verify:oak:hub           # transportador postgame del sótano de Oak
+npm run verify:oak:hub           # el laboratorio de Oak conserva solo sus transportadores
 npm run verify:multiverse        # Monte Silver y emisiones creepypasta
+npm run verify:expansion         # grietas, Liga Oscura, Atlas Mil e Isla Espejo
 npm run verify:defeats           # derrotas permanentes; revanchas solo por menú
 npm run verify:wild              # encuentros salvajes de las zonas nuevas
 node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom
@@ -134,13 +209,13 @@ node web/js/ui.test.mjs            # 22 pruebas; requiere jsdom
 
 ## Estado de entrega del PR #10
 
-El PR #10 incorpora los 16 mosaicos, el informe de 1.022 mapas y ambos paquetes ZIP. Las comprobaciones completas se ejecutan con `npm ci && npm run verify:all` y también en CI antes de compilar la APK. La sincronización comprueba cada dato y recurso byte a byte contra su origen; el informe se contrasta con los mapas y catálogos actuales (ignorando solamente la fecha de generación).
+El PR #10 incorpora los 16 mosaicos, el informe de 1.022 mapas y ambos paquetes ZIP. Las comprobaciones completas se ejecutan con `npm ci && npm run dn:preparar && npm run verify:all` y también en CI antes de compilar la APK; en un clon limpio, `dn:preparar` regenera los derivados que git ignora (recortes `slices/`, tilesets y hojas origen) a partir de los mosaicos fuente versionados. La sincronización comprueba cada dato y recurso byte a byte contra su origen; el informe se contrasta con los mapas y catálogos actuales (ignorando solamente la fecha de generación).
 
 Los pasos de instalación y las comprobaciones pendientes dentro del juego están en [`docs/ENTREGA_PR10.md`](docs/ENTREGA_PR10.md). Las pruebas automáticas no certifican una ejecución en Kirin/Game.exe.
 
 ## Roadmap
 
-- Pintar tiles en mapas (capas 1-3) · Deshacer/rehacer · Duplicar páginas/eventos
+- Pintar tiles en mapas (capas 1-3) · Duplicar páginas/eventos
 - Más plantillas (PC, gimnasio, concurso) · Editor de tiendas con precios
 - Vista previa de animaciones de autotiles · Importar/exportar mapas sueltos
 - Traducción EN/PT

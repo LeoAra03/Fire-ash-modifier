@@ -63,8 +63,8 @@ Las 9 zonas del Monte Silver y las 3 de Isla Espejo tienen tablas de encuentros 
 
 ## Integración
 
-- **Entrada**: laboratorio de Oak (mapa 48) → cápsula del hub → opción «Monte Silver» (postgame, switch 429).
-- **Retorno libre**: cada emisión y la cumbre vuelven a la falda; la falda baja al laboratorio.
+- **Entrada**: **siete grietas** instaladas por la Expansión Multiversal en Kanto y Johto (Torre Pokémon, Islas Espuma, Monte Moon, Torre Quemada, Planta de Energía, Ruinas Alfa y Mansión Pokémon). Cada grieta avisa y pregunta Entrar/Retirarse antes de cruzar. Con las siete purgadas aparece el **punto de colapso** de la Torre Pokémon 1F, que sube a la falda. La antigua cápsula del hub del laboratorio de Oak **ya no existe**.
+- **Retorno libre**: cada emisión tiene un evento «Volver al mundo» que devuelve a la celda de su grieta, además de la salida original a la gruta; la falda baja al mundo por la torre.
 - Nombres de mapa resueltos por el fallback de `MapInfos` (sin reescribir paquetes de idiomas).
 - 8 equipos nuevos en `trainers.dat` (aditivos), 9 mapas nuevos, `MapInfos` y `map_metadata` actualizados.
 - Backups: `pokemon_fire_ash/PokeModBackups/multiverse_creepypasta_originals/`.
@@ -74,8 +74,9 @@ Las 9 zonas del Monte Silver y las 3 de Isla Espejo tienen tablas de encuentros 
 ```bash
 npm run create:multiverse   # regenera content/multiverse_creepypasta.json
 npm run verify:multiverse   # estructura, derrota permanente, canLose, recompensas
+npm run verify:expansion    # grietas purgables, colapso, Liga Oscura, Atlas Mil y espejo
 npm run verify:defeats      # auditoría global de persistencia (incluye 2021-2029)
 npm test                    # 51 + 114 + 62 pruebas
 ```
 
-La checklist manual incluye la sección E con las 10 comprobaciones del Monte Silver (`docs/QA_MANUAL_PLAYTEST.md`, 94 en total).
+La checklist manual incluye la sección E con las 12 comprobaciones del Monte Silver y la sección G con las 10 de la Expansión Multiversal (`docs/QA_MANUAL_PLAYTEST.md`, 106 en total). El arco completo está en [`EXPANSION_MULTIVERSAL.md`](EXPANSION_MULTIVERSAL.md).

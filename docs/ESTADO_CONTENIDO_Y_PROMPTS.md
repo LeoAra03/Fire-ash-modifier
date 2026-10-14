@@ -37,6 +37,15 @@
 | **Pulido completo por capas** | **0** | — | **0** |
 | **Prompts agrupando cinco lotes** | — | 5 lotes por prompt | **0** |
 
+## Nuevas prioridades de mantenimiento
+
+| Frente | Estado | Alcance confirmado |
+|---|---|---|
+| Reparar Atlas Mil | Prompt maestro ampliado; diagnóstico y reparación aún no iniciados | Auditar mapas existentes y corregir sólo defectos demostrados, conservando autoría, progresión y retornos. |
+| Mejorar diseño de niveles de La Ruta de Dios | Prompt maestro ampliado; todavía sin cambios de mapas | Rediseñar flujo, hitos, rutas y arenas tras inspección; preservar mecánicas aprobadas y separar Map2030/Map2038. |
+
+Estos frentes nuevos no cambian el conteo histórico de prompts narrativos Tier 1 ni autorizan sincronizar el paquete directo.
+
 ## Tier 1 narrativo completo
 
 Los 40 prompts Tier 1 fueron ejecutados, aprobados y compilados. No queda autoría narrativa ni composición visual estática Tier 1 pendiente; siguen siendo obligatorias las pruebas manuales.
@@ -57,3 +66,17 @@ Además siguen pendientes 40 pruebas manuales en `Game.exe`. No se cuentan como 
 - Tier 2 tiene 120/120 rutas de autoría dedicada; faltan 0.
 - Tier 3 cubre 840/840 Ecos con regla local (420 desafíos Atlas + 420 reglas reversibles de `content/atlas_tier3_rules.json`); faltan 0.
 - La certificación final requiere `Game.exe`; ningún linter puede validar ritmo, clipping o sensación de juego.
+
+## Diseño en curso (no instalado)
+
+| Frente | Estado | Documento |
+|---|---|---|
+| **Dimensional Nightmare** (9 mundos: 6 universos + W7–W9 + Nexo + Liga Oscura, Map2040–2190, 151 mapas, 105 eventos) | **Mapas recreados e instalados (149/149: 101 del ciclo + 48 de W7–W9) con eventos/NPCs/jefes (E4/E8), hub 2040 jugable (E6), medallas y cartucheras `Badges of <mundo>` (21 objetos, 9 pedestales), sensaciones de tono por mundo y Liga Oscura con Mad Pikachu (M2, doc 14: 2141–2142)**: nueve grietas (EP01–EP06, W7–W9), archivero, monumento de progreso, salida y Vitrina del Testigo (`DN_CASE_WIT`, sw931); arte ALTA instalado (KINGGUS/Mano Blanca/Fragmento). **Cierre M2: plan de experiencia por mapa (doc 15, 151 ganchos únicos), auditoría de contenido 151/151 sin errores ni avisos, flags DN nombradas (switches 882–931, variables 264–288) y correcciones de la Liga Oscura y de la batalla de La Ruta de Dios (S1–S8)**. Pendientes: arte MEDIA/BAJA, variantes de audio por fase/anomalía/BGS, QA manual, espejo EP05 y forma final EP06. Catálogo en `content/dimensional_nightmare.json` y plan de cierre en `docs/DIMENSIONAL_NIGHTMARE/13_PLAN_DE_CIERRE.md` | `docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md` · `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` · `docs/DIMENSIONAL_NIGHTMARE/15_EXPERIENCIA_POR_MAPA.md` |
+| **Mosaicos de referencia de la recreación** | **11 hojas `docs/dn_referencia/recreacion/`**: una por mundo (HUB · EP01–EP06 · NEXO · W7–W9; ficha de la crepypasta · mapa instalado · transitabilidad) y el mosaico general de 149 mapas, con `INDICE.md`, `dn:mosaicos:check` y las **hojas origen** de W7–W9 (`dn:mosaicos:origen`) | `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` |
+| **Recreación de mapas desde los 7 mosaicos de referencia** | **Ejecutada (E0–E6)**: pipeline `dn:ingest` → `dn:tiles` → `dn:build:all` → `dn:verify:all`; 103 mapas con pasajes pasados, eventos y verificación integrada | `docs/DIMENSIONAL_NIGHTMARE/12_PLAN_DE_RECREACION_DE_MAPAS.md` |
+
+> El Nightmare está instalado como capa de diseño: describe qué construir y con qué flags
+> (switches 882–921, variables 264–282, nombrados y verificados por `npm run dn:flags:verify`).
+> Sus 103 mapas (2040–2142), eventos, batallas y arte viven fuera de los conteos certificados
+> de arriba hasta que cierren los pendientes (arte MEDIA/BAJA, audio, QA manual, espejo EP05
+> y forma final EP06). La batería `npm run dn:verify:all` los comprueba por separado.

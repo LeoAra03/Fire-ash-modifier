@@ -22,6 +22,12 @@
  * existentes en Pueblo Paleta y Ciudad Verde: solo se suman eventos nuevos
  * marcados con el prefijo "PokeMod Hub:". El instalador es idempotente.
  *
+ * RETIRADO: la Expansión Multiversal sustituyó la cápsula por viaje dentro del
+ * mundo (grietas, barco de Ciudad Carmín, espejo de Isla Canela). Esta
+ * herramienta ya no instala nada: se queda para retirar los restos de la
+ * cápsula en instalaciones antiguas y para verificar que el laboratorio
+ * conserva solo sus transportadores originales.
+ *
  * Uso:
  *   node tools/apply_oak_lab_postgame_hub.mjs            # instala y verifica
  *   node tools/apply_oak_lab_postgame_hub.mjs --verify   # solo verifica
@@ -132,19 +138,14 @@ function backup() {
   if (!fs.existsSync(target)) fs.copyFileSync(path.join(DATA, FILE), target);
   fs.writeFileSync(path.join(BACKUP, "LEEME.txt"), "Map048.rxdata anterior al tercer transportador del laboratorio de Oak. Restaura este archivo sobre Data/ para revertirlo.\n");
 }
-function install() {
+function retire() {
   const map = read(FILE);
   const events = iv(map, "events");
-  const originals = events.pairs.filter(([, object]) => !txt(iv(object, "name")).startsWith(MARKER));
-  const occupied = new Set(originals.map(([, object]) => `${iv(object, "x")},${iv(object, "y")}`));
-  const ids = new Set(originals.map(([id]) => Number(id)));
-  for (const object of additions()) {
-    const key = `${iv(object, "x")},${iv(object, "y")}`;
-    if (occupied.has(key)) throw new Error(`La celda ${key} ya tiene un evento original`);
-    if (ids.has(Number(iv(object, "id")))) throw new Error(`El ID ${iv(object, "id")} ya pertenece a un evento original`);
-  }
-  events.pairs = [...originals, ...additions().map((object) => [Number(iv(object, "id")), object])];
+  const kept = events.pairs.filter(([, object]) => !txt(iv(object, "name")).startsWith(MARKER));
+  const removed = events.pairs.length - kept.length;
+  events.pairs = kept;
   write(FILE, map);
+  return removed;
 }
 
 const tilesetsRaw = read("Tilesets.rxdata"), tilesets = new Map();
@@ -161,40 +162,34 @@ function verify() {
   const ok = (value, message) => { if (!value) errors.push(message); };
   const parsed = parseMap(read(FILE));
   const events = parsed.events.map(({ obj }) => parseEvent(obj));
-  const added = events.filter((entry) => entry.name.startsWith(MARKER));
-  ok(added.length === 5, `hay ${added.length}/5 eventos del hub`);
-  ok(events.filter((entry) => !entry.name.startsWith(MARKER)).length === 26, "el laboratorio perdió o ganó eventos originales");
+  const capsule = events.filter((entry) => entry.name.startsWith(MARKER));
+  ok(capsule.length === 0, `la cápsula central nueva sigue instalada (${capsule.length} eventos)`);
+  const originals = events.filter((entry) => !entry.name.startsWith(MARKER) && !entry.name.startsWith("PokeMod Oak:"));
+  ok(originals.length === 26, `el laboratorio debe conservar sus 26 eventos originales (${originals.length})`);
   const originalDoors = events.filter((entry) => [15, 16].includes(entry.id));
-  ok(originalDoors.length === 2 && originalDoors.every((entry) => entry.pages[1]?.condition?.switch1 === POSTGAME), "los transportadores originales ya no dependen del switch 429");
-  for (const entry of added) {
-    ok(entry.pages.length === 2 && entry.pages[1].condition?.switch1 === POSTGAME && !entry.pages[0].condition?.switch1, `${entry.name}: debe depender del switch 429 igual que las cápsulas originales`);
-    ok(!entry.pages[0].graphic?.tileId && !entry.pages[0].graphic?.charName, `${entry.name}: debe ser invisible antes del postgame`);
-    ok(openCell(parsed, entry.x, entry.y), `${entry.name}: colocado sobre una celda bloqueada (${entry.x},${entry.y})`);
+  ok(originalDoors.length === 2 && originalDoors.every((entry) => entry.pages[1]?.condition?.switch1 === POSTGAME),
+    "los transportadores originales ya no dependen del switch 429");
+  const menus = events.filter((entry) => entry.name.startsWith("PokeMod"))
+    .filter((entry) => entry.pages.some((page) => new Set(page.list.map(cmdOf)
+      .filter((command) => command.code === 201).map((command) => Number(command.params[1]))).size > 1));
+  ok(menus.length === 0, `el laboratorio no debe ofrecer menús de destinos (${menus.map((entry) => entry.name).join(", ")})`);
+  const advisor = events.find((entry) => entry.name === "PokeMod Oak: Registro de Grietas");
+  if (!advisor) console.log("Aviso: falta el Oak consejero. Instálalo con tools/apply_expansion_multiversal.mjs");
+  else {
+    ok(advisor.pages[1]?.condition?.switch1 === POSTGAME, "el Oak consejero debe depender del switch 429");
+    ok(!advisor.pages.some((page) => page.list.map(cmdOf).some((command) => command.code === 201)),
+      "Oak no teletransporta a nadie: solo aconseja");
+    ok(openCell(parsed, advisor.x, advisor.y), `el Oak consejero está sobre una celda bloqueada (${advisor.x},${advisor.y})`);
   }
-  const pad = added.find((entry) => entry.name.endsWith("Transportador"));
-  const commands = pad ? pad.pages[1].list.map(cmdOf) : [];
-  const transfers = commands.filter((entry) => entry.code === 201);
-  ok(transfers.length === DESTINATIONS.length, `la cápsula tiene ${transfers.length}/${DESTINATIONS.length} teletransportes`);
-  for (const destination of DESTINATIONS) {
-    const transfer = transfers.find((entry) => Number(entry.params[1]) === destination.map);
-    ok(transfer, `falta el destino ${destination.label}`);
-    if (!transfer) continue;
-    const target = parseMap(read(`Map${String(destination.map).padStart(3, "0")}.rxdata`));
-    ok(openCell(target, Number(transfer.params[2]), Number(transfer.params[3])), `${destination.label}: llegada bloqueada en (${transfer.params[2]},${transfer.params[3]})`);
-    if (destination.gate) ok(commands.some((entry) => entry.code === 111 && Number(entry.params[0]) === 0 && Number(entry.params[1]) === destination.gate), `${destination.label}: falta la comprobación del switch ${destination.gate}`);
-  }
-  const ruby = commands.filter((entry) => [111, 355, 655].includes(entry.code)).map((entry) => txt(entry.params[entry.code === 111 ? 1 : 0])).join("\n");
-  ok(!/674|675/.test(ruby) && !commands.some((entry) => entry.code === 121 && Number(entry.params[0]) <= 675 && Number(entry.params[1]) >= 674), "la cápsula no debe tocar los switches 674/675");
-  ok(commands.some((entry) => entry.code === 101 && txt(entry.params[0]).includes(`\\ch[${CHOICE_VARIABLE},`)), "la cápsula no usa el menú de destinos");
-  const infos = read("MapInfos.rxdata");
-  for (const destination of DESTINATIONS) ok(infos.pairs.some(([key]) => Number(key) === destination.map), `MapInfos no registra ${destination.map}`);
-  if (errors.length) throw new Error(`Hub del laboratorio inválido (${errors.length}):\n- ${errors.join("\n- ")}`);
-  console.log(`Verificación OK: tercer transportador en el laboratorio de Oak (mapa ${MAP_ID}) con ${DESTINATIONS.length} destinos condicionados por el switch ${POSTGAME}, 26 eventos originales intactos y llegadas transitables.`);
+  if (errors.length) throw new Error(`Laboratorio de Oak inválido (${errors.length}):\n- ${errors.join("\n- ")}`);
+  console.log(`Verificación OK: el laboratorio de Oak (mapa ${MAP_ID}) conserva sus 26 eventos originales,` +
+    " sus dos transportadores de siempre, ningún menú de destinos y Oak como consejero.");
 }
 
 if (!VERIFY_ONLY) {
   backup();
-  install();
-  console.log(`Hub postgame instalado en ${FILE}. Backup: ${path.relative(ROOT, BACKUP)}`);
+  const removed = retire();
+  console.log(`Cápsula central retirada del laboratorio de Oak (${removed} eventos menos).` +
+    " El viaje multiversal ahora se descubre en el mundo. Backup: " + path.relative(ROOT, BACKUP));
 }
 verify();
