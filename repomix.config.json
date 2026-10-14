@@ -4,7 +4,7 @@
     "maxFileSize": 1048576
   },
   "output": {
-    "filePath": "repomix-output.xml",
+    "filePath": "xml/repomix-output.xml",
     "style": "xml",
     "parsableStyle": true,
     "compress": false,
@@ -45,8 +45,8 @@
     "useGitignore": true,
     "useDefaultPatterns": true,
     "customPatterns": [
+      "xml/**",
       "repomix-output.xml",
-      "repomix-output*.xml",
       "**/*.{png,jpg,jpeg,gif,webp,ogg,wav,mp3,mid,rxdata,zip,rar,7z,exe,dll,ttf,bmp,xcf,sf2,apk,aab,pdf}",
       "**/*.dat",
       "content/arceus_omega_qa_matrix.jsonl",
