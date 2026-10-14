@@ -211,7 +211,7 @@
       "sourceName": "Lappet Town",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "name": "Atlas 0001 - Lappet Town"
+      "name": "Pueblo Campanario"
     },
     {
       "index": 2,
@@ -220,7 +220,7 @@
       "sourceName": "\\PN's house",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "name": "Atlas 0002 - \\PN's house"
+      "name": "Refugio de los Ecos"
     },
     {
       "index": 3,
@@ -229,7 +229,7 @@
       "sourceName": "Pokémon Lab",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "name": "Atlas 0003 - Pokémon Lab"
+      "name": "Laboratorio de Resonancia"
     },
     {
       "index": 4,
@@ -238,7 +238,7 @@
       "sourceName": "Route 1",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "name": "Atlas 0004 - Route 1"
+      "name": "Ruta del Zumbido Dorado"
     },
     {
       "index": 5,
@@ -247,7 +247,7 @@
       "sourceName": "Kurt's house",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "name": "Atlas 0005 - Kurt's house"
+      "name": "Taller de Conchas de Viento"
     },
     {
       "index": 6,
@@ -9209,13 +9209,13 @@
     {
       "id": 1,
       "mapId": 1021,
-      "mapName": "Atlas 0001 - Lappet Town",
+      "mapName": "Pueblo Campanario",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "title": "La baliza que cambió de dueño — Atlas 0001 - Lappet Town",
+      "title": "La baliza que cambió de dueño — Pueblo Campanario",
       "category": "jefe_faccion",
       "npc": "capitana de Meridiano Ámbar",
-      "hook": "La facción Vigías Ámbar protege en Atlas 0001 - Lappet Town información sobre Oshawott. Su líder ofrece un combate amistoso para decidir quién conserva el registro.",
+      "hook": "La facción Vigías Ámbar protege en Pueblo Campanario información sobre Oshawott. Su líder ofrece un combate amistoso para decidir quién conserva el registro.",
       "pokemon": "OSHAWOTT",
       "pokemonName": "Oshawott",
       "item": "RARECANDY",
@@ -9244,13 +9244,13 @@
     {
       "id": 2,
       "mapId": 1022,
-      "mapName": "Atlas 0002 - \\PN's house",
+      "mapName": "Refugio de los Ecos",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "title": "El duelo sin espectadores — Atlas 0002 - \\PN's house",
+      "title": "El duelo sin espectadores — Refugio de los Ecos",
       "category": "duelo_especialista",
       "npc": "geólogo de Meridiano Ámbar",
-      "hook": "geólogo de Atlas 0002 - \\PN's house estudió un estilo no utilizado en Horizontes y desafía al jugador con seis especies y coberturas exclusivas.",
+      "hook": "geólogo de Refugio de los Ecos estudió un estilo no utilizado en Horizontes y desafía al jugador con seis especies y coberturas exclusivas.",
       "pokemon": "DEWOTT",
       "pokemonName": "Dewott",
       "item": "COMETSHARD",
@@ -9279,13 +9279,13 @@
     {
       "id": 3,
       "mapId": 1023,
-      "mapName": "Atlas 0003 - Pokémon Lab",
+      "mapName": "Laboratorio de Resonancia",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "title": "La patrulla de seis sombras — Atlas 0003 - Pokémon Lab",
+      "title": "La patrulla de seis sombras — Laboratorio de Resonancia",
       "category": "supervivencia",
       "npc": "agente de campo de Meridiano Ámbar",
-      "hook": "Una tormenta aisló al equipo de agente de campo en Atlas 0003 - Pokémon Lab. Supera un combate de resistencia de seis Pokémon para reactivar la baliza de retorno.",
+      "hook": "Una tormenta aisló al equipo de agente de campo en Laboratorio de Resonancia. Supera un combate de resistencia de seis Pokémon para reactivar la baliza de retorno.",
       "pokemon": "SAMUROTT",
       "pokemonName": "Samurott",
       "item": "ASSAULTVEST",
@@ -9314,13 +9314,13 @@
     {
       "id": 4,
       "mapId": 1024,
-      "mapName": "Atlas 0004 - Route 1",
+      "mapName": "Ruta del Zumbido Dorado",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "title": "Una señal bajo la piedra — Atlas 0004 - Route 1",
+      "title": "Una señal bajo la piedra — Ruta del Zumbido Dorado",
       "category": "evento_artefacto",
       "npc": "ingeniera de Meridiano Ámbar",
-      "hook": "ingeniera encontró en Atlas 0004 - Route 1 un artefacto relacionado con Patrat. Elegir cómo restaurarlo decide el diálogo y revela WATERSTONE.",
+      "hook": "ingeniera encontró en Ruta del Zumbido Dorado un artefacto relacionado con Patrat. Elegir cómo restaurarlo decide el diálogo y revela WATERSTONE.",
       "pokemon": "PATRAT",
       "pokemonName": "Patrat",
       "item": "WATERSTONE",
@@ -9349,13 +9349,13 @@
     {
       "id": 5,
       "mapId": 1025,
-      "mapName": "Atlas 0005 - Kurt's house",
+      "mapName": "Taller de Conchas de Viento",
       "sector": 1,
       "sectorName": "Meridiano Ámbar",
-      "title": "El torneo de una sola ronda — Atlas 0005 - Kurt's house",
+      "title": "El torneo de una sola ronda — Taller de Conchas de Viento",
       "category": "jefe_faccion",
       "npc": "árbitro de Meridiano Ámbar",
-      "hook": "La facción Vigías Ámbar protege en Atlas 0005 - Kurt's house información sobre Watchog. Su líder ofrece un combate amistoso para decidir quién conserva el registro.",
+      "hook": "La facción Vigías Ámbar protege en Taller de Conchas de Viento información sobre Watchog. Su líder ofrece un combate amistoso para decidir quién conserva el registro.",
       "pokemon": "WATCHOG",
       "pokemonName": "Watchog",
       "item": "BOTTLECAP",

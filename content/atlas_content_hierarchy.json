@@ -8,7 +8,7 @@
   "maps": [
     {
       "mapId": 1021,
-      "mapName": "Atlas 0001 - Lappet Town",
+      "mapName": "Pueblo Campanario",
       "sourceId": 2,
       "sourceName": "Lappet Town",
       "sector": 1,
@@ -20,7 +20,7 @@
     },
     {
       "mapId": 1022,
-      "mapName": "Atlas 0002 - \\PN's house",
+      "mapName": "Refugio de los Ecos",
       "sourceId": 3,
       "sourceName": "\\PN's house",
       "sector": 1,
@@ -32,7 +32,7 @@
     },
     {
       "mapId": 1023,
-      "mapName": "Atlas 0003 - Pokémon Lab",
+      "mapName": "Laboratorio de Resonancia",
       "sourceId": 4,
       "sourceName": "Pokémon Lab",
       "sector": 1,
@@ -44,7 +44,7 @@
     },
     {
       "mapId": 1024,
-      "mapName": "Atlas 0004 - Route 1",
+      "mapName": "Ruta del Zumbido Dorado",
       "sourceId": 5,
       "sourceName": "Route 1",
       "sector": 1,
@@ -56,7 +56,7 @@
     },
     {
       "mapId": 1025,
-      "mapName": "Atlas 0005 - Kurt's house",
+      "mapName": "Taller de Conchas de Viento",
       "sourceId": 6,
       "sourceName": "Kurt's house",
       "sector": 1,

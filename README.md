@@ -131,7 +131,7 @@ El archivo completo [`Scripts_corregido/Scripts.rxdata`](Scripts_corregido/Scrip
 
 ## Catálogo visual referencial de mapas
 
-En [`Scripts_corregido/`](Scripts_corregido/) están los **16 mosaicos PNG** (Atlas Mil en 15 hojas y los otros 22 mapas en la hoja 16), el [informe con ficha para cada uno de los 1.022 IDs](Scripts_corregido/INFORME_REFERENCIAL_MAPAS.md) y el [ZIP descargable del paquete](Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip). Son referencias estáticas basadas en los datos del proyecto; no sustituyen una prueba dentro de Kirin ni de `Game.exe`.
+En [`Scripts_corregido/`](Scripts_corregido/) están los **16 mosaicos PNG** (Atlas Mil en 15 hojas y 45 mapas complementarios en la hoja 16), el [informe con ficha para cada uno de los 1.045 mapas](Scripts_corregido/INFORME_REFERENCIAL_MAPAS.md) y el [ZIP descargable del paquete](Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip). Son referencias estáticas basadas en los datos del proyecto; no sustituyen una prueba dentro de Kirin ni de `Game.exe`.
 
 ## Compilar la APK
 

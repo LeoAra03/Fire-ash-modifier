@@ -6,7 +6,7 @@ Estas 500 propuestas se compararon con las 500 de Horizontes. No repiten título
 
 Facción: **Vigías Ámbar**
 
-### 1. La baliza que cambió de dueño — Atlas 0001 - Lappet Town
+### 1. La baliza que cambió de dueño — Pueblo Campanario
 
 - **Tipo:** jefe_faccion
 - **NPC:** capitana de Meridiano Ámbar
@@ -14,9 +14,9 @@ Facción: **Vigías Ámbar**
 - **Equipo:** OSHAWOTT, HAWLUCHA, VIKAVOLT, KOMALA, RILLABOOM, TOXTRICITY
 - **Recompensa:** RARECANDY
 - **Flag:** Mapa 1021 / evento 100 / self-switch A
-- **Propuesta aplicada:** La facción Vigías Ámbar protege en Atlas 0001 - Lappet Town información sobre Oshawott. Su líder ofrece un combate amistoso para decidir quién conserva el registro.
+- **Propuesta aplicada:** La facción Vigías Ámbar protege en Pueblo Campanario información sobre Oshawott. Su líder ofrece un combate amistoso para decidir quién conserva el registro.
 
-### 2. El duelo sin espectadores — Atlas 0002 - \PN's house
+### 2. El duelo sin espectadores — Refugio de los Ecos
 
 - **Tipo:** duelo_especialista
 - **NPC:** geólogo de Meridiano Ámbar
@@ -24,9 +24,9 @@ Facción: **Vigías Ámbar**
 - **Equipo:** DEWOTT, BERGMITE, MUDBRAY, TAPULELE, CORVIKNIGHT, MORGREM
 - **Recompensa:** COMETSHARD
 - **Flag:** Mapa 1022 / evento 100 / self-switch A
-- **Propuesta aplicada:** geólogo de Atlas 0002 - \PN's house estudió un estilo no utilizado en Horizontes y desafía al jugador con seis especies y coberturas exclusivas.
+- **Propuesta aplicada:** geólogo de Refugio de los Ecos estudió un estilo no utilizado en Horizontes y desafía al jugador con seis especies y coberturas exclusivas.
 
-### 3. La patrulla de seis sombras — Atlas 0003 - Pokémon Lab
+### 3. La patrulla de seis sombras — Laboratorio de Resonancia
 
 - **Tipo:** supervivencia
 - **NPC:** agente de campo de Meridiano Ámbar
@@ -34,9 +34,9 @@ Facción: **Vigías Ámbar**
 - **Equipo:** SAMUROTT, DARTRIX, BEWEAR, CELESTEELA, DREDNAW, PINCURCHIN
 - **Recompensa:** ASSAULTVEST
 - **Flag:** Mapa 1023 / evento 100 / self-switch A
-- **Propuesta aplicada:** Una tormenta aisló al equipo de agente de campo en Atlas 0003 - Pokémon Lab. Supera un combate de resistencia de seis Pokémon para reactivar la baliza de retorno.
+- **Propuesta aplicada:** Una tormenta aisló al equipo de agente de campo en Laboratorio de Resonancia. Supera un combate de resistencia de seis Pokémon para reactivar la baliza de retorno.
 
-### 4. Una señal bajo la piedra — Atlas 0004 - Route 1
+### 4. Una señal bajo la piedra — Ruta del Zumbido Dorado
 
 - **Tipo:** evento_artefacto
 - **NPC:** ingeniera de Meridiano Ámbar
@@ -44,9 +44,9 @@ Facción: **Vigías Ámbar**
 - **Equipo:** PATRAT, YUNGOOS, PYUKUMUKU, MELTAN, CRAMORANT, DRACOVISH
 - **Recompensa:** WATERSTONE
 - **Flag:** Mapa 1024 / evento 100 / self-switch A
-- **Propuesta aplicada:** ingeniera encontró en Atlas 0004 - Route 1 un artefacto relacionado con Patrat. Elegir cómo restaurarlo decide el diálogo y revela WATERSTONE.
+- **Propuesta aplicada:** ingeniera encontró en Ruta del Zumbido Dorado un artefacto relacionado con Patrat. Elegir cómo restaurarlo decide el diálogo y revela WATERSTONE.
 
-### 5. El torneo de una sola ronda — Atlas 0005 - Kurt's house
+### 5. El torneo de una sola ronda — Taller de Conchas de Viento
 
 - **Tipo:** jefe_faccion
 - **NPC:** árbitro de Meridiano Ámbar
@@ -54,7 +54,7 @@ Facción: **Vigías Ámbar**
 - **Equipo:** WATCHOG, LYCANROC, JANGMOO, SKWOVET, HATENNA, ZARUDE
 - **Recompensa:** BOTTLECAP
 - **Flag:** Mapa 1025 / evento 100 / self-switch A
-- **Propuesta aplicada:** La facción Vigías Ámbar protege en Atlas 0005 - Kurt's house información sobre Watchog. Su líder ofrece un combate amistoso para decidir quién conserva el registro.
+- **Propuesta aplicada:** La facción Vigías Ámbar protege en Taller de Conchas de Viento información sobre Watchog. Su líder ofrece un combate amistoso para decidir quién conserva el registro.
 
 ### 6. La cápsula llegada sin remitente — Atlas 0006 - Cedolan City
 
