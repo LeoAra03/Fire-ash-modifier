@@ -207,18 +207,25 @@ function installSpecies() {
   const speciesData = readRx("species.dat");
   const numeric = speciesData.pairs.filter(([key]) => typeof key === "number").map(([key]) => Number(key));
   const currentRecord = findRecordBySymbol(speciesData, SPECIES_ID);
-  const numericEntry = speciesData.pairs.find(([key]) => Number(key) === CONFIG.species.number);
-  if (!currentRecord && numericEntry) throw new Error(`El número de especie ${CONFIG.species.number} ya está ocupado.`);
-  if (!currentRecord && Math.max(0, ...numeric) + 1 !== CONFIG.species.number) {
-    throw new Error(`El siguiente número de especie esperado no es ${CONFIG.species.number}.`);
+  const targetNumber = Number(CONFIG.species.number);
+  const numericEntry = speciesData.pairs.find(([key]) => typeof key === "number" && key === targetNumber);
+  if (numericEntry && sym(iv(numericEntry[1], "id")) !== SPECIES_ID) {
+    throw new Error(`El número de especie ${targetNumber} ya pertenece a ${sym(iv(numericEntry[1], "id"))}.`);
+  }
+  if (!currentRecord && !numericEntry && Math.max(0, ...numeric) + 1 !== targetNumber) {
+    throw new Error(`El siguiente número de especie esperado no es ${targetNumber}.`);
+  }
+  if (currentRecord) {
+    const aliases = speciesData.pairs.filter(([key, value]) => typeof key === "number" && Number(key) !== targetNumber && sym(iv(value, "id")) === SPECIES_ID);
+    speciesData.pairs = speciesData.pairs.filter((pair) => !aliases.includes(pair));
   }
   const record = createAuralumeRecord(speciesData);
   const symbolEntry = speciesData.pairs.find(([key]) => key instanceof RSymbol && key.name === SPECIES_ID);
-  const numberEntry = speciesData.pairs.find(([key]) => typeof key === "number" && key === CONFIG.species.number);
+  const numberEntry = speciesData.pairs.find(([key]) => typeof key === "number" && key === targetNumber);
   if (symbolEntry) symbolEntry[1] = record;
   else speciesData.pairs.push([Sym(SPECIES_ID), record]);
   if (numberEntry) numberEntry[1] = record;
-  else speciesData.pairs.push([CONFIG.species.number, record]);
+  else speciesData.pairs.push([targetNumber, record]);
   writeRx("species.dat", speciesData);
 }
 
