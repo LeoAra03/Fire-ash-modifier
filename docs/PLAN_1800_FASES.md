@@ -35,7 +35,7 @@
 935. Fijar el contenido mínimo de un mapa de guarida: entrada vigilada, tres salas con función y jefe final.
 936. Verificar que cada mapa cumpla el mínimo de su perfil antes de entrar en el lote.
 937. Medir la densidad real de cada mapa nuevo en eventos, páginas y comandos y guardarla en `content/plan2700_densidad.json`.
-938. Fijar el umbral de calidad: ninguna ruta nueva por debajo de 12 eventos, 18 páginas y 120 comandos.
+938. Fijar el umbral de densidad como piso y no como meta, con muestreo humano ciego de uno de cada diez mapas: el umbral no demuestra autoría.
 939. Fijar el umbral de calidad: ninguna ciudad nueva por debajo de 20 eventos, 30 páginas y 250 comandos.
 940. Fijar el umbral de calidad: ningún gimnasio nuevo por debajo de 8 eventos, 12 páginas y 90 comandos.
 941. Fijar el umbral de calidad: ningún interior visitable por debajo de 2 eventos y 6 comandos.

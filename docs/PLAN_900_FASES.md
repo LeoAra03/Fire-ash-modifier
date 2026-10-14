@@ -823,7 +823,7 @@
 823. Auditar que Atlas tenga jefes intermedios además de las anclas.
 824. Verificar que el jugador pueda abandonar Atlas en cualquier momento y volver.
 825. Cerrar el bloque de escalado con una tabla de progresión publicada en `docs/qa/progresion.md`.
-826. Ejecutar la partida de punta a punta guiada por `docs/QA_MANUAL_PLAYTEST.md`.
+826. Ejecutar la partida de punta a punta guiada por `docs/QA_MANUAL_PLAYTEST.md` con cuota de cobertura medida, no solo recorrido.
 827. Registrar cada sesión de prueba con fecha, duración, versión y hallazgos.
 828. Probar el arranque en frío desde el menú principal hasta el primer guardado.
 829. Probar la carga de una partida guardada antes del duelo de Arceus y su comportamiento.

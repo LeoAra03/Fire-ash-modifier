@@ -389,7 +389,7 @@
 2189. Verificar que el control detecte variables insertadas inexistentes.
 2190. Cerrar el carril de diálogos con el control en CI y el informe publicado.
 2191. Abrir el carril de playtest real: nadie ha jugado el DLC de punta a punta todavía.
-2192. Escribir el guion de playtest completo en `docs/qa/playtest_maestro.md` con una sesión por bloque.
+2192. Escribir el guion de playtest con cuota de cobertura por sesión: celdas visitadas, eventos ejecutados y diálogos mostrados, no solo "jugar".
 2193. Definir la ficha de sesión: fecha, versión, duración, hallazgos y capturas.
 2194. Crear `docs/qa/playtest/` y una carpeta por sesión.
 2195. Sesión 1: arranque en frío, menú principal y primera partida.
@@ -424,7 +424,7 @@
 2224. Sesión 30: perder contra cada jefe final y reintentar.
 2225. Sesión 31: abandonar cada región a mitad y retomar después.
 2226. Sesión 32: el DLC completo sin usar ninguna guía externa.
-2227. Registrar cada sesión con su ficha completa y sus hallazgos numerados.
+2227. Registrar cada sesión con su ficha, sus hallazgos numerados y la tasa de descubrimiento (hallazgos por hora), que debe bajar ronda a ronda.
 2228. Clasificar cada hallazgo por gravedad: bloqueante, grave, leve o cosmético.
 2229. Corregir los hallazgos bloqueantes en el mismo día de la sesión.
 2230. Corregir los graves antes de la sesión siguiente.
@@ -812,10 +812,10 @@
 2612. Verificar que ninguna dimensión se haya quedado sin visitar en esa partida.
 2613. Verificar que ningún contenido prometido haya quedado fuera de alcance.
 2614. Firmar el acta final de la partida de cierre.
-2615. Reservar el bloque final del plan para los defectos que solo aparecen al jugar.
+2615. Sustituir la reserva fija por un ciclo con criterio de salida: defecto detectado, reproducido, corregido con regresión y reverificado.
 2616. Documentar que ningún plan puede prever todos los defectos de un juego de esta escala.
-2617. Fijar el número de fases de reserva dedicado a defectos imprevistos.
-2618. Usar esas fases solo para defectos hallados en playtest y nunca para contenido nuevo.
+2617. Repetir el ciclo con una ronda completa de juego hasta que la tasa de descubrimiento sea cero en tres sesiones consecutivas.
+2618. Prohibir cerrar el plan con un solo defecto abierto, aunque sea cosmético, y prohibir declararlo "conocido" para saltarlo.
 2619. Documentar el procedimiento de priorización de defectos durante esos cierres.
 2620. Cerrar cada defecto con su prueba de regresión antes de darlo por resuelto.
 2621. Verificar que ningún defecto se cierre sin reproducirlo antes.
