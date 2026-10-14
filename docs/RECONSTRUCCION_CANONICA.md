@@ -1,6 +1,6 @@
 # Reconstrucción canónica
 
-Inicio: 2026-10-14T17:10:22.439Z
+Inicio: 2026-10-14T17:11:28.684Z
 Resultado: OK
 
 Orden obligatorio: expansión multiversal, canon de Arceus, protección de `Tone.new`, protección de `transition_name`.
@@ -11,7 +11,7 @@ Idempotencia: `apply_tone_safety_fix.mjs` y `apply_transition_safety_fix.mjs` no
 
 - Script: `tools/apply_expansion_multiversal.mjs`
 - Precondición: OK — Data del juego y el plano de la expansión están presentes. No exige switches previos: este paso es el que instala los sellos base.
-- Instalación: exit 0 en 1618 ms
+- Instalación: exit 0 en 1625 ms
 - Verificación: exit 0 en 326 ms
 - Archivos tocados en este paso (git status nuevo respecto al inicio del paso): 1
 
@@ -34,7 +34,7 @@ Verificación OK: 7 grietas con Entrar/Retirarse y retorno al mundo, punto de co
 
 - Script: `tools/apply_canon_arceus.mjs`
 - Precondición: OK — La expansión verifica sus sellos, grietas y retornos. El canon puede exigir el duelo encima de esa base.
-- Instalación: exit 0 en 386 ms
+- Instalación: exit 0 en 407 ms
 - Verificación: exit 0 en 120 ms
 - Archivos tocados en este paso (git status nuevo respecto al inicio del paso): 0
 
@@ -79,8 +79,8 @@ Verificación OK: 7 grietas con Entrar/Retirarse y retorno al mundo, punto de co
 
 - Script: `tools/apply_tone_safety_fix.mjs`
 - Precondición: OK — Game_Screen, Game_Picture y PokeMod_CanonArceus están en el Scripts.rxdata corregido.
-- Instalación: exit 0 en 139 ms
-- Verificación: exit 0 en 85 ms
+- Instalación: exit 0 en 131 ms
+- Verificación: exit 0 en 88 ms
 - Archivos tocados en este paso (git status nuevo respecto al inicio del paso): 0
 
 ### Instalación — salida literal
@@ -102,8 +102,8 @@ OK: Scripts_corregido, Paquete_directo y ZIP contienen la misma corrección
 
 - Script: `tools/apply_transition_safety_fix.mjs`
 - Precondición: OK — Scene_Map existe y el parche de tono ya está en Game_Screen.
-- Instalación: exit 0 en 133 ms
-- Verificación: exit 0 en 86 ms
+- Instalación: exit 0 en 129 ms
+- Verificación: exit 0 en 87 ms
 - Archivos tocados en este paso (git status nuevo respecto al inicio del paso): 0
 
 ### Instalación — salida literal
@@ -149,7 +149,7 @@ OK: Scripts_corregido, Paquete_directo y ZIP están sincronizados
 
 18 sección(es) Ruby revisadas · ✔ sin errores
 
-(node:2874) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(node:3508) ExperimentalWarning: WASI is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 ```
 
@@ -190,22 +190,12 @@ OK: ningún script escribe clima, terreno o talentos que el motor rechace (R10).
 
 Cambios de git status aparecidos durante la orquestación:
 
-- Ninguno.
+- ` M docs/AUDITORIA_TOTAL_FLAGS.md`
 
 ```
- .gitignore                             |   3 +
- docs/AUDITORIA_TOTAL_FLAGS.md          | 519 ++++++++++++++++++++-------------
- pokemon_fire_ash/Data/Map108.rxdata    | Bin 139770 -> 139770 bytes
- pokemon_fire_ash/Data/Map143.rxdata    | Bin 9378 -> 9378 bytes
- pokemon_fire_ash/Data/Map2142.rxdata   | Bin 18468 -> 18452 bytes
- pokemon_fire_ash/Data/Map2192.rxdata   | Bin 78383 -> 78274 bytes
- pokemon_fire_ash/Data/Map2193.rxdata   | Bin 195871 -> 195767 bytes
- pokemon_fire_ash/Data/Map2194.rxdata   | Bin 18457 -> 18442 bytes
- pokemon_fire_ash/Data/MapInfos.rxdata  | Bin 241938 -> 241938 bytes
- pokemon_fire_ash/Data/map_metadata.dat | Bin 510855 -> 510855 bytes
- tools/apply_expansion_multiversal.mjs  |  48 ++-
- tools/apply_tone_safety_fix.mjs        |  50 +++-
- tools/apply_transition_safety_fix.mjs  |  37 ++-
- tools/lib/dn_rmxp.mjs                  |  34 ++-
- 14 files changed, 453 insertions(+), 238 deletions(-)
+ docs/AUDITORIA_TOTAL_FLAGS.md        |   2 +-
+ pokemon_fire_ash/Data/Map108.rxdata  | Bin 139770 -> 139770 bytes
+ pokemon_fire_ash/Data/Map143.rxdata  | Bin 9378 -> 9378 bytes
+ pokemon_fire_ash/Data/Map2194.rxdata | Bin 18442 -> 18442 bytes
+ 4 files changed, 1 insertion(+), 1 deletion(-)
 ```
