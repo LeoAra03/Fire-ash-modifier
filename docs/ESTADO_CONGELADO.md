@@ -1,6 +1,6 @@
 # Estado congelado
 
-Generado: 2026-10-15T05:47:09.688Z
+Generado: 2026-10-15T05:49:58.441Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
@@ -192,6 +192,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
   3. **Integridad de backups**: al menos un ZIP en `pokemon_fire_ash/PokeModBackups/` y `python3 -m zipfile --test` sin errores sobre cada uno.
 - **Ejecución real: exit 0** — 25 fases registradas (última: 26), 25/25 filas con verificador, 1 backup íntegro (`backup_20261015_041420.zip`, 19,5 MB).
 - Inventario congelado regenerado tras añadir el script (nuevo archivo en `tools/`): **5422 archivos (Data 5215 + tools 207)**, `--verify` en verde.
+
+### FASE 28 — Avance del plan auditable por CI
+
+- Añadido **`"plan900:check": "node tools/plan900/checkpoint.mjs"`** al `package.json` y un paso «Auditoría de avance del plan 900» al workflow `.github/workflows/build-apk.yml` (tras `npm ci`), de modo que cada push a `arena/**` audite el registro del plan.
+- **Ajuste del checkpoint para CI:** `PokeModBackups/` está en `.gitignore`, así que un checkout limpio no tiene ZIP; con 0 backups el checkpoint emite **advertencia** (no error) y solo exige `zipfile --test` a los ZIP que existan. Localmente sigue probando los reales.
+- **Ejecución real: `npm run plan900:check` exit 0** — 26 fases (última: 27), 26/26 verificadores, 1 backup íntegro (19,5 MB).
 
 ## Totales
 

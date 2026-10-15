@@ -7,8 +7,11 @@
 //   2. Verificadores: cada fila en OK cita evidencia de verificador en verde
 //      (protocolo de cierre, FASE 26). Excepciones históricas solo para las
 //      fases pre-protocolo documentadas abajo; desde la FASE 27 no se admiten.
-//   3. Integridad de los backups ZIP de pokemon_fire_ash/PokeModBackups
-//      (test de zipfile sobre cada archivo; debe existir al menos uno).
+//   3. Integridad de los backups ZIP de pokemon_fire_ash/PokeModBackups:
+//      cada ZIP presente debe pasar `python3 -m zipfile --test`. Si no hay
+//      ninguno (checkout de CI o entorno limpio: la carpeta está en
+//      .gitignore) se emite advertencia, no error — lo auditable es la
+//      integridad de los backups que existan, no su presencia.
 //
 // Uso:  node tools/plan900/checkpoint.mjs      (exit 0 = todo en verde)
 
@@ -104,7 +107,11 @@ let zips = [];
 try {
   zips = readdirSync(BACKUPS_DIR).filter((n) => n.toLowerCase().endsWith(".zip")).sort();
 } catch { /* directorio ausente: zips queda vacío */ }
-paso(zips.length > 0, `backups: ${zips.length} ZIP en PokeModBackups (mínimo 1)`);
+if (zips.length > 0) {
+  paso(true, `backups: ${zips.length} ZIP en PokeModBackups`);
+} else {
+  console.log("⚠ backups: 0 ZIP en PokeModBackups (checkout de CI o entorno sin backups locales): se omite la prueba de integridad");
+}
 for (const z of zips) {
   const ruta = join(BACKUPS_DIR, z);
   const mb = (statSync(ruta).size / 1048576).toFixed(1);
@@ -122,9 +129,10 @@ for (const z of zips) {
 // Resumen
 // ---------------------------------------------------------------------------
 const ultima = filas.length ? filas[filas.length - 1].fase : 0;
+const resumenBackups = zips.length ? `${zips.length} backup(s) íntegro(s)` : "sin backups locales (solo advertencia)";
 console.log(
   fallos === 0
-    ? `checkpoint plan 900: TODO EN VERDE — ${filas.length} fases registradas (última: ${ultima}), ${zips.length} backup(s) íntegro(s)`
+    ? `checkpoint plan 900: TODO EN VERDE — ${filas.length} fases registradas (última: ${ultima}), ${resumenBackups}`
     : `checkpoint plan 900: ${fallos} comprobación(es) en rojo`
 );
 process.exit(fallos === 0 ? 0 : 1);
