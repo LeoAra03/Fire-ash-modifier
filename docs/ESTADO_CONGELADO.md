@@ -75,6 +75,14 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **`npm run verify:ruby`: exit 0** — 18 secciones Ruby revisadas con Ruby WASM, sin errores de sintaxis (6 del juego vivo `pokemon_fire_ash/Data/Scripts.rxdata`, 6 de `Scripts_corregido/Scripts.rxdata`, 3 del Paquete directo, 3 del paquete DN QA).
 - **Barrido zlib completo (solo lectura): 409/409 secciones** de `pokemon_fire_ash/Data/Scripts.rxdata` descomprimidas con `zlib.inflateSync` **sin un solo error** — coincide con las 409 secciones del inventario congelado (FASE 3) y del censo (FASE 9).
 
+### FASE 11 — Salud global del árbol (pre-reescritura)
+
+- **`npm run verify:salud`: exit 0 — sin fallos graves** (`graves: []`), medido antes de empezar cualquier reescritura masiva.
+- Mapas: 3465 entradas de MapInfos · 3465 archivos · sin archivo: ninguno · tileset vacío/fuera de rango: ninguno · transferencias rotas: ninguna · llamadas a métodos inexistentes: ninguna.
+- Parches instalados: botón Z (`Input::SPECIAL`) ✔ y parche de gráficos ✔; secciones PokeMod presentes (RutaDeDios, CanonArceus, BadgeRegions, Dialogos, Atavios, ZMenu, Graficos).
+- Diálogos: 57591 bloques, 0 vacíos, 40 líneas largas (cosmético, cajas de 53 car.).
+- **1 aviso (no bloqueante):** 12 páginas «automático» sin espera (riesgo de bucle). Hallazgos informativos: ~16 mapas marcador de región sin tiles (Kanto, Johto, Sinnoh, etc., casi todos con 0 eventos) y 4 slots de tileset vacíos — preexistentes del juego base.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
