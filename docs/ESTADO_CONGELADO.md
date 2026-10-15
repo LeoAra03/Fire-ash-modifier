@@ -1,10 +1,12 @@
 # Estado congelado
 
-Generado: 2026-10-14T17:11:44.096Z
+Generado: 2026-10-15T04:11:26.319Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
-## Línea base `npm test` (FASE 1)
+## Bitácora de fases
+
+### FASE 1 — Línea base `npm test`
 
 - **Fecha de la corrida:** 2026-10-15 (Node v22.22.3, npm 10.9.8, dependencias instaladas con `npm ci`, 54 paquetes).
 - **Resultado global:** `npm test` completo terminó con **código de salida 0**.
@@ -14,6 +16,13 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - `npm run` verificados OK: `verify:zmenu`, `verify:graficos`, `verify:ruby`, `verify:mapas`, `verify:boot`, `verify:teckel`, `verify:visor`, `verify:lideres`, `verify:glazed`, `verify:light_platinum`, `verify:liquid_crystal`, `verify:canon:arceus`, `verify:arceus:sprites`, `verify:diplomas`, `verify:corregido:zip` (2616 archivos, 46.6 MB), `verify:ruta_de_dios`.
 - Suite maestra final (`test:atlas:master`): **76 258 aserciones superadas, 0 fallos** (1227 mapas de campañas ROM, 8742 warps, 829 combates, 104 mapas DN, 946 eventos creepypasta).
 - **Efecto colateral determinista del suite:** el `pretest` (`build:teckel`) re-escenifica `Scripts_corregido/Ciudad_Teckel_Paraiso/Data/` desde el juego vivo; los 5 archivos binarios de ese stage estaban desactualizados respecto a HEAD y quedaron resincronizados (rebuild idempotente, verificado con doble corrida e igual hash). No es un error: es la salida oficial del suite.
+
+### FASE 3 — Regeneración del inventario congelado
+
+- **Regenerado:** `node tools/inventario_congelado.mjs` (2026-10-15). Reescrito `tools/inventario_congelado.json` y este documento; `--verify` posterior en verde.
+- **Archivos hasheados confirmados: 5417** (Data 5215, Scripts 0, tools 202) — sin desviaciones de conteo.
+- Única desviación de hashes previa a regenerar: los 5 archivos del stage Teckel resincronizados por el `pretest` de la FASE 1 (ver arriba), absorbidos ahora en el JSON oficial. Ningún otro hash cambió.
+- Estable tras regenerar: mapas 3465 · scripts 409 · pares ID 9197 · colisiones 0 · rango reservado libre.
 
 ## Totales
 
