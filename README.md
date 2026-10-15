@@ -73,6 +73,7 @@ Producto cerrado y jugable. Lo último que entró:
 | `docs/AUDITORIA_TOTAL_FLAGS.md` | Qué switch y qué variable está libre. |
 | **`docs/qa/glosario.md`** | **El diccionario congelado**: Vía, Ancla, Emisión, Sello, Fragmento, Dimensión invitada y Liga Oscura, con sus mapas, switches y fuentes. `npm run verify:glosario` comprueba el sello. |
 | **`docs/qa/metrica_dimensiones.md`** | **Cuándo un mundo está terminado**: las cuatro condiciones (jefe final, retorno libre, verificador propio y partida de prueba registrada) medidas contra los 23 mundos del plan. `npm run verify:metrica` las comprueba. |
+| **`docs/qa/mapa_terminado.md`** | **Cuándo un mapa está terminado**: transitable, sin celdas huérfanas, con encuentros, con música y con entrada y salida, medido mapa por mapa (173 del plan, 3465 de censo). `npm run verify:mapa_terminado` lo comprueba. |
 | `docs/PRESUPUESTO_ARTEFACTO_SESION.md` | Cuánto puede pesar el ZIP raíz (64 MiB) y cada grupo de artefactos (128 MiB), qué exceso está justificado y qué se recorta para volver al techo. |
 | `docs/PLAN_SWARM_161.md` | El plan de producción con 161 agentes. |
 

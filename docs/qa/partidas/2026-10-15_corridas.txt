@@ -1,18 +1,20 @@
 # Corridas de verificación registradas — 2026-10-15
 
-Registro de las corridas **ejecutadas de verdad** el 2026-10-15 en el repositorio (fase 2/46199, tarea 36),
-con la salida íntegra de cada comando y su código de salida. Es la evidencia de la cuarta condición de la
-métrica (`content/metrica_dimensiones.json`): cada mundo declarado tiene al menos una partida de prueba
-registrada en la capa automática. La partida manual sigue pendiente en `docs/QA_MANUAL_PLAYTEST.md`
+Registro de las corridas **ejecutadas de verdad** el 2026-10-15 en el repositorio (fases 2 y 3 de la
+tarea 46199), con la salida íntegra de cada comando y su código de salida. Es la evidencia de dos
+cosas: de la condición «partida de prueba registrada» de cada mundo
+(`content/metrica_dimensiones.json`) y de la capa automática de la definición de mapa terminado
+(`content/mapa_terminado.json`). La partida manual sigue pendiente en `docs/QA_MANUAL_PLAYTEST.md`
 porque el entorno no tiene Game.exe ni Kirin (ni Wine).
 
 Entorno: Node.js 22 con `npm install` hecho (los verificadores de Dimensional Nightmare importan
-`@napi-rs/canvas`). Los dos últimos comandos de la lista salen en rojo y están incluidos a propósito: son
-deuda declarada en la métrica, no fallos del registro. Al final va una corrida **en rojo a propósito**
-(autoprueba negativa de la métrica), que es la que demuestra que el verificador detecta lo que dice detectar.
+`@napi-rs/canvas`). Los dos últimos comandos de la lista salen en rojo y están incluidos a propósito:
+son deuda declarada en la métrica, no fallos del registro. Al final va una corrida **en rojo a
+propósito** (autoprueba negativa de la métrica), que es la que demuestra que el verificador detecta lo
+que dice detectar.
 
-Nota de higiene: el hook `pretest` rehace `Scripts_corregido/Ciudad_Teckel_Paraiso/Data/*` cada vez que se corre
-`npm test`, así que esas diferencias binarias se revirtieron y no forman parte del commit de la fase.
+Nota de higiene: el hook `pretest` rehace `Scripts_corregido/Ciudad_Teckel_Paraiso/Data/*` cada vez que
+se corre `npm test`, así que esas diferencias binarias se revirtieron y no forman parte del commit.
 
 ---
 
@@ -300,7 +302,245 @@ EXIT=0
 
 ---
 
-## npm test (cadena completa, con verify:metrica dentro)
+## npm run verify:mapa_terminado
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:mapa_terminado
+> node tools/qa/mapa_terminado_check.mjs
+
+Mapas terminados — anillo A: 173 mapas en 0.5 s (Transitable · Sin celdas huérfanas · Con encuentros · Con música · Con entrada y salida)
+
+  ✔ Map2021  Monte Silver — Falda                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 73 celdas huérfanas en 4 regiones (BFS 90 %), con contenido en 0 de ellas
+  ✔ Map2022  Monte Silver — Cumbre                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2023  La Torre que Escuchaba                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 18 celdas huérfanas en 1 regiones (BFS 93 %), con contenido en 0 de ellas
+  ✔ Map2024  La Partida Perdida                       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+  ✔ Map2025  La Fosa del Enterrado                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 2 celdas huérfanas en 2 regiones (BFS 99 %), con contenido en 0 de ellas
+  ⏳ Map2026  La Cinta Carmesí                         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        PENDIENTE MS-PLANTILLA-139 (sin huérfanas): salidas inalcanzables desde la llegada: PokeMod Multiverso: Volver a la gruta(1,23), PokeMod Grieta: Volver al mundo(2,2) · jefe «PokeMod Multiverso: Jefe EL NIÑO DE LA CINTA» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada · salida «PokeMod Multiverso: Volver a la gruta» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada · salida «PokeMod Grieta: Volver al mundo» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada
+        aviso 2 evento(s) con gráfico fuera de la zona alcanzable
+        aviso 119 celdas huérfanas en 2 regiones (BFS 34 %), con contenido en 4 de ellas
+  ✔ Map2027  Ciudad Glitch                            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 730 celdas huérfanas en 9 regiones (BFS 40 %), con contenido en 0 de ellas
+  ✔ Map2028  El Eco que Jugó Contigo                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 32 celdas huérfanas en 6 regiones (BFS 49 %), con contenido en 0 de ellas
+  ⏳ Map2029  La Consola de 1996                       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        PENDIENTE MS-PLANTILLA-139 (sin huérfanas): salidas inalcanzables desde la llegada: PokeMod Multiverso: Volver a la gruta(1,23), PokeMod Grieta: Volver al mundo(2,2) · jefe «PokeMod Multiverso: Jefe EL JUGADOR DE 1996» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada · salida «PokeMod Multiverso: Volver a la gruta» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada · salida «PokeMod Grieta: Volver al mundo» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada
+        aviso 2 evento(s) con gráfico fuera de la zona alcanzable
+        aviso 119 celdas huérfanas en 2 regiones (BFS 34 %), con contenido en 4 de ellas
+  ✔ Map2030  Monte Silver — Gruta de los Testigos     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 188 celdas huérfanas en 142 regiones (BFS 87 %), con contenido en 0 de ellas
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2040  DN 2040 · Antesala de las Grietas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 32 celdas huérfanas en 16 regiones (BFS 92 %), con contenido en 0 de ellas
+  ✔ Map2041  DN 2041 · Catacumbas — Entrada Arqueada  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2042  DN 2042 · Catacumbas — Sala de las Urnas ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2043  DN 2043 · Catacumbas — Celdas            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2044  DN 2044 · Catacumbas — Galería de Barrot ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2045  DN 2045 · Catacumbas — Escalera del Arco ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2046  DN 2046 · Catacumbas — Cripta de Sarcófa ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2047  DN 2047 · Catacumbas — Osario            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2048  DN 2048 · Catacumbas — Jardín de Raíces  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2049  DN 2049 · Catacumbas — Pasadizo que Resp ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2050  DN 2050 · Catacumbas — Galería de Mausol ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2051  DN 2051 · Catacumbas — Sala de Pedestale ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2052  DN 2052 · Catacumbas — Capilla de la Cam ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2053  DN 2053 · Catacumbas — Sala de las Besti ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2054  DN 2054 · Catacumbas — Pared de Inscripc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2055  DN 2055 · Catacumbas — Sala Ritual       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2056  DN 2056 · Catacumbas — Cámara de la Mano ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2057  DN 2057 · Pueblo Sin Color — Entrada     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2058  DN 2058 · Calle de las Casas Huecas      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2059  DN 2059 · Plaza de la Fuente Seca        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2060  DN 2060 · Callejón de Escombros          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2061  DN 2061 · Bosque de Troncos              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2062  DN 2062 · Páramo de Árboles Secos        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2063  DN 2063 · Estanque Estancado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2064  DN 2064 · Puente de Madera Podrida       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2065  DN 2065 · Colina de la Iglesia           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+  ✔ Map2066  DN 2066 · Cementerio Cercado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2067  DN 2067 · Mausoleo Central               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2068  DN 2068 · Cementerio Grande              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2069  DN 2069 · Estación Abandonada            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2070  DN 2070 · Biblioteca Polvorienta         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2071  DN 2071 · Campanario                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2072  DN 2072 · Torre de la Escalera de Caraco ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2073  DN 2073 · Cara Norte — Vereda Helada     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2074  DN 2074 · Acantilado de Zetas            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2075  DN 2075 · Sendero de la Cornisa          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2076  DN 2076 · Cabaña del Montañés            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2077  DN 2077 · Lago Congelado                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2078  DN 2078 · Pueblo de la Niebla            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2079  DN 2079 · Pueblo Alto                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2080  DN 2080 · Cueva de Bloques de Hielo      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2081  DN 2081 · Entrada de Cueva               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2082  DN 2082 · Caverna de Estalactitas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2083  DN 2083 · Cámara de los Dos Lagos        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2084  DN 2084 · Grieta Estrecha                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2085  DN 2085 · Cámara de Cristales            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2086  DN 2086 · Templo de las Estatuas         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2087  DN 2087 · Corazón del Monte              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2088  DN 2088 · Bosque Dormido — Entrada       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2089  DN 2089 · Senda del Cartel Torcido       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2090  DN 2090 · Puente de Piedra               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2091  DN 2091 · Cabaña de las Ventanas         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2092  DN 2092 · Arco de Niebla Púrpura         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2093  DN 2093 · Cementerio del Bosque          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2094  DN 2094 · Campo de Flores Moradas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2095  DN 2095 · Campamento de Tiendas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2096  DN 2096 · Boca de la Cueva Negra         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2097  DN 2097 · Árboles Retorcidos             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2098  DN 2098 · Estanque de Nenúfares          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2099  DN 2099 · Muro de Ruinas                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2100  DN 2100 · Granero Abandonado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2101  DN 2101 · Bosque de Luciérnagas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2102  DN 2102 · Muro del Pasaje                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2103  DN 2103 · Árbol Anciano                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2104  DN 2104 · Pueblo 000 — Entrada           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2105  DN 2105 · Calle Incompleta               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2106  DN 2106 · Plaza sin Fuente               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2107  DN 2107 · Callejón Terminado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2108  DN 2108 · Bosque Sin Troncos             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2109  DN 2109 · Páramo Blanco                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2110  DN 2110 · Estanque Vacío                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2111  DN 2111 · Puente Cortado                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2112  DN 2112 · Colina Erguida                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+  ✔ Map2113  DN 2113 · Cementerio Vacío               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2114  DN 2114 · Mausoleo Abierto               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2115  DN 2115 · Estación 000                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2116  DN 2116 · Biblioteca sin Letras          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2117  DN 2117 · Campanario Roto                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2118  DN 2118 · Pueblo 404                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2119  DN 2119 · El Borde del Mundo             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 98 %), con contenido en 0 de ellas
+  ✔ Map2120  DN 2120 · Atrio de las Letras            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2121  DN 2121 · Sala de la Inscripción         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2122  DN 2122 · Corredor de Columnas           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2123  DN 2123 · Biblioteca Prohibida           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2124  DN 2124 · Balcón de los Unown            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2125  DN 2125 · Sala del Ojo                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2126  DN 2126 · Escalinata Interior            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2127  DN 2127 · Cripta de Sarcófagos           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2128  DN 2128 · Sala de los Símbolos           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2129  DN 2129 · Caverna de Cristales           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2130  DN 2130 · Galería Inundada               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2131  DN 2131 · Salón de las Estatuas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2132  DN 2132 · Galería Menor                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2133  DN 2133 · Sala del Trono                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2134  DN 2134 · Sala LEAVENOW                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2135  DN 2135 · Cámara de KINGGUS              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2136  DN 2136 · Nexo — Falla Cero              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 98 %), con contenido en 0 de ellas
+  ✔ Map2137  DN 2137 · Nexo — Pueblo Reensamblado     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2138  DN 2138 · Nexo — Centro Pokémon Sumergid ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2139  DN 2139 · Nexo — Pasillo de Código       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2140  DN 2140 · Nexo — Sala del Testigo        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2141  DN 2141 · Liga Oscura — Pórtico del Códi ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2142  DN 2142 · Liga Oscura — Coliseo del Vínc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 8 celdas huérfanas en 4 regiones (BFS 97 %), con contenido en 0 de ellas
+  ✔ Map2143  DN 2143 · Strangled Red — Patio de la Ca ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2144  DN 2144 · Strangled Red — Cuarto del Amo ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2145  DN 2145 · Strangled Red — Pasillo de Tro ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2146  DN 2146 · Strangled Red — Jardín de la P ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2147  DN 2147 · Strangled Red — Cocina Fría    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2148  DN 2148 · Strangled Red — Escalera Que S ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2149  DN 2149 · Strangled Red — Cripta del Pok ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2150  DN 2150 · Strangled Red — Torre de las C ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2151  DN 2151 · Strangled Red — Sala de los Re ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2152  DN 2152 · Strangled Red — Corredor de la ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2153  DN 2153 · Strangled Red — Plaza Sin Gent ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2154  DN 2154 · Strangled Red — Canil Vacío    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2155  DN 2155 · Strangled Red — Capilla del Nu ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2156  DN 2156 · Strangled Red — Espejo Roto    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2157  DN 2157 · Strangled Red — Umbral del Aho ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2158  DN 2158 · Strangled Red — Árbol del Ajus ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2159  DN 2159 · Buried Alive — Pozo de Entrada ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2160  DN 2160 · Buried Alive — Túnel Angosto   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2161  DN 2161 · Buried Alive — Cámara de Tierr ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2162  DN 2162 · Buried Alive — Galería de Raíc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2163  DN 2163 · Buried Alive — Osario Inundado ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2164  DN 2164 · Buried Alive — Escalera de Tie ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2165  DN 2165 · Buried Alive — Cripta del Aire ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2166  DN 2166 · Buried Alive — Sala de los Sel ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2167  DN 2167 · Buried Alive — Pozo Sin Fondo  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2168  DN 2168 · Buried Alive — Pueblo Enterrad ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2169  DN 2169 · Buried Alive — Iglesia Boca Ab ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2170  DN 2170 · Buried Alive — Campo de Lápida ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2171  DN 2171 · Buried Alive — Fosa Común      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2172  DN 2172 · Buried Alive — Túnel de la Man ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2173  DN 2173 · Buried Alive — Umbral del Aire ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2174  DN 2174 · Buried Alive — Fondo de la Fos ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2175  DN 2175 · Lavender Syndrome — Entrada de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2176  DN 2176 · Lavender Syndrome — Calle del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2177  DN 2177 · Lavender Syndrome — Casa del P ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2178  DN 2178 · Lavender Syndrome — Escuela de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2179  DN 2179 · Lavender Syndrome — Capilla de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2180  DN 2180 · Lavender Syndrome — Torre de l ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2181  DN 2181 · Lavender Syndrome — Calle del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2182  DN 2182 · Lavender Syndrome — Jardín Sor ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2183  DN 2183 · Lavender Syndrome — Mercado de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2184  DN 2184 · Lavender Syndrome — Cine Sin S ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2185  DN 2185 · Lavender Syndrome — Fosa Acúst ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2186  DN 2186 · Lavender Syndrome — Túnel de l ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2187  DN 2187 · Lavender Syndrome — Sala de lo ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2188  DN 2188 · Lavender Syndrome — Torre del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2189  DN 2189 · Lavender Syndrome — Estudio de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2190  DN 2190 · Lavender Syndrome — Campanario ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 5 celdas huérfanas en 1 regiones (BFS 93 %), con contenido en 0 de ellas
+  ✔ Map2200  Glazed — Bahía de Cedolán                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2201  Gimnasio Glazed — Líder Ámbar            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2210  Light Platinum — Costa de Lappet         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2211  Gimnasio Light Platinum — Líder Respland ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2220  Team Rocket — Base Subterránea           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2221  Team Rocket — Núcleo del Mando           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2240  Liquid Crystal — Santuario de Johto      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2241  Dojo Liquid Crystal — Guardiana Suicune  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2242  TFOH — Frontera del Origen               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2243  TFOH — Cámara de la Primera Huella       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2244  Factory Adventure — Distrito Primigenio  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2245  Factory Adventure — Núcleo de Ensamblaje ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+
+  anillo A: 171/173 mapas terminados · 2 con pendiente declarado · 0 con fallo
+  hallazgo DN-SALVAJES-DECLARADOS: confirmado — 14 mapas del sueño declaran salvajes en las fichas (el registro lista 14) y 0 los tienen implementados (el registro dice 0)
+  hallazgo BGM-SAFARI: confirmado — 2 mapas del juego con BGM declarada que no existe en Audio/BGM (el registro declara 2)
+  hallazgo MS-PLANTILLA-139: confirmado — 2 mapas del plan llegan a una zona desde la que no se alcanza el jefe (el registro declara 2)
+  deuda CENSO-FIRE-ASH: El juego base arrastra mapas sin tabla de encuentros ni entrada/salida
+  deuda PARTIDA-MANUAL-MAPA: Ningún mapa está jugado por una persona
+OK: ningún mapa del anillo A tiene fallo abierto (los pendientes declarados van listados arriba con su cita)
+EXIT=0
+```
+
+---
+
+## npm run verify:mapa_terminado:censo
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:mapa_terminado:censo
+> node tools/qa/mapa_terminado_check.mjs --censo
+
+Censo de mapas terminados — 3465 mapas en 12.8 s (detalle: content/mapa_terminado_censo.json)
+  completos (5/5)        598/3465   · con pendiente declarado: 2   · con fallo: 2865
+  transitable             3463/3465   99.9 %   (base 3463)
+  sin huérfanas           2302/3465   66.4 %   (base 2300)
+  con encuentros           674/3465   19.5 %   (base 674)
+  con música              3463/3465   99.9 %   (base 3463)
+  con entrada y salida    3406/3465   98.3 %   (base 3406)
+  hallazgo DN-SALVAJES-DECLARADOS: confirmado — 14 mapas del sueño declaran salvajes en las fichas (el registro lista 14) y 0 los tienen implementados (el registro dice 0)
+  hallazgo BGM-SAFARI: confirmado — 2 mapas del juego con BGM declarada que no existe en Audio/BGM (el registro declara 2)
+  hallazgo MS-PLANTILLA-139: confirmado — 2 mapas del plan llegan a una zona desde la que no se alcanza el jefe (el registro declara 2)
+  deuda CENSO-FIRE-ASH: El juego base arrastra mapas sin tabla de encuentros ni entrada/salida
+  deuda PARTIDA-MANUAL-MAPA: Ningún mapa está jugado por una persona
+EXIT=0
+```
+
+---
+
+## npm test (cadena completa, con verify:metrica y verify:mapa_terminado dentro)
 
 ```text
 > fire-ash-modifier-tools@1.0.0 pretest
@@ -314,7 +554,7 @@ OK: Fire_Ash_Ciudad_Teckel_Paraiso.zip (72 entradas)
 OK: paquete Teckel/Paraíso verificado (72 entradas)
 
 > fire-ash-modifier-tools@1.0.0 test
-> node web/js/marshal.test.mjs && node web/js/history.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:zmenu && npm run verify:graficos && npm run verify:ruby && npm run verify:mapas && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:glazed && npm run verify:light_platinum && npm run verify:liquid_crystal && npm run verify:canon:arceus && npm run verify:arceus:sprites && npm run verify:diplomas && npm run verify:corregido:zip && npm run verify:ruta_de_dios && npm run verify:presupuesto && npm run verify:presupuesto:selftest && npm run verify:glosario && npm run verify:metrica && npm run test:atlas:master
+> node web/js/marshal.test.mjs && node web/js/history.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:zmenu && npm run verify:graficos && npm run verify:ruby && npm run verify:mapas && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:glazed && npm run verify:light_platinum && npm run verify:liquid_crystal && npm run verify:canon:arceus && npm run verify:arceus:sprites && npm run verify:diplomas && npm run verify:corregido:zip && npm run verify:ruta_de_dios && npm run verify:presupuesto && npm run verify:presupuesto:selftest && npm run verify:glosario && npm run verify:metrica && npm run verify:mapa_terminado && npm run test:atlas:master
 
 
 marshal.js: 51 OK, 0 fallos
@@ -467,14 +707,14 @@ Auditoría de recursos del duelo divino (R12)
 
 
 ✔ 27 comprobaciones de recursos: el duelo no nombra nada que el juego no tenga.
-(node:4969) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(node:6742) ExperimentalWarning: WASI is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ ALCANCE R15b (PokeMod_RutaDeDios): 280 defs/constantes; todo lo que parece de nivel superior lo es de verdad.
-(node:4976) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(node:6749) ExperimentalWarning: WASI is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ ALCANCE R15b (PokeMod_CanonArceus): 48 defs/constantes; todo lo que parece de nivel superior lo es de verdad.
 OK: seis barras, catálogo real de ataques/apoyos con filtros de autodaño y huida, captura segura de invocaciones, límite de cuatro movimientos y sincronía en los tres paquetes.
-(node:4990) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(node:6763) ExperimentalWarning: WASI is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 == Cinemáticas: Arceus de apoyo contra Cynthia/Steven y Red/Gold ==
   OK  el jefe de apoyo se reconoce como cinemático
@@ -563,7 +803,7 @@ OK: seis barras, catálogo real de ataques/apoyos con filtros de autodaño y hui
 Resultado: 68 comprobaciones OK, 0 fallos
 
 RESUMEN: 68 OK / 0 FALLOS
-(node:4997) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(node:6770) ExperimentalWarning: WASI is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 ARCEUS_MOVES_QA_OK: 142 movimientos seguros; autodaño/huida filtrados; apoyo y ataques seleccionables; invocación no capturable; 0EC no cierra el duelo.
 tone safety: recuperación String→Tone, pantallas/imágenes y paquete OK
@@ -593,7 +833,7 @@ Runtime DN: combate espejo no destructivo y forma final de KINGGUS verificados.
 > fire-ash-modifier-tools@1.0.0 verify:ruby
 > node tools/qa/ruby_syntax_check.mjs
 
-(node:5075) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(node:6848) ExperimentalWarning: WASI is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_Dialogos
 ✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_ZMenu
@@ -753,7 +993,7 @@ Presupuesto de artefacto de sesión (techo combinado: 128 MiB por grupo)
       justificación hasta 136.00 MiB: Los cuatro entregables versionados suman 133,34 MiB y superan el techo de sesión de 128 MiB en 5,34 MiB. Se justifica en vez de recortar porque cada uno es la vía de instalación de un contenido distinto (scripts corregidos, paquete directo, mapas referenciales, QA de Dimensional Nightmare) y quitarlos rompería enlaces publicados en README.md y Scripts_corregido/LEEME.md. Además, el ZIP raíz duplica el contenido de Scripts_corregido/Paquete_directo/: la ruta de retorno al techo sin justificación está documentada en docs/PRESUPUESTO_ARTEFACTO_SESION.md (deduplicar esa pareja o dejar el paquete directo como único artefacto de instalación). Mientras esa ruta no se ejecute, ningún entregable nuevo puede añadirse sin subir este techo de forma explícita.
   JUSTIFICADO            Insumos de terceros (32 archivos): 260.25 MiB / tope 128.00 MiB (+132.25 MiB)
       justificación hasta 280.00 MiB: Los 32 archivos comprimidos de terceros versionados suman 260,25 MiB, el exceso mayor del repositorio, y se justifica por partes: porymap 1-15 (144,06 MiB) es el editor de mapas con el que se reconstruyen las regiones; Tiled 1-4 (44,26 MiB) son binarios de Linux redistribuibles que se bajan del release oficial; ROMS (1..3) (32,56 MiB) y Pokemon unbound part1-2 (16,51 MiB) son las ROMs invitadas de la extraccion nativa; swablu (15,81 MiB) es material de referencia de sprites; pokecrystal, pokered, timps-swarm, pokemon-agent, rvpacker y porygion aportan ~7 MiB de herramientas fuente. Nada de esto es entregable ni se publica: son la materia prima con la que ya se generaron los PNG, tilesets y sprites que si estan versionados. Se declara techo de 280 MiB en lugar de podar en esta fase porque la poda es destructiva y exige confirmacion del usuario; las rutas de poda, con el ahorro medido de cada una, quedan escritas en docs/PRESUPUESTO_ARTEFACTO_SESION.md. Si una fase futura anade insumos, debe subir este techo con motivo explicito.
-  OK                     Repositorio completo (29242 archivos): 1445.11 MiB / tope 1600.00 MiB
+  OK                     Repositorio completo (29246 archivos): 1445.22 MiB / tope 1600.00 MiB
       insumo mayor: Pokemon unbound gba.part1.rar (16.00 MiB)
       insumo mayor: swablu (3).zip (15.81 MiB)
       insumo mayor: ROMS (1).rar (14.00 MiB)
@@ -813,6 +1053,214 @@ Métrica de éxito del plan — 23 mundos (Jefe final · Retorno libre · Verifi
 
   métrica: 23/23 mundos con las cuatro condiciones (100 %) · partida manual registrada en 0/23 mundos (0 %)
 OK: los 4 criterios están cubiertos en la capa automática para todos los mundos del plan
+
+> fire-ash-modifier-tools@1.0.0 verify:mapa_terminado
+> node tools/qa/mapa_terminado_check.mjs
+
+Mapas terminados — anillo A: 173 mapas en 0.6 s (Transitable · Sin celdas huérfanas · Con encuentros · Con música · Con entrada y salida)
+
+  ✔ Map2021  Monte Silver — Falda                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 73 celdas huérfanas en 4 regiones (BFS 90 %), con contenido en 0 de ellas
+  ✔ Map2022  Monte Silver — Cumbre                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2023  La Torre que Escuchaba                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 18 celdas huérfanas en 1 regiones (BFS 93 %), con contenido en 0 de ellas
+  ✔ Map2024  La Partida Perdida                       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+  ✔ Map2025  La Fosa del Enterrado                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 2 celdas huérfanas en 2 regiones (BFS 99 %), con contenido en 0 de ellas
+  ⏳ Map2026  La Cinta Carmesí                         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        PENDIENTE MS-PLANTILLA-139 (sin huérfanas): salidas inalcanzables desde la llegada: PokeMod Multiverso: Volver a la gruta(1,23), PokeMod Grieta: Volver al mundo(2,2) · jefe «PokeMod Multiverso: Jefe EL NIÑO DE LA CINTA» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada · salida «PokeMod Multiverso: Volver a la gruta» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada · salida «PokeMod Grieta: Volver al mundo» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada
+        aviso 2 evento(s) con gráfico fuera de la zona alcanzable
+        aviso 119 celdas huérfanas en 2 regiones (BFS 34 %), con contenido en 4 de ellas
+  ✔ Map2027  Ciudad Glitch                            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 730 celdas huérfanas en 9 regiones (BFS 40 %), con contenido en 0 de ellas
+  ✔ Map2028  El Eco que Jugó Contigo                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 32 celdas huérfanas en 6 regiones (BFS 49 %), con contenido en 0 de ellas
+  ⏳ Map2029  La Consola de 1996                       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        PENDIENTE MS-PLANTILLA-139 (sin huérfanas): salidas inalcanzables desde la llegada: PokeMod Multiverso: Volver a la gruta(1,23), PokeMod Grieta: Volver al mundo(2,2) · jefe «PokeMod Multiverso: Jefe EL JUGADOR DE 1996» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada · salida «PokeMod Multiverso: Volver a la gruta» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada · salida «PokeMod Grieta: Volver al mundo» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada
+        aviso 2 evento(s) con gráfico fuera de la zona alcanzable
+        aviso 119 celdas huérfanas en 2 regiones (BFS 34 %), con contenido en 4 de ellas
+  ✔ Map2030  Monte Silver — Gruta de los Testigos     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 188 celdas huérfanas en 142 regiones (BFS 87 %), con contenido en 0 de ellas
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2040  DN 2040 · Antesala de las Grietas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 32 celdas huérfanas en 16 regiones (BFS 92 %), con contenido en 0 de ellas
+  ✔ Map2041  DN 2041 · Catacumbas — Entrada Arqueada  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2042  DN 2042 · Catacumbas — Sala de las Urnas ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2043  DN 2043 · Catacumbas — Celdas            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2044  DN 2044 · Catacumbas — Galería de Barrot ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2045  DN 2045 · Catacumbas — Escalera del Arco ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2046  DN 2046 · Catacumbas — Cripta de Sarcófa ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2047  DN 2047 · Catacumbas — Osario            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2048  DN 2048 · Catacumbas — Jardín de Raíces  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2049  DN 2049 · Catacumbas — Pasadizo que Resp ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2050  DN 2050 · Catacumbas — Galería de Mausol ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2051  DN 2051 · Catacumbas — Sala de Pedestale ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2052  DN 2052 · Catacumbas — Capilla de la Cam ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2053  DN 2053 · Catacumbas — Sala de las Besti ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2054  DN 2054 · Catacumbas — Pared de Inscripc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2055  DN 2055 · Catacumbas — Sala Ritual       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2056  DN 2056 · Catacumbas — Cámara de la Mano ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2057  DN 2057 · Pueblo Sin Color — Entrada     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2058  DN 2058 · Calle de las Casas Huecas      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2059  DN 2059 · Plaza de la Fuente Seca        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2060  DN 2060 · Callejón de Escombros          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2061  DN 2061 · Bosque de Troncos              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2062  DN 2062 · Páramo de Árboles Secos        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2063  DN 2063 · Estanque Estancado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2064  DN 2064 · Puente de Madera Podrida       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2065  DN 2065 · Colina de la Iglesia           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+  ✔ Map2066  DN 2066 · Cementerio Cercado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2067  DN 2067 · Mausoleo Central               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2068  DN 2068 · Cementerio Grande              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2069  DN 2069 · Estación Abandonada            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2070  DN 2070 · Biblioteca Polvorienta         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2071  DN 2071 · Campanario                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2072  DN 2072 · Torre de la Escalera de Caraco ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2073  DN 2073 · Cara Norte — Vereda Helada     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2074  DN 2074 · Acantilado de Zetas            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2075  DN 2075 · Sendero de la Cornisa          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2076  DN 2076 · Cabaña del Montañés            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2077  DN 2077 · Lago Congelado                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2078  DN 2078 · Pueblo de la Niebla            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2079  DN 2079 · Pueblo Alto                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2080  DN 2080 · Cueva de Bloques de Hielo      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2081  DN 2081 · Entrada de Cueva               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2082  DN 2082 · Caverna de Estalactitas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2083  DN 2083 · Cámara de los Dos Lagos        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2084  DN 2084 · Grieta Estrecha                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2085  DN 2085 · Cámara de Cristales            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2086  DN 2086 · Templo de las Estatuas         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2087  DN 2087 · Corazón del Monte              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2088  DN 2088 · Bosque Dormido — Entrada       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2089  DN 2089 · Senda del Cartel Torcido       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2090  DN 2090 · Puente de Piedra               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2091  DN 2091 · Cabaña de las Ventanas         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2092  DN 2092 · Arco de Niebla Púrpura         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2093  DN 2093 · Cementerio del Bosque          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2094  DN 2094 · Campo de Flores Moradas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2095  DN 2095 · Campamento de Tiendas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2096  DN 2096 · Boca de la Cueva Negra         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2097  DN 2097 · Árboles Retorcidos             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2098  DN 2098 · Estanque de Nenúfares          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2099  DN 2099 · Muro de Ruinas                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2100  DN 2100 · Granero Abandonado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2101  DN 2101 · Bosque de Luciérnagas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2102  DN 2102 · Muro del Pasaje                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2103  DN 2103 · Árbol Anciano                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2104  DN 2104 · Pueblo 000 — Entrada           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2105  DN 2105 · Calle Incompleta               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2106  DN 2106 · Plaza sin Fuente               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2107  DN 2107 · Callejón Terminado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2108  DN 2108 · Bosque Sin Troncos             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2109  DN 2109 · Páramo Blanco                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2110  DN 2110 · Estanque Vacío                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2111  DN 2111 · Puente Cortado                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2112  DN 2112 · Colina Erguida                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+  ✔ Map2113  DN 2113 · Cementerio Vacío               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2114  DN 2114 · Mausoleo Abierto               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2115  DN 2115 · Estación 000                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2116  DN 2116 · Biblioteca sin Letras          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2117  DN 2117 · Campanario Roto                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2118  DN 2118 · Pueblo 404                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2119  DN 2119 · El Borde del Mundo             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 98 %), con contenido en 0 de ellas
+  ✔ Map2120  DN 2120 · Atrio de las Letras            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2121  DN 2121 · Sala de la Inscripción         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2122  DN 2122 · Corredor de Columnas           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2123  DN 2123 · Biblioteca Prohibida           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2124  DN 2124 · Balcón de los Unown            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2125  DN 2125 · Sala del Ojo                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2126  DN 2126 · Escalinata Interior            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2127  DN 2127 · Cripta de Sarcófagos           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2128  DN 2128 · Sala de los Símbolos           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2129  DN 2129 · Caverna de Cristales           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2130  DN 2130 · Galería Inundada               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2131  DN 2131 · Salón de las Estatuas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2132  DN 2132 · Galería Menor                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2133  DN 2133 · Sala del Trono                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2134  DN 2134 · Sala LEAVENOW                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2135  DN 2135 · Cámara de KINGGUS              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2136  DN 2136 · Nexo — Falla Cero              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 98 %), con contenido en 0 de ellas
+  ✔ Map2137  DN 2137 · Nexo — Pueblo Reensamblado     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2138  DN 2138 · Nexo — Centro Pokémon Sumergid ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2139  DN 2139 · Nexo — Pasillo de Código       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2140  DN 2140 · Nexo — Sala del Testigo        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2141  DN 2141 · Liga Oscura — Pórtico del Códi ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2142  DN 2142 · Liga Oscura — Coliseo del Vínc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 8 celdas huérfanas en 4 regiones (BFS 97 %), con contenido en 0 de ellas
+  ✔ Map2143  DN 2143 · Strangled Red — Patio de la Ca ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2144  DN 2144 · Strangled Red — Cuarto del Amo ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2145  DN 2145 · Strangled Red — Pasillo de Tro ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2146  DN 2146 · Strangled Red — Jardín de la P ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2147  DN 2147 · Strangled Red — Cocina Fría    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2148  DN 2148 · Strangled Red — Escalera Que S ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2149  DN 2149 · Strangled Red — Cripta del Pok ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2150  DN 2150 · Strangled Red — Torre de las C ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2151  DN 2151 · Strangled Red — Sala de los Re ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2152  DN 2152 · Strangled Red — Corredor de la ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2153  DN 2153 · Strangled Red — Plaza Sin Gent ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2154  DN 2154 · Strangled Red — Canil Vacío    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2155  DN 2155 · Strangled Red — Capilla del Nu ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2156  DN 2156 · Strangled Red — Espejo Roto    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2157  DN 2157 · Strangled Red — Umbral del Aho ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2158  DN 2158 · Strangled Red — Árbol del Ajus ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2159  DN 2159 · Buried Alive — Pozo de Entrada ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2160  DN 2160 · Buried Alive — Túnel Angosto   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2161  DN 2161 · Buried Alive — Cámara de Tierr ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2162  DN 2162 · Buried Alive — Galería de Raíc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2163  DN 2163 · Buried Alive — Osario Inundado ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2164  DN 2164 · Buried Alive — Escalera de Tie ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2165  DN 2165 · Buried Alive — Cripta del Aire ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2166  DN 2166 · Buried Alive — Sala de los Sel ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2167  DN 2167 · Buried Alive — Pozo Sin Fondo  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2168  DN 2168 · Buried Alive — Pueblo Enterrad ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2169  DN 2169 · Buried Alive — Iglesia Boca Ab ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2170  DN 2170 · Buried Alive — Campo de Lápida ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2171  DN 2171 · Buried Alive — Fosa Común      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2172  DN 2172 · Buried Alive — Túnel de la Man ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2173  DN 2173 · Buried Alive — Umbral del Aire ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2174  DN 2174 · Buried Alive — Fondo de la Fos ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2175  DN 2175 · Lavender Syndrome — Entrada de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2176  DN 2176 · Lavender Syndrome — Calle del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2177  DN 2177 · Lavender Syndrome — Casa del P ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2178  DN 2178 · Lavender Syndrome — Escuela de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2179  DN 2179 · Lavender Syndrome — Capilla de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2180  DN 2180 · Lavender Syndrome — Torre de l ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2181  DN 2181 · Lavender Syndrome — Calle del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2182  DN 2182 · Lavender Syndrome — Jardín Sor ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2183  DN 2183 · Lavender Syndrome — Mercado de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2184  DN 2184 · Lavender Syndrome — Cine Sin S ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2185  DN 2185 · Lavender Syndrome — Fosa Acúst ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2186  DN 2186 · Lavender Syndrome — Túnel de l ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2187  DN 2187 · Lavender Syndrome — Sala de lo ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2188  DN 2188 · Lavender Syndrome — Torre del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2189  DN 2189 · Lavender Syndrome — Estudio de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2190  DN 2190 · Lavender Syndrome — Campanario ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 5 celdas huérfanas en 1 regiones (BFS 93 %), con contenido en 0 de ellas
+  ✔ Map2200  Glazed — Bahía de Cedolán                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2201  Gimnasio Glazed — Líder Ámbar            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2210  Light Platinum — Costa de Lappet         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2211  Gimnasio Light Platinum — Líder Respland ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2220  Team Rocket — Base Subterránea           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2221  Team Rocket — Núcleo del Mando           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2240  Liquid Crystal — Santuario de Johto      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2241  Dojo Liquid Crystal — Guardiana Suicune  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2242  TFOH — Frontera del Origen               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2243  TFOH — Cámara de la Primera Huella       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2244  Factory Adventure — Distrito Primigenio  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2245  Factory Adventure — Núcleo de Ensamblaje ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+
+  anillo A: 171/173 mapas terminados · 2 con pendiente declarado · 0 con fallo
+  hallazgo DN-SALVAJES-DECLARADOS: confirmado — 14 mapas del sueño declaran salvajes en las fichas (el registro lista 14) y 0 los tienen implementados (el registro dice 0)
+  hallazgo BGM-SAFARI: confirmado — 2 mapas del juego con BGM declarada que no existe en Audio/BGM (el registro declara 2)
+  hallazgo MS-PLANTILLA-139: confirmado — 2 mapas del plan llegan a una zona desde la que no se alcanza el jefe (el registro declara 2)
+  deuda CENSO-FIRE-ASH: El juego base arrastra mapas sin tabla de encuentros ni entrada/salida
+  deuda PARTIDA-MANUAL-MAPA: Ningún mapa está jugado por una persona
+OK: ningún mapa del anillo A tiene fallo abierto (los pendientes declarados van listados arriba con su cita)
 
 > fire-ash-modifier-tools@1.0.0 test:atlas:master
 > node tools/qa/atlas_master_suite.test.mjs
