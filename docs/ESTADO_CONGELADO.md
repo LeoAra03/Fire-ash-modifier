@@ -131,6 +131,15 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Verificadores oficiales ejecutados: **`dn:liga:verify` exit 0** (mapas 2141/2142, MAD PIKACHU nv 175, 4 chispas, Pórtico BFS 100 % · Coliseo BFS 97 %), **`dn:events:verify` exit 0** (anomalías por episodio verificadas) y **`dn:flags:verify` exit 0** (54 switches, 43 variables DN).
 - Nota preexistente: `dn:maps:verify` no es ejecutable en este espacio de trabajo porque falta `content/dimensional_nightmare_tiles_2x.json`, dependiente de `reference/dimensional_nightmare/slices/` purgado — el límite conocido documentado en `docs/DLC_TOTAL.md` §9; el paquete DN se construye bien y la suite maestra (FASE 1) ya auditó 104 mapas y 946 eventos creepypasta en verde.
 
+### FASE 20 — Puertas de entrada al contenido extra (429 / 870)
+
+- **Auditoría real de las 24 transferencias desde mapas originales (1–996) hacia contenido extra (≥997):**
+  - **19 puertas tras el switch 429 (Postgame)**: las 7 grietas multiversales (páginas 429 y 429+sello 940–946), el Aide de Isla Espejo (Pallet→997, 429), la Escotilla (Mansión B1F→2194, 429+873), el Capitán de la Expedición (Carmín→2191, 429+873) y la página 429+873 del Guardabosques.
+  - **3 puertas tras la cadena Volus**: Guardabosques de Ciudad Verde (→1000/1001) con 701/703 (misión Hypno) **+ 873** (`RUTA_DE_DIOS_ARCEUS_RESOLVED`, que solo se enciende ganando el duelo tras activar a Volus).
+  - **2 puertas sin condición, ambas por diseño documentado**: el propio **portal de la Ruta de Dios** (Puntaneva→2038, sin requisito de 870 a propósito — recuperación para partidas antiguas que perdieron la flag, ver `INFORME_LA_RUTA_DE_DIOS.md` §3 y README) y la **puerta del Salón de Diplomas** (casa de Ash→2288, extensión inofensiva de la propia casa sin combates).
+- **Origen del 870**: solo lo activa hablar con **Volus en Pueblo Hojaverde** (`Map513 ev101`, comando 121 ×2 tras la cinemática de las 17 Tablas, con opción de resonancia para otorgarlas). El 870 gobierna el diálogo posterior de Volus y al segundo Volus guía de Puntaneva (`Map625 ev103`), no al portal.
+- **Todo el DLC y las campañas ROM se entra desde Puerto Horizonte (1001) u otros mapas extra** — transitivamente detrás de esas puertas. **Veredicto: la afirmación se sostiene en lo sustancial** (22/24 puertas tras 429 o la cadena Volus 870→873; las 2 excepciones son el mecanismo de recuperación y la sala de la casa, ambas intencionales y documentadas).
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
