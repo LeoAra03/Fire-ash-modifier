@@ -29,6 +29,7 @@
     "verify:trainer_types:campanas": "node tools/verify_trainer_types_campanas.mjs",
     "verify:npc:contrapartes": "node tools/verify_npc_contrapartes_rom.mjs",
     "verify:perfiles:campanas": "node tools/perfiles_artesanales_campanas.mjs --check",
+    "audit:interiores:campanas": "node tools/auditar_interiores_campanas.mjs",
     "verify:coherencia:sprites": "node tools/verify_overworld_battle_coherence.mjs",
     "verify:salud": "node tools/qa/fire_ash_health.mjs",
     "repair:mapas": "node tools/repair_missing_maps.mjs && node tools/repair_map_data.mjs",
