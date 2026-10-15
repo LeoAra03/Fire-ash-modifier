@@ -106,6 +106,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Creado **`docs/qa/mapas_dlc_musica.md`**: tabla única con los 17 mapas nuevos del DLC (2195, 2196, 2200, 2201, 2210, 2211, 2220, 2221, 2230, 2250–2257), su nombre, BGM asignado, volumen/tono, existencia del archivo y prefijo SHA-256 del mapa congelado.
 - Verificado sobre disco: **17/17 con BGM idéntico al plan** (`content/dlc_ambience.json`), **17/17 archivos de música existentes** en `Audio/BGM/`, volumen/tono 100/100. Los ocho gimnasios de Atlas suenan cada uno distinto (Bruma→Cumbre).
 
+### FASE 16 — Inventario de eventos PokeMod*
+
+- Creado **`content/plan900_inventario_eventos.json`** con la herramienta reproducible `tools/plan900_inventario_eventos.mjs` (solo lectura, criterio: nombre de evento que empieza por `PokeMod`).
+- Resultado real: **13 734 eventos PokeMod\* en 1887 de 3465 mapas**. Desglose por prefijo: Campaña ROM 12 379 · Tier3 420 · Tier2 240 · Tier1 200 · Barco 92 · Multiverso 59 · Región 57 · Circuito 50 · Atlas Mil 41 · Grieta 28 · Vía 25 · Restauración 23 · Rocket 22 · Pokégod 20 · Diplomas 9 · Canon 5 · Espejo 5 · Glazed 5 · y resto de marcadores puntuales (líderes de gimnasio, portal, vestidor, Oak…).
+- Cada entrada registra mapId, nombre de mapa, eventoId, nombre, x/y y páginas; el JSON incluye totales y prefijos.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
