@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T05:58:25.752Z",
+  "generatedAt": "2026-10-15T06:02:31.069Z",
   "git": {
     "branch": "arena/2a3657d3-fire-ash-modifier",
-    "commit": "4ecdccb53d495d30ba8a3182756d8a38b60342f5"
+    "commit": "b5c8c37d5bdf861f681898a05e0fdfa1abb4d2aa"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5422,
+    "fileCount": 5423,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 207
+      "tools": 208
     },
     "files": [
       {
@@ -26910,8 +26910,8 @@
       },
       {
         "path": "tools/plan900/avance.md",
-        "bytes": 9709,
-        "sha256": "9754f6bc273aeca23b9edcaeca048c03645bee7c617c8c3360517ee03d20be88"
+        "bytes": 10087,
+        "sha256": "7eccee841b9ec5372fefd8857bdcddefdf096b7f791c2ed010b49d33ad515db7"
       },
       {
         "path": "tools/plan900/avance.sh",
@@ -26927,6 +26927,11 @@
         "path": "tools/plan900/orden_instalacion.sh",
         "bytes": 5745,
         "sha256": "898cb2bf4dc7d39ed10aeebbdb28de38101eeecca7473582ffe3264d6abbf4d1"
+      },
+      {
+        "path": "tools/plan900/verificar_originales.mjs",
+        "bytes": 5852,
+        "sha256": "862d395dec7dae8b9f1b6dd4ec111d397d6e2ab51a6d84d26f47c58768918d06"
       },
       {
         "path": "tools/plan900_inventario_eventos.mjs",

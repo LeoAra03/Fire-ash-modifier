@@ -1,6 +1,6 @@
 # Estado congelado
 
-Generado: 2026-10-15T05:58:25.752Z
+Generado: 2026-10-15T06:02:31.069Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
@@ -208,6 +208,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
   - **Mapa completo**: los 9 del orden obligatorio + familia Atlas (12) + familia DN (6) + campañas (14) + reparaciones/gráficos/ROM (6) + aclaración de qué NO es respaldo.
 - **Verificador real de esta fase (exit 0):** los 42 nombres de carpeta citados existen como constantes en `tools/` y los 38 scripts npm citados existen en `package.json`.
 
+### FASE 30 — Originales de todos los mapas confirmados
+
+- Creado **`tools/plan900/verificar_originales.mjs`** (reutilizable antes de cualquier `--apply`): comprueba que cada `Map<NNN>.rxdata` existente esté en al menos un `backup_*.zip` de `PokeModBackups/`, compara CRC32 contra el ZIP más reciente (frescura del snapshot) y valida que los IDs libres de la política de IDs no tengan archivo (los mapas nuevos no requieren original).
+- **Confirmación real (exit 0):** **3465/3465 mapas existentes protegidos** en `backup_20261015_041420.zip`; **snapshot virgen: 0/3465 diferencias de CRC** (el ZIP es copia exacta del estado pre-plan de cada mapa); **6534 IDs libres** (2039, 2197–2199, 2202–2209, …, 4420+) sin archivo y sin colisiones.
+- El plan puede tocar mapas con garantía de rollback total: cualquier mapa existente se restaura desde el ZIP (§3 de `docs/qa/rollback.md`) y los nuevos viven solo en IDs libres.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
@@ -285,7 +291,7 @@ NEXO y Liga Oscura caen dentro de Dimensional Nightmare. Sus conteos no se suman
 
 ## Hashes
 
-- Archivos hasheados: 5422 (Data 5215, Scripts 0, tools 207).
+- Archivos hasheados: 5423 (Data 5215, Scripts 0, tools 208).
 - Directorios `Scripts/` encontrados: 0 archivo(s). Las secciones Ruby del juego están dentro de `Data/Scripts.rxdata`.
 - Algoritmo: SHA-256. El detalle por archivo está en `tools/inventario_congelado.json`.
 - Expresiones dinámicas (no se tratan como ID libre): 71.
