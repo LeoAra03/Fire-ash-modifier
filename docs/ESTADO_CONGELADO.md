@@ -167,6 +167,17 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Verificado contra el inventario congelado: **0 switches y 0 variables usan hoy el prefijo** (sin colisiones). La convención existente del repo (`POKEMOD <NOMBRE>` en mayúsculas) se conserva; el plan 900 añade el segmento `900 ` para trazabilidad total.
 - Reglas: asignación solo en territorio nuevo (≥ 995 / ≥ 355) o huecos reales de la FASE 23; nombre obligatorio en `System.rxdata`; registro en la política de IDs y regeneración del inventario; self-switches exentos (clave `mapa:evento:letra`) y trainer types nuevos con símbolo `POKEMOD900_`.
 
+### FASE 25 — Verificación de no-colisión del rango del plan
+
+- **8/8 comprobaciones en verde (exit 0)** contra el inventario congelado y `System.rxdata`:
+  1. Ningún switch usado invade **≥ 995** (máximo usado: 994).
+  2. Ninguna variable usada invade **≥ 355** (máxima usada: 354).
+  3. Los **20 huecos de switch** (949, 958, 959, 965–969, 978–989) siguen 20/20 fuera del set usado.
+  4. Los **17 huecos de variable** (308, 309, 323–329, 334–340, 349) siguen 17/17 fuera del set usado.
+  5–6. Ningún hueco toca el rango reservado (switches 701–867, variables 101–263).
+  7–8. Ningún nombre existente usa el prefijo `POKEMOD 900 ` (switches ni variables).
+- **Veredicto: sin colisiones** entre los 887 switches y 293 variables usados y el territorio que el plan va a consumir. La advertencia estándar de la auditoría se mantiene: las expresiones dinámicas de Ruby impiden probar libertad absoluta, pero el rango ≥ 995 / ≥ 355 está por encima de todo uso literal y de todo nombre declarado.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
