@@ -44,7 +44,10 @@ Las cinco campañas ROM ya **no se adaptan**: usan el contenido de la ROM tal cu
 - **Verificación**: `npm run verify:rom:nativo` → 0 fallos sobre 1 486 028 celdas
   (874 996 sólidas = 58,9 %), cada PNG con sus dimensiones y su huella sha1, cada
   mapa con su `@tileset_id` y cada tileset registrado en `Tilesets.rxdata`.
-- **ZIP raíz**: 2 615 archivos (46,6 MB) con todo lo anterior; `npm run verify:corregido:zip`.
+- **ZIP raíz**: 2 616 archivos (46,58 MiB) con todo lo anterior; `npm run verify:corregido:zip`.
+  Tope duro del ZIP raíz: **64 MiB**, y techo de sesión de **128 MiB** por grupo de
+  artefactos con justificación escrita obligatoria para cualquier exceso
+  (`npm run verify:presupuesto`, ver [el presupuesto](docs/PRESUPUESTO_ARTEFACTO_SESION.md)).
 
 ## Entrega final (R18, 2026-10-11)
 
@@ -68,6 +71,7 @@ Producto cerrado y jugable. Lo último que entró:
 | `docs/DLC_TOTAL.md` | El acta narrativa del DLC: los seis pilares contados. |
 | `docs/ENTREGA_PROYECTO.md` | La entrega, punto por punto. |
 | `docs/AUDITORIA_TOTAL_FLAGS.md` | Qué switch y qué variable está libre. |
+| `docs/PRESUPUESTO_ARTEFACTO_SESION.md` | Cuánto puede pesar el ZIP raíz (64 MiB) y cada grupo de artefactos (128 MiB), qué exceso está justificado y qué se recorta para volver al techo. |
 | `docs/PLAN_SWARM_161.md` | El plan de producción con 161 agentes. |
 
 ## Uso rápido
