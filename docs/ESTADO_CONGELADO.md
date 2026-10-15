@@ -70,6 +70,11 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Otros totales del censo: 399 tilesets · 36147 eventos · 55499 páginas · 20779 NPCs · 57591 diálogos · 5208 elecciones · 19054 transfers · 4616 combates de entrenador · 5547 entrenadores · 1317 especies · 1025 objetos.
 - Hallazgos del análisis estático (preexistentes, no rompen `npm test`): 41 issues — 8 errores de "entrenador compilado inexistente" (CAMPER/Wyatt m606, LASS/Lyra m630, COOLTRAINER_F/Victoria m355, COOLTRAINER_F/Kahili m959 ×2, SCIENTIST/Faba m960 ×2, SECRET_Volo/Volus m2037) y 33 avisos (23 sprite ausente, 10 objeto simbólico no definido).
 
+### FASE 10 — Apertura zlib de los 409 scripts
+
+- **`npm run verify:ruby`: exit 0** — 18 secciones Ruby revisadas con Ruby WASM, sin errores de sintaxis (6 del juego vivo `pokemon_fire_ash/Data/Scripts.rxdata`, 6 de `Scripts_corregido/Scripts.rxdata`, 3 del Paquete directo, 3 del paquete DN QA).
+- **Barrido zlib completo (solo lectura): 409/409 secciones** de `pokemon_fire_ash/Data/Scripts.rxdata` descomprimidas con `zlib.inflateSync` **sin un solo error** — coincide con las 409 secciones del inventario congelado (FASE 3) y del censo (FASE 9).
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
