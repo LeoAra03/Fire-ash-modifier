@@ -99,7 +99,7 @@ for (const [png, ts] of declarados) {
 
 const mb = (bytesTotales / (1024 * 1024)).toFixed(2);
 console.log(`Tilesets declarados: ${declarados.size} · PNG en disco: ${enDisco.length} · comprobados: ${comprobados}`);
-console.log(`Tamaño total: ${mb} MB (${bytesTotales} bytes)`);
+console.log(`Tamaño total: ${mb} MiB (${bytesTotales} bytes)`);
 if (errores.length) {
   for (const e of errores) console.log(`  FALLO  ${e}`);
   console.log(`✘ ${errores.length} problema(s)`);
