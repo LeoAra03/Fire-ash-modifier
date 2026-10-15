@@ -1084,8 +1084,8 @@
     },
     {
       "path": "Data/Map2142.rxdata",
-      "bytes": 18468,
-      "sha256": "f42b67c1f281de8d1036245e3e3c70aa2ddfb77dc21af1da683e6a83337bea9a"
+      "bytes": 18452,
+      "sha256": "e377f78e728de69ae2be397e19b4468f8b9a88a3216ba7310d1b9ac6f8be28c1"
     },
     {
       "path": "Data/Map2143.rxdata",
@@ -1339,13 +1339,13 @@
     },
     {
       "path": "Data/MapInfos.rxdata",
-      "bytes": 236999,
-      "sha256": "8882fe51275427594af94e26d00e37220e5422a8c843ad7d7dc0e5c89ed4a5c1"
+      "bytes": 241938,
+      "sha256": "2194ea4218ecc72499e5e3f076afe6bc8dae43072712d261541e513a948c4b94"
     },
     {
       "path": "Data/Scripts.rxdata",
-      "bytes": 1160560,
-      "sha256": "cc6ed6a84fa612ba6e0541cf3a4bec7818bfee0a1de0806c71f4b089c2cef5cb"
+      "bytes": 1165084,
+      "sha256": "1936066b208ca364591eecce7f22e61f43ade92e0aee172dd04ef9f717e757d2"
     },
     {
       "path": "Data/System.rxdata",
@@ -1354,13 +1354,13 @@
     },
     {
       "path": "Data/Tilesets.rxdata",
-      "bytes": 763348,
-      "sha256": "5c31c77dbe0c1839b27ce8aadc9038e6bef1e01ac693fa1db7471b38052f7133"
+      "bytes": 1789815,
+      "sha256": "2a404347fdc541f86dd2aea51fa14beee048152ecd42fb789078bf3a1ab20746"
     },
     {
       "path": "Data/encounters.dat",
-      "bytes": 54601,
-      "sha256": "0c84b96f64b018aa8b5ca239e9e97bef02106c66d6d5c3aed9974dbae5e48d41"
+      "bytes": 70096,
+      "sha256": "d729d5b42d915797950b21827c15fd580ad15a417328b23e7dfd382ca07db3c3"
     },
     {
       "path": "Data/items.dat",
@@ -1370,7 +1370,7 @@
     {
       "path": "Data/map_metadata.dat",
       "bytes": 510855,
-      "sha256": "05df04e61927448dd1e9ed5b1ae5afe0609a9eb5024ac035231a01dec37a5369"
+      "sha256": "7ab7729deb6455e14f8a937bd930df694be7cde26ef96002525cc7d86740269e"
     },
     {
       "path": "Data/trainer_lists.dat",
@@ -1389,8 +1389,8 @@
     },
     {
       "path": "Data/trainers.dat",
-      "bytes": 1510745,
-      "sha256": "0017d709827ee7afc20b5f0aa25f154b0497256639eab794d198399afd372e03"
+      "bytes": 1510723,
+      "sha256": "c7374366d9d036d936e308e0cb86521894f186fda0f01d0123fe8801b6a41c2c"
     },
     {
       "path": "Data/trainertypes.dat",
