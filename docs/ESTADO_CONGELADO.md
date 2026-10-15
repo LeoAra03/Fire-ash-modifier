@@ -118,6 +118,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Las 92 transferencias (comando 201) de esos 20 mapas apuntan todas a mapas existentes (0 inválidas).
 - **Hallazgo preexistente documentado:** `node tools/apply_horizontes_500_expansion.mjs --verify` termina en rojo con «se esperaban 44 transferencias aditivas; hay 56» — expectativa desfasada del verificador (el contenido posterior añadió transferencias válidas; el informe original hablaba de 44). No afecta a los eventos Horizonte ni a `npm test` (ese verificador no forma parte del suite de la FASE 1). Pendiente de ajuste en su fase.
 
+### FASE 18 — Confirmación de Atlas Mil y las anclas Tier 1
+
+- **1000/1000 mapas de Atlas Mil (1021–2020)** presentes en disco y con entrada en `MapInfos.rxdata` — cero faltantes.
+- **40/40 anclas Tier 1 confirmadas:** mapas 1021–1996 (un ancla cada 25 mapas: 1021, 1046, 1071 … 1996), switches 708–747 — los 40 nombrados con el patrón `POKEMOD ATLAS SEAL*` (el 708 es `SEAL 01 BELL`, del 722–747 `SEAL 15–40`), variable compartida 103 (`POKEMOD ATLAS NARRATIVE SEALS`) y decisiones 104–143 las 40 nombradas.
+- Cada mapa ancla tiene instalados su evento `PokeMod Tier1: Conductor <título de ancla>` y sus NPCs `PokeMod Tier1: NPC <nombre>` (verificado 40/40, 0 fallos).
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
