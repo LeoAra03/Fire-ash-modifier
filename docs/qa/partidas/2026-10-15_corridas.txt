@@ -1,0 +1,946 @@
+# Corridas de verificación registradas — 2026-10-15
+
+Registro de las corridas **ejecutadas de verdad** el 2026-10-15 en el repositorio (fase 2/46199, tarea 36),
+con la salida íntegra de cada comando y su código de salida. Es la evidencia de la cuarta condición de la
+métrica (`content/metrica_dimensiones.json`): cada mundo declarado tiene al menos una partida de prueba
+registrada en la capa automática. La partida manual sigue pendiente en `docs/QA_MANUAL_PLAYTEST.md`
+porque el entorno no tiene Game.exe ni Kirin (ni Wine).
+
+Entorno: Node.js 22 con `npm install` hecho (los verificadores de Dimensional Nightmare importan
+`@napi-rs/canvas`). Los dos últimos comandos de la lista salen en rojo y están incluidos a propósito: son
+deuda declarada en la métrica, no fallos del registro. Al final va una corrida **en rojo a propósito**
+(autoprueba negativa de la métrica), que es la que demuestra que el verificador detecta lo que dice detectar.
+
+Nota de higiene: el hook `pretest` rehace `Scripts_corregido/Ciudad_Teckel_Paraiso/Data/*` cada vez que se corre
+`npm test`, así que esas diferencias binarias se revirtieron y no forman parte del commit de la fase.
+
+---
+
+## npm run verify:dimensiones
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:dimensiones
+> node tools/apply_dimensiones_barco.mjs --verify
+
+✔ Dimensiones de barco: verificación OK
+EXIT=0
+```
+
+---
+
+## npm run verify:glazed
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:glazed
+> node tools/apply_glazed_encounters.mjs --verify
+
+✔ Verificación OK: 14 zonas de Glazed registradas con especies y niveles válidos.
+EXIT=0
+```
+
+---
+
+## npm run verify:light_platinum
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:light_platinum
+> node tools/apply_light_platinum_native_lore.mjs --verify
+
+✔ Verificación OK: 19 mapas y 10 tablas de encuentros de Light Platinum validados.
+EXIT=0
+```
+
+---
+
+## npm run verify:liquid_crystal
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:liquid_crystal
+> node tools/apply_liquid_crystal_native_lore.mjs --verify
+
+✔ Verificación OK: 432 mapas y 14 tablas de encuentros de Liquid Crystal validados.
+EXIT=0
+```
+
+---
+
+## npm run verify:rocket
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:rocket
+> node tools/apply_team_rocket_mision.mjs --verify
+
+✔ Dimensión Team Rocket: verificación OK
+EXIT=0
+```
+
+---
+
+## npm run verify:monte_silver
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:monte_silver
+> node tools/apply_monte_silver_rebuild.mjs --verify
+
+Verificación OK: falda 2021 + gruta 2030 + cumbre 2022 con recorridos validados, 7 puertas Unown sellables (sw768-774, TESTIGO), contador solo sellando, transfers re-apuntadas, encounters/música/metadatos correctos.
+EXIT=0
+```
+
+---
+
+## npm run verify:multiverse
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:multiverse
+> node tools/apply_multiverse_creepypasta.mjs --verify
+
+Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029); 8 batallas con canLose, derrota permanente por sello y revancha por menú; 8 equipos nuevos en trainers.dat.
+EXIT=0
+```
+
+---
+
+## npm run dn:events:verify
+
+```text
+> fire-ash-modifier-tools@1.0.0 dn:events:verify
+> node tools/apply_dimensional_nightmare_events.mjs --verify
+
+verificación de 148 mapas con eventos
+  EP01: 12/12 anomalías
+  EP02: 13/13 anomalías
+  EP03: 12/12 anomalías
+  EP04: 13/13 anomalías
+  EP05: 13/13 anomalías
+  EP06: 14/14 anomalías
+  NEXO: 0/0 anomalías
+  W7: 12/12 anomalías
+  W8: 11/11 anomalías
+  W9: 12/12 anomalías
+verificación OK
+EXIT=0
+```
+
+---
+
+## npm run dn:battles:verify
+
+```text
+> fire-ash-modifier-tools@1.0.0 dn:battles:verify
+> node tools/apply_dimensional_nightmare_battles.mjs --verify
+
+verificación de fase B (jefes, trainers y objetos)
+  EP01: LA MANO BLANCA · cadenas ×4 (v289) · trainer DN_EP01_A · objeto DN_PAGE_01
+  EP02: EL SIN NOMBRE · fotos ×4 (v290) · trainer DN_EP02_A · objeto DN_PAGE_02
+  EP03: EL CAMINANTE · fogatas ×4 (v291) · trainer DN_EP03_A · objeto DN_PAGE_03
+  EP04: LA NANA · cunas ×4 (v292) · trainer DN_EP04_A · objeto POKEFLUTE
+  EP05: EL JUGADOR 000 · rendijas ×4 (v293) · trainer DN_EP05_A · objeto DN_PAGE_05
+  EP06: KINGGUS · letras ×7 (v294) · trainer DN_EP06_A · objeto DN_ANCLA
+  W7: EL AMO Y LA CORREA · correas ×4 (v295) · trainer DN_W7_A · objeto DN_PAGE_W7
+  W8: EL QUE RESPIRA DEBAJO · bolsas ×5 (v296) · trainer DN_W8_A · objeto DN_PAGE_W8
+  W9: EL CORO DEL CAMPANARIO · silencios ×4 (v297) · trainer DN_W9_A · objeto DN_PAGE_W9
+verificación OK
+EXIT=0
+```
+
+---
+
+## npm run dn:medals:verify
+
+```text
+> fire-ash-modifier-tools@1.0.0 dn:medals:verify
+> node tools/dn_apply_medals.mjs --verify
+
+verificación de medallas y cartucheras (21 objetos, 9 pedestales, 1 vitrina)
+verificación de medallas OK
+EXIT=0
+```
+
+---
+
+## npm run dn:liga:verify
+
+```text
+> fire-ash-modifier-tools@1.0.0 dn:liga:verify
+> node tools/dn_build_liga.mjs --verify
+
+verificación de la Liga Oscura (mapas 2141/2142, trainer MAD PIKACHU nv 175, 4 chispas)
+  Pórtico BFS 100 % · Coliseo BFS 97 %
+verificación de la Liga OK
+EXIT=0
+```
+
+---
+
+## npm run dn:flags:verify
+
+```text
+> fire-ash-modifier-tools@1.0.0 dn:flags:verify
+> node tools/dn_name_flags.mjs --verify
+
+verificación de flags DN (54 switches, 43 variables)
+verificación de flags DN OK
+EXIT=0
+```
+
+---
+
+## npm run dn:audit
+
+```text
+> fire-ash-modifier-tools@1.0.0 dn:audit
+> node tools/dn_audit_content.mjs
+
+auditoría de 151 mapas · 0 errores · 0 avisos
+informe: docs/dn_referencia/auditoria/dn_audit.json
+EXIT=0
+```
+
+---
+
+## npm run verify:rom:campaigns:plan
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:rom:campaigns:plan
+> node tools/create_complete_rom_campaigns.mjs --check
+
+✔ Plano estructural reproducible: 5 campañas, 1227 mapas, 3625/9691 actores adaptados/origen, 5061 warps.
+EXIT=0
+```
+
+---
+
+## npm run verify:metrica
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:metrica
+> node tools/qa/metrica_dimensiones_check.mjs
+
+Métrica de éxito del plan — 23 mundos (Jefe final · Retorno libre · Verificador propio · Partida de prueba registrada)
+  jefe final | retorno libre | verificador propio | partida registrada (docs/qa/partidas/2026-10-15_corridas.txt)
+
+  ✔ glazed             jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:glazed) · manual: pendiente
+  ✔ lightplatinum      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:light_platinum) · manual: pendiente
+  ✔ liquidcrystal      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:liquid_crystal) · manual: pendiente
+  ✔ tfoh               jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ factoryadventure   jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ teamrocket         jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:rocket) · manual: pendiente
+  ✔ locutora           jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ plata              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ enterrado          jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ cinta              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ fallo              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ eco                jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ consola            jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ dn_ep01            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep02            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep03            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep04            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep05            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep06            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w7              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w8              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w9              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_liga_oscura     jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:liga:verify, dn:medals:verify) · manual: pendiente
+
+  hallazgo COLISION-SW768: confirmado — Map2030 usa 7 switches del rango 768–774; 7 de ellos están nombrados «POKEMOD ATLAS T2…» en System.rxdata
+  deuda PARTIDA-MANUAL: Ninguna de las 23 partidas de prueba está jugada por una persona
+  deuda DN-MAPS-VERIFY-PRERREQUISITO: dn:maps:verify no corre sin el ingest de referencia
+  deuda ROM-NATIVO-11-FALLOS: verify:rom:nativo reporta 11 fallos en mapas de campaña
+
+  métrica: 23/23 mundos con las cuatro condiciones (100 %) · partida manual registrada en 0/23 mundos (0 %)
+OK: los 4 criterios están cubiertos en la capa automática para todos los mundos del plan
+EXIT=0
+```
+
+---
+
+## npm run verify:metrica:profundo
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:metrica:profundo
+> node tools/qa/metrica_dimensiones_check.mjs --profundo
+
+Métrica de éxito del plan — 23 mundos (Jefe final · Retorno libre · Verificador propio · Partida de prueba registrada)
+  jefe final | retorno libre | verificador propio | partida registrada (docs/qa/partidas/2026-10-15_corridas.txt)
+
+  ✔ glazed             jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:glazed) · manual: pendiente
+  ✔ lightplatinum      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:light_platinum) · manual: pendiente
+  ✔ liquidcrystal      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:liquid_crystal) · manual: pendiente
+  ✔ tfoh               jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ factoryadventure   jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ teamrocket         jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:rocket) · manual: pendiente
+  ✔ locutora           jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ plata              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ enterrado          jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ cinta              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ fallo              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ eco                jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ consola            jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ dn_ep01            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep02            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep03            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep04            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep05            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep06            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w7              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w8              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w9              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_liga_oscura     jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:liga:verify, dn:medals:verify) · manual: pendiente
+
+  hallazgo COLISION-SW768: confirmado — Map2030 usa 7 switches del rango 768–774; 7 de ellos están nombrados «POKEMOD ATLAS T2…» en System.rxdata
+  deuda PARTIDA-MANUAL: Ninguna de las 23 partidas de prueba está jugada por una persona
+  deuda DN-MAPS-VERIFY-PRERREQUISITO: dn:maps:verify no corre sin el ingest de referencia
+  deuda ROM-NATIVO-11-FALLOS: verify:rom:nativo reporta 11 fallos en mapas de campaña
+
+  métrica: 23/23 mundos con las cuatro condiciones (100 %) · partida manual registrada en 0/23 mundos (0 %)
+OK: los 4 criterios están cubiertos en la capa automática para todos los mundos del plan
+EXIT=0
+```
+
+---
+
+## npm test (cadena completa, con verify:metrica dentro)
+
+```text
+> fire-ash-modifier-tools@1.0.0 pretest
+> npm run build:teckel
+
+
+> fire-ash-modifier-tools@1.0.0 build:teckel
+> node tools/build_teckel_package.mjs
+
+OK: Fire_Ash_Ciudad_Teckel_Paraiso.zip (72 entradas)
+OK: paquete Teckel/Paraíso verificado (72 entradas)
+
+> fire-ash-modifier-tools@1.0.0 test
+> node web/js/marshal.test.mjs && node web/js/history.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:zmenu && npm run verify:graficos && npm run verify:ruby && npm run verify:mapas && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:glazed && npm run verify:light_platinum && npm run verify:liquid_crystal && npm run verify:canon:arceus && npm run verify:arceus:sprites && npm run verify:diplomas && npm run verify:corregido:zip && npm run verify:ruta_de_dios && npm run verify:presupuesto && npm run verify:presupuesto:selftest && npm run verify:glosario && npm run verify:metrica && npm run test:atlas:master
+
+
+marshal.js: 51 OK, 0 fallos
+
+historial: 10 OK, 0 fallos
+— demo —
+— proyecto —
+— mapas —
+— render (stub) —
+— scripts zlib —
+— kirin check —
+— scan global —
+— sala pokemod —
+— pbs —
+— protección partidas —
+— crear: plantillas —
+— crear: insertar+mapa —
+— crear: pbs texto —
+— crear: auditoría —
+— crear: registro de mapa —
+— analizar —
+— packs —
+— crear: jefes y borrado PBS —
+— historial integrado —
+
+integración: 124 OK, 0 fallos
+OK: el .pkregion de Atlas cumple el formato v1
+OK: Region Builder contiene los 40 sectores
+OK: la Pokédex regional contiene las 153 especies aprobadas
+OK: las capas de agua y caminos tienen contenido
+OK: el adaptador rechaza versiones .pkregion desconocidas
+OK: el adaptador rechaza referencias a landmarks inexistentes
+OK: el diseño neutral supera la compuerta narrativa
+OK: un .pkregion nunca se declara compilable directamente
+OK: el plano distingue 40 episodios aprobados
+OK: el plano mantiene 0 anclas pendientes
+OK: el manifiesto de autoría estilo Studio tiene integridad referencial
+OK: Studio reference indexa las 40 anclas
+OK: Studio reference separa 40 episodios compilados
+OK: Studio reference reserva 0 registros futuros
+OK: el manifiesto no copia código de Pokémon Studio
+OK: el manifiesto no se presenta como proyecto PSDK
+OK: todos los registros conservan retorno libre
+OK: el inspector abre un proyecto Studio 2.11.0 de solo lectura
+OK: el inspector bloquea importación PSDK directa
+OK: el inspector indexa dbSymbol por colección
+OK: los 40 mapas superan compatibilidad técnica de estilo
+OK: style gate aprobó 40/40 anclas
+OK: style gate reconoce 40/40 anclas con composición propia
+OK: style gate conserva 0/40 anclas con geometría totalmente heredada
+OK: el backlog visual está derivado de la geometría real
+OK: ningún mapa se certifica visualmente sin revisión humana
+OK: las 40 anclas siguen requiriendo Game.exe
+OK: la prueba dentro de Game.exe sigue siendo obligatoria
+OK: los manifiestos definen 120 rutas Tier 2 en lotes completos
+OK: las 120 rutas Tier 2 superan su QA dedicado
+OK: los mapas Tier 2 de autoría son únicos
+OK: los switches Tier 2 reservados son únicos
+OK: las variables de decisión Tier 2 son únicas
+OK: las recompensas Tier 2 son únicas en el catálogo acumulado
+OK: los NPCs Tier 2 tienen nombres únicos
+OK: el catálogo Tier 2 no repite líneas de diálogo
+OK: los switches Tier 2 forman una reserva continua sin huecos
+OK: cada ruta Tier 2 conserva dos NPCs, decisión persistente y garantías de seguridad
+OK: las 120 rutas compiladas conservan el desafío base cuando existe, dos NPCs y retorno libre
+OK: el catálogo Tier 3 define 420/420 reglas locales
+OK: el catálogo Tier 3 declara Mochila libre, sin combates, retorno libre y 0 flags globales
+OK: las reglas cubren exactamente los Ecos sin desafío Atlas
+OK: cada regla Tier 3 identifica su eco, su anomalía y tres reglas de contrajuego
+OK: las 420 reglas pertenecen a las 14 familias de anomalía declaradas
+OK: ningún texto Tier 3 menciona los switches 674/675
+OK: las 420 reglas compiladas conservan baliza, retorno, microdecisión y self-switch A
+OK: el portal de Arceus aparece en Puntaneva con un aro de luz accesible aunque se haya perdido la flag 870
+OK: el paquete directo conserva el portal, al Squirtle y los cinco sprites de apoyo cinematográfico
+OK: Puntaneva muestra al segundo Volus después de hablar con el primero
+OK: la plaza del templo queda libre y Squirtle ofrece el paso temporal junto al Charmeleon
+OK: la aproximación celestial está en Map2038 y conserva una montaña larga con entrada y retorno
+OK: Map2030 sigue siendo la Gruta de los Testigos y no se reemplaza por la aproximación
+OK: el paquete directo conserva Map2030 como gruta y Map2038 como aproximación
+OK: el ZIP descargable está al día con Paquete_directo/
+OK: el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa
+OK: Arceus conserva batalla por fases, merced única del Rotom (sin pseudo-PC ni curas, R14), séquito doble, copia del activo, rendición y prólogo cinematográfico
+OK: pbSetSeen/pbSetBattled resuelven la Pokédex global en v19–v21 sin invocarla sobre NPCTrainer
+OK: el equipo de Cintia registra como vistos sus seis Pokémon al aparecer el primer rival
+OK: los tres apoyos conservan la escena de combate, pero sus comandos, azar y desenlace están coreografiados
+OK: Cynthia/Steven, Gold/Eco/Red y Volus/Giratina tienen equipos reales y Arceus de apoyo nivel 200
+OK: la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después
+OK: Arceus exige seis barras completas, rueda las 17 Tablas, es inmune a estados y adapta niveles/ataques
+OK: la ruleta termina con la Tabla elegida arriba, no a la derecha
+OK: las caminatas de Cynthia/Máximo y Red/Gold anteceden a sus retratos/batallas y Arceus se regenera en el prólogo
+OK: ni los movimientos ni el clima pueden derrotar a los Arceus de la cima: el cinemático absorbe y el divino mueve sus barras
+OK: los comandos de pantalla de Arceus serializan Tone como objeto RMXP, no como String
+OK: Map2037 contiene los cinco entrenadores de apoyo en tres entradas coreografiadas
+OK: los equipos cinemáticos usan especies/movimientos/objetos existentes y respetan el tope de nivel
+OK: los seis sets de movimientos de Arceus existen en los datos del juego
+OK: los tipos de entrenador de las batallas cinemáticas y de Arceus están registrados
+OK: los datos del juego contienen la versión 4 del equipo de Volus usada por el evento
+OK: el nivel 200 queda reservado al Arceus jefe o al capturado dentro de la whitelist; todo Arceus normal queda bajo el techo de 175
+OK: capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable
+OK: Map2037 tiene ramas RGSS válidas; Volus sólo se pelea al intentar bajar y una victoria cierra la ruta
+OK: el Scripts.rxdata descargable conserva todas las secciones
+OK: el archivo descargable corrige Grandeur Club, colisiones, guardado, tonos y transiciones
+OK: Grandeur Club conserva la corrección del end sobrante
+OK: el script descargable no contiene un end extra antes de givePassive
+OK: Game_Character bloquea sprites aunque la página del evento marque Through
+OK: Game_Event hace sólidos los eventos con character_name al refrescarse
+OK: Game_Player conserva la interacción con sprites sólidos
+OK: Game_Screen recupera los tonos String heredados sin cerrar el juego
+OK: Game_Picture normaliza tonos antes de interpolarlos
+OK: Scene_Map usa la transición predeterminada cuando transition_name es nil
+OK: la partida principal no depende del archivo auxiliar PokemonSystemSettings
+OK: la velocidad no depende de una carpeta Save Files inexistente
+OK: Battle_Action_UseItem aplica el parche de Mochila libre
+OK: pbCanUseItemOnPokemon? ya no consulta el switch 674
+OK: pbCanUseItemOnPokemon? conserva Embargo y el límite de objetos por combate
+OK: pbItemMenu conserva Mochila libre y la regla de combates externos
+OK: la torre conserva sus 8 activaciones originales del switch 674 (8)
+OK: el laboratorio de Oak conserva 0 cápsulas del hub (debe ser 0)
+OK: el laboratorio no debe ofrecer menús de destinos ()
+OK: Oak aconseja sobre las lecturas de las grietas en el laboratorio
+OK: el Oak consejero depende del switch 429 de postgame
+OK: Oak no teletransporta: solo aconseja
+OK: Oak lee el contador de purgas (\v[264])
+OK: los transportadores originales siguen intactos y condicionados por el postgame
+OK: la puerta de la torre sigue llevando al mapa 141 (SECRET PEAK)
+OK: el catálogo del multiverso define 9 mapas, 7 emisiones y al Campeón Silencioso
+OK: el multiverso declara homenajes reinterpretados, canLose, derrota permanente, revancha por menú y retorno libre
+OK: las recompensas del multiverso son únicas
+OK: los equipos del multiverso respetan 6 Pokémon y el techo de 175
+OK: los 8 jefes del multiverso quedan derrotados para siempre y solo revanchan por menú
+OK: el catálogo define 22 zonas salvajes (mínimo 13)
+OK: las tablas salvajes respetan niveles 1-175
+OK: hay Monte Silver, Bosque Susurrante y encuentros de agua (surf)
+OK: todas las especies salvajes existen en Fire Ash
+OK: las 13 tablas están instaladas en encounters.dat
+OK: la depuración DN audita los 151 mapas y limita el artefacto de rótulos a cinco bandas con huellas de integridad
+
+External authoring: 110 OK, 0 fallos.
+Secciones analizadas: 409
+Métodos definidos en el juego: 4930
+Llamadas sin definición conocida: 0
+Patrones de campo peligrosos (R10): 0
+OK: ninguna llamada apunta a un método inexistente en los scripts instalados.
+OK: ningún script escribe clima, terreno o talentos que el motor rechace (R10).
+Auditoría de recursos del duelo divino (R12)
+  Juego auditado: /home/user/Fire-ash-modifier/pokemon_fire_ash
+  Movimientos: 82 referencias · Especies: 37 · Objetos: 19 · Pistas: 7 · Personajes: 5
+
+  ⚠ el juego no trae animaciones «Common:» (clima, etc.): el motor las salta en silencio; el clima sigue funcionando a nivel mecánico
+
+
+✔ 27 comprobaciones de recursos: el duelo no nombra nada que el juego no tenga.
+(node:4969) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ALCANCE R15b (PokeMod_RutaDeDios): 280 defs/constantes; todo lo que parece de nivel superior lo es de verdad.
+(node:4976) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ALCANCE R15b (PokeMod_CanonArceus): 48 defs/constantes; todo lo que parece de nivel superior lo es de verdad.
+OK: seis barras, catálogo real de ataques/apoyos con filtros de autodaño y huida, captura segura de invocaciones, límite de cuatro movimientos y sincronía en los tres paquetes.
+(node:4990) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+== Cinemáticas: Arceus de apoyo contra Cynthia/Steven y Red/Gold ==
+  OK  el jefe de apoyo se reconoce como cinemático
+  OK  el setter de PS existe
+  OK  el granizo de la cumbre no baja ni un PS al Creador
+  OK  Meteor Mash de Metagross golpea pero no resta PS (hpLost anulado)
+  OK  un golpe letal tampoco mueve la barra
+  OK  el intento letal provoca la burla del Creador en vez de una derrota
+  OK  una escritura directa de PS (plugins/movimientos custom) se rechaza
+  OK  hp -= (ruta de confusión y similares) se rechaza
+  OK  pbFaint restaura al jefe y nunca registra su derrota
+  OK  si un daño externo lo deja a media vida, el escudo la restaura por completo
+
+== Duelo divino: Ash (Metagross) contra Arceus nivel 200 ==
+  OK  el jefe del duelo real se reconoce como divino
+  OK  la batalla se marca como divina
+  OK  Arceus no cae en dos golpes: la barra sobrevive y se restaura al umbral rojo
+  OK  dos golpes dejan la barra abierta tras recuperar un cuarto
+  OK  cuatro ataques y la curación roja agotan exactamente la primera barra
+  OK  la primera barra se restaura completa tras la transición
+  OK  la transición no aplica daño real ni derrota a Arceus
+  OK  la acción que rompió la barra queda registrada
+  OK  un multigolpe no puede saltar dos barras en la misma acción
+  OK  ningún golpe aislado puede derrotar al Creador
+  OK  la curación de umbral rojo devuelve un cuarto, no borra el avance
+  OK  la segunda barra se agota con la progresión completa, sin saltos
+  OK  el granizo de fin de ronda no toca la barra de Arceus
+  OK  una escritura externa de PS no puede derrotar al dios
+  OK  pbFaint jamás cierra el duelo con una derrota de Arceus
+
+== Seis barras y captura: nadie salta el guion ==
+  OK  seis barras se agotan con golpes limitados a 38% y sus transiciones
+  OK  tras la sexta barra se habilita la captura determinista
+  OK  Arceus queda a 1 PS para la captura final
+  OK  sigue en pie: la sexta barra no es una derrota
+  OK  después de la sexta barra no se puede seguir dañando
+
+== Inferencia del modo divino sin bandera previa ==
+  OK  la batalla reconoce al jefe por la marca del Pokémon
+  OK  sin bandera previa, cuatro acciones reales también avanzan una barra
+
+== Ball Breaker (DF08): el movimiento de Metagross ya no aborta el combate ==
+  OK  los ayudantes selfProtected? y sideProtected? existen en PokeBattle_Battler
+  OK  sin protecciones activas ambos ayudantes devuelven false
+  OK  selfProtected? detecta Protect
+  OK  sideProtected? no inventa protecciones de lado
+  OK  Ball Breaker avisa de que la protección terminó
+  OK  Ball Breaker retira la protección individual (Protect, King's Shield…)
+  OK  y no deja restos de otros escudos
+  OK  sideProtected? detecta Wide Guard del lado
+  OK  con protección doble avisa al mismo tiempo del escudo y del lado
+  OK  Ball Breaker limpia también las protecciones de lado
+  OK  sin protecciones no muestra ningún mensaje
+  OK  la versión instalada avisa igual del escudo y del lado
+  OK  la versión instalada retira todas las protecciones
+  OK  la versión instalada tolera un objetivo nulo sin lanzar excepción
+
+== Regresión: un Arceus normal del jugador no lleva escudo ==
+  OK  el Arceus capturado o de un equipo cualquiera recibe daño normal
+  OK  y puede debilitarse como cualquier Pokémon
+
+== Duelo jugable (R8): iniciativa de Ash, barras que sí se mueven y cero KOs de un golpe ==
+  OK  todo el lado de Ash abre la ronda aunque Arceus sea mil veces más rápido
+  OK  la iniciativa del lado de Ash sobrevive al Espacio Raro de la Etapa 4
+  OK  con la sexta barra agotada la regla de iniciativa se apaga
+  OK  mientras el duelo siga vivo, Ash conserva la iniciativa
+  OK  la guardia anti-KO reconoce el golpe letal de Arceus
+  OK  un golpe mortal de Arceus sólo quita como máximo el 48%: nunca un KO de un solo turno
+  OK  el vínculo de Ash se narra cuando el golpe mortal es detenido
+  OK  el segundo impacto de la misma acción (multigolpe) tampoco remata
+  OK  cada acción de Arceus vuelve a toparse: hacen falta tres para tumbar a un Pokémon sano
+  OK  un golpe fuerte no mortal se recorta al tope sin gastar el relato de aguante
+  OK  un Pokémon ya debilitado por debajo del tope sí puede ser derribado: el duelo no se estanca
+  OK  la guardia nunca protege al propio Arceus
+  OK  las cinemáticas de apoyo no usan la guardia del duelo
+  OK  un golpe flojo de Ash conserva el mínimo del 12% y el vínculo del prólogo
+  OK  el golpe mínimo mueve de verdad la barra del dios por la ruta de daño
+  OK  el daño que no sale de Ash (retroceso, clima) no recibe el vínculo
+
+== Ritmo del duelo (R9): seis barras contra un equipo de seis Pokémon ==
+  OK  un equipo que apenas rasguña la barra puede perder el combate (18 turnos, 6 bajas)
+  OK  dos ataques bien preparados por turno pueden vaciar seis barras (12 turnos, 3 bajas)
+  OK  un equipo con buen daño avanza más rápido que uno mal preparado
+  OK  un equipo fuerte puede recuperarse de rondas perdidas, con bajas reales (17 turnos, 4 bajas)
+
+Resultado: 68 comprobaciones OK, 0 fallos
+
+RESUMEN: 68 OK / 0 FALLOS
+(node:4997) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ARCEUS_MOVES_QA_OK: 142 movimientos seguros; autodaño/huida filtrados; apoyo y ataques seleccionables; invocación no capturable; 0EC no cierra el duelo.
+tone safety: recuperación String→Tone, pantallas/imágenes y paquete OK
+package integrity: archivos ausentes, copia idéntica, corrupción del mismo tamaño y verificación sin escritura OK
+Runtime DN: combate espejo no destructivo y forma final de KINGGUS verificados.
+
+> fire-ash-modifier-tools@1.0.0 verify:zmenu
+> node tools/apply_z_menu_safety.mjs --verify
+
+✔ pokemon_fire_ash/Data/Scripts.rxdata
+✔ Scripts_corregido/Scripts.rxdata
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+
+✔ parche del botón Z presente y correcto
+
+> fire-ash-modifier-tools@1.0.0 verify:graficos
+> node tools/apply_graficos_safety.mjs --verify
+
+✔ pokemon_fire_ash/Data/Scripts.rxdata
+✔ Scripts_corregido/Scripts.rxdata
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+
+✔ parche de gráficos presente y correcto
+
+> fire-ash-modifier-tools@1.0.0 verify:ruby
+> node tools/qa/ruby_syntax_check.mjs
+
+(node:5075) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_Dialogos
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_ZMenu
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_Graficos
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_Atavios
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_BadgeRegions
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_CanonArceus
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_Dialogos
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_ZMenu
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_Graficos
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_Atavios
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_BadgeRegions
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_CanonArceus
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata · PokeMod_Dialogos
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata · PokeMod_ZMenu
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata · PokeMod_Graficos
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata · PokeMod_Dialogos
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata · PokeMod_ZMenu
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata · PokeMod_Graficos
+
+18 sección(es) Ruby revisadas · ✔ sin errores
+
+> fire-ash-modifier-tools@1.0.0 verify:mapas
+> node tools/repair_missing_maps.mjs --verify && node tools/repair_map_data.mjs --verify
+
+
+=== pokemon_fire_ash: 3465 entradas · 3465 archivos · 0 hueco(s)
+   ✔ sin mapas listados que falten
+
+=== Scripts_corregido/Paquete_directo: 3465 entradas · 1366 archivos · 2099 hueco(s)
+   (paquete parcial: los 2099 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+=== Scripts_corregido/Dimensional_Nightmare_QA: 3465 entradas · 192 archivos · 3273 hueco(s)
+   (paquete parcial: los 3273 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+=== Scripts_corregido/Ciudad_Teckel_Paraiso: 3465 entradas · 41 archivos · 3424 hueco(s)
+   (paquete parcial: los 3424 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+=== Scripts_corregido/Expansion_Multiversal: 3465 entradas · 50 archivos · 3415 hueco(s)
+   (paquete parcial: los 3415 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+Verificación: 0 hueco(s) en el juego completo, 0 reparado(s)
+
+A) ✔ ningún mapa apunta a un tileset vacío
+
+B) ✔ ningún sprite usa un nombre que exista con otros ceros
+
+✔ nada roto que reparar
+
+> fire-ash-modifier-tools@1.0.0 verify:boot
+> node tools/validate_boot_classes.mjs && node tools/repair_map_metadata_classes.mjs --verify && node tools/apply_no_badge_field_moves.mjs --verify
+
+── Juego de desarrollo: 3519 archivos de datos contra pokemon_fire_ash/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+── Paquete directo: 1377 archivos de datos contra Scripts_corregido/Paquete_directo/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+── Dimensional Nightmare QA: 204 archivos de datos contra Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+── Expansión Multiversal (scripts de DN QA): 57 archivos de datos contra Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+OK: verificación de clases de arranque superada
+✔ pokemon_fire_ash/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+✔ Scripts_corregido/Paquete_directo/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+✔ Scripts_corregido/Expansion_Multiversal/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+OK: ningún map_metadata.dat distribuido contiene RPG::MapMetadata
+✔ pokemon_fire_ash/Data/Scripts.rxdata: 0 candados de medalla retirados
+✔ Scripts_corregido/Scripts.rxdata: 0 candados de medalla retirados
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata: 0 candados de medalla retirados
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata: 0 candados de medalla retirados
+OK: los movimientos de campo no piden medalla ni MO en ningún Scripts.rxdata
+
+> fire-ash-modifier-tools@1.0.0 verify:teckel
+> node tools/apply_atlas_relocalizacion.mjs --verify && node tools/apply_ciudad_teckel_maxine.mjs --verify && node tools/build_teckel_package.mjs --verify
+
+✔ relocalización Atlas: verificación OK
+✔ ciudad teckel + maxine: verificación OK
+OK: paquete Teckel/Paraíso verificado (72 entradas)
+
+> fire-ash-modifier-tools@1.0.0 verify:visor
+> node tools/apply_badge_viewer.mjs --verify
+
+✔ visor de medallas: verificación OK
+
+> fire-ash-modifier-tools@1.0.0 verify:lideres
+> node tools/apply_lideres_campanas.mjs --verify
+
+✔ líderes de campañas: verificación OK
+
+> fire-ash-modifier-tools@1.0.0 verify:glazed
+> node tools/apply_glazed_encounters.mjs --verify
+
+✔ Verificación OK: 14 zonas de Glazed registradas con especies y niveles válidos.
+
+> fire-ash-modifier-tools@1.0.0 verify:light_platinum
+> node tools/apply_light_platinum_native_lore.mjs --verify
+
+✔ Verificación OK: 19 mapas y 10 tablas de encuentros de Light Platinum validados.
+
+> fire-ash-modifier-tools@1.0.0 verify:liquid_crystal
+> node tools/apply_liquid_crystal_native_lore.mjs --verify
+
+✔ Verificación OK: 432 mapas y 14 tablas de encuentros de Liquid Crystal validados.
+
+> fire-ash-modifier-tools@1.0.0 verify:canon:arceus
+> node tools/apply_canon_arceus.mjs --verify
+
+✔ Canon de Arceus verificado.
+  · todas las puertas exigen el duelo de La Ruta de Dios
+  · Fragmento del Génesis en la cumbre, solo tras el duelo
+  · Rotom del Tiempo en los tres accesos
+  · Oak habla de las dimensiones y Arceus aparece si fue capturado
+  · el combate doblega una regla distinta por fase
+
+> fire-ash-modifier-tools@1.0.0 verify:arceus:sprites
+> node tools/verify_arceus_phase_sprites.mjs
+
+  ✔ juego: la tabla de sufijos declara un sprite por fase (1-5 de fase + 19 mil brazos)
+  ✔ juego: el nombre del archivo se compone en runtime (auditoría de recursos)
+  ✔ juego: existen los tres cambios de hoja (fase, primigenia y restauración)
+  ✔ juego: la apertura del duelo y cada cambio de barra aplican la hoja de su fase
+  ✔ juego: la primigenia estrena hoja y todo redibujado la conserva
+  ✔ juego: el origen del sprite se recalcula al cambiar de tamaño de hoja
+  ✔ paquete: la tabla de sufijos declara un sprite por fase (1-5 de fase + 19 mil brazos)
+  ✔ paquete: el nombre del archivo se compone en runtime (auditoría de recursos)
+  ✔ paquete: existen los tres cambios de hoja (fase, primigenia y restauración)
+  ✔ paquete: la apertura del duelo y cada cambio de barra aplican la hoja de su fase
+  ✔ paquete: la primigenia estrena hoja y todo redibujado la conserva
+  ✔ paquete: el origen del sprite se recalcula al cambiar de tamaño de hoja
+  ✔ las 6 fases tienen sprite propio, existente y distinto
+  ✔ la Forma Primigenia usa el Arceus clásico, distinto de las seis fases
+  ✔ el ZIP de entrega trae los 6 sprites de fase
+
+OK: Arceus cambia de sprite en cada fase (15 comprobaciones, 6 fases distintas).
+
+> fire-ash-modifier-tools@1.0.0 verify:diplomas
+> node tools/apply_diplomas_planta.mjs --verify
+
+OK: Salón de Diplomas instalado; siete marcos con hitos verificados.
+
+> fire-ash-modifier-tools@1.0.0 verify:corregido:zip
+> node tools/refresh_corregido_zip.mjs --verify
+
+OK: el ZIP de la raíz coincide con Paquete_directo/ y LEEME.md (2616 archivos, 46.6 MB)
+
+> fire-ash-modifier-tools@1.0.0 verify:ruta_de_dios
+> node tools/apply_la_ruta_de_dios.mjs --verify
+
+Verification OK: La Ruta de Dios fully verified (7 floors, Arceus Lv. 200, Volo, Dialga, Palkia, trainers, switches, and scripts).
+
+> fire-ash-modifier-tools@1.0.0 verify:presupuesto
+> node tools/qa/artifact_budget_check.mjs
+
+Presupuesto de artefacto de sesión (techo combinado: 128 MiB por grupo)
+  OK                     ZIP raíz (Fire-Ash-Scripts-Corregidos.zip): 46.58 MiB / tope 64.00 MiB
+  JUSTIFICADO            Entregables versionados (raíz + Scripts_corregido): 133.34 MiB / tope 128.00 MiB (+5.34 MiB)
+      justificación hasta 136.00 MiB: Los cuatro entregables versionados suman 133,34 MiB y superan el techo de sesión de 128 MiB en 5,34 MiB. Se justifica en vez de recortar porque cada uno es la vía de instalación de un contenido distinto (scripts corregidos, paquete directo, mapas referenciales, QA de Dimensional Nightmare) y quitarlos rompería enlaces publicados en README.md y Scripts_corregido/LEEME.md. Además, el ZIP raíz duplica el contenido de Scripts_corregido/Paquete_directo/: la ruta de retorno al techo sin justificación está documentada en docs/PRESUPUESTO_ARTEFACTO_SESION.md (deduplicar esa pareja o dejar el paquete directo como único artefacto de instalación). Mientras esa ruta no se ejecute, ningún entregable nuevo puede añadirse sin subir este techo de forma explícita.
+  JUSTIFICADO            Insumos de terceros (32 archivos): 260.25 MiB / tope 128.00 MiB (+132.25 MiB)
+      justificación hasta 280.00 MiB: Los 32 archivos comprimidos de terceros versionados suman 260,25 MiB, el exceso mayor del repositorio, y se justifica por partes: porymap 1-15 (144,06 MiB) es el editor de mapas con el que se reconstruyen las regiones; Tiled 1-4 (44,26 MiB) son binarios de Linux redistribuibles que se bajan del release oficial; ROMS (1..3) (32,56 MiB) y Pokemon unbound part1-2 (16,51 MiB) son las ROMs invitadas de la extraccion nativa; swablu (15,81 MiB) es material de referencia de sprites; pokecrystal, pokered, timps-swarm, pokemon-agent, rvpacker y porygion aportan ~7 MiB de herramientas fuente. Nada de esto es entregable ni se publica: son la materia prima con la que ya se generaron los PNG, tilesets y sprites que si estan versionados. Se declara techo de 280 MiB en lugar de podar en esta fase porque la poda es destructiva y exige confirmacion del usuario; las rutas de poda, con el ahorro medido de cada una, quedan escritas en docs/PRESUPUESTO_ARTEFACTO_SESION.md. Si una fase futura anade insumos, debe subir este techo con motivo explicito.
+  OK                     Repositorio completo (29242 archivos): 1445.11 MiB / tope 1600.00 MiB
+      insumo mayor: Pokemon unbound gba.part1.rar (16.00 MiB)
+      insumo mayor: swablu (3).zip (15.81 MiB)
+      insumo mayor: ROMS (1).rar (14.00 MiB)
+      insumo mayor: ROMS (2).rar (14.00 MiB)
+      insumo mayor: Tiled-1.12.2_Linux_x86_64.part1.rar (12.00 MiB)
+Objetivo sin justificación: Fire-Ash-Scripts-Corregidos.zip debe bajar a 41.24 MiB (hoy 46.58 MiB) o hay que deduplicar el paquete directo. Ver docs/PRESUPUESTO_ARTEFACTO_SESION.md.
+OK: presupuesto de artefacto dentro de los topes (con justificación escrita: entregables, insumos)
+
+> fire-ash-modifier-tools@1.0.0 verify:presupuesto:selftest
+> node tools/qa/artifact_budget_check.mjs --selftest
+
+presupuesto de artefacto: 7/7 reglas verificadas (tope duro del ZIP raíz, techo combinado, justificación vigente y vencida, faltantes, objetivo de recorte)
+
+> fire-ash-modifier-tools@1.0.0 verify:glosario
+> node tools/qa/glosario_check.mjs
+
+Glosario congelado — docs/qa/glosario.md (revisión R1, 2026-10-15)
+  términos: Vía · Ancla · Emisión · Sello · Fragmento · Dimensión invitada · Liga Oscura
+  fuentes: 34 declaradas, 33 con cita literal verificable
+  divergencias registradas: D1, D2, D3
+OK: el glosario coincide con su sello, los 7 términos están cerrados y todas las citas siguen en pie
+
+> fire-ash-modifier-tools@1.0.0 verify:metrica
+> node tools/qa/metrica_dimensiones_check.mjs
+
+Métrica de éxito del plan — 23 mundos (Jefe final · Retorno libre · Verificador propio · Partida de prueba registrada)
+  jefe final | retorno libre | verificador propio | partida registrada (docs/qa/partidas/2026-10-15_corridas.txt)
+
+  ✔ glazed             jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:glazed) · manual: pendiente
+  ✔ lightplatinum      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:light_platinum) · manual: pendiente
+  ✔ liquidcrystal      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:liquid_crystal) · manual: pendiente
+  ✔ tfoh               jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ factoryadventure   jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ teamrocket         jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:rocket) · manual: pendiente
+  ✔ locutora           jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ plata              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ enterrado          jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ cinta              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ fallo              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ eco                jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ consola            jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ dn_ep01            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep02            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep03            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep04            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep05            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep06            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w7              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w8              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w9              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_liga_oscura     jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:liga:verify, dn:medals:verify) · manual: pendiente
+
+  hallazgo COLISION-SW768: confirmado — Map2030 usa 7 switches del rango 768–774; 7 de ellos están nombrados «POKEMOD ATLAS T2…» en System.rxdata
+  deuda PARTIDA-MANUAL: Ninguna de las 23 partidas de prueba está jugada por una persona
+  deuda DN-MAPS-VERIFY-PRERREQUISITO: dn:maps:verify no corre sin el ingest de referencia
+  deuda ROM-NATIVO-11-FALLOS: verify:rom:nativo reporta 11 fallos en mapas de campaña
+
+  métrica: 23/23 mundos con las cuatro condiciones (100 %) · partida manual registrada en 0/23 mundos (0 %)
+OK: los 4 criterios están cubiertos en la capa automática para todos los mundos del plan
+
+> fire-ash-modifier-tools@1.0.0 test:atlas:master
+> node tools/qa/atlas_master_suite.test.mjs
+
+================================================================================
+   SUITE MAESTRA ATLAS TOTAL · 2000+ TESTS DE INTEGRIDAD Y PROFUNDIDAD
+================================================================================
+
+--- FASE 1: Motor, Scripts PokeMod y Atributos Globales ---
+--- FASE 2: Integridad Estructural de los 1,227 Mapas de Campañas ROM ---
+--- FASE 3: Líderes de Gimnasio, Medallas y Switches (700-731) ---
+--- FASE 4: Dimensional Nightmare (Creepypastas GBC · Mapas 2041-2144) ---
+--- FASE 5: La Ruta de Dios & Canon Arceus ---
+--- FASE 6: Puerto Horizonte (Map 1001) y Portales Dimensionales ---
+--- FASE 7: Guardarropa y Atavíos Dimensionales (0-10) ---
+--- FASE 8: Ausencia de Mapas en Negro y Cero Solapamientos de Eventos ---
+
+================================================================================
+RESUMEN GENERAL DE VERIFICACIÓN ATLAS TOTAL:
+  Mapas de Campañas ROM auditados:   1227
+  Warps totales verificados:         8742
+  Warps de retorno validados:        1227
+  Combates de entrenadores:          829
+  Mapas Creepypastas DN auditados:   104
+  Eventos Creepypastas auditados:    946
+--------------------------------------------------------------------------------
+TOTAL DE ASERCIONES SUPERADAS:       76258
+TOTAL DE FALLOS:                     0
+================================================================================
+
+✔ SUITE MAESTRA COMPLETA: 76258 PRUEBAS SUPERADAS CON ÉXITO.
+EXIT=0
+```
+
+---
+
+## npm run dn:maps:verify
+
+```text
+> fire-ash-modifier-tools@1.0.0 dn:maps:verify
+> node tools/apply_dimensional_nightmare_maps.mjs --verify
+
+node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '/home/user/Fire-ash-modifier/content/dimensional_nightmare_tiles_2x.json'
+    at Object.readFileSync (node:fs:440:20)
+    at file:///home/user/Fire-ash-modifier/tools/apply_dimensional_nightmare_maps.mjs:74:31
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/user/Fire-ash-modifier/content/dimensional_nightmare_tiles_2x.json'
+}
+
+Node.js v22.22.3
+EXIT=1
+```
+
+---
+
+## npm run verify:rom:nativo
+
+```text
+> fire-ash-modifier-tools@1.0.0 verify:rom:nativo
+> node tools/rom_nativo_mapas.mjs --verify && node tools/rom_nativo_sprites.mjs --verify
+
+verificación nativa: 1227 mapas · 212 tilesets · 12411 eventos revisados · 11 fallos
+  · celdas 1486028 · sólidas 874996 (58.9 %) · libres 611032 · accesos abiertos 4743
+  FALLA: Map3031: 1 celdas no coinciden con el ROM
+  FALLA: Map3079: 1 celdas no coinciden con el ROM
+  FALLA: Map3094: 1 celdas no coinciden con el ROM
+  FALLA: Map3120: 1 celdas no coinciden con el ROM
+  FALLA: Map3120: "PokeMod Campaña ROM: NPC — Kaori" @22,21 y 1 eventos más sobre celdas sólidas
+  FALLA: Map3125: 1 celdas no coinciden con el ROM
+  FALLA: Map3323: 1 celdas no coinciden con el ROM
+  FALLA: Map3385: 1 celdas no coinciden con el ROM
+  FALLA: Map3805: 1 celdas no coinciden con el ROM
+  FALLA: Map3839: 1 celdas no coinciden con el ROM
+  FALLA: Map3874: 1 celdas no coinciden con el ROM
+EXIT=1
+```
+
+---
+
+## Autoprueba negativa de la métrica
+
+Con la cita de una corrida falsificada a propósito y el mundo `dn_w9` quitado del registro, el verificador
+tenía que fallar por las dos vías (cita y cobertura). Este es su resultado; después se restauró el registro
+y volvió a dar `EXIT=0`.
+
+```text
+Métrica de éxito del plan — 22 mundos (Jefe final · Retorno libre · Verificador propio · Partida de prueba registrada)
+  jefe final | retorno libre | verificador propio | partida registrada (docs/qa/partidas/2026-10-15_corridas.txt)
+
+  ✘ glazed             jefe ✔  retorno ✔  verificador ✔  partida ✘  (verify:dimensiones, verify:glazed) · manual: pendiente
+        FALLO partida: la cita no aparece en docs/qa/partidas/2026-10-15_corridas.txt: «✔ Cita que no existe en el registro»
+  ✔ lightplatinum      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:light_platinum) · manual: pendiente
+  ✔ liquidcrystal      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:liquid_crystal) · manual: pendiente
+  ✔ tfoh               jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ factoryadventure   jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ teamrocket         jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:rocket) · manual: pendiente
+  ✔ locutora           jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ plata              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ enterrado          jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ cinta              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ fallo              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ eco                jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ consola            jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ dn_ep01            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep02            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep03            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep04            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep05            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep06            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w7              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w8              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_liga_oscura     jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:liga:verify, dn:medals:verify) · manual: pendiente
+
+  hallazgo COLISION-SW768: confirmado — Map2030 usa 7 switches del rango 768–774; 7 de ellos están nombrados «POKEMOD ATLAS T2…» en System.rxdata
+  deuda PARTIDA-MANUAL: Ninguna de las 23 partidas de prueba está jugada por una persona
+  deuda DN-MAPS-VERIFY-PRERREQUISITO: dn:maps:verify no corre sin el ingest de referencia
+  deuda ROM-NATIVO-11-FALLOS: verify:rom:nativo reporta 11 fallos en mapas de campaña
+  FALLO cobertura: falta el mundo dn_w9 (mundo creepypasta)
+
+  métrica: 21/22 mundos con las cuatro condiciones (95 %) · partida manual registrada en 0/22 mundos (0 %)
+FALLO: la métrica no está cubierta (1 mundo(s) con fallos)
+```
