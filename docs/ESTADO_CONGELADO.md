@@ -62,6 +62,14 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Creado **`tools/plan900/avance.md`**: registro fase por fase con **fecha y hash de HEAD** (base y cierre) más estado y verificación de cada fase. Fases 1–7 reconstruidas con datos reales de `git log`; la FASE 2 no fue enviada por el backlog y consta como no ejecutada.
 - Creado **`tools/plan900/avance.sh`**: medidor que imprime fecha, hash de HEAD y última fase registrada, para reutilizar en cada fase futura (probado: exit 0).
 
+### FASE 9 — Censo real de mapas
+
+- **Ejecutado:** `node tools/analyze_compiled_fire_ash.mjs` (exit 0, solo lectura; informe detallado en `pokemon_fire_ash/PokeModBackups/analisis_total_fire_ash.json`, artefacto local gitignored).
+- **Comparación contra el último recuento: COINCIDENCIA EXACTA.** El censo reporta **3465 entradas en `MapInfos.rxdata` y 3465 mapas leídos**, igual que los 3465 del inventario congelado (FASE 3). Conteo estricto en disco: 3465 archivos `Map<N>.rxdata` (rango de IDs 1–4419). El glob laxo `Map*.rxdata` da 3468 porque arrastra `MapInfos.rxdata`, `Map341 2.rxdata` y `Map813b.rxdata` (variantes preexistentes ajenas al censo; también existe `Map081.BAK` con otra extensión).
+- Cruzado adicional con el inventario: 887 switches y 293 variables referenciados, 409 secciones de script — todo coincide.
+- Otros totales del censo: 399 tilesets · 36147 eventos · 55499 páginas · 20779 NPCs · 57591 diálogos · 5208 elecciones · 19054 transfers · 4616 combates de entrenador · 5547 entrenadores · 1317 especies · 1025 objetos.
+- Hallazgos del análisis estático (preexistentes, no rompen `npm test`): 41 issues — 8 errores de "entrenador compilado inexistente" (CAMPER/Wyatt m606, LASS/Lyra m630, COOLTRAINER_F/Victoria m355, COOLTRAINER_F/Kahili m959 ×2, SCIENTIST/Faba m960 ×2, SECRET_Volo/Volus m2037) y 33 avisos (23 sprite ausente, 10 objeto simbólico no definido).
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
