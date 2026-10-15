@@ -1,0 +1,5051 @@
+{
+  "generado": "tools/perfiles_artesanales_campanas.mjs",
+  "reglas": {
+    "MAX": 4,
+    "TIPOS_INTERIOR": [
+      8,
+      9
+    ],
+    "SATURACION": 12
+  },
+  "politica": {
+    "maxPorMapa": 4,
+    "mapasRevisados": 1227,
+    "violaciones": []
+  },
+  "resumen": {
+    "mapasConPerfil": 385,
+    "perdidosEnMapasConPerfil": 5062,
+    "perdidosTotalesDelPlan": 6066,
+    "porRegla": {
+      "R1_interior": 9,
+      "R1b_probable": 97,
+      "R2_saturacion": 297
+    }
+  },
+  "mapas": [
+    {
+      "campaña": "glazed",
+      "mapa": 3000,
+      "titulo": "Glazed · Pueblo Glenwood (Lab. de Willow)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3013,
+      "titulo": "Glazed · Ruta 42 (Paso Marino)",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "12x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3014,
+      "titulo": "Glazed · Central Eléctrica de Oceanview",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "12x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3021,
+      "titulo": "Glazed · Paseo de las Palmeras",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 0,
+      "dimension": "20x160",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3022,
+      "titulo": "Glazed · Mirador del Océano",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "28x148",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3026,
+      "titulo": "Glazed · Isla Serenidad (Balneario)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "31x12",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3027,
+      "titulo": "Glazed · Ruta 43 (Arrecife de Coral)",
+      "origen": 24,
+      "instalados": 4,
+      "perdidos": 20,
+      "tipoMapa": 0,
+      "dimension": "50x33",
+      "motivos": [
+        "R2 saturación (24 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3028,
+      "titulo": "Glazed · Faro de Serenidad",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "18x8",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3029,
+      "titulo": "Glazed · Gruta del Resplandor",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x8",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3030,
+      "titulo": "Glazed · Bahía del Sol Poniente",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x8",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3031,
+      "titulo": "Glazed · Gimnasio Serenity (Medalla Pure)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x8",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3033,
+      "titulo": "Glazed · Acantilado Tranquilo",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "17x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3038,
+      "titulo": "Glazed · Embarcadero de Serenidad",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "19x73",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3048,
+      "titulo": "Glazed · Puesto de Guardia",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "13x9",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3051,
+      "titulo": "Glazed · Colina de los Vientos",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "12x15",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3052,
+      "titulo": "Glazed · Paso hacia Mt. Stratus",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 0,
+      "dimension": "46x50",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3054,
+      "titulo": "Glazed · Mt. Stratus (Base de la Montaña)",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "125x24",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3056,
+      "titulo": "Glazed · Mt. Stratus (Caverna de Hielo)",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "31x164",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3057,
+      "titulo": "Glazed · Puesto de Avanzada Team Fusion",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "9x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3065,
+      "titulo": "Glazed · Pista de Aterrizaje Fusion",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "64x34",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3066,
+      "titulo": "Glazed · Bajada hacia Darkwood",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3067,
+      "titulo": "Glazed · Pueblo Darkwood (Bosque Umbrío)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3068,
+      "titulo": "Glazed · Iglesia de Pikachu (Templo del Lenguaje)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3069,
+      "titulo": "Glazed · Bosque de las Sombras 1F",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3070,
+      "titulo": "Glazed · Bosque de las Sombras 2F (Península)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3078,
+      "titulo": "Glazed · Altar del Scarf Pikachu",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "50x38",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3081,
+      "titulo": "Glazed · Aldea Geminite (Valle de los Cristales)",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 0,
+      "dimension": "30x62",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3084,
+      "titulo": "Glazed · Pozo de Excavación",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3085,
+      "titulo": "Glazed · Fundición de Geminite",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "120x28",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3086,
+      "titulo": "Glazed · Caverna de Cuarzo Resonante",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "19x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3091,
+      "titulo": "Glazed · Fisura Subterránea",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "50x56",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3095,
+      "titulo": "Glazed · Sendero de la Liga de Tunod",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "16x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3096,
+      "titulo": "Glazed · Safari de Tunod (Entrada Principal)",
+      "origen": 11,
+      "instalados": 4,
+      "perdidos": 7,
+      "tipoMapa": 0,
+      "dimension": "13x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3100,
+      "titulo": "Glazed · Avenida de la Victoria de Tunod",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "14x15",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3104,
+      "titulo": "Glazed · Terraza de la Convergencia",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 0,
+      "dimension": "64x17",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "glazed",
+      "mapa": 3106,
+      "titulo": "Glazed · Coliseo de la Liga de Tunod",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "106x23",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3120,
+      "titulo": "Light Platinum · Yellow Town (Lab. de la Prof. Jasmine)",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 0,
+      "dimension": "40x46",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3121,
+      "titulo": "Light Platinum · Cueva Central (Paso hacia Central City)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "40x30",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3122,
+      "titulo": "Light Platinum · Costa de Marfeny Lake",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "36x28",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3123,
+      "titulo": "Light Platinum · Bosque Inhore (Inhore Woods)",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 2,
+      "dimension": "36x48",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3125,
+      "titulo": "Light Platinum · Ciudad Esmeralda & Lab. Botánico",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 3,
+      "dimension": "66x32",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3133,
+      "titulo": "Light Platinum · Sendero de Mt. Zhery",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3134,
+      "titulo": "Light Platinum · Central de Serenity & Gimnasio (Rayner)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3135,
+      "titulo": "Light Platinum · Cordillera Mt. Icestorm (Glaciar de Zhery)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3136,
+      "titulo": "Light Platinum · Gimnasio de Snowce (Sophia)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3137,
+      "titulo": "Light Platinum · Sendero de Mt. Draken (Altar del Team Steam)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "light_platinum",
+      "mapa": 3138,
+      "titulo": "Light Platinum · Drakenbreath & Gimnasio Dragón (Wesley)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3204,
+      "titulo": "Liquid Crystal · Cueva Oscura (Dark Cave)",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "15x12",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3207,
+      "titulo": "Liquid Crystal · Gimnasio de Malvalona (Falkner)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "13x15",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3209,
+      "titulo": "Liquid Crystal · Ruinas Alfa (Sector 2)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "13x15",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3212,
+      "titulo": "Liquid Crystal · Ruinas Alfa (Sector 5)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3213,
+      "titulo": "Liquid Crystal · Ruinas Alfa (Sector 6)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3216,
+      "titulo": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 1)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "9x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3217,
+      "titulo": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 2)",
+      "origen": 11,
+      "instalados": 4,
+      "perdidos": 7,
+      "tipoMapa": 0,
+      "dimension": "13x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3218,
+      "titulo": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 3)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3241,
+      "titulo": "Liquid Crystal · Torre Radio de Trigal (Radio Tower)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "20x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3242,
+      "titulo": "Liquid Crystal · Gimnasio de Trigal (Whitney)",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "12x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3264,
+      "titulo": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 2)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "12x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3265,
+      "titulo": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 3)",
+      "origen": 11,
+      "instalados": 4,
+      "perdidos": 7,
+      "tipoMapa": 0,
+      "dimension": "12x18",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3268,
+      "titulo": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 6)",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "20x18",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3282,
+      "titulo": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 3)",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "20x18",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3284,
+      "titulo": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 5)",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "9x9",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3292,
+      "titulo": "Liquid Crystal · Faro de Olivo (Planta 2)",
+      "origen": 21,
+      "instalados": 4,
+      "perdidos": 17,
+      "tipoMapa": 0,
+      "dimension": "68x56",
+      "motivos": [
+        "R2 saturación (21 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3293,
+      "titulo": "Liquid Crystal · Faro de Olivo (Planta 3)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "70x56",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3300,
+      "titulo": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 5)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 11,
+      "dimension": "70x60",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3301,
+      "titulo": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 6)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "58x50",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3302,
+      "titulo": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 7)",
+      "origen": 32,
+      "instalados": 4,
+      "perdidos": 28,
+      "tipoMapa": 0,
+      "dimension": "20x40",
+      "motivos": [
+        "R2 saturación (32 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3303,
+      "titulo": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 8)",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3316,
+      "titulo": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 7)",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "38x27",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3317,
+      "titulo": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 8)",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "34x22",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3318,
+      "titulo": "Liquid Crystal · Islas Remolino (Whirl Islands · Gruta 9)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "36x22",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3320,
+      "titulo": "Liquid Crystal · Ciudad Orquídea (Cianwood City)",
+      "origen": 10,
+      "instalados": 4,
+      "perdidos": 6,
+      "tipoMapa": 0,
+      "dimension": "18x14",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3321,
+      "titulo": "Liquid Crystal · Costa de Orquídea (Tramo 1)",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "40x44",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3322,
+      "titulo": "Liquid Crystal · Costa de Orquídea (Tramo 2)",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "40x44",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3323,
+      "titulo": "Liquid Crystal · Gimnasio de Orquídea (Chuck)",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 11,
+      "dimension": "40x23",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3331,
+      "titulo": "Liquid Crystal · Acantilados & Safari de Johto (Sector 8)",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "40x44",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3332,
+      "titulo": "Liquid Crystal · Acantilados & Safari de Johto (Sector 9)",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 11,
+      "dimension": "40x23",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3333,
+      "titulo": "Liquid Crystal · Acantilados & Safari de Johto (Sector 10)",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "44x34",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3348,
+      "titulo": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 9)",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "21x11",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3353,
+      "titulo": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 14)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "23x24",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3355,
+      "titulo": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 16)",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "155x20",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3388,
+      "titulo": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 3)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "12x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3389,
+      "titulo": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 4)",
+      "origen": 11,
+      "instalados": 4,
+      "perdidos": 7,
+      "tipoMapa": 0,
+      "dimension": "12x18",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3392,
+      "titulo": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 7)",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "20x18",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3406,
+      "titulo": "Liquid Crystal · Ruta Helada (Ice Path · Galería 7)",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "20x18",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3408,
+      "titulo": "Liquid Crystal · Ruta Helada (Ice Path · Galería 9)",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "9x9",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3416,
+      "titulo": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 1)",
+      "origen": 21,
+      "instalados": 4,
+      "perdidos": 17,
+      "tipoMapa": 0,
+      "dimension": "68x56",
+      "motivos": [
+        "R2 saturación (21 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3417,
+      "titulo": "Liquid Crystal · Guarida Dragón (Dragon Den · Cámara 2)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "70x56",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3424,
+      "titulo": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 2)",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "21x17",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3425,
+      "titulo": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 3)",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 2,
+      "dimension": "16x36",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3429,
+      "titulo": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 7)",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "19x16",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3512,
+      "titulo": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 13)",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "155x20",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3515,
+      "titulo": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 16)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "16x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3524,
+      "titulo": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (5)",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "58x50",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3525,
+      "titulo": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (6)",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "16x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3537,
+      "titulo": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (18)",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "60x54",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3539,
+      "titulo": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (20)",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 2,
+      "dimension": "68x58",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3544,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (5)",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 2,
+      "dimension": "66x55",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3546,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (7)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "60x52",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3547,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (8)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "54x42",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3548,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (9)",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "76x54",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3549,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (10)",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 2,
+      "dimension": "54x26",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3550,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (11)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "68x46",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3553,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Carmín & Central Eléctrica (14)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "34x78",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3560,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (1)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "100x36",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3569,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (10)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "40x60",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3576,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (17)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "110x32",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3577,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (18)",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 2,
+      "dimension": "76x20",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3578,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (19)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "28x35",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3579,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azafrán & Silph S.A. (20)",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 2,
+      "dimension": "38x62",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3581,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (2)",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "38x120",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3583,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (4)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "58x23",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3585,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (6)",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 2,
+      "dimension": "54x112",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3587,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (8)",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "28x52",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3589,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (10)",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "28x46",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3590,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (11)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "90x36",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3591,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (12)",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 2,
+      "dimension": "52x56",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3592,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (13)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "48x76",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3593,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (14)",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "70x50",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3596,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (17)",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "90x44",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3597,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (18)",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "26x126",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3599,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Azulona & Casino (20)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "40x164",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3607,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (8)",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 11,
+      "dimension": "60x36",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3614,
+      "titulo": "Liquid Crystal · Kanto · Ciudad Celeste & Cueva Celeste (15)",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "64x26",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3621,
+      "titulo": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (7)",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "42x48",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3622,
+      "titulo": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (8)",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 2,
+      "dimension": "100x36",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3624,
+      "titulo": "Liquid Crystal · Kanto · Pueblo Lavanda & Torre (10)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "42x68",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3626,
+      "titulo": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 2)",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "68x42",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3630,
+      "titulo": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 6)",
+      "origen": 39,
+      "instalados": 4,
+      "perdidos": 35,
+      "tipoMapa": 0,
+      "dimension": "110x46",
+      "motivos": [
+        "R2 saturación (39 → 4)"
+      ]
+    },
+    {
+      "campaña": "liquid_crystal",
+      "mapa": 3631,
+      "titulo": "Liquid Crystal · Cima del Monte Plateado (Duelo contra Red)",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "108x42",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3700,
+      "titulo": "TFOH · Capítulo 01 · poblado 001",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "15x15",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3701,
+      "titulo": "TFOH · Capítulo 01 · ruta 002",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "40x38",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3702,
+      "titulo": "TFOH · Capítulo 01 · santuario 003",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "40x38",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3704,
+      "titulo": "TFOH · Capítulo 01 · costa 005",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "15x17",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3705,
+      "titulo": "TFOH · Capítulo 01 · poblado 006",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 3,
+      "dimension": "15x17",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3706,
+      "titulo": "TFOH · Capítulo 01 · instalación 007",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 8,
+      "dimension": "15x17",
+      "motivos": [
+        "R1 interior (tipo 8)",
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3707,
+      "titulo": "TFOH · Capítulo 01 · instalación 008",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 7,
+      "dimension": "15x17",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3712,
+      "titulo": "TFOH · Capítulo 02 · costa 013",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "15x12",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3713,
+      "titulo": "TFOH · Capítulo 02 · poblado 014",
+      "origen": 56,
+      "instalados": 4,
+      "perdidos": 52,
+      "tipoMapa": 11,
+      "dimension": "54x69",
+      "motivos": [
+        "R2 saturación (56 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3714,
+      "titulo": "TFOH · Capítulo 02 · instalación 015",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3716,
+      "titulo": "TFOH · Capítulo 02 · poblado 017",
+      "origen": 32,
+      "instalados": 4,
+      "perdidos": 28,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (32 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3721,
+      "titulo": "TFOH · Capítulo 02 · bosque 022",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "85x80",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3724,
+      "titulo": "TFOH · Capítulo 03 · poblado 025",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "51x22",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3725,
+      "titulo": "TFOH · Capítulo 03 · ruta 026",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "45x22",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3730,
+      "titulo": "TFOH · Capítulo 03 · instalación 031",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "36x22",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3733,
+      "titulo": "TFOH · Capítulo 03 · ruta 034",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "50x32",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3739,
+      "titulo": "TFOH · Capítulo 04 · meseta 040",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "17x19",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3740,
+      "titulo": "TFOH · Capítulo 04 · poblado 041",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "17x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3745,
+      "titulo": "TFOH · Capítulo 04 · bosque 046",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "51x36",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3746,
+      "titulo": "TFOH · Capítulo 04 · instalación 047",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "54x35",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3747,
+      "titulo": "TFOH · Capítulo 04 · meseta 048",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "57x40",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3748,
+      "titulo": "TFOH · Capítulo 05 · poblado 049",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 0,
+      "dimension": "48x36",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3752,
+      "titulo": "TFOH · Capítulo 05 · costa 053",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "40x23",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3753,
+      "titulo": "TFOH · Capítulo 05 · bosque 054",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "40x23",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3758,
+      "titulo": "TFOH · Capítulo 05 · santuario 059",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "13x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3760,
+      "titulo": "TFOH · Capítulo 06 · bosque 061",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3761,
+      "titulo": "TFOH · Capítulo 06 · instalación 062",
+      "origen": 45,
+      "instalados": 4,
+      "perdidos": 41,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (45 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3762,
+      "titulo": "TFOH · Capítulo 06 · instalación 063",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "38x24",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3763,
+      "titulo": "TFOH · Capítulo 06 · meseta 064",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "38x23",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3764,
+      "titulo": "TFOH · Capítulo 06 · poblado 065",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "38x24",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3765,
+      "titulo": "TFOH · Capítulo 06 · ruta 066",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "38x24",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3771,
+      "titulo": "TFOH · Capítulo 06 · bosque 072",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 6,
+      "dimension": "24x20",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3774,
+      "titulo": "TFOH · Capítulo 07 · santuario 075",
+      "origen": 31,
+      "instalados": 4,
+      "perdidos": 27,
+      "tipoMapa": 0,
+      "dimension": "49x40",
+      "motivos": [
+        "R2 saturación (31 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3776,
+      "titulo": "TFOH · Capítulo 07 · costa 077",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "57x54",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3782,
+      "titulo": "TFOH · Capítulo 07 · santuario 083",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "50x32",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3784,
+      "titulo": "TFOH · Capítulo 08 · costa 085",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 0,
+      "dimension": "16x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3785,
+      "titulo": "TFOH · Capítulo 08 · bosque 086",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 0,
+      "dimension": "50x32",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3786,
+      "titulo": "TFOH · Capítulo 08 · ruta 087",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 11,
+      "dimension": "57x47",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3798,
+      "titulo": "TFOH · Capítulo 09 · santuario 099",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "60x32",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3801,
+      "titulo": "TFOH · Capítulo 09 · bosque 102",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3802,
+      "titulo": "TFOH · Capítulo 09 · instalación 103",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3803,
+      "titulo": "TFOH · Capítulo 09 · meseta 104",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3804,
+      "titulo": "TFOH · Capítulo 09 · poblado 105",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3805,
+      "titulo": "TFOH · Capítulo 09 · ruta 106",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3806,
+      "titulo": "TFOH · Capítulo 09 · santuario 107",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3807,
+      "titulo": "TFOH · Capítulo 09 · cueva 108",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3808,
+      "titulo": "TFOH · Capítulo 10 · costa 109",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "18x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3810,
+      "titulo": "TFOH · Capítulo 10 · instalación 111",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "19x17",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3833,
+      "titulo": "TFOH · Capítulo 12 · bosque 134",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 0,
+      "dimension": "15x16",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3839,
+      "titulo": "TFOH · Capítulo 12 · cueva 140",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3840,
+      "titulo": "TFOH · Capítulo 12 · costa 141",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3841,
+      "titulo": "TFOH · Capítulo 12 · bosque 142",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3843,
+      "titulo": "TFOH · Capítulo 12 · ruta 144",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3844,
+      "titulo": "TFOH · Capítulo 13 · santuario 145",
+      "origen": 33,
+      "instalados": 4,
+      "perdidos": 29,
+      "tipoMapa": 2,
+      "dimension": "60x40",
+      "motivos": [
+        "R2 saturación (33 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3845,
+      "titulo": "TFOH · Capítulo 13 · cueva 146",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 2,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3848,
+      "titulo": "TFOH · Capítulo 13 · costa 149",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "66x55",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3852,
+      "titulo": "TFOH · Capítulo 13 · santuario 153",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 2,
+      "dimension": "24x40",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3853,
+      "titulo": "TFOH · Capítulo 13 · cueva 154",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3857,
+      "titulo": "TFOH · Capítulo 14 · bosque 158",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "24x40",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3858,
+      "titulo": "TFOH · Capítulo 14 · instalación 159",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "24x80",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3859,
+      "titulo": "TFOH · Capítulo 14 · meseta 160",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 0,
+      "dimension": "84x20",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3860,
+      "titulo": "TFOH · Capítulo 14 · poblado 161",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 0,
+      "dimension": "108x20",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3861,
+      "titulo": "TFOH · Capítulo 14 · ruta 162",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3862,
+      "titulo": "TFOH · Capítulo 14 · santuario 163",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "24x40",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3863,
+      "titulo": "TFOH · Capítulo 14 · bosque 164",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "24x20",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3864,
+      "titulo": "TFOH · Capítulo 14 · meseta 165",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 3,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3865,
+      "titulo": "TFOH · Capítulo 14 · bosque 166",
+      "origen": 21,
+      "instalados": 4,
+      "perdidos": 17,
+      "tipoMapa": 0,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (21 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3866,
+      "titulo": "TFOH · Capítulo 14 · instalación 167",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "24x80",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3867,
+      "titulo": "TFOH · Capítulo 14 · ruta 168",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 2,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3868,
+      "titulo": "TFOH · Capítulo 15 · poblado 169",
+      "origen": 32,
+      "instalados": 4,
+      "perdidos": 28,
+      "tipoMapa": 0,
+      "dimension": "24x120",
+      "motivos": [
+        "R2 saturación (32 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3869,
+      "titulo": "TFOH · Capítulo 15 · cueva 170",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 2,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3870,
+      "titulo": "TFOH · Capítulo 15 · costa 171",
+      "origen": 36,
+      "instalados": 4,
+      "perdidos": 32,
+      "tipoMapa": 2,
+      "dimension": "24x60",
+      "motivos": [
+        "R2 saturación (36 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3871,
+      "titulo": "TFOH · Capítulo 15 · bosque 172",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 2,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3872,
+      "titulo": "TFOH · Capítulo 15 · instalación 173",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "48x20",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3873,
+      "titulo": "TFOH · Capítulo 15 · meseta 174",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 2,
+      "dimension": "24x160",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3875,
+      "titulo": "TFOH · Capítulo 15 · ruta 176",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 2,
+      "dimension": "24x60",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3876,
+      "titulo": "TFOH · Capítulo 15 · santuario 177",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 2,
+      "dimension": "120x20",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3877,
+      "titulo": "TFOH · Capítulo 15 · ruta 178",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "24x50",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3878,
+      "titulo": "TFOH · Capítulo 15 · costa 179",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "24x50",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3879,
+      "titulo": "TFOH · Capítulo 15 · cueva 180",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "48x24",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3880,
+      "titulo": "TFOH · Capítulo 16 · costa 181",
+      "origen": 25,
+      "instalados": 4,
+      "perdidos": 21,
+      "tipoMapa": 0,
+      "dimension": "24x160",
+      "motivos": [
+        "R2 saturación (25 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3882,
+      "titulo": "TFOH · Capítulo 16 · instalación 183",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 0,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3883,
+      "titulo": "TFOH · Capítulo 16 · ruta 184",
+      "origen": 29,
+      "instalados": 4,
+      "perdidos": 25,
+      "tipoMapa": 2,
+      "dimension": "24x140",
+      "motivos": [
+        "R2 saturación (29 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3890,
+      "titulo": "TFOH · Capítulo 16 · poblado 191",
+      "origen": 45,
+      "instalados": 4,
+      "perdidos": 41,
+      "tipoMapa": 2,
+      "dimension": "40x70",
+      "motivos": [
+        "R2 saturación (45 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3897,
+      "titulo": "TFOH · Capítulo 17 · meseta 198",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 2,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3900,
+      "titulo": "TFOH · Capítulo 17 · santuario 201",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 2,
+      "dimension": "24x80",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3905,
+      "titulo": "TFOH · Capítulo 18 · bosque 206",
+      "origen": 8,
+      "instalados": 4,
+      "perdidos": 4,
+      "tipoMapa": 0,
+      "dimension": "13x14",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3910,
+      "titulo": "TFOH · Capítulo 18 · santuario 211",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3913,
+      "titulo": "TFOH · Capítulo 18 · bosque 214",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "19x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3917,
+      "titulo": "TFOH · Capítulo 19 · ruta 218",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 0,
+      "dimension": "13x15",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3921,
+      "titulo": "TFOH · Capítulo 19 · bosque 222",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3924,
+      "titulo": "TFOH · Capítulo 19 · poblado 225",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 0,
+      "dimension": "18x15",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3926,
+      "titulo": "TFOH · Capítulo 19 · santuario 227",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "13x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3927,
+      "titulo": "TFOH · Capítulo 19 · cueva 228",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3928,
+      "titulo": "TFOH · Capítulo 20 · costa 229",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "30x25",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3934,
+      "titulo": "TFOH · Capítulo 20 · santuario 235",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 0,
+      "dimension": "12x9",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3935,
+      "titulo": "TFOH · Capítulo 20 · cueva 236",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 0,
+      "dimension": "13x16",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "tfoh",
+      "mapa": 3942,
+      "titulo": "TFOH · Capítulo 21 · santuario 243",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "19x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4010,
+      "titulo": "Pokémon Unbound · Capítulo 01 · cueva 011",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 0,
+      "dimension": "34x30",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4018,
+      "titulo": "Pokémon Unbound · Capítulo 02 · santuario 019",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x20",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4019,
+      "titulo": "Pokémon Unbound · Capítulo 02 · cueva 020",
+      "origen": 26,
+      "instalados": 4,
+      "perdidos": 22,
+      "tipoMapa": 0,
+      "dimension": "37x28",
+      "motivos": [
+        "R2 saturación (26 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4026,
+      "titulo": "Pokémon Unbound · Capítulo 03 · santuario 027",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "17x15",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4029,
+      "titulo": "Pokémon Unbound · Capítulo 03 · bosque 030",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "38x25",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4038,
+      "titulo": "Pokémon Unbound · Capítulo 04 · instalación 039",
+      "origen": 21,
+      "instalados": 4,
+      "perdidos": 17,
+      "tipoMapa": 0,
+      "dimension": "54x32",
+      "motivos": [
+        "R2 saturación (21 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4049,
+      "titulo": "Pokémon Unbound · Capítulo 05 · ruta 050",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "24x20",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4055,
+      "titulo": "Pokémon Unbound · Capítulo 05 · meseta 056",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4057,
+      "titulo": "Pokémon Unbound · Capítulo 05 · ruta 058",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "13x12",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4058,
+      "titulo": "Pokémon Unbound · Capítulo 05 · cueva 059",
+      "origen": 25,
+      "instalados": 4,
+      "perdidos": 21,
+      "tipoMapa": 0,
+      "dimension": "96x56",
+      "motivos": [
+        "R2 saturación (25 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4059,
+      "titulo": "Pokémon Unbound · Capítulo 05 · bosque 060",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "60x60",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4060,
+      "titulo": "Pokémon Unbound · Capítulo 06 · meseta 061",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 11,
+      "dimension": "48x46",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4061,
+      "titulo": "Pokémon Unbound · Capítulo 06 · bosque 062",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4062,
+      "titulo": "Pokémon Unbound · Capítulo 06 · instalación 063",
+      "origen": 33,
+      "instalados": 4,
+      "perdidos": 29,
+      "tipoMapa": 0,
+      "dimension": "24x17",
+      "motivos": [
+        "R2 saturación (33 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4064,
+      "titulo": "Pokémon Unbound · Capítulo 06 · poblado 065",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 0,
+      "dimension": "27x19",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4066,
+      "titulo": "Pokémon Unbound · Capítulo 06 · santuario 067",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "11x16",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4067,
+      "titulo": "Pokémon Unbound · Capítulo 06 · cueva 068",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "64x30",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4068,
+      "titulo": "Pokémon Unbound · Capítulo 06 · costa 069",
+      "origen": 10,
+      "instalados": 4,
+      "perdidos": 6,
+      "tipoMapa": 0,
+      "dimension": "9x9",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4070,
+      "titulo": "Pokémon Unbound · Capítulo 06 · instalación 071",
+      "origen": 25,
+      "instalados": 4,
+      "perdidos": 21,
+      "tipoMapa": 0,
+      "dimension": "29x36",
+      "motivos": [
+        "R2 saturación (25 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4072,
+      "titulo": "Pokémon Unbound · Capítulo 07 · poblado 073",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 0,
+      "dimension": "11x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4073,
+      "titulo": "Pokémon Unbound · Capítulo 07 · ruta 074",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "51x55",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4076,
+      "titulo": "Pokémon Unbound · Capítulo 07 · instalación 077",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "58x33",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4080,
+      "titulo": "Pokémon Unbound · Capítulo 07 · poblado 081",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "14x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4082,
+      "titulo": "Pokémon Unbound · Capítulo 07 · santuario 083",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "19x16",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4083,
+      "titulo": "Pokémon Unbound · Capítulo 07 · cueva 084",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "19x16",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4084,
+      "titulo": "Pokémon Unbound · Capítulo 08 · costa 085",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4085,
+      "titulo": "Pokémon Unbound · Capítulo 08 · bosque 086",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "15x11",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4105,
+      "titulo": "Pokémon Unbound · Capítulo 09 · ruta 106",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4110,
+      "titulo": "Pokémon Unbound · Capítulo 10 · instalación 111",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4114,
+      "titulo": "Pokémon Unbound · Capítulo 10 · santuario 115",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4123,
+      "titulo": "Pokémon Unbound · Capítulo 11 · bosque 124",
+      "origen": 31,
+      "instalados": 4,
+      "perdidos": 27,
+      "tipoMapa": 2,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (31 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4124,
+      "titulo": "Pokémon Unbound · Capítulo 11 · instalación 125",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 2,
+      "dimension": "82x90",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4125,
+      "titulo": "Pokémon Unbound · Capítulo 11 · meseta 126",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "48x50",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4126,
+      "titulo": "Pokémon Unbound · Capítulo 11 · poblado 127",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 2,
+      "dimension": "40x40",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4128,
+      "titulo": "Pokémon Unbound · Capítulo 11 · santuario 129",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 2,
+      "dimension": "76x40",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4129,
+      "titulo": "Pokémon Unbound · Capítulo 11 · cueva 130",
+      "origen": 41,
+      "instalados": 4,
+      "perdidos": 37,
+      "tipoMapa": 2,
+      "dimension": "118x33",
+      "motivos": [
+        "R2 saturación (41 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4130,
+      "titulo": "Pokémon Unbound · Capítulo 11 · santuario 131",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "64x30",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4132,
+      "titulo": "Pokémon Unbound · Capítulo 12 · instalación 133",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "30x27",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4134,
+      "titulo": "Pokémon Unbound · Capítulo 12 · instalación 135",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "58x66",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4135,
+      "titulo": "Pokémon Unbound · Capítulo 12 · meseta 136",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "24x20",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4136,
+      "titulo": "Pokémon Unbound · Capítulo 12 · poblado 137",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4141,
+      "titulo": "Pokémon Unbound · Capítulo 12 · meseta 142",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 2,
+      "dimension": "58x36",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4145,
+      "titulo": "Pokémon Unbound · Capítulo 13 · ruta 146",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4146,
+      "titulo": "Pokémon Unbound · Capítulo 13 · santuario 147",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "42x26",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4149,
+      "titulo": "Pokémon Unbound · Capítulo 13 · meseta 150",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "36x40",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4150,
+      "titulo": "Pokémon Unbound · Capítulo 13 · poblado 151",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "60x60",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4153,
+      "titulo": "Pokémon Unbound · Capítulo 13 · cueva 154",
+      "origen": 36,
+      "instalados": 4,
+      "perdidos": 32,
+      "tipoMapa": 2,
+      "dimension": "51x37",
+      "motivos": [
+        "R2 saturación (36 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4157,
+      "titulo": "Pokémon Unbound · Capítulo 14 · meseta 158",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "75x40",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4158,
+      "titulo": "Pokémon Unbound · Capítulo 14 · poblado 159",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "70x75",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4169,
+      "titulo": "Pokémon Unbound · Capítulo 15 · ruta 170",
+      "origen": 24,
+      "instalados": 4,
+      "perdidos": 20,
+      "tipoMapa": 8,
+      "dimension": "48x40",
+      "motivos": [
+        "R1 interior (tipo 8)",
+        "R2 saturación (24 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4170,
+      "titulo": "Pokémon Unbound · Capítulo 15 · santuario 171",
+      "origen": 33,
+      "instalados": 4,
+      "perdidos": 29,
+      "tipoMapa": 8,
+      "dimension": "75x64",
+      "motivos": [
+        "R1 interior (tipo 8)",
+        "R2 saturación (33 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4174,
+      "titulo": "Pokémon Unbound · Capítulo 15 · instalación 175",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "10x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4192,
+      "titulo": "Pokémon Unbound · Capítulo 17 · cueva 193",
+      "origen": 16,
+      "instalados": 4,
+      "perdidos": 12,
+      "tipoMapa": 11,
+      "dimension": "60x36",
+      "motivos": [
+        "R2 saturación (16 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4193,
+      "titulo": "Pokémon Unbound · Capítulo 17 · ruta 194",
+      "origen": 6,
+      "instalados": 4,
+      "perdidos": 2,
+      "tipoMapa": 0,
+      "dimension": "16x10",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4194,
+      "titulo": "Pokémon Unbound · Capítulo 17 · santuario 195",
+      "origen": 21,
+      "instalados": 4,
+      "perdidos": 17,
+      "tipoMapa": 0,
+      "dimension": "50x40",
+      "motivos": [
+        "R2 saturación (21 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4195,
+      "titulo": "Pokémon Unbound · Capítulo 17 · cueva 196",
+      "origen": 21,
+      "instalados": 4,
+      "perdidos": 17,
+      "tipoMapa": 0,
+      "dimension": "60x60",
+      "motivos": [
+        "R2 saturación (21 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4198,
+      "titulo": "Pokémon Unbound · Capítulo 17 · instalación 199",
+      "origen": 10,
+      "instalados": 4,
+      "perdidos": 6,
+      "tipoMapa": 0,
+      "dimension": "13x12",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4200,
+      "titulo": "Pokémon Unbound · Capítulo 17 · poblado 201",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "40x30",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4201,
+      "titulo": "Pokémon Unbound · Capítulo 17 · ruta 202",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 0,
+      "dimension": "74x100",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4202,
+      "titulo": "Pokémon Unbound · Capítulo 17 · santuario 203",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "47x151",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4207,
+      "titulo": "Pokémon Unbound · Capítulo 18 · ruta 208",
+      "origen": 31,
+      "instalados": 4,
+      "perdidos": 27,
+      "tipoMapa": 2,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (31 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4208,
+      "titulo": "Pokémon Unbound · Capítulo 18 · santuario 209",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 2,
+      "dimension": "82x90",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4209,
+      "titulo": "Pokémon Unbound · Capítulo 18 · cueva 210",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "48x50",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4210,
+      "titulo": "Pokémon Unbound · Capítulo 18 · costa 211",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 2,
+      "dimension": "40x40",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4212,
+      "titulo": "Pokémon Unbound · Capítulo 18 · instalación 213",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 2,
+      "dimension": "76x40",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4213,
+      "titulo": "Pokémon Unbound · Capítulo 18 · meseta 214",
+      "origen": 41,
+      "instalados": 4,
+      "perdidos": 37,
+      "tipoMapa": 2,
+      "dimension": "118x33",
+      "motivos": [
+        "R2 saturación (41 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4214,
+      "titulo": "Pokémon Unbound · Capítulo 18 · instalación 215",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "64x30",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4216,
+      "titulo": "Pokémon Unbound · Capítulo 19 · santuario 217",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "30x27",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4218,
+      "titulo": "Pokémon Unbound · Capítulo 19 · santuario 219",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "58x66",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4219,
+      "titulo": "Pokémon Unbound · Capítulo 19 · cueva 220",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "24x20",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4220,
+      "titulo": "Pokémon Unbound · Capítulo 19 · costa 221",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4225,
+      "titulo": "Pokémon Unbound · Capítulo 19 · cueva 226",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 2,
+      "dimension": "58x36",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4229,
+      "titulo": "Pokémon Unbound · Capítulo 20 · bosque 230",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4230,
+      "titulo": "Pokémon Unbound · Capítulo 20 · instalación 231",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "42x26",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4233,
+      "titulo": "Pokémon Unbound · Capítulo 20 · cueva 234",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "36x40",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4234,
+      "titulo": "Pokémon Unbound · Capítulo 20 · costa 235",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "60x60",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4241,
+      "titulo": "Pokémon Unbound · Capítulo 21 · cueva 242",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "75x40",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4242,
+      "titulo": "Pokémon Unbound · Capítulo 21 · costa 243",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "70x75",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4258,
+      "titulo": "Pokémon Unbound · Capítulo 22 · santuario 259",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "15x12",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4262,
+      "titulo": "Pokémon Unbound · Capítulo 22 · instalación 263",
+      "origen": 8,
+      "instalados": 4,
+      "perdidos": 4,
+      "tipoMapa": 0,
+      "dimension": "17x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4263,
+      "titulo": "Pokémon Unbound · Capítulo 22 · poblado 264",
+      "origen": 7,
+      "instalados": 4,
+      "perdidos": 3,
+      "tipoMapa": 9,
+      "dimension": "17x20",
+      "motivos": [
+        "R1 interior (tipo 9)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4264,
+      "titulo": "Pokémon Unbound · Capítulo 23 · ruta 265",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 9,
+      "dimension": "9x11",
+      "motivos": [
+        "R1 interior (tipo 9)",
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4269,
+      "titulo": "Pokémon Unbound · Capítulo 23 · bosque 270",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 0,
+      "dimension": "40x31",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4272,
+      "titulo": "Pokémon Unbound · Capítulo 23 · poblado 273",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "18x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4278,
+      "titulo": "Pokémon Unbound · Capítulo 24 · instalación 279",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "33x25",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4279,
+      "titulo": "Pokémon Unbound · Capítulo 24 · meseta 280",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "35x25",
+      "motivos": [
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4281,
+      "titulo": "Pokémon Unbound · Capítulo 24 · cueva 282",
+      "origen": 26,
+      "instalados": 4,
+      "perdidos": 22,
+      "tipoMapa": 2,
+      "dimension": "40x23",
+      "motivos": [
+        "R2 saturación (26 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4283,
+      "titulo": "Pokémon Unbound · Capítulo 24 · cueva 284",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "13x12",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4285,
+      "titulo": "Pokémon Unbound · Capítulo 24 · bosque 286",
+      "origen": 11,
+      "instalados": 4,
+      "perdidos": 7,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4286,
+      "titulo": "Pokémon Unbound · Capítulo 24 · instalación 287",
+      "origen": 5,
+      "instalados": 4,
+      "perdidos": 1,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4290,
+      "titulo": "Pokémon Unbound · Capítulo 25 · santuario 291",
+      "origen": 9,
+      "instalados": 4,
+      "perdidos": 5,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4292,
+      "titulo": "Pokémon Unbound · Capítulo 25 · costa 293",
+      "origen": 50,
+      "instalados": 4,
+      "perdidos": 46,
+      "tipoMapa": 0,
+      "dimension": "80x55",
+      "motivos": [
+        "R2 saturación (50 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4293,
+      "titulo": "Pokémon Unbound · Capítulo 25 · instalación 294",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 0,
+      "dimension": "34x30",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4294,
+      "titulo": "Pokémon Unbound · Capítulo 25 · meseta 295",
+      "origen": 33,
+      "instalados": 4,
+      "perdidos": 29,
+      "tipoMapa": 0,
+      "dimension": "51x22",
+      "motivos": [
+        "R2 saturación (33 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4295,
+      "titulo": "Pokémon Unbound · Capítulo 25 · meseta 296",
+      "origen": 18,
+      "instalados": 4,
+      "perdidos": 14,
+      "tipoMapa": 0,
+      "dimension": "32x28",
+      "motivos": [
+        "R2 saturación (18 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4296,
+      "titulo": "Pokémon Unbound · Capítulo 25 · poblado 297",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 0,
+      "dimension": "74x100",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4297,
+      "titulo": "Pokémon Unbound · Capítulo 25 · ruta 298",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 0,
+      "dimension": "47x151",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4304,
+      "titulo": "Pokémon Unbound · Capítulo 26 · poblado 305",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4305,
+      "titulo": "Pokémon Unbound · Capítulo 26 · cueva 306",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 2,
+      "dimension": "58x36",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4306,
+      "titulo": "Pokémon Unbound · Capítulo 26 · costa 307",
+      "origen": 28,
+      "instalados": 4,
+      "perdidos": 24,
+      "tipoMapa": 2,
+      "dimension": "82x90",
+      "motivos": [
+        "R2 saturación (28 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4307,
+      "titulo": "Pokémon Unbound · Capítulo 26 · bosque 308",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "30x27",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4308,
+      "titulo": "Pokémon Unbound · Capítulo 26 · instalación 309",
+      "origen": 31,
+      "instalados": 4,
+      "perdidos": 27,
+      "tipoMapa": 2,
+      "dimension": "48x40",
+      "motivos": [
+        "R2 saturación (31 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4309,
+      "titulo": "Pokémon Unbound · Capítulo 26 · meseta 310",
+      "origen": 45,
+      "instalados": 4,
+      "perdidos": 41,
+      "tipoMapa": 2,
+      "dimension": "106x49",
+      "motivos": [
+        "R2 saturación (45 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4311,
+      "titulo": "Pokémon Unbound · Capítulo 26 · ruta 312",
+      "origen": 36,
+      "instalados": 4,
+      "perdidos": 32,
+      "tipoMapa": 2,
+      "dimension": "51x37",
+      "motivos": [
+        "R2 saturación (36 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4312,
+      "titulo": "Pokémon Unbound · Capítulo 27 · santuario 313",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 2,
+      "dimension": "40x40",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4314,
+      "titulo": "Pokémon Unbound · Capítulo 27 · costa 315",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 2,
+      "dimension": "76x40",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4315,
+      "titulo": "Pokémon Unbound · Capítulo 27 · bosque 316",
+      "origen": 41,
+      "instalados": 4,
+      "perdidos": 37,
+      "tipoMapa": 2,
+      "dimension": "118x33",
+      "motivos": [
+        "R2 saturación (41 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4316,
+      "titulo": "Pokémon Unbound · Capítulo 27 · costa 317",
+      "origen": 50,
+      "instalados": 4,
+      "perdidos": 46,
+      "tipoMapa": 0,
+      "dimension": "80x55",
+      "motivos": [
+        "R2 saturación (50 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4319,
+      "titulo": "Pokémon Unbound · Capítulo 27 · meseta 320",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "58x66",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4320,
+      "titulo": "Pokémon Unbound · Capítulo 27 · poblado 321",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 0,
+      "dimension": "24x20",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4321,
+      "titulo": "Pokémon Unbound · Capítulo 27 · ruta 322",
+      "origen": 14,
+      "instalados": 4,
+      "perdidos": 10,
+      "tipoMapa": 0,
+      "dimension": "13x13",
+      "motivos": [
+        "R1b interior probable",
+        "R2 saturación (14 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4329,
+      "titulo": "Pokémon Unbound · Capítulo 28 · ruta 330",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 0,
+      "dimension": "72x20",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4330,
+      "titulo": "Pokémon Unbound · Capítulo 28 · santuario 331",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "42x26",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4333,
+      "titulo": "Pokémon Unbound · Capítulo 28 · meseta 334",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "36x40",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4334,
+      "titulo": "Pokémon Unbound · Capítulo 28 · poblado 335",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "60x60",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4337,
+      "titulo": "Pokémon Unbound · Capítulo 29 · cueva 338",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "48x50",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4338,
+      "titulo": "Pokémon Unbound · Capítulo 29 · costa 339",
+      "origen": 45,
+      "instalados": 4,
+      "perdidos": 41,
+      "tipoMapa": 2,
+      "dimension": "106x49",
+      "motivos": [
+        "R2 saturación (45 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4342,
+      "titulo": "Pokémon Unbound · Capítulo 29 · poblado 343",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "75x40",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4343,
+      "titulo": "Pokémon Unbound · Capítulo 29 · ruta 344",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "70x75",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4354,
+      "titulo": "Pokémon Unbound · Capítulo 30 · santuario 355",
+      "origen": 24,
+      "instalados": 4,
+      "perdidos": 20,
+      "tipoMapa": 8,
+      "dimension": "48x40",
+      "motivos": [
+        "R1 interior (tipo 8)",
+        "R2 saturación (24 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4355,
+      "titulo": "Pokémon Unbound · Capítulo 30 · cueva 356",
+      "origen": 33,
+      "instalados": 4,
+      "perdidos": 29,
+      "tipoMapa": 8,
+      "dimension": "75x64",
+      "motivos": [
+        "R1 interior (tipo 8)",
+        "R2 saturación (33 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4358,
+      "titulo": "Pokémon Unbound · Capítulo 30 · santuario 359",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 4,
+      "dimension": "59x50",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4359,
+      "titulo": "Pokémon Unbound · Capítulo 30 · cueva 360",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 4,
+      "dimension": "31x49",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4361,
+      "titulo": "Pokémon Unbound · Capítulo 31 · cueva 362",
+      "origen": 31,
+      "instalados": 4,
+      "perdidos": 27,
+      "tipoMapa": 2,
+      "dimension": "70x40",
+      "motivos": [
+        "R2 saturación (31 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4362,
+      "titulo": "Pokémon Unbound · Capítulo 31 · costa 363",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "38x40",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4363,
+      "titulo": "Pokémon Unbound · Capítulo 31 · bosque 364",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "55x47",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4364,
+      "titulo": "Pokémon Unbound · Capítulo 31 · instalación 365",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 2,
+      "dimension": "115x41",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4365,
+      "titulo": "Pokémon Unbound · Capítulo 31 · bosque 366",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 0,
+      "dimension": "84x42",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4366,
+      "titulo": "Pokémon Unbound · Capítulo 31 · poblado 367",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 2,
+      "dimension": "54x51",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4367,
+      "titulo": "Pokémon Unbound · Capítulo 31 · ruta 368",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 2,
+      "dimension": "68x70",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4368,
+      "titulo": "Pokémon Unbound · Capítulo 31 · santuario 369",
+      "origen": 25,
+      "instalados": 4,
+      "perdidos": 21,
+      "tipoMapa": 2,
+      "dimension": "60x86",
+      "motivos": [
+        "R2 saturación (25 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4369,
+      "titulo": "Pokémon Unbound · Capítulo 31 · poblado 370",
+      "origen": 25,
+      "instalados": 4,
+      "perdidos": 21,
+      "tipoMapa": 7,
+      "dimension": "94x79",
+      "motivos": [
+        "R2 saturación (25 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4370,
+      "titulo": "Pokémon Unbound · Capítulo 31 · instalación 371",
+      "origen": 17,
+      "instalados": 4,
+      "perdidos": 13,
+      "tipoMapa": 4,
+      "dimension": "102x50",
+      "motivos": [
+        "R2 saturación (17 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4371,
+      "titulo": "Pokémon Unbound · Capítulo 31 · instalación 372",
+      "origen": 35,
+      "instalados": 4,
+      "perdidos": 31,
+      "tipoMapa": 3,
+      "dimension": "70x100",
+      "motivos": [
+        "R2 saturación (35 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4372,
+      "titulo": "Pokémon Unbound · Capítulo 32 · instalación 373",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "44x51",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4373,
+      "titulo": "Pokémon Unbound · Capítulo 32 · poblado 374",
+      "origen": 20,
+      "instalados": 4,
+      "perdidos": 16,
+      "tipoMapa": 3,
+      "dimension": "88x41",
+      "motivos": [
+        "R2 saturación (20 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4375,
+      "titulo": "Pokémon Unbound · Capítulo 32 · santuario 376",
+      "origen": 25,
+      "instalados": 4,
+      "perdidos": 21,
+      "tipoMapa": 3,
+      "dimension": "93x49",
+      "motivos": [
+        "R2 saturación (25 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4376,
+      "titulo": "Pokémon Unbound · Capítulo 32 · santuario 377",
+      "origen": 33,
+      "instalados": 4,
+      "perdidos": 29,
+      "tipoMapa": 2,
+      "dimension": "60x73",
+      "motivos": [
+        "R2 saturación (33 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4377,
+      "titulo": "Pokémon Unbound · Capítulo 32 · cueva 378",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 2,
+      "dimension": "60x90",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4378,
+      "titulo": "Pokémon Unbound · Capítulo 32 · costa 379",
+      "origen": 22,
+      "instalados": 4,
+      "perdidos": 18,
+      "tipoMapa": 2,
+      "dimension": "80x50",
+      "motivos": [
+        "R2 saturación (22 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4379,
+      "titulo": "Pokémon Unbound · Capítulo 32 · bosque 380",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "61x40",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4380,
+      "titulo": "Pokémon Unbound · Capítulo 32 · costa 381",
+      "origen": 26,
+      "instalados": 4,
+      "perdidos": 22,
+      "tipoMapa": 0,
+      "dimension": "63x60",
+      "motivos": [
+        "R2 saturación (26 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4381,
+      "titulo": "Pokémon Unbound · Capítulo 32 · meseta 382",
+      "origen": 25,
+      "instalados": 4,
+      "perdidos": 21,
+      "tipoMapa": 2,
+      "dimension": "71x100",
+      "motivos": [
+        "R2 saturación (25 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4382,
+      "titulo": "Pokémon Unbound · Capítulo 32 · instalación 383",
+      "origen": 33,
+      "instalados": 4,
+      "perdidos": 29,
+      "tipoMapa": 8,
+      "dimension": "75x64",
+      "motivos": [
+        "R1 interior (tipo 8)",
+        "R2 saturación (33 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4383,
+      "titulo": "Pokémon Unbound · Capítulo 32 · meseta 384",
+      "origen": 24,
+      "instalados": 4,
+      "perdidos": 20,
+      "tipoMapa": 8,
+      "dimension": "48x40",
+      "motivos": [
+        "R1 interior (tipo 8)",
+        "R2 saturación (24 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4385,
+      "titulo": "Pokémon Unbound · Capítulo 33 · cueva 386",
+      "origen": 29,
+      "instalados": 4,
+      "perdidos": 25,
+      "tipoMapa": 2,
+      "dimension": "66x50",
+      "motivos": [
+        "R2 saturación (29 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4390,
+      "titulo": "Pokémon Unbound · Capítulo 33 · poblado 391",
+      "origen": 32,
+      "instalados": 4,
+      "perdidos": 28,
+      "tipoMapa": 2,
+      "dimension": "38x147",
+      "motivos": [
+        "R2 saturación (32 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4391,
+      "titulo": "Pokémon Unbound · Capítulo 33 · ruta 392",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "48x50",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4392,
+      "titulo": "Pokémon Unbound · Capítulo 33 · santuario 393",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 2,
+      "dimension": "36x40",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4393,
+      "titulo": "Pokémon Unbound · Capítulo 33 · cueva 394",
+      "origen": 41,
+      "instalados": 4,
+      "perdidos": 37,
+      "tipoMapa": 2,
+      "dimension": "118x33",
+      "motivos": [
+        "R2 saturación (41 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4394,
+      "titulo": "Pokémon Unbound · Capítulo 33 · costa 395",
+      "origen": 27,
+      "instalados": 4,
+      "perdidos": 23,
+      "tipoMapa": 2,
+      "dimension": "76x40",
+      "motivos": [
+        "R2 saturación (27 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4395,
+      "titulo": "Pokémon Unbound · Capítulo 33 · bosque 396",
+      "origen": 15,
+      "instalados": 4,
+      "perdidos": 11,
+      "tipoMapa": 2,
+      "dimension": "75x40",
+      "motivos": [
+        "R2 saturación (15 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4396,
+      "titulo": "Pokémon Unbound · Capítulo 34 · instalación 397",
+      "origen": 19,
+      "instalados": 4,
+      "perdidos": 15,
+      "tipoMapa": 2,
+      "dimension": "70x75",
+      "motivos": [
+        "R2 saturación (19 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4400,
+      "titulo": "Pokémon Unbound · Capítulo 34 · poblado 401",
+      "origen": 13,
+      "instalados": 4,
+      "perdidos": 9,
+      "tipoMapa": 0,
+      "dimension": "58x66",
+      "motivos": [
+        "R2 saturación (13 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4408,
+      "titulo": "Pokémon Unbound · Capítulo 35 · poblado 409",
+      "origen": 23,
+      "instalados": 4,
+      "perdidos": 19,
+      "tipoMapa": 0,
+      "dimension": "42x26",
+      "motivos": [
+        "R2 saturación (23 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4410,
+      "titulo": "Pokémon Unbound · Capítulo 35 · costa 411",
+      "origen": 30,
+      "instalados": 4,
+      "perdidos": 26,
+      "tipoMapa": 2,
+      "dimension": "40x40",
+      "motivos": [
+        "R2 saturación (30 → 4)"
+      ]
+    },
+    {
+      "campaña": "unbound",
+      "mapa": 4415,
+      "titulo": "Pokémon Unbound · Capítulo 35 · ruta 416",
+      "origen": 12,
+      "instalados": 4,
+      "perdidos": 8,
+      "tipoMapa": 2,
+      "dimension": "26x70",
+      "motivos": [
+        "R2 saturación (12 → 4)"
+      ]
+    }
+  ]
+}
