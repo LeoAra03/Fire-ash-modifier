@@ -63,6 +63,17 @@ Las cinco campañas ROM ya **no se adaptan**: usan el contenido de la ROM tal cu
   informe en [`docs/qa/paletas_campanas.md`](docs/qa/paletas_campanas.md)
   (`npm run audit:campanas:paletas` · `verify:campanas:paletas`). Detalle:
   [`docs/qa/gbc_pipeline.md`](docs/qa/gbc_pipeline.md) §13.
+- **Donde la GBC sólo permitía 4 colores por sprite no hay degradados**: la regla
+  queda fijada en el contrato visual (`fidelidad`: cuatro tonos, máscara de un bit,
+  16 px de microcuadrícula) y se audita sobre los 260 PNG de la dimensión creepypasta.
+  22 archivos añadían tonos intermedios o bordes suaves (los iconos de medalla y
+  cartuchera, dibujados con antialiasing, y el traje creep); `npm run fix:gbc:fidelidad`
+  los cuantiza y deja **260/260 fieles, 0 degradados** (silueta conservada: ≥ 0,94 de IoU),
+  con la reparación registrada
+  (antes/después) en [`docs/qa/gbc_fidelidad.md`](docs/qa/gbc_fidelidad.md).
+  Los generadores ya no pueden reintroducirlos (`dn:gameboy` deja máscara dura) y el
+  informe avisa de las copias que quedan en las dos entregas (`build:dn:qa`, `sync:paquete`).
+  Detalle: [`docs/qa/gbc_pipeline.md`](docs/qa/gbc_pipeline.md) §14.
 - **3 538 eventos de campaña visten el personaje que les da la ROM** y **759 diálogos
   originales** sustituyen el andamiaje en el primer mensaje del evento.
 - **Verificación**: `npm run verify:rom:nativo` → 0 fallos sobre 1 486 028 celdas

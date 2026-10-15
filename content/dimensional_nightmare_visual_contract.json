@@ -17,5 +17,19 @@
   "engineTileCellPx": 32,
   "visualMicroGridPx": 16,
   "downsampleFactor": 2,
-  "notes": "RMXP de Fire Ash conserva celdas de mapa de 32×32 px. Para no romper el motor, el arte de esta dimensión se cuantiza y dibuja en bloques internos de 16×16 px; no se cambia el tamaño global de tile. Interiores y exteriores conservan tilesets/mapas separados."
+  "notes": "RMXP de Fire Ash conserva celdas de mapa de 32×32 px. Para no romper el motor, el arte de esta dimensión se cuantiza y dibuja en bloques internos de 16×16 px; no se cambia el tamaño global de tile. Interiores y exteriores conservan tilesets/mapas separados.",
+  "fidelidad": {
+    "maquinaDeReferencia": "Game Boy Color",
+    "maxColoresPorSprite": 4,
+    "colores": [
+      "#0f380f",
+      "#306230",
+      "#8bac0f",
+      "#9bbc0f"
+    ],
+    "celdaPx": 16,
+    "umbralAlfa": 128,
+    "mascaraDeBits": 1,
+    "nota": "Donde la GBC sólo permitía 4 colores por sprite, el juego moderno no añade degradados: todo píxel visible es uno de los cuatro tonos y el alfa es 0 o 255 (máscara de un bit). Los tonos intermedios (antialiasing, mezcla, escalado suave) y los bordes semitransparentes son incumplimientos. Lo comprueba `npm run verify:gbc:fidelidad` sobre Graphics/**/DN_*.png y el traje creep, y lo corrige `npm run fix:gbc:fidelidad`."
+  }
 }

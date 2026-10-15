@@ -30,6 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createCanvas } from "@napi-rs/canvas";
+import { faltasDe, medirPng, normalizarPng, reglas } from "./gbc_fidelidad.mjs";
 import {
   GRAPHICS, txt, grid, nearestFreeCell, reachableFrom, upsertEvents, writeItems, cmd,
   readData, readJson, CATALOG, EVENTS, condition, graphic, page, event, texts, script,
@@ -161,15 +162,28 @@ function drawCase(color) {
   return canvas;
 }
 
+/**
+ * Los iconos se dibujan con canvas (curvas y glifos con antialiasing) y se pasan por la
+ * restricción de fidelidad antes de escribirse: donde la GBC sólo permitía cuatro colores
+ * por sprite, el juego no añade degradados. La corrección cuantiza cada píxel al tono del
+ * contrato y colapsa el alfa a 0/255 (máscara de un bit), así que reejecutar esta
+ * herramienta nunca devuelve bordes suaves.
+ */
 function installIcons() {
   fs.mkdirSync(ITEM_ICONS, { recursive: true });
-  let drawn = 0;
+  const r0 = reglas();
+  let drawn = 0, tonos = 0, alfa = 0;
   for (const item of ALL_ITEMS) {
     const file = path.join(ITEM_ICONS, `${item.id}.png`);
     if (DRY) { drawn++; continue; }
-    fs.writeFileSync(file, (item.kind === "medal" ? drawMedal(item.color) : drawCase(item.color)).toBuffer("image/png"));
+    const dibujo = (item.kind === "medal" ? drawMedal(item.color) : drawCase(item.color)).toBuffer("image/png");
+    const fiel = normalizarPng(dibujo, r0);
+    fs.writeFileSync(file, fiel.png);
+    tonos += fiel.tonos;
+    alfa += fiel.alfa;
     drawn++;
   }
+  if (tonos + alfa) console.log(`  iconos: ${tonos} píxeles de tono y ${alfa} de alfa llevados a la paleta de la máquina`);
   return drawn;
 }
 
@@ -284,7 +298,12 @@ function verify() {
     if (!entry) continue;
     ok(txt(entry.getIvar("@real_name")) === item.name, `${item.id}: nombre «${txt(entry.getIvar("@real_name"))}» ≠ «${item.name}»`);
     ok(entry.getIvar("@pocket") === 8, `${item.id}: no es objeto clave`);
-    ok(fs.existsSync(path.join(ITEM_ICONS, `${item.id}.png`)), `${item.id}: falta el icono 48×48`);
+    const icono = path.join(ITEM_ICONS, `${item.id}.png`);
+    ok(fs.existsSync(icono), `${item.id}: falta el icono 48×48`);
+    if (fs.existsSync(icono)) {
+      const faltas = faltasDe(medirPng(fs.readFileSync(icono)), reglas());
+      ok(!faltas.length, `${item.id}: el icono añade degradados (${faltas.join("; ")})`);
+    }
   }
   for (const world of WORLDS) {
     ok(readData("items.dat").pairs.some(([k, v]) => k && k.name !== undefined && k.name === world.case &&
@@ -352,7 +371,7 @@ if (VERIFY) {
   const written = writeItems(ALL_ITEMS, { base: ITEM_BASE, dry: DRY });
   const icons = installIcons();
   const pedestals = applyPedestals();
-  console.log(`objetos: ${written.filter((w) => !w.existed).length} nuevos · iconos: ${icons}`);
+  console.log(`objetos: ${written.filter((w) => !w.existed).length} nuevos · iconos: ${icons} (cuatro tonos planos, sin degradados)`);
   for (const p of pedestals) {
     console.log(p.error ? `  ${p.key}: ${p.error}` : `  ${p.key}: pedestal en Map${p.mapId} @ ${p.cell.join(",")} (sello ${p.seal})`);
   }

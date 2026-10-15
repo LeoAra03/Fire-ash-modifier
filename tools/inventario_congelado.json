@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T09:19:11.298Z",
+  "generatedAt": "2026-10-15T09:58:44.040Z",
   "git": {
     "branch": "arena/36bf89a0-fire-ash-modifier",
-    "commit": "f32a1a78a92aeb5cb708c748a31c3d46ff42e12b"
+    "commit": "0e19651cb3d099a6d651c9382a1d5a654a1f0d8b"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5417,
+    "fileCount": 5419,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 202
+      "tools": 204
     },
     "files": [
       {
@@ -26449,6 +26449,11 @@
         "sha256": "e85b9434f2ffe1d93746f047bae9c67f1596d19abe4abf3cd6cad23f23506881"
       },
       {
+        "path": "tools/audit_campaign_palettes.mjs",
+        "bytes": 38060,
+        "sha256": "f29f81d7e607f3803790859f2caa0210e777bd5085a236b68c4d9e3efa9adea9"
+      },
+      {
         "path": "tools/audit_content_progress.mjs",
         "bytes": 20748,
         "sha256": "fc1e0e252c8fb865bd6ba01331ebf44a1ce1eaecdf4a0198b52fdfc08361bd4c"
@@ -26610,13 +26615,13 @@
       },
       {
         "path": "tools/dn_apply_gameboy_palette.mjs",
-        "bytes": 21721,
-        "sha256": "e49eed14034483162d898ea4cdb66cc78bc75770c2f8d6e8afbeba4220a65703"
+        "bytes": 24823,
+        "sha256": "44c4a2370808e323280b078915c3011d9452599bcebda09de42df8c4406c96a1"
       },
       {
         "path": "tools/dn_apply_medals.mjs",
-        "bytes": 19826,
-        "sha256": "ad1eb3590cb77525d088a46caaeebf8585cb0892106ecad7094288825fc8394b"
+        "bytes": 20880,
+        "sha256": "19145dd6baf02bad1589b73ceaa25f656114b5032b4040a42f3b8bc8168fccda"
       },
       {
         "path": "tools/dn_apply_sensations.mjs",
@@ -26752,6 +26757,11 @@
         "path": "tools/gba_maps_events.mjs",
         "bytes": 21107,
         "sha256": "c3d2b608bb34e8cd831da7d44c3ee230bad47525a4f8f234c08e3fcb999c4551"
+      },
+      {
+        "path": "tools/gbc_fidelidad.mjs",
+        "bytes": 32875,
+        "sha256": "4f9cfeb386ab6b1f272f8d56d82e1f4ac8d0a98bc8c85cf276afb3880dc25b8a"
       },
       {
         "path": "tools/generar_assets_pokegods.mjs",

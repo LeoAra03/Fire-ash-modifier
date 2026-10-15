@@ -9,7 +9,10 @@
  * El juego usa tiles RMXP de 32 px; no se cambia el tamaño global, que rompería mapas
  * normales. Las referencias y originales se conservan en PokeModBackups/dn_gameboy_palette.
  *
- * Uso: node tools/dn_apply_gameboy_palette.mjs [--verify]
+ * Uso:
+ *   node tools/dn_apply_gameboy_palette.mjs            # aplica paleta y máscara de un bit
+ *   node tools/dn_apply_gameboy_palette.mjs --verify   # sólo comprueba
+ *   node tools/dn_apply_gameboy_palette.mjs --selftest # comprobaciones sintéticas
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -17,6 +20,8 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { createCanvas, loadImage } from "@napi-rs/canvas";
 import { DATA, GAME, RObject, S, txt, iv, readData, writeData, readMapRaw, writeMapRaw } from "./lib/dlc_helpers.mjs";
+import { faltasDe, medirPng, reglas } from "./gbc_fidelidad.mjs";
+import { pngRGBA } from "./forense/png.mjs";
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CONTRACT_PATH = path.join(ROOT_DIR, "content", "dimensional_nightmare_visual_contract.json");
@@ -27,6 +32,7 @@ const GRAPHICS = path.join(GAME, "Graphics");
 const CHARS = path.join(GRAPHICS, "Characters");
 const BACKUP = path.join(GAME, "PokeModBackups", "dn_gameboy_palette");
 const VERIFY_ONLY = process.argv.includes("--verify");
+const SELFTEST = process.argv.includes("--selftest");
 const GREEN = ["#0f380f", "#306230", "#8bac0f", "#9bbc0f"].map((hex) => [
   Number.parseInt(hex.slice(1, 3), 16), Number.parseInt(hex.slice(3, 5), 16), Number.parseInt(hex.slice(5, 7), 16),
 ]);
@@ -131,37 +137,45 @@ function quantile(sorted, q) {
   return sorted[Math.min(sorted.length - 1, Math.floor((sorted.length - 1) * q))];
 }
 
-/** 2×2 block reduction, then the four-tone classic Game Boy green palette. */
-function transformPixels(imageData) {
+/**
+ * 2×2 block reduction, then the four-tone classic Game Boy green palette.
+ *
+ * La máscara también es de la máquina: un bloque sólo sobrevive si su alfa medio llega al
+ * umbral del contrato, y los píxeles que sobreviven quedan opacos (alfa 0 o 255). Donde la
+ * GBC sólo permitía cuatro colores por sprite, el juego moderno no añade degradados: ni
+ * tonos intermedios ni bordes suavizados por antialiasing.
+ */
+export function transformPixels(imageData, umbralAlfa = reglas().umbralAlfa) {
   const { width, height } = imageData;
   const input = imageData.data;
   const blocks = [];
   const luminances = [];
   const channelLuma = (r, g, b) => 0.299 * r + 0.587 * g + 0.114 * b;
   for (let y = 0; y < height; y += 2) for (let x = 0; x < width; x += 2) {
-    let r = 0, g = 0, b = 0, count = 0;
+    let r = 0, g = 0, b = 0, count = 0, alfa = 0, vistos = 0;
     for (let by = y; by < Math.min(y + 2, height); by += 1) for (let bx = x; bx < Math.min(x + 2, width); bx += 1) {
       const i = (by * width + bx) * 4;
       const a = input[i + 3] / 255;
+      vistos += 1;
+      alfa += input[i + 3];
       if (!a) continue;
       r += input[i] * a; g += input[i + 1] * a; b += input[i + 2] * a; count += a;
     }
-    if (!count) { blocks.push({ x, y, opaque: false, luma: 0 }); continue; }
+    const alfaMedio = vistos ? alfa / vistos : 0;
+    if (!count || alfaMedio < umbralAlfa) { blocks.push({ x, y, opaque: false, luma: 0, alfaMedio }); continue; }
     const luma = channelLuma(r / count, g / count, b / count);
-    blocks.push({ x, y, opaque: true, luma });
+    blocks.push({ x, y, opaque: true, luma, alfaMedio });
     luminances.push(luma);
   }
   luminances.sort((a, b) => a - b);
   const thresholds = [quantile(luminances, 0.25), quantile(luminances, 0.5), quantile(luminances, 0.75)];
   const output = new Uint8ClampedArray(input);
   for (const block of blocks) {
-    if (!block.opaque) continue;
-    const [r, g, b] = GREEN[shadeFor(block.luma, thresholds)];
+    const tono = block.opaque ? GREEN[shadeFor(block.luma, thresholds)] : null;
     for (let y = block.y; y < Math.min(block.y + 2, height); y += 1) for (let x = block.x; x < Math.min(block.x + 2, width); x += 1) {
       const i = (y * width + x) * 4;
-      if (input[i + 3] === 0) continue;
-      output[i] = r; output[i + 1] = g; output[i + 2] = b;
-      // Se conserva cada píxel de alfa, por lo que bordes transparentes siguen limpios.
+      if (!tono) { output[i + 3] = 0; continue; }  // el bloque no llega al umbral: fuera
+      output[i] = tono[0]; output[i + 1] = tono[1]; output[i + 2] = tono[2]; output[i + 3] = 255;
     }
   }
   return output;
@@ -339,29 +353,21 @@ function namesAndBallCount(mapId) {
   return { actors, balls, violations };
 }
 
+/**
+ * El arte de la dimensión se audita con la regla fijada en el contrato y con el lector PNG
+ * propio (sin tolerancia de canal: el antialiasing que la máquina no podía dibujar cuenta
+ * como fallo). La lista de archivos y la medida son las de `tools/gbc_fidelidad.mjs`.
+ */
 async function verifyArtwork() {
+  const r0 = reglas();
   const files = walkPngs(GRAPHICS).filter((file) => path.basename(file).startsWith("DN_")
     || file === path.join(CHARS, "ash_outfit_creep.png"));
   const errors = [];
   for (const file of files) {
-    const image = await loadImage(file);
-    const canvas = createCanvas(image.width, image.height);
-    const context = canvas.getContext("2d");
-    context.drawImage(image, 0, 0);
-    const data = context.getImageData(0, 0, image.width, image.height).data;
-    let visible = 0;
-    for (let i = 0; i < data.length; i += 4) {
-      // Canvas aplica redondeo de sRGB en semitransparencias al decodificar PNG.
-      // Los píxeles opacos deben coincidir con uno de los cuatro tonos (±2 por canal).
-      if (data[i + 3] < 250) continue;
-      visible += 1;
-      const matched = GREEN.some(([r, g, b]) => Math.abs(data[i] - r) <= 2 && Math.abs(data[i + 1] - g) <= 2 && Math.abs(data[i + 2] - b) <= 2);
-      if (!matched) {
-        errors.push(`${path.relative(GRAPHICS, file)}: color fuera de la paleta verde`);
-        break;
-      }
-    }
-    if (!visible) errors.push(`${path.relative(GRAPHICS, file)}: imagen vacía`);
+    const medida = medirPng(fs.readFileSync(file), r0);
+    const faltas = faltasDe(medida, r0);
+    if (faltas.length) errors.push(`${path.relative(GRAPHICS, file)}: ${faltas.join("; ")}`);
+    if (!medida.pixeles) errors.push(`${path.relative(GRAPHICS, file)}: imagen vacía`);
   }
   return { files: files.length, errors };
 }
@@ -485,7 +491,44 @@ async function apply() {
   await verify();
 }
 
-if (VERIFY_ONLY) await verify();
+/* ───────────────────────────── autocomprobación ─────────────────────────── */
+
+/**
+ * La transformación se comprueba sin ROM ni backups: un degradado sintético (rampa de
+ * color y borde semitransparente) tiene que salir en cuatro tonos planos y alfa 0/255.
+ */
+function selftest() {
+  let ok = 0;
+  const afirma = (cond, mensaje) => { if (!cond) throw new Error(`selftest: ${mensaje}`); ok += 1; };
+  const r0 = reglas();
+  const ancho = 16, alto = 16;
+  const ALFA_DIFUSA = 40;
+  const umbral = 2; // dos filas: un bloque de la reducción 2×2 completo
+  const data = new Uint8ClampedArray(ancho * alto * 4);
+  for (let y = 0; y < alto; y++) for (let x = 0; x < ancho; x++) {
+    const i = (y * ancho + x) * 4;
+    data[i] = 30 + x * 12; data[i + 1] = 60 + y * 10; data[i + 2] = 40 + x * 6;
+    // La banda superior entra con alfa 40: por debajo del umbral, es un borde difuso que
+    // la máquina no podía dibujar (el bloque de 2×2 se mide entero, como su píxel).
+    data[i + 3] = y < umbral ? ALFA_DIFUSA : 255;
+  }
+  const salida = transformPixels({ width: ancho, height: alto, data }, r0.umbralAlfa);
+  const medida = medirPng(pngRGBA(ancho, alto, salida), r0);
+  afirma(!faltasDe(medida, r0).length, "la transformación deja el sprite dentro de la regla (cuatro tonos, máscara de un bit)");
+  afirma(medida.fueraPaleta === 0 && medida.alfaParcial === 0, "no quedan tonos intermedios ni alfa parcial");
+  afirma(medida.coloresDistintos >= 3 && medida.coloresDistintos <= 4, "el degradado original se resuelve en tres o cuatro tonos planos");
+  afirma(medida.celdaMaxColores <= r0.maxColoresPorSprite, "ninguna microcelda usa más tonos de los permitidos");
+  const filasDifusas = [...salida.slice(0, ancho * umbral * 4)].filter((_, i) => i % 4 === 3);
+  afirma(filasDifusas.every((a) => a === 0), "un borde que no llega al umbral queda transparente del todo");
+  const alfaResto = [...salida.slice(ancho * umbral * 4)].filter((_, i) => i % 4 === 3);
+  afirma(alfaResto.every((a) => a === 0 || a === 255), "el resto del sprite es opaco o transparente, nunca intermedio");
+  console.log(`OK: autocomprobación de la paleta Game Boy (${ok} comprobaciones)`);
+}
+
+/* ─────────────────────────────────── main ───────────────────────────────── */
+
+if (SELFTEST) selftest();
+else if (VERIFY_ONLY) await verify();
 else {
   try { await apply(); }
   catch (error) { console.error(`[dn-gameboy] ERROR: ${error.message}`); process.exit(1); }

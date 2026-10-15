@@ -42,6 +42,8 @@ npm run verify:rom:nativo:paletas                              # paso 4.1 (ROM +
 npm run audit:campanas:paletas                                 # paso 13 (paleta de campaña vs declarada)
 npm run verify:campanas:paletas                                # paso 13, recalcula y compara
 npm run selftest:campanas:paletas                              # 16 comprobaciones sintéticas
+npm run verify:gbc:fidelidad                                   # paso 14 (4 colores por sprite, sin degradados)
+npm run fix:gbc:fidelidad                                      # paso 14, corrige y registra la reparación
 ```
 
 La carpeta `roms pokemon/` está ignorada por Git: los binarios nunca entran al
@@ -456,3 +458,58 @@ cinco en frío y Light Platinum la cuarta en luminancia), **0 fallos**. Conclusi
 documentada: las cinco comparten base azul + verde y se separan sobre todo por
 amarillo y rojo, así que la paleta declarada describe la **intención narrativa**
 de cada dimensión más que una firma cromática exclusiva.
+
+---
+
+## 14. Fidelidad Game Boy: cuatro colores por sprite, sin degradados
+
+Medir la paleta de una dimensión (§13) dice *qué colores* tiene; esta sección fija
+la otra mitad del contrato: **donde la GBC sólo permitía 4 colores por sprite, el
+juego moderno no añade degradados**. La máquina de referencia dibuja sprites de
+2 bpp contra cuatro tonos y una **máscara de un bit** por píxel, así que la regla
+queda fijada en `content/dimensional_nightmare_visual_contract.json` → `fidelidad`
+y se traduce en tres comprobaciones sobre el arte entregado:
+
+1. **Cuatro tonos planos**: todo píxel visible es exactamente uno de
+   `#0f380f · #306230 · #8bac0f · #9bbc0f`. Cualquier otro color sólo puede haber
+   entrado por interpolación (mezcla, antialiasing, escalado suave) → degradado.
+2. **Máscara de un bit**: el alfa sólo vale 0 o 255.
+3. **Cuatro tonos por sprite**: ninguna celda de 16×16 px (la microcuadrícula del
+   contrato) usa más tonos que los permitidos.
+
+Alcance: los 260 PNG de la dimensión (`Graphics/**/DN_*.png` y el traje creep
+`Graphics/Characters/ash_outfit_creep.png`). El resto del juego es GBA/RMXP y no le
+aplica este techo.
+
+```bash
+npm run audit:gbc:fidelidad     # mide y reescribe el informe
+npm run fix:gbc:fidelidad       # corrige los degradados añadidos y reescribe el informe
+npm run verify:gbc:fidelidad    # recalcula y compara con el informe guardado
+npm run selftest:gbc:fidelidad  # 17 comprobaciones sintéticas
+npm run dn:gameboy:selftest     # 6 comprobaciones de la transformación 2×2 + máscara
+```
+
+**Qué se midió.** De los 260 archivos, **238 ya eran fieles** y **22 añadían
+degradados**: los 21 iconos de medalla/cartuchera que dibuja
+`tools/dn_apply_medals.mjs` (curvas y glifos con antialiasing: hasta 35 tonos por
+icono, 132 píxeles con alfa parcial) y el traje creep (14 tonos, 118 píxeles con
+alfa parcial). El motivo es siempre el mismo: arte «moderno» —bordes suavizados y
+tonos intermedios— donde la máquina sólo podía poner un bit y cuatro colores.
+
+**Cómo quedó.** `npm run fix:gbc:fidelidad` cuantiza cada píxel al tono permitido
+más cercano y colapsa el alfa a 0/255; la reparación queda registrada en el informe
+con el antes y el después (sha1 incluido), así que no se pierde la evidencia.
+Estado medido: **260/260 fieles · 0 degradados · 288 píxeles de tono y 1 834 de
+alfa corregidos · 0 fallos**, con la silueta conservada (peor intersección sobre
+unión 0,94 y media 0,97: cambia el borde, no el dibujo). Los generadores ya no pueden reintroducirlos: los
+iconos se pasan por la máscara antes de escribirse y `transformPixels()` de
+`dn_apply_gameboy_palette.mjs` deja máscara dura (un bloque 2×2 que no llega al
+umbral de alfa queda transparente). Informe con la lista de reparaciones:
+[`docs/qa/gbc_fidelidad.md`](gbc_fidelidad.md) (+ `content/gbc_fidelidad.json`).
+
+Nota: `npm run dn:gameboy:verify` sigue informando 14 problemas **ajenos a la
+paleta** (sprites de `Map2142`, `Map2192`, `Map2193` y `Map2194` sin copia DN). Las
+dos entregas guardan su propia copia del arte, así que hasta reejecutarlas siguen
+sirviendo el anterior: el **paquete QA** 22 copias (`npm run build:dn:qa`) y el
+**paquete directo** la del traje creep (`npm run sync:paquete` y luego
+`npm run build:corregido:zip`); el informe lo avisa en cada pasada.
