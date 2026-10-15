@@ -83,6 +83,13 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Diálogos: 57591 bloques, 0 vacíos, 40 líneas largas (cosmético, cajas de 53 car.).
 - **1 aviso (no bloqueante):** 12 páginas «automático» sin espera (riesgo de bucle). Hallazgos informativos: ~16 mapas marcador de región sin tiles (Kanto, Johto, Sinnoh, etc., casi todos con 0 eventos) y 4 slots de tileset vacíos — preexistentes del juego base.
 
+### FASE 12 — Política de IDs fijada
+
+- Creado **`docs/qa/politica_ids.md`**: tabla maestra de rangos usados medida sobre datos reales (inventario congelado, censo y `MapInfos`/`System`/`trainer_types.dat`).
+- Mapas: 3465 en disco, IDs 1–4419 — original 1–996, PokeMod desde 997 (Teckel) con todos los bloques etiquetados (Horizontes, Atlas Mil, Monte Silver/Ruta de Dios, DN, DLC, campañas ROM 3000–4419) e IDs libres listados.
+- Switches: 887 usados (1–994), techo original 700; reservado 701–867 verificado; bloques Ruta de Dios 868–880, DN 882–939, campañas 990–994. Variables: 293 usadas (1–354), techo original 100; DN 264–307, atavíos, progreso campañas 350–354.
+- Self-switches: 8017 pares `mapa:evento:letra` (A–E) en 2405 mapas — espacio propio por mapa, sin reserva global. Trainer types: 556 (0–593) — original 0–261, **libres 262–299**, `SECRET_*` 300–515, `SYGNA_*` 516–558, `DOJO_/ANNI_/Arc` 559–593.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
