@@ -57,6 +57,11 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Tres modos: por defecto solo imprime el orden (`--plan`), `--verify` ejecuta los 9 verificadores npm en ese orden, `--apply` instala. Nada se ejecuta por accidente.
 - Probado con resultados reales: modo plan exit 0 y modo `--verify` exit 0 con **los 9 verificadores en verde** (expansion, canon:arceus, eras, restauracion, dimensiones, rocket, circuito, ambience, wild).
 
+### FASE 8 — Registro de avance del plan 900
+
+- Creado **`tools/plan900/avance.md`**: registro fase por fase con **fecha y hash de HEAD** (base y cierre) más estado y verificación de cada fase. Fases 1–7 reconstruidas con datos reales de `git log`; la FASE 2 no fue enviada por el backlog y consta como no ejecutada.
+- Creado **`tools/plan900/avance.sh`**: medidor que imprime fecha, hash de HEAD y última fase registrada, para reutilizar en cada fase futura (probado: exit 0).
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
