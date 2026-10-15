@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-14T17:11:44.096Z",
+  "generatedAt": "2026-10-15T06:05:53.255Z",
   "git": {
-    "branch": "arena/2608d599-fire-ash-modifier",
-    "commit": "c46abf34a1ae8724072196a39b8b1f957c167dd3"
+    "branch": "arena/2a3657d3-fire-ash-modifier",
+    "commit": "c5f6ba42eea81cef974afd83d7b2160742c5126e"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5417,
+    "fileCount": 5423,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 202
+      "tools": 208
     },
     "files": [
       {
@@ -35,13 +35,13 @@
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/Map1001.rxdata",
-        "bytes": 93350,
-        "sha256": "1e863a1f83e741177a90715f9f94a726a2cdcf1cd453cf3c70f4e50d6d17cf89"
+        "bytes": 93379,
+        "sha256": "e813f9a7687864b4ea6607d7220f2b9542cee19059dd1ce5a344a17199a8b12d"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/Map1021.rxdata",
-        "bytes": 17812,
-        "sha256": "e4d3ae6458a743b3709b43a825409a08089a712d6d0be2a25cdccd512531957c"
+        "bytes": 18361,
+        "sha256": "57e42b325e9e6fed17b3b667a77e2b5a3f8687d9adbfe08c5b72b6c118cad6c4"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/Map1046.rxdata",
@@ -240,8 +240,8 @@
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/MapInfos.rxdata",
-        "bytes": 241952,
-        "sha256": "f2ee61a172108ad9b84a4aaf31909abad2808d51d68f77cb287c5183a8264dfe"
+        "bytes": 241938,
+        "sha256": "2194ea4218ecc72499e5e3f076afe6bc8dae43072712d261541e513a948c4b94"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/encounters.dat",
@@ -256,12 +256,12 @@
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/map_metadata.dat",
         "bytes": 510855,
-        "sha256": "05df04e61927448dd1e9ed5b1ae5afe0609a9eb5024ac035231a01dec37a5369"
+        "sha256": "7ab7729deb6455e14f8a937bd930df694be7cde26ef96002525cc7d86740269e"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/species.dat",
-        "bytes": 1073799,
-        "sha256": "1fded90ba2c147dbe3dbdd4af3904c4ccb3fa96fab8a1674b09f6215f24c1363"
+        "bytes": 1074483,
+        "sha256": "8b064cbef8e082119a06a1e366cc51040aa9d5e2156a146c80d4fde5ddda7163"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/trainer_types.dat",
@@ -26907,6 +26907,36 @@
         "path": "tools/package_release.sh",
         "bytes": 443,
         "sha256": "7f7ed26aadc2287fc8d1891cf4f30817ac29d4b755c1ab45ad56b0d478a934b5"
+      },
+      {
+        "path": "tools/plan900/avance.md",
+        "bytes": 10545,
+        "sha256": "9b9dbd4ebd5af98e8c60cf94d3bb12f926d293a0a516b446bb71b72771237495"
+      },
+      {
+        "path": "tools/plan900/avance.sh",
+        "bytes": 951,
+        "sha256": "314e5eb1bbdde2cfe510682fad190823dc301cca2046cd19d205cc3c5b4e28d0"
+      },
+      {
+        "path": "tools/plan900/checkpoint.mjs",
+        "bytes": 6667,
+        "sha256": "398e07dd2cf948503415ff6b17b3e963778da2e2dabceb9c469818ba7dbb814f"
+      },
+      {
+        "path": "tools/plan900/orden_instalacion.sh",
+        "bytes": 5745,
+        "sha256": "898cb2bf4dc7d39ed10aeebbdb28de38101eeecca7473582ffe3264d6abbf4d1"
+      },
+      {
+        "path": "tools/plan900/verificar_originales.mjs",
+        "bytes": 5852,
+        "sha256": "862d395dec7dae8b9f1b6dd4ec111d397d6e2ab51a6d84d26f47c58768918d06"
+      },
+      {
+        "path": "tools/plan900_inventario_eventos.mjs",
+        "bytes": 3158,
+        "sha256": "6dbb4f1dfb72156d39950b125b8e16aad50b4d297106370d0925b5089f63f36f"
       },
       {
         "path": "tools/pokemon_studio_adapter.mjs",

@@ -22,6 +22,11 @@ jobs:
           node-version: "22"
       - name: Instalar dependencias reproducibles
         run: npm ci
+      - name: Auditoría de avance del plan 900
+        # Numeración de fases, verificadores citados por fila e integridad de
+        # backups (en CI no hay ZIP locales: el checkpoint lo tolera con
+        # advertencia y audita los que existan).
+        run: npm run plan900:check
       - name: Preparar derivados del material de referencia
         # Los mosaicos fuente (Mapas/Crepypastas) sí están versionados, pero los recortes
         # (slices/), los tilesets deducidos y las hojas origen son artefactos ignorados por
