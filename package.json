@@ -24,6 +24,7 @@
     "verify:graficos": "node tools/apply_graficos_safety.mjs --verify",
     "verify:mapas": "node tools/repair_missing_maps.mjs --verify && node tools/repair_map_data.mjs --verify",
     "verify:ruby": "node tools/qa/ruby_syntax_check.mjs",
+    "verify:coherencia:sprites": "node tools/verify_overworld_battle_coherence.mjs",
     "verify:salud": "node tools/qa/fire_ash_health.mjs",
     "repair:mapas": "node tools/repair_missing_maps.mjs && node tools/repair_map_data.mjs",
     "verify:dialogos:queue": "node tools/apply_cajas_dialogo.mjs --verify",
