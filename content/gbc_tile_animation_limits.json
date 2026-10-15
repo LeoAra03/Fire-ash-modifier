@@ -1,0 +1,690 @@
+{
+  "esquema": "gbc_tile_animation/1.0",
+  "titulo": "Límites de la GBC sobre la animación de tiles",
+  "regla": "Sólo animaciones lentas y sólo donde el original de Game Boy Color las tenía.",
+  "generadoPor": "tools/gbc_tile_animation_limits.mjs",
+  "gbc": {
+    "fuente": {
+      "archivo": "pokecrystal-master.zip",
+      "entradas": [
+        {
+          "entrada": "pokecrystal-master/data/tileset_anims.asm",
+          "sha1": "4e3717684b88",
+          "bytes": 8886
+        },
+        {
+          "entrada": "pokecrystal-master/engine/tilesets/tileset_anims.asm",
+          "sha1": "23de87a51b88",
+          "bytes": 15027
+        }
+      ],
+      "notas": [
+        "Un comando por VBlank: _AnimateTileset ejecuta la función del índice hTileAnimFrame y lo incrementa (engine/tilesets/tileset_anims.asm).",
+        "Se llama desde VBlank (home/vblank.asm) y sólo durante el primer quinto de éste: home/video.asm comprueba LY < LY_VBLANK + 7.",
+        "Se ejecuta con el banco 0 de VRAM seleccionado, así que los tiles $80 y superiores (banco 1) no se pueden animar.",
+        "hMapAnims = 0 desactiva toda la animación de mapa."
+      ]
+    },
+    "hzVBlank": 59.7275,
+    "comandosPorVBlank": 1,
+    "limiteTilesAnimables": "sólo VRAM banco 0 (tiles $00–$7F); una escritura de tile por VBlank como máximo",
+    "tilesets": [
+      {
+        "etiquetas": [
+          "Tileset0Anim",
+          "TilesetJohtoModernAnim",
+          "TilesetKantoAnim"
+        ],
+        "nombre": "Kanto",
+        "mostrar": "Kanto · 3 tilesets",
+        "compartidoCon": [
+          "0",
+          "JohtoModern"
+        ],
+        "sinUso": false,
+        "comandos": 11,
+        "segundos": 0.184,
+        "escriturasPorCiclo": 2,
+        "elementos": [
+          "agua",
+          "flores"
+        ],
+        "paletas": [
+          "paleta-agua"
+        ],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetParkAnim"
+        ],
+        "nombre": "Park",
+        "mostrar": "Park",
+        "compartidoCon": [],
+        "sinUso": false,
+        "comandos": 11,
+        "segundos": 0.184,
+        "escriturasPorCiclo": 3,
+        "elementos": [
+          "agua",
+          "flores",
+          "fuente"
+        ],
+        "paletas": [
+          "paleta-agua"
+        ],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetForestAnim"
+        ],
+        "nombre": "Forest",
+        "mostrar": "Forest",
+        "compartidoCon": [],
+        "sinUso": false,
+        "comandos": 12,
+        "segundos": 0.201,
+        "escriturasPorCiclo": 6,
+        "elementos": [
+          "agua",
+          "arboles",
+          "flores"
+        ],
+        "paletas": [
+          "paleta-agua"
+        ],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetJohtoAnim"
+        ],
+        "nombre": "Johto",
+        "mostrar": "Johto",
+        "compartidoCon": [],
+        "sinUso": false,
+        "comandos": 13,
+        "segundos": 0.218,
+        "escriturasPorCiclo": 6,
+        "elementos": [
+          "agua",
+          "flores",
+          "remolino"
+        ],
+        "paletas": [
+          "paleta-agua"
+        ],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "UnusedTilesetFlowerAnim"
+        ],
+        "nombre": "Flower",
+        "mostrar": "Flower",
+        "compartidoCon": [],
+        "sinUso": true,
+        "comandos": 11,
+        "segundos": 0.184,
+        "escriturasPorCiclo": 2,
+        "elementos": [
+          "agua",
+          "flores"
+        ],
+        "paletas": [],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "UnusedTilesetWaterAnim"
+        ],
+        "nombre": "Water",
+        "mostrar": "Water",
+        "compartidoCon": [],
+        "sinUso": true,
+        "comandos": 11,
+        "segundos": 0.184,
+        "escriturasPorCiclo": 1,
+        "elementos": [
+          "agua"
+        ],
+        "paletas": [],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetPortAnim"
+        ],
+        "nombre": "Port",
+        "mostrar": "Port",
+        "compartidoCon": [],
+        "sinUso": false,
+        "comandos": 12,
+        "segundos": 0.201,
+        "escriturasPorCiclo": 1,
+        "elementos": [
+          "agua"
+        ],
+        "paletas": [
+          "paleta-agua"
+        ],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetEliteFourRoomAnim"
+        ],
+        "nombre": "EliteFourRoom",
+        "mostrar": "EliteFourRoom",
+        "compartidoCon": [],
+        "sinUso": false,
+        "comandos": 8,
+        "segundos": 0.134,
+        "escriturasPorCiclo": 2,
+        "elementos": [
+          "lava"
+        ],
+        "paletas": [],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "UnusedTilesetGenericAnim"
+        ],
+        "nombre": "Generic",
+        "mostrar": "Generic",
+        "compartidoCon": [],
+        "sinUso": true,
+        "comandos": 12,
+        "segundos": 0.201,
+        "escriturasPorCiclo": 3,
+        "elementos": [
+          "agua",
+          "cascada"
+        ],
+        "paletas": [],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "UnusedTilesetFontAnim"
+        ],
+        "nombre": "Font",
+        "mostrar": "Font",
+        "compartidoCon": [],
+        "sinUso": true,
+        "comandos": 14,
+        "segundos": 0.234,
+        "escriturasPorCiclo": 3,
+        "elementos": [
+          "agua",
+          "cascada"
+        ],
+        "paletas": [],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetCaveAnim",
+          "TilesetDarkCaveAnim"
+        ],
+        "nombre": "Cave",
+        "mostrar": "Cave · 2 tilesets",
+        "compartidoCon": [
+          "DarkCave"
+        ],
+        "sinUso": false,
+        "comandos": 19,
+        "segundos": 0.318,
+        "escriturasPorCiclo": 2,
+        "elementos": [
+          "agua",
+          "cascada"
+        ],
+        "paletas": [
+          "paleta-agua",
+          "paleta-cueva"
+        ],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetIcePathAnim"
+        ],
+        "nombre": "IcePath",
+        "mostrar": "IcePath",
+        "compartidoCon": [],
+        "sinUso": false,
+        "comandos": 19,
+        "segundos": 0.318,
+        "escriturasPorCiclo": 2,
+        "elementos": [
+          "agua",
+          "cascada"
+        ],
+        "paletas": [
+          "paleta-agua",
+          "paleta-cueva"
+        ],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetTowerAnim"
+        ],
+        "nombre": "Tower",
+        "mostrar": "Tower",
+        "compartidoCon": [],
+        "sinUso": false,
+        "comandos": 16,
+        "segundos": 0.268,
+        "escriturasPorCiclo": 10,
+        "elementos": [
+          "pilar-torre"
+        ],
+        "paletas": [],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "UnusedTilesetRocketHouseAnim"
+        ],
+        "nombre": "RocketHouse",
+        "mostrar": "RocketHouse",
+        "compartidoCon": [],
+        "sinUso": true,
+        "comandos": 10,
+        "segundos": 0.167,
+        "escriturasPorCiclo": 1,
+        "elementos": [
+          "agua"
+        ],
+        "paletas": [],
+        "animaTiles": true
+      },
+      {
+        "etiquetas": [
+          "TilesetBattleTowerOutsideAnim",
+          "TilesetHouseAnim",
+          "TilesetPlayersHouseAnim",
+          "TilesetPokecenterAnim",
+          "TilesetGateAnim",
+          "TilesetLabAnim",
+          "TilesetFacilityAnim",
+          "TilesetMartAnim",
+          "TilesetMansionAnim",
+          "TilesetGameCornerAnim",
+          "TilesetTraditionalHouseAnim",
+          "TilesetTrainStationAnim",
+          "TilesetChampionsRoomAnim",
+          "TilesetLighthouseAnim",
+          "TilesetPlayersRoomAnim",
+          "TilesetPokeComCenterAnim",
+          "TilesetBattleTowerInsideAnim",
+          "TilesetRuinsOfAlphAnim",
+          "TilesetRadioTowerAnim",
+          "TilesetUndergroundAnim",
+          "TilesetBetaWordRoomAnim",
+          "TilesetHoOhWordRoomAnim",
+          "TilesetKabutoWordRoomAnim",
+          "TilesetOmanyteWordRoomAnim",
+          "TilesetAerodactylWordRoomAnim"
+        ],
+        "nombre": "BattleTowerOutside",
+        "mostrar": "BattleTowerOutside · 25 tilesets",
+        "compartidoCon": [
+          "House",
+          "PlayersHouse",
+          "Pokecenter",
+          "Gate",
+          "Lab",
+          "Facility",
+          "Mart",
+          "Mansion",
+          "GameCorner",
+          "TraditionalHouse",
+          "TrainStation",
+          "ChampionsRoom",
+          "Lighthouse",
+          "PlayersRoom",
+          "PokeComCenter",
+          "BattleTowerInside",
+          "RuinsOfAlph",
+          "RadioTower",
+          "Underground",
+          "BetaWordRoom",
+          "HoOhWordRoom",
+          "KabutoWordRoom",
+          "OmanyteWordRoom",
+          "AerodactylWordRoom"
+        ],
+        "sinUso": false,
+        "comandos": 5,
+        "segundos": 0.084,
+        "escriturasPorCiclo": 0,
+        "elementos": [],
+        "paletas": [],
+        "animaTiles": false
+      }
+    ],
+    "clases": {
+      "agua": {
+        "clase": "agua",
+        "tilesets": [
+          "Cave",
+          "Forest",
+          "IcePath",
+          "Johto",
+          "Kanto",
+          "Park",
+          "Port"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Kanto",
+          "comandos": 11,
+          "segundos": 0.184
+        }
+      },
+      "flores": {
+        "clase": "flores",
+        "tilesets": [
+          "Forest",
+          "Johto",
+          "Kanto",
+          "Park"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Kanto",
+          "comandos": 11,
+          "segundos": 0.184
+        }
+      },
+      "fuente": {
+        "clase": "fuente",
+        "tilesets": [
+          "Park"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Park",
+          "comandos": 11,
+          "segundos": 0.184
+        }
+      },
+      "arboles": {
+        "clase": "arboles",
+        "tilesets": [
+          "Forest"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Forest",
+          "comandos": 12,
+          "segundos": 0.201
+        }
+      },
+      "remolino": {
+        "clase": "remolino",
+        "tilesets": [
+          "Johto"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Johto",
+          "comandos": 13,
+          "segundos": 0.218
+        }
+      },
+      "lava": {
+        "clase": "lava",
+        "tilesets": [
+          "EliteFourRoom"
+        ],
+        "cicloMasRapido": {
+          "tileset": "EliteFourRoom",
+          "comandos": 8,
+          "segundos": 0.134
+        }
+      },
+      "cascada": {
+        "clase": "cascada",
+        "tilesets": [
+          "Cave",
+          "IcePath"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Cave",
+          "comandos": 19,
+          "segundos": 0.318
+        }
+      },
+      "pilar-torre": {
+        "clase": "pilar-torre",
+        "tilesets": [
+          "Tower"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Tower",
+          "comandos": 16,
+          "segundos": 0.268
+        }
+      }
+    },
+    "clasesSinUso": {
+      "agua": {
+        "clase": "agua",
+        "tilesets": [
+          "Flower",
+          "Font",
+          "Generic",
+          "RocketHouse",
+          "Water"
+        ],
+        "cicloMasRapido": {
+          "tileset": "RocketHouse",
+          "comandos": 10,
+          "segundos": 0.167
+        }
+      },
+      "flores": {
+        "clase": "flores",
+        "tilesets": [
+          "Flower"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Flower",
+          "comandos": 11,
+          "segundos": 0.184
+        }
+      },
+      "cascada": {
+        "clase": "cascada",
+        "tilesets": [
+          "Font",
+          "Generic"
+        ],
+        "cicloMasRapido": {
+          "tileset": "Generic",
+          "comandos": 12,
+          "segundos": 0.201
+        }
+      }
+    },
+    "resumen": {
+      "secuencias": 15,
+      "secuenciasEnUso": 10,
+      "tilesetsQueAnimanTiles": 9,
+      "secuenciasSinUso": 5,
+      "tilesetsSinAnimacion": [
+        "BattleTowerOutside · 25 tilesets"
+      ],
+      "totalTilesets": 42,
+      "tilesetsSinAnimacionCantidad": 25,
+      "cicloMasRapido": {
+        "tileset": "EliteFourRoom",
+        "comandos": 8,
+        "segundos": 0.134
+      },
+      "cicloMasLento": {
+        "tileset": "Cave",
+        "comandos": 19,
+        "segundos": 0.318
+      }
+    }
+  },
+  "motor": {
+    "engine": "RPG Maker XP sobre mkxp (base de Fire Ash)",
+    "autotileFrameWidthPx": 96,
+    "framesUsadosPorAutotile": 4,
+    "framesPorPaso": 16,
+    "fps": 40,
+    "fpsNota": "valor por defecto de RMXP/mkxp; mkxp.json de Fire Ash no lo sobreescribe",
+    "segundosPorPaso": 0.4,
+    "segundosPorCiclo": 1.6,
+    "detectaAnimacion": "ancho del PNG > 96 px (mkxp src/tilemap.cpp · updateAutotileInfo)",
+    "mecanica": "el shader del tilemap desplaza la coordenada de textura en (índice de animación) × 96 px",
+    "fuente": "mkxp src/tilemap.cpp (atAnimation[16*4]) y src/tileatlas.cpp (atAreaW = 96*4)"
+  },
+  "politica": {
+    "alcance": "Dimensional Nightmare (rangos de mapas del contrato visual)",
+    "minimoFramesPorPaso": 8,
+    "minimoSegundosPorPaso": 0.2,
+    "cadenciaNativaAutotilesUnicaPermitida": true,
+    "interior": {
+      "patron": "inside|interior|interior general|house|habitaci|room|mart|pok[eé]center|center|lab|facility|gate|station|mansion|corner|underground",
+      "clasesProhibidas": [
+        "fuente"
+      ],
+      "nota": "En el original de GBC los tilesets de interior (casa, centro, tienda, laboratorio…) sólo encadenan WaitTileAnimation: no animan nada."
+    },
+    "clases": [
+      {
+        "clase": "cascada",
+        "permitida": true,
+        "patrones": [
+          "waterfall",
+          "cascada"
+        ],
+        "origen": "ScrollTileDown (cueva $40, ruta helada $31)"
+      },
+      {
+        "clase": "remolino",
+        "permitida": true,
+        "patrones": [
+          "whirlpool",
+          "remolino"
+        ],
+        "origen": "AnimateWhirlpoolTile (sólo Johto)"
+      },
+      {
+        "clase": "lava",
+        "permitida": true,
+        "patrones": [
+          "lava"
+        ],
+        "origen": "AnimateLavaBubbleTile1/2 (sala de Élite Four)"
+      },
+      {
+        "clase": "pilar-torre",
+        "permitida": true,
+        "patrones": [
+          "tower",
+          "pillar",
+          "torre",
+          "pilar"
+        ],
+        "origen": "AnimateTowerPillarTile (torre)"
+      },
+      {
+        "clase": "flores",
+        "permitida": true,
+        "patrones": [
+          "flower",
+          "flor"
+        ],
+        "origen": "AnimateFlowerTile ($03)"
+      },
+      {
+        "clase": "arboles",
+        "permitida": true,
+        "patrones": [
+          "tree",
+          "arbol",
+          "forest",
+          "bosque"
+        ],
+        "origen": "ForestTreeLeft/RightAnimation (bosque)"
+      },
+      {
+        "clase": "fuente",
+        "permitida": true,
+        "patrones": [
+          "fountain",
+          "fuente"
+        ],
+        "origen": "AnimateFountainTile (sólo el Parque Nacional, $5f)",
+        "nota": "Permitida en exterior; prohibida en interior (ver política.interior)."
+      },
+      {
+        "clase": "orilla",
+        "permitida": false,
+        "patrones": [
+          "^shore",
+          "shore$",
+          "orilla",
+          "beach",
+          "playa",
+          "^sand",
+          "sand"
+        ],
+        "excluir": [
+          "sea",
+          "water",
+          "river",
+          "ocean",
+          "lake",
+          "without shore"
+        ],
+        "origen": "sin equivalente en el original",
+        "nota": "La orilla es estática en GBC: sólo se anima la lámina de agua, no la arena."
+      },
+      {
+        "clase": "paleta-agua",
+        "permitida": false,
+        "patrones": [
+          "water palette",
+          "paleta"
+        ],
+        "origen": "AnimateWaterPalette: ciclo de paleta, no de tiles",
+        "nota": "RMXP no cicla paletas de tileset; un tono de pantalla repetido sería una animación nueva, no del original."
+      },
+      {
+        "clase": "paleta-cueva",
+        "permitida": false,
+        "patrones": [
+          "cave palette"
+        ],
+        "origen": "FlickeringCaveEntrancePalette: parpadeo de la entrada de cueva",
+        "nota": "Parpadeo deliberado: fuera del conjunto lento y del original."
+      },
+      {
+        "clase": "agua",
+        "permitida": true,
+        "patrones": [
+          "^sea",
+          "sea",
+          "^water$",
+          "water",
+          "river",
+          "pond",
+          "ocean",
+          "lagoon",
+          "agua"
+        ],
+        "origen": "AnimateWaterTile / ScrollTileRightLeft (vTiles2 $14, $03, $35)"
+      }
+    ],
+    "claseDesconocida": {
+      "permitida": false,
+      "nota": "Cualquier autotile animado que no encaje en las clases del original se considera animación nueva y queda prohibido."
+    }
+  }
+}

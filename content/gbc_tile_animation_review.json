@@ -1,0 +1,2825 @@
+{
+  "esquema": "gbc_tile_animation_review/1.0",
+  "generadoPor": "tools/gbc_tile_animation_limits.mjs",
+  "alcance": {
+    "mapas": [
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2040,
+      2041,
+      2042,
+      2043,
+      2044,
+      2045,
+      2046,
+      2047,
+      2048,
+      2049,
+      2050,
+      2051,
+      2052,
+      2053,
+      2054,
+      2055,
+      2056,
+      2057,
+      2058,
+      2059,
+      2060,
+      2061,
+      2062,
+      2063,
+      2064,
+      2065,
+      2066,
+      2067,
+      2068,
+      2069,
+      2070,
+      2071,
+      2072,
+      2073,
+      2074,
+      2075,
+      2076,
+      2077,
+      2078,
+      2079,
+      2080,
+      2081,
+      2082,
+      2083,
+      2084,
+      2085,
+      2086,
+      2087,
+      2088,
+      2089,
+      2090,
+      2091,
+      2092,
+      2093,
+      2094,
+      2095,
+      2096,
+      2097,
+      2098,
+      2099,
+      2100,
+      2101,
+      2102,
+      2103,
+      2104,
+      2105,
+      2106,
+      2107,
+      2108,
+      2109,
+      2110,
+      2111,
+      2112,
+      2113,
+      2114,
+      2115,
+      2116,
+      2117,
+      2118,
+      2119,
+      2120,
+      2121,
+      2122,
+      2123,
+      2124,
+      2125,
+      2126,
+      2127,
+      2128,
+      2129,
+      2130,
+      2131,
+      2132,
+      2133,
+      2134,
+      2135,
+      2136,
+      2137,
+      2138,
+      2139,
+      2140,
+      2141,
+      2142,
+      2143,
+      2144,
+      2145,
+      2146,
+      2147,
+      2148,
+      2149,
+      2150,
+      2151,
+      2152,
+      2153,
+      2154,
+      2155,
+      2156,
+      2157,
+      2158,
+      2159,
+      2160,
+      2161,
+      2162,
+      2163,
+      2164,
+      2165,
+      2166,
+      2167,
+      2168,
+      2169,
+      2170,
+      2171,
+      2172,
+      2173,
+      2174,
+      2175,
+      2176,
+      2177,
+      2178,
+      2179,
+      2180,
+      2181,
+      2182,
+      2183,
+      2184,
+      2185,
+      2186,
+      2187,
+      2188,
+      2189,
+      2190,
+      2192,
+      2193,
+      2194
+    ],
+    "rangos": [
+      [
+        2023,
+        2029
+      ],
+      [
+        2040,
+        2190
+      ],
+      [
+        2192,
+        2194
+      ]
+    ],
+    "tilesets": [
+      {
+        "id": 26,
+        "nombre": "DN_2041",
+        "mapas": 1
+      },
+      {
+        "id": 27,
+        "nombre": "DN_2088",
+        "mapas": 1
+      },
+      {
+        "id": 28,
+        "nombre": "DN_2120",
+        "mapas": 1
+      },
+      {
+        "id": 29,
+        "nombre": "DN_2042",
+        "mapas": 1
+      },
+      {
+        "id": 30,
+        "nombre": "DN_2043",
+        "mapas": 1
+      },
+      {
+        "id": 31,
+        "nombre": "DN_2044",
+        "mapas": 1
+      },
+      {
+        "id": 32,
+        "nombre": "DN_2045",
+        "mapas": 1
+      },
+      {
+        "id": 33,
+        "nombre": "DN_2046",
+        "mapas": 1
+      },
+      {
+        "id": 34,
+        "nombre": "DN_2047",
+        "mapas": 1
+      },
+      {
+        "id": 35,
+        "nombre": "DN_2048",
+        "mapas": 1
+      },
+      {
+        "id": 36,
+        "nombre": "DN_2049",
+        "mapas": 1
+      },
+      {
+        "id": 37,
+        "nombre": "DN_2050",
+        "mapas": 1
+      },
+      {
+        "id": 38,
+        "nombre": "DN_2051",
+        "mapas": 1
+      },
+      {
+        "id": 39,
+        "nombre": "DN_2052",
+        "mapas": 1
+      },
+      {
+        "id": 40,
+        "nombre": "DN_2053",
+        "mapas": 1
+      },
+      {
+        "id": 41,
+        "nombre": "DN_2054",
+        "mapas": 1
+      },
+      {
+        "id": 42,
+        "nombre": "DN_2055",
+        "mapas": 1
+      },
+      {
+        "id": 43,
+        "nombre": "DN_2056",
+        "mapas": 1
+      },
+      {
+        "id": 44,
+        "nombre": "DN_2057",
+        "mapas": 1
+      },
+      {
+        "id": 45,
+        "nombre": "DN_2058",
+        "mapas": 1
+      },
+      {
+        "id": 46,
+        "nombre": "DN_2059",
+        "mapas": 1
+      },
+      {
+        "id": 47,
+        "nombre": "DN_2060",
+        "mapas": 1
+      },
+      {
+        "id": 48,
+        "nombre": "DN_2061",
+        "mapas": 1
+      },
+      {
+        "id": 49,
+        "nombre": "DN_2062",
+        "mapas": 1
+      },
+      {
+        "id": 50,
+        "nombre": "DN_2063",
+        "mapas": 1
+      },
+      {
+        "id": 51,
+        "nombre": "DN_2064",
+        "mapas": 1
+      },
+      {
+        "id": 52,
+        "nombre": "DN_2065",
+        "mapas": 1
+      },
+      {
+        "id": 53,
+        "nombre": "DN_2066",
+        "mapas": 1
+      },
+      {
+        "id": 54,
+        "nombre": "DN_2067",
+        "mapas": 1
+      },
+      {
+        "id": 55,
+        "nombre": "DN_2068",
+        "mapas": 1
+      },
+      {
+        "id": 56,
+        "nombre": "DN_2069",
+        "mapas": 1
+      },
+      {
+        "id": 57,
+        "nombre": "DN_2070",
+        "mapas": 1
+      },
+      {
+        "id": 58,
+        "nombre": "DN_2071",
+        "mapas": 1
+      },
+      {
+        "id": 59,
+        "nombre": "DN_2072",
+        "mapas": 1
+      },
+      {
+        "id": 60,
+        "nombre": "DN_2073",
+        "mapas": 1
+      },
+      {
+        "id": 61,
+        "nombre": "DN_2074",
+        "mapas": 1
+      },
+      {
+        "id": 62,
+        "nombre": "DN_2075",
+        "mapas": 1
+      },
+      {
+        "id": 63,
+        "nombre": "DN_2076",
+        "mapas": 1
+      },
+      {
+        "id": 64,
+        "nombre": "DN_2077",
+        "mapas": 1
+      },
+      {
+        "id": 65,
+        "nombre": "DN_2078",
+        "mapas": 1
+      },
+      {
+        "id": 66,
+        "nombre": "DN_2079",
+        "mapas": 1
+      },
+      {
+        "id": 67,
+        "nombre": "DN_2080",
+        "mapas": 1
+      },
+      {
+        "id": 68,
+        "nombre": "DN_2081",
+        "mapas": 1
+      },
+      {
+        "id": 69,
+        "nombre": "DN_2082",
+        "mapas": 1
+      },
+      {
+        "id": 70,
+        "nombre": "DN_2083",
+        "mapas": 1
+      },
+      {
+        "id": 71,
+        "nombre": "DN_2084",
+        "mapas": 1
+      },
+      {
+        "id": 72,
+        "nombre": "DN_2085",
+        "mapas": 1
+      },
+      {
+        "id": 73,
+        "nombre": "DN_2086",
+        "mapas": 1
+      },
+      {
+        "id": 74,
+        "nombre": "DN_2087",
+        "mapas": 1
+      },
+      {
+        "id": 75,
+        "nombre": "DN_2089",
+        "mapas": 1
+      },
+      {
+        "id": 76,
+        "nombre": "DN_2090",
+        "mapas": 1
+      },
+      {
+        "id": 77,
+        "nombre": "DN_2091",
+        "mapas": 1
+      },
+      {
+        "id": 78,
+        "nombre": "DN_2092",
+        "mapas": 1
+      },
+      {
+        "id": 79,
+        "nombre": "DN_2093",
+        "mapas": 1
+      },
+      {
+        "id": 80,
+        "nombre": "DN_2094",
+        "mapas": 1
+      },
+      {
+        "id": 81,
+        "nombre": "DN_2095",
+        "mapas": 1
+      },
+      {
+        "id": 82,
+        "nombre": "DN_2096",
+        "mapas": 1
+      },
+      {
+        "id": 83,
+        "nombre": "DN_2097",
+        "mapas": 1
+      },
+      {
+        "id": 84,
+        "nombre": "DN_2098",
+        "mapas": 1
+      },
+      {
+        "id": 85,
+        "nombre": "DN_2099",
+        "mapas": 1
+      },
+      {
+        "id": 86,
+        "nombre": "DN_2100",
+        "mapas": 1
+      },
+      {
+        "id": 87,
+        "nombre": "DN_2101",
+        "mapas": 1
+      },
+      {
+        "id": 88,
+        "nombre": "DN_2102",
+        "mapas": 1
+      },
+      {
+        "id": 89,
+        "nombre": "DN_2103",
+        "mapas": 1
+      },
+      {
+        "id": 90,
+        "nombre": "DN_2104",
+        "mapas": 1
+      },
+      {
+        "id": 91,
+        "nombre": "DN_2105",
+        "mapas": 1
+      },
+      {
+        "id": 92,
+        "nombre": "DN_2106",
+        "mapas": 1
+      },
+      {
+        "id": 93,
+        "nombre": "DN_2107",
+        "mapas": 1
+      },
+      {
+        "id": 94,
+        "nombre": "DN_2108",
+        "mapas": 1
+      },
+      {
+        "id": 95,
+        "nombre": "DN_2109",
+        "mapas": 1
+      },
+      {
+        "id": 96,
+        "nombre": "DN_2110",
+        "mapas": 1
+      },
+      {
+        "id": 97,
+        "nombre": "DN_2111",
+        "mapas": 1
+      },
+      {
+        "id": 98,
+        "nombre": "DN_2112",
+        "mapas": 1
+      },
+      {
+        "id": 99,
+        "nombre": "DN_2113",
+        "mapas": 1
+      },
+      {
+        "id": 100,
+        "nombre": "DN_2114",
+        "mapas": 1
+      },
+      {
+        "id": 101,
+        "nombre": "DN_2115",
+        "mapas": 1
+      },
+      {
+        "id": 102,
+        "nombre": "DN_2116",
+        "mapas": 1
+      },
+      {
+        "id": 103,
+        "nombre": "DN_2117",
+        "mapas": 1
+      },
+      {
+        "id": 104,
+        "nombre": "DN_2118",
+        "mapas": 1
+      },
+      {
+        "id": 105,
+        "nombre": "DN_2119",
+        "mapas": 1
+      },
+      {
+        "id": 106,
+        "nombre": "DN_2121",
+        "mapas": 1
+      },
+      {
+        "id": 107,
+        "nombre": "DN_2122",
+        "mapas": 1
+      },
+      {
+        "id": 108,
+        "nombre": "DN_2123",
+        "mapas": 1
+      },
+      {
+        "id": 109,
+        "nombre": "DN_2124",
+        "mapas": 1
+      },
+      {
+        "id": 110,
+        "nombre": "DN_2125",
+        "mapas": 1
+      },
+      {
+        "id": 111,
+        "nombre": "DN_2126",
+        "mapas": 1
+      },
+      {
+        "id": 112,
+        "nombre": "DN_2127",
+        "mapas": 1
+      },
+      {
+        "id": 113,
+        "nombre": "DN_2128",
+        "mapas": 1
+      },
+      {
+        "id": 114,
+        "nombre": "DN_2129",
+        "mapas": 1
+      },
+      {
+        "id": 115,
+        "nombre": "DN_2130",
+        "mapas": 1
+      },
+      {
+        "id": 116,
+        "nombre": "DN_2131",
+        "mapas": 1
+      },
+      {
+        "id": 117,
+        "nombre": "DN_2132",
+        "mapas": 1
+      },
+      {
+        "id": 118,
+        "nombre": "DN_2133",
+        "mapas": 1
+      },
+      {
+        "id": 119,
+        "nombre": "DN_2134",
+        "mapas": 1
+      },
+      {
+        "id": 120,
+        "nombre": "DN_2135",
+        "mapas": 1
+      },
+      {
+        "id": 121,
+        "nombre": "DN_2136",
+        "mapas": 1
+      },
+      {
+        "id": 122,
+        "nombre": "DN_2137",
+        "mapas": 1
+      },
+      {
+        "id": 123,
+        "nombre": "DN_2138",
+        "mapas": 1
+      },
+      {
+        "id": 124,
+        "nombre": "DN_2139",
+        "mapas": 2
+      },
+      {
+        "id": 125,
+        "nombre": "DN_2140",
+        "mapas": 1
+      },
+      {
+        "id": 126,
+        "nombre": "DN_2143",
+        "mapas": 1
+      },
+      {
+        "id": 127,
+        "nombre": "DN_2144",
+        "mapas": 1
+      },
+      {
+        "id": 128,
+        "nombre": "DN_2145",
+        "mapas": 1
+      },
+      {
+        "id": 129,
+        "nombre": "DN_2146",
+        "mapas": 1
+      },
+      {
+        "id": 130,
+        "nombre": "DN_2147",
+        "mapas": 1
+      },
+      {
+        "id": 131,
+        "nombre": "DN_2148",
+        "mapas": 1
+      },
+      {
+        "id": 132,
+        "nombre": "DN_2149",
+        "mapas": 1
+      },
+      {
+        "id": 133,
+        "nombre": "DN_2150",
+        "mapas": 1
+      },
+      {
+        "id": 134,
+        "nombre": "DN_2151",
+        "mapas": 1
+      },
+      {
+        "id": 135,
+        "nombre": "DN_2152",
+        "mapas": 1
+      },
+      {
+        "id": 136,
+        "nombre": "DN_2153",
+        "mapas": 1
+      },
+      {
+        "id": 137,
+        "nombre": "DN_2154",
+        "mapas": 1
+      },
+      {
+        "id": 138,
+        "nombre": "DN_2155",
+        "mapas": 1
+      },
+      {
+        "id": 139,
+        "nombre": "DN_2156",
+        "mapas": 1
+      },
+      {
+        "id": 140,
+        "nombre": "DN_2157",
+        "mapas": 1
+      },
+      {
+        "id": 141,
+        "nombre": "DN_2158",
+        "mapas": 1
+      },
+      {
+        "id": 142,
+        "nombre": "DN_2159",
+        "mapas": 1
+      },
+      {
+        "id": 143,
+        "nombre": "DN_2160",
+        "mapas": 1
+      },
+      {
+        "id": 144,
+        "nombre": "DN_2161",
+        "mapas": 1
+      },
+      {
+        "id": 145,
+        "nombre": "DN_2162",
+        "mapas": 1
+      },
+      {
+        "id": 146,
+        "nombre": "DN_2163",
+        "mapas": 1
+      },
+      {
+        "id": 147,
+        "nombre": "DN_2164",
+        "mapas": 1
+      },
+      {
+        "id": 148,
+        "nombre": "DN_2165",
+        "mapas": 1
+      },
+      {
+        "id": 149,
+        "nombre": "DN_2166",
+        "mapas": 1
+      },
+      {
+        "id": 150,
+        "nombre": "DN_2167",
+        "mapas": 1
+      },
+      {
+        "id": 151,
+        "nombre": "DN_2168",
+        "mapas": 1
+      },
+      {
+        "id": 152,
+        "nombre": "DN_2169",
+        "mapas": 1
+      },
+      {
+        "id": 153,
+        "nombre": "DN_2170",
+        "mapas": 1
+      },
+      {
+        "id": 154,
+        "nombre": "DN_2171",
+        "mapas": 1
+      },
+      {
+        "id": 155,
+        "nombre": "DN_2172",
+        "mapas": 1
+      },
+      {
+        "id": 156,
+        "nombre": "DN_2173",
+        "mapas": 1
+      },
+      {
+        "id": 157,
+        "nombre": "DN_2174",
+        "mapas": 1
+      },
+      {
+        "id": 158,
+        "nombre": "DN_2175",
+        "mapas": 1
+      },
+      {
+        "id": 159,
+        "nombre": "DN_2176",
+        "mapas": 1
+      },
+      {
+        "id": 160,
+        "nombre": "DN_2177",
+        "mapas": 1
+      },
+      {
+        "id": 161,
+        "nombre": "DN_2178",
+        "mapas": 1
+      },
+      {
+        "id": 162,
+        "nombre": "DN_2179",
+        "mapas": 1
+      },
+      {
+        "id": 163,
+        "nombre": "DN_2180",
+        "mapas": 1
+      },
+      {
+        "id": 164,
+        "nombre": "DN_2181",
+        "mapas": 1
+      },
+      {
+        "id": 165,
+        "nombre": "DN_2182",
+        "mapas": 1
+      },
+      {
+        "id": 166,
+        "nombre": "DN_2183",
+        "mapas": 1
+      },
+      {
+        "id": 167,
+        "nombre": "DN_2184",
+        "mapas": 1
+      },
+      {
+        "id": 168,
+        "nombre": "DN_2185",
+        "mapas": 1
+      },
+      {
+        "id": 169,
+        "nombre": "DN_2186",
+        "mapas": 1
+      },
+      {
+        "id": 170,
+        "nombre": "DN_2187",
+        "mapas": 1
+      },
+      {
+        "id": 171,
+        "nombre": "DN_2188",
+        "mapas": 1
+      },
+      {
+        "id": 172,
+        "nombre": "DN_2189",
+        "mapas": 1
+      },
+      {
+        "id": 173,
+        "nombre": "DN_2190",
+        "mapas": 1
+      },
+      {
+        "id": 180,
+        "nombre": "DN_GB_TS13",
+        "mapas": 1
+      },
+      {
+        "id": 181,
+        "nombre": "DN_GB_TS14",
+        "mapas": 2
+      },
+      {
+        "id": 182,
+        "nombre": "DN_GB_TS3",
+        "mapas": 3
+      },
+      {
+        "id": 183,
+        "nombre": "DN_GB_TS1",
+        "mapas": 1
+      },
+      {
+        "id": 184,
+        "nombre": "DN_GB_TS6",
+        "mapas": 2
+      },
+      {
+        "id": 185,
+        "nombre": "DN_GB_TS17",
+        "mapas": 1
+      },
+      {
+        "id": 186,
+        "nombre": "DN_GB_TS16",
+        "mapas": 1
+      },
+      {
+        "id": 187,
+        "nombre": "DN_GB_TS13",
+        "mapas": 1
+      }
+    ]
+  },
+  "resumen": {
+    "mapas": 161,
+    "tilesets": 156,
+    "declarados": 14,
+    "animados": 14,
+    "celdasAnimadas": 0,
+    "procesosParalelos": 7,
+    "paginasConSwap": 0,
+    "rapidos": 0,
+    "incumplimientos": 0,
+    "observaciones": 15,
+    "estado": "CUMPLE",
+    "frase": "la dimensión no pinta ni una celda animada: no hay ninguna animación de tiles dentro del juego, así que no hay nada fuera de los límites de la GBC"
+  },
+  "clasesDetectadas": [
+    {
+      "clase": "agua",
+      "autotiles": 6
+    },
+    {
+      "clase": "cascada",
+      "autotiles": 3
+    },
+    {
+      "clase": "fuente",
+      "autotiles": 2
+    },
+    {
+      "clase": "flores",
+      "autotiles": 2
+    },
+    {
+      "clase": "orilla",
+      "autotiles": 1
+    }
+  ],
+  "tilesets": [
+    {
+      "id": 26,
+      "nombre": "DN 2041 — Catacumbas — Entrada Arqueada",
+      "recursos": "DN_2041",
+      "mapas": [
+        2041
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 27,
+      "nombre": "DN 2088 — Bosque Dormido — Entrada",
+      "recursos": "DN_2088",
+      "mapas": [
+        2088
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 28,
+      "nombre": "DN 2120 — Atrio de las Letras",
+      "recursos": "DN_2120",
+      "mapas": [
+        2120
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 29,
+      "nombre": "DN 2042 — Catacumbas — Sala de las Urnas",
+      "recursos": "DN_2042",
+      "mapas": [
+        2042
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 30,
+      "nombre": "DN 2043 — Catacumbas — Celdas",
+      "recursos": "DN_2043",
+      "mapas": [
+        2043
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 31,
+      "nombre": "DN 2044 — Catacumbas — Galería de Barrotes",
+      "recursos": "DN_2044",
+      "mapas": [
+        2044
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 32,
+      "nombre": "DN 2045 — Catacumbas — Escalera del Arco",
+      "recursos": "DN_2045",
+      "mapas": [
+        2045
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 33,
+      "nombre": "DN 2046 — Catacumbas — Cripta de Sarcófagos",
+      "recursos": "DN_2046",
+      "mapas": [
+        2046
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 34,
+      "nombre": "DN 2047 — Catacumbas — Osario",
+      "recursos": "DN_2047",
+      "mapas": [
+        2047
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 35,
+      "nombre": "DN 2048 — Catacumbas — Jardín de Raíces",
+      "recursos": "DN_2048",
+      "mapas": [
+        2048
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 36,
+      "nombre": "DN 2049 — Catacumbas — Pasadizo que Respira",
+      "recursos": "DN_2049",
+      "mapas": [
+        2049
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 37,
+      "nombre": "DN 2050 — Catacumbas — Galería de Mausoleos",
+      "recursos": "DN_2050",
+      "mapas": [
+        2050
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 38,
+      "nombre": "DN 2051 — Catacumbas — Sala de Pedestales",
+      "recursos": "DN_2051",
+      "mapas": [
+        2051
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 39,
+      "nombre": "DN 2052 — Catacumbas — Capilla de la Campana",
+      "recursos": "DN_2052",
+      "mapas": [
+        2052
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 40,
+      "nombre": "DN 2053 — Catacumbas — Sala de las Bestias",
+      "recursos": "DN_2053",
+      "mapas": [
+        2053
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 41,
+      "nombre": "DN 2054 — Catacumbas — Pared de Inscripciones",
+      "recursos": "DN_2054",
+      "mapas": [
+        2054
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 42,
+      "nombre": "DN 2055 — Catacumbas — Sala Ritual",
+      "recursos": "DN_2055",
+      "mapas": [
+        2055
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 43,
+      "nombre": "DN 2056 — Catacumbas — Cámara de la Mano",
+      "recursos": "DN_2056",
+      "mapas": [
+        2056
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 44,
+      "nombre": "DN 2057 — Pueblo Sin Color — Entrada",
+      "recursos": "DN_2057",
+      "mapas": [
+        2057
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 45,
+      "nombre": "DN 2058 — Calle de las Casas Huecas",
+      "recursos": "DN_2058",
+      "mapas": [
+        2058
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 46,
+      "nombre": "DN 2059 — Plaza de la Fuente Seca",
+      "recursos": "DN_2059",
+      "mapas": [
+        2059
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 47,
+      "nombre": "DN 2060 — Callejón de Escombros",
+      "recursos": "DN_2060",
+      "mapas": [
+        2060
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 48,
+      "nombre": "DN 2061 — Bosque de Troncos",
+      "recursos": "DN_2061",
+      "mapas": [
+        2061
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 49,
+      "nombre": "DN 2062 — Páramo de Árboles Secos",
+      "recursos": "DN_2062",
+      "mapas": [
+        2062
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 50,
+      "nombre": "DN 2063 — Estanque Estancado",
+      "recursos": "DN_2063",
+      "mapas": [
+        2063
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 51,
+      "nombre": "DN 2064 — Puente de Madera Podrida",
+      "recursos": "DN_2064",
+      "mapas": [
+        2064
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 52,
+      "nombre": "DN 2065 — Colina de la Iglesia",
+      "recursos": "DN_2065",
+      "mapas": [
+        2065
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 53,
+      "nombre": "DN 2066 — Cementerio Cercado",
+      "recursos": "DN_2066",
+      "mapas": [
+        2066
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 54,
+      "nombre": "DN 2067 — Mausoleo Central",
+      "recursos": "DN_2067",
+      "mapas": [
+        2067
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 55,
+      "nombre": "DN 2068 — Cementerio Grande",
+      "recursos": "DN_2068",
+      "mapas": [
+        2068
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 56,
+      "nombre": "DN 2069 — Estación Abandonada",
+      "recursos": "DN_2069",
+      "mapas": [
+        2069
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 57,
+      "nombre": "DN 2070 — Biblioteca Polvorienta",
+      "recursos": "DN_2070",
+      "mapas": [
+        2070
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 58,
+      "nombre": "DN 2071 — Campanario",
+      "recursos": "DN_2071",
+      "mapas": [
+        2071
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 59,
+      "nombre": "DN 2072 — Torre de la Escalera de Caracol",
+      "recursos": "DN_2072",
+      "mapas": [
+        2072
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 60,
+      "nombre": "DN 2073 — Cara Norte — Vereda Helada",
+      "recursos": "DN_2073",
+      "mapas": [
+        2073
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 61,
+      "nombre": "DN 2074 — Acantilado de Zetas",
+      "recursos": "DN_2074",
+      "mapas": [
+        2074
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 62,
+      "nombre": "DN 2075 — Sendero de la Cornisa",
+      "recursos": "DN_2075",
+      "mapas": [
+        2075
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 63,
+      "nombre": "DN 2076 — Cabaña del Montañés",
+      "recursos": "DN_2076",
+      "mapas": [
+        2076
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 64,
+      "nombre": "DN 2077 — Lago Congelado",
+      "recursos": "DN_2077",
+      "mapas": [
+        2077
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 65,
+      "nombre": "DN 2078 — Pueblo de la Niebla",
+      "recursos": "DN_2078",
+      "mapas": [
+        2078
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 66,
+      "nombre": "DN 2079 — Pueblo Alto",
+      "recursos": "DN_2079",
+      "mapas": [
+        2079
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 67,
+      "nombre": "DN 2080 — Cueva de Bloques de Hielo",
+      "recursos": "DN_2080",
+      "mapas": [
+        2080
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 68,
+      "nombre": "DN 2081 — Entrada de Cueva",
+      "recursos": "DN_2081",
+      "mapas": [
+        2081
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 69,
+      "nombre": "DN 2082 — Caverna de Estalactitas",
+      "recursos": "DN_2082",
+      "mapas": [
+        2082
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 70,
+      "nombre": "DN 2083 — Cámara de los Dos Lagos",
+      "recursos": "DN_2083",
+      "mapas": [
+        2083
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 71,
+      "nombre": "DN 2084 — Grieta Estrecha",
+      "recursos": "DN_2084",
+      "mapas": [
+        2084
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 72,
+      "nombre": "DN 2085 — Cámara de Cristales",
+      "recursos": "DN_2085",
+      "mapas": [
+        2085
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 73,
+      "nombre": "DN 2086 — Templo de las Estatuas",
+      "recursos": "DN_2086",
+      "mapas": [
+        2086
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 74,
+      "nombre": "DN 2087 — Corazón del Monte",
+      "recursos": "DN_2087",
+      "mapas": [
+        2087
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 75,
+      "nombre": "DN 2089 — Senda del Cartel Torcido",
+      "recursos": "DN_2089",
+      "mapas": [
+        2089
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 76,
+      "nombre": "DN 2090 — Puente de Piedra",
+      "recursos": "DN_2090",
+      "mapas": [
+        2090
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 77,
+      "nombre": "DN 2091 — Cabaña de las Ventanas",
+      "recursos": "DN_2091",
+      "mapas": [
+        2091
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 78,
+      "nombre": "DN 2092 — Arco de Niebla Púrpura",
+      "recursos": "DN_2092",
+      "mapas": [
+        2092
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 79,
+      "nombre": "DN 2093 — Cementerio del Bosque",
+      "recursos": "DN_2093",
+      "mapas": [
+        2093
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 80,
+      "nombre": "DN 2094 — Campo de Flores Moradas",
+      "recursos": "DN_2094",
+      "mapas": [
+        2094
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 81,
+      "nombre": "DN 2095 — Campamento de Tiendas",
+      "recursos": "DN_2095",
+      "mapas": [
+        2095
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 82,
+      "nombre": "DN 2096 — Boca de la Cueva Negra",
+      "recursos": "DN_2096",
+      "mapas": [
+        2096
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 83,
+      "nombre": "DN 2097 — Árboles Retorcidos",
+      "recursos": "DN_2097",
+      "mapas": [
+        2097
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 84,
+      "nombre": "DN 2098 — Estanque de Nenúfares",
+      "recursos": "DN_2098",
+      "mapas": [
+        2098
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 85,
+      "nombre": "DN 2099 — Muro de Ruinas",
+      "recursos": "DN_2099",
+      "mapas": [
+        2099
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 86,
+      "nombre": "DN 2100 — Granero Abandonado",
+      "recursos": "DN_2100",
+      "mapas": [
+        2100
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 87,
+      "nombre": "DN 2101 — Bosque de Luciérnagas",
+      "recursos": "DN_2101",
+      "mapas": [
+        2101
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 88,
+      "nombre": "DN 2102 — Muro del Pasaje",
+      "recursos": "DN_2102",
+      "mapas": [
+        2102
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 89,
+      "nombre": "DN 2103 — Árbol Anciano",
+      "recursos": "DN_2103",
+      "mapas": [
+        2103
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 90,
+      "nombre": "DN 2104 — Pueblo 000 — Entrada",
+      "recursos": "DN_2104",
+      "mapas": [
+        2104
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 91,
+      "nombre": "DN 2105 — Calle Incompleta",
+      "recursos": "DN_2105",
+      "mapas": [
+        2105
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 92,
+      "nombre": "DN 2106 — Plaza sin Fuente",
+      "recursos": "DN_2106",
+      "mapas": [
+        2106
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 93,
+      "nombre": "DN 2107 — Callejón Terminado",
+      "recursos": "DN_2107",
+      "mapas": [
+        2107
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 94,
+      "nombre": "DN 2108 — Bosque Sin Troncos",
+      "recursos": "DN_2108",
+      "mapas": [
+        2108
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 95,
+      "nombre": "DN 2109 — Páramo Blanco",
+      "recursos": "DN_2109",
+      "mapas": [
+        2109
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 96,
+      "nombre": "DN 2110 — Estanque Vacío",
+      "recursos": "DN_2110",
+      "mapas": [
+        2110
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 97,
+      "nombre": "DN 2111 — Puente Cortado",
+      "recursos": "DN_2111",
+      "mapas": [
+        2111
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 98,
+      "nombre": "DN 2112 — Colina Erguida",
+      "recursos": "DN_2112",
+      "mapas": [
+        2112
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 99,
+      "nombre": "DN 2113 — Cementerio Vacío",
+      "recursos": "DN_2113",
+      "mapas": [
+        2113
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 100,
+      "nombre": "DN 2114 — Mausoleo Abierto",
+      "recursos": "DN_2114",
+      "mapas": [
+        2114
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 101,
+      "nombre": "DN 2115 — Estación 000",
+      "recursos": "DN_2115",
+      "mapas": [
+        2115
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 102,
+      "nombre": "DN 2116 — Biblioteca sin Letras",
+      "recursos": "DN_2116",
+      "mapas": [
+        2116
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 103,
+      "nombre": "DN 2117 — Campanario Roto",
+      "recursos": "DN_2117",
+      "mapas": [
+        2117
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 104,
+      "nombre": "DN 2118 — Pueblo 404",
+      "recursos": "DN_2118",
+      "mapas": [
+        2118
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 105,
+      "nombre": "DN 2119 — El Borde del Mundo",
+      "recursos": "DN_2119",
+      "mapas": [
+        2119
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 106,
+      "nombre": "DN 2121 — Sala de la Inscripción",
+      "recursos": "DN_2121",
+      "mapas": [
+        2121
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 107,
+      "nombre": "DN 2122 — Corredor de Columnas",
+      "recursos": "DN_2122",
+      "mapas": [
+        2122
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 108,
+      "nombre": "DN 2123 — Biblioteca Prohibida",
+      "recursos": "DN_2123",
+      "mapas": [
+        2123
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 109,
+      "nombre": "DN 2124 — Balcón de los Unown",
+      "recursos": "DN_2124",
+      "mapas": [
+        2124
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 110,
+      "nombre": "DN 2125 — Sala del Ojo",
+      "recursos": "DN_2125",
+      "mapas": [
+        2125
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 111,
+      "nombre": "DN 2126 — Escalinata Interior",
+      "recursos": "DN_2126",
+      "mapas": [
+        2126
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 112,
+      "nombre": "DN 2127 — Cripta de Sarcófagos",
+      "recursos": "DN_2127",
+      "mapas": [
+        2127
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 113,
+      "nombre": "DN 2128 — Sala de los Símbolos",
+      "recursos": "DN_2128",
+      "mapas": [
+        2128
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 114,
+      "nombre": "DN 2129 — Caverna de Cristales",
+      "recursos": "DN_2129",
+      "mapas": [
+        2129
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 115,
+      "nombre": "DN 2130 — Galería Inundada",
+      "recursos": "DN_2130",
+      "mapas": [
+        2130
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 116,
+      "nombre": "DN 2131 — Salón de las Estatuas",
+      "recursos": "DN_2131",
+      "mapas": [
+        2131
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 117,
+      "nombre": "DN 2132 — Galería Menor",
+      "recursos": "DN_2132",
+      "mapas": [
+        2132
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 118,
+      "nombre": "DN 2133 — Sala del Trono",
+      "recursos": "DN_2133",
+      "mapas": [
+        2133
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 119,
+      "nombre": "DN 2134 — Sala LEAVENOW",
+      "recursos": "DN_2134",
+      "mapas": [
+        2134
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 120,
+      "nombre": "DN 2135 — Cámara de KINGGUS",
+      "recursos": "DN_2135",
+      "mapas": [
+        2135
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 121,
+      "nombre": "DN 2136 — Nexo — Falla Cero",
+      "recursos": "DN_2136",
+      "mapas": [
+        2136
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 122,
+      "nombre": "DN 2137 — Nexo — Pueblo Reensamblado",
+      "recursos": "DN_2137",
+      "mapas": [
+        2137
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 123,
+      "nombre": "DN 2138 — Nexo — Centro Pokémon Sumergido",
+      "recursos": "DN_2138",
+      "mapas": [
+        2138
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 124,
+      "nombre": "DN 2139 — Nexo — Pasillo de Código",
+      "recursos": "DN_2139",
+      "mapas": [
+        2139,
+        2141
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 125,
+      "nombre": "DN 2140 — Nexo — Sala del Testigo",
+      "recursos": "DN_2140",
+      "mapas": [
+        2140
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 126,
+      "nombre": "DN 2143 — Strangled Red — Patio de la Casa Rota",
+      "recursos": "DN_2143",
+      "mapas": [
+        2143
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 127,
+      "nombre": "DN 2144 — Strangled Red — Cuarto del Amo",
+      "recursos": "DN_2144",
+      "mapas": [
+        2144
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 128,
+      "nombre": "DN 2145 — Strangled Red — Pasillo de Trofeos",
+      "recursos": "DN_2145",
+      "mapas": [
+        2145
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 129,
+      "nombre": "DN 2146 — Strangled Red — Jardín de la Promesa",
+      "recursos": "DN_2146",
+      "mapas": [
+        2146
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 130,
+      "nombre": "DN 2147 — Strangled Red — Cocina Fría",
+      "recursos": "DN_2147",
+      "mapas": [
+        2147
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 131,
+      "nombre": "DN 2148 — Strangled Red — Escalera Que Sube y Baja",
+      "recursos": "DN_2148",
+      "mapas": [
+        2148
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 132,
+      "nombre": "DN 2149 — Strangled Red — Cripta del Pokémon",
+      "recursos": "DN_2149",
+      "mapas": [
+        2149
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 133,
+      "nombre": "DN 2150 — Strangled Red — Torre de las Cintas",
+      "recursos": "DN_2150",
+      "mapas": [
+        2150
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 134,
+      "nombre": "DN 2151 — Strangled Red — Sala de los Reflejos",
+      "recursos": "DN_2151",
+      "mapas": [
+        2151
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 135,
+      "nombre": "DN 2152 — Strangled Red — Corredor de la Culpa",
+      "recursos": "DN_2152",
+      "mapas": [
+        2152
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 136,
+      "nombre": "DN 2153 — Strangled Red — Plaza Sin Gente",
+      "recursos": "DN_2153",
+      "mapas": [
+        2153
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 137,
+      "nombre": "DN 2154 — Strangled Red — Canil Vacío",
+      "recursos": "DN_2154",
+      "mapas": [
+        2154
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 138,
+      "nombre": "DN 2155 — Strangled Red — Capilla del Nudo",
+      "recursos": "DN_2155",
+      "mapas": [
+        2155
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 139,
+      "nombre": "DN 2156 — Strangled Red — Espejo Roto",
+      "recursos": "DN_2156",
+      "mapas": [
+        2156
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 140,
+      "nombre": "DN 2157 — Strangled Red — Umbral del Ahorcado",
+      "recursos": "DN_2157",
+      "mapas": [
+        2157
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 141,
+      "nombre": "DN 2158 — Strangled Red — Árbol del Ajuste",
+      "recursos": "DN_2158",
+      "mapas": [
+        2158
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 142,
+      "nombre": "DN 2159 — Buried Alive — Pozo de Entrada",
+      "recursos": "DN_2159",
+      "mapas": [
+        2159
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 143,
+      "nombre": "DN 2160 — Buried Alive — Túnel Angosto",
+      "recursos": "DN_2160",
+      "mapas": [
+        2160
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 144,
+      "nombre": "DN 2161 — Buried Alive — Cámara de Tierra",
+      "recursos": "DN_2161",
+      "mapas": [
+        2161
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 145,
+      "nombre": "DN 2162 — Buried Alive — Galería de Raíces",
+      "recursos": "DN_2162",
+      "mapas": [
+        2162
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 146,
+      "nombre": "DN 2163 — Buried Alive — Osario Inundado",
+      "recursos": "DN_2163",
+      "mapas": [
+        2163
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 147,
+      "nombre": "DN 2164 — Buried Alive — Escalera de Tierra",
+      "recursos": "DN_2164",
+      "mapas": [
+        2164
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 148,
+      "nombre": "DN 2165 — Buried Alive — Cripta del Aire",
+      "recursos": "DN_2165",
+      "mapas": [
+        2165
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 149,
+      "nombre": "DN 2166 — Buried Alive — Sala de los Sellados",
+      "recursos": "DN_2166",
+      "mapas": [
+        2166
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 150,
+      "nombre": "DN 2167 — Buried Alive — Pozo Sin Fondo",
+      "recursos": "DN_2167",
+      "mapas": [
+        2167
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 151,
+      "nombre": "DN 2168 — Buried Alive — Pueblo Enterrado",
+      "recursos": "DN_2168",
+      "mapas": [
+        2168
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 152,
+      "nombre": "DN 2169 — Buried Alive — Iglesia Boca Abajo",
+      "recursos": "DN_2169",
+      "mapas": [
+        2169
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 153,
+      "nombre": "DN 2170 — Buried Alive — Campo de Lápidas",
+      "recursos": "DN_2170",
+      "mapas": [
+        2170
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 154,
+      "nombre": "DN 2171 — Buried Alive — Fosa Común",
+      "recursos": "DN_2171",
+      "mapas": [
+        2171
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 155,
+      "nombre": "DN 2172 — Buried Alive — Túnel de la Mano",
+      "recursos": "DN_2172",
+      "mapas": [
+        2172
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 156,
+      "nombre": "DN 2173 — Buried Alive — Umbral del Aire",
+      "recursos": "DN_2173",
+      "mapas": [
+        2173
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 157,
+      "nombre": "DN 2174 — Buried Alive — Fondo de la Fosa",
+      "recursos": "DN_2174",
+      "mapas": [
+        2174
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 158,
+      "nombre": "DN 2175 — Lavender Syndrome — Entrada del Pueblo",
+      "recursos": "DN_2175",
+      "mapas": [
+        2175
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 159,
+      "nombre": "DN 2176 — Lavender Syndrome — Calle del Altavoz",
+      "recursos": "DN_2176",
+      "mapas": [
+        2176
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 160,
+      "nombre": "DN 2177 — Lavender Syndrome — Casa del Piano",
+      "recursos": "DN_2177",
+      "mapas": [
+        2177
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 161,
+      "nombre": "DN 2178 — Lavender Syndrome — Escuela de Música",
+      "recursos": "DN_2178",
+      "mapas": [
+        2178
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 162,
+      "nombre": "DN 2179 — Lavender Syndrome — Capilla de la Campana",
+      "recursos": "DN_2179",
+      "mapas": [
+        2179
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 163,
+      "nombre": "DN 2180 — Lavender Syndrome — Torre de las Ondas",
+      "recursos": "DN_2180",
+      "mapas": [
+        2180
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 164,
+      "nombre": "DN 2181 — Lavender Syndrome — Calle del Silencio",
+      "recursos": "DN_2181",
+      "mapas": [
+        2181
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 165,
+      "nombre": "DN 2182 — Lavender Syndrome — Jardín Sordo",
+      "recursos": "DN_2182",
+      "mapas": [
+        2182
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 166,
+      "nombre": "DN 2183 — Lavender Syndrome — Mercado de Cintas",
+      "recursos": "DN_2183",
+      "mapas": [
+        2183
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 167,
+      "nombre": "DN 2184 — Lavender Syndrome — Cine Sin Sonido",
+      "recursos": "DN_2184",
+      "mapas": [
+        2184
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 168,
+      "nombre": "DN 2185 — Lavender Syndrome — Fosa Acústica",
+      "recursos": "DN_2185",
+      "mapas": [
+        2185
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 169,
+      "nombre": "DN 2186 — Lavender Syndrome — Túnel de las Voces",
+      "recursos": "DN_2186",
+      "mapas": [
+        2186
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 170,
+      "nombre": "DN 2187 — Lavender Syndrome — Sala de los Audífonos",
+      "recursos": "DN_2187",
+      "mapas": [
+        2187
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 171,
+      "nombre": "DN 2188 — Lavender Syndrome — Torre del Canto",
+      "recursos": "DN_2188",
+      "mapas": [
+        2188
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 172,
+      "nombre": "DN 2189 — Lavender Syndrome — Estudio del Autor",
+      "recursos": "DN_2189",
+      "mapas": [
+        2189
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 173,
+      "nombre": "DN 2190 — Lavender Syndrome — Campanario Final",
+      "recursos": "DN_2190",
+      "mapas": [
+        2190
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 180,
+      "nombre": "DN Game Boy 13",
+      "recursos": "DN_GB_TS13",
+      "mapas": [
+        2023
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 181,
+      "nombre": "DN Game Boy 14",
+      "recursos": "DN_GB_TS14",
+      "mapas": [
+        2024,
+        2025
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 182,
+      "nombre": "DN Game Boy 3",
+      "recursos": "DN_GB_TS3",
+      "mapas": [
+        2026,
+        2029,
+        2192
+      ],
+      "autotiles": [
+        {
+          "slot": 0,
+          "recurso": "DN_GB_TS3_A0",
+          "original": "Fountain2",
+          "clonadoDe": {
+            "tilesetId": 3,
+            "tileset": "Interior general",
+            "ranura": 0
+          },
+          "existe": true,
+          "ancho": 384,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 4,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "fuente",
+          "clasePermitida": false,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "interior (Inside): En el original de GBC los tilesets de interior (casa, centro, tienda, laboratorio…) sólo encadenan WaitTileAnimation: no animan nada."
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "nombre": "DN Game Boy 1",
+      "recursos": "DN_GB_TS1",
+      "mapas": [
+        2027
+      ],
+      "autotiles": [
+        {
+          "slot": 0,
+          "recurso": "DN_GB_TS1_A0",
+          "original": "Sea",
+          "clonadoDe": {
+            "tilesetId": 1,
+            "tileset": "Outside",
+            "ranura": 0
+          },
+          "existe": true,
+          "ancho": 768,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 8,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "agua",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateWaterTile / ScrollTileRightLeft (vTiles2 $14, $03, $35)"
+        },
+        {
+          "slot": 1,
+          "recurso": "DN_GB_TS1_A1",
+          "original": "Sea without shore",
+          "clonadoDe": {
+            "tilesetId": 1,
+            "tileset": "Outside",
+            "ranura": 1
+          },
+          "existe": true,
+          "ancho": 768,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 8,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "agua",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateWaterTile / ScrollTileRightLeft (vTiles2 $14, $03, $35)"
+        },
+        {
+          "slot": 2,
+          "recurso": "DN_GB_TS1_A2",
+          "original": "Sea deep",
+          "clonadoDe": {
+            "tilesetId": 1,
+            "tileset": "Outside",
+            "ranura": 2
+          },
+          "existe": true,
+          "ancho": 768,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 8,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "agua",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateWaterTile / ScrollTileRightLeft (vTiles2 $14, $03, $35)"
+        },
+        {
+          "slot": 3,
+          "recurso": "DN_GB_TS1_A3",
+          "original": "Sand shore",
+          "clonadoDe": {
+            "tilesetId": 1,
+            "tileset": "Outside",
+            "ranura": 3
+          },
+          "existe": true,
+          "ancho": 768,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 8,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "orilla",
+          "clasePermitida": false,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "La orilla es estática en GBC: sólo se anima la lámina de agua, no la arena."
+        },
+        {
+          "slot": 4,
+          "recurso": "DN_GB_TS1_A4",
+          "original": "Flowers1",
+          "clonadoDe": {
+            "tilesetId": 1,
+            "tileset": "Outside",
+            "ranura": 4
+          },
+          "existe": true,
+          "ancho": 160,
+          "alto": 32,
+          "animado": true,
+          "framesArchivo": 1,
+          "formato": "reducido (alto 32)",
+          "framesMostrados": null,
+          "clase": "flores",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateFlowerTile ($03)"
+        },
+        {
+          "slot": 5,
+          "recurso": "DN_GB_TS1_A5",
+          "original": "Flowers2",
+          "clonadoDe": {
+            "tilesetId": 1,
+            "tileset": "Outside",
+            "ranura": 5
+          },
+          "existe": true,
+          "ancho": 160,
+          "alto": 32,
+          "animado": true,
+          "framesArchivo": 1,
+          "formato": "reducido (alto 32)",
+          "framesMostrados": null,
+          "clase": "flores",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateFlowerTile ($03)"
+        },
+        {
+          "slot": 6,
+          "recurso": "DN_GB_TS1_A6",
+          "original": "Fountain1",
+          "clonadoDe": {
+            "tilesetId": 1,
+            "tileset": "Outside",
+            "ranura": 6
+          },
+          "existe": true,
+          "ancho": 480,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 5,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "fuente",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "Permitida en exterior; prohibida en interior (ver política.interior)."
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "nombre": "DN Game Boy 6",
+      "recursos": "DN_GB_TS6",
+      "mapas": [
+        2028,
+        2040
+      ],
+      "autotiles": [
+        {
+          "slot": 0,
+          "recurso": "DN_GB_TS6_A0",
+          "original": "Sea",
+          "clonadoDe": {
+            "tilesetId": 6,
+            "tileset": "Caves",
+            "ranura": 0
+          },
+          "existe": true,
+          "ancho": 768,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 8,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "agua",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateWaterTile / ScrollTileRightLeft (vTiles2 $14, $03, $35)"
+        },
+        {
+          "slot": 1,
+          "recurso": "DN_GB_TS6_A1",
+          "original": "Sea without shore",
+          "clonadoDe": {
+            "tilesetId": 6,
+            "tileset": "Caves",
+            "ranura": 1
+          },
+          "existe": true,
+          "ancho": 768,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 8,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "agua",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateWaterTile / ScrollTileRightLeft (vTiles2 $14, $03, $35)"
+        },
+        {
+          "slot": 2,
+          "recurso": "DN_GB_TS6_A2",
+          "original": "Sea deep",
+          "clonadoDe": {
+            "tilesetId": 6,
+            "tileset": "Caves",
+            "ranura": 2
+          },
+          "existe": true,
+          "ancho": 768,
+          "alto": 128,
+          "animado": true,
+          "framesArchivo": 8,
+          "formato": "completo (96×128)",
+          "framesMostrados": 4,
+          "clase": "agua",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "AnimateWaterTile / ScrollTileRightLeft (vTiles2 $14, $03, $35)"
+        },
+        {
+          "slot": 4,
+          "recurso": "DN_GB_TS6_A4",
+          "original": "Waterfall crest",
+          "clonadoDe": {
+            "tilesetId": 6,
+            "tileset": "Caves",
+            "ranura": 4
+          },
+          "existe": true,
+          "ancho": 128,
+          "alto": 32,
+          "animado": true,
+          "framesArchivo": 1,
+          "formato": "reducido (alto 32)",
+          "framesMostrados": null,
+          "clase": "cascada",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "ScrollTileDown (cueva $40, ruta helada $31)"
+        },
+        {
+          "slot": 5,
+          "recurso": "DN_GB_TS6_A5",
+          "original": "Waterfall",
+          "clonadoDe": {
+            "tilesetId": 6,
+            "tileset": "Caves",
+            "ranura": 5
+          },
+          "existe": true,
+          "ancho": 128,
+          "alto": 32,
+          "animado": true,
+          "framesArchivo": 1,
+          "formato": "reducido (alto 32)",
+          "framesMostrados": null,
+          "clase": "cascada",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "ScrollTileDown (cueva $40, ruta helada $31)"
+        },
+        {
+          "slot": 6,
+          "recurso": "DN_GB_TS6_A6",
+          "original": "Waterfall bottom",
+          "clonadoDe": {
+            "tilesetId": 6,
+            "tileset": "Caves",
+            "ranura": 6
+          },
+          "existe": true,
+          "ancho": 128,
+          "alto": 32,
+          "animado": true,
+          "framesArchivo": 1,
+          "formato": "reducido (alto 32)",
+          "framesMostrados": null,
+          "clase": "cascada",
+          "clasePermitida": true,
+          "celdas": 0,
+          "mapas": [],
+          "motivo": "ScrollTileDown (cueva $40, ruta helada $31)"
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "nombre": "DN Game Boy 17",
+      "recursos": "DN_GB_TS17",
+      "mapas": [
+        2193
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 186,
+      "nombre": "DN Game Boy 16",
+      "recursos": "DN_GB_TS16",
+      "mapas": [
+        2194
+      ],
+      "autotiles": []
+    },
+    {
+      "id": 187,
+      "nombre": "DN Game Boy 13",
+      "recursos": "DN_GB_TS13",
+      "mapas": [
+        2142
+      ],
+      "autotiles": []
+    }
+  ],
+  "eventos": {
+    "procesosParalelos": 7,
+    "paginasConSwap": 0,
+    "rapidos": []
+  },
+  "incumplimientos": [],
+  "observaciones": [
+    {
+      "tipo": "clase-no-original-latente",
+      "tileset": "DN_GB_TS3",
+      "autotile": "DN_GB_TS3_A0",
+      "clase": "fuente",
+      "motivo": "interior (Inside): En el original de GBC los tilesets de interior (casa, centro, tienda, laboratorio…) sólo encadenan WaitTileAnimation: no animan nada.",
+      "detalle": "clase «fuente» declarada animada pero sin pintar en ningún mapa: si se pinta incumpliría la regla (interior (Inside): En el original de GBC los tilesets de interior (casa, centro, tienda, laboratorio…) sólo encadenan WaitTileAnimation: no animan nada.)"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A0",
+      "detalle": "el PNG trae 8 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 4 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A1",
+      "detalle": "el PNG trae 8 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 4 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A2",
+      "detalle": "el PNG trae 8 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 4 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A3",
+      "detalle": "el PNG trae 8 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 4 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "clase-no-original-latente",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A3",
+      "clase": "orilla",
+      "motivo": "La orilla es estática en GBC: sólo se anima la lámina de agua, no la arena.",
+      "detalle": "clase «orilla» declarada animada pero sin pintar en ningún mapa: si se pinta incumpliría la regla (La orilla es estática en GBC: sólo se anima la lámina de agua, no la arena.)"
+    },
+    {
+      "tipo": "formato-reducido",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A4",
+      "detalle": "mide 160×32 px: no ocupa la rejilla de 96×128 que el motor reserva por autotile, así que su ciclo no encaja con el paso de 96 px"
+    },
+    {
+      "tipo": "formato-reducido",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A5",
+      "detalle": "mide 160×32 px: no ocupa la rejilla de 96×128 que el motor reserva por autotile, así que su ciclo no encaja con el paso de 96 px"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS1",
+      "autotile": "DN_GB_TS1_A6",
+      "detalle": "el PNG trae 5 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 1 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS6",
+      "autotile": "DN_GB_TS6_A0",
+      "detalle": "el PNG trae 8 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 4 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS6",
+      "autotile": "DN_GB_TS6_A1",
+      "detalle": "el PNG trae 8 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 4 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "fotogramas-mudos",
+      "tileset": "DN_GB_TS6",
+      "autotile": "DN_GB_TS6_A2",
+      "detalle": "el PNG trae 8 fotogramas pero el motor sólo muestra 4 (paso de 96 px): 4 fotogramas nunca se ven"
+    },
+    {
+      "tipo": "formato-reducido",
+      "tileset": "DN_GB_TS6",
+      "autotile": "DN_GB_TS6_A4",
+      "detalle": "mide 128×32 px: no ocupa la rejilla de 96×128 que el motor reserva por autotile, así que su ciclo no encaja con el paso de 96 px"
+    },
+    {
+      "tipo": "formato-reducido",
+      "tileset": "DN_GB_TS6",
+      "autotile": "DN_GB_TS6_A5",
+      "detalle": "mide 128×32 px: no ocupa la rejilla de 96×128 que el motor reserva por autotile, así que su ciclo no encaja con el paso de 96 px"
+    },
+    {
+      "tipo": "formato-reducido",
+      "tileset": "DN_GB_TS6",
+      "autotile": "DN_GB_TS6_A6",
+      "detalle": "mide 128×32 px: no ocupa la rejilla de 96×128 que el motor reserva por autotile, así que su ciclo no encaja con el paso de 96 px"
+    }
+  ]
+}
