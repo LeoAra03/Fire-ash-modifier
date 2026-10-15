@@ -112,6 +112,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Resultado real: **13 734 eventos PokeMod\* en 1887 de 3465 mapas**. Desglose por prefijo: Campaña ROM 12 379 · Tier3 420 · Tier2 240 · Tier1 200 · Barco 92 · Multiverso 59 · Región 57 · Circuito 50 · Atlas Mil 41 · Grieta 28 · Vía 25 · Restauración 23 · Rocket 22 · Pokégod 20 · Diplomas 9 · Canon 5 · Espejo 5 · Glazed 5 · y resto de marcadores puntuales (líderes de gimnasio, portal, vestidor, Oak…).
 - Cada entrada registra mapId, nombre de mapa, eventoId, nombre, x/y y páginas; el JSON incluye totales y prefijos.
 
+### FASE 17 — Integridad de los 500 eventos Horizonte N:
+
+- **Confirmado: 500/500 eventos `Horizonte N:` instalados sin corrimiento de índices.** Cruzado catálogo (`content/horizontes_500.json`) ↔ disco: mapa esperado, **eventoId = slot+99** y nombre completo `Horizonte NNN: título` coinciden en los 500; IDs 1–500 completos, sin duplicados ni eventos fuera de catálogo; 25 aventuras exactas por cada uno de los 20 mapas (1001–1020).
+- Las 92 transferencias (comando 201) de esos 20 mapas apuntan todas a mapas existentes (0 inválidas).
+- **Hallazgo preexistente documentado:** `node tools/apply_horizontes_500_expansion.mjs --verify` termina en rojo con «se esperaban 44 transferencias aditivas; hay 56» — expectativa desfasada del verificador (el contenido posterior añadió transferencias válidas; el informe original hablaba de 44). No afecta a los eventos Horizonte ni a `npm test` (ese verificador no forma parte del suite de la FASE 1). Pendiente de ajuste en su fase.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
