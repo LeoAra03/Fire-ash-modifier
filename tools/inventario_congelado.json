@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T05:49:58.441Z",
+  "generatedAt": "2026-10-15T05:58:25.752Z",
   "git": {
     "branch": "arena/2a3657d3-fire-ash-modifier",
-    "commit": "bfcaee77433f4bc178d1e1f5920a97990226a6fe"
+    "commit": "4ecdccb53d495d30ba8a3182756d8a38b60342f5"
   },
   "scope": {
     "hashRoots": [
@@ -26910,8 +26910,8 @@
       },
       {
         "path": "tools/plan900/avance.md",
-        "bytes": 9308,
-        "sha256": "d0d61cd2cd2cd4e562130cf548961a4f559ad380c75122f58d385a065be2a790"
+        "bytes": 9709,
+        "sha256": "9754f6bc273aeca23b9edcaeca048c03645bee7c617c8c3360517ee03d20be88"
       },
       {
         "path": "tools/plan900/avance.sh",
