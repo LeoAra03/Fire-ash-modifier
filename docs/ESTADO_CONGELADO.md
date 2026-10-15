@@ -101,6 +101,11 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **`npm run verify:event-collision`: exit 0** — `Game_Character` bloquea eventos con sprite aunque estén marcados `Through`; `Game_Event` hace sólidos los eventos con `character_name`; `Game_Player` conserva la interacción con sprites sólidos (también al cargar el mapa encima). Sin colisiones de eventos.
 - **`npm run verify:save-path`: exit 0** — `PokemonSystemSettings.dat` y `GameSpeedSetting.dat` ya no se escriben como auxiliares en «Save Files»: se guardan junto a `Game.rxdata`, cuya carpeta ya conoce `SaveData`. Descartado el `Errno::ENOENT` en PC/Android (Kirin). Sin rutas de guardado rotas.
 
+### FASE 15 — Congelación de los 17 mapas del DLC y su música
+
+- Creado **`docs/qa/mapas_dlc_musica.md`**: tabla única con los 17 mapas nuevos del DLC (2195, 2196, 2200, 2201, 2210, 2211, 2220, 2221, 2230, 2250–2257), su nombre, BGM asignado, volumen/tono, existencia del archivo y prefijo SHA-256 del mapa congelado.
+- Verificado sobre disco: **17/17 con BGM idéntico al plan** (`content/dlc_ambience.json`), **17/17 archivos de música existentes** en `Audio/BGM/`, volumen/tono 100/100. Los ocho gimnasios de Atlas suenan cada uno distinto (Bruma→Cumbre).
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
