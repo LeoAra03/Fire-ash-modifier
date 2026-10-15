@@ -39,6 +39,8 @@ Las cinco campañas ROM ya **no se adaptan**: usan el contenido de la ROM tal cu
   (structs con `paletteTag` 0x11xx) y `sObjectEventSpritePalettes[]`, se leen los
   9 frames 4bpp (abajo/arriba/lado y sus pasos) y se arma la hoja RMXP de 4 columnas
   × 4 filas (`$ROMN_<campaña>_g<id>.png`). Herramienta: `npm run rom:nativo:sprites`.
+  Los doce pasos, con offsets y comprobaciones:
+  [`docs/qa/gbc_pipeline.md`](docs/qa/gbc_pipeline.md).
 - **Los 9 frames 4bpp se verifican antes de armar cada hoja**: medidas, rejilla de
   tiles 8×8, 16 colores, las tres poses quietas y sus seis pasos. La auditoría de
   las 667 hojas encontró **155 frames vacíos en 41 personajes** (huecos que en RMXP

@@ -6,7 +6,8 @@
 > el contrato, la hoja no se escribe.
 
 Herramienta: `tools/rom_nativo_sprites.mjs` (con el lector PNG sin dependencias
-de `tools/forense/png.mjs`).
+de `tools/forense/png.mjs`). El recorrido completo de la ROM a la hoja, paso a
+paso, está en [`docs/qa/gbc_pipeline.md`](qa/gbc_pipeline.md).
 
 ```bash
 npm run selftest:rom:nativo:frames     # comprobaciones sintéticas (16)
