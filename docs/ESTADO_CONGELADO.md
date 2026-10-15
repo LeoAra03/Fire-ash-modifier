@@ -24,6 +24,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Única desviación de hashes previa a regenerar: los 5 archivos del stage Teckel resincronizados por el `pretest` de la FASE 1 (ver arriba), absorbidos ahora en el JSON oficial. Ningún otro hash cambió.
 - Estable tras regenerar: mapas 3465 · scripts 409 · pares ID 9197 · colisiones 0 · rango reservado libre.
 
+### FASE 4 — Verificación del rango reservado
+
+- **`node tools/inventario_congelado.mjs --verify`: exit 0** — "hashes, mapas, anclas, pares y rango reservado coinciden" contra el JSON oficial de la FASE 3.
+- `unassignedPortionFree: true`. **Switches 701–867:** 167/167 con asignación canónica, 0 sin asignación, 0 de la porción no asignada en uso. **Variables 101–263:** 163/163 con asignación canónica, 0 sin asignación, 0 de la porción no asignada en uso.
+- El rango reservado **sigue libre en su porción no asignada**: ningún ID de esa porción tiene nombre ni uso literal. Sin cambios de contenido; solo este registro.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
