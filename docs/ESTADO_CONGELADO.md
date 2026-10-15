@@ -1,6 +1,6 @@
 # Estado congelado
 
-Generado: 2026-10-15T05:43:02.200Z
+Generado: 2026-10-15T05:47:09.688Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
@@ -184,6 +184,15 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **La regla se aplicó ya a esta fase y cazó deriva real:** al correr `inventario_congelado --verify` como verificador de cierre, apareció en rojo porque las fases 7, 8 y 16 habían añadido 4 archivos a `tools/` (orden_instalacion.sh, avance.md, avance.sh, plan900_inventario_eventos.mjs) sin regenerar el inventario. **Regenerado:** ahora congela **5421 archivos (Data 5215 + Scripts 0 + tools 206)** y `--verify` vuelve a estar en verde.
 - Auditoría de cumplimiento de las fases 1–25: todas las filas del registro citan verificador real; la FASE 6 (solo documentación, anterior al protocolo) queda respaldada por el estado verde de las FASES 3–4.
 
+### FASE 27 — Checkpoint único del plan
+
+- Creado **`tools/plan900/checkpoint.mjs`** (`node tools/plan900/checkpoint.mjs`, exit 0 = todo en verde), que valida en un solo comando:
+  1. **Numeración de fases** de `tools/plan900/avance.md`: ascendente, sin duplicados, primer número 1 y único hueco tolerado el de la FASE 2 (nunca enviada).
+  2. **Verificadores citados** (protocolo FASE 26): cada fila en `OK` cita evidencia en su columna de entrega; las fases pre-protocolo 6 y 23 constan como excepciones históricas documentadas en el propio script (verificación en bitácora); desde la FASE 27 no se admiten excepciones.
+  3. **Integridad de backups**: al menos un ZIP en `pokemon_fire_ash/PokeModBackups/` y `python3 -m zipfile --test` sin errores sobre cada uno.
+- **Ejecución real: exit 0** — 25 fases registradas (última: 26), 25/25 filas con verificador, 1 backup íntegro (`backup_20261015_041420.zip`, 19,5 MB).
+- Inventario congelado regenerado tras añadir el script (nuevo archivo en `tools/`): **5422 archivos (Data 5215 + tools 207)**, `--verify` en verde.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
@@ -261,7 +270,7 @@ NEXO y Liga Oscura caen dentro de Dimensional Nightmare. Sus conteos no se suman
 
 ## Hashes
 
-- Archivos hasheados: 5421 (Data 5215, Scripts 0, tools 206).
+- Archivos hasheados: 5422 (Data 5215, Scripts 0, tools 207).
 - Directorios `Scripts/` encontrados: 0 archivo(s). Las secciones Ruby del juego están dentro de `Data/Scripts.rxdata`.
 - Algoritmo: SHA-256. El detalle por archivo está en `tools/inventario_congelado.json`.
 - Expresiones dinámicas (no se tratan como ID libre): 71.

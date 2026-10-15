@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T05:43:02.200Z",
+  "generatedAt": "2026-10-15T05:47:09.688Z",
   "git": {
     "branch": "arena/2a3657d3-fire-ash-modifier",
-    "commit": "ad37649aed94d07ff28b7defb0f430271e5445df"
+    "commit": "f8b4866a34a6d6b440a872c10085839c328e80a9"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5421,
+    "fileCount": 5422,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 206
+      "tools": 207
     },
     "files": [
       {
@@ -26910,13 +26910,18 @@
       },
       {
         "path": "tools/plan900/avance.md",
-        "bytes": 8616,
-        "sha256": "30818a0e887d02a0b787277cc39a3785f96afa76071c1a2bb6a0621c2369d62d"
+        "bytes": 8959,
+        "sha256": "d63842c2af8e48b7db9673b06fb50965322b6c62bf650c3c4933670c37d5aa21"
       },
       {
         "path": "tools/plan900/avance.sh",
         "bytes": 951,
         "sha256": "314e5eb1bbdde2cfe510682fad190823dc301cca2046cd19d205cc3c5b4e28d0"
+      },
+      {
+        "path": "tools/plan900/checkpoint.mjs",
+        "bytes": 6205,
+        "sha256": "b6c7615689f20ddaa1b428bc3ec2255c77341187be881a4e8027270cf4d7fdac"
       },
       {
         "path": "tools/plan900/orden_instalacion.sh",
