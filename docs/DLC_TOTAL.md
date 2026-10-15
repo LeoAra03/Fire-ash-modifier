@@ -250,6 +250,12 @@ Expansión Multiversal reescribe las puertas que el canon había cerrado.
 
 ## 8. Verificación
 
+Las fuentes de diálogo se ajustan al estilo GBC al compilar: **40 caracteres visibles por línea y hasta dos líneas por caja**. El formateador crea otra caja al superar ese límite y conserva la etiqueta del hablante. Para auditar todos los manifiestos de contenido:
+
+```bash
+npm run verify:dlc:dialogues
+```
+
 ```bash
 npm run verify:all
 ```

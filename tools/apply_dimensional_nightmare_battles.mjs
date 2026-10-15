@@ -26,6 +26,7 @@ import { createCanvas } from "@napi-rs/canvas";
 import { marshalLoad, marshalDump, RHash, RObject, RString, RSymbol } from "../web/js/marshal.js";
 import { parseMap } from "../web/js/rmxp.js";
 import { passabilityOf } from "./lib/map_painter.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
@@ -91,7 +92,7 @@ const result = { generatedBy: "tools/apply_dimensional_nightmare_battles.mjs", f
 // --------------------------------------------------------------- RMXP bits
 const cmd = (code, params = [], indent = 0) => new RObject("RPG::EventCommand", [["@code", code], ["@indent", indent], ["@parameters", params]]);
 const script = (text) => cmd(355, [S(text)]);
-const texts = (lines) => [cmd(101, [S("")]), ...[].concat(lines).map((line) => cmd(401, [S(line)]))];
+const texts = (lines, indent = 0) => gbcDialogueCommands(lines, { cmd, S, indent });
 const condition = ({ sw = 0, sw2 = 0, self = "", variable = null } = {}) => new RObject("RPG::Event::Page::Condition", [
   ["@switch1_valid", !!sw], ["@switch1_id", sw || 1],
   ["@switch2_valid", !!sw2], ["@switch2_id", sw2 || 1],

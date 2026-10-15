@@ -34,6 +34,7 @@ import { fileURLToPath } from "node:url";
 import { marshalLoad, marshalDump, RHash, RObject, RString } from "../web/js/marshal.js";
 import { parseMap, tableGet } from "../web/js/rmxp.js";
 import { passabilityOf, reachableCells } from "./lib/map_painter.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(ROOT, "pokemon_fire_ash", "Data");
@@ -95,7 +96,7 @@ const page = ({ cond = condition(), gfx = graphic(), trigger = 0, through = fals
   ["@trigger", trigger], ["@list", list],
 ]);
 const event = (id, name, x, y, pages) => new RObject("RPG::Event", [["@id", id], ["@name", S(name)], ["@x", x], ["@y", y], ["@pages", pages]]);
-const texts = (lines) => [cmd(101, [S("")]), ...[].concat(lines).map((line) => cmd(401, [S(line)]))];
+const texts = (lines, indent = 0) => gbcDialogueCommands(lines, { cmd, S, indent });
 const script = (line) => cmd(355, [S(line)]);
 const transfer = (mapId, x, y, dir = 2) => cmd(201, [0, mapId, x, y, dir, 1]);
 const graphicOk = (name) => fs.existsSync(path.join(CHAR_DIR, name));

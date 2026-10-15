@@ -5,6 +5,7 @@ import path from "node:path";
 import { marshalDump, marshalLoad, RObject, RString, RSymbol } from "../web/js/marshal.js";
 import { parseEvent, parseMap, parseTileset, tableGet } from "../web/js/rmxp.js";
 import { DATA, GAME, ROOT } from "./lib/fire_ash_registry.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const inputAt = process.argv.indexOf("--input");
 const backupAt = process.argv.indexOf("--backup");
@@ -80,8 +81,7 @@ function graphic(name = "") { return new RObject("RPG::Event::Page::Graphic", [[
 function route() { return new RObject("RPG::MoveRoute", [["@repeat", true], ["@skippable", false], ["@list", []]]); }
 function page({ cond = condition(), gfx = graphic(), list = [cmd(0)] } = {}) { return new RObject("RPG::Event::Page", [["@condition", cond], ["@graphic", gfx], ["@move_type", 0], ["@move_speed", 3], ["@move_frequency", 3], ["@move_route", route()], ["@walk_anime", true], ["@step_anime", false], ["@direction_fix", false], ["@through", true], ["@always_on_top", false], ["@trigger", 0], ["@list", list]]); }
 function event(id, name, x, y, pages) { return new RObject("RPG::Event", [["@id", id], ["@name", S(name)], ["@x", x], ["@y", y], ["@pages", pages]]); }
-function wrap(input, max = 43) { const output = []; for (const paragraph of String(input).split("\n")) { let line = ""; for (const word of paragraph.split(/\s+/)) { if (!line) line = word; else if (`${line} ${word}`.length <= max) line += ` ${word}`; else { output.push(line); line = word; } } if (line) output.push(line); } return output.length ? output : ["..."]; }
-function texts(lines, indent = 0) { const all = (Array.isArray(lines) ? lines : [lines]).flatMap((line) => wrap(line)); return [cmd(101, [S("")], indent), ...all.map((line) => cmd(401, [S(line)], indent))]; }
+function texts(lines, indent = 0) { return gbcDialogueCommands(lines, { cmd, S, indent }); }
 function setSwitch(id, indent = 0) { return cmd(121, [id, id, 0], indent); }
 function setVariable(id, value, indent = 0) { return cmd(122, [id, id, 0, 0, value], indent); }
 

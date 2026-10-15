@@ -39,6 +39,7 @@ import { marshalLoad, marshalDump, RHash, RObject, RString, RSymbol, RUserDef } 
 import { parseMap, parseTileset, tableGet } from "../web/js/rmxp.js";
 import { DATA, GAME, ROOT } from "./lib/fire_ash_registry.mjs";
 import { S, Sym, txt, cmd, condition, graphic, moveRoute, grid, walkableAt } from "./lib/dn_rmxp.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const VERIFY_ONLY = process.argv.includes("--verify");
 const BACKUP = path.join(GAME, "PokeModBackups", "expansion_multiversal");
@@ -72,22 +73,8 @@ function backup(files) {
 }
 
 // ------------------------------------------------------------------- comandos
-function wrap(input, max = 43) {
-  const output = [];
-  for (const paragraph of String(input).split("\n")) {
-    let line = "";
-    for (const word of paragraph.split(/\s+/).filter(Boolean)) {
-      if (!line) line = word;
-      else if (`${line} ${word}`.length <= max) line += ` ${word}`;
-      else { output.push(line); line = word; }
-    }
-    if (line) output.push(line);
-  }
-  return output.length ? output : ["..."];
-}
 function texts(lines, indent = 0) {
-  const flat = (Array.isArray(lines) ? lines : [lines]).flatMap((line) => wrap(line));
-  return [cmd(101, [S(flat[0])], indent), ...flat.slice(1).map((line) => cmd(401, [S(line)], indent))];
+  return gbcDialogueCommands(lines, { cmd, S, indent });
 }
 const script = (line, indent = 0) => cmd(355, [S(line)], indent);
 const wait = (frames, indent = 0) => cmd(106, [frames], indent);

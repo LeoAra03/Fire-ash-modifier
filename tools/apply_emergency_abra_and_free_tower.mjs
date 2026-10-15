@@ -45,6 +45,7 @@ import zlib from "node:zlib";
 import { marshalDump, marshalLoad, RObject, RString, RSymbol, RUserDef } from "../web/js/marshal.js";
 import { cmdOf, parseEvent, parseMap, parseTileset, tableGet, tableSet, tableToUserDef, tableFromUserDef } from "../web/js/rmxp.js";
 import { DATA, GAME, ROOT } from "./lib/fire_ash_registry.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const VERIFY_ONLY = process.argv.includes("--verify");
 const BACKUP = path.join(GAME, "PokeModBackups", "emergency_abra_and_tower_originals");
@@ -57,6 +58,7 @@ const write = (file, value) => fs.writeFileSync(path.join(DATA, file), Buffer.fr
 function cmd(code, parameters = [], indent = 0) {
   return new RObject("RPG::EventCommand", [["@code", code], ["@indent", indent], ["@parameters", parameters]]);
 }
+const textCommands = (lines, indent = 0) => gbcDialogueCommands(lines, { cmd, S, indent });
 function condition(sw = 0) {
   return new RObject("RPG::Event::Page::Condition", [
     ["@switch1_valid", Boolean(sw)], ["@switch1_id", sw || 1],
@@ -369,14 +371,12 @@ function installMap033() {
   page0.setIvar("@through", true); // Permite al jugador atravesarlo sin atascarse
 
   const commands = [
-    cmd(101, [S("\\bOak's aide: A stable signal has appeared beyond the Orange Archipelago.")]),
-    cmd(401, [S("Professor Oak calls it Mirror Island. It preserves battles from worlds that might have been.")]),
+    ...textCommands(["\\bOak's aide: A stable signal has appeared beyond the Orange Archipelago.", "Professor Oak calls it Mirror Island. It preserves battles from worlds that might have been."]),
     cmd(111, [12, S("!$PokemonBag.pbHasItem?(:ABRADEEMERGENCIA)")]),
-    cmd(101, [S("\\bOak's aide: Prof. Oak asked me to give you this Emergency Abra.")]),
-    cmd(401, [S("If you ever get trapped, it will teleport you straight back home!")]),
+    ...textCommands(["\\bOak's aide: Prof. Oak asked me to give you this Emergency Abra.", "If you ever get trapped, it will teleport you straight back home!"]),
     cmd(355, [S("pbReceiveItem(:ABRADEEMERGENCIA, 1)")]),
     cmd(412),
-    cmd(101, [S("Where would you like to go?\\ch[1,3,Sail to Mirror Island,Teleport to Ash's House,Leave / Step aside]")]),
+    ...textCommands(["Where would you like to go?\\ch[1,3,Sail to Mirror Island,Teleport to Ash's House,Leave / Step aside]"]),
     cmd(111, [1, 1, 0, 0, 0]),
     cmd(201, [0, 997, 14, 10, 2, 1], 1),
     cmd(0, [], 1),
@@ -386,11 +386,11 @@ function installMap033() {
     cmd(106, [8], 1),
     cmd(201, [0, 42, 3, 8, 8, 1], 1),
     cmd(223, [tone(0, 0, 0), 6], 1),
-    cmd(101, [S("You returned safely to Ash's house.")], 1),
+    ...textCommands(["You returned safely to Ash's house."], 1),
     cmd(0, [], 1),
     cmd(412),
     cmd(111, [1, 1, 0, 2, 0]),
-    cmd(101, [S("\\bOak's aide: You can pass freely at any time. I will keep the route open!")], 1),
+    ...textCommands(["\\bOak's aide: You can pass freely at any time. I will keep the route open!"], 1),
     cmd(0, [], 1),
     cmd(412),
     cmd(0)
@@ -406,25 +406,24 @@ function installMap033() {
 function abraEvent(id, [x, y], customIntro = null) {
   const intro = customIntro || "Este Abra de emergencia te sacará de cualquier apuro y puede llevarte a casa en cualquier momento.";
   const list = [
-    cmd(101, [S("\\bAbra: ¡Aaaa-bra!\\1")]),
-    cmd(101, [S(`\\b${intro}`)]),
-    cmd(401, [S("Puede teletransportarte de inmediato a la casa de Ash en Kanto.")]),
+    ...textCommands(["\\bAbra: ¡Aaaa-bra!\\1"]),
+    ...textCommands([`\\b${intro}`, "Puede teletransportarte de inmediato a la casa de Ash en Kanto."]),
     cmd(111, [12, S("!$PokemonBag.pbHasItem?(:ABRADEEMERGENCIA)")]),
-    cmd(101, [S("\\b¡Recibiste el objeto 'Abra de emergencia'!\\1")], 1),
+    ...textCommands(["\\b¡Recibiste el objeto 'Abra de emergencia'!\\1"], 1),
     cmd(355, [S("pbReceiveItem(:ABRADEEMERGENCIA, 1)")], 1),
-    cmd(101, [S("\\bAhora puedes usar el 'Abra de emergencia' desde los Objetos Clave de tu Mochila en cualquier momento.")], 1),
+    ...textCommands(["\\bAhora puedes usar el 'Abra de emergencia' desde los Objetos Clave de tu Mochila en cualquier momento."], 1),
     cmd(412),
-    cmd(101, [S("¿Deseas usar Teletransporte ahora hacia la casa de Ash en Kanto?\\ch[1,2,Teletransportar,Quedarme aquí]")]),
+    ...textCommands(["¿Deseas usar Teletransporte ahora hacia la casa de Ash en Kanto?\\ch[1,2,Teletransportar,Quedarme aquí]"]),
     cmd(111, [1, 1, 0, 0, 0]),
     cmd(223, [tone(-255, -255, -255), 6], 1),
     cmd(106, [8], 1),
     cmd(201, [0, 42, 3, 8, 8, 1], 1),
     cmd(223, [tone(0, 0, 0), 6], 1),
-    cmd(101, [S("Llegaste a salvo a la casa de Ash en Kanto.")], 1),
+    ...textCommands(["Llegaste a salvo a la casa de Ash en Kanto."], 1),
     cmd(0, [], 1),
     cmd(412),
     cmd(111, [1, 1, 0, 1, 0]),
-    cmd(101, [S("\\bAbra: ¡Abra-abra! Estaré aquí por si me necesitas.")], 1),
+    ...textCommands(["\\bAbra: ¡Abra-abra! Estaré aquí por si me necesitas."], 1),
     cmd(0, [], 1),
     cmd(412),
     cmd(0)
@@ -463,7 +462,7 @@ function freeCellNear(map, hx, hy, taken = new Set()) {
 function ferryEvent(id, [x, y]) {
   return event(id, "Return Ferry", [x, y], [
     page({ gfx: graphic({ name: "trchar048", dir: 2 }), list: [
-      cmd(101, [S("\\bEl barquero: «¿Vuelves al continente? Sube, que la marea no espera.»")]),
+      ...textCommands(["\\bEl barquero: «¿Vuelves al continente? Sube, que la marea no espera.»"]),
       cmd(201, [0, 33, 39, 23, 2, 1]),
       cmd(0),
     ] }),

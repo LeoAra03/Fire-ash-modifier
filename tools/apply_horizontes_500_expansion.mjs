@@ -18,6 +18,7 @@ import {
   marshalLoad, marshalDump, RHash, RObject, RString, RSymbol,
 } from "../web/js/marshal.js";
 import { parseMap, parseTileset, tableGet } from "../web/js/rmxp.js";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
@@ -95,22 +96,8 @@ function page({ cond=condition(), gfx=graphic(), trigger=0, through=false, alway
 function event(id,name,x,y,pages) {
   return new RObject("RPG::Event", [["@id",id],["@name",S(name)],["@x",x],["@y",y],["@pages",pages]]);
 }
-function wrapLine(input, max=43) {
-  const out=[];
-  for (const paragraph of String(input).split("\n")) {
-    const words=paragraph.split(/\s+/).filter(Boolean); let line="";
-    for (const word of words) {
-      if (!line) line=word;
-      else if (`${line} ${word}`.length<=max) line+=` ${word}`;
-      else { out.push(line); line=word; }
-    }
-    if (line) out.push(line);
-  }
-  return out.length ? out : ["..."];
-}
 function textCommands(lines, indent=0) {
-  const all=(Array.isArray(lines)?lines:[lines]).flatMap((line)=>wrapLine(line));
-  return [cmd(101,[S("")],indent),...all.map((line)=>cmd(401,[S(line)],indent))];
+  return gbcDialogueCommands(lines,{cmd,S,indent});
 }
 function scriptCommands(lines, indent=0) {
   const all=Array.isArray(lines)?lines:[lines];

@@ -78,6 +78,7 @@ import {
 } from "./lib/map_painter.mjs";
 import { parseMap, tableGet } from "../web/js/rmxp.js";
 import { tableFromUserDef, tableToUserDef, tableSet } from "../web/js/rmxp.js";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
@@ -178,13 +179,7 @@ function cinematicTrainerEvent(id, name, x, y, switchId, characterName) {
   ]);
 }
 function textCommands(lines, indent = 0) {
-  const arr = Array.isArray(lines) ? lines : [lines];
-  // "Maya: ..." -> "\bMaya: ...": el nombre del hablante se resalta en color
-  // (el motor convierte \b en una etiqueta <c3=...>), así los diálogos de la
-  // ruta se diferencian entre sí en lugar de parecer todos iguales.
-  const conHablante = (l) =>
-    /^([A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚÑáéíóúñ]{0,15}):\s/.test(l) ? "\\b" + l : l;
-  return [cmd(101, [S("")], indent), ...arr.map((l) => cmd(401, [S(conHablante(l))], indent))];
+  return gbcDialogueCommands(lines, { cmd, S, indent });
 }
 function script(line, indent = 0) { return cmd(355, [S(line)], indent); }
 function transfer(map, x, y, dir = 2, indent = 0) {
@@ -253,7 +248,7 @@ function sealedRelicEvent(id, name, x, y, sealSwitch, itemSym, itemName) {
     cond: condition({ sw: sealSwitch }),
     gfx: graphic("Object ball special", 2),
     list: [
-      cmd(101, [S(`¡La reliquia sellada cede! Encontraste ${itemName}.\\1`)]),
+      ...textCommands([`¡La reliquia sellada cede! Encontraste ${itemName}.\\1`]),
       script(`pbReceiveItem(:${itemSym}, 1)`),
       cmd(123, [S("A"), 0]),
       cmd(0),
@@ -413,7 +408,7 @@ function hiddenItemEvent(id, name, x, y, itemSym, itemName) {
   const p1 = page({
     gfx: graphic("Object ball special", 2),
     list: [
-      cmd(101, [S(`¡Encontraste un ${itemName}!\\1`)]),
+      ...textCommands([`¡Encontraste un ${itemName}!\\1`]),
       script(`pbReceiveItem(:${itemSym}, 1)`),
       cmd(123, [S("A"), 0]),
       cmd(0),
@@ -5340,40 +5335,40 @@ function installTwinleafVolo() {
   const p1 = page({
     gfx: graphic("SECRET_Volo", 2),
     list: [
-      cmd(101, [S("\\bVolus: Ah... ¿eres tú el muchacho que desafía los horizontes de Sinnoh?\\1")]),
-      cmd(101, [S("\\bMe llamo Volus. Soy un humilde mercader... y un apasionado buscador de los mitos que forjaron la creación.")]),
+      ...textCommands(["\\bVolus: Ah... ¿eres tú el muchacho que desafía los horizontes de Sinnoh?\\1"]),
+      ...textCommands(["\\bMe llamo Volus. Soy un humilde mercader... y un apasionado buscador de los mitos que forjaron la creación."]),
       script("pbCount = pbCountArceusPlates"),
       cmd(111, [12, S("pbHasAllArceusPlates?")]),
       // When player HAS all 17 plates:
-      cmd(101, [S("\\bVolus: ... ¡¿QUÉ?! ¡¿E-Esas luces que emanan de tu Mochila...?!\\1")]),
-      cmd(101, [S("\\b¡¿Es... es imposible?! ¡Tienes contigo TODAS las 17 Tablas del Génesis!")]),
-      cmd(101, [S("\\bLa Llama, la Gota, el Trueno, el Prado, el Helado, la Tabla Fuerte, la Tóxica, la Terrestre, la Celeste, la Mental, la Bicho, la Pétrea, la Terrorífica, la Dragón, la Oscura, la Acero y la Duende...")]),
-      cmd(101, [S("\\b¡Es una oportunidad entre una infinidad! ¡El mito primordial ha despertado!")]),
+      ...textCommands(["\\bVolus: ... ¡¿QUÉ?! ¡¿E-Esas luces que emanan de tu Mochila...?!\\1"]),
+      ...textCommands(["\\b¡¿Es... es imposible?! ¡Tienes contigo TODAS las 17 Tablas del Génesis!"]),
+      ...textCommands(["\\bLa Llama, la Gota, el Trueno, el Prado, el Helado, la Tabla Fuerte, la Tóxica, la Terrestre, la Celeste, la Mental, la Bicho, la Pétrea, la Terrorífica, la Dragón, la Oscura, la Acero y la Duende..."]),
+      ...textCommands(["\\b¡Es una oportunidad entre una infinidad! ¡El mito primordial ha despertado!"]),
       // Earthquake cinematic
       script("$game_screen.start_shake(6, 6, 60)"),
       cmd(250, [new RObject("RPG::AudioFile", [["@name", S("Thunder8")], ["@volume", 100], ["@pitch", 100]])]),
       cmd(224, [new RUserDef("Color", Buffer.alloc(32)), 30]),
-      cmd(101, [S("\\b¡¡RUUUUMBLE!!")]),
-      cmd(101, [S("\\b¡Un colosal terremoto cósmico sacude la región entera de Sinnoh!")]),
-      cmd(101, [S("\\bVolus: ¡¿Qué ha sido ese temblor divino?! ¡Las Tablas están resonando con la Cima del Mundo!\\1")]),
-      cmd(101, [S("\\b¡Una fractura dimensional acaba de rasgar el cielo sobre la entrada del Templo de Ciudad Puntaneva!")]),
-      cmd(101, [S("\\b¡El velo de los dioses se ha quebrado! ¡Asciende hacia Ciudad Puntaneva si tienes la osadía de enfrentar lo que aguarda en la cumbre!")]),
+      ...textCommands(["\\b¡¡RUUUUMBLE!!"]),
+      ...textCommands(["\\b¡Un colosal terremoto cósmico sacude la región entera de Sinnoh!"]),
+      ...textCommands(["\\bVolus: ¡¿Qué ha sido ese temblor divino?! ¡Las Tablas están resonando con la Cima del Mundo!\\1"]),
+      ...textCommands(["\\b¡Una fractura dimensional acaba de rasgar el cielo sobre la entrada del Templo de Ciudad Puntaneva!"]),
+      ...textCommands(["\\b¡El velo de los dioses se ha quebrado! ¡Asciende hacia Ciudad Puntaneva si tienes la osadía de enfrentar lo que aguarda en la cumbre!"]),
       cmd(121, [SW_UNLOCKED, SW_UNLOCKED, 0]), // Set SW_UNLOCKED ON
       cmd(411), // Else (lacks plates)
-      cmd(101, [S("\\bVolus: Cuenta la leyenda que el Creador dispersó 17 Tablas elementales antes de sumirse en su letargo.")]),
-      cmd(101, [S("\\bActualmente percibo que posees \\v[1] de las 17 Tablas del Génesis.")]),
-      cmd(101, [S("¿Deseas que canalice la resonancia de las eras pasadas para despertar las Tablas restantes?\\ch[1,2,Canalizar resonancia,Buscaré por mi cuenta]")]),
+      ...textCommands(["\\bVolus: Cuenta la leyenda que el Creador dispersó 17 Tablas elementales antes de sumirse en su letargo."]),
+      ...textCommands(["\\bActualmente percibo que posees \\v[1] de las 17 Tablas del Génesis."]),
+      ...textCommands(["¿Deseas que canalice la resonancia de las eras pasadas para despertar las Tablas restantes?\\ch[1,2,Canalizar resonancia,Buscaré por mi cuenta]"]),
       cmd(111, [12, S("$game_variables[1] == 1")]),
       script("pbGrantAllArceusPlates"),
-      cmd(101, [S("\\b¡Las 17 Tablas del Génesis han resonado intensamente y se manifiestan en tu Mochila!\\1")]),
-      cmd(101, [S("\\bVolus: ¡Increíble! ¡Todas las Tablas están unidas!")]),
+      ...textCommands(["\\b¡Las 17 Tablas del Génesis han resonado intensamente y se manifiestan en tu Mochila!\\1"]),
+      ...textCommands(["\\bVolus: ¡Increíble! ¡Todas las Tablas están unidas!"]),
       script("$game_screen.start_shake(6, 6, 60)"),
       cmd(250, [new RObject("RPG::AudioFile", [["@name", S("Thunder8")], ["@volume", 100], ["@pitch", 100]])]),
-      cmd(101, [S("\\b¡Un colosal terremoto cósmico sacude la región de Sinnoh!")]),
-      cmd(101, [S("\\bVolus: ¡El portal se ha abierto en Ciudad Puntaneva! ¡Hacia allá, aprisa!")]),
+      ...textCommands(["\\b¡Un colosal terremoto cósmico sacude la región de Sinnoh!"]),
+      ...textCommands(["\\bVolus: ¡El portal se ha abierto en Ciudad Puntaneva! ¡Hacia allá, aprisa!"]),
       cmd(121, [SW_UNLOCKED, SW_UNLOCKED, 0]),
       cmd(411),
-      cmd(101, [S("\\bVolus: Regresa cuando reúnas las Tablas. El destino no esperará por siempre.")]),
+      ...textCommands(["\\bVolus: Regresa cuando reúnas las Tablas. El destino no esperará por siempre."]),
       cmd(412),
       cmd(412),
       cmd(0),
@@ -5385,8 +5380,8 @@ function installTwinleafVolo() {
     cond: condition({ sw: SW_UNLOCKED }),
     gfx: graphic("SECRET_Volo", 2),
     list: [
-      cmd(101, [S("\\bVolus: ¡La Ruta de Dios está abierta en Ciudad Puntaneva!\\1")]),
-      cmd(101, [S("\\bNo pierdas tiempo. Lo que aguarda en la Cima del Génesis decidirá la existencia de todo nuestro mundo.")]),
+      ...textCommands(["\\bVolus: ¡La Ruta de Dios está abierta en Ciudad Puntaneva!\\1"]),
+      ...textCommands(["\\bNo pierdas tiempo. Lo que aguarda en la Cima del Génesis decidirá la existencia de todo nuestro mundo."]),
       cmd(0),
     ],
   });
@@ -5396,7 +5391,7 @@ function installTwinleafVolo() {
     cond: condition({ sw: SW_COMPLETED }),
     gfx: graphic("SECRET_Volo", 2),
     list: [
-      cmd(101, [S("\\bVolus: La suave brisa de Sinnoh... Ha pasado mucho tiempo desde que sentí tanta paz. Gracias, Ash.")]),
+      ...textCommands(["\\bVolus: La suave brisa de Sinnoh... Ha pasado mucho tiempo desde que sentí tanta paz. Gracias, Ash."]),
       cmd(0),
     ],
   });
@@ -5520,10 +5515,10 @@ function installSnowpointPortal() {
     gfx: graphic("ARCEUS_GATE", 2),
     trigger: 0,
     list: [
-      cmd(101, [S("Una majestuosa fisura de luz celestial resuena ante las puertas del templo.")]),
-      cmd(101, [S("¿Deseas ascender por 'La Ruta de Dios' hacia las alturas del cosmos?\\ch[1,2,Ascender,Permanecer en Puntaneva]")]),
+      ...textCommands(["Una majestuosa fisura de luz celestial resuena ante las puertas del templo."]),
+      ...textCommands(["¿Deseas ascender por 'La Ruta de Dios' hacia las alturas del cosmos?\\ch[1,2,Ascender,Permanecer en Puntaneva]"]),
       cmd(111, [12, S("$game_variables[1] == 1")]),
-      cmd(101, [S("Una ráfaga de viento sagrado envuelve tu cuerpo...")]),
+      ...textCommands(["Una ráfaga de viento sagrado envuelve tu cuerpo..."]),
       transfer(2038, 26, 68, 8, 1),
       cmd(412),
       cmd(0),
@@ -6424,12 +6419,12 @@ export function buildFloor5() {
   addEventToMap(map, transferEvent(2, "Escaleras al 6F", 19, 5, 2036, 19, 34, 8));
 
   const dialgaBattle = [
-    cmd(101, [S("¡GYYYROOOHHH!\\1")]),
-    cmd(101, [S("El señor del tiempo emite un rugido que desgarra el tejido de los segundos. ¡Una distorsión temporal envuelve el altar!")]),
+    ...textCommands(["¡GYYYROOOHHH!\\1"]),
+    ...textCommands(["El señor del tiempo emite un rugido que desgarra el tejido de los segundos. ¡Una distorsión temporal envuelve el altar!"]),
     script("pbWildBattle(:DIALGA, 150)"),
     cmd(111, [12, S("$game_variables[1] == 1 || $game_variables[1] == 4")]),
     cmd(121, [SW_DIALGA_DEFEATED, SW_DIALGA_DEFEATED, 0]),
-    cmd(101, [S("La figura de Dialga se disuelve en una cascada de luz cósmica, abriendo el paso hacia el santuario espacial...")]),
+    ...textCommands(["La figura de Dialga se disuelve en una cascada de luz cósmica, abriendo el paso hacia el santuario espacial..."]),
     cmd(412),
     cmd(0),
   ];
@@ -6492,12 +6487,12 @@ export function buildFloor6() {
   addEventToMap(map, transferEvent(2, "Escaleras a la Cima", 19, 5, 2037, 23, 40, 8));
 
   const palkiaBattle = [
-    cmd(101, [S("¡GRAAAGHHH!\\1")]),
-    cmd(101, [S("El amo del espacio emite un alarido desgarrador. Las dimensiones tiemblan bajo el peso de su presencia.")]),
+    ...textCommands(["¡GRAAAGHHH!\\1"]),
+    ...textCommands(["El amo del espacio emite un alarido desgarrador. Las dimensiones tiemblan bajo el peso de su presencia."]),
     script("pbWildBattle(:PALKIA, 150)"),
     cmd(111, [12, S("$game_variables[1] == 1 || $game_variables[1] == 4")]),
     cmd(121, [SW_PALKIA_DEFEATED, SW_PALKIA_DEFEATED, 0]),
-    cmd(101, [S("Palkia canaliza su esencia hacia las dimensiones lejanas. El portal hacia la Cima del Génesis ha sido despejado.")]),
+    ...textCommands(["Palkia canaliza su esencia hacia las dimensiones lejanas. El portal hacia la Cima del Génesis ha sido despejado."]),
     cmd(412),
     cmd(0),
   ];

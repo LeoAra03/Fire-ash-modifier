@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marshalLoad,marshalDump,RHash,RObject,RString,RSymbol } from "../web/js/marshal.js";
 import { parseMap,parseTileset,tableGet } from "../web/js/rmxp.js";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const GAME=path.join(ROOT,"pokemon_fire_ash"),DATA=path.join(GAME,"Data");
@@ -58,8 +59,7 @@ function page({cond=condition(),gfx=graphic(),trigger=0,through=true,alwaysTop=f
   ["@walk_anime",true],["@step_anime",false],["@direction_fix",false],["@through",through],["@always_on_top",alwaysTop],["@trigger",trigger],["@list",list],
 ]);}
 function event(id,name,x,y,pages){return new RObject("RPG::Event",[["@id",id],["@name",S(name)],["@x",x],["@y",y],["@pages",pages]]);}
-function wrap(input,max=43){const out=[];for(const paragraph of String(input).split("\n")){const words=paragraph.split(/\s+/).filter(Boolean);let line="";for(const word of words){if(!line)line=word;else if(`${line} ${word}`.length<=max)line+=` ${word}`;else{out.push(line);line=word;}}if(line)out.push(line);}return out.length?out:["..."];}
-function textCommands(lines,indent=0){const all=(Array.isArray(lines)?lines:[lines]).flatMap((x)=>wrap(x));return[cmd(101,[S("")],indent),...all.map((x)=>cmd(401,[S(x)],indent))];}
+function textCommands(lines,indent=0){return gbcDialogueCommands(lines,{cmd,S,indent});}
 function scriptCommands(lines,indent=0){const all=Array.isArray(lines)?lines:[lines];return[cmd(355,[S(all[0]||"")],indent),...all.slice(1).map((x)=>cmd(655,[S(x)],indent))];}
 function transfer(map,x,y,dir=2,indent=0){return cmd(201,[0,map,x,y,dir,1],indent);}
 function selfOn(letter="A",indent=0){return cmd(123,[S(letter),0],indent);}

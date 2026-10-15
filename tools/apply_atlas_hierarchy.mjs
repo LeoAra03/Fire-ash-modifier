@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marshalLoad,marshalDump,RObject,RString } from "../web/js/marshal.js";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),".."),GAME=path.join(ROOT,"pokemon_fire_ash"),DATA=path.join(GAME,"Data");
 const hierarchy=JSON.parse(fs.readFileSync(path.join(ROOT,"content","atlas_content_hierarchy.json"),"utf8"));
 const seeds=JSON.parse(fs.readFileSync(path.join(ROOT,"content","atlas_narrative_seeds.json"),"utf8")).seeds;
@@ -11,8 +12,7 @@ const BACKUP=path.join(GAME,"PokeModBackups","atlas_hierarchy_originals"),VERIFY
 const S=(x)=>RString.fromText(String(x)),iv=(o,n)=>o?.getIvar?.(n),txt=(v)=>v instanceof RString?v.text:String(v??""),pad=(n)=>String(n).padStart(3,"0");
 const read=(f)=>marshalLoad(fs.readFileSync(path.join(DATA,f))),write=(f,v)=>fs.writeFileSync(path.join(DATA,f),Buffer.from(marshalDump(v)));
 function cmd(code,params=[],indent=0){return new RObject("RPG::EventCommand",[["@code",code],["@indent",indent],["@parameters",params]]);}
-function wrap(s,max=43){const out=[];let line="";for(const w of String(s).split(/\s+/)){if(!line)line=w;else if(`${line} ${w}`.length<=max)line+=` ${w}`;else{out.push(line);line=w;}}if(line)out.push(line);return out;}
-function textCommands(lines){const all=lines.flatMap((x)=>wrap(x));return[cmd(101,[S("")]),...all.map((x)=>cmd(401,[S(x)])),cmd(0)];}
+function textCommands(lines){return [...gbcDialogueCommands(lines,{cmd,S}),cmd(0)];}
 function linesFor(m){if(m.tier===1){const seed=seeds.find((x)=>x.mapId===m.mapId);return[
   `ANCLA ARTESANAL — Sector ${m.sector}: ${m.sectorName}.`,
   seed.coreMystery,

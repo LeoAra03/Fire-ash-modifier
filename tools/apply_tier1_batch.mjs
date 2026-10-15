@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marshalLoad,marshalDump,RHash,RObject,RString,RSymbol } from "../web/js/marshal.js";
 import { parseMap,parseTileset,tableGet } from "../web/js/rmxp.js";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),".."),GAME=path.join(ROOT,"pokemon_fire_ash"),DATA=path.join(GAME,"Data");
 const inputAt=process.argv.indexOf("--input"),backupAt=process.argv.indexOf("--backup");
 const INPUT=path.resolve(inputAt>=0?process.argv[inputAt+1]:path.join(ROOT,"content","atlas_tier1_blueprints_approved.json"));
@@ -24,8 +25,7 @@ function graphic(name="",dir=2,pattern=1){return new RObject("RPG::Event::Page::
 function route(){return new RObject("RPG::MoveRoute",[["@repeat",true],["@skippable",false],["@list",[]]]);}
 function page({cond=condition(),gfx=graphic(),through=true,list=[cmd(0)]}={}){return new RObject("RPG::Event::Page",[["@condition",cond],["@graphic",gfx],["@move_type",0],["@move_speed",3],["@move_frequency",3],["@move_route",route()],["@walk_anime",true],["@step_anime",false],["@direction_fix",false],["@through",through],["@always_on_top",false],["@trigger",0],["@list",list]]);}
 function event(id,name,x,y,pages){return new RObject("RPG::Event",[["@id",id],["@name",S(name)],["@x",x],["@y",y],["@pages",pages]]);}
-function wrap(input,max=43){const out=[];for(const para of String(input).split("\n")){let line="";for(const word of para.split(/\s+/)){if(!line)line=word;else if(`${line} ${word}`.length<=max)line+=` ${word}`;else{out.push(line);line=word;}}if(line)out.push(line);}return out.length?out:["..."];}
-function texts(lines,indent=0){const all=(Array.isArray(lines)?lines:[lines]).flatMap((x)=>wrap(x));return[cmd(101,[S("")],indent),...all.map((x)=>cmd(401,[S(x)],indent))];}
+function texts(lines,indent=0){return gbcDialogueCommands(lines,{cmd,S,indent});}
 function scripts(lines,indent=0){const all=Array.isArray(lines)?lines:[lines];return[cmd(355,[S(all[0]||"")],indent),...all.slice(1).map((x)=>cmd(655,[S(x)],indent))];}
 function selfOn(letter="A",indent=0){return cmd(123,[S(letter),0],indent);}
 function setSwitch(id,indent=0){return cmd(121,[id,id,0],indent);}

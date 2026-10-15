@@ -13,6 +13,7 @@ import { ROOT, GAME, DATA } from "./fire_ash_registry.mjs";
 import {
   S, Sym, txt, cmd, condition, graphic, grid, walkableAt, mapFile, readData, writeData,
 } from "./dn_rmxp.mjs";
+import { gbcDialogueCommands } from "./dlc_dialogue_layout.mjs";
 
 export { fs, path, marshalLoad, marshalDump, RHash, RObject, RString, RUserDef, ROOT, GAME, DATA };
 export { S, Sym, txt, cmd, condition, graphic, grid, walkableAt, mapFile, readData, writeData, cmdOf };
@@ -43,10 +44,7 @@ export function backup(dirName, files) {
 
 /* ─────────────────────────────── comandos ──────────────────────────────── */
 
-export const texts = (lines, indent = 0) => [
-  cmd(101, [S("")], indent),
-  ...[].concat(lines).map((line) => cmd(401, [S(line)], indent)),
-];
+export const texts = (lines, indent = 0) => gbcDialogueCommands(lines, { cmd, S, indent });
 export const script = (line, indent = 0) => cmd(355, [S(line)], indent);
 export const transfer = (mapId, x, y, dir = 2, indent = 0) => cmd(201, [0, mapId, x, y, dir, 1], indent);
 export const wait = (frames, indent = 0) => cmd(106, [frames], indent);

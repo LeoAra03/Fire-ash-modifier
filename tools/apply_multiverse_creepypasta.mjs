@@ -23,6 +23,7 @@ import path from "node:path";
 import { marshalLoad, marshalDump, RHash, RObject, RString, RSymbol } from "../web/js/marshal.js";
 import { parseEvent, parseMap, parseTileset, tableGet } from "../web/js/rmxp.js";
 import { DATA, GAME, ROOT } from "./lib/fire_ash_registry.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const VERIFY_ONLY = process.argv.includes("--verify");
 const BACKUP = path.join(GAME, "PokeModBackups", "multiverse_creepypasta_originals");
@@ -74,8 +75,7 @@ function event(id, name, x, y, pages) {
   return new RObject("RPG::Event", [["@id", id], ["@name", S(name)], ["@x", x], ["@y", y], ["@pages", pages]]);
 }
 function texts(lines, indent = 0) {
-  const arr = Array.isArray(lines) ? lines : [lines];
-  return [cmd(101, [S("")], indent), ...arr.map((line) => cmd(401, [S(line)], indent))];
+  return gbcDialogueCommands(lines, { cmd, S, indent });
 }
 function script(line, indent = 0) { return cmd(355, [S(line)], indent); }
 function transfer(map, x, y, dir = 2, indent = 0) { return cmd(201, [0, map, x, y, dir, 1], indent); }

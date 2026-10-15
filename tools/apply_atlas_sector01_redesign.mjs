@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { marshalDump, marshalLoad, RHash, RObject, RString, RSymbol } from "../web/js/marshal.js";
 import { parseMap, parseTileset, tableGet } from "../web/js/rmxp.js";
 import { generateAtlasSector01Assets } from "./lib/atlas_sector01_art.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
@@ -70,22 +71,8 @@ function eventPage({ graphic = eventGraphic(""), condition = eventCondition(), l
 function eventObject(id, name, x, y, pages) {
   return new RObject("RPG::Event", [["@id", id], ["@name", S(name)], ["@x", x], ["@y", y], ["@pages", pages]]);
 }
-function wrap(text, max = 43) {
-  const output = [];
-  for (const paragraph of String(text).split("\n")) {
-    let line = "";
-    for (const word of paragraph.split(/\s+/).filter(Boolean)) {
-      if (!line) line = word;
-      else if (`${line} ${word}`.length <= max) line += ` ${word}`;
-      else { output.push(line); line = word; }
-    }
-    if (line) output.push(line);
-  }
-  return output.length ? output : ["…"];
-}
 function textCommands(lines, indent = 0) {
-  const wrapped = (Array.isArray(lines) ? lines : [lines]).flatMap((line) => wrap(line));
-  return [cmd(101, [S("")], indent), ...wrapped.map((line) => cmd(401, [S(line)], indent))];
+  return gbcDialogueCommands(lines, { cmd, S, indent });
 }
 function textList(lines) { return [...textCommands(lines), cmd(0)]; }
 function setGraphic(page, name) {

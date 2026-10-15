@@ -24,6 +24,7 @@ import { fileURLToPath } from "node:url";
 import {
   marshalLoad, marshalDump, RHash, RObject, RString, RSymbol,
 } from "../web/js/marshal.js";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
@@ -109,8 +110,7 @@ function event(id, name, x, y, pages) {
   ]);
 }
 function textCommands(lines, indent = 0) {
-  const arr = Array.isArray(lines) ? lines : [lines];
-  return [cmd(101, [S("")], indent), ...arr.map((line) => cmd(401, [S(line)], indent))];
+  return gbcDialogueCommands(lines, { cmd, S, indent });
 }
 function script(line, indent = 0) { return cmd(355, [S(line)], indent); }
 function transfer(map, x, y, dir = 2, indent = 0) {

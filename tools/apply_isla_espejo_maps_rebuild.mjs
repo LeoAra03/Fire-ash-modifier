@@ -46,6 +46,7 @@ import {
 import {
   TileCanvas, passabilityOf, reachableCells, buildMapObject,
 } from "./lib/map_painter.mjs";
+import { gbcDialogueCommands } from "./lib/dlc_dialogue_layout.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GAME = path.join(ROOT, "pokemon_fire_ash");
@@ -101,8 +102,7 @@ function event(id, name, x, y, pages) {
   ]);
 }
 function textCommands(lines, indent = 0) {
-  const arr = Array.isArray(lines) ? lines : [lines];
-  return [cmd(101, [S("")], indent), ...arr.map((l) => cmd(401, [S(l)], indent))];
+  return gbcDialogueCommands(lines, { cmd, S, indent });
 }
 function script(line, indent = 0) { return cmd(355, [S(line)], indent); }
 function transfer(map, x, y, dir = 2, indent = 0) {
@@ -201,17 +201,17 @@ function inscriptionEvent(id, name, x, y, lines) {
 function abraEvent(id, x, y, introMsg) {
   const customIntro = introMsg || "Este Abra de emergencia te sacará de cualquier apuro y puede llevarte a casa en cualquier momento.";
   const list = [
-    cmd(101, [S("\\bAbra: ¡Aaaa-bra!\\1")]),
-    cmd(101, [S(`\\b${customIntro}`)]),
-    cmd(101, [S("\\b¡Recibiste el objeto 'Abra de emergencia'!\\1")]),
+    ...textCommands(["\\bAbra: ¡Aaaa-bra!\\1"]),
+    ...textCommands([`\\b${customIntro}`]),
+    ...textCommands(["\\b¡Recibiste el objeto 'Abra de emergencia'!\\1"]),
     script("pbReceiveItem(:ABRADEEMERGENCIA, 1)"),
-    cmd(101, [S("\\bAhora puedes usar el 'Abra de emergencia' desde los Objetos Clave de tu Mochila en cualquier momento.")]),
-    cmd(101, [S("¿Deseas usar Teletransporte ahora hacia la casa de Ash en Kanto?\\ch[1,2,Teletransportar,Quedarme aquí]")]),
+    ...textCommands(["\\bAhora puedes usar el 'Abra de emergencia' desde los Objetos Clave de tu Mochila en cualquier momento."]),
+    ...textCommands(["¿Deseas usar Teletransporte ahora hacia la casa de Ash en Kanto?\\ch[1,2,Teletransportar,Quedarme aquí]"]),
     cmd(111, [12, S("$game_variables[1] == 1")]),
     transfer(42, 3, 8, 8, 1),
-    cmd(101, [S("Llegaste a salvo a la casa de Ash en Kanto.")]),
+    ...textCommands(["Llegaste a salvo a la casa de Ash en Kanto."]),
     cmd(411),
-    cmd(101, [S("\\bAbra: ¡Abra-abra! Estaré aquí por si me necesitas.")]),
+    ...textCommands(["\\bAbra: ¡Abra-abra! Estaré aquí por si me necesitas."]),
     cmd(412),
     cmd(0),
   ];
