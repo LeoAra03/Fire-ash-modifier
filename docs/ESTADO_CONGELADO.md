@@ -51,6 +51,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Añadida la sección **"Regla de oro"** al inicio de este documento: ningún mapa, evento, switch o diálogo original de Fire Ash se edita; todo entra por IDs nuevos y aditivos (mapas ≥ 1000, switches 701–867, variables 101–263, extensiones aditivas de contenedores, retorno libre).
 - Coherente con el estado verificado: rango reservado libre (FASE 4), backup previo a escrituras (FASE 5) e inventario congelado en verde (FASE 3). Solo documentación; sin cambios de contenido.
 
+### FASE 7 — Orden de reconstrucción obligatorio documentado
+
+- Creado **`tools/plan900/orden_instalacion.sh`** con el orden obligatorio: **multiversal → canon Arceus → eras → restauración → dimensiones → rocket → circuito → ambience → wild**, con la justificación de cada posición (el multiversal reescribe puertas que el canon cierra; ambience necesita los 17 mapas nuevos ya creados; wild consume el catálogo `content/wild_zones.json` que ambience sincroniza).
+- Tres modos: por defecto solo imprime el orden (`--plan`), `--verify` ejecuta los 9 verificadores npm en ese orden, `--apply` instala. Nada se ejecuta por accidente.
+- Probado con resultados reales: modo plan exit 0 y modo `--verify` exit 0 con **los 9 verificadores en verde** (expansion, canon:arceus, eras, restauracion, dimensiones, rocket, circuito, ambience, wild).
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
