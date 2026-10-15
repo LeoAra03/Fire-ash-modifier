@@ -4,6 +4,17 @@ Generado: 2026-10-14T17:11:44.096Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
+## Línea base `npm test` (FASE 1)
+
+- **Fecha de la corrida:** 2026-10-15 (Node v22.22.3, npm 10.9.8, dependencias instaladas con `npm ci`, 54 paquetes).
+- **Resultado global:** `npm test` completo terminó con **código de salida 0**.
+- **Verificadores en rojo: NINGUNO.** No hay ningún paso del suite en estado fallido antes de iniciar las fases del backlog.
+- `pretest` (`build:teckel`): OK — `Fire_Ash_Ciudad_Teckel_Paraiso.zip` (72 entradas).
+- Tests directos OK: `marshal`, `history`, `integration` (web/js), `external_authoring`, `scripts_dangling_calls`, `verify_arceus_recursos`, `arceus_scope_map --audit` (global y sobre `PokeMod_CanonArceus`), `verify_arceus_action_safety`, `arceus_shield_harness`, `arceus_moves_harness`, `tone_safety`, `package_integrity`, `dn_runtime_support`.
+- `npm run` verificados OK: `verify:zmenu`, `verify:graficos`, `verify:ruby`, `verify:mapas`, `verify:boot`, `verify:teckel`, `verify:visor`, `verify:lideres`, `verify:glazed`, `verify:light_platinum`, `verify:liquid_crystal`, `verify:canon:arceus`, `verify:arceus:sprites`, `verify:diplomas`, `verify:corregido:zip` (2616 archivos, 46.6 MB), `verify:ruta_de_dios`.
+- Suite maestra final (`test:atlas:master`): **76 258 aserciones superadas, 0 fallos** (1227 mapas de campañas ROM, 8742 warps, 829 combates, 104 mapas DN, 946 eventos creepypasta).
+- **Efecto colateral determinista del suite:** el `pretest` (`build:teckel`) re-escenifica `Scripts_corregido/Ciudad_Teckel_Paraiso/Data/` desde el juego vivo; los 5 archivos binarios de ese stage estaban desactualizados respecto a HEAD y quedaron resincronizados (rebuild idempotente, verificado con doble corrida e igual hash). No es un error: es la salida oficial del suite.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
