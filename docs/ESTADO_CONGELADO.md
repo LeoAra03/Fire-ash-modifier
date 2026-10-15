@@ -1,6 +1,6 @@
 # Estado congelado
 
-Generado: 2026-10-15T06:02:31.069Z
+Generado: 2026-10-15T06:05:53.255Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
@@ -213,6 +213,14 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Creado **`tools/plan900/verificar_originales.mjs`** (reutilizable antes de cualquier `--apply`): comprueba que cada `Map<NNN>.rxdata` existente esté en al menos un `backup_*.zip` de `PokeModBackups/`, compara CRC32 contra el ZIP más reciente (frescura del snapshot) y valida que los IDs libres de la política de IDs no tengan archivo (los mapas nuevos no requieren original).
 - **Confirmación real (exit 0):** **3465/3465 mapas existentes protegidos** en `backup_20261015_041420.zip`; **snapshot virgen: 0/3465 diferencias de CRC** (el ZIP es copia exacta del estado pre-plan de cada mapa); **6534 IDs libres** (2039, 2197–2199, 2202–2209, …, 4420+) sin archivo y sin colisiones.
 - El plan puede tocar mapas con garantía de rollback total: cualquier mapa existente se restaura desde el ZIP (§3 de `docs/qa/rollback.md`) y los nuevos viven solo en IDs libres.
+
+### FASE 31 — Chequeo Kirin/Android ejecutado y anotado
+
+- Añadido **`npm run kirin_check`** al `package.json` (envuelve `python3 tools/kirin_check.py pokemon_fire_ash`). **Ejecución real: exit 0 — 0 errores, 3 avisos** (40 MIDIs, sin PBS local, 14 colisiones de mayúsculas).
+- Anotado en **`docs/qa/kirin_check.md`**:
+  - **`.rgssad` que rompen Android: 0** — árbol totalmente extraído (0 `.rgssad`/`.rgss2a`/`.rgss3a`).
+  - **Mayúsculas que rompen Android: 14 pares** `.PNG`↔`.png` en `Graphics/Tilesets/` (herencia de la distribución original): **idénticos byte a byte (14/14, SHA-1)** y referenciados en `Tilesets.rxdata` **sin extensión** (formato RMXP). Riesgo real: extractores/ADB/empaquetadores que colapsan duplicados por case en FS sensible de Android.
+  - Tratamiento: no se borra nada (regla de oro; con ambos ficheros cualquier resolución funciona); el plan no creará nunca assets que colisionen por mayúsculas; si algo colapsa duplicados, se conserva la variante minúscula; `kirin_check` reejecutable con expectativa «0 errores y ≤14 colisiones».
 
 ## Totales
 

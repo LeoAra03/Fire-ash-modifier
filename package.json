@@ -8,6 +8,7 @@
     "test": "node web/js/marshal.test.mjs && node web/js/history.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:zmenu && npm run verify:graficos && npm run verify:ruby && npm run verify:mapas && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:glazed && npm run verify:light_platinum && npm run verify:liquid_crystal && npm run verify:canon:arceus && npm run verify:arceus:sprites && npm run verify:diplomas && npm run verify:corregido:zip && npm run verify:ruta_de_dios && npm run test:atlas:master",
     "test:atlas:master": "node tools/qa/atlas_master_suite.test.mjs",
     "plan900:check": "node tools/plan900/checkpoint.mjs",
+    "kirin_check": "python3 tools/kirin_check.py pokemon_fire_ash",
     "pretest": "npm run build:teckel",
     "verify:visor": "node tools/apply_badge_viewer.mjs --verify",
     "verify:lideres": "node tools/apply_lideres_campanas.mjs --verify",
