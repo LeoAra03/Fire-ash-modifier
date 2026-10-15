@@ -4,6 +4,16 @@ Generado: 2026-10-15T04:11:26.319Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
+## Regla de oro (reafirmada en FASE 6)
+
+**Ningún mapa, evento, switch o diálogo original de Fire Ash se edita. Todo el contenido nuevo entra por IDs nuevos y aditivos.**
+
+- El hack original Fire Ash es **intocable**: sus mapas, eventos, diálogos, switches y variables se leen, nunca se reescriben.
+- El contenido PokeMod entra por **IDs nuevos**: mapas a partir de 1000 (Horizontes 1001–1020, Atlas Mil 1021–2020, Dimensional Nightmare 2040–2190, Team Rocket 2220–2221), switches reservados **701–867** y variables reservadas **101–263** (verificado libres en su porción no asignada en FASE 4).
+- Los archivos contenedores compartidos (`MapInfos.rxdata`, `map_metadata.dat`, `trainers.dat`, `species.dat`, …) solo se **extienden de forma aditiva** para registrar los IDs nuevos; jamás se alteran las entradas originales.
+- Las partidas originales siguen cargando y todo lo nuevo tiene **retorno libre**: nada bloquea la historia principal, la Mochila ni la salida.
+- Mecanismo de aplicación: el `inventario_congelado --verify` detecta cualquier cambio de hash en un archivo original y las herramientas `apply_*.mjs --verify` auditan que cada transformación siga siendo aditiva respecto al original respaldado en `PokeModBackups/`.
+
 ## Bitácora de fases
 
 ### FASE 1 — Línea base `npm test`
@@ -35,6 +45,11 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **Rehecho con la herramienta oficial:** `python3 tools/backup.py pokemon_fire_ash` → `pokemon_fire_ash/PokeModBackups/backup_20261015_041420.zip` (19.5 MB, 3530 entradas).
 - Cobertura verificada: **3529/3529 archivos de `Data/`** (coincide 1:1 con el disco) **+ `Data/Scripts.rxdata` incluido** + `Game.ini`. Integridad del ZIP comprobada con `testzip`: sin corrupción.
 - Creado **antes de la primera escritura del plan**; `PokeModBackups/` está gitignored por convención del repo (artefacto local), así que el ZIP vive en el árbol de trabajo y este registro documenta su existencia, huella y fecha.
+
+### FASE 6 — Regla de oro reafirmada
+
+- Añadida la sección **"Regla de oro"** al inicio de este documento: ningún mapa, evento, switch o diálogo original de Fire Ash se edita; todo entra por IDs nuevos y aditivos (mapas ≥ 1000, switches 701–867, variables 101–263, extensiones aditivas de contenedores, retorno libre).
+- Coherente con el estado verificado: rango reservado libre (FASE 4), backup previo a escrituras (FASE 5) e inventario congelado en verde (FASE 3). Solo documentación; sin cambios de contenido.
 
 ## Totales
 
