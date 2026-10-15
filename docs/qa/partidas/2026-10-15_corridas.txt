@@ -1,10 +1,10 @@
 # Corridas de verificación registradas — 2026-10-15
 
-Registro de las corridas **ejecutadas de verdad** el 2026-10-15 en el repositorio (fases 2 y 3 de la
+Registro de las corridas **ejecutadas de verdad** el 2026-10-15 en el repositorio (fases 2, 3 y 4 de la
 tarea 46199), con la salida íntegra de cada comando y su código de salida. Es la evidencia de dos
 cosas: de la condición «partida de prueba registrada» de cada mundo
 (`content/metrica_dimensiones.json`) y de la capa automática de la definición de mapa terminado
-(`content/mapa_terminado.json`). La partida manual sigue pendiente en `docs/QA_MANUAL_PLAYTEST.md`
+(`content/mapa_terminado.json`) y de la de evento terminado (`content/evento_terminado.json`). La partida manual sigue pendiente en `docs/QA_MANUAL_PLAYTEST.md`
 porque el entorno no tiene Game.exe ni Kirin (ni Wine).
 
 Entorno: Node.js 22 con `npm install` hecho (los verificadores de Dimensional Nightmare importan
@@ -1391,4 +1391,166 @@ Métrica de éxito del plan — 22 mundos (Jefe final · Retorno libre · Verifi
 
   métrica: 21/22 mundos con las cuatro condiciones (95 %) · partida manual registrada en 0/22 mundos (0 %)
 FALLO: la métrica no está cubierta (1 mundo(s) con fallos)
+```
+
+---
+
+## npm run verify:evento_terminado
+
+```text
+
+> fire-ash-modifier-tools@1.0.0 verify:evento_terminado
+> node tools/qa/evento_terminado_check.mjs
+
+  eventos: 1567 objetos en 173 mapas · 1557 nombres distintos (10 repiten nombre, y una declaración por nombre cubre a todos los que se llamen así)
+Eventos terminados — 1567 eventos en 0.5 s (diálogo revisado · flag de una sola escritura · texto en dos líneas de caja · salida garantizada)
+  texto: 2612 bloques de caja y 65 mensajes por script · 1218 caben en una caja de 2 líneas (46.6 %)
+  caja de 53 columnas: 2247 bloques con línea de autor más ancha (peor: 492) · 1434 juntas 401 sin salto explícito
+  flags: 50 switches (20 con más de un escritor, 0 apagados) y 21 variables · 44 sin nombre
+  salida: 3179 páginas · 0 sin orden de fin · 22 autorun y 7 paralelas sin liberación
+
+  anillo A: 554/1567 eventos terminados · 966 con deuda declarada · 47 con pendiente declarado · 0 con fallo abierto
+  DEUDA EVENTO-CAJA-ANCHA (texto en dos líneas de caja): 2247 fallos en 995 eventos y 173 mapas — El plan escribe para una caja más ancha que la del motor: 2247 de los 2612 bloques tienen alguna línea de más de 53 columnas (59 hasta 60, 709 hasta 100 y 1479 por encima; la peor, 492). El motor parte la línea por píxeles, así que el texto se lee, pero la maquetación que ve el jugador no es la que escribió el autor. La herencia de Fire Ash tampoco respeta la medida (32 753 de 57 591 bloques).
+  DEUDA EVENTO-JUNTA-401 (texto en dos líneas de caja): 1192 fallos en 616 eventos y 173 mapas — 1434 juntas entre continuaciones 401 repartidas en 1192 bloques: el motor las une con un espacio (Interpreter_Commands#command_101), así que dos líneas de autor se leen como una sola. Se arregla cerrando cada línea con \n o dejando el párrafo en una sola línea.
+  DEUDA EVENTO-TEXTO-DE-DISENO (diálogo revisado): 147 fallos en 147 eventos y 112 mapas — 147 textos del plan son la ficha de diseño volcada como diálogo: 115 llevan el id del mapa, 15 el número de variable, 12 el switch, 3 el tono o la pista de música y 2 la celda. El instalador del sueño los generó desde item.text.
+  DEUDA EVENTO-FLAG-DOBLE (flag de una sola escritura): 20 fallos en 18 eventos y 18 mapas — 20 sitios en 18 eventos encienden un switch que ya se enciende en otro sitio; catorce switches del plan tienen más de un escritor ON (885, 888, 895, 903–908, 928–930, 957 y 963; el 957 del Nexo, siete). La auditoría de flags lo deja por escrito: «| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |».
+  DEUDA EVENTO-FLAG-SIN-NOMBRE (flag de una sola escritura): 44 fallos en 25 eventos y 10 mapas — 44 usos en 25 eventos de 17 switches sin nombre en System.rxdata (940–947, 950–957 y 963): el editor los muestra como «—» y no se pueden leer ni depurar. La auditoría del juego los cuenta (31 en total).
+  PENDIENTE EVENTO-AUTORUN-SIN-SALIDA (salida garantizada): 29 eventos — 22 páginas autorun y 7 paralelas se quedan sin liberar (self switch, borrar evento, transferencia o flag propia): el motor las vuelve a arrancar al terminar y el jugador no recupera el control. La ficha de diseño las pedía «autorun al entrar» y el instalador copió el trigger; ninguna tiene condición, así que se disparan al pisar el mapa.
+  PENDIENTE EVENTO-RELLENO-PENDIENTE (diálogo revisado): 18 eventos — 18 eventos avisan al jugador de que el contenido no está: el rescue del instalador deja «(cartuchera del testigo pendiente de registrar)», «(medalla DN_MEDAL_WHT pendiente de registrar)» y dieciséis más. Los trainers y los objetos existen (dn:battles:verify), así que el arreglo es quitar el aviso o completar el contenido que falta.
+  EXENCIÓN (1 textos): Panel de progreso del hub: muestra a propósito datos de la partida (sellos, resonancia, anomalías y nivel de Rotom) porque es la pantalla de estado del jugador, no diálogo de personaje.
+  ⏳ 2023:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2024:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2025:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2026:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2027:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2028:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2029:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2040:VITRINA_TESTIGO · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2041:EV_CAT_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2046:EV_CAT_Sarcofagos_1 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2046:EV_CAT_Sarcofagos_2 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2046:EV_CAT_Sarcofagos_3 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2049:EV_CAT_Pasadizo · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2056:EV_CAT_Mano · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2056:MEDALLA_EP01 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2057:EV_SIL_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2063:EV_SIL_Espejo · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2072:EV_SIL_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2072:EV_SIL_Sello · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2072:MEDALLA_EP02 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2084:EV_SNOW_Grieta · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2087:EV_SNOW_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2087:MEDALLA_EP03 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2088:EV_HYP_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2103:EV_HYP_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2103:MEDALLA_EP04 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2104:EV_BLK_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2114:EV_BLK_Mausoleo · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2119:EV_BLK_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2119:MEDALLA_EP05 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2120:EV_UNO_Atrio · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2129:EV_UNO_LetraS · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2130:EV_UNO_LetraS · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2135:EV_UNO_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2135:MEDALLA_EP06 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2142:LIGA_MPIKA · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2143:EV_W7_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2152:EV_W7_Corredor · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2158:EV_W7_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2158:MEDALLA_W7 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2159:EV_W8_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2167:EV_W8_Pozo · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2174:EV_W8_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2174:MEDALLA_W8 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2175:EV_W9_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2190:EV_W9_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2190:MEDALLA_W9 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+OK: ningún evento del anillo A tiene fallo abierto (los pendientes declarados van listados con su cita)
+EXIT=0
+```
+
+---
+
+## npm run verify:evento_terminado:censo
+
+```text
+
+> fire-ash-modifier-tools@1.0.0 verify:evento_terminado:censo
+> node tools/qa/evento_terminado_check.mjs --censo
+
+  eventos: 36147 objetos en 3448 mapas · 28809 nombres distintos (7338 repiten nombre, y una declaración por nombre cubre a todos los que se llamen así)
+Eventos terminados — 36147 eventos en 3 s (diálogo revisado · flag de una sola escritura · texto en dos líneas de caja · salida garantizada)
+  texto: 57591 bloques de caja y 68 mensajes por script · 40275 caben en una caja de 2 líneas (69.9 %)
+  caja de 53 columnas: 32753 bloques con línea de autor más ancha (peor: 740) · 44459 juntas 401 sin salto explícito
+  flags: 1787 switches (744 con más de un escritor, 696 apagados) y 887 variables · 69 sin nombre
+  salida: 55499 páginas · 0 sin orden de fin · 1260 autorun y 9 paralelas sin liberación
+  veredictos: 13822 terminados · 966 con deuda declarada · 47 con pendiente declarado · 21312 abiertos (línea base del juego; las declaraciones del registro sólo cubren al plan)
+  deuda EVENTO-CAJA-ANCHA (texto en dos líneas de caja): 2247 fallos en 995 eventos · medido 2247
+  deuda EVENTO-JUNTA-401 (texto en dos líneas de caja): 1192 fallos en 616 eventos · medido 1192
+  deuda EVENTO-TEXTO-DE-DISENO (diálogo revisado): 147 fallos en 147 eventos · medido 147
+  deuda EVENTO-FLAG-DOBLE (flag de una sola escritura): 20 fallos en 18 eventos · medido 20
+  deuda EVENTO-FLAG-SIN-NOMBRE (flag de una sola escritura): 44 fallos en 25 eventos · medido 44
+  pendiente EVENTO-AUTORUN-SIN-SALIDA (salida garantizada): 29 eventos declarados, medido 29
+  pendiente EVENTO-RELLENO-PENDIENTE (diálogo revisado): 18 eventos declarados, medido 18
+  ABIERTO (línea base) 707:Pokemon: codigo-mal-formado p1
+  ABIERTO (línea base) 707:Entrance: autorun-sin-salida p2
+  ABIERTO (línea base) 707:Person: codigo-mal-formado p1
+  ABIERTO (línea base) 707:Skyla: codigo-mal-formado p1 · linea-ancha p1
+  ABIERTO (línea base) 707:Person: linea-ancha p1 · junta-401 p1
+  ABIERTO (línea base) 707:Cilan: codigo-mal-formado p2 · codigo-mal-formado p2 · linea-ancha p1 · junta-401 p1 · linea-ancha p1 · junta-401 p1 · linea-ancha p2 · junta-401 p2 · linea-ancha p2 · junta-401 p2
+  ABIERTO (línea base) 707:Person: codigo-mal-formado p1 · linea-ancha p1
+  ABIERTO (línea base) 707:Condo door: autorun-sin-salida p2
+EXIT=0
+```
+
+---
+
+## npm test (fase 4: la cadena completa, ya con verify:evento_terminado dentro)
+
+Salida recortada al final de la corrida: el resto de la cadena es idéntico al de la sección «npm test» de
+la fase 3, con `npm run verify:evento_terminado` intercalado entre `verify:mapa_terminado` y
+`test:atlas:master`.
+
+```text
+  ⏳ 2158:MEDALLA_W7 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2159:EV_W8_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2167:EV_W8_Pozo · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2174:EV_W8_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2174:MEDALLA_W8 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2175:EV_W9_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2190:EV_W9_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2190:MEDALLA_W9 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+OK: ningún evento del anillo A tiene fallo abierto (los pendientes declarados van listados con su cita)
+
+> fire-ash-modifier-tools@1.0.0 test:atlas:master
+> node tools/qa/atlas_master_suite.test.mjs
+
+================================================================================
+   SUITE MAESTRA ATLAS TOTAL · 2000+ TESTS DE INTEGRIDAD Y PROFUNDIDAD
+================================================================================
+
+--- FASE 1: Motor, Scripts PokeMod y Atributos Globales ---
+--- FASE 2: Integridad Estructural de los 1,227 Mapas de Campañas ROM ---
+--- FASE 3: Líderes de Gimnasio, Medallas y Switches (700-731) ---
+--- FASE 4: Dimensional Nightmare (Creepypastas GBC · Mapas 2041-2144) ---
+--- FASE 5: La Ruta de Dios & Canon Arceus ---
+--- FASE 6: Puerto Horizonte (Map 1001) y Portales Dimensionales ---
+--- FASE 7: Guardarropa y Atavíos Dimensionales (0-10) ---
+--- FASE 8: Ausencia de Mapas en Negro y Cero Solapamientos de Eventos ---
+
+================================================================================
+RESUMEN GENERAL DE VERIFICACIÓN ATLAS TOTAL:
+  Mapas de Campañas ROM auditados:   1227
+  Warps totales verificados:         8742
+  Warps de retorno validados:        1227
+  Combates de entrenadores:          829
+  Mapas Creepypastas DN auditados:   104
+  Eventos Creepypastas auditados:    946
+--------------------------------------------------------------------------------
+TOTAL DE ASERCIONES SUPERADAS:       76258
+TOTAL DE FALLOS:                     0
+================================================================================
+
+✔ SUITE MAESTRA COMPLETA: 76258 PRUEBAS SUPERADAS CON ÉXITO.
+EXIT=0
 ```

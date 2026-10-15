@@ -1,0 +1,534 @@
+{
+ "version": 1,
+ "fecha": "2026-10-15",
+ "fase": "Fase 4/46199 (tarea 38)",
+ "titulo": "Qué significa que un evento esté terminado",
+ "definicion": "docs/qa/evento_terminado.md",
+ "verificador": "tools/qa/evento_terminado_check.mjs",
+ "caja": {
+  "columnas": 53,
+  "lineas": 2,
+  "fuentes": [
+   {
+    "ruta": "web/js/rmxp.js",
+    "busca": "export function wrapMessage(text, cols = 53, maxLines = Infinity)"
+   },
+   {
+    "ruta": "web/js/editors.js",
+    "busca": "<option value=\"53,2\">2 líneas (normal)</option>"
+   },
+   {
+    "ruta": "web/js/rmxp.js",
+    "busca": "export function reflowMessage(text, cols = 53, linesPerBox = 2)"
+   }
+  ],
+  "nota": "El motor crea la caja con pbBottomLeftLines(msgwindow,2) (Scripts · Messages#pbCreateMessageWindow) y muestra 2 líneas porque Settings::SCREEN_HEIGHT = 384 no supera 400 (Messages#pbMessageDisplay: linecount=(Graphics.height>400) ? 3 : 2). Esos tres hechos se comprueban leyendo los Scripts compilados en cada corrida; el ancho de 53 columnas es el del editor de mapas del repo (wrapMessage/reflowMessage)."
+ },
+ "patrones": {
+  "fugas": [
+   {
+    "id": "nota-de-implementacion",
+    "expresion": "\\\\[EV_[A-Z0-9_]+\\]",
+    "banderas": "",
+    "que": "el nombre interno del evento de la ficha de diseño"
+   },
+   {
+    "id": "sw-en-el-texto",
+    "expresion": "\\bsw\\d{2,4}\\s*=|sw\\d{2,4}\\s*= ON",
+    "banderas": "",
+    "que": "el switch que enciende el evento",
+    "nota": "Un switch escrito en el texto que el jugador lee: la nota del instalador se quedó como diálogo."
+   },
+   {
+    "id": "variable-en-el-texto",
+    "expresion": "\\bv\\d{1,3}\\s*(?:>=|<=|==|>|<|=(?!=))",
+    "banderas": "",
+    "que": "el número de variable de la ficha de diseño"
+   },
+   {
+    "id": "tone-y-musica",
+    "expresion": "tone fase|self-switch|música\\s+[A-Za-z\"]*(?:Pkm|DN_|\\.(?:mid|ogg)|Lavender)",
+    "banderas": "i",
+    "que": "la nota de tono o de pista del diseño"
+   },
+   {
+    "id": "id-de-mapa",
+    "expresion": "\\bMap\\d{3,4}\\b",
+    "banderas": "",
+    "que": "el id del mapa en el texto del jugador"
+   },
+   {
+    "id": "coordenadas",
+    "expresion": "\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)",
+    "banderas": "",
+    "que": "la celda de diseño"
+   },
+   {
+    "id": "fase-de-diseno",
+    "expresion": "\\bFase\\s*[≥>]",
+    "banderas": "",
+    "que": "el número de fase de la ficha"
+   },
+   {
+    "id": "ficha-R",
+    "expresion": "\\bR\\d+-\\d+\\b",
+    "banderas": "",
+    "que": "el recorte de referencia de la ficha"
+   },
+   {
+    "id": "ficha-de-anomalia",
+    "expresion": "(?:^|\\n)\\[A\\d{2}\\]\\s+[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ0-9 ,.:;—-]{4,}",
+    "banderas": "",
+    "que": "el volcado de la ficha de la anomalía (código + título en mayúsculas, como el índice de docs/DIMENSIONAL_NIGHTMARE/01_EP01_WHITE_HAND.md), no la etiqueta del Registro Dimensional del juego"
+   }
+  ],
+  "relleno": [
+   {
+    "id": "pendiente-de-registrar",
+    "expresion": "pendiente de registrar",
+    "banderas": "i",
+    "que": "el aviso del instalador de que el contenido aún no está"
+   },
+   {
+    "id": "marca-todo",
+    "expresion": "\\bTODO\\b|\\bFIXME\\b|\\bXXX\\b",
+    "banderas": "",
+    "que": "una marca de trabajo sin resolver"
+   }
+  ],
+  "metagame": [
+   {
+    "id": "nivel-en-voz",
+    "expresion": "\\bnivel\\s*(\\d|#\\{)|\\bNv\\.?\\s*\\d|Pokédex|\\bPS\\s*\\d|\\bIVs?\\b|\\bEVs?\\b|estadísticas?",
+    "banderas": "i",
+    "que": "una cifra de sistema en boca de un personaje (regla 13 de docs/ESTRATEGIA_PULIDO_ATLAS.md: los diálogos importantes deben sobrevivir sin mencionar niveles, estadísticas ni entradas de Pokédex)",
+    "nota": "El patrón también ve el valor interpolado (nivel #{$game_variables[275]}), porque es lo que el jugador lee al final: «Rotom: nivel 42»."
+   }
+  ]
+ },
+ "criterios": [
+  {
+   "id": "dialogo",
+   "nombre": "Diálogo revisado",
+   "regla": "El texto que el jugador lee —las cajas 101/401 y los mensajes que dispara un script (pbMessage)— no lleva notas de implementación ni fichas técnicas de diseño, ni marcas de relleno, ni metagame; y está bien formado: sin bloques vacíos, sin espacios dobles, sin espacio antes de puntuación, sin espacios finales y sin códigos de escape sueltos."
+  },
+  {
+   "id": "flag",
+   "nombre": "Flag de una sola escritura",
+   "regla": "Cada switch de progreso que escribe el evento se enciende en un único sitio del juego (contando todos los mapas), no se apaga en ninguno y tiene nombre propio en System.rxdata. Las variables se cuentan aparte: son contadores con valor, no banderas."
+  },
+  {
+   "id": "caja",
+   "nombre": "Texto en dos líneas de caja",
+   "regla": "El texto está maquetado para la caja real del motor: ninguna línea que el autor cierra con \\n supera las 53 columnas, de modo que la caja muestra lo que el autor escribió (2 líneas por caja, las que use el bloque); y nada depende de que el motor junte las continuaciones 401, que las une con un espacio (Interpreter_Commands#command_101)."
+  },
+  {
+   "id": "salida",
+   "nombre": "Salida garantizada",
+   "regla": "Toda página termina con la orden de fin (código 0) y ninguna retiene al jugador: una página autorun o paralela tiene que liberarse con un self switch, con borrar evento, con una transferencia o con una flag que su propia condición mire; si no, el motor la vuelve a arrancar en cuanto termina y el jugador no recupera el control."
+  }
+ ],
+ "alcance": {
+  "anillo_a": {
+   "fuente": "content/mapa_terminado.json (anillo A de mapas del plan)",
+   "nota": "Todos los eventos de los 173 mapas del plan (las dimensiones del barco, Team Rocket, las emisiones del Monte Silver, la gruta, la Antesala de las Grietas, el Nexo y los 150 mapas del Dimensional Nightmare)."
+  },
+  "anillo_b": {
+   "fuente": "MapInfos.rxdata (3465 mapas)",
+   "nota": "Censo del juego entero: mide la herencia de Fire Ash y fija la línea base para que ninguna fase futura la empeore. El detalle queda en content/evento_terminado_censo.json.",
+   "linea_base": {
+    "fecha": "2026-10-15",
+    "eventos": 36147,
+    "mapas": 3448,
+    "nombres": 28809,
+    "eventos_ok": {
+     "dialogo": 32787,
+     "flag": 35426,
+     "caja": 17994,
+     "salida": 34913
+    },
+    "texto": {
+     "bloques": 57591,
+     "cabeEnUnaCaja": 40275,
+     "lineasAnchas": 32753,
+     "juntas": 44459,
+     "peorLinea": 740
+    },
+    "switches": {
+     "total": 1787,
+     "dobles": 744,
+     "apagadas": 696,
+     "sinNombre": 69
+    },
+    "paginas": {
+     "total": 55499,
+     "sinFin": 0,
+     "autorunSinLiberar": 1260,
+     "paralelasSinLiberar": 9,
+     "autorunSinCondicion": 20
+    },
+    "nota": "Medido con --censo el 2026-10-15. Ninguna fase futura puede bajar de estos números: el verificador compara la corrida del censo con esta línea base y falla si empeora."
+   }
+  }
+ },
+ "exenciones": {
+  "textos": [
+   {
+    "rango": [
+     2040,
+     2040
+    ],
+    "eventos": [
+     "2040:HUB_PROGRESO"
+    ],
+    "motivo": "Panel de progreso del hub: muestra a propósito datos de la partida (sellos, resonancia, anomalías y nivel de Rotom) porque es la pantalla de estado del jugador, no diálogo de personaje.",
+    "tipos": [
+     "metagame:nivel-en-voz"
+    ],
+    "condiciones": [
+     "dialogo"
+    ]
+   }
+  ]
+ },
+ "pendientes": [
+  {
+   "id": "EVENTO-AUTORUN-SIN-SALIDA",
+   "condicion": "salida",
+   "eventos": [
+    "2023:PokeMod Restauración: Ceniza",
+    "2024:PokeMod Restauración: Ceniza",
+    "2025:PokeMod Restauración: Ceniza",
+    "2026:PokeMod Restauración: Ceniza",
+    "2027:PokeMod Restauración: Ceniza",
+    "2028:PokeMod Restauración: Ceniza",
+    "2029:PokeMod Restauración: Ceniza",
+    "2041:EV_CAT_Entrada",
+    "2049:EV_CAT_Pasadizo",
+    "2056:EV_CAT_Mano",
+    "2057:EV_SIL_Entrada",
+    "2063:EV_SIL_Espejo",
+    "2072:EV_SIL_Jefe",
+    "2084:EV_SNOW_Grieta",
+    "2087:EV_SNOW_Jefe",
+    "2088:EV_HYP_Entrada",
+    "2103:EV_HYP_Jefe",
+    "2104:EV_BLK_Entrada",
+    "2119:EV_BLK_Jefe",
+    "2120:EV_UNO_Atrio",
+    "2135:EV_UNO_Jefe",
+    "2143:EV_W7_Entrada",
+    "2152:EV_W7_Corredor",
+    "2158:EV_W7_Jefe",
+    "2159:EV_W8_Entrada",
+    "2167:EV_W8_Pozo",
+    "2174:EV_W8_Jefe",
+    "2175:EV_W9_Entrada",
+    "2190:EV_W9_Jefe"
+   ],
+   "motivo": "22 páginas autorun y 7 paralelas se quedan sin liberar (self switch, borrar evento, transferencia o flag propia): el motor las vuelve a arrancar al terminar y el jugador no recupera el control. La ficha de diseño las pedía «autorun al entrar» y el instalador copió el trigger; ninguna tiene condición, así que se disparan al pisar el mapa.",
+   "fuente": {
+    "ruta": "docs/DIMENSIONAL_NIGHTMARE/01_EP01_WHITE_HAND.md",
+    "busca": "— Sala 2041 — Autorun al entrar (v264≥3)"
+   },
+   "medido": 29,
+   "metrica": "eventos"
+  },
+  {
+   "id": "EVENTO-RELLENO-PENDIENTE",
+   "condicion": "dialogo",
+   "eventos": [
+    "2040:VITRINA_TESTIGO",
+    "2046:EV_CAT_Sarcofagos_1",
+    "2046:EV_CAT_Sarcofagos_2",
+    "2046:EV_CAT_Sarcofagos_3",
+    "2056:MEDALLA_EP01",
+    "2072:EV_SIL_Sello",
+    "2072:MEDALLA_EP02",
+    "2087:MEDALLA_EP03",
+    "2103:MEDALLA_EP04",
+    "2114:EV_BLK_Mausoleo",
+    "2119:MEDALLA_EP05",
+    "2129:EV_UNO_LetraS",
+    "2130:EV_UNO_LetraS",
+    "2135:MEDALLA_EP06",
+    "2142:LIGA_MPIKA",
+    "2158:MEDALLA_W7",
+    "2174:MEDALLA_W8",
+    "2190:MEDALLA_W9"
+   ],
+   "motivo": "18 eventos avisan al jugador de que el contenido no está: el rescue del instalador deja «(cartuchera del testigo pendiente de registrar)», «(medalla DN_MEDAL_WHT pendiente de registrar)» y dieciséis más. Los trainers y los objetos existen (dn:battles:verify), así que el arreglo es quitar el aviso o completar el contenido que falta.",
+   "fuente": {
+    "ruta": "tools/dn_apply_medals.mjs",
+    "busca": "pbMessage(\"(cartuchera del testigo pendiente de registrar)\")"
+   },
+   "medido": 18,
+   "metrica": "eventos"
+  }
+ ],
+ "mediciones": [
+  {
+   "etiqueta": "Eventos del plan",
+   "metrica": "eventos",
+   "valor": 1567
+  },
+  {
+   "etiqueta": "Mapas del plan",
+   "metrica": "mapas",
+   "valor": 173
+  },
+  {
+   "etiqueta": "Páginas de evento",
+   "metrica": "paginas",
+   "valor": 3179
+  },
+  {
+   "etiqueta": "Páginas sin orden de fin",
+   "metrica": "sinFin",
+   "valor": 0
+  },
+  {
+   "etiqueta": "Bloques de caja 101/401",
+   "metrica": "bloques",
+   "valor": 2612
+  },
+  {
+   "etiqueta": "Textos contados (bloques + scripts)",
+   "metrica": "textos",
+   "valor": 2677
+  },
+  {
+   "etiqueta": "Bloques que caben en una caja de 2 líneas",
+   "metrica": "cabeEnUnaCaja",
+   "valor": 1218
+  },
+  {
+   "etiqueta": "Bloques con línea de autor más ancha que la caja",
+   "metrica": "lineasAnchas",
+   "valor": 2247
+  },
+  {
+   "etiqueta": "Línea de autor más larga (columnas)",
+   "metrica": "peorLinea",
+   "valor": 492
+  },
+  {
+   "etiqueta": "Bloques anchos de hasta 60 columnas",
+   "metrica": "anchurasHasta60",
+   "valor": 59
+  },
+  {
+   "etiqueta": "Bloques anchos de 61 a 100 columnas",
+   "metrica": "anchurasHasta100",
+   "valor": 709
+  },
+  {
+   "etiqueta": "Bloques anchos de más de 100 columnas",
+   "metrica": "anchurasMasDe100",
+   "valor": 1479
+  },
+  {
+   "etiqueta": "Juntas 401 sin salto explícito",
+   "metrica": "juntas",
+   "valor": 1434
+  },
+  {
+   "etiqueta": "Switches que escribe el plan",
+   "metrica": "switches",
+   "valor": 50
+  },
+  {
+   "etiqueta": "Switches con más de un escritor ON",
+   "metrica": "dobles",
+   "valor": 20
+  },
+  {
+   "etiqueta": "Switches del plan sin nombre en System.rxdata",
+   "metrica": "sinNombre",
+   "valor": 44
+  },
+  {
+   "etiqueta": "Switches del plan que se apagan",
+   "metrica": "apagadas",
+   "valor": 0
+  },
+  {
+   "etiqueta": "Variables que escribe el plan",
+   "metrica": "variables",
+   "valor": 21
+  },
+  {
+   "etiqueta": "Páginas autorun sin liberación",
+   "metrica": "autorunSinLiberar",
+   "valor": 22
+  },
+  {
+   "etiqueta": "Páginas paralelas sin liberación",
+   "metrica": "paralelasSinLiberar",
+   "valor": 7
+  },
+  {
+   "etiqueta": "Eventos terminados",
+   "metrica": "terminados",
+   "valor": 554
+  },
+  {
+   "etiqueta": "Eventos con deuda declarada",
+   "metrica": "con_deuda",
+   "valor": 966
+  },
+  {
+   "etiqueta": "Eventos con pendiente declarado",
+   "metrica": "con_pendiente",
+   "valor": 47
+  },
+  {
+   "etiqueta": "Eventos con fallo abierto",
+   "metrica": "con_fallo",
+   "valor": 0
+  }
+ ],
+ "hallazgos": [
+  {
+   "id": "EVENTO-AUTORUN-SIN-SALIDA",
+   "titulo": "Las notas de diseño del Dimensional Nightmare quedaron como eventos autorun que no se sueltan",
+   "nota": "El instalador del sueño construyó los eventos del índice con el trigger de la ficha (autorun al entrar) y el texto de la nota de implementación como diálogo. Como la página no tiene condición ni liberación, el motor la vuelve a arrancar al terminar: el jugador queda en un bucle con la nota del diseñador en pantalla. Se ve en el primer mapa de EP01 (Map2041, EV_CAT_Entrada) y en otros 21 sitios; ninguna herramienta del repo lo estaba midiendo.",
+   "fuente": {
+    "ruta": "tools/apply_dimensional_nightmare_events.mjs",
+    "busca": "trigger: ev.trigger === \"autorun\" ? 3"
+   }
+  },
+  {
+   "id": "EVENTO-TEXTO-DE-DISENO",
+   "titulo": "El jugador lee fichas de diseño: notas de implementación y datos técnicos",
+   "nota": "Los textos del sueño se generaron desde la ficha de cada evento y de cada anomalía, así que el diálogo lleva el nombre interno del evento, el switch que enciende, el tono, la pista de música, el id del mapa, la celda y el número de fase del diseño.",
+   "fuente": {
+    "ruta": "tools/apply_dimensional_nightmare_events.mjs",
+    "busca": "item.text.slice(0, 220)"
+   }
+  },
+  {
+   "id": "EVENTO-RELLENO-PENDIENTE",
+   "titulo": "Mensajes con «pendiente de registrar» en vez de contenido",
+   "nota": "Cuando el jefe, el objeto o la medalla todavía no existían, el instalador puso un aviso en el hueco: «(jefe pendiente de registrar: DN_EP02_A)», «(objeto REVIVE pendiente de registrar)», «(medalla DN_MEDAL_WHT pendiente de registrar)». Los trainers y objetos ya existen (lo confirma dn:battles:verify), así que el aviso es un resto de la instalación que el jugador sigue leyendo.",
+   "fuente": {
+    "ruta": "tools/dn_apply_medals.mjs",
+    "busca": "pbMessage(\"(cartuchera del testigo pendiente de registrar)\")"
+   }
+  },
+  {
+   "id": "EVENTO-401-SIN-SALTO",
+   "titulo": "El motor une las continuaciones 401 con espacios",
+   "nota": "El ensamblador del motor (Interpreter_Commands#command_101) añade un espacio entre el texto del 101 y cada 401 posterior. Los textos generados por las herramientas usan el patrón «101 vacío + un 401 por línea», así que la caja recibe un párrafo corrido en vez de las líneas que el autor escribió, salvo donde el `\\n` viaja dentro del propio 401. El editor de mapas del repo ya lo sabe y por eso guarda todo el mensaje en el 101.",
+   "fuente": {
+    "ruta": "tools/lib/dn_rmxp.mjs",
+    "busca": "export const texts = (lines, indent = 0)"
+   }
+  },
+  {
+   "id": "EVENTO-FLAG-DOBLE",
+   "titulo": "Doce switches del plan se encienden desde más de un sitio",
+   "nota": "Los sellos y las fases de jefe del sueño se escriben desde el evento del jefe y desde su fase B (el mismo valor, escrituras idempotentes), y el switch 957 de la restauración del Monte Silver se enciende desde los siete nexos de las emisiones. Hoy no rompe nada —ninguno se apaga nunca— pero deja dos dueños de la misma bandera.",
+   "fuente": {
+    "ruta": "docs/DIMENSIONAL_NIGHTMARE/10_EVENTOS_Y_FLAGS.md",
+    "busca": "| EP01 | `EV_CAT_Entrada`"
+   }
+  }
+ ],
+ "deudas_del_proyecto": [
+  {
+   "id": "EVENTO-LINEA-BASE-FIRE-ASH",
+   "titulo": "El juego base arrastra el mismo tipo de deuda en sus 3465 mapas",
+   "detalle": "El censo mide lo heredado: miles de bloques con líneas más anchas que la caja, mensajes partidos entre el 101 y los 401 y más de mil páginas autorun sin liberación escritas antes de este plan. No son eventos de este plan: la línea base los fija para que ninguna fase futura los empeore.",
+   "evidencia": [
+    {
+     "ruta": "content/evento_terminado_censo.json",
+     "busca": "\"por_mapa\""
+    }
+   ]
+  },
+  {
+   "id": "EVENTO-PARTIDA-MANUAL",
+   "titulo": "Ningún evento está jugado por una persona",
+   "detalle": "Las cuatro condiciones se pueden medir sin abrir el juego, pero un evento solo queda certificado cuando alguien lo dispara y comprueba que se lee y suelta el control. Sigue pendiente la pasada manual de docs/QA_MANUAL_PLAYTEST.md.",
+   "evidencia": [
+    {
+     "ruta": "docs/QA_MANUAL_PLAYTEST.md",
+     "busca": "Ningún linter sustituye esta pasada"
+    }
+   ]
+  }
+ ],
+ "deudas": [
+  {
+   "id": "EVENTO-CAJA-ANCHA",
+   "condicion": "caja",
+   "tipos": [
+    "linea-ancha"
+   ],
+   "motivo": "El plan escribe para una caja más ancha que la del motor: 2247 de los 2612 bloques tienen alguna línea de más de 53 columnas (59 hasta 60, 709 hasta 100 y 1479 por encima; la peor, 492). El motor parte la línea por píxeles, así que el texto se lee, pero la maquetación que ve el jugador no es la que escribió el autor. La herencia de Fire Ash tampoco respeta la medida (32 753 de 57 591 bloques).",
+   "fuente": {
+    "ruta": "docs/qa/evento_terminado.md",
+    "busca": "EVENTO-CAJA-ANCHA"
+   },
+   "medido": 2247,
+   "metrica": "fallos"
+  },
+  {
+   "id": "EVENTO-JUNTA-401",
+   "condicion": "caja",
+   "tipos": [
+    "junta-401"
+   ],
+   "motivo": "1434 juntas entre continuaciones 401 repartidas en 1192 bloques: el motor las une con un espacio (Interpreter_Commands#command_101), así que dos líneas de autor se leen como una sola. Se arregla cerrando cada línea con \\n o dejando el párrafo en una sola línea.",
+   "fuente": {
+    "ruta": "docs/qa/evento_terminado.md",
+    "busca": "EVENTO-JUNTA-401"
+   },
+   "medido": 1192,
+   "metrica": "fallos"
+  },
+  {
+   "id": "EVENTO-TEXTO-DE-DISENO",
+   "condicion": "dialogo",
+   "tipos": [
+    "fuga:*"
+   ],
+   "motivo": "147 textos del plan son la ficha de diseño volcada como diálogo: 115 llevan el id del mapa, 15 el número de variable, 12 el switch, 3 el tono o la pista de música y 2 la celda. El instalador del sueño los generó desde item.text.",
+   "fuente": {
+    "ruta": "tools/apply_dimensional_nightmare_events.mjs",
+    "busca": "item.text.slice(0, 220)"
+   },
+   "medido": 147,
+   "metrica": "fallos"
+  },
+  {
+   "id": "EVENTO-FLAG-DOBLE",
+   "condicion": "flag",
+   "tipos": [
+    "flag-doble"
+   ],
+   "motivo": "20 sitios en 18 eventos encienden un switch que ya se enciende en otro sitio; catorce switches del plan tienen más de un escritor ON (885, 888, 895, 903–908, 928–930, 957 y 963; el 957 del Nexo, siete). La auditoría de flags lo deja por escrito: «| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |».",
+   "fuente": {
+    "ruta": "docs/AUDITORIA_TOTAL_FLAGS.md",
+    "busca": "| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |"
+   },
+   "medido": 20,
+   "metrica": "fallos"
+  },
+  {
+   "id": "EVENTO-FLAG-SIN-NOMBRE",
+   "condicion": "flag",
+   "tipos": [
+    "flag-sin-nombre"
+   ],
+   "motivo": "44 usos en 25 eventos de 17 switches sin nombre en System.rxdata (940–947, 950–957 y 963): el editor los muestra como «—» y no se pueden leer ni depurar. La auditoría del juego los cuenta (31 en total).",
+   "fuente": {
+    "ruta": "docs/AUDITORIA_TOTAL_FLAGS.md",
+    "busca": "Switches usados sin nombre: 31."
+   },
+   "medido": 44,
+   "metrica": "fallos"
+  }
+ ]
+}

@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Herramientas reproducibles de auditoría y referencia visual para Fire Ash Modifier.",
   "scripts": {
-    "test": "node web/js/marshal.test.mjs && node web/js/history.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:zmenu && npm run verify:graficos && npm run verify:ruby && npm run verify:mapas && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:glazed && npm run verify:light_platinum && npm run verify:liquid_crystal && npm run verify:canon:arceus && npm run verify:arceus:sprites && npm run verify:diplomas && npm run verify:corregido:zip && npm run verify:ruta_de_dios && npm run verify:presupuesto && npm run verify:presupuesto:selftest && npm run verify:glosario && npm run verify:metrica && npm run verify:mapa_terminado && npm run test:atlas:master",
+    "test": "node web/js/marshal.test.mjs && node web/js/history.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:zmenu && npm run verify:graficos && npm run verify:ruby && npm run verify:mapas && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:glazed && npm run verify:light_platinum && npm run verify:liquid_crystal && npm run verify:canon:arceus && npm run verify:arceus:sprites && npm run verify:diplomas && npm run verify:corregido:zip && npm run verify:ruta_de_dios && npm run verify:presupuesto && npm run verify:presupuesto:selftest && npm run verify:glosario && npm run verify:metrica && npm run verify:mapa_terminado && npm run verify:evento_terminado && npm run test:atlas:master",
     "test:atlas:master": "node tools/qa/atlas_master_suite.test.mjs",
     "pretest": "npm run build:teckel",
     "verify:visor": "node tools/apply_badge_viewer.mjs --verify",
@@ -211,7 +211,9 @@
     "verify:metrica": "node tools/qa/metrica_dimensiones_check.mjs",
     "verify:metrica:profundo": "node tools/qa/metrica_dimensiones_check.mjs --profundo",
     "verify:mapa_terminado": "node tools/qa/mapa_terminado_check.mjs",
-    "verify:mapa_terminado:censo": "node tools/qa/mapa_terminado_check.mjs --censo"
+    "verify:mapa_terminado:censo": "node tools/qa/mapa_terminado_check.mjs --censo",
+    "verify:evento_terminado": "node tools/qa/evento_terminado_check.mjs",
+    "verify:evento_terminado:censo": "node tools/qa/evento_terminado_check.mjs --censo"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.10",
