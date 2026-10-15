@@ -140,6 +140,13 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **Origen del 870**: solo lo activa hablar con **Volus en Pueblo Hojaverde** (`Map513 ev101`, comando 121 ×2 tras la cinemática de las 17 Tablas, con opción de resonancia para otorgarlas). El 870 gobierna el diálogo posterior de Volus y al segundo Volus guía de Puntaneva (`Map625 ev103`), no al portal.
 - **Todo el DLC y las campañas ROM se entra desde Puerto Horizonte (1001) u otros mapas extra** — transitivamente detrás de esas puertas. **Veredicto: la afirmación se sostiene en lo sustancial** (22/24 puertas tras 429 o la cadena Volus 870→873; las 2 excepciones son el mecanismo de recuperación y la sala de la casa, ambas intencionales y documentadas).
 
+### FASE 21 — DLC inalcanzable antes de derrotar a Arceus
+
+- **`node tools/qa/arceus_scope_map.mjs --audit`: exit 0** — «ALCANCE R15b (PokeMod_RutaDeDios): 280 defs/constantes; todo lo que parece de nivel superior lo es de verdad». Variante CanonArceus también exit 0 (48 defs).
+- **Audit warp a warp de los 17 mapas DLC (2195, 2196, 2200, 2201, 2210, 2211, 2220, 2221, 2230, 2250–2257): 34 warps de entrada, 0 desde mapas originales.** La única vía de entrada externa al clúster es desde **Puerto Horizonte (1001) con el switch 873** (`RUTA_DE_DIOS_ARCEUS_RESOLVED`, el duelo ganado) en el propio warp: 2195 ← 1001[873] (la puerta de la Vía exige el duelo, como documenta `VIA_NUEVE_ERAS.md`), 2200 ← 1001[873], 2210 ← 1001[873], 2220 ← 1001[873], 2230 ← 1001[873].
+- El resto de entradas son intra-DLC (gimnasios 2250–2257 ↔ Avenida 2230 con sellos 970–976, devoluciones de dimensiones) o desde contenido extra ya gated (2260, 2270, 2280, 3110). Y el propio 1001 solo se alcanza por el Guardabosques cuyas 3 páginas de transferencia exigen 873 (FASE 20).
+- **Confirmado: nada del DLC es alcanzable antes de derrotar a Arceus en La Ruta de Dios.**
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
