@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T04:11:26.319Z",
+  "generatedAt": "2026-10-15T05:43:02.200Z",
   "git": {
     "branch": "arena/2a3657d3-fire-ash-modifier",
-    "commit": "9cb35fd50f84af356cbebb7487060526525632d5"
+    "commit": "ad37649aed94d07ff28b7defb0f430271e5445df"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5417,
+    "fileCount": 5421,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 202
+      "tools": 206
     },
     "files": [
       {
@@ -26907,6 +26907,26 @@
         "path": "tools/package_release.sh",
         "bytes": 443,
         "sha256": "7f7ed26aadc2287fc8d1891cf4f30817ac29d4b755c1ab45ad56b0d478a934b5"
+      },
+      {
+        "path": "tools/plan900/avance.md",
+        "bytes": 8616,
+        "sha256": "30818a0e887d02a0b787277cc39a3785f96afa76071c1a2bb6a0621c2369d62d"
+      },
+      {
+        "path": "tools/plan900/avance.sh",
+        "bytes": 951,
+        "sha256": "314e5eb1bbdde2cfe510682fad190823dc301cca2046cd19d205cc3c5b4e28d0"
+      },
+      {
+        "path": "tools/plan900/orden_instalacion.sh",
+        "bytes": 5745,
+        "sha256": "898cb2bf4dc7d39ed10aeebbdb28de38101eeecca7473582ffe3264d6abbf4d1"
+      },
+      {
+        "path": "tools/plan900_inventario_eventos.mjs",
+        "bytes": 3158,
+        "sha256": "6dbb4f1dfb72156d39950b125b8e16aad50b4d297106370d0925b5089f63f36f"
       },
       {
         "path": "tools/pokemon_studio_adapter.mjs",

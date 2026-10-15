@@ -17,6 +17,13 @@ Convenciones:
 Medidor: `bash tools/plan900/avance.sh` imprime fecha, hash de HEAD y última
 fase registrada, listo para copiar al abrir o cerrar una fase.
 
+**Protocolo de cierre de fase (establecido en FASE 26):** toda fase de este
+plan termina con **al menos un verificador en verde (exit 0)** —citado en su
+fila— y **una línea nueva en esta tabla**. Una fase sin verificador o sin fila
+no se considera cerrada. Si el verificador de cierre sale en rojo por deriva
+legítima (p. ej. archivos nuevos en `tools/`), se regenera el inventario
+congelado en la misma fase antes de commitear.
+
 ## Tabla de avance
 
 | Fase | Fecha (cierre, UTC) | HEAD base | HEAD cierre | Estado | Entrega / verificación |
@@ -44,4 +51,5 @@ fase registrada, listo para copiar al abrir o cerrar una fase.
 | 22 | 2026-10-15 (este commit) | `c869da87` | `595c5f61` | OK | Listado cada warp condicionado en **`docs/qa/puertas_postgame.md`**: las 24 puertas original→extra con su switch, los warps gated del hub 1001 (873/876/706/704), gimnasios (960–964, 970–976) y leyenda de switches. |
 | 23 | 2026-10-15 (este commit) | `595c5f61` | *(este commit)* | OK | Marcados los **huecos reales** en `docs/AUDITORIA_TOTAL_FLAGS.md`: switches consumibles 949, 958, 959, 965–969, 978–989 (20) y variables 308, 309, 323–329, 334–340, 349 (17); 12 switches y 5 variables "libres aparentes" resultaron reservados (constantes RutaDeDios/CanonArceus y registro DN); recomendación: crecer por 995+/355+. |
 | 24 | 2026-10-15 (este commit) | `91d15cbc` | `f64cbcf2` | OK | **Definido el prefijo `POKEMOD 900 `** para todo switch/variable del plan (sección en `docs/qa/politica_ids.md` + regla de consumo en la auditoría): asignación solo en ≥995/≥355 o huecos reales, nombre obligatorio, prefijo verificado libre (0 colisiones). |
-| 25 | 2026-10-15 (este commit) | `f64cbcf2` | *(este commit)* | OK | **Sin colisiones** entre lo usado (887 switches, max 994; 293 variables, max 354) y el rango a consumir (≥995/≥355 + 20/17 huecos): 8/8 comprobaciones en verde, incluida ausencia del prefijo `POKEMOD 900` y no solapamiento con el rango reservado. |
+| 25 | 2026-10-15 (este commit) | `f64cbcf2` | `ad37649a` | OK | **Sin colisiones** entre lo usado (887 switches, max 994; 293 variables, max 354) y el rango a consumir (≥995/≥355 + 20/17 huecos): 8/8 comprobaciones en verde, incluida ausencia del prefijo `POKEMOD 900` y no solapamiento con el rango reservado. |
+| 26 | 2026-10-15 (este commit) | `ad37649a` | *(este commit)* | OK | **Establecido el protocolo de cierre** (verificador en verde + fila nueva, fijado en las convenciones de este registro). Su primera aplicación cazó deriva real: inventario regenerado a **5421 archivos (Data 5215 + tools 206)** y `inventario_congelado --verify` exit 0. |

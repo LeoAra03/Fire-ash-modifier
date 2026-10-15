@@ -1,6 +1,6 @@
 # Estado congelado
 
-Generado: 2026-10-15T04:11:26.319Z
+Generado: 2026-10-15T05:43:02.200Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
@@ -178,6 +178,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
   7–8. Ningún nombre existente usa el prefijo `POKEMOD 900 ` (switches ni variables).
 - **Veredicto: sin colisiones** entre los 887 switches y 293 variables usados y el territorio que el plan va a consumir. La advertencia estándar de la auditoría se mantiene: las expresiones dinámicas de Ruby impiden probar libertad absoluta, pero el rango ≥ 995 / ≥ 355 está por encima de todo uso literal y de todo nombre declarado.
 
+### FASE 26 — Protocolo de cierre de fase
+
+- **Establecido el protocolo:** cada fase del plan 900 termina con **(a) al menos un verificador en verde (exit 0)** —nombrado en su fila del registro— y **(b) una línea nueva en `tools/plan900/avance.md`** con fecha y hashes de HEAD (convención de la FASE 8). Queda fijado en las convenciones del propio registro.
+- **La regla se aplicó ya a esta fase y cazó deriva real:** al correr `inventario_congelado --verify` como verificador de cierre, apareció en rojo porque las fases 7, 8 y 16 habían añadido 4 archivos a `tools/` (orden_instalacion.sh, avance.md, avance.sh, plan900_inventario_eventos.mjs) sin regenerar el inventario. **Regenerado:** ahora congela **5421 archivos (Data 5215 + Scripts 0 + tools 206)** y `--verify` vuelve a estar en verde.
+- Auditoría de cumplimiento de las fases 1–25: todas las filas del registro citan verificador real; la FASE 6 (solo documentación, anterior al protocolo) queda respaldada por el estado verde de las FASES 3–4.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
@@ -255,7 +261,7 @@ NEXO y Liga Oscura caen dentro de Dimensional Nightmare. Sus conteos no se suman
 
 ## Hashes
 
-- Archivos hasheados: 5417 (Data 5215, Scripts 0, tools 202).
+- Archivos hasheados: 5421 (Data 5215, Scripts 0, tools 206).
 - Directorios `Scripts/` encontrados: 0 archivo(s). Las secciones Ruby del juego están dentro de `Data/Scripts.rxdata`.
 - Algoritmo: SHA-256. El detalle por archivo está en `tools/inventario_congelado.json`.
 - Expresiones dinámicas (no se tratan como ID libre): 71.
