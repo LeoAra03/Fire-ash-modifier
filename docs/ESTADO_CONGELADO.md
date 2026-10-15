@@ -90,6 +90,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Switches: 887 usados (1–994), techo original 700; reservado 701–867 verificado; bloques Ruta de Dios 868–880, DN 882–939, campañas 990–994. Variables: 293 usadas (1–354), techo original 100; DN 264–307, atavíos, progreso campañas 350–354.
 - Self-switches: 8017 pares `mapa:evento:letra` (A–E) en 2405 mapas — espacio propio por mapa, sin reserva global. Trainer types: 556 (0–593) — original 0–261, **libres 262–299**, `SECRET_*` 300–515, `SYGNA_*` 516–558, `DOJO_/ANNI_/Arc` 559–593.
 
+### FASE 13 — Auditoría de persistencia de derrotas
+
+- **`npm run verify:defeats`: exit 0 — sin anomalías.** Regla verificada: «si lo derrotaste una vez, queda derrotado» (con `canLose` para reintentar tras perder y revanchas solo tras elección explícita por menú).
+- Total auditado: **1702 batallas en 747 eventos** — derrota permanente 691/747, revanchas opcionales por menú 70. Por bloque: Horizontes 241/241 permanentes (canLose 241/241), Atlas Mil 456 (437 permanentes + 56 revanchas + 19 salvajes Pokégod repetibles por diseño), Monte Silver 8/8, Multiversal 5/5, Teckel/Isla Espejo 4 (líder con revancha por menú).
+- La Torre Grandeur Club (33 eventos, Map 141/151/214) es repetible **por diseño del juego original** y se reporta aparte; sus entradas «sin canLose» no son contenido DLC. Ningún jefe del DLC deja estado inconsistente tras la primera victoria.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
