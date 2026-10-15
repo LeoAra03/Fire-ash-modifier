@@ -1,6 +1,6 @@
 # Estado congelado
 
-Generado: 2026-10-15T09:06:16.502Z
+Generado: 2026-10-15T09:19:11.298Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 

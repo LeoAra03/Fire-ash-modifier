@@ -48,6 +48,13 @@ Las cinco campañas ROM ya **no se adaptan**: usan el contenido de la ROM tal cu
   dirección (129) o con la fila de abajo (26, objetos que en la ROM sólo traen el
   frente) y ahora `npm run verify:rom:nativo:frames` da **0 fallos**. Detalle:
   [`docs/VERIFICACION_FRAMES_ROM_NATIVO.md`](docs/VERIFICACION_FRAMES_ROM_NATIVO.md).
+- **La paleta de cada personaje se verifica contra su tag**: `npm run
+  verify:rom:nativo:paletas` relee `sObjectEventSpritePalettes[]` cuando están las
+  ROMs (cobertura de tags, sin duplicados, paleta fuera de los frames, segundo tag
+  de reflejo también en el array, cabeza del array) y siempre comprueba sobre lo
+  entregado que **ninguna hoja use colores de la paleta de otro sprite**: 667 hojas,
+  241 tags, 241/241 grupos dentro de 16 colores, 0 fallos. Detalle:
+  [`docs/qa/gbc_pipeline.md`](docs/qa/gbc_pipeline.md) §4.1.
 - **3 538 eventos de campaña visten el personaje que les da la ROM** y **759 diálogos
   originales** sustituyen el andamiaje en el primer mensaje del evento.
 - **Verificación**: `npm run verify:rom:nativo` → 0 fallos sobre 1 486 028 celdas

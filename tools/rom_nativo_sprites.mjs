@@ -66,6 +66,8 @@ const EXTRACT = args.includes("--extract");
 const INSTALL = args.includes("--install");
 const VERIFY = args.includes("--verify");
 const VERIFY_FRAMES = args.includes("--verify-frames");
+const VERIFY_PALETAS = args.includes("--verify-paletas");
+const PALETAS = args.includes("--paletas");
 const REPAIR = args.includes("--repair");
 const SELFTEST = args.includes("--selftest");
 const dirArg = args.indexOf("--dir");
@@ -173,7 +175,7 @@ export function tablaGraficos(data, ids = []) {
 }
 
 /** ¿Es una paleta de personaje? 16 colores BGR555 con varios colores reales. */
-function esPaleta(data, ptr, tag) {
+export function esPaleta(data, ptr, tag) {
   if (!(tag >= 0x1100 && tag <= 0x1fff)) return false;
   if (!esPtr(data, ptr)) return false;
   const o = ptr - 0x08000000;
@@ -186,6 +188,19 @@ function esPaleta(data, ptr, tag) {
 /**
  * Busca el array `sObjectEventSpritePalettes[]` ({ const u16 *data; u16 tag; })
  * y devuelve el que cubre más tags pedidos (los de las fichas en uso).
+ *
+ * El array se identifica por su forma (entradas de 8 bytes con puntero válido y
+ * tag en el rango de OBJ_EVENT_PAL_TAG_*) y se puntúa por la cobertura de los
+ * tags que realmente usan los personajes de la campaña. Tres detalles que hacen
+ * que el mapa `tag → paleta` no pueda salir de una tabla parecida:
+ *
+ *   · no se descartan solapamientos: un sub-array desplazado también parece
+ *     válido y tiene que competir;
+ *   · a igualdad de cobertura gana el array MÁS LARGO y, después, el offset MÁS
+ *     BAJO (la cabeza real, no una cola);
+ *   · al final se camina hacia atrás mientras la entrada anterior siga siendo
+ *     válida: así el array empieza en su cabeza de verdad y no se pierde ninguna
+ *     paleta de los primeros tags.
  */
 export function tablaPaletas(data, tags = []) {
   const MAX_HUECO = 12;
@@ -193,6 +208,9 @@ export function tablaPaletas(data, tags = []) {
   const vistos = new Set();
   for (let o = 0; o + 8 * 10 < data.length; o += 4) {
     if (vistos.has(o)) continue;
+    // La cabeza de un array empieza con una entrada válida: si las primeras
+    // entradas son un hueco, ese offset es una cola con relleno por delante.
+    if (!esPaleta(data, u32(data, o), u16(data, o + 4))) continue;
     let validos = 0, hueco = 0, i = 0;
     while (i < 40) {
       const p = u32(data, o + i * 8);
@@ -223,14 +241,94 @@ export function tablaPaletas(data, tags = []) {
   let mejor = null;
   for (const o of candidatos) {
     const m = puntuar(o);
-    if (!mejor || m.cobertura > mejor.cobertura || (m.cobertura === mejor.cobertura && m.paletas > mejor.paletas)) mejor = { o, ...m };
+    if (!mejor || m.cobertura > mejor.cobertura
+      || (m.cobertura === mejor.cobertura && m.paletas > mejor.paletas)
+      || (m.cobertura === mejor.cobertura && m.paletas === mejor.paletas && o < mejor.o)) mejor = { o, ...m };
   }
-  return mejor;
+  if (!mejor) return null;
+  // Cabeza del array: mientras la entrada anterior sea una paleta válida, el
+  // inicio está más atrás (un sub-array perdería las paletas de los primeros tags).
+  let inicio = mejor.o;
+  while (inicio >= 8 && esPaleta(data, u32(data, inicio - 8), u16(data, inicio - 4))) inicio -= 8;
+  const { entradas, duplicados } = entradasDePaletas(data, inicio);
+  return { ...mejor, o: inicio, entradas, duplicados, headExacta: mejor.o === inicio };
 }
 
-/** Mapa tag → puntero de la paleta de 16 colores (usa el conjunto detectado). */
+/**
+ * Entradas reales del array desde `o`: `{ tag, ptr, offset }` en orden, hasta el
+ * hueco largo. Detecta tags repetidos con punteros distintos (un join ambiguo:
+ * el mismo tag apuntando a dos paletas obliga a decidir cuál es la buena).
+ */
+export function entradasDePaletas(data, o, { maxHueco = 12, maximo = 300 } = {}) {
+  const entradas = [];
+  const duplicados = [];
+  const porTag = new Map();
+  let hueco = 0, i = 0;
+  while (i < maximo && hueco <= maxHueco) {
+    const ptr = u32(data, o + i * 8);
+    const tag = u16(data, o + i * 8 + 4);
+    if (esPaleta(data, ptr, tag)) {
+      const entrada = { tag, ptr, offset: o + i * 8 };
+      entradas.push(entrada);
+      if (porTag.has(tag) && porTag.get(tag) !== ptr) duplicados.push({ tag, ptrs: [porTag.get(tag), ptr] });
+      else if (!porTag.has(tag)) porTag.set(tag, ptr);
+      hueco = 0;
+    } else hueco += 1;
+    i += 1;
+  }
+  return { entradas, duplicados };
+}
+
+/** Volcado de una paleta de 16 colores BGR555: 32 bytes en hexadecimal. */
+export function hexDePaleta(data, ptr) {
+  const o = ptr - 0x08000000;
+  if (o < 0 || o + 32 > data.length) return null;
+  let hex = "";
+  for (let c = 0; c < 32; c += 1) hex += data[o + c].toString(16).padStart(2, "0");
+  return hex;
+}
+
+/** Los 16 colores RGBA de un volcado hexadecimal (índice 0 transparente). */
+export function coloresDeHexPaleta(hex) {
+  const colores = [];
+  for (let c = 0; c < 16; c += 1) {
+    const v = Number.parseInt(hex.slice(c * 4, c * 4 + 2), 16) | (Number.parseInt(hex.slice(c * 4 + 2, c * 4 + 4), 16) << 8);
+    colores.push([Math.round(((v & 31) * 255) / 31), Math.round((((v >> 5) & 31) * 255) / 31), Math.round((((v >> 10) & 31) * 255) / 31), c === 0 ? 0 : 255]);
+  }
+  return colores;
+}
+
+/**
+ * Registro completo de `sObjectEventSpritePalettes[]` para una campaña:
+ * el mapa `tag → puntero`, el volcado de cada paleta usada y los problemas de
+ * lectura que se hayan visto (tags repetidos, orden monotónico, cabeza exacta).
+ */
+export function registroPaletas(data, tabla, tags = []) {
+  const mapa = new Map();
+  for (const { tag, ptr } of tabla.entradas) if (!mapa.has(tag)) mapa.set(tag, ptr);
+  const usados = new Set(tags);
+  const entradasUsadas = tabla.entradas.filter((e) => usados.has(e.tag));
+  const refs = new Map();
+  for (const { ptr } of entradasUsadas) if (!refs.has(ptr)) refs.set(ptr, hexDePaleta(data, ptr));
+  // Si el array va en orden creciente de tag, el índice de la entrada tiene que
+  // coincidir con `tag - primerTag`: si no, un join por índice y otro por tag
+  // darían paletas distintas (ambigüedad real en la lectura).
+  const ordenTags = tabla.entradas.map((e) => e.tag);
+  const monotona = ordenTags.every((t, i) => i === 0 || t > ordenTags[i - 1]);
+  const desajustes = monotona
+    ? tabla.entradas.filter((e, i) => i > 0 && e.tag - ordenTags[0] !== i).map((e) => e.tag)
+    : [];
+  const sinCobertura = [...usados].filter((t) => !mapa.has(t));
+  return { mapa, refs, entradas: tabla.entradas, duplicados: tabla.duplicados, monotona, desajustes, sinCobertura, headExacta: tabla.headExacta };
+}
+
+/** Mapa tag → puntero de la paleta de 16 colores (usa las entradas del array). */
 export function paletasDe(data, tabla) {
   const mapa = new Map();
+  if (tabla?.entradas) {
+    for (const { tag, ptr } of tabla.entradas) if (!mapa.has(tag)) mapa.set(tag, ptr);
+    return mapa;
+  }
   if (tabla.conjunto) {
     let hueco = 0, i = 0;
     while (i < 300 && hueco <= 12) {
@@ -498,8 +596,72 @@ export function preparar(data, campana) {
     if (esPtr(data, p)) tagsUsados.push(u16(data, p - 0x08000000 + 2));
   }
   const palTab = tablaPaletas(data, tagsUsados);
-  const paletas = paletasDe(data, palTab);
-  return { usados, gfxTab, palTab, paletas, tagsUsados };
+  const registro = registroPaletas(data, palTab, tagsUsados);
+  const paletas = registro.mapa;
+  return { usados, gfxTab, palTab, paletas, registro, tagsUsados };
+}
+
+/* ─────────── verificación de las paletas contra la ROM ─────────── */
+
+/**
+ * Verifica la lectura de `sObjectEventSpritePalettes[]` y que cada personaje
+ * reciba SU paleta. El join es por tag: el `paletteTag` que declara el struct
+ * (0x02) tiene que existir en una entrada del array y esa entrada tiene que
+ * apuntar a una paleta de 16 colores BGR555 dentro de la ROM. Comprobaciones:
+ *
+ *   1. cobertura: todos los tags de los personajes usados resuelven;
+ *   2. sin duplicados: ningún tag apunta a dos paletas distintas (join ambiguo);
+ *   3. entrada bien formada: puntero 4-alineado, 16 colores, índice 0 = BGR555 0;
+ *   4. la paleta NO cae dentro de la tira de frames del propio personaje (una
+ *      paleta leída de los píxeles sería una paleta equivocada);
+ *   5. `reflectionPaletteTag` (0x04): el segundo tag del struct también tiene que
+ *      estar en el mismo array — es la evidencia independiente de que el array
+ *      detectado es el bueno y no un parecido;
+ *   6. si el array va en orden creciente de tag, el índice de la entrada tiene
+ *      que ser `tag - primerTag`: que un join por índice y otro por tag den la
+ *      MISMA paleta (si no, la asignación sería ambigua);
+ *   7. la cabeza del array es exacta (la entrada anterior ya no es una paleta):
+ *      no se está leyendo una cola del array y perdiendo las primeras paletas.
+ */
+export function verificarPaletasRom(data, campana, prep) {
+  const fallos = [];
+  const avisos = [];
+  const { gfxTab, registro, tagsUsados } = prep;
+  const datos = { tags: tagsUsados.length, unicos: new Set(tagsUsados).size, paletas: registro.refs.size, reflexion: 0, sinReflexion: 0 };
+  const paletas = registro.mapa;
+  if (registro.sinCobertura.length) fallos.push(`${registro.sinCobertura.length} tags de personaje sin entrada en el array: ${registro.sinCobertura.slice(0, 8).map((t) => `0x${t.toString(16)}`).join(", ")}`);
+  for (const { tag, ptrs } of registro.duplicados) fallos.push(`el tag 0x${tag.toString(16)} aparece con dos paletas distintas (0x${ptrs[0].toString(16)} / 0x${ptrs[1].toString(16)}): el join sería ambiguo`);
+  if (!registro.headExacta) fallos.push("la tabla de paletas no empieza en su cabeza: hay entradas válidas antes del offset elegido");
+  // El array va en orden creciente de tag, pero con huecos: aquí un join por
+  // índice daría otra paleta, así que el único join válido es por tag (el que
+  // usa el pipeline). Queda como aviso, no como fallo.
+  if (registro.desajustes.length) avisos.push(`el array tiene huecos de tag (${registro.desajustes.length} entradas donde índice ≠ tag - primerTag): el join por índice daría paletas distintas, por eso se une por tag`);
+  for (const graphicsId of new Set(prep.usados.map(([id]) => id))) {
+    const p = u32(data, gfxTab.o + graphicsId * 4);
+    if (!esPtr(data, p)) continue;
+    const st = p - 0x08000000;
+    const tag = u16(data, st + 2);
+    const ptr = paletas.get(tag);
+    if (!ptr) continue;
+    if (ptr % 4 !== 0) fallos.push(`g${graphicsId}: la paleta 0x${tag.toString(16)} no está alineada a 4 bytes (0x${ptr.toString(16)})`);
+    const hex = hexDePaleta(data, ptr);
+    if (!hex) { fallos.push(`g${graphicsId}: la paleta 0x${tag.toString(16)} se sale de la ROM`); continue; }
+    if (hex.slice(0, 4) !== "0000") avisos.push(`g${graphicsId}: el índice 0 de la paleta 0x${tag.toString(16)} no es BGR555 cero (0x${hex.slice(0, 4)})`);
+    const reflexion = u16(data, st + 4);
+    if (reflexion >= 0x1100 && reflexion <= 0x1fff && reflexion !== tag) {
+      if (paletas.has(reflexion)) datos.reflexion += 1;
+      else { datos.sinReflexion += 1; avisos.push(`g${graphicsId}: reflectionPaletteTag 0x${reflexion.toString(16)} no está en el array (¿tabla incompleta?)`); }
+    }
+    // La paleta no puede ser un trozo de los píxeles del propio personaje.
+    const imagenes = u32(data, st + 0x1c);
+    if (esPtr(data, imagenes)) {
+      const base = u32(data, imagenes - 0x08000000) - 0x08000000;
+      const tam = (u16(data, st + 8) * u16(data, st + 10)) / 2;
+      const po = ptr - 0x08000000;
+      if (po >= base && po < base + 9 * tam) fallos.push(`g${graphicsId}: la paleta 0x${tag.toString(16)} cae dentro de sus propios frames (0x${ptr.toString(16)})`);
+    }
+  }
+  return { fallos, avisos, datos };
 }
 
 function extraer() {
@@ -510,7 +672,10 @@ function extraer() {
     const romPath = path.join(ROM_DIR, campana.rom);
     if (!fs.existsSync(romPath)) { console.log(`  · ${clave}: ROM ausente (${campana.rom}); se omite`); continue; }
     const data = fs.readFileSync(romPath);
-    const { usados, gfxTab, palTab, paletas, tagsUsados } = preparar(data, campana);
+    const { usados, gfxTab, palTab, paletas, registro, tagsUsados } = preparar(data, campana);
+    const paletasRom = verificarPaletasRom(data, campana, { usados, gfxTab, palTab, paletas, registro, tagsUsados });
+    for (const f of paletasRom.fallos) console.error(`  FALLA paletas ${clave}: ${f}`);
+    for (const a of paletasRom.avisos.slice(0, 3)) console.log(`  · aviso paletas ${clave}: ${a}`);
     const escala = 2;
     const sprites = {};
     let bytes = 0;
@@ -537,6 +702,8 @@ function extraer() {
       sprites[graphicsId] = {
         nombre, png: `${nombre}.png`, sha1: sha1(png), ancho: hoja.ancho, alto: hoja.alto,
         frame: `${sprite.ancho}x${sprite.alto}`, tag: sprite.tag, usos,
+        // De dónde salió la paleta de este personaje (join por tag, fase 54).
+        paleta: paletas.get(sprite.tag) ?? null,
         ...(tocados.length ? { reparados: tocados } : {}),
         ...(prestados.length ? { prestados } : {}),
         ...(revision.repetidos.length ? { pasosRepetidos: revision.repetidos } : {}),
@@ -549,10 +716,11 @@ function extraer() {
       rom: campana.rom,
       gfxTab: gfxTab.o, gfxFichas: gfxTab.fichas, gfxCobertura: gfxTab.cobertura,
       palTab: palTab.o, palPaletas: palTab.paletas, palCobertura: palTab.cobertura,
+      paletas: volcadoRegistro(registro),
       sprites, faltantes, rechazados,
     };
     totalBytes += bytes;
-    console.log(`  · ${clave}: ${Object.keys(sprites).length} sprites nativos (${(bytes / 1024).toFixed(0)} KB) · tabla de gráficos 0x${gfxTab.o.toString(16)} (${gfxTab.cobertura}/${usados.length} ids) · paletas 0x${palTab.o.toString(16)} (${palTab.cobertura}/${tagsUsados.length} tags)${faltantes.length ? ` · sin gráfico en la ROM: ${faltantes.slice(0, 8).join(",")}${faltantes.length > 8 ? "…" : ""} (${faltantes.length})` : ""}${reparados ? ` · ${reparados} frames vacíos cubiertos (pose quieta o fila de abajo)` : ""}${rechazados.length ? ` · RECHAZADOS por los 9 frames: ${rechazados.length}` : ""}`);
+    console.log(`  · ${clave}: ${Object.keys(sprites).length} sprites nativos (${(bytes / 1024).toFixed(0)} KB) · tabla de gráficos 0x${gfxTab.o.toString(16)} (${gfxTab.cobertura}/${usados.length} ids) · paletas 0x${palTab.o.toString(16)} (${palTab.cobertura}/${tagsUsados.length} tags · ${Object.keys(registro.refs).length} distintas · ${paletasRom.datos.reflexion} de reflejo)${faltantes.length ? ` · sin gráfico en la ROM: ${faltantes.slice(0, 8).join(",")}${faltantes.length > 8 ? "…" : ""} (${faltantes.length})` : ""}${reparados ? ` · ${reparados} frames vacíos cubiertos (pose quieta o fila de abajo)` : ""}${rechazados.length ? ` · RECHAZADOS por los 9 frames: ${rechazados.length}` : ""}`);
   }
   salida.resumen = { sprites: totalSprites, bytes: totalBytes };
   if (!DRY) fs.writeFileSync(PLAN_SPRITES, `${JSON.stringify(salida)}\n`);
@@ -697,6 +865,69 @@ function verificar() {
   console.log(`verificación de sprites: ${totalSprites} personajes nativos · ${revisados} eventos revisados · ${conNativo} con sprite del ROM · ${fallos} fallos`);
   if (errores.length) { for (const e of errores) console.error(`  FALLA: ${e}`); process.exit(1); }
   console.log("  · cada NPC de campaña muestra el personaje que le asigna la ROM");
+}
+
+/* ───────── volcado del registro de paletas al plan ───────── */
+
+/**
+ * Registro de `sObjectEventSpritePalettes[]` en JSON: `tags` (tag → puntero),
+ * `refs` (puntero → volcado de 32 bytes y su sha1) y el estado de la lectura.
+ * Con esto, la auditoría puede comprobar SIN la ROM que los colores de cada hoja
+ * entregada son los de la paleta que le toca a su tag.
+ */
+export function volcadoRegistro(registro) {
+  const tags = {};
+  for (const [tag, ptr] of [...registro.mapa].sort((a, b) => a[0] - b[0])) tags[tag] = ptr;
+  const refs = {};
+  for (const [ptr, hex] of [...registro.refs].sort((a, b) => a[0] - b[0])) {
+    if (hex) refs[ptr] = { s: sha1(Buffer.from(hex, "hex")).slice(0, 12), d: hex };
+  }
+  return {
+    tags, refs,
+    entradas: registro.entradas.length,
+    monotona: registro.monotona,
+    headExacta: registro.headExacta,
+    ...(registro.duplicados.length ? { duplicadas: registro.duplicados } : {}),
+    ...(registro.sinCobertura.length ? { sinCobertura: registro.sinCobertura } : {}),
+  };
+}
+
+/**
+ * `--paletas`: relee `sObjectEventSpritePalettes[]` de las ROMs y refresca SÓLO
+ * el registro de paletas del plan (y el puntero de paleta de cada personaje),
+ * sin volver a escribir ni una hoja. Sirve para verificar la lectura en un
+ * entorno que tenga las ROMs sin tocar los sprites ya entregados.
+ */
+function refrescarPaletas() {
+  if (!fs.existsSync(PLAN_SPRITES)) throw new Error("Falta content/rom_nativo_sprites.json");
+  const plan = planNativo();
+  const planSpr = JSON.parse(fs.readFileSync(PLAN_SPRITES, "utf8"));
+  let campanas = 0, fallos = 0, tags = 0;
+  for (const [clave, campana] of Object.entries(plan.campaigns)) {
+    const romPath = path.join(ROM_DIR, campana.rom);
+    if (!fs.existsSync(romPath)) { console.log(`  · ${clave}: ROM ausente (${campana.rom}); se omite`); continue; }
+    const data = fs.readFileSync(romPath);
+    const prep = preparar(data, campana);
+    const revision = verificarPaletasRom(data, campana, prep);
+    fallos += revision.fallos.length;
+    for (const f of revision.fallos) console.error(`  FALLA paletas ${clave}: ${f}`);
+    const ficha = planSpr.campaigns[clave];
+    if (!ficha) continue;
+    ficha.palTab = prep.palTab.o;
+    ficha.palPaletas = prep.palTab.paletas;
+    ficha.palCobertura = prep.palTab.cobertura;
+    ficha.paletas = volcadoRegistro(prep.registro);
+    for (const [graphicsId, sprite] of Object.entries(ficha.sprites ?? {})) {
+      if (sprite.tag === undefined) continue;
+      sprite.paleta = prep.paletas.get(sprite.tag) ?? null;
+    }
+    tags += Object.keys(ficha.paletas.tags).length;
+    campanas += 1;
+    console.log(`  · ${clave}: ${Object.keys(ficha.paletas.tags).length} tags · ${Object.keys(ficha.paletas.refs).length} paletas distintas · ${revision.datos.reflexion} tags de reflejo también en el array · ${revision.fallos.length} fallos`);
+  }
+  fs.writeFileSync(PLAN_SPRITES, `${JSON.stringify(planSpr)}\n`);
+  console.log(`✅ Registro de paletas actualizado: ${campanas} campañas · ${tags} tags${fallos ? ` · ${fallos} FALLOS` : ""} → content/rom_nativo_sprites.json`);
+  if (fallos) process.exit(1);
 }
 
 /* ─────────── auditoría de los 9 frames en las hojas ya escritas ─────────── */
@@ -861,6 +1092,144 @@ export function auditarHojas({ reparar = false, silencioso = false } = {}) {
   return { hojas, framesVacios, reparadas, sinPlan, errores, avisos };
 }
 
+/* ─────── auditoría de paletas sobre el material entregado ─────── */
+
+/** Colores (sin el transparente) que usa una hoja escrita. */
+function coloresDeHoja(imagen) {
+  const usados = new Set();
+  let transparencias = 0;
+  for (let i = 0; i < imagen.ancho * imagen.alto; i += 1) {
+    const c = imagen.paleta[imagen.indices[i]] ?? [0, 0, 0, 0];
+    if (c[3] === 0) { transparencias += 1; continue; }
+    usados.add(`${c[0]},${c[1]},${c[2]}`);
+  }
+  return { usados, transparencias };
+}
+
+/**
+ * Verifica que ninguna paleta se haya aplicado a un sprite equivocado, sobre las
+ * hojas YA escritas (no necesita la ROM):
+ *
+ *   · con registro (`paletas` en el plan, escrito por `--extract`/`--paletas`):
+ *     cada personaje tiene que usar su tag, el tag tiene que apuntar a una paleta
+ *     del registro, el volcado tiene que cuadrar con su sha1 y **todos los colores
+ *     de la hoja tienen que estar en esa paleta** — el color transparente incluido
+ *     (índice 0). Si a una hoja se le hubiera aplicado la paleta de otro personaje,
+ *     aparecerían colores que no pertenecen a su tag.
+ *   · sin registro (todavía no se releyó la ROM): se comprueba el invariante
+ *     fuerte que sí se puede medir — todas las hojas que comparten un tag tienen
+ *     que caber en UNA sola paleta de 16 colores (si a una de ellas se le hubiera
+ *     aplicado otra paleta, la unión se saldría de 16).
+ */
+export function auditarPaletas({ silencioso = false } = {}) {
+  const plan = JSON.parse(fs.readFileSync(PLAN_SPRITES, "utf8"));
+  const errores = [];
+  const avisos = [];
+  let hojas = 0, conPaleta = 0, grupos = 0, gruposGrandes = 0, sinTag = 0, refs = 0;
+  const detalleGrupo = [];
+  for (const [clave, campana] of Object.entries(plan.campaigns)) {
+    const registro = campana.paletas;
+    const refsCampana = new Map();
+    if (registro) {
+      for (const [ptr, ref] of Object.entries(registro.refs ?? {})) {
+        if (sha1(Buffer.from(ref.d, "hex")).slice(0, 12) !== ref.s) errores.push(`campaña ${clave}: el volcado de la paleta 0x${Number(ptr).toString(16)} (0x${ptr}) no cuadra con su sha1`);
+        refsCampana.set(Number(ptr), { ...ref, colores: new Set(coloresDeHexPaleta(ref.d).slice(1).map((c) => `${c[0]},${c[1]},${c[2]}`)) });
+      }
+      refs += refsCampana.size;
+    }
+    const porTag = new Map();
+    for (const [graphicsId, ficha] of Object.entries(campana.sprites ?? {})) {
+      const ruta = path.join(PERSONAJES, ficha.png);
+      if (!fs.existsSync(ruta)) { errores.push(`${ficha.png}: falta la hoja`); continue; }
+      let imagen;
+      try { imagen = leerPng(fs.readFileSync(ruta)); } catch (e) { errores.push(`${ficha.png}: PNG ilegible (${e.message})`); continue; }
+      hojas += 1;
+      const { usados } = coloresDeHoja(imagen);
+      if (ficha.tag === undefined) { sinTag += 1; avisos.push(`${ficha.png}: la ficha no guarda tag de paleta`); }
+      if (!porTag.has(ficha.tag)) porTag.set(ficha.tag, { usados: new Set(), hojas: [], ptr: ficha.paleta });
+      const grupo = porTag.get(ficha.tag);
+      grupo.hojas.push(ficha.png);
+      for (const c of usados) grupo.usados.add(c);
+      if (usados.size > 15) errores.push(`${ficha.png}: usa ${usados.size} colores opacos; una paleta de personaje tiene 15 (más el transparente)`);
+      if (!registro) continue;
+      const ptr = ficha.paleta ?? registro.tags?.[ficha.tag];
+      const ref = ptr !== undefined ? refsCampana.get(ptr) : null;
+      if (ref === undefined || ref === null) { errores.push(`${ficha.png}: su tag 0x${Number(ficha.tag).toString(16)} no tiene paleta en el registro de la campaña ${clave}`); continue; }
+      if (registro.tags?.[ficha.tag] !== ptr) errores.push(`${ficha.png}: el tag 0x${Number(ficha.tag).toString(16)} apunta a 0x${ptr} pero el registro dice 0x${registro.tags?.[ficha.tag]}`);
+      conPaleta += 1;
+      for (const c of usados) if (!ref.colores.has(c)) errores.push(`${ficha.png}: el color ${c} no está en la paleta 0x${Number(ptr).toString(16)} de su tag (¿paleta de otro personaje?)`);
+      // El índice 0 es el transparente y tiene que ser BGR555 cero.
+      const cero = coloresDeHexPaleta(ref.d)[0];
+      if (cero[0] || cero[1] || cero[2]) avisos.push(`${ficha.png}: la paleta de su tag no tiene el índice 0 a cero`);
+    }
+    for (const [tag, grupo] of porTag) {
+      grupos += 1;
+      if (grupo.usados.size > 16) {
+        gruposGrandes += 1;
+        detalleGrupo.push(`campaña ${clave} tag 0x${Number(tag).toString(16)}: ${grupo.usados.size} colores entre ${grupo.hojas.length} hojas`);
+      }
+    }
+  }
+  for (const d of detalleGrupo.slice(0, 8)) errores.push(`un tag con más de 16 colores (alguno de sus sprites llevaría otra paleta): ${d}`);
+  if (!silencioso) {
+    console.log(`paletas: ${hojas} hojas · ${grupos} tags distintos${refs ? ` · ${refs} paletas en el registro` : " · sin registro de ROM en el plan"}`);
+    console.log(`  · un tag = una paleta: ${grupos - gruposGrandes}/${grupos} grupos caben en 16 colores${sinTag ? ` · ${sinTag} hojas sin tag` : ""}`);
+    console.log(conPaleta
+      ? `  · ${conPaleta} hojas verificadas color a color contra la paleta de su tag (${refs} volcados de la ROM)`
+      : "  · el registro de ROM no está en el plan: se comprueba el invariante de 16 colores por tag (ejecuta --paletas con las ROMs para la comprobación color a color)");
+  }
+  return { hojas, conPaleta, grupos, gruposGrandes, sinTag, refs, errores, avisos };
+}
+
+/** `--verify-paletas`: la ROM (si está) y, siempre, el material entregado. */
+function verificarPaletas() {
+  const plan = planNativo();
+  const planSpr = JSON.parse(fs.readFileSync(PLAN_SPRITES, "utf8"));
+  let rom = 0, fallosRom = 0, tagsRom = 0, reflexion = 0, avisosRom = 0;
+  for (const [clave, campana] of Object.entries(plan.campaigns)) {
+    const romPath = path.join(ROM_DIR, campana.rom);
+    if (!fs.existsSync(romPath)) continue;
+    const data = fs.readFileSync(romPath);
+    const prep = preparar(data, campana);
+    if (!prep) { console.error(`  FALLA paletas ${clave}: no se localizó gObjectEventGraphicsInfoPointers[]`); fallosRom += 1; continue; }
+    const revision = verificarPaletasRom(data, campana, prep);
+    for (const f of revision.fallos) console.error(`  FALLA paletas ${clave}: ${f}`);
+    for (const a of revision.avisos.slice(0, 3)) console.log(`  · aviso paletas ${clave}: ${a}`);
+    fallosRom += revision.fallos.length;
+    avisosRom += revision.avisos.length;
+    reflexion += revision.datos.reflexion;
+    tagsRom += revision.datos.unicos;
+    rom += 1;
+    // El registro del plan (si lo hay) tiene que describir la misma tabla.
+    const guardado = planSpr.campaigns[clave]?.paletas;
+    if (guardado?.tags) {
+      const ahora = volcadoRegistro(prep.registro);
+      const difTags = Object.entries(ahora.tags).filter(([tag, ptr]) => guardado.tags[tag] !== ptr).length;
+      const difRefs = Object.entries(ahora.refs).filter(([ptr, ref]) => guardado.refs?.[ptr]?.s !== ref.s).length;
+      const difEntradas = Number(guardado.entradas) !== ahora.entradas;
+      if (difEntradas || difTags || difRefs) {
+        console.error(`  FALLA paletas ${clave}: el registro del plan no describe la tabla de la ROM (${difEntradas ? "entradas " : ""}${difTags} tags y ${difRefs} paletas distintas)`);
+        fallosRom += 1;
+      } else {
+        console.log(`  · paletas ${clave}: el registro del plan (${Object.keys(guardado.tags).length} tags, ${Object.keys(guardado.refs ?? {}).length} paletas) describe la misma tabla que la ROM`);
+      }
+    }
+  }
+  const entregado = auditarPaletas({ silencioso: true });
+  const totalSprites = Object.values(planSpr.campaigns).reduce((s, c) => s + Object.keys(c.sprites ?? {}).length, 0);
+  console.log(`verificación de paletas (sObjectEventSpritePalettes[]): ${rom ? `${rom} campañas releídas del ROM · ${tagsRom} tags de personaje · ${reflexion} tags de reflejo confirmados en el array` : "ROM ausente: no se pudo releer el array"}`);
+  console.log(`paletas: ${entregado.hojas}/${totalSprites} hojas · ${entregado.grupos} tags distintos${entregado.refs ? ` · ${entregado.conPaleta} hojas con la paleta de su tag (${entregado.refs} volcados)` : ""} · ${entregado.grupos - entregado.gruposGrandes}/${entregado.grupos} grupos dentro de 16 colores`);
+  if (entregado.avisos.length) console.log(`  · avisos: ${entregado.avisos.length} (p. ej. ${entregado.avisos[0]})`);
+  if (avisosRom) console.log(`  · avisos de ROM: ${avisosRom}`);
+  const fallos = fallosRom + entregado.errores.length;
+  if (fallos) {
+    for (const e of entregado.errores.slice(0, 12)) console.error(`  FALLA: ${e}`);
+    console.error(`verificación de paletas: ${fallos} fallos`);
+    process.exit(1);
+  }
+  console.log("  · ninguna paleta se aplica a un sprite equivocado (join por tag verificado)");
+}
+
 /** Verifica los 9 frames contra la ROM (si está) y contra las hojas escritas. */
 function verificarFrames() {
   const plan = JSON.parse(fs.readFileSync(PLAN_SPRITES, "utf8"));
@@ -902,6 +1271,73 @@ function verificarFrames() {
     process.exit(1);
   }
   console.log(`  · los 9 frames (abajo, arriba, lado y sus pasos) están completos y la hoja de 4×4 se descompone sin huecos`);
+}
+
+
+/**
+ * ROM sintética para la autocomprobación: monta en memoria el mismo formato que
+ * un cartucho de GBA (frame 4bpp con tiles 8×8, tabla `SpriteFrameImage[9]`,
+ * struct `ObjectEventGraphicsInfo` de 0x24 bytes, `gObjectEventGraphicsInfoPointers[]`
+ * y `sObjectEventSpritePalettes[]` con entradas { puntero, tag }). Cada personaje
+ * lleva su propia paleta, con el color de índice 1 distinto, para poder
+ * comprobar que a cada uno se le aplica la SUYA.
+ */
+export function romSintetica({ nGraficos = 30, nPaletas = 12, mezclarPaletas = false, etiquetaRepetida = false, saltoTags = 1 } = {}) {
+  const rom = Buffer.alloc(0x8000);
+  const BASE = 0x08000000;
+  const OAM = 0x7800, SUBS = 0x7820, ANIMS = 0x7840;
+  const FICHAS = 0x7000;                  // structs de 0x24 bytes
+  const ARRAY = 0x7600;                   // gObjectEventGraphicsInfoPointers[]
+  const PALETAS = 0x1000;                 // 16 colores BGR555 por paleta
+  const PAL_TAB = 0x2000;                 // sObjectEventSpritePalettes[] (8 B/entrada)
+  const FRAMES = 0x4000;                  // tiras de 9 frames de 8×8 (32 B cada una)
+  const w = (off, v) => rom.writeUInt16LE(v & 0xffff, off);
+  const d = (off, v) => rom.writeUInt32LE(v >>> 0, off);
+  // Paletas: la entrada 1 cambia por paleta (10*i, 0, 0) para distinguirlas.
+  for (let i = 0; i < nPaletas; i += 1) {
+    for (let c = 0; c < 16; c += 1) {
+      const r = c === 1 ? (i + 1) * 10 : c * 2;
+      const g = c === 1 ? 0 : c * 3;
+      const b = c === 1 ? 0 : c * 4;
+      w(PALETAS + i * 32 + c * 2, ((b >> 3) << 10) | ((g >> 3) << 5) | (r >> 3));
+    }
+  }
+  for (let i = 0; i < nPaletas; i += 1) {
+    const destino = mezclarPaletas ? (i + 1) % nPaletas : i;
+    d(PAL_TAB + i * 8, BASE + PALETAS + destino * 32);
+    w(PAL_TAB + i * 8 + 4, 0x1100 + (etiquetaRepetida && i > 0 ? 0 : i * saltoTags));
+  }
+  // Frames: cada personaje usa el índice 1 en todos sus píxeles (nibble bajo y alto).
+  for (let g = 0; g < nGraficos; g += 1) {
+    const base = FRAMES + g * 9 * 32;
+    for (let f = 0; f < 9; f += 1) rom.fill(0x11, base + f * 32, base + f * 32 + 32);
+  }
+  for (let g = 0; g < nGraficos; g += 1) {
+    const tabla = 0x3000 + g * 9 * 8;
+    for (let f = 0; f < 9; f += 1) {
+      d(tabla + f * 8, BASE + FRAMES + g * 9 * 32 + f * 32);
+      w(tabla + f * 8 + 4, 32);
+    }
+    const st = FICHAS + g * 0x24;
+    w(st + 0x00, 0x1000 + g);
+    w(st + 0x02, 0x1100 + (g % nPaletas) * saltoTags);
+    w(st + 0x04, 0x1100 + ((g + 1) % nPaletas) * saltoTags);   // reflectionPaletteTag
+    w(st + 0x06, 8);
+    w(st + 0x08, 8);
+    w(st + 0x0a, 8);
+    d(st + 0x10, BASE + OAM);
+    d(st + 0x14, BASE + SUBS);
+    d(st + 0x18, BASE + ANIMS);
+    d(st + 0x1c, BASE + tabla);
+    d(st + 0x20, 0);
+    d(ARRAY + g * 4, BASE + st);
+  }
+  return rom;
+}
+
+/** Campaña sintética: un mapa con los NPCs 0..n-1 (el graphicsId es el localId). */
+export function campanaSintetica(nGraficos = 30) {
+  return { rom: "sintetica.gba", maps: { "1": { npcs: Array.from({ length: nGraficos }, (_, i) => ({ sprite: i, x: i, y: 0, localId: i })) } } };
 }
 
 /* ──────────────────────────── autocomprobación ─────────────────────────── */
@@ -948,7 +1384,76 @@ function selftest() {
   afirma(vuelta.tipoColor === 6 && vuelta.rgba.every((v, i) => v === rgba[i]), "el PNG RGBA vuelve píxel a píxel");
   afirma(UBICACION.get(0)[1] === 0 && UBICACION.get(6)[1] === 3 && UBICACION.get(7)[0] === 1, "cada frame tiene su celda en la rejilla");
 
-  console.log(`OK: autocomprobación de los 9 frames 4bpp y de la hoja RMXP (${ok} comprobaciones)`);
+
+  // ── paletas: la ROM sintética prueba la lectura del array y el join tag → paleta
+  const rom = romSintetica();
+  const campana = campanaSintetica();
+  const prep = preparar(rom, campana);
+  afirma(prep !== null, "la ROM sintética se deja leer: hace falta su gObjectEventGraphicsInfoPointers[]");
+  afirma(prep.palTab.o === 0x2000, "sObjectEventSpritePalettes[] se localiza en su sitio de la ROM sintética");
+  afirma(prep.registro.entradas.length === 12 && prep.registro.monotona && prep.registro.headExacta, "las doce entradas del array se leen en orden, con la cabeza exacta");
+  afirma(prep.registro.sinCobertura.length === 0 && prep.registro.duplicados.length === 0, "cada tag de personaje resuelve y ninguno apunta a dos paletas");
+  const revisionPaletas = verificarPaletasRom(rom, campana, prep);
+  afirma(revisionPaletas.fallos.length === 0, `la verificación de paletas no encuentra fallos en la ROM sintética: ${revisionPaletas.fallos[0] ?? ""}`);
+  afirma(revisionPaletas.datos.reflexion === 30, "los 30 tags de reflejo (0x04) también están en el array: evidencia de que es el array bueno");
+  // Y cada personaje recibe SU paleta, no la de otro.
+  // El rojo de la entrada 1 se guarda en BGR555, así que el valor que se ve es
+  // el del canal ya cuantizado a 5 bits (y vuelto a 8).
+  const esperado = (i) => Math.round(((((i + 1) * 10) >> 3) * 255) / 31);
+  const color1 = (sprite) => sprite.frames[0][0];
+  const s0 = spriteDe(rom, prep.gfxTab, prep.paletas, 0);
+  const s1 = spriteDe(rom, prep.gfxTab, prep.paletas, 1);
+  const s7 = spriteDe(rom, prep.gfxTab, prep.paletas, 7);
+  afirma(color1(s0) === esperado(0) && color1(s1) === esperado(1) && color1(s7) === esperado(7) && esperado(0) !== esperado(1), `cada graphicsId se pinta con la paleta de su tag (${esperado(0)} · ${esperado(1)} · ${esperado(7)})`);
+  afirma(s0.tag === 0x1100 && s1.tag === 0x1101 && s7.tag === 0x1107, "el tag de cada personaje sale del struct, no del orden del array");
+  const conOtra = { usados: prep.usados, gfxTab: prep.gfxTab, palTab: prep.palTab, paletas: new Map(prep.paletas) };
+  conOtra.paletas.set(0x1107, prep.paletas.get(0x1100));
+  afirma(color1(spriteDe(rom, conOtra.gfxTab, conOtra.paletas, 7)) === esperado(0), "si el join se rompiera, el sprite saldría con la paleta equivocada (el detector tiene sentido)");
+  // Tablas parecidas que NO se deben elegir.
+  // Con las paletas del array desordenadas, el join por tag sigue resolviendo y
+  // los tags son los mismos, pero el volcado cambia: eso es exactamente lo que
+  // detecta la comparación contra el registro guardado en el plan.
+  const mezclada = romSintetica({ mezclarPaletas: true });
+  const prepMezclada = preparar(mezclada, campana);
+  const regA = volcadoRegistro(prep.registro), regB = volcadoRegistro(prepMezclada.registro);
+  const tagsIguales = JSON.stringify(regA.tags) === JSON.stringify(regB.tags);
+  const paletasIguales = JSON.stringify(regA.refs) === JSON.stringify(regB.refs);
+  afirma(!tagsIguales && paletasIguales, "si las paletas del array cambian de sitio, el join tag → paleta del registro lo delata (las 12 paletas son las mismas: lo que cambia es cuál le toca a cada tag)");
+  // Un array con huecos de tag (orden creciente pero no consecutivo) avisa de
+  // que el join por índice daría otra paleta.
+  const conHuecos = romSintetica({ saltoTags: 2 });
+  const prepHuecos = preparar(conHuecos, campanaSintetica());
+  const revisionHuecos = verificarPaletasRom(conHuecos, campanaSintetica(), prepHuecos);
+  afirma(prepHuecos.registro.desajustes.length > 0 && revisionHuecos.fallos.length === 0 && revisionHuecos.avisos.some((a) => a.includes("huecos de tag")), "un array monotónico con huecos se avisa y no se da por fallo (se une por tag)");
+  const repetida = romSintetica({ etiquetaRepetida: true });
+  const prepRepetida = preparar(repetida, campana);
+  afirma(prepRepetida.registro.duplicados.length > 0, "dos entradas con el mismo tag y paletas distintas se marcan como ambiguas");
+  afirma(verificarPaletasRom(repetida, campana, prepRepetida).fallos.some((f) => f.includes("dos paletas distintas")), "la ambigüedad de tag hace fallar la verificación");
+  const corte = romSintetica();
+  const prepCorte = preparar(corte, campana);
+  const soloCola = { ...prepCorte, registro: { ...prepCorte.registro, headExacta: false } };
+  afirma(verificarPaletasRom(corte, campana, soloCola).fallos.some((f) => f.includes("cabeza")), "leer una cola del array en vez de su cabeza se detecta");
+  // El registro que viaja en el plan describe la misma tabla.
+  const volcado = volcadoRegistro(prep.registro);
+  afirma(Object.keys(volcado.tags).length === 12 && Object.keys(volcado.refs).length === 12, "el registro del plan guarda los 12 tags y sus 12 paletas");
+  const colores = coloresDeHexPaleta(volcado.refs[0x08001000].d);
+  afirma(colores[0][3] === 0 && colores[1][0] === esperado(0) && sha1(Buffer.from(volcado.refs[0x08001000].d, "hex")).slice(0, 12) === volcado.refs[0x08001000].s, "el volcado vuelve a dar los mismos colores y cuadra con su sha1");
+
+  // El circuito completo: ROM → 9 frames → verificación → hoja 4×4 → PNG indexado,
+  // y de vuelta al leer los colores de la hoja, que tienen que ser los de SU paleta.
+  const s3 = spriteDe(rom, prep.gfxTab, prep.paletas, 3);
+  const limpio = repararFrames(s3);
+  const hoja3 = hojaRmxp({ ...s3, frames: limpio.frames }, 2);
+  const pngHoja = escribirPng(hoja3.rgba, hoja3.ancho, hoja3.alto);
+  const leida = leerPng(pngHoja);
+  const suyos = coloresDeHexPaleta(volcadoRegistro(prep.registro).refs[0x08001060].d);
+  const permitidos = new Set(suyos.filter((c) => c[3] !== 0).map((c) => `${c[0]},${c[1]},${c[2]}`));
+  const vistos = coloresDeHoja(leida);
+  afirma(leida.ancho === 64 && leida.alto === 64, "la hoja del personaje sintético mide 4 × 4 celdas de 16×16 reescaladas ×2");
+  afirma([...vistos.usados].every((c) => permitidos.has(c)), "todos los colores de la hoja están en la paleta de su tag");
+  afirma(vistos.usados.has(`${esperado(3)},0,0`) && !vistos.usados.has(`${esperado(4)},0,0`), "la hoja usa su paleta y no la del tag vecino");
+
+  console.log(`OK: autocomprobación de los 9 frames 4bpp, la hoja RMXP y las paletas (${ok} comprobaciones)`);
 }
 
 /* ───────────────────── lectura/escritura de Map*.rxdata ────────────────── */
@@ -958,8 +1463,8 @@ const guardarMapa = (nombre, objeto) => { if (!DRY) fs.writeFileSync(path.join(D
 
 /* ─────────────────────────────────── main ─────────────────────────────── */
 if (isMain) {
-  if (!EXTRACT && !INSTALL && !VERIFY && !VERIFY_FRAMES && !SELFTEST) {
-    console.log("uso: --extract | --install | --verify | --verify-frames [--repair] | --selftest  [--dry-run] [--dir ROM_DIR]");
+  if (!EXTRACT && !INSTALL && !VERIFY && !VERIFY_FRAMES && !VERIFY_PALETAS && !PALETAS && !SELFTEST) {
+    console.log("uso: --extract | --install | --verify | --verify-frames [--repair] | --verify-paletas | --paletas | --selftest  [--dry-run] [--dir ROM_DIR]");
     process.exit(1);
   }
   if (SELFTEST) selftest();
@@ -967,4 +1472,6 @@ if (isMain) {
   else if (INSTALL) instalar();
   else if (VERIFY) verificar();
   else if (VERIFY_FRAMES) verificarFrames();
+  else if (VERIFY_PALETAS) verificarPaletas();
+  else if (PALETAS) refrescarPaletas();
 }

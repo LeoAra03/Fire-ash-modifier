@@ -18,6 +18,7 @@ ROM (.gba)
      └─ 3  struct ObjectEventGraphicsInfo (0x24 B) .. esFichaGrafico()
          ├─ 4  paletteTag → sObjectEventSpritePalettes[] ... tablaPaletas() / paletaDe()
          │      └─ 16 colores BGR555 (índice 0 transparente)
+         │      └─ verificación del join tag → paleta ... verificarPaletasRom() / auditarPaletas()
          └─ 5  images → SpriteFrameImage[9] (8 B c/u) ...... spriteDe()
              └─ 6  tiles 8×8 en 4bpp (32 B/tile) ........... decodificación nibble
                  └─ 7  verificación de los 9 frames ........ validarFrames() / repararFrames()
@@ -36,7 +37,8 @@ npm run rom:nativo:sprites -- --install                        # paso 10
 npm run verify:rom:nativo                                      # paso 11 (+ mapas)
 npm run verify:rom:nativo:frames                               # paso 7 sobre lo entregado
 npm run repair:rom:nativo:frames                               # cubre huecos de frames
-npm run selftest:rom:nativo:frames                             # 16 comprobaciones sintéticas
+npm run selftest:rom:nativo:frames                             # 35 comprobaciones sintéticas
+npm run verify:rom:nativo:paletas                              # paso 4.1 (ROM + entregado)
 ```
 
 La carpeta `roms pokemon/` está ignorada por Git: los binarios nunca entran al
@@ -148,6 +150,57 @@ entrada que cubre más tags:
 El plan guarda `palTab`, `palPaletas` (35 · 37 · 20 · 147 · 287 paletas válidas en
 el array) y `palCobertura` (117 · 40 · 123 · 196 · 191, una paleta resuelta por
 cada personaje extraído).
+
+### 4.1 Cómo se verifica la lectura (fase 54)
+
+El join `tag → paleta` es **por tag**, nunca por índice: el `paletteTag` que
+declara el struct (§3, offset 0x02) se busca en las entradas del array y se lee la
+paleta de la entrada que lleva **ese mismo tag**. `verificarPaletasRom()` lo
+comprueba contra la ROM:
+
+| # | Comprobación | Qué descarta |
+|---|---|---|
+| 1 | **Cobertura**: todos los tags de los personajes usados resuelven | una tabla incompleta o mal detectada |
+| 2 | **Sin duplicados**: ningún tag apunta a dos paletas distintas | un join ambiguo (¿cuál de las dos?) |
+| 3 | **Entrada bien formada**: puntero 4-alineado, 16 colores BGR555, índice 0 = cero | una «paleta» leída de datos cualesquiera |
+| 4 | **Paleta fuera de los frames del propio personaje** | una paleta sacada de sus propios píxeles |
+| 5 | **`reflectionPaletteTag` (0x04)** también está en el array | que el array detectado no sea `sObjectEventSpritePalettes[]` (evidencia independiente: los dos tags de un mismo struct apuntan al mismo array) |
+| 6 | **Cabeza del array**: la entrada anterior ya no es una paleta | estar leyendo una cola del array y perder las primeras paletas |
+| 7 | **Huecos de tag**: si el array va en orden creciente pero no consecutivo, se avisa de que un join por índice daría otra paleta | que alguien indexe por posición en vez de por tag |
+
+Y sobre el material ya entregado, sin necesidad de ROM (`auditarPaletas()`):
+
+- **Con registro en el plan** (`paletas`: `tags`, `refs` con el volcado de 32 bytes
+  de cada paleta y su sha1, escrito por `--extract` o `--paletas`): cada hoja tiene
+  que usar su tag, el tag tiene que apuntar a una paleta del registro y **todos los
+  colores de la hoja tienen que estar en esa paleta**. Si a un sprite se le hubiera
+  aplicado la paleta de otro, aparecerían colores que no son de su tag.
+- **Sin registro**: el invariante que sí se puede medir — todas las hojas que
+  comparten un tag tienen que caber en **una sola** paleta de 16 colores. Si a una
+  de ellas se le hubiera aplicado otra paleta, la unión se saldría de 16.
+
+```bash
+npm run verify:rom:nativo:paletas    # ROM (si está) + material entregado
+npm run refresh:rom:nativo:paletas   # relee el array de la ROM y refresca el registro del plan
+npm run selftest:rom:nativo:frames   # 35 comprobaciones, con ROM sintética
+```
+
+La autocomprobación monta una **ROM sintética** en memoria (tiles 4bpp, tabla
+`SpriteFrameImage[9]`, structs de 0x24 bytes, `gObjectEventGraphicsInfoPointers[]`
+y `sObjectEventSpritePalettes[]` con una paleta distinta por tag) y comprueba que
+el array se localiza en su sitio, que cada `graphicsId` se pinta con **su** paleta
+(el rojo de la entrada 1 es distinto por paleta), que el circuito completo
+ROM → hoja → PNG → color vuelve a dar los colores de esa paleta, y que los tres
+engaños se detectan: tag repetido con dos paletas, array con los índices
+desordenados y lectura de una cola del array en vez de su cabeza.
+
+Estado medido sobre lo entregado: **667 hojas · 241 tags distintos · 241/241
+grupos dentro de 16 colores** (≤15 colores opacos por hoja) y **0 fallos**. El
+registro `paletas` se escribe en el plan la próxima vez que se ejecute
+`--extract`/`--paletas` con las ROMs delante; entonces la comprobación pasa a ser
+color a color. Las ROMs de este entorno llegan en RAR de varias partes
+(`RAR5`), que no se puede abrir aquí: por eso la lectura se valida con la ROM
+sintética de la autocomprobación.
 
 ---
 
@@ -287,7 +340,8 @@ Un JSON de una línea con todo lo que hizo la extracción, por campaña:
 | `rom` | archivo de ROM usado |
 | `gfxTab`, `gfxFichas`, `gfxCobertura` | offset y calidad de `gObjectEventGraphicsInfoPointers[]` |
 | `palTab`, `palPaletas`, `palCobertura` | offset y calidad de `sObjectEventSpritePalettes[]` |
-| `sprites[<id>]` | `nombre`, `png`, `sha1`, `ancho`, `alto`, `frame`, `tag`, `usos` y, si hubo huecos, `reparados` / `prestados` |
+| `paletas` | registro del array: `tags` (tag → puntero), `refs` (volcado de 32 bytes y sha1 de cada paleta), entradas, cabeza exacta y duplicados (se escribe al extraer con ROM; §4.1) |
+| `sprites[<id>]` | `nombre`, `png`, `sha1`, `ancho`, `alto`, `frame`, `tag`, `paleta` (puntero de la paleta que le toca), `usos` y, si hubo huecos, `reparados` / `prestados` |
 | `faltantes` | `graphicsId` usados que no resuelven en la ROM |
 | `rechazados` | personajes cuyo contrato de 9 frames falló, con el motivo |
 | `resumen` | `sprites` (667) y `bytes` (1 039 209) |
@@ -329,12 +383,15 @@ Resultado: **3 529 eventos** de las cinco campañas muestran el personaje de su 
 
 ## 12. Verificación de lo entregado
 
-`npm run verify:rom:nativo` encadena tres comprobaciones:
+`npm run verify:rom:nativo` encadena cuatro comprobaciones:
 
 1. `rom_nativo_sprites.mjs --verify-frames` (§7): 667 hojas, 0 fallos, avisos
    contados por tipo.
-2. `rom_nativo_mapas.mjs --verify`: celdas de los mapas, `@tileset_id` y tilesets.
-3. `rom_nativo_sprites.mjs --verify`: cada evento de personaje usa el PNG que le
+2. `rom_nativo_sprites.mjs --verify-paletas` (§4.1): relee
+   `sObjectEventSpritePalettes[]` si están las ROMs y siempre comprueba el join
+   tag → paleta sobre las hojas entregadas (241/241 grupos dentro de 16 colores).
+3. `rom_nativo_mapas.mjs --verify`: celdas de los mapas, `@tileset_id` y tilesets.
+4. `rom_nativo_sprites.mjs --verify`: cada evento de personaje usa el PNG que le
    toca, con las dimensiones del plan y su huella **sha1**.
 
 `npm test` añade además la comprobación de los ZIP descargables y la suite maestra

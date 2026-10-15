@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T09:06:16.502Z",
+  "generatedAt": "2026-10-15T09:19:11.298Z",
   "git": {
     "branch": "arena/36bf89a0-fire-ash-modifier",
-    "commit": "d6e4b3e227e16a0142c722d2edd631156b040c17"
+    "commit": "f32a1a78a92aeb5cb708c748a31c3d46ff42e12b"
   },
   "scope": {
     "hashRoots": [
@@ -35,13 +35,13 @@
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/Map1001.rxdata",
-        "bytes": 93350,
-        "sha256": "1e863a1f83e741177a90715f9f94a726a2cdcf1cd453cf3c70f4e50d6d17cf89"
+        "bytes": 93379,
+        "sha256": "e813f9a7687864b4ea6607d7220f2b9542cee19059dd1ce5a344a17199a8b12d"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/Map1021.rxdata",
-        "bytes": 17812,
-        "sha256": "e4d3ae6458a743b3709b43a825409a08089a712d6d0be2a25cdccd512531957c"
+        "bytes": 18361,
+        "sha256": "57e42b325e9e6fed17b3b667a77e2b5a3f8687d9adbfe08c5b72b6c118cad6c4"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/Map1046.rxdata",
@@ -240,8 +240,8 @@
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/MapInfos.rxdata",
-        "bytes": 241952,
-        "sha256": "f2ee61a172108ad9b84a4aaf31909abad2808d51d68f77cb287c5183a8264dfe"
+        "bytes": 241938,
+        "sha256": "2194ea4218ecc72499e5e3f076afe6bc8dae43072712d261541e513a948c4b94"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/encounters.dat",
@@ -256,12 +256,12 @@
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/map_metadata.dat",
         "bytes": 510855,
-        "sha256": "05df04e61927448dd1e9ed5b1ae5afe0609a9eb5024ac035231a01dec37a5369"
+        "sha256": "7ab7729deb6455e14f8a937bd930df694be7cde26ef96002525cc7d86740269e"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/species.dat",
-        "bytes": 1073799,
-        "sha256": "1fded90ba2c147dbe3dbdd4af3904c4ccb3fa96fab8a1674b09f6215f24c1363"
+        "bytes": 1074483,
+        "sha256": "8b064cbef8e082119a06a1e366cc51040aa9d5e2156a146c80d4fde5ddda7163"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/trainer_types.dat",
@@ -27030,8 +27030,8 @@
       },
       {
         "path": "tools/rom_nativo_sprites.mjs",
-        "bytes": 50702,
-        "sha256": "54666cf30260540d032fcef52bb72c1543d416162efc0159a59d6f9c51af12cd"
+        "bytes": 81970,
+        "sha256": "4ac8d6b2dd6be9e336002695c6c6f614fca2a00b0022bef903999b357749da75"
       },
       {
         "path": "tools/setup_pokemon_studio.mjs",
