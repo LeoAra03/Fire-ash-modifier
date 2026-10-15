@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-14T17:11:44.096Z",
+  "generatedAt": "2026-10-15T09:06:16.502Z",
   "git": {
-    "branch": "arena/2608d599-fire-ash-modifier",
-    "commit": "c46abf34a1ae8724072196a39b8b1f957c167dd3"
+    "branch": "arena/36bf89a0-fire-ash-modifier",
+    "commit": "d6e4b3e227e16a0142c722d2edd631156b040c17"
   },
   "scope": {
     "hashRoots": [
@@ -1595,8 +1595,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map1001.rxdata",
-        "bytes": 93350,
-        "sha256": "1e863a1f83e741177a90715f9f94a726a2cdcf1cd453cf3c70f4e50d6d17cf89"
+        "bytes": 93379,
+        "sha256": "e813f9a7687864b4ea6607d7220f2b9542cee19059dd1ce5a344a17199a8b12d"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map1041.rxdata",
@@ -1895,8 +1895,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2142.rxdata",
-        "bytes": 18468,
-        "sha256": "f42b67c1f281de8d1036245e3e3c70aa2ddfb77dc21af1da683e6a83337bea9a"
+        "bytes": 18452,
+        "sha256": "e377f78e728de69ae2be397e19b4468f8b9a88a3216ba7310d1b9ac6f8be28c1"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2145.rxdata",
@@ -1990,18 +1990,18 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2192.rxdata",
-        "bytes": 78383,
-        "sha256": "9eaafab05d0315ac16dda2de1a50b3aac43786195aa39fbbfe906a78246f6da2"
+        "bytes": 78274,
+        "sha256": "6de7d5504e15254c2c4a9a3fc124381444b98cccbed63318f6acf51536337f3c"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2193.rxdata",
-        "bytes": 195871,
-        "sha256": "4089bb27b7b46689b5a452d96d3d0a39176d925968ac5a50a01284dc30d9c512"
+        "bytes": 195767,
+        "sha256": "85e4542a23bda519cd1945f2d627e0aa6a8311122f9265f5cdf0bab5a2982da7"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2194.rxdata",
-        "bytes": 18457,
-        "sha256": "9a7aee76c3015c89c9c82e013839f57f095fbe9a2f42829bc03fb3743efc47ce"
+        "bytes": 18442,
+        "sha256": "07e9765d761295b4dd9a95276e006d005a630b06ede40162a860ba1059a31ad0"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2195.rxdata",
@@ -8410,8 +8410,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/MapInfos.rxdata",
-        "bytes": 241952,
-        "sha256": "f2ee61a172108ad9b84a4aaf31909abad2808d51d68f77cb287c5183a8264dfe"
+        "bytes": 241938,
+        "sha256": "2194ea4218ecc72499e5e3f076afe6bc8dae43072712d261541e513a948c4b94"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Scripts.rxdata",
@@ -8441,7 +8441,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/map_metadata.dat",
         "bytes": 510855,
-        "sha256": "05df04e61927448dd1e9ed5b1ae5afe0609a9eb5024ac035231a01dec37a5369"
+        "sha256": "7ab7729deb6455e14f8a937bd930df694be7cde26ef96002525cc7d86740269e"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/metadata.dat",
@@ -8450,8 +8450,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/species.dat",
-        "bytes": 1073799,
-        "sha256": "1fded90ba2c147dbe3dbdd4af3904c4ccb3fa96fab8a1674b09f6215f24c1363"
+        "bytes": 1074483,
+        "sha256": "8b064cbef8e082119a06a1e366cc51040aa9d5e2156a146c80d4fde5ddda7163"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/trainer_types.dat",
@@ -26740,8 +26740,8 @@
       },
       {
         "path": "tools/forense/png.mjs",
-        "bytes": 3303,
-        "sha256": "5308ff7352110fe2360f3c7531e7341a0717f8f62c26b6aa516686fdc4334cd5"
+        "bytes": 8342,
+        "sha256": "5a96c778b17c2cfe7dba20a3fe8504367f1125b5e60734a2967536dc9a22db50"
       },
       {
         "path": "tools/forense_roms.mjs",
@@ -27030,8 +27030,8 @@
       },
       {
         "path": "tools/rom_nativo_sprites.mjs",
-        "bytes": 26437,
-        "sha256": "06936f0b37fab4aa58949627d099ce8160db3247bb33ae6b84fbd809ec7f6c91"
+        "bytes": 50702,
+        "sha256": "54666cf30260540d032fcef52bb72c1543d416162efc0159a59d6f9c51af12cd"
       },
       {
         "path": "tools/setup_pokemon_studio.mjs",

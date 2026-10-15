@@ -6,7 +6,7 @@
  * gráficos en las ROMs de GBA/GBC: 4 bpp con el índice 0 como transparente.
  */
 
-import { deflateSync } from 'node:zlib';
+import { deflateSync, inflateSync } from 'node:zlib';
 
 const TABLA_CRC = (() => {
   const t = new Int32Array(256);
@@ -96,4 +96,106 @@ export function pngRGBA(ancho, alto, rgba) {
     bloque('IDAT', deflateSync(crudo, { level: 9 })),
     bloque('IEND', Buffer.alloc(0)),
   ]);
+}
+
+/* ─────────────────────────────── lectura ───────────────────────────────── */
+
+/** Canales de color por tipo PNG (0 gris, 2 RGB, 3 indexado, 4 gris+alfa, 6 RGBA). */
+const CANALES = { 0: 1, 2: 3, 3: 1, 4: 2, 6: 4 };
+
+function desfiltrar(crudo, ancho, alto, porFila, bpp) {
+  const salida = new Uint8Array(porFila * alto);
+  let previa = new Uint8Array(porFila);
+  for (let y = 0; y < alto; y++) {
+    const off = y * (porFila + 1);
+    const filtro = crudo[off];
+    const fila = Uint8Array.from(crudo.subarray(off + 1, off + 1 + porFila));
+    for (let i = 0; i < porFila; i++) {
+      const a = i >= bpp ? fila[i - bpp] : 0;
+      const b = previa[i];
+      const c = i >= bpp ? previa[i - bpp] : 0;
+      if (filtro === 1) fila[i] = (fila[i] + a) & 0xff;
+      else if (filtro === 2) fila[i] = (fila[i] + b) & 0xff;
+      else if (filtro === 3) fila[i] = (fila[i] + ((a + b) >> 1)) & 0xff;
+      else if (filtro === 4) {
+        const pa = Math.abs(b - c), pb = Math.abs(a - c), pc = Math.abs(a + b - 2 * c);
+        fila[i] = (fila[i] + (pa <= pb && pa <= pc ? a : pb <= pc ? b : c)) & 0xff;
+      }
+    }
+    salida.set(fila, y * porFila);
+    previa = fila;
+  }
+  return salida;
+}
+
+/**
+ * Lector PNG sin dependencias (zlib de Node). Devuelve siempre `indices` (para
+ * imágenes indexadas) o `rgba` (para RGBA/grís), más la paleta resuelta con su
+ * alfa. Se usa para auditar los PNG que ya están escritos (p. ej. las hojas de
+ * personaje RMXP) sin cargar un canvas en Node.
+ */
+export function leerPng(bytes) {
+  if (bytes.length < 8 || bytes.readUInt32BE(0) !== 0x89504e47) throw new Error("no es un PNG");
+  let ancho = 0, alto = 0, profundidad = 0, tipoColor = 0, entrelazado = 0;
+  const idat = [];
+  const plte = [];
+  let trns = null;
+  let p = 8;
+  while (p + 8 <= bytes.length) {
+    const largo = bytes.readUInt32BE(p);
+    const tipo = bytes.toString("latin1", p + 4, p + 8);
+    const datos = bytes.subarray(p + 8, p + 8 + largo);
+    if (tipo === "IHDR") {
+      ancho = datos.readUInt32BE(0); alto = datos.readUInt32BE(4);
+      profundidad = datos[8]; tipoColor = datos[9]; entrelazado = datos[12];
+    } else if (tipo === "PLTE") { for (const v of datos) plte.push(v); }
+    else if (tipo === "tRNS") trns = Buffer.from(datos);
+    else if (tipo === "IDAT") idat.push(datos);
+    else if (tipo === "IEND") break;
+    p += 12 + largo;
+  }
+  if (!ancho || !alto) throw new Error("PNG sin IHDR válido");
+  if (entrelazado !== 0) throw new Error("PNG entrelazado: no soportado");
+  const canales = CANALES[tipoColor];
+  if (!canales) throw new Error(`tipo de color PNG ${tipoColor} no soportado`);
+  if (![1, 2, 4, 8, 16].includes(profundidad)) throw new Error(`profundidad PNG ${profundidad} no soportada`);
+  if (profundidad === 16) throw new Error("PNG de 16 bits por canal: no soportado");
+  const porPx = (canales * profundidad) / 8;
+  const porFila = Math.ceil((ancho * canales * profundidad) / 8);
+  const plano = desfiltrar(inflateSync(Buffer.concat(idat)), ancho, alto, porFila, porPx);
+  const leer = (x, y) => {
+    const off = y * porFila;
+    if (profundidad === 8) return Array.from(plano.subarray(off + x * canales, off + (x + 1) * canales));
+    if (profundidad === 4) { const v = plano[off + (x >> 1)]; return [(x & 1) ? v & 0x0f : v >> 4]; }
+    if (profundidad === 2) { const v = plano[off + (x >> 2)]; return [(v >> (6 - 2 * (x & 3))) & 3]; }
+    return [(plano[off + (x >> 3)] >> (7 - (x & 7))) & 1];
+  };
+  const paleta = [];
+  for (let i = 0; i < plte.length / 3; i += 1) {
+    paleta.push([plte[i * 3], plte[i * 3 + 1], plte[i * 3 + 2], trns && i < trns.length ? trns[i] : 255]);
+  }
+  const resultado = { ancho, alto, profundidad, tipoColor, paleta, entrelazado };
+  if (tipoColor === 3) {
+    const indices = new Uint8Array(ancho * alto);
+    for (let y = 0; y < alto; y++) for (let x = 0; x < ancho; x++) indices[y * ancho + x] = leer(x, y)[0];
+    resultado.indices = indices;
+    resultado.rgba = new Uint8Array(ancho * alto * 4);
+    for (let i = 0; i < ancho * alto; i += 1) {
+      const c = paleta[indices[i]] ?? [0, 0, 0, 0];
+      resultado.rgba[i * 4] = c[0]; resultado.rgba[i * 4 + 1] = c[1]; resultado.rgba[i * 4 + 2] = c[2]; resultado.rgba[i * 4 + 3] = c[3];
+    }
+  } else {
+    const rgba = new Uint8Array(ancho * alto * 4);
+    for (let y = 0; y < alto; y++) {
+      for (let x = 0; x < ancho; x++) {
+        const v = leer(x, y);
+        const d = (y * ancho + x) * 4;
+        if (tipoColor === 6) { rgba[d] = v[0]; rgba[d + 1] = v[1]; rgba[d + 2] = v[2]; rgba[d + 3] = profundidad === 8 ? v[3] : 255; }
+        else if (tipoColor === 2) { rgba[d] = v[0]; rgba[d + 1] = v[1]; rgba[d + 2] = v[2]; rgba[d + 3] = 255; }
+        else { rgba[d] = v[0]; rgba[d + 1] = v[0]; rgba[d + 2] = v[0]; rgba[d + 3] = tipoColor === 4 ? (profundidad === 8 ? v[1] : 255) : 255; }
+      }
+    }
+    resultado.rgba = rgba;
+  }
+  return resultado;
 }

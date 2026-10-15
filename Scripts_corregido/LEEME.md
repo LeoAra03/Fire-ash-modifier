@@ -19,6 +19,13 @@ verificadas, de las cuales **874 996 son sólidas (58,9 %)**.
 lado, más sus pasos) y se arma una hoja RMXP de 4 columnas × 4 filas por personaje:
 **667 personajes nativos** en `Graphics/Characters/`.
 
+**2 bis. Los 9 frames 4bpp se verifican antes de armar cada hoja.** Medidas, rejilla de tiles 8×8,
+16 colores, las tres poses quietas y sus seis pasos: si algo no cuadra, la hoja no se escribe
+(`rechazados` en el plan). La auditoría de las 667 hojas encontró **155 frames vacíos en 41
+personajes** —huecos que en RMXP hacen parpadear al personaje o lo desaparecen entero si el hueco
+es la pose quieta— y se cubrieron con la pose quieta de su dirección (129) o con la fila de abajo
+(26, objetos que en la ROM sólo traen el frente). `npm run verify:rom:nativo:frames` da **0 fallos**.
+
 **3. Los eventos hablan como en el ROM.** **3 538 eventos de campaña** muestran el personaje que
 les asigna la ROM y **759 diálogos originales** reemplazan el andamiaje en el primer mensaje.
 
