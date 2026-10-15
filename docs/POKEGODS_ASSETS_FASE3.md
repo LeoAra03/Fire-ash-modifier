@@ -75,8 +75,10 @@ Definidas en `content/pokegods_originales.json` → `forms`:
 | Forma | Nivel | IVs | Reglas |
 |---|---|---|---|
 | **Alfa** | 85 | 31 | Se puede huir y capturar. Reglas normales. |
-| **Beta** | 100 | 31 | EV repartidos, habilidad oculta, **clima que daña al jugador**. |
-| **Omega** | 100 | 31 | Además **rompe una regla del combate** (inmunidades extremas, turnos extra, ignora precisión). |
+| **Beta** | 100 | 31 | EVs 252/252/6, habilidad oculta, **clima que daña al jugador**, **no se puede huir**. |
+| **Omega** | 115 | 31 | **Shiny**, EVs 252/252/6, **Wonder Guard**, clima extremo y fondo de distorsión; **no se puede huir**. |
+
+Fuente de verdad: `content/pokegods_originales.json` → `forms`. Verificación en `docs/VERIFICACION_FORMAS_ANOMALIA.md`.
 
 No usan niveles estándar: la dificultad la marca la forma, no el nivel.
 
