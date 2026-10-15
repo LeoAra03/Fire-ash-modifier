@@ -124,6 +124,13 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **40/40 anclas Tier 1 confirmadas:** mapas 1021–1996 (un ancla cada 25 mapas: 1021, 1046, 1071 … 1996), switches 708–747 — los 40 nombrados con el patrón `POKEMOD ATLAS SEAL*` (el 708 es `SEAL 01 BELL`, del 722–747 `SEAL 15–40`), variable compartida 103 (`POKEMOD ATLAS NARRATIVE SEALS`) y decisiones 104–143 las 40 nombradas.
 - Cada mapa ancla tiene instalados su evento `PokeMod Tier1: Conductor <título de ancla>` y sus NPCs `PokeMod Tier1: NPC <nombre>` (verificado 40/40, 0 fallos).
 
+### FASE 19 — Dimensional Nightmare y sus subconjuntos
+
+- **151/151 mapas de Dimensional Nightmare (2040–2190)** presentes en disco y en `MapInfos.rxdata`: de `DN 2040 · Antesala de las Grietas` a `DN 2190 · Lavender Syndrome — Campanario Final`.
+- **NEXO (2136–2140): 5/5** — Falla Cero, Pueblo Reensamblado, Centro Pokémon Sumergido, Pasillo de Código, Sala del Testigo. **Liga Oscura (2141–2142): 2/2** — Pórtico del Código, Coliseo del Vínculo. Ambos son subconjuntos de DN: sus conteos no se suman al total.
+- Verificadores oficiales ejecutados: **`dn:liga:verify` exit 0** (mapas 2141/2142, MAD PIKACHU nv 175, 4 chispas, Pórtico BFS 100 % · Coliseo BFS 97 %), **`dn:events:verify` exit 0** (anomalías por episodio verificadas) y **`dn:flags:verify` exit 0** (54 switches, 43 variables DN).
+- Nota preexistente: `dn:maps:verify` no es ejecutable en este espacio de trabajo porque falta `content/dimensional_nightmare_tiles_2x.json`, dependiente de `reference/dimensional_nightmare/slices/` purgado — el límite conocido documentado en `docs/DLC_TOTAL.md` §9; el paquete DN se construye bien y la suite maestra (FASE 1) ya auditó 104 mapas y 946 eventos creepypasta en verde.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
