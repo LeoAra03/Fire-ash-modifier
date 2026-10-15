@@ -155,6 +155,7 @@
     "rom:nativo:mapas": "node tools/rom_nativo_mapas.mjs",
     "rom:nativo:sprites": "node tools/rom_nativo_sprites.mjs",
     "verify:rom:nativo": "node tools/rom_nativo_mapas.mjs --verify && node tools/rom_nativo_sprites.mjs --verify",
+    "verify:rom:nativo:tilesets": "node tools/qa/verify_rom_nativo_tilesets.mjs",
     "canon:arceus": "node tools/apply_canon_arceus.mjs",
     "verify:canon:arceus": "node tools/apply_canon_arceus.mjs --verify",
     "audit:atlas:tiles": "node tools/atlas_tile_audit.mjs",
