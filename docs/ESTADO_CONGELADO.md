@@ -96,6 +96,11 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - Total auditado: **1702 batallas en 747 eventos** — derrota permanente 691/747, revanchas opcionales por menú 70. Por bloque: Horizontes 241/241 permanentes (canLose 241/241), Atlas Mil 456 (437 permanentes + 56 revanchas + 19 salvajes Pokégod repetibles por diseño), Monte Silver 8/8, Multiversal 5/5, Teckel/Isla Espejo 4 (líder con revancha por menú).
 - La Torre Grandeur Club (33 eventos, Map 141/151/214) es repetible **por diseño del juego original** y se reporta aparte; sus entradas «sin canLose» no son contenido DLC. Ningún jefe del DLC deja estado inconsistente tras la primera victoria.
 
+### FASE 14 — Colisiones de eventos y rutas de guardado
+
+- **`npm run verify:event-collision`: exit 0** — `Game_Character` bloquea eventos con sprite aunque estén marcados `Through`; `Game_Event` hace sólidos los eventos con `character_name`; `Game_Player` conserva la interacción con sprites sólidos (también al cargar el mapa encima). Sin colisiones de eventos.
+- **`npm run verify:save-path`: exit 0** — `PokemonSystemSettings.dat` y `GameSpeedSetting.dat` ya no se escriben como auxiliares en «Save Files»: se guardan junto a `Game.rxdata`, cuya carpeta ya conoce `SaveData`. Descartado el `Errno::ENOENT` en PC/Android (Kirin). Sin rutas de guardado rotas.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
