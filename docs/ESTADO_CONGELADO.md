@@ -154,6 +154,13 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **Sección 2:** warps condicionados internos — desde el hub 1001 (Vía/Barcos/Portal Atlas con **873**; campañas ROM con **876**; sectores Atlas Mil con **706**; Cronista con **704**), puertas de gimnasio de dimensiones (**960–964** = `dim.abierta`), cadena de medallas del circuito Atlas (**970–976**, primera puerta libre, variable 319) y entrada DN vía 2030 (transitiva).
 - **Sección 3:** leyenda de switches con nombre en `System.rxdata` y significado.
 
+### FASE 23 — Huecos reales de switches y variables
+
+- Revisada y ampliada **`docs/AUDITORIA_TOTAL_FLAGS.md`** con la sección «Huecos reales consumibles por el plan», cruzando uso literal × nombres de `System.rxdata` × constantes de script (`PokeMod_RutaDeDios`, `PokeMod_CanonArceus`) × registro DN (`dn_name_flags`, verificado en verde).
+- **Switches:** zona original (75 libres, no consumibles) y reservada (0 libres) intactas. En la zona PokeMod, de 32 libres aparentes, **12 están reservados** (868 bloque documentado, 869/881 constantes, 902/909–916 registro DN) y quedan **20 huecos reales**: 949, 958, 959, 965–969, 978–989.
+- **Variables:** **17 huecos reales** (308, 309, 323–329, 334–340, 349); las 5 libres aparentes restantes (267, 280, 286–288) son registro DN.
+- **Regla de consumo fijada:** crecer primero por **switches ≥ 995 y variables ≥ 355**; los huecos interiores solo con cautela; toda asignación se registra en `docs/qa/politica_ids.md` y regenera el inventario.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
