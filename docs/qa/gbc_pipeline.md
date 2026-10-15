@@ -39,6 +39,9 @@ npm run verify:rom:nativo:frames                               # paso 7 sobre lo
 npm run repair:rom:nativo:frames                               # cubre huecos de frames
 npm run selftest:rom:nativo:frames                             # 35 comprobaciones sintéticas
 npm run verify:rom:nativo:paletas                              # paso 4.1 (ROM + entregado)
+npm run audit:campanas:paletas                                 # paso 13 (paleta de campaña vs declarada)
+npm run verify:campanas:paletas                                # paso 13, recalcula y compara
+npm run selftest:campanas:paletas                              # 16 comprobaciones sintéticas
 ```
 
 La carpeta `roms pokemon/` está ignorada por Git: los binarios nunca entran al
@@ -400,3 +403,56 @@ sprites y de frames da 0 fallos; la de mapas sigue fallando por celdas que no
 coinciden con el ROM en `Map3125`, `Map3323`, `Map3385`, `Map3805`, `Map3839`,
 `Map3874` y dos eventos sobre celdas sólidas en `Map3120`, todo anterior a este
 pipeline de sprites.
+
+---
+
+## 13. La paleta de campaña contra la paleta declarada
+
+Hasta aquí se ha verificado **de qué sprite es cada paleta** (§4.1). El paso que
+cierra el círculo es el contrario: comprobar que la paleta de cada dimensión
+invitada se parece a la que esa dimensión **declara** en
+`content/rom_campaigns_complete.json` (`campaigns[].palette`), que es texto
+narrativo, y que ninguna quedó teñida con el verde de la dimensión creepypasta.
+Lo mide `tools/audit_campaign_palettes.mjs`; el informe vive en
+[`docs/qa/paletas_campanas.md`](paletas_campanas.md) con los números en
+`content/campanas_paletas.json`.
+
+```bash
+npm run audit:campanas:paletas      # mide el arte y reescribe el informe
+npm run verify:campanas:paletas     # recalcula y compara con el informe guardado
+npm run selftest:campanas:paletas   # 16 comprobaciones sintéticas
+```
+
+**Cómo se mide.** Sobre el arte nativo ya extraído de esa dimensión (los 212
+tilesets `ROMN_<índice>_p<n>.png` y las 667 hojas `$ROMN_<índice>_g<id>.png`), se
+cuenta cada color con su frecuencia y se reduce a una **paleta GBC de cuatro
+tonos** por cuantiles de luminancia —el mismo formato de cuatro tonos que la
+paleta verde de la dimensión creepypasta (`#0f380f · #306230 · #8bac0f ·
+#9bbc0f`)—, más el reparto por familias de tono, la temperatura (frío / cálido /
+neutro) y la luminosidad y saturación medias. La unión declaración ↔ arte es
+`sourceRom` → `rom` de `content/rom_nativo.json`.
+
+**Cómo se compara.** El texto declarado se trocea por comas y conjunciones y cada
+término se cruza con la tabla `PALABRAS` (qué familia de tono nombra y qué
+temperatura o brillo implica). Veredictos: **coincide**, **parcial** (el color
+está pero el brillo o la temperatura no cuadran) y **no coincide** (el término
+nombra una familia ausente del arte). Sólo hacen fallar la verificación
+`no coincide`, la falta de arte, una declaración vacía y que una dimensión haya
+quedado con el verde de la dimensión creepypasta (`esVerdeGameBoy`, umbral 30).
+
+**Estado medido** (5 dimensiones · 895 archivos · 7 283 colores):
+
+| Dimensión | Paleta GBC medida | Lum. | Frío | Términos |
+|---|---|---|---|---|
+| `glazed` | #352a2a #716859 #9a9e85 #d5d6be | 0.503 | 23.8 % | 3/3 |
+| `light_platinum` | #322d35 #6d5f73 #8b9577 #cccab3 | 0.478 | 35.7 % | 3/3 |
+| `liquid_crystal` | #3b3338 #7c6c66 #9da97c #d5d7c5 | 0.526 | 24.3 % | 4/4 |
+| `tfoh` | #332d31 #736a5e #9ca37c #d0dcb4 | 0.512 | 22.5 % | 3/3 |
+| `unbound` | #292530 #626163 #889781 #c6d4b5 | 0.476 | 24.6 % | 2/3 |
+
+15 términos confirmados, 0 parciales, 0 sin respaldo, 3 avisos (un término de
+Unbound no es medible en color —«decisiones difíciles»—, Glazed es la cuarta de
+cinco en frío y Light Platinum la cuarta en luminancia), **0 fallos**. Conclusión
+documentada: las cinco comparten base azul + verde y se separan sobre todo por
+amarillo y rojo, así que la paleta declarada describe la **intención narrativa**
+de cada dimensión más que una firma cromática exclusiva.

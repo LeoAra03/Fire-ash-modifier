@@ -1,0 +1,1055 @@
+{
+ "generatedBy": "tools/audit_campaign_palettes.mjs",
+ "declaradoEn": "content/rom_campaigns_complete.json",
+ "medidoEn": "pokemon_fire_ash/Graphics (tilesets ROMN_<índice>_p*.png + personajes $ROMN_<índice>_g*.png)",
+ "comparacionContra": "content/dimensional_nightmare_visual_contract.json (paleta GBC de cuatro tonos de la dimensión creepypasta)",
+ "umbrales": {
+  "familia": 0.04,
+  "frio": 0.18,
+  "neutro": 0.25,
+  "luminancia": 0.45,
+  "verdeGameBoy": 30
+ },
+ "verdeDn": [
+  "#0f380f",
+  "#306230",
+  "#8bac0f",
+  "#9bbc0f"
+ ],
+ "sintesis": {
+  "frio": {
+   "campo": "frio",
+   "min": 0.225,
+   "minId": "tfoh",
+   "max": 0.357,
+   "maxId": "light_platinum",
+   "rango": 0.131
+  },
+  "calido": {
+   "campo": "calido",
+   "min": 0.324,
+   "minId": "light_platinum",
+   "max": 0.345,
+   "maxId": "unbound",
+   "rango": 0.021
+  },
+  "luminancia": {
+   "campo": "luminancia",
+   "min": 0.476,
+   "minId": "unbound",
+   "max": 0.526,
+   "maxId": "liquid_crystal",
+   "rango": 0.05
+  },
+  "saturacion": {
+   "campo": "saturacion",
+   "min": 0.342,
+   "minId": "liquid_crystal",
+   "max": 0.401,
+   "maxId": "unbound",
+   "rango": 0.059
+  },
+  "colores": {
+   "campo": "colores",
+   "min": 452,
+   "minId": "light_platinum",
+   "max": 2541,
+   "maxId": "unbound",
+   "rango": 2089
+  },
+  "familias": [
+   {
+    "familia": "azul",
+    "max": 0.333,
+    "maxId": "light_platinum",
+    "min": 0.181,
+    "minId": "glazed",
+    "rango": 0.152
+   },
+   {
+    "familia": "naranja",
+    "max": 0.2,
+    "maxId": "unbound",
+    "min": 0.117,
+    "minId": "tfoh",
+    "rango": 0.083
+   },
+   {
+    "familia": "verde",
+    "max": 0.191,
+    "maxId": "unbound",
+    "min": 0.113,
+    "minId": "glazed",
+    "rango": 0.077
+   },
+   {
+    "familia": "amarillo",
+    "max": 0.156,
+    "maxId": "tfoh",
+    "min": 0.053,
+    "minId": "light_platinum",
+    "rango": 0.103
+   },
+   {
+    "familia": "rojo",
+    "max": 0.082,
+    "maxId": "unbound",
+    "min": 0.061,
+    "minId": "liquid_crystal",
+    "rango": 0.021
+   },
+   {
+    "familia": "cian",
+    "max": 0.053,
+    "maxId": "glazed",
+    "min": 0.011,
+    "minId": "liquid_crystal",
+    "rango": 0.042
+   },
+   {
+    "familia": "rosa",
+    "max": 0.023,
+    "maxId": "light_platinum",
+    "min": 0.009,
+    "minId": "liquid_crystal",
+    "rango": 0.014
+   },
+   {
+    "familia": "violeta",
+    "max": 0.013,
+    "maxId": "tfoh",
+    "min": 0.001,
+    "minId": "light_platinum",
+    "rango": 0.011
+   }
+  ],
+  "familiasEnTop4": {
+   "rojo": 0,
+   "naranja": 3,
+   "amarillo": 2,
+   "verde": 5,
+   "cian": 0,
+   "azul": 5,
+   "violeta": 0,
+   "rosa": 0
+  },
+  "familiasComunes": [
+   "azul",
+   "verde"
+  ],
+  "familiasDistintivas": [
+   "amarillo",
+   "rojo"
+  ],
+  "base": "azul",
+  "texto": [
+   "Las 5 dimensiones invitadas comparten una base cromática: azul, verde aparecen en el top-4 de tono de todas y los neutros oscilan entre el 31.9 % y el 43.7 %.",
+   "El reparto frío va del 22.5 % (tfoh) al 35.7 % (light_platinum); la luminancia media, del 0.476 (unbound) al 0.526 (liquid_crystal).",
+   "Con esa horquilla, la paleta declarada describe la **intención narrativa** de cada dimensión más que una firma cromática exclusiva: las cinco se apoyan en los mismos materiales de GBA/GBC (hierba, agua, tierra y piedra) y se distinguen por matices.",
+   "Las familias que sí separan a unas dimensiones de otras son amarillo, rojo."
+  ]
+ },
+ "distancias": {
+  "pares": [
+   {
+    "a": "glazed",
+    "b": "tfoh",
+    "distancia": 4.833
+   },
+   {
+    "a": "liquid_crystal",
+    "b": "tfoh",
+    "distancia": 6.167
+   },
+   {
+    "a": "light_platinum",
+    "b": "unbound",
+    "distancia": 7
+   },
+   {
+    "a": "glazed",
+    "b": "liquid_crystal",
+    "distancia": 7.333
+   },
+   {
+    "a": "light_platinum",
+    "b": "tfoh",
+    "distancia": 8.5
+   },
+   {
+    "a": "tfoh",
+    "b": "unbound",
+    "distancia": 8.833
+   },
+   {
+    "a": "glazed",
+    "b": "unbound",
+    "distancia": 9.167
+   },
+   {
+    "a": "glazed",
+    "b": "light_platinum",
+    "distancia": 10.5
+   },
+   {
+    "a": "light_platinum",
+    "b": "liquid_crystal",
+    "distancia": 11.833
+   },
+   {
+    "a": "liquid_crystal",
+    "b": "unbound",
+    "distancia": 13.167
+   }
+  ],
+  "masParecidas": {
+   "a": "glazed",
+   "b": "tfoh",
+   "distancia": 4.833
+  },
+  "masDistintas": {
+   "a": "liquid_crystal",
+   "b": "unbound",
+   "distancia": 13.167
+  }
+ },
+ "resumen": {
+  "dimensiones": 5,
+  "archivosMedidos": 895,
+  "coloresDistintos": 7283,
+  "terminosConfirmados": 15,
+  "terminosParciales": 0,
+  "terminosSinRespaldo": 0,
+  "avisos": 3
+ },
+ "dimensiones": [
+  {
+   "id": "glazed",
+   "titulo": "Glazed",
+   "primeraMapa": 3000,
+   "ultimoMapa": 3110,
+   "mapas": 111,
+   "rom": "GlazedESPB6.gba",
+   "indiceNativo": "0",
+   "declarada": {
+    "etiqueta": "postgame A",
+    "texto": "postgame A: escarcha, lagos y ciudades que recuerdan dos líneas temporales",
+    "terminos": [
+     "escarcha",
+     "lagos",
+     "ciudades que recuerdan dos líneas temporales"
+    ]
+   },
+   "medido": {
+    "archivos": 151,
+    "tilesets": 34,
+    "personajes": 117,
+    "colores": 1133,
+    "pixeles": 10889024,
+    "luminancia": 0.503,
+    "saturacion": 0.361,
+    "temperatura": {
+     "frio": 0.2375,
+     "calido": 0.3435,
+     "neutro": 0.419
+    },
+    "familia": {
+     "rojo": 0.0661,
+     "naranja": 0.1836,
+     "amarillo": 0.0938,
+     "verde": 0.1134,
+     "cian": 0.0529,
+     "azul": 0.1805,
+     "violeta": 0.0041,
+     "rosa": 0.0145,
+     "neutro": 0.2911
+    },
+    "principales": [
+     [
+      "neutro",
+      0.2911
+     ],
+     [
+      "naranja",
+      0.1836
+     ],
+     [
+      "azul",
+      0.1805
+     ],
+     [
+      "verde",
+      0.1134
+     ]
+    ],
+    "gbc": [
+     "#352a2a",
+     "#716859",
+     "#9a9e85",
+     "#d5d6be"
+    ],
+    "gbcRgb": [
+     [
+      53,
+      42,
+      42
+     ],
+     [
+      113,
+      104,
+      89
+     ],
+     [
+      154,
+      158,
+      133
+     ],
+     [
+      213,
+      214,
+      190
+     ]
+    ]
+   },
+   "terminos": [
+    {
+     "termino": "escarcha",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "escarcha/nieve",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "cian",
+          "azul"
+         ],
+         "valor": 0.2334,
+         "minimo": 0.04,
+         "ok": true
+        },
+        {
+         "tipo": "temperatura",
+         "valor": 0.2375,
+         "minimo": 0.18,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "lagos",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "agua/costa",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "azul",
+          "cian",
+          "verde"
+         ],
+         "valor": 0.3468,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "ciudades que recuerdan dos líneas temporales",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "tierra/camino",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "naranja",
+          "amarillo",
+          "verde"
+         ],
+         "valor": 0.3908,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "avisos": [
+    "declara frío pero es la 4.ª de 5 en azules/cianes (23.8 %); la más fría es light_platinum"
+   ]
+  },
+  {
+   "id": "light_platinum",
+   "titulo": "Light Platinum",
+   "primeraMapa": 3120,
+   "ultimoMapa": 3138,
+   "mapas": 19,
+   "rom": "LightPlatinumEsp.gba",
+   "indiceNativo": "1",
+   "declarada": {
+    "etiqueta": "postgame A",
+    "texto": "postgame A: costas luminosas, rutas largas y plazas de una liga viajera",
+    "terminos": [
+     "costas luminosas",
+     "rutas largas",
+     "plazas de una liga viajera"
+    ]
+   },
+   "medido": {
+    "archivos": 47,
+    "tilesets": 7,
+    "personajes": 40,
+    "colores": 452,
+    "pixeles": 3309592,
+    "luminancia": 0.478,
+    "saturacion": 0.395,
+    "temperatura": {
+     "frio": 0.3566,
+     "calido": 0.3241,
+     "neutro": 0.3194
+    },
+    "familia": {
+     "rojo": 0.0731,
+     "naranja": 0.1981,
+     "amarillo": 0.0529,
+     "verde": 0.1358,
+     "cian": 0.0227,
+     "azul": 0.3325,
+     "violeta": 0.0014,
+     "rosa": 0.0232,
+     "neutro": 0.1603
+    },
+    "principales": [
+     [
+      "azul",
+      0.3325
+     ],
+     [
+      "naranja",
+      0.1981
+     ],
+     [
+      "neutro",
+      0.1603
+     ],
+     [
+      "verde",
+      0.1358
+     ]
+    ],
+    "gbc": [
+     "#322d35",
+     "#6d5f73",
+     "#8b9577",
+     "#cccab3"
+    ],
+    "gbcRgb": [
+     [
+      50,
+      45,
+      53
+     ],
+     [
+      109,
+      95,
+      115
+     ],
+     [
+      139,
+      149,
+      119
+     ],
+     [
+      204,
+      202,
+      179
+     ]
+    ]
+   },
+   "terminos": [
+    {
+     "termino": "costas luminosas",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "agua/costa",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "azul",
+          "cian",
+          "verde"
+         ],
+         "valor": 0.491,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      },
+      {
+       "palabra": "luz",
+       "filas": [
+        {
+         "tipo": "luminancia",
+         "valor": 0.478,
+         "minimo": 0.45,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "rutas largas",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "tierra/camino",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "naranja",
+          "amarillo",
+          "verde"
+         ],
+         "valor": 0.38680000000000003,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "plazas de una liga viajera",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "tierra/camino",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "naranja",
+          "amarillo",
+          "verde"
+         ],
+         "valor": 0.38680000000000003,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "avisos": [
+    "declara luminosidad pero su luminancia media (0.478) es la 4.ª de 5"
+   ]
+  },
+  {
+   "id": "liquid_crystal",
+   "titulo": "Liquid Crystal",
+   "primeraMapa": 3200,
+   "ultimoMapa": 3631,
+   "mapas": 432,
+   "rom": "LiquidCrystalESP.gba",
+   "indiceNativo": "2",
+   "declarada": {
+    "etiqueta": "postgame A",
+    "texto": "postgame A: lluvia de Johto, ruinas, faros y cristal vivo",
+    "terminos": [
+     "lluvia de Johto",
+     "ruinas",
+     "faros",
+     "cristal vivo"
+    ]
+   },
+   "medido": {
+    "archivos": 175,
+    "tilesets": 51,
+    "personajes": 124,
+    "colores": 1169,
+    "pixeles": 19461572,
+    "luminancia": 0.526,
+    "saturacion": 0.342,
+    "temperatura": {
+     "frio": 0.2428,
+     "calido": 0.3339,
+     "neutro": 0.4233
+    },
+    "familia": {
+     "rojo": 0.0613,
+     "naranja": 0.1173,
+     "amarillo": 0.1553,
+     "verde": 0.1893,
+     "cian": 0.0111,
+     "azul": 0.2257,
+     "violeta": 0.006,
+     "rosa": 0.0088,
+     "neutro": 0.2252
+    },
+    "principales": [
+     [
+      "azul",
+      0.2257
+     ],
+     [
+      "neutro",
+      0.2252
+     ],
+     [
+      "verde",
+      0.1893
+     ],
+     [
+      "amarillo",
+      0.1553
+     ]
+    ],
+    "gbc": [
+     "#3b3338",
+     "#7c6c66",
+     "#9da97c",
+     "#d5d7c5"
+    ],
+    "gbcRgb": [
+     [
+      59,
+      51,
+      56
+     ],
+     [
+      124,
+      108,
+      102
+     ],
+     [
+      157,
+      169,
+      124
+     ],
+     [
+      213,
+      215,
+      197
+     ]
+    ]
+   },
+   "terminos": [
+    {
+     "termino": "lluvia de Johto",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "agua/costa",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "azul",
+          "cian",
+          "verde"
+         ],
+         "valor": 0.42610000000000003,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "ruinas",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "ruinas",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "verde",
+          "naranja",
+          "amarillo"
+         ],
+         "valor": 0.4619,
+         "minimo": 0.04,
+         "ok": true
+        },
+        {
+         "tipo": "temperatura",
+         "valor": 0.4233,
+         "minimo": 0.25,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "faros",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "agua/costa",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "azul",
+          "cian",
+          "verde"
+         ],
+         "valor": 0.42610000000000003,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "cristal vivo",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "agua/costa",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "azul",
+          "cian",
+          "verde"
+         ],
+         "valor": 0.42610000000000003,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "avisos": []
+  },
+  {
+   "id": "tfoh",
+   "titulo": "TFOH",
+   "primeraMapa": 3700,
+   "ultimoMapa": 3944,
+   "mapas": 245,
+   "rom": "Pokémon TFOH-Beta3.gba",
+   "indiceNativo": "3",
+   "declarada": {
+    "etiqueta": "postgame A",
+    "texto": "postgame A: frontera, archipiélagos y caminos de una aventura que siguió creciendo",
+    "terminos": [
+     "frontera",
+     "archipiélagos",
+     "caminos de una aventura que siguió creciendo"
+    ]
+   },
+   "medido": {
+    "archivos": 254,
+    "tilesets": 55,
+    "personajes": 199,
+    "colores": 1988,
+    "pixeles": 20807812,
+    "luminancia": 0.512,
+    "saturacion": 0.378,
+    "temperatura": {
+     "frio": 0.2251,
+     "calido": 0.3378,
+     "neutro": 0.4371
+    },
+    "familia": {
+     "rojo": 0.0645,
+     "naranja": 0.1172,
+     "amarillo": 0.1562,
+     "verde": 0.1752,
+     "cian": 0.0159,
+     "azul": 0.1967,
+     "violeta": 0.0126,
+     "rosa": 0.0209,
+     "neutro": 0.241
+    },
+    "principales": [
+     [
+      "neutro",
+      0.241
+     ],
+     [
+      "azul",
+      0.1967
+     ],
+     [
+      "verde",
+      0.1752
+     ],
+     [
+      "amarillo",
+      0.1562
+     ]
+    ],
+    "gbc": [
+     "#332d31",
+     "#736a5e",
+     "#9ca37c",
+     "#d0dcb4"
+    ],
+    "gbcRgb": [
+     [
+      51,
+      45,
+      49
+     ],
+     [
+      115,
+      106,
+      94
+     ],
+     [
+      156,
+      163,
+      124
+     ],
+     [
+      208,
+      220,
+      180
+     ]
+    ]
+   },
+   "terminos": [
+    {
+     "termino": "frontera",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "tierra/camino",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "naranja",
+          "amarillo",
+          "verde"
+         ],
+         "valor": 0.4486,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "archipiélagos",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "agua/costa",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "azul",
+          "cian",
+          "verde"
+         ],
+         "valor": 0.38780000000000003,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "caminos de una aventura que siguió creciendo",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "tierra/camino",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "naranja",
+          "amarillo",
+          "verde"
+         ],
+         "valor": 0.4486,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "avisos": []
+  },
+  {
+   "id": "unbound",
+   "titulo": "Pokémon Unbound",
+   "primeraMapa": 4000,
+   "ultimoMapa": 4419,
+   "mapas": 420,
+   "rom": "Pokemon unbound gba.gba",
+   "indiceNativo": "4",
+   "declarada": {
+    "etiqueta": "postgame A",
+    "texto": "postgame A: caminos de frontera, decisiones difíciles y refugios construidos en equipo",
+    "terminos": [
+     "caminos de frontera",
+     "decisiones difíciles",
+     "refugios construidos en equipo"
+    ]
+   },
+   "medido": {
+    "archivos": 268,
+    "tilesets": 65,
+    "personajes": 203,
+    "colores": 2541,
+    "pixeles": 22304624,
+    "luminancia": 0.476,
+    "saturacion": 0.401,
+    "temperatura": {
+     "frio": 0.2456,
+     "calido": 0.3448,
+     "neutro": 0.4097
+    },
+    "familia": {
+     "rojo": 0.082,
+     "naranja": 0.1998,
+     "amarillo": 0.063,
+     "verde": 0.1909,
+     "cian": 0.0471,
+     "azul": 0.1879,
+     "violeta": 0.0105,
+     "rosa": 0.0185,
+     "neutro": 0.2003
+    },
+    "principales": [
+     [
+      "neutro",
+      0.2003
+     ],
+     [
+      "naranja",
+      0.1998
+     ],
+     [
+      "verde",
+      0.1909
+     ],
+     [
+      "azul",
+      0.1879
+     ]
+    ],
+    "gbc": [
+     "#292530",
+     "#626163",
+     "#889781",
+     "#c6d4b5"
+    ],
+    "gbcRgb": [
+     [
+      41,
+      37,
+      48
+     ],
+     [
+      98,
+      97,
+      99
+     ],
+     [
+      136,
+      151,
+      129
+     ],
+     [
+      198,
+      212,
+      181
+     ]
+    ]
+   },
+   "terminos": [
+    {
+     "termino": "caminos de frontera",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "tierra/camino",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "naranja",
+          "amarillo",
+          "verde"
+         ],
+         "valor": 0.4537,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "termino": "decisiones difíciles",
+     "veredicto": "sin expectativa",
+     "expectativas": []
+    },
+    {
+     "termino": "refugios construidos en equipo",
+     "veredicto": "coincide",
+     "expectativas": [
+      {
+       "palabra": "tierra/camino",
+       "filas": [
+        {
+         "tipo": "familia",
+         "familias": [
+          "naranja",
+          "amarillo",
+          "verde"
+         ],
+         "valor": 0.4537,
+         "minimo": 0.04,
+         "ok": true
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "avisos": []
+  }
+ ],
+ "errores": [],
+ "avisos": [
+  "unbound: «decisiones difíciles» no tiene expectativa de color medible",
+  "glazed: declara frío pero es la 4.ª de 5 en azules/cianes (23.8 %); la más fría es light_platinum",
+  "light_platinum: declara luminosidad pero su luminancia media (0.478) es la 4.ª de 5"
+ ]
+}

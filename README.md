@@ -55,6 +55,14 @@ Las cinco campañas ROM ya **no se adaptan**: usan el contenido de la ROM tal cu
   entregado que **ninguna hoja use colores de la paleta de otro sprite**: 667 hojas,
   241 tags, 241/241 grupos dentro de 16 colores, 0 fallos. Detalle:
   [`docs/qa/gbc_pipeline.md`](docs/qa/gbc_pipeline.md) §4.1.
+- **La paleta GBC de cada dimensión invitada se compara con la que declara**: los
+  895 archivos nativos (7 283 colores) se reducen a una paleta de cuatro tonos por
+  cuantiles de luminancia y se cruzan con el texto de
+  `content/rom_campaigns_complete.json`; ninguna quedó con el verde de la dimensión
+  creepypasta. 15 términos confirmados, 0 parciales, 0 sin respaldo, 0 fallos;
+  informe en [`docs/qa/paletas_campanas.md`](docs/qa/paletas_campanas.md)
+  (`npm run audit:campanas:paletas` · `verify:campanas:paletas`). Detalle:
+  [`docs/qa/gbc_pipeline.md`](docs/qa/gbc_pipeline.md) §13.
 - **3 538 eventos de campaña visten el personaje que les da la ROM** y **759 diálogos
   originales** sustituyen el andamiaje en el primer mensaje del evento.
 - **Verificación**: `npm run verify:rom:nativo` → 0 fallos sobre 1 486 028 celdas
