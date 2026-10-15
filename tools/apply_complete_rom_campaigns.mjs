@@ -8,14 +8,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import { marshalDump, RHash } from "../web/js/marshal.js";
-import { tableGet } from "../web/js/rmxp.js";
 import {
   DATA, ROOT, backup, condition, elseBranch, endBranch, endEvent, event, graphic,
   ifScript, installMapInfos, installMetadata, installTrainerTypes, installTrainers,
   page, pagesOf, readData, readMapRaw, script, selfSwitch, switchOn, texts, transfer,
   upsert, eventsOf, iv, makeChecker, wait, writeData, S, txt, grid, walkableAt,
 } from "./lib/dlc_helpers.mjs";
-import { TileCanvas, buildMapObject, loadSourceMap, tilesets } from "./lib/map_painter.mjs";
+import { buildMapObject } from "./lib/map_painter.mjs";
+// El pintor de filas de estilo (visualRows) es compartido con
+// tools/audit_visual_rows.mjs: lo auditado es exactamente lo que se pinta.
+import { floorPalette, paintMap } from "./lib/rom_campaign_painter.mjs";
 
 const VERIFY = process.argv.includes("--verify");
 const ONLY = process.argv.find((arg) => arg.startsWith("--campaign="))?.split("=")[1] ?? null;
@@ -56,50 +58,6 @@ const mapPath = (id) => path.join(DATA, `Map${pad(id)}.rxdata`);
 const flatten = (value) => value.flat(Infinity).filter(Boolean);
 const returnMap = (campaign) => Number(campaign.returnMapId ?? campaign.lobbyMapId);
 const isAshProtagonist = (campaign) => campaign.playerRole === "ash_protagonist";
-
-function floorPalette(donorIds) {
-  const passages = tilesets().get(1)?.passages?.data ?? [];
-  const result = new Map();
-  for (const id of donorIds) {
-    const donor = loadSourceMap(id);
-    const count = new Map();
-    for (let y = 0; y < donor.height; y += 1) for (let x = 0; x < donor.width; x += 1) {
-      const tile = tableGet(donor.table, x, y, 0);
-      if (tile && (passages[tile] ?? 0) === 0) count.set(tile, (count.get(tile) ?? 0) + 1);
-    }
-    const floors = [...count.entries()].sort((a, b) => b[1] - a[1]).map(([tile]) => tile);
-    if (!floors.length) throw new Error(`El donante Map${id} no tiene suelo transitable de tileset 1`);
-    result.set(id, floors);
-  }
-  return { passages, result };
-}
-
-function paintMap(campaign, blueprint, palette) {
-  const desiredEvents = blueprint.npcs.length + blueprint.warps.length + 6;
-  const minSide = Math.ceil(Math.sqrt(desiredEvents)) + 4;
-  const width = Math.max(blueprint.dimensions.width, minSide, 8);
-  const height = Math.max(blueprint.dimensions.height, minSide, 8);
-  const canvas = new TileCanvas(width, height, 1);
-  for (let y = 0; y < height; y += 1) {
-    const row = blueprint.visualRows[y % blueprint.visualRows.length];
-    const donor = loadSourceMap(row.donorMapId);
-    const floors = palette.result.get(row.donorMapId);
-    for (let x = 0; x < width; x += 1) {
-      const sx = (x + row.floorPhase) % donor.width;
-      const sy = (y + blueprint.sequence + row.floorPhase) % donor.height;
-      let floor = tableGet(donor.table, sx, sy, 0);
-      if (!floor || (palette.passages[floor] ?? 0) !== 0) floor = floors[(x + y + row.floorPhase) % Math.min(floors.length, 12)];
-      canvas.set(x, y, 0, floor);
-      if ((x + row.floorPhase) % row.accentEvery === 0 && x > 1 && y > 1 && x < width - 2 && y < height - 2) {
-        for (const z of [1, 2]) {
-          const accent = tableGet(donor.table, sx, sy, z);
-          if (accent && (palette.passages[accent] ?? 0) === 0) canvas.set(x, y, z, accent);
-        }
-      }
-    }
-  }
-  return canvas;
-}
 
 function allocator(width, height) {
   const used = new Set();

@@ -21,6 +21,10 @@ const CHECK = process.argv.includes("--check");
 const OUT = path.join(ROOT, "content", "rom_campaigns_complete.json");
 const INPUT = path.resolve(process.env.ROM_INPUT_DIR || path.join(ROOT, "reference", "roms_invitadas"));
 const MAX_NPCS_PER_MAP = 4;
+// `donors`: seis mapas exteriores de Fire Ash (tileset 1) por campaña; cada mapa
+// del plano usa donors[índice % 6]. Deben tener un suelo transitable variado:
+// con un suelo uniforme todas las filas de estilo (`visualRows`) se pintan
+// iguales. Lo comprueba `npm run verify:visual:rows` (docs/AUDITORIA_VISUAL_ROWS.md).
 const CONFIGS = [
   {
     id: "glazed", source: "GlazedESPB6", title: "Glazed", firstMapId: 3000, lobbyMapId: 2200,
@@ -47,7 +51,8 @@ const CONFIGS = [
     returnMapId: 1001, mainHubMapId: 1001, cityPortal: { x: 31, y: 26 },
     completeSwitch: 992, progressVariable: 352, trainerType: "CRYSTAL_ARCHIVE", outfitId: 5,
     playerRole: "ash_protagonist", legacyLobbyEnabled: true,
-    donors: [251, 254, 295, 299, 306, 308],
+    // 294 «Route 36» (el camino a las ruinas) sustituye a 295 «Ruins of Alph», cuyo suelo es una sola tesela.
+    donors: [251, 254, 294, 299, 306, 308],
     palette: "postgame A: lluvia de Johto, ruinas, faros y cristal vivo",
     storyAxis: "los lugares de Johto, sus lazos y sus recuerdos",
     ashVoice: "Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo.",
@@ -56,7 +61,10 @@ const CONFIGS = [
     id: "tfoh", source: "Pokémon TFOH-Beta3", title: "TFOH", firstMapId: 3700, lobbyMapId: 2242,
     returnMapId: 2242, completeSwitch: 993, progressVariable: 353,
     trainerType: "TFOH_ARCHIVE", outfitId: 6, playerRole: "visitor", legacyLobbyEnabled: true,
-    donors: [209, 211, 228, 236, 245, 491],
+    // Islas y frontera de suelo variado (Daroxy, Tangelo, Cinnabar, Lily of the Valley, Cero, Battle Frontier).
+    // Sustituyen a 209 Valencia, 228 Seven Grapefruit, 236 Ascorbia, 245 Pummelo y 491 Metallica, cuyo suelo
+    // es (casi) una sola tesela.
+    donors: [72, 211, 184, 642, 517, 52],
     palette: "postgame A: frontera, archipiélagos y caminos de una aventura que siguió creciendo",
     storyAxis: "la frontera, el archipiélago y una aventura en expansión",
     ashVoice: "Vengo a conocer este lugar y a respetar la historia de quienes ya viven aquí.",
@@ -66,7 +74,7 @@ const CONFIGS = [
     returnMapId: 1001, mainHubMapId: 1001, cityPortal: { x: 34, y: 25 },
     completeSwitch: 994, progressVariable: 354, trainerType: "UNBOUND_ARCHIVE", outfitId: 10,
     playerRole: "ash_protagonist", legacyLobbyEnabled: false,
-    donors: [209, 211, 228, 236, 245, 491],
+    donors: [72, 211, 184, 642, 517, 52], // los mismos donantes de suelo variado que TFOH
     palette: "postgame A: caminos de frontera, decisiones difíciles y refugios construidos en equipo",
     storyAxis: "los dilemas de una región fronteriza y la gente que decide protegerla",
     ashVoice: "Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo.",
@@ -147,6 +155,8 @@ function dialoguePlanFor(cfg, npc) {
 
 function mapVisualRows(cfg, map, index, dimensions) {
   // Un único donante por mapa evita cambios de tileset/paleta de fila en fila.
+  // Cada fila varía floorPhase/accentEvery, pero esa variación sólo se ve si el
+  // donante tiene varios suelos transitables (ver comentario de CONFIGS).
   // El pintor actual usa fuentes exteriores de Fire Ash; la clasificación y la
   // construcción artesanal de interiores sigue siendo una tarea de arte aparte.
   const donorMapId = cfg.donors[index % cfg.donors.length];

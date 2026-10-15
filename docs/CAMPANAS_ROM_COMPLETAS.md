@@ -31,7 +31,9 @@ Además se reconstruyeron **3.252 warps**. Cuando el destino banco/mapa fue dete
 
 ## Reconstrucción de mapas
 
-Cada mapa conserva las dimensiones detectadas en el ROM, salvo que necesite crecer para colocar sin solapamientos todos sus eventos. El aspecto se genera mediante 22.539 instrucciones de fila que combinan mapas donantes del propio Fire Ash. Sólo se aceptan tiles transitables del tileset exterior, evitando huecos, tiles inválidos y zonas aisladas.
+Cada mapa conserva las dimensiones detectadas en el ROM, salvo que necesite crecer para colocar sin solapamientos todos sus eventos. El aspecto estructural se genera con instrucciones de fila (`visualRows`, una por cada fila de cada mapa) que muestrean un único mapa donante del propio Fire Ash por mapa. En el plano actual (cinco campañas con Unbound, 1.227 mapas) son 35.591. Sólo se aceptan tiles transitables del tileset exterior, evitando huecos, tiles inválidos y zonas aisladas.
+
+Los donantes deben tener un suelo variado: con uno uniforme, todas las filas se pintan iguales. `npm run verify:visual:rows` pinta cada mapa con el pintor real (`tools/lib/rom_campaign_painter.mjs`) y confirma que ninguno queda con una sola fila de estilo; el detalle está en [AUDITORIA_VISUAL_ROWS.md](AUDITORIA_VISUAL_ROWS.md). Las teselas que se ven en el juego son las nativas de cada ROM (`tools/rom_nativo_mapas.mjs`); este pintor es el paso estructural previo.
 
 El plano completo está en:
 
@@ -51,6 +53,7 @@ npm run create:rom:campaigns
 # Compilar dentro de Fire Ash
 npm run build:rom:campaigns
 npm run verify:rom:campaigns:plan
+npm run verify:visual:rows
 npm run verify:rom:campaigns
 
 # Sincronizar paquete instalable

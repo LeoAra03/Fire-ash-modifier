@@ -102,6 +102,7 @@ npm run verify:back:sprites    # las espaldas de los atuendos guardan las propor
 npm run verify:corregido:zip   # el ZIP raíz coincide archivo por archivo
 npm run verify:package         # el ZIP directo coincide archivo por archivo
 npm run verify:rom:campaigns:plan   # las cinco campañas siguen completas
+npm run verify:visual:rows     # ningún mapa de campaña ROM queda con una sola fila de estilo
 ```
 
 Para reconstruir todo desde cero:

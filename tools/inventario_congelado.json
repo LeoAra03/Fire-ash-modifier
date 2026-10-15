@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T11:14:43.042Z",
+  "generatedAt": "2026-10-15T11:57:01.082Z",
   "git": {
     "branch": "arena/1c2fcf01-fire-ash-modifier",
-    "commit": "d6e4b3e227e16a0142c722d2edd631156b040c17"
+    "commit": "7dae6e758e093d37e102cf66ee9cea5c3bc88adc"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5418,
+    "fileCount": 5420,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 203
+      "tools": 205
     },
     "files": [
       {
@@ -26205,8 +26205,8 @@
       },
       {
         "path": "tools/apply_complete_rom_campaigns.mjs",
-        "bytes": 25340,
-        "sha256": "07dce55bfffb36a7d4a3839925a8ad2a7b3c2b3f7eaf5f63ab6883a1d85d5585"
+        "bytes": 23437,
+        "sha256": "5bb1b17f4f6298e49bdc2bbef0b853a601ee9433764e615539749286f9915fcc"
       },
       {
         "path": "tools/apply_dimensional_nightmare_battles.mjs",
@@ -26464,6 +26464,11 @@
         "sha256": "7556847909471f4332a79651218c1620703724c7dfad9cc27c5b0f51ffd9486b"
       },
       {
+        "path": "tools/audit_visual_rows.mjs",
+        "bytes": 16729,
+        "sha256": "fd805488ce3690df22926845d5012de2335974c040b242bdc8d19d6ff35da1e6"
+      },
+      {
         "path": "tools/backup.py",
         "bytes": 1694,
         "sha256": "f3fd93060521efe99a13e297098f93f3adc6dbe080f2aebddaa3433505c71ade"
@@ -26520,8 +26525,8 @@
       },
       {
         "path": "tools/create_complete_rom_campaigns.mjs",
-        "bytes": 16365,
-        "sha256": "9707f912cdd8497c3e56dc7d02260e5e22bbd7336d27ba196cf89731e952566f"
+        "bytes": 17267,
+        "sha256": "bc5b40d1438713873c701f4fb1e7ea8fb702861d9d084c65cf2624e6de76d4aa"
       },
       {
         "path": "tools/create_dimensional_nightmare_events.mjs",
@@ -26887,6 +26892,11 @@
         "path": "tools/lib/region_builder.mjs",
         "bytes": 40525,
         "sha256": "17f3af31326fbbeea6df3ea020007199cc5d5d980de92f5a6542e48b53bc1e34"
+      },
+      {
+        "path": "tools/lib/rom_campaign_painter.mjs",
+        "bytes": 3790,
+        "sha256": "43f981cc8549a2ba3b4fa39220c156b8f1dd163a83e54a56852bd6c06305121e"
       },
       {
         "path": "tools/lib/sprite_build.mjs",
