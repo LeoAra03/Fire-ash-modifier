@@ -30,6 +30,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - `unassignedPortionFree: true`. **Switches 701–867:** 167/167 con asignación canónica, 0 sin asignación, 0 de la porción no asignada en uso. **Variables 101–263:** 163/163 con asignación canónica, 0 sin asignación, 0 de la porción no asignada en uso.
 - El rango reservado **sigue libre en su porción no asignada**: ningún ID de esa porción tiene nombre ni uso literal. Sin cambios de contenido; solo este registro.
 
+### FASE 5 — Backup ZIP pre-escritura
+
+- **Rehecho con la herramienta oficial:** `python3 tools/backup.py pokemon_fire_ash` → `pokemon_fire_ash/PokeModBackups/backup_20261015_041420.zip` (19.5 MB, 3530 entradas).
+- Cobertura verificada: **3529/3529 archivos de `Data/`** (coincide 1:1 con el disco) **+ `Data/Scripts.rxdata` incluido** + `Game.ini`. Integridad del ZIP comprobada con `testzip`: sin corrupción.
+- Creado **antes de la primera escritura del plan**; `PokeModBackups/` está gitignored por convención del repo (artefacto local), así que el ZIP vive en el árbol de trabajo y este registro documenta su existencia, huella y fecha.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
