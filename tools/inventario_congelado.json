@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-14T17:11:44.096Z",
+  "generatedAt": "2026-10-15T11:14:43.042Z",
   "git": {
-    "branch": "arena/2608d599-fire-ash-modifier",
-    "commit": "c46abf34a1ae8724072196a39b8b1f957c167dd3"
+    "branch": "arena/1c2fcf01-fire-ash-modifier",
+    "commit": "d6e4b3e227e16a0142c722d2edd631156b040c17"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5417,
+    "fileCount": 5418,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 202
+      "tools": 203
     },
     "files": [
       {
@@ -26410,13 +26410,13 @@
       },
       {
         "path": "tools/assemble_atuendos.py",
-        "bytes": 10688,
-        "sha256": "66375c20f8f2d45d7ed28f3d5a9799bdc36bbd60459891a318587aa03a1da90a"
+        "bytes": 23154,
+        "sha256": "b4910620591dac6a900cbb65231ade874609a5740d42054f8635247c4be1c439"
       },
       {
         "path": "tools/assemble_r17_art.py",
-        "bytes": 5844,
-        "sha256": "5ae6d0c731ab87fa540d5bc37c70e0d2b9d98848196ec95a6f01aa19c4639a25"
+        "bytes": 5633,
+        "sha256": "cfad73ddf2d4abefeb2b621b0dfa3bb2584cc3c78f90d7ca96bf5a4d1045ba82"
       },
       {
         "path": "tools/atlas_ingest_reference.mjs",
@@ -26447,6 +26447,11 @@
         "path": "tools/audit_all_flags.mjs",
         "bytes": 13372,
         "sha256": "e85b9434f2ffe1d93746f047bae9c67f1596d19abe4abf3cd6cad23f23506881"
+      },
+      {
+        "path": "tools/audit_back_sprites.mjs",
+        "bytes": 22349,
+        "sha256": "b5d5486d8bf912549f6bf3a8496add196b001f79c6c2c02faad941f1f51f44e1"
       },
       {
         "path": "tools/audit_content_progress.mjs",

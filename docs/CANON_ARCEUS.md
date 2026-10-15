@@ -356,7 +356,10 @@ Generado con IA y ensamblado con `tools/assemble_r17_art.py` desde `assets_raw/`
   (switch 876 → regalo con switch 885 + self-switch A; una sola vez).
 - Se compone de: `Characters/ash_outfit_maestro.png` (overworld 128×192),
   `Trainers/POKEMONTRAINER_Red_8.png` (batalla frente) y
-  `Trainers/POKEMONTRAINER_Red_8_back.png` (batalla espalda, tira de 4 poses).
+  `Trainers/POKEMONTRAINER_Red_8_back.png` (batalla espalda: 5 marcos de
+  162×196, quieto ×2 y lanzar ×3). Los dos de batalla los ensambla
+  `tools/assemble_atuendos.py` como kit 8 (§9), con la espalda conformada a su
+  frente (§9.2).
 - Integrado con el vestidor de la casa: atavio 9 de `PokeModAtavios` (modo fijo
   al recibirlo) + outfit de batalla 8 del motor (mismo sistema que las variantes
   `Red_1..7`).
@@ -371,7 +374,7 @@ hubiera estado en el juego (nunca falta un sprite ni una animación):
 | `trchar000_N` (caminar 128×192) | 3 poses IA por atuendo → pasos derivados |
 | `boy_run_N` (correr) | derivado del caminar (avance inclinado) |
 | `boy_bike_N`, `boy_surf_N`, `boy_fish_offset_N` | originales del motor recoloreados con la paleta del atuendo |
-| `POKEMONTRAINER_Red_N` / `_N_back` | batalla frente/espalda (tira de lanzamiento) |
+| `POKEMONTRAINER_Red_N` / `_N_back` | batalla frente/espalda (tira de lanzamiento de 5 marcos de 162×196) |
 
 El sistema de outfits del motor (mismo mecanismo que las variantes `Red_1..7`)
 resuelve los `*_N` automáticamente: caminar, correr, bici, surf, pesca y batalla
@@ -396,8 +399,33 @@ puede ignorarse.)
 Los crudos son pixel-art estilo GBA de **Ash** (mismo rostro/pelo que el
 protagonista) con cada atuendo, y los tamaños finales son los del motor de
 primera/tercera generación en RMXP: marco de caminar 32×48 (hoja 128×192),
-batalla frente 158×158 y espalda en tira 812×196 — idénticos a los originales
+batalla frente 158×158 y espalda en tira 812×196 (5 marcos de 162×196, la
+rejilla con la que el motor corta la tira) — idénticos a los originales
 `trchar000`/`POKEMONTRAINER_Red`. El ensamblador quita el fondo con flood-fill
 desde los bordes (alfa 0), recorta al personaje y conserva RGBA en todos los
 PNG, para que nada desentone en el juego. La pose quieta de espalda en batalla
 se deriva de la espalda de caminar cuando no hay crudo propio.
+
+### 9.2 Espaldas conformadas a su frente (auditoría de back sprites)
+
+Las poses IA de espalda (`creep_back`, `glazed_back`, `lp_back`, `lc_back`,
+`ash_maestro_back` y las de batalla) no compartían proporciones con su frente, y
+las tiras de batalla estaban montadas en 4 poses de 203 px que el motor corta en
+quintos de 162 px. Regla vigente, aplicada por `tools/assemble_atuendos.py` y
+vigilada por `npm run verify:back:sprites` (dentro de `npm test`):
+
+- **Cabeza:** la proporción ancho de cabeza / alto de la espalda iguala la de
+  su frente (caminar contra `<kit>_front`, batalla contra `<kit>_battle_front`);
+  se escala solo la cabeza, cortando en el cuello.
+- **Escala y eje:** en caminar, misma altura y línea de pies que el frente y el
+  eje del cuerpo alineado; en batalla, misma altura en pie que el frente
+  158×158, con la pose de lanzar a la misma escala que la quieta.
+- **Rejilla del motor:** tira de 812×196 = 5 marcos de 162×196 (quieto,
+  quieto, lanzar, lanzar, lanzar), pies abajo y ninguna figura cruzando al
+  marco vecino.
+
+Medidas, tolerancias y factores aplicados: [`docs/AUDITORIA_BACK_SPRITES.md`](AUDITORIA_BACK_SPRITES.md)
+y `content/atuendos_espaldas.json`. Los charsets heredados
+`ash_outfit_{creep,glazed,lp,lc}` de los atavíos por dimensión quedan solo
+reportados (tienen las figuras partidas entre celdas); la corrección prevista
+es recablear esos atavíos a los slots de outfit 11-14.

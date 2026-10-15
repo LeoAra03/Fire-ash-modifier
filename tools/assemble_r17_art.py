@@ -8,9 +8,12 @@ Salida:   pokemon_fire_ash/Graphics/...
   (la fase 6 usa la forma primigenia: Pokemon/Front/ARCEUS.png, ya existente)
 - Fondos de batalla -> Battlebacks/genesis{1,2,3}_bg.png (512x288, reemplaza
   el arte de nuestro DLC) y olas_bg / volus_bg (nuevos) con sus bases.
-- Ash Maestro       -> Characters/ash_outfit_maestro.png (128x192, 4x4 de 32x48),
-  Trainers/POKEMONTRAINER_Red_8.png (158x158) y POKEMONTRAINER_Red_8_back.png
-  (812x196 = 4 poses de 203x196).
+- Ash Maestro       -> Characters/ash_outfit_maestro.png (128x192, 4x4 de 32x48).
+  Sus sprites de batalla (Trainers/POKEMONTRAINER_Red_8.png 158x158 y la tira
+  POKEMONTRAINER_Red_8_back.png de 812x196 = 5 marcos de 162x196) los ensambla
+  tools/assemble_atuendos.py (kit 8) con fondo transparente y la espalda
+  conformada a su frente; este script ya no los escribe para no pisarlos con
+  la tira antigua de 4 poses de 203 px, que el motor cortaba en quintos.
 
 Los originales reemplazados se respaldan en PokeModBackups/la_ruta_de_dios/graphics/.
 Los crudos generados NO son entregables: viven en assets_raw/ (fuera del juego).
@@ -123,18 +126,8 @@ def ash_maestro():
     else:
         print("  (faltan sprites de Ash, se omite)")
         return
-    bat = load("ash_maestro_battle_front.png")
-    if bat is not None:
-        save(fit(bat, 158, 158), os.path.join("Trainers", "POKEMONTRAINER_Red_8.png"))
-    stand = load("ash_maestro_battle_back_stand.png")
-    throw = load("ash_maestro_battle_back_throw.png")
-    if stand is not None:
-        s = fit(stand, 203, 196)
-        t = fit(throw, 203, 196) if throw is not None else s
-        strip = Image.new("RGBA", (812, 196), (0, 0, 0, 0))
-        for i, fr in enumerate([s, s, t, t]):
-            strip.paste(fr, (i * 203, 0))
-        save(strip, os.path.join("Trainers", "POKEMONTRAINER_Red_8_back.png"), quantize_colors=64)
+    # Batalla (Red_8 / Red_8_back): tools/assemble_atuendos.py, kit 8.
+    print("  (batalla de Ash Maestro: python3 tools/assemble_atuendos.py, kit 8)")
 
 
 def main():

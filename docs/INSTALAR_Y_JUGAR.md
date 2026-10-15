@@ -98,6 +98,7 @@ con siete marcos: La Ruta de Dios (876), **Liga Oscura (948)**, Mundo Atlas
 npm test                       # cadena completa de QA (incluye los tres candados nuevos)
 npm run verify:arceus:sprites  # seis fases, seis sprites distintos, en juego y en el ZIP
 npm run verify:diplomas        # los siete marcos tienen hito comprobable
+npm run verify:back:sprites    # las espaldas de los atuendos guardan las proporciones de su frente
 npm run verify:corregido:zip   # el ZIP raíz coincide archivo por archivo
 npm run verify:package         # el ZIP directo coincide archivo por archivo
 npm run verify:rom:campaigns:plan   # las cinco campañas siguen completas

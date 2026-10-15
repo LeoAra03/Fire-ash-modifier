@@ -1,0 +1,191 @@
+{
+  "generado_por": "tools/assemble_atuendos.py",
+  "auditoria": "tools/audit_back_sprites.mjs (docs/AUDITORIA_BACK_SPRITES.md)",
+  "criterio": "la espalda se conforma a su frente: proporción cabeza/alto (solo se escala la cabeza, corte en el cuello), misma escala de personaje y mismo eje del cuerpo",
+  "tolerancia_cabeza": 0.05,
+  "limites_k_cabeza": [
+    0.6,
+    1.8
+  ],
+  "tira_trasera": {
+    "tamano": [
+      812,
+      196
+    ],
+    "marcos": 5,
+    "orden": [
+      "quieto",
+      "quieto",
+      "lanzar",
+      "lanzar",
+      "lanzar"
+    ]
+  },
+  "kits": {
+    "8": {
+      "crudo": "ash_maestro",
+      "caminar": {
+        "cabeza_frente": 0.331,
+        "cabeza_espalda": 0.301,
+        "cuello_espalda": 0.27,
+        "k_cabeza": 1.145,
+        "cabeza_conformada": 0.333,
+        "alto_px": 48,
+        "frente": "ash_maestro_front.png",
+        "espalda": "ash_maestro_back.png"
+      },
+      "batalla": {
+        "quieto": "ash_maestro_battle_back_stand.png",
+        "lanzar": "ash_maestro_battle_back_throw.png",
+        "frente": "ash_maestro_battle_front.png",
+        "cabeza_frente": 0.31,
+        "cabeza_quieto": 0.277,
+        "cuello_quieto": 0.231,
+        "k_cabeza": 1.162,
+        "cabeza_conformada": 0.314,
+        "marcos": "5x162x196",
+        "orden": [
+          "quieto",
+          "quieto",
+          "lanzar",
+          "lanzar",
+          "lanzar"
+        ],
+        "altura_en_pie_frente": 155,
+        "altura_en_pie_espalda": 155
+      }
+    },
+    "11": {
+      "crudo": "creep",
+      "caminar": {
+        "cabeza_frente": 0.49,
+        "cabeza_espalda": 0.41,
+        "cuello_espalda": 0.336,
+        "k_cabeza": 1.323,
+        "cabeza_conformada": 0.49,
+        "alto_px": 48,
+        "frente": "creep_front.png",
+        "espalda": "creep_back.png"
+      },
+      "batalla": {
+        "quieto": "creep_back.png",
+        "lanzar": "creep_battle_back_throw.png",
+        "frente": "creep_battle_front.png",
+        "cabeza_frente": 0.354,
+        "cabeza_quieto": 0.41,
+        "cuello_quieto": 0.336,
+        "k_cabeza": 0.807,
+        "cabeza_conformada": 0.357,
+        "marcos": "5x162x196",
+        "orden": [
+          "quieto",
+          "quieto",
+          "lanzar",
+          "lanzar",
+          "lanzar"
+        ],
+        "altura_en_pie_frente": 156,
+        "altura_en_pie_espalda": 156
+      }
+    },
+    "12": {
+      "crudo": "glazed",
+      "caminar": {
+        "cabeza_frente": 0.286,
+        "cabeza_espalda": 0.362,
+        "cuello_espalda": 0.353,
+        "k_cabeza": 0.708,
+        "cabeza_conformada": 0.292,
+        "alto_px": 48,
+        "frente": "glazed_front.png",
+        "espalda": "glazed_back.png"
+      },
+      "batalla": {
+        "quieto": "glazed_back.png",
+        "lanzar": "glazed_battle_back_throw.png",
+        "frente": "glazed_battle_front.png",
+        "cabeza_frente": 0.302,
+        "cabeza_quieto": 0.362,
+        "cuello_quieto": 0.353,
+        "k_cabeza": 0.767,
+        "cabeza_conformada": 0.309,
+        "marcos": "5x162x196",
+        "orden": [
+          "quieto",
+          "quieto",
+          "lanzar",
+          "lanzar",
+          "lanzar"
+        ],
+        "altura_en_pie_frente": 154,
+        "altura_en_pie_espalda": 154
+      }
+    },
+    "13": {
+      "crudo": "lp",
+      "caminar": {
+        "cabeza_frente": 0.426,
+        "cabeza_espalda": 0.297,
+        "cuello_espalda": 0.295,
+        "k_cabeza": 1.752,
+        "cabeza_conformada": 0.434,
+        "alto_px": 48,
+        "frente": "lp_front.png",
+        "espalda": "lp_back.png"
+      },
+      "batalla": {
+        "quieto": "lp_back.png",
+        "lanzar": "lp_battle_back_throw.png",
+        "frente": "lp_battle_front.png",
+        "cabeza_frente": 0.311,
+        "cabeza_quieto": 0.297,
+        "cuello_quieto": 0.295,
+        "k_cabeza": 1.0,
+        "cabeza_conformada": 0.297,
+        "marcos": "5x162x196",
+        "orden": [
+          "quieto",
+          "quieto",
+          "lanzar",
+          "lanzar",
+          "lanzar"
+        ],
+        "altura_en_pie_frente": 156,
+        "altura_en_pie_espalda": 156
+      }
+    },
+    "14": {
+      "crudo": "lc",
+      "caminar": {
+        "cabeza_frente": 0.344,
+        "cabeza_espalda": 0.26,
+        "cuello_espalda": 0.225,
+        "k_cabeza": 1.458,
+        "cabeza_conformada": 0.345,
+        "alto_px": 48,
+        "frente": "lc_front.png",
+        "espalda": "lc_back.png"
+      },
+      "batalla": {
+        "quieto": "lc_back.png",
+        "lanzar": "lc_battle_back_throw.png",
+        "frente": "lc_battle_front.png",
+        "cabeza_frente": 0.333,
+        "cabeza_quieto": 0.26,
+        "cuello_quieto": 0.225,
+        "k_cabeza": 1.397,
+        "cabeza_conformada": 0.336,
+        "marcos": "5x162x196",
+        "orden": [
+          "quieto",
+          "quieto",
+          "lanzar",
+          "lanzar",
+          "lanzar"
+        ],
+        "altura_en_pie_frente": 155,
+        "altura_en_pie_espalda": 155
+      }
+    }
+  }
+}
