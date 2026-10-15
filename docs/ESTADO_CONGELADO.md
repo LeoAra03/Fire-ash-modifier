@@ -147,6 +147,13 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - El resto de entradas son intra-DLC (gimnasios 2250–2257 ↔ Avenida 2230 con sellos 970–976, devoluciones de dimensiones) o desde contenido extra ya gated (2260, 2270, 2280, 3110). Y el propio 1001 solo se alcanza por el Guardabosques cuyas 3 páginas de transferencia exigen 873 (FASE 20).
 - **Confirmado: nada del DLC es alcanzable antes de derrotar a Arceus en La Ruta de Dios.**
 
+### FASE 22 — Catálogo de puertas del postgame
+
+- Creado **`docs/qa/puertas_postgame.md`**: cada warp condicionado y el switch que lo habilita, medido sobre los datos reales.
+- **Sección 1:** las 24 puertas original→extra con origen, evento, página, destino y switches (429, 701/703+873, sellos de grieta 940–946; las 2 sin condición documentadas como intencionales).
+- **Sección 2:** warps condicionados internos — desde el hub 1001 (Vía/Barcos/Portal Atlas con **873**; campañas ROM con **876**; sectores Atlas Mil con **706**; Cronista con **704**), puertas de gimnasio de dimensiones (**960–964** = `dim.abierta`), cadena de medallas del circuito Atlas (**970–976**, primera puerta libre, variable 319) y entrada DN vía 2030 (transitiva).
+- **Sección 3:** leyenda de switches con nombre en `System.rxdata` y significado.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).
