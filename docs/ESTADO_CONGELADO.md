@@ -161,6 +161,12 @@ Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los has
 - **Variables:** **17 huecos reales** (308, 309, 323–329, 334–340, 349); las 5 libres aparentes restantes (267, 280, 286–288) son registro DN.
 - **Regla de consumo fijada:** crecer primero por **switches ≥ 995 y variables ≥ 355**; los huecos interiores solo con cautela; toda asignación se registra en `docs/qa/politica_ids.md` y regenera el inventario.
 
+### FASE 24 — Prefijo de nombres del plan 900
+
+- **Definido el prefijo `POKEMOD 900 `** para cualquier switch o variable que se cree durante el plan: sección «Prefijo de nombres del plan 900» en `docs/qa/politica_ids.md` y punto 3 de la regla de consumo en `docs/AUDITORIA_TOTAL_FLAGS.md`.
+- Verificado contra el inventario congelado: **0 switches y 0 variables usan hoy el prefijo** (sin colisiones). La convención existente del repo (`POKEMOD <NOMBRE>` en mayúsculas) se conserva; el plan 900 añade el segmento `900 ` para trazabilidad total.
+- Reglas: asignación solo en territorio nuevo (≥ 995 / ≥ 355) o huecos reales de la FASE 23; nombre obligatorio en `System.rxdata`; registro en la política de IDs y regeneración del inventario; self-switches exentos (clave `mapa:evento:letra`) y trainer types nuevos con símbolo `POKEMOD900_`.
+
 ## Totales
 
 - **Total de mapas:** 3465 archivos `Map*.rxdata` (3465 entradas en `MapInfos.rxdata`).

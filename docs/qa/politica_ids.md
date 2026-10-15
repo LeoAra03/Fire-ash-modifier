@@ -104,3 +104,34 @@ banco de entrenadores vive en `trainers.dat` (5547 entrenadores, clave
 - Recalcular y comparar: `node tools/inventario_congelado.mjs --verify` (colisiones y rango reservado).
 - Censo completo: `node tools/analyze_compiled_fire_ash.mjs`.
 - Audit de flags: `npm run verify:all` · Detalle por ID: `tools/inventario_congelado.json` (`ids.switchesUsed`, `ids.variablesUsed`, `ids.selfSwitchesUsed`).
+
+## Prefijo de nombres del plan 900 (FASE 24)
+
+**Todo switch o variable que se cree durante el plan 900 se nombra con el
+prefijo `POKEMOD 900 `** (un solo espacio tras `900`), seguido del nombre
+descriptivo en MAYÚSCULAS:
+
+- Switches: `POKEMOD 900 <PROPOSITO>` — p. ej. `POKEMOD 900 SELLO SECTOR 41`,
+  `POKEMOD 900 PUERTA ABIERTA`.
+- Variables: `POKEMOD 900 <PROPOSITO>` — p. ej. `POKEMOD 900 CONTADOR X`,
+  `POKEMOD 900 DECISION Y`.
+
+Reglas del prefijo:
+
+1. **Asignación**: solo en territorio nuevo (switches **≥ 995**, variables
+   **≥ 355**) o en los huecos reales marcados en `docs/AUDITORIA_TOTAL_FLAGS.md`
+   (FASE 23). Nunca en la zona original (1–700 / 1–100) ni en IDs reservados.
+2. **Nombre obligatorio**: ningún ID del plan 900 queda sin nombre en
+   `System.rxdata`; el prefijo hace al ID trazable y auditable (regla de oro:
+   todo lo PokeMod se distingue del original).
+3. **Unicidad**: el prefijo `POKEMOD 900 ` estaba libre a la fijación de esta
+   regla (0 switches y 0 variables lo usaban; verificado contra el inventario
+   congelado). Cualquier colisión futura de nombres idénticos se trata como
+   error de auditoría.
+4. **Registro**: toda asignación nueva se anota aquí y en
+   `docs/AUDITORIA_TOTAL_FLAGS.md`, y se regenera el inventario congelado.
+5. **Self-switches y trainer types** no llevan el prefijo: los self-switches
+   son `mapa:evento:letra` (espacio propio) y los trainer types son símbolos
+   aditivos; si el plan crea trainer types, se prefijan `POKEMOD900_` en el
+   símbolo para la misma trazabilidad.
+

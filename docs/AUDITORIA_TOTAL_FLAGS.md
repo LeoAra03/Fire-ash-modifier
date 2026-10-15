@@ -1719,7 +1719,8 @@ De los 22 libres aparentes de la zona PokeMod:
 
 1. Lo primero: **switches ≥ 995 y variables ≥ 355** (territorio nuevo, contiguo, aditivo).
 2. Solo si se necesita un ID interior: usar los huecos reales listados arriba, **nunca** los reservados por nombre/constante/registro ni los de la zona original.
-3. Toda asignación nueva debe registrarse en `docs/qa/politica_ids.md` y regenerar el inventario congelado.
+3. **Nombres: todo switch o variable creado durante el plan 900 usa el prefijo `POKEMOD 900 `** (definido en FASE 24, ver `docs/qa/politica_ids.md` § «Prefijo de nombres del plan 900»). El prefijo estaba libre a fecha de su fijación.
+4. Toda asignación nueva debe registrarse en `docs/qa/politica_ids.md` y regenerar el inventario congelado.
 
 ## Indicadores que requieren cautela
 
