@@ -30,6 +30,60 @@ La vista previa muestra cada página con sus comandos antes de crear. Si un ID
 (especie, objeto, tipo) no existe en los PBS, verás un aviso (puedes crearlo igual
 y añadir el dato después, o corregirlo antes).
 
+### Cuándo un evento está terminado
+
+Un evento no está **terminado** por estar creado o compilado: debe cumplir los
+cuatro criterios siguientes y dejar evidencia de su revisión. Se aplican a los
+eventos nuevos y a las revisiones de eventos existentes.
+
+- [ ] **Diálogo revisado.** Leer todas las ramas (inicio, aceptación, rechazo,
+  éxito, fallo y estado posterior): ortografía, nombre del hablante, objetivo y
+  consecuencias coherentes con lo que realmente ejecuta el evento. No quedan
+  textos provisionales, opciones sin respuesta ni instrucciones contradictorias.
+- [ ] **Flag de una sola escritura.** Identificar la flag de cierre (switch o
+  self-switch) y su único punto de escritura, protegido por una comprobación de
+  que aún no está activada. Solo pasa de pendiente a completado tras el éxito
+  real; una derrota, cancelación o entrega fallida no completa el evento. La
+  recompensa y los incrementos de progreso quedan dentro de esa misma guarda;
+  la página posterior no vuelve a escribir la flag ni duplica premios. No se
+  reinicia al salir del mapa ni al cargar partida. Consultar la
+  [auditoría de flags](AUDITORIA_TOTAL_FLAGS.md) antes de reservar IDs y revisar
+  también referencias dinámicas y eventos comunes. En servicios repetibles o
+  carteles sin progreso, registrar «no aplica: sin cierre ni recompensa única»;
+  no crear una flag artificial ni reutilizar una de otro evento.
+- [ ] **Texto en dos líneas de caja.** Componer cada caja para un máximo de dos
+  líneas visibles; dividir el texto largo en cajas sucesivas, sin cortar palabras
+  ni mezclar hablantes. Una frase breve puede ocupar una línea. Comprobar en el
+  juego el ajuste con nombres y variables sustituidos, acentos y opciones: no
+  basta contar saltos de línea en el archivo. No hay tercera línea, recortes ni
+  cajas solapadas.
+- [ ] **Salida garantizada.** Cada rama termina y devuelve el control al jugador,
+  incluidos rechazo, cancelación, derrota y falta de espacio para una entrega.
+  Los autorun dejan de ejecutarse mediante una condición/página de salida; no
+  quedan bucles, rutas de movimiento bloqueadas ni controles deshabilitados.
+  Existe un camino transitable de regreso o un teletransporte válido a una
+  casilla libre, tanto antes como después del cierre y aunque falten requisitos.
+  Un fallo permite salir y, cuando corresponda, reintentar sin conceder progreso.
+
+#### Prueba de aceptación y evidencia
+
+1. Con una partida anterior al evento, recorrer todas las ramas disponibles;
+   comprobar diálogo, cajas y salida, incluidos los casos de fallo anteriores.
+2. Completar la rama de éxito y registrar flag, contador e inventario antes y
+   después: cierre y recompensa deben ocurrir una sola vez.
+3. Interactuar de nuevo, salir y volver al mapa, guardar y cargar; verificar que
+   el estado posterior persiste, no se repiten premios ni incrementos y la salida
+   sigue accesible. Probar también el reintento después de un fallo.
+4. Anotar mapa/ID/nombre del evento, páginas y ramas revisadas, flag y punto de
+   escritura (o justificación de no aplicación), partida/versión probada,
+   responsable, fecha y resultados; adjuntar capturas de las cajas y del retorno.
+
+Usar el [checklist de prueba manual](QA_MANUAL_PLAYTEST.md) como complemento.
+Una auditoría automática o una compilación correcta no sustituyen esta prueba:
+si falta evidencia o no se pudo ejecutar el juego, el evento queda **pendiente de
+QA**, no terminado. Esta definición no certifica retroactivamente los eventos
+ya existentes.
+
 ## 2. Mapa nuevo
 
 - **Mapa vacío**: nombre, tamaño, tileset y tile de relleno. Nace sin eventos;
