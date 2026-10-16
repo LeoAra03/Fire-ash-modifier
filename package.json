@@ -214,6 +214,8 @@
     "verify:ash:unbound": "node tools/build_unbound_ash_outfit.mjs --verify",
     "build:ash:mapa-espalda": "node tools/build_ash_mapa_espalda.mjs",
     "verify:ash:mapa-espalda": "node tools/build_ash_mapa_espalda.mjs --verify",
+    "build:ash:accion-bicicleta": "node tools/build_ash_accion_bicicleta.mjs",
+    "verify:ash:accion-bicicleta": "node tools/build_ash_accion_bicicleta.mjs --verify",
     "apply:atavios": "node tools/apply_outfits_dimensiones.mjs",
     "verify:atavios": "node tools/apply_outfits_dimensiones.mjs --verify",
     "dn:gameboy": "node tools/dn_apply_gameboy_palette.mjs",
