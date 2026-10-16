@@ -49,7 +49,7 @@ Verificación OK: 7 grietas con Entrar/Retirarse y retorno al mundo, punto de co
 ```
 ✔ Canon de Arceus aplicado sobre pokemon_fire_ash
   · guion PokeMod_CanonArceus: actualizado (581 líneas, 6 fases con abuso de mecánicas)
-  · Scripts_corregido/Scripts.rxdata: actualizado (mismas nueve correcciones de estabilidad)
+  · Scripts_corregido/Scripts.rxdata: actualizado (mismas correcciones de estabilidad que la copia del juego)
   · Rotom del Tiempo — la Isla Espejo: mapa 2194 en (20,24)
   · Rotom del Tiempo — Atlas Mil: mapa 108 en (35,36)
   · Rotom del Tiempo — el mundo creepypasta: mapa 143 en (11,18)

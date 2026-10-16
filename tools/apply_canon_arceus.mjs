@@ -657,8 +657,11 @@ function escribirSeccion(archivo) {
 function inyectarRuby() {
   respaldo("Scripts.rxdata");
   const existia = escribirSeccion("Scripts.rxdata");
-  // El paquete descargable lleva su propio Scripts.rxdata con nueve correcciones
-  // de estabilidad: el canon tiene que viajar también ahí, en la misma posición.
+  // El paquete descargable lleva su propio Scripts.rxdata con las correcciones de
+  // estabilidad: el canon tiene que viajar también ahí, en la misma posición.
+  // (El número de secciones que divergen de la copia del juego se mide, no se
+  // escribe aquí: la fase 32 reparó el `end` sobrante de «Grandeur Club» en el
+  // juego y esa sección dejó de contar como diferencia.)
   const corregido = path.join(ROOT, "Scripts_corregido", "Scripts.rxdata");
   let descargable = null;
   if (fs.existsSync(corregido)) descargable = escribirSeccion(path.join("Scripts_corregido", "Scripts.rxdata"));
@@ -990,7 +993,7 @@ const madPikachu = intervencionMadPikachu();
 console.log(`✔ Canon de Arceus aplicado sobre ${path.relative(ROOT, GAME)}`);
 console.log(`  · guion PokeMod_CanonArceus: ${inyeccion.existia ? "actualizado" : "inyectado"} (${RUBY.split("\n").length} líneas, ${Object.keys(CFG.fases_dios).length} fases con abuso de mecánicas)`);
 if (inyeccion.descargable !== null) {
-  console.log(`  · Scripts_corregido/Scripts.rxdata: ${inyeccion.descargable ? "actualizado" : "inyectado"} (mismas nueve correcciones de estabilidad)`);
+  console.log(`  · Scripts_corregido/Scripts.rxdata: ${inyeccion.descargable ? "actualizado" : "inyectado"} (mismas correcciones de estabilidad que la copia del juego)`);
 }
 for (const r of rotoms) {
   console.log(`  · Rotom del Tiempo — ${r.punto.lugar}: mapa ${r.punto.mapa} en (${r.celda ? r.celda.join(",") : "—"})`);

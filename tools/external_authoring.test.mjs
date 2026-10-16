@@ -465,12 +465,23 @@ const fastForwardChange = scriptChanges.find((change) => change.name === "Better
 const screenToneChange = scriptChanges.find((change) => change.name === "Game_Screen");
 const pictureToneChange = scriptChanges.find((change) => change.name === "Game_Picture");
 const sceneMapTransitionChange = scriptChanges.find((change) => change.name === "Scene_Map");
-check(scriptChanges.length === 9 && grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange && sceneMapTransitionChange,
-  "el archivo descargable corrige Grandeur Club, colisiones, guardado, tonos y transiciones");
-check(grandeurChange.corrected === grandeurChange.source.replace("end\nend\r\n\r\ndef givePassive", "end\n\r\ndef givePassive"),
-  "Grandeur Club conserva la corrección del end sobrante");
-check(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurChange.corrected),
-  "el script descargable no contiene un end extra antes de givePassive");
+check(scriptChanges.length === 8 && !grandeurChange && characterChange && eventChange && playerChange && startGameChange && fastForwardChange && screenToneChange && pictureToneChange && sceneMapTransitionChange,
+  "el archivo descargable corrige colisiones, guardado, tonos y transiciones (Grandeur Club ya no diverge: fase 32)");
+// Fase 32: el `end` sobrante de «Grandeur Club» se reparó también en la copia del
+// juego (tools/repair_grandeur_club_end.mjs), así que la sección coincide byte a
+// byte en las dos copias y esa corrección ya no es una diferencia entre ellas.
+const codigoSeccion = (scripts, nombre) => {
+  const fila = scripts.find(([, titulo]) => titulo && titulo.text === nombre);
+  return fila ? zlib.inflateSync(Buffer.from(fila[2].bytes)).toString("utf8") : null;
+};
+const grandeurJuego = codigoSeccion(gameScripts, "Grandeur Club");
+const grandeurDescargable = codigoSeccion(downloadableScripts, "Grandeur Club");
+check(grandeurJuego !== null && grandeurJuego === grandeurDescargable,
+  "Grandeur Club es idéntica en el juego y en el archivo descargable (fin del `end` sobrante)");
+check(grandeurJuego !== null &&
+  grandeurJuego.includes("# PokeMod: Grandeur Club Free Items (0 Credits)") &&
+  !/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(grandeurJuego),
+  "las dos copias conservan el parche de 0 créditos sin un end extra antes de givePassive");
 check(characterChange.corrected.includes("next if event.through && event.character_name == \"\"") &&
   characterChange.corrected.includes("Los eventos con gráfico son sólidos"),
   "Game_Character bloquea sprites aunque la página del evento marque Through");

@@ -45,6 +45,7 @@ import zlib from "node:zlib";
 import { marshalDump, marshalLoad, RObject, RString, RSymbol, RUserDef } from "../web/js/marshal.js";
 import { cmdOf, parseEvent, parseMap, parseTileset, tableGet, tableSet, tableToUserDef, tableFromUserDef } from "../web/js/rmxp.js";
 import { DATA, GAME, ROOT } from "./lib/fire_ash_registry.mjs";
+import { endSobranteTrasMetodo, reemplazarMetodo } from "./lib/ruby_method_patch.mjs";
 
 const VERIFY_ONLY = process.argv.includes("--verify");
 const BACKUP = path.join(GAME, "PokeModBackups", "emergency_abra_and_tower_originals");
@@ -223,11 +224,13 @@ function installScripts() {
     end
   end
 end`;
-    const replacedGc = gc.code.replace(
-      /def grandeurItemExchange\(item,itemprice\)[\s\S]*?pbMessage\(_INTL\("\\\\CN\\\\bYou have no room in your Bag\."\)\)\s+end\s+end\s+end\s+end/m,
-      newExchange
-    );
-    if (replacedGc === gc.code) throw new Error("No se pudo reemplazar grandeurItemExchange en Grandeur Club");
+    // Sustitución estructural: el método se reemplaza hasta su `end` de nivel
+    // superior (columna 0), no contando cuántos `end` se supone que tenía el
+    // original. La cuenta a ciegas (`\s+end\s+end\s+end\s+end`) dejó un `end`
+    // sobrante en la copia del juego y la sección dejó de compilar; lo registró
+    // la fase 39 y lo cierra la fase 32 (docs/REPARACION_GRANDEUR_CLUB_END.md).
+    const { code: replacedGc, reemplazado } = reemplazarMetodo(gc.code, "grandeurItemExchange", newExchange);
+    if (!reemplazado) throw new Error("No se pudo reemplazar grandeurItemExchange en Grandeur Club (no se encontró su `end` de nivel superior)");
     storeCode(gc.row, replacedGc);
     changed = true;
   }
@@ -606,11 +609,18 @@ function verify() {
   const gc = sectionCode(scripts, "Grandeur Club");
   ok(gc.code.includes("# PokeMod: Grandeur Club Free Items (0 Credits)"), "falta parche de 0 créditos en Grandeur Club");
   ok(gc.code.includes("maxitems = 99"), "grandeurItemExchange debe permitir hasta 99 unidades libres");
-  // La copia del juego puede conservar el script original; la copia que se
-  // distribuye para instalar debe ser la que no contiene el `end` sobrante.
+  // Fase 32: ninguna de las dos copias puede llevar un `end` de nivel superior
+  // sobrante tras grandeurItemExchange. Antes sólo se le exigía a la copia
+  // distribuible y la del juego se quedaba con una sección que no compilaba
+  // (línea 710): lo detecta tools/qa/ruby_syntax_full_check.mjs.
+  ok(!endSobranteTrasMetodo(gc.code, "grandeurItemExchange").sobrante,
+    "la copia del juego tiene un `end` sobrante tras grandeurItemExchange (reparar con node tools/repair_grandeur_club_end.mjs)");
   const correctedScripts = marshalLoad(fs.readFileSync(path.join(ROOT, "Scripts_corregido", "Scripts.rxdata")));
   const correctedGc = sectionCode(correctedScripts, "Grandeur Club");
-  ok(!/(?<=\n)end\r?\nend\r?\n\r?\ndef givePassive\b/.test(correctedGc.code), "Scripts_corregido/Scripts.rxdata contiene un end extra tras grandeurItemExchange");
+  ok(!endSobranteTrasMetodo(correctedGc.code, "grandeurItemExchange").sobrante,
+    "Scripts_corregido/Scripts.rxdata contiene un end extra tras grandeurItemExchange");
+  ok(gc.code === correctedGc.code,
+    "la sección «Grandeur Club» del juego y la de Scripts_corregido/Scripts.rxdata divergen (deben ser la misma)");
 
   const buffs = sectionCode(scripts, "Sygna Buffs");
   ok(buffs.code.includes("# PokeMod: Sygna Buffs 0 Credits"), "falta parche de 0 créditos en Sygna Buffs");
