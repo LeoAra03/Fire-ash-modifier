@@ -123,7 +123,10 @@ el Rotom del Testigo sigue apareciendo si la partida se borra.
 
 Todo esto vive en la sección `PokeMod_CanonArceus` de `Scripts.rxdata`, que
 se inyecta **también** en `Scripts_corregido/Scripts.rxdata` (el paquete
-descargable), conservando sus nueve correcciones de estabilidad.
+descargable), conservando sus correcciones de estabilidad. Desde la fase 32
+esas correcciones son ocho secciones que divergen de la copia del juego: la
+novena, el `end` sobrante de «Grandeur Club», ya está reparada también en
+`pokemon_fire_ash/` (`docs/REPARACION_GRANDEUR_CLUB_END.md`).
 
 ---
 

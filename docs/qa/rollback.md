@@ -196,6 +196,7 @@ un rollback quirúrgico se usa para confirmar que el instalador quedó
 | `apply_oak_lab_postgame_hub.mjs` | `oak_lab_hub_originals/` | `npm run verify:oak:hub` |
 | `apply_emergency_abra_and_free_tower.mjs` | `emergency_abra_and_tower_originals/` | `npm run verify:abra:tower` |
 | `apply_grandeur_bag_freedom.mjs` | `grandeur_bag_originals/` | `npm run verify:grandeur:bag` |
+| `repair_grandeur_club_end.mjs` | `grandeur_club_end_originals/` | `npm run verify:grandeur:end` |
 | `apply_extended_level_cap.mjs` | `extended_level_cap_originals/` | (auditoría interna) |
 | `apply_cajas_dialogo.mjs` | `cajas_dialogo/` | `npm run verify:dialogos:queue` |
 
@@ -225,7 +226,8 @@ un rollback quirúrgico se usa para confirmar que el instalador quedó
 npm run plan900:check                            # registro del plan + backups
 node tools/inventario_congelado.mjs --verify     # verde solo en estado canónico
 bash tools/plan900/orden_instalacion.sh --verify # los 9 verificadores en orden
-npm run verify:ruby                              # Scripts.rxdata sin errores
+npm run verify:ruby                              # lista fija de secciones PokeMod
+npm run verify:ruby:full                         # las 409 secciones de los 4 paquetes compilan
 python3 -m zipfile --test pokemon_fire_ash/PokeModBackups/*.zip  # ZIP sanos
 ```
 
