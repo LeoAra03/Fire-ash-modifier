@@ -1,0 +1,570 @@
+{
+  "generado": "tools/qa/audit_gbc_terreno.mjs",
+  "rom": "GlazedESPB6.gba",
+  "campana": "0",
+  "regla": "Celda del MapLayout con bits 10–11 = 0 (sin colisión): se trata como libre (paso 0) y se documenta aquí.",
+  "totales": {
+    "mapas": 111,
+    "mapasNoComparados": 1,
+    "celdas": 82518,
+    "libresSinBit": 30871,
+    "bloqueadas": 51647
+  },
+  "mapas": [
+    {
+      "mapId": 3000,
+      "celdas": 169,
+      "libresSinBit": 91
+    },
+    {
+      "mapId": 3001,
+      "celdas": 90,
+      "libresSinBit": 47
+    },
+    {
+      "mapId": 3002,
+      "celdas": 696,
+      "libresSinBit": 260
+    },
+    {
+      "mapId": 3003,
+      "celdas": 210,
+      "libresSinBit": 118
+    },
+    {
+      "mapId": 3004,
+      "celdas": 108,
+      "libresSinBit": 52
+    },
+    {
+      "mapId": 3005,
+      "celdas": 88,
+      "libresSinBit": 30
+    },
+    {
+      "mapId": 3006,
+      "celdas": 156,
+      "libresSinBit": 73
+    },
+    {
+      "mapId": 3007,
+      "celdas": 504,
+      "libresSinBit": 150
+    },
+    {
+      "mapId": 3008,
+      "celdas": 72,
+      "libresSinBit": 41
+    },
+    {
+      "mapId": 3009,
+      "celdas": 90,
+      "libresSinBit": 51
+    },
+    {
+      "mapId": 3010,
+      "celdas": 171,
+      "libresSinBit": 72
+    },
+    {
+      "mapId": 3011,
+      "celdas": 375,
+      "libresSinBit": 146
+    },
+    {
+      "mapId": 3012,
+      "celdas": 171,
+      "libresSinBit": 81
+    },
+    {
+      "mapId": 3013,
+      "celdas": 240,
+      "libresSinBit": 93
+    },
+    {
+      "mapId": 3014,
+      "celdas": 132,
+      "libresSinBit": 62
+    },
+    {
+      "mapId": 3015,
+      "celdas": 924,
+      "libresSinBit": 333
+    },
+    {
+      "mapId": 3016,
+      "celdas": 210,
+      "libresSinBit": 125
+    },
+    {
+      "mapId": 3017,
+      "celdas": 210,
+      "libresSinBit": 118
+    },
+    {
+      "mapId": 3018,
+      "celdas": 99,
+      "libresSinBit": 62
+    },
+    {
+      "mapId": 3019,
+      "celdas": 108,
+      "libresSinBit": 65
+    },
+    {
+      "mapId": 3020,
+      "celdas": 400,
+      "libresSinBit": 92
+    },
+    {
+      "mapId": 3021,
+      "celdas": 3200,
+      "libresSinBit": 2393
+    },
+    {
+      "mapId": 3022,
+      "celdas": 4144,
+      "libresSinBit": 1180
+    },
+    {
+      "mapId": 3023,
+      "celdas": 231,
+      "libresSinBit": 15
+    },
+    {
+      "mapId": 3024,
+      "celdas": 231,
+      "libresSinBit": 15
+    },
+    {
+      "mapId": 3025,
+      "celdas": 120,
+      "libresSinBit": 67
+    },
+    {
+      "mapId": 3026,
+      "celdas": 372,
+      "libresSinBit": 150
+    },
+    {
+      "mapId": 3027,
+      "celdas": 1650,
+      "libresSinBit": 463
+    },
+    {
+      "mapId": 3028,
+      "celdas": 144,
+      "libresSinBit": 66
+    },
+    {
+      "mapId": 3029,
+      "celdas": 144,
+      "libresSinBit": 67
+    },
+    {
+      "mapId": 3030,
+      "celdas": 144,
+      "libresSinBit": 67
+    },
+    {
+      "mapId": 3031,
+      "celdas": 144,
+      "libresSinBit": 67
+    },
+    {
+      "mapId": 3032,
+      "celdas": 120,
+      "libresSinBit": 67
+    },
+    {
+      "mapId": 3033,
+      "celdas": 187,
+      "libresSinBit": 109
+    },
+    {
+      "mapId": 3034,
+      "celdas": 494,
+      "libresSinBit": 303
+    },
+    {
+      "mapId": 3035,
+      "celdas": 416,
+      "libresSinBit": 190
+    },
+    {
+      "mapId": 3036,
+      "celdas": 180,
+      "libresSinBit": 95
+    },
+    {
+      "mapId": 3037,
+      "celdas": 288,
+      "libresSinBit": 206
+    },
+    {
+      "mapId": 3038,
+      "celdas": 1387,
+      "libresSinBit": 1387
+    },
+    {
+      "mapId": 3039,
+      "celdas": 182,
+      "libresSinBit": 114
+    },
+    {
+      "mapId": 3040,
+      "celdas": 182,
+      "libresSinBit": 114
+    },
+    {
+      "mapId": 3041,
+      "celdas": 182,
+      "libresSinBit": 114
+    },
+    {
+      "mapId": 3042,
+      "celdas": 182,
+      "libresSinBit": 114
+    },
+    {
+      "mapId": 3043,
+      "celdas": 288,
+      "libresSinBit": 162
+    },
+    {
+      "mapId": 3044,
+      "celdas": 988,
+      "libresSinBit": 716
+    },
+    {
+      "mapId": 3045,
+      "celdas": 1440,
+      "libresSinBit": 1440
+    },
+    {
+      "mapId": 3046,
+      "celdas": 252,
+      "libresSinBit": 189
+    },
+    {
+      "mapId": 3047,
+      "celdas": 90,
+      "libresSinBit": 62
+    },
+    {
+      "mapId": 3048,
+      "celdas": 117,
+      "libresSinBit": 78
+    },
+    {
+      "mapId": 3049,
+      "celdas": 504,
+      "libresSinBit": 144
+    },
+    {
+      "mapId": 3050,
+      "celdas": 1680,
+      "libresSinBit": 462
+    },
+    {
+      "mapId": 3051,
+      "celdas": 180,
+      "libresSinBit": 125
+    },
+    {
+      "mapId": 3052,
+      "celdas": 2300,
+      "libresSinBit": 360
+    },
+    {
+      "mapId": 3053,
+      "celdas": 728,
+      "libresSinBit": 260
+    },
+    {
+      "mapId": 3054,
+      "celdas": 3000,
+      "libresSinBit": 751
+    },
+    {
+      "mapId": 3055,
+      "celdas": 270,
+      "libresSinBit": 122
+    },
+    {
+      "mapId": 3056,
+      "celdas": 5084,
+      "libresSinBit": 1443
+    },
+    {
+      "mapId": 3057,
+      "celdas": 180,
+      "libresSinBit": 91
+    },
+    {
+      "mapId": 3058,
+      "celdas": 621,
+      "libresSinBit": 370
+    },
+    {
+      "mapId": 3059,
+      "celdas": 435,
+      "libresSinBit": 143
+    },
+    {
+      "mapId": 3060,
+      "celdas": 312,
+      "libresSinBit": null
+    },
+    {
+      "mapId": 3061,
+      "celdas": 494,
+      "libresSinBit": 202
+    },
+    {
+      "mapId": 3062,
+      "celdas": 570,
+      "libresSinBit": 145
+    },
+    {
+      "mapId": 3063,
+      "celdas": 360,
+      "libresSinBit": 360
+    },
+    {
+      "mapId": 3064,
+      "celdas": 900,
+      "libresSinBit": 410
+    },
+    {
+      "mapId": 3065,
+      "celdas": 2176,
+      "libresSinBit": 780
+    },
+    {
+      "mapId": 3066,
+      "celdas": 165,
+      "libresSinBit": 121
+    },
+    {
+      "mapId": 3067,
+      "celdas": 165,
+      "libresSinBit": 121
+    },
+    {
+      "mapId": 3068,
+      "celdas": 165,
+      "libresSinBit": 121
+    },
+    {
+      "mapId": 3069,
+      "celdas": 165,
+      "libresSinBit": 121
+    },
+    {
+      "mapId": 3070,
+      "celdas": 165,
+      "libresSinBit": 121
+    },
+    {
+      "mapId": 3071,
+      "celdas": 625,
+      "libresSinBit": 418
+    },
+    {
+      "mapId": 3072,
+      "celdas": 600,
+      "libresSinBit": 467
+    },
+    {
+      "mapId": 3073,
+      "celdas": 612,
+      "libresSinBit": 235
+    },
+    {
+      "mapId": 3074,
+      "celdas": 640,
+      "libresSinBit": 274
+    },
+    {
+      "mapId": 3075,
+      "celdas": 1768,
+      "libresSinBit": 440
+    },
+    {
+      "mapId": 3076,
+      "celdas": 855,
+      "libresSinBit": 288
+    },
+    {
+      "mapId": 3077,
+      "celdas": 400,
+      "libresSinBit": 142
+    },
+    {
+      "mapId": 3078,
+      "celdas": 1900,
+      "libresSinBit": 263
+    },
+    {
+      "mapId": 3079,
+      "celdas": 1440,
+      "libresSinBit": 470
+    },
+    {
+      "mapId": 3080,
+      "celdas": 600,
+      "libresSinBit": 121
+    },
+    {
+      "mapId": 3081,
+      "celdas": 1860,
+      "libresSinBit": 444
+    },
+    {
+      "mapId": 3082,
+      "celdas": 1240,
+      "libresSinBit": 100
+    },
+    {
+      "mapId": 3083,
+      "celdas": 754,
+      "libresSinBit": 289
+    },
+    {
+      "mapId": 3084,
+      "celdas": 165,
+      "libresSinBit": 147
+    },
+    {
+      "mapId": 3085,
+      "celdas": 3360,
+      "libresSinBit": 241
+    },
+    {
+      "mapId": 3086,
+      "celdas": 323,
+      "libresSinBit": 141
+    },
+    {
+      "mapId": 3087,
+      "celdas": 336,
+      "libresSinBit": 263
+    },
+    {
+      "mapId": 3088,
+      "celdas": 336,
+      "libresSinBit": 263
+    },
+    {
+      "mapId": 3089,
+      "celdas": 336,
+      "libresSinBit": 263
+    },
+    {
+      "mapId": 3090,
+      "celdas": 336,
+      "libresSinBit": 263
+    },
+    {
+      "mapId": 3091,
+      "celdas": 2800,
+      "libresSinBit": 638
+    },
+    {
+      "mapId": 3092,
+      "celdas": 315,
+      "libresSinBit": 177
+    },
+    {
+      "mapId": 3093,
+      "celdas": 525,
+      "libresSinBit": 525
+    },
+    {
+      "mapId": 3094,
+      "celdas": 220,
+      "libresSinBit": 42
+    },
+    {
+      "mapId": 3095,
+      "celdas": 320,
+      "libresSinBit": 114
+    },
+    {
+      "mapId": 3096,
+      "celdas": 130,
+      "libresSinBit": 86
+    },
+    {
+      "mapId": 3097,
+      "celdas": 900,
+      "libresSinBit": 348
+    },
+    {
+      "mapId": 3098,
+      "celdas": 1681,
+      "libresSinBit": 634
+    },
+    {
+      "mapId": 3099,
+      "celdas": 210,
+      "libresSinBit": 118
+    },
+    {
+      "mapId": 3100,
+      "celdas": 210,
+      "libresSinBit": 118
+    },
+    {
+      "mapId": 3101,
+      "celdas": 2400,
+      "libresSinBit": 209
+    },
+    {
+      "mapId": 3102,
+      "celdas": 496,
+      "libresSinBit": 206
+    },
+    {
+      "mapId": 3103,
+      "celdas": 714,
+      "libresSinBit": 40
+    },
+    {
+      "mapId": 3104,
+      "celdas": 1088,
+      "libresSinBit": 465
+    },
+    {
+      "mapId": 3105,
+      "celdas": 576,
+      "libresSinBit": 208
+    },
+    {
+      "mapId": 3106,
+      "celdas": 2438,
+      "libresSinBit": 1386
+    },
+    {
+      "mapId": 3107,
+      "celdas": 1196,
+      "libresSinBit": 165
+    },
+    {
+      "mapId": 3108,
+      "celdas": 1664,
+      "libresSinBit": 276
+    },
+    {
+      "mapId": 3109,
+      "celdas": 2720,
+      "libresSinBit": 261
+    },
+    {
+      "mapId": 3110,
+      "celdas": 400,
+      "libresSinBit": 378
+    }
+  ]
+}
