@@ -212,6 +212,8 @@
     "verify:arceus:scope": "node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit",
     "build:ash:unbound": "node tools/build_unbound_ash_outfit.mjs",
     "verify:ash:unbound": "node tools/build_unbound_ash_outfit.mjs --verify",
+    "build:ash:mapa-espalda": "node tools/build_ash_mapa_espalda.mjs",
+    "verify:ash:mapa-espalda": "node tools/build_ash_mapa_espalda.mjs --verify",
     "apply:atavios": "node tools/apply_outfits_dimensiones.mjs",
     "verify:atavios": "node tools/apply_outfits_dimensiones.mjs --verify",
     "dn:gameboy": "node tools/dn_apply_gameboy_palette.mjs",
