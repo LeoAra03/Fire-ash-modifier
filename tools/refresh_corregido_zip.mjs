@@ -21,6 +21,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { listFiles, readZipEntry, readZipIndex, writeZipEntries } from "./lib/zip_writer.mjs";
 import { leemeToText } from "./build_direct_package.mjs";
+import { cargarPolitica, formatearMiB, mbABytes } from "./lib/artifact_budget.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PACKAGE = path.join(ROOT, "Scripts_corregido");
@@ -107,7 +108,19 @@ function verify() {
   for (const name of inZip) {
     if (!files.some((entry) => entry.name === name)) throw new Error(`El ZIP trae un archivo inesperado: ${name}`);
   }
-  return { files: files.length, bytes: fs.statSync(ZIP).size };
+  // Fase 14/2680 (tarea 34): el ZIP raíz tiene tope duro y no justificable, para
+  // que nunca consuma por sí solo el techo de sesión de 128 MiB.
+  const { zip_raiz: topeZipRaiz } = cargarPolitica();
+  const topeBytes = mbABytes(topeZipRaiz.tope_mb);
+  const bytes = fs.statSync(ZIP).size;
+  if (bytes > topeBytes) {
+    throw new Error(
+      `Fire-Ash-Scripts-Corregidos.zip pesa ${formatearMiB(bytes)} y supera el tope duro de ` +
+        `${topeZipRaiz.tope_mb} MiB del ZIP raíz (${path.relative(ROOT, ZIP)}). ` +
+        "Recorta el paquete directo o revisa docs/PRESUPUESTO_ARTEFACTO_SESION.md y `npm run verify:presupuesto`.",
+    );
+  }
+  return { files: files.length, bytes };
 }
 
 if (!VERIFY_ONLY) {

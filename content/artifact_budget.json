@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "_doc": "docs/PRESUPUESTO_ARTEFACTO_SESION.md",
+  "_nota": "Presupuesto de tamaño del artefacto de sesión (Fase 14/2680, tarea 34). La unidad de trabajo es el MiB (1 MiB = 1 048 576 bytes). Un límite solo puede superarse si existe una entrada en 'justificaciones' con el mismo 'id' y un 'techo_mb' mayor o igual a lo medido; si lo medido pasa ese techo, la justificación vence y la comprobación falla.",
+  "limite_sesion_mb": 128,
+  "zip_raiz": {
+    "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+    "tope_mb": 64,
+    "justificable": false,
+    "motivo": "Es el único artefacto que el usuario descarga suelto desde la raíz del repositorio y el que se reconstruye con npm run build:corregido:zip. Tope duro y no justificable: 64 MiB, la mitad del techo de sesión, para que el ZIP raíz nunca pueda consumir por sí solo el presupuesto completo. Hoy ocupa 46,58 MiB."
+  },
+  "entregables": [
+    {
+      "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+      "rol": "zip_raiz",
+      "motivo": "Paquete directo + LEEME.txt, reconstruido con npm run build:corregido:zip."
+    },
+    {
+      "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+      "rol": "paquete_directo",
+      "motivo": "ZIP que se descomprime sobre la raíz del juego; incluye Scripts.rxdata compilado, Graphics y Audio."
+    },
+    {
+      "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+      "rol": "referencia_mapas",
+      "motivo": "Hojas PNG y el informe referencial que acompañan la entrega de mapas."
+    },
+    {
+      "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+      "rol": "qa_dn",
+      "motivo": "Lote de QA jugable de Dimensional Nightmare; se construye con npm run build:dn:qa."
+    }
+  ],
+  "insumos": {
+    "extensiones": [".zip", ".rar", ".7z"],
+    "motivo": "Material fuente de terceros que vive versionado en el repositorio (porymap, Tiled, ROMs invitadas, repos de referencia) y que no forma parte de la entrega. Se mide aparte para que no se confunda con lo que se publica."
+  },
+  "repositorio": {
+    "tope_mb": 1600,
+    "motivo": "Peso total versionado (assets del juego, mapas, docs, PNG de referencia). Es la línea base heredada; el tope existe para que una fase futura no la infle sin justificarlo."
+  },
+  "justificaciones": [
+    {
+      "id": "entregables",
+      "techo_mb": 136,
+      "fecha": "2026-10-15",
+      "autor": "Fase 14/2680",
+      "motivo": "Los cuatro entregables versionados suman 133,34 MiB y superan el techo de sesión de 128 MiB en 5,34 MiB. Se justifica en vez de recortar porque cada uno es la vía de instalación de un contenido distinto (scripts corregidos, paquete directo, mapas referenciales, QA de Dimensional Nightmare) y quitarlos rompería enlaces publicados en README.md y Scripts_corregido/LEEME.md. Además, el ZIP raíz duplica el contenido de Scripts_corregido/Paquete_directo/: la ruta de retorno al techo sin justificación está documentada en docs/PRESUPUESTO_ARTEFACTO_SESION.md (deduplicar esa pareja o dejar el paquete directo como único artefacto de instalación). Mientras esa ruta no se ejecute, ningún entregable nuevo puede añadirse sin subir este techo de forma explícita."
+    },
+    {
+      "id": "insumos",
+      "techo_mb": 280,
+      "fecha": "2026-10-15",
+      "autor": "Fase 14/2680",
+      "motivo": "Los 32 archivos comprimidos de terceros versionados suman 260,25 MiB, el exceso mayor del repositorio, y se justifica por partes: porymap 1-15 (144,06 MiB) es el editor de mapas con el que se reconstruyen las regiones; Tiled 1-4 (44,26 MiB) son binarios de Linux redistribuibles que se bajan del release oficial; ROMS (1..3) (32,56 MiB) y Pokemon unbound part1-2 (16,51 MiB) son las ROMs invitadas de la extraccion nativa; swablu (15,81 MiB) es material de referencia de sprites; pokecrystal, pokered, timps-swarm, pokemon-agent, rvpacker y porygion aportan ~7 MiB de herramientas fuente. Nada de esto es entregable ni se publica: son la materia prima con la que ya se generaron los PNG, tilesets y sprites que si estan versionados. Se declara techo de 280 MiB en lugar de podar en esta fase porque la poda es destructiva y exige confirmacion del usuario; las rutas de poda, con el ahorro medido de cada una, quedan escritas en docs/PRESUPUESTO_ARTEFACTO_SESION.md. Si una fase futura anade insumos, debe subir este techo con motivo explicito."
+    },
+    {
+      "id": "repositorio",
+      "techo_mb": 1600,
+      "fecha": "2026-10-15",
+      "autor": "Fase 14/2680",
+      "motivo": "El total versionado (1 445,05 MiB en 29 235 archivos) es la línea base heredada del proyecto: sprites, tilesets, mapas, documentos y paquetes ya descritos en README.md. El techo de sesión de 128 MiB se fija sobre lo que la sesión produce y publica, no sobre el material preexistente que la fase 34 no puede podar sin destruir contenido del usuario. Cualquier fase que supere estos 1 600 MiB debe actualizar esta entrada explicando qué se añadió y por qué."
+    }
+  ]
+}

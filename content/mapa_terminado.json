@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "fecha": "2026-10-15",
+  "fase": "Fase 3/46199 (tarea 37)",
+  "titulo": "Qué significa que un mapa esté terminado",
+  "definicion": "docs/qa/mapa_terminado.md",
+  "verificador": "tools/qa/mapa_terminado_check.mjs",
+  "criterios": [
+    {
+      "id": "transitable",
+      "nombre": "Transitable",
+      "regla": "Existe Map<id>.rxdata, el tileset tiene nombre (si no, el mapa entra en negro), hay celdas transitables y la entrada instalada —o la primera transferencia que llega al mapa— pisa una celda por la que se puede caminar."
+    },
+    {
+      "id": "huerfanas",
+      "nombre": "Sin celdas huérfanas",
+      "regla": "Las celdas alcanzables desde la entrada con el movimiento real del motor (direcciones + hielo) son al menos el 90 % de las transitables, y ninguna salida ni transferencia cae fuera de esa zona. Las regiones aisladas se cuentan y se publican."
+    },
+    {
+      "id": "encuentros",
+      "nombre": "Con encuentros",
+      "regla": "Si el mapa está declarado como zona salvaje en los catálogos de encuentros, tiene su tabla Map<id>_0 con especies reales, pesos positivos y niveles entre 1 y el techo de la expansión (175), o combate salvaje por evento. Si no es zona salvaje, exige una exención declarada con su motivo."
+    },
+    {
+      "id": "musica",
+      "nombre": "Con música",
+      "regla": "El BGM declarado existe en Audio/BGM (nombre con o sin extensión), o el mapa hereda la música del anterior (@autoplay_bgm apagado: el idioma del motor, usado en 116 mapas), o el silencio está declarado y citado."
+    },
+    {
+      "id": "entrada_salida",
+      "nombre": "Con entrada y salida",
+      "regla": "Alguna transferencia real del juego llega al mapa (o el mapa está declarado como raíz, por ejemplo el inicio de partida) y el mapa tiene al menos una salida que transfiere a otro mapa."
+    }
+  ],
+  "alcance": {
+    "anillo_a": {
+      "fuentes": [
+        "content/metrica_dimensiones.json"
+      ],
+      "mapas": [
+        2021,
+        2022,
+        2040,
+        2136,
+        2137,
+        2138,
+        2139,
+        2140
+      ],
+      "rangos": [
+        [
+          2041,
+          2190
+        ]
+      ],
+      "nota": "Los mapas del plan: los 23 mundos de la métrica (fase 2), la falda y la cumbre del Monte Silver, la Antesala de las Grietas y los cinco mapas del Nexo, más los 150 mapas del Dimensional Nightmare (2041–2190), que es el bloque de contenido más grande del plan."
+    },
+    "anillo_b": {
+      "fuente": "MapInfos.rxdata (3465 mapas)",
+      "nota": "Censo completo del juego (Fire Ash original + todo lo añadido). Es la línea base: el verificador falla si algún contador baja, y la lista de trabajo queda en content/mapa_terminado_censo.json.",
+      "linea_base": {
+        "fecha": "2026-10-15",
+        "mapas": 3465,
+        "transitable": 3463,
+        "huerfanas": 2300,
+        "encuentros": 674,
+        "musica": 3463,
+        "entrada_salida": 3406,
+        "nota": "Medido el 2026-10-15 con `node tools/qa/mapa_terminado_check.mjs --censo`. El verificador falla si algún contador baja; si sube, hay que volver a medir y actualizar la base."
+      }
+    }
+  },
+  "exenciones": {
+    "umbral_huerfanas_por_defecto": 0.9,
+    "techo_nivel": 175,
+    "nota": "Una exención no es un permiso para no mirar: es una frase de diseño con su motivo escrito. El verificador exige el motivo (20 caracteres mínimo) y, cuando la exención afirma algo del juego (el silencio), también su cita literal.",
+    "sin_encuentros": [
+      {
+        "rango": [
+          2041,
+          2190
+        ],
+        "motivo": "Interior del sueño: el Dimensional Nightmare pelea con jefes, anomalías y objetos, y su catálogo no instala tablas salvajes (0 de sus 150 mapas aparecen en encounters.dat). Los salvajes que las fichas sí declaran no se dan por buenos aquí: los mide el hallazgo DN-SALVAJES-DECLARADOS con su lista y su cuenta."
+      },
+      {
+        "mapa": 2040,
+        "motivo": "Antesala de las Grietas: hub narrativo del sueño, sin terreno salvaje ni zona de encuentros."
+      },
+      {
+        "mapa": 2201,
+        "motivo": "Gimnasio de la dimensión invitada: un solo combate contra la líder, sin zona salvaje.",
+        "fuente": {
+          "ruta": "content/dimensiones_barco.json",
+          "busca": "\"tituloGimnasio\": \"Gimnasio Glazed — Líder Ámbar\""
+        }
+      },
+      {
+        "mapa": 2211,
+        "motivo": "Gimnasio de la dimensión invitada: un solo combate contra la líder, sin zona salvaje.",
+        "fuente": {
+          "ruta": "content/dimensiones_barco.json",
+          "busca": "\"tituloGimnasio\": \"Gimnasio Light Platinum — Líder Resplandor\""
+        }
+      },
+      {
+        "mapa": 2221,
+        "motivo": "Núcleo del Mando del Team Rocket: combate de rango y entrega de la insignia, sin zona salvaje."
+      },
+      {
+        "mapa": 2240,
+        "motivo": "Umbral de la dimensión: es la bahía de llegada, y quien lleva las zonas salvajes es la campaña completa de Liquid Crystal.",
+        "fuente": {
+          "ruta": "docs/CANON_ARCEUS.md",
+          "busca": "| Liquid Crystal | 2240–2241 y 3200–3631 (campaña completa; 432 mapas) |"
+        }
+      },
+      {
+        "mapa": 2241,
+        "motivo": "Dojo de la dimensión invitada: un solo combate contra la guardiana, sin zona salvaje.",
+        "fuente": {
+          "ruta": "content/dimensiones_barco.json",
+          "busca": "\"tituloGimnasio\": \"Dojo Liquid Crystal — Guardiana Suicune\""
+        }
+      },
+      {
+        "mapa": 2242,
+        "motivo": "Umbral de la dimensión: es la frontera de llegada, y la campaña de TFOH (3700–3944) es quien lleva las zonas salvajes.",
+        "fuente": {
+          "ruta": "docs/CANON_ARCEUS.md",
+          "busca": "TFOH (3700–3944)"
+        }
+      },
+      {
+        "mapa": 2243,
+        "motivo": "Cámara de la Primera Huella: la sala del líder, un solo combate, sin zona salvaje.",
+        "fuente": {
+          "ruta": "content/dimensiones_barco.json",
+          "busca": "\"tituloGimnasio\": \"TFOH — Cámara de la Primera Huella\""
+        }
+      },
+      {
+        "mapa": 2244,
+        "motivo": "Umbral de la dimensión: distrito de llegada de Factory Adventure, sin zona de encuentros propia."
+      },
+      {
+        "mapa": 2245,
+        "motivo": "Núcleo de Ensamblaje: la sala del maestro, un solo combate, sin zona salvaje.",
+        "fuente": {
+          "ruta": "content/dimensiones_barco.json",
+          "busca": "\"tituloGimnasio\": \"Factory Adventure — Núcleo de Ensamblaje\""
+        }
+      }
+    ],
+    "sin_musica": [
+      {
+        "rango": [
+          2104,
+          2109
+        ],
+        "motivo": "Silencio explícito del EP05: la ausencia de música es el recurso del episodio, no un olvido.",
+        "fuente": {
+          "ruta": "docs/DIMENSIONAL_NIGHTMARE/05_EP05_POKEMON_BLACK.md",
+          "busca": "BGM vacía con autoplay"
+        }
+      }
+    ],
+    "raices": []
+  },
+  "pendientes": [
+    {
+      "id": "MS-PLANTILLA-139",
+      "condicion": "huerfanas",
+      "mapas": [
+        2026,
+        2029
+      ],
+      "motivo": "Las dos emisiones construidas sobre la plantilla 139 (La Cinta Carmesí y La Consola de 1996) reciben al jugador en una isla de 60 celdas desde la que no se alcanza el jefe ni la salida a la gruta: la otra punta del mapa queda al otro lado del muro. El hallazgo MS-PLANTILLA-139 explica la causa en el instalador.",
+      "fuente": {
+        "ruta": "docs/qa/mapa_terminado.md",
+        "busca": "MS-PLANTILLA-139"
+      }
+    }
+  ],
+  "hallazgos": [
+    {
+      "id": "DN-SALVAJES-DECLARADOS",
+      "titulo": "El sueño declara salvajes en 14 mapas y no implementa ninguno",
+      "detalle": "Los documentos del Dimensional Nightmare (EP01, EP05, W7, W8 y W9) declaran Pokémon salvajes con nivel y mapa concreto; los catálogos instalados no tienen ninguna tabla para esos mapas y ningún evento de 2041–2190 llama a pbWildBattle. El verificador recuenta la lista leyendo las fichas cada vez, para que no se quede vieja.",
+      "verificacion": {
+        "tipo": "salvajes_en_docs",
+        "docs": "docs/DIMENSIONAL_NIGHTMARE",
+        "mapas": [
+          2047,
+          2115,
+          2145,
+          2147,
+          2150,
+          2154,
+          2163,
+          2167,
+          2168,
+          2171,
+          2180,
+          2181,
+          2185,
+          2186
+        ],
+        "implementados": 0
+      },
+      "fuente": {
+        "ruta": "docs/DIMENSIONAL_NIGHTMARE/17_W8_BURIED_ALIVE.md",
+        "busca": "niveles 98–106, encuentros en 2163, 2167, 2168 y 2171"
+      }
+    },
+    {
+      "id": "BGM-SAFARI",
+      "titulo": "Dos mapas del juego base piden una música que no está en disco",
+      "detalle": "Map68 y Map1086 (las dos «safari») declaran el BGM «safari» con autoplay encendido y ese archivo no existe en Audio/BGM: el motor arranca el mapa sin música. Al no tener herencia declarada ni silencio citado, son los dos únicos mapas del juego que fallan la condición de música en el censo.",
+      "verificacion": {
+        "tipo": "audio_roto_en_el_juego",
+        "mapas": 2
+      }
+    },
+    {
+      "id": "MS-PLANTILLA-139",
+      "titulo": "Dos emisiones del Monte Silver reciben al jugador sin salida ni jefe a la vista",
+      "detalle": "La Cinta Carmesí (2026) y La Consola de 1996 (2029) comparten la plantilla 139, un mapa de tres islas separadas. El instalador de las emisiones elige la isla del ancla y, cuando no le caben los eventos, reparte el resto por TODAS las celdas del mapa (tools/apply_multiverse_creepypasta.mjs, el respaldo `component.length >= count ? component : cells`). Resultado: el jefe y las dos salidas quedan en islas que no se tocan, y la llegada —(20,7)— cae en una isla de 60 celdas con tres eventos de sabor. El jugador puede salir por el Nexo de emergencia, pero la emisión no se puede jugar desde su puerta.",
+      "verificacion": {
+        "tipo": "llegadas_sin_contenido",
+        "mapas": [
+          2026,
+          2029
+        ]
+      },
+      "fuente": {
+        "ruta": "tools/apply_multiverse_creepypasta.mjs",
+        "busca": "const region = (component.length >= count ? component : cells)"
+      }
+    }
+  ],
+  "deudas": [
+    {
+      "id": "CENSO-FIRE-ASH",
+      "titulo": "El juego base arrastra mapas sin tabla de encuentros ni entrada/salida",
+      "detalle": "El censo de los 3465 mapas mide la herencia de Fire Ash: 2791 mapas sin tabla de encuentros (interiores en su mayoría), 1165 con alguna salida que no se alcanza desde sus puertas (la medida no modela caídas de una sola dirección), 109 sin entrada o sin salida declarada y dos con la música rota. No son mapas de este plan; la línea base los fija para que ninguna fase futura los empeore y la lista de trabajo queda en content/mapa_terminado_censo.json.",
+      "evidencia": [
+        {
+          "ruta": "content/mapa_terminado.json",
+          "busca": "\"linea_base\""
+        }
+      ]
+    },
+    {
+      "id": "PARTIDA-MANUAL-MAPA",
+      "titulo": "Ningún mapa está jugado por una persona",
+      "detalle": "La condición de terminado se puede medir sin abrir el juego, pero el mapa solo está «Certificado» cuando alguien lo recorre. Sigue pendiente la pasada manual de docs/QA_MANUAL_PLAYTEST.md, igual que en la métrica de mundos (fase 2).",
+      "evidencia": [
+        {
+          "ruta": "docs/QA_MANUAL_PLAYTEST.md",
+          "busca": "Ningún linter sustituye esta pasada"
+        }
+      ]
+    }
+  ]
+}

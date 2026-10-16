@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "revision": "R1",
+  "fecha": "2026-10-15",
+  "fase": "Fase 1/46199 (tarea 35)",
+  "archivo": "docs/qa/glosario.md",
+  "sha256": "06ec2db6a7b1cc8ff4c237b271beb2be0238f5dcc01274a5bce075636f841c49",
+  "terminos": [
+    "Vía",
+    "Ancla",
+    "Emisión",
+    "Sello",
+    "Fragmento",
+    "Dimensión invitada",
+    "Liga Oscura"
+  ],
+  "secciones_extra": [
+    "Divergencias conocidas",
+    "Protocolo de congelación",
+    "Cómo se comprueba"
+  ],
+  "fuentes": [
+    {
+      "termino": "Vía",
+      "ruta": "docs/VIA_NUEVE_ERAS.md",
+      "busca": "Vía de las Nueve Eras"
+    },
+    {
+      "termino": "Vía",
+      "ruta": "tools/apply_atlas_eras_map.mjs",
+      "busca": "SW_DUELO = 873"
+    },
+    {
+      "termino": "Ancla",
+      "ruta": "docs/ESTADO_CONGELADO.md",
+      "busca": "40 anclas, mapIds 1021–1996, switches 708–747"
+    },
+    {
+      "termino": "Ancla",
+      "ruta": "docs/ATLAS_TIER3_REGLAS.md",
+      "busca": "40 anclas Tier 1, 120 rutas Tier 2 y 840 Ecos Tier 3"
+    },
+    {
+      "termino": "Ancla",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md",
+      "busca": "| 5 | **Ancla** | 100 |"
+    },
+    {
+      "termino": "Ancla",
+      "ruta": "docs/INFORME_ATLAS_MIL_Y_FLAGS.md",
+      "busca": "40 sectores de 25 mapas"
+    },
+    {
+      "termino": "Ancla",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/00_MASTER_GDD.md",
+      "busca": "v265 DN_RESONANCE"
+    },
+    {
+      "termino": "Ancla",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/14_MEDALLAS_LIGA_OSCURA_Y_SENSACIONES.md",
+      "busca": "**Ancla visible**"
+    },
+    {
+      "termino": "Emisión",
+      "ruta": "docs/MULTIVERSO_CREEPYPASTA.md",
+      "busca": "siete dimensiones donde viven los cuentos"
+    },
+    {
+      "termino": "Emisión",
+      "ruta": "docs/MONTE_SILVER_REBUILD.md",
+      "busca": "solo sube al SELLAR una emisión"
+    },
+    {
+      "termino": "Emisión",
+      "ruta": "docs/MONTE_SILVER_REBUILD.md",
+      "busca": "sw768–774"
+    },
+    {
+      "termino": "Emisión",
+      "ruta": "content/multiverse_creepypasta.json"
+    },
+    {
+      "termino": "Sello",
+      "ruta": "docs/ESTADO_CONGELADO.md",
+      "busca": "POKEMOD ATLAS SEAL 01 BELL"
+    },
+    {
+      "termino": "Sello",
+      "ruta": "docs/ATLAS_MIL_TRES_AVENTURAS.md",
+      "busca": "953–966 (14 sellos)"
+    },
+    {
+      "termino": "Sello",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/01_EP01_WHITE_HAND.md",
+      "busca": "EV_CAT_Sello"
+    },
+    {
+      "termino": "Sello",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/14_MEDALLAS_LIGA_OSCURA_Y_SENSACIONES.md",
+      "busca": "Pedestal del Sello"
+    },
+    {
+      "termino": "Sello",
+      "ruta": "tools/dn_name_flags.mjs",
+      "busca": "DN_MEDALS_READY"
+    },
+    {
+      "termino": "Fragmento",
+      "ruta": "docs/CANON_ARCEUS.md",
+      "busca": "Fragmento del Génesis"
+    },
+    {
+      "termino": "Fragmento",
+      "ruta": "docs/CANON_ARCEUS.md",
+      "busca": "Fragmentos de dimensión"
+    },
+    {
+      "termino": "Fragmento",
+      "ruta": "content/dimensiones_barco.json",
+      "busca": "Cada ROM se conserva como un Fragmento independiente"
+    },
+    {
+      "termino": "Fragmento",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/01_EP01_WHITE_HAND.md",
+      "busca": "DN_CARTRIDGE_01"
+    },
+    {
+      "termino": "Fragmento",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/06_EP06_KING_UNOWN.md",
+      "busca": "DN_UNOWN_FRAGMENT"
+    },
+    {
+      "termino": "Dimensión invitada",
+      "ruta": "tools/apply_dimensiones_barco.mjs",
+      "busca": "cinco dimensiones invitadas navegables"
+    },
+    {
+      "termino": "Dimensión invitada",
+      "ruta": "content/dimensiones_barco.json",
+      "busca": "Cinco ROMs invitadas convertidas en dimensiones visitables por Ash"
+    },
+    {
+      "termino": "Dimensión invitada",
+      "ruta": "docs/PLAN_FUSION_3_JUEGOS.md",
+      "busca": "Ruta Paralela"
+    },
+    {
+      "termino": "Dimensión invitada",
+      "ruta": "docs/PROMPT_MAESTRO_Y_ESTADO.md",
+      "busca": "dimensiones invitadas"
+    },
+    {
+      "termino": "Dimensión invitada",
+      "ruta": "docs/ROM_INVITADO_EXTRACCION.md",
+      "busca": "ROM invitado"
+    },
+    {
+      "termino": "Dimensión invitada",
+      "ruta": "docs/CANON_ARCEUS.md",
+      "busca": "Liquid Crystal | 2240–2241 y 3200–3631"
+    },
+    {
+      "termino": "Liga Oscura",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/14_MEDALLAS_LIGA_OSCURA_Y_SENSACIONES.md",
+      "busca": "DN_MEDALS_READY"
+    },
+    {
+      "termino": "Liga Oscura",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/14_MEDALLAS_LIGA_OSCURA_Y_SENSACIONES.md",
+      "busca": "DN_MPIKA_150"
+    },
+    {
+      "termino": "Liga Oscura",
+      "ruta": "docs/DIMENSIONAL_NIGHTMARE/15_EXPERIENCIA_POR_MAPA.md",
+      "busca": "Coliseo del Vínculo"
+    },
+    {
+      "termino": "Liga Oscura",
+      "ruta": "docs/ESTADO_CONGELADO.md",
+      "busca": "Liga Oscura** 2141–2142"
+    },
+    {
+      "termino": "Liga Oscura",
+      "ruta": "docs/AUDITORIA_TOTAL_FLAGS.md",
+      "busca": "DN_LIGA_RAMA_MADPIKA"
+    },
+    {
+      "termino": "Liga Oscura",
+      "ruta": "tools/apply_diplomas_planta.mjs",
+      "busca": "POKEMOD LIGA OSCURA COMPLETA"
+    }
+  ],
+  "divergencias": [
+    {
+      "id": "D1",
+      "titulo": "Cuántas dimensiones invitadas son «las» dimensiones invitadas",
+      "lados": [
+        {
+          "ruta": "docs/PROMPT_MAESTRO_Y_ESTADO.md",
+          "busca": "Dos dimensiones invitadas"
+        },
+        {
+          "ruta": "content/dimensiones_barco.json",
+          "busca": "Cinco ROMs invitadas"
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "titulo": "La llave de la Liga Oscura",
+      "lados": [
+        {
+          "ruta": "docs/PROMPT_MAESTRO_Y_ESTADO.md",
+          "busca": "Purgar las siete abre la LIGA OSCURA"
+        },
+        {
+          "ruta": "docs/DIMENSIONAL_NIGHTMARE/14_MEDALLAS_LIGA_OSCURA_Y_SENSACIONES.md",
+          "busca": "las seis cartucheras"
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "titulo": "«Vía» con dos grafías de familia",
+      "lados": [
+        {
+          "ruta": "docs/ATLAS_TIER3_REGLAS.md",
+          "busca": "120 rutas Tier 2"
+        },
+        {
+          "ruta": "docs/VIA_NUEVE_ERAS.md",
+          "busca": "Vía de las Nueve Eras"
+        }
+      ]
+    }
+  ],
+  "protocolo": "Editar el glosario exige re-sellar con `node tools/qa/glosario_check.mjs --recongelar` en el mismo commit; la comprobación falla si el hash no coincide, si falta o sobra un término, si una fuente no existe o si una cita dejó de aparecer.",
+  "hash_anterior": "PENDIENTE"
+}

@@ -1,0 +1,675 @@
+{
+  "version": 1,
+  "fecha": "2026-10-15",
+  "fase": "Fase 2/46199 (tarea 36)",
+  "definicion": "docs/qa/metrica_dimensiones.md",
+  "corridas": "docs/qa/partidas/2026-10-15_corridas.txt",
+  "checklist_manual": "docs/QA_MANUAL_PLAYTEST.md",
+  "criterios": [
+    {
+      "id": "jefe",
+      "nombre": "Jefe final",
+      "regla": "El mundo declara un mapa, un evento instalado y la llamada de combate exacta que lo cierra, y el evento existe de verdad en los datos compilados."
+    },
+    {
+      "id": "retorno",
+      "nombre": "Retorno libre",
+      "regla": "El mundo declara al menos una salida instalada cuya página transfiere fuera del mundo sin ninguna condición de switch ni de variable: perder no encierra y ganar no obliga a quedarse."
+    },
+    {
+      "id": "verificador",
+      "nombre": "Verificador propio",
+      "regla": "El mundo declara al menos un script de verificación que existe en package.json y que comprueba su contenido (no el del proyecto entero)."
+    },
+    {
+      "id": "partida",
+      "nombre": "Partida de prueba registrada",
+      "regla": "El mundo declara una corrida registrada con fecha, comando y la cita literal que aparece en el registro de corridas. La capa automática se cubre hoy; la partida manual se registra aparte y queda pendiente mientras no la juegue una persona."
+    }
+  ],
+  "mundos": [
+    {
+      "id": "glazed",
+      "familia": "dimension_invitada",
+      "nombre": "Glazed — Bahía de Cedolán",
+      "mapas": [2200, 2201],
+      "acceso": "Barco del capitán Ferrán en Puerto Horizonte (1001), abierto con el switch 873 (duelo de Arceus resuelto).",
+      "jefe": {
+        "mapa": 2201,
+        "evento": "PokeMod Barco: Líder — Líder Ámbar",
+        "entrenador": "GLAZED_LEADER/AMBAR",
+        "batalla": "pbTrainerBattle(:GLAZED_LEADER,\"AMBAR\"",
+        "premio": "GLAZEDBADGE"
+      },
+      "retornos": [
+        { "mapa": 2200, "evento": "PokeMod Barco: Barco a Puerto Horizonte", "destino": 1001 }
+      ],
+      "verificadores": ["verify:dimensiones", "verify:glazed"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:glazed",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "✔ Verificación OK: 14 zonas de Glazed registradas con especies y niveles válidos." },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "lightplatinum",
+      "familia": "dimension_invitada",
+      "nombre": "Light Platinum — Costa de Lappet",
+      "mapas": [2210, 2211],
+      "acceso": "Barco desde Puerto Horizonte (1001), switch 961.",
+      "jefe": {
+        "mapa": 2211,
+        "evento": "PokeMod Barco: Líder — Líder Resplandor",
+        "entrenador": "PLATINUM_LEADER/RESPLANDOR",
+        "batalla": "pbTrainerBattle(:PLATINUM_LEADER,\"RESPLANDOR\"",
+        "premio": "PLATINUMBADGE"
+      },
+      "retornos": [
+        { "mapa": 2210, "evento": "PokeMod Barco: Barco a Puerto Horizonte", "destino": 1001 }
+      ],
+      "verificadores": ["verify:dimensiones", "verify:light_platinum"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:light_platinum",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "✔ Verificación OK: 19 mapas y 10 tablas de encuentros de Light Platinum validados." },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "liquidcrystal",
+      "familia": "dimension_invitada",
+      "nombre": "Liquid Crystal — Santuario de Johto",
+      "mapas": [2240, 2241],
+      "acceso": "Barco desde Puerto Horizonte (1001), switch 962.",
+      "jefe": {
+        "mapa": 2241,
+        "evento": "PokeMod Barco: Líder — Guardiana Nerea",
+        "entrenador": "LIQUIDCRYSTAL_LEADER/NEREA",
+        "batalla": "pbTrainerBattle(:LIQUIDCRYSTAL_LEADER,\"NEREA\"",
+        "premio": "CRYSTALBADGE"
+      },
+      "retornos": [
+        { "mapa": 2240, "evento": "PokeMod Barco: Barco a Puerto Horizonte", "destino": 1001 }
+      ],
+      "verificadores": ["verify:dimensiones", "verify:liquid_crystal"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:liquid_crystal",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "✔ Verificación OK: 432 mapas y 14 tablas de encuentros de Liquid Crystal validados." },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "tfoh",
+      "familia": "dimension_invitada",
+      "nombre": "TFOH — Frontera del Origen",
+      "mapas": [2242, 2243],
+      "acceso": "Barco desde Puerto Horizonte (1001), switch 963. La campaña completa vive en Map3700–Map3944.",
+      "jefe": {
+        "mapa": 2243,
+        "evento": "PokeMod Barco: Líder — Custodia Alba",
+        "entrenador": "TFOH_LEADER/ALBA",
+        "batalla": "pbTrainerBattle(:TFOH_LEADER,\"ALBA\"",
+        "premio": "ORIGINBADGE"
+      },
+      "retornos": [
+        { "mapa": 2242, "evento": "PokeMod Barco: Barco a Puerto Horizonte", "destino": 1001 }
+      ],
+      "verificadores": ["verify:dimensiones"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:dimensiones",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "✔ Dimensiones de barco: verificación OK" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "factoryadventure",
+      "familia": "dimension_invitada",
+      "nombre": "Factory Adventure — Distrito Primigenio",
+      "mapas": [2244, 2245],
+      "acceso": "Barco desde Puerto Horizonte (1001), switch 964.",
+      "jefe": {
+        "mapa": 2245,
+        "evento": "PokeMod Barco: Líder — Maestro Ensamble",
+        "entrenador": "FACTORY_LEADER/ENSAMBLE",
+        "batalla": "pbTrainerBattle(:FACTORY_LEADER,\"ENSAMBLE\"",
+        "premio": "FACTORYSEAL"
+      },
+      "retornos": [
+        { "mapa": 2244, "evento": "PokeMod Barco: Barco a Puerto Horizonte", "destino": 1001 }
+      ],
+      "verificadores": ["verify:dimensiones"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:dimensiones",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "✔ Dimensiones de barco: verificación OK" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "teamrocket",
+      "familia": "dimension_invitada",
+      "nombre": "Team Rocket — Base Subterránea y Núcleo del Mando",
+      "mapas": [2220, 2221],
+      "acceso": "Barco desde Puerto Horizonte (1001); Ash entra como infiltrado y asciende por rango (variable 311).",
+      "jefe": {
+        "mapa": 2220,
+        "evento": "PokeMod Rocket: Misión — El juicio del Comandante",
+        "entrenador": "ROCKET_BOSS/COMANDANTE_NEGRO",
+        "batalla": "pbTrainerBattle(:ROCKET_BOSS,\"COMANDANTE_NEGRO\"",
+        "premio": "ROCKETINSIGNIA"
+      },
+      "retornos": [
+        { "mapa": 2220, "evento": "PokeMod Rocket: Barco a Puerto Horizonte", "destino": 1001 }
+      ],
+      "verificadores": ["verify:rocket"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:rocket",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "✔ Dimensión Team Rocket: verificación OK" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "locutora",
+      "familia": "emision",
+      "nombre": "La Torre que Escuchaba (emisión 1)",
+      "mapas": [2023, 2030],
+      "acceso": "Puerta 1 — T de la Gruta de los Testigos (2030), condicionada por el switch 768.",
+      "jefe": {
+        "mapa": 2023,
+        "evento": "PokeMod Multiverso: Jefe LA LOCUTORA",
+        "entrenador": "PSYCHIC_F/LA LOCUTORA",
+        "batalla": "pbTrainerBattle(:PSYCHIC_F,\"LA LOCUTORA\"",
+        "premio": "CLEANSETAG"
+      },
+      "retornos": [
+        { "mapa": 2023, "evento": "PokeMod Multiverso: Volver a la gruta", "destino": 2030 },
+        { "mapa": 2030, "evento": "PokeMod Multiverso: Salir a la falda", "destino": 2021 }
+      ],
+      "verificadores": ["verify:multiverse", "verify:monte_silver"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:multiverse",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029)" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "plata",
+      "familia": "emision",
+      "nombre": "La Partida Perdida (emisión 2)",
+      "mapas": [2024, 2030],
+      "acceso": "Puerta 2 — E de la Gruta de los Testigos (2030), condicionada por el switch 769.",
+      "jefe": {
+        "mapa": 2024,
+        "evento": "PokeMod Multiverso: Jefe PLATA PERDIDA",
+        "entrenador": "POKEMONTRAINER_Silver/PLATA PERDIDA",
+        "batalla": "pbTrainerBattle(:POKEMONTRAINER_Silver,\"PLATA PERDIDA\"",
+        "premio": "ODDKEYSTONE"
+      },
+      "retornos": [
+        { "mapa": 2024, "evento": "PokeMod Multiverso: Volver a la gruta", "destino": 2030 },
+        { "mapa": 2024, "evento": "PokeMod Grieta: Volver al mundo", "destino": 979 }
+      ],
+      "verificadores": ["verify:multiverse", "verify:monte_silver"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:multiverse",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029)" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "enterrado",
+      "familia": "emision",
+      "nombre": "La Fosa del Enterrado (emisión 3)",
+      "mapas": [2025, 2030],
+      "acceso": "Puerta 3 — S de la Gruta de los Testigos (2030), condicionada por el switch 770.",
+      "jefe": {
+        "mapa": 2025,
+        "evento": "PokeMod Multiverso: Jefe EL ENTERRADO",
+        "entrenador": "HIKER/EL ENTERRADO",
+        "batalla": "pbTrainerBattle(:HIKER,\"EL ENTERRADO\"",
+        "premio": "SPELLTAG"
+      },
+      "retornos": [
+        { "mapa": 2025, "evento": "PokeMod Multiverso: Volver a la gruta", "destino": 2030 },
+        { "mapa": 2025, "evento": "PokeMod Grieta: Volver al mundo", "destino": 90 }
+      ],
+      "verificadores": ["verify:multiverse", "verify:monte_silver"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:multiverse",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029)" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "cinta",
+      "familia": "emision",
+      "nombre": "La Cinta Carmesí (emisión 4)",
+      "mapas": [2026, 2030],
+      "acceso": "Puerta 4 — T de la Gruta de los Testigos (2030), condicionada por el switch 771.",
+      "jefe": {
+        "mapa": 2026,
+        "evento": "PokeMod Multiverso: Jefe EL NIÑO DE LA CINTA",
+        "entrenador": "YOUNGSTER/EL NIÑO DE LA CINTA",
+        "batalla": "pbTrainerBattle(:YOUNGSTER,\"EL NIÑO DE LA CINTA\"",
+        "premio": "FLAMEORB"
+      },
+      "retornos": [
+        { "mapa": 2026, "evento": "PokeMod Multiverso: Volver a la gruta", "destino": 2030 },
+        { "mapa": 2026, "evento": "PokeMod Grieta: Volver al mundo", "destino": 303 }
+      ],
+      "verificadores": ["verify:multiverse", "verify:monte_silver"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:multiverse",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029)" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "fallo",
+      "familia": "emision",
+      "nombre": "Ciudad Glitch (emisión 5)",
+      "mapas": [2027, 2030],
+      "acceso": "Puerta 5 — I de la Gruta de los Testigos (2030), condicionada por el switch 772.",
+      "jefe": {
+        "mapa": 2027,
+        "evento": "PokeMod Multiverso: Jefe EL FALLO CERO",
+        "entrenador": "SCIENTIST/EL FALLO CERO",
+        "batalla": "pbTrainerBattle(:SCIENTIST,\"EL FALLO CERO\"",
+        "premio": "GHOSTGEM"
+      },
+      "retornos": [
+        { "mapa": 2027, "evento": "PokeMod Multiverso: Volver a la gruta", "destino": 2030 },
+        { "mapa": 2027, "evento": "PokeMod Grieta: Volver al mundo", "destino": 412 }
+      ],
+      "verificadores": ["verify:multiverse", "verify:monte_silver"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:multiverse",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029)" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "eco",
+      "familia": "emision",
+      "nombre": "El Eco que Jugó Contigo (emisión 6)",
+      "mapas": [2028, 2030],
+      "acceso": "Puerta 6 — G de la Gruta de los Testigos (2030), condicionada por el switch 773.",
+      "jefe": {
+        "mapa": 2028,
+        "evento": "PokeMod Multiverso: Jefe EL ECO AHOGADO",
+        "entrenador": "SWIMMER_M/EL ECO AHOGADO",
+        "batalla": "pbTrainerBattle(:SWIMMER_M,\"EL ECO AHOGADO\"",
+        "premio": "SPOOKYPLATE"
+      },
+      "retornos": [
+        { "mapa": 2028, "evento": "PokeMod Multiverso: Volver a la gruta", "destino": 2030 },
+        { "mapa": 2028, "evento": "PokeMod Grieta: Volver al mundo", "destino": 295 }
+      ],
+      "verificadores": ["verify:multiverse", "verify:monte_silver"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:multiverse",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029)" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "consola",
+      "familia": "emision",
+      "nombre": "La Consola de 1996 (emisión 7)",
+      "mapas": [2029, 2030],
+      "acceso": "Puerta 7 — O de la Gruta de los Testigos (2030), condicionada por el switch 774.",
+      "jefe": {
+        "mapa": 2029,
+        "evento": "PokeMod Multiverso: Jefe EL JUGADOR DE 1996",
+        "entrenador": "SUPERNERD/EL JUGADOR DE 1996",
+        "batalla": "pbTrainerBattle(:SUPERNERD,\"EL JUGADOR DE 1996\"",
+        "premio": "LIFEORB"
+      },
+      "retornos": [
+        { "mapa": 2029, "evento": "PokeMod Multiverso: Volver a la gruta", "destino": 2030 },
+        { "mapa": 2029, "evento": "PokeMod Grieta: Volver al mundo", "destino": 190 }
+      ],
+      "verificadores": ["verify:multiverse", "verify:monte_silver"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "verify:multiverse",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "Verificación OK: Monte Silver (2021-2022) + 7 emisiones (2023-2029)" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_ep01",
+      "familia": "mundo_creepypasta",
+      "nombre": "EP01 White Hand — LA MANO BLANCA",
+      "mapas": [2041, 2056],
+      "acceso": "Grieta EP01 de la Antesala de las Grietas (2040) hacia Map2041; sello 883.",
+      "jefe": {
+        "mapa": 2056,
+        "evento": "EV_EP01_JEFE",
+        "entrenador": "HIKER/EL SEPULTADO",
+        "batalla": "PBTrainer.new(\"HIKER\", \"EL SEPULTADO\")",
+        "premio": "DN_MEDAL_WHT"
+      },
+      "retornos": [
+        { "mapa": 2041, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "EP01: LA MANO BLANCA · cadenas ×4 (v289) · trainer DN_EP01_A · objeto DN_PAGE_01" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_ep02",
+      "familia": "mundo_creepypasta",
+      "nombre": "EP02 Lost Silver — EL SIN NOMBRE",
+      "mapas": [2057, 2072],
+      "acceso": "Grieta EP02 de la Antesala (2040) hacia Map2057; sello 884.",
+      "jefe": {
+        "mapa": 2072,
+        "evento": "EV_EP02_JEFE",
+        "entrenador": "COOLTRAINER_M/EL SIN NOMBRE",
+        "batalla": "PBTrainer.new(\"COOLTRAINER_M\", \"EL SIN NOMBRE\")",
+        "premio": "DN_MEDAL_LSV"
+      },
+      "retornos": [
+        { "mapa": 2057, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "EP02: EL SIN NOMBRE · fotos ×4 (v290) · trainer DN_EP02_A · objeto DN_PAGE_02" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_ep03",
+      "familia": "mundo_creepypasta",
+      "nombre": "EP03 Snow on Mt. Silver — EL CAMINANTE",
+      "mapas": [2073, 2087],
+      "acceso": "Grieta EP03 de la Antesala (2040) hacia Map2073; sello 885.",
+      "jefe": {
+        "mapa": 2087,
+        "evento": "EV_EP03_JEFE",
+        "entrenador": "CHAMPION/EL CAMINANTE",
+        "batalla": "PBTrainer.new(\"CHAMPION\", \"EL CAMINANTE\")",
+        "premio": "DN_MEDAL_SNO"
+      },
+      "retornos": [
+        { "mapa": 2073, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "EP03: EL CAMINANTE · fogatas ×4 (v291) · trainer DN_EP03_A · objeto DN_PAGE_03" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_ep04",
+      "familia": "mundo_creepypasta",
+      "nombre": "EP04 Hypno's Lullaby — LA NANA",
+      "mapas": [2088, 2103],
+      "acceso": "Grieta EP04 de la Antesala (2040) hacia Map2088; sello 886.",
+      "jefe": {
+        "mapa": 2103,
+        "evento": "EV_EP04_JEFE",
+        "entrenador": "PSYCHIC_F/LA NANA",
+        "batalla": "PBTrainer.new(\"PSYCHIC_F\", \"LA NANA\")",
+        "premio": "DN_MEDAL_HYP"
+      },
+      "retornos": [
+        { "mapa": 2088, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "EP04: LA NANA · cunas ×4 (v292) · trainer DN_EP04_A · objeto POKEFLUTE" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_ep05",
+      "familia": "mundo_creepypasta",
+      "nombre": "EP05 Pokémon Black — EL JUGADOR 000",
+      "mapas": [2104, 2119],
+      "acceso": "Grieta EP05 de la Antesala (2040) hacia Map2104; sello 887.",
+      "jefe": {
+        "mapa": 2119,
+        "evento": "EV_EP05_JEFE",
+        "entrenador": "TEAMROCKET/EL JUGADOR 000",
+        "batalla": "dn_mirror_battle(\"EL JUGADOR 000\")",
+        "premio": "DN_MEDAL_BLK"
+      },
+      "retornos": [
+        { "mapa": 2104, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "EP05: EL JUGADOR 000 · rendijas ×4 (v293) · trainer DN_EP05_A · objeto DN_PAGE_05" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_ep06",
+      "familia": "mundo_creepypasta",
+      "nombre": "EP06 King Unown — KINGGUS",
+      "mapas": [2120, 2135],
+      "acceso": "Grieta EP06 de la Antesala (2040) hacia Map2120; sello 888.",
+      "jefe": {
+        "mapa": 2135,
+        "evento": "EV_EP06_JEFE",
+        "entrenador": "DN_KINGGUS/KINGGUS",
+        "batalla": "dn_kinggus_final_sequence",
+        "premio": "DN_MEDAL_UNO"
+      },
+      "retornos": [
+        { "mapa": 2120, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "EP06: KINGGUS · letras ×7 (v294) · trainer DN_EP06_A · objeto DN_ANCLA" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_w7",
+      "familia": "mundo_creepypasta",
+      "nombre": "W7 Strangled Red — EL AMO Y LA CORREA (segundo anillo)",
+      "mapas": [2143, 2158],
+      "acceso": "Grieta W7 de la Antesala (2040) hacia Map2143; switch 920 (Liga Oscura cerrada).",
+      "jefe": {
+        "mapa": 2158,
+        "evento": "EV_W7_JEFE",
+        "entrenador": "HIKER/EL AMO",
+        "batalla": "PBTrainer.new(\"HIKER\", \"EL AMO\")",
+        "premio": "DN_MEDAL_AMO"
+      },
+      "retornos": [
+        { "mapa": 2143, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "W7: EL AMO Y LA CORREA · correas ×4 (v295) · trainer DN_W7_A · objeto DN_PAGE_W7" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_w8",
+      "familia": "mundo_creepypasta",
+      "nombre": "W8 Buried Alive — EL QUE RESPIRA DEBAJO (segundo anillo)",
+      "mapas": [2159, 2174],
+      "acceso": "Grieta W8 de la Antesala (2040) hacia Map2159; switch 925.",
+      "jefe": {
+        "mapa": 2174,
+        "evento": "EV_W8_JEFE",
+        "entrenador": "CHAMPION/EL QUE RESPIRA",
+        "batalla": "PBTrainer.new(\"CHAMPION\", \"EL QUE RESPIRA\")",
+        "premio": "DN_MEDAL_FOS"
+      },
+      "retornos": [
+        { "mapa": 2159, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "W8: EL QUE RESPIRA DEBAJO · bolsas ×5 (v296) · trainer DN_W8_A · objeto DN_PAGE_W8" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_w9",
+      "familia": "mundo_creepypasta",
+      "nombre": "W9 Lavender Town Syndrome — EL CORO DEL CAMPANARIO (segundo anillo)",
+      "mapas": [2175, 2190],
+      "acceso": "Grieta W9 de la Antesala (2040) hacia Map2175; switch 926.",
+      "jefe": {
+        "mapa": 2190,
+        "evento": "EV_W9_JEFE",
+        "entrenador": "PSYCHIC_F/EL CORO",
+        "batalla": "PBTrainer.new(\"PSYCHIC_F\", \"EL CORO\")",
+        "premio": "DN_MEDAL_SIL"
+      },
+      "retornos": [
+        { "mapa": 2175, "evento": "CONN_HUB_entrada", "destino": 2030 }
+      ],
+      "verificadores": ["dn:events:verify", "dn:battles:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:battles:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "W9: EL CORO DEL CAMPANARIO · silencios ×4 (v297) · trainer DN_W9_A · objeto DN_PAGE_W9" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    },
+    {
+      "id": "dn_liga_oscura",
+      "familia": "mundo_creepypasta",
+      "nombre": "Liga Oscura — Pórtico del Código y Coliseo del Vínculo",
+      "mapas": [2141, 2142],
+      "acceso": "HUB_LIGA_OSCURA en la Antesala de las Grietas (2040), con las seis cartucheras (switch 917); el cierre lo marca el switch 948.",
+      "jefe": {
+        "mapa": 2142,
+        "evento": "LIGA_MPIKA",
+        "entrenador": "DN_MADPIKA/MAD PIKACHU",
+        "batalla": "PBTrainer.new(\"DN_MADPIKA\", \"MAD PIKACHU\")",
+        "premio": "DN_MEDAL_MPK"
+      },
+      "retornos": [
+        { "mapa": 2141, "evento": "LIGA_SALIDA", "destino": 2040 },
+        { "mapa": 2142, "evento": "LIGA_SALIDA_COLISEO", "destino": 2141 }
+      ],
+      "verificadores": ["dn:liga:verify", "dn:medals:verify"],
+      "partida": {
+        "tipo": "automatica",
+        "fecha": "2026-10-15",
+        "comando": "dn:liga:verify",
+        "resultado": "ok",
+        "evidencia": { "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "verificación de la Liga OK" },
+        "manual": { "estado": "pendiente", "motivo": "Requiere Game.exe o Kirin; el entorno de la fase no tiene ninguno de los dos." }
+      }
+    }
+  ],
+  "hallazgos": [
+    {
+      "id": "COLISION-SW768",
+      "titulo": "Los switches 768–774 están usados dos veces: puertas Unown de la Gruta de los Testigos y rutas Tier 2 del Atlas",
+      "detalle": "Map2030 abre cada emisión con una puerta Unown condicionada por los switches 768–774 (T, E, S, T, I, G, O), pero System.rxdata nombra esos mismos ids POKEMOD ATLAS T2 ROUTE 21…27. Un jugador que cierre la ruta Tier 2 21 abre la puerta 1 de la Gruta sin haber sellado nada. La métrica lo registra como hallazgo abierto: arreglarlo exige renumerar un lado y volver a ejecutar su instalador, y no es parte de esta fase.",
+      "verificacion": {
+        "tipo": "switch_compartido",
+        "mapa": 2030,
+        "rango": [768, 774],
+        "prefijo_system": "POKEMOD ATLAS T2",
+        "fuentes": [
+          { "ruta": "docs/MONTE_SILVER_REBUILD.md", "busca": "sw768–774" },
+          { "ruta": "docs/ESTADO_CONGELADO.md", "busca": "748–867 (rutas Tier 2)" }
+        ]
+      }
+    }
+  ],
+  "deudas": [
+    {
+      "id": "PARTIDA-MANUAL",
+      "titulo": "Ninguna de las 23 partidas de prueba está jugada por una persona",
+      "detalle": "La capa automática está cubierta al 100 %, pero la condición «partida de prueba registrada» en su lectura fuerte (una persona juega el mundo) no se puede cumplir en este entorno: no hay Game.exe, ni Kirin, ni Wine. La checklist existe y está sin marcar en docs/QA_MANUAL_PLAYTEST.md; cada mundo apunta ahí en `partida.manual`.",
+      "evidencia": [{ "ruta": "docs/QA_MANUAL_PLAYTEST.md", "busca": "Ningún linter sustituye esta pasada" }]
+    },
+    {
+      "id": "DN-MAPS-VERIFY-PRERREQUISITO",
+      "titulo": "dn:maps:verify no corre sin el ingest de referencia",
+      "detalle": "Falla con ENOENT de content/dimensional_nightmare_tiles_2x.json, que está ignorado por Git a propósito: hay que ejecutar npm run dn:preparar antes. Los verificadores de eventos, batallas, medallas, flags, Liga y auditoría sí corren y están en verde.",
+      "evidencia": [{ "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "content/dimensional_nightmare_tiles_2x.json" }]
+    },
+    {
+      "id": "ROM-NATIVO-11-FALLOS",
+      "titulo": "verify:rom:nativo reporta 11 fallos en mapas de campaña",
+      "detalle": "11 fallos preexistentes: diez mapas con 1 celda que no coincide con el ROM (3031, 3079, 3094, 3120, 3125, 3323, 3385, 3805, 3839, 3874) y un evento solapado en Map3120. Dos de esos mapas (3839 y 3874) están en el rango de la campaña TFOH. No afecta a las dimensiones 2242/2243, que verifican en verde con verify:dimensiones, pero queda registrado como deuda del pilar ROM nativo.",
+      "evidencia": [{ "ruta": "docs/qa/partidas/2026-10-15_corridas.txt", "busca": "verificación nativa: 1227 mapas · 212 tilesets · 12411 eventos revisados · 11 fallos" }]
+    }
+  ]
+}
