@@ -1,0 +1,167 @@
+{
+  "schema": "coverage/1.0",
+  "source": "tools/plan2700/lote6_fase028_instrumentacion.mjs",
+  "semantics": "indexed_not_runtime_exercised",
+  "records": [
+    {
+      "family": "maps",
+      "candidate": 3465,
+      "indexed": 3465,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "cells",
+      "candidate": 5493642,
+      "indexed": 5493642,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "events",
+      "candidate": 36149,
+      "indexed": 36149,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "dialogues",
+      "candidate": 57593,
+      "indexed": 57593,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "battles",
+      "candidate": 5614,
+      "indexed": 5614,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "choices",
+      "candidate": 5208,
+      "indexed": 5208,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "conditions",
+      "candidate": 16931,
+      "indexed": 16931,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "transfers",
+      "candidate": 19064,
+      "indexed": 19064,
+      "exercised": 0,
+      "status": "runtime_pending"
+    },
+    {
+      "family": "scripts",
+      "candidate": 24130,
+      "indexed": 24130,
+      "exercised": 0,
+      "status": "runtime_pending"
+    }
+  ],
+  "byRegion": {
+    "atlas_mil": {
+      "label": "Atlas Mil",
+      "maps": 1000,
+      "events": 6410,
+      "dialogues": 11607,
+      "indexed": true,
+      "exercised": 0
+    },
+    "base_or_other": {
+      "label": "Base/otros",
+      "maps": 1065,
+      "events": 15347,
+      "dialogues": 27371,
+      "indexed": true,
+      "exercised": 0
+    },
+    "dimensional_nightmare": {
+      "label": "Dimensional Nightmare",
+      "maps": 149,
+      "events": 1337,
+      "dialogues": 2132,
+      "indexed": true,
+      "exercised": 0
+    },
+    "glazed": {
+      "label": "Glazed",
+      "maps": 111,
+      "events": 1277,
+      "dialogues": 1395,
+      "indexed": true,
+      "exercised": 0
+    },
+    "horizontes": {
+      "label": "Horizontes",
+      "maps": 20,
+      "events": 594,
+      "dialogues": 1505,
+      "indexed": true,
+      "exercised": 0
+    },
+    "liga_oscura": {
+      "label": "Liga Oscura",
+      "maps": 2,
+      "events": 22,
+      "dialogues": 42,
+      "indexed": true,
+      "exercised": 0
+    },
+    "light_platinum": {
+      "label": "Light Platinum",
+      "maps": 19,
+      "events": 175,
+      "dialogues": 209,
+      "indexed": true,
+      "exercised": 0
+    },
+    "liquid_crystal": {
+      "label": "Liquid Crystal",
+      "maps": 432,
+      "events": 4253,
+      "dialogues": 5096,
+      "indexed": true,
+      "exercised": 0
+    },
+    "team_rocket": {
+      "label": "Team Rocket",
+      "maps": 2,
+      "events": 25,
+      "dialogues": 68,
+      "indexed": true,
+      "exercised": 0
+    },
+    "tfoh": {
+      "label": "TFOH",
+      "maps": 245,
+      "events": 2321,
+      "dialogues": 2847,
+      "indexed": true,
+      "exercised": 0
+    },
+    "unbound": {
+      "label": "Unbound",
+      "maps": 420,
+      "events": 4388,
+      "dialogues": 5321,
+      "indexed": true,
+      "exercised": 0
+    }
+  },
+  "mergeContract": {
+    "key": "map/event/dialogue/battle",
+    "operation": "set_union",
+    "deterministic": true,
+    "personalData": false,
+    "saveFiles": false
+  }
+}

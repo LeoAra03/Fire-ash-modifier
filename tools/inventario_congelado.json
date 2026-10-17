@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-17T19:07:25.306Z",
+  "generatedAt": "2026-10-17T19:10:52.280Z",
   "git": {
     "branch": "arena/8e9aeeac-fire-ash-modifier",
-    "commit": "29b63af7530d49c8d4d73eb74e342fd67477a1b6"
+    "commit": "e88f8306391a26297d1addb7b2ca6ecd8325f309"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5469,
+    "fileCount": 5471,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 254
+      "tools": 256
     },
     "files": [
       {
@@ -26994,6 +26994,11 @@
         "sha256": "426b3d127d072894cad26638ad4acdf6447edc125346174453f04b1ac7393a91"
       },
       {
+        "path": "tools/plan2700/harness_core.mjs",
+        "bytes": 11561,
+        "sha256": "f865cd5762dbcaebffdf9700fbc33d37aeff767ed8a7216c2b18fda0d28340be"
+      },
+      {
         "path": "tools/plan2700/lote5_fase022_dialogos.mjs",
         "bytes": 7299,
         "sha256": "09d687bf1e64c2170ec9dcf058b98df21a57210c1dc1c191b8713d5d00673339"
@@ -27022,6 +27027,11 @@
         "path": "tools/plan2700/lote6_fase027_cierre.mjs",
         "bytes": 11276,
         "sha256": "943484de8ce8ad0af16aaddff201ea66db0e0f4ae14c3180cab52cd356b6fcb2"
+      },
+      {
+        "path": "tools/plan2700/lote6_fase028_instrumentacion.mjs",
+        "bytes": 16498,
+        "sha256": "c11603b529f0c63ab71c446cc0289e74daac2e4640da6079367d517d6c0b335b"
       },
       {
         "path": "tools/plan2700/repair_electramew_character.mjs",

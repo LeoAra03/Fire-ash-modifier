@@ -1,0 +1,680 @@
+{
+  "schema": "lote6_fase028_instrumentacion/1.0",
+  "tasks": "2700–2799",
+  "scan": {
+    "infos": 3465,
+    "mapFiles": 3465,
+    "missingFiles": [],
+    "orphanFiles": [],
+    "malformedFiles": [
+      "Map341 2.rxdata",
+      "Map813b.rxdata"
+    ],
+    "parseErrors": [],
+    "totals": {
+      "maps": 3465,
+      "cells": 5493642,
+      "events": 36149,
+      "pages": 55501,
+      "dialogues": 57593,
+      "choices": 5208,
+      "conditions": 16931,
+      "switches": 2275,
+      "variables": 2563,
+      "selfSwitches": 8484,
+      "transfers": 19064,
+      "battles": 5614,
+      "moves": 0,
+      "waits": 7838,
+      "scripts": 24130,
+      "commands": 444294,
+      "parallelPages": 12,
+      "autorunPages": 2260
+    },
+    "families": {
+      "atlas_mil": {
+        "label": "Atlas Mil",
+        "maps": 1000,
+        "cells": 1864106,
+        "events": 6410,
+        "pages": 9673,
+        "dialogues": 11607,
+        "choices": 3932,
+        "conditions": 1722,
+        "switches": 449,
+        "variables": 617,
+        "selfSwitches": 1329,
+        "transfers": 3247,
+        "battles": 550,
+        "moves": 0,
+        "waits": 572,
+        "scripts": 3745,
+        "commands": 110021,
+        "parallelPages": 0,
+        "autorunPages": 364
+      },
+      "base_or_other": {
+        "label": "Base/otros",
+        "maps": 1065,
+        "cells": 2042467,
+        "events": 15347,
+        "pages": 28538,
+        "dialogues": 27371,
+        "choices": 1150,
+        "conditions": 13976,
+        "switches": 1740,
+        "variables": 1931,
+        "selfSwitches": 4978,
+        "transfers": 6667,
+        "battles": 3974,
+        "moves": 0,
+        "waits": 7190,
+        "scripts": 15476,
+        "commands": 241705,
+        "parallelPages": 12,
+        "autorunPages": 1670
+      },
+      "dimensional_nightmare": {
+        "label": "Dimensional Nightmare",
+        "maps": 149,
+        "cells": 35909,
+        "events": 1337,
+        "pages": 2848,
+        "dialogues": 2132,
+        "choices": 12,
+        "conditions": 56,
+        "switches": 38,
+        "variables": 0,
+        "selfSwitches": 828,
+        "transfers": 308,
+        "battles": 14,
+        "moves": 0,
+        "waits": 60,
+        "scripts": 1236,
+        "commands": 10974,
+        "parallelPages": 0,
+        "autorunPages": 221
+      },
+      "glazed": {
+        "label": "Glazed",
+        "maps": 111,
+        "cells": 82878,
+        "events": 1277,
+        "pages": 1319,
+        "dialogues": 1395,
+        "choices": 0,
+        "conditions": 42,
+        "switches": 9,
+        "variables": 0,
+        "selfSwitches": 42,
+        "transfers": 921,
+        "battles": 42,
+        "moves": 0,
+        "waits": 0,
+        "scripts": 196,
+        "commands": 6682,
+        "parallelPages": 0,
+        "autorunPages": 0
+      },
+      "horizontes": {
+        "label": "Horizontes",
+        "maps": 20,
+        "cells": 51276,
+        "events": 594,
+        "pages": 1111,
+        "dialogues": 1505,
+        "choices": 107,
+        "conditions": 342,
+        "switches": 7,
+        "variables": 0,
+        "selfSwitches": 502,
+        "transfers": 92,
+        "battles": 240,
+        "moves": 0,
+        "waits": 7,
+        "scripts": 747,
+        "commands": 10770,
+        "parallelPages": 0,
+        "autorunPages": 0
+      },
+      "liga_oscura": {
+        "label": "Liga Oscura",
+        "maps": 2,
+        "cells": 902,
+        "events": 22,
+        "pages": 42,
+        "dialogues": 42,
+        "choices": 0,
+        "conditions": 4,
+        "switches": 0,
+        "variables": 0,
+        "selfSwitches": 9,
+        "transfers": 4,
+        "battles": 1,
+        "moves": 0,
+        "waits": 3,
+        "scripts": 25,
+        "commands": 225,
+        "parallelPages": 0,
+        "autorunPages": 5
+      },
+      "light_platinum": {
+        "label": "Light Platinum",
+        "maps": 19,
+        "cells": 11208,
+        "events": 175,
+        "pages": 190,
+        "dialogues": 209,
+        "choices": 0,
+        "conditions": 14,
+        "switches": 10,
+        "variables": 0,
+        "selfSwitches": 14,
+        "transfers": 110,
+        "battles": 14,
+        "moves": 0,
+        "waits": 0,
+        "scripts": 48,
+        "commands": 991,
+        "parallelPages": 0,
+        "autorunPages": 0
+      },
+      "liquid_crystal": {
+        "label": "Liquid Crystal",
+        "maps": 432,
+        "cells": 535032,
+        "events": 4253,
+        "pages": 4538,
+        "dialogues": 5096,
+        "choices": 0,
+        "conditions": 284,
+        "switches": 11,
+        "variables": 0,
+        "selfSwitches": 284,
+        "transfers": 3035,
+        "battles": 284,
+        "moves": 0,
+        "waits": 0,
+        "scripts": 1001,
+        "commands": 24060,
+        "parallelPages": 0,
+        "autorunPages": 0
+      },
+      "team_rocket": {
+        "label": "Team Rocket",
+        "maps": 2,
+        "cells": 12816,
+        "events": 25,
+        "pages": 44,
+        "dialogues": 68,
+        "choices": 7,
+        "conditions": 2,
+        "switches": 1,
+        "variables": 15,
+        "selfSwitches": 9,
+        "transfers": 4,
+        "battles": 6,
+        "moves": 0,
+        "waits": 6,
+        "scripts": 19,
+        "commands": 324,
+        "parallelPages": 0,
+        "autorunPages": 0
+      },
+      "tfoh": {
+        "label": "TFOH",
+        "maps": 245,
+        "cells": 213612,
+        "events": 2321,
+        "pages": 2499,
+        "dialogues": 2847,
+        "choices": 0,
+        "conditions": 178,
+        "switches": 9,
+        "variables": 0,
+        "selfSwitches": 178,
+        "transfers": 1607,
+        "battles": 178,
+        "moves": 0,
+        "waits": 0,
+        "scripts": 594,
+        "commands": 13398,
+        "parallelPages": 0,
+        "autorunPages": 0
+      },
+      "unbound": {
+        "label": "Unbound",
+        "maps": 420,
+        "cells": 643436,
+        "events": 4388,
+        "pages": 4699,
+        "dialogues": 5321,
+        "choices": 0,
+        "conditions": 311,
+        "switches": 1,
+        "variables": 0,
+        "selfSwitches": 311,
+        "transfers": 3069,
+        "battles": 311,
+        "moves": 0,
+        "waits": 0,
+        "scripts": 1043,
+        "commands": 25144,
+        "parallelPages": 0,
+        "autorunPages": 0
+      }
+    },
+    "resources": {
+      "missingCharacters": [
+        "Object tree 2"
+      ],
+      "caseOnlyCharacters": [
+        "Object tree 2"
+      ],
+      "missingBgm": [
+        "Battle Gym Leader.mid",
+        "Cave.ogg",
+        "DN_SnowSilver.mid",
+        "Johto Route.ogg",
+        "Kalos Route.ogg",
+        "Kalos Town.ogg",
+        "Kanto Route.ogg",
+        "Kanto Town.ogg",
+        "Lab.mid",
+        "Poke Center.mid",
+        "PokeCenter.ogg",
+        "PokeMart.ogg",
+        "Safari.mid",
+        "Sinnoh Route.ogg",
+        "Sinnoh Town.ogg",
+        "Team Rocket OW Hoenn.ogg",
+        "Team Rocket OW Journeys.ogg",
+        "Team Rocket OW Kanto.ogg",
+        "Team Rocket OW Unova.ogg",
+        "TeamGalactic.ogg",
+        "TeamPlasma.ogg",
+        "TeamRocket.ogg",
+        "TeamRocket1.ogg",
+        "gym.mid",
+        "gym.ogg",
+        "gymleader-1.ogg",
+        "gymleader-2.ogg",
+        "gymleader-3.ogg",
+        "gymleader-4.ogg",
+        "gymleader-5.ogg",
+        "gymleader-6.ogg",
+        "gymleader-8.ogg",
+        "gymleader-stadium.ogg",
+        "gymsinnoh.ogg",
+        "route.mid",
+        "safari",
+        "secretjohto.ogg"
+      ]
+    },
+    "anomalies": {
+      "knownNames": [
+        "Map341 2.rxdata",
+        "Map813b.rxdata"
+      ],
+      "futureCandidates": [
+        "Map341 2.rxdata",
+        "Map813b.rxdata"
+      ],
+      "mapInfosWithoutFile": [],
+      "mapFilesWithoutMapInfos": []
+    }
+  },
+  "fixture": {
+    "harness": {
+      "replayStarted": true,
+      "trace": 2,
+      "saveIsolation": true,
+      "stateAfter": {
+        "x": 1,
+        "y": 0,
+        "actions": 1
+      }
+    },
+    "walker": {
+      "coverage": 0.3333333333333333,
+      "unreachable": [
+        "2,0",
+        "2,1",
+        "2,2",
+        "3,0",
+        "3,1",
+        "3,2"
+      ]
+    },
+    "eventExecutor": {
+      "controlReturned": true,
+      "errors": [
+        {
+          "map": 9901,
+          "event": "seeded-exception",
+          "command": 0,
+          "op": "throw",
+          "error": "semilla reproducible"
+        }
+      ]
+    },
+    "dialogueOracle": {
+      "ok": false,
+      "findings": [
+        {
+          "index": 0,
+          "type": "empty"
+        },
+        {
+          "index": 1,
+          "type": "english",
+          "text": "the untranslated error"
+        }
+      ]
+    },
+    "seededFaults": [
+      {
+        "id": "warp-roto",
+        "detected": true,
+        "reason": "destino 9902 ausente del grafo fixture"
+      },
+      {
+        "id": "caja-vacia",
+        "detected": true,
+        "reason": "oráculo de diálogos"
+      },
+      {
+        "id": "flag-sin-lector",
+        "detected": true,
+        "reason": "escritura FLAG_OK sin una condición lectora en el fixture"
+      },
+      {
+        "id": "colision-mal-puesta",
+        "detected": true,
+        "reason": "bot caminante informa celdas no alcanzadas"
+      },
+      {
+        "id": "recurso-ausente",
+        "detected": true,
+        "reason": "recurso fixture ausente en el índice"
+      }
+    ],
+    "seededFaultsDetected": 5,
+    "seededFalsePositives": 0
+  },
+  "selfTest": {
+    "assertions": 13,
+    "status": "pass"
+  },
+  "coverage": {
+    "schema": "coverage/1.0",
+    "source": "tools/plan2700/lote6_fase028_instrumentacion.mjs",
+    "semantics": "indexed_not_runtime_exercised",
+    "records": [
+      {
+        "family": "maps",
+        "candidate": 3465,
+        "indexed": 3465,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "cells",
+        "candidate": 5493642,
+        "indexed": 5493642,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "events",
+        "candidate": 36149,
+        "indexed": 36149,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "dialogues",
+        "candidate": 57593,
+        "indexed": 57593,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "battles",
+        "candidate": 5614,
+        "indexed": 5614,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "choices",
+        "candidate": 5208,
+        "indexed": 5208,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "conditions",
+        "candidate": 16931,
+        "indexed": 16931,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "transfers",
+        "candidate": 19064,
+        "indexed": 19064,
+        "exercised": 0,
+        "status": "runtime_pending"
+      },
+      {
+        "family": "scripts",
+        "candidate": 24130,
+        "indexed": 24130,
+        "exercised": 0,
+        "status": "runtime_pending"
+      }
+    ],
+    "byRegion": {
+      "atlas_mil": {
+        "label": "Atlas Mil",
+        "maps": 1000,
+        "events": 6410,
+        "dialogues": 11607,
+        "indexed": true,
+        "exercised": 0
+      },
+      "base_or_other": {
+        "label": "Base/otros",
+        "maps": 1065,
+        "events": 15347,
+        "dialogues": 27371,
+        "indexed": true,
+        "exercised": 0
+      },
+      "dimensional_nightmare": {
+        "label": "Dimensional Nightmare",
+        "maps": 149,
+        "events": 1337,
+        "dialogues": 2132,
+        "indexed": true,
+        "exercised": 0
+      },
+      "glazed": {
+        "label": "Glazed",
+        "maps": 111,
+        "events": 1277,
+        "dialogues": 1395,
+        "indexed": true,
+        "exercised": 0
+      },
+      "horizontes": {
+        "label": "Horizontes",
+        "maps": 20,
+        "events": 594,
+        "dialogues": 1505,
+        "indexed": true,
+        "exercised": 0
+      },
+      "liga_oscura": {
+        "label": "Liga Oscura",
+        "maps": 2,
+        "events": 22,
+        "dialogues": 42,
+        "indexed": true,
+        "exercised": 0
+      },
+      "light_platinum": {
+        "label": "Light Platinum",
+        "maps": 19,
+        "events": 175,
+        "dialogues": 209,
+        "indexed": true,
+        "exercised": 0
+      },
+      "liquid_crystal": {
+        "label": "Liquid Crystal",
+        "maps": 432,
+        "events": 4253,
+        "dialogues": 5096,
+        "indexed": true,
+        "exercised": 0
+      },
+      "team_rocket": {
+        "label": "Team Rocket",
+        "maps": 2,
+        "events": 25,
+        "dialogues": 68,
+        "indexed": true,
+        "exercised": 0
+      },
+      "tfoh": {
+        "label": "TFOH",
+        "maps": 245,
+        "events": 2321,
+        "dialogues": 2847,
+        "indexed": true,
+        "exercised": 0
+      },
+      "unbound": {
+        "label": "Unbound",
+        "maps": 420,
+        "events": 4388,
+        "dialogues": 5321,
+        "indexed": true,
+        "exercised": 0
+      }
+    },
+    "mergeContract": {
+      "key": "map/event/dialogue/battle",
+      "operation": "set_union",
+      "deterministic": true,
+      "personalData": false,
+      "saveFiles": false
+    }
+  },
+  "mergeExample": {
+    "maps": [
+      "1",
+      "2",
+      "3"
+    ],
+    "events": [
+      "1:1",
+      "1:2"
+    ],
+    "dialogues": [],
+    "battles": []
+  },
+  "routeExample": {
+    "reachable": [
+      "1",
+      "2",
+      "3"
+    ],
+    "unreachable": []
+  },
+  "contracts": {
+    "replay": [
+      "headless",
+      "load fixture/save copy",
+      "input sequence",
+      "deterministic trace",
+      "no real save writes"
+    ],
+    "walker": [
+      "quota",
+      "unreachable cells with reason",
+      "coordinates for stalls"
+    ],
+    "eventExecutor": [
+      "condition page order",
+      "map/event/command exception context",
+      "control returned after failure"
+    ],
+    "dialogueOracle": [
+      "empty",
+      "three lines",
+      "overflow",
+      "cut words",
+      "opening signs",
+      "English residue"
+    ],
+    "stateInjector": [
+      "flags",
+      "variables",
+      "inventory",
+      "team",
+      "sampled 2^18 combinations"
+    ],
+    "coverage": [
+      "map",
+      "region",
+      "family",
+      "deterministic set union",
+      "no personal/save data"
+    ],
+    "frameComparator": [
+      "single pixel",
+      "cyclic animation mask",
+      "before/after evidence"
+    ],
+    "stateOracle": [
+      "duplicate item/badge",
+      "counter reset",
+      "partial flags"
+    ],
+    "routesAndScenes": [
+      "unreachable maps",
+      "eight-second scene budget",
+      "victory/defeat samples"
+    ],
+    "resources": [
+      "characters",
+      "battlers/icons/BGM/SE adapter points",
+      "case-sensitive names",
+      "documented fallback"
+    ],
+    "idempotence": [
+      "before/after archive",
+      "second application stable",
+      "171 tools can be enumerated by the caller"
+    ]
+  },
+  "runtime": {
+    "status": "manual_pending",
+    "reason": "No se inventa una ejecución headless del motor RGSS/Game.exe en Node.",
+    "adapterProtocol": "docs/qa/harnesses.md"
+  },
+  "generated": {
+    "coverage": "content/cobertura.json",
+    "panel": "docs/plan_generado/cobertura.html",
+    "plan": "docs/plan_generado/fases_pendientes.md",
+    "commands": [
+      "npm run cobertura",
+      "npm run cobertura:plan",
+      "npm run cobertura:check"
+    ]
+  },
+  "status": "static_pass_runtime_pending"
+}
