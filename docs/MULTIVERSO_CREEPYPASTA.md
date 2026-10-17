@@ -40,7 +40,7 @@ Cada emisión: señal de atmósfera, guardiana de curación, jefe y salida libre
 Todas siguen las reglas de oro del proyecto:
 
 - **`canLose` en todas** (perder = reintentar cuando quieras, con curación al lado).
-- **Derrota permanente al ganar**: self-switch A + sello (`868–875`) + contador (`v[264]`) + página de registro; **no vuelven a atacar**.
+- **Derrota permanente al ganar**: self-switch A + sello (`940–946` para las siete emisiones; `947` para RED) + contador (`v[264]`) + página de registro; **no vuelven a atacar**.
 - **Revancha amistosa solo por menú** («Revancha / Luego»): nunca forzada.
 - **Recompensa única** por primera victoria (8 objetos, sin duplicados en el catálogo).
 - Equipos ≤6 Pokémon y niveles 100–108 (tope del juego: 150).
@@ -80,3 +80,10 @@ npm test                    # 51 + 114 + 62 pruebas
 ```
 
 La checklist manual incluye la sección E con las 12 comprobaciones del Monte Silver y la sección G con las 10 de la Expansión Multiversal (`docs/QA_MANUAL_PLAYTEST.md`, 106 en total). El arco completo está en [`EXPANSION_MULTIVERSAL.md`](EXPANSION_MULTIVERSAL.md).
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

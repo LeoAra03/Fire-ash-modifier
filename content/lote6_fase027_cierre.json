@@ -1,0 +1,218 @@
+{
+  "schema": "lote6_fase027_cierre/1.0",
+  "tasks": "2600–2699",
+  "packages": [
+    {
+      "path": "Fire-Ash-Scripts-Corregidos.zip",
+      "exists": true,
+      "readable": true,
+      "bytes": 48854143,
+      "sha256": "d5c8a4c62f4c01c7e8dbcc640a0b592fb788b16ba32d68ee877e80f0e88e7846",
+      "entries": 2658,
+      "forbiddenRuntimeEntries": [],
+      "forbiddenGuestSourceEntries": [],
+      "guestMosaicNames": []
+    },
+    {
+      "path": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+      "exists": true,
+      "readable": true,
+      "bytes": 63733443,
+      "sha256": "ebb471beef6fea3673b9374f38733b7dd7907c5c816f187cfbdb2f01da146fb9",
+      "entries": 2637,
+      "forbiddenRuntimeEntries": [],
+      "forbiddenGuestSourceEntries": [],
+      "guestMosaicNames": []
+    },
+    {
+      "path": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+      "exists": true,
+      "readable": true,
+      "bytes": 13294668,
+      "sha256": "603528fc25d9d66c5f47cf616e03e7ef8e2f4ae9d458e19ab904c178c0dbccf0",
+      "entries": 501,
+      "forbiddenRuntimeEntries": [],
+      "forbiddenGuestSourceEntries": [],
+      "guestMosaicNames": []
+    },
+    {
+      "path": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+      "exists": true,
+      "readable": true,
+      "bytes": 15013030,
+      "sha256": "c15f447eeeaf86989777b329efcd11333a0aeda30d857d827c4d4c9a0e2f24f0",
+      "entries": 18,
+      "forbiddenRuntimeEntries": [],
+      "forbiddenGuestSourceEntries": [],
+      "guestMosaicNames": []
+    },
+    {
+      "path": "Scripts_corregido/Fire_Ash_Expansion_Multiversal.zip",
+      "exists": true,
+      "readable": true,
+      "bytes": 8585784,
+      "sha256": "3e52ad85cd5f9d7c6305ef6fa2795cfa989b18cce292470ad0aafcf9035460d2",
+      "entries": 205,
+      "forbiddenRuntimeEntries": [],
+      "forbiddenGuestSourceEntries": [],
+      "guestMosaicNames": []
+    }
+  ],
+  "checks": {
+    "requiredPackages": {
+      "count": 5,
+      "missing": []
+    },
+    "forbiddenPackageEntries": [],
+    "guestRomDerivedMosaics": [],
+    "versionedRuntimeArtifacts": [
+      "pokemon_fire_ash/Data/Map081.BAK"
+    ],
+    "allRequiredPackagesReadable": true,
+    "packagesContainNoBackupsSavesOrGuestSources": true,
+    "packagesContainNoGuestRomDerivedMosaics": true,
+    "cleanInstallManifest": {
+      "package": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+      "requiredFiles": [
+        "Data/Scripts.rxdata",
+        "Data/MapInfos.rxdata",
+        "LEEME.txt"
+      ],
+      "present": [
+        "Data/Scripts.rxdata",
+        "Data/MapInfos.rxdata",
+        "LEEME.txt"
+      ],
+      "missing": [],
+      "mode": "patch_over_existing_game",
+      "note": "El ZIP es un parche; Game.exe y las partidas del jugador quedan fuera. La instalación limpia real queda en pending_human_review."
+    },
+    "documentation": {
+      "required": [
+        {
+          "path": "docs/qa/defectos.md",
+          "marker": "Registro de defectos"
+        },
+        {
+          "path": "docs/qa/guia_mantenimiento.md",
+          "marker": "Guía de mantenimiento"
+        },
+        {
+          "path": "docs/qa/mapa_conocimiento.md",
+          "marker": "Mapa de conocimiento"
+        },
+        {
+          "path": "docs/qa/reversion_bloque.md",
+          "marker": "Prueba de reversión"
+        },
+        {
+          "path": "docs/qa/lote6/fase_027_cierre.md",
+          "marker": "FASE 027"
+        },
+        {
+          "path": "docs/ENTREGA_FINAL_LIMITACIONES.md",
+          "marker": "Limitaciones conocidas"
+        },
+        {
+          "path": "Scripts_corregido/LEEME.md",
+          "marker": "Limitaciones comprobables"
+        }
+      ],
+      "found": [
+        "docs/qa/defectos.md",
+        "docs/qa/guia_mantenimiento.md",
+        "docs/qa/mapa_conocimiento.md",
+        "docs/qa/reversion_bloque.md",
+        "docs/qa/lote6/fase_027_cierre.md",
+        "docs/ENTREGA_FINAL_LIMITACIONES.md",
+        "Scripts_corregido/LEEME.md"
+      ],
+      "missing": [],
+      "wrongMarker": []
+    },
+    "defectRegister": {
+      "present": true,
+      "requiredMarkers": [
+        "ID",
+        "Estado",
+        "Reproducción",
+        "Regresión",
+        "Alcance",
+        "pending_human_review"
+      ],
+      "missingMarkers": [],
+      "knownOpen": 1,
+      "policy": "No se borra ni se salta un defecto: se reproduce, se clasifica, se corrige, se regresa y se reverifica; lo humano queda pendiente y visible."
+    },
+    "romIndependence": {
+      "ignoredGuestRoms": true,
+      "documentedDependency": true,
+      "defaultWithoutRom": true,
+      "nativeTools": [
+        {
+          "file": "tools/rom_nativo_mapas.mjs",
+          "exists": true
+        },
+        {
+          "file": "tools/rom_nativo_sprites.mjs",
+          "exists": true
+        },
+        {
+          "file": "tools/rom_nativo_mapas.mjs",
+          "exists": true
+        }
+      ],
+      "rule": "La entrega no contiene ROMs ni mosaicos derivados; los extractores nativos solo se ejecutan con una fuente local explícita y no son parte del arranque normal."
+    },
+    "temporaryTrackedFiles": [],
+    "staticFailures": []
+  },
+  "reproducibility": {
+    "commands": [
+      "npm run build:package && npm run verify:package",
+      "npm run build:corregido:zip && npm run verify:corregido:zip",
+      "npm run build:dn:qa && npm run verify:dn:qa",
+      "npm run sync:ruta_de_dios:package && npm run verify:ruta_de_dios:package",
+      "npm run build:expansion:package && npm run verify:expansion:package",
+      "npm run create:map-reference && npm run verify:map-reference",
+      "node tools/inventario_congelado.mjs --verify",
+      "node tools/qa/artifact_budget_check.mjs --json"
+    ],
+    "numbersPolicy": "Toda cifra de este bloque debe tener una fuente o comando vecino; las pruebas de runtime se listan como manual_pending.",
+    "cleanClone": "pending_human_review: clonar la rama publicada en un directorio sin node_modules y ejecutar los comandos anteriores."
+  },
+  "manual": [
+    {
+      "id": "M027-01",
+      "task": "2602–2614",
+      "status": "pending_human_review",
+      "evidence": "instalación descargada, registro de Game.exe y acta firmada"
+    },
+    {
+      "id": "M027-02",
+      "task": "2617–2633",
+      "status": "pending_human_review",
+      "evidence": "tres sesiones humanas consecutivas sin descubrimientos y guía de limitaciones"
+    },
+    {
+      "id": "M027-03",
+      "task": "2635–2644",
+      "status": "pending_human_review",
+      "evidence": "etiqueta final y CI remota del cierre completo"
+    },
+    {
+      "id": "M027-04",
+      "task": "2665–2679",
+      "status": "static_pass_manual_runtime_pending",
+      "evidence": "clon limpio, ROM ausente, Game.exe y Android/Kirin"
+    },
+    {
+      "id": "M027-05",
+      "task": "2691–2699",
+      "status": "pending_human_review",
+      "evidence": "firmas del playtest y revisión externa"
+    }
+  ],
+  "status": "static_pass_manual_pending",
+  "policy": "No se afirma que el juego entero esté jugado ni que la CI final exista: esta tanda deja evidencia estática y una cola humana verificable."
+}

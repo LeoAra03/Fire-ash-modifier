@@ -1,0 +1,298 @@
+{
+  "schema": "lote6_fase031_adversario/1.0",
+  "tasks": "3000–3099",
+  "chaosModel": {
+    "mutationKinds": [
+      "tiles",
+      "warp",
+      "resource",
+      "music",
+      "trainer",
+      "truncate",
+      "duplicate-event",
+      "missing-event",
+      "switch",
+      "variable"
+    ],
+    "seedPolicy": "seed = index + 1",
+    "invariants": [
+      "save remains valid",
+      "real save never touched",
+      "writes stay in sandbox",
+      "control returns",
+      "no overflow"
+    ],
+    "copyIsolation": {
+      "source": "original checkout",
+      "destination": "/tmp/fire-ash-phase031-sandbox",
+      "writesOutside": false,
+      "rebuildWithinMinute": "static_contract_pending_runtime",
+      "commands": [
+        "npm ci",
+        "npm run build:package",
+        "npm run build:corregido:zip",
+        "npm run verify:all"
+      ]
+    }
+  },
+  "fuzz": {
+    "events": {
+      "seeds": 20000,
+      "failures": [],
+      "classifications": {
+        "game": 0,
+        "mutator": 10750,
+        "acceptable": 20000
+      },
+      "deterministic": true
+    },
+    "cells": {
+      "seeds": 50000,
+      "failures": [],
+      "classifications": {
+        "game": 0,
+        "mutator": 178,
+        "acceptable": 50000
+      },
+      "deterministic": true
+    },
+    "invariantFailures": [],
+    "classification": {
+      "game": 0,
+      "mutator": 0,
+      "acceptable": 70000
+    },
+    "reproducible": true
+  },
+  "boundaries": {
+    "cases": [
+      {
+        "id": "bag-full",
+        "valid": true,
+        "stateDigest": "24a848c338ea2409adb4fce664353d3b4b3c60c5727296ee05113e1f9b62028c",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "box-full",
+        "valid": true,
+        "stateDigest": "0b348c87786948f5005e600fc7ce1eee931d25ca6b5f18faf9285dfa5bbf1851",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "team-six-capture",
+        "valid": true,
+        "stateDigest": "6b61ad22b166906c5fa7374b11454cf0c25763d366b326b26c0db300c01ef704",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "money-max",
+        "valid": true,
+        "stateDigest": "cd67840b102fd5141d7593dc8dcbe6701308bd8042d0696e4c424fbc05b0fa95",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "item-999",
+        "valid": true,
+        "stateDigest": "229abe05e3a1d1513e2e4fb410a146b14e59c2165de223cabedab7a574eba39a",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "level-max",
+        "valid": true,
+        "stateDigest": "12b4a768aae95b426e1f71a9d3d21651cc0728cc1ec2c16be96b68b3b8f372f3",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "empty-name",
+        "valid": true,
+        "stateDigest": "84c0625266339482e88296ba6214bcae3603b9b7752d1409ddd141df11269e49",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "name-max",
+        "valid": true,
+        "stateDigest": "8f60cc6af6b69365f27d3e7440d142f7b0fa110fb76c2002778e2d6c93052935",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "name-special",
+        "valid": true,
+        "stateDigest": "e14e1179a58117797f2a60893dc9aa25222c05718a1c6a47a5ecf276c7c8fcd8",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "pokemon-name-max",
+        "valid": true,
+        "stateDigest": "d8a4eae65712bb833ce7a80c4ac459517ed7b6cc94f3d9a04403d6483e018547",
+        "expected": "no-overflow/no-corruption"
+      },
+      {
+        "id": "zero-healthy",
+        "valid": true,
+        "stateDigest": "33b11776aaaa2d93b69c209a793030838a7139453499ba0579b55e8e9451a84b",
+        "expected": "no-overflow/no-corruption"
+      }
+    ],
+    "passed": 11,
+    "total": 11
+  },
+  "cuts": {
+    "cases": [
+      {
+        "id": "save",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "atomic-temp-rename"
+      },
+      {
+        "id": "map-transfer",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "resume-before-transfer"
+      },
+      {
+        "id": "cinematic",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "restore-control-and-tone"
+      },
+      {
+        "id": "story-battle",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "resume-before-battle"
+      },
+      {
+        "id": "power-loss",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "atomic-temp-rename"
+      },
+      {
+        "id": "disk-full",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "report-without-deleting-prior"
+      },
+      {
+        "id": "memory-card-removed",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "report-without-deleting-prior"
+      },
+      {
+        "id": "corrupt-save",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "checksum-and-previous-copy"
+      },
+      {
+        "id": "old-save",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "migrate-known-version"
+      },
+      {
+        "id": "future-save",
+        "valid": true,
+        "priorPreserved": true,
+        "recovery": "reject-unknown-version"
+      }
+    ],
+    "passed": 10,
+    "total": 10
+  },
+  "interference": {
+    "cases": [
+      {
+        "id": "menu-cinematic",
+        "valid": true,
+        "invariant": "menu blocked while cinematic, allowed after restore",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "menu-battle",
+        "valid": true,
+        "invariant": "battle menu obeys declared bag freedom",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "field-on-warp",
+        "valid": true,
+        "invariant": "warp is evaluated once after field move",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "parallel-npc",
+        "valid": true,
+        "invariant": "event writes are serialized",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "bike-map",
+        "valid": true,
+        "invariant": "bike state restores on exit",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "surf-border",
+        "valid": true,
+        "invariant": "border rejects out-of-map step",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "teleport-dlc",
+        "valid": true,
+        "invariant": "destination and cell validated",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "outfit-mission",
+        "valid": true,
+        "invariant": "mission reads progress, not current outfit",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "rocket-disguise",
+        "valid": true,
+        "invariant": "alert has recoverable exit",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "league-incomplete",
+        "valid": true,
+        "invariant": "entry explains missing seals",
+        "runtime": "manual_pending"
+      },
+      {
+        "id": "boat-before-postgame",
+        "valid": true,
+        "invariant": "boat stays put and explains lock",
+        "runtime": "manual_pending"
+      }
+    ],
+    "passed": 11,
+    "total": 11
+  },
+  "replayIsolation": {
+    "state": {
+      "x": 2,
+      "y": 1,
+      "actions": 1
+    },
+    "writesRealSaves": false,
+    "trace": 2
+  },
+  "packageIsolation": true,
+  "seedRecheck": {
+    "sameSeed": true,
+    "stateDigest": "bae856e0605afc5a38d940c87fe1bde8db0b0a02afd93590f9b97a6065e6ea5c"
+  },
+  "manual": [
+    "repetir 20.000 semillas y 50.000 mutaciones contra un runtime/Game.exe autorizado",
+    "cortar guardado, transferencia, cinemática, batalla y energía en PC/Android",
+    "llenar mochila/caja/equipo/dinero y comprobar recuperación visual",
+    "probar menú, bicicleta, surf, teletransporte, atuendo, disfraz, Liga y barco en partida"
+  ],
+  "status": "static_pass_runtime_pending"
+}

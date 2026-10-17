@@ -265,3 +265,10 @@ Arceus, tonos y transiciones.
 `reference/dimensional_nightmare/slices/`. El paquete de Dimensional Nightmare
 se construye bien; lo que no se puede regenerar aquí es el censo de recortes.
 Subiendo esas imágenes se pone en verde. No afecta al juego.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

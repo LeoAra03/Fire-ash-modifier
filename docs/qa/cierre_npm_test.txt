@@ -1,0 +1,961 @@
+
+> fire-ash-modifier-tools@1.0.0 pretest
+> npm run build:teckel
+
+
+> fire-ash-modifier-tools@1.0.0 build:teckel
+> node tools/build_teckel_package.mjs
+
+OK: Fire_Ash_Ciudad_Teckel_Paraiso.zip (72 entradas)
+OK: paquete Teckel/Paraíso verificado (72 entradas)
+
+> fire-ash-modifier-tools@1.0.0 test
+> node web/js/marshal.test.mjs && node web/js/history.test.mjs && node web/js/integration.test.mjs && node tools/external_authoring.test.mjs && node tools/qa/scripts_dangling_calls.mjs && node tools/verify_arceus_recursos.mjs && node tools/qa/arceus_scope_map.mjs --audit && node tools/qa/arceus_scope_map.mjs pokemon_fire_ash/Data/Scripts.rxdata PokeMod_CanonArceus --audit && node tools/verify_arceus_action_safety.mjs && node tools/qa/arceus_shield_harness.mjs && node tools/qa/arceus_moves_harness.mjs && node tools/tone_safety.test.mjs && node tools/package_integrity.test.mjs && node tools/dn_runtime_support.test.mjs && npm run verify:zmenu && npm run verify:graficos && npm run verify:ruby && npm run verify:ruby:full && npm run verify:grandeur:end && npm run verify:grandeur:end:selftest && npm run verify:mapas && npm run verify:boot && npm run verify:teckel && npm run verify:visor && npm run verify:lideres && npm run verify:glazed && npm run verify:light_platinum && npm run verify:liquid_crystal && npm run verify:canon:arceus && npm run verify:arceus:sprites && npm run verify:diplomas && npm run verify:corregido:zip && npm run verify:ruta_de_dios && npm run verify:presupuesto && npm run verify:presupuesto:selftest && npm run verify:glosario && npm run verify:metrica && npm run verify:mapa_terminado && npm run verify:evento_terminado && npm run test:atlas:master
+
+
+marshal.js: 51 OK, 0 fallos
+
+historial: 10 OK, 0 fallos
+— demo —
+— proyecto —
+— mapas —
+— render (stub) —
+— scripts zlib —
+— kirin check —
+— scan global —
+— sala pokemod —
+— pbs —
+— protección partidas —
+— crear: plantillas —
+— crear: insertar+mapa —
+— crear: pbs texto —
+— crear: auditoría —
+— crear: registro de mapa —
+— analizar —
+— packs —
+— crear: jefes y borrado PBS —
+— historial integrado —
+
+integración: 124 OK, 0 fallos
+OK: el .pkregion de Atlas cumple el formato v1
+OK: Region Builder contiene los 40 sectores
+OK: la Pokédex regional contiene las 153 especies aprobadas
+OK: las capas de agua y caminos tienen contenido
+OK: el adaptador rechaza versiones .pkregion desconocidas
+OK: el adaptador rechaza referencias a landmarks inexistentes
+OK: el diseño neutral supera la compuerta narrativa
+OK: un .pkregion nunca se declara compilable directamente
+OK: el plano distingue 40 episodios aprobados
+OK: el plano mantiene 0 anclas pendientes
+OK: el manifiesto de autoría estilo Studio tiene integridad referencial
+OK: Studio reference indexa las 40 anclas
+OK: Studio reference separa 40 episodios compilados
+OK: Studio reference reserva 0 registros futuros
+OK: el manifiesto no copia código de Pokémon Studio
+OK: el manifiesto no se presenta como proyecto PSDK
+OK: todos los registros conservan retorno libre
+OK: el inspector abre un proyecto Studio 2.11.0 de solo lectura
+OK: el inspector bloquea importación PSDK directa
+OK: el inspector indexa dbSymbol por colección
+OK: los 40 mapas superan compatibilidad técnica de estilo
+OK: style gate aprobó 40/40 anclas
+OK: style gate reconoce 40/40 anclas con composición propia
+OK: style gate conserva 0/40 anclas con geometría totalmente heredada
+OK: el backlog visual está derivado de la geometría real
+OK: ningún mapa se certifica visualmente sin revisión humana
+OK: las 40 anclas siguen requiriendo Game.exe
+OK: la prueba dentro de Game.exe sigue siendo obligatoria
+OK: los manifiestos definen 120 rutas Tier 2 en lotes completos
+OK: las 120 rutas Tier 2 superan su QA dedicado
+OK: los mapas Tier 2 de autoría son únicos
+OK: los switches Tier 2 reservados son únicos
+OK: las variables de decisión Tier 2 son únicas
+OK: las recompensas Tier 2 son únicas en el catálogo acumulado
+OK: los NPCs Tier 2 tienen nombres únicos
+OK: el catálogo Tier 2 no repite líneas de diálogo
+OK: los switches Tier 2 forman una reserva continua sin huecos
+OK: cada ruta Tier 2 conserva dos NPCs, decisión persistente y garantías de seguridad
+OK: las 120 rutas compiladas conservan el desafío base cuando existe, dos NPCs y retorno libre
+OK: el catálogo Tier 3 define 420/420 reglas locales
+OK: el catálogo Tier 3 declara Mochila libre, sin combates, retorno libre y 0 flags globales
+OK: las reglas cubren exactamente los Ecos sin desafío Atlas
+OK: cada regla Tier 3 identifica su eco, su anomalía y tres reglas de contrajuego
+OK: las 420 reglas pertenecen a las 14 familias de anomalía declaradas
+OK: ningún texto Tier 3 menciona los switches 674/675
+OK: las 420 reglas compiladas conservan baliza, retorno, microdecisión y self-switch A
+OK: el portal de Arceus aparece en Puntaneva con un aro de luz accesible aunque se haya perdido la flag 870
+OK: el paquete directo conserva el portal, al Squirtle y los cinco sprites de apoyo cinematográfico
+OK: Puntaneva muestra al segundo Volus después de hablar con el primero
+OK: la plaza del templo queda libre y Squirtle ofrece el paso temporal junto al Charmeleon
+OK: la aproximación celestial está en Map2038 y conserva una montaña larga con entrada y retorno
+OK: Map2030 sigue siendo la Gruta de los Testigos y no se reemplaza por la aproximación
+OK: el paquete directo conserva Map2030 como gruta y Map2038 como aproximación
+OK: el ZIP descargable está al día con Paquete_directo/
+OK: el paso entre árboles está limitado a Puntaneva y se reinicia al cargar otro mapa
+OK: Arceus conserva batalla por fases, merced única del Rotom (sin pseudo-PC ni curas, R14), séquito doble, copia del activo, rendición y prólogo cinematográfico
+OK: pbSetSeen/pbSetBattled resuelven la Pokédex global en v19–v21 sin invocarla sobre NPCTrainer
+OK: el equipo de Cintia registra como vistos sus seis Pokémon al aparecer el primer rival
+OK: los tres apoyos conservan la escena de combate, pero sus comandos, azar y desenlace están coreografiados
+OK: Cynthia/Steven, Gold/Eco/Red y Volus/Giratina tienen equipos reales y Arceus de apoyo nivel 200
+OK: la captura de Arceus queda bloqueada antes del debilitamiento final y garantizada después
+OK: Arceus exige seis barras completas, rueda las 17 Tablas, es inmune a estados y adapta niveles/ataques
+OK: la ruleta termina con la Tabla elegida arriba, no a la derecha
+OK: las caminatas de Cynthia/Máximo y Red/Gold anteceden a sus retratos/batallas y Arceus se regenera en el prólogo
+OK: ni los movimientos ni el clima pueden derrotar a los Arceus de la cima: el cinemático absorbe y el divino mueve sus barras
+OK: los comandos de pantalla de Arceus serializan Tone como objeto RMXP, no como String
+OK: Map2037 contiene los cinco entrenadores de apoyo en tres entradas coreografiadas
+OK: los equipos cinemáticos usan especies/movimientos/objetos existentes y respetan el tope de nivel
+OK: los seis sets de movimientos de Arceus existen en los datos del juego
+OK: los tipos de entrenador de las batallas cinemáticas y de Arceus están registrados
+OK: los datos del juego contienen la versión 4 del equipo de Volus usada por el evento
+OK: el nivel 200 queda reservado al Arceus jefe o al capturado dentro de la whitelist; todo Arceus normal queda bajo el techo de 175
+OK: capturar Arceus activa la ruta de Volus y el jefe permanece con 1 HP capturable
+OK: Map2037 tiene ramas RGSS válidas; Volus sólo se pelea al intentar bajar y una victoria cierra la ruta
+OK: el Scripts.rxdata descargable conserva todas las secciones
+OK: el archivo descargable corrige colisiones, guardado, tonos y transiciones (Grandeur Club ya no diverge: fase 32)
+OK: Grandeur Club es idéntica en el juego y en el archivo descargable (fin del `end` sobrante)
+OK: las dos copias conservan el parche de 0 créditos sin un end extra antes de givePassive
+OK: Game_Character bloquea sprites aunque la página del evento marque Through
+OK: Game_Event hace sólidos los eventos con character_name al refrescarse
+OK: Game_Player conserva la interacción con sprites sólidos
+OK: Game_Screen recupera los tonos String heredados sin cerrar el juego
+OK: Game_Picture normaliza tonos antes de interpolarlos
+OK: Scene_Map usa la transición predeterminada cuando transition_name es nil
+OK: la partida principal no depende del archivo auxiliar PokemonSystemSettings
+OK: la velocidad no depende de una carpeta Save Files inexistente
+OK: Battle_Action_UseItem aplica el parche de Mochila libre
+OK: pbCanUseItemOnPokemon? ya no consulta el switch 674
+OK: pbCanUseItemOnPokemon? conserva Embargo y el límite de objetos por combate
+OK: pbItemMenu conserva Mochila libre y la regla de combates externos
+OK: la torre conserva sus 8 activaciones originales del switch 674 (8)
+OK: el laboratorio de Oak conserva 0 cápsulas del hub (debe ser 0)
+OK: el laboratorio no debe ofrecer menús de destinos ()
+OK: Oak aconseja sobre las lecturas de las grietas en el laboratorio
+OK: el Oak consejero depende del switch 429 de postgame
+OK: Oak no teletransporta: solo aconseja
+OK: Oak lee el contador de purgas (\v[264])
+OK: los transportadores originales siguen intactos y condicionados por el postgame
+OK: la puerta de la torre sigue llevando al mapa 141 (SECRET PEAK)
+OK: el catálogo del multiverso define 9 mapas, 7 emisiones y al Campeón Silencioso
+OK: el multiverso declara homenajes reinterpretados, canLose, derrota permanente, revancha por menú y retorno libre
+OK: las recompensas del multiverso son únicas
+OK: los equipos del multiverso respetan 6 Pokémon y el techo de 175
+OK: los 8 jefes del multiverso quedan derrotados para siempre y solo revanchan por menú
+OK: el catálogo define 22 zonas salvajes (mínimo 13)
+OK: las tablas salvajes respetan niveles 1-175
+OK: hay Monte Silver, Bosque Susurrante y encuentros de agua (surf)
+OK: todas las especies salvajes existen en Fire Ash
+OK: las 13 tablas están instaladas en encounters.dat
+OK: la depuración DN audita los 151 mapas y limita el artefacto de rótulos a cinco bandas con huellas de integridad
+
+External authoring: 110 OK, 0 fallos.
+Secciones analizadas: 409
+Métodos definidos en el juego: 4930
+Llamadas sin definición conocida: 0
+Patrones de campo peligrosos (R10): 0
+OK: ninguna llamada apunta a un método inexistente en los scripts instalados.
+OK: ningún script escribe clima, terreno o talentos que el motor rechace (R10).
+Auditoría de recursos del duelo divino (R12)
+  Juego auditado: /home/user/Fire-ash-modifier/pokemon_fire_ash
+  Movimientos: 82 referencias · Especies: 37 · Objetos: 19 · Pistas: 7 · Personajes: 5
+
+  ⚠ el juego no trae animaciones «Common:» (clima, etc.): el motor las salta en silencio; el clima sigue funcionando a nivel mecánico
+
+
+✔ 27 comprobaciones de recursos: el duelo no nombra nada que el juego no tenga.
+(node:4001) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ALCANCE R15b (PokeMod_RutaDeDios): 280 defs/constantes; todo lo que parece de nivel superior lo es de verdad.
+(node:4008) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ALCANCE R15b (PokeMod_CanonArceus): 48 defs/constantes; todo lo que parece de nivel superior lo es de verdad.
+OK: seis barras, catálogo real de ataques/apoyos con filtros de autodaño y huida, captura segura de invocaciones, límite de cuatro movimientos y sincronía en los tres paquetes.
+(node:4022) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+== Cinemáticas: Arceus de apoyo contra Cynthia/Steven y Red/Gold ==
+  OK  el jefe de apoyo se reconoce como cinemático
+  OK  el setter de PS existe
+  OK  el granizo de la cumbre no baja ni un PS al Creador
+  OK  Meteor Mash de Metagross golpea pero no resta PS (hpLost anulado)
+  OK  un golpe letal tampoco mueve la barra
+  OK  el intento letal provoca la burla del Creador en vez de una derrota
+  OK  una escritura directa de PS (plugins/movimientos custom) se rechaza
+  OK  hp -= (ruta de confusión y similares) se rechaza
+  OK  pbFaint restaura al jefe y nunca registra su derrota
+  OK  si un daño externo lo deja a media vida, el escudo la restaura por completo
+
+== Duelo divino: Ash (Metagross) contra Arceus nivel 200 ==
+  OK  el jefe del duelo real se reconoce como divino
+  OK  la batalla se marca como divina
+  OK  Arceus no cae en dos golpes: la barra sobrevive y se restaura al umbral rojo
+  OK  dos golpes dejan la barra abierta tras recuperar un cuarto
+  OK  cuatro ataques y la curación roja agotan exactamente la primera barra
+  OK  la primera barra se restaura completa tras la transición
+  OK  la transición no aplica daño real ni derrota a Arceus
+  OK  la acción que rompió la barra queda registrada
+  OK  un multigolpe no puede saltar dos barras en la misma acción
+  OK  ningún golpe aislado puede derrotar al Creador
+  OK  la curación de umbral rojo devuelve un cuarto, no borra el avance
+  OK  la segunda barra se agota con la progresión completa, sin saltos
+  OK  el granizo de fin de ronda no toca la barra de Arceus
+  OK  una escritura externa de PS no puede derrotar al dios
+  OK  pbFaint jamás cierra el duelo con una derrota de Arceus
+
+== Seis barras y captura: nadie salta el guion ==
+  OK  seis barras se agotan con golpes limitados a 38% y sus transiciones
+  OK  tras la sexta barra se habilita la captura determinista
+  OK  Arceus queda a 1 PS para la captura final
+  OK  sigue en pie: la sexta barra no es una derrota
+  OK  después de la sexta barra no se puede seguir dañando
+
+== Inferencia del modo divino sin bandera previa ==
+  OK  la batalla reconoce al jefe por la marca del Pokémon
+  OK  sin bandera previa, cuatro acciones reales también avanzan una barra
+
+== Ball Breaker (DF08): el movimiento de Metagross ya no aborta el combate ==
+  OK  los ayudantes selfProtected? y sideProtected? existen en PokeBattle_Battler
+  OK  sin protecciones activas ambos ayudantes devuelven false
+  OK  selfProtected? detecta Protect
+  OK  sideProtected? no inventa protecciones de lado
+  OK  Ball Breaker avisa de que la protección terminó
+  OK  Ball Breaker retira la protección individual (Protect, King's Shield…)
+  OK  y no deja restos de otros escudos
+  OK  sideProtected? detecta Wide Guard del lado
+  OK  con protección doble avisa al mismo tiempo del escudo y del lado
+  OK  Ball Breaker limpia también las protecciones de lado
+  OK  sin protecciones no muestra ningún mensaje
+  OK  la versión instalada avisa igual del escudo y del lado
+  OK  la versión instalada retira todas las protecciones
+  OK  la versión instalada tolera un objetivo nulo sin lanzar excepción
+
+== Regresión: un Arceus normal del jugador no lleva escudo ==
+  OK  el Arceus capturado o de un equipo cualquiera recibe daño normal
+  OK  y puede debilitarse como cualquier Pokémon
+
+== Duelo jugable (R8): iniciativa de Ash, barras que sí se mueven y cero KOs de un golpe ==
+  OK  todo el lado de Ash abre la ronda aunque Arceus sea mil veces más rápido
+  OK  la iniciativa del lado de Ash sobrevive al Espacio Raro de la Etapa 4
+  OK  con la sexta barra agotada la regla de iniciativa se apaga
+  OK  mientras el duelo siga vivo, Ash conserva la iniciativa
+  OK  la guardia anti-KO reconoce el golpe letal de Arceus
+  OK  un golpe mortal de Arceus sólo quita como máximo el 48%: nunca un KO de un solo turno
+  OK  el vínculo de Ash se narra cuando el golpe mortal es detenido
+  OK  el segundo impacto de la misma acción (multigolpe) tampoco remata
+  OK  cada acción de Arceus vuelve a toparse: hacen falta tres para tumbar a un Pokémon sano
+  OK  un golpe fuerte no mortal se recorta al tope sin gastar el relato de aguante
+  OK  un Pokémon ya debilitado por debajo del tope sí puede ser derribado: el duelo no se estanca
+  OK  la guardia nunca protege al propio Arceus
+  OK  las cinemáticas de apoyo no usan la guardia del duelo
+  OK  un golpe flojo de Ash conserva el mínimo del 12% y el vínculo del prólogo
+  OK  el golpe mínimo mueve de verdad la barra del dios por la ruta de daño
+  OK  el daño que no sale de Ash (retroceso, clima) no recibe el vínculo
+
+== Ritmo del duelo (R9): seis barras contra un equipo de seis Pokémon ==
+  OK  un equipo que apenas rasguña la barra puede perder el combate (18 turnos, 6 bajas)
+  OK  dos ataques bien preparados por turno pueden vaciar seis barras (12 turnos, 3 bajas)
+  OK  un equipo con buen daño avanza más rápido que uno mal preparado
+  OK  un equipo fuerte puede recuperarse de rondas perdidas, con bajas reales (17 turnos, 4 bajas)
+
+Resultado: 68 comprobaciones OK, 0 fallos
+
+RESUMEN: 68 OK / 0 FALLOS
+(node:4029) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ARCEUS_MOVES_QA_OK: 142 movimientos seguros; autodaño/huida filtrados; apoyo y ataques seleccionables; invocación no capturable; 0EC no cierra el duelo.
+tone safety: recuperación String→Tone, pantallas/imágenes y paquete OK
+package integrity: archivos ausentes, copia idéntica, corrupción del mismo tamaño y verificación sin escritura OK
+Runtime DN: combate espejo no destructivo y forma final de KINGGUS verificados.
+
+> fire-ash-modifier-tools@1.0.0 verify:zmenu
+> node tools/apply_z_menu_safety.mjs --verify
+
+✔ pokemon_fire_ash/Data/Scripts.rxdata
+✔ Scripts_corregido/Scripts.rxdata
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+
+✔ parche del botón Z presente y correcto
+
+> fire-ash-modifier-tools@1.0.0 verify:graficos
+> node tools/apply_graficos_safety.mjs --verify
+
+✔ pokemon_fire_ash/Data/Scripts.rxdata
+✔ Scripts_corregido/Scripts.rxdata
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+
+✔ parche de gráficos presente y correcto
+
+> fire-ash-modifier-tools@1.0.0 verify:ruby
+> node tools/qa/ruby_syntax_check.mjs
+
+(node:4107) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_Dialogos
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_ZMenu
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_Graficos
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_Atavios
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_BadgeRegions
+✔ pokemon_fire_ash/Data/Scripts.rxdata · PokeMod_CanonArceus
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_Dialogos
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_ZMenu
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_Graficos
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_Atavios
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_BadgeRegions
+✔ Scripts_corregido/Scripts.rxdata · PokeMod_CanonArceus
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata · PokeMod_Dialogos
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata · PokeMod_ZMenu
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata · PokeMod_Graficos
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata · PokeMod_Dialogos
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata · PokeMod_ZMenu
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata · PokeMod_Graficos
+
+18 sección(es) Ruby revisadas · ✔ sin errores
+
+> fire-ash-modifier-tools@1.0.0 verify:ruby:full
+> node tools/qa/ruby_syntax_full_check.mjs
+
+(node:4126) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ pokemon_fire_ash/Data/Scripts.rxdata · 323/323 secciones compilan
+✔ Scripts_corregido/Scripts.rxdata · 323/323 secciones compilan
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata · 323/323 secciones compilan
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata · 324/324 secciones compilan
+
+1293 sección(es) Ruby compiladas en 4 paquete(s) · ✔ todas válidas
+
+> fire-ash-modifier-tools@1.0.0 verify:grandeur:end
+> node tools/repair_grandeur_club_end.mjs --verify
+
+Verificación OK: «Grandeur Club» sin `end` sobrante en las cuatro copias.
+  · copia previa: sin copia previa en el checkout (nada que comparar)
+  · juego: pokemon_fire_ash/Data/Scripts.rxdata (56832 caracteres, 734 líneas, método en líneas 688–709)
+  · Scripts_corregido/Scripts.rxdata (56832 caracteres, sin `end` sobrante)
+  · Scripts_corregido/Paquete_directo/Data/Scripts.rxdata (56832 caracteres, sin `end` sobrante)
+  · Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata (56832 caracteres, sin `end` sobrante)
+
+> fire-ash-modifier-tools@1.0.0 verify:grandeur:end:selftest
+> node tools/repair_grandeur_club_end.mjs --selftest
+
+✔ reemplazo estructural: 3 aperturas de nivel superior y 3 `end`, sin sobrantes
+✔ reemplazo estructural: independiente de cuántos `end` indentados cierre el original
+✔ reemplazo estructural: un segundo método con el mismo mensaje sobrevive intacto
+✔ reemplazo estructural: idempotente (la segunda pasada deja el mismo texto)
+✔ detección y reparación del `end` sobrante (texto exacto y equilibrio recuperado)
+✔ sección sana: no se detecta `end` sobrante ni se modifica el texto
+✔ método ausente: no se reemplaza nada (quien llama decide si lanzar)
+✔ dividirLineas conserva desplazamientos y terminadores (ida y vuelta exacta)
+
+selftest: ✔ 8/8 reglas en verde
+
+> fire-ash-modifier-tools@1.0.0 verify:mapas
+> node tools/repair_missing_maps.mjs --verify && node tools/repair_map_data.mjs --verify
+
+
+=== pokemon_fire_ash: 3465 entradas · 3465 archivos · 0 hueco(s)
+   ✔ sin mapas listados que falten
+
+=== Scripts_corregido/Paquete_directo: 3465 entradas · 1366 archivos · 2099 hueco(s)
+   (paquete parcial: los 2099 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+=== Scripts_corregido/Dimensional_Nightmare_QA: 3465 entradas · 192 archivos · 3273 hueco(s)
+   (paquete parcial: los 3273 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+=== Scripts_corregido/Ciudad_Teckel_Paraiso: 3465 entradas · 41 archivos · 3424 hueco(s)
+   (paquete parcial: los 3424 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+=== Scripts_corregido/Expansion_Multiversal: 3465 entradas · 50 archivos · 3415 hueco(s)
+   (paquete parcial: los 3415 huecos son mapas del juego que el parche no incluye — no se tocan)
+
+Verificación: 0 hueco(s) en el juego completo, 0 reparado(s)
+
+A) ✔ ningún mapa apunta a un tileset vacío
+
+B) ✔ ningún sprite usa un nombre que exista con otros ceros
+
+✔ nada roto que reparar
+
+> fire-ash-modifier-tools@1.0.0 verify:boot
+> node tools/validate_boot_classes.mjs && node tools/repair_map_metadata_classes.mjs --verify && node tools/apply_no_badge_field_moves.mjs --verify
+
+── Juego de desarrollo: 3519 archivos de datos contra pokemon_fire_ash/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+── Paquete directo: 1377 archivos de datos contra Scripts_corregido/Paquete_directo/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+── Dimensional Nightmare QA: 204 archivos de datos contra Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+── Expansión Multiversal (scripts de DN QA): 57 archivos de datos contra Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata
+   ✔ todas las clases serializadas están definidas
+OK: verificación de clases de arranque superada
+✔ pokemon_fire_ash/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+✔ Scripts_corregido/Paquete_directo/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+✔ Scripts_corregido/Expansion_Multiversal/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/map_metadata.dat: 0 entradas RPG::MapMetadata
+OK: ningún map_metadata.dat distribuido contiene RPG::MapMetadata
+✔ pokemon_fire_ash/Data/Scripts.rxdata: 0 candados de medalla retirados
+✔ Scripts_corregido/Scripts.rxdata: 0 candados de medalla retirados
+✔ Scripts_corregido/Paquete_directo/Data/Scripts.rxdata: 0 candados de medalla retirados
+✔ Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata: 0 candados de medalla retirados
+OK: los movimientos de campo no piden medalla ni MO en ningún Scripts.rxdata
+
+> fire-ash-modifier-tools@1.0.0 verify:teckel
+> node tools/apply_atlas_relocalizacion.mjs --verify && node tools/apply_ciudad_teckel_maxine.mjs --verify && node tools/build_teckel_package.mjs --verify
+
+✔ relocalización Atlas: verificación OK
+✔ ciudad teckel + maxine: verificación OK
+OK: paquete Teckel/Paraíso verificado (72 entradas)
+
+> fire-ash-modifier-tools@1.0.0 verify:visor
+> node tools/apply_badge_viewer.mjs --verify
+
+✔ visor de medallas: verificación OK
+
+> fire-ash-modifier-tools@1.0.0 verify:lideres
+> node tools/apply_lideres_campanas.mjs --verify
+
+✔ líderes de campañas: verificación OK
+
+> fire-ash-modifier-tools@1.0.0 verify:glazed
+> node tools/apply_glazed_encounters.mjs --verify
+
+✔ Verificación OK: 14 zonas de Glazed registradas con especies y niveles válidos.
+
+> fire-ash-modifier-tools@1.0.0 verify:light_platinum
+> node tools/apply_light_platinum_native_lore.mjs --verify
+
+✔ Verificación OK: 19 mapas y 10 tablas de encuentros de Light Platinum validados.
+
+> fire-ash-modifier-tools@1.0.0 verify:liquid_crystal
+> node tools/apply_liquid_crystal_native_lore.mjs --verify
+
+✔ Verificación OK: 432 mapas y 14 tablas de encuentros de Liquid Crystal validados.
+
+> fire-ash-modifier-tools@1.0.0 verify:canon:arceus
+> node tools/apply_canon_arceus.mjs --verify
+
+✔ Canon de Arceus verificado.
+  · todas las puertas exigen el duelo de La Ruta de Dios
+  · Fragmento del Génesis en la cumbre, solo tras el duelo
+  · Rotom del Tiempo en los tres accesos
+  · Oak habla de las dimensiones y Arceus aparece si fue capturado
+  · el combate doblega una regla distinta por fase
+
+> fire-ash-modifier-tools@1.0.0 verify:arceus:sprites
+> node tools/verify_arceus_phase_sprites.mjs
+
+  ✔ juego: la tabla de sufijos declara un sprite por fase (1-5 de fase + 19 mil brazos)
+  ✔ juego: el nombre del archivo se compone en runtime (auditoría de recursos)
+  ✔ juego: existen los tres cambios de hoja (fase, primigenia y restauración)
+  ✔ juego: la apertura del duelo y cada cambio de barra aplican la hoja de su fase
+  ✔ juego: la primigenia estrena hoja y todo redibujado la conserva
+  ✔ juego: el origen del sprite se recalcula al cambiar de tamaño de hoja
+  ✔ paquete: la tabla de sufijos declara un sprite por fase (1-5 de fase + 19 mil brazos)
+  ✔ paquete: el nombre del archivo se compone en runtime (auditoría de recursos)
+  ✔ paquete: existen los tres cambios de hoja (fase, primigenia y restauración)
+  ✔ paquete: la apertura del duelo y cada cambio de barra aplican la hoja de su fase
+  ✔ paquete: la primigenia estrena hoja y todo redibujado la conserva
+  ✔ paquete: el origen del sprite se recalcula al cambiar de tamaño de hoja
+  ✔ las 6 fases tienen sprite propio, existente y distinto
+  ✔ la Forma Primigenia usa el Arceus clásico, distinto de las seis fases
+  ✔ el ZIP de entrega trae los 6 sprites de fase
+
+OK: Arceus cambia de sprite en cada fase (15 comprobaciones, 6 fases distintas).
+
+> fire-ash-modifier-tools@1.0.0 verify:diplomas
+> node tools/apply_diplomas_planta.mjs --verify
+
+OK: Salón de Diplomas instalado; siete marcos con hitos verificados.
+
+> fire-ash-modifier-tools@1.0.0 verify:corregido:zip
+> node tools/refresh_corregido_zip.mjs --verify
+
+OK: el ZIP de la raíz coincide con Paquete_directo/ y LEEME.md (2616 archivos, 46.6 MB)
+
+> fire-ash-modifier-tools@1.0.0 verify:ruta_de_dios
+> node tools/apply_la_ruta_de_dios.mjs --verify
+
+Verification OK: La Ruta de Dios fully verified (7 floors, Arceus Lv. 200, Volo, Dialga, Palkia, trainers, switches, and scripts).
+
+> fire-ash-modifier-tools@1.0.0 verify:presupuesto
+> node tools/qa/artifact_budget_check.mjs
+
+Presupuesto de artefacto de sesión (techo combinado: 128 MiB por grupo)
+  OK                     ZIP raíz (Fire-Ash-Scripts-Corregidos.zip): 46.59 MiB / tope 64.00 MiB
+  JUSTIFICADO            Entregables versionados (raíz + Scripts_corregido): 134.37 MiB / tope 128.00 MiB (+6.37 MiB)
+      justificación hasta 136.00 MiB: Los cuatro entregables versionados suman 133,34 MiB y superan el techo de sesión de 128 MiB en 5,34 MiB. Se justifica en vez de recortar porque cada uno es la vía de instalación de un contenido distinto (scripts corregidos, paquete directo, mapas referenciales, QA de Dimensional Nightmare) y quitarlos rompería enlaces publicados en README.md y Scripts_corregido/LEEME.md. Además, el ZIP raíz duplica el contenido de Scripts_corregido/Paquete_directo/: la ruta de retorno al techo sin justificación está documentada en docs/PRESUPUESTO_ARTEFACTO_SESION.md (deduplicar esa pareja o dejar el paquete directo como único artefacto de instalación). Mientras esa ruta no se ejecute, ningún entregable nuevo puede añadirse sin subir este techo de forma explícita.
+  JUSTIFICADO            Insumos de terceros (32 archivos): 260.25 MiB / tope 128.00 MiB (+132.25 MiB)
+      justificación hasta 280.00 MiB: Los 32 archivos comprimidos de terceros versionados suman 260,25 MiB, el exceso mayor del repositorio, y se justifica por partes: porymap 1-15 (144,06 MiB) es el editor de mapas con el que se reconstruyen las regiones; Tiled 1-4 (44,26 MiB) son binarios de Linux redistribuibles que se bajan del release oficial; ROMS (1..3) (32,56 MiB) y Pokemon unbound part1-2 (16,51 MiB) son las ROMs invitadas de la extraccion nativa; swablu (15,81 MiB) es material de referencia de sprites; pokecrystal, pokered, timps-swarm, pokemon-agent, rvpacker y porygion aportan ~7 MiB de herramientas fuente. Nada de esto es entregable ni se publica: son la materia prima con la que ya se generaron los PNG, tilesets y sprites que si estan versionados. Se declara techo de 280 MiB en lugar de podar en esta fase porque la poda es destructiva y exige confirmacion del usuario; las rutas de poda, con el ahorro medido de cada una, quedan escritas en docs/PRESUPUESTO_ARTEFACTO_SESION.md. Si una fase futura anade insumos, debe subir este techo con motivo explicito.
+  OK                     Repositorio completo (29863 archivos): 1567.41 MiB / tope 1600.00 MiB
+      insumo mayor: Pokemon unbound gba.part1.rar (16.00 MiB)
+      insumo mayor: swablu (3).zip (15.81 MiB)
+      insumo mayor: ROMS (1).rar (14.00 MiB)
+      insumo mayor: ROMS (2).rar (14.00 MiB)
+      insumo mayor: Tiled-1.12.2_Linux_x86_64.part1.rar (12.00 MiB)
+Objetivo sin justificación: Fire-Ash-Scripts-Corregidos.zip debe bajar a 40.22 MiB (hoy 46.59 MiB) o hay que deduplicar el paquete directo. Ver docs/PRESUPUESTO_ARTEFACTO_SESION.md.
+OK: presupuesto de artefacto dentro de los topes (con justificación escrita: entregables, insumos)
+
+> fire-ash-modifier-tools@1.0.0 verify:presupuesto:selftest
+> node tools/qa/artifact_budget_check.mjs --selftest
+
+presupuesto de artefacto: 7/7 reglas verificadas (tope duro del ZIP raíz, techo combinado, justificación vigente y vencida, faltantes, objetivo de recorte)
+
+> fire-ash-modifier-tools@1.0.0 verify:glosario
+> node tools/qa/glosario_check.mjs
+
+Glosario congelado — docs/qa/glosario.md (revisión R1, 2026-10-15)
+  términos: Vía · Ancla · Emisión · Sello · Fragmento · Dimensión invitada · Liga Oscura
+  fuentes: 34 declaradas, 33 con cita literal verificable
+  divergencias registradas: D1, D2, D3
+OK: el glosario coincide con su sello, los 7 términos están cerrados y todas las citas siguen en pie
+
+> fire-ash-modifier-tools@1.0.0 verify:metrica
+> node tools/qa/metrica_dimensiones_check.mjs
+
+Métrica de éxito del plan — 23 mundos (Jefe final · Retorno libre · Verificador propio · Partida de prueba registrada)
+  jefe final | retorno libre | verificador propio | partida registrada (docs/qa/partidas/2026-10-15_corridas.txt)
+
+  ✔ glazed             jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:glazed) · manual: pendiente
+  ✔ lightplatinum      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:light_platinum) · manual: pendiente
+  ✔ liquidcrystal      jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones, verify:liquid_crystal) · manual: pendiente
+  ✔ tfoh               jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ factoryadventure   jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:dimensiones) · manual: pendiente
+  ✔ teamrocket         jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:rocket) · manual: pendiente
+  ✔ locutora           jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ plata              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ enterrado          jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ cinta              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ fallo              jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ eco                jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ consola            jefe ✔  retorno ✔  verificador ✔  partida ✔  (verify:multiverse, verify:monte_silver) · manual: pendiente
+  ✔ dn_ep01            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep02            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep03            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep04            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep05            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_ep06            jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w7              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w8              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_w9              jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:events:verify, dn:battles:verify) · manual: pendiente
+  ✔ dn_liga_oscura     jefe ✔  retorno ✔  verificador ✔  partida ✔  (dn:liga:verify, dn:medals:verify) · manual: pendiente
+
+  hallazgo COLISION-SW768: confirmado — Map2030 usa 7 switches del rango 768–774; 7 de ellos están nombrados «POKEMOD ATLAS T2…» en System.rxdata
+  deuda PARTIDA-MANUAL: Ninguna de las 23 partidas de prueba está jugada por una persona
+  deuda DN-MAPS-VERIFY-PRERREQUISITO: dn:maps:verify no corre sin el ingest de referencia
+  deuda ROM-NATIVO-11-FALLOS: verify:rom:nativo reporta 11 fallos en mapas de campaña
+
+  métrica: 23/23 mundos con las cuatro condiciones (100 %) · partida manual registrada en 0/23 mundos (0 %)
+OK: los 4 criterios están cubiertos en la capa automática para todos los mundos del plan
+
+> fire-ash-modifier-tools@1.0.0 verify:mapa_terminado
+> node tools/qa/mapa_terminado_check.mjs
+
+Mapas terminados — anillo A: 173 mapas en 0.4 s (Transitable · Sin celdas huérfanas · Con encuentros · Con música · Con entrada y salida)
+
+  ✔ Map2021  Monte Silver — Falda                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 73 celdas huérfanas en 4 regiones (BFS 90 %), con contenido en 0 de ellas
+  ✔ Map2022  Monte Silver — Cumbre                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2023  La Torre que Escuchaba                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 18 celdas huérfanas en 1 regiones (BFS 93 %), con contenido en 0 de ellas
+  ✔ Map2024  La Partida Perdida                       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+  ✔ Map2025  La Fosa del Enterrado                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 2 celdas huérfanas en 2 regiones (BFS 99 %), con contenido en 0 de ellas
+  ⏳ Map2026  La Cinta Carmesí                         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        PENDIENTE MS-PLANTILLA-139 (sin huérfanas): salidas inalcanzables desde la llegada: PokeMod Multiverso: Volver a la gruta(1,23), PokeMod Grieta: Volver al mundo(2,2) · jefe «PokeMod Multiverso: Jefe EL NIÑO DE LA CINTA» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada · salida «PokeMod Multiverso: Volver a la gruta» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada · salida «PokeMod Grieta: Volver al mundo» del mundo «La Cinta Carmesí (emisión 4)» no se alcanza desde la llegada
+        aviso 2 evento(s) con gráfico fuera de la zona alcanzable
+        aviso 119 celdas huérfanas en 2 regiones (BFS 34 %), con contenido en 4 de ellas
+  ✔ Map2027  Ciudad Glitch                            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 730 celdas huérfanas en 9 regiones (BFS 40 %), con contenido en 0 de ellas
+  ✔ Map2028  El Eco que Jugó Contigo                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 32 celdas huérfanas en 6 regiones (BFS 49 %), con contenido en 0 de ellas
+  ⏳ Map2029  La Consola de 1996                       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        PENDIENTE MS-PLANTILLA-139 (sin huérfanas): salidas inalcanzables desde la llegada: PokeMod Multiverso: Volver a la gruta(1,23), PokeMod Grieta: Volver al mundo(2,2) · jefe «PokeMod Multiverso: Jefe EL JUGADOR DE 1996» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada · salida «PokeMod Multiverso: Volver a la gruta» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada · salida «PokeMod Grieta: Volver al mundo» del mundo «La Consola de 1996 (emisión 7)» no se alcanza desde la llegada
+        aviso 2 evento(s) con gráfico fuera de la zona alcanzable
+        aviso 119 celdas huérfanas en 2 regiones (BFS 34 %), con contenido en 4 de ellas
+  ✔ Map2030  Monte Silver — Gruta de los Testigos     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 188 celdas huérfanas en 142 regiones (BFS 87 %), con contenido en 0 de ellas
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2040  DN 2040 · Antesala de las Grietas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 32 celdas huérfanas en 16 regiones (BFS 92 %), con contenido en 0 de ellas
+  ✔ Map2041  DN 2041 · Catacumbas — Entrada Arqueada  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2042  DN 2042 · Catacumbas — Sala de las Urnas ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2043  DN 2043 · Catacumbas — Celdas            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2044  DN 2044 · Catacumbas — Galería de Barrot ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2045  DN 2045 · Catacumbas — Escalera del Arco ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2046  DN 2046 · Catacumbas — Cripta de Sarcófa ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2047  DN 2047 · Catacumbas — Osario            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2048  DN 2048 · Catacumbas — Jardín de Raíces  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2049  DN 2049 · Catacumbas — Pasadizo que Resp ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2050  DN 2050 · Catacumbas — Galería de Mausol ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2051  DN 2051 · Catacumbas — Sala de Pedestale ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2052  DN 2052 · Catacumbas — Capilla de la Cam ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2053  DN 2053 · Catacumbas — Sala de las Besti ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2054  DN 2054 · Catacumbas — Pared de Inscripc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2055  DN 2055 · Catacumbas — Sala Ritual       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2056  DN 2056 · Catacumbas — Cámara de la Mano ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2057  DN 2057 · Pueblo Sin Color — Entrada     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2058  DN 2058 · Calle de las Casas Huecas      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2059  DN 2059 · Plaza de la Fuente Seca        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2060  DN 2060 · Callejón de Escombros          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2061  DN 2061 · Bosque de Troncos              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2062  DN 2062 · Páramo de Árboles Secos        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2063  DN 2063 · Estanque Estancado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2064  DN 2064 · Puente de Madera Podrida       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2065  DN 2065 · Colina de la Iglesia           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2066  DN 2066 · Cementerio Cercado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2067  DN 2067 · Mausoleo Central               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2068  DN 2068 · Cementerio Grande              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2069  DN 2069 · Estación Abandonada            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2070  DN 2070 · Biblioteca Polvorienta         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2071  DN 2071 · Campanario                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2072  DN 2072 · Torre de la Escalera de Caraco ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2073  DN 2073 · Cara Norte — Vereda Helada     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2074  DN 2074 · Acantilado de Zetas            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2075  DN 2075 · Sendero de la Cornisa          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2076  DN 2076 · Cabaña del Montañés            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2077  DN 2077 · Lago Congelado                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2078  DN 2078 · Pueblo de la Niebla            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2079  DN 2079 · Pueblo Alto                    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2080  DN 2080 · Cueva de Bloques de Hielo      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2081  DN 2081 · Entrada de Cueva               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2082  DN 2082 · Caverna de Estalactitas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2083  DN 2083 · Cámara de los Dos Lagos        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2084  DN 2084 · Grieta Estrecha                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2085  DN 2085 · Cámara de Cristales            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2086  DN 2086 · Templo de las Estatuas         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2087  DN 2087 · Corazón del Monte              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2088  DN 2088 · Bosque Dormido — Entrada       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2089  DN 2089 · Senda del Cartel Torcido       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2090  DN 2090 · Puente de Piedra               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2091  DN 2091 · Cabaña de las Ventanas         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2092  DN 2092 · Arco de Niebla Púrpura         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2093  DN 2093 · Cementerio del Bosque          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2094  DN 2094 · Campo de Flores Moradas        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2095  DN 2095 · Campamento de Tiendas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2096  DN 2096 · Boca de la Cueva Negra         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2097  DN 2097 · Árboles Retorcidos             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2098  DN 2098 · Estanque de Nenúfares          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2099  DN 2099 · Muro de Ruinas                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2100  DN 2100 · Granero Abandonado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2101  DN 2101 · Bosque de Luciérnagas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2102  DN 2102 · Muro del Pasaje                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2103  DN 2103 · Árbol Anciano                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2104  DN 2104 · Pueblo 000 — Entrada           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2105  DN 2105 · Calle Incompleta               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2106  DN 2106 · Plaza sin Fuente               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2107  DN 2107 · Callejón Terminado             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2108  DN 2108 · Bosque Sin Troncos             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2109  DN 2109 · Páramo Blanco                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2110  DN 2110 · Estanque Vacío                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2111  DN 2111 · Puente Cortado                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2112  DN 2112 · Colina Erguida                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 99 %), con contenido en 0 de ellas
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2113  DN 2113 · Cementerio Vacío               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2114  DN 2114 · Mausoleo Abierto               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2115  DN 2115 · Estación 000                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2116  DN 2116 · Biblioteca sin Letras          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2117  DN 2117 · Campanario Roto                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2118  DN 2118 · Pueblo 404                     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2119  DN 2119 · El Borde del Mundo             ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 98 %), con contenido en 0 de ellas
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2120  DN 2120 · Atrio de las Letras            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2121  DN 2121 · Sala de la Inscripción         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2122  DN 2122 · Corredor de Columnas           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2123  DN 2123 · Biblioteca Prohibida           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2124  DN 2124 · Balcón de los Unown            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2125  DN 2125 · Sala del Ojo                   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2126  DN 2126 · Escalinata Interior            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2127  DN 2127 · Cripta de Sarcófagos           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2128  DN 2128 · Sala de los Símbolos           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2129  DN 2129 · Caverna de Cristales           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2130  DN 2130 · Galería Inundada               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2131  DN 2131 · Salón de las Estatuas          ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2132  DN 2132 · Galería Menor                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2133  DN 2133 · Sala del Trono                 ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2134  DN 2134 · Sala LEAVENOW                  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2135  DN 2135 · Cámara de KINGGUS              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2136  DN 2136 · Nexo — Falla Cero              ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 1 celdas huérfanas en 1 regiones (BFS 98 %), con contenido en 0 de ellas
+  ✔ Map2137  DN 2137 · Nexo — Pueblo Reensamblado     ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2138  DN 2138 · Nexo — Centro Pokémon Sumergid ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2139  DN 2139 · Nexo — Pasillo de Código       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2140  DN 2140 · Nexo — Sala del Testigo        ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2141  DN 2141 · Liga Oscura — Pórtico del Códi ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2142  DN 2142 · Liga Oscura — Coliseo del Vínc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 8 celdas huérfanas en 4 regiones (BFS 97 %), con contenido en 0 de ellas
+  ✔ Map2143  DN 2143 · Strangled Red — Patio de la Ca ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2144  DN 2144 · Strangled Red — Cuarto del Amo ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2145  DN 2145 · Strangled Red — Pasillo de Tro ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2146  DN 2146 · Strangled Red — Jardín de la P ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2147  DN 2147 · Strangled Red — Cocina Fría    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2148  DN 2148 · Strangled Red — Escalera Que S ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2149  DN 2149 · Strangled Red — Cripta del Pok ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2150  DN 2150 · Strangled Red — Torre de las C ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2151  DN 2151 · Strangled Red — Sala de los Re ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2152  DN 2152 · Strangled Red — Corredor de la ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2153  DN 2153 · Strangled Red — Plaza Sin Gent ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2154  DN 2154 · Strangled Red — Canil Vacío    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2155  DN 2155 · Strangled Red — Capilla del Nu ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2156  DN 2156 · Strangled Red — Espejo Roto    ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2157  DN 2157 · Strangled Red — Umbral del Aho ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2158  DN 2158 · Strangled Red — Árbol del Ajus ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2159  DN 2159 · Buried Alive — Pozo de Entrada ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2160  DN 2160 · Buried Alive — Túnel Angosto   ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2161  DN 2161 · Buried Alive — Cámara de Tierr ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2162  DN 2162 · Buried Alive — Galería de Raíc ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2163  DN 2163 · Buried Alive — Osario Inundado ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2164  DN 2164 · Buried Alive — Escalera de Tie ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2165  DN 2165 · Buried Alive — Cripta del Aire ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2166  DN 2166 · Buried Alive — Sala de los Sel ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2167  DN 2167 · Buried Alive — Pozo Sin Fondo  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2168  DN 2168 · Buried Alive — Pueblo Enterrad ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2169  DN 2169 · Buried Alive — Iglesia Boca Ab ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2170  DN 2170 · Buried Alive — Campo de Lápida ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2171  DN 2171 · Buried Alive — Fosa Común      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2172  DN 2172 · Buried Alive — Túnel de la Man ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2173  DN 2173 · Buried Alive — Umbral del Aire ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2174  DN 2174 · Buried Alive — Fondo de la Fos ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2175  DN 2175 · Lavender Syndrome — Entrada de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2176  DN 2176 · Lavender Syndrome — Calle del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2177  DN 2177 · Lavender Syndrome — Casa del P ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2178  DN 2178 · Lavender Syndrome — Escuela de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2179  DN 2179 · Lavender Syndrome — Capilla de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2180  DN 2180 · Lavender Syndrome — Torre de l ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2181  DN 2181 · Lavender Syndrome — Calle del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2182  DN 2182 · Lavender Syndrome — Jardín Sor ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2183  DN 2183 · Lavender Syndrome — Mercado de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2184  DN 2184 · Lavender Syndrome — Cine Sin S ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2185  DN 2185 · Lavender Syndrome — Fosa Acúst ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2186  DN 2186 · Lavender Syndrome — Túnel de l ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso tiene tabla de encuentros pero no figura en ningún catálogo de zonas salvajes
+  ✔ Map2187  DN 2187 · Lavender Syndrome — Sala de lo ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2188  DN 2188 · Lavender Syndrome — Torre del  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2189  DN 2189 · Lavender Syndrome — Estudio de ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2190  DN 2190 · Lavender Syndrome — Campanario ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+        aviso 5 celdas huérfanas en 1 regiones (BFS 93 %), con contenido en 0 de ellas
+  ✔ Map2200  Glazed — Bahía de Cedolán                ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2201  Gimnasio Glazed — Líder Ámbar            ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2210  Light Platinum — Costa de Lappet         ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2211  Gimnasio Light Platinum — Líder Respland ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2220  Team Rocket — Base Subterránea           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2221  Team Rocket — Núcleo del Mando           ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2240  Liquid Crystal — Santuario de Johto      ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2241  Dojo Liquid Crystal — Guardiana Suicune  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2242  TFOH — Frontera del Origen               ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2243  TFOH — Cámara de la Primera Huella       ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2244  Factory Adventure — Distrito Primigenio  ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+  ✔ Map2245  Factory Adventure — Núcleo de Ensamblaje ✔ transitable | ✔ sin huérfanas | ✔ con encuentros | ✔ con música | ✔ con entrada y salida
+
+  anillo A: 171/173 mapas terminados · 2 con pendiente declarado · 0 con fallo
+  hallazgo DN-SALVAJES-DECLARADOS: confirmado — 15 mapas del sueño declaran salvajes en las fichas (el registro lista 15) y 15 los tienen implementados (el registro dice 15)
+  hallazgo BGM-SAFARI: confirmado — 2 mapas del juego con BGM declarada que no existe en Audio/BGM (el registro declara 2)
+  hallazgo MS-PLANTILLA-139: confirmado — 2 mapas del plan llegan a una zona desde la que no se alcanza el jefe (el registro declara 2)
+  deuda CENSO-FIRE-ASH: El juego base arrastra mapas sin tabla de encuentros ni entrada/salida
+  deuda PARTIDA-MANUAL-MAPA: Ningún mapa está jugado por una persona
+OK: ningún mapa del anillo A tiene fallo abierto (los pendientes declarados van listados arriba con su cita)
+
+> fire-ash-modifier-tools@1.0.0 verify:evento_terminado
+> node tools/qa/evento_terminado_check.mjs
+
+  eventos: 1567 objetos en 173 mapas · 1557 nombres distintos (10 repiten nombre, y una declaración por nombre cubre a todos los que se llamen así)
+Eventos terminados — 1567 eventos en 0.3 s (diálogo revisado · flag de una sola escritura · texto en dos líneas de caja · salida garantizada)
+  texto: 2612 bloques de caja y 65 mensajes por script · 1218 caben en una caja de 2 líneas (46.6 %)
+  caja de 53 columnas: 2247 bloques con línea de autor más ancha (peor: 492) · 1434 juntas 401 sin salto explícito
+  flags: 50 switches (20 con más de un escritor, 0 apagados) y 21 variables · 0 sin nombre
+  salida: 3179 páginas · 0 sin orden de fin · 22 autorun y 7 paralelas sin liberación
+
+  anillo A: 554/1567 eventos terminados · 966 con deuda declarada · 47 con pendiente declarado · 0 con fallo abierto
+  DEUDA EVENTO-CAJA-ANCHA (texto en dos líneas de caja): 2247 fallos en 995 eventos y 173 mapas — El plan escribe para una caja más ancha que la del motor: 2247 de los 2612 bloques tienen alguna línea de más de 53 columnas (59 hasta 60, 709 hasta 100 y 1479 por encima; la peor, 492). El motor parte la línea por píxeles, así que el texto se lee, pero la maquetación que ve el jugador no es la que escribió el autor. La herencia de Fire Ash tampoco respeta la medida (32 753 de 57 591 bloques).
+  DEUDA EVENTO-JUNTA-401 (texto en dos líneas de caja): 1192 fallos en 616 eventos y 173 mapas — 1434 juntas entre continuaciones 401 repartidas en 1192 bloques: el motor las une con un espacio (Interpreter_Commands#command_101), así que dos líneas de autor se leen como una sola. Se arregla cerrando cada línea con \n o dejando el párrafo en una sola línea.
+  DEUDA EVENTO-TEXTO-DE-DISENO (diálogo revisado): 147 fallos en 147 eventos y 112 mapas — 147 textos del plan son la ficha de diseño volcada como diálogo: 115 llevan el id del mapa, 15 el número de variable, 12 el switch, 3 el tono o la pista de música y 2 la celda. El instalador del sueño los generó desde item.text.
+  DEUDA EVENTO-FLAG-DOBLE (flag de una sola escritura): 20 fallos en 18 eventos y 18 mapas — 20 sitios en 18 eventos encienden un switch que ya se enciende en otro sitio; catorce switches del plan tienen más de un escritor ON (885, 888, 895, 903–908, 928–930, 957 y 963; el 957 del Nexo, siete). La auditoría de flags lo deja por escrito: «| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |».
+  DEUDA EVENTO-FLAG-SIN-NOMBRE (flag de una sola escritura): 0 fallos en 0 eventos y 0 mapas — 44 usos en 25 eventos de 17 switches sin nombre en System.rxdata (940–947, 950–957 y 963): el editor los muestra como «—» y no se pueden leer ni depurar. La auditoría del juego los cuenta (31 en total).
+  PENDIENTE EVENTO-AUTORUN-SIN-SALIDA (salida garantizada): 29 eventos — 22 páginas autorun y 7 paralelas se quedan sin liberar (self switch, borrar evento, transferencia o flag propia): el motor las vuelve a arrancar al terminar y el jugador no recupera el control. La ficha de diseño las pedía «autorun al entrar» y el instalador copió el trigger; ninguna tiene condición, así que se disparan al pisar el mapa.
+  PENDIENTE EVENTO-RELLENO-PENDIENTE (diálogo revisado): 18 eventos — 18 eventos avisan al jugador de que el contenido no está: el rescue del instalador deja «(cartuchera del testigo pendiente de registrar)», «(medalla DN_MEDAL_WHT pendiente de registrar)» y dieciséis más. Los trainers y los objetos existen (dn:battles:verify), así que el arreglo es quitar el aviso o completar el contenido que falta.
+  EXENCIÓN (1 textos): Panel de progreso del hub: muestra a propósito datos de la partida (sellos, resonancia, anomalías y nivel de Rotom) porque es la pantalla de estado del jugador, no diálogo de personaje.
+  ⏳ 2023:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2024:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2025:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2026:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2027:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2028:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2029:PokeMod Restauración: Ceniza · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (paralela-sin-salida)
+  ⏳ 2040:VITRINA_TESTIGO · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2041:EV_CAT_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2046:EV_CAT_Sarcofagos_1 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2046:EV_CAT_Sarcofagos_2 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2046:EV_CAT_Sarcofagos_3 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2049:EV_CAT_Pasadizo · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2056:EV_CAT_Mano · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2056:MEDALLA_EP01 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2057:EV_SIL_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2063:EV_SIL_Espejo · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2072:EV_SIL_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2072:EV_SIL_Sello · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2072:MEDALLA_EP02 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2084:EV_SNOW_Grieta · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2087:EV_SNOW_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2087:MEDALLA_EP03 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2088:EV_HYP_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2103:EV_HYP_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2103:MEDALLA_EP04 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2104:EV_BLK_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2114:EV_BLK_Mausoleo · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2119:EV_BLK_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2119:MEDALLA_EP05 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2120:EV_UNO_Atrio · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2129:EV_UNO_LetraS · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2130:EV_UNO_LetraS · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2135:EV_UNO_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2135:MEDALLA_EP06 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2142:LIGA_MPIKA · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2143:EV_W7_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2152:EV_W7_Corredor · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2158:EV_W7_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2158:MEDALLA_W7 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2159:EV_W8_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2167:EV_W8_Pozo · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2174:EV_W8_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2174:MEDALLA_W8 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+  ⏳ 2175:EV_W9_Entrada · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2190:EV_W9_Jefe · salida garantizada: pendiente EVENTO-AUTORUN-SIN-SALIDA (autorun-sin-salida)
+  ⏳ 2190:MEDALLA_W9 · diálogo revisado: pendiente EVENTO-RELLENO-PENDIENTE (relleno:pendiente-de-registrar)
+OK: ningún evento del anillo A tiene fallo abierto (los pendientes declarados van listados con su cita)
+
+> fire-ash-modifier-tools@1.0.0 test:atlas:master
+> node tools/qa/atlas_master_suite.test.mjs
+
+================================================================================
+   SUITE MAESTRA ATLAS TOTAL · 2000+ TESTS DE INTEGRIDAD Y PROFUNDIDAD
+================================================================================
+
+--- FASE 1: Motor, Scripts PokeMod y Atributos Globales ---
+--- FASE 2: Integridad Estructural de los 1,227 Mapas de Campañas ROM ---
+--- FASE 3: Líderes de Gimnasio, Medallas y Switches (700-731) ---
+--- FASE 4: Dimensional Nightmare (Creepypastas GBC · Mapas 2041-2144) ---
+--- FASE 5: La Ruta de Dios & Canon Arceus ---
+--- FASE 6: Puerto Horizonte (Map 1001) y Portales Dimensionales ---
+--- FASE 7: Guardarropa y Atavíos Dimensionales (0-10) ---
+--- FASE 8: Ausencia de Mapas en Negro y Cero Solapamientos de Eventos ---
+
+================================================================================
+RESUMEN GENERAL DE VERIFICACIÓN ATLAS TOTAL:
+  Mapas de Campañas ROM auditados:   1227
+  Warps totales verificados:         8742
+  Warps de retorno validados:        1227
+  Combates de entrenadores:          829
+  Mapas Creepypastas DN auditados:   104
+  Eventos Creepypastas auditados:    946
+--------------------------------------------------------------------------------
+TOTAL DE ASERCIONES SUPERADAS:       76264
+TOTAL DE FALLOS:                     0
+================================================================================
+
+✔ SUITE MAESTRA COMPLETA: 76264 PRUEBAS SUPERADAS CON ÉXITO.

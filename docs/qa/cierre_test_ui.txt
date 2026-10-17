@@ -1,0 +1,15 @@
+
+> fire-ash-modifier-tools@1.0.0 test:ui
+> node --experimental-vm-modules web/js/ui.test.mjs
+
+— boot —
+— demo + mapas —
+— eventos —
+— flags —
+— npcs —
+— pbs —
+— crear —
+— mods —
+— modales —
+
+ui: 29 OK, 0 fallos

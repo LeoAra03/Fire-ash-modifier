@@ -58,7 +58,8 @@ quién y por dónde se puede crecer sin pisar a nadie.
 | 868–875 | Sellos multiversales / La Ruta de Dios (868–869 aún sin usar; 870–875 = `RUTA_DE_DIOS_*`, incl. el 873 del duelo de Arceus) | PokeMod |
 | 876–880 | `RUTA_DE_DIOS_COMPLETED`, `SNOWPOINT_TEMPORARY_TREE_PASS`, cinemáticas de Arceus (878–880) | PokeMod |
 | 882–939 | Dimensional Nightmare (`DN_UNLOCKED`, `DN_SELLO_EP*`…; 881 libre) | PokeMod |
-| 940–989 | Internos sin nombre de las campañas ROM (940–977 en uso; 978–989 libres) | PokeMod |
+| 940–947 | Sellos del Multiverso: siete emisiones (940–946) y RED en la cumbre (947) | PokeMod |
+| 948–989 | Internos de campañas ROM (948–977 en uso; 978–989 libres) | PokeMod |
 | 990–994 | `POKEMOD <CAMPAÑA> COMPLETADA` (Glazed, Light Platinum, Liquid Crystal, TFOH, Unbound) | PokeMod |
 
 **Libres:** 881 · 978–989 · 995+. Verificación de colisiones: 0 (inventario congelado).

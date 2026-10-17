@@ -44,4 +44,13 @@
 [*]Golisopod User, Maruno
 [/LIST]
 [/LIST]
+[*]Fire Ash Modifier / DLC assets:
+[LIST]
+[*]Plan 2700 — inventario de arte SHA-256 y referencias: `content/plan2700_arte.json` y `docs/qa/creditos_arte.md`.
+[*]Adaptaciones de campañas y dimensiones: recursos originales de Fire Ash; las fuentes estructurales invitadas no se redistribuyen.
+[*]Ash dimension outfit references and attribution notes - see `ashsprites/README` (the source plate attribution is retained with the reference; the ROMs and fangame text are not redistributed).
+[*]Dimensional Nightmare priority art - original mod assets documented in `reference/dimensional_nightmare/art_src/` and `content/dimensional_nightmare_art.json`.
+[*]Campaign maps and visuals - structural adaptations made with original Fire Ash resources; see `content/rom_campaigns_complete.json` for the no-emulation/no-fangame-art policy.
+[/LIST]
+[/LIST]
 [/FONT]

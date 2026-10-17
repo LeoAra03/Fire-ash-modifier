@@ -82,13 +82,12 @@ islas (`placeSlots` debe fallar en vez de usar todo el mapa, o elegir la isla m�
 emisiones se rehacen sobre una plantilla de una sola región. Cualquiera de las dos exige volver a pasar
 `verify:multiverse` y este verificador.
 
-### DN-SALVAJES-DECLARADOS — el sueño declara salvajes en 14 mapas y no implementa ninguno
+### DN-SALVAJES-DECLARADOS — el sueño declara y cubre 15 mapas con salvajes
 
 Los documentos del Dimensional Nightmare (EP01, EP05, W7, W8 y W9) declaran Pokémon salvajes con nivel y
-mapa concreto —`2047, 2115, 2145, 2147, 2150, 2154, 2163, 2167, 2168, 2171, 2180, 2181, 2185, 2186`— y
-cuatro fichas lo anuncian en su papel («Combates salvajes, huesos»). Ninguno de los 150 mapas del sueño
-tiene tabla en `encounters.dat` ni un solo `pbWildBattle`: **0 implementaciones**. El verificador recuenta
-la lista leyendo las fichas cada vez, para que no se quede vieja.
+mapa concreto —`2047, 2115, 2135, 2145, 2147, 2150, 2154, 2163, 2167, 2168, 2171, 2180, 2181, 2185, 2186`— y
+las fichas y tablas instaladas mantienen **15/15 implementaciones**. El verificador recuenta la lista
+leyendo las fichas y los mapas cada vez, para que no se quede vieja.
 
 ### BGM-SAFARI — dos mapas del juego base piden una música que no está en disco
 

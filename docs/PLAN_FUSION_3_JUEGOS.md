@@ -191,3 +191,10 @@ turno el agente encadena todas las herramientas que hagan falta.
 - [ ] Batallas con Formas de Anomalía y jefes de dimensión.
 - [ ] `npm run verify:all` en verde y auditoría de banderas sin huecos.
 - [ ] PR final con el resumen de lo aportado por cada agente.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

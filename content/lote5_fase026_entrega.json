@@ -1,0 +1,79 @@
+{
+  "schema": "lote5_fase026_entrega/1.0",
+  "tasks": "2500–2599",
+  "packages": [
+    {
+      "path": "Fire-Ash-Scripts-Corregidos.zip",
+      "exists": true,
+      "bytes": 48853734,
+      "sha256": "f5ec4817bc49301905f14ded36a5c2e378b92c955ceca6494923bb30ae4d46d9",
+      "readable": true,
+      "entries": 2658,
+      "forbidden": []
+    },
+    {
+      "path": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+      "exists": true,
+      "bytes": 63733034,
+      "sha256": "a4e71693844e6fe5b98cdf316dbd827f119a7ddd660897b6f38662f631950deb",
+      "readable": true,
+      "entries": 2637,
+      "forbidden": []
+    },
+    {
+      "path": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+      "exists": true,
+      "bytes": 13294668,
+      "sha256": "603528fc25d9d66c5f47cf616e03e7ef8e2f4ae9d458e19ab904c178c0dbccf0",
+      "readable": true,
+      "entries": 501,
+      "forbidden": []
+    },
+    {
+      "path": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+      "exists": true,
+      "bytes": 15013030,
+      "sha256": "c15f447eeeaf86989777b329efcd11333a0aeda30d857d827c4d4c9a0e2f24f0",
+      "readable": true,
+      "entries": 18,
+      "forbidden": []
+    },
+    {
+      "path": "Scripts_corregido/Fire_Ash_Expansion_Multiversal.zip",
+      "exists": true,
+      "bytes": 8585784,
+      "sha256": "3e52ad85cd5f9d7c6305ef6fa2795cfa989b18cce292470ad0aafcf9035460d2",
+      "readable": true,
+      "entries": 205,
+      "forbidden": []
+    }
+  ],
+  "checks": {
+    "requiredPackages": {
+      "count": 5,
+      "missing": []
+    },
+    "forbiddenPackageEntries": [],
+    "versionedRuntimeArtifacts": [
+      "pokemon_fire_ash/Data/Map081.BAK"
+    ],
+    "allRequiredPackagesReadable": true,
+    "packagesContainNoBackupsOrSaves": true,
+    "rootZipIsUnder64MiB": true
+  },
+  "generated": {
+    "directPackage": "npm run build:package && npm run verify:package",
+    "correctedZip": "npm run build:corregido:zip && npm run verify:corregido:zip",
+    "nightmareQA": "npm run build:dn:qa && npm run verify:dn:qa",
+    "rutaDeDios": "npm run sync:ruta_de_dios:package && npm run verify:ruta_de_dios:package",
+    "expansion": "npm run build:expansion:package && npm run verify:expansion:package",
+    "mapReference": "npm run create:map-reference && npm run verify:map-reference"
+  },
+  "manual": [
+    "instalar sobre copia limpia y arrancar Game.exe",
+    "recorrer contenido completo y verificar Android/Kirin",
+    "comprobar desinstalación desde backups originales",
+    "descargar la entrega desde GitHub y repetir instalación"
+  ],
+  "policy": "Los paquetes no deben contener análisis, backups ni partidas; las fuentes no redistribuibles quedan fuera de la entrega."
+}

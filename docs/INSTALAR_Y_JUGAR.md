@@ -73,6 +73,30 @@ y **todo** el contenido de abajo queda disponible.
 Nada se alcanza por menú de teletransporte: todo es diegético (barco, espejo,
 grieta, portal) y siempre hay retorno.
 
+## Orden recomendado y señales de desbloqueo
+
+El contenido extra se puede recorrer con libertad después de sus puertas; el
+orden siguiente evita entrar con equipos demasiado bajos sin convertirlo en una
+ruta obligatoria:
+
+1. Termina la historia base y activa el **postgame 429** al regresar a casa.
+2. Completa el duelo de Arceus: Volus abre la ruta en el **870** y la conclusión
+   deja **876**. Hasta entonces no se habilitan los barcos de las cinco campañas.
+3. Recorre La Ruta de Dios (siete pisos) y después elige cualquier campaña o
+   dimensión desde sus accesos diegéticos. Cada una tiene retorno y curación;
+   salir no borra el progreso.
+4. Deja para después de las campañas que prefieras la Liga Oscura: sus ocho
+   purgas y el sello de Red son la señal de que ya puede abrirse el umbral.
+5. Consulta el laboratorio de Oak y los hubs: muestran el siguiente hito sin
+   exigir volver a cada región. Las medallas y diplomas registran las
+   recompensas únicas; una revancha nunca es necesaria para avanzar.
+
+La libertad es posterior a las puertas, no anterior: si un barco, grieta o
+lobby no aparece, el propio Oak/hub indica si falta 429, la ruta 870/876, una
+purgación o el combate correspondiente. El menú de atavíos sólo cambia la
+apariencia y respeta las exclusiones de Team Rocket; no funciona como menú de
+teletransporte.
+
 ## Atavíos de Ash
 
 - **Vestidor**: casa de Ash (Map003), junto a la cama. Elige atavío, fíjalo o
@@ -126,3 +150,10 @@ npm run verify:all
 > El Coliseo de la Liga Oscura (Map2142) se **reconstruye** en `dn:build:all`, así
 > que el canon y la paleta Game Boy van después: al revés desaparece el evento
 > «eco del Génesis» y el verificador de canon se pone rojo.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.
