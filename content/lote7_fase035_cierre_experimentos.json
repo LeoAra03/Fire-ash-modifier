@@ -27,9 +27,7 @@
   },
   "inventory": {
     "exists": true,
-    "generatedAt": "2026-10-17T20:29:39.340Z",
-    "recordedCommit": "2a664a418e64186bb6cb61bb03e5afb34864e36f",
-    "fileCount": 5478,
+    "algorithm": "sha256",
     "phaseTools": [
       "tools/plan2700/lote7_fase032_resistencia.mjs",
       "tools/plan2700/lote7_fase033_coherencia.mjs",
@@ -37,7 +35,7 @@
       "tools/plan2700/lote7_fase035_cierre_experimentos.mjs"
     ],
     "excludesSelf": true,
-    "status": "static_present_parent_commit_expected"
+    "status": "static_present"
   },
   "scope": {
     "originalFireAshChangesBeforeAudit": [],

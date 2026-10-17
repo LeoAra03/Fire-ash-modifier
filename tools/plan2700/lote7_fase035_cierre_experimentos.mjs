@@ -48,15 +48,13 @@ function inventoryAudit() {
   if (!fs.existsSync(file)) return { exists: false, phaseTools: [], fileCount: 0, status: "missing" };
   const inventory = readJson("tools/inventario_congelado.json");
   const paths = inventory.hashes?.files?.map((row) => row.path) ?? [];
-  const phaseTools = paths.filter((filePath) => /lote7_fase0(32|33|34|35)/.test(filePath));
+  const phaseTools = paths.filter((filePath) => /lote7_fase0(32|33|34|35)/.test(filePath)).sort();
   return {
     exists: true,
-    generatedAt: inventory.generatedAt,
-    recordedCommit: inventory.git?.commit ?? "",
-    fileCount: inventory.hashes?.fileCount ?? paths.length,
+    algorithm: inventory.hashes?.algorithm ?? "sha256",
     phaseTools,
     excludesSelf: !paths.includes("tools/inventario_congelado.json"),
-    status: phaseTools.length >= 3 ? "static_present_parent_commit_expected" : "needs_regeneration",
+    status: phaseTools.length >= 3 ? "static_present" : "needs_regeneration",
   };
 }
 function criteriaAudit() {
