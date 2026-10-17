@@ -1,0 +1,8838 @@
+{
+  "schema": "plan2700_arte_faltante/1.0",
+  "generatedAt": "2026-10-17T16:39:20.096Z",
+  "missingReferences": [],
+  "genericCandidates": [
+    {
+      "name": "Object ball special",
+      "uses": 5402,
+      "maps": 1027,
+      "file": "pokemon_fire_ash/Graphics/Characters/Object ball special.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 48,
+          "event": "Starter ball"
+        },
+        {
+          "mapId": 48,
+          "event": "Starter ball"
+        },
+        {
+          "mapId": 207,
+          "event": "GS Ball"
+        },
+        {
+          "mapId": 272,
+          "event": "GS Ball"
+        },
+        {
+          "mapId": 1001,
+          "event": "Return to Viridian"
+        },
+        {
+          "mapId": 1001,
+          "event": "Gate: Jardines Aurora"
+        },
+        {
+          "mapId": 1001,
+          "event": "Gate: Arrecife Cinerario"
+        },
+        {
+          "mapId": 1001,
+          "event": "Gate: Ciudad Engranaje"
+        }
+      ]
+    },
+    {
+      "name": "Healing balls left",
+      "uses": 1568,
+      "maps": 224,
+      "file": "pokemon_fire_ash/Graphics/Characters/Healing balls left.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 566,
+          "event": "Healing balls left"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls left"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls left"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls left"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls left"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls left"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls left"
+        },
+        {
+          "mapId": 284,
+          "event": "Healing balls left"
+        }
+      ]
+    },
+    {
+      "name": "Healing balls right",
+      "uses": 1568,
+      "maps": 224,
+      "file": "pokemon_fire_ash/Graphics/Characters/Healing balls right.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 566,
+          "event": "Healing balls right"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls right"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls right"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls right"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls right"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls right"
+        },
+        {
+          "mapId": 566,
+          "event": "Healing balls right"
+        },
+        {
+          "mapId": 284,
+          "event": "Healing balls right"
+        }
+      ]
+    },
+    {
+      "name": "DN_SHARED_4f626a65637420726f636b",
+      "uses": 794,
+      "maps": 159,
+      "file": "pokemon_fire_ash/Graphics/Characters/DN_SHARED_4f626a65637420726f636b.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 2023,
+          "event": "PokeMod Restauración: Nexo — La Torre que Escuchaba"
+        },
+        {
+          "mapId": 2023,
+          "event": "PokeMod Restauración: Nexo — La Torre que Escuchaba"
+        },
+        {
+          "mapId": 2023,
+          "event": "PokeMod Restauración: Nexo — La Torre que Escuchaba"
+        },
+        {
+          "mapId": 2024,
+          "event": "PokeMod Restauración: Nexo — La Partida Perdida"
+        },
+        {
+          "mapId": 2024,
+          "event": "PokeMod Restauración: Nexo — La Partida Perdida"
+        },
+        {
+          "mapId": 2024,
+          "event": "PokeMod Restauración: Nexo — La Partida Perdida"
+        },
+        {
+          "mapId": 2025,
+          "event": "PokeMod Restauración: Nexo — La Fosa del Enterrado"
+        },
+        {
+          "mapId": 2025,
+          "event": "PokeMod Restauración: Nexo — La Fosa del Enterrado"
+        }
+      ]
+    },
+    {
+      "name": "Object ball",
+      "uses": 712,
+      "maps": 284,
+      "file": "pokemon_fire_ash/Graphics/Characters/Object ball.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Item"
+        },
+        {
+          "mapId": 424,
+          "event": "Item"
+        },
+        {
+          "mapId": 424,
+          "event": "Item"
+        },
+        {
+          "mapId": 424,
+          "event": "Item"
+        },
+        {
+          "mapId": 990,
+          "event": "Item"
+        },
+        {
+          "mapId": 990,
+          "event": "Item"
+        },
+        {
+          "mapId": 990,
+          "event": "Item"
+        },
+        {
+          "mapId": 990,
+          "event": "Item"
+        }
+      ]
+    },
+    {
+      "name": "doors3",
+      "uses": 706,
+      "maps": 199,
+      "file": "pokemon_fire_ash/Graphics/Characters/doors3.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Mart door"
+        },
+        {
+          "mapId": 707,
+          "event": "Mart door"
+        },
+        {
+          "mapId": 849,
+          "event": "Poké Center door"
+        },
+        {
+          "mapId": 849,
+          "event": "Poké Center door"
+        },
+        {
+          "mapId": 426,
+          "event": "Mart door"
+        },
+        {
+          "mapId": 426,
+          "event": "Mart door"
+        },
+        {
+          "mapId": 2,
+          "event": "Lab door"
+        },
+        {
+          "mapId": 2,
+          "event": "Lab door"
+        }
+      ]
+    },
+    {
+      "name": "trchar036",
+      "uses": 681,
+      "maps": 187,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar036.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 566,
+          "event": " "
+        },
+        {
+          "mapId": 566,
+          "event": " "
+        },
+        {
+          "mapId": 566,
+          "event": " "
+        },
+        {
+          "mapId": 566,
+          "event": " "
+        },
+        {
+          "mapId": 566,
+          "event": " "
+        }
+      ]
+    },
+    {
+      "name": "NPC 16",
+      "uses": 609,
+      "maps": 306,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 16.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 849,
+          "event": "Item"
+        },
+        {
+          "mapId": 849,
+          "event": "Item"
+        },
+        {
+          "mapId": 566,
+          "event": "Nurse"
+        },
+        {
+          "mapId": 566,
+          "event": "Nurse"
+        },
+        {
+          "mapId": 284,
+          "event": "Nurse"
+        },
+        {
+          "mapId": 284,
+          "event": "Nurse"
+        },
+        {
+          "mapId": 709,
+          "event": "Nurse"
+        },
+        {
+          "mapId": 709,
+          "event": "Nurse"
+        }
+      ]
+    },
+    {
+      "name": "trchar009",
+      "uses": 473,
+      "maps": 200,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar009.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 710,
+          "event": "Trainer(5)"
+        },
+        {
+          "mapId": 710,
+          "event": "Trainer(5)"
+        },
+        {
+          "mapId": 710,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 710,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "trchar028",
+      "uses": 458,
+      "maps": 152,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar028.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 3,
+          "event": "Pokémon-checking NPC"
+        },
+        {
+          "mapId": 4,
+          "event": "Dex access"
+        },
+        {
+          "mapId": 430,
+          "event": "Move Tutor"
+        },
+        {
+          "mapId": 430,
+          "event": "Move Tutor"
+        },
+        {
+          "mapId": 430,
+          "event": "Person"
+        },
+        {
+          "mapId": 430,
+          "event": "Person"
+        },
+        {
+          "mapId": 430,
+          "event": "Item"
+        },
+        {
+          "mapId": 430,
+          "event": "Item"
+        }
+      ]
+    },
+    {
+      "name": "doors6",
+      "uses": 446,
+      "maps": 164,
+      "file": "pokemon_fire_ash/Graphics/Characters/doors6.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Poké Center door"
+        },
+        {
+          "mapId": 707,
+          "event": "Poké Center door"
+        },
+        {
+          "mapId": 849,
+          "event": "Poké Center door"
+        },
+        {
+          "mapId": 849,
+          "event": "Poké Center door"
+        },
+        {
+          "mapId": 426,
+          "event": "Game Corner door"
+        },
+        {
+          "mapId": 426,
+          "event": "Game Corner door"
+        },
+        {
+          "mapId": 426,
+          "event": "Dept door left"
+        },
+        {
+          "mapId": 426,
+          "event": "Dept door left"
+        }
+      ]
+    },
+    {
+      "name": "trchar035",
+      "uses": 421,
+      "maps": 131,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar035.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 425,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 567,
+          "event": "Double trainer M"
+        },
+        {
+          "mapId": 567,
+          "event": "Double trainer M"
+        },
+        {
+          "mapId": 992,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 851,
+          "event": "Person"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar008",
+      "uses": 419,
+      "maps": 174,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar008.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 715,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 715,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 731,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 731,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 731,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 731,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 731,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 731,
+          "event": "Trainer(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar037",
+      "uses": 393,
+      "maps": 147,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar037.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 849,
+          "event": "Person"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 850,
+          "event": "Item"
+        }
+      ]
+    },
+    {
+      "name": "NPC 19",
+      "uses": 371,
+      "maps": 185,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 19.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 283,
+          "event": "Vendor"
+        },
+        {
+          "mapId": 709,
+          "event": "Mart"
+        },
+        {
+          "mapId": 851,
+          "event": "Mart"
+        },
+        {
+          "mapId": 427,
+          "event": "Person"
+        },
+        {
+          "mapId": 286,
+          "event": "Cashier top"
+        },
+        {
+          "mapId": 286,
+          "event": "Cashier bottom"
+        },
+        {
+          "mapId": 994,
+          "event": "Vendor"
+        },
+        {
+          "mapId": 994,
+          "event": "Vendor"
+        }
+      ]
+    },
+    {
+      "name": "NPC 04",
+      "uses": 370,
+      "maps": 192,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 04.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 283,
+          "event": "Person"
+        },
+        {
+          "mapId": 143,
+          "event": "Person"
+        },
+        {
+          "mapId": 994,
+          "event": "NPC"
+        },
+        {
+          "mapId": 8,
+          "event": "Effort ribbon giver"
+        },
+        {
+          "mapId": 863,
+          "event": "Person"
+        },
+        {
+          "mapId": 300,
+          "event": "Person"
+        },
+        {
+          "mapId": 725,
+          "event": "Person"
+        },
+        {
+          "mapId": 444,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar007",
+      "uses": 369,
+      "maps": 156,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar007.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar017",
+      "uses": 350,
+      "maps": 157,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar017.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 849,
+          "event": "Person"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 568,
+          "event": "Move Tutor"
+        }
+      ]
+    },
+    {
+      "name": "doors1",
+      "uses": 313,
+      "maps": 70,
+      "file": "pokemon_fire_ash/Graphics/Characters/doors1.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 707,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 707,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 707,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 707,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 707,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 849,
+          "event": "Home door"
+        },
+        {
+          "mapId": 849,
+          "event": "Home door"
+        }
+      ]
+    },
+    {
+      "name": "trchar011",
+      "uses": 302,
+      "maps": 126,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar011.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 428,
+          "event": "Item"
+        },
+        {
+          "mapId": 428,
+          "event": "Item"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(5)"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(5)"
+        },
+        {
+          "mapId": 717,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "trchar021",
+      "uses": 295,
+      "maps": 140,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar021.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 856,
+          "event": "Item"
+        },
+        {
+          "mapId": 856,
+          "event": "Item"
+        },
+        {
+          "mapId": 437,
+          "event": "Person"
+        },
+        {
+          "mapId": 443,
+          "event": "Move Tutor"
+        },
+        {
+          "mapId": 585,
+          "event": "Trainer(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar031",
+      "uses": 284,
+      "maps": 101,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar031.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 850,
+          "event": "Person"
+        },
+        {
+          "mapId": 711,
+          "event": "Counter(3)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 854,
+          "event": "Counter(6)"
+        },
+        {
+          "mapId": 854,
+          "event": "Counter(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar016",
+      "uses": 269,
+      "maps": 134,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar016.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 849,
+          "event": "Item"
+        },
+        {
+          "mapId": 849,
+          "event": "Item"
+        },
+        {
+          "mapId": 283,
+          "event": "Person"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 427,
+          "event": "Person"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 152,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar027",
+      "uses": 269,
+      "maps": 101,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar027.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 427,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 427,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 427,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 427,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 427,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 153,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar038",
+      "uses": 257,
+      "maps": 104,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar038.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 142,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 850,
+          "event": "Item"
+        },
+        {
+          "mapId": 850,
+          "event": "Item"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 856,
+          "event": "Person"
+        },
+        {
+          "mapId": 856,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar018",
+      "uses": 227,
+      "maps": 87,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar018.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 142,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "NPC 20",
+      "uses": 222,
+      "maps": 27,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 20.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 994,
+          "event": "flying taxi man"
+        },
+        {
+          "mapId": 440,
+          "event": "Counter(2)"
+        },
+        {
+          "mapId": 869,
+          "event": "Cop"
+        },
+        {
+          "mapId": 869,
+          "event": "Cop"
+        },
+        {
+          "mapId": 869,
+          "event": "Cop"
+        },
+        {
+          "mapId": 869,
+          "event": "Cop"
+        },
+        {
+          "mapId": 869,
+          "event": "Cop"
+        },
+        {
+          "mapId": 869,
+          "event": "Cop"
+        }
+      ]
+    },
+    {
+      "name": "trchar033",
+      "uses": 217,
+      "maps": 84,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar033.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar010",
+      "uses": 213,
+      "maps": 78,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar010.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 425,
+          "event": "Person"
+        },
+        {
+          "mapId": 568,
+          "event": "Person"
+        },
+        {
+          "mapId": 712,
+          "event": "Trader - Basic"
+        },
+        {
+          "mapId": 712,
+          "event": "Trader - Basic"
+        }
+      ]
+    },
+    {
+      "name": "blank trainer",
+      "uses": 210,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/blank trainer.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 214,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar015",
+      "uses": 195,
+      "maps": 87,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar015.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Item"
+        },
+        {
+          "mapId": 424,
+          "event": "Item"
+        },
+        {
+          "mapId": 849,
+          "event": "Item"
+        },
+        {
+          "mapId": 849,
+          "event": "Item"
+        },
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 293,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 293,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 438,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trainer_AROMALADY",
+      "uses": 192,
+      "maps": 190,
+      "file": "pokemon_fire_ash/Graphics/Characters/trainer_AROMALADY.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 566,
+          "event": "Wonder Trade"
+        },
+        {
+          "mapId": 284,
+          "event": "Wonder Trade"
+        },
+        {
+          "mapId": 709,
+          "event": "Wonder Trade"
+        },
+        {
+          "mapId": 851,
+          "event": "Wonder Trade"
+        },
+        {
+          "mapId": 428,
+          "event": "Wonder Trade"
+        },
+        {
+          "mapId": 994,
+          "event": "NPC"
+        },
+        {
+          "mapId": 858,
+          "event": "Wonder Trade"
+        },
+        {
+          "mapId": 576,
+          "event": "Wonder Trade"
+        }
+      ]
+    },
+    {
+      "name": "trchar034",
+      "uses": 181,
+      "maps": 80,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar034.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 424,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 711,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 570,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar032",
+      "uses": 177,
+      "maps": 86,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar032.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 570,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 570,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 715,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 715,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "$ROMN_2_g92",
+      "uses": 169,
+      "maps": 91,
+      "file": "pokemon_fire_ash/Graphics/Characters/$ROMN_2_g92.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 3235,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_36_1"
+        },
+        {
+          "mapId": 3243,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_44_1"
+        },
+        {
+          "mapId": 3243,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_44_2"
+        },
+        {
+          "mapId": 3243,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_44_3"
+        },
+        {
+          "mapId": 3244,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_45_1"
+        },
+        {
+          "mapId": 3244,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_45_2"
+        },
+        {
+          "mapId": 3244,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_45_3"
+        },
+        {
+          "mapId": 3245,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_46_1"
+        }
+      ]
+    },
+    {
+      "name": "trchar069",
+      "uses": 163,
+      "maps": 70,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar069.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Agatha"
+        },
+        {
+          "mapId": 881,
+          "event": "Agatha"
+        },
+        {
+          "mapId": 43,
+          "event": "Agatha"
+        },
+        {
+          "mapId": 43,
+          "event": "Agatha"
+        },
+        {
+          "mapId": 43,
+          "event": "Agatha"
+        },
+        {
+          "mapId": 1001,
+          "event": "Horizonte 007: La piedra que recuerda nombres — Puerto Horizonte"
+        },
+        {
+          "mapId": 1001,
+          "event": "Horizonte 007: La piedra que recuerda nombres — Puerto Horizonte"
+        },
+        {
+          "mapId": 1001,
+          "event": "Horizonte 017: La patrulla desaparecida — Puerto Horizonte"
+        }
+      ]
+    },
+    {
+      "name": "trchar246",
+      "uses": 160,
+      "maps": 70,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar246.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 918,
+          "event": "Faba"
+        },
+        {
+          "mapId": 919,
+          "event": "Faba"
+        },
+        {
+          "mapId": 919,
+          "event": "Faba"
+        },
+        {
+          "mapId": 919,
+          "event": "Faba"
+        },
+        {
+          "mapId": 919,
+          "event": "Faba"
+        },
+        {
+          "mapId": 919,
+          "event": "Counter(2)"
+        },
+        {
+          "mapId": 958,
+          "event": "Faba"
+        },
+        {
+          "mapId": 958,
+          "event": "Faba"
+        }
+      ]
+    },
+    {
+      "name": "trchar054",
+      "uses": 156,
+      "maps": 70,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar054.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 424,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 424,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 424,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 424,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 425,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 425,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 425,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 425,
+          "event": "Double trainer F"
+        }
+      ]
+    },
+    {
+      "name": "NPC 01",
+      "uses": 138,
+      "maps": 51,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 01.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 283,
+          "event": "Cop"
+        },
+        {
+          "mapId": 995,
+          "event": "Person"
+        },
+        {
+          "mapId": 995,
+          "event": "Guard"
+        },
+        {
+          "mapId": 995,
+          "event": "Person"
+        },
+        {
+          "mapId": 573,
+          "event": "Counter(6)"
+        },
+        {
+          "mapId": 25,
+          "event": "Deliveryman"
+        },
+        {
+          "mapId": 29,
+          "event": "Guard"
+        }
+      ]
+    },
+    {
+      "name": "doors5",
+      "uses": 132,
+      "maps": 29,
+      "file": "pokemon_fire_ash/Graphics/Characters/doors5.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 426,
+          "event": "Condo door"
+        }
+      ]
+    },
+    {
+      "name": "DN_SHARED_747263686172303238",
+      "uses": 131,
+      "maps": 18,
+      "file": "pokemon_fire_ash/Graphics/Characters/DN_SHARED_747263686172303238.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 2023,
+          "event": "PokeMod Restauración: Operadora sin turno"
+        },
+        {
+          "mapId": 2023,
+          "event": "PokeMod Restauración: Operadora sin turno"
+        },
+        {
+          "mapId": 2041,
+          "event": "NPC_Sepulturero_Anciano"
+        },
+        {
+          "mapId": 2041,
+          "event": "NPC_Sepulturero_Anciano"
+        },
+        {
+          "mapId": 2041,
+          "event": "NPC_Sepulturero_Anciano"
+        },
+        {
+          "mapId": 2041,
+          "event": "NPC_Sepulturero_Anciano"
+        },
+        {
+          "mapId": 2041,
+          "event": "NPC_Sepulturero_Anciano"
+        },
+        {
+          "mapId": 2041,
+          "event": "NPC_Sepulturero_Anciano"
+        }
+      ]
+    },
+    {
+      "name": "trchar023",
+      "uses": 130,
+      "maps": 59,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar023.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 425,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 143,
+          "event": "Person"
+        },
+        {
+          "mapId": 570,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "NPC 15",
+      "uses": 129,
+      "maps": 81,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 15.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 849,
+          "event": "Teleport"
+        },
+        {
+          "mapId": 849,
+          "event": "Block"
+        },
+        {
+          "mapId": 849,
+          "event": "Counter(6)"
+        },
+        {
+          "mapId": 849,
+          "event": "Teleport"
+        },
+        {
+          "mapId": 710,
+          "event": "Gym Guy"
+        },
+        {
+          "mapId": 852,
+          "event": "Teleport"
+        },
+        {
+          "mapId": 852,
+          "event": "Teleport"
+        },
+        {
+          "mapId": 994,
+          "event": "NPC"
+        }
+      ]
+    },
+    {
+      "name": "$ROMN_4_g96",
+      "uses": 129,
+      "maps": 62,
+      "file": "pokemon_fire_ash/Graphics/Characters/$ROMN_4_g96.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 4010,
+          "event": "PokeMod Campaña ROM: NPC — unbound_11_1"
+        },
+        {
+          "mapId": 4010,
+          "event": "PokeMod Campaña ROM: NPC — unbound_11_2"
+        },
+        {
+          "mapId": 4022,
+          "event": "PokeMod Campaña ROM: NPC — unbound_23_2"
+        },
+        {
+          "mapId": 4022,
+          "event": "PokeMod Campaña ROM: NPC — unbound_23_3"
+        },
+        {
+          "mapId": 4025,
+          "event": "PokeMod Campaña ROM: NPC — unbound_26_1"
+        },
+        {
+          "mapId": 4025,
+          "event": "PokeMod Campaña ROM: NPC — unbound_26_2"
+        },
+        {
+          "mapId": 4038,
+          "event": "PokeMod Campaña ROM: NPC — unbound_39_3"
+        },
+        {
+          "mapId": 4046,
+          "event": "PokeMod Campaña ROM: NPC — unbound_47_1"
+        }
+      ]
+    },
+    {
+      "name": "doors4",
+      "uses": 124,
+      "maps": 24,
+      "file": "pokemon_fire_ash/Graphics/Characters/doors4.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 7,
+          "event": "Institute door"
+        },
+        {
+          "mapId": 7,
+          "event": "Institute door"
+        },
+        {
+          "mapId": 437,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 437,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 437,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 437,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 437,
+          "event": "Condo door"
+        },
+        {
+          "mapId": 437,
+          "event": "Condo door"
+        }
+      ]
+    },
+    {
+      "name": "$ROMN_4_g92",
+      "uses": 123,
+      "maps": 75,
+      "file": "pokemon_fire_ash/Graphics/Characters/$ROMN_4_g92.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 4001,
+          "event": "PokeMod Campaña ROM: NPC — unbound_2_2"
+        },
+        {
+          "mapId": 4011,
+          "event": "PokeMod Campaña ROM: NPC — unbound_12_3"
+        },
+        {
+          "mapId": 4018,
+          "event": "PokeMod Campaña ROM: NPC — unbound_19_3"
+        },
+        {
+          "mapId": 4023,
+          "event": "PokeMod Campaña ROM: NPC — unbound_24_2"
+        },
+        {
+          "mapId": 4024,
+          "event": "PokeMod Campaña ROM: NPC — unbound_25_3"
+        },
+        {
+          "mapId": 4024,
+          "event": "PokeMod Campaña ROM: NPC — unbound_25_4"
+        },
+        {
+          "mapId": 4026,
+          "event": "PokeMod Campaña ROM: NPC — unbound_27_3"
+        },
+        {
+          "mapId": 4028,
+          "event": "PokeMod Campaña ROM: NPC — unbound_29_1"
+        }
+      ]
+    },
+    {
+      "name": "trchar014",
+      "uses": 122,
+      "maps": 63,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar014.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 708,
+          "event": "Item"
+        },
+        {
+          "mapId": 708,
+          "event": "Item"
+        },
+        {
+          "mapId": 143,
+          "event": "Person"
+        },
+        {
+          "mapId": 143,
+          "event": "Move Tutor"
+        },
+        {
+          "mapId": 287,
+          "event": "Item"
+        },
+        {
+          "mapId": 287,
+          "event": "Item"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar030",
+      "uses": 121,
+      "maps": 71,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar030.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 850,
+          "event": "Person"
+        },
+        {
+          "mapId": 850,
+          "event": "Person"
+        },
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 995,
+          "event": "Person"
+        },
+        {
+          "mapId": 858,
+          "event": "Person"
+        },
+        {
+          "mapId": 299,
+          "event": "Counter(3)"
+        },
+        {
+          "mapId": 867,
+          "event": "Person"
+        },
+        {
+          "mapId": 869,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar012",
+      "uses": 119,
+      "maps": 41,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar012.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 425,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 425,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 143,
+          "event": "Person"
+        },
+        {
+          "mapId": 144,
+          "event": "Person"
+        },
+        {
+          "mapId": 145,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 145,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 145,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 145,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar022",
+      "uses": 115,
+      "maps": 61,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar022.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 856,
+          "event": "Person"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 291,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 294,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 591,
+          "event": "Person"
+        },
+        {
+          "mapId": 26,
+          "event": "Gift Pokémon - Basic"
+        }
+      ]
+    },
+    {
+      "name": "NPC 05",
+      "uses": 113,
+      "maps": 73,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 05.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 428,
+          "event": "Person"
+        },
+        {
+          "mapId": 994,
+          "event": "NPC"
+        },
+        {
+          "mapId": 571,
+          "event": "Person"
+        },
+        {
+          "mapId": 856,
+          "event": "Person"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 435,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar169",
+      "uses": 113,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar169.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 854,
+          "event": "Counter(6)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 854,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 859,
+          "event": "Counter(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar056",
+      "uses": 111,
+      "maps": 27,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar056.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 572,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 572,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "$ROMN_3_g92",
+      "uses": 111,
+      "maps": 68,
+      "file": "pokemon_fire_ash/Graphics/Characters/$ROMN_3_g92.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 3700,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_1_3"
+        },
+        {
+          "mapId": 3702,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_3_3"
+        },
+        {
+          "mapId": 3713,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_14_3"
+        },
+        {
+          "mapId": 3714,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_15_3"
+        },
+        {
+          "mapId": 3714,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_15_4"
+        },
+        {
+          "mapId": 3715,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_16_2"
+        },
+        {
+          "mapId": 3723,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_24_3"
+        },
+        {
+          "mapId": 3723,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_24_4"
+        }
+      ]
+    },
+    {
+      "name": "trchar020",
+      "uses": 99,
+      "maps": 68,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar020.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 849,
+          "event": "Person"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 142,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 570,
+          "event": "Item"
+        },
+        {
+          "mapId": 570,
+          "event": "Item"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 571,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "NPC 41",
+      "uses": 99,
+      "maps": 13,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 41.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 889,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 889,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 890,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 891,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 891,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 891,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 891,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 891,
+          "event": "Kukui"
+        }
+      ]
+    },
+    {
+      "name": "doors2",
+      "uses": 96,
+      "maps": 18,
+      "file": "pokemon_fire_ash/Graphics/Characters/doors2.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 574,
+          "event": "Home door"
+        },
+        {
+          "mapId": 574,
+          "event": "Home door"
+        },
+        {
+          "mapId": 574,
+          "event": "Home door"
+        },
+        {
+          "mapId": 574,
+          "event": "Home door"
+        },
+        {
+          "mapId": 574,
+          "event": "Home door"
+        },
+        {
+          "mapId": 574,
+          "event": "Home door"
+        },
+        {
+          "mapId": 863,
+          "event": "Home door"
+        },
+        {
+          "mapId": 863,
+          "event": "Home door"
+        }
+      ]
+    },
+    {
+      "name": "NPC 02",
+      "uses": 94,
+      "maps": 69,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 02.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 994,
+          "event": "NPC"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 153,
+          "event": "Person"
+        },
+        {
+          "mapId": 437,
+          "event": "Person"
+        },
+        {
+          "mapId": 863,
+          "event": "Person"
+        },
+        {
+          "mapId": 440,
+          "event": "Person"
+        },
+        {
+          "mapId": 299,
+          "event": "Person"
+        },
+        {
+          "mapId": 443,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar041",
+      "uses": 92,
+      "maps": 39,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar041.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Person"
+        },
+        {
+          "mapId": 294,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 294,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 298,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 298,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 442,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 442,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 442,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "DN_SHARED_747261696e65725f48494b4552",
+      "uses": 92,
+      "maps": 14,
+      "file": "pokemon_fire_ash/Graphics/Characters/DN_SHARED_747261696e65725f48494b4552.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 2043,
+          "event": "NPC_Carcelero_Ciego"
+        },
+        {
+          "mapId": 2043,
+          "event": "NPC_Carcelero_Ciego"
+        },
+        {
+          "mapId": 2043,
+          "event": "NPC_Carcelero_Ciego"
+        },
+        {
+          "mapId": 2043,
+          "event": "NPC_Carcelero_Ciego"
+        },
+        {
+          "mapId": 2043,
+          "event": "NPC_Carcelero_Ciego"
+        },
+        {
+          "mapId": 2043,
+          "event": "NPC_Carcelero_Ciego"
+        },
+        {
+          "mapId": 2043,
+          "event": "NPC_Carcelero_Ciego"
+        },
+        {
+          "mapId": 2053,
+          "event": "NPC_Guardi_n_de_las_Bestias"
+        }
+      ]
+    },
+    {
+      "name": "trchar223",
+      "uses": 91,
+      "maps": 28,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar223.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 586,
+          "event": "Goh"
+        },
+        {
+          "mapId": 586,
+          "event": "Goh"
+        },
+        {
+          "mapId": 167,
+          "event": "Goh"
+        },
+        {
+          "mapId": 311,
+          "event": "Goh"
+        },
+        {
+          "mapId": 311,
+          "event": "Goh"
+        },
+        {
+          "mapId": 311,
+          "event": "Goh"
+        },
+        {
+          "mapId": 171,
+          "event": "Goh"
+        },
+        {
+          "mapId": 171,
+          "event": "Goh"
+        }
+      ]
+    },
+    {
+      "name": "NPC 07",
+      "uses": 90,
+      "maps": 51,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 07.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 708,
+          "event": "Person"
+        },
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 3,
+          "event": "Text formatting NPC"
+        },
+        {
+          "mapId": 994,
+          "event": "NPC"
+        },
+        {
+          "mapId": 8,
+          "event": "Dr Footstep"
+        },
+        {
+          "mapId": 433,
+          "event": "Person"
+        },
+        {
+          "mapId": 575,
+          "event": "Reggie"
+        },
+        {
+          "mapId": 575,
+          "event": "Reggie"
+        }
+      ]
+    },
+    {
+      "name": "NPC 08",
+      "uses": 86,
+      "maps": 65,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 08.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 143,
+          "event": "Person"
+        },
+        {
+          "mapId": 285,
+          "event": "NPC"
+        },
+        {
+          "mapId": 3,
+          "event": "Choices NPC"
+        },
+        {
+          "mapId": 994,
+          "event": "NPC"
+        },
+        {
+          "mapId": 431,
+          "event": "NPC"
+        },
+        {
+          "mapId": 716,
+          "event": "Person"
+        },
+        {
+          "mapId": 577,
+          "event": "NPC"
+        }
+      ]
+    },
+    {
+      "name": "trchar026",
+      "uses": 85,
+      "maps": 48,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar026.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 288,
+          "event": "Person"
+        },
+        {
+          "mapId": 720,
+          "event": "Item"
+        },
+        {
+          "mapId": 721,
+          "event": "Person"
+        },
+        {
+          "mapId": 721,
+          "event": "Person"
+        },
+        {
+          "mapId": 721,
+          "event": "Person"
+        },
+        {
+          "mapId": 721,
+          "event": "Person"
+        },
+        {
+          "mapId": 443,
+          "event": "Person"
+        },
+        {
+          "mapId": 455,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "NPC 06",
+      "uses": 80,
+      "maps": 69,
+      "file": "pokemon_fire_ash/Graphics/Characters/NPC 06.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 708,
+          "event": "Move Relearner"
+        },
+        {
+          "mapId": 2,
+          "event": "Door explainer"
+        },
+        {
+          "mapId": 427,
+          "event": "Person"
+        },
+        {
+          "mapId": 994,
+          "event": "NPC"
+        },
+        {
+          "mapId": 995,
+          "event": "Move Relearner"
+        },
+        {
+          "mapId": 713,
+          "event": "Person"
+        },
+        {
+          "mapId": 152,
+          "event": "Person"
+        },
+        {
+          "mapId": 153,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar019",
+      "uses": 80,
+      "maps": 44,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar019.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 429,
+          "event": "Person"
+        },
+        {
+          "mapId": 571,
+          "event": "Person"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 443,
+          "event": "Person"
+        },
+        {
+          "mapId": 726,
+          "event": "Person"
+        },
+        {
+          "mapId": 591,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar013",
+      "uses": 76,
+      "maps": 26,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar013.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 152,
+          "event": "Move Tutor"
+        },
+        {
+          "mapId": 166,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 166,
+          "event": "Trainer(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar042",
+      "uses": 75,
+      "maps": 45,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar042.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 284,
+          "event": "Person"
+        },
+        {
+          "mapId": 853,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 853,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 853,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 853,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 853,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 853,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 713,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar209",
+      "uses": 73,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar209.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 574,
+          "event": "Person"
+        },
+        {
+          "mapId": 574,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 574,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 574,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 574,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 574,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar025",
+      "uses": 67,
+      "maps": 34,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar025.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 293,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 293,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 293,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 293,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 863,
+          "event": "Person"
+        },
+        {
+          "mapId": 306,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 306,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 590,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar029",
+      "uses": 60,
+      "maps": 19,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar029.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 430,
+          "event": "Item"
+        },
+        {
+          "mapId": 441,
+          "event": "Person"
+        },
+        {
+          "mapId": 177,
+          "event": "Person"
+        },
+        {
+          "mapId": 463,
+          "event": "Person"
+        },
+        {
+          "mapId": 463,
+          "event": "Person"
+        },
+        {
+          "mapId": 464,
+          "event": "Person"
+        },
+        {
+          "mapId": 184,
+          "event": "Move Tutor"
+        },
+        {
+          "mapId": 919,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar044",
+      "uses": 56,
+      "maps": 28,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar044.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 433,
+          "event": "Person"
+        },
+        {
+          "mapId": 437,
+          "event": "Person"
+        },
+        {
+          "mapId": 440,
+          "event": "Person"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar059",
+      "uses": 52,
+      "maps": 26,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar059.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 567,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 567,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 995,
+          "event": "Brock"
+        },
+        {
+          "mapId": 10,
+          "event": "Brock"
+        },
+        {
+          "mapId": 10,
+          "event": "Brock"
+        },
+        {
+          "mapId": 165,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 165,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 165,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar057",
+      "uses": 52,
+      "maps": 19,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar057.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 572,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 572,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar179",
+      "uses": 52,
+      "maps": 17,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar179.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 441,
+          "event": "Sophocles"
+        },
+        {
+          "mapId": 441,
+          "event": "Sophocles"
+        },
+        {
+          "mapId": 889,
+          "event": "Counter(3)"
+        },
+        {
+          "mapId": 891,
+          "event": "Sophocles"
+        },
+        {
+          "mapId": 891,
+          "event": "Sophocles"
+        },
+        {
+          "mapId": 891,
+          "event": "Sophocles"
+        },
+        {
+          "mapId": 891,
+          "event": "Sophocles"
+        },
+        {
+          "mapId": 891,
+          "event": "Sophocles"
+        }
+      ]
+    },
+    {
+      "name": "trchar177",
+      "uses": 52,
+      "maps": 16,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar177.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 889,
+          "event": "Kiawe"
+        },
+        {
+          "mapId": 889,
+          "event": "Kiawe"
+        },
+        {
+          "mapId": 889,
+          "event": "Kiawe"
+        },
+        {
+          "mapId": 891,
+          "event": "Kiawe"
+        },
+        {
+          "mapId": 891,
+          "event": "Kiawe"
+        },
+        {
+          "mapId": 891,
+          "event": "Kiawe"
+        },
+        {
+          "mapId": 891,
+          "event": "Kiawe"
+        },
+        {
+          "mapId": 891,
+          "event": "Kiawe"
+        }
+      ]
+    },
+    {
+      "name": "trchar180",
+      "uses": 51,
+      "maps": 14,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar180.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        },
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        },
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        },
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        },
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        },
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        },
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        },
+        {
+          "mapId": 891,
+          "event": "Lillie"
+        }
+      ]
+    },
+    {
+      "name": "trchar073",
+      "uses": 50,
+      "maps": 42,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar073.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 991,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 569,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 862,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 722,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 303,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 876,
+          "event": "James"
+        },
+        {
+          "mapId": 453,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 171,
+          "event": "Team Rocket"
+        }
+      ]
+    },
+    {
+      "name": "trchar006",
+      "uses": 49,
+      "maps": 29,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar006.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 283,
+          "event": "Person"
+        },
+        {
+          "mapId": 152,
+          "event": "Person"
+        },
+        {
+          "mapId": 294,
+          "event": "Person"
+        },
+        {
+          "mapId": 294,
+          "event": "Person"
+        },
+        {
+          "mapId": 294,
+          "event": "Person"
+        },
+        {
+          "mapId": 153,
+          "event": "Person"
+        },
+        {
+          "mapId": 725,
+          "event": "Person"
+        },
+        {
+          "mapId": 725,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar039",
+      "uses": 49,
+      "maps": 31,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar039.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 856,
+          "event": "Person"
+        },
+        {
+          "mapId": 444,
+          "event": "Person"
+        },
+        {
+          "mapId": 591,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 591,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 591,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 174,
+          "event": "Person"
+        },
+        {
+          "mapId": 177,
+          "event": "Person"
+        },
+        {
+          "mapId": 177,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar045",
+      "uses": 49,
+      "maps": 18,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar045.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 437,
+          "event": "Person"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 458,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar178",
+      "uses": 48,
+      "maps": 13,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar178.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 889,
+          "event": "Mallow"
+        },
+        {
+          "mapId": 891,
+          "event": "Mallow"
+        },
+        {
+          "mapId": 891,
+          "event": "Mallow"
+        },
+        {
+          "mapId": 891,
+          "event": "Mallow"
+        },
+        {
+          "mapId": 891,
+          "event": "Mallow"
+        },
+        {
+          "mapId": 891,
+          "event": "Mallow"
+        },
+        {
+          "mapId": 891,
+          "event": "Mallow"
+        },
+        {
+          "mapId": 891,
+          "event": "Mallow"
+        }
+      ]
+    },
+    {
+      "name": "trchar176",
+      "uses": 48,
+      "maps": 13,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar176.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 889,
+          "event": "Lana"
+        },
+        {
+          "mapId": 889,
+          "event": "Lana"
+        },
+        {
+          "mapId": 889,
+          "event": "Lana"
+        },
+        {
+          "mapId": 891,
+          "event": "Lana"
+        },
+        {
+          "mapId": 891,
+          "event": "Lana"
+        },
+        {
+          "mapId": 891,
+          "event": "Lana"
+        },
+        {
+          "mapId": 891,
+          "event": "Lana"
+        },
+        {
+          "mapId": 891,
+          "event": "Lana"
+        }
+      ]
+    },
+    {
+      "name": "trchar072",
+      "uses": 45,
+      "maps": 42,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar072.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 991,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 569,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 862,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 722,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 303,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 876,
+          "event": "James"
+        },
+        {
+          "mapId": 453,
+          "event": "Team Rocket"
+        },
+        {
+          "mapId": 171,
+          "event": "Team Rocket"
+        }
+      ]
+    },
+    {
+      "name": "trchar043",
+      "uses": 41,
+      "maps": 22,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar043.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 592,
+          "event": "Item"
+        },
+        {
+          "mapId": 592,
+          "event": "Item"
+        },
+        {
+          "mapId": 310,
+          "event": "Person"
+        },
+        {
+          "mapId": 318,
+          "event": "Person"
+        },
+        {
+          "mapId": 177,
+          "event": "Person"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar105",
+      "uses": 35,
+      "maps": 21,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar105.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Dawn"
+        },
+        {
+          "mapId": 574,
+          "event": "Dawn"
+        },
+        {
+          "mapId": 591,
+          "event": "Dawn"
+        },
+        {
+          "mapId": 591,
+          "event": "Dawn"
+        },
+        {
+          "mapId": 591,
+          "event": "Dawn"
+        },
+        {
+          "mapId": 591,
+          "event": "Dawn"
+        },
+        {
+          "mapId": 177,
+          "event": "Dawn"
+        },
+        {
+          "mapId": 746,
+          "event": "Dawn"
+        }
+      ]
+    },
+    {
+      "name": "trchar224",
+      "uses": 33,
+      "maps": 10,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar224.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Leon"
+        },
+        {
+          "mapId": 996,
+          "event": "Enemy Trainer"
+        },
+        {
+          "mapId": 996,
+          "event": "Enemy Trainer"
+        },
+        {
+          "mapId": 996,
+          "event": "Enemy Trainer"
+        },
+        {
+          "mapId": 996,
+          "event": "Enemy Trainer"
+        },
+        {
+          "mapId": 996,
+          "event": "Enemy Trainer"
+        },
+        {
+          "mapId": 996,
+          "event": "Enemy Trainer"
+        },
+        {
+          "mapId": 996,
+          "event": "Enemy Trainer"
+        }
+      ]
+    },
+    {
+      "name": "trchar060",
+      "uses": 31,
+      "maps": 15,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar060.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Misty"
+        },
+        {
+          "mapId": 150,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 150,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 881,
+          "event": "Misty"
+        },
+        {
+          "mapId": 881,
+          "event": "Misty"
+        },
+        {
+          "mapId": 182,
+          "event": "Misty"
+        },
+        {
+          "mapId": 182,
+          "event": "Misty"
+        },
+        {
+          "mapId": 891,
+          "event": "Misty"
+        }
+      ]
+    },
+    {
+      "name": "trchar003",
+      "uses": 30,
+      "maps": 20,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar003.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 429,
+          "event": "May"
+        },
+        {
+          "mapId": 995,
+          "event": "May"
+        },
+        {
+          "mapId": 591,
+          "event": "May"
+        },
+        {
+          "mapId": 591,
+          "event": "May"
+        },
+        {
+          "mapId": 591,
+          "event": "May"
+        },
+        {
+          "mapId": 462,
+          "event": "May"
+        },
+        {
+          "mapId": 462,
+          "event": "May"
+        },
+        {
+          "mapId": 195,
+          "event": "May"
+        }
+      ]
+    },
+    {
+      "name": "trchar181",
+      "uses": 29,
+      "maps": 13,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar181.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 891,
+          "event": "Gladion"
+        },
+        {
+          "mapId": 895,
+          "event": "Gladion"
+        },
+        {
+          "mapId": 895,
+          "event": "Gladion"
+        },
+        {
+          "mapId": 895,
+          "event": "Gladion"
+        },
+        {
+          "mapId": 895,
+          "event": "Gladion"
+        },
+        {
+          "mapId": 895,
+          "event": "Gladion"
+        },
+        {
+          "mapId": 919,
+          "event": "Gladion"
+        },
+        {
+          "mapId": 920,
+          "event": "Gladion"
+        }
+      ]
+    },
+    {
+      "name": "trchar048",
+      "uses": 28,
+      "maps": 17,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar048.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 587,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 587,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 592,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 592,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 310,
+          "event": "Person"
+        },
+        {
+          "mapId": 318,
+          "event": "Person"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar219",
+      "uses": 28,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar219.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 889,
+          "event": "Team Skull"
+        },
+        {
+          "mapId": 889,
+          "event": "Team Skull"
+        },
+        {
+          "mapId": 889,
+          "event": "Team Skull"
+        },
+        {
+          "mapId": 889,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 889,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 889,
+          "event": "Person"
+        },
+        {
+          "mapId": 889,
+          "event": "Person"
+        },
+        {
+          "mapId": 889,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar050",
+      "uses": 26,
+      "maps": 13,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar050.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 600,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 600,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 600,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 355,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 355,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 789,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar024",
+      "uses": 26,
+      "maps": 9,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar024.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 48,
+          "event": "Oak"
+        },
+        {
+          "mapId": 48,
+          "event": "Oak"
+        },
+        {
+          "mapId": 48,
+          "event": "Oak"
+        },
+        {
+          "mapId": 48,
+          "event": "Oak"
+        },
+        {
+          "mapId": 48,
+          "event": "Oak"
+        },
+        {
+          "mapId": 48,
+          "event": "Oak"
+        },
+        {
+          "mapId": 48,
+          "event": "Oak"
+        },
+        {
+          "mapId": 48,
+          "event": "Oak"
+        }
+      ]
+    },
+    {
+      "name": "trchar198",
+      "uses": 25,
+      "maps": 14,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar198.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Cynthia"
+        },
+        {
+          "mapId": 738,
+          "event": "Cynthia"
+        },
+        {
+          "mapId": 738,
+          "event": "Cynthia"
+        },
+        {
+          "mapId": 881,
+          "event": "Cynthia"
+        },
+        {
+          "mapId": 881,
+          "event": "Cynthia"
+        },
+        {
+          "mapId": 177,
+          "event": "Cynthia"
+        },
+        {
+          "mapId": 177,
+          "event": "Cynthia"
+        },
+        {
+          "mapId": 177,
+          "event": "Cynthia"
+        }
+      ]
+    },
+    {
+      "name": "trchar047",
+      "uses": 24,
+      "maps": 12,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar047.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 587,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 587,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 592,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 592,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 317,
+          "event": "Person"
+        },
+        {
+          "mapId": 318,
+          "event": "Person"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar055",
+      "uses": 22,
+      "maps": 13,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar055.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 609,
+          "event": "Person"
+        },
+        {
+          "mapId": 898,
+          "event": "Sophocles"
+        },
+        {
+          "mapId": 335,
+          "event": "Person"
+        },
+        {
+          "mapId": 342,
+          "event": "Item"
+        },
+        {
+          "mapId": 342,
+          "event": "Item"
+        },
+        {
+          "mapId": 367,
+          "event": "Person"
+        },
+        {
+          "mapId": 794,
+          "event": "Person"
+        },
+        {
+          "mapId": 794,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar160",
+      "uses": 20,
+      "maps": 7,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar160.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Clemont"
+        },
+        {
+          "mapId": 854,
+          "event": "Clemont"
+        },
+        {
+          "mapId": 854,
+          "event": "Clemont"
+        },
+        {
+          "mapId": 876,
+          "event": "Clemont"
+        },
+        {
+          "mapId": 881,
+          "event": "Clemont"
+        },
+        {
+          "mapId": 881,
+          "event": "Clemont"
+        },
+        {
+          "mapId": 793,
+          "event": "Clemont"
+        },
+        {
+          "mapId": 793,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar040",
+      "uses": 19,
+      "maps": 12,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar040.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 426,
+          "event": "Person"
+        },
+        {
+          "mapId": 286,
+          "event": "Person"
+        },
+        {
+          "mapId": 286,
+          "event": "Person"
+        },
+        {
+          "mapId": 578,
+          "event": "Person"
+        },
+        {
+          "mapId": 444,
+          "event": "Person"
+        },
+        {
+          "mapId": 181,
+          "event": "Trainer(5)"
+        },
+        {
+          "mapId": 181,
+          "event": "Trainer(5)"
+        },
+        {
+          "mapId": 484,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar046",
+      "uses": 19,
+      "maps": 11,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar046.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 860,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 860,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 69,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 69,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 211,
+          "event": "Person"
+        }
+      ]
+    },
+    {
+      "name": "trchar120",
+      "uses": 18,
+      "maps": 10,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar120.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 707,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 707,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 567,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 995,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 586,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 586,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 881,
+          "event": "Cilan"
+        }
+      ]
+    },
+    {
+      "name": "trchar004",
+      "uses": 18,
+      "maps": 12,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar004.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 152,
+          "event": "Gary"
+        },
+        {
+          "mapId": 298,
+          "event": "Gary"
+        },
+        {
+          "mapId": 31,
+          "event": "Rival"
+        },
+        {
+          "mapId": 33,
+          "event": "Gary"
+        },
+        {
+          "mapId": 33,
+          "event": "Gary"
+        },
+        {
+          "mapId": 33,
+          "event": "Gary"
+        },
+        {
+          "mapId": 33,
+          "event": "Person"
+        },
+        {
+          "mapId": 43,
+          "event": "Gary"
+        }
+      ]
+    },
+    {
+      "name": "trchar049",
+      "uses": 18,
+      "maps": 10,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar049.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 600,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 600,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 600,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 743,
+          "event": "Person"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 887,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 211,
+          "event": "Person"
+        },
+        {
+          "mapId": 355,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar187",
+      "uses": 17,
+      "maps": 7,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar187.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 891,
+          "event": "Lusamine"
+        },
+        {
+          "mapId": 891,
+          "event": "Lusamine"
+        },
+        {
+          "mapId": 891,
+          "event": "Lusamine"
+        },
+        {
+          "mapId": 895,
+          "event": "Lusamine"
+        },
+        {
+          "mapId": 919,
+          "event": "Lusamine"
+        },
+        {
+          "mapId": 919,
+          "event": "Lusamine"
+        },
+        {
+          "mapId": 919,
+          "event": "Lusamine"
+        },
+        {
+          "mapId": 922,
+          "event": "Lusamine"
+        }
+      ]
+    },
+    {
+      "name": "trchar199",
+      "uses": 17,
+      "maps": 6,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar199.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 893,
+          "event": "Hau"
+        },
+        {
+          "mapId": 893,
+          "event": "Hau"
+        },
+        {
+          "mapId": 932,
+          "event": "Hau"
+        },
+        {
+          "mapId": 932,
+          "event": "Hau"
+        },
+        {
+          "mapId": 957,
+          "event": "Hau"
+        },
+        {
+          "mapId": 957,
+          "event": "Hau"
+        },
+        {
+          "mapId": 957,
+          "event": "Hau"
+        },
+        {
+          "mapId": 957,
+          "event": "Hau"
+        }
+      ]
+    },
+    {
+      "name": "trchar166",
+      "uses": 16,
+      "maps": 8,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar166.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 856,
+          "event": "Person"
+        },
+        {
+          "mapId": 863,
+          "event": "Sawyer"
+        },
+        {
+          "mapId": 869,
+          "event": "Sawyer"
+        },
+        {
+          "mapId": 869,
+          "event": "Sawyer"
+        },
+        {
+          "mapId": 874,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 874,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 874,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 874,
+          "event": "League Battle"
+        }
+      ]
+    },
+    {
+      "name": "trchar117",
+      "uses": 16,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar117.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 630,
+          "event": "Barry"
+        },
+        {
+          "mapId": 630,
+          "event": "Barry"
+        },
+        {
+          "mapId": 630,
+          "event": "Barry"
+        },
+        {
+          "mapId": 643,
+          "event": "Barry"
+        },
+        {
+          "mapId": 643,
+          "event": "Barry"
+        },
+        {
+          "mapId": 643,
+          "event": "Barry"
+        },
+        {
+          "mapId": 643,
+          "event": "Barry"
+        },
+        {
+          "mapId": 643,
+          "event": "Barry"
+        }
+      ]
+    },
+    {
+      "name": "trchar106",
+      "uses": 15,
+      "maps": 8,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar106.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 574,
+          "event": "Paul"
+        },
+        {
+          "mapId": 574,
+          "event": "Paul"
+        },
+        {
+          "mapId": 592,
+          "event": "Paul"
+        },
+        {
+          "mapId": 592,
+          "event": "Paul"
+        },
+        {
+          "mapId": 606,
+          "event": "Paul"
+        },
+        {
+          "mapId": 606,
+          "event": "Paul"
+        },
+        {
+          "mapId": 624,
+          "event": "Paul"
+        },
+        {
+          "mapId": 624,
+          "event": "Paul"
+        }
+      ]
+    },
+    {
+      "name": "trchar236",
+      "uses": 15,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar236.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 440,
+          "event": "Person"
+        },
+        {
+          "mapId": 171,
+          "event": "Person"
+        },
+        {
+          "mapId": 171,
+          "event": "Person"
+        },
+        {
+          "mapId": 171,
+          "event": "Person"
+        },
+        {
+          "mapId": 977,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 977,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 977,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 977,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar005",
+      "uses": 15,
+      "maps": 9,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar005.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 33,
+          "event": "Gary"
+        },
+        {
+          "mapId": 33,
+          "event": "Gary"
+        },
+        {
+          "mapId": 33,
+          "event": "Gary"
+        },
+        {
+          "mapId": 33,
+          "event": "Gary"
+        },
+        {
+          "mapId": 601,
+          "event": "Gary"
+        },
+        {
+          "mapId": 601,
+          "event": "Gary"
+        },
+        {
+          "mapId": 601,
+          "event": "Gary"
+        },
+        {
+          "mapId": 764,
+          "event": "Gary"
+        }
+      ]
+    },
+    {
+      "name": "trchar002",
+      "uses": 14,
+      "maps": 8,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar002.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 31,
+          "event": "Brendan"
+        },
+        {
+          "mapId": 2242,
+          "event": "PokeMod Barco: Poblador — TFOH"
+        },
+        {
+          "mapId": 3046,
+          "event": "PokeMod Líder glazed 4 — Lief"
+        },
+        {
+          "mapId": 3046,
+          "event": "PokeMod Líder glazed 4 — Lief"
+        },
+        {
+          "mapId": 3128,
+          "event": "PokeMod Líder light_platinum 4 — Alba"
+        },
+        {
+          "mapId": 3128,
+          "event": "PokeMod Líder light_platinum 4 — Alba"
+        },
+        {
+          "mapId": 3130,
+          "event": "PokeMod Líder light_platinum 4 — Thomas"
+        },
+        {
+          "mapId": 3130,
+          "event": "PokeMod Líder light_platinum 4 — Thomas"
+        }
+      ]
+    },
+    {
+      "name": "trchar204",
+      "uses": 14,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar204.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 900,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 900,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 957,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 957,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 958,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 958,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 958,
+          "event": "Kukui"
+        },
+        {
+          "mapId": 958,
+          "event": "Kukui"
+        }
+      ]
+    },
+    {
+      "name": "trchar052",
+      "uses": 14,
+      "maps": 7,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar052.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 2253,
+          "event": "PokeMod Circuito: Líder — Líder Crisol"
+        },
+        {
+          "mapId": 2253,
+          "event": "PokeMod Circuito: Líder — Líder Crisol"
+        },
+        {
+          "mapId": 2245,
+          "event": "PokeMod Barco: Líder — Maestro Ensamble"
+        },
+        {
+          "mapId": 2245,
+          "event": "PokeMod Barco: Líder — Maestro Ensamble"
+        },
+        {
+          "mapId": 3110,
+          "event": "PokeMod Glazed: Líder Suprema Regina — Team Fusion"
+        },
+        {
+          "mapId": 3110,
+          "event": "PokeMod Glazed: Líder Suprema Regina — Team Fusion"
+        },
+        {
+          "mapId": 3138,
+          "event": "PokeMod Campaña ROM: Final — Light Platinum"
+        },
+        {
+          "mapId": 3138,
+          "event": "PokeMod Campaña ROM: Final — Light Platinum"
+        }
+      ]
+    },
+    {
+      "name": "trchar167",
+      "uses": 13,
+      "maps": 7,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar167.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 856,
+          "event": "Alain"
+        },
+        {
+          "mapId": 856,
+          "event": "Alain"
+        },
+        {
+          "mapId": 859,
+          "event": "Counter(6)"
+        },
+        {
+          "mapId": 869,
+          "event": "Alain"
+        },
+        {
+          "mapId": 875,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 875,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 875,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 875,
+          "event": "League Battle"
+        }
+      ]
+    },
+    {
+      "name": "trchar184",
+      "uses": 13,
+      "maps": 7,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar184.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Nanu"
+        },
+        {
+          "mapId": 881,
+          "event": "Nanu"
+        },
+        {
+          "mapId": 934,
+          "event": "Nanu"
+        },
+        {
+          "mapId": 934,
+          "event": "Nanu"
+        },
+        {
+          "mapId": 934,
+          "event": "Nanu"
+        },
+        {
+          "mapId": 934,
+          "event": "Nanu"
+        },
+        {
+          "mapId": 934,
+          "event": "Nanu"
+        },
+        {
+          "mapId": 957,
+          "event": "Nanu"
+        }
+      ]
+    },
+    {
+      "name": "trchar213",
+      "uses": 13,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar213.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 771,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 771,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 771,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 771,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 771,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 771,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 771,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 771,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar188",
+      "uses": 13,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar188.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 930,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 930,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 930,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 930,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 930,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 930,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 931,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 931,
+          "event": "Trainer(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar165",
+      "uses": 12,
+      "maps": 9,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar165.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Diantha"
+        },
+        {
+          "mapId": 860,
+          "event": "Diantha"
+        },
+        {
+          "mapId": 876,
+          "event": "Diantha"
+        },
+        {
+          "mapId": 881,
+          "event": "Diantha"
+        },
+        {
+          "mapId": 881,
+          "event": "Diantha"
+        },
+        {
+          "mapId": 177,
+          "event": "Diantha"
+        },
+        {
+          "mapId": 177,
+          "event": "Diantha"
+        },
+        {
+          "mapId": 177,
+          "event": "Diantha"
+        }
+      ]
+    },
+    {
+      "name": "trchar205",
+      "uses": 12,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar205.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 430,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 430,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 430,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 430,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "trchar182",
+      "uses": 12,
+      "maps": 8,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar182.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Hala"
+        },
+        {
+          "mapId": 881,
+          "event": "Hala"
+        },
+        {
+          "mapId": 902,
+          "event": "Hala"
+        },
+        {
+          "mapId": 902,
+          "event": "Hala"
+        },
+        {
+          "mapId": 903,
+          "event": "Hala"
+        },
+        {
+          "mapId": 903,
+          "event": "Hala"
+        },
+        {
+          "mapId": 957,
+          "event": "Hala"
+        },
+        {
+          "mapId": 958,
+          "event": "Hala"
+        }
+      ]
+    },
+    {
+      "name": "trchar070",
+      "uses": 11,
+      "maps": 7,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar070.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Lance"
+        },
+        {
+          "mapId": 881,
+          "event": "Lance"
+        },
+        {
+          "mapId": 881,
+          "event": "Lance"
+        },
+        {
+          "mapId": 884,
+          "event": "Encouter Pokemon"
+        },
+        {
+          "mapId": 884,
+          "event": "Lance"
+        },
+        {
+          "mapId": 884,
+          "event": "Lance"
+        },
+        {
+          "mapId": 884,
+          "event": "Lance"
+        },
+        {
+          "mapId": 177,
+          "event": "Lance"
+        }
+      ]
+    },
+    {
+      "name": "trchar206",
+      "uses": 11,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar206.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 430,
+          "event": "Brodie"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 387,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "trchar202",
+      "uses": 11,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar202.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 889,
+          "event": "Guzma"
+        },
+        {
+          "mapId": 889,
+          "event": "Guzma"
+        },
+        {
+          "mapId": 957,
+          "event": "Guzma"
+        },
+        {
+          "mapId": 957,
+          "event": "Guzma"
+        },
+        {
+          "mapId": 957,
+          "event": "Guzma"
+        },
+        {
+          "mapId": 957,
+          "event": "Guzma"
+        },
+        {
+          "mapId": 959,
+          "event": "Guzma"
+        },
+        {
+          "mapId": 962,
+          "event": "Guzma"
+        }
+      ]
+    },
+    {
+      "name": "trchar001",
+      "uses": 11,
+      "maps": 8,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar001.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 2031,
+          "event": "Peregrino de la memoria (1F)"
+        },
+        {
+          "mapId": 2036,
+          "event": "Peregrino del sello (6F)"
+        },
+        {
+          "mapId": 2244,
+          "event": "PokeMod Barco: Poblador — Factory Adventure"
+        },
+        {
+          "mapId": 3204,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_5_1"
+        },
+        {
+          "mapId": 3204,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_5_2"
+        },
+        {
+          "mapId": 3204,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_5_3"
+        },
+        {
+          "mapId": 3204,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_5_4"
+        },
+        {
+          "mapId": 3758,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_59_3"
+        }
+      ]
+    },
+    {
+      "name": "trchar220",
+      "uses": 10,
+      "maps": 6,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar220.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Iris"
+        },
+        {
+          "mapId": 881,
+          "event": "Iris"
+        },
+        {
+          "mapId": 881,
+          "event": "Iris"
+        },
+        {
+          "mapId": 177,
+          "event": "Iris"
+        },
+        {
+          "mapId": 636,
+          "event": "Iris"
+        },
+        {
+          "mapId": 85,
+          "event": "Iris"
+        },
+        {
+          "mapId": 85,
+          "event": "Iris"
+        },
+        {
+          "mapId": 85,
+          "event": "Iris"
+        }
+      ]
+    },
+    {
+      "name": "trchar183",
+      "uses": 10,
+      "maps": 6,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar183.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Olivia"
+        },
+        {
+          "mapId": 881,
+          "event": "Olivia"
+        },
+        {
+          "mapId": 891,
+          "event": "Olivia"
+        },
+        {
+          "mapId": 917,
+          "event": "Olivia"
+        },
+        {
+          "mapId": 917,
+          "event": "Olivia"
+        },
+        {
+          "mapId": 917,
+          "event": "Olivia"
+        },
+        {
+          "mapId": 957,
+          "event": "Olivia"
+        },
+        {
+          "mapId": 958,
+          "event": "Olivia"
+        }
+      ]
+    },
+    {
+      "name": "trchar114",
+      "uses": 10,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar114.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Volkner"
+        },
+        {
+          "mapId": 881,
+          "event": "Volkner"
+        },
+        {
+          "mapId": 632,
+          "event": "Volkner"
+        },
+        {
+          "mapId": 632,
+          "event": "Volkner"
+        },
+        {
+          "mapId": 641,
+          "event": "Volkner"
+        },
+        {
+          "mapId": 641,
+          "event": "Volkner"
+        },
+        {
+          "mapId": 641,
+          "event": "Volkner"
+        },
+        {
+          "mapId": 641,
+          "event": "Volkner"
+        }
+      ]
+    },
+    {
+      "name": "trchar064",
+      "uses": 10,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar064.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Sabrina"
+        },
+        {
+          "mapId": 881,
+          "event": "Sabrina"
+        },
+        {
+          "mapId": 136,
+          "event": "Sabrina"
+        },
+        {
+          "mapId": 136,
+          "event": "Sabrina"
+        },
+        {
+          "mapId": 136,
+          "event": "Sabrina"
+        },
+        {
+          "mapId": 136,
+          "event": "Sabrina"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Liquid Crystal"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Liquid Crystal"
+        }
+      ]
+    },
+    {
+      "name": "trchar121",
+      "uses": 10,
+      "maps": 6,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar121.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 748,
+          "event": "Counter(2)"
+        },
+        {
+          "mapId": 748,
+          "event": "Counter(2)"
+        },
+        {
+          "mapId": 754,
+          "event": "Counter(2)"
+        },
+        {
+          "mapId": 754,
+          "event": "Counter(2)"
+        },
+        {
+          "mapId": 654,
+          "event": "Counter(6)"
+        },
+        {
+          "mapId": 669,
+          "event": "Iris"
+        },
+        {
+          "mapId": 685,
+          "event": "Counter(2)"
+        },
+        {
+          "mapId": 685,
+          "event": "Counter(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar075",
+      "uses": 10,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar075.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 42,
+          "event": "Tracey"
+        },
+        {
+          "mapId": 42,
+          "event": "Tracey"
+        },
+        {
+          "mapId": 42,
+          "event": "Tracey"
+        },
+        {
+          "mapId": 764,
+          "event": "Tracey"
+        },
+        {
+          "mapId": 764,
+          "event": "Tracey"
+        },
+        {
+          "mapId": 764,
+          "event": "Tracey"
+        },
+        {
+          "mapId": 211,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 211,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar115",
+      "uses": 10,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar115.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 764,
+          "event": "Paul"
+        },
+        {
+          "mapId": 764,
+          "event": "Paul"
+        },
+        {
+          "mapId": 625,
+          "event": "Paul"
+        },
+        {
+          "mapId": 643,
+          "event": "Paul"
+        },
+        {
+          "mapId": 643,
+          "event": "Paul"
+        },
+        {
+          "mapId": 643,
+          "event": "Paul"
+        },
+        {
+          "mapId": 646,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 646,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar228",
+      "uses": 9,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar228.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 586,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 586,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 586,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 586,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 586,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 881,
+          "event": "Opal"
+        },
+        {
+          "mapId": 881,
+          "event": "Opal"
+        },
+        {
+          "mapId": 636,
+          "event": "Opal"
+        }
+      ]
+    },
+    {
+      "name": "trchar158",
+      "uses": 9,
+      "maps": 6,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar158.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 876,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 881,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 881,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 793,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 817,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 824,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 824,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 826,
+          "event": "Korrina"
+        }
+      ]
+    },
+    {
+      "name": "trchar065",
+      "uses": 9,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar065.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Blaine"
+        },
+        {
+          "mapId": 881,
+          "event": "Blaine"
+        },
+        {
+          "mapId": 193,
+          "event": "Blaine"
+        },
+        {
+          "mapId": 193,
+          "event": "Blaine"
+        },
+        {
+          "mapId": 193,
+          "event": "Blaine"
+        },
+        {
+          "mapId": 193,
+          "event": "Blaine"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — TFOH"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — TFOH"
+        }
+      ]
+    },
+    {
+      "name": "trchar162",
+      "uses": 8,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar162.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 852,
+          "event": "Olympia"
+        },
+        {
+          "mapId": 853,
+          "event": "Olympia"
+        },
+        {
+          "mapId": 853,
+          "event": "Olympia"
+        },
+        {
+          "mapId": 853,
+          "event": "Olympia"
+        },
+        {
+          "mapId": 876,
+          "event": "Olympia"
+        },
+        {
+          "mapId": 881,
+          "event": "Olympia"
+        },
+        {
+          "mapId": 881,
+          "event": "Olympia"
+        },
+        {
+          "mapId": 793,
+          "event": "Olympia"
+        }
+      ]
+    },
+    {
+      "name": "trchar196",
+      "uses": 8,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar196.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Steven"
+        },
+        {
+          "mapId": 881,
+          "event": "Steven"
+        },
+        {
+          "mapId": 881,
+          "event": "Steven"
+        },
+        {
+          "mapId": 177,
+          "event": "Steven"
+        },
+        {
+          "mapId": 636,
+          "event": "Steven"
+        },
+        {
+          "mapId": 274,
+          "event": "Leon"
+        },
+        {
+          "mapId": 274,
+          "event": "Marnie"
+        },
+        {
+          "mapId": 274,
+          "event": "Marnie"
+        }
+      ]
+    },
+    {
+      "name": "trchar210",
+      "uses": 8,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar210.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 574,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 574,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 608,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 608,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 628,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 628,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 970,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 970,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar163",
+      "uses": 8,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar163.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 866,
+          "event": "Wulfric"
+        },
+        {
+          "mapId": 866,
+          "event": "Wulfric"
+        },
+        {
+          "mapId": 866,
+          "event": "Wulfric"
+        },
+        {
+          "mapId": 866,
+          "event": "Wulfric"
+        },
+        {
+          "mapId": 876,
+          "event": "Wulfric"
+        },
+        {
+          "mapId": 881,
+          "event": "Wulfric"
+        },
+        {
+          "mapId": 881,
+          "event": "Wulfric"
+        },
+        {
+          "mapId": 793,
+          "event": "Wulfric"
+        }
+      ]
+    },
+    {
+      "name": "trchar085",
+      "uses": 8,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar085.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 304,
+          "event": "Sakura"
+        },
+        {
+          "mapId": 304,
+          "event": "Sakura"
+        },
+        {
+          "mapId": 304,
+          "event": "Sakura"
+        },
+        {
+          "mapId": 304,
+          "event": "Tamao"
+        },
+        {
+          "mapId": 304,
+          "event": "Satsuki"
+        },
+        {
+          "mapId": 304,
+          "event": "Satsuki"
+        },
+        {
+          "mapId": 304,
+          "event": "Sumomo"
+        },
+        {
+          "mapId": 304,
+          "event": "Koume"
+        }
+      ]
+    },
+    {
+      "name": "trchar062",
+      "uses": 8,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar062.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 163,
+          "event": "Erika"
+        },
+        {
+          "mapId": 163,
+          "event": "Erika"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Glazed"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Glazed"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Rocket: Capitán — Team Rocket"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Rocket: Capitán — Team Rocket"
+        },
+        {
+          "mapId": 2200,
+          "event": "PokeMod Barco: Barco a Puerto Horizonte"
+        },
+        {
+          "mapId": 2220,
+          "event": "PokeMod Rocket: Barco a Puerto Horizonte"
+        }
+      ]
+    },
+    {
+      "name": "trchar227",
+      "uses": 8,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar227.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 164,
+          "event": "Bea"
+        },
+        {
+          "mapId": 164,
+          "event": "Bea"
+        },
+        {
+          "mapId": 881,
+          "event": "Bea"
+        },
+        {
+          "mapId": 881,
+          "event": "Bea"
+        },
+        {
+          "mapId": 321,
+          "event": "Bea"
+        },
+        {
+          "mapId": 321,
+          "event": "Bea"
+        },
+        {
+          "mapId": 972,
+          "event": "Bea"
+        },
+        {
+          "mapId": 972,
+          "event": "Bea"
+        }
+      ]
+    },
+    {
+      "name": "trchar211",
+      "uses": 8,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar211.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 608,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 608,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 618,
+          "event": "Person"
+        },
+        {
+          "mapId": 618,
+          "event": "Person"
+        },
+        {
+          "mapId": 628,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 628,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 970,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 970,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar083",
+      "uses": 7,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar083.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 292,
+          "event": "Whitney"
+        },
+        {
+          "mapId": 292,
+          "event": "Whitney"
+        },
+        {
+          "mapId": 292,
+          "event": "Whitney"
+        },
+        {
+          "mapId": 293,
+          "event": "Whitney"
+        },
+        {
+          "mapId": 293,
+          "event": "Whitney"
+        },
+        {
+          "mapId": 881,
+          "event": "Whitney"
+        },
+        {
+          "mapId": 881,
+          "event": "Whitney"
+        }
+      ]
+    },
+    {
+      "name": "trchar091",
+      "uses": 7,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar091.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Brawly"
+        },
+        {
+          "mapId": 881,
+          "event": "Brawly"
+        },
+        {
+          "mapId": 384,
+          "event": "Brawly"
+        },
+        {
+          "mapId": 384,
+          "event": "Brawly"
+        },
+        {
+          "mapId": 384,
+          "event": "Brawly"
+        },
+        {
+          "mapId": 385,
+          "event": "Brawly"
+        },
+        {
+          "mapId": 385,
+          "event": "Brawly"
+        }
+      ]
+    },
+    {
+      "name": "trchar104",
+      "uses": 7,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar104.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Brandon"
+        },
+        {
+          "mapId": 881,
+          "event": "Brandon"
+        },
+        {
+          "mapId": 499,
+          "event": "Brandon"
+        },
+        {
+          "mapId": 502,
+          "event": "Brandon"
+        },
+        {
+          "mapId": 502,
+          "event": "Brandon"
+        },
+        {
+          "mapId": 502,
+          "event": "Brandon"
+        },
+        {
+          "mapId": 502,
+          "event": "Brandon"
+        }
+      ]
+    },
+    {
+      "name": "trchar185",
+      "uses": 7,
+      "maps": 5,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar185.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 881,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 950,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 957,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 958,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 958,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 959,
+          "event": "Hapu"
+        }
+      ]
+    },
+    {
+      "name": "trchar135",
+      "uses": 7,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar135.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Alder"
+        },
+        {
+          "mapId": 881,
+          "event": "Alder"
+        },
+        {
+          "mapId": 748,
+          "event": "Alder"
+        },
+        {
+          "mapId": 748,
+          "event": "Alder"
+        },
+        {
+          "mapId": 693,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 693,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 693,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar063",
+      "uses": 7,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar063.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Koga"
+        },
+        {
+          "mapId": 881,
+          "event": "Koga"
+        },
+        {
+          "mapId": 178,
+          "event": "Koga"
+        },
+        {
+          "mapId": 178,
+          "event": "Koga"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Light Platinum"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Light Platinum"
+        },
+        {
+          "mapId": 2210,
+          "event": "PokeMod Barco: Barco a Puerto Horizonte"
+        }
+      ]
+    },
+    {
+      "name": "trchar122",
+      "uses": 7,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar122.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Chili"
+        },
+        {
+          "mapId": 881,
+          "event": "Chili"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 694,
+          "event": "Clay"
+        }
+      ]
+    },
+    {
+      "name": "trchar226",
+      "uses": 7,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar226.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 881,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 177,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 177,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 636,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 980,
+          "event": "Raihan"
+        },
+        {
+          "mapId": 980,
+          "event": "Raihan"
+        }
+      ]
+    },
+    {
+      "name": "trchar080",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar080.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Drake"
+        },
+        {
+          "mapId": 881,
+          "event": "Drake"
+        },
+        {
+          "mapId": 881,
+          "event": "Drake"
+        },
+        {
+          "mapId": 247,
+          "event": "Drake"
+        },
+        {
+          "mapId": 247,
+          "event": "Drake"
+        },
+        {
+          "mapId": 247,
+          "event": "Drake"
+        }
+      ]
+    },
+    {
+      "name": "trchar222",
+      "uses": 6,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar222.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 865,
+          "event": "Serena"
+        },
+        {
+          "mapId": 865,
+          "event": "Serena"
+        },
+        {
+          "mapId": 876,
+          "event": "Korrina"
+        },
+        {
+          "mapId": 793,
+          "event": "Serena"
+        },
+        {
+          "mapId": 834,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 834,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "trchar096",
+      "uses": 6,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar096.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 442,
+          "event": "Tate"
+        },
+        {
+          "mapId": 442,
+          "event": "Tate"
+        },
+        {
+          "mapId": 442,
+          "event": "Tate"
+        },
+        {
+          "mapId": 442,
+          "event": "Tate"
+        },
+        {
+          "mapId": 881,
+          "event": "Tate"
+        },
+        {
+          "mapId": 881,
+          "event": "Tate"
+        }
+      ]
+    },
+    {
+      "name": "trchar156",
+      "uses": 6,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar156.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 876,
+          "event": "Viola"
+        },
+        {
+          "mapId": 881,
+          "event": "Viola"
+        },
+        {
+          "mapId": 881,
+          "event": "Viola"
+        },
+        {
+          "mapId": 793,
+          "event": "Viola"
+        },
+        {
+          "mapId": 802,
+          "event": "Viola"
+        },
+        {
+          "mapId": 802,
+          "event": "Viola"
+        }
+      ]
+    },
+    {
+      "name": "trchar161",
+      "uses": 6,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar161.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 876,
+          "event": "Valerie"
+        },
+        {
+          "mapId": 881,
+          "event": "Valerie"
+        },
+        {
+          "mapId": 881,
+          "event": "Valerie"
+        },
+        {
+          "mapId": 793,
+          "event": "Valerie"
+        },
+        {
+          "mapId": 840,
+          "event": "Valerie"
+        },
+        {
+          "mapId": 840,
+          "event": "Valerie"
+        }
+      ]
+    },
+    {
+      "name": "trchar157",
+      "uses": 6,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar157.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 876,
+          "event": "Grant"
+        },
+        {
+          "mapId": 881,
+          "event": "Grant"
+        },
+        {
+          "mapId": 881,
+          "event": "Grant"
+        },
+        {
+          "mapId": 793,
+          "event": "Grant"
+        },
+        {
+          "mapId": 816,
+          "event": "Grant"
+        },
+        {
+          "mapId": 816,
+          "event": "Grant"
+        }
+      ]
+    },
+    {
+      "name": "trchar159",
+      "uses": 6,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar159.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 876,
+          "event": "Ramos"
+        },
+        {
+          "mapId": 881,
+          "event": "Ramos"
+        },
+        {
+          "mapId": 881,
+          "event": "Ramos"
+        },
+        {
+          "mapId": 793,
+          "event": "Ramos"
+        },
+        {
+          "mapId": 831,
+          "event": "Ramos"
+        },
+        {
+          "mapId": 831,
+          "event": "Ramos"
+        }
+      ]
+    },
+    {
+      "name": "trchar086",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar086.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Jasmine"
+        },
+        {
+          "mapId": 881,
+          "event": "Jasmine"
+        },
+        {
+          "mapId": 316,
+          "event": "Jasmine"
+        },
+        {
+          "mapId": 316,
+          "event": "Jasmine"
+        },
+        {
+          "mapId": 330,
+          "event": "Jasmine"
+        },
+        {
+          "mapId": 330,
+          "event": "Jasmine"
+        }
+      ]
+    },
+    {
+      "name": "trchar123",
+      "uses": 6,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar123.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Cress"
+        },
+        {
+          "mapId": 881,
+          "event": "Cress"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        },
+        {
+          "mapId": 663,
+          "event": "Cilan"
+        }
+      ]
+    },
+    {
+      "name": "trchar127",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar127.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Clay"
+        },
+        {
+          "mapId": 881,
+          "event": "Clay"
+        },
+        {
+          "mapId": 694,
+          "event": "Clay"
+        },
+        {
+          "mapId": 694,
+          "event": "Clay"
+        },
+        {
+          "mapId": 701,
+          "event": "Clay"
+        },
+        {
+          "mapId": 701,
+          "event": "Clay"
+        }
+      ]
+    },
+    {
+      "name": "trchar107",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar107.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Roark"
+        },
+        {
+          "mapId": 881,
+          "event": "Roark"
+        },
+        {
+          "mapId": 528,
+          "event": "Roark"
+        },
+        {
+          "mapId": 528,
+          "event": "Roark"
+        },
+        {
+          "mapId": 530,
+          "event": "Roark"
+        },
+        {
+          "mapId": 530,
+          "event": "Roark"
+        }
+      ]
+    },
+    {
+      "name": "trchar092",
+      "uses": 6,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar092.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Wattson"
+        },
+        {
+          "mapId": 881,
+          "event": "Wattson"
+        },
+        {
+          "mapId": 398,
+          "event": "Wattson"
+        },
+        {
+          "mapId": 398,
+          "event": "Wattson"
+        },
+        {
+          "mapId": 398,
+          "event": "Wattson"
+        },
+        {
+          "mapId": 398,
+          "event": "Wattson"
+        }
+      ]
+    },
+    {
+      "name": "trchar090",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar090.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Roxanne"
+        },
+        {
+          "mapId": 881,
+          "event": "Roxanne"
+        },
+        {
+          "mapId": 375,
+          "event": "Roxanne"
+        },
+        {
+          "mapId": 375,
+          "event": "Roxanne"
+        },
+        {
+          "mapId": 378,
+          "event": "Roxanne"
+        },
+        {
+          "mapId": 378,
+          "event": "Roxanne"
+        }
+      ]
+    },
+    {
+      "name": "trchar094",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar094.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Norman"
+        },
+        {
+          "mapId": 881,
+          "event": "Norman"
+        },
+        {
+          "mapId": 366,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 366,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 416,
+          "event": "Norman"
+        },
+        {
+          "mapId": 416,
+          "event": "Norman"
+        }
+      ]
+    },
+    {
+      "name": "trchar124",
+      "uses": 6,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar124.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Lenora"
+        },
+        {
+          "mapId": 881,
+          "event": "Lenora"
+        },
+        {
+          "mapId": 674,
+          "event": "Lenora"
+        },
+        {
+          "mapId": 674,
+          "event": "Lenora"
+        },
+        {
+          "mapId": 674,
+          "event": "Lenora"
+        },
+        {
+          "mapId": 674,
+          "event": "Lenora"
+        }
+      ]
+    },
+    {
+      "name": "trchar089",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar089.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Clair"
+        },
+        {
+          "mapId": 881,
+          "event": "Clair"
+        },
+        {
+          "mapId": 346,
+          "event": "Clair"
+        },
+        {
+          "mapId": 346,
+          "event": "Clair"
+        },
+        {
+          "mapId": 346,
+          "event": "Clair"
+        },
+        {
+          "mapId": 348,
+          "event": "Clair"
+        }
+      ]
+    },
+    {
+      "name": "trchar108",
+      "uses": 6,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar108.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Gardenia"
+        },
+        {
+          "mapId": 881,
+          "event": "Gardenia"
+        },
+        {
+          "mapId": 540,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 545,
+          "event": "Gardenia"
+        },
+        {
+          "mapId": 545,
+          "event": "Gardenia"
+        },
+        {
+          "mapId": 545,
+          "event": "Gardenia"
+        }
+      ]
+    },
+    {
+      "name": "trchar128",
+      "uses": 5,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar128.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 707,
+          "event": "Skyla"
+        },
+        {
+          "mapId": 710,
+          "event": "Skyla"
+        },
+        {
+          "mapId": 710,
+          "event": "Skyla"
+        },
+        {
+          "mapId": 881,
+          "event": "Skyla"
+        },
+        {
+          "mapId": 881,
+          "event": "Skyla"
+        }
+      ]
+    },
+    {
+      "name": "trchar240",
+      "uses": 5,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar240.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 426,
+          "event": "Serena-2"
+        },
+        {
+          "mapId": 426,
+          "event": "Serena"
+        },
+        {
+          "mapId": 426,
+          "event": "Serena"
+        },
+        {
+          "mapId": 429,
+          "event": "Serena"
+        },
+        {
+          "mapId": 995,
+          "event": "Serena"
+        }
+      ]
+    },
+    {
+      "name": "trchar084",
+      "uses": 5,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar084.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 303,
+          "event": "Morty"
+        },
+        {
+          "mapId": 305,
+          "event": "Morty"
+        },
+        {
+          "mapId": 305,
+          "event": "Morty"
+        },
+        {
+          "mapId": 881,
+          "event": "Morty"
+        },
+        {
+          "mapId": 881,
+          "event": "Morty"
+        }
+      ]
+    },
+    {
+      "name": "trchar233",
+      "uses": 5,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar233.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 171,
+          "event": "Rose"
+        },
+        {
+          "mapId": 172,
+          "event": "Rose"
+        },
+        {
+          "mapId": 172,
+          "event": "Rose"
+        },
+        {
+          "mapId": 457,
+          "event": "Rose"
+        },
+        {
+          "mapId": 457,
+          "event": "Rose"
+        }
+      ]
+    },
+    {
+      "name": "trchar079",
+      "uses": 5,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar079.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Luana"
+        },
+        {
+          "mapId": 881,
+          "event": "Luana"
+        },
+        {
+          "mapId": 244,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 244,
+          "event": "Double trainer F"
+        },
+        {
+          "mapId": 244,
+          "event": "Double trainer F"
+        }
+      ]
+    },
+    {
+      "name": "trchar119",
+      "uses": 5,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar119.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Flint"
+        },
+        {
+          "mapId": 881,
+          "event": "Flint"
+        },
+        {
+          "mapId": 632,
+          "event": "Flint"
+        },
+        {
+          "mapId": 632,
+          "event": "Flint"
+        },
+        {
+          "mapId": 632,
+          "event": "Flint"
+        }
+      ]
+    },
+    {
+      "name": "trchar125",
+      "uses": 5,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar125.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Burgh"
+        },
+        {
+          "mapId": 881,
+          "event": "Burgh"
+        },
+        {
+          "mapId": 675,
+          "event": "Burgh"
+        },
+        {
+          "mapId": 681,
+          "event": "Burgh"
+        },
+        {
+          "mapId": 681,
+          "event": "Burgh"
+        }
+      ]
+    },
+    {
+      "name": "trchar081",
+      "uses": 5,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar081.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Falkner"
+        },
+        {
+          "mapId": 881,
+          "event": "Falkner"
+        },
+        {
+          "mapId": 267,
+          "event": "Falkner"
+        },
+        {
+          "mapId": 267,
+          "event": "Falkner"
+        },
+        {
+          "mapId": 267,
+          "event": "Falkner"
+        }
+      ]
+    },
+    {
+      "name": "trchar111",
+      "uses": 5,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar111.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Fantina"
+        },
+        {
+          "mapId": 881,
+          "event": "Fantina"
+        },
+        {
+          "mapId": 606,
+          "event": "Fantina"
+        },
+        {
+          "mapId": 611,
+          "event": "Fantina"
+        },
+        {
+          "mapId": 611,
+          "event": "Fantina"
+        }
+      ]
+    },
+    {
+      "name": "trchar097",
+      "uses": 5,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar097.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Juan"
+        },
+        {
+          "mapId": 881,
+          "event": "Juan"
+        },
+        {
+          "mapId": 458,
+          "event": "Juan"
+        },
+        {
+          "mapId": 458,
+          "event": "Juan"
+        },
+        {
+          "mapId": 458,
+          "event": "Juan"
+        }
+      ]
+    },
+    {
+      "name": "trchar095",
+      "uses": 5,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar095.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Winona"
+        },
+        {
+          "mapId": 881,
+          "event": "Winona"
+        },
+        {
+          "mapId": 419,
+          "event": "Winona"
+        },
+        {
+          "mapId": 423,
+          "event": "Winona"
+        },
+        {
+          "mapId": 423,
+          "event": "Winona"
+        }
+      ]
+    },
+    {
+      "name": "trchar066",
+      "uses": 5,
+      "maps": 4,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar066.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 749,
+          "event": "Giovanni"
+        },
+        {
+          "mapId": 194,
+          "event": "Giovanni"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Factory Adventure"
+        },
+        {
+          "mapId": 1001,
+          "event": "PokeMod Barco: Capitán — Factory Adventure"
+        },
+        {
+          "mapId": 2244,
+          "event": "PokeMod Barco: Barco a Puerto Horizonte"
+        }
+      ]
+    },
+    {
+      "name": "trchar207",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar207.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 430,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 430,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar215",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar215.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 861,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 861,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 876,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 876,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar216",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar216.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 861,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 861,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 876,
+          "event": "Trainer(6)"
+        },
+        {
+          "mapId": 876,
+          "event": "Trainer(6)"
+        }
+      ]
+    },
+    {
+      "name": "trchar109",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar109.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 584,
+          "event": "Maylene"
+        },
+        {
+          "mapId": 584,
+          "event": "Maylene"
+        },
+        {
+          "mapId": 881,
+          "event": "Maylene"
+        },
+        {
+          "mapId": 881,
+          "event": "Maylene"
+        }
+      ]
+    },
+    {
+      "name": "trchar172",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar172.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 443,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 443,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 881,
+          "event": "Drake"
+        },
+        {
+          "mapId": 881,
+          "event": "Drake"
+        }
+      ]
+    },
+    {
+      "name": "trchar173",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar173.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 587,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 587,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 881,
+          "event": "Bertha"
+        },
+        {
+          "mapId": 881,
+          "event": "Bertha"
+        }
+      ]
+    },
+    {
+      "name": "trchar129",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar129.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 729,
+          "event": "Brycen"
+        },
+        {
+          "mapId": 729,
+          "event": "Brycen"
+        },
+        {
+          "mapId": 881,
+          "event": "Brycen"
+        },
+        {
+          "mapId": 881,
+          "event": "Brycen"
+        }
+      ]
+    },
+    {
+      "name": "trchar231",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar231.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 875,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 875,
+          "event": "League Battle"
+        },
+        {
+          "mapId": 881,
+          "event": "Drasna"
+        },
+        {
+          "mapId": 881,
+          "event": "Drasna"
+        }
+      ]
+    },
+    {
+      "name": "trchar110",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar110.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Crasher Wake"
+        },
+        {
+          "mapId": 881,
+          "event": "Crasher Wake"
+        },
+        {
+          "mapId": 600,
+          "event": "Crasher Wake"
+        },
+        {
+          "mapId": 600,
+          "event": "Crasher Wake"
+        }
+      ]
+    },
+    {
+      "name": "trchar087",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar087.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Chuck"
+        },
+        {
+          "mapId": 881,
+          "event": "Chuck"
+        },
+        {
+          "mapId": 321,
+          "event": "Chuck"
+        },
+        {
+          "mapId": 321,
+          "event": "Chuck"
+        }
+      ]
+    },
+    {
+      "name": "trchar101",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar101.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Lucy"
+        },
+        {
+          "mapId": 881,
+          "event": "Lucy"
+        },
+        {
+          "mapId": 490,
+          "event": "Lucy"
+        },
+        {
+          "mapId": 490,
+          "event": "Lucy"
+        }
+      ]
+    },
+    {
+      "name": "trchar058",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar058.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Giovanni"
+        },
+        {
+          "mapId": 881,
+          "event": "Giovanni"
+        },
+        {
+          "mapId": 2256,
+          "event": "PokeMod Circuito: Líder — Líder Retoño"
+        },
+        {
+          "mapId": 2256,
+          "event": "PokeMod Circuito: Líder — Líder Retoño"
+        }
+      ]
+    },
+    {
+      "name": "trchar076",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar076.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Cissy"
+        },
+        {
+          "mapId": 881,
+          "event": "Cissy"
+        },
+        {
+          "mapId": 218,
+          "event": "Cissy"
+        },
+        {
+          "mapId": 218,
+          "event": "Cissy"
+        }
+      ]
+    },
+    {
+      "name": "trchar195",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar195.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Wikstrom"
+        },
+        {
+          "mapId": 881,
+          "event": "Wikstrom"
+        },
+        {
+          "mapId": 616,
+          "event": "Wikstrom"
+        },
+        {
+          "mapId": 616,
+          "event": "Wikstrom"
+        }
+      ]
+    },
+    {
+      "name": "trchar103",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar103.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Anabel"
+        },
+        {
+          "mapId": 881,
+          "event": "Anabel"
+        },
+        {
+          "mapId": 498,
+          "event": "Anabel"
+        },
+        {
+          "mapId": 498,
+          "event": "Anabel"
+        }
+      ]
+    },
+    {
+      "name": "trchar130",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar130.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Roxie"
+        },
+        {
+          "mapId": 881,
+          "event": "Roxie"
+        },
+        {
+          "mapId": 741,
+          "event": "Roxie"
+        },
+        {
+          "mapId": 741,
+          "event": "Roxie"
+        }
+      ]
+    },
+    {
+      "name": "trchar078",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar078.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Danny"
+        },
+        {
+          "mapId": 881,
+          "event": "Danny"
+        },
+        {
+          "mapId": 227,
+          "event": "Danny"
+        },
+        {
+          "mapId": 227,
+          "event": "Danny"
+        }
+      ]
+    },
+    {
+      "name": "trchar102",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar102.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Spenser"
+        },
+        {
+          "mapId": 881,
+          "event": "Spenser"
+        },
+        {
+          "mapId": 493,
+          "event": "Spenser"
+        },
+        {
+          "mapId": 493,
+          "event": "Spenser"
+        }
+      ]
+    },
+    {
+      "name": "trchar113",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar113.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Candice"
+        },
+        {
+          "mapId": 881,
+          "event": "Candice"
+        },
+        {
+          "mapId": 629,
+          "event": "Candice"
+        },
+        {
+          "mapId": 629,
+          "event": "Candice"
+        }
+      ]
+    },
+    {
+      "name": "trchar088",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar088.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Pryce"
+        },
+        {
+          "mapId": 881,
+          "event": "Pryce"
+        },
+        {
+          "mapId": 339,
+          "event": "Pryce"
+        },
+        {
+          "mapId": 339,
+          "event": "Pryce"
+        }
+      ]
+    },
+    {
+      "name": "trchar077",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar077.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Rudy"
+        },
+        {
+          "mapId": 881,
+          "event": "Rudy"
+        },
+        {
+          "mapId": 235,
+          "event": "Rudy"
+        },
+        {
+          "mapId": 235,
+          "event": "Rudy"
+        }
+      ]
+    },
+    {
+      "name": "trchar126",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar126.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Elesa"
+        },
+        {
+          "mapId": 881,
+          "event": "Elesa"
+        },
+        {
+          "mapId": 692,
+          "event": "Elesa"
+        },
+        {
+          "mapId": 692,
+          "event": "Elesa"
+        }
+      ]
+    },
+    {
+      "name": "trchar093",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar093.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Flannery"
+        },
+        {
+          "mapId": 881,
+          "event": "Flannery"
+        },
+        {
+          "mapId": 413,
+          "event": "Flannery"
+        },
+        {
+          "mapId": 413,
+          "event": "Flannery"
+        }
+      ]
+    },
+    {
+      "name": "trchar082",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar082.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Bugsy"
+        },
+        {
+          "mapId": 881,
+          "event": "Bugsy"
+        },
+        {
+          "mapId": 276,
+          "event": "Bugsy"
+        },
+        {
+          "mapId": 276,
+          "event": "Bugsy"
+        }
+      ]
+    },
+    {
+      "name": "trchar131",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar131.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Cheren"
+        },
+        {
+          "mapId": 881,
+          "event": "Cheren"
+        },
+        {
+          "mapId": 770,
+          "event": "Cheren"
+        },
+        {
+          "mapId": 770,
+          "event": "Cheren"
+        }
+      ]
+    },
+    {
+      "name": "trchar098",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar098.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Noland"
+        },
+        {
+          "mapId": 881,
+          "event": "Noland"
+        },
+        {
+          "mapId": 475,
+          "event": "Noland"
+        },
+        {
+          "mapId": 475,
+          "event": "Noland"
+        }
+      ]
+    },
+    {
+      "name": "trchar230",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar230.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Allister"
+        },
+        {
+          "mapId": 881,
+          "event": "Allister"
+        },
+        {
+          "mapId": 544,
+          "event": "Allister"
+        },
+        {
+          "mapId": 544,
+          "event": "Allister"
+        }
+      ]
+    },
+    {
+      "name": "trchar067",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar067.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Lorelei"
+        },
+        {
+          "mapId": 881,
+          "event": "Lorelei"
+        },
+        {
+          "mapId": 231,
+          "event": "Lorelei"
+        },
+        {
+          "mapId": 231,
+          "event": "Lorelei"
+        }
+      ]
+    },
+    {
+      "name": "trchar099",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar099.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Greta"
+        },
+        {
+          "mapId": 881,
+          "event": "Greta"
+        },
+        {
+          "mapId": 479,
+          "event": "Greta"
+        },
+        {
+          "mapId": 479,
+          "event": "Greta"
+        }
+      ]
+    },
+    {
+      "name": "trchar100",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar100.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Tucker"
+        },
+        {
+          "mapId": 881,
+          "event": "Tucker"
+        },
+        {
+          "mapId": 483,
+          "event": "Tucker"
+        },
+        {
+          "mapId": 483,
+          "event": "Tucker"
+        }
+      ]
+    },
+    {
+      "name": "trchar229",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar229.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Piers"
+        },
+        {
+          "mapId": 881,
+          "event": "Piers"
+        },
+        {
+          "mapId": 977,
+          "event": "Piers"
+        },
+        {
+          "mapId": 977,
+          "event": "Piers"
+        }
+      ]
+    },
+    {
+      "name": "trchar112",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar112.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Byron"
+        },
+        {
+          "mapId": 881,
+          "event": "Byron"
+        },
+        {
+          "mapId": 617,
+          "event": "Byron"
+        },
+        {
+          "mapId": 617,
+          "event": "Byron"
+        }
+      ]
+    },
+    {
+      "name": "trchar208",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar208.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 884,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 387,
+          "event": "Trainer(1)"
+        },
+        {
+          "mapId": 387,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar212",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar212.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 628,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 628,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 970,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 970,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "trchar143",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar143.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 630,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 630,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 779,
+          "event": "Crystal"
+        },
+        {
+          "mapId": 779,
+          "event": "Crystal"
+        }
+      ]
+    },
+    {
+      "name": "trchar137",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar137.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 772,
+          "event": "Red"
+        },
+        {
+          "mapId": 772,
+          "event": "Red"
+        },
+        {
+          "mapId": 2022,
+          "event": "PokeMod Multiverso: Jefe RED"
+        },
+        {
+          "mapId": 2022,
+          "event": "PokeMod Multiverso: Jefe RED"
+        }
+      ]
+    },
+    {
+      "name": "trchar200",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar200.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 948,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 948,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 948,
+          "event": "Hapu"
+        },
+        {
+          "mapId": 950,
+          "event": "Hapu"
+        }
+      ]
+    },
+    {
+      "name": "trchar203",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar203.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 956,
+          "event": "Koga"
+        },
+        {
+          "mapId": 956,
+          "event": "Koga"
+        },
+        {
+          "mapId": 694,
+          "event": "Ryuki"
+        },
+        {
+          "mapId": 694,
+          "event": "Ryuki"
+        }
+      ]
+    },
+    {
+      "name": "trchar247",
+      "uses": 4,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar247.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 959,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 959,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 959,
+          "event": "Trainer(2)"
+        },
+        {
+          "mapId": 959,
+          "event": "Trainer(2)"
+        }
+      ]
+    },
+    {
+      "name": "trchar051",
+      "uses": 4,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar051.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 2231,
+          "event": "PokeMod Barco: Líder — Custodia Alba"
+        },
+        {
+          "mapId": 2231,
+          "event": "PokeMod Barco: Líder — Custodia Alba"
+        },
+        {
+          "mapId": 2243,
+          "event": "PokeMod Barco: Líder — Custodia Alba"
+        },
+        {
+          "mapId": 2243,
+          "event": "PokeMod Barco: Líder — Custodia Alba"
+        }
+      ]
+    },
+    {
+      "name": "trchar197",
+      "uses": 3,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar197.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 426,
+          "event": "Wallace"
+        },
+        {
+          "mapId": 881,
+          "event": "Wallace"
+        },
+        {
+          "mapId": 881,
+          "event": "Wallace"
+        }
+      ]
+    },
+    {
+      "name": "trchar170",
+      "uses": 3,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar170.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Drayden"
+        },
+        {
+          "mapId": 881,
+          "event": "Drayden"
+        },
+        {
+          "mapId": 85,
+          "event": "Drayden"
+        }
+      ]
+    },
+    {
+      "name": "trchar189",
+      "uses": 3,
+      "maps": 3,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar189.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 177,
+          "event": "Alain"
+        },
+        {
+          "mapId": 636,
+          "event": "Alain"
+        },
+        {
+          "mapId": 274,
+          "event": "Leon"
+        }
+      ]
+    },
+    {
+      "name": "trchar118",
+      "uses": 3,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar118.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 513,
+          "event": "Palmer"
+        },
+        {
+          "mapId": 513,
+          "event": "Palmer"
+        },
+        {
+          "mapId": 513,
+          "event": "Palmer"
+        }
+      ]
+    },
+    {
+      "name": "trchar134",
+      "uses": 3,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar134.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 689,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 689,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 689,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar133",
+      "uses": 3,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar133.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 689,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 689,
+          "event": "Trainer(4)"
+        },
+        {
+          "mapId": 689,
+          "event": "Trainer(4)"
+        }
+      ]
+    },
+    {
+      "name": "trchar232",
+      "uses": 3,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar232.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 977,
+          "event": "Marnie"
+        },
+        {
+          "mapId": 274,
+          "event": "Marnie"
+        },
+        {
+          "mapId": 274,
+          "event": "Marnie"
+        }
+      ]
+    },
+    {
+      "name": "trchar352",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar352.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 151,
+          "event": "Brock"
+        },
+        {
+          "mapId": 151,
+          "event": "Brock"
+        }
+      ]
+    },
+    {
+      "name": "trchar214",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar214.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 876,
+          "event": "Trainer(3)"
+        },
+        {
+          "mapId": 876,
+          "event": "Trainer(3)"
+        }
+      ]
+    },
+    {
+      "name": "trchar217",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar217.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 876,
+          "event": "Trainer(5)"
+        },
+        {
+          "mapId": 876,
+          "event": "Trainer(5)"
+        }
+      ]
+    },
+    {
+      "name": "trchar168",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar168.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 878,
+          "event": "Lysandre"
+        },
+        {
+          "mapId": 878,
+          "event": "Lysandre"
+        }
+      ]
+    },
+    {
+      "name": "trchar154",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar154.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 879,
+          "event": "X"
+        },
+        {
+          "mapId": 879,
+          "event": "X"
+        }
+      ]
+    },
+    {
+      "name": "trchar155",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar155.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 880,
+          "event": "Y"
+        },
+        {
+          "mapId": 880,
+          "event": "Y"
+        }
+      ]
+    },
+    {
+      "name": "trchar193",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar193.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Malva"
+        },
+        {
+          "mapId": 881,
+          "event": "Malva"
+        }
+      ]
+    },
+    {
+      "name": "trchar194",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar194.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Siebold"
+        },
+        {
+          "mapId": 881,
+          "event": "Siebold"
+        }
+      ]
+    },
+    {
+      "name": "trchar171",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar171.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Marlon"
+        },
+        {
+          "mapId": 881,
+          "event": "Marlon"
+        }
+      ]
+    },
+    {
+      "name": "trchar190",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar190.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Aaron"
+        },
+        {
+          "mapId": 881,
+          "event": "Aaron"
+        }
+      ]
+    },
+    {
+      "name": "trchar191",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar191.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Lucian"
+        },
+        {
+          "mapId": 881,
+          "event": "Lucian"
+        }
+      ]
+    },
+    {
+      "name": "trchar192",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar192.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Caitlin"
+        },
+        {
+          "mapId": 881,
+          "event": "Caitlin"
+        }
+      ]
+    },
+    {
+      "name": "trchar068",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar068.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 881,
+          "event": "Bruno"
+        },
+        {
+          "mapId": 881,
+          "event": "Bruno"
+        }
+      ]
+    },
+    {
+      "name": "trchar071",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar071.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 37,
+          "event": "Champion"
+        },
+        {
+          "mapId": 37,
+          "event": "Champion"
+        }
+      ]
+    },
+    {
+      "name": "trchar136",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar136.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 771,
+          "event": "Colress"
+        },
+        {
+          "mapId": 771,
+          "event": "Colress"
+        }
+      ]
+    },
+    {
+      "name": "trchar138",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar138.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 773,
+          "event": "Blue"
+        },
+        {
+          "mapId": 773,
+          "event": "Blue"
+        }
+      ]
+    },
+    {
+      "name": "trchar139",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar139.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 775,
+          "event": "Green"
+        },
+        {
+          "mapId": 775,
+          "event": "Green"
+        }
+      ]
+    },
+    {
+      "name": "trchar140",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar140.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 776,
+          "event": "Yellow"
+        },
+        {
+          "mapId": 776,
+          "event": "Yellow"
+        }
+      ]
+    },
+    {
+      "name": "trchar141",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar141.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 777,
+          "event": "Gold"
+        },
+        {
+          "mapId": 777,
+          "event": "Gold"
+        }
+      ]
+    },
+    {
+      "name": "trchar142",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar142.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 778,
+          "event": "Silver"
+        },
+        {
+          "mapId": 778,
+          "event": "Silver"
+        }
+      ]
+    },
+    {
+      "name": "trchar144",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar144.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 780,
+          "event": "Ruby"
+        },
+        {
+          "mapId": 780,
+          "event": "Ruby"
+        }
+      ]
+    },
+    {
+      "name": "trchar145",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar145.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 781,
+          "event": "Sapphire"
+        },
+        {
+          "mapId": 781,
+          "event": "Sapphire"
+        }
+      ]
+    },
+    {
+      "name": "trchar146",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar146.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 782,
+          "event": "Emerald"
+        },
+        {
+          "mapId": 782,
+          "event": "Emerald"
+        }
+      ]
+    },
+    {
+      "name": "trchar147",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar147.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 783,
+          "event": "Diamond"
+        },
+        {
+          "mapId": 783,
+          "event": "Diamond"
+        }
+      ]
+    },
+    {
+      "name": "trchar174",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar174.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 925,
+          "event": "Sun"
+        },
+        {
+          "mapId": 925,
+          "event": "Sun"
+        }
+      ]
+    },
+    {
+      "name": "trchar148",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar148.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 784,
+          "event": "Pearl"
+        },
+        {
+          "mapId": 784,
+          "event": "Pearl"
+        }
+      ]
+    },
+    {
+      "name": "trchar175",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar175.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 926,
+          "event": "Moon"
+        },
+        {
+          "mapId": 926,
+          "event": "Moon"
+        }
+      ]
+    },
+    {
+      "name": "trchar149",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar149.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 785,
+          "event": "Platinum"
+        },
+        {
+          "mapId": 785,
+          "event": "Platinum"
+        }
+      ]
+    },
+    {
+      "name": "trchar150",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar150.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 786,
+          "event": "Black"
+        },
+        {
+          "mapId": 786,
+          "event": "Black"
+        }
+      ]
+    },
+    {
+      "name": "trchar151",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar151.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 787,
+          "event": "White"
+        },
+        {
+          "mapId": 787,
+          "event": "White"
+        }
+      ]
+    },
+    {
+      "name": "trchar153",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar153.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 791,
+          "event": "Whitley"
+        },
+        {
+          "mapId": 791,
+          "event": "Whitley"
+        }
+      ]
+    },
+    {
+      "name": "trchar152",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar152.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 792,
+          "event": "Blake"
+        },
+        {
+          "mapId": 792,
+          "event": "Blake"
+        }
+      ]
+    },
+    {
+      "name": "trchar164",
+      "uses": 2,
+      "maps": 2,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar164.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 799,
+          "event": "Serena"
+        },
+        {
+          "mapId": 821,
+          "event": "Serena"
+        }
+      ]
+    },
+    {
+      "name": "trchar061",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar061.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 112,
+          "event": "Lt. Surge"
+        },
+        {
+          "mapId": 112,
+          "event": "Lt. Surge"
+        }
+      ]
+    },
+    {
+      "name": "trchar238",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar238.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 973,
+          "event": "Henry"
+        },
+        {
+          "mapId": 973,
+          "event": "Henry"
+        }
+      ]
+    },
+    {
+      "name": "trchar239",
+      "uses": 2,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar239.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 974,
+          "event": "Casey"
+        },
+        {
+          "mapId": 974,
+          "event": "Casey"
+        }
+      ]
+    },
+    {
+      "name": "trchar221",
+      "uses": 1,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar221.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 995,
+          "event": "Alder"
+        }
+      ]
+    },
+    {
+      "name": "trchar218",
+      "uses": 1,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar218.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 877,
+          "event": "Trainer(1)"
+        }
+      ]
+    },
+    {
+      "name": "trchar000",
+      "uses": 1,
+      "maps": 1,
+      "file": "pokemon_fire_ash/Graphics/Characters/trchar000.png",
+      "generic": true,
+      "examples": [
+        {
+          "mapId": 2035,
+          "event": "Peregrino del sello (5F)"
+        }
+      ]
+    }
+  ],
+  "unreferencedNewCharacterFiles": [],
+  "nextBatches": [
+    "sustituir primero candidatos genéricos de Liga/Atlas/campañas con sprites propios aprobados",
+    "validar cada sprite con cuatro direcciones, pasos y escala antes de cambiar referencias",
+    "no eliminar duplicados exactos hasta revisar si son alias de runtime"
+  ]
+}
