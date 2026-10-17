@@ -4,9 +4,9 @@
   "fuente": "pokemon_fire_ash/Data/Map*.rxdata (solo lectura)",
   "totales": {
     "mapasConEventos": 1887,
-    "eventosPokeMod": 13734,
-    "paginas": 15554,
-    "cajasTexto": 19799,
+    "eventosPokeMod": 13736,
+    "paginas": 15556,
+    "cajasTexto": 19801,
     "mensajesRuby": 3983
   },
   "mapas": [
@@ -88702,31 +88702,6 @@
           ]
         },
         {
-          "eventoId": 8,
-          "nombre": "PokeMod Glazed: Rival Percy",
-          "coordenadas": [
-            8,
-            8
-          ],
-          "paginas": [
-            {
-              "pagina": 1,
-              "cajas": [
-                {
-                  "comando": 0,
-                  "lineas": [
-                    "\\sp[Percy]",
-                    "Percy: ¿Tú también vas a desafiar los 8 gimnasios de Tunod? ¡Yo seré el primero en conquistar la Liga!",
-                    "Ash: ¡Acepto el desafío! Nos vemos en Chocovine y en las cumbres nevadas."
-                  ],
-                  "texto": "\\sp[Percy] Percy: ¿Tú también vas a desafiar los 8 gimnasios de Tunod? ¡Yo seré el primero en conquistar la Liga! Ash: ¡Acepto el desafío! Nos vemos en Chocovine y en las cumbres nevadas."
-                }
-              ],
-              "scripts": []
-            }
-          ]
-        },
-        {
           "eventoId": 9,
           "nombre": "PokeMod Glazed: Team Fusion Recluta",
           "coordenadas": [
@@ -88744,6 +88719,31 @@
                     "Recluta Fusion: La Jefa Regina tiene el control del Núcleo Temporal. ¡Nadie podrá detener la fusión de Tunod!"
                   ],
                   "texto": "\\sp[Team Fusion] Recluta Fusion: La Jefa Regina tiene el control del Núcleo Temporal. ¡Nadie podrá detener la fusión de Tunod!"
+                }
+              ],
+              "scripts": []
+            }
+          ]
+        },
+        {
+          "eventoId": 10,
+          "nombre": "PokeMod Glazed: Percy — llegada",
+          "coordenadas": [
+            3,
+            2
+          ],
+          "paginas": [
+            {
+              "pagina": 1,
+              "cajas": [
+                {
+                  "comando": 0,
+                  "lineas": [
+                    "",
+                    "Percy: No conozco estas rutas, pero sí conozco la sensación de que dos futuros compitan por el mismo lugar.",
+                    "Ash: Entonces no correremos para ser los primeros. Primero entenderemos qué está pasando en Tunod."
+                  ],
+                  "texto": " Percy: No conozco estas rutas, pero sí conozco la sensación de que dos futuros compitan por el mismo lugar. Ash: Entonces no correremos para ser los primeros. Primero entenderemos qué está pasando en Tunod."
                 }
               ],
               "scripts": []
@@ -96972,6 +96972,32 @@
                     "Esta historia trata de las decisiones que conectan dos historias sin borrar ninguna. Preguntar primero también es una forma de ayudar."
                   ],
                   "texto": " entrenador de paso: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Si hay alguien que necesita ayuda, vamos. Pero primero quiero escuchar qué pasó. Esta historia trata de las decisiones que conectan dos historias sin borrar ninguna. Preguntar primero también es una forma de ayudar."
+                }
+              ],
+              "scripts": []
+            }
+          ]
+        },
+        {
+          "eventoId": 11,
+          "nombre": "PokeMod Glazed: Percy — elección",
+          "coordenadas": [
+            1,
+            5
+          ],
+          "paginas": [
+            {
+              "pagina": 1,
+              "cajas": [
+                {
+                  "comando": 0,
+                  "lineas": [
+                    "",
+                    "Percy: Podrías tomar el camino rápido y dejar que otros carguen con la fractura. Yo casi lo hice.",
+                    "Ash: Ganar no sirve si el mundo que queda detrás ya no puede volver a casa.",
+                    "Percy: De acuerdo. La próxima vez que nos encontremos, competiré contigo sin olvidar a quién afecta la carrera."
+                  ],
+                  "texto": " Percy: Podrías tomar el camino rápido y dejar que otros carguen con la fractura. Yo casi lo hice. Ash: Ganar no sirve si el mundo que queda detrás ya no puede volver a casa. Percy: De acuerdo. La próxima vez que nos encontremos, competiré contigo sin olvidar a quién afecta la carrera."
                 }
               ],
               "scripts": []
@@ -123087,6 +123113,32 @@
                     "La geometría se adaptó a Fire Ash; el destino conserva su relación estructural."
                   ],
                   "texto": " Enlace reconstruido del banco 23, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural."
+                }
+              ],
+              "scripts": []
+            }
+          ]
+        },
+        {
+          "eventoId": 34,
+          "nombre": "PokeMod Glazed: Percy — cumbre",
+          "coordenadas": [
+            21,
+            2
+          ],
+          "paginas": [
+            {
+              "pagina": 1,
+              "cajas": [
+                {
+                  "comando": 0,
+                  "lineas": [
+                    "",
+                    "Percy: He llegado hasta la nieve sin convertirme en la sombra de otro entrenador. Tú también puedes elegir qué conservar.",
+                    "Ash: La Ruta de Dios me enseñó que una puerta no borra el camino anterior. Vamos a cerrar esta herida sin borrar a Tunod.",
+                    "Percy: Entonces nos veremos en la Liga, como rivales y como testigos de que el futuro puede tener más de una línea."
+                  ],
+                  "texto": " Percy: He llegado hasta la nieve sin convertirme en la sombra de otro entrenador. Tú también puedes elegir qué conservar. Ash: La Ruta de Dios me enseñó que una puerta no borra el camino anterior. Vamos a cerrar esta herida sin borrar a Tunod. Percy: Entonces nos veremos en la Liga, como rivales y como testigos de que el futuro puede tener más de una línea."
                 }
               ],
               "scripts": []
