@@ -74,6 +74,7 @@
     "verify:plan900:recursos": "node tools/plan900/inventario_recursos.mjs --verify",
     "repair:plan900:flags": "node tools/plan900/name_flags.mjs --apply",
     "verify:plan900:flags": "node tools/plan900/name_flags.mjs --verify",
+    "audit:plan900:fase008": "node tools/plan900/fase008_check.mjs",
     "repair:multiverse:flags": "node tools/qa/name_multiverse_flags.mjs --apply",
     "verify:multiverse:flags": "node tools/qa/name_multiverse_flags.mjs --verify",
     "verify:multiverse": "node tools/apply_multiverse_creepypasta.mjs --verify && npm run verify:multiverse:flags",
