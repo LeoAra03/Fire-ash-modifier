@@ -1,14 +1,14 @@
 # Auditoría total de flags de Fire Ash
 
-Generada: 2026-10-17T16:07:01.293Z
+Generada: 2026-10-17T16:13:09.183Z
 
 ## Cobertura
 
 - 3465 mapas.
 - 50 eventos comunes.
 - 409 secciones de script.
-- 994 slots de switch (890 con nombre).
-- 354 slots de variable (306 con nombre).
+- 994 slots de switch (910 con nombre).
+- 354 slots de variable (316 con nombre).
 - 8037 claves de self-switch observadas.
 - 89 expresiones dinámicas distintas.
 
@@ -1266,33 +1266,33 @@ Conflictos de reserva: **0**.
 | 947 | POKEMOD MULTIVERSO SELLO 08 RED CUMBRE | 0 | 1 | 0 | 0 | write only/static |
 | 948 | POKEMOD LIGA OSCURA COMPLETA | 1 | 2 | 0 | 0 | used |
 | 949 | — | 0 | 0 | 0 | 0 | no literal use |
-| 950 | — | 5 | 1 | 0 | 0 | used; unnamed |
-| 951 | — | 5 | 1 | 0 | 0 | used; unnamed |
-| 952 | — | 5 | 1 | 0 | 0 | used; unnamed |
-| 953 | — | 5 | 1 | 0 | 0 | used; unnamed |
-| 954 | — | 5 | 1 | 0 | 0 | used; unnamed |
-| 955 | — | 5 | 1 | 0 | 0 | used; unnamed |
-| 956 | — | 5 | 1 | 0 | 0 | used; unnamed |
-| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |
+| 950 | POKEMOD RESTAURACION COLOR 01 | 5 | 1 | 0 | 0 | used |
+| 951 | POKEMOD RESTAURACION COLOR 02 | 5 | 1 | 0 | 0 | used |
+| 952 | POKEMOD RESTAURACION COLOR 03 | 5 | 1 | 0 | 0 | used |
+| 953 | POKEMOD RESTAURACION COLOR 04 | 5 | 1 | 0 | 0 | used |
+| 954 | POKEMOD RESTAURACION COLOR 05 | 5 | 1 | 0 | 0 | used |
+| 955 | POKEMOD RESTAURACION COLOR 06 | 5 | 1 | 0 | 0 | used |
+| 956 | POKEMOD RESTAURACION COLOR 07 | 5 | 1 | 0 | 0 | used |
+| 957 | POKEMOD RESTAURACION TODAS EN PAZ | 1 | 7 | 0 | 0 | used |
 | 958 | — | 0 | 0 | 0 | 0 | no literal use |
 | 959 | — | 0 | 0 | 0 | 0 | no literal use |
-| 960 | — | 3 | 2 | 0 | 0 | used; unnamed |
-| 961 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 962 | — | 3 | 3 | 0 | 0 | used; unnamed |
-| 963 | — | 1 | 2 | 0 | 0 | used; unnamed |
-| 964 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 960 | POKEMOD DIMENSION GLAZED COMPLETADA | 3 | 2 | 0 | 0 | used |
+| 961 | POKEMOD DIMENSION LIGHT PLATINUM COMPLETADA | 2 | 1 | 0 | 0 | used |
+| 962 | POKEMOD DIMENSION LIQUID CRYSTAL COMPLETADA | 3 | 3 | 0 | 0 | used |
+| 963 | POKEMOD DIMENSION TFOH COMPLETADA | 1 | 2 | 0 | 0 | used |
+| 964 | POKEMOD DIMENSION FACTORY ADVENTURE COMPLETADA | 1 | 1 | 0 | 0 | used |
 | 965 | — | 0 | 0 | 0 | 0 | no literal use |
 | 966 | — | 0 | 0 | 0 | 0 | no literal use |
 | 967 | — | 0 | 0 | 0 | 0 | no literal use |
 | 968 | — | 0 | 0 | 0 | 0 | no literal use |
 | 969 | — | 0 | 0 | 0 | 0 | no literal use |
-| 970 | — | 1 | 1 | 0 | 0 | used; unnamed |
-| 971 | — | 1 | 1 | 0 | 0 | used; unnamed |
-| 972 | — | 1 | 1 | 0 | 0 | used; unnamed |
-| 973 | — | 1 | 1 | 0 | 0 | used; unnamed |
-| 974 | — | 1 | 1 | 0 | 0 | used; unnamed |
-| 975 | — | 1 | 1 | 0 | 0 | used; unnamed |
-| 976 | — | 1 | 1 | 0 | 0 | used; unnamed |
+| 970 | POKEMOD ATLAS MEDALLA 01 | 1 | 1 | 0 | 0 | used |
+| 971 | POKEMOD ATLAS MEDALLA 02 | 1 | 1 | 0 | 0 | used |
+| 972 | POKEMOD ATLAS MEDALLA 03 | 1 | 1 | 0 | 0 | used |
+| 973 | POKEMOD ATLAS MEDALLA 04 | 1 | 1 | 0 | 0 | used |
+| 974 | POKEMOD ATLAS MEDALLA 05 | 1 | 1 | 0 | 0 | used |
+| 975 | POKEMOD ATLAS MEDALLA 06 | 1 | 1 | 0 | 0 | used |
+| 976 | POKEMOD ATLAS MEDALLA 07 | 1 | 1 | 0 | 0 | used |
 | 977 | — | 0 | 1 | 0 | 0 | write only/static; unnamed |
 | 978 | — | 0 | 0 | 0 | 0 | no literal use |
 | 979 | — | 0 | 0 | 0 | 0 | no literal use |
@@ -1626,19 +1626,19 @@ Conflictos de reserva: **0**.
 | 307 | DN_DECISION_LIGA | 0 | 2 | 4 | used |
 | 308 | — | 0 | 0 | 0 | no literal use |
 | 309 | — | 0 | 0 | 0 | no literal use |
-| 310 | — | 7 | 7 | 0 | used; unnamed |
-| 311 | — | 7 | 5 | 0 | used; unnamed |
-| 312 | — | 0 | 5 | 0 | write only/static; unnamed |
-| 313 | — | 0 | 3 | 0 | write only/static; unnamed |
+| 310 | POKEMOD RESTAURACION MUNDOS RECUPERADOS | 7 | 7 | 0 | used |
+| 311 | POKEMOD ROCKET RANGO | 7 | 5 | 0 | used |
+| 312 | POKEMOD ROCKET MISIONES CUMPLIDAS | 0 | 5 | 0 | write only/static |
+| 313 | POKEMOD ROCKET HERIDOS SOCORRIDOS | 0 | 3 | 0 | write only/static |
 | 314 | PM_ROCKET_DISFRAZ | 0 | 4 | 0 | write only/static |
-| 315 | — | 6 | 8 | 0 | used; unnamed |
+| 315 | POKEMOD CAMPANAS RESULTADO LIGHT PLATINUM | 6 | 8 | 0 | used |
 | 316 | POKEMOD ATAVIO ACTUAL | 0 | 4 | 0 | write only/static |
 | 317 | POKEMOD ATAVIO MODO (0 auto, 1 fijo) | 0 | 4 | 0 | write only/static |
-| 318 | — | 0 | 8 | 0 | write only/static; unnamed |
-| 319 | — | 1 | 8 | 0 | used; unnamed |
-| 320 | — | 0 | 1 | 0 | write only/static; unnamed |
-| 321 | — | 0 | 1 | 0 | write only/static; unnamed |
-| 322 | — | 0 | 1 | 0 | write only/static; unnamed |
+| 318 | POKEMOD CAMPANAS PROGRESO 01 | 0 | 8 | 0 | write only/static |
+| 319 | POKEMOD CAMPANAS PROGRESO 02 | 1 | 8 | 0 | used |
+| 320 | POKEMOD CAMPANAS PROGRESO 03 | 0 | 1 | 0 | write only/static |
+| 321 | POKEMOD CAMPANAS PROGRESO 04 | 0 | 1 | 0 | write only/static |
+| 322 | POKEMOD CAMPANAS PROGRESO 05 | 0 | 1 | 0 | write only/static |
 | 323 | — | 0 | 0 | 0 | no literal use |
 | 324 | — | 0 | 0 | 0 | no literal use |
 | 325 | — | 0 | 0 | 0 | no literal use |
@@ -1686,7 +1686,7 @@ Conflictos de reserva: **0**.
 ## Indicadores que requieren cautela
 
 - Switches con nombre sin uso literal: 25.
-- Switches usados sin nombre: 23.
+- Switches usados sin nombre: 3.
 - Switches con escritura estática sin lectura literal: 27.
 - Switches con lectura/acceso sin escritura estática: 25.
 

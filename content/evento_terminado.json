@@ -345,7 +345,7 @@
   {
    "etiqueta": "Switches del plan sin nombre en System.rxdata",
    "metrica": "sinNombre",
-   "valor": 44
+   "valor": 0
   },
   {
    "etiqueta": "Switches del plan que se apagan",
@@ -527,7 +527,7 @@
     "ruta": "docs/AUDITORIA_TOTAL_FLAGS.md",
     "busca": "Switches usados sin nombre: 31."
    },
-   "medido": 44,
+   "medido": 0,
    "metrica": "fallos"
   }
  ]
