@@ -1,6 +1,6 @@
 # Acta de entrega del plan 2700
 
-Version/commit de construcción: `0e65dfa0` (FASE 026).
+Version/commit de construcción: `fc5c9b80` (FASE 026).
 
 ## Paquetes
 
