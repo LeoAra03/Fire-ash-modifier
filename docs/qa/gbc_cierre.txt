@@ -1,0 +1,14 @@
+Cierre del bloque GBC · verificación ejecutada el 2026-10-17
+
+Comando: npm run verify:rom:nativo
+Resultado: EXIT=1 (no está en verde; cierre pendiente de corregir 11 fallos).
+
+Salida resumida:
+verificación nativa: 1227 mapas · 212 tilesets · 12411 eventos revisados · 11 fallos
+celdas 1486028 · sólidas 874996 (58.9 %) · libres 611032 · accesos abiertos 4743
+
+Fallos reportados: una celda no coincidente en Map3031, Map3079, Map3094, Map3120,
+Map3125, Map3323, Map3385, Map3805, Map3839 y Map3874; además, en Map3120 hay eventos
+solapados sobre una celda sólida (incluidos «PokeMod Campaña ROM: NPC — Kaori» @22,21).
+No se declara el cierre como aprobado mientras el verificador termine con código distinto
+ de cero. Reejecutar `npm run verify:rom:nativo` tras resolverlos.
