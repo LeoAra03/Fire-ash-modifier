@@ -1,0 +1,3651 @@
+{
+  "schema": "lote5_fase022_dialogos/1.0",
+  "tasks": "2100–2199",
+  "source": "pokemon_fire_ash/Data/MapInfos.rxdata + Map*.rxdata",
+  "totals": {
+    "maps": 3465,
+    "mapsWithPokeMod": 1887,
+    "events": 13736,
+    "pages": 15556,
+    "boxes": 19801,
+    "scripts": 3983
+  },
+  "profiles": {
+    "base/dlc": {
+      "maps": 72,
+      "events": 419,
+      "boxes": 787
+    },
+    "atlas": {
+      "maps": 583,
+      "events": 884,
+      "boxes": 4083
+    },
+    "glazed": {
+      "maps": 111,
+      "events": 1277,
+      "boxes": 1395
+    },
+    "light_platinum": {
+      "maps": 19,
+      "events": 175,
+      "boxes": 209
+    },
+    "liquid_crystal": {
+      "maps": 432,
+      "events": 4253,
+      "boxes": 5096
+    },
+    "tfoh": {
+      "maps": 245,
+      "events": 2321,
+      "boxes": 2847
+    },
+    "unbound": {
+      "maps": 420,
+      "events": 4388,
+      "boxes": 5321
+    },
+    "nightmare/multiversal": {
+      "maps": 5,
+      "events": 19,
+      "boxes": 63
+    }
+  },
+  "buckets": {
+    "emisiones": {
+      "events": 30,
+      "pages": 51,
+      "boxes": 111
+    },
+    "otros_pokemod": {
+      "events": 296,
+      "pages": 375,
+      "boxes": 621
+    },
+    "npc_campanas": {
+      "events": 12388,
+      "pages": 13188,
+      "boxes": 14781
+    },
+    "atlas": {
+      "events": 905,
+      "pages": 1732,
+      "boxes": 3954
+    },
+    "team_rocket": {
+      "events": 32,
+      "pages": 53,
+      "boxes": 76
+    },
+    "hubs_accesos": {
+      "events": 6,
+      "pages": 10,
+      "boxes": 11
+    },
+    "jefes": {
+      "events": 70,
+      "pages": 130,
+      "boxes": 246
+    },
+    "carteles_objetos": {
+      "events": 9,
+      "pages": 17,
+      "boxes": 1
+    }
+  },
+  "checks": {
+    "empty": {
+      "count": 0,
+      "examples": []
+    },
+    "english": {
+      "count": 242,
+      "examples": [
+        {
+          "mapId": 33,
+          "map": "Pallet Town",
+          "eventId": 76,
+          "event": "PokeMod: Aide Isla Espejo",
+          "page": 1,
+          "command": 0,
+          "text": "\\bOak's aide: A stable signal has appeared beyond the Orange Archipelago. Professor Oak calls it Mirror Island. It preserves battles from worlds that might have been."
+        },
+        {
+          "mapId": 33,
+          "map": "Pallet Town",
+          "eventId": 76,
+          "event": "PokeMod: Aide Isla Espejo",
+          "page": 1,
+          "command": 21,
+          "text": "\\bOak's aide: You can pass freely at any time. I will keep the route open!"
+        },
+        {
+          "mapId": 1525,
+          "map": "Atlas 0505 - Route 201",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0505",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0505 del sector Territorio Origami: recuerdo incompleto de Route 201. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Route 201 viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1530,
+          "map": "Atlas 0510 - Jubilife City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0510",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0510 del sector Territorio Origami: recuerdo incompleto de Jubilife City. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Jubilife City se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1535,
+          "map": "Atlas 0515 - Route 6",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0515",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0515 del sector Territorio Origami: recuerdo incompleto de Route 6. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Route 6 responden tarde: la flecha de hoy avisa del camino de ayer."
+        },
+        {
+          "mapId": 1536,
+          "map": "Atlas 0516 - Route 203",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0516",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0516 del sector Territorio Origami: recuerdo incompleto de Route 203. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 203 se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1538,
+          "map": "Atlas 0518 - Oreburgh City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0518",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0518 del sector Territorio Origami: recuerdo incompleto de Oreburgh City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Oreburgh City respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1544,
+          "map": "Atlas 0524 - Route 204",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0524",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0524 del sector Territorio Origami: recuerdo incompleto de Route 204. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Route 204 recuerda dónde estuvo ayer y se niega a iluminar lo nuevo."
+        },
+        {
+          "mapId": 1553,
+          "map": "Atlas 0533 - Route 205",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0533",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0533 del sector Delta de Cristal: recuerdo incompleto de Route 205. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 205 se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1554,
+          "map": "Atlas 0534 - Route 205 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0534",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0534 del sector Delta de Cristal: recuerdo incompleto de Route 205 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de Route 205 House cambian de asiento: la etiqueta de un lugar se pasea al vecino."
+        },
+        {
+          "mapId": 1556,
+          "map": "Atlas 0536 - Eterna City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0536",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0536 del sector Delta de Cristal: recuerdo incompleto de Eterna City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La gravedad de Eterna City está prestada y reclama devolución en el tramo más estrecho."
+        },
+        {
+          "mapId": 1561,
+          "map": "Atlas 0541 - Route 206",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0541",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0541 del sector Delta de Cristal: recuerdo incompleto de Route 206. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Route 206 recuerda dónde estuvo ayer y se niega a iluminar lo nuevo."
+        },
+        {
+          "mapId": 1562,
+          "map": "Atlas 0542 - Route 206 Gate",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0542",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0542 del sector Delta de Cristal: recuerdo incompleto de Route 206 Gate. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las coordenadas de Route 206 Gate mienten con educación: la X señala bien y la Y se equivoca a propósito."
+        },
+        {
+          "mapId": 1563,
+          "map": "Atlas 0543 - Route 206",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0543",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0543 del sector Delta de Cristal: recuerdo incompleto de Route 206. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Route 206 se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1564,
+          "map": "Atlas 0544 - Route 206 Gate",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0544",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0544 del sector Delta de Cristal: recuerdo incompleto de Route 206 Gate. La baliza de retorno y la navegación del Atlas permanecen abiertas. El silencio de Route 206 Gate es activo: escucha, ordena y se enfada con el ruido."
+        },
+        {
+          "mapId": 1566,
+          "map": "Atlas 0546 - Hearthome City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0546",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0546 del sector Delta de Cristal: recuerdo incompleto de Hearthome City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Hearthome City recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1572,
+          "map": "Atlas 0552 - Battle Hall",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0552",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0552 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Battle Hall respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1573,
+          "map": "Atlas 0553 - Battle Hall Stadium",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0553",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0553 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall Stadium. La baliza de retorno y la navegación del Atlas permanecen abiertas. La gravedad de Battle Hall Stadium está prestada y reclama devolución en el tramo más estrecho."
+        },
+        {
+          "mapId": 1574,
+          "map": "Atlas 0554 - Battle Hall Stadium",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0554",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0554 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall Stadium. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos en Battle Hall Stadium vuelven tarde, como ecos de un minuto que ya pasó."
+        },
+        {
+          "mapId": 1575,
+          "map": "Atlas 0555 - Battle Hall Stadium",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0555",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0555 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall Stadium. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Battle Hall Stadium viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1577,
+          "map": "Atlas 0557 - Route 209",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0557",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0557 del sector Llanura Meteoro: recuerdo incompleto de Route 209. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las sombras en Route 209 se duplican y solo una de ellas sigue al visitante."
+        },
+        {
+          "mapId": 1585,
+          "map": "Atlas 0565 - Route 210",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0565",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0565 del sector Llanura Meteoro: recuerdo incompleto de Route 210. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Route 210 responden tarde: la flecha de hoy avisa del camino de ayer."
+        },
+        {
+          "mapId": 1586,
+          "map": "Atlas 0566 - Route 210 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0566",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0566 del sector Llanura Meteoro: recuerdo incompleto de Route 210 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 210 House se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1587,
+          "map": "Atlas 0567 - Route 215",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0567",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0567 del sector Llanura Meteoro: recuerdo incompleto de Route 215. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de Route 215 cambian de asiento: la etiqueta de un lugar se pasea al vecino."
+        },
+        {
+          "mapId": 1588,
+          "map": "Atlas 0568 - Route 215 Gate",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0568",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0568 del sector Llanura Meteoro: recuerdo incompleto de Route 215 Gate. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Route 215 Gate respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1589,
+          "map": "Atlas 0569 - Veilstone City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0569",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0569 del sector Llanura Meteoro: recuerdo incompleto de Veilstone City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La gravedad de Veilstone City está prestada y reclama devolución en el tramo más estrecho."
+        },
+        {
+          "mapId": 1600,
+          "map": "Atlas 0580 - Route 214",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0580",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0580 del sector Cordillera Coral: recuerdo incompleto de Route 214. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los compases de Route 214 se desfasan: la música va por delante de las baldosas."
+        },
+        {
+          "mapId": 1607,
+          "map": "Atlas 0587 - Route 213",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0587",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0587 del sector Cordillera Coral: recuerdo incompleto de Route 213. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos en Route 213 vuelven tarde, como ecos de un minuto que ya pasó."
+        },
+        {
+          "mapId": 1609,
+          "map": "Atlas 0589 - Pastoria City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0589",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0589 del sector Cordillera Coral: recuerdo incompleto de Pastoria City. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Pastoria City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1616,
+          "map": "Atlas 0596 - Route 212",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0596",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0596 del sector Cordillera Coral: recuerdo incompleto de Route 212. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Route 212 recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1620,
+          "map": "Atlas 0600 - Route 212 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0600",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0600 del sector Cordillera Coral: recuerdo incompleto de Route 212 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de Route 212 House cambian de asiento: la etiqueta de un lugar se pasea al vecino."
+        },
+        {
+          "mapId": 1627,
+          "map": "Atlas 0607 - Route 218",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0607",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0607 del sector Ciudad del Eclipse: recuerdo incompleto de Route 218. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las sombras en Route 218 se duplican y solo una de ellas sigue al visitante."
+        },
+        {
+          "mapId": 1628,
+          "map": "Atlas 0608 - Canalave City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0608",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0608 del sector Ciudad del Eclipse: recuerdo incompleto de Canalave City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Canalave City recuerda dónde estuvo ayer y se niega a iluminar lo nuevo."
+        },
+        {
+          "mapId": 1634,
+          "map": "Atlas 0614 - Route 211",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0614",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0614 del sector Ciudad del Eclipse: recuerdo incompleto de Route 211. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los compases de Route 211 se desfasan: la música va por delante de las baldosas."
+        },
+        {
+          "mapId": 1635,
+          "map": "Atlas 0615 - Route 216",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0615",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0615 del sector Ciudad del Eclipse: recuerdo incompleto de Route 216. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Route 216 responden tarde: la flecha de hoy avisa del camino de ayer."
+        },
+        {
+          "mapId": 1636,
+          "map": "Atlas 0616 - Route 216 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0616",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0616 del sector Ciudad del Eclipse: recuerdo incompleto de Route 216 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 216 House se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1637,
+          "map": "Atlas 0617 - Route 217",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0617",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0617 del sector Ciudad del Eclipse: recuerdo incompleto de Route 217. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de Route 217 cambian de asiento: la etiqueta de un lugar se pasea al vecino."
+        },
+        {
+          "mapId": 1638,
+          "map": "Atlas 0618 - Route 217 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0618",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0618 del sector Ciudad del Eclipse: recuerdo incompleto de Route 217 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Route 217 House respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1645,
+          "map": "Atlas 0625 - Route 222",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0625",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0625 del sector Ciudad del Eclipse: recuerdo incompleto de Route 222. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las coordenadas de Route 222 mienten con educación: la X señala bien y la Y se equivoca a propósito."
+        },
+        {
+          "mapId": 1647,
+          "map": "Atlas 0627 - Sunnyshore City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0627",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0627 del sector Archipiélago Vapor: recuerdo incompleto de Sunnyshore City. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Sunnyshore City se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1657,
+          "map": "Atlas 0637 - Lily of the Valley Island",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0637",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0637 del sector Archipiélago Vapor: recuerdo incompleto de Lily of the Valley Island. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos en Lily of the Valley Island vuelven tarde, como ecos de un minuto que ya pasó."
+        },
+        {
+          "mapId": 1669,
+          "map": "Atlas 0649 - Route 1",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0649",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0649 del sector Archipiélago Vapor: recuerdo incompleto de Route 1. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 1 se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1674,
+          "map": "Atlas 0654 - Route 2",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0654",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0654 del sector Santuario de Polen: recuerdo incompleto de Route 2. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos en Route 2 vuelven tarde, como ecos de un minuto que ya pasó."
+        },
+        {
+          "mapId": 1675,
+          "map": "Atlas 0655 - Striaton City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0655",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0655 del sector Santuario de Polen: recuerdo incompleto de Striaton City. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Striaton City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1680,
+          "map": "Atlas 0660 - Route 3",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0660",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0660 del sector Santuario de Polen: recuerdo incompleto de Route 3. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Route 3 se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1681,
+          "map": "Atlas 0661 - Route 3 Day Care",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0661",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0661 del sector Santuario de Polen: recuerdo incompleto de Route 3 Day Care. La baliza de retorno y la navegación del Atlas permanecen abiertas. El silencio de Route 3 Day Care es activo: escucha, ordena y se enfada con el ruido."
+        },
+        {
+          "mapId": 1682,
+          "map": "Atlas 0662 - Route 3 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0662",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0662 del sector Santuario de Polen: recuerdo incompleto de Route 3 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Route 3 House recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1684,
+          "map": "Atlas 0664 - Nacrene City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0664",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0664 del sector Santuario de Polen: recuerdo incompleto de Nacrene City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los compases de Nacrene City se desfasan: la música va por delante de las baldosas."
+        },
+        {
+          "mapId": 1692,
+          "map": "Atlas 0672 - Castelia City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0672",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0672 del sector Santuario de Polen: recuerdo incompleto de Castelia City. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Castelia City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1697,
+          "map": "Atlas 0677 - Route 4",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0677",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0677 del sector Cañón Espejo: recuerdo incompleto de Route 4. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Route 4 se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1698,
+          "map": "Atlas 0678 - Route 4",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0678",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0678 del sector Cañón Espejo: recuerdo incompleto de Route 4. La baliza de retorno y la navegación del Atlas permanecen abiertas. El silencio de Route 4 es activo: escucha, ordena y se enfada con el ruido."
+        },
+        {
+          "mapId": 1699,
+          "map": "Atlas 0679 - Club Battle",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0679",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0679 del sector Cañón Espejo: recuerdo incompleto de Club Battle. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Club Battle recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1700,
+          "map": "Atlas 0680 - Club Battle Room",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0680",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0680 del sector Cañón Espejo: recuerdo incompleto de Club Battle Room. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los compases de Club Battle Room se desfasan: la música va por delante de las baldosas."
+        },
+        {
+          "mapId": 1704,
+          "map": "Atlas 0684 - Battle Subway",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0684",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0684 del sector Cañón Espejo: recuerdo incompleto de Battle Subway. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de Battle Subway cambian de asiento: la etiqueta de un lugar se pasea al vecino."
+        },
+        {
+          "mapId": 1709,
+          "map": "Atlas 0689 - Driftveil City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0689",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0689 del sector Cañón Espejo: recuerdo incompleto de Driftveil City. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Driftveil City viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1717,
+          "map": "Atlas 0697 - Route 6",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0697",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0697 del sector Cañón Espejo: recuerdo incompleto de Route 6. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los compases de Route 6 se desfasan: la música va por delante de las baldosas."
+        },
+        {
+          "mapId": 1718,
+          "map": "Atlas 0698 - Route 6 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0698",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0698 del sector Cañón Espejo: recuerdo incompleto de Route 6 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Route 6 House responden tarde: la flecha de hoy avisa del camino de ayer."
+        },
+        {
+          "mapId": 1722,
+          "map": "Atlas 0702 - Mistralton City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0702",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0702 del sector Bahía Relámpago: recuerdo incompleto de Mistralton City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Mistralton City respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1727,
+          "map": "Atlas 0707 - Route 7 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0707",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0707 del sector Bahía Relámpago: recuerdo incompleto de Route 7 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las sombras en Route 7 House se duplican y solo una de ellas sigue al visitante."
+        },
+        {
+          "mapId": 1728,
+          "map": "Atlas 0708 - Route 7",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0708",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0708 del sector Bahía Relámpago: recuerdo incompleto de Route 7. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Route 7 recuerda dónde estuvo ayer y se niega a iluminar lo nuevo."
+        },
+        {
+          "mapId": 1745,
+          "map": "Atlas 0725 - Route 8",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0725",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0725 del sector Bahía Relámpago: recuerdo incompleto de Route 8. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las coordenadas de Route 8 mienten con educación: la X señala bien y la Y se equivoca a propósito."
+        },
+        {
+          "mapId": 1753,
+          "map": "Atlas 0733 - Virbank City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0733",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0733 del sector Meseta de Tinta: recuerdo incompleto de Virbank City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Virbank City se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1757,
+          "map": "Atlas 0737 - Route 16",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0737",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0737 del sector Meseta de Tinta: recuerdo incompleto de Route 16. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos en Route 16 vuelven tarde, como ecos de un minuto que ya pasó."
+        },
+        {
+          "mapId": 1768,
+          "map": "Atlas 0748 - Route 12",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0748",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0748 del sector Meseta de Tinta: recuerdo incompleto de Route 12. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Route 12 responden tarde: la flecha de hoy avisa del camino de ayer."
+        },
+        {
+          "mapId": 1769,
+          "map": "Atlas 0749 - Opelucid City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0749",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0749 del sector Meseta de Tinta: recuerdo incompleto de Opelucid City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Opelucid City se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1772,
+          "map": "Atlas 0752 - Vetress City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0752",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0752 del sector Reserva de Engranajes: recuerdo incompleto de Vetress City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Vetress City respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1780,
+          "map": "Atlas 0760 - Route 20",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0760",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0760 del sector Reserva de Engranajes: recuerdo incompleto de Route 20. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Route 20 se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1781,
+          "map": "Atlas 0761 - Route 19",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0761",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0761 del sector Reserva de Engranajes: recuerdo incompleto de Route 19. La baliza de retorno y la navegación del Atlas permanecen abiertas. El silencio de Route 19 es activo: escucha, ordena y se enfada con el ruido."
+        },
+        {
+          "mapId": 1782,
+          "map": "Atlas 0762 - Aspertia City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0762",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0762 del sector Reserva de Engranajes: recuerdo incompleto de Aspertia City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Aspertia City recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1793,
+          "map": "Atlas 0773 - Viridian City-Silver",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0773",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0773 del sector Reserva de Engranajes: recuerdo incompleto de Viridian City-Silver. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las sombras en Viridian City-Silver se duplican y solo una de ellas sigue al visitante."
+        },
+        {
+          "mapId": 1794,
+          "map": "Atlas 0774 - Ecruteak City-Crystal",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0774",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0774 del sector Reserva de Engranajes: recuerdo incompleto de Ecruteak City-Crystal. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Ecruteak City-Crystal recuerda dónde estuvo ayer y se niega a iluminar lo nuevo."
+        },
+        {
+          "mapId": 1795,
+          "map": "Atlas 0775 - Slateport City-Ruby",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0775",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0775 del sector Reserva de Engranajes: recuerdo incompleto de Slateport City-Ruby. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las coordenadas de Slateport City-Ruby mienten con educación: la X señala bien y la Y se equivoca a propósito."
+        },
+        {
+          "mapId": 1797,
+          "map": "Atlas 0777 - Battle Tower-Emerald",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0777",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0777 del sector Círculo de Ceniza: recuerdo incompleto de Battle Tower-Emerald. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Battle Tower-Emerald se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1799,
+          "map": "Atlas 0779 - Pastoria City-Pearl",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0779",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0779 del sector Círculo de Ceniza: recuerdo incompleto de Pastoria City-Pearl. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Pastoria City-Pearl recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1802,
+          "map": "Atlas 0782 - Nimbasa City-White",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0782",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0782 del sector Círculo de Ceniza: recuerdo incompleto de Nimbasa City-White. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Nimbasa City-White responden tarde: la flecha de hoy avisa del camino de ayer."
+        },
+        {
+          "mapId": 1803,
+          "map": "Atlas 0783 - Route 19 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0783",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0783 del sector Círculo de Ceniza: recuerdo incompleto de Route 19 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 19 House se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1806,
+          "map": "Atlas 0786 - Aspertia City-Whitley",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0786",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0786 del sector Círculo de Ceniza: recuerdo incompleto de Aspertia City-Whitley. La baliza de retorno y la navegación del Atlas permanecen abiertas. La gravedad de Aspertia City-Whitley está prestada y reclama devolución en el tramo más estrecho."
+        },
+        {
+          "mapId": 1807,
+          "map": "Atlas 0787 - Virbank City-Blake",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0787",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0787 del sector Círculo de Ceniza: recuerdo incompleto de Virbank City-Blake. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos en Virbank City-Blake vuelven tarde, como ecos de un minuto que ya pasó."
+        },
+        {
+          "mapId": 1813,
+          "map": "Atlas 0793 - Route 4",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0793",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0793 del sector Círculo de Ceniza: recuerdo incompleto de Route 4. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Route 4 se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1814,
+          "map": "Atlas 0794 - Santalune City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0794",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0794 del sector Círculo de Ceniza: recuerdo incompleto de Santalune City. La baliza de retorno y la navegación del Atlas permanecen abiertas. El silencio de Santalune City es activo: escucha, ordena y se enfada con el ruido."
+        },
+        {
+          "mapId": 1818,
+          "map": "Atlas 0798 - Route 5",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0798",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0798 del sector Círculo de Ceniza: recuerdo incompleto de Route 5. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Route 5 responden tarde: la flecha de hoy avisa del camino de ayer."
+        },
+        {
+          "mapId": 1822,
+          "map": "Atlas 0802 - Route 6",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0802",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0802 del sector Labertino Boreal: recuerdo incompleto de Route 6. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Route 6 respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1825,
+          "map": "Atlas 0805 - Route 7",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0805",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0805 del sector Labertino Boreal: recuerdo incompleto de Route 7. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Route 7 viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1827,
+          "map": "Atlas 0807 - Route 8",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0807",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0807 del sector Labertino Boreal: recuerdo incompleto de Route 8. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las sombras en Route 8 se duplican y solo una de ellas sigue al visitante."
+        },
+        {
+          "mapId": 1828,
+          "map": "Atlas 0808 - Cyllage City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0808",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0808 del sector Labertino Boreal: recuerdo incompleto de Cyllage City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Cyllage City recuerda dónde estuvo ayer y se niega a iluminar lo nuevo."
+        },
+        {
+          "mapId": 1832,
+          "map": "Atlas 0812 - Route 10",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0812",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0812 del sector Labertino Boreal: recuerdo incompleto de Route 10. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Route 10 recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1836,
+          "map": "Atlas 0816 - Route 11",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0816",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0816 del sector Labertino Boreal: recuerdo incompleto de Route 11. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 11 se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1838,
+          "map": "Atlas 0818 - Shalour City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0818",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0818 del sector Labertino Boreal: recuerdo incompleto de Shalour City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Shalour City respira: los pasos se alargan o se encogen según quién mire el mapa."
+        },
+        {
+          "mapId": 1842,
+          "map": "Atlas 0822 - Route 12",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0822",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0822 del sector Labertino Boreal: recuerdo incompleto de Route 12. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Route 12 viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 1843,
+          "map": "Atlas 0823 - Coumarine City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0823",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0823 del sector Labertino Boreal: recuerdo incompleto de Coumarine City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las sombras en Coumarine City se duplican y solo una de ellas sigue al visitante."
+        },
+        {
+          "mapId": 1847,
+          "map": "Atlas 0827 - Route 13",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0827",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0827 del sector República de Musgo: recuerdo incompleto de Route 13. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Route 13 se usan pasos prestados: los pies ajenos cruzan antes que los propios."
+        },
+        {
+          "mapId": 1849,
+          "map": "Atlas 0829 - Route 14",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0829",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0829 del sector República de Musgo: recuerdo incompleto de Route 14. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales de Route 14 recuerdan su forma anterior y se niegan a la reforma."
+        },
+        {
+          "mapId": 1850,
+          "map": "Atlas 0830 - Laverre City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0830",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0830 del sector República de Musgo: recuerdo incompleto de Laverre City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los compases de Laverre City se desfasan: la música va por delante de las baldosas."
+        },
+        {
+          "mapId": 1856,
+          "map": "Atlas 0836 - Route 15",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0836",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0836 del sector República de Musgo: recuerdo incompleto de Route 15. La baliza de retorno y la navegación del Atlas permanecen abiertas. La gravedad de Route 15 está prestada y reclama devolución en el tramo más estrecho."
+        },
+        {
+          "mapId": 1860,
+          "map": "Atlas 0840 - Route 17",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0840",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0840 del sector República de Musgo: recuerdo incompleto de Route 17. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las sombras en Route 17 se duplican y solo una de ellas sigue al visitante."
+        },
+        {
+          "mapId": 1864,
+          "map": "Atlas 0844 - Anistar City",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0844",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0844 del sector República de Musgo: recuerdo incompleto de Anistar City. La baliza de retorno y la navegación del Atlas permanecen abiertas. El silencio de Anistar City es activo: escucha, ordena y se enfada con el ruido."
+        },
+        {
+          "mapId": 1869,
+          "map": "Atlas 0849 - Route 18",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0849",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0849 del sector República de Musgo: recuerdo incompleto de Route 18. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 18 se corrigen solos y el trazo nuevo tapa el camino aprendido."
+        },
+        {
+          "mapId": 1870,
+          "map": "Atlas 0850 - Route 18 House",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0850",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0850 del sector República de Musgo: recuerdo incompleto de Route 18 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de Route 18 House cambian de asiento: la etiqueta de un lugar se pasea al vecino."
+        },
+        {
+          "mapId": 1874,
+          "map": "Atlas 0854 - Route 19",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0854",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0854 del sector Cinturón Aurora: recuerdo incompleto de Route 19. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos en Route 19 vuelven tarde, como ecos de un minuto que ya pasó."
+        },
+        {
+          "mapId": 1875,
+          "map": "Atlas 0855 - Route 21",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0855",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0855 del sector Cinturón Aurora: recuerdo incompleto de Route 21. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Route 21 viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        }
+      ]
+    },
+    "goreOrParody": {
+      "count": 0,
+      "examples": []
+    },
+    "humiliating": {
+      "count": 0,
+      "examples": []
+    },
+    "engineMechanics": {
+      "count": 2,
+      "examples": [
+        {
+          "mapId": 2195,
+          "map": "Atlas Mil · Vía de las Nueve Eras",
+          "eventId": 12,
+          "event": "PokeMod Vía: Cronista — Galar",
+          "page": 1,
+          "command": 0,
+          "text": "Cronista de Galar — 8.ª generación · Nintendo Switch. Galar, 2019. Estadio, acero y niebla: la ciudad se diseña para ser vista desde lejos. Este distrito es un trozo real de Ciudad Artejo: no está rehecho, está traído."
+        },
+        {
+          "mapId": 2196,
+          "map": "Gimnasio Atlas · Las Nueve Eras",
+          "eventId": 9,
+          "event": "PokeMod Vía: Entrenador — Galar",
+          "page": 1,
+          "command": 0,
+          "text": "Entrenador de Galar — 8.ª generación · Nintendo Switch. «Galar, 2019. Estadio, acero y niebla: la ciudad se diseña para ser vista desde lejos.»"
+        }
+      ]
+    },
+    "missingOpening": {
+      "count": 100,
+      "examples": [
+        {
+          "mapId": 33,
+          "map": "Pallet Town",
+          "eventId": 76,
+          "event": "PokeMod: Aide Isla Espejo",
+          "page": 1,
+          "command": 7,
+          "text": "Where would you like to go?\\ch[1,3,Sail to Mirror Island,Teleport to Ash's House,Leave / Step aside]"
+        },
+        {
+          "mapId": 2009,
+          "map": "Atlas 0989 - Wyndon Stadium?",
+          "eventId": 120,
+          "event": "PokeMod Tier3: Eco 0989",
+          "page": 1,
+          "command": 0,
+          "text": "Eco 0989 del sector Umbral Mil: recuerdo incompleto de Wyndon Stadium?. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Wyndon Stadium? viene fragmentado: llueve en una calle y hace sol en la siguiente baldosa."
+        },
+        {
+          "mapId": 3020,
+          "map": "Glazed · Almacén del Team Fusion",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — glazed_21_1",
+          "page": 1,
+          "command": 0,
+          "text": "SOHEAL: Isnt it amazing? Theyhave STARTER POKéMON here! Anyway,are you ready to go back? Ash: Si hay alguien que necesita ayuda, vamos. Pero primero quiero escuchar qué pasó. Esta historia trata de las decisiones que conectan dos historias sin borrar ninguna. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3025,
+          "map": "Glazed · Estación del Transbordador",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — glazed_26_1",
+          "page": 1,
+          "command": 0,
+          "text": "Really, Im sorry DARKRAI put youthrough that. It must have been ashock, right? Come visit me later,well chat then. Celda abierta. Esta historia trata de las decisiones que conectan dos historias sin borrar ninguna. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3086,
+          "map": "Glazed · Caverna de Cuarzo Resonante",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: NPC — glazed_87_3",
+          "page": 1,
+          "command": 0,
+          "text": "Do you see the Time Board over there?My friends and I are trying to see whocan reach the top in the least time. Ash: Si hay alguien que necesita ayuda, vamos. Pero primero quiero escuchar qué pasó. Esta historia trata de las decisiones que conectan dos historias sin borrar ninguna. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3202,
+          "map": "Liquid Crystal · Ciudad Cerezo (Cherrygrove City)",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_3_1",
+          "page": 1,
+          "command": 0,
+          "text": "he link will be terminated if youleave the room. Is that okay? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3252,
+          "map": "Liquid Crystal · Subterráneo de Trigal (Galería 10)",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_53_1",
+          "page": 1,
+          "command": 0,
+          "text": "On this island, different eventsoccur depending on connections.What are those connections?They are for you to discover onyour own. Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3287,
+          "map": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 8)",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Entrenador — liquid_crystal_88_1",
+          "page": 1,
+          "command": 0,
+          "text": "Im investigating MT.MORTAR, but mypals gone AWOL.Have you seen a TRAINER who has aSLOWPOKE that can use STRENGTH? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta batalla forma parte de los lugares de Johto, sus lazos y sus recuerdos; nadie tiene que imitar a otra persona para pertenecer aquí."
+        },
+        {
+          "mapId": 3298,
+          "map": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 3)",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: Warp 2",
+          "page": 1,
+          "command": 0,
+          "text": "ÀËLANCE: DGAGONITE, HYPER BEAÀËWhat took you, À?Just as I thought, that strange radiosignal is coming from herÀËThe stairs are right herÁÀËLANCE: À, we should split upto check this place. Ill go first. ÀËWhat took you, À?Just as I thought, that strange radiosignal is coming from herÀËThe stairs are right herÁÀËLANCE: À, we should split upto check this place. Ill go first."
+        },
+        {
+          "mapId": 3303,
+          "map": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 8)",
+          "eventId": 3,
+          "event": "PokeMod Campaña ROM: Tramo siguiente",
+          "page": 1,
+          "command": 0,
+          "text": "ÀËAh! You found me again!What is wrong with me?Your better than me at this.Well. As promised heres aninteresting item for findingme again."
+        },
+        {
+          "mapId": 3356,
+          "map": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 17)",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_157_1",
+          "page": 1,
+          "command": 0,
+          "text": "Are you going to the BATTLE TOWER?This is a secret but if you win awhole lot, you can win special gifts. Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3411,
+          "map": "Liquid Crystal · Ruta Helada (Ice Path · Galería 12)",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Entrenador — liquid_crystal_212_1",
+          "page": 1,
+          "command": 0,
+          "text": "Im investigating MT.MORTAR, but mypals gone AWOL.Have you seen a TRAINER who has aSLOWPOKE that can use STRENGTH? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta batalla forma parte de los lugares de Johto, sus lazos y sus recuerdos; nadie tiene que imitar a otra persona para pertenecer aquí."
+        },
+        {
+          "mapId": 3422,
+          "map": "Liquid Crystal · Gimnasio de Endrino (Clair)",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: Warp 2",
+          "page": 1,
+          "command": 0,
+          "text": "ÀËLANCE: DGAGONITE, HYPER BEAÀËWhat took you, À?Just as I thought, that strange radiosignal is coming from herÀËThe stairs are right herÁÀËLANCE: À, we should split upto check this place. Ill go first. ÀËWhat took you, À?Just as I thought, that strange radiosignal is coming from herÀËThe stairs are right herÁÀËLANCE: À, we should split upto check this place. Ill go first."
+        },
+        {
+          "mapId": 3440,
+          "map": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 18)",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_241_1",
+          "page": 1,
+          "command": 0,
+          "text": "On this island, different eventsoccur depending on connections.What are those connections?They are for you to discover onyour own. Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3445,
+          "map": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 23)",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Warp 3",
+          "page": 1,
+          "command": 0,
+          "text": "Sorry, but this floor is strictly offlimits. Would you like an office of yourown?Call our sales team at133713371337."
+        },
+        {
+          "mapId": 3447,
+          "map": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 25)",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_248_1",
+          "page": 1,
+          "command": 0,
+          "text": "OFFICER: Please remain calm and stayin your seat kid!What?You want to help?...Are you crazy?The situation is too dangerous.We have no idea what could be outthere...And either way...I cant let a single person out thereespecially when we are  ???: sigh Then Ill go with him.OFFICER: And who are you????: sigh... The names JIN.Im an EX-GYM LEADER.Theres nothing me and my POKéMONcant handle together!OFFICER: Hmm...And why do you want to help thiskid?Do you know him? JIN: I admire his spirit, for wantingto help these poor people all alone.sigh And Im also interested toknow whats going on out there.OFFICER: Well.. Hmm..Umm.Uh....!OK.If you promise to look after the kid?JIN: Yea whatever...Just let us go?"
+        },
+        {
+          "mapId": 3511,
+          "map": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 12)",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: Entrenador — liquid_crystal_312_4",
+          "page": 1,
+          "command": 0,
+          "text": "Just becuase you beat me, doesntmean you look less annoying, OK?! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta batalla forma parte de los lugares de Johto, sus lazos y sus recuerdos; nadie tiene que imitar a otra persona para pertenecer aquí."
+        },
+        {
+          "mapId": 3525,
+          "map": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (6)",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_326_1",
+          "page": 1,
+          "command": 0,
+          "text": "Have you seen them?Those dreadful machines on Route 58and Route 59.I heard they were placed on SunburstIsland to damage Trainers Pokémon! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3526,
+          "map": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (7)",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_327_1",
+          "page": 1,
+          "command": 0,
+          "text": "When I was a young boy, I traveledto a distant region.I saw this fantastic Pokémon.All Im able to remember is, its aPokémon with a fin, and pretty smalltoo.Ever since Ive longed to see itagain, which is almost impossiblewhen you dont know i Hmm, is that so...?Maybe Im just making this wholething up, and its a figment of myimagination?You never know when you get as oldas me! Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3627,
+          "map": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 3)",
+          "eventId": 12,
+          "event": "PokeMod Campaña ROM: NPC — liquid_crystal_428_1",
+          "page": 1,
+          "command": 0,
+          "text": "Such a peaceful place, this SafariTown.I wonder what the old Safari Zone inKanto used to be like.Do they have the same Pokémon we haveover here? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 3630,
+          "map": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 6)",
+          "eventId": 10,
+          "event": "PokeMod Campaña ROM: Entrenador — liquid_crystal_431_1",
+          "page": 1,
+          "command": 0,
+          "text": "See that shop?Its selling refreshments! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta batalla forma parte de los lugares de Johto, sus lazos y sus recuerdos; nadie tiene que imitar a otra persona para pertenecer aquí."
+        },
+        {
+          "mapId": 3725,
+          "map": "TFOH · Capítulo 03 · ruta 026",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: Entrenador — tfoh_26_1",
+          "page": 1,
+          "command": 0,
+          "text": "So, it was you who beat GIOVANNIof TEAM ROCKET? Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Si aceptas el desafío, podrás continuar aunque pierdas; el camino nunca se cerrará."
+        },
+        {
+          "mapId": 3727,
+          "map": "TFOH · Capítulo 03 · cueva 028",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: Entrenador — tfoh_28_1",
+          "page": 1,
+          "command": 0,
+          "text": "The TEAM ROCKET HQ has fourunderground floors.Think you can reach the BOSS? Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Si aceptas el desafío, podrás continuar aunque pierdas; el camino nunca se cerrará."
+        },
+        {
+          "mapId": 3732,
+          "map": "TFOH · Capítulo 03 · poblado 033",
+          "eventId": 14,
+          "event": "PokeMod Campaña ROM: Entrenador — tfoh_33_1",
+          "page": 1,
+          "command": 0,
+          "text": "A hint? You can open doors witha CARD KEY! Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Si aceptas el desafío, podrás continuar aunque pierdas; el camino nunca se cerrará."
+        },
+        {
+          "mapId": 3739,
+          "map": "TFOH · Capítulo 04 · meseta 040",
+          "eventId": 10,
+          "event": "PokeMod Campaña ROM: Entrenador — tfoh_40_1",
+          "page": 1,
+          "command": 0,
+          "text": "Are you satisfied with beating me?Then go on home! Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Si aceptas el desafío, podrás continuar aunque pierdas; el camino nunca se cerrará."
+        },
+        {
+          "mapId": 3773,
+          "map": "TFOH · Capítulo 07 · meseta 074",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_74_1",
+          "page": 1,
+          "command": 0,
+          "text": "MR. FUJI: Heh?You came to save me?Thank you. But, I came here of myown free will.I came to calm the spirit ofCUBONEs mother.I think MAROWAKs spirit hasfinally left us.I must thank you for your kindconcern.Follow me to my home, POKéMONHOUSE, Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Pregunta, observa y vuelve cuando quieras: ninguna puerta depende de llevarte algo ajeno."
+        },
+        {
+          "mapId": 3791,
+          "map": "TFOH · Capítulo 08 · cueva 092",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: Entrenador — tfoh_92_1",
+          "page": 1,
+          "command": 0,
+          "text": "TEAM ROCKET broke up?What planet are you from? Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Si aceptas el desafío, podrás continuar aunque pierdas; el camino nunca se cerrará."
+        },
+        {
+          "mapId": 3840,
+          "map": "TFOH · Capítulo 12 · costa 141",
+          "eventId": 15,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_141_4",
+          "page": 1,
+          "command": 0,
+          "text": "Psssst!Do you know what Im doing? Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Pregunta, observa y vuelve cuando quieras: ninguna puerta depende de llevarte algo ajeno."
+        },
+        {
+          "mapId": 3894,
+          "map": "TFOH · Capítulo 17 · costa 195",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: Entrenador — tfoh_195_1",
+          "page": 1,
+          "command": 0,
+          "text": "So listen, you havent seen anyrare POKéMON, have you? Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Si aceptas el desafío, podrás continuar aunque pierdas; el camino nunca se cerrará."
+        },
+        {
+          "mapId": 3897,
+          "map": "TFOH · Capítulo 17 · meseta 198",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_198_1",
+          "page": 1,
+          "command": 0,
+          "text": "I cant figure out how Im supposedto get inside. Let me tell you, I found thisplace.Dont look so envious, will you? Pregunta, observa y vuelve cuando quieras: ninguna puerta depende de llevarte algo ajeno."
+        },
+        {
+          "mapId": 3899,
+          "map": "TFOH · Capítulo 17 · ruta 200",
+          "eventId": 4,
+          "event": "PokeMod Campaña ROM: Entrenador — tfoh_200_1",
+          "page": 1,
+          "command": 0,
+          "text": "Whats that?I dont act the way I look?Heh, thats a part of my strategy! Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Si aceptas el desafío, podrás continuar aunque pierdas; el camino nunca se cerrará."
+        },
+        {
+          "mapId": 3944,
+          "map": "TFOH · Capítulo 21 · costa 245",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — tfoh_245_1",
+          "page": 1,
+          "command": 0,
+          "text": "On sunny days, I step out and gazeupon the volcano.Thats my daily routine. Let me think… When was the lasttime MT. EMBER erupted? Pregunta, observa y vuelve cuando quieras: ninguna puerta depende de llevarte algo ajeno."
+        },
+        {
+          "mapId": 4010,
+          "map": "Pokémon Unbound · Capítulo 01 · cueva 011",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: NPC — unbound_11_1",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4016,
+          "map": "Pokémon Unbound · Capítulo 02 · poblado 017",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_17_4",
+          "page": 1,
+          "command": 0,
+          "text": "With most of the other grunts gone,our manpower has become verylimited.So, it is essential that each of usbecome as strong as possible.Would you allow me the privilege ofbattling with you, sir? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4017,
+          "map": "Pokémon Unbound · Capítulo 02 · ruta 018",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_18_3",
+          "page": 1,
+          "command": 0,
+          "text": "Oh, Marlon, sir!I spent some time back at HQ withthe Science Society, and learnedabout a new way to make ourPokémon stronger in battles!Would you like to see it? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4018,
+          "map": "Pokémon Unbound · Capítulo 02 · santuario 019",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — unbound_19_1",
+          "page": 1,
+          "command": 0,
+          "text": "Great care is being taken insynthesizing this next batch ofShadow Warriors.These Shadow Warriors will be thestrongest weve ever created!Theyll be invincible!And the Light of Ruin will stand nochance against them! They wanted us to go back to HQand stop making Shadow Warriors.STOP MAKING SHADOW WARRIORS!?ARE YOU KIDDING ME!?Creating Shadow Warriors is all Ilive for!Im fortunate that Zeph still had ause for more and allowed me tocontinue synthesizing  Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4034,
+          "map": "Pokémon Unbound · Capítulo 03 · costa 035",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_35_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4036,
+          "map": "Pokémon Unbound · Capítulo 04 · instalación 037",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_37_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4038,
+          "map": "Pokémon Unbound · Capítulo 04 · instalación 039",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Warp 3",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â!"
+        },
+        {
+          "mapId": 4046,
+          "map": "Pokémon Unbound · Capítulo 04 · ruta 047",
+          "eventId": 10,
+          "event": "PokeMod Campaña ROM: NPC — unbound_47_1",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4064,
+          "map": "Pokémon Unbound · Capítulo 06 · poblado 065",
+          "eventId": 19,
+          "event": "PokeMod Campaña ROM: NPC — unbound_65_3",
+          "page": 1,
+          "command": 0,
+          "text": "ÀÁThe Shadow Warrior is currently inbattle with a Floette.Remove its cloak? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4069,
+          "map": "Pokémon Unbound · Capítulo 06 · poblado 070",
+          "eventId": 15,
+          "event": "PokeMod Campaña ROM: NPC — unbound_70_4",
+          "page": 1,
+          "command": 0,
+          "text": "ÀÁReturn to ÀÉDehara CityÀÁ? ÀÉBraaaaa! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4072,
+          "map": "Pokémon Unbound · Capítulo 07 · poblado 073",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_73_1",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4084,
+          "map": "Pokémon Unbound · Capítulo 08 · costa 085",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_85_1",
+          "page": 1,
+          "command": 0,
+          "text": "À, you have not found apartner for your tag team.Would you like to quit looking andreturn to the reception counter? Milo Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4093,
+          "map": "Pokémon Unbound · Capítulo 08 · cueva 094",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — unbound_94_1",
+          "page": 1,
+          "command": 0,
+          "text": "Hi, glad to meet you!…Thats unfriendly of you.How about saying hi back?So, come on, tell me aboutyourself.Id love to hear your profile! Please tell me more aboutyourself next time! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4094,
+          "map": "Pokémon Unbound · Capítulo 08 · costa 095",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — unbound_95_1",
+          "page": 1,
+          "command": 0,
+          "text": "Hi, glad to meet you!…Thats unfriendly of you.How about saying hi back?So, come on, tell me aboutyourself.Id love to hear your profile! Please tell me more aboutyourself next time! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4095,
+          "map": "Pokémon Unbound · Capítulo 08 · bosque 096",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — unbound_96_1",
+          "page": 1,
+          "command": 0,
+          "text": "Hi, glad to meet you!…Thats unfriendly of you.How about saying hi back?So, come on, tell me aboutyourself.Id love to hear your profile! Please tell me more aboutyourself next time! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4105,
+          "map": "Pokémon Unbound · Capítulo 09 · ruta 106",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — unbound_106_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4105,
+          "map": "Pokémon Unbound · Capítulo 09 · ruta 106",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_106_4",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4108,
+          "map": "Pokémon Unbound · Capítulo 10 · costa 109",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — unbound_109_1",
+          "page": 1,
+          "command": 0,
+          "text": "Hey!How are you?Have you visited Professor Logslaboratory yet? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4109,
+          "map": "Pokémon Unbound · Capítulo 10 · bosque 110",
+          "eventId": 5,
+          "event": "PokeMod Campaña ROM: NPC — unbound_110_1",
+          "page": 1,
+          "command": 0,
+          "text": "Hey!How are you?Have you visited Professor Logslaboratory yet? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4112,
+          "map": "Pokémon Unbound · Capítulo 10 · poblado 113",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Entrenador — unbound_113_1",
+          "page": 1,
+          "command": 0,
+          "text": "Our top of the line security systemonly gets harder to crack once yougo higher up!You think your puny brain is bigenough to handle it? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta batalla forma parte de los dilemas de una región fronteriza y la gente que decide protegerla; nadie tiene que imitar a otra persona para pertenecer aquí."
+        },
+        {
+          "mapId": 4113,
+          "map": "Pokémon Unbound · Capítulo 10 · ruta 114",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_114_1",
+          "page": 1,
+          "command": 0,
+          "text": "You think youre so smart crackinthose codes below, doncha?But are you smart enough to crackthe code to this door?Chaw ha, I doubt it!Those Science Society nerds whobuilt the security system, madethis one extra tough to crack! Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4123,
+          "map": "Pokémon Unbound · Capítulo 11 · bosque 124",
+          "eventId": 11,
+          "event": "PokeMod Campaña ROM: NPC — unbound_124_1",
+          "page": 1,
+          "command": 0,
+          "text": "If youve become a bit of a fanaticabout battles, Im the guy who canteach your Pokémon all kinds ofmoves.May I teach your Pokémon moves inexchange for BP? If youve poured your heart andsoul into Pokémon battles, Imthe guy who can teach your Pokémonall kinds of moves.May I teach your Pokémon moves inexchange for BP? If youve poured your whole lifeinto Pokémon battles, Im the guywho can teach your Pokémon allkinds of moves.May I teach your Pokémon moves inexchange for BP?"
+        },
+        {
+          "mapId": 4138,
+          "map": "Pokémon Unbound · Capítulo 12 · costa 139",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_139_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4142,
+          "map": "Pokémon Unbound · Capítulo 12 · poblado 143",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_143_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4149,
+          "map": "Pokémon Unbound · Capítulo 13 · meseta 150",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_150_2",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4153,
+          "map": "Pokémon Unbound · Capítulo 13 · cueva 154",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Warp 3",
+          "page": 1,
+          "command": 0,
+          "text": "Where could my girl be…? La geometría se adaptó a Fire Ash; el destino conserva su relación estructural."
+        },
+        {
+          "mapId": 4153,
+          "map": "Pokémon Unbound · Capítulo 13 · cueva 154",
+          "eventId": 11,
+          "event": "PokeMod Campaña ROM: NPC — unbound_154_2",
+          "page": 1,
+          "command": 0,
+          "text": "You cant fool us, Cube Corp!We know what youre up to in there!We know youre really run by theScience Society!And one day, well oust youonce and for all! Down with Cube Corp!Down with Cube Corp!Im protesting against the evils ofCube Corp, and especially theScience Society.Theyve been running cruelexperiments on Pokémon, includingthe ones Im responsible for!Hmm…? I have ÀÉhard, snowy scalesÀË Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4155,
+          "map": "Pokémon Unbound · Capítulo 13 · cueva 156",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_156_2",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4155,
+          "map": "Pokémon Unbound · Capítulo 13 · cueva 156",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_156_3",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4157,
+          "map": "Pokémon Unbound · Capítulo 14 · meseta 158",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_158_4",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4168,
+          "map": "Pokémon Unbound · Capítulo 15 · poblado 169",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_169_1",
+          "page": 1,
+          "command": 0,
+          "text": "This section of the Expressway wasintentionally blocked off due tothe high crime rate in AntisisCity.If youre stuck here without a wayback home, I can teleport you overthe blockage.Would you like that? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4207,
+          "map": "Pokémon Unbound · Capítulo 18 · ruta 208",
+          "eventId": 11,
+          "event": "PokeMod Campaña ROM: NPC — unbound_208_1",
+          "page": 1,
+          "command": 0,
+          "text": "If youve become a bit of a fanaticabout battles, Im the guy who canteach your Pokémon all kinds ofmoves.May I teach your Pokémon moves inexchange for BP? If youve poured your heart andsoul into Pokémon battles, Imthe guy who can teach your Pokémonall kinds of moves.May I teach your Pokémon moves inexchange for BP? If youve poured your whole lifeinto Pokémon battles, Im the guywho can teach your Pokémon allkinds of moves.May I teach your Pokémon moves inexchange for BP?"
+        },
+        {
+          "mapId": 4222,
+          "map": "Pokémon Unbound · Capítulo 19 · poblado 223",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_223_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4226,
+          "map": "Pokémon Unbound · Capítulo 19 · costa 227",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_227_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4233,
+          "map": "Pokémon Unbound · Capítulo 20 · cueva 234",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_234_2",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4239,
+          "map": "Pokémon Unbound · Capítulo 20 · meseta 240",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_240_2",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4239,
+          "map": "Pokémon Unbound · Capítulo 20 · meseta 240",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_240_3",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4241,
+          "map": "Pokémon Unbound · Capítulo 21 · cueva 242",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_242_4",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4256,
+          "map": "Pokémon Unbound · Capítulo 22 · poblado 257",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_257_1",
+          "page": 1,
+          "command": 0,
+          "text": "The link will be terminated if youleave the room. Is that okay? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4269,
+          "map": "Pokémon Unbound · Capítulo 23 · bosque 270",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: NPC — unbound_270_1",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4270,
+          "map": "Pokémon Unbound · Capítulo 23 · instalación 271",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_271_1",
+          "page": 1,
+          "command": 0,
+          "text": "With the ÀÉÁÀË in hand,you will be able to translate theancient dialect, if you so desire.In fact, it may be advantageous foryou to discover what is behindthese tablets.Once you have solved the riddle oneach of the tablets in Borrius,come s Am I Blind? Am I Blind?"
+        },
+        {
+          "mapId": 4278,
+          "map": "Pokémon Unbound · Capítulo 24 · instalación 279",
+          "eventId": 4,
+          "event": "PokeMod Campaña ROM: Warp 1",
+          "page": 1,
+          "command": 0,
+          "text": "Where do you think youre going,kid?Im under strict orders to keep youlocked up. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural."
+        },
+        {
+          "mapId": 4288,
+          "map": "Pokémon Unbound · Capítulo 25 · poblado 289",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Entrenador — unbound_289_1",
+          "page": 1,
+          "command": 0,
+          "text": "Our top of the line security systemonly gets harder to crack once yougo higher up!You think your puny brain is bigenough to handle it? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta batalla forma parte de los dilemas de una región fronteriza y la gente que decide protegerla; nadie tiene que imitar a otra persona para pertenecer aquí."
+        },
+        {
+          "mapId": 4289,
+          "map": "Pokémon Unbound · Capítulo 25 · ruta 290",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_290_1",
+          "page": 1,
+          "command": 0,
+          "text": "You think youre so smart crackinthose codes below, doncha?But are you smart enough to crackthe code to this door?Chaw ha, I doubt it!Those Science Society nerds whobuilt the security system, madethis one extra tough to crack! Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4292,
+          "map": "Pokémon Unbound · Capítulo 25 · costa 293",
+          "eventId": 16,
+          "event": "PokeMod Campaña ROM: NPC — unbound_293_2",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4293,
+          "map": "Pokémon Unbound · Capítulo 25 · instalación 294",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: NPC — unbound_294_1",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4299,
+          "map": "Pokémon Unbound · Capítulo 25 · cueva 300",
+          "eventId": 19,
+          "event": "PokeMod Campaña ROM: NPC — unbound_300_1",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4300,
+          "map": "Pokémon Unbound · Capítulo 26 · costa 301",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: NPC — unbound_301_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4303,
+          "map": "Pokémon Unbound · Capítulo 26 · meseta 304",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_304_1",
+          "page": 1,
+          "command": 0,
+          "text": "This section of the Expressway wasintentionally blocked off due tothe high crime rate in AntisisCity.If youre stuck here without a wayback home, I can teleport you overthe blockage.Would you like that? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4308,
+          "map": "Pokémon Unbound · Capítulo 26 · instalación 309",
+          "eventId": 11,
+          "event": "PokeMod Campaña ROM: NPC — unbound_309_1",
+          "page": 1,
+          "command": 0,
+          "text": "If youve become a bit of a fanaticabout battles, Im the guy who canteach your Pokémon all kinds ofmoves.May I teach your Pokémon moves inexchange for BP? If youve poured your heart andsoul into Pokémon battles, Imthe guy who can teach your Pokémonall kinds of moves.May I teach your Pokémon moves inexchange for BP? If youve poured your whole lifeinto Pokémon battles, Im the guywho can teach your Pokémon allkinds of moves.May I teach your Pokémon moves inexchange for BP?"
+        },
+        {
+          "mapId": 4311,
+          "map": "Pokémon Unbound · Capítulo 26 · ruta 312",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: Warp 3",
+          "page": 1,
+          "command": 0,
+          "text": "Where could my girl be…? La geometría se adaptó a Fire Ash; el destino conserva su relación estructural."
+        },
+        {
+          "mapId": 4311,
+          "map": "Pokémon Unbound · Capítulo 26 · ruta 312",
+          "eventId": 11,
+          "event": "PokeMod Campaña ROM: NPC — unbound_312_2",
+          "page": 1,
+          "command": 0,
+          "text": "You cant fool us, Cube Corp!We know what youre up to in there!We know youre really run by theScience Society!And one day, well oust youonce and for all! Down with Cube Corp!Down with Cube Corp!Im protesting against the evils ofCube Corp, and especially theScience Society.Theyve been running cruelexperiments on Pokémon, includingthe ones Im responsible for!Hmm…? I have ÀÉhard, snowy scalesÀË Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4316,
+          "map": "Pokémon Unbound · Capítulo 27 · costa 317",
+          "eventId": 16,
+          "event": "PokeMod Campaña ROM: NPC — unbound_317_2",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4326,
+          "map": "Pokémon Unbound · Capítulo 28 · poblado 327",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_327_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4327,
+          "map": "Pokémon Unbound · Capítulo 28 · ruta 328",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_328_1",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4333,
+          "map": "Pokémon Unbound · Capítulo 28 · meseta 334",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_334_2",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4340,
+          "map": "Pokémon Unbound · Capítulo 29 · costa 341",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_341_2",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4340,
+          "map": "Pokémon Unbound · Capítulo 29 · costa 341",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_341_3",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4342,
+          "map": "Pokémon Unbound · Capítulo 29 · poblado 343",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_343_4",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4353,
+          "map": "Pokémon Unbound · Capítulo 30 · ruta 354",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_354_1",
+          "page": 1,
+          "command": 0,
+          "text": "This section of the Expressway wasintentionally blocked off due tothe high crime rate in AntisisCity.If youre stuck here without a wayback home, I can teleport you overthe blockage.Would you like that? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4365,
+          "map": "Pokémon Unbound · Capítulo 31 · bosque 366",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: NPC — unbound_366_3",
+          "page": 1,
+          "command": 0,
+          "text": "This tree looks like it can be cutdown!Would you like to cut it? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4369,
+          "map": "Pokémon Unbound · Capítulo 31 · poblado 370",
+          "eventId": 9,
+          "event": "PokeMod Campaña ROM: NPC — unbound_370_3",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4378,
+          "map": "Pokémon Unbound · Capítulo 32 · costa 379",
+          "eventId": 12,
+          "event": "PokeMod Campaña ROM: Warp 9",
+          "page": 1,
+          "command": 0,
+          "text": "Well, well, well…If it isnt À!Marlon told me not to let youinto Thundercap Mt., so youcant interfere with our plans.Even if I did let you in, youd betoast without the power ofÀÉMega EvolutionÀË.So dont you see?You should stay out here for y You placed yourself firmly onthe bench."
+        },
+        {
+          "mapId": 4381,
+          "map": "Pokémon Unbound · Capítulo 32 · meseta 382",
+          "eventId": 25,
+          "event": "PokeMod Campaña ROM: NPC — unbound_382_1",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4392,
+          "map": "Pokémon Unbound · Capítulo 33 · santuario 393",
+          "eventId": 6,
+          "event": "PokeMod Campaña ROM: NPC — unbound_393_2",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4395,
+          "map": "Pokémon Unbound · Capítulo 33 · bosque 396",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_396_4",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4398,
+          "map": "Pokémon Unbound · Capítulo 34 · instalación 399",
+          "eventId": 7,
+          "event": "PokeMod Campaña ROM: NPC — unbound_399_2",
+          "page": 1,
+          "command": 0,
+          "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        },
+        {
+          "mapId": 4398,
+          "map": "Pokémon Unbound · Capítulo 34 · instalación 399",
+          "eventId": 8,
+          "event": "PokeMod Campaña ROM: NPC — unbound_399_3",
+          "page": 1,
+          "command": 0,
+          "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar."
+        }
+      ]
+    },
+    "variablesEmpty": {
+      "count": 0,
+      "examples": []
+    }
+  },
+  "repeatedLiterals": [
+    {
+      "text": "Regresar a Puerto Horizonte. El retorno nunca está condicionado.",
+      "count": 1226
+    },
+    {
+      "text": "Puedes reintentarlo o seguir explorando: aquí una derrota no encierra a nadie.",
+      "count": 789
+    },
+    {
+      "text": "Nuestro combate ya forma parte del viaje. Sigue escuchando a esta dimensión.",
+      "count": 789
+    },
+    {
+      "text": "Ash: ¡Buena batalla! Me gusta que podamos seguir viajando después de medir fuerzas.",
+      "count": 620
+    },
+    {
+      "text": "Decides observar sin intervenir. La anomalía sigue activa y podrás volver a intentarlo.",
+      "count": 420
+    },
+    {
+      "text": "Has comprendido este tramo sin apropiarte de él.",
+      "count": 169
+    },
+    {
+      "text": "Haz espacio en la Mochila y vuelve a hablar conmigo. La decisión aún puede revisarse y la salida permanece abierta.",
+      "count": 120
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 109
+    },
+    {
+      "text": "Enlace reconstruido del banco 5, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 62
+    },
+    {
+      "text": "Enlace reconstruido del banco 14, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 61
+    },
+    {
+      "text": "La anomalía se recompone. Puedes recuperarte y volver a intentarlo.",
+      "count": 57
+    },
+    {
+      "text": "Enlace reconstruido del banco 30, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 57
+    },
+    {
+      "text": "Enlace reconstruido del banco 50, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 55
+    },
+    {
+      "text": "Enlace reconstruido del banco 40, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 53
+    },
+    {
+      "text": "Enlace reconstruido del banco 44, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 52
+    },
+    {
+      "text": "Enlace reconstruido del banco 23, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 50
+    },
+    {
+      "text": "La revancha queda registrada sin repetir sello ni recompensa.",
+      "count": 40
+    },
+    {
+      "text": "Puedes intentarlo nuevamente cuando estés preparado.",
+      "count": 40
+    },
+    {
+      "text": "Este episodio puede ser exigente. Puedo restaurar a todo tu equipo antes de continuar.",
+      "count": 40
+    },
+    {
+      "text": "Listo. La salida al puerto permanece abierta.",
+      "count": 40
+    },
+    {
+      "text": "Enlace reconstruido del banco 8, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 40
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 6. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 38
+    },
+    {
+      "text": "Enlace reconstruido del banco 11, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 35
+    },
+    {
+      "text": "Enlace reconstruido del banco 29, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 34
+    },
+    {
+      "text": "Enlace reconstruido del banco 23, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 33
+    },
+    {
+      "text": "Enlace reconstruido del banco 11, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 33
+    },
+    {
+      "text": "Enlace reconstruido del banco 12, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 32
+    },
+    {
+      "text": "Enlace reconstruido del banco 1, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 31
+    },
+    {
+      "text": "La derrota devuelve al jugador al punto de curación; no altera la decisión ni bloquea la salida.",
+      "count": 30
+    },
+    {
+      "text": "Enlace reconstruido del banco 9, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 30
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 7. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 28
+    },
+    {
+      "text": "Enlace reconstruido del banco 9, mapa 6. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 27
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 26
+    },
+    {
+      "text": "Enlace reconstruido del banco 26, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 26
+    },
+    {
+      "text": "Enlace reconstruido del banco 9, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 25
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 25
+    },
+    {
+      "text": "Enlace reconstruido del banco 49, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 25
+    },
+    {
+      "text": "Enlace reconstruido del banco 0, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 24
+    },
+    {
+      "text": "Enlace reconstruido del banco 28, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 24
+    },
+    {
+      "text": "Enlace reconstruido del banco 9, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 23
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 23. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 23
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 25. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 23
+    },
+    {
+      "text": "Enlace reconstruido del banco 5, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 23
+    },
+    {
+      "text": "Enlace reconstruido del banco 0, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 22
+    },
+    {
+      "text": "Enlace reconstruido del banco 13, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 22
+    },
+    {
+      "text": "Enlace reconstruido del banco 15, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 22
+    },
+    {
+      "text": "Enlace reconstruido del banco 28, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 22
+    },
+    {
+      "text": "Enlace reconstruido del banco 5, mapa 6. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 22
+    },
+    {
+      "text": "This rock appears to be breakable.Would you like to use Rock Smash? Á used Â! Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 22
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 21
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 7. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 21
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 11. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 21
+    },
+    {
+      "text": "Enlace reconstruido del banco 51, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 21
+    },
+    {
+      "text": "Enlace reconstruido del banco 12, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 21
+    },
+    {
+      "text": "Enlace reconstruido del banco 5, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 20
+    },
+    {
+      "text": "Enlace reconstruido del banco 19, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 20
+    },
+    {
+      "text": "Enlace reconstruido del banco 55, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 20
+    },
+    {
+      "text": "El cristal ofrece tres Formas de Anomalía.\\ch[1,4,Anomalía Alfa,Anomalía Beta,Anomalía Omega,Retirarse]",
+      "count": 19
+    },
+    {
+      "text": "Enlace reconstruido del banco 0, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 19
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 19
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 19
+    },
+    {
+      "text": "Enlace reconstruido del banco 5, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 19
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 6. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 19
+    },
+    {
+      "text": "Enlace reconstruido del banco 6, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 11, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 18, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 14. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 15. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 46, mapa 9. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 55, mapa 7. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 18
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 5. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 17
+    },
+    {
+      "text": "Enlace reconstruido del banco 9, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 17
+    },
+    {
+      "text": "Enlace reconstruido del banco 16, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 17
+    },
+    {
+      "text": "Enlace reconstruido del banco 20, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 17
+    },
+    {
+      "text": "Enlace reconstruido del banco 34, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 17
+    },
+    {
+      "text": "Enlace reconstruido del banco 44, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 17
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 7. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 17
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 4, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 8, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 20, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 22, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 8. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 13, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 45, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 49, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 10. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 16. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 16
+    },
+    {
+      "text": "Enlace reconstruido del banco 2, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "Enlace reconstruido del banco 2, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "Enlace reconstruido del banco 15, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "Enlace reconstruido del banco 17, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "Enlace reconstruido del banco 21, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "cronista de la dimensión: Ash, aquí cada persona tiene algo propio que contar sobre amistad. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 15
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 14. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "Enlace reconstruido del banco 36, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "Enlace reconstruido del banco 52, mapa 9. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 15
+    },
+    {
+      "text": "entrenador de paso: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 15
+    },
+    {
+      "text": "cronista de la dimensión: Ash, aquí cada persona tiene algo propio que contar sobre retorno. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 15
+    },
+    {
+      "text": "cuidador del distrito: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 15
+    },
+    {
+      "text": "Its a big boulder, but a Pokémonmay be able to push it aside.Would you like to use Strength? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 15
+    },
+    {
+      "text": "Fred Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 15
+    },
+    {
+      "text": "Vuelve cuando quieras.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 3, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 4, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 6, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 7, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 15, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 19, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 20, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 24, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 27, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 28, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 31, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 35, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 38, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 48, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 48, mapa 10. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 6, mapa 15. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 14
+    },
+    {
+      "text": "investigador de campo: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 14
+    },
+    {
+      "text": "Enlace reconstruido del banco 2, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 13, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 17, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 21, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "cronista de la dimensión: Ash, aquí cada persona tiene algo propio que contar sobre legado. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 13
+    },
+    {
+      "text": "testigo del camino: Ash, aquí cada persona tiene algo propio que contar sobre legado. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 17, mapa 5. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 26, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 27, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 40, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 46, mapa 5. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 48, mapa 5. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 8. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 20. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "investigador de campo: Ash, aquí eres visitante; escucha lo que este lugar conserva sobre refugio. Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Pregunta, observa y vuelve cuando quieras: ninguna puerta depende de llevarte algo ajeno.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 2, mapa 10. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 4, mapa 7. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 13
+    },
+    {
+      "text": "mensajero regional: Ash, aquí cada persona tiene algo propio que contar sobre viaje. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 13
+    },
+    {
+      "text": "mensajero regional: Ash, aquí cada persona tiene algo propio que contar sobre retorno. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 13
+    },
+    {
+      "text": "investigador de campo: Ash, aquí cada persona tiene algo propio que contar sobre retorno. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 13
+    },
+    {
+      "text": "Enlace reconstruido del banco 4, mapa 4. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 8, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 17, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 21, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 21, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 22, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "testigo del camino: Ash, aquí cada persona tiene algo propio que contar sobre viaje. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "cuidador del distrito: Ash, aquí cada persona tiene algo propio que contar sobre memoria. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "exploradora de rutas: Ash, aquí cada persona tiene algo propio que contar sobre memoria. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "investigador de campo: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "entrenador de paso: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "exploradora de rutas: Ash, aquí cada persona tiene algo propio que contar sobre elección. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "guía local: Ash, aquí cada persona tiene algo propio que contar sobre frontera. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "testigo del camino: Ash, aquí cada persona tiene algo propio que contar sobre memoria. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "guía local: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "cronista de la dimensión: Ash, aquí cada persona tiene algo propio que contar sobre elección. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 35, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 43, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 46, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 46, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 49, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 49, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 22. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "testigo del camino: Ash, aquí eres visitante; escucha lo que este lugar conserva sobre promesa. Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Pregunta, observa y vuelve cuando quieras: ninguna puerta depende de llevarte algo ajeno.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 2, mapa 7. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 12
+    },
+    {
+      "text": "mensajero regional: Ash, aquí cada persona tiene algo propio que contar sobre refugio. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "testigo del camino: Ash, aquí cada persona tiene algo propio que contar sobre rivalidad. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "cronista de la dimensión: Ash, aquí cada persona tiene algo propio que contar sobre elección. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "mensajero regional: Ash, aquí cada persona tiene algo propio que contar sobre memoria. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "investigador de campo: Ash, aquí cada persona tiene algo propio que contar sobre elección. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "cuidador del distrito: Ash, aquí cada persona tiene algo propio que contar sobre memoria. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "cuidador del distrito: Ash, aquí cada persona tiene algo propio que contar sobre legado. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "mensajero regional: Ash, aquí cada persona tiene algo propio que contar sobre legado. ¿Nos ayudas a entenderlo? Ash: Una región dividida no deja de ser un hogar. Si alguien necesita ayuda, cuenta conmigo. Esta historia trata de los dilemas de una región fronteriza y la gente que decide protegerla. Preguntar primero también es una forma de ayudar.",
+      "count": 12
+    },
+    {
+      "text": "Enlace reconstruido del banco 0, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 1, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 2, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 4, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 5. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 13, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 19, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "investigador de campo: Ash, aquí cada persona tiene algo propio que contar sobre rumor. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 11
+    },
+    {
+      "text": "testigo del camino: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 11
+    },
+    {
+      "text": "mensajero regional: Ash, aquí cada persona tiene algo propio que contar sobre elección. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 11
+    },
+    {
+      "text": "cuidador del distrito: Ash, aquí cada persona tiene algo propio que contar sobre hallazgo. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 10, mapa 15. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "cronista de la dimensión: Ash, aquí cada persona tiene algo propio que contar sobre promesa. ¿Nos ayudas a entenderlo? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es una forma de ayudar.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 14, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 21, mapa 12. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 21, mapa 13. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 24, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 29, mapa 2. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 46, mapa 3. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 47, mapa 0. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 48, mapa 7. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 51, mapa 1. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 12. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "Enlace reconstruido del banco 54, mapa 27. La geometría se adaptó a Fire Ash; el destino conserva su relación estructural.",
+      "count": 11
+    },
+    {
+      "text": "mensajero regional: Ash, aquí eres visitante; escucha lo que este lugar conserva sobre rivalidad. Este rincón pertenece a TFOH. Puedes recorrerlo sin borrar la historia de quienes llegaron antes. Pregunta, observa y vuelve cuando quieras: ninguna puerta depende de llevarte algo ajeno.",
+      "count": 11
+    }
+  ],
+  "samples": {
+    "champions": [],
+    "leaders": [
+      {
+        "mapId": 2023,
+        "map": "La Torre que Escuchaba",
+        "eventId": 2,
+        "event": "PokeMod Multiverso: Jefe LA LOCUTORA"
+      },
+      {
+        "mapId": 2023,
+        "map": "La Torre que Escuchaba",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2024,
+        "map": "La Partida Perdida",
+        "eventId": 2,
+        "event": "PokeMod Multiverso: Jefe PLATA PERDIDA"
+      },
+      {
+        "mapId": 2024,
+        "map": "La Partida Perdida",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2025,
+        "map": "La Fosa del Enterrado",
+        "eventId": 2,
+        "event": "PokeMod Multiverso: Jefe EL ENTERRADO"
+      },
+      {
+        "mapId": 2025,
+        "map": "La Fosa del Enterrado",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2026,
+        "map": "La Cinta Carmesí",
+        "eventId": 2,
+        "event": "PokeMod Multiverso: Jefe EL NIÑO DE LA CINTA"
+      },
+      {
+        "mapId": 2026,
+        "map": "La Cinta Carmesí",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2027,
+        "map": "Ciudad Glitch",
+        "eventId": 2,
+        "event": "PokeMod Multiverso: Jefe EL FALLO CERO"
+      },
+      {
+        "mapId": 2027,
+        "map": "Ciudad Glitch",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2028,
+        "map": "El Eco que Jugó Contigo",
+        "eventId": 2,
+        "event": "PokeMod Multiverso: Jefe EL ECO AHOGADO"
+      },
+      {
+        "mapId": 2028,
+        "map": "El Eco que Jugó Contigo",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2029,
+        "map": "La Consola de 1996",
+        "eventId": 2,
+        "event": "PokeMod Multiverso: Jefe EL JUGADOR DE 1996"
+      },
+      {
+        "mapId": 2029,
+        "map": "La Consola de 1996",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2021,
+        "map": "Monte Silver — Falda",
+        "eventId": 6,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2030,
+        "map": "Monte Silver — Gruta de los Testigos",
+        "eventId": 10,
+        "event": "PokeMod Multiverso: Guardiana"
+      },
+      {
+        "mapId": 2022,
+        "map": "Monte Silver — Cumbre",
+        "eventId": 3,
+        "event": "PokeMod Multiverso: Jefe RED"
+      },
+      {
+        "mapId": 2201,
+        "map": "Gimnasio Glazed — Líder Ámbar",
+        "eventId": 2,
+        "event": "PokeMod Barco: Líder — Líder Ámbar"
+      },
+      {
+        "mapId": 2211,
+        "map": "Gimnasio Light Platinum — Líder Resplandor",
+        "eventId": 2,
+        "event": "PokeMod Barco: Líder — Líder Resplandor"
+      },
+      {
+        "mapId": 2250,
+        "map": "Gimnasio de Atlas · Bruma",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Néboa"
+      },
+      {
+        "mapId": 2251,
+        "map": "Gimnasio de Atlas · Veta",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Canto"
+      },
+      {
+        "mapId": 2252,
+        "map": "Gimnasio de Atlas · Duna",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Ágata"
+      },
+      {
+        "mapId": 2253,
+        "map": "Gimnasio de Atlas · Fragua",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Crisol"
+      },
+      {
+        "mapId": 2254,
+        "map": "Gimnasio de Atlas · Marea",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Náyade"
+      },
+      {
+        "mapId": 2255,
+        "map": "Gimnasio de Atlas · Vendaval",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Cierzo"
+      },
+      {
+        "mapId": 2256,
+        "map": "Gimnasio de Atlas · Invernadero",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Retoño"
+      },
+      {
+        "mapId": 2257,
+        "map": "Gimnasio de Atlas · Cumbre",
+        "eventId": 2,
+        "event": "PokeMod Circuito: Líder — Líder Chispa"
+      },
+      {
+        "mapId": 2195,
+        "map": "Atlas Mil · Vía de las Nueve Eras",
+        "eventId": 4,
+        "event": "PokeMod Vía: Guardiana de la Vía"
+      },
+      {
+        "mapId": 2196,
+        "map": "Gimnasio Atlas · Las Nueve Eras",
+        "eventId": 11,
+        "event": "PokeMod Vía: Líder Vera"
+      },
+      {
+        "mapId": 2231,
+        "map": "TFOH — Cámara de la Primera Huella",
+        "eventId": 2,
+        "event": "PokeMod Barco: Líder — Custodia Alba"
+      },
+      {
+        "mapId": 2241,
+        "map": "Dojo Liquid Crystal — Guardiana Suicune",
+        "eventId": 2,
+        "event": "PokeMod Barco: Líder — Guardiana Nerea"
+      },
+      {
+        "mapId": 2243,
+        "map": "TFOH — Cámara de la Primera Huella",
+        "eventId": 2,
+        "event": "PokeMod Barco: Líder — Custodia Alba"
+      },
+      {
+        "mapId": 2245,
+        "map": "Factory Adventure — Núcleo de Ensamblaje",
+        "eventId": 2,
+        "event": "PokeMod Barco: Líder — Maestro Ensamble"
+      },
+      {
+        "mapId": 3011,
+        "map": "Glazed · Paso Fronterizo de Chocovine",
+        "eventId": 10,
+        "event": "PokeMod Líder glazed 1 — Sparky"
+      },
+      {
+        "mapId": 3025,
+        "map": "Glazed · Estación del Transbordador",
+        "eventId": 7,
+        "event": "PokeMod Líder glazed 2 — Terry"
+      },
+      {
+        "mapId": 3036,
+        "map": "Glazed · Banco de Arena",
+        "eventId": 8,
+        "event": "PokeMod Líder glazed 3 — Flo"
+      },
+      {
+        "mapId": 3046,
+        "map": "Glazed · Jardines Botánicos",
+        "eventId": 7,
+        "event": "PokeMod Líder glazed 4 — Lief"
+      },
+      {
+        "mapId": 3056,
+        "map": "Glazed · Mt. Stratus (Caverna de Hielo)",
+        "eventId": 34,
+        "event": "PokeMod Líder glazed 5 — Irene"
+      },
+      {
+        "mapId": 3071,
+        "map": "Glazed · Cripta Sagrada de Darkwood",
+        "eventId": 10,
+        "event": "PokeMod Líder glazed 6 — Ernest"
+      },
+      {
+        "mapId": 3086,
+        "map": "Glazed · Caverna de Cuarzo Resonante",
+        "eventId": 11,
+        "event": "PokeMod Líder glazed 7 — Nicole"
+      },
+      {
+        "mapId": 3101,
+        "map": "Glazed · Puerta de los Campeones de Tunod",
+        "eventId": 11,
+        "event": "PokeMod Líder glazed 8 — Tyson"
+      },
+      {
+        "mapId": 3110,
+        "map": "Glazed · Cumbre de Tunod (Duelo Final Team Fusion)",
+        "eventId": 10,
+        "event": "PokeMod Glazed: Líder Suprema Regina — Team Fusion"
+      },
+      {
+        "mapId": 3124,
+        "map": "Light Platinum · Gimnasio de Inhore (Jessica)",
+        "eventId": 11,
+        "event": "PokeMod Líder light_platinum 1 — Jessica"
+      },
+      {
+        "mapId": 3126,
+        "map": "Light Platinum · Gimnasio de Esmeralda (Esmeralda)",
+        "eventId": 7,
+        "event": "PokeMod Líder light_platinum 2 — Esmeralda"
+      },
+      {
+        "mapId": 3128,
+        "map": "Light Platinum · Gimnasio de Seanport (Lucas)",
+        "eventId": 7,
+        "event": "PokeMod Líder light_platinum 4 — Alba"
+      },
+      {
+        "mapId": 3128,
+        "map": "Light Platinum · Gimnasio de Seanport (Lucas)",
+        "eventId": 8,
+        "event": "PokeMod Líder light_platinum 3 — Lucas"
+      },
+      {
+        "mapId": 3130,
+        "map": "Light Platinum · Torre Guardiana & Gimnasio Dardusk (Thomas)",
+        "eventId": 7,
+        "event": "PokeMod Líder light_platinum 5 — Céfiro"
+      },
+      {
+        "mapId": 3130,
+        "map": "Light Platinum · Torre Guardiana & Gimnasio Dardusk (Thomas)",
+        "eventId": 8,
+        "event": "PokeMod Líder light_platinum 4 — Thomas"
+      },
+      {
+        "mapId": 3134,
+        "map": "Light Platinum · Central de Serenity & Gimnasio (Rayner)",
+        "eventId": 8,
+        "event": "PokeMod Líder light_platinum 6 — Rayner"
+      },
+      {
+        "mapId": 3136,
+        "map": "Light Platinum · Gimnasio de Snowce (Sophia)",
+        "eventId": 8,
+        "event": "PokeMod Líder light_platinum 7 — Sophia"
+      },
+      {
+        "mapId": 3138,
+        "map": "Light Platinum · Drakenbreath & Gimnasio Dragón (Wesley)",
+        "eventId": 9,
+        "event": "PokeMod Líder light_platinum 8 — Wesley"
+      },
+      {
+        "mapId": 3207,
+        "map": "Liquid Crystal · Gimnasio de Malvalona (Falkner)",
+        "eventId": 11,
+        "event": "PokeMod Líder liquid_crystal 1 — Falkner"
+      },
+      {
+        "mapId": 3222,
+        "map": "Liquid Crystal · Gimnasio de Azalea (Bugsy)",
+        "eventId": 8,
+        "event": "PokeMod Líder liquid_crystal 2 — Bugsy"
+      },
+      {
+        "mapId": 3242,
+        "map": "Liquid Crystal · Gimnasio de Trigal (Whitney)",
+        "eventId": 9,
+        "event": "PokeMod Líder liquid_crystal 3 — Whitney"
+      },
+      {
+        "mapId": 3262,
+        "map": "Liquid Crystal · Gimnasio de Iris (Morty)",
+        "eventId": 9,
+        "event": "PokeMod Líder liquid_crystal 2 — Prisma"
+      },
+      {
+        "mapId": 3262,
+        "map": "Liquid Crystal · Gimnasio de Iris (Morty)",
+        "eventId": 10,
+        "event": "PokeMod Líder liquid_crystal 4 — Morty"
+      },
+      {
+        "mapId": 3295,
+        "map": "Liquid Crystal · Gimnasio de Olivo (Jasmine)",
+        "eventId": 16,
+        "event": "PokeMod Líder liquid_crystal 6 — Jasmine"
+      },
+      {
+        "mapId": 3323,
+        "map": "Liquid Crystal · Gimnasio de Orquídea (Chuck)",
+        "eventId": 14,
+        "event": "PokeMod Líder liquid_crystal 3 — Faceta"
+      },
+      {
+        "mapId": 3323,
+        "map": "Liquid Crystal · Gimnasio de Orquídea (Chuck)",
+        "eventId": 15,
+        "event": "PokeMod Líder liquid_crystal 5 — Chuck"
+      },
+      {
+        "mapId": 3385,
+        "map": "Liquid Crystal · Gimnasio de Caoba (Pryce)",
+        "eventId": 11,
+        "event": "PokeMod Líder liquid_crystal 4 — Cuarzo"
+      },
+      {
+        "mapId": 3385,
+        "map": "Liquid Crystal · Gimnasio de Caoba (Pryce)",
+        "eventId": 12,
+        "event": "PokeMod Líder liquid_crystal 7 — Pryce"
+      },
+      {
+        "mapId": 3422,
+        "map": "Liquid Crystal · Gimnasio de Endrino (Clair)",
+        "eventId": 10,
+        "event": "PokeMod Líder liquid_crystal 8 — Clair"
+      },
+      {
+        "mapId": 3700,
+        "map": "TFOH · Capítulo 01 · poblado 001",
+        "eventId": 9,
+        "event": "PokeMod Líder tfoh 1 — Ejecutivo Kuro"
+      },
+      {
+        "mapId": 3735,
+        "map": "TFOH · Capítulo 03 · cueva 036",
+        "eventId": 13,
+        "event": "PokeMod Líder tfoh 2 — Ejecutiva Vex"
+      },
+      {
+        "mapId": 3770,
+        "map": "TFOH · Capítulo 06 · costa 071",
+        "eventId": 11,
+        "event": "PokeMod Líder tfoh 3 — Ejecutivo Mal"
+      },
+      {
+        "mapId": 3805,
+        "map": "TFOH · Capítulo 09 · ruta 106",
+        "eventId": 11,
+        "event": "PokeMod Líder tfoh 4 — Ejecutiva Nox"
+      },
+      {
+        "mapId": 3839,
+        "map": "TFOH · Capítulo 12 · cueva 140",
+        "eventId": 17,
+        "event": "PokeMod Líder tfoh 5 — Ejecutivo Umbra"
+      },
+      {
+        "mapId": 3874,
+        "map": "TFOH · Capítulo 15 · poblado 175",
+        "eventId": 10,
+        "event": "PokeMod Líder tfoh 6 — Ejecutiva Lis"
+      },
+      {
+        "mapId": 3909,
+        "map": "TFOH · Capítulo 18 · ruta 210",
+        "eventId": 10,
+        "event": "PokeMod Líder tfoh 7 — Ejecutivo Grajo"
+      },
+      {
+        "mapId": 3944,
+        "map": "TFOH · Capítulo 21 · costa 245",
+        "eventId": 8,
+        "event": "PokeMod Líder tfoh 8 — Jefe Sombra"
+      }
+    ],
+    "emissions": [
+      {
+        "mapId": 143,
+        "map": "Pokémon Tower 1F",
+        "eventId": 21,
+        "event": "PokeMod Grieta: Punto de colapso"
+      },
+      {
+        "mapId": 143,
+        "map": "Pokémon Tower 1F",
+        "eventId": 22,
+        "event": "PokeMod Canon: Rotom del Tiempo — el mundo creepypasta"
+      },
+      {
+        "mapId": 149,
+        "map": "Pokémon Tower 7F",
+        "eventId": 4,
+        "event": "PokeMod Grieta: La Torre que Escuchaba"
+      },
+      {
+        "mapId": 295,
+        "map": "Ruins of Alph",
+        "eventId": 7,
+        "event": "PokeMod Grieta: El Eco que Jugó Contigo"
+      },
+      {
+        "mapId": 303,
+        "map": "Burned Tower",
+        "eventId": 10,
+        "event": "PokeMod Grieta: La Cinta Carmesí"
+      },
+      {
+        "mapId": 48,
+        "map": "Professor Oak's Lab",
+        "eventId": 27,
+        "event": "PokeMod Oak: Registro de Grietas"
+      },
+      {
+        "mapId": 190,
+        "map": "Pokémon Mansion 2F",
+        "eventId": 16,
+        "event": "PokeMod Grieta: La Consola de 1996"
+      },
+      {
+        "mapId": 90,
+        "map": "Mt Moon B1F",
+        "eventId": 15,
+        "event": "PokeMod Grieta: La Fosa del Enterrado"
+      },
+      {
+        "mapId": 412,
+        "map": "Kanto Power Plant",
+        "eventId": 23,
+        "event": "PokeMod Grieta: Ciudad Glitch"
+      },
+      {
+        "mapId": 979,
+        "map": "Seafoam Islands",
+        "eventId": 45,
+        "event": "PokeMod Grieta: La Partida Perdida"
+      },
+      {
+        "mapId": 2023,
+        "map": "La Torre que Escuchaba",
+        "eventId": 19,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2024,
+        "map": "La Partida Perdida",
+        "eventId": 19,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2025,
+        "map": "La Fosa del Enterrado",
+        "eventId": 19,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2026,
+        "map": "La Cinta Carmesí",
+        "eventId": 19,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2027,
+        "map": "Ciudad Glitch",
+        "eventId": 19,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2028,
+        "map": "El Eco que Jugó Contigo",
+        "eventId": 19,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2029,
+        "map": "La Consola de 1996",
+        "eventId": 19,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2021,
+        "map": "Monte Silver — Falda",
+        "eventId": 1,
+        "event": "PokeMod Grieta: Volver al mundo"
+      },
+      {
+        "mapId": 2022,
+        "map": "Monte Silver — Cumbre",
+        "eventId": 2,
+        "event": "PokeMod Grieta: Umbral de la Liga Oscura"
+      },
+      {
+        "mapId": 2192,
+        "map": "Liga Oscura — Umbral",
+        "eventId": 1,
+        "event": "PokeMod Grieta: Inscripción del Archivero"
+      },
+      {
+        "mapId": 2192,
+        "map": "Liga Oscura — Umbral",
+        "eventId": 2,
+        "event": "PokeMod Grieta: Guardiana"
+      },
+      {
+        "mapId": 2192,
+        "map": "Liga Oscura — Umbral",
+        "eventId": 3,
+        "event": "PokeMod Grieta: Salir al mundo"
+      },
+      {
+        "mapId": 2192,
+        "map": "Liga Oscura — Umbral",
+        "eventId": 4,
+        "event": "PokeMod Grieta: Puerta de la arena"
+      },
+      {
+        "mapId": 2192,
+        "map": "Liga Oscura — Umbral",
+        "eventId": 5,
+        "event": "PokeMod Grieta: EL CANTO"
+      },
+      {
+        "mapId": 2192,
+        "map": "Liga Oscura — Umbral",
+        "eventId": 6,
+        "event": "PokeMod Grieta: LA ESTÁTICA"
+      },
+      {
+        "mapId": 2193,
+        "map": "Liga Oscura — Arena Final",
+        "eventId": 1,
+        "event": "PokeMod Grieta: EL SIN ROSTRO"
+      },
+      {
+        "mapId": 2193,
+        "map": "Liga Oscura — Arena Final",
+        "eventId": 2,
+        "event": "PokeMod Grieta: EL ECO"
+      },
+      {
+        "mapId": 2193,
+        "map": "Liga Oscura — Arena Final",
+        "eventId": 3,
+        "event": "PokeMod Grieta: LA CONVERGENCIA"
+      },
+      {
+        "mapId": 2193,
+        "map": "Liga Oscura — Arena Final",
+        "eventId": 4,
+        "event": "PokeMod Grieta: Volver al umbral"
+      },
+      {
+        "mapId": 2193,
+        "map": "Liga Oscura — Arena Final",
+        "eventId": 5,
+        "event": "PokeMod Grieta: Salir al mundo"
+      }
+    ],
+    "rocket": [
+      {
+        "mapId": 1001,
+        "map": "Puerto Horizonte",
+        "eventId": 959,
+        "event": "PokeMod Rocket: Capitán — Team Rocket"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 1,
+        "event": "PokeMod Rocket: Barco a Puerto Horizonte"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 2,
+        "event": "PokeMod Rocket: Puerta del Núcleo"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 3,
+        "event": "PokeMod Rocket: PokeMod Rocket: Contacto Gris"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 4,
+        "event": "PokeMod Rocket: PokeMod Rocket: Tablón de Mando"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 5,
+        "event": "PokeMod Rocket: PokeMod Rocket: Enfermera"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 6,
+        "event": "PokeMod Rocket: PokeMod Rocket: Centinela"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 7,
+        "event": "PokeMod Rocket: Misión — Entrega en el almacén"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 8,
+        "event": "PokeMod Rocket: Misión — Ronda de los tres guardias"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 9,
+        "event": "PokeMod Rocket: Misión — El interrogatorio"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 10,
+        "event": "PokeMod Rocket: Misión — Sabotaje del generador"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 11,
+        "event": "PokeMod Rocket: Misión — El juicio del Comandante"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 12,
+        "event": "PokeMod Rocket: Herido — Recluta herido"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 13,
+        "event": "PokeMod Rocket: Herido — Guardia con fiebre"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 14,
+        "event": "PokeMod Rocket: Herido — La que cuida"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 15,
+        "event": "PokeMod Rocket: Agente — RK_01"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 16,
+        "event": "PokeMod Rocket: Agente — RK_02"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 17,
+        "event": "PokeMod Rocket: Agente — RK_03"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 18,
+        "event": "PokeMod Rocket: Agente — RK_04"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 20,
+        "event": "PokeMod Disfraz:Intendente Norbert"
+      },
+      {
+        "mapId": 2220,
+        "map": "Team Rocket — Base Subterránea",
+        "eventId": 21,
+        "event": "PokeMod Disfraz:Centinela Rocket"
+      },
+      {
+        "mapId": 2221,
+        "map": "Team Rocket — Núcleo del Mando",
+        "eventId": 1,
+        "event": "PokeMod Rocket: Núcleo del Mando"
+      },
+      {
+        "mapId": 2221,
+        "map": "Team Rocket — Núcleo del Mando",
+        "eventId": 2,
+        "event": "PokeMod Rocket: Salida del Núcleo"
+      },
+      {
+        "mapId": 2221,
+        "map": "Team Rocket — Núcleo del Mando",
+        "eventId": 3,
+        "event": "PokeMod Rocket: PokeMod Rocket: Rival Rocket"
+      },
+      {
+        "mapId": 2221,
+        "map": "Team Rocket — Núcleo del Mando",
+        "eventId": 4,
+        "event": "PokeMod Disfraz:Centinela del Núcleo"
+      },
+      {
+        "mapId": 2281,
+        "map": "Team Rocket — Vestíbulo de Recepción",
+        "eventId": 1,
+        "event": "PokeMod Región: Salida — Team Rocket — Muelle de Infiltración"
+      },
+      {
+        "mapId": 2281,
+        "map": "Team Rocket — Vestíbulo de Recepción",
+        "eventId": 4,
+        "event": "PokeMod Disfraz:Armera Violeta"
+      },
+      {
+        "mapId": 2282,
+        "map": "Team Rocket — Pasillo de Tuberías",
+        "eventId": 1,
+        "event": "PokeMod Región: Salida — Team Rocket — Vestíbulo de Recepción"
+      },
+      {
+        "mapId": 2283,
+        "map": "Team Rocket — Sala de Máquinas",
+        "eventId": 1,
+        "event": "PokeMod Región: Salida — Team Rocket — Pasillo de Tuberías"
+      },
+      {
+        "mapId": 2284,
+        "map": "Team Rocket — Almacén de Suministros",
+        "eventId": 1,
+        "event": "PokeMod Región: Salida — Team Rocket — Pasillo de Tuberías"
+      },
+      {
+        "mapId": 2285,
+        "map": "Team Rocket — Enfermería",
+        "eventId": 1,
+        "event": "PokeMod Región: Salida — Team Rocket — Pasillo de Tuberías"
+      },
+      {
+        "mapId": 2286,
+        "map": "Team Rocket — Sala de Comunicaciones",
+        "eventId": 1,
+        "event": "PokeMod Región: Salida — Team Rocket — Pasillo de Tuberías"
+      }
+    ],
+    "signsAndObjects": [
+      {
+        "mapId": 2021,
+        "map": "Monte Silver — Falda",
+        "eventId": 9,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2021,
+        "map": "Monte Silver — Falda",
+        "eventId": 10,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2021,
+        "map": "Monte Silver — Falda",
+        "eventId": 11,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2030,
+        "map": "Monte Silver — Gruta de los Testigos",
+        "eventId": 13,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2030,
+        "map": "Monte Silver — Gruta de los Testigos",
+        "eventId": 14,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2030,
+        "map": "Monte Silver — Gruta de los Testigos",
+        "eventId": 15,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2022,
+        "map": "Monte Silver — Cumbre",
+        "eventId": 6,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2022,
+        "map": "Monte Silver — Cumbre",
+        "eventId": 7,
+        "event": "PokeMod Multiverso: Objeto"
+      },
+      {
+        "mapId": 2191,
+        "map": "Muelle de Atlas Mil",
+        "eventId": 3,
+        "event": "PokeMod Expedición: Cartel del muelle"
+      }
+    ],
+    "hubs": [
+      {
+        "mapId": 1001,
+        "map": "Puerto Horizonte",
+        "eventId": 961,
+        "event": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Glazed"
+      },
+      {
+        "mapId": 1001,
+        "map": "Puerto Horizonte",
+        "eventId": 962,
+        "event": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Light Platinum"
+      },
+      {
+        "mapId": 1001,
+        "map": "Puerto Horizonte",
+        "eventId": 963,
+        "event": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Liquid Crystal"
+      },
+      {
+        "mapId": 1001,
+        "map": "Puerto Horizonte",
+        "eventId": 964,
+        "event": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Pokémon Unbound"
+      },
+      {
+        "mapId": 2230,
+        "map": "Atlas — Avenida de los Ocho Gimnasios",
+        "eventId": 1,
+        "event": "PokeMod Circuito: Portal de vuelta"
+      },
+      {
+        "mapId": 2280,
+        "map": "Team Rocket — Muelle de Infiltración",
+        "eventId": 3,
+        "event": "PokeMod Región: Recluta de guardia"
+      }
+    ]
+  },
+  "editorial": [
+    "leer los candidatos de voz, canon y ausencia de copia con contexto de escena",
+    "revisar manualmente los avisos de posible inglés, gore/parodia y jerga de motor",
+    "contrastar los textos de créditos con pokemon_fire_ash/Credits.txt",
+    "cerrar el carril solo después del playtest humano de las escenas clave"
+  ]
+}
