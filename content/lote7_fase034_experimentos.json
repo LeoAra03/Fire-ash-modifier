@@ -1,0 +1,837 @@
+{
+  "schema": "lote7_fase034_experimentos/1.0",
+  "tasks": "3300–3399",
+  "protocol": {
+    "hypothesesBeforeChange": true,
+    "beforeAfterRequired": true,
+    "measures": {
+      "time": {
+        "unit": "seconds",
+        "definition": "tiempo desde la instrucción hasta completar el objetivo; registrar mediana y rango",
+        "capture": "cronómetro visible para el observador"
+      },
+      "stuck": {
+        "unit": "events",
+        "definition": "atasco cuando la persona nueva permanece más de 120 segundos sin progreso ni decisión",
+        "capture": "mapa, minuto y pista solicitada"
+      },
+      "defeats": {
+        "unit": "count",
+        "definition": "derrotas contra un jefe desde el mismo estado inicial",
+        "capture": "jefe, nivel, equipo, intentos y motivo declarado"
+      },
+      "abandonment": {
+        "unit": "map_or_minute",
+        "definition": "punto donde la persona deja de jugar o expresa que no continuará",
+        "capture": "mapa, minuto, causa textual no identificable"
+      },
+      "comprehension": {
+        "unit": "rubric_0_to_3",
+        "definition": "recuerdo cinco minutos después: 0 no recuerda, 1 detalle aislado, 2 idea correcta, 3 objetivo y consecuencia correctos",
+        "capture": "respuesta literal anonimizada y puntuación"
+      },
+      "discovery": {
+        "unit": "count",
+        "definition": "hallazgos opcionales encontrados sin guía",
+        "capture": "lista de hallazgos y tiempo"
+      },
+      "satisfaction": {
+        "unit": "rubric_1_to_5",
+        "definition": "valoración declarada del final/recompensa, siempre acompañada de un porqué",
+        "capture": "puntuación y explicación breve"
+      }
+    },
+    "participantTarget": 5,
+    "independentReplicationRequired": true,
+    "noPersonalData": true,
+    "consentFile": "docs/qa/protocolo_experimento.md",
+    "offlineCapable": "manual_pending",
+    "pcAndroidParity": "manual_pending"
+  },
+  "experiments": [
+    {
+      "id": 1,
+      "title": "primer jefe por región",
+      "hypothesis": "La dificultad del primer jefe permite aprender sin trivializar la respuesta.",
+      "metrics": [
+        "defeats",
+        "time",
+        "abandonment"
+      ],
+      "sample": "cinco jugadores nuevos por región; misma versión y estado inicial",
+      "decision": "ajustar solo si la medida se desvía del rango definido y repetir con grupo independiente",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 2,
+      "title": "arranque del postgame",
+      "hypothesis": "Una persona nueva puede explicar Fragmento, dimensiones y siguiente objetivo tras la primera escena.",
+      "metrics": [
+        "comprehension",
+        "stuck"
+      ],
+      "sample": "cinco personas nuevas, sin documentación externa",
+      "decision": "reescribir la escena solo con hipótesis previa y repetir",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 3,
+      "title": "orientación en Atlas Mil",
+      "hypothesis": "Las señales del circuito evitan atascos en las primeras veinte franjas.",
+      "metrics": [
+        "stuck",
+        "time"
+      ],
+      "sample": "cinco personas nuevas con ruta libre",
+      "decision": "añadir señal solo en el punto observado y repetir",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 4,
+      "title": "identidad de siete regiones",
+      "hypothesis": "Las regiones se distinguen por captura, símbolo, paleta y música sin texto explicativo.",
+      "metrics": [
+        "comprehension",
+        "satisfaction"
+      ],
+      "sample": "mostrar las mismas capturas/fragmentos a cinco personas nuevas",
+      "decision": "rediseñar únicamente la región confundida y documentar la diferencia",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 5,
+      "title": "efecto de las emisiones",
+      "hypothesis": "Cada emisión produce tensión en los primeros dos minutos sin susto gratuito.",
+      "metrics": [
+        "time",
+        "comprehension",
+        "satisfaction"
+      ],
+      "sample": "cinco personas nuevas por emisión; volumen y configuración declarados",
+      "decision": "cambiar ritmo/sonido/luz con hipótesis, no añadir gore",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 6,
+      "title": "arco de Team Rocket",
+      "hypothesis": "La persona puede resumir el arco sin invertir causa y consecuencia.",
+      "metrics": [
+        "comprehension",
+        "abandonment"
+      ],
+      "sample": "cinco personas nuevas al terminar la misión",
+      "decision": "corregir la escena concreta que se interpreta al revés",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 7,
+      "title": "finales regionales",
+      "hypothesis": "El cierre paga la promesa de la región y se entiende por qué termina.",
+      "metrics": [
+        "satisfaction",
+        "comprehension",
+        "abandonment"
+      ],
+      "sample": "cinco personas nuevas por final",
+      "decision": "reescribir el cierre débil y volver a medir",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 8,
+      "title": "resumen de progreso",
+      "hypothesis": "El jugador sabe qué le falta sin salir del juego.",
+      "metrics": [
+        "time",
+        "comprehension",
+        "stuck"
+      ],
+      "sample": "cinco personas nuevas con una lista de objetivos mezclados",
+      "decision": "añadir información faltante sin destripes",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 9,
+      "title": "economía percibida",
+      "hypothesis": "El dinero disponible no fuerza ni elimina la decisión de curar/comprar en cada tercio.",
+      "metrics": [
+        "time",
+        "satisfaction",
+        "abandonment"
+      ],
+      "sample": "cinco personas nuevas por tercio con estado equivalente",
+      "decision": "ajustar precios/recompensas y repetir; no usar opinión aislada",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 10,
+      "title": "ritmo de misiones Rocket",
+      "hypothesis": "Cada misión conserva su dilema y no se alarga sin aportar.",
+      "metrics": [
+        "time",
+        "abandonment",
+        "satisfaction"
+      ],
+      "sample": "cinco personas nuevas, medir cada misión por separado",
+      "decision": "recortar solo tramos sin información ni decisión",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 11,
+      "title": "exploración de cuevas",
+      "hypothesis": "Las bifurcaciones y recompensas hacen que la persona explore en vez de ir a la salida.",
+      "metrics": [
+        "discovery",
+        "time",
+        "stuck"
+      ],
+      "sample": "cinco personas nuevas, sin mapa externo",
+      "decision": "añadir recompensa donde la decisión no se lee",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 12,
+      "title": "puzles de gimnasio",
+      "hypothesis": "La idea central se puede explicar y no se resuelve por prueba y error puro.",
+      "metrics": [
+        "time",
+        "stuck",
+        "comprehension"
+      ],
+      "sample": "cinco personas nuevas por puzle",
+      "decision": "rediseñar la regla central y repetir",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 13,
+      "title": "legibilidad nocturna",
+      "hypothesis": "Camino y pared se distinguen sin perder atmósfera.",
+      "metrics": [
+        "stuck",
+        "time",
+        "satisfaction"
+      ],
+      "sample": "cinco personas nuevas en ciudades nuevas de noche",
+      "decision": "ajustar tinte/contraste con una hipótesis previa",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 14,
+      "title": "menús nuevos",
+      "hypothesis": "Las funciones nuevas se encuentran sin explicación del observador.",
+      "metrics": [
+        "time",
+        "stuck",
+        "comprehension"
+      ],
+      "sample": "cinco personas nuevas con tareas aleatorizadas",
+      "decision": "reordenar solo la función que nadie encuentra",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 15,
+      "title": "valor de recompensas",
+      "hypothesis": "La recompensa deseada se recuerda y tiene efecto visible.",
+      "metrics": [
+        "comprehension",
+        "satisfaction",
+        "discovery"
+      ],
+      "sample": "cinco personas nuevas tras hitos comparables",
+      "decision": "sustituir una recompensa olvidada y repetir",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 16,
+      "title": "peso de diálogos",
+      "hypothesis": "Los saltos de texto señalan exceso de carga y no falta de interés aislada.",
+      "metrics": [
+        "time",
+        "abandonment",
+        "comprehension"
+      ],
+      "sample": "cinco personas nuevas; registrar saltos sin juzgar a la persona",
+      "decision": "recortar texto solo si no elimina información",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 17,
+      "title": "objetos parecidos",
+      "hypothesis": "Nombre e icono permiten distinguir objetos similares.",
+      "metrics": [
+        "time",
+        "comprehension",
+        "stuck"
+      ],
+      "sample": "cinco personas nuevas con inventario controlado",
+      "decision": "renombrar o redibujar la pareja confundida",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 18,
+      "title": "mochila en combate",
+      "hypothesis": "La libertad de mochila no vuelve trivial el combate.",
+      "metrics": [
+        "defeats",
+        "time",
+        "satisfaction"
+      ],
+      "sample": "cinco personas nuevas con jefe y recursos equivalentes",
+      "decision": "ajustar jefe solo si la trivialidad se reproduce",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 19,
+      "title": "curva de niveles",
+      "hypothesis": "La persona llega al jefe dentro del nivel previsto sin grindeo obligatorio.",
+      "metrics": [
+        "time",
+        "defeats",
+        "abandonment"
+      ],
+      "sample": "cinco personas nuevas por región",
+      "decision": "ajustar camino antes que inflar el jefe",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 20,
+      "title": "rejugabilidad",
+      "hypothesis": "Una región terminada conserva un motivo opcional para volver.",
+      "metrics": [
+        "discovery",
+        "satisfaction",
+        "comprehension"
+      ],
+      "sample": "cinco personas nuevas tras terminarla; no contar obligación",
+      "decision": "añadir contenido opcional solo donde falte motivo",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 21,
+      "title": "jefe de Liga Oscura",
+      "hypothesis": "El final exige estrategia y no frustra ni aburre.",
+      "metrics": [
+        "defeats",
+        "time",
+        "satisfaction"
+      ],
+      "sample": "cinco personas nuevas con expectativas registradas antes",
+      "decision": "ajustar y comparar con expectativa, no solo con derrotas",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 22,
+      "title": "requisito de Liga Oscura",
+      "hypothesis": "La persona puede decir qué falta para entrar sin consultar documentación.",
+      "metrics": [
+        "comprehension",
+        "stuck",
+        "time"
+      ],
+      "sample": "cinco personas nuevas antes de entregar una pista",
+      "decision": "reescribir el aviso hasta que la causa quede clara",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 23,
+      "title": "mapa generado frente a original",
+      "hypothesis": "La diferencia artesanal se puede describir sin presentar como artesanal lo que no lo es.",
+      "metrics": [
+        "satisfaction",
+        "comprehension"
+      ],
+      "sample": "cinco personas nuevas, comparación ciega y mismo tamaño de captura",
+      "decision": "aceptar, mejorar o reducir alcance por escrito",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 24,
+      "title": "dos versiones de escena",
+      "hypothesis": "Una de dos versiones se recuerda mejor sin aumentar confusión.",
+      "metrics": [
+        "comprehension",
+        "satisfaction",
+        "abandonment"
+      ],
+      "sample": "mismo grupo, orden contrabalanceado y versión ciega",
+      "decision": "conservar la versión con mejor evidencia y enlazar la decisión",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    },
+    {
+      "id": 25,
+      "title": "dos curvas de dificultad",
+      "hypothesis": "Una curva reduce derrotas injustas y abandono sin volver trivial la región.",
+      "metrics": [
+        "defeats",
+        "abandonment",
+        "satisfaction"
+      ],
+      "sample": "mismo grupo, orden contrabalanceado y dos versiones",
+      "decision": "adoptar solo si el resultado se replica y no rompe regiones vecinas",
+      "result": null,
+      "evidence": [],
+      "status": "manual_pending"
+    }
+  ],
+  "validation": {
+    "errors": [],
+    "definitionsComplete": true,
+    "noFabricatedResults": true
+  },
+  "taskMatrix": [
+    {
+      "id": 3300,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3301,
+      "status": "static_pass"
+    },
+    {
+      "id": 3302,
+      "status": "static_pass"
+    },
+    {
+      "id": 3303,
+      "status": "static_pass"
+    },
+    {
+      "id": 3304,
+      "status": "static_pass"
+    },
+    {
+      "id": 3305,
+      "status": "static_pass"
+    },
+    {
+      "id": 3306,
+      "status": "static_pass"
+    },
+    {
+      "id": 3307,
+      "status": "static_pass"
+    },
+    {
+      "id": 3308,
+      "status": "static_pass"
+    },
+    {
+      "id": 3309,
+      "status": "static_pass"
+    },
+    {
+      "id": 3310,
+      "status": "static_pass"
+    },
+    {
+      "id": 3311,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3312,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3313,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3314,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3315,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3316,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3317,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3318,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3319,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3320,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3321,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3322,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3323,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3324,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3325,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3326,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3327,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3328,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3329,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3330,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3331,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3332,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3333,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3334,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3335,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3336,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3337,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3338,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3339,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3340,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3341,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3342,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3343,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3344,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3345,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3346,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3347,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3348,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3349,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3350,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3351,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3352,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3353,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3354,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3355,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3356,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3357,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3358,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3359,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3360,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3361,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3362,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3363,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3364,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3365,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3366,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3367,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3368,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3369,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3370,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3371,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3372,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3373,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3374,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3375,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3376,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3377,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3378,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3379,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3380,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3381,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3382,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3383,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3384,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3385,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3386,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3387,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3388,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3389,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3390,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3391,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3392,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3393,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3394,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3395,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3396,
+      "status": "static_pass"
+    },
+    {
+      "id": 3397,
+      "status": "static_pass"
+    },
+    {
+      "id": 3398,
+      "status": "static_pass"
+    },
+    {
+      "id": 3399,
+      "status": "static_pass"
+    }
+  ],
+  "manual": [
+    "reclutar y consentir cinco personas nuevas por experimento cuando corresponda",
+    "medir antes/después con la misma versión, estado, orden y configuración declarados",
+    "repetir con un segundo grupo; registrar resultados negativos, reversiones y regresiones",
+    "no publicar datos personales ni presentar cinco personas como validación estadística"
+  ],
+  "status": "static_pass_manual_pending"
+}
