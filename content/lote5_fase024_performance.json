@@ -1,0 +1,9351 @@
+{
+  "schema": "lote5_fase024_performance/1.0",
+  "tasks": "2300–2399",
+  "source": "checkout local y pokemon_fire_ash/Data/Map*.rxdata",
+  "static": {
+    "maps": 3465,
+    "events": 36149,
+    "pages": 55501,
+    "parallelPages": 12,
+    "autorunPages": 2260,
+    "audioReferenced": 772,
+    "audioMissing": 4,
+    "audioZeroBytes": 0,
+    "dataBytes": 109912019,
+    "graphicsBytes": 87545954,
+    "audioBytes": 471932397
+  },
+  "budgets": {
+    "mapEventCeilingCandidate": 100,
+    "mapsOverCandidate": [
+      {
+        "id": 151,
+        "name": "GRANDEUR LOUNGE",
+        "events": 139
+      },
+      {
+        "id": 162,
+        "name": "Game Corner",
+        "events": 120
+      },
+      {
+        "id": 591,
+        "name": "Lake Valor Contest",
+        "events": 102
+      },
+      {
+        "id": 876,
+        "name": "Lumiose City",
+        "events": 165
+      },
+      {
+        "id": 881,
+        "name": "Driftveil Battle House",
+        "events": 106
+      },
+      {
+        "id": 214,
+        "name": "STAGE",
+        "events": 161
+      },
+      {
+        "id": 793,
+        "name": "Lumiose City",
+        "events": 107
+      },
+      {
+        "id": 390,
+        "name": "Cerise Park",
+        "events": 112
+      },
+      {
+        "id": 108,
+        "name": "Vermilion City",
+        "events": 145
+      },
+      {
+        "id": 677,
+        "name": "Castelia City",
+        "events": 152
+      },
+      {
+        "id": 971,
+        "name": "Pokémon Mart",
+        "events": 121
+      },
+      {
+        "id": 3060,
+        "name": "Glazed · Mt. Stratus (Cumbre Helada)",
+        "events": 105
+      }
+    ],
+    "parallelPagesOverCandidate": [],
+    "note": "Los techos candidatos son señales para revisión; el perfil narrativo puede justificar una densidad alta."
+  },
+  "audio": {
+    "references": [
+      {
+        "kind": "SE",
+        "name": "Exit Door",
+        "references": 1235,
+        "maps": [
+          3,
+          4,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          36,
+          39,
+          40,
+          42,
+          44,
+          45,
+          46,
+          48,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          67,
+          68,
+          74,
+          77,
+          78,
+          79,
+          83,
+          84,
+          85,
+          86,
+          91,
+          93,
+          94,
+          95,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          105,
+          106,
+          107,
+          109,
+          110,
+          111,
+          112,
+          113,
+          115,
+          117,
+          118,
+          119,
+          120,
+          121,
+          123,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          134,
+          135,
+          136,
+          137,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          168,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          182,
+          185,
+          186,
+          188,
+          189,
+          190,
+          191,
+          192,
+          197,
+          198,
+          207,
+          210,
+          212,
+          213,
+          214,
+          216,
+          217,
+          218,
+          219,
+          221,
+          229,
+          230,
+          233,
+          234,
+          235,
+          237,
+          238,
+          239,
+          241,
+          242,
+          244,
+          246,
+          250,
+          252,
+          253,
+          257,
+          258,
+          260,
+          261,
+          262,
+          263,
+          264,
+          266,
+          267,
+          271,
+          272,
+          273,
+          276,
+          277,
+          278,
+          279,
+          280,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          299,
+          300,
+          301,
+          303,
+          304,
+          305,
+          309,
+          310,
+          312,
+          313,
+          314,
+          315,
+          316,
+          318,
+          319,
+          320,
+          321,
+          324,
+          325,
+          326,
+          330,
+          331,
+          332,
+          336,
+          337,
+          339,
+          342,
+          343,
+          344,
+          346,
+          350,
+          358,
+          359,
+          362,
+          363,
+          364,
+          367,
+          368,
+          372,
+          373,
+          374,
+          375,
+          376,
+          378,
+          380,
+          381,
+          384,
+          388,
+          389,
+          391,
+          392,
+          394,
+          395,
+          396,
+          398,
+          399,
+          401,
+          402,
+          404,
+          405,
+          406,
+          407,
+          410,
+          411,
+          412,
+          413,
+          416,
+          417,
+          420,
+          421,
+          423,
+          426,
+          427,
+          428,
+          429,
+          430,
+          431,
+          432,
+          433,
+          434,
+          435,
+          436,
+          438,
+          439,
+          440,
+          441,
+          442,
+          443,
+          444,
+          445,
+          446,
+          447,
+          448,
+          449,
+          450,
+          452,
+          455,
+          456,
+          457,
+          458,
+          460,
+          461,
+          462,
+          464,
+          472,
+          474,
+          477,
+          478,
+          480,
+          481,
+          484,
+          486,
+          487,
+          488,
+          489,
+          492,
+          495,
+          496,
+          500,
+          504,
+          505,
+          506,
+          509,
+          510,
+          511,
+          512,
+          514,
+          515,
+          516,
+          519,
+          521,
+          524,
+          525,
+          527,
+          530,
+          533,
+          534,
+          535,
+          536,
+          539,
+          541,
+          542,
+          543,
+          544,
+          545,
+          546,
+          547,
+          548,
+          549,
+          551,
+          552,
+          553,
+          554,
+          555,
+          556,
+          557,
+          562,
+          564,
+          565,
+          566,
+          568,
+          571,
+          572,
+          573,
+          574,
+          575,
+          576,
+          577,
+          578,
+          579,
+          580,
+          581,
+          582,
+          583,
+          584,
+          585,
+          587,
+          588,
+          589,
+          590,
+          591,
+          592,
+          593,
+          594,
+          595,
+          596,
+          597,
+          598,
+          599,
+          600,
+          601,
+          602,
+          603,
+          604,
+          605,
+          608,
+          609,
+          611,
+          614,
+          615,
+          616,
+          617,
+          618,
+          621,
+          622,
+          623,
+          624,
+          626,
+          627,
+          629,
+          630,
+          631,
+          632,
+          633,
+          634,
+          635,
+          636,
+          637,
+          641,
+          643,
+          648,
+          652,
+          653,
+          655,
+          656,
+          657,
+          658,
+          659,
+          660,
+          661,
+          662,
+          663,
+          664,
+          665,
+          666,
+          667,
+          669,
+          671,
+          672,
+          673,
+          674,
+          678,
+          679,
+          680,
+          681,
+          684,
+          687,
+          688,
+          689,
+          690,
+          691,
+          692,
+          696,
+          697,
+          699,
+          701,
+          703,
+          708,
+          709,
+          710,
+          712,
+          714,
+          716,
+          717,
+          718,
+          719,
+          720,
+          726,
+          727,
+          728,
+          729,
+          732,
+          733,
+          734,
+          735,
+          736,
+          737,
+          739,
+          740,
+          741,
+          744,
+          745,
+          746,
+          747,
+          755,
+          756,
+          758,
+          768,
+          769,
+          770,
+          788,
+          793,
+          794,
+          795,
+          796,
+          797,
+          798,
+          800,
+          801,
+          802,
+          803,
+          805,
+          806,
+          807,
+          809,
+          811,
+          813,
+          814,
+          815,
+          816,
+          819,
+          820,
+          823,
+          824,
+          825,
+          826,
+          827,
+          828,
+          829,
+          830,
+          831,
+          832,
+          833,
+          834,
+          835,
+          836,
+          837,
+          838,
+          839,
+          840,
+          841,
+          842,
+          843,
+          844,
+          845,
+          849,
+          850,
+          851,
+          853,
+          854,
+          855,
+          856,
+          857,
+          858,
+          859,
+          860,
+          863,
+          864,
+          866,
+          867,
+          868,
+          869,
+          876,
+          877,
+          878,
+          881,
+          882,
+          883,
+          889,
+          890,
+          891,
+          892,
+          895,
+          896,
+          898,
+          903,
+          904,
+          908,
+          909,
+          919,
+          928,
+          929,
+          934,
+          935,
+          943,
+          946,
+          947,
+          954,
+          955,
+          956,
+          958,
+          966,
+          967,
+          968,
+          969,
+          971,
+          978,
+          982,
+          984,
+          985,
+          986,
+          987,
+          988,
+          995,
+          1032,
+          1180
+        ],
+        "file": "Audio/SE/Exit Door.ogg"
+      },
+      {
+        "kind": "ME",
+        "name": "Pokemon Healing",
+        "references": 235,
+        "maps": [
+          9,
+          24,
+          36,
+          42,
+          53,
+          55,
+          57,
+          94,
+          116,
+          141,
+          151,
+          177,
+          214,
+          227,
+          253,
+          341,
+          359,
+          364,
+          401,
+          425,
+          453,
+          474,
+          481,
+          484,
+          489,
+          492,
+          495,
+          496,
+          500,
+          509,
+          514,
+          539,
+          557,
+          588,
+          603,
+          608,
+          616,
+          621,
+          653,
+          703,
+          704,
+          721,
+          746,
+          796,
+          809,
+          846,
+          859,
+          881,
+          891,
+          892,
+          897,
+          899,
+          911,
+          919,
+          964,
+          982,
+          983,
+          988,
+          995,
+          1028,
+          1043,
+          1055,
+          1061,
+          1071,
+          1073,
+          1075,
+          1112,
+          1134,
+          1169,
+          1195,
+          1245,
+          1271,
+          1357,
+          1375,
+          1380,
+          1417,
+          1469,
+          1489,
+          1499,
+          1504,
+          1507,
+          1511,
+          1515,
+          1524,
+          1554,
+          1572,
+          1603,
+          1618,
+          1631,
+          1668,
+          1718,
+          1719,
+          1736,
+          1761,
+          1811,
+          1824,
+          1861,
+          1874,
+          1896,
+          1906,
+          1907,
+          1912,
+          1926,
+          1934,
+          1978,
+          1996,
+          1997,
+          2002,
+          2009
+        ],
+        "file": "Audio/ME/Pokemon Healing.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "113Cry",
+        "references": 69,
+        "maps": [
+          78,
+          84,
+          86,
+          93,
+          103,
+          110,
+          132,
+          140,
+          154,
+          174,
+          176,
+          186,
+          198,
+          210,
+          213,
+          217,
+          221,
+          229,
+          234,
+          238,
+          241,
+          246,
+          258,
+          261,
+          264,
+          273,
+          279,
+          284,
+          301,
+          310,
+          319,
+          325,
+          337,
+          344,
+          350,
+          363,
+          368,
+          376,
+          381,
+          389,
+          396,
+          405,
+          411,
+          421,
+          428,
+          439,
+          445,
+          446,
+          447,
+          456,
+          461,
+          464,
+          474,
+          505,
+          519,
+          525,
+          534,
+          543,
+          554,
+          555,
+          566,
+          576,
+          598,
+          615,
+          627,
+          635,
+          643
+        ],
+        "file": "Audio/SE/113Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "Voltorb Flip explosion",
+        "references": 61,
+        "maps": [
+          214
+        ],
+        "file": "Audio/SE/Voltorb Flip explosion.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "543Cry",
+        "references": 60,
+        "maps": [
+          677,
+          680
+        ],
+        "file": "Audio/SE/543Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "Entering Door",
+        "references": 54,
+        "maps": [
+          37,
+          141,
+          151,
+          214
+        ],
+        "file": "Audio/SE/Entering Door.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "006Cry",
+        "references": 38,
+        "maps": [
+          269,
+          342,
+          419,
+          464,
+          473,
+          500,
+          764,
+          773,
+          824,
+          878,
+          879,
+          889,
+          907,
+          915,
+          917,
+          920
+        ],
+        "file": "Audio/SE/006Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "128Cry",
+        "references": 37,
+        "maps": [
+          180,
+          211,
+          764,
+          784,
+          907
+        ],
+        "file": "Audio/SE/128Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "122Cry",
+        "references": 23,
+        "maps": [
+          33,
+          42,
+          77,
+          94,
+          140,
+          779,
+          782,
+          889,
+          929,
+          958,
+          978
+        ],
+        "file": "Audio/SE/122Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "241Cry",
+        "references": 23,
+        "maps": [
+          571,
+          906,
+          907
+        ],
+        "file": "Audio/SE/241Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "222Cry",
+        "references": 22,
+        "maps": [
+          95,
+          324,
+          328,
+          350
+        ],
+        "file": "Audio/SE/222Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "079Cry",
+        "references": 15,
+        "maps": [
+          174,
+          198,
+          211,
+          271,
+          273,
+          815,
+          817
+        ],
+        "file": "Audio/SE/079Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "803Cry",
+        "references": 15,
+        "maps": [
+          891,
+          900,
+          901,
+          923
+        ],
+        "file": "Audio/SE/803Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "040Cry",
+        "references": 14,
+        "maps": [
+          775,
+          795,
+          801,
+          806,
+          815,
+          820,
+          825,
+          830,
+          839,
+          844,
+          851,
+          858,
+          867,
+          869
+        ],
+        "file": "Audio/SE/040Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "672Cry",
+        "references": 14,
+        "maps": [
+          827
+        ],
+        "file": "Audio/SE/672Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "007Cry",
+        "references": 13,
+        "maps": [
+          104,
+          106,
+          108
+        ],
+        "file": "Audio/SE/007Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "531Cry",
+        "references": 13,
+        "maps": [
+          657,
+          662,
+          672,
+          679,
+          691,
+          697,
+          709,
+          728,
+          740,
+          745,
+          756,
+          758,
+          769
+        ],
+        "file": "Audio/SE/531Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "001Cry",
+        "references": 11,
+        "maps": [
+          108,
+          538,
+          764,
+          824
+        ],
+        "file": "Audio/SE/001Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "054Cry",
+        "references": 11,
+        "maps": [
+          95,
+          139,
+          153,
+          542,
+          570,
+          608
+        ],
+        "file": "Audio/SE/054Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "008Cry",
+        "references": 10,
+        "maps": [
+          237,
+          278,
+          350,
+          608,
+          824
+        ],
+        "file": "Audio/SE/008Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "131Cry",
+        "references": 10,
+        "maps": [
+          174,
+          211,
+          268,
+          889,
+          894,
+          897
+        ],
+        "file": "Audio/SE/131Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "LATIAS",
+        "references": 10,
+        "maps": [
+          108,
+          268,
+          376,
+          494,
+          567,
+          620,
+          812,
+          991,
+          992,
+          1392
+        ],
+        "file": "Audio/SE/LATIAS.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW Kanto",
+        "references": 10,
+        "maps": [
+          78,
+          106,
+          182,
+          239,
+          266,
+          303,
+          333,
+          348,
+          494,
+          991
+        ],
+        "file": "Audio/BGM/Team Rocket OW Kanto.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "012Cry",
+        "references": 9,
+        "maps": [
+          110,
+          139,
+          196,
+          211,
+          421,
+          534,
+          566,
+          776
+        ],
+        "file": "Audio/SE/012Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "130Cry",
+        "references": 9,
+        "maps": [
+          95,
+          334,
+          772,
+          778,
+          884,
+          897
+        ],
+        "file": "Audio/SE/130Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "190Cry",
+        "references": 9,
+        "maps": [
+          197,
+          499,
+          553,
+          608,
+          642,
+          738,
+          869
+        ],
+        "file": "Audio/SE/190Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "242Cry",
+        "references": 9,
+        "maps": [
+          896,
+          904,
+          909,
+          929,
+          935,
+          947,
+          955,
+          958
+        ],
+        "file": "Audio/SE/242Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "764Cry",
+        "references": 9,
+        "maps": [
+          86,
+          896,
+          904,
+          909,
+          929,
+          935,
+          947,
+          955,
+          958
+        ],
+        "file": "Audio/SE/764Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CORVIKNIGHT",
+        "references": 9,
+        "maps": [
+          171,
+          232,
+          440,
+          981,
+          985,
+          994
+        ],
+        "file": "Audio/SE/CORVIKNIGHT.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "002Cry",
+        "references": 8,
+        "maps": [
+          108
+        ],
+        "file": "Audio/SE/002Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "063Cry",
+        "references": 8,
+        "maps": [
+          78,
+          258,
+          363,
+          505,
+          550,
+          551,
+          628,
+          806
+        ],
+        "file": "Audio/SE/063Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "065Cry",
+        "references": 8,
+        "maps": [
+          298,
+          301,
+          396,
+          439,
+          554,
+          773,
+          820
+        ],
+        "file": "Audio/SE/065Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "175Cry",
+        "references": 8,
+        "maps": [
+          182,
+          400
+        ],
+        "file": "Audio/SE/175Cry.ogg"
+      },
+      {
+        "kind": "ME",
+        "name": "013-Gag02",
+        "references": 7,
+        "maps": [
+          12,
+          175,
+          343,
+          448,
+          614,
+          708,
+          843
+        ],
+        "file": "Audio/ME/013-Gag02.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "066Cry",
+        "references": 7,
+        "maps": [
+          108,
+          197,
+          380,
+          528,
+          850
+        ],
+        "file": "Audio/SE/066Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "133Cry",
+        "references": 7,
+        "maps": [
+          152,
+          891,
+          894,
+          953
+        ],
+        "file": "Audio/SE/133Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "482Cry",
+        "references": 7,
+        "maps": [
+          590,
+          628,
+          630,
+          639,
+          970
+        ],
+        "file": "Audio/SE/482Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "744Cry",
+        "references": 7,
+        "maps": [
+          892
+        ],
+        "file": "Audio/SE/744Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "791Cry",
+        "references": 7,
+        "maps": [
+          922,
+          923
+        ],
+        "file": "Audio/SE/791Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "FARFETCHD",
+        "references": 7,
+        "maps": [
+          94,
+          171,
+          174,
+          390,
+          426
+        ],
+        "file": "Audio/SE/FARFETCHD.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PC access",
+        "references": 7,
+        "maps": [
+          151
+        ],
+        "file": "Audio/SE/PC access.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "025Cry",
+        "references": 6,
+        "maps": [
+          48,
+          113,
+          139,
+          211,
+          772,
+          776
+        ],
+        "file": "Audio/SE/025Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "035Cry",
+        "references": 6,
+        "maps": [
+          93,
+          154,
+          381,
+          411,
+          525,
+          839
+        ],
+        "file": "Audio/SE/035Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "059Cry",
+        "references": 6,
+        "maps": [
+          186,
+          211,
+          344,
+          773,
+          779,
+          793
+        ],
+        "file": "Audio/SE/059Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "143Cry",
+        "references": 6,
+        "maps": [
+          211,
+          228,
+          764,
+          772,
+          782,
+          804
+        ],
+        "file": "Audio/SE/143Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "269Cry",
+        "references": 6,
+        "maps": [
+          355,
+          419,
+          650,
+          789,
+          823,
+          887
+        ],
+        "file": "Audio/SE/269Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "453Cry",
+        "references": 6,
+        "maps": [
+          86,
+          594,
+          823
+        ],
+        "file": "Audio/SE/453Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "479Cry",
+        "references": 6,
+        "maps": [
+          48,
+          648,
+          783,
+          892,
+          919,
+          926
+        ],
+        "file": "Audio/SE/479Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "735Cry",
+        "references": 6,
+        "maps": [
+          905,
+          912,
+          916
+        ],
+        "file": "Audio/SE/735Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "COMBEE",
+        "references": 6,
+        "maps": [
+          541
+        ],
+        "file": "Audio/SE/COMBEE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FLABEBE",
+        "references": 6,
+        "maps": [
+          390,
+          902
+        ],
+        "file": "Audio/SE/FLABEBE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GENGAR",
+        "references": 6,
+        "maps": [
+          94,
+          764
+        ],
+        "file": "Audio/SE/GENGAR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "HONCHKROW",
+        "references": 6,
+        "maps": [
+          932
+        ],
+        "file": "Audio/SE/HONCHKROW.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "INDEEDEE_1",
+        "references": 6,
+        "maps": [
+          173,
+          452,
+          555,
+          599,
+          978,
+          987
+        ],
+        "file": "Audio/SE/INDEEDEE_1.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "MURKROW",
+        "references": 6,
+        "maps": [
+          130,
+          390,
+          932
+        ],
+        "file": "Audio/SE/MURKROW.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "throw",
+        "references": 6,
+        "maps": [
+          34,
+          49,
+          190
+        ],
+        "file": "Audio/SE/throw.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "003Cry",
+        "references": 5,
+        "maps": [
+          108,
+          772
+        ],
+        "file": "Audio/SE/003Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "155Cry",
+        "references": 5,
+        "maps": [
+          253,
+          270,
+          463,
+          764
+        ],
+        "file": "Audio/SE/155Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "158Cry",
+        "references": 5,
+        "maps": [
+          253,
+          277,
+          594,
+          764
+        ],
+        "file": "Audio/SE/158Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "177Cry",
+        "references": 5,
+        "maps": [
+          264,
+          310,
+          376,
+          419,
+          844
+        ],
+        "file": "Audio/SE/177Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "185Cry",
+        "references": 5,
+        "maps": [
+          86,
+          294,
+          777,
+          782
+        ],
+        "file": "Audio/SE/185Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "227Cry",
+        "references": 5,
+        "maps": [
+          419,
+          512,
+          590,
+          624,
+          632
+        ],
+        "file": "Audio/SE/227Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "254Cry",
+        "references": 5,
+        "maps": [
+          764,
+          782,
+          837,
+          869,
+          876
+        ],
+        "file": "Audio/SE/254Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "475Cry",
+        "references": 5,
+        "maps": [
+          635,
+          745,
+          781,
+          794,
+          904
+        ],
+        "file": "Audio/SE/475Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "501Cry",
+        "references": 5,
+        "maps": [
+          654,
+          725,
+          764
+        ],
+        "file": "Audio/SE/501Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "542Cry",
+        "references": 5,
+        "maps": [
+          675,
+          727,
+          764
+        ],
+        "file": "Audio/SE/542Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "725Cry",
+        "references": 5,
+        "maps": [
+          889,
+          894
+        ],
+        "file": "Audio/SE/725Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "799Cry",
+        "references": 5,
+        "maps": [
+          942,
+          957
+        ],
+        "file": "Audio/SE/799Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ABRA",
+        "references": 5,
+        "maps": [
+          513,
+          523,
+          574,
+          587,
+          607
+        ],
+        "file": "Audio/SE/ABRA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BIDOOF",
+        "references": 5,
+        "maps": [
+          523
+        ],
+        "file": "Audio/SE/BIDOOF.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DRAGONITE",
+        "references": 5,
+        "maps": [
+          94,
+          265,
+          764
+        ],
+        "file": "Audio/SE/DRAGONITE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DRATINI",
+        "references": 5,
+        "maps": [
+          177,
+          265,
+          342
+        ],
+        "file": "Audio/SE/DRATINI.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FLOETTE",
+        "references": 5,
+        "maps": [
+          390,
+          454
+        ],
+        "file": "Audio/SE/FLOETTE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "HOOTHOOT",
+        "references": 5,
+        "maps": [
+          251,
+          262,
+          299,
+          390
+        ],
+        "file": "Audio/SE/HOOTHOOT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PIDGEY",
+        "references": 5,
+        "maps": [
+          33,
+          215,
+          262,
+          390
+        ],
+        "file": "Audio/SE/PIDGEY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TAILLOW",
+        "references": 5,
+        "maps": [
+          357,
+          390,
+          437
+        ],
+        "file": "Audio/SE/TAILLOW.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW Sinnoh",
+        "references": 5,
+        "maps": [
+          540,
+          569,
+          610,
+          631,
+          637
+        ],
+        "file": "Audio/BGM/Team Rocket OW Sinnoh.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW Unova",
+        "references": 5,
+        "maps": [
+          658,
+          680,
+          722,
+          749,
+          765
+        ],
+        "file": "Audio/BGM/Team Rocket OW Unova.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "022Cry",
+        "references": 4,
+        "maps": [
+          81,
+          250,
+          318,
+          419
+        ],
+        "file": "Audio/SE/022Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "037Cry",
+        "references": 4,
+        "maps": [
+          891,
+          958
+        ],
+        "file": "Audio/SE/037Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "049Cry",
+        "references": 4,
+        "maps": [
+          42,
+          176,
+          576,
+          867
+        ],
+        "file": "Audio/SE/049Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "052Cry",
+        "references": 4,
+        "maps": [
+          153,
+          542,
+          925,
+          944
+        ],
+        "file": "Audio/SE/052Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "067Cry",
+        "references": 4,
+        "maps": [
+          139,
+          250,
+          528,
+          619
+        ],
+        "file": "Audio/SE/067Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "081Cry",
+        "references": 4,
+        "maps": [
+          94,
+          428,
+          615,
+          833
+        ],
+        "file": "Audio/SE/081Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "104Cry",
+        "references": 4,
+        "maps": [
+          139,
+          198,
+          429,
+          779
+        ],
+        "file": "Audio/SE/104Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "105Cry",
+        "references": 4,
+        "maps": [
+          891,
+          917,
+          957
+        ],
+        "file": "Audio/SE/105Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "120Cry",
+        "references": 4,
+        "maps": [
+          95,
+          947,
+          958
+        ],
+        "file": "Audio/SE/120Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "124Cry",
+        "references": 4,
+        "maps": [
+          337,
+          341,
+          564,
+          627
+        ],
+        "file": "Audio/SE/124Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "152Cry",
+        "references": 4,
+        "maps": [
+          253,
+          254,
+          255
+        ],
+        "file": "Audio/SE/152Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "178Cry",
+        "references": 4,
+        "maps": [
+          421,
+          608,
+          779,
+          801
+        ],
+        "file": "Audio/SE/178Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "181Cry",
+        "references": 4,
+        "maps": [
+          316,
+          534,
+          643
+        ],
+        "file": "Audio/SE/181Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "214Cry",
+        "references": 4,
+        "maps": [
+          254,
+          414,
+          764,
+          837
+        ],
+        "file": "Audio/SE/214Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "282Cry",
+        "references": 4,
+        "maps": [
+          456,
+          780,
+          795,
+          876
+        ],
+        "file": "Audio/SE/282Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "517Cry",
+        "references": 4,
+        "maps": [
+          661,
+          672,
+          697,
+          709
+        ],
+        "file": "Audio/SE/517Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "605Cry",
+        "references": 4,
+        "maps": [
+          657,
+          662,
+          679,
+          691
+        ],
+        "file": "Audio/SE/605Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "648Cry",
+        "references": 4,
+        "maps": [
+          738,
+          743,
+          749
+        ],
+        "file": "Audio/SE/648Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "730Cry",
+        "references": 4,
+        "maps": [
+          891,
+          894,
+          958
+        ],
+        "file": "Audio/SE/730Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "761Cry",
+        "references": 4,
+        "maps": [
+          889,
+          891,
+          911
+        ],
+        "file": "Audio/SE/761Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "763Cry",
+        "references": 4,
+        "maps": [
+          891,
+          895,
+          957
+        ],
+        "file": "Audio/SE/763Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "777Cry",
+        "references": 4,
+        "maps": [
+          889,
+          891,
+          958
+        ],
+        "file": "Audio/SE/777Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "785Cry",
+        "references": 4,
+        "maps": [
+          889,
+          902
+        ],
+        "file": "Audio/SE/785Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "792Cry",
+        "references": 4,
+        "maps": [
+          922,
+          923
+        ],
+        "file": "Audio/SE/792Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CHATOT",
+        "references": 4,
+        "maps": [
+          261,
+          515,
+          532,
+          574
+        ],
+        "file": "Audio/SE/CHATOT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "Door exit",
+        "references": 4,
+        "maps": [
+          29,
+          30
+        ],
+        "file": "Audio/SE/Door exit.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "FALINKS",
+        "references": 4,
+        "maps": [
+          390,
+          440,
+          526,
+          974
+        ],
+        "file": "Audio/SE/FALINKS.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GEODUDE",
+        "references": 4,
+        "maps": [
+          137,
+          390,
+          607
+        ],
+        "file": "Audio/SE/GEODUDE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "KINGDRA",
+        "references": 4,
+        "maps": [
+          317,
+          390,
+          754
+        ],
+        "file": "Audio/SE/KINGDRA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "KOFFING",
+        "references": 4,
+        "maps": [
+          152,
+          823
+        ],
+        "file": "Audio/SE/KOFFING.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MAGIKARP",
+        "references": 4,
+        "maps": [
+          335,
+          345,
+          390
+        ],
+        "file": "Audio/SE/MAGIKARP.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PIDGEOTTO",
+        "references": 4,
+        "maps": [
+          33,
+          390,
+          426
+        ],
+        "file": "Audio/SE/PIDGEOTTO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RAICHU",
+        "references": 4,
+        "maps": [
+          231,
+          308,
+          390
+        ],
+        "file": "Audio/SE/RAICHU.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SIRFETCHD",
+        "references": 4,
+        "maps": [
+          94,
+          764,
+          973
+        ],
+        "file": "Audio/SE/SIRFETCHD.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "STANTLER",
+        "references": 4,
+        "maps": [
+          82,
+          390,
+          563
+        ],
+        "file": "Audio/SE/STANTLER.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW Alola",
+        "references": 4,
+        "maps": [
+          42,
+          898,
+          910,
+          936
+        ],
+        "file": "Audio/BGM/Team Rocket OW Alola.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW Hoenn",
+        "references": 4,
+        "maps": [
+          375,
+          407,
+          453,
+          481
+        ],
+        "file": "Audio/BGM/Team Rocket OW Hoenn.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW Journeys",
+        "references": 4,
+        "maps": [
+          94,
+          171,
+          265,
+          406
+        ],
+        "file": "Audio/BGM/Team Rocket OW Journeys.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW Kalos",
+        "references": 4,
+        "maps": [
+          803,
+          826,
+          838,
+          862
+        ],
+        "file": "Audio/BGM/Team Rocket OW Kalos.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "VOLTORB",
+        "references": 4,
+        "maps": [
+          390,
+          406,
+          835
+        ],
+        "file": "Audio/SE/VOLTORB.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WURMPLE",
+        "references": 4,
+        "maps": [
+          390,
+          738
+        ],
+        "file": "Audio/SE/WURMPLE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ZACIAN",
+        "references": 4,
+        "maps": [
+          422,
+          508
+        ],
+        "file": "Audio/SE/ZACIAN.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "004Cry",
+        "references": 3,
+        "maps": [
+          101,
+          627
+        ],
+        "file": "Audio/SE/004Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "016Cry",
+        "references": 3,
+        "maps": [
+          109,
+          211,
+          419
+        ],
+        "file": "Audio/SE/016Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "018Cry",
+        "references": 3,
+        "maps": [
+          130,
+          764,
+          773
+        ],
+        "file": "Audio/SE/018Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "084Cry",
+        "references": 3,
+        "maps": [
+          211,
+          407,
+          419
+        ],
+        "file": "Audio/SE/084Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "089Cry",
+        "references": 3,
+        "maps": [
+          48,
+          168,
+          926
+        ],
+        "file": "Audio/SE/089Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "098Cry",
+        "references": 3,
+        "maps": [
+          104,
+          211,
+          764
+        ],
+        "file": "Audio/SE/098Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "102Cry",
+        "references": 3,
+        "maps": [
+          543,
+          830,
+          935
+        ],
+        "file": "Audio/SE/102Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "149Cry",
+        "references": 3,
+        "maps": [
+          348,
+          884
+        ],
+        "file": "Audio/SE/149Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "186Cry",
+        "references": 3,
+        "maps": [
+          95,
+          777
+        ],
+        "file": "Audio/SE/186Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "197Cry",
+        "references": 3,
+        "maps": [
+          298,
+          601
+        ],
+        "file": "Audio/SE/197Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "212Cry",
+        "references": 3,
+        "maps": [
+          631,
+          643,
+          773
+        ],
+        "file": "Audio/SE/212Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "280Cry",
+        "references": 3,
+        "maps": [
+          368,
+          389,
+          896
+        ],
+        "file": "Audio/SE/280Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "324Cry",
+        "references": 3,
+        "maps": [
+          415,
+          764,
+          793
+        ],
+        "file": "Audio/SE/324Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "341Cry",
+        "references": 3,
+        "maps": [
+          383,
+          738,
+          764
+        ],
+        "file": "Audio/SE/341Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "389Cry",
+        "references": 3,
+        "maps": [
+          574,
+          764,
+          783
+        ],
+        "file": "Audio/SE/389Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "405Cry",
+        "references": 3,
+        "maps": [
+          784,
+          833,
+          876
+        ],
+        "file": "Audio/SE/405Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "430Cry",
+        "references": 3,
+        "maps": [
+          574,
+          642,
+          778
+        ],
+        "file": "Audio/SE/430Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "480Cry",
+        "references": 3,
+        "maps": [
+          628,
+          640,
+          970
+        ],
+        "file": "Audio/SE/480Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "481Cry",
+        "references": 3,
+        "maps": [
+          628,
+          638,
+          970
+        ],
+        "file": "Audio/SE/481Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "495Cry",
+        "references": 3,
+        "maps": [
+          665,
+          764
+        ],
+        "file": "Audio/SE/495Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "518Cry",
+        "references": 3,
+        "maps": [
+          740,
+          756,
+          786
+        ],
+        "file": "Audio/SE/518Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "525Cry",
+        "references": 3,
+        "maps": [
+          743,
+          764,
+          924
+        ],
+        "file": "Audio/SE/525Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "536Cry",
+        "references": 3,
+        "maps": [
+          682,
+          707,
+          764
+        ],
+        "file": "Audio/SE/536Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "590Cry",
+        "references": 3,
+        "maps": [
+          711,
+          791
+        ],
+        "file": "Audio/SE/590Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "641Cry",
+        "references": 3,
+        "maps": [
+          698,
+          700,
+          749
+        ],
+        "file": "Audio/SE/641Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "642Cry",
+        "references": 3,
+        "maps": [
+          698,
+          700,
+          749
+        ],
+        "file": "Audio/SE/642Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "645Cry",
+        "references": 3,
+        "maps": [
+          698,
+          700,
+          749
+        ],
+        "file": "Audio/SE/645Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "652Cry",
+        "references": 3,
+        "maps": [
+          819,
+          869,
+          879
+        ],
+        "file": "Audio/SE/652Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "718Cry",
+        "references": 3,
+        "maps": [
+          862,
+          878
+        ],
+        "file": "Audio/SE/718Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "727Cry",
+        "references": 3,
+        "maps": [
+          892,
+          925
+        ],
+        "file": "Audio/SE/727Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "728Cry",
+        "references": 3,
+        "maps": [
+          889,
+          891,
+          897
+        ],
+        "file": "Audio/SE/728Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "776Cry",
+        "references": 3,
+        "maps": [
+          889,
+          917,
+          957
+        ],
+        "file": "Audio/SE/776Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "805Cry",
+        "references": 3,
+        "maps": [
+          889,
+          925
+        ],
+        "file": "Audio/SE/805Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ARIADOS",
+        "references": 3,
+        "maps": [
+          240,
+          390
+        ],
+        "file": "Audio/SE/ARIADOS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BANETTE",
+        "references": 3,
+        "maps": [
+          373,
+          376,
+          443
+        ],
+        "file": "Audio/SE/BANETTE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BUNNELBY",
+        "references": 3,
+        "maps": [
+          390,
+          517,
+          799
+        ],
+        "file": "Audio/SE/BUNNELBY.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CASCOON",
+        "references": 3,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/CASCOON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CHARIZARD",
+        "references": 3,
+        "maps": [
+          171,
+          422
+        ],
+        "file": "Audio/SE/CHARIZARD.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CUBONE",
+        "references": 3,
+        "maps": [
+          43,
+          299,
+          390
+        ],
+        "file": "Audio/SE/CUBONE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DEWGONG",
+        "references": 3,
+        "maps": [
+          184,
+          390,
+          632
+        ],
+        "file": "Audio/SE/DEWGONG.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DRACOVISH",
+        "references": 3,
+        "maps": [
+          94,
+          764
+        ],
+        "file": "Audio/SE/DRACOVISH.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DRAGONAIR",
+        "references": 3,
+        "maps": [
+          265
+        ],
+        "file": "Audio/SE/DRAGONAIR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DUSTOX",
+        "references": 3,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/DUSTOX.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FLETCHLING",
+        "references": 3,
+        "maps": [
+          390,
+          793
+        ],
+        "file": "Audio/SE/FLETCHLING.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GRIMER",
+        "references": 3,
+        "maps": [
+          390,
+          894
+        ],
+        "file": "Audio/SE/GRIMER.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LUCARIO",
+        "references": 3,
+        "maps": [
+          94,
+          764
+        ],
+        "file": "Audio/SE/LUCARIO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MAGNEMITE",
+        "references": 3,
+        "maps": [
+          394,
+          452
+        ],
+        "file": "Audio/SE/MAGNEMITE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "NICKIT",
+        "references": 3,
+        "maps": [
+          171
+        ],
+        "file": "Audio/SE/NICKIT.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "NIDORANfE",
+        "references": 3,
+        "maps": [
+          89,
+          390
+        ],
+        "file": "Audio/SE/NIDORANfE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "NIDORANmA",
+        "references": 3,
+        "maps": [
+          89,
+          390
+        ],
+        "file": "Audio/SE/NIDORANmA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PANPOUR",
+        "references": 3,
+        "maps": [
+          390,
+          655,
+          725
+        ],
+        "file": "Audio/SE/PANPOUR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PORYGON",
+        "references": 3,
+        "maps": [
+          282
+        ],
+        "file": "Audio/SE/PORYGON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SCIZOR",
+        "references": 3,
+        "maps": [
+          390,
+          743,
+          818
+        ],
+        "file": "Audio/SE/SCIZOR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SEADRA",
+        "references": 3,
+        "maps": [
+          317,
+          366
+        ],
+        "file": "Audio/SE/SEADRA.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretlounge",
+        "references": 3,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretlounge.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretloungeautumn",
+        "references": 3,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretloungeautumn.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretloungenight",
+        "references": 3,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretloungenight.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretloungespring",
+        "references": 3,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretloungespring.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretloungesummer",
+        "references": 3,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretloungesummer.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretloungewinter",
+        "references": 3,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretloungewinter.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "STARAPTOR",
+        "references": 3,
+        "maps": [
+          507,
+          651
+        ],
+        "file": "Audio/SE/STARAPTOR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TENTACOOL",
+        "references": 3,
+        "maps": [
+          184,
+          390
+        ],
+        "file": "Audio/SE/TENTACOOL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "THIEVUL",
+        "references": 3,
+        "maps": [
+          171
+        ],
+        "file": "Audio/SE/THIEVUL.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "WAILMER",
+        "references": 3,
+        "maps": [
+          268
+        ],
+        "file": "Audio/SE/WAILMER.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WINGULL",
+        "references": 3,
+        "maps": [
+          390,
+          408,
+          437
+        ],
+        "file": "Audio/SE/WINGULL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "009Cry",
+        "references": 2,
+        "maps": [
+          643,
+          775
+        ],
+        "file": "Audio/SE/009Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "017Cry",
+        "references": 2,
+        "maps": [
+          81,
+          419
+        ],
+        "file": "Audio/SE/017Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "032Cry",
+        "references": 2,
+        "maps": [
+          83
+        ],
+        "file": "Audio/SE/032Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "039Cry",
+        "references": 2,
+        "maps": [
+          769,
+          851
+        ],
+        "file": "Audio/SE/039Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "057Cry",
+        "references": 2,
+        "maps": [
+          150,
+          165
+        ],
+        "file": "Audio/SE/057Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "062Cry",
+        "references": 2,
+        "maps": [
+          152,
+          772
+        ],
+        "file": "Audio/SE/062Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "064Cry",
+        "references": 2,
+        "maps": [
+          132,
+          173
+        ],
+        "file": "Audio/SE/064Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "074Cry",
+        "references": 2,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/074Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "080Cry",
+        "references": 2,
+        "maps": [
+          89,
+          858
+        ],
+        "file": "Audio/SE/080Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "086Cry",
+        "references": 2,
+        "maps": [
+          113,
+          233
+        ],
+        "file": "Audio/SE/086Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "090Cry",
+        "references": 2,
+        "maps": [
+          319
+        ],
+        "file": "Audio/SE/090Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "095Cry",
+        "references": 2,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/095Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "096Cry",
+        "references": 2,
+        "maps": [
+          84,
+          284
+        ],
+        "file": "Audio/SE/096Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "100Cry",
+        "references": 2,
+        "maps": [
+          481
+        ],
+        "file": "Audio/SE/100Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "115Cry",
+        "references": 2,
+        "maps": [
+          174,
+          879
+        ],
+        "file": "Audio/SE/115Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "125Cry",
+        "references": 2,
+        "maps": [
+          574,
+          909
+        ],
+        "file": "Audio/SE/125Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "156Cry",
+        "references": 2,
+        "maps": [
+          764,
+          804
+        ],
+        "file": "Audio/SE/156Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "164Cry",
+        "references": 2,
+        "maps": [
+          277,
+          764
+        ],
+        "file": "Audio/SE/164Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "217Cry",
+        "references": 2,
+        "maps": [
+          574,
+          778
+        ],
+        "file": "Audio/SE/217Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "226Cry",
+        "references": 2,
+        "maps": [
+          777,
+          782
+        ],
+        "file": "Audio/SE/226Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "232Cry",
+        "references": 2,
+        "maps": [
+          764,
+          781
+        ],
+        "file": "Audio/SE/232Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "249Cry",
+        "references": 2,
+        "maps": [
+          108,
+          322
+        ],
+        "file": "Audio/SE/249Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "257Cry",
+        "references": 2,
+        "maps": [
+          781,
+          819
+        ],
+        "file": "Audio/SE/257Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "267Cry",
+        "references": 2,
+        "maps": [
+          367,
+          419
+        ],
+        "file": "Audio/SE/267Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "272Cry",
+        "references": 2,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/272Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "281Cry",
+        "references": 2,
+        "maps": [
+          405,
+          825
+        ],
+        "file": "Audio/SE/281Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "298Cry",
+        "references": 2,
+        "maps": [
+          95,
+          835
+        ],
+        "file": "Audio/SE/298Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "350Cry",
+        "references": 2,
+        "maps": [
+          590,
+          780
+        ],
+        "file": "Audio/SE/350Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "362Cry",
+        "references": 2,
+        "maps": [
+          743,
+          764
+        ],
+        "file": "Audio/SE/362Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "382Cry",
+        "references": 2,
+        "maps": [
+          884
+        ],
+        "file": "Audio/SE/382Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "383Cry",
+        "references": 2,
+        "maps": [
+          884
+        ],
+        "file": "Audio/SE/383Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "386Cry",
+        "references": 2,
+        "maps": [
+          72,
+          494
+        ],
+        "file": "Audio/SE/386Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "390Cry",
+        "references": 2,
+        "maps": [
+          551,
+          608
+        ],
+        "file": "Audio/SE/390Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "392Cry",
+        "references": 2,
+        "maps": [
+          764,
+          784
+        ],
+        "file": "Audio/SE/392Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "393Cry",
+        "references": 2,
+        "maps": [
+          507,
+          553
+        ],
+        "file": "Audio/SE/393Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "418Cry",
+        "references": 2,
+        "maps": [
+          764,
+          784
+        ],
+        "file": "Audio/SE/418Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "424Cry",
+        "references": 2,
+        "maps": [
+          108,
+          777
+        ],
+        "file": "Audio/SE/424Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "443Cry",
+        "references": 2,
+        "maps": [
+          630,
+          764
+        ],
+        "file": "Audio/SE/443Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "445Cry",
+        "references": 2,
+        "maps": [
+          796,
+          876
+        ],
+        "file": "Audio/SE/445Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "446Cry",
+        "references": 2,
+        "maps": [
+          783,
+          892
+        ],
+        "file": "Audio/SE/446Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "448Cry",
+        "references": 2,
+        "maps": [
+          618,
+          876
+        ],
+        "file": "Audio/SE/448Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "464Cry",
+        "references": 2,
+        "maps": [
+          773,
+          954
+        ],
+        "file": "Audio/SE/464Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "472Cry",
+        "references": 2,
+        "maps": [
+          764,
+          792
+        ],
+        "file": "Audio/SE/472Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "478Cry",
+        "references": 2,
+        "maps": [
+          785,
+          953
+        ],
+        "file": "Audio/SE/478Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "483Cry",
+        "references": 2,
+        "maps": [
+          774,
+          970
+        ],
+        "file": "Audio/SE/483Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "484Cry",
+        "references": 2,
+        "maps": [
+          774,
+          970
+        ],
+        "file": "Audio/SE/484Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "498Cry",
+        "references": 2,
+        "maps": [
+          658,
+          787
+        ],
+        "file": "Audio/SE/498Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "499Cry",
+        "references": 2,
+        "maps": [
+          758,
+          764
+        ],
+        "file": "Audio/SE/499Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "553Cry",
+        "references": 2,
+        "maps": [
+          727,
+          764
+        ],
+        "file": "Audio/SE/553Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "559Cry",
+        "references": 2,
+        "maps": [
+          757,
+          764
+        ],
+        "file": "Audio/SE/559Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "610Cry",
+        "references": 2,
+        "maps": [
+          686,
+          758
+        ],
+        "file": "Audio/SE/610Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "643Cry",
+        "references": 2,
+        "maps": [
+          771,
+          786
+        ],
+        "file": "Audio/SE/643Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "647Cry",
+        "references": 2,
+        "maps": [
+          792,
+          885
+        ],
+        "file": "Audio/SE/647Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "649Cry",
+        "references": 2,
+        "maps": [
+          766,
+          792
+        ],
+        "file": "Audio/SE/649Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "666Cry",
+        "references": 2,
+        "maps": [
+          837,
+          876
+        ],
+        "file": "Audio/SE/666Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "678Cry",
+        "references": 2,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/678Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "701Cry",
+        "references": 2,
+        "maps": [
+          764,
+          821
+        ],
+        "file": "Audio/SE/701Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "716Cry",
+        "references": 2,
+        "maps": [
+          822,
+          880
+        ],
+        "file": "Audio/SE/716Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "722Cry",
+        "references": 2,
+        "maps": [
+          892,
+          893
+        ],
+        "file": "Audio/SE/722Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "737Cry",
+        "references": 2,
+        "maps": [
+          891,
+          926
+        ],
+        "file": "Audio/SE/737Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "738Cry",
+        "references": 2,
+        "maps": [
+          891
+        ],
+        "file": "Audio/SE/738Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "747Cry",
+        "references": 2,
+        "maps": [
+          926,
+          944
+        ],
+        "file": "Audio/SE/747Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "787Cry",
+        "references": 2,
+        "maps": [
+          938
+        ],
+        "file": "Audio/SE/787Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "789Cry",
+        "references": 2,
+        "maps": [
+          892,
+          893
+        ],
+        "file": "Audio/SE/789Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "794Cry",
+        "references": 2,
+        "maps": [
+          910
+        ],
+        "file": "Audio/SE/794Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "795Cry",
+        "references": 2,
+        "maps": [
+          901
+        ],
+        "file": "Audio/SE/795Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "798Cry",
+        "references": 2,
+        "maps": [
+          894
+        ],
+        "file": "Audio/SE/798Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "800Cry",
+        "references": 2,
+        "maps": [
+          923
+        ],
+        "file": "Audio/SE/800Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "832Cry",
+        "references": 2,
+        "maps": [
+          891,
+          892
+        ],
+        "file": "Audio/SE/832Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ABSOL",
+        "references": 2,
+        "maps": [
+          390,
+          625
+        ],
+        "file": "Audio/SE/ABSOL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "AMPHAROS",
+        "references": 2,
+        "maps": [
+          441,
+          793
+        ],
+        "file": "Audio/SE/AMPHAROS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "APPLETUN",
+        "references": 2,
+        "maps": [
+          754
+        ],
+        "file": "Audio/SE/APPLETUN.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "APPLIN",
+        "references": 2,
+        "maps": [
+          754
+        ],
+        "file": "Audio/SE/APPLIN.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ARCANINE",
+        "references": 2,
+        "maps": [
+          130
+        ],
+        "file": "Audio/SE/ARCANINE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ARTICUNO",
+        "references": 2,
+        "maps": [
+          222,
+          979
+        ],
+        "file": "Audio/SE/ARTICUNO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "AUDINO",
+        "references": 2,
+        "maps": [
+          793,
+          849
+        ],
+        "file": "Audio/SE/AUDINO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BEARTIC",
+        "references": 2,
+        "maps": [
+          620
+        ],
+        "file": "Audio/SE/BEARTIC.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BELLOSSOM",
+        "references": 2,
+        "maps": [
+          532
+        ],
+        "file": "Audio/SE/BELLOSSOM.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BOLDORE",
+        "references": 2,
+        "maps": [
+          390,
+          767
+        ],
+        "file": "Audio/SE/BOLDORE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CALYREX",
+        "references": 2,
+        "maps": [
+          981
+        ],
+        "file": "Audio/SE/CALYREX.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CAMERUPT",
+        "references": 2,
+        "maps": [
+          390,
+          632
+        ],
+        "file": "Audio/SE/CAMERUPT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CHANSEY",
+        "references": 2,
+        "maps": [
+          152
+        ],
+        "file": "Audio/SE/CHANSEY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CHARMELEON",
+        "references": 2,
+        "maps": [
+          625
+        ],
+        "file": "Audio/SE/CHARMELEON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CINDERACE",
+        "references": 2,
+        "maps": [
+          390,
+          974
+        ],
+        "file": "Audio/SE/CINDERACE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DARMANITAN",
+        "references": 2,
+        "maps": [
+          390,
+          738
+        ],
+        "file": "Audio/SE/DARMANITAN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DEDENNE",
+        "references": 2,
+        "maps": [
+          515
+        ],
+        "file": "Audio/SE/DEDENNE.ogg"
+      },
+      {
+        "kind": "ME",
+        "name": "Ding dong",
+        "references": 2,
+        "maps": [
+          214
+        ],
+        "file": "Audio/ME/Ding dong.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DITTO",
+        "references": 2,
+        "maps": [
+          387
+        ],
+        "file": "Audio/SE/DITTO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DODRIO",
+        "references": 2,
+        "maps": [
+          228
+        ],
+        "file": "Audio/SE/DODRIO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DREEPY",
+        "references": 2,
+        "maps": [
+          440
+        ],
+        "file": "Audio/SE/DREEPY.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DROWZEE",
+        "references": 2,
+        "maps": [
+          361,
+          390
+        ],
+        "file": "Audio/SE/DROWZEE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DURANT",
+        "references": 2,
+        "maps": [
+          390,
+          799
+        ],
+        "file": "Audio/SE/DURANT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "EELEKTRIK",
+        "references": 2,
+        "maps": [
+          655
+        ],
+        "file": "Audio/SE/EELEKTRIK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "EEVEE",
+        "references": 2,
+        "maps": [
+          94
+        ],
+        "file": "Audio/SE/EEVEE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "EKANS",
+        "references": 2,
+        "maps": [
+          390,
+          767
+        ],
+        "file": "Audio/SE/EKANS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ELECTABUZZ",
+        "references": 2,
+        "maps": [
+          220
+        ],
+        "file": "Audio/SE/ELECTABUZZ.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "EXEGGUTOR",
+        "references": 2,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/EXEGGUTOR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FLAAFFY",
+        "references": 2,
+        "maps": [
+          282
+        ],
+        "file": "Audio/SE/FLAAFFY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FLETCHINDER",
+        "references": 2,
+        "maps": [
+          793
+        ],
+        "file": "Audio/SE/FLETCHINDER.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "FLYGON",
+        "references": 2,
+        "maps": [
+          369,
+          390
+        ],
+        "file": "Audio/SE/FLYGON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FOONGUS",
+        "references": 2,
+        "maps": [
+          856
+        ],
+        "file": "Audio/SE/FOONGUS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FRAXURE",
+        "references": 2,
+        "maps": [
+          171,
+          754
+        ],
+        "file": "Audio/SE/FRAXURE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FRILLISH",
+        "references": 2,
+        "maps": [
+          842
+        ],
+        "file": "Audio/SE/FRILLISH.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FURFROU",
+        "references": 2,
+        "maps": [
+          793
+        ],
+        "file": "Audio/SE/FURFROU.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GIBLE",
+        "references": 2,
+        "maps": [
+          342
+        ],
+        "file": "Audio/SE/GIBLE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GOLDEEN",
+        "references": 2,
+        "maps": [
+          390,
+          906
+        ],
+        "file": "Audio/SE/GOLDEEN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GOTHITELLE",
+        "references": 2,
+        "maps": [
+          130
+        ],
+        "file": "Audio/SE/GOTHITELLE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GUI naming confirm",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": "Audio/SE/GUI naming confirm.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GURDURR",
+        "references": 2,
+        "maps": [
+          518,
+          973
+        ],
+        "file": "Audio/SE/GURDURR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "HERACROSS",
+        "references": 2,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/HERACROSS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "HITMONCHAN",
+        "references": 2,
+        "maps": [
+          390,
+          563
+        ],
+        "file": "Audio/SE/HITMONCHAN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "HOOH",
+        "references": 2,
+        "maps": [
+          76,
+          108
+        ],
+        "file": "Audio/SE/HOOH.wav"
+      },
+      {
+        "kind": "ME",
+        "name": "Item get",
+        "references": 2,
+        "maps": [
+          214
+        ],
+        "file": "Audio/ME/Item get.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "KABUTO",
+        "references": 2,
+        "maps": [
+          215
+        ],
+        "file": "Audio/SE/KABUTO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "KAKUNA",
+        "references": 2,
+        "maps": [
+          174,
+          390
+        ],
+        "file": "Audio/SE/KAKUNA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "KANGASKHAN",
+        "references": 2,
+        "maps": [
+          231,
+          551
+        ],
+        "file": "Audio/SE/KANGASKHAN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "KECLEON",
+        "references": 2,
+        "maps": [
+          515
+        ],
+        "file": "Audio/SE/KECLEON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "KRABBY",
+        "references": 2,
+        "maps": [
+          390,
+          767
+        ],
+        "file": "Audio/SE/KRABBY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LARVITAR",
+        "references": 2,
+        "maps": [
+          953
+        ],
+        "file": "Audio/SE/LARVITAR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LEAVANNY",
+        "references": 2,
+        "maps": [
+          526
+        ],
+        "file": "Audio/SE/LEAVANNY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MANTYKE",
+        "references": 2,
+        "maps": [
+          390,
+          563
+        ],
+        "file": "Audio/SE/MANTYKE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "menu",
+        "references": 2,
+        "maps": [
+          34
+        ],
+        "file": "Audio/SE/menu.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "METAPOD",
+        "references": 2,
+        "maps": [
+          390,
+          799
+        ],
+        "file": "Audio/SE/METAPOD.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MISDREAVUS",
+        "references": 2,
+        "maps": [
+          137,
+          390
+        ],
+        "file": "Audio/SE/MISDREAVUS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MOLTRES",
+        "references": 2,
+        "maps": [
+          397,
+          764
+        ],
+        "file": "Audio/SE/MOLTRES.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MUNCHLAX",
+        "references": 2,
+        "maps": [
+          443
+        ],
+        "file": "Audio/SE/MUNCHLAX.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "NOCTOWL",
+        "references": 2,
+        "maps": [
+          251
+        ],
+        "file": "Audio/SE/NOCTOWL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ODDISH",
+        "references": 2,
+        "maps": [
+          390,
+          551
+        ],
+        "file": "Audio/SE/ODDISH.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PACHIRISU",
+        "references": 2,
+        "maps": [
+          551
+        ],
+        "file": "Audio/SE/PACHIRISU.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PANSEAR",
+        "references": 2,
+        "maps": [
+          390,
+          655
+        ],
+        "file": "Audio/SE/PANSEAR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PC close",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": "Audio/SE/PC close.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PC open",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": "Audio/SE/PC open.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "Piano b4 Cynthia",
+        "references": 2,
+        "maps": [
+          274
+        ],
+        "file": "Audio/BGM/Piano b4 Cynthia.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PIDGEOT",
+        "references": 2,
+        "maps": [
+          33
+        ],
+        "file": "Audio/SE/PIDGEOT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PIDOVE",
+        "references": 2,
+        "maps": [
+          651
+        ],
+        "file": "Audio/SE/PIDOVE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PIKIPEK",
+        "references": 2,
+        "maps": [
+          889
+        ],
+        "file": "Audio/SE/PIKIPEK.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PIPLUP",
+        "references": 2,
+        "maps": [
+          513,
+          541
+        ],
+        "file": "Audio/SE/PIPLUP.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PONYTA",
+        "references": 2,
+        "maps": [
+          513,
+          586
+        ],
+        "file": "Audio/SE/PONYTA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "QUAGSIRE",
+        "references": 2,
+        "maps": [
+          256
+        ],
+        "file": "Audio/SE/QUAGSIRE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RAPIDASH",
+        "references": 2,
+        "maps": [
+          256,
+          440
+        ],
+        "file": "Audio/SE/RAPIDASH.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RATICATE",
+        "references": 2,
+        "maps": [
+          390,
+          813
+        ],
+        "file": "Audio/SE/RATICATE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RATTATA",
+        "references": 2,
+        "maps": [
+          390,
+          894
+        ],
+        "file": "Audio/SE/RATTATA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "REGIELEKI",
+        "references": 2,
+        "maps": [
+          390,
+          989
+        ],
+        "file": "Audio/SE/REGIELEKI.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "RILLABOOM",
+        "references": 2,
+        "maps": [
+          973,
+          977
+        ],
+        "file": "Audio/SE/RILLABOOM.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SANDILE",
+        "references": 2,
+        "maps": [
+          390,
+          677
+        ],
+        "file": "Audio/SE/SANDILE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SCRAFTY",
+        "references": 2,
+        "maps": [
+          694
+        ],
+        "file": "Audio/SE/SCRAFTY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SCYTHER",
+        "references": 2,
+        "maps": [
+          390,
+          743
+        ],
+        "file": "Audio/SE/SCYTHER.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretduet",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretduet.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretgauntlet",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretgauntlet.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretsygna",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretsygna.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secrettitan",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": null
+      },
+      {
+        "kind": "SE",
+        "name": "SKIDDO",
+        "references": 2,
+        "maps": [
+          517,
+          594
+        ],
+        "file": "Audio/SE/SKIDDO.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SKITTY",
+        "references": 2,
+        "maps": [
+          517,
+          594
+        ],
+        "file": "Audio/SE/SKITTY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SPHEAL",
+        "references": 2,
+        "maps": [
+          459
+        ],
+        "file": "Audio/SE/SPHEAL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "STARAVIA",
+        "references": 2,
+        "maps": [
+          507
+        ],
+        "file": "Audio/SE/STARAVIA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "STARLY",
+        "references": 2,
+        "maps": [
+          507
+        ],
+        "file": "Audio/SE/STARLY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "STUNFISK",
+        "references": 2,
+        "maps": [
+          390,
+          974
+        ],
+        "file": "Audio/SE/STUNFISK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SWELLOW",
+        "references": 2,
+        "maps": [
+          357
+        ],
+        "file": "Audio/SE/SWELLOW.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TALONFLAME",
+        "references": 2,
+        "maps": [
+          793
+        ],
+        "file": "Audio/SE/TALONFLAME.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "Thunder8",
+        "references": 2,
+        "maps": [
+          513
+        ],
+        "file": null
+      },
+      {
+        "kind": "SE",
+        "name": "TOUCANNON",
+        "references": 2,
+        "maps": [
+          889
+        ],
+        "file": "Audio/SE/TOUCANNON.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "TOXTRICITY",
+        "references": 2,
+        "maps": [
+          977
+        ],
+        "file": "Audio/SE/TOXTRICITY.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "TRANQUILL",
+        "references": 2,
+        "maps": [
+          651
+        ],
+        "file": "Audio/SE/TRANQUILL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TRAPINCH",
+        "references": 2,
+        "maps": [
+          390,
+          394
+        ],
+        "file": "Audio/SE/TRAPINCH.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TRUMBEAK",
+        "references": 2,
+        "maps": [
+          889
+        ],
+        "file": "Audio/SE/TRUMBEAK.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "TURTONATOR",
+        "references": 2,
+        "maps": [
+          891
+        ],
+        "file": "Audio/SE/TURTONATOR.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "UNFEZANT",
+        "references": 2,
+        "maps": [
+          651
+        ],
+        "file": "Audio/SE/UNFEZANT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "VENOMOTH",
+        "references": 2,
+        "maps": [
+          390,
+          799
+        ],
+        "file": "Audio/SE/VENOMOTH.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WEEDLE",
+        "references": 2,
+        "maps": [
+          82,
+          390
+        ],
+        "file": "Audio/SE/WEEDLE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WEEZING",
+        "references": 2,
+        "maps": [
+          823
+        ],
+        "file": "Audio/SE/WEEZING.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "YAMPER",
+        "references": 2,
+        "maps": [
+          94
+        ],
+        "file": "Audio/SE/YAMPER.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ZAMAZENTA",
+        "references": 2,
+        "maps": [
+          422,
+          508
+        ],
+        "file": "Audio/SE/ZAMAZENTA.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ZAPDOS",
+        "references": 2,
+        "maps": [
+          187,
+          412
+        ],
+        "file": "Audio/SE/ZAPDOS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ZIGZAGOON",
+        "references": 2,
+        "maps": [
+          373
+        ],
+        "file": "Audio/SE/ZIGZAGOON.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "002-Battle02",
+        "references": 1,
+        "maps": [
+          47
+        ],
+        "file": null
+      },
+      {
+        "kind": "SE",
+        "name": "010Cry",
+        "references": 1,
+        "maps": [
+          81
+        ],
+        "file": "Audio/SE/010Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "020Cry",
+        "references": 1,
+        "maps": [
+          776
+        ],
+        "file": "Audio/SE/020Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "021Cry",
+        "references": 1,
+        "maps": [
+          77
+        ],
+        "file": "Audio/SE/021Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "026Cry",
+        "references": 1,
+        "maps": [
+          529
+        ],
+        "file": "Audio/SE/026Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "031Cry",
+        "references": 1,
+        "maps": [
+          775
+        ],
+        "file": "Audio/SE/031Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "036Cry",
+        "references": 1,
+        "maps": [
+          775
+        ],
+        "file": "Audio/SE/036Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "038Cry",
+        "references": 1,
+        "maps": [
+          773
+        ],
+        "file": "Audio/SE/038Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "047Cry",
+        "references": 1,
+        "maps": [
+          779
+        ],
+        "file": "Audio/SE/047Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "048Cry",
+        "references": 1,
+        "maps": [
+          42
+        ],
+        "file": "Audio/SE/048Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "050Cry",
+        "references": 1,
+        "maps": [
+          784
+        ],
+        "file": "Audio/SE/050Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "055Cry",
+        "references": 1,
+        "maps": [
+          773
+        ],
+        "file": "Audio/SE/055Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "058Cry",
+        "references": 1,
+        "maps": [
+          631
+        ],
+        "file": "Audio/SE/058Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "061Cry",
+        "references": 1,
+        "maps": [
+          455
+        ],
+        "file": "Audio/SE/061Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "068Cry",
+        "references": 1,
+        "maps": [
+          773
+        ],
+        "file": "Audio/SE/068Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "076Cry",
+        "references": 1,
+        "maps": [
+          776
+        ],
+        "file": "Audio/SE/076Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "078Cry",
+        "references": 1,
+        "maps": [
+          785
+        ],
+        "file": "Audio/SE/078Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "082Cry",
+        "references": 1,
+        "maps": [
+          833
+        ],
+        "file": "Audio/SE/082Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "085Cry",
+        "references": 1,
+        "maps": [
+          776
+        ],
+        "file": "Audio/SE/085Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "094Cry",
+        "references": 1,
+        "maps": [
+          879
+        ],
+        "file": "Audio/SE/094Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "099Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/099Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "103Cry",
+        "references": 1,
+        "maps": [
+          773
+        ],
+        "file": "Audio/SE/103Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "107Cry",
+        "references": 1,
+        "maps": [
+          779
+        ],
+        "file": "Audio/SE/107Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "111Cry",
+        "references": 1,
+        "maps": [
+          880
+        ],
+        "file": "Audio/SE/111Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "116Cry",
+        "references": 1,
+        "maps": [
+          95
+        ],
+        "file": "Audio/SE/116Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "118Cry",
+        "references": 1,
+        "maps": [
+          95
+        ],
+        "file": "Audio/SE/118Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "121Cry",
+        "references": 1,
+        "maps": [
+          95
+        ],
+        "file": "Audio/SE/121Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "123Cry",
+        "references": 1,
+        "maps": [
+          42
+        ],
+        "file": "Audio/SE/123Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "127Cry",
+        "references": 1,
+        "maps": [
+          879
+        ],
+        "file": "Audio/SE/127Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "132Cry",
+        "references": 1,
+        "maps": [
+          775
+        ],
+        "file": "Audio/SE/132Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "138Cry",
+        "references": 1,
+        "maps": [
+          967
+        ],
+        "file": "Audio/SE/138Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "139Cry",
+        "references": 1,
+        "maps": [
+          776
+        ],
+        "file": "Audio/SE/139Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "141Cry",
+        "references": 1,
+        "maps": [
+          792
+        ],
+        "file": "Audio/SE/141Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "142Cry",
+        "references": 1,
+        "maps": [
+          772
+        ],
+        "file": "Audio/SE/142Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "144Cry",
+        "references": 1,
+        "maps": [
+          281
+        ],
+        "file": "Audio/SE/144Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "145Cry",
+        "references": 1,
+        "maps": [
+          281
+        ],
+        "file": "Audio/SE/145Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "146Cry",
+        "references": 1,
+        "maps": [
+          281
+        ],
+        "file": "Audio/SE/146Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "150Cry",
+        "references": 1,
+        "maps": [
+          88
+        ],
+        "file": "Audio/SE/150Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "151Cry",
+        "references": 1,
+        "maps": [
+          73
+        ],
+        "file": "Audio/SE/151Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "153Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/153Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "154Cry",
+        "references": 1,
+        "maps": [
+          779
+        ],
+        "file": "Audio/SE/154Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "157Cry",
+        "references": 1,
+        "maps": [
+          777
+        ],
+        "file": "Audio/SE/157Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "160Cry",
+        "references": 1,
+        "maps": [
+          778
+        ],
+        "file": "Audio/SE/160Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "169Cry",
+        "references": 1,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/169Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "172Cry",
+        "references": 1,
+        "maps": [
+          777
+        ],
+        "file": "Audio/SE/172Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "183Cry",
+        "references": 1,
+        "maps": [
+          42
+        ],
+        "file": "Audio/SE/183Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "192Cry",
+        "references": 1,
+        "maps": [
+          777
+        ],
+        "file": "Audio/SE/192Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "196Cry",
+        "references": 1,
+        "maps": [
+          772
+        ],
+        "file": "Audio/SE/196Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "202Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/202Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "205Cry",
+        "references": 1,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/205Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "207Cry",
+        "references": 1,
+        "maps": [
+          572
+        ],
+        "file": "Audio/SE/207Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "208Cry",
+        "references": 1,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/208Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "210Cry",
+        "references": 1,
+        "maps": [
+          775
+        ],
+        "file": "Audio/SE/210Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "230Cry",
+        "references": 1,
+        "maps": [
+          778
+        ],
+        "file": "Audio/SE/230Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "231Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/231Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "233Cry",
+        "references": 1,
+        "maps": [
+          773
+        ],
+        "file": "Audio/SE/233Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "238Cry",
+        "references": 1,
+        "maps": [
+          779
+        ],
+        "file": "Audio/SE/238Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "243Cry",
+        "references": 1,
+        "maps": [
+          303
+        ],
+        "file": "Audio/SE/243Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "244Cry",
+        "references": 1,
+        "maps": [
+          303
+        ],
+        "file": "Audio/SE/244Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "245Cry",
+        "references": 1,
+        "maps": [
+          303
+        ],
+        "file": "Audio/SE/245Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "251Cry",
+        "references": 1,
+        "maps": [
+          485
+        ],
+        "file": "Audio/SE/251Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "252Cry",
+        "references": 1,
+        "maps": [
+          371
+        ],
+        "file": "Audio/SE/252Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "256Cry",
+        "references": 1,
+        "maps": [
+          429
+        ],
+        "file": "Audio/SE/256Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "259Cry",
+        "references": 1,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/259Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "260Cry",
+        "references": 1,
+        "maps": [
+          780
+        ],
+        "file": "Audio/SE/260Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "262Cry",
+        "references": 1,
+        "maps": [
+          780
+        ],
+        "file": "Audio/SE/262Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "276Cry",
+        "references": 1,
+        "maps": [
+          371
+        ],
+        "file": "Audio/SE/276Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "277Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/277Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "278Cry",
+        "references": 1,
+        "maps": [
+          374
+        ],
+        "file": "Audio/SE/278Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "300Cry",
+        "references": 1,
+        "maps": [
+          367
+        ],
+        "file": "Audio/SE/300Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "301Cry",
+        "references": 1,
+        "maps": [
+          780
+        ],
+        "file": "Audio/SE/301Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "306Cry",
+        "references": 1,
+        "maps": [
+          781
+        ],
+        "file": "Audio/SE/306Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "310Cry",
+        "references": 1,
+        "maps": [
+          879
+        ],
+        "file": "Audio/SE/310Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "311Cry",
+        "references": 1,
+        "maps": [
+          780
+        ],
+        "file": "Audio/SE/311Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "312Cry",
+        "references": 1,
+        "maps": [
+          781
+        ],
+        "file": "Audio/SE/312Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "321Cry",
+        "references": 1,
+        "maps": [
+          781
+        ],
+        "file": "Audio/SE/321Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "334Cry",
+        "references": 1,
+        "maps": [
+          464
+        ],
+        "file": "Audio/SE/334Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "351Cry",
+        "references": 1,
+        "maps": [
+          780
+        ],
+        "file": "Audio/SE/351Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "356Cry",
+        "references": 1,
+        "maps": [
+          782
+        ],
+        "file": "Audio/SE/356Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "357Cry",
+        "references": 1,
+        "maps": [
+          781
+        ],
+        "file": "Audio/SE/357Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "359Cry",
+        "references": 1,
+        "maps": [
+          880
+        ],
+        "file": "Audio/SE/359Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "361Cry",
+        "references": 1,
+        "maps": [
+          453
+        ],
+        "file": "Audio/SE/361Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "369Cry",
+        "references": 1,
+        "maps": [
+          781
+        ],
+        "file": "Audio/SE/369Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "370Cry",
+        "references": 1,
+        "maps": [
+          95
+        ],
+        "file": "Audio/SE/370Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "376Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/376Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "380Cry",
+        "references": 1,
+        "maps": [
+          425
+        ],
+        "file": "Audio/SE/380Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "381Cry",
+        "references": 1,
+        "maps": [
+          425
+        ],
+        "file": "Audio/SE/381Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "384Cry",
+        "references": 1,
+        "maps": [
+          630
+        ],
+        "file": "Audio/SE/384Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "385Cry",
+        "references": 1,
+        "maps": [
+          403
+        ],
+        "file": "Audio/SE/385Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "395Cry",
+        "references": 1,
+        "maps": [
+          785
+        ],
+        "file": "Audio/SE/395Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "396Cry",
+        "references": 1,
+        "maps": [
+          506
+        ],
+        "file": "Audio/SE/396Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "398Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/398Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "411Cry",
+        "references": 1,
+        "maps": [
+          783
+        ],
+        "file": "Audio/SE/411Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "417Cry",
+        "references": 1,
+        "maps": [
+          785
+        ],
+        "file": "Audio/SE/417Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "421Cry",
+        "references": 1,
+        "maps": [
+          785
+        ],
+        "file": "Audio/SE/421Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "428Cry",
+        "references": 1,
+        "maps": [
+          785
+        ],
+        "file": "Audio/SE/428Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "431Cry",
+        "references": 1,
+        "maps": [
+          514
+        ],
+        "file": "Audio/SE/431Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "441Cry",
+        "references": 1,
+        "maps": [
+          784
+        ],
+        "file": "Audio/SE/441Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "447Cry",
+        "references": 1,
+        "maps": [
+          585
+        ],
+        "file": "Audio/SE/447Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "460Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/460Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "461Cry",
+        "references": 1,
+        "maps": [
+          778
+        ],
+        "file": "Audio/SE/461Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "463Cry",
+        "references": 1,
+        "maps": [
+          783
+        ],
+        "file": "Audio/SE/463Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "466Cry",
+        "references": 1,
+        "maps": [
+          574
+        ],
+        "file": "Audio/SE/466Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "467Cry",
+        "references": 1,
+        "maps": [
+          574
+        ],
+        "file": "Audio/SE/467Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "468Cry",
+        "references": 1,
+        "maps": [
+          777
+        ],
+        "file": "Audio/SE/468Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "473Cry",
+        "references": 1,
+        "maps": [
+          783
+        ],
+        "file": "Audio/SE/473Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "485Cry",
+        "references": 1,
+        "maps": [
+          630
+        ],
+        "file": "Audio/SE/485Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "486Cry",
+        "references": 1,
+        "maps": [
+          783
+        ],
+        "file": "Audio/SE/486Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "487Cry",
+        "references": 1,
+        "maps": [
+          774
+        ],
+        "file": "Audio/SE/487Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "488Cry",
+        "references": 1,
+        "maps": [
+          613
+        ],
+        "file": "Audio/SE/488Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "490Cry",
+        "references": 1,
+        "maps": [
+          512
+        ],
+        "file": "Audio/SE/490Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "491Cry",
+        "references": 1,
+        "maps": [
+          613
+        ],
+        "file": "Audio/SE/491Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "492Cry",
+        "references": 1,
+        "maps": [
+          630
+        ],
+        "file": "Audio/SE/492Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "493Cry",
+        "references": 1,
+        "maps": [
+          590
+        ],
+        "file": "Audio/SE/493Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "494Cry",
+        "references": 1,
+        "maps": [
+          682
+        ],
+        "file": "Audio/SE/494Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "497Cry",
+        "references": 1,
+        "maps": [
+          787
+        ],
+        "file": "Audio/SE/497Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "500Cry",
+        "references": 1,
+        "maps": [
+          786
+        ],
+        "file": "Audio/SE/500Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "502Cry",
+        "references": 1,
+        "maps": [
+          792
+        ],
+        "file": "Audio/SE/502Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "519Cry",
+        "references": 1,
+        "maps": [
+          654
+        ],
+        "file": "Audio/SE/519Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "521Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/521Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "524Cry",
+        "references": 1,
+        "maps": [
+          682
+        ],
+        "file": "Audio/SE/524Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "528Cry",
+        "references": 1,
+        "maps": [
+          727
+        ],
+        "file": "Audio/SE/528Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "540Cry",
+        "references": 1,
+        "maps": [
+          675
+        ],
+        "file": "Audio/SE/540Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "552Cry",
+        "references": 1,
+        "maps": [
+          702
+        ],
+        "file": "Audio/SE/552Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "555Cry",
+        "references": 1,
+        "maps": [
+          682
+        ],
+        "file": "Audio/SE/555Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "565Cry",
+        "references": 1,
+        "maps": [
+          786
+        ],
+        "file": "Audio/SE/565Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "575Cry",
+        "references": 1,
+        "maps": [
+          698
+        ],
+        "file": "Audio/SE/575Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "578Cry",
+        "references": 1,
+        "maps": [
+          787
+        ],
+        "file": "Audio/SE/578Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "585Cry",
+        "references": 1,
+        "maps": [
+          787
+        ],
+        "file": "Audio/SE/585Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "589Cry",
+        "references": 1,
+        "maps": [
+          792
+        ],
+        "file": "Audio/SE/589Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "594Cry",
+        "references": 1,
+        "maps": [
+          787
+        ],
+        "file": "Audio/SE/594Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "596Cry",
+        "references": 1,
+        "maps": [
+          786
+        ],
+        "file": "Audio/SE/596Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "606Cry",
+        "references": 1,
+        "maps": [
+          728
+        ],
+        "file": "Audio/SE/606Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "617Cry",
+        "references": 1,
+        "maps": [
+          791
+        ],
+        "file": "Audio/SE/617Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "618Cry",
+        "references": 1,
+        "maps": [
+          787
+        ],
+        "file": "Audio/SE/618Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "628Cry",
+        "references": 1,
+        "maps": [
+          786
+        ],
+        "file": "Audio/SE/628Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "629Cry",
+        "references": 1,
+        "maps": [
+          787
+        ],
+        "file": "Audio/SE/629Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "638Cry",
+        "references": 1,
+        "maps": [
+          750
+        ],
+        "file": "Audio/SE/638Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "639Cry",
+        "references": 1,
+        "maps": [
+          751
+        ],
+        "file": "Audio/SE/639Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "640Cry",
+        "references": 1,
+        "maps": [
+          752
+        ],
+        "file": "Audio/SE/640Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "644Cry",
+        "references": 1,
+        "maps": [
+          651
+        ],
+        "file": "Audio/SE/644Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "646Cry",
+        "references": 1,
+        "maps": [
+          886
+        ],
+        "file": "Audio/SE/646Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "650Cry",
+        "references": 1,
+        "maps": [
+          833
+        ],
+        "file": "Audio/SE/650Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "654Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/654Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "656Cry",
+        "references": 1,
+        "maps": [
+          793
+        ],
+        "file": "Audio/SE/656Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "658Cry",
+        "references": 1,
+        "maps": [
+          880
+        ],
+        "file": "Audio/SE/658Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "659Cry",
+        "references": 1,
+        "maps": [
+          833
+        ],
+        "file": "Audio/SE/659Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "661Cry",
+        "references": 1,
+        "maps": [
+          798
+        ],
+        "file": "Audio/SE/661Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "662Cry",
+        "references": 1,
+        "maps": [
+          880
+        ],
+        "file": "Audio/SE/662Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "663Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/663Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "673Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/673Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "675Cry",
+        "references": 1,
+        "maps": [
+          857
+        ],
+        "file": "Audio/SE/675Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "682Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/682Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "686Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/686Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "695Cry",
+        "references": 1,
+        "maps": [
+          833
+        ],
+        "file": "Audio/SE/695Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "696Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/696Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "700Cry",
+        "references": 1,
+        "maps": [
+          880
+        ],
+        "file": "Audio/SE/700Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "702Cry",
+        "references": 1,
+        "maps": [
+          833
+        ],
+        "file": "Audio/SE/702Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "704Cry",
+        "references": 1,
+        "maps": [
+          827
+        ],
+        "file": "Audio/SE/704Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "711Cry",
+        "references": 1,
+        "maps": [
+          876
+        ],
+        "file": "Audio/SE/711Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "715Cry",
+        "references": 1,
+        "maps": [
+          764
+        ],
+        "file": "Audio/SE/715Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "717Cry",
+        "references": 1,
+        "maps": [
+          847
+        ],
+        "file": "Audio/SE/717Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "724Cry",
+        "references": 1,
+        "maps": [
+          926
+        ],
+        "file": "Audio/SE/724Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "729Cry",
+        "references": 1,
+        "maps": [
+          891
+        ],
+        "file": "Audio/SE/729Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "740Cry",
+        "references": 1,
+        "maps": [
+          925
+        ],
+        "file": "Audio/SE/740Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "746Cry",
+        "references": 1,
+        "maps": [
+          925
+        ],
+        "file": "Audio/SE/746Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "746SCry",
+        "references": 1,
+        "maps": [
+          912
+        ],
+        "file": "Audio/SE/746SCry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "754Cry",
+        "references": 1,
+        "maps": [
+          916
+        ],
+        "file": "Audio/SE/754Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "762Cry",
+        "references": 1,
+        "maps": [
+          891
+        ],
+        "file": "Audio/SE/762Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "778Cry",
+        "references": 1,
+        "maps": [
+          925
+        ],
+        "file": "Audio/SE/778Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "786Cry",
+        "references": 1,
+        "maps": [
+          917
+        ],
+        "file": "Audio/SE/786Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "788Cry",
+        "references": 1,
+        "maps": [
+          949
+        ],
+        "file": "Audio/SE/788Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "793Cry",
+        "references": 1,
+        "maps": [
+          923
+        ],
+        "file": "Audio/SE/793Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "831Cry",
+        "references": 1,
+        "maps": [
+          892
+        ],
+        "file": "Audio/SE/831Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "833Cry",
+        "references": 1,
+        "maps": [
+          892
+        ],
+        "file": "Audio/SE/833Cry.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ABOMASNOW",
+        "references": 1,
+        "maps": [
+          625
+        ],
+        "file": "Audio/SE/ABOMASNOW.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "AERODACTYL",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/AERODACTYL.wav"
+      },
+      {
+        "kind": "ME",
+        "name": "Alarm",
+        "references": 1,
+        "maps": [
+          214
+        ],
+        "file": "Audio/ME/Alarm.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ALCREMIE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/ALCREMIE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ALTARIA",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/ALTARIA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "AMAURA",
+        "references": 1,
+        "maps": [
+          863
+        ],
+        "file": "Audio/SE/AMAURA.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ARBOK",
+        "references": 1,
+        "maps": [
+          211
+        ],
+        "file": "Audio/SE/ARBOK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ARCTOZOLT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/ARCTOZOLT.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ARROKUDA",
+        "references": 1,
+        "maps": [
+          974
+        ],
+        "file": "Audio/SE/ARROKUDA.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "AVALUGG",
+        "references": 1,
+        "maps": [
+          863
+        ],
+        "file": "Audio/SE/AVALUGG.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "AZELF",
+        "references": 1,
+        "maps": [
+          614
+        ],
+        "file": "Audio/SE/AZELF.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "AZUMARILL",
+        "references": 1,
+        "maps": [
+          184
+        ],
+        "file": "Audio/SE/AZUMARILL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "AZURILL",
+        "references": 1,
+        "maps": [
+          184
+        ],
+        "file": "Audio/SE/AZURILL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BAGON",
+        "references": 1,
+        "maps": [
+          387
+        ],
+        "file": "Audio/SE/BAGON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "balldrop",
+        "references": 1,
+        "maps": [
+          49
+        ],
+        "file": "Audio/SE/balldrop.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "BALTOY",
+        "references": 1,
+        "maps": [
+          437
+        ],
+        "file": "Audio/SE/BALTOY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BASCULIN",
+        "references": 1,
+        "maps": [
+          677
+        ],
+        "file": "Audio/SE/BASCULIN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "Battle ball hit",
+        "references": 1,
+        "maps": [
+          151
+        ],
+        "file": "Audio/SE/Battle ball hit.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "Battle flee",
+        "references": 1,
+        "maps": [
+          151
+        ],
+        "file": "Audio/SE/Battle flee.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "Battle1",
+        "references": 1,
+        "maps": [
+          614
+        ],
+        "file": "Audio/SE/Battle1.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "BEEDRILL",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/BEEDRILL.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "begin",
+        "references": 1,
+        "maps": [
+          1
+        ],
+        "file": "Audio/BGM/begin.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "BELLSPROUT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/BELLSPROUT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BERGMITE",
+        "references": 1,
+        "maps": [
+          863
+        ],
+        "file": "Audio/SE/BERGMITE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "BINACLE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/BINACLE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "BLISSEY",
+        "references": 1,
+        "maps": [
+          86
+        ],
+        "file": "Audio/SE/BLISSEY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BONSLY",
+        "references": 1,
+        "maps": [
+          515
+        ],
+        "file": "Audio/SE/BONSLY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "BRUXISH",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/BRUXISH.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "BUTTERFREE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/BUTTERFREE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CACNEA",
+        "references": 1,
+        "maps": [
+          426
+        ],
+        "file": "Audio/SE/CACNEA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CARVANHA",
+        "references": 1,
+        "maps": [
+          426
+        ],
+        "file": "Audio/SE/CARVANHA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CATERPIE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/CATERPIE.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "Cave",
+        "references": 1,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/Cave.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CENTISKORCH",
+        "references": 1,
+        "maps": [
+          422
+        ],
+        "file": "Audio/SE/CENTISKORCH.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "champion-2",
+        "references": 1,
+        "maps": [
+          636
+        ],
+        "file": "Audio/BGM/champion-2.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CHIMECHO",
+        "references": 1,
+        "maps": [
+          387
+        ],
+        "file": "Audio/SE/CHIMECHO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CHINCHOU",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/CHINCHOU.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CLAUNCHER",
+        "references": 1,
+        "maps": [
+          95
+        ],
+        "file": "Audio/SE/CLAUNCHER.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CLAYDOL",
+        "references": 1,
+        "maps": [
+          429
+        ],
+        "file": "Audio/SE/CLAYDOL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CLEFABLE",
+        "references": 1,
+        "maps": [
+          599
+        ],
+        "file": "Audio/SE/CLEFABLE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CLEFAIRY",
+        "references": 1,
+        "maps": [
+          518
+        ],
+        "file": "Audio/SE/CLEFAIRY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CLEFFA",
+        "references": 1,
+        "maps": [
+          987
+        ],
+        "file": "Audio/SE/CLEFFA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CLOBBOPUS",
+        "references": 1,
+        "maps": [
+          535
+        ],
+        "file": "Audio/SE/CLOBBOPUS.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CLOYSTER",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/CLOYSTER.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "COALOSSAL",
+        "references": 1,
+        "maps": [
+          171
+        ],
+        "file": "Audio/SE/COALOSSAL.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "CONKELDURR",
+        "references": 1,
+        "maps": [
+          677
+        ],
+        "file": "Audio/SE/CONKELDURR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CORSOLA",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/CORSOLA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "CRESSELIA",
+        "references": 1,
+        "maps": [
+          537
+        ],
+        "file": "Audio/SE/CRESSELIA.wav"
+      },
+      {
+        "kind": "ME",
+        "name": "Cricket-sfx",
+        "references": 1,
+        "maps": [
+          214
+        ],
+        "file": "Audio/ME/Cricket-sfx.mp3"
+      },
+      {
+        "kind": "SE",
+        "name": "CROCONAW",
+        "references": 1,
+        "maps": [
+          308
+        ],
+        "file": "Audio/SE/CROCONAW.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DARKRAI",
+        "references": 1,
+        "maps": [
+          537
+        ],
+        "file": "Audio/SE/DARKRAI.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DELCATTY",
+        "references": 1,
+        "maps": [
+          443
+        ],
+        "file": "Audio/SE/DELCATTY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DELPHOX",
+        "references": 1,
+        "maps": [
+          791
+        ],
+        "file": "Audio/SE/DELPHOX.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DHELMISE",
+        "references": 1,
+        "maps": [
+          944
+        ],
+        "file": "Audio/SE/DHELMISE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DIGGERSBY",
+        "references": 1,
+        "maps": [
+          833
+        ],
+        "file": "Audio/SE/DIGGERSBY.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DIGLETT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/DIGLETT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "DONPHAN",
+        "references": 1,
+        "maps": [
+          228
+        ],
+        "file": "Audio/SE/DONPHAN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "Door",
+        "references": 1,
+        "maps": [
+          214
+        ],
+        "file": "Audio/SE/Door.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DRAKLOAK",
+        "references": 1,
+        "maps": [
+          535
+        ],
+        "file": "Audio/SE/DRAKLOAK.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DREDNAW",
+        "references": 1,
+        "maps": [
+          171
+        ],
+        "file": "Audio/SE/DREDNAW.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DRIZZILE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/DRIZZILE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DURALUDON",
+        "references": 1,
+        "maps": [
+          823
+        ],
+        "file": "Audio/SE/DURALUDON.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "DUSKULL",
+        "references": 1,
+        "maps": [
+          507
+        ],
+        "file": "Audio/SE/DUSKULL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "EISCUE",
+        "references": 1,
+        "maps": [
+          974
+        ],
+        "file": "Audio/SE/EISCUE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ELEKID",
+        "references": 1,
+        "maps": [
+          856
+        ],
+        "file": "Audio/SE/ELEKID.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ENAMORUS",
+        "references": 1,
+        "maps": [
+          990
+        ],
+        "file": "Audio/SE/ENAMORUS.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "Endless Path",
+        "references": 1,
+        "maps": [
+          141
+        ],
+        "file": "Audio/BGM/Endless Path.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ESPEON",
+        "references": 1,
+        "maps": [
+          551
+        ],
+        "file": "Audio/SE/ESPEON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ESPURR",
+        "references": 1,
+        "maps": [
+          849
+        ],
+        "file": "Audio/SE/ESPURR.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "evolv",
+        "references": 1,
+        "maps": [
+          177
+        ],
+        "file": "Audio/BGM/evolv.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "EXEGGCUTE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/EXEGGCUTE.wav"
+      },
+      {
+        "kind": "ME",
+        "name": "Explosion-sfx",
+        "references": 1,
+        "maps": [
+          214
+        ],
+        "file": "Audio/ME/Explosion-sfx.mp3"
+      },
+      {
+        "kind": "SE",
+        "name": "EXPLOUD",
+        "references": 1,
+        "maps": [
+          551
+        ],
+        "file": "Audio/SE/EXPLOUD.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FEEBAS",
+        "references": 1,
+        "maps": [
+          856
+        ],
+        "file": "Audio/SE/FEEBAS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FERROTHORN",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/FERROTHORN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "FLORGES",
+        "references": 1,
+        "maps": [
+          532
+        ],
+        "file": "Audio/SE/FLORGES.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "FROAKIE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/FROAKIE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "FROGADIER",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/FROGADIER.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "FURRET",
+        "references": 1,
+        "maps": [
+          613
+        ],
+        "file": "Audio/SE/FURRET.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GABITE",
+        "references": 1,
+        "maps": [
+          523
+        ],
+        "file": "Audio/SE/GABITE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GALLADE",
+        "references": 1,
+        "maps": [
+          108
+        ],
+        "file": "Audio/SE/GALLADE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GARBODOR",
+        "references": 1,
+        "maps": [
+          669
+        ],
+        "file": "Audio/SE/GARBODOR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GASTLY",
+        "references": 1,
+        "maps": [
+          454
+        ],
+        "file": "Audio/SE/GASTLY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GIRAFARIG",
+        "references": 1,
+        "maps": [
+          541
+        ],
+        "file": "Audio/SE/GIRAFARIG.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GLASTRIER",
+        "references": 1,
+        "maps": [
+          259
+        ],
+        "file": "Audio/SE/GLASTRIER.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GLOOM",
+        "references": 1,
+        "maps": [
+          89
+        ],
+        "file": "Audio/SE/GLOOM.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GOGOAT",
+        "references": 1,
+        "maps": [
+          793
+        ],
+        "file": "Audio/SE/GOGOAT.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GOLBAT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/GOLBAT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GOLURK",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/GOLURK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GOSSIFLEUR",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/GOSSIFLEUR.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GRAVELER",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/GRAVELER.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GREEDENT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/GREEDENT.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GROOKEY",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/GROOKEY.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "GROVYLE",
+        "references": 1,
+        "maps": [
+          964
+        ],
+        "file": "Audio/SE/GROVYLE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "GULPIN",
+        "references": 1,
+        "maps": [
+          574
+        ],
+        "file": "Audio/SE/GULPIN.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "Hall of Fame",
+        "references": 1,
+        "maps": [
+          996
+        ],
+        "file": "Audio/BGM/Hall of Fame.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "HATTERENE",
+        "references": 1,
+        "maps": [
+          567
+        ],
+        "file": "Audio/SE/HATTERENE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "HAWLUCHA",
+        "references": 1,
+        "maps": [
+          927
+        ],
+        "file": "Audio/SE/HAWLUCHA.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "HERDIER",
+        "references": 1,
+        "maps": [
+          707
+        ],
+        "file": "Audio/SE/HERDIER.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "HoF room",
+        "references": 1,
+        "maps": [
+          204
+        ],
+        "file": "Audio/BGM/HoF room.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "HYDREIGON",
+        "references": 1,
+        "maps": [
+          440
+        ],
+        "file": "Audio/SE/HYDREIGON.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "in my memory",
+        "references": 1,
+        "maps": [
+          214
+        ],
+        "file": "Audio/BGM/in my memory.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "INCINEROAR",
+        "references": 1,
+        "maps": [
+          927
+        ],
+        "file": "Audio/SE/INCINEROAR.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "INDEEDEE",
+        "references": 1,
+        "maps": [
+          177
+        ],
+        "file": "Audio/SE/INDEEDEE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "INTELEON",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/INTELEON.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "itemlevel",
+        "references": 1,
+        "maps": [
+          48
+        ],
+        "file": "Audio/SE/itemlevel.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "IVYSAUR",
+        "references": 1,
+        "maps": [
+          394
+        ],
+        "file": "Audio/SE/IVYSAUR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "JIGGLYPUFF",
+        "references": 1,
+        "maps": [
+          33
+        ],
+        "file": "Audio/SE/JIGGLYPUFF.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "JOLTEON",
+        "references": 1,
+        "maps": [
+          541
+        ],
+        "file": "Audio/SE/JOLTEON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "JOLTIK",
+        "references": 1,
+        "maps": [
+          694
+        ],
+        "file": "Audio/SE/JOLTIK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LATIOS",
+        "references": 1,
+        "maps": [
+          992
+        ],
+        "file": "Audio/SE/LATIOS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LEDIAN",
+        "references": 1,
+        "maps": [
+          982
+        ],
+        "file": "Audio/SE/LEDIAN.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "Legend Sinnoh",
+        "references": 1,
+        "maps": [
+          2037
+        ],
+        "file": "Audio/BGM/Legend Sinnoh.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "LILLIGANT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/LILLIGANT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LILLIPUP",
+        "references": 1,
+        "maps": [
+          677
+        ],
+        "file": "Audio/SE/LILLIPUP.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LINOONE",
+        "references": 1,
+        "maps": [
+          977
+        ],
+        "file": "Audio/SE/LINOONE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "LITTEN",
+        "references": 1,
+        "maps": [
+          892
+        ],
+        "file": "Audio/SE/LITTEN.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "LUGIA",
+        "references": 1,
+        "maps": [
+          108
+        ],
+        "file": "Audio/SE/LUGIA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MACHAMP",
+        "references": 1,
+        "maps": [
+          927
+        ],
+        "file": "Audio/SE/MACHAMP.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MAGBY",
+        "references": 1,
+        "maps": [
+          262
+        ],
+        "file": "Audio/SE/MAGBY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MAGCARGO",
+        "references": 1,
+        "maps": [
+          379
+        ],
+        "file": "Audio/SE/MAGCARGO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MAGNETON",
+        "references": 1,
+        "maps": [
+          394
+        ],
+        "file": "Audio/SE/MAGNETON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MANDIBUZZ",
+        "references": 1,
+        "maps": [
+          677
+        ],
+        "file": "Audio/SE/MANDIBUZZ.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MANKEY",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/MANKEY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MARACTUS",
+        "references": 1,
+        "maps": [
+          686
+        ],
+        "file": "Audio/SE/MARACTUS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MAREEP",
+        "references": 1,
+        "maps": [
+          517
+        ],
+        "file": "Audio/SE/MAREEP.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MARILL",
+        "references": 1,
+        "maps": [
+          184
+        ],
+        "file": "Audio/SE/MARILL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MASQUERAIN",
+        "references": 1,
+        "maps": [
+          366
+        ],
+        "file": "Audio/SE/MASQUERAIN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MINCCINO",
+        "references": 1,
+        "maps": [
+          677
+        ],
+        "file": "Audio/SE/MINCCINO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MISMAGIUS",
+        "references": 1,
+        "maps": [
+          299
+        ],
+        "file": "Audio/SE/MISMAGIUS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MORELULL",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/MORELULL.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "MORGREM",
+        "references": 1,
+        "maps": [
+          171
+        ],
+        "file": "Audio/SE/MORGREM.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "MRMIME",
+        "references": 1,
+        "maps": [
+          172
+        ],
+        "file": "Audio/SE/MRMIME.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "MRRIME",
+        "references": 1,
+        "maps": [
+          973
+        ],
+        "file": "Audio/SE/MRRIME.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "MUDBRAY",
+        "references": 1,
+        "maps": [
+          517
+        ],
+        "file": "Audio/SE/MUDBRAY.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "MUNNA",
+        "references": 1,
+        "maps": [
+          660
+        ],
+        "file": "Audio/SE/MUNNA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "NIDORINO",
+        "references": 1,
+        "maps": [
+          828
+        ],
+        "file": "Audio/SE/NIDORINO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "NIHILEGO",
+        "references": 1,
+        "maps": [
+          982
+        ],
+        "file": "Audio/SE/NIHILEGO.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "NINCADA",
+        "references": 1,
+        "maps": [
+          177
+        ],
+        "file": "Audio/SE/NINCADA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "NINJASK",
+        "references": 1,
+        "maps": [
+          379
+        ],
+        "file": "Audio/SE/NINJASK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "NOSEPASS",
+        "references": 1,
+        "maps": [
+          607
+        ],
+        "file": "Audio/SE/NOSEPASS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "OBSTAGOON",
+        "references": 1,
+        "maps": [
+          977
+        ],
+        "file": "Audio/SE/OBSTAGOON.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "OMANYTE",
+        "references": 1,
+        "maps": [
+          82
+        ],
+        "file": "Audio/SE/OMANYTE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ORANGURU",
+        "references": 1,
+        "maps": [
+          973
+        ],
+        "file": "Audio/SE/ORANGURU.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ORBEETLE",
+        "references": 1,
+        "maps": [
+          172
+        ],
+        "file": "Audio/SE/ORBEETLE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ORICORIO_2",
+        "references": 1,
+        "maps": [
+          894
+        ],
+        "file": "Audio/SE/ORICORIO_2.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PANGORO",
+        "references": 1,
+        "maps": [
+          171
+        ],
+        "file": "Audio/SE/PANGORO.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PANSAGE",
+        "references": 1,
+        "maps": [
+          655
+        ],
+        "file": "Audio/SE/PANSAGE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PARAS",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/PARAS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PARASECT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/PARASECT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PASSIMIAN",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/PASSIMIAN.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PATRAT",
+        "references": 1,
+        "maps": [
+          517
+        ],
+        "file": "Audio/SE/PATRAT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PHANTUMP",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/PHANTUMP.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PICHU",
+        "references": 1,
+        "maps": [
+          454
+        ],
+        "file": "Audio/SE/PICHU.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PILOSWINE",
+        "references": 1,
+        "maps": [
+          981
+        ],
+        "file": "Audio/SE/PILOSWINE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PINECO",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/PINECO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PINSIR",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/PINSIR.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "POIPOLE",
+        "references": 1,
+        "maps": [
+          892
+        ],
+        "file": "Audio/SE/POIPOLE.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "Pokemon Master",
+        "references": 1,
+        "maps": [
+          33
+        ],
+        "file": "Audio/BGM/Pokemon Master.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "POLIWAG",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/POLIWAG.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PRIMEAPE",
+        "references": 1,
+        "maps": [
+          526
+        ],
+        "file": "Audio/SE/PRIMEAPE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PUMPKABOO",
+        "references": 1,
+        "maps": [
+          804
+        ],
+        "file": "Audio/SE/PUMPKABOO.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "PURUGLY",
+        "references": 1,
+        "maps": [
+          613
+        ],
+        "file": "Audio/SE/PURUGLY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "PYUKUMUKU",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/PYUKUMUKU.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "QWILFISH",
+        "references": 1,
+        "maps": [
+          282
+        ],
+        "file": "Audio/SE/QWILFISH.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RABOOT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/RABOOT.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "RAMPARDOS",
+        "references": 1,
+        "maps": [
+          813
+        ],
+        "file": "Audio/SE/RAMPARDOS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "REGIDRAGO",
+        "references": 1,
+        "maps": [
+          989
+        ],
+        "file": "Audio/SE/REGIDRAGO.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "REMORAID",
+        "references": 1,
+        "maps": [
+          174
+        ],
+        "file": "Audio/SE/REMORAID.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RHYHORN",
+        "references": 1,
+        "maps": [
+          813
+        ],
+        "file": "Audio/SE/RHYHORN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RIOLU",
+        "references": 1,
+        "maps": [
+          94
+        ],
+        "file": "Audio/SE/RIOLU.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ROGGENROLA",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/ROGGENROLA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ROOKIDEE",
+        "references": 1,
+        "maps": [
+          177
+        ],
+        "file": "Audio/SE/ROOKIDEE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ROSELIA",
+        "references": 1,
+        "maps": [
+          532
+        ],
+        "file": "Audio/SE/ROSELIA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "RUFFLET",
+        "references": 1,
+        "maps": [
+          677
+        ],
+        "file": "Audio/SE/RUFFLET.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SABLEYE",
+        "references": 1,
+        "maps": [
+          902
+        ],
+        "file": "Audio/SE/SABLEYE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SANDSHREW",
+        "references": 1,
+        "maps": [
+          403
+        ],
+        "file": "Audio/SE/SANDSHREW.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SCATTERBUG",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SCATTERBUG.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SCORBUNNY",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SCORBUNNY.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SEALEO",
+        "references": 1,
+        "maps": [
+          387
+        ],
+        "file": "Audio/SE/SEALEO.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretcliff",
+        "references": 1,
+        "maps": [
+          141
+        ],
+        "file": "Audio/BGM/secretcliff.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretdespair",
+        "references": 1,
+        "maps": [
+          214
+        ],
+        "file": "Audio/BGM/secretdespair.ogg"
+      },
+      {
+        "kind": "BGM",
+        "name": "secretmayhem",
+        "references": 1,
+        "maps": [
+          151
+        ],
+        "file": "Audio/BGM/secretmayhem.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SEISMITOAD",
+        "references": 1,
+        "maps": [
+          725
+        ],
+        "file": "Audio/SE/SEISMITOAD.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SENTRET",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SENTRET.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SHARPEDO",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SHARPEDO.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SHEDINJA",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SHEDINJA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SHELGON",
+        "references": 1,
+        "maps": [
+          813
+        ],
+        "file": "Audio/SE/SHELGON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "Sing",
+        "references": 1,
+        "maps": [
+          84
+        ],
+        "file": "Audio/SE/Sing.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SKWOVET",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SKWOVET.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SLAKING",
+        "references": 1,
+        "maps": [
+          587
+        ],
+        "file": "Audio/SE/SLAKING.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SLOWKING",
+        "references": 1,
+        "maps": [
+          594
+        ],
+        "file": "Audio/SE/SLOWKING.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SLOWPOKE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SLOWPOKE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SMEARGLE",
+        "references": 1,
+        "maps": [
+          632
+        ],
+        "file": "Audio/SE/SMEARGLE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SNIVY",
+        "references": 1,
+        "maps": [
+          828
+        ],
+        "file": "Audio/SE/SNIVY.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SNORLAX",
+        "references": 1,
+        "maps": [
+          187
+        ],
+        "file": "Audio/SE/SNORLAX.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SNOVER",
+        "references": 1,
+        "maps": [
+          842
+        ],
+        "file": "Audio/SE/SNOVER.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SNUBBULL",
+        "references": 1,
+        "maps": [
+          842
+        ],
+        "file": "Audio/SE/SNUBBULL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SOBBLE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SOBBLE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SOLOSIS",
+        "references": 1,
+        "maps": [
+          849
+        ],
+        "file": "Audio/SE/SOLOSIS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SPEAROW",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SPEAROW.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SPECTRIER",
+        "references": 1,
+        "maps": [
+          222
+        ],
+        "file": "Audio/SE/SPECTRIER.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "SPINDA",
+        "references": 1,
+        "maps": [
+          563
+        ],
+        "file": "Audio/SE/SPINDA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SPOINK",
+        "references": 1,
+        "maps": [
+          408
+        ],
+        "file": "Audio/SE/SPOINK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SPRITZEE",
+        "references": 1,
+        "maps": [
+          835
+        ],
+        "file": "Audio/SE/SPRITZEE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "STEELIX",
+        "references": 1,
+        "maps": [
+          177
+        ],
+        "file": "Audio/SE/STEELIX.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "STOUTLAND",
+        "references": 1,
+        "maps": [
+          387
+        ],
+        "file": "Audio/SE/STOUTLAND.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SUICUNE",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/SUICUNE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SWABLU",
+        "references": 1,
+        "maps": [
+          366
+        ],
+        "file": "Audio/SE/SWABLU.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SWADLOON",
+        "references": 1,
+        "maps": [
+          669
+        ],
+        "file": "Audio/SE/SWADLOON.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "SYLVEON",
+        "references": 1,
+        "maps": [
+          835
+        ],
+        "file": "Audio/SE/SYLVEON.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "TANGELA",
+        "references": 1,
+        "maps": [
+          236
+        ],
+        "file": "Audio/SE/TANGELA.wav"
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW",
+        "references": 1,
+        "maps": [
+          121
+        ],
+        "file": null
+      },
+      {
+        "kind": "SE",
+        "name": "TEDDIURSA",
+        "references": 1,
+        "maps": [
+          856
+        ],
+        "file": "Audio/SE/TEDDIURSA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TENTACRUEL",
+        "references": 1,
+        "maps": [
+          944
+        ],
+        "file": "Audio/SE/TENTACRUEL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TEPIG",
+        "references": 1,
+        "maps": [
+          686
+        ],
+        "file": "Audio/SE/TEPIG.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TOXTRICITY_1",
+        "references": 1,
+        "maps": [
+          974
+        ],
+        "file": "Audio/SE/TOXTRICITY_1.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "TREVENANT",
+        "references": 1,
+        "maps": [
+          828
+        ],
+        "file": "Audio/SE/TREVENANT.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "TROPIUS",
+        "references": 1,
+        "maps": [
+          824
+        ],
+        "file": "Audio/SE/TROPIUS.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "TYROGUE",
+        "references": 1,
+        "maps": [
+          130
+        ],
+        "file": "Audio/SE/TYROGUE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "URSARING",
+        "references": 1,
+        "maps": [
+          317
+        ],
+        "file": "Audio/SE/URSARING.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "URSHIFU_1",
+        "references": 1,
+        "maps": [
+          973
+        ],
+        "file": "Audio/SE/URSHIFU_1.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "VANILLISH",
+        "references": 1,
+        "maps": [
+          981
+        ],
+        "file": "Audio/SE/VANILLISH.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "VANILLITE",
+        "references": 1,
+        "maps": [
+          677
+        ],
+        "file": "Audio/SE/VANILLITE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "VENONAT",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/VENONAT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "VESPIQUEN",
+        "references": 1,
+        "maps": [
+          541
+        ],
+        "file": "Audio/SE/VESPIQUEN.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "VIBRAVA",
+        "references": 1,
+        "maps": [
+          390
+        ],
+        "file": "Audio/SE/VIBRAVA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "VOLCARONA",
+        "references": 1,
+        "maps": [
+          311
+        ],
+        "file": "Audio/SE/VOLCARONA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WATCHOG",
+        "references": 1,
+        "maps": [
+          906
+        ],
+        "file": "Audio/SE/WATCHOG.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WEEPINBELL",
+        "references": 1,
+        "maps": [
+          211
+        ],
+        "file": "Audio/SE/WEEPINBELL.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WOOBAT",
+        "references": 1,
+        "maps": [
+          669
+        ],
+        "file": "Audio/SE/WOOBAT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "WYNAUT",
+        "references": 1,
+        "maps": [
+          403
+        ],
+        "file": "Audio/SE/WYNAUT.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "XATU",
+        "references": 1,
+        "maps": [
+          373
+        ],
+        "file": "Audio/SE/XATU.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "YAMASK",
+        "references": 1,
+        "maps": [
+          660
+        ],
+        "file": "Audio/SE/YAMASK.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ZANGOOSE",
+        "references": 1,
+        "maps": [
+          357
+        ],
+        "file": "Audio/SE/ZANGOOSE.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ZARUDE",
+        "references": 1,
+        "maps": [
+          567
+        ],
+        "file": "Audio/SE/ZARUDE.ogg"
+      },
+      {
+        "kind": "SE",
+        "name": "ZORUA",
+        "references": 1,
+        "maps": [
+          694
+        ],
+        "file": "Audio/SE/ZORUA.wav"
+      },
+      {
+        "kind": "SE",
+        "name": "ZWEILOUS",
+        "references": 1,
+        "maps": [
+          754
+        ],
+        "file": "Audio/SE/ZWEILOUS.wav"
+      }
+    ],
+    "missing": [
+      {
+        "kind": "BGM",
+        "name": "secrettitan",
+        "references": 2,
+        "maps": [
+          151
+        ],
+        "file": null
+      },
+      {
+        "kind": "SE",
+        "name": "Thunder8",
+        "references": 2,
+        "maps": [
+          513
+        ],
+        "file": null
+      },
+      {
+        "kind": "BGM",
+        "name": "002-Battle02",
+        "references": 1,
+        "maps": [
+          47
+        ],
+        "file": null
+      },
+      {
+        "kind": "BGM",
+        "name": "Team Rocket OW",
+        "references": 1,
+        "maps": [
+          121
+        ],
+        "file": null
+      }
+    ],
+    "zeroBytes": [],
+    "files": 4652
+  },
+  "largestMaps": [
+    {
+      "id": 876,
+      "name": "Lumiose City",
+      "events": 165,
+      "pages": 178,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 214,
+      "name": "STAGE",
+      "events": 161,
+      "pages": 1424,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 677,
+      "name": "Castelia City",
+      "events": 152,
+      "pages": 224,
+      "parallelPages": 0,
+      "autorunPages": 13
+    },
+    {
+      "id": 108,
+      "name": "Vermilion City",
+      "events": 145,
+      "pages": 319,
+      "parallelPages": 0,
+      "autorunPages": 12
+    },
+    {
+      "id": 151,
+      "name": "GRANDEUR LOUNGE",
+      "events": 139,
+      "pages": 211,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 971,
+      "name": "Pokémon Mart",
+      "events": 121,
+      "pages": 122,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 162,
+      "name": "Game Corner",
+      "events": 120,
+      "pages": 144,
+      "parallelPages": 0,
+      "autorunPages": 8
+    },
+    {
+      "id": 390,
+      "name": "Cerise Park",
+      "events": 112,
+      "pages": 144,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 793,
+      "name": "Lumiose City",
+      "events": 107,
+      "pages": 184,
+      "parallelPages": 0,
+      "autorunPages": 15
+    },
+    {
+      "id": 881,
+      "name": "Driftveil Battle House",
+      "events": 106,
+      "pages": 205,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 3060,
+      "name": "Glazed · Mt. Stratus (Cumbre Helada)",
+      "events": 105,
+      "pages": 107,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 591,
+      "name": "Lake Valor Contest",
+      "events": 102,
+      "pages": 128,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 1001,
+      "name": "Puerto Horizonte",
+      "events": 100,
+      "pages": 142,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 764,
+      "name": "Oak's Corral",
+      "events": 99,
+      "pages": 152,
+      "parallelPages": 0,
+      "autorunPages": 4
+    },
+    {
+      "id": 41,
+      "name": "Route 5",
+      "events": 96,
+      "pages": 96,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 204,
+      "name": "Kanto",
+      "events": 87,
+      "pages": 88,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 171,
+      "name": "Wyndon",
+      "events": 85,
+      "pages": 164,
+      "parallelPages": 0,
+      "autorunPages": 16
+    },
+    {
+      "id": 636,
+      "name": "Ballonlea Stadium",
+      "events": 81,
+      "pages": 114,
+      "parallelPages": 0,
+      "autorunPages": 11
+    },
+    {
+      "id": 889,
+      "name": "Route 1",
+      "events": 79,
+      "pages": 205,
+      "parallelPages": 0,
+      "autorunPages": 14
+    },
+    {
+      "id": 743,
+      "name": "Undella Town",
+      "events": 73,
+      "pages": 172,
+      "parallelPages": 0,
+      "autorunPages": 6
+    },
+    {
+      "id": 282,
+      "name": "Goldenrod City",
+      "events": 69,
+      "pages": 92,
+      "parallelPages": 0,
+      "autorunPages": 16
+    },
+    {
+      "id": 43,
+      "name": "Viridian City",
+      "events": 66,
+      "pages": 166,
+      "parallelPages": 0,
+      "autorunPages": 9
+    },
+    {
+      "id": 686,
+      "name": "Nimbasa City",
+      "events": 62,
+      "pages": 83,
+      "parallelPages": 0,
+      "autorunPages": 10
+    },
+    {
+      "id": 969,
+      "name": "Jubilife Contest",
+      "events": 62,
+      "pages": 69,
+      "parallelPages": 0,
+      "autorunPages": 2
+    },
+    {
+      "id": 957,
+      "name": "Manalo Stadium",
+      "events": 61,
+      "pages": 184,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 4059,
+      "name": "Pokémon Unbound · Capítulo 05 · bosque 060",
+      "events": 61,
+      "pages": 63,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 4150,
+      "name": "Pokémon Unbound · Capítulo 13 · poblado 151",
+      "events": 61,
+      "pages": 63,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 4234,
+      "name": "Pokémon Unbound · Capítulo 20 · costa 235",
+      "events": 61,
+      "pages": 63,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 4334,
+      "name": "Pokémon Unbound · Capítulo 28 · poblado 335",
+      "events": 61,
+      "pages": 63,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 274,
+      "name": "Wyndon Stadium",
+      "events": 60,
+      "pages": 94,
+      "parallelPages": 0,
+      "autorunPages": 14
+    },
+    {
+      "id": 169,
+      "name": "Route 17",
+      "events": 57,
+      "pages": 66,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 42,
+      "name": "Pallet House",
+      "events": 55,
+      "pages": 149,
+      "parallelPages": 1,
+      "autorunPages": 4
+    },
+    {
+      "id": 418,
+      "name": "Route 119",
+      "events": 55,
+      "pages": 84,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 972,
+      "name": "Stow-on-Side Stadium",
+      "events": 55,
+      "pages": 57,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 980,
+      "name": "Hammerlocke Stadium",
+      "events": 55,
+      "pages": 57,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 958,
+      "name": "Alola Pokemon League",
+      "events": 54,
+      "pages": 185,
+      "parallelPages": 0,
+      "autorunPages": 2
+    },
+    {
+      "id": 440,
+      "name": "Hammerlocke",
+      "events": 53,
+      "pages": 74,
+      "parallelPages": 0,
+      "autorunPages": 12
+    },
+    {
+      "id": 551,
+      "name": "Hearthome City",
+      "events": 53,
+      "pages": 83,
+      "parallelPages": 0,
+      "autorunPages": 12
+    },
+    {
+      "id": 678,
+      "name": "Castelia House",
+      "events": 53,
+      "pages": 64,
+      "parallelPages": 0,
+      "autorunPages": 2
+    },
+    {
+      "id": 907,
+      "name": "Paniola Ranch",
+      "events": 53,
+      "pages": 114,
+      "parallelPages": 0,
+      "autorunPages": 2
+    },
+    {
+      "id": 4277,
+      "name": "Pokémon Unbound · Capítulo 24 · bosque 278",
+      "events": 53,
+      "pages": 53,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 959,
+      "name": "Manalo Royal",
+      "events": 51,
+      "pages": 155,
+      "parallelPages": 0,
+      "autorunPages": 4
+    },
+    {
+      "id": 355,
+      "name": "Hoenn",
+      "events": 50,
+      "pages": 99,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 601,
+      "name": "Route 212",
+      "events": 50,
+      "pages": 90,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 628,
+      "name": "Mt. Coronet",
+      "events": 50,
+      "pages": 146,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 650,
+      "name": "Unova",
+      "events": 50,
+      "pages": 99,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 789,
+      "name": "Kalos",
+      "events": 50,
+      "pages": 99,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 887,
+      "name": "Alola",
+      "events": 50,
+      "pages": 99,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 228,
+      "name": "Seven Grapefruit Islands",
+      "events": 49,
+      "pages": 67,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 702,
+      "name": "Route 6",
+      "events": 49,
+      "pages": 74,
+      "parallelPages": 0,
+      "autorunPages": 4
+    },
+    {
+      "id": 894,
+      "name": "Hau'oli City",
+      "events": 49,
+      "pages": 111,
+      "parallelPages": 0,
+      "autorunPages": 10
+    },
+    {
+      "id": 919,
+      "name": "Aether Paradise",
+      "events": 49,
+      "pages": 94,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 574,
+      "name": "Veilstone City",
+      "events": 47,
+      "pages": 88,
+      "parallelPages": 0,
+      "autorunPages": 8
+    },
+    {
+      "id": 794,
+      "name": "Lumiose House",
+      "events": 47,
+      "pages": 65,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 3355,
+      "name": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 16)",
+      "events": 47,
+      "pages": 49,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 3512,
+      "name": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 13)",
+      "events": 47,
+      "pages": 49,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 94,
+      "name": "Professor Cerise's Lab",
+      "events": 46,
+      "pages": 215,
+      "parallelPages": 0,
+      "autorunPages": 8
+    },
+    {
+      "id": 515,
+      "name": "Jubilife City",
+      "events": 46,
+      "pages": 60,
+      "parallelPages": 0,
+      "autorunPages": 7
+    },
+    {
+      "id": 694,
+      "name": "Driftveil City",
+      "events": 46,
+      "pages": 72,
+      "parallelPages": 0,
+      "autorunPages": 9
+    },
+    {
+      "id": 1985,
+      "name": "Atlas 0965 - Pokémon Mart",
+      "events": 46,
+      "pages": 47,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 177,
+      "name": "Wyndon Stadium",
+      "events": 45,
+      "pages": 116,
+      "parallelPages": 0,
+      "autorunPages": 2
+    },
+    {
+      "id": 562,
+      "name": "Route 209",
+      "events": 45,
+      "pages": 65,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 606,
+      "name": "Route 210",
+      "events": 45,
+      "pages": 91,
+      "parallelPages": 0,
+      "autorunPages": 4
+    },
+    {
+      "id": 979,
+      "name": "Seafoam Islands",
+      "events": 45,
+      "pages": 79,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 33,
+      "name": "Pallet Town",
+      "events": 44,
+      "pages": 125,
+      "parallelPages": 0,
+      "autorunPages": 5
+    },
+    {
+      "id": 31,
+      "name": "Route 3",
+      "events": 43,
+      "pages": 58,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 211,
+      "name": "Tangelo Island",
+      "events": 43,
+      "pages": 62,
+      "parallelPages": 0,
+      "autorunPages": 6
+    },
+    {
+      "id": 387,
+      "name": "Slateport City",
+      "events": 43,
+      "pages": 58,
+      "parallelPages": 0,
+      "autorunPages": 7
+    },
+    {
+      "id": 891,
+      "name": "Pokémon School",
+      "events": 43,
+      "pages": 380,
+      "parallelPages": 0,
+      "autorunPages": 8
+    },
+    {
+      "id": 130,
+      "name": "Saffron City",
+      "events": 42,
+      "pages": 74,
+      "parallelPages": 0,
+      "autorunPages": 12
+    },
+    {
+      "id": 136,
+      "name": "Saffron Gym",
+      "events": 42,
+      "pages": 59,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 193,
+      "name": "Cinnabar Gym",
+      "events": 42,
+      "pages": 64,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 236,
+      "name": "Ascorbia Island",
+      "events": 42,
+      "pages": 68,
+      "parallelPages": 0,
+      "autorunPages": 7
+    },
+    {
+      "id": 567,
+      "name": "Glimwood Tangle",
+      "events": 42,
+      "pages": 69,
+      "parallelPages": 0,
+      "autorunPages": 9
+    },
+    {
+      "id": 607,
+      "name": "Celestic Town",
+      "events": 42,
+      "pages": 107,
+      "parallelPages": 0,
+      "autorunPages": 7
+    },
+    {
+      "id": 983,
+      "name": "Crown Tundra",
+      "events": 42,
+      "pages": 75,
+      "parallelPages": 0,
+      "autorunPages": 10
+    },
+    {
+      "id": 630,
+      "name": "Route 222",
+      "events": 41,
+      "pages": 83,
+      "parallelPages": 0,
+      "autorunPages": 4
+    },
+    {
+      "id": 79,
+      "name": "Gate",
+      "events": 40,
+      "pages": 57,
+      "parallelPages": 0,
+      "autorunPages": 3
+    },
+    {
+      "id": 278,
+      "name": "Pokémon Swap Meet",
+      "events": 40,
+      "pages": 51,
+      "parallelPages": 0,
+      "autorunPages": 2
+    },
+    {
+      "id": 526,
+      "name": "Stow-on-Side",
+      "events": 40,
+      "pages": 65,
+      "parallelPages": 0,
+      "autorunPages": 14
+    },
+    {
+      "id": 954,
+      "name": "Malie House",
+      "events": 40,
+      "pages": 44,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 994,
+      "name": "Wyndon?",
+      "events": 40,
+      "pages": 41,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 3236,
+      "name": "Liquid Crystal · Ruta 34 & Guardería (Sector 6)",
+      "events": 40,
+      "pages": 42,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 172,
+      "name": "Wyndon House",
+      "events": 39,
+      "pages": 51,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 443,
+      "name": "Izabe Island",
+      "events": 39,
+      "pages": 55,
+      "parallelPages": 0,
+      "autorunPages": 13
+    },
+    {
+      "id": 523,
+      "name": "Oreburgh City",
+      "events": 39,
+      "pages": 63,
+      "parallelPages": 0,
+      "autorunPages": 10
+    },
+    {
+      "id": 892,
+      "name": "Kukui's House",
+      "events": 39,
+      "pages": 200,
+      "parallelPages": 0,
+      "autorunPages": 26
+    },
+    {
+      "id": 3264,
+      "name": "Liquid Crystal · Torre Hojalata (Bell Tower · Planta 2)",
+      "events": 39,
+      "pages": 42,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 3388,
+      "name": "Liquid Crystal · Ruta 44 (Paso hacia Ruta Helada · Tramo 3)",
+      "events": 39,
+      "pages": 42,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 342,
+      "name": "Blackthorn City",
+      "events": 38,
+      "pages": 63,
+      "parallelPages": 0,
+      "autorunPages": 7
+    },
+    {
+      "id": 419,
+      "name": "Fortree City",
+      "events": 38,
+      "pages": 55,
+      "parallelPages": 0,
+      "autorunPages": 7
+    },
+    {
+      "id": 424,
+      "name": "Route 120",
+      "events": 38,
+      "pages": 72,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 538,
+      "name": "Route 205",
+      "events": 38,
+      "pages": 72,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 613,
+      "name": "Canalave City",
+      "events": 38,
+      "pages": 50,
+      "parallelPages": 0,
+      "autorunPages": 9
+    },
+    {
+      "id": 632,
+      "name": "Sunnyshore City",
+      "events": 38,
+      "pages": 70,
+      "parallelPages": 0,
+      "autorunPages": 9
+    },
+    {
+      "id": 494,
+      "name": "Route 26",
+      "events": 37,
+      "pages": 66,
+      "parallelPages": 0,
+      "autorunPages": 4
+    },
+    {
+      "id": 995,
+      "name": "Wyndon Stadium?",
+      "events": 37,
+      "pages": 54,
+      "parallelPages": 0,
+      "autorunPages": 1
+    },
+    {
+      "id": 572,
+      "name": "Route 215",
+      "events": 36,
+      "pages": 58,
+      "parallelPages": 0,
+      "autorunPages": 0
+    },
+    {
+      "id": 738,
+      "name": "Virbank City",
+      "events": 36,
+      "pages": 50,
+      "parallelPages": 0,
+      "autorunPages": 5
+    },
+    {
+      "id": 373,
+      "name": "Rustboro City",
+      "events": 35,
+      "pages": 49,
+      "parallelPages": 0,
+      "autorunPages": 7
+    }
+  ],
+  "largestTracked": [
+    {
+      "path": "content/arceus_omega_qa_matrix.jsonl",
+      "bytes": 65493172
+    },
+    {
+      "path": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+      "bytes": 63733034
+    },
+    {
+      "path": "Fire-Ash-Scripts-Corregidos.zip",
+      "bytes": 48853734
+    }
+  ],
+  "packages": [
+    {
+      "path": "Fire-Ash-Scripts-Corregidos.zip",
+      "bytes": 48853734,
+      "readable": true,
+      "entries": 2658,
+      "forbidden": []
+    },
+    {
+      "path": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+      "bytes": 13293412,
+      "readable": true,
+      "entries": 501,
+      "forbidden": []
+    },
+    {
+      "path": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+      "bytes": 63733034,
+      "readable": true,
+      "entries": 2637,
+      "forbidden": []
+    },
+    {
+      "path": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+      "bytes": 15013030,
+      "readable": true,
+      "entries": 18,
+      "forbidden": []
+    },
+    {
+      "path": "agents/timps-swarm-main.zip",
+      "bytes": 1567693,
+      "readable": true,
+      "entries": 592,
+      "forbidden": [
+        "timps-swarm-main/.claude/agents/timps-backup_sentinel.md",
+        "timps-swarm-main/.codex/agents/timps-backup_sentinel.toml",
+        "timps-swarm-main/cli/tools/",
+        "timps-swarm-main/cli/tools/generate-manifest.js"
+      ]
+    },
+    {
+      "path": "pokecrystal-master.zip",
+      "bytes": 3773358,
+      "readable": true,
+      "entries": 5012,
+      "forbidden": [
+        "pokecrystal-master/engine/events/checksave.asm",
+        "pokecrystal-master/engine/menus/delete_save.asm",
+        "pokecrystal-master/engine/menus/save.asm",
+        "pokecrystal-master/engine/menus/savemenu_copytilemapatonce.asm",
+        "pokecrystal-master/tools/",
+        "pokecrystal-master/tools/.gitignore",
+        "pokecrystal-master/tools/Makefile",
+        "pokecrystal-master/tools/common.h",
+        "pokecrystal-master/tools/gbcpal.c",
+        "pokecrystal-master/tools/gfx.c",
+        "pokecrystal-master/tools/lzcompress.c",
+        "pokecrystal-master/tools/make_patch.c",
+        "pokecrystal-master/tools/png_dimensions.c",
+        "pokecrystal-master/tools/pokemon_animation.c",
+        "pokecrystal-master/tools/pokemon_animation_graphics.c",
+        "pokecrystal-master/tools/scan_includes.c",
+        "pokecrystal-master/tools/stadium.c",
+        "pokecrystal-master/tools/unnamed.py"
+      ]
+    },
+    {
+      "path": "pokemon-agent-main.zip",
+      "bytes": 87043,
+      "readable": true,
+      "entries": 41,
+      "forbidden": []
+    },
+    {
+      "path": "pokered-master.zip",
+      "bytes": 1912421,
+      "readable": true,
+      "entries": 2958,
+      "forbidden": [
+        "pokered-master/audio/sfx/save_1.asm",
+        "pokered-master/audio/sfx/save_3.asm",
+        "pokered-master/engine/battle/save_trainer_name.asm",
+        "pokered-master/engine/menus/save.asm",
+        "pokered-master/engine/movie/oak_speech/clear_save.asm",
+        "pokered-master/tools/",
+        "pokered-master/tools/.gitignore",
+        "pokered-master/tools/Makefile",
+        "pokered-master/tools/common.h",
+        "pokered-master/tools/gfx.c",
+        "pokered-master/tools/make_patch.c",
+        "pokered-master/tools/pkmncompress.c",
+        "pokered-master/tools/scan_includes.c"
+      ]
+    },
+    {
+      "path": "porygion-master.zip",
+      "bytes": 19269,
+      "readable": true,
+      "entries": 12,
+      "forbidden": []
+    },
+    {
+      "path": "rvpacker-txt-rs-main.zip",
+      "bytes": 24792,
+      "readable": true,
+      "entries": 15,
+      "forbidden": []
+    },
+    {
+      "path": "swablu (3).zip",
+      "bytes": 16578854,
+      "readable": true,
+      "entries": 2437,
+      "forbidden": []
+    }
+  ],
+  "versionedSaves": [
+    "pokemon_fire_ash/Audio/SE/save.ogg"
+  ],
+  "manual": [
+    "FPS y memoria real en Android/Kirin en mapas cargados",
+    "tiempos de arranque/carga por región en hardware objetivo",
+    "bucle audible y mezcla de volumen de pistas nuevas",
+    "partida de cuatro horas, guardados corruptos y tarjeta llena",
+    "editor SAF, exportación/reimportación y permisos de escritura"
+  ],
+  "verdict": "static_pass_manual_runtime_pending"
+}
