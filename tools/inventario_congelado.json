@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T06:05:53.255Z",
+  "generatedAt": "2026-10-17T16:25:01.786Z",
   "git": {
-    "branch": "arena/2a3657d3-fire-ash-modifier",
-    "commit": "c5f6ba42eea81cef974afd83d7b2160742c5126e"
+    "branch": "arena/8e9aeeac-fire-ash-modifier",
+    "commit": "c83ecee25e2ead5ccb55e7392a9771d7bc83a587"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5423,
+    "fileCount": 5456,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 208
+      "tools": 241
     },
     "files": [
       {
@@ -245,8 +245,8 @@
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/encounters.dat",
-        "bytes": 58937,
-        "sha256": "cbc11983833f75368fb29a6ca13da7d4a8e17afe46ba2929a332b335bf5d365d"
+        "bytes": 70096,
+        "sha256": "d729d5b42d915797950b21827c15fd580ad15a417328b23e7dfd382ca07db3c3"
       },
       {
         "path": "Scripts_corregido/Ciudad_Teckel_Paraiso/Data/items.dat",
@@ -980,8 +980,8 @@
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/Map2142.rxdata",
-        "bytes": 18468,
-        "sha256": "f42b67c1f281de8d1036245e3e3c70aa2ddfb77dc21af1da683e6a83337bea9a"
+        "bytes": 18452,
+        "sha256": "e377f78e728de69ae2be397e19b4468f8b9a88a3216ba7310d1b9ac6f8be28c1"
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/Map2143.rxdata",
@@ -1235,13 +1235,13 @@
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/MapInfos.rxdata",
-        "bytes": 236999,
-        "sha256": "8882fe51275427594af94e26d00e37220e5422a8c843ad7d7dc0e5c89ed4a5c1"
+        "bytes": 241938,
+        "sha256": "2194ea4218ecc72499e5e3f076afe6bc8dae43072712d261541e513a948c4b94"
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/Scripts.rxdata",
-        "bytes": 1164819,
-        "sha256": "42c0c3519e8f53ee639a660950d57d849013ee35a88966bcc217ef2a1c3d1361"
+        "bytes": 1165084,
+        "sha256": "1936066b208ca364591eecce7f22e61f43ade92e0aee172dd04ef9f717e757d2"
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/System.rxdata",
@@ -1250,13 +1250,13 @@
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/Tilesets.rxdata",
-        "bytes": 763348,
-        "sha256": "5c31c77dbe0c1839b27ce8aadc9038e6bef1e01ac693fa1db7471b38052f7133"
+        "bytes": 1789815,
+        "sha256": "2a404347fdc541f86dd2aea51fa14beee048152ecd42fb789078bf3a1ab20746"
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/encounters.dat",
-        "bytes": 54601,
-        "sha256": "0c84b96f64b018aa8b5ca239e9e97bef02106c66d6d5c3aed9974dbae5e48d41"
+        "bytes": 70096,
+        "sha256": "d729d5b42d915797950b21827c15fd580ad15a417328b23e7dfd382ca07db3c3"
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/items.dat",
@@ -1266,7 +1266,7 @@
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/map_metadata.dat",
         "bytes": 510855,
-        "sha256": "05df04e61927448dd1e9ed5b1ae5afe0609a9eb5024ac035231a01dec37a5369"
+        "sha256": "7ab7729deb6455e14f8a937bd930df694be7cde26ef96002525cc7d86740269e"
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/trainer_lists.dat",
@@ -1285,8 +1285,8 @@
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/trainers.dat",
-        "bytes": 1510745,
-        "sha256": "0017d709827ee7afc20b5f0aa25f154b0497256639eab794d198399afd372e03"
+        "bytes": 1510723,
+        "sha256": "c7374366d9d036d936e308e0cb86521894f186fda0f01d0123fe8801b6a41c2c"
       },
       {
         "path": "Scripts_corregido/Dimensional_Nightmare_QA/Data/trainertypes.dat",
@@ -1595,8 +1595,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map1001.rxdata",
-        "bytes": 93350,
-        "sha256": "1e863a1f83e741177a90715f9f94a726a2cdcf1cd453cf3c70f4e50d6d17cf89"
+        "bytes": 93379,
+        "sha256": "e813f9a7687864b4ea6607d7220f2b9542cee19059dd1ce5a344a17199a8b12d"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map1041.rxdata",
@@ -2001,7 +2001,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2194.rxdata",
         "bytes": 18457,
-        "sha256": "9a7aee76c3015c89c9c82e013839f57f095fbe9a2f42829bc03fb3743efc47ce"
+        "sha256": "05c39ad749655b835fc72ada5a4b382d8db89482b916c15edac5ed2b2d7b25a9"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map2195.rxdata",
@@ -2235,8 +2235,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3000.rxdata",
-        "bytes": 5633,
-        "sha256": "2126f61772ad6ab7c9da4c143bbe461ae990e5a4b76e388ae56e3983e1d036b9"
+        "bytes": 5650,
+        "sha256": "2c1a24e5c1e72b5327319b84cec365f92add124256aa4e761649ffbe67d8872f"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3001.rxdata",
@@ -2395,8 +2395,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3031.rxdata",
-        "bytes": 6446,
-        "sha256": "8299923c3c80a87ed7c70d77f08008a06fdd18fbadd919bea0ea809c20d5fd4c"
+        "bytes": 7028,
+        "sha256": "faa7a503cfe518a689eaca24e04e51fd2de9b2f605df910c1307aefdf02b7356"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3032.rxdata",
@@ -2636,7 +2636,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3079.rxdata",
         "bytes": 16155,
-        "sha256": "22a88ab98d835813b76ed99be27d7f741f75edacf50a7277f0887f446319f2a8"
+        "sha256": "e3f40eff0487c2d671c6fbc7c7240bcf0a39468c986e67b032fa1305e38c9ac6"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3080.rxdata",
@@ -2711,7 +2711,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3094.rxdata",
         "bytes": 5794,
-        "sha256": "eb09b430f848424d9bb6b0e2ef2af6886986da958bc9daf974f219914c9b1bed"
+        "sha256": "ceb23204a43b287a831f83711c686d10361a548c8abd06c846c97349643aa5de"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3095.rxdata",
@@ -2785,8 +2785,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3109.rxdata",
-        "bytes": 30445,
-        "sha256": "eb6b8c52e564f5f35ff568fbac36e638686af495c2c0d4e4c60ef0a41893cc0a"
+        "bytes": 31101,
+        "sha256": "879fc2fdbcebd2b91d2417d435084369af46ffc06608476595abe2a50ea770b8"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3110.rxdata",
@@ -2796,7 +2796,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3120.rxdata",
         "bytes": 19767,
-        "sha256": "9b119accf700bae7200c4c8898d343ba8751f412c1b8143f278f55a1310b6ad4"
+        "sha256": "027375b20057d8a5aba3951e136a4b85db6433bf8ca1a257eaa7c47be6065e3b"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3121.rxdata",
@@ -2821,7 +2821,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3125.rxdata",
         "bytes": 18442,
-        "sha256": "458d5991aa29ea3678c032618a661846c38e033706b3292b6f8b79a3a959d182"
+        "sha256": "8c116eb2e7f6a27f1dd8aeafa8110d884d4bab3bf5a03c2c67407275e6466552"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3126.rxdata",
@@ -3506,7 +3506,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3323.rxdata",
         "bytes": 16064,
-        "sha256": "f9995fab9c22989081610d144fedcc7db8b16f49396f27ce38bd29f38cd2a327"
+        "sha256": "7f0a3595a7556aac6662cb0fe40ca8217e8480f96497f9d542f6a938ae754840"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3324.rxdata",
@@ -3816,7 +3816,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3385.rxdata",
         "bytes": 10796,
-        "sha256": "7b17592457acf3183a00482ba13f9b498b0242b6b671376a1dc26ff17c452c1c"
+        "sha256": "d68fa906cb8d0a2014c2134dfa2df232373b304118b8df5078d1703cf6487cc7"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3386.rxdata",
@@ -5576,7 +5576,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3805.rxdata",
         "bytes": 8270,
-        "sha256": "abc28656fc42cceb1dc1b9999315d3552a7766a0284409aeee6752efede4859e"
+        "sha256": "51a8c2dd61116c606b508e3d0abed2307e16986dd153f3f70262df5dff974b2b"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3806.rxdata",
@@ -5746,7 +5746,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3839.rxdata",
         "bytes": 20451,
-        "sha256": "b107812f131f244de5de9555ca34fac1bba2a6bc31cd577c16a484dd838d6354"
+        "sha256": "d7868d8b39baf076aed51f70c8283e247509eedc66053be922ac4ca181dd5db3"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3840.rxdata",
@@ -5921,7 +5921,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3874.rxdata",
         "bytes": 14487,
-        "sha256": "1f3d66bb22d88eb56d9fb7fc6857fd28aa33aac522680a2c9620f240c253387a"
+        "sha256": "0ea02f69fcff931039657f5123b2147bce76dc38211dc7b3669bcd008e8d13c2"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Map3875.rxdata",
@@ -8410,8 +8410,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/MapInfos.rxdata",
-        "bytes": 241952,
-        "sha256": "f2ee61a172108ad9b84a4aaf31909abad2808d51d68f77cb287c5183a8264dfe"
+        "bytes": 241938,
+        "sha256": "2194ea4218ecc72499e5e3f076afe6bc8dae43072712d261541e513a948c4b94"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Scripts.rxdata",
@@ -8420,18 +8420,18 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/System.rxdata",
-        "bytes": 27957,
-        "sha256": "50ca386d19771d1dad741d30459d07ec1fa5830b33b38d0ca213873bcc49c49d"
+        "bytes": 29172,
+        "sha256": "05e4416a1b05b40356fcc401016516982b5f13ae9d20e088415eff3074be0505"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/Tilesets.rxdata",
         "bytes": 1789815,
-        "sha256": "2ed9d34e02ce6a18050a69818ddfd14bc71fb58af8c78cb2a0b1e225fb278af5"
+        "sha256": "2a404347fdc541f86dd2aea51fa14beee048152ecd42fb789078bf3a1ab20746"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/encounters.dat",
-        "bytes": 58937,
-        "sha256": "cbc11983833f75368fb29a6ca13da7d4a8e17afe46ba2929a332b335bf5d365d"
+        "bytes": 70096,
+        "sha256": "d729d5b42d915797950b21827c15fd580ad15a417328b23e7dfd382ca07db3c3"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/items.dat",
@@ -8441,7 +8441,7 @@
       {
         "path": "Scripts_corregido/Paquete_directo/Data/map_metadata.dat",
         "bytes": 510855,
-        "sha256": "05df04e61927448dd1e9ed5b1ae5afe0609a9eb5024ac035231a01dec37a5369"
+        "sha256": "7ab7729deb6455e14f8a937bd930df694be7cde26ef96002525cc7d86740269e"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/metadata.dat",
@@ -8450,8 +8450,8 @@
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/species.dat",
-        "bytes": 1073799,
-        "sha256": "1fded90ba2c147dbe3dbdd4af3904c4ccb3fa96fab8a1674b09f6215f24c1363"
+        "bytes": 1074483,
+        "sha256": "8b064cbef8e082119a06a1e366cc51040aa9d5e2156a146c80d4fde5ddda7163"
       },
       {
         "path": "Scripts_corregido/Paquete_directo/Data/trainer_types.dat",
@@ -15300,8 +15300,8 @@
       },
       {
         "path": "pokemon_fire_ash/Data/Map2142.rxdata",
-        "bytes": 18452,
-        "sha256": "e377f78e728de69ae2be397e19b4468f8b9a88a3216ba7310d1b9ac6f8be28c1"
+        "bytes": 18468,
+        "sha256": "f42b67c1f281de8d1036245e3e3c70aa2ddfb77dc21af1da683e6a83337bea9a"
       },
       {
         "path": "pokemon_fire_ash/Data/Map2143.rxdata",
@@ -15575,18 +15575,18 @@
       },
       {
         "path": "pokemon_fire_ash/Data/Map2192.rxdata",
-        "bytes": 78274,
-        "sha256": "6de7d5504e15254c2c4a9a3fc124381444b98cccbed63318f6acf51536337f3c"
+        "bytes": 78383,
+        "sha256": "9eaafab05d0315ac16dda2de1a50b3aac43786195aa39fbbfe906a78246f6da2"
       },
       {
         "path": "pokemon_fire_ash/Data/Map2193.rxdata",
-        "bytes": 195767,
-        "sha256": "85e4542a23bda519cd1945f2d627e0aa6a8311122f9265f5cdf0bab5a2982da7"
+        "bytes": 195871,
+        "sha256": "4089bb27b7b46689b5a452d96d3d0a39176d925968ac5a50a01284dc30d9c512"
       },
       {
         "path": "pokemon_fire_ash/Data/Map2194.rxdata",
-        "bytes": 18442,
-        "sha256": "07e9765d761295b4dd9a95276e006d005a630b06ede40162a860ba1059a31ad0"
+        "bytes": 18457,
+        "sha256": "05c39ad749655b835fc72ada5a4b382d8db89482b916c15edac5ed2b2d7b25a9"
       },
       {
         "path": "pokemon_fire_ash/Data/Map2195.rxdata",
@@ -16220,8 +16220,8 @@
       },
       {
         "path": "pokemon_fire_ash/Data/Map3000.rxdata",
-        "bytes": 5633,
-        "sha256": "2126f61772ad6ab7c9da4c143bbe461ae990e5a4b76e388ae56e3983e1d036b9"
+        "bytes": 5650,
+        "sha256": "2c1a24e5c1e72b5327319b84cec365f92add124256aa4e761649ffbe67d8872f"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3001.rxdata",
@@ -16390,8 +16390,8 @@
       },
       {
         "path": "pokemon_fire_ash/Data/Map3031.rxdata",
-        "bytes": 6446,
-        "sha256": "8299923c3c80a87ed7c70d77f08008a06fdd18fbadd919bea0ea809c20d5fd4c"
+        "bytes": 7028,
+        "sha256": "faa7a503cfe518a689eaca24e04e51fd2de9b2f605df910c1307aefdf02b7356"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3032.rxdata",
@@ -16651,7 +16651,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3079.rxdata",
         "bytes": 16155,
-        "sha256": "22a88ab98d835813b76ed99be27d7f741f75edacf50a7277f0887f446319f2a8"
+        "sha256": "e3f40eff0487c2d671c6fbc7c7240bcf0a39468c986e67b032fa1305e38c9ac6"
       },
       {
         "path": "pokemon_fire_ash/Data/Map308.rxdata",
@@ -16736,7 +16736,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3094.rxdata",
         "bytes": 5794,
-        "sha256": "eb09b430f848424d9bb6b0e2ef2af6886986da958bc9daf974f219914c9b1bed"
+        "sha256": "ceb23204a43b287a831f83711c686d10361a548c8abd06c846c97349643aa5de"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3095.rxdata",
@@ -16815,8 +16815,8 @@
       },
       {
         "path": "pokemon_fire_ash/Data/Map3109.rxdata",
-        "bytes": 30445,
-        "sha256": "eb6b8c52e564f5f35ff568fbac36e638686af495c2c0d4e4c60ef0a41893cc0a"
+        "bytes": 31101,
+        "sha256": "879fc2fdbcebd2b91d2417d435084369af46ffc06608476595abe2a50ea770b8"
       },
       {
         "path": "pokemon_fire_ash/Data/Map311.rxdata",
@@ -16836,7 +16836,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3120.rxdata",
         "bytes": 19767,
-        "sha256": "9b119accf700bae7200c4c8898d343ba8751f412c1b8143f278f55a1310b6ad4"
+        "sha256": "027375b20057d8a5aba3951e136a4b85db6433bf8ca1a257eaa7c47be6065e3b"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3121.rxdata",
@@ -16861,7 +16861,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3125.rxdata",
         "bytes": 18442,
-        "sha256": "458d5991aa29ea3678c032618a661846c38e033706b3292b6f8b79a3a959d182"
+        "sha256": "8c116eb2e7f6a27f1dd8aeafa8110d884d4bab3bf5a03c2c67407275e6466552"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3126.rxdata",
@@ -17646,7 +17646,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3323.rxdata",
         "bytes": 16064,
-        "sha256": "f9995fab9c22989081610d144fedcc7db8b16f49396f27ce38bd29f38cd2a327"
+        "sha256": "7f0a3595a7556aac6662cb0fe40ca8217e8480f96497f9d542f6a938ae754840"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3324.rxdata",
@@ -17986,7 +17986,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3385.rxdata",
         "bytes": 10796,
-        "sha256": "7b17592457acf3183a00482ba13f9b498b0242b6b671376a1dc26ff17c452c1c"
+        "sha256": "d68fa906cb8d0a2014c2134dfa2df232373b304118b8df5078d1703cf6487cc7"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3386.rxdata",
@@ -19961,7 +19961,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3805.rxdata",
         "bytes": 8270,
-        "sha256": "abc28656fc42cceb1dc1b9999315d3552a7766a0284409aeee6752efede4859e"
+        "sha256": "51a8c2dd61116c606b508e3d0abed2307e16986dd153f3f70262df5dff974b2b"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3806.rxdata",
@@ -20146,7 +20146,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3839.rxdata",
         "bytes": 20451,
-        "sha256": "b107812f131f244de5de9555ca34fac1bba2a6bc31cd577c16a484dd838d6354"
+        "sha256": "d7868d8b39baf076aed51f70c8283e247509eedc66053be922ac4ca181dd5db3"
       },
       {
         "path": "pokemon_fire_ash/Data/Map384.rxdata",
@@ -20341,7 +20341,7 @@
       {
         "path": "pokemon_fire_ash/Data/Map3874.rxdata",
         "bytes": 14487,
-        "sha256": "1f3d66bb22d88eb56d9fb7fc6857fd28aa33aac522680a2c9620f240c253387a"
+        "sha256": "0ea02f69fcff931039657f5123b2147bce76dc38211dc7b3669bcd008e8d13c2"
       },
       {
         "path": "pokemon_fire_ash/Data/Map3875.rxdata",
@@ -25880,8 +25880,8 @@
       },
       {
         "path": "pokemon_fire_ash/Data/Scripts.rxdata",
-        "bytes": 1162815,
-        "sha256": "087ad1413487d18df1ff3d077a4bc3acbe8f1fca0e623841df1f37d8af789ae3"
+        "bytes": 1162814,
+        "sha256": "6edffe4e6a475cda298e158960cec581496c5cbbdf25dfdc91c293caf4848d48"
       },
       {
         "path": "pokemon_fire_ash/Data/Scripts_bak.rxdata",
@@ -25900,13 +25900,13 @@
       },
       {
         "path": "pokemon_fire_ash/Data/System.rxdata",
-        "bytes": 27957,
-        "sha256": "50ca386d19771d1dad741d30459d07ec1fa5830b33b38d0ca213873bcc49c49d"
+        "bytes": 29172,
+        "sha256": "05e4416a1b05b40356fcc401016516982b5f13ae9d20e088415eff3074be0505"
       },
       {
         "path": "pokemon_fire_ash/Data/Tilesets.rxdata",
         "bytes": 1789815,
-        "sha256": "2ed9d34e02ce6a18050a69818ddfd14bc71fb58af8c78cb2a0b1e225fb278af5"
+        "sha256": "2a404347fdc541f86dd2aea51fa14beee048152ecd42fb789078bf3a1ab20746"
       },
       {
         "path": "pokemon_fire_ash/Data/TilesetsTemp.rxdata",
@@ -25960,8 +25960,8 @@
       },
       {
         "path": "pokemon_fire_ash/Data/encounters.dat",
-        "bytes": 58937,
-        "sha256": "cbc11983833f75368fb29a6ca13da7d4a8e17afe46ba2929a332b335bf5d365d"
+        "bytes": 70096,
+        "sha256": "d729d5b42d915797950b21827c15fd580ad15a417328b23e7dfd382ca07db3c3"
       },
       {
         "path": "pokemon_fire_ash/Data/english.dat",
@@ -26195,8 +26195,8 @@
       },
       {
         "path": "tools/apply_canon_arceus.mjs",
-        "bytes": 41456,
-        "sha256": "8123705a257b0a962465794e24d276598a0d376af37f7a7f0ce3abff59993e6c"
+        "bytes": 41695,
+        "sha256": "cf82e18bc7a4bacccec91e465581c6ecb164ca9f8365843758029703ff554e89"
       },
       {
         "path": "tools/apply_ciudad_teckel_maxine.mjs",
@@ -26205,8 +26205,8 @@
       },
       {
         "path": "tools/apply_complete_rom_campaigns.mjs",
-        "bytes": 25340,
-        "sha256": "07dce55bfffb36a7d4a3839925a8ad2a7b3c2b3f7eaf5f63ab6883a1d85d5585"
+        "bytes": 26042,
+        "sha256": "da9a87ac694c9a59a879516a991c6d8041cbbf2d0f5e6420429d25c7859043cf"
       },
       {
         "path": "tools/apply_dimensional_nightmare_battles.mjs",
@@ -26250,8 +26250,8 @@
       },
       {
         "path": "tools/apply_emergency_abra_and_free_tower.mjs",
-        "bytes": 31384,
-        "sha256": "6dcd79a3006cf556a1ccdabbec48c10a828d1b35de394dd78db9fd332ee1e9cd"
+        "bytes": 32319,
+        "sha256": "b1f2a54c47c8d012d9882fc23d8df0ce1a4ada5e276d5c81c0cf998f8fab6133"
       },
       {
         "path": "tools/apply_event_collision_fix.mjs",
@@ -26260,8 +26260,8 @@
       },
       {
         "path": "tools/apply_expansion_multiversal.mjs",
-        "bytes": 53777,
-        "sha256": "f4134f6468a8beddcd538219635e359543a6843374a69856ff07045c1a1ac463"
+        "bytes": 53827,
+        "sha256": "131f225558992b2a57f1d329039c097a16af74b6e33d7d1176579e598dc218e6"
       },
       {
         "path": "tools/apply_extended_level_cap.mjs",
@@ -26459,9 +26459,29 @@
         "sha256": "7556847909471f4332a79651218c1620703724c7dfad9cc27c5b0f51ffd9486b"
       },
       {
+        "path": "tools/auditar_interiores_campanas.mjs",
+        "bytes": 4827,
+        "sha256": "bdf061e9d91d2ce5fc8cc5c600bfb6be234236a87b8afadcbe571f0f5736dc27"
+      },
+      {
         "path": "tools/backup.py",
         "bytes": 1694,
         "sha256": "f3fd93060521efe99a13e297098f93f3adc6dbe080f2aebddaa3433505c71ade"
+      },
+      {
+        "path": "tools/build_ash_accion_bicicleta.mjs",
+        "bytes": 7174,
+        "sha256": "a09e6445e108b91f37d3225a6b4db444f18f74ab6d7d821199be54ea97149281"
+      },
+      {
+        "path": "tools/build_ash_mapa_espalda.mjs",
+        "bytes": 8883,
+        "sha256": "65023584f9abbfb1d06111b623bd50f656553acdd77419c1277d8158b21cfd77"
+      },
+      {
+        "path": "tools/build_ash_mapa_frontal.mjs",
+        "bytes": 3951,
+        "sha256": "6b09af715c29a23c2ce5d0a16338e97004352d9f2b60727aaa7623f55a7c3258"
       },
       {
         "path": "tools/build_direct_package.mjs",
@@ -26475,8 +26495,8 @@
       },
       {
         "path": "tools/build_expansion_package.mjs",
-        "bytes": 11520,
-        "sha256": "1e5ed19d1fd6a1b1e05385891dc5b75104fe2aaa51b2be6422207024280d978e"
+        "bytes": 11567,
+        "sha256": "1501fd74eff552b2c8f7cc7ed9e32ceda5d66322a54b287324780131ad1acd32"
       },
       {
         "path": "tools/build_outfit_sheets.mjs",
@@ -26709,6 +26729,11 @@
         "sha256": "e048e3ea9b89ade67a1e59ee598a218f8f81c6a81e83f929fef54e1dc15f50ae"
       },
       {
+        "path": "tools/dn_terrain_tags.mjs",
+        "bytes": 53439,
+        "sha256": "d6c7adc16e7fa5f93dc8a34f9c4d45f366cc78a459fd041bbabc10bc0a657941"
+      },
+      {
         "path": "tools/dn_verify_slices.mjs",
         "bytes": 9388,
         "sha256": "7f007a0822e14dcc6e0a7bcb01cc281a38e36c2e345ef3b0297eea4a80bb1d0e"
@@ -26724,9 +26749,14 @@
         "sha256": "9df78213bb2ce4002cf3ec8b1c982016abbb23db32a9553b534368a82f97f6a1"
       },
       {
+        "path": "tools/equivalencias_entrenador_campanas.mjs",
+        "bytes": 6174,
+        "sha256": "6ec3d97e5883a55323bea7d48fc0c848b857efe4d5be7b136e8105e028c14ccb"
+      },
+      {
         "path": "tools/external_authoring.test.mjs",
-        "bytes": 47660,
-        "sha256": "1cce7d88d744bf041dba06b9b3061e966962089d186386870a590c6e363f1a93"
+        "bytes": 48393,
+        "sha256": "a0c7106e6d8e5b2a99712443fca04fde54ddb1a45bdba4a800380c0a7396dd00"
       },
       {
         "path": "tools/forense/gb.mjs",
@@ -26802,6 +26832,11 @@
         "path": "tools/kirin_check.py",
         "bytes": 2636,
         "sha256": "c7ae268c842b47f9a0a0ab4237a124d91c70db28ac78832588b6989c902675bc"
+      },
+      {
+        "path": "tools/lib/artifact_budget.mjs",
+        "bytes": 8375,
+        "sha256": "929d17beee10965162118e99e80be4bcf98ce61342422472a9ddb19b8ff284a0"
       },
       {
         "path": "tools/lib/atlas_sector01_art.mjs",
@@ -26884,6 +26919,11 @@
         "sha256": "17f3af31326fbbeea6df3ea020007199cc5d5d980de92f5a6542e48b53bc1e34"
       },
       {
+        "path": "tools/lib/ruby_method_patch.mjs",
+        "bytes": 7298,
+        "sha256": "78fce0cfb3b31078299c61de9a3fb4d839beab20f8e269ae005001822f069950"
+      },
+      {
         "path": "tools/lib/sprite_build.mjs",
         "bytes": 8409,
         "sha256": "d747433b9f7bde81989c67477b38a0e38a55d573f0542b0930df47bd816c31d0"
@@ -26909,9 +26949,24 @@
         "sha256": "7f7ed26aadc2287fc8d1891cf4f30817ac29d4b755c1ab45ad56b0d478a934b5"
       },
       {
+        "path": "tools/perfiles_artesanales_campanas.mjs",
+        "bytes": 4834,
+        "sha256": "ea03a6a01ecb93d3867dca49a9de32ccb53f7f2c8fe0f9bfa8d2b1ddff893444"
+      },
+      {
+        "path": "tools/plan2700/audit_campaign_region.mjs",
+        "bytes": 10081,
+        "sha256": "f860a852cec37aef5e78379195c0362afca3056c92e5418d50d699fb4c9a0bfa"
+      },
+      {
+        "path": "tools/plan2700/glazed_story.mjs",
+        "bytes": 3226,
+        "sha256": "426b3d127d072894cad26638ad4acdf6447edc125346174453f04b1ac7393a91"
+      },
+      {
         "path": "tools/plan900/avance.md",
-        "bytes": 10545,
-        "sha256": "9b9dbd4ebd5af98e8c60cf94d3bb12f926d293a0a516b446bb71b72771237495"
+        "bytes": 12271,
+        "sha256": "e01e3ad87bb0e0582c47dd93d9a0bb8b877cf63d433dca186153c9a88889f206"
       },
       {
         "path": "tools/plan900/avance.sh",
@@ -26922,6 +26977,26 @@
         "path": "tools/plan900/checkpoint.mjs",
         "bytes": 6667,
         "sha256": "398e07dd2cf948503415ff6b17b3e963778da2e2dabceb9c469818ba7dbb814f"
+      },
+      {
+        "path": "tools/plan900/dump_dialogos.mjs",
+        "bytes": 4224,
+        "sha256": "c69e46fcc0a34cd07ac8f20d1cbc4669fe64f39ce3ac82855425c2bfbebc3f63"
+      },
+      {
+        "path": "tools/plan900/fase008_check.mjs",
+        "bytes": 7460,
+        "sha256": "e96cfbedf3edb915e8e5d29854f94a48b2f3d1c366c1c807e893fe8cb207d7cc"
+      },
+      {
+        "path": "tools/plan900/inventario_recursos.mjs",
+        "bytes": 6429,
+        "sha256": "e0ea8ad1cb3a89ee68d305650bc76ed53b7f9e0fb6760525d4dbd5ff74b9bd59"
+      },
+      {
+        "path": "tools/plan900/name_flags.mjs",
+        "bytes": 3843,
+        "sha256": "df4c96c6192358b394a6273affa8462acce8f1409a71b2ff9e45b99343e01f2d"
       },
       {
         "path": "tools/plan900/orden_instalacion.sh",
@@ -26979,9 +27054,19 @@
         "sha256": "5fed78c17c4d45de1ccaa2495f8d4b7b40946e569f0ca4f331b7c6f461c18786"
       },
       {
+        "path": "tools/qa/artifact_budget_check.mjs",
+        "bytes": 8495,
+        "sha256": "2b0c3a1016f67e2c7805e8b05036b06898339be96dadedb7932200d83ad018a9"
+      },
+      {
         "path": "tools/qa/atlas_master_suite.test.mjs",
         "bytes": 22389,
         "sha256": "3859c7309072ce1405c48b9c1b997f0ad7dda84ade807f75202fb9cb2579a1fd"
+      },
+      {
+        "path": "tools/qa/audit_gbc_terreno.mjs",
+        "bytes": 9616,
+        "sha256": "7f92aa238cd44d7d3f6d80dd25fd2dbc287354a7dc97e0f14d4075a4d9e11e74"
       },
       {
         "path": "tools/qa/dialogos_harness.mjs",
@@ -26989,9 +27074,44 @@
         "sha256": "792f7d03d12980318f1aea330ea884a556b6589af901d9e436f3773c96c87aec"
       },
       {
+        "path": "tools/qa/dinamismo_check.mjs",
+        "bytes": 5410,
+        "sha256": "fd25faa5d919427b1ce57828c0d8167aa6cdef5e533e0f62845c099af6d4ad55"
+      },
+      {
+        "path": "tools/qa/evento_terminado_check.mjs",
+        "bytes": 36326,
+        "sha256": "f7a91c0cd82f8f0019ac49afcf24d476adc4c402f9c822458a6c3e6d34b630e7"
+      },
+      {
         "path": "tools/qa/fire_ash_health.mjs",
         "bytes": 19199,
         "sha256": "9578219eda4404fa0e8eb4bdd051d446d89a727aaaaae98ab4b8772b62c245dc"
+      },
+      {
+        "path": "tools/qa/glosario_check.mjs",
+        "bytes": 8091,
+        "sha256": "c9290f9514e57a56545ab2bafa11a192ee465c0f30ca78a81646dcc51f084741"
+      },
+      {
+        "path": "tools/qa/mapa_terminado_check.mjs",
+        "bytes": 31161,
+        "sha256": "91d0796a03cfc282b01f7272712f87655d8ed3dcbfbc50ed899c4776d0e93530"
+      },
+      {
+        "path": "tools/qa/metrica_dimensiones_check.mjs",
+        "bytes": 13691,
+        "sha256": "43a000011f7d04a4152a41beef5b5d25bf4e290cb1d263d5602f3c576bc80816"
+      },
+      {
+        "path": "tools/qa/name_multiverse_flags.mjs",
+        "bytes": 2827,
+        "sha256": "144fff6c3548a2147d90992af92d9a62fca4f339aaaa39ce6b7d3e0df1f15ae3"
+      },
+      {
+        "path": "tools/qa/repair_rom_nativo_access.mjs",
+        "bytes": 6854,
+        "sha256": "f77d03c0ce7ae2c3420a4c4d995c2c09eb40a45c37b86fff8831a2048ac05213"
       },
       {
         "path": "tools/qa/ruby_syntax_check.mjs",
@@ -26999,9 +27119,34 @@
         "sha256": "9a462ab99a501b559c4d248942fb0f3d4485ea5192796cbff2c1df53df58ae99"
       },
       {
+        "path": "tools/qa/ruby_syntax_full_check.mjs",
+        "bytes": 6309,
+        "sha256": "3c9d67411f45ed16e82f4ecd7988fef61eea92306f18ef7b7d22b0a5daa30dec"
+      },
+      {
         "path": "tools/qa/scripts_dangling_calls.mjs",
         "bytes": 11009,
         "sha256": "3139f885e50f0282534243f0a35907db7ea7194ba5642df66dfd2763b51ef40f"
+      },
+      {
+        "path": "tools/qa/verify_rom_nativo_base_id.mjs",
+        "bytes": 10477,
+        "sha256": "a6343ee176fa42ef96845641be92ede89b3bc37c85f33e6e2e18322070f5a125"
+      },
+      {
+        "path": "tools/qa/verify_rom_nativo_colision.mjs",
+        "bytes": 9583,
+        "sha256": "3979985393e074ac77429c795aeae4d841b3fdf2b9dbe0805af41671e3baa4d0"
+      },
+      {
+        "path": "tools/qa/verify_rom_nativo_elevacion.mjs",
+        "bytes": 4468,
+        "sha256": "281f632428d688fc5b2f47f5af71628e4e6b706962c5fbe54f2ce03643423418"
+      },
+      {
+        "path": "tools/qa/verify_rom_nativo_tilesets.mjs",
+        "bytes": 4436,
+        "sha256": "7fb6bcf099a6184e3fea4a98ae199a43c406dc2cd47d1fc76c4b2030f02b272a"
       },
       {
         "path": "tools/reconstruccion_canonica.mjs",
@@ -27010,8 +27155,8 @@
       },
       {
         "path": "tools/refresh_corregido_zip.mjs",
-        "bytes": 5188,
-        "sha256": "246a567d9aa633072b515fcce8093f9704b2a156e1483559e8db513c798ae264"
+        "bytes": 5900,
+        "sha256": "7fcc2ef35259d68f501b79aa7a11b3a8de4dad6274213436c07148222a33255b"
       },
       {
         "path": "tools/region_builder_adapter.mjs",
@@ -27032,6 +27177,11 @@
         "path": "tools/render_region_builder_reference.mjs",
         "bytes": 5323,
         "sha256": "1158a6e0e31a70639764c409e7e77c939751d0778a7610a3188a3c14cc69ff2c"
+      },
+      {
+        "path": "tools/repair_grandeur_club_end.mjs",
+        "bytes": 16100,
+        "sha256": "9679ea17a955ed58608c007f3caee11a48c3b5bb8471f15302282db576f49af8"
       },
       {
         "path": "tools/repair_map_data.mjs",
@@ -27142,6 +27292,21 @@
         "path": "tools/verify_arceus_sandbox.mjs",
         "bytes": 2987,
         "sha256": "be2075eb407b434ff72b7c8b91fc2190ea762f981d3afb1b4c12ab26d4134168"
+      },
+      {
+        "path": "tools/verify_npc_contrapartes_rom.mjs",
+        "bytes": 5668,
+        "sha256": "5fc6303c1d202cdd17572d96dbb5754258ec5cfd33b08397a2ed1e73548085d8"
+      },
+      {
+        "path": "tools/verify_overworld_battle_coherence.mjs",
+        "bytes": 9515,
+        "sha256": "fef3353c5c5ece9c97aaa7639705df1ea187598e0c4616939a45ded1cd7ae98f"
+      },
+      {
+        "path": "tools/verify_trainer_types_campanas.mjs",
+        "bytes": 6152,
+        "sha256": "8c00134225e40cfd802098728293c83b23c6e7b956c1671ae9d9c7658e8be5a4"
       }
     ]
   },
@@ -34929,7 +35094,7 @@
       {
         "kind": "switch",
         "id": 940,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 01 TORRE",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 0
@@ -34937,7 +35102,7 @@
       {
         "kind": "switch",
         "id": 941,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 02 PARTIDA",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 0
@@ -34945,7 +35110,7 @@
       {
         "kind": "switch",
         "id": 942,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 03 FOSA",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 0
@@ -34953,7 +35118,7 @@
       {
         "kind": "switch",
         "id": 943,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 04 CINTA",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 0
@@ -34961,7 +35126,7 @@
       {
         "kind": "switch",
         "id": 944,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 05 GLITCH",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 0
@@ -34969,7 +35134,7 @@
       {
         "kind": "switch",
         "id": 945,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 06 ECO",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 0
@@ -34977,7 +35142,7 @@
       {
         "kind": "switch",
         "id": 946,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 07 CONSOLA",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 0
@@ -34985,7 +35150,7 @@
       {
         "kind": "switch",
         "id": 947,
-        "name": "",
+        "name": "POKEMOD MULTIVERSO SELLO 08 RED CUMBRE",
         "reads": 0,
         "writes": 1,
         "scriptAccess": 0
@@ -35001,7 +35166,7 @@
       {
         "kind": "switch",
         "id": 950,
-        "name": "",
+        "name": "POKEMOD RESTAURACION COLOR 01",
         "reads": 5,
         "writes": 1,
         "scriptAccess": 0
@@ -35009,7 +35174,7 @@
       {
         "kind": "switch",
         "id": 951,
-        "name": "",
+        "name": "POKEMOD RESTAURACION COLOR 02",
         "reads": 5,
         "writes": 1,
         "scriptAccess": 0
@@ -35017,7 +35182,7 @@
       {
         "kind": "switch",
         "id": 952,
-        "name": "",
+        "name": "POKEMOD RESTAURACION COLOR 03",
         "reads": 5,
         "writes": 1,
         "scriptAccess": 0
@@ -35025,7 +35190,7 @@
       {
         "kind": "switch",
         "id": 953,
-        "name": "",
+        "name": "POKEMOD RESTAURACION COLOR 04",
         "reads": 5,
         "writes": 1,
         "scriptAccess": 0
@@ -35033,7 +35198,7 @@
       {
         "kind": "switch",
         "id": 954,
-        "name": "",
+        "name": "POKEMOD RESTAURACION COLOR 05",
         "reads": 5,
         "writes": 1,
         "scriptAccess": 0
@@ -35041,7 +35206,7 @@
       {
         "kind": "switch",
         "id": 955,
-        "name": "",
+        "name": "POKEMOD RESTAURACION COLOR 06",
         "reads": 5,
         "writes": 1,
         "scriptAccess": 0
@@ -35049,7 +35214,7 @@
       {
         "kind": "switch",
         "id": 956,
-        "name": "",
+        "name": "POKEMOD RESTAURACION COLOR 07",
         "reads": 5,
         "writes": 1,
         "scriptAccess": 0
@@ -35057,7 +35222,7 @@
       {
         "kind": "switch",
         "id": 957,
-        "name": "",
+        "name": "POKEMOD RESTAURACION TODAS EN PAZ",
         "reads": 1,
         "writes": 7,
         "scriptAccess": 0
@@ -35065,7 +35230,7 @@
       {
         "kind": "switch",
         "id": 960,
-        "name": "",
+        "name": "POKEMOD DIMENSION GLAZED COMPLETADA",
         "reads": 3,
         "writes": 2,
         "scriptAccess": 0
@@ -35073,7 +35238,7 @@
       {
         "kind": "switch",
         "id": 961,
-        "name": "",
+        "name": "POKEMOD DIMENSION LIGHT PLATINUM COMPLETADA",
         "reads": 2,
         "writes": 1,
         "scriptAccess": 1
@@ -35081,7 +35246,7 @@
       {
         "kind": "switch",
         "id": 962,
-        "name": "",
+        "name": "POKEMOD DIMENSION LIQUID CRYSTAL COMPLETADA",
         "reads": 3,
         "writes": 3,
         "scriptAccess": 0
@@ -35089,7 +35254,7 @@
       {
         "kind": "switch",
         "id": 963,
-        "name": "",
+        "name": "POKEMOD DIMENSION TFOH COMPLETADA",
         "reads": 1,
         "writes": 2,
         "scriptAccess": 0
@@ -35097,7 +35262,7 @@
       {
         "kind": "switch",
         "id": 964,
-        "name": "",
+        "name": "POKEMOD DIMENSION FACTORY ADVENTURE COMPLETADA",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -35105,7 +35270,7 @@
       {
         "kind": "switch",
         "id": 970,
-        "name": "",
+        "name": "POKEMOD ATLAS MEDALLA 01",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -35113,7 +35278,7 @@
       {
         "kind": "switch",
         "id": 971,
-        "name": "",
+        "name": "POKEMOD ATLAS MEDALLA 02",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -35121,7 +35286,7 @@
       {
         "kind": "switch",
         "id": 972,
-        "name": "",
+        "name": "POKEMOD ATLAS MEDALLA 03",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -35129,7 +35294,7 @@
       {
         "kind": "switch",
         "id": 973,
-        "name": "",
+        "name": "POKEMOD ATLAS MEDALLA 04",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -35137,7 +35302,7 @@
       {
         "kind": "switch",
         "id": 974,
-        "name": "",
+        "name": "POKEMOD ATLAS MEDALLA 05",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -35145,7 +35310,7 @@
       {
         "kind": "switch",
         "id": 975,
-        "name": "",
+        "name": "POKEMOD ATLAS MEDALLA 06",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -35153,7 +35318,7 @@
       {
         "kind": "switch",
         "id": 976,
-        "name": "",
+        "name": "POKEMOD ATLAS MEDALLA 07",
         "reads": 1,
         "writes": 1,
         "scriptAccess": 0
@@ -37315,7 +37480,7 @@
       {
         "kind": "variable",
         "id": 310,
-        "name": "",
+        "name": "POKEMOD RESTAURACION MUNDOS RECUPERADOS",
         "reads": 7,
         "writes": 7,
         "scriptAccess": 0
@@ -37323,7 +37488,7 @@
       {
         "kind": "variable",
         "id": 311,
-        "name": "",
+        "name": "POKEMOD ROCKET RANGO",
         "reads": 7,
         "writes": 5,
         "scriptAccess": 0
@@ -37331,7 +37496,7 @@
       {
         "kind": "variable",
         "id": 312,
-        "name": "",
+        "name": "POKEMOD ROCKET MISIONES CUMPLIDAS",
         "reads": 0,
         "writes": 5,
         "scriptAccess": 0
@@ -37339,7 +37504,7 @@
       {
         "kind": "variable",
         "id": 313,
-        "name": "",
+        "name": "POKEMOD ROCKET HERIDOS SOCORRIDOS",
         "reads": 0,
         "writes": 3,
         "scriptAccess": 0
@@ -37355,7 +37520,7 @@
       {
         "kind": "variable",
         "id": 315,
-        "name": "",
+        "name": "POKEMOD CAMPANAS RESULTADO LIGHT PLATINUM",
         "reads": 6,
         "writes": 4,
         "scriptAccess": 4
@@ -37379,7 +37544,7 @@
       {
         "kind": "variable",
         "id": 318,
-        "name": "",
+        "name": "POKEMOD CAMPANAS PROGRESO 01",
         "reads": 0,
         "writes": 0,
         "scriptAccess": 8
@@ -37387,7 +37552,7 @@
       {
         "kind": "variable",
         "id": 319,
-        "name": "",
+        "name": "POKEMOD CAMPANAS PROGRESO 02",
         "reads": 1,
         "writes": 8,
         "scriptAccess": 0
@@ -37395,7 +37560,7 @@
       {
         "kind": "variable",
         "id": 320,
-        "name": "",
+        "name": "POKEMOD CAMPANAS PROGRESO 03",
         "reads": 0,
         "writes": 0,
         "scriptAccess": 1
@@ -37403,7 +37568,7 @@
       {
         "kind": "variable",
         "id": 321,
-        "name": "",
+        "name": "POKEMOD CAMPANAS PROGRESO 04",
         "reads": 0,
         "writes": 0,
         "scriptAccess": 1
@@ -37411,7 +37576,7 @@
       {
         "kind": "variable",
         "id": 322,
-        "name": "",
+        "name": "POKEMOD CAMPANAS PROGRESO 05",
         "reads": 0,
         "writes": 0,
         "scriptAccess": 1

@@ -1,6 +1,6 @@
 # Auditoría total de flags de Fire Ash
 
-Generada: 2026-10-17T16:13:09.183Z
+Generada: 2026-10-17T16:26:47.056Z
 
 ## Cobertura
 
