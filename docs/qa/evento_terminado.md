@@ -156,7 +156,7 @@ borrándola del registro).
 | **EVENTO-JUNTA-401** | texto en dos líneas de caja | 1434 juntas en 1192 bloques | Cerrar cada línea de autor con `\n`. |
 | **EVENTO-TEXTO-DE-DISENO** | diálogo revisado | 147 textos en 147 eventos | Sustituir la ficha volcada por diálogo escrito. |
 | **EVENTO-FLAG-DOBLE** | flag de una sola escritura | 20 sitios en 18 eventos | Decidir el dueño de cada switch (o documentar por qué se enciende en varios). |
-| **EVENTO-FLAG-SIN-NOMBRE** | flag de una sola escritura | 44 usos en 25 eventos (17 switches) | Ponerle nombre a los switches 940–947, 950–957 y 963 en `System.rxdata`. |
+| **EVENTO-FLAG-SIN-NOMBRE** | flag de una sola escritura | **0 fallos** (0 switches del anillo sin nombre) | Cerrado: 940–947 tienen nombre Multiverso y 950–957, 960–964, 970–976 y variables 310–315/318–322 tienen nombre del plan. |
 
 ## Deudas del proyecto (no las mide este verificador, se publican aquí)
 

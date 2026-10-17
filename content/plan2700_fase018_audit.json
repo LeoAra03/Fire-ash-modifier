@@ -1,0 +1,488 @@
+{
+  "schema": "plan2700_fase018_audit/1.0",
+  "phase": "018",
+  "tasks": [
+    1700,
+    1799
+  ],
+  "atlas": {
+    "maps": 1000,
+    "absent": [],
+    "events": 6410,
+    "averageEvents": 6.41,
+    "maxEvents": 46,
+    "over60": [],
+    "anchors": [
+      {
+        "index": 1,
+        "mapId": 1021,
+        "switchId": 708,
+        "title": "Santuario de la Última Campana",
+        "events": 11
+      },
+      {
+        "index": 2,
+        "mapId": 1046,
+        "switchId": 709,
+        "title": "La Copa del Huevo Vacío",
+        "events": 12
+      },
+      {
+        "index": 3,
+        "mapId": 1071,
+        "switchId": 710,
+        "title": "El Campeón de Fecha Imposible",
+        "events": 15
+      },
+      {
+        "index": 4,
+        "mapId": 1096,
+        "switchId": 711,
+        "title": "El Gremio de la Camilla Vacía",
+        "events": 16
+      },
+      {
+        "index": 5,
+        "mapId": 1121,
+        "switchId": 712,
+        "title": "Operación Rescate Demasiado Perfecto",
+        "events": 16
+      },
+      {
+        "index": 6,
+        "mapId": 1146,
+        "switchId": 713,
+        "title": "La Sombra que Eligió Quedarse",
+        "events": 11
+      },
+      {
+        "index": 7,
+        "mapId": 1171,
+        "switchId": 714,
+        "title": "El Jardín de los Dos Juramentos",
+        "events": 11
+      },
+      {
+        "index": 8,
+        "mapId": 1196,
+        "switchId": 715,
+        "title": "La Persona Fuera del Encuadre",
+        "events": 11
+      },
+      {
+        "index": 9,
+        "mapId": 1221,
+        "switchId": 716,
+        "title": "El Festival que Olvidó su Motivo",
+        "events": 11
+      },
+      {
+        "index": 10,
+        "mapId": 1246,
+        "switchId": 717,
+        "title": "La Carta que Recuerda a su Jugador",
+        "events": 13
+      },
+      {
+        "index": 11,
+        "mapId": 1271,
+        "switchId": 718,
+        "title": "El Compañero del Minuto Cero",
+        "events": 13
+      },
+      {
+        "index": 12,
+        "mapId": 1296,
+        "switchId": 719,
+        "title": "El Punto que Nadie Quiso Marcar",
+        "events": 12
+      },
+      {
+        "index": 13,
+        "mapId": 1321,
+        "switchId": 720,
+        "title": "La Señal Hecha de Ausencias",
+        "events": 11
+      },
+      {
+        "index": 14,
+        "mapId": 1346,
+        "switchId": 721,
+        "title": "La Ciudad a la que Dieron Cuerda",
+        "events": 11
+      },
+      {
+        "index": 15,
+        "mapId": 1371,
+        "switchId": 722,
+        "title": "El Mosaico de los Nombres Imposibles",
+        "events": 11
+      },
+      {
+        "index": 16,
+        "mapId": 1396,
+        "switchId": 723,
+        "title": "La Receta que Lloraba por Otros",
+        "events": 11
+      },
+      {
+        "index": 17,
+        "mapId": 1421,
+        "switchId": 724,
+        "title": "El Caso de las Cuatro Mediasnoches",
+        "events": 16
+      },
+      {
+        "index": 18,
+        "mapId": 1446,
+        "switchId": 725,
+        "title": "El Museo de lo Todavía No Perdido",
+        "events": 12
+      },
+      {
+        "index": 19,
+        "mapId": 1471,
+        "switchId": 726,
+        "title": "El Arrecife que Llegó Después",
+        "events": 11
+      },
+      {
+        "index": 20,
+        "mapId": 1496,
+        "switchId": 727,
+        "title": "Los Dos Nombres del Cometa",
+        "events": 12
+      },
+      {
+        "index": 21,
+        "mapId": 1521,
+        "switchId": 728,
+        "title": "La Central de las Cenizas Vivas",
+        "events": 10
+      },
+      {
+        "index": 22,
+        "mapId": 1546,
+        "switchId": 729,
+        "title": "La Profecía Escrita Después",
+        "events": 10
+      },
+      {
+        "index": 23,
+        "mapId": 1571,
+        "switchId": 730,
+        "title": "La Ciudad que Pagaba con Recuerdos",
+        "events": 10
+      },
+      {
+        "index": 24,
+        "mapId": 1596,
+        "switchId": 731,
+        "title": "Las Cartas de una Familia Incompatible",
+        "events": 10
+      },
+      {
+        "index": 25,
+        "mapId": 1621,
+        "switchId": 732,
+        "title": "El Mercado de los Umbrales Pequeños",
+        "events": 10
+      },
+      {
+        "index": 26,
+        "mapId": 1646,
+        "switchId": 733,
+        "title": "La Estatua que Ensayaba Ciudades",
+        "events": 11
+      },
+      {
+        "index": 27,
+        "mapId": 1671,
+        "switchId": 734,
+        "title": "La Mina de las Decisiones Sólidas",
+        "events": 10
+      },
+      {
+        "index": 28,
+        "mapId": 1696,
+        "switchId": 735,
+        "title": "El Peaje de los Sueños Prestados",
+        "events": 10
+      },
+      {
+        "index": 29,
+        "mapId": 1721,
+        "switchId": 736,
+        "title": "El Campeón de las Dos Banderas",
+        "events": 10
+      },
+      {
+        "index": 30,
+        "mapId": 1746,
+        "switchId": 737,
+        "title": "La Academia del Error Permitido",
+        "events": 11
+      },
+      {
+        "index": 31,
+        "mapId": 1771,
+        "switchId": 738,
+        "title": "La Frecuencia que Pide Permiso",
+        "events": 16
+      },
+      {
+        "index": 32,
+        "mapId": 1796,
+        "switchId": 739,
+        "title": "El Héroe que Pidió un Nombre Pequeño",
+        "events": 10
+      },
+      {
+        "index": 33,
+        "mapId": 1821,
+        "switchId": 740,
+        "title": "La Victoria que Nadie Ganó",
+        "events": 16
+      },
+      {
+        "index": 34,
+        "mapId": 1846,
+        "switchId": 741,
+        "title": "La Excavación que Fabricó su Pasado",
+        "events": 10
+      },
+      {
+        "index": 35,
+        "mapId": 1871,
+        "switchId": 742,
+        "title": "El Refugio que Contestaba Solo",
+        "events": 11
+      },
+      {
+        "index": 36,
+        "mapId": 1896,
+        "switchId": 743,
+        "title": "El Registro que No Pudo Clasificarte",
+        "events": 16
+      },
+      {
+        "index": 37,
+        "mapId": 1921,
+        "switchId": 744,
+        "title": "El Acertijo que Cambiaba la Pregunta",
+        "events": 10
+      },
+      {
+        "index": 38,
+        "mapId": 1946,
+        "switchId": 745,
+        "title": "El Enemigo que Alguien Recordó por Ti",
+        "events": 9
+      },
+      {
+        "index": 39,
+        "mapId": 1971,
+        "switchId": 746,
+        "title": "La Copia que Aprendió a Despertar",
+        "events": 10
+      },
+      {
+        "index": 40,
+        "mapId": 1996,
+        "switchId": 747,
+        "title": "El Final que Dejó Cuarenta Puertas Abiertas",
+        "events": 10
+      }
+    ],
+    "tier2": [
+      {
+        "file": "atlas_tier2_blueprints_macro02.json",
+        "count": 10
+      },
+      {
+        "file": "atlas_tier2_blueprints_macro03.json",
+        "count": 25
+      },
+      {
+        "file": "atlas_tier2_blueprints_macro04.json",
+        "count": 25
+      },
+      {
+        "file": "atlas_tier2_blueprints_macro05.json",
+        "count": 25
+      },
+      {
+        "file": "atlas_tier2_blueprints_macro06.json",
+        "count": 25
+      },
+      {
+        "file": "atlas_tier2_blueprints_macro07.json",
+        "count": 10
+      }
+    ],
+    "tier2Total": 120,
+    "tier3Rules": 420,
+    "progressSummary": {
+      "sectors": 40,
+      "maps": 1000,
+      "mapsWithReturn": 1000,
+      "mapsWithTierBeacon": 1000,
+      "mapsWithGenericChallenge": 500,
+      "transferInfrastructure": 3039,
+      "tier1": {
+        "total": 40,
+        "approvedBlueprints": 40,
+        "compiledEpisodes": 40,
+        "generatedPrompts": 40,
+        "namedNpcs": 120,
+        "persistentDecisions": 40,
+        "bosses": 40,
+        "finalConvergencePrerequisiteSeals": 39,
+        "completionPercent": 100
+      },
+      "tier2": {
+        "total": 120,
+        "infrastructureComplete": 120,
+        "withGenericChallenge": 60,
+        "dedicatedAuthoredRoutes": 120,
+        "namedNpcs": 240,
+        "persistentDecisions": 120,
+        "uniqueRewards": 120
+      },
+      "tier3": {
+        "total": 840,
+        "infrastructureComplete": 840,
+        "withLocalGenericRuleOrChallenge": 840,
+        "withGenericChallenge": 420,
+        "withReversibleLocalRule": 420,
+        "missingLocalRule": 0
+      },
+      "authoring": {
+        "regionBuilderLandmarks": 40,
+        "compatibleRegionalDexSpecies": 153,
+        "studioRecords": 40,
+        "styleTechnicalPassed": 40,
+        "exactInheritedAnchorGeometry": 0,
+        "customAnchorGeometry": 40,
+        "narrativeBatchesCompleted": 9,
+        "visualBatchesCompleted": 8,
+        "visualMacroCyclesCompleted": 2,
+        "tier2BatchesCompleted": 24,
+        "tier2MacroCyclesCompleted": 6,
+        "approvedTeamSpecies": 153
+      }
+    }
+  },
+  "nightmare": {
+    "plannedMaps": 151,
+    "actualMaps": 151,
+    "actualEvents": 1359,
+    "episodes": [
+      {
+        "key": "EP01",
+        "mapRange": {
+          "from": 2041,
+          "to": 2056
+        },
+        "anomalies": 12
+      },
+      {
+        "key": "EP02",
+        "mapRange": {
+          "from": 2057,
+          "to": 2072
+        },
+        "anomalies": 13
+      },
+      {
+        "key": "EP03",
+        "mapRange": {
+          "from": 2073,
+          "to": 2087
+        },
+        "anomalies": 12
+      },
+      {
+        "key": "EP04",
+        "mapRange": {
+          "from": 2088,
+          "to": 2103
+        },
+        "anomalies": 13
+      },
+      {
+        "key": "EP05",
+        "mapRange": {
+          "from": 2104,
+          "to": 2119
+        },
+        "anomalies": 13
+      },
+      {
+        "key": "EP06",
+        "mapRange": {
+          "from": 2120,
+          "to": 2135
+        },
+        "anomalies": 14
+      },
+      {
+        "key": "W7",
+        "mapRange": {
+          "from": 2143,
+          "to": 2158
+        },
+        "anomalies": 12
+      },
+      {
+        "key": "W8",
+        "mapRange": {
+          "from": 2159,
+          "to": 2174
+        },
+        "anomalies": 11
+      },
+      {
+        "key": "W9",
+        "mapRange": {
+          "from": 2175,
+          "to": 2190
+        },
+        "anomalies": 12
+      },
+      {
+        "key": "NEXO",
+        "mapRange": {
+          "from": 2136,
+          "to": 2140
+        },
+        "anomalies": 0
+      }
+    ],
+    "anomalyCount": 112,
+    "flags": {
+      "switches": [
+        882,
+        935
+      ],
+      "variables": [
+        265,
+        297
+      ],
+      "readonly264": true
+    },
+    "missingTiles2xCatalog": true
+  },
+  "manualQa": [
+    "recorrido humano de franjas Atlas y dos franjas en partida real",
+    "comprobación de ritmo de jefes, ciudades, curación y tienda",
+    "recorrido de los episodios DN en Game.exe/Kirin",
+    "verificación perceptiva de arte y audio DN"
+  ],
+  "failures": [],
+  "warnings": [
+    "La legibilidad del puzle, la escucha musical y el recorrido humano de franjas Atlas no se prueban con Marshal.",
+    "Nightmare: falta content/dimensional_nightmare_tiles_2x.json; dn:verify:all queda bloqueado por ese catálogo ausente y no se inventa.",
+    "Nightmare: el JSON conserva su etiqueta histórica de GDD aunque hay mapas/eventos compilados; no se reescribe sin decidir una política de estado."
+  ]
+}

@@ -184,14 +184,15 @@
   "hallazgos": [
     {
       "id": "DN-SALVAJES-DECLARADOS",
-      "titulo": "El sueño declara salvajes en 14 mapas y no implementa ninguno",
-      "detalle": "Los documentos del Dimensional Nightmare (EP01, EP05, W7, W8 y W9) declaran Pokémon salvajes con nivel y mapa concreto; los catálogos instalados no tienen ninguna tabla para esos mapas y ningún evento de 2041–2190 llama a pbWildBattle. El verificador recuenta la lista leyendo las fichas cada vez, para que no se quede vieja.",
+      "titulo": "El sueño declara salvajes en 15 mapas y los implementa en sus tablas",
+      "detalle": "Los documentos del Dimensional Nightmare (EP01, EP05, W7, W8 y W9) declaran Pokémon salvajes con nivel y mapa concreto; los catálogos instalados tienen tablas instaladas en esos mapas y los encuentros quedan cubiertos por el catálogo vigente. El verificador recuenta la lista leyendo las fichas cada vez, para que no se quede vieja.",
       "verificacion": {
         "tipo": "salvajes_en_docs",
         "docs": "docs/DIMENSIONAL_NIGHTMARE",
         "mapas": [
           2047,
           2115,
+          2135,
           2145,
           2147,
           2150,
@@ -205,7 +206,7 @@
           2185,
           2186
         ],
-        "implementados": 0
+        "implementados": 15
       },
       "fuente": {
         "ruta": "docs/DIMENSIONAL_NIGHTMARE/17_W8_BURIED_ALIVE.md",

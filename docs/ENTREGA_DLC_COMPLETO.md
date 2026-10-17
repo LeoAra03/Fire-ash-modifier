@@ -120,3 +120,10 @@ verificada: `npm test` en verde.
       (marcos 32×48 y batalla 158×158/812×196, como los originales del motor).
 
 Ver `docs/CANON_ARCEUS.md` §9. `npm test` en verde.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

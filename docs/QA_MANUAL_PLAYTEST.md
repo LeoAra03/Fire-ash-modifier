@@ -149,3 +149,9 @@ Cada regla: identificación del eco legible, las tres reglas de contrajuego se e
 
 **106 comprobaciones** (12 críticas + 40 anclas + 10 rutas Tier 2 + 14 ecos + 12 Monte Silver + 8 regresión + 10 expansión multiversal). Marca este archivo o una copia local; no hace falta commitearlo.
 
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

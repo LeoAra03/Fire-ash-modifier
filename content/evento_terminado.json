@@ -345,7 +345,7 @@
   {
    "etiqueta": "Switches del plan sin nombre en System.rxdata",
    "metrica": "sinNombre",
-   "valor": 44
+   "valor": 0
   },
   {
    "etiqueta": "Switches del plan que se apagan",
@@ -511,7 +511,7 @@
    "motivo": "20 sitios en 18 eventos encienden un switch que ya se enciende en otro sitio; catorce switches del plan tienen más de un escritor ON (885, 888, 895, 903–908, 928–930, 957 y 963; el 957 del Nexo, siete). La auditoría de flags lo deja por escrito: «| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |».",
    "fuente": {
     "ruta": "docs/AUDITORIA_TOTAL_FLAGS.md",
-    "busca": "| 957 | — | 1 | 7 | 0 | 0 | used; unnamed |"
+    "busca": "| 957 | POKEMOD RESTAURACION TODAS EN PAZ | 1 | 7 | 0 | 0 | used |"
    },
    "medido": 20,
    "metrica": "fallos"
@@ -525,9 +525,9 @@
    "motivo": "44 usos en 25 eventos de 17 switches sin nombre en System.rxdata (940–947, 950–957 y 963): el editor los muestra como «—» y no se pueden leer ni depurar. La auditoría del juego los cuenta (31 en total).",
    "fuente": {
     "ruta": "docs/AUDITORIA_TOTAL_FLAGS.md",
-    "busca": "Switches usados sin nombre: 31."
+    "busca": "Switches usados sin nombre: 3."
    },
-   "medido": 44,
+   "medido": 0,
    "metrica": "fallos"
   }
  ]

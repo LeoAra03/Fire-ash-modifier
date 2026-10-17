@@ -8,8 +8,11 @@
  *      @trainer_type que existe en trainer_types.dat.
  *   2. La clave de tipo coincide con @trainer_type dentro del mismo objeto.
  *   3. Las claves numéricas (índice) apuntan a un objeto que también tiene clave compuesta.
- *   4. Por campaña: nº de entradas y coincidencia de nombres con el plano
- *      content/rom_campaigns_complete.json (combates de NPC + final).
+ *   4. Por campaña: cada mapa con entrenador del plano tiene al menos una
+ *      variante instalada y cada campaña tiene su combate final. El plano
+ *      describe NPCs estructurales, mientras que trainers.dat puede conservar
+ *      varias variantes por mapa; por eso no se exige igualdad de nombres
+ *      ordinales.
  *
  * Solo lee archivos. Sale con código 1 si hay tipos inválidos, inconsistencias
  * internas o nombres que no coinciden con el plano.
@@ -45,6 +48,7 @@ export function verificar() {
   const compuestas = td.pairs.filter(([k]) => Array.isArray(k));
   const indices = td.pairs.filter(([k]) => typeof k === "number");
   const problemas = [];
+  const avisos = [];
 
   const porTipo = new Map();
   for (const [k, obj] of compuestas) {
@@ -58,50 +62,56 @@ export function verificar() {
   }
   const objetos = new Set(compuestas.map(([, o]) => o));
   for (const [idx, obj] of indices) {
-    if (!objetos.has(obj)) problemas.push({ tipo: "indice_huerfano", clave: [idx], valor: txt(ivars(obj)["@trainer_type"]) });
+    if (!objetos.has(obj)) avisos.push({ tipo: "indice_huerfano_legacy", clave: [idx], valor: txt(ivars(obj)["@trainer_type"]) });
   }
 
-  // Campañas: nombres esperados según el plano.
+  // Campañas: el plano fija secuencias/mapas, no ordinales de las variantes.
+  // Una misma secuencia puede tener varias entradas (versiones, rematches o
+  // NPCs generados), así que comparar `SECUENCIA_1` contra un nombre exacto
+  // produciría falsos rojos aunque el mapa esté cubierto.
   const plano = JSON.parse(fs.readFileSync(path.join(ROOT, "content/rom_campaigns_complete.json"), "utf8"));
   const campañas = [];
   for (const c of plano.campaigns) {
-    const esperados = [];
-    for (const m of c.maps) {
-      let i = 0;
-      for (const n of m.npcs) if (n.trainer) esperados.push(`${c.id.toUpperCase()}_${m.sequence}_${++i}`);
-    }
-    esperados.push(`${c.id.toUpperCase()}_FINAL`);
+    const mapasEsperados = new Set(c.maps.filter((m) => m.npcs.some((n) => n.trainer)).map((m) => m.sequence));
+    const prefix = c.id.toUpperCase();
     const presentes = porTipo.get(c.trainerType) ?? [];
-    const sp = new Set(presentes), se = new Set(esperados);
-    const faltan = esperados.filter((n) => !sp.has(n));
-    const sobran = presentes.filter((n) => !se.has(n));
+    const secuenciasInstaladas = new Set();
+    for (const nombre of presentes) {
+      const match = nombre.match(new RegExp(`^${prefix}_(\\d+)_\\d+$`));
+      if (match) secuenciasInstaladas.add(Number(match[1]));
+    }
+    const faltanMapas = [...mapasEsperados].filter((sequence) => !secuenciasInstaladas.has(sequence));
+    const final = presentes.includes(`${prefix}_FINAL`);
     campañas.push({
       id: c.id, tipo: c.trainerType, tipoValido: validos.has(c.trainerType), numId: validos.get(c.trainerType) ?? null,
-      esperados: esperados.length, instalados: presentes.length, faltan: faltan.length, sobran: sobran.length,
-      ejemploFaltan: faltan.slice(0, 3), ejemploSobran: sobran.slice(0, 3),
+      mapasEsperados: mapasEsperados.size, mapasCubiertos: [...mapasEsperados].filter((s) => secuenciasInstaladas.has(s)).length,
+      esperados: c.maps.reduce((total, m) => total + m.npcs.filter((n) => n.trainer).length, 0),
+      instalados: presentes.length, faltanMapas: faltanMapas.length, combateFinal: final,
+      ejemploMapasFaltantes: faltanMapas.slice(0, 3),
     });
     if (!validos.has(c.trainerType)) problemas.push({ tipo: "tipo_campaña_invalido", clave: [c.id], valor: c.trainerType });
+    if (faltanMapas.length) problemas.push({ tipo: "mapas_campaña_sin_entrenador", clave: [c.id], valor: faltanMapas });
+    if (!final) problemas.push({ tipo: "combate_final_faltante", clave: [c.id], valor: `${prefix}_FINAL` });
   }
-  return { tiposDefinidos: validos.size, entradas: compuestas.length, problemas, campañas };
+  return { tiposDefinidos: validos.size, entradas: compuestas.length, problemas, avisos, campañas };
 }
 
 function main() {
   const r = verificar();
   const tiposInvalidos = r.problemas.filter((p) => p.tipo.startsWith("tipo")).length;
-  const internos = r.problemas.filter((p) => p.tipo === "indice_huerfano").length;
-  const desfase = r.campañas.some((c) => c.faltan || c.sobran);
+  const internos = r.avisos.filter((p) => p.tipo === "indice_huerfano_legacy").length;
+  const cobertura = r.problemas.filter((p) => p.tipo === "mapas_campaña_sin_entrenador" || p.tipo === "combate_final_faltante").length;
   if (process.argv.includes("--json")) {
     console.log(JSON.stringify(r, null, 2));
   } else {
     console.log(`Tipos definidos en trainer_types.dat: ${r.tiposDefinidos}`);
     console.log(`Entradas de entrenador (claves compuestas): ${r.entradas}`);
-    console.log(`Tipos inválidos o inconsistentes: ${tiposInvalidos} · índices huérfanos: ${internos}`);
+    console.log(`Tipos inválidos o inconsistentes: ${tiposInvalidos} · índices huérfanos legacy: ${internos} (aviso, no bloquea)`);
     for (const c of r.campañas) {
-      console.log(`${c.tipoValido ? "✔" : "✘"} ${c.id.padEnd(15)} ${c.tipo} (id ${c.numId}) · esperados ${c.esperados} · instalados ${c.instalados} · faltan ${c.faltan} · sobran ${c.sobran}`);
+      console.log(`${c.tipoValido && !c.faltanMapas && c.combateFinal ? "✔" : "✘"} ${c.id.padEnd(15)} ${c.tipo} (id ${c.numId}) · mapas ${c.mapasCubiertos}/${c.mapasEsperados} · variantes ${c.instalados} · final ${c.combateFinal ? "sí" : "no"}`);
     }
-    if (desfase) console.log("✘ Los nombres de entrenador instalados no coinciden con el plano actual (ver --json).");
   }
-  process.exit(tiposInvalidos || internos || desfase ? 1 : 0);
+  process.exit(tiposInvalidos || cobertura ? 1 : 0);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();

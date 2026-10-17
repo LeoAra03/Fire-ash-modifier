@@ -108,7 +108,8 @@ sección 1).
 | 870 | `RUTA_DE_DIOS_UNLOCKED` | Lo activa hablar con Volus (Map513, tras las 17 Tablas) |
 | 873 | `RUTA_DE_DIOS_ARCEUS_RESOLVED` | Arceus derrotado en La Ruta de Dios |
 | 876 | `RUTA_DE_DIOS_COMPLETED` | La Ruta de Dios completada de principio a fin |
-| 940–946 | *(sin nombre)* | Sello de cada grieta multiversal (jefe derrotado) |
+| 940–946 | `POKEMOD MULTIVERSO SELLO 01…07` | Sello de cada emisión multiversal (jefe derrotado) |
+| 947 | `POKEMOD MULTIVERSO SELLO 08 RED CUMBRE` | Sello de RED en la cumbre del Monte Silver |
 | 960–964 | *(sin nombre)* | Dimensión del barco completada (puerta del gimnasio) |
 | 970–976 | *(sin nombre)* | Medalla anterior del circuito de Atlas |
 

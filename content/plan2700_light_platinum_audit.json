@@ -1,0 +1,317 @@
+{
+  "schema": "plan2700_region_audit/1.0",
+  "campaign": "light_platinum",
+  "title": "Light Platinum",
+  "range": [
+    3120,
+    3138
+  ],
+  "planMaps": 19,
+  "leaders": [
+    {
+      "map": 3124,
+      "name": "Jessica",
+      "switch": 708
+    },
+    {
+      "map": 3126,
+      "name": "Esmeralda",
+      "switch": 709
+    },
+    {
+      "map": 3128,
+      "name": "Lucas",
+      "switch": 710
+    },
+    {
+      "map": 3130,
+      "name": "Thomas",
+      "switch": 711
+    },
+    {
+      "map": 3132,
+      "name": "Atlas",
+      "switch": 712
+    },
+    {
+      "map": 3134,
+      "name": "Rayner",
+      "switch": 713
+    },
+    {
+      "map": 3136,
+      "name": "Sophia",
+      "switch": 714
+    },
+    {
+      "map": 3138,
+      "name": "Wesley",
+      "switch": 715
+    }
+  ],
+  "encounters": {
+    "zones": 10,
+    "slots": 61,
+    "minLevel": 6,
+    "maxLevel": 60
+  },
+  "actualEvents": 175,
+  "actualActors": 65,
+  "actualWarps": 53,
+  "maxEvents": 19,
+  "maxWidth": 66,
+  "maxHeight": 48,
+  "bgms": [
+    "Sinnoh Route.ogg"
+  ],
+  "tileSets": [
+    "ROMN_1_p1",
+    "ROMN_1_p2",
+    "ROMN_1_p3",
+    "ROMN_1_p4",
+    "ROMN_1_p5",
+    "ROMN_1_p6",
+    "ROMN_1_p7"
+  ],
+  "chapters": {
+    "1": 12,
+    "2": 7
+  },
+  "closeWriters": [],
+  "mapRows": [
+    {
+      "mapId": 3120,
+      "sequence": 1,
+      "chapter": 1,
+      "events": 19,
+      "actors": 4,
+      "warps": 12,
+      "width": 40,
+      "height": 46,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p1"
+    },
+    {
+      "mapId": 3121,
+      "sequence": 2,
+      "chapter": 1,
+      "events": 17,
+      "actors": 4,
+      "warps": 10,
+      "width": 40,
+      "height": 30,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p2"
+    },
+    {
+      "mapId": 3122,
+      "sequence": 3,
+      "chapter": 1,
+      "events": 15,
+      "actors": 4,
+      "warps": 8,
+      "width": 36,
+      "height": 28,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p2"
+    },
+    {
+      "mapId": 3123,
+      "sequence": 4,
+      "chapter": 1,
+      "events": 9,
+      "actors": 4,
+      "warps": 2,
+      "width": 36,
+      "height": 48,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p3"
+    },
+    {
+      "mapId": 3124,
+      "sequence": 5,
+      "chapter": 1,
+      "events": 11,
+      "actors": 5,
+      "warps": 3,
+      "width": 36,
+      "height": 34,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p4"
+    },
+    {
+      "mapId": 3125,
+      "sequence": 6,
+      "chapter": 1,
+      "events": 7,
+      "actors": 4,
+      "warps": 0,
+      "width": 66,
+      "height": 32,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p4"
+    },
+    {
+      "mapId": 3126,
+      "sequence": 7,
+      "chapter": 1,
+      "events": 7,
+      "actors": 2,
+      "warps": 2,
+      "width": 13,
+      "height": 14,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p5"
+    },
+    {
+      "mapId": 3127,
+      "sequence": 8,
+      "chapter": 1,
+      "events": 6,
+      "actors": 1,
+      "warps": 2,
+      "width": 13,
+      "height": 14,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p5"
+    },
+    {
+      "mapId": 3128,
+      "sequence": 9,
+      "chapter": 1,
+      "events": 8,
+      "actors": 3,
+      "warps": 2,
+      "width": 13,
+      "height": 14,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p5"
+    },
+    {
+      "mapId": 3129,
+      "sequence": 10,
+      "chapter": 1,
+      "events": 6,
+      "actors": 1,
+      "warps": 2,
+      "width": 14,
+      "height": 9,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p6"
+    },
+    {
+      "mapId": 3130,
+      "sequence": 11,
+      "chapter": 1,
+      "events": 8,
+      "actors": 3,
+      "warps": 2,
+      "width": 12,
+      "height": 9,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p6"
+    },
+    {
+      "mapId": 3131,
+      "sequence": 12,
+      "chapter": 1,
+      "events": 8,
+      "actors": 1,
+      "warps": 4,
+      "width": 20,
+      "height": 10,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p6"
+    },
+    {
+      "mapId": 3132,
+      "sequence": 13,
+      "chapter": 2,
+      "events": 8,
+      "actors": 1,
+      "warps": 4,
+      "width": 14,
+      "height": 9,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p6"
+    },
+    {
+      "mapId": 3133,
+      "sequence": 14,
+      "chapter": 2,
+      "events": 7,
+      "actors": 4,
+      "warps": 0,
+      "width": 15,
+      "height": 11,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p7"
+    },
+    {
+      "mapId": 3134,
+      "sequence": 15,
+      "chapter": 2,
+      "events": 8,
+      "actors": 5,
+      "warps": 0,
+      "width": 15,
+      "height": 11,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p7"
+    },
+    {
+      "mapId": 3135,
+      "sequence": 16,
+      "chapter": 2,
+      "events": 7,
+      "actors": 4,
+      "warps": 0,
+      "width": 15,
+      "height": 11,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p7"
+    },
+    {
+      "mapId": 3136,
+      "sequence": 17,
+      "chapter": 2,
+      "events": 8,
+      "actors": 5,
+      "warps": 0,
+      "width": 15,
+      "height": 11,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p7"
+    },
+    {
+      "mapId": 3137,
+      "sequence": 18,
+      "chapter": 2,
+      "events": 7,
+      "actors": 4,
+      "warps": 0,
+      "width": 15,
+      "height": 11,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p7"
+    },
+    {
+      "mapId": 3138,
+      "sequence": 19,
+      "chapter": 2,
+      "events": 9,
+      "actors": 6,
+      "warps": 0,
+      "width": 15,
+      "height": 11,
+      "bgm": "Sinnoh Route.ogg",
+      "tileset": "ROMN_1_p7"
+    }
+  ],
+  "failures": [],
+  "warnings": [
+    "Light Platinum: sus BGM viven en el contrato de campaña, no en dlc_ambience.json",
+    "Light Platinum: densidad máxima 19 eventos/mapa; revisar los mapas densos en el perfil visual",
+    "Light Platinum: volumen, clima y escucha de transición requieren playtest"
+  ]
+}

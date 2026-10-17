@@ -451,3 +451,10 @@ recursos 27/27 · alcance AST 229+47 · npm test verde · artefactos verificados
 
 `npm run verify:ruta_de_dios` ejecutado desde la raíz del repositorio: **EXIT=0**.
 Salida: `Verification OK: La Ruta de Dios fully verified (7 floors, Arceus Lv. 200, Volo, Dialga, Palkia, trainers, switches, and scripts).`
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

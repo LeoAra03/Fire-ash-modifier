@@ -75,3 +75,10 @@ npm run verify:package
 ## Límite honesto
 
 «Completo» aquí significa **toda la estructura detectable de los cuatro ROMs integrada y recorrible**. No significa emulación byte por byte ni copia literal de sus guiones y assets. La minería de ROM puede producir falsos positivos y no recupera todos los nombres internos; por eso se conserva un trayecto lineal seguro y la narrativa se reescribe para Ash visitante. La sensación final todavía debe revisarse manualmente en Kirin/Game.exe.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

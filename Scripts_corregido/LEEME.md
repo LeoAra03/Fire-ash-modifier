@@ -1,5 +1,13 @@
 # Paquete corregido, «La Ruta de Dios», «Dimensional Nightmare» y «Expansión Multiversal»
 
+## Limitaciones comprobables de esta entrega (FASE 027)
+
+Este archivo explica cómo instalar un parche sobre una copia existente de Fire Ash; no contiene `Game.exe` ni reemplaza las partidas del jugador. Antes de instalar, conserva una copia de la carpeta del juego y de `Save*.rxdata` fuera del paquete.
+
+Los ZIP publicados excluyen backups, partidas, `Game.rxdata`, herramientas, informes internos, ROMs invitadas y mosaicos derivados de ROM. La comprobación reproducible es `npm run verify:plan2700:fase027`. La instalación limpia real, el recorrido completo, Android/Kirin, FPS/memoria, revisión externa y las firmas del playtest siguen pendientes de una sesión humana con el binario; no se deben leer como certificadas por este README.
+
+Las limitaciones abiertas y su estado están en [`docs/ENTREGA_FINAL_LIMITACIONES.md`](../docs/ENTREGA_FINAL_LIMITACIONES.md) y [`docs/qa/defectos.md`](../docs/qa/defectos.md). Si se corrige un defecto tardío, ejecuta `npm run verify:all` además del verificador del bloque y conserva la regresión.
+
 ## ROMs al 100 % nativo (R19, 2026-10-12) — las cinco campañas usan el contenido de la ROM tal cual
 
 Esta entrega cumple el encargo al pie de la letra: **no se adaptó nada**, se usó lo que trae
