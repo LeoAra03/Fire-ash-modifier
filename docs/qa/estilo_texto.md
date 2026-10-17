@@ -54,3 +54,12 @@ Expone implementación, no voz narrativa.
 > estés preparado.»
 
 Ofrece recuperación sin humillación ni bloqueo permanente.
+
+## Reglas aprendidas de las medidas de juego
+
+Las medidas de juego de `docs/qa/medidas_juego.md` no sustituyen una lectura
+humana. Antes de cambiar un texto se escribe una hipótesis y se mide tiempo,
+atasco, comprensión y abandono con la misma versión. Un texto más corto no es
+automáticamente mejor: si elimina una consecuencia necesaria, se revierte.
+Las conclusiones de cinco personas son indicativas y requieren repetición con
+un grupo independiente.

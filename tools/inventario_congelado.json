@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-17T19:16:57.822Z",
+  "generatedAt": "2026-10-17T20:29:39.340Z",
   "git": {
     "branch": "arena/8e9aeeac-fire-ash-modifier",
-    "commit": "2fa1ef7f06b3b672ccb8bca8404139731c1b2fb0"
+    "commit": "2a664a418e64186bb6cb61bb03e5afb34864e36f"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5474,
+    "fileCount": 5478,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 259
+      "tools": 263
     },
     "files": [
       {
@@ -27047,6 +27047,26 @@
         "path": "tools/plan2700/lote6_fase031_adversario.mjs",
         "bytes": 12626,
         "sha256": "08030f52312e69ccbf73930ea3ef839c71fb370f3944ddc64551d2086375b673"
+      },
+      {
+        "path": "tools/plan2700/lote7_fase032_resistencia.mjs",
+        "bytes": 11494,
+        "sha256": "e048e28073f733c8c2d4b496e8ba1f929afbcb0543b673e953b7e871543fd228"
+      },
+      {
+        "path": "tools/plan2700/lote7_fase033_coherencia.mjs",
+        "bytes": 12216,
+        "sha256": "f9b41ad4b115c7bf8afedaa7b2c4512c5d386a2c1f9a26dd1dbc708fbe96eac7"
+      },
+      {
+        "path": "tools/plan2700/lote7_fase034_experimentos.mjs",
+        "bytes": 11101,
+        "sha256": "1ffcd952538bf7c6b8e9a4f5bdd8ef1b54f8e993f1a5d485ad6449e1035b65b0"
+      },
+      {
+        "path": "tools/plan2700/lote7_fase035_cierre_experimentos.mjs",
+        "bytes": 10822,
+        "sha256": "43e9b4efb36ada8d90e92cd3566ce5091b6386836852f07b577082fe18d48399"
       },
       {
         "path": "tools/plan2700/repair_electramew_character.mjs",

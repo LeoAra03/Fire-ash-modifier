@@ -112,7 +112,16 @@ La suite general puede requerir recortes DN no redistribuibles. Ese resultado
 se documenta como pendiente; no se reemplaza la fuente ausente por un PNG
 sintético.
 
-## 6. Restaurar cambios desde backup
+## 6. Medir un cambio de diseño
+
+Antes de rediseñar un mapa, texto, jefe, menú o recompensa escribe la hipótesis
+y usa `docs/qa/protocolo_experimento.md`. Registra una medida antes y otra
+después en `docs/qa/medidas_juego.md`; no presentes cinco participantes como
+validación estadística y conserva también los resultados negativos. Si un
+cambio no se replica, revierte el cambio y anota la regresión. La medición no
+autoriza a ampliar el alcance ni a convertir una preferencia en defecto.
+
+## 7. Restaurar cambios desde backup
 
 Primero identifica si el daño es no commiteado, puntual o total:
 
@@ -128,7 +137,7 @@ antes de extraerlo a una carpeta temporal. Nunca copies una partida ni
 `Game.rxdata` desde un backup al paquete de entrega. Después del rollback,
 re-sincroniza y ejecuta el verificador del instalador.
 
-## 7. Ejemplo completo, copiable y aislado
+## 8. Ejemplo completo, copiable y aislado
 
 Este ejemplo no toca `pokemon_fire_ash/`, no modifica Git y deja su carpeta de
 prueba como estaba. Crea una especificación mínima, la valida y la elimina:

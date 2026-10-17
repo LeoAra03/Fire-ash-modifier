@@ -1,0 +1,503 @@
+{
+  "schema": "lote7_fase035_cierre_experimentos/1.0",
+  "tasks": "3400–3499",
+  "experiments": {
+    "source": "content/lote7_fase034_experimentos.json",
+    "count": 25,
+    "errors": [],
+    "allResultsEmpty": true,
+    "secondIndependentGroup": {
+      "target": 5,
+      "results": [],
+      "status": "manual_pending"
+    },
+    "reversionLog": {
+      "entries": [],
+      "status": "manual_pending: se completa solo al observar un cambio no replicado"
+    },
+    "timebox": {
+      "minutesPerExperiment": 90,
+      "totalMinutes": 2250,
+      "enforcement": "manual_pending"
+    },
+    "learnings": {
+      "conclusions": [],
+      "status": "manual_pending"
+    }
+  },
+  "inventory": {
+    "exists": true,
+    "generatedAt": "2026-10-17T20:29:39.340Z",
+    "recordedCommit": "2a664a418e64186bb6cb61bb03e5afb34864e36f",
+    "fileCount": 5478,
+    "phaseTools": [
+      "tools/plan2700/lote7_fase032_resistencia.mjs",
+      "tools/plan2700/lote7_fase033_coherencia.mjs",
+      "tools/plan2700/lote7_fase034_experimentos.mjs",
+      "tools/plan2700/lote7_fase035_cierre_experimentos.mjs"
+    ],
+    "excludesSelf": true,
+    "status": "static_present_parent_commit_expected"
+  },
+  "scope": {
+    "originalFireAshChangesBeforeAudit": [],
+    "originalFireAshUntouchedByThisPhase": true,
+    "worktreePolicy": "la fase genera únicamente su reporte y documentos; no toca pokemon_fire_ash ni los ZIP de entrega",
+    "noScopeExpansion": true
+  },
+  "documentation": {
+    "experiments": "docs/qa/experimentos.md",
+    "measures": "docs/qa/medidas_juego.md",
+    "protocol": "docs/qa/protocolo_experimento.md",
+    "styleRules": true,
+    "maintenanceRules": true
+  },
+  "criteria": {
+    "C1": {
+      "targetUnits": 6283152,
+      "observedCells": 5493642,
+      "coverageReport": true,
+      "status": "not_satisfied_or_different_census"
+    },
+    "C2": {
+      "defectsDocumentPresent": true,
+      "openOrPendingEntries": 6,
+      "status": "not_satisfied_open_register"
+    },
+    "C3": {
+      "fuzzReportPresent": true,
+      "eventSeeds": 20000,
+      "cellMutations": 50000,
+      "invariantFailures": 0,
+      "cuts": true,
+      "status": "static_pass_runtime_pending"
+    },
+    "C4": {
+      "blindRounds": 3,
+      "observedRounds": 0,
+      "status": "manual_pending"
+    },
+    "C5": {
+      "verifyAll": "pending_or_blocked_by_authorized_DN_sources",
+      "ci": "manual_pending",
+      "cleanClone": "manual_pending",
+      "status": "manual_pending"
+    },
+    "simultaneous": "manual_pending"
+  },
+  "designFreeze": {
+    "requested": true,
+    "date": null,
+    "exceptions": [],
+    "status": "manual_pending"
+  },
+  "taskMatrix": [
+    {
+      "id": 3400,
+      "status": "static_review"
+    },
+    {
+      "id": 3401,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3402,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3403,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3404,
+      "status": "static_review"
+    },
+    {
+      "id": 3405,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3406,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3407,
+      "status": "static_review"
+    },
+    {
+      "id": 3408,
+      "status": "static_review"
+    },
+    {
+      "id": 3409,
+      "status": "static_review"
+    },
+    {
+      "id": 3410,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3411,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3412,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3413,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3414,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3415,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3416,
+      "status": "static_review"
+    },
+    {
+      "id": 3417,
+      "status": "static_review"
+    },
+    {
+      "id": 3418,
+      "status": "static_review"
+    },
+    {
+      "id": 3419,
+      "status": "static_review"
+    },
+    {
+      "id": 3420,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3421,
+      "status": "static_review"
+    },
+    {
+      "id": 3422,
+      "status": "static_review"
+    },
+    {
+      "id": 3423,
+      "status": "static_review"
+    },
+    {
+      "id": 3424,
+      "status": "static_review"
+    },
+    {
+      "id": 3425,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3426,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3427,
+      "status": "static_review"
+    },
+    {
+      "id": 3428,
+      "status": "static_review"
+    },
+    {
+      "id": 3429,
+      "status": "static_review"
+    },
+    {
+      "id": 3430,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3431,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3432,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3433,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3434,
+      "status": "static_review"
+    },
+    {
+      "id": 3435,
+      "status": "static_review"
+    },
+    {
+      "id": 3436,
+      "status": "static_review"
+    },
+    {
+      "id": 3437,
+      "status": "static_review"
+    },
+    {
+      "id": 3438,
+      "status": "static_review"
+    },
+    {
+      "id": 3439,
+      "status": "static_review"
+    },
+    {
+      "id": 3440,
+      "status": "static_review"
+    },
+    {
+      "id": 3441,
+      "status": "static_review"
+    },
+    {
+      "id": 3442,
+      "status": "static_review"
+    },
+    {
+      "id": 3443,
+      "status": "static_review"
+    },
+    {
+      "id": 3444,
+      "status": "static_review"
+    },
+    {
+      "id": 3445,
+      "status": "static_review"
+    },
+    {
+      "id": 3446,
+      "status": "static_review"
+    },
+    {
+      "id": 3447,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3448,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3449,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3450,
+      "status": "static_review"
+    },
+    {
+      "id": 3451,
+      "status": "static_review"
+    },
+    {
+      "id": 3452,
+      "status": "static_review"
+    },
+    {
+      "id": 3453,
+      "status": "static_review"
+    },
+    {
+      "id": 3454,
+      "status": "static_review"
+    },
+    {
+      "id": 3455,
+      "status": "static_review"
+    },
+    {
+      "id": 3456,
+      "status": "static_review"
+    },
+    {
+      "id": 3457,
+      "status": "static_review"
+    },
+    {
+      "id": 3458,
+      "status": "static_review"
+    },
+    {
+      "id": 3459,
+      "status": "static_review"
+    },
+    {
+      "id": 3460,
+      "status": "static_review"
+    },
+    {
+      "id": 3461,
+      "status": "static_review"
+    },
+    {
+      "id": 3462,
+      "status": "static_review"
+    },
+    {
+      "id": 3463,
+      "status": "static_review"
+    },
+    {
+      "id": 3464,
+      "status": "static_review"
+    },
+    {
+      "id": 3465,
+      "status": "static_review"
+    },
+    {
+      "id": 3466,
+      "status": "static_review"
+    },
+    {
+      "id": 3467,
+      "status": "static_review"
+    },
+    {
+      "id": 3468,
+      "status": "static_review"
+    },
+    {
+      "id": 3469,
+      "status": "static_review"
+    },
+    {
+      "id": 3470,
+      "status": "static_review"
+    },
+    {
+      "id": 3471,
+      "status": "static_review"
+    },
+    {
+      "id": 3472,
+      "status": "static_review"
+    },
+    {
+      "id": 3473,
+      "status": "static_review"
+    },
+    {
+      "id": 3474,
+      "status": "static_review"
+    },
+    {
+      "id": 3475,
+      "status": "static_review"
+    },
+    {
+      "id": 3476,
+      "status": "static_review"
+    },
+    {
+      "id": 3477,
+      "status": "static_review"
+    },
+    {
+      "id": 3478,
+      "status": "static_review"
+    },
+    {
+      "id": 3479,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3480,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3481,
+      "status": "static_review"
+    },
+    {
+      "id": 3482,
+      "status": "static_review"
+    },
+    {
+      "id": 3483,
+      "status": "static_review"
+    },
+    {
+      "id": 3484,
+      "status": "static_review"
+    },
+    {
+      "id": 3485,
+      "status": "static_review"
+    },
+    {
+      "id": 3486,
+      "status": "static_review"
+    },
+    {
+      "id": 3487,
+      "status": "static_review"
+    },
+    {
+      "id": 3488,
+      "status": "static_review"
+    },
+    {
+      "id": 3489,
+      "status": "static_review"
+    },
+    {
+      "id": 3490,
+      "status": "static_review"
+    },
+    {
+      "id": 3491,
+      "status": "static_review"
+    },
+    {
+      "id": 3492,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3493,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3494,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3495,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3496,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3497,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3498,
+      "status": "manual_pending"
+    },
+    {
+      "id": 3499,
+      "status": "manual_pending"
+    }
+  ],
+  "manual": [
+    "ejecutar los 25 experimentos con cinco personas y una segunda ronda independiente",
+    "comparar primera/última medida, publicar resultados negativos y aplicar regresiones",
+    "decidir qué cambios se aceptan, revierten o mantienen sin ampliar alcance",
+    "hacer tres rondas de playtest ciego y cerrar C1–C5 simultáneamente"
+  ],
+  "status": "static_review_manual_pending"
+}
