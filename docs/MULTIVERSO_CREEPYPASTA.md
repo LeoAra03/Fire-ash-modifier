@@ -40,7 +40,7 @@ Cada emisión: señal de atmósfera, guardiana de curación, jefe y salida libre
 Todas siguen las reglas de oro del proyecto:
 
 - **`canLose` en todas** (perder = reintentar cuando quieras, con curación al lado).
-- **Derrota permanente al ganar**: self-switch A + sello (`868–875`) + contador (`v[264]`) + página de registro; **no vuelven a atacar**.
+- **Derrota permanente al ganar**: self-switch A + sello (`940–946` para las siete emisiones; `947` para RED) + contador (`v[264]`) + página de registro; **no vuelven a atacar**.
 - **Revancha amistosa solo por menú** («Revancha / Luego»): nunca forzada.
 - **Recompensa única** por primera victoria (8 objetos, sin duplicados en el catálogo).
 - Equipos ≤6 Pokémon y niveles 100–108 (tope del juego: 150).

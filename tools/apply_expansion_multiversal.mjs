@@ -21,8 +21,9 @@
  *      "PokeMod Hub:") y Oak se queda como consejero de las lecturas.
  *
  * No se crea ni un switch ni una variable nueva: todo el progreso vive en el
- * contador 264 y en los sellos 868-875, de modo que ninguna partida guardada
- * puede quedarse sin slots. Toda transferencia termina en una celda abierta y
+ * contador 264 y en los sellos 940-947, de modo que ninguna partida guardada
+ * puede quedarse sin slots. El bloque 868-875 queda reservado para Arceus.
+ * Toda transferencia termina en una celda abierta y
  * todo destino tiene retorno: se verifica al final.
  *
  * Idempotente: al reemplazar un evento propio se conserva su ID. Si no, cada

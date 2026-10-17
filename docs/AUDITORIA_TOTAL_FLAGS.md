@@ -1,13 +1,13 @@
 # Auditoría total de flags de Fire Ash
 
-Generada: 2026-10-14T17:11:35.043Z
+Generada: 2026-10-17T16:07:01.293Z
 
 ## Cobertura
 
 - 3465 mapas.
 - 50 eventos comunes.
 - 409 secciones de script.
-- 994 slots de switch (882 con nombre).
+- 994 slots de switch (890 con nombre).
 - 354 slots de variable (306 con nombre).
 - 8037 claves de self-switch observadas.
 - 89 expresiones dinámicas distintas.
@@ -1256,14 +1256,14 @@ Conflictos de reserva: **0**.
 | 937 | RUTA_DE_DIOS_RELIQUIA_2F | 1 | 1 | 0 | 0 | used |
 | 938 | RUTA_DE_DIOS_RELIQUIA_3F | 1 | 1 | 0 | 0 | used |
 | 939 | RUTA_DE_DIOS_RELIQUIA_4F | 1 | 1 | 0 | 0 | used |
-| 940 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 941 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 942 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 943 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 944 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 945 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 946 | — | 2 | 1 | 0 | 0 | used; unnamed |
-| 947 | — | 0 | 1 | 0 | 0 | write only/static; unnamed |
+| 940 | POKEMOD MULTIVERSO SELLO 01 TORRE | 2 | 1 | 0 | 0 | used |
+| 941 | POKEMOD MULTIVERSO SELLO 02 PARTIDA | 2 | 1 | 0 | 0 | used |
+| 942 | POKEMOD MULTIVERSO SELLO 03 FOSA | 2 | 1 | 0 | 0 | used |
+| 943 | POKEMOD MULTIVERSO SELLO 04 CINTA | 2 | 1 | 0 | 0 | used |
+| 944 | POKEMOD MULTIVERSO SELLO 05 GLITCH | 2 | 1 | 0 | 0 | used |
+| 945 | POKEMOD MULTIVERSO SELLO 06 ECO | 2 | 1 | 0 | 0 | used |
+| 946 | POKEMOD MULTIVERSO SELLO 07 CONSOLA | 2 | 1 | 0 | 0 | used |
+| 947 | POKEMOD MULTIVERSO SELLO 08 RED CUMBRE | 0 | 1 | 0 | 0 | write only/static |
 | 948 | POKEMOD LIGA OSCURA COMPLETA | 1 | 2 | 0 | 0 | used |
 | 949 | — | 0 | 0 | 0 | 0 | no literal use |
 | 950 | — | 5 | 1 | 0 | 0 | used; unnamed |
@@ -1683,49 +1683,10 @@ Conflictos de reserva: **0**.
 - **Variables 104–143:** decisiones persistentes de los 40 episodios Tier 1.
 - **Switches 748–867 y variables 144–263:** progreso y decisiones persistentes de las primeras 120 rutas Tier 2.
 
-## Huecos reales consumibles por el plan (FASE 23, 2026-10-15)
-
-Revisión cruzada: uso literal (inventario congelado) × nombres de `System.rxdata` × constantes de script (`PokeMod_RutaDeDios`, `PokeMod_CanonArceus`) × registro DN (`tools/dn_name_flags.mjs`, verificado en verde).
-
-### Switches (887 usados de 1–994)
-
-| Zona | Libres aparentes | Veredicto |
-|---|---:|---|
-| Original 1–700 | 75 (14 con nombre) | **NO consumir**: territorio del juego base (regla de oro). |
-| Reservada 701–867 | 0 | Asignación canónica completa (167/167). Nada que consumir. |
-| PokeMod 868–994 | 32 | Ver detalle abajo. |
-
-De los 32 libres aparentes de la zona PokeMod:
-
-- **12 reservados (NO consumir):** 868 (bloque documentado de sellos 868–875), 869 `RUTA_DE_DIOS_ARCEUS_MERCY` (constante en `PokeMod_RutaDeDios`), 881 `RUTA_DE_DIOS_PRELUDE_SEEN` (constante), 902 `DN_ROTOM_OBTAINED`, 909 `DN_JEFE_NEXO_FASE_A`, 910–915 `DN_BOSS_EP01–06_PASO_1` y 916 `DN_BOSS_RESERVA` (registro DN declarado y verificado, aún sin uso literal).
-- **20 huecos reales (sin nombre, sin uso literal, sin constante, sin registro):** **949 · 958 · 959 · 965 · 966 · 967 · 968 · 969 · 978–989**. Son bolsillos intercalados entre bandas activas (DN 882–939, grietas 940–946, dimensiones 960–964, medallas 970–976, campañas 990–994): consumibles con cautela, sin bloque contiguo grande.
-- **Territorio nuevo recomendado para el plan: 995 en adelante** (limpio, aditivo, sin nombre ni uso).
-
-### Variables (293 usadas de 1–354)
-
-| Zona | Libres aparentes | Veredicto |
-|---|---:|---|
-| Original 1–100 | 39 (30 con nombre) | **NO consumir**: territorio del juego base. |
-| Reservada 101–263 | 0 | Asignación canónica completa (163/163). Nada que consumir. |
-| PokeMod 264–354 | 22 | Ver detalle abajo. |
-
-De los 22 libres aparentes de la zona PokeMod:
-
-- **5 reservadas por el registro DN (NO consumir):** 267 `DN_EPISODIO_ACTUAL`, 280 `DN_MEDALLAS_CONTADAS`, 286 `DN_W8_AIRE`, 287 `DN_W9_CANTO`, 288 `DN_W7_CORREAS`.
-- **17 huecos reales (sin nombre, sin uso literal):** **308 · 309 · 323–329 · 334–340 · 349**. Intercalados entre la banda DN (264–307), atavíos (316–317) y progreso de campañas (350–354): consumibles con cautela.
-- **Territorio nuevo recomendado para el plan: 355 en adelante.**
-
-### Regla de consumo
-
-1. Lo primero: **switches ≥ 995 y variables ≥ 355** (territorio nuevo, contiguo, aditivo).
-2. Solo si se necesita un ID interior: usar los huecos reales listados arriba, **nunca** los reservados por nombre/constante/registro ni los de la zona original.
-3. **Nombres: todo switch o variable creado durante el plan 900 usa el prefijo `POKEMOD 900 `** (definido en FASE 24, ver `docs/qa/politica_ids.md` § «Prefijo de nombres del plan 900»). El prefijo estaba libre a fecha de su fijación.
-4. Toda asignación nueva debe registrarse en `docs/qa/politica_ids.md` y regenerar el inventario congelado.
-
 ## Indicadores que requieren cautela
 
 - Switches con nombre sin uso literal: 25.
-- Switches usados sin nombre: 31.
+- Switches usados sin nombre: 23.
 - Switches con escritura estática sin lectura literal: 27.
 - Switches con lectura/acceso sin escritura estática: 25.
 

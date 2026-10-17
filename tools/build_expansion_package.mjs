@@ -173,7 +173,7 @@ GARANTÍAS
 - Ningún combate encierra: todos permiten perder y hay curación y retorno.
 - Ningún evento nuevo ofrece un menú de destinos.
 - No se crea ni un switch ni una variable nueva: el progreso vive en \\v[264]
-  y en los sellos 868-875, así que ninguna partida guardada se queda sin slots.
+  y en los sellos 940-947, así que ninguna partida guardada se queda sin slots. El bloque 868-875 queda reservado para Arceus.
 
 LIMITACIONES CONOCIDAS
 ----------------------

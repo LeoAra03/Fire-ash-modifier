@@ -145,9 +145,10 @@ te reconocen); ninguna recompensa de A o B es necesaria para terminar C.
 
 ## Presupuesto de flags
 
-El arco de las Grietas vive en el contador `264` y los sellos `868‑875`. Para
-las tres aventuras se reserva un bloque nuevo, **verificado por el instalador
-antes de escribir** (si el rango no está libre, se detiene y lo dice):
+El arco de las Grietas vive en el contador `264` y los sellos `940‑947`.
+El bloque `868‑875` queda reservado para La Ruta de Dios. Para las tres
+aventuras se reserva un bloque nuevo, **verificado por el instalador antes de
+escribir** (si el rango no está libre, se detiene y lo dice):
 
 | Aventura | Variables | Switches |
 |---|---|---|

@@ -142,10 +142,10 @@ El laboratorio **vuelve a ser el de siempre**:
 |---|---|
 | Sin menús de viaje | Ningún evento nuevo reparte más de un destino; no hay cápsula central |
 | Siempre se puede volver | Toda grieta, emisión, muelle, sótano, isla y arena tiene salida explícita |
-| Enemigo derrotado, derrotado | Sellos `868-875` en las grietas; self-switch A en la Liga Oscura |
+| Enemigo derrotado, derrotado | Sellos `940-946` en las siete grietas y `947` para RED; self-switch A en la Liga Oscura |
 | Combates perdonavidas | `canLose` en los cinco combates de la Liga Oscura y en los Pokégods |
 | Revancha opcional | Menú del jefe, nunca forzado |
-| Cero switches y cero variables nuevos | No quedaban IDs libres: todo vive en `\v[264]` y los sellos `868-875` |
+| Cero switches y cero variables nuevos | No se consume el bloque canónico de Arceus: el progreso vive en `\v[264]` y los sellos `940-947` |
 | Cero assets ausentes | Sprites, fondos, tipos de entrenador, objetos y especies verificados antes de grabar |
 
 ## Cómo revertirlo
