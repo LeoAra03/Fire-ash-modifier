@@ -1,14 +1,34 @@
 Cierre del bloque GBC · verificación ejecutada el 2026-10-17
 
-Comando: npm run verify:rom:nativo
-Resultado: EXIT=1 (no está en verde; cierre pendiente de corregir 11 fallos).
+Alcance de la tanda (líneas 96–100 de tareas.txt)
+- Se conserva la escala ×2 de los tilesets y mosaicos nativos con vecino más cercano.
+- El BASE_ID 384 y la elevación/colisión declaradas por el manifiesto siguen siendo
+  la fuente de la instalación; no se editan mapas originales.
+- Las aperturas de acceso sólo usan el gemelo transitable del mismo metatile bajo
+  un evento. El dibujo del ROM no cambia.
 
-Salida resumida:
-verificación nativa: 1227 mapas · 212 tilesets · 12411 eventos revisados · 11 fallos
-celdas 1486028 · sólidas 874996 (58.9 %) · libres 611032 · accesos abiertos 4743
+Corrección aplicada antes de verificar:
+`npm run repair:rom:nativo:access`
 
-Fallos reportados: una celda no coincidente en Map3031, Map3079, Map3094, Map3120,
-Map3125, Map3323, Map3385, Map3805, Map3839 y Map3874; además, en Map3120 hay eventos
-solapados sobre una celda sólida (incluidos «PokeMod Campaña ROM: NPC — Kaori» @22,21).
-No se declara el cierre como aprobado mientras el verificador termine con código distinto
- de cero. Reejecutar `npm run verify:rom:nativo` tras resolverlos.
+El reparador detectó y respaldó en `pokemon_fire_ash/PokeModBackups/rom_nativo_access/`
+12 celdas de deriva en 10 mapas nativos (3031, 3079, 3094, 3120, 3125, 3323,
+3385, 3805, 3839 y 3874). También abrió los dos eventos que estaban sobre una
+celda sólida en Map3120, siempre usando el gemelo libre del mismo metatile.
+
+Comando de cierre:
+`npm run verify:rom:nativo`
+
+Resultado: EXIT=0
+```
+verificación nativa: 1227 mapas · 212 tilesets · 12411 eventos revisados · 0 fallos
+  · celdas 1486028 · sólidas 875004 (58.9 %) · libres 611024 · accesos abiertos 4745
+  · cada mapa usa su tileset del ROM, sus celdas, su colisión original y accesos jugables
+verificación de sprites: 667 personajes nativos · 3529 eventos revisados · 3529 con sprite del ROM · 0 fallos
+  · cada NPC de campaña muestra el personaje que le asigna la ROM
+```
+
+Cierre aprobado: el verificador de mapas y el verificador de sprites terminan en
+cero fallos. Las auditorías especializadas de tilesets y BASE_ID también quedan
+en verde; la auditoría separada de elevación conserva su hallazgo histórico de
+que la tabla de RMXP no representa los bits de elevación, por lo que no se usa
+como condición de este cierre.
