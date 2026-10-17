@@ -1,0 +1,7 @@
+Cierre del bloque Isla Espejo · verificación ejecutada el 2026-10-17
+
+- `npm run verify:multiverse`: EXIT=0. Verifica Monte Silver y siete emisiones; 8 batallas con canLose, derrota persistente por sello y revancha por menú.
+- `npm run verify:isla_espejo`: EXIT=0. Maps 997–999 verificados con 16 jefes, salidas de retorno, Nurse y Abra.
+- No existe un script `verify:pokegods` en `package.json`. Se probó el comando de assets en modo de verificación (`npm run pokegods:assets -- --verify`): EXIT=1, falta `reference/pokegods/concepto`.
+
+Estado: cierre parcial, no declarar verde hasta restaurar/proporcionar `reference/pokegods/concepto` y añadir/ejecutar un verificador específico de Pokégods. La validación de multiverso e Isla Espejo sí está aprobada.

@@ -446,3 +446,8 @@ QA R15d: fuzz 1 000 000/0 (F1 581 400 · F2 150 000 · F3 3 000 · F4 44 000 · 
 200 600 · F6 10 000 arranques · F7 11 000) · escudos 69/0 · cinemáticas 77/77 ·
 recursos 27/27 · alcance AST 229+47 · npm test verde · artefactos verificados
 (ZIP raíz 1157/33,7 MB · directo 1157/50,2 MB · DN QA 422/20,9 MB).
+
+### Verificación independiente de cierre (2026-10-17)
+
+`npm run verify:ruta_de_dios` ejecutado desde la raíz del repositorio: **EXIT=0**.
+Salida: `Verification OK: La Ruta de Dios fully verified (7 floors, Arceus Lv. 200, Volo, Dialga, Palkia, trainers, switches, and scripts).`
