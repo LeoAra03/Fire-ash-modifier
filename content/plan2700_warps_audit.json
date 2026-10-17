@@ -1,0 +1,7 @@
+{
+  "schema": "plan2700_audit_warps/1.0",
+  "maps": 3465,
+  "transfers": 19064,
+  "invalid": [],
+  "policy": "La existencia de retorno físico se revisa sobre comandos; los menús de retorno son QA adicional."
+}
