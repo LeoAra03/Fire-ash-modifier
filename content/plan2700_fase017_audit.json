@@ -1,0 +1,533 @@
+{
+  "schema": "plan2700_fase017_audit/1.0",
+  "phase": "017",
+  "tasks": [
+    1600,
+    1699
+  ],
+  "ligaOscura": {
+    "maps": [
+      {
+        "mapId": 2141,
+        "width": 22,
+        "height": 11,
+        "events": 10,
+        "names": [
+          "LIGA_LLEGADA",
+          "LIGA_CUSTODIO",
+          "LIGA_ECO",
+          "LIGA_ACCESO_COLISEO",
+          "LIGA_SALIDA",
+          "DN_PHASE_GUARD",
+          "DN_MAP_MEMORY",
+          "DN_STATUE_LORE",
+          "DN_OPENING_SCENE",
+          "DN_PHASE_SCENE_5"
+        ]
+      },
+      {
+        "mapId": 2142,
+        "width": 30,
+        "height": 22,
+        "events": 12,
+        "names": [
+          "LIGA_ENTRADA_COLISEO",
+          "LIGA_MPIKA",
+          "LIGA_CHISPA_1",
+          "LIGA_CHISPA_2",
+          "LIGA_CHISPA_3",
+          "LIGA_CHISPA_4",
+          "LIGA_SALIDA_COLISEO",
+          "DN_PHASE_GUARD",
+          "DN_MAP_MEMORY",
+          "DN_STATUE_LORE",
+          "DN_PHASE_SCENE_7",
+          "PokeMod Canon: eco del Génesis"
+        ]
+      },
+      {
+        "mapId": 2192,
+        "width": 100,
+        "height": 120,
+        "events": 6,
+        "names": [
+          "PokeMod Grieta: Inscripción del Archivero",
+          "PokeMod Grieta: Guardiana",
+          "PokeMod Grieta: Salir al mundo",
+          "PokeMod Grieta: Puerta de la arena",
+          "PokeMod Grieta: EL CANTO",
+          "PokeMod Grieta: LA ESTÁTICA"
+        ]
+      },
+      {
+        "mapId": 2193,
+        "width": 180,
+        "height": 175,
+        "events": 5,
+        "names": [
+          "PokeMod Grieta: EL SIN ROSTRO",
+          "PokeMod Grieta: EL ECO",
+          "PokeMod Grieta: LA CONVERGENCIA",
+          "PokeMod Grieta: Volver al umbral",
+          "PokeMod Grieta: Salir al mundo"
+        ]
+      }
+    ],
+    "sealIds": [
+      940,
+      941,
+      942,
+      943,
+      944,
+      945,
+      946
+    ],
+    "arenaId": 2193,
+    "finalEvents": 1,
+    "finalWrites": 2,
+    "diplomaCondition": {
+      "switch": 948
+    },
+    "switches": [
+      {
+        "id": 940,
+        "name": "POKEMOD MULTIVERSO SELLO 01 TORRE"
+      },
+      {
+        "id": 941,
+        "name": "POKEMOD MULTIVERSO SELLO 02 PARTIDA"
+      },
+      {
+        "id": 942,
+        "name": "POKEMOD MULTIVERSO SELLO 03 FOSA"
+      },
+      {
+        "id": 943,
+        "name": "POKEMOD MULTIVERSO SELLO 04 CINTA"
+      },
+      {
+        "id": 944,
+        "name": "POKEMOD MULTIVERSO SELLO 05 GLITCH"
+      },
+      {
+        "id": 945,
+        "name": "POKEMOD MULTIVERSO SELLO 06 ECO"
+      },
+      {
+        "id": 946,
+        "name": "POKEMOD MULTIVERSO SELLO 07 CONSOLA"
+      },
+      {
+        "id": 948,
+        "name": "POKEMOD LIGA OSCURA COMPLETA"
+      }
+    ]
+  },
+  "emisiones": {
+    "maps": [
+      {
+        "mapId": 2021,
+        "width": 44,
+        "height": 41,
+        "events": 13,
+        "names": [
+          "PokeMod Grieta: Volver al mundo",
+          "PokeMod Multiverso: Entrada de cueva",
+          "PokeMod Multiverso: Verja",
+          "PokeMod Multiverso: Archivero",
+          "PokeMod Multiverso: Placa",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Montañero",
+          "PokeMod Multiverso: Placa de la cueva",
+          "PokeMod Multiverso: Objeto",
+          "PokeMod Multiverso: Objeto",
+          "PokeMod Multiverso: Objeto",
+          "PokeMod Restauración: Censo Cromático",
+          "PokeMod Restauración: Registro del Agente"
+        ]
+      },
+      {
+        "mapId": 2022,
+        "width": 32,
+        "height": 24,
+        "events": 7,
+        "names": [
+          "PokeMod Multiverso: Bajar a la gruta",
+          "PokeMod Grieta: Umbral de la Liga Oscura",
+          "PokeMod Multiverso: Jefe RED",
+          "PokeMod Multiverso: Placa",
+          "PokeMod Multiverso: Estación",
+          "PokeMod Multiverso: Objeto",
+          "PokeMod Multiverso: Objeto"
+        ]
+      },
+      {
+        "mapId": 2023,
+        "width": 25,
+        "height": 25,
+        "events": 8,
+        "names": [
+          "PokeMod Multiverso: Volver a la gruta",
+          "PokeMod Multiverso: Jefe LA LOCUTORA",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Señal",
+          "PokeMod Restauración: Ceniza",
+          "PokeMod Restauración: Nexo — La Torre que Escuchaba",
+          "PokeMod Restauración: Operadora sin turno",
+          "PokeMod Grieta: Volver al mundo"
+        ]
+      },
+      {
+        "mapId": 2024,
+        "width": 20,
+        "height": 15,
+        "events": 8,
+        "names": [
+          "PokeMod Multiverso: Volver a la gruta",
+          "PokeMod Multiverso: Jefe PLATA PERDIDA",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Señal",
+          "PokeMod Restauración: Ceniza",
+          "PokeMod Restauración: Nexo — La Partida Perdida",
+          "PokeMod Restauración: Entrenador sin equipo",
+          "PokeMod Grieta: Volver al mundo"
+        ]
+      },
+      {
+        "mapId": 2025,
+        "width": 30,
+        "height": 25,
+        "events": 8,
+        "names": [
+          "PokeMod Multiverso: Volver a la gruta",
+          "PokeMod Multiverso: Jefe EL ENTERRADO",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Señal",
+          "PokeMod Restauración: Ceniza",
+          "PokeMod Restauración: Nexo — La Fosa del Enterrado",
+          "PokeMod Restauración: El que cavaba",
+          "PokeMod Grieta: Volver al mundo"
+        ]
+      },
+      {
+        "mapId": 2026,
+        "width": 40,
+        "height": 30,
+        "events": 8,
+        "names": [
+          "PokeMod Multiverso: Volver a la gruta",
+          "PokeMod Multiverso: Jefe EL NIÑO DE LA CINTA",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Señal",
+          "PokeMod Restauración: Ceniza",
+          "PokeMod Restauración: Nexo — La Cinta Carmesí",
+          "PokeMod Restauración: El que hace muñecos",
+          "PokeMod Grieta: Volver al mundo"
+        ]
+      },
+      {
+        "mapId": 2027,
+        "width": 42,
+        "height": 37,
+        "events": 8,
+        "names": [
+          "PokeMod Multiverso: Volver a la gruta",
+          "PokeMod Multiverso: Jefe EL FALLO CERO",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Señal",
+          "PokeMod Restauración: Ceniza",
+          "PokeMod Restauración: Nexo — Ciudad Glitch",
+          "PokeMod Restauración: El programador",
+          "PokeMod Grieta: Volver al mundo"
+        ]
+      },
+      {
+        "mapId": 2028,
+        "width": 30,
+        "height": 25,
+        "events": 8,
+        "names": [
+          "PokeMod Multiverso: Volver a la gruta",
+          "PokeMod Multiverso: Jefe EL ECO AHOGADO",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Señal",
+          "PokeMod Restauración: Ceniza",
+          "PokeMod Restauración: Nexo — El Eco que Jugó Contigo",
+          "PokeMod Restauración: El que juega solo",
+          "PokeMod Grieta: Volver al mundo"
+        ]
+      },
+      {
+        "mapId": 2029,
+        "width": 40,
+        "height": 30,
+        "events": 8,
+        "names": [
+          "PokeMod Multiverso: Volver a la gruta",
+          "PokeMod Multiverso: Jefe EL JUGADOR DE 1996",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Señal",
+          "PokeMod Restauración: Ceniza",
+          "PokeMod Restauración: Nexo — La Consola de 1996",
+          "PokeMod Restauración: El coleccionista",
+          "PokeMod Grieta: Volver al mundo"
+        ]
+      }
+    ],
+    "emissions": [
+      {
+        "mapId": 2023,
+        "title": "La Torre que Escuchaba",
+        "boss": "LA LOCUTORA",
+        "seal": 940,
+        "events": 8,
+        "mapsInEmission": 1,
+        "wildSlots": 6,
+        "manualExpansion": "La estructura instalada conserva una emisión por mapa; una ampliación a 2–3 mapas requiere diseño visual/playtest, no se afirma como hecha."
+      },
+      {
+        "mapId": 2024,
+        "title": "La Partida Perdida",
+        "boss": "PLATA PERDIDA",
+        "seal": 941,
+        "events": 8,
+        "mapsInEmission": 1,
+        "wildSlots": 6,
+        "manualExpansion": "La estructura instalada conserva una emisión por mapa; una ampliación a 2–3 mapas requiere diseño visual/playtest, no se afirma como hecha."
+      },
+      {
+        "mapId": 2025,
+        "title": "La Fosa del Enterrado",
+        "boss": "EL ENTERRADO",
+        "seal": 942,
+        "events": 8,
+        "mapsInEmission": 1,
+        "wildSlots": 6,
+        "manualExpansion": "La estructura instalada conserva una emisión por mapa; una ampliación a 2–3 mapas requiere diseño visual/playtest, no se afirma como hecha."
+      },
+      {
+        "mapId": 2026,
+        "title": "La Cinta Carmesí",
+        "boss": "EL NIÑO DE LA CINTA",
+        "seal": 943,
+        "events": 8,
+        "mapsInEmission": 1,
+        "wildSlots": 6,
+        "manualExpansion": "La estructura instalada conserva una emisión por mapa; una ampliación a 2–3 mapas requiere diseño visual/playtest, no se afirma como hecha."
+      },
+      {
+        "mapId": 2027,
+        "title": "Ciudad Glitch",
+        "boss": "EL FALLO CERO",
+        "seal": 944,
+        "events": 8,
+        "mapsInEmission": 1,
+        "wildSlots": 6,
+        "manualExpansion": "La estructura instalada conserva una emisión por mapa; una ampliación a 2–3 mapas requiere diseño visual/playtest, no se afirma como hecha."
+      },
+      {
+        "mapId": 2028,
+        "title": "El Eco que Jugó Contigo",
+        "boss": "EL ECO AHOGADO",
+        "seal": 945,
+        "events": 8,
+        "mapsInEmission": 1,
+        "wildSlots": 12,
+        "manualExpansion": "La estructura instalada conserva una emisión por mapa; una ampliación a 2–3 mapas requiere diseño visual/playtest, no se afirma como hecha."
+      },
+      {
+        "mapId": 2029,
+        "title": "La Consola de 1996",
+        "boss": "EL JUGADOR DE 1996",
+        "seal": 946,
+        "events": 8,
+        "mapsInEmission": 1,
+        "wildSlots": 6,
+        "manualExpansion": "La estructura instalada conserva una emisión por mapa; una ampliación a 2–3 mapas requiere diseño visual/playtest, no se afirma como hecha."
+      }
+    ],
+    "counterVariable": 264
+  },
+  "rutaDeDios": {
+    "maps": [
+      {
+        "mapId": 2030,
+        "width": 68,
+        "height": 46,
+        "events": 16,
+        "names": [
+          "PokeMod Multiverso: Salir a la falda",
+          "PokeMod Multiverso: Subir a la cumbre",
+          "PokeMod Multiverso: Puerta 1 — T",
+          "PokeMod Multiverso: Puerta 2 — E",
+          "PokeMod Multiverso: Puerta 3 — S",
+          "PokeMod Multiverso: Puerta 4 — T",
+          "PokeMod Multiverso: Puerta 5 — I",
+          "PokeMod Multiverso: Puerta 6 — G",
+          "PokeMod Multiverso: Puerta 7 — O",
+          "PokeMod Multiverso: Guardiana",
+          "PokeMod Multiverso: Placa",
+          "PokeMod Multiverso: Archivero",
+          "PokeMod Multiverso: Objeto",
+          "PokeMod Multiverso: Objeto",
+          "PokeMod Multiverso: Objeto",
+          "HUB_GRIETA_CAVE"
+        ]
+      },
+      {
+        "mapId": 2031,
+        "width": 40,
+        "height": 40,
+        "events": 7,
+        "names": [
+          "Retorno a Ciudad Puntaneva",
+          "Escaleras al 2F",
+          "Maya de la Ruta",
+          "Item RARECANDY",
+          "Reliquia Sellada de la Aurora",
+          "Peregrino de la memoria (1F)",
+          "Peregrino del sello (1F)"
+        ]
+      },
+      {
+        "mapId": 2032,
+        "width": 40,
+        "height": 40,
+        "events": 8,
+        "names": [
+          "Escaleras al 1F",
+          "Escaleras al 3F",
+          "Palmer del Frente",
+          "Barry",
+          "Item MAXREVIVE",
+          "Reliquia Sellada del Trueno",
+          "Peregrino de la memoria (2F)",
+          "Peregrino del sello (2F)"
+        ]
+      },
+      {
+        "mapId": 2033,
+        "width": 42,
+        "height": 42,
+        "events": 7,
+        "names": [
+          "Escaleras al 2F",
+          "Escaleras al 4F",
+          "Quinoa de la Isla",
+          "Item PPMAX",
+          "Reliquia Sellada de la Isla",
+          "Peregrino de la memoria (3F)",
+          "Peregrino del sello (3F)"
+        ]
+      },
+      {
+        "mapId": 2034,
+        "width": 42,
+        "height": 42,
+        "events": 7,
+        "names": [
+          "Escaleras al 3F",
+          "Escaleras al 5F",
+          "Cintia Campeona",
+          "Item SACREDASH",
+          "Reliquia Sellada de la Campeona",
+          "Peregrino de la memoria (4F)",
+          "Peregrino del sello (4F)"
+        ]
+      },
+      {
+        "mapId": 2035,
+        "width": 38,
+        "height": 38,
+        "events": 7,
+        "names": [
+          "Escaleras al 4F",
+          "Escaleras al 6F",
+          "Guardián Dialga",
+          "Item COMETSHARD",
+          "Reliquia Sellada del Tiempo",
+          "Peregrino de la memoria (5F)",
+          "Peregrino del sello (5F)"
+        ]
+      },
+      {
+        "mapId": 2036,
+        "width": 38,
+        "height": 38,
+        "events": 7,
+        "names": [
+          "Escaleras al 5F",
+          "Escaleras a la Cima",
+          "Guardián Palkia",
+          "Item ABILITYCAPSULE",
+          "Reliquia Sellada del Espacio",
+          "Peregrino de la memoria (6F)",
+          "Peregrino del sello (6F)"
+        ]
+      },
+      {
+        "mapId": 2037,
+        "width": 46,
+        "height": 46,
+        "events": 9,
+        "names": [
+          "Escaleras al 6F",
+          "Arceus Creador",
+          "Item GOLDBOTTLECAP",
+          "Apoyo — Cynthia",
+          "Apoyo — Steven",
+          "Apoyo — Gold",
+          "Apoyo — Red",
+          "Apoyo — Volus",
+          "PokeMod Canon: Fragmento del Génesis"
+        ]
+      },
+      {
+        "mapId": 2038,
+        "width": 52,
+        "height": 72,
+        "events": 8,
+        "names": [
+          "Regreso a Ciudad Puntaneva",
+          "Puerta de la Cima del Génesis",
+          "Hito de las Regiones",
+          "Hito del Tiempo",
+          "Hito del Vínculo",
+          "Hito del Origen",
+          "Reliquia de la Aurora",
+          "Reliquia del Vínculo"
+        ]
+      }
+    ],
+    "scriptBytes": 1162814,
+    "floors": [
+      2031,
+      2032,
+      2033,
+      2034,
+      2035,
+      2036,
+      2037
+    ],
+    "hiddenItems": 7
+  },
+  "wild": {
+    "zones": 9,
+    "slots": 62,
+    "minLevel": 85,
+    "maxLevel": 106
+  },
+  "manualQa": [
+    "recorrido automático de Liga Oscura y de las siete emisiones",
+    "partida real con siete sellos, derrota y reintento",
+    "escucha de BGM y clima, restauración de tono al salir",
+    "recorrido completo de La Ruta de Dios en Kirin/Game.exe",
+    "verificación humana de que cada puzle tiene pista diegética"
+  ],
+  "failures": [],
+  "warnings": [
+    "El número de mapas de cada emisión es 1 en el estado instalado; la expansión a 2–3 mapas es una tarea creativa pendiente y no se maquilla en el informe.",
+    "El recorrido automático y la partida real de las siete emisiones requieren ejecución en Kirin/Game.exe.",
+    "La comprobación de cámara lenta, paneo, tiempos de control y ritmo de partida no puede sustituir un recorrido humano."
+  ]
+}
