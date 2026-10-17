@@ -18,6 +18,8 @@
     "verify:glazed:story": "node tools/plan2700/glazed_story.mjs --verify",
     "audit:plan2700:fase017": "node tools/plan2700/audit_fase017.mjs",
     "verify:plan2700:fase017": "node tools/plan2700/audit_fase017.mjs --json",
+    "audit:plan2700:fase018": "node tools/plan2700/audit_fase018.mjs",
+    "verify:plan2700:fase018": "node tools/plan2700/audit_fase018.mjs --json",
     "verify:light_platinum": "node tools/apply_light_platinum_native_lore.mjs --verify",
     "audit:light_platinum:region": "node tools/plan2700/audit_campaign_region.mjs --campaign=light_platinum",
     "verify:liquid_crystal": "node tools/apply_liquid_crystal_native_lore.mjs --verify",
