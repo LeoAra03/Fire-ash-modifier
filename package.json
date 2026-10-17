@@ -19,6 +19,8 @@
     "audit:plan2700:fase017": "node tools/plan2700/audit_fase017.mjs",
     "verify:plan2700:fase017": "node tools/plan2700/audit_fase017.mjs --json",
     "audit:plan2700:fase018": "node tools/plan2700/audit_fase018.mjs",
+    "audit:plan2700:fase027": "node tools/plan2700/lote6_fase027_cierre.mjs",
+    "verify:plan2700:fase027": "node tools/plan2700/lote6_fase027_cierre.mjs --verify",
     "verify:plan2700:fase018": "node tools/plan2700/audit_fase018.mjs --json",
     "audit:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --write",
     "verify:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --json",
