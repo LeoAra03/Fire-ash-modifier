@@ -26,6 +26,8 @@
     "cobertura:check": "node tools/plan2700/lote6_fase028_instrumentacion.mjs --verify",
     "audit:plan2700:fase028": "node tools/plan2700/lote6_fase028_instrumentacion.mjs",
     "verify:plan2700:fase028": "node tools/plan2700/lote6_fase028_instrumentacion.mjs --verify",
+    "audit:plan2700:fase029": "node tools/plan2700/lote6_fase029_cobertura.mjs",
+    "verify:plan2700:fase029": "node tools/plan2700/lote6_fase029_cobertura.mjs --verify",
     "verify:plan2700:fase018": "node tools/plan2700/audit_fase018.mjs --json",
     "audit:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --write",
     "verify:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --json",
