@@ -1693,3 +1693,10 @@ Conflictos de reserva: **0**.
 El detalle de ubicaciones (hasta 30 por ID), self-switches y expresiones dinámicas está en:
 
 `pokemon_fire_ash/PokeModBackups/auditoria_flags_total.json`
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

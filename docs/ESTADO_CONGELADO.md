@@ -1,6 +1,6 @@
 # Estado congelado
 
-Generado: 2026-10-17T16:25:01.786Z
+Generado: 2026-10-17T17:59:44.332Z
 
 Inventario de solo lectura del juego vivo (`pokemon_fire_ash/Data`) y de los hashes SHA-256 de `Data/`, `Scripts/` y `tools/`. No modifica mapas, scripts ni partidas.
 
@@ -81,7 +81,7 @@ NEXO y Liga Oscura caen dentro de Dimensional Nightmare. Sus conteos no se suman
 
 ## Hashes
 
-- Archivos hasheados: 5456 (Data 5215, Scripts 0, tools 241).
+- Archivos hasheados: 5468 (Data 5215, Scripts 0, tools 253).
 - Directorios `Scripts/` encontrados: 0 archivo(s). Las secciones Ruby del juego están dentro de `Data/Scripts.rxdata`.
 - Algoritmo: SHA-256. El detalle por archivo está en `tools/inventario_congelado.json`.
 - Expresiones dinámicas (no se tratan como ID libre): 71.

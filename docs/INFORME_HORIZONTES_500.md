@@ -212,3 +212,10 @@ node tools/analyze_compiled_fire_ash.mjs
 ```
 
 No se pudo ejecutar `Game.exe` en este contenedor porque no dispone de Wine. La comprobación pendiente es visual: iniciar una partida postgame en Windows, hablar con el guardabosques en Ciudad Verde y recorrer la ruta Ciudad Verde → Bosque Susurrante → Puerto Horizonte → Ciudad Verde.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

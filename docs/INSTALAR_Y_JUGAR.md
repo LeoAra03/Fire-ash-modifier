@@ -150,3 +150,10 @@ npm run verify:all
 > El Coliseo de la Liga Oscura (Map2142) se **reconstruye** en `dn:build:all`, así
 > que el canon y la paleta Game Boy van después: al revés desaparece el evento
 > «eco del Génesis» y el verificador de canon se pone rojo.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

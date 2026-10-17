@@ -203,3 +203,10 @@ extraído en `roms pokemon/` (202 y 411 nombres de especie, 282 y 385 sprites
 frontales, más de 50 000 diálogos y 9 485 bloques comprimidos censados). El plan
 de ejecución con los 161 agentes está en `docs/PLAN_SWARM_161.md` y el plano de
 la fusión en `docs/PLAN_FUSION_3_JUEGOS.md`.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

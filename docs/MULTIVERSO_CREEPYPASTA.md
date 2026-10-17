@@ -80,3 +80,10 @@ npm test                    # 51 + 114 + 62 pruebas
 ```
 
 La checklist manual incluye la sección E con las 12 comprobaciones del Monte Silver y la sección G con las 10 de la Expansión Multiversal (`docs/QA_MANUAL_PLAYTEST.md`, 106 en total). El arco completo está en [`EXPANSION_MULTIVERSAL.md`](EXPANSION_MULTIVERSAL.md).
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

@@ -1084,8 +1084,8 @@
     },
     {
       "path": "Data/Map2142.rxdata",
-      "bytes": 18452,
-      "sha256": "e377f78e728de69ae2be397e19b4468f8b9a88a3216ba7310d1b9ac6f8be28c1"
+      "bytes": 18468,
+      "sha256": "f42b67c1f281de8d1036245e3e3c70aa2ddfb77dc21af1da683e6a83337bea9a"
     },
     {
       "path": "Data/Map2143.rxdata",
@@ -1349,8 +1349,8 @@
     },
     {
       "path": "Data/System.rxdata",
-      "bytes": 27957,
-      "sha256": "50ca386d19771d1dad741d30459d07ec1fa5830b33b38d0ca213873bcc49c49d"
+      "bytes": 29172,
+      "sha256": "05e4416a1b05b40356fcc401016516982b5f13ae9d20e088415eff3074be0505"
     },
     {
       "path": "Data/Tilesets.rxdata",
@@ -1789,23 +1789,23 @@
     },
     {
       "path": "Graphics/Items/DN_CASE_AMO.png",
-      "bytes": 562,
-      "sha256": "3a4738b8a3460095c5265a1153528d2dfccffedfd555365e7a9d7a129c0dea19"
+      "bytes": 565,
+      "sha256": "f8b7da99bbc0422c1c6ecf9dcd035aad5abd4a3e445668ccec9488642e306661"
     },
     {
       "path": "Graphics/Items/DN_CASE_BLK.png",
-      "bytes": 511,
-      "sha256": "ae843c015032bf86a8878796dc5628f5cd4235bc4b518f16110d518e83a5e9a2"
+      "bytes": 532,
+      "sha256": "dd7aa2587a459ca98a53af314e63995f7035d1b68d16f1f4a7cbb349ab6af53c"
     },
     {
       "path": "Graphics/Items/DN_CASE_FOS.png",
-      "bytes": 566,
-      "sha256": "cbf2fd5fcd30cb631e8f05048ada079632ee112a206492d18095f0535f83671e"
+      "bytes": 565,
+      "sha256": "db42b22e00506a0792e94637a9cced5919023dc298585295705ac76e68139e22"
     },
     {
       "path": "Graphics/Items/DN_CASE_HYP.png",
-      "bytes": 620,
-      "sha256": "621f93d800cd63f92fc69932100a399919e458a17f3c97c78e968877a51a7ff2"
+      "bytes": 631,
+      "sha256": "ad24a4f4646eb3a3db49a5a6e708c999e857d04c66c59d801c9d0c8ee7a27b7b"
     },
     {
       "path": "Graphics/Items/DN_CASE_LSV.png",
@@ -1814,23 +1814,23 @@
     },
     {
       "path": "Graphics/Items/DN_CASE_MPK.png",
-      "bytes": 636,
-      "sha256": "08625bcf8957f35b95f37d3f33ebdc44fd81d0b3a424d61c63c144c8d5d3f698"
+      "bytes": 635,
+      "sha256": "9a36ea4dee5079d7bd3474961b14c68c5bcdd4e4e4aae51ebe630b9027bcdfad"
     },
     {
       "path": "Graphics/Items/DN_CASE_SIL.png",
-      "bytes": 598,
-      "sha256": "146fe455a8cb80317ace015bbecc079bc9ccfabb39aa24698a0d67f7faadb802"
+      "bytes": 603,
+      "sha256": "c0a806ba91989082bb276c6329a94b12aa197e2e3d7aa853e76a06f323bc04a9"
     },
     {
       "path": "Graphics/Items/DN_CASE_SNO.png",
-      "bytes": 636,
-      "sha256": "08625bcf8957f35b95f37d3f33ebdc44fd81d0b3a424d61c63c144c8d5d3f698"
+      "bytes": 635,
+      "sha256": "9a36ea4dee5079d7bd3474961b14c68c5bcdd4e4e4aae51ebe630b9027bcdfad"
     },
     {
       "path": "Graphics/Items/DN_CASE_UNO.png",
-      "bytes": 596,
-      "sha256": "330a6cf11c4bf9b3460e77af657261934ea0233d7ff02ac70a64b3e80b6b03a4"
+      "bytes": 587,
+      "sha256": "1515bd86dc205302f33f3c2923aad482661538c2405536b86ff6b170ec32248d"
     },
     {
       "path": "Graphics/Items/DN_CASE_WHT.png",
@@ -1839,13 +1839,13 @@
     },
     {
       "path": "Graphics/Items/DN_CASE_WIT.png",
-      "bytes": 617,
-      "sha256": "fc54495b59484f597b7f600754dc80e2adcfafad02cad71bd1349abcb221b24c"
+      "bytes": 625,
+      "sha256": "a3a8f6dea29baad398e655d1fd5679c52ed8dff5142fde4475f46d78fd1d0727"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_AMO.png",
-      "bytes": 1041,
-      "sha256": "dad01ecbf06274046bd05d635c9efa1e3e896c9fc4cde88049aec3f5e99b6c46"
+      "bytes": 1043,
+      "sha256": "dde2924c51d57751b49388371f926ed8fe77e657ac50d5b884ed36d518603788"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_BLK.png",
@@ -1859,38 +1859,38 @@
     },
     {
       "path": "Graphics/Items/DN_MEDAL_HYP.png",
-      "bytes": 1062,
-      "sha256": "73c203cb90adc403de40620e57e262f51a2eb81ce21ee6b4fcd4951d1493d75f"
+      "bytes": 1058,
+      "sha256": "2e4895d368a62694e141ad07972a1102e660829cec3cb8b799c2c73e0a2e2065"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_LSV.png",
-      "bytes": 1032,
-      "sha256": "2783e52ba72502ebac3adb2ea186b273d1424822eae65b5caf0c7caf64789f84"
+      "bytes": 1038,
+      "sha256": "d9d57041954d3faf557f15062aa9bbcd35e5253d86005b7ca3ba42b8c3cbf9bf"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_MPK.png",
-      "bytes": 1079,
-      "sha256": "e3bc8398b09f11cb0a483a21f298d5493a3720696eafbe6f7e6aa13104df8f9c"
+      "bytes": 1075,
+      "sha256": "6d8a72e206d8fe62314bdf8b2e1ca7e1500d360730034f468c275281d53acac6"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_SIL.png",
-      "bytes": 1047,
-      "sha256": "73b288e1b1946f38b8119541e3f1215a5a048bb9ac3c579339404171db542276"
+      "bytes": 1051,
+      "sha256": "ec20f7020b15a549622e34cb6e505a0ee46fa2a7037681ad615d77f1186e2478"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_SNO.png",
-      "bytes": 1104,
-      "sha256": "ab9bb7805c370a66cb932dc24c39d994dea735da420d9077460487a277384626"
+      "bytes": 1087,
+      "sha256": "ab1f6bc6ea50e1a074b00612c6d96f2da21218e820981cdfb0bcae7514869399"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_UNO.png",
-      "bytes": 1042,
-      "sha256": "cd6a4b3a82df358c55ee93e368d3ee70551d97866d141a7ba1abb0aeabc2231b"
+      "bytes": 1046,
+      "sha256": "72be75c20224800c4bd49a730e82e30d6e4c36ce146b0f084670583df423c447"
     },
     {
       "path": "Graphics/Items/DN_MEDAL_WHT.png",
-      "bytes": 1101,
-      "sha256": "c42554c5815e5c1f1d61b02e913722a90f130d0604869519afd8fcef154f33c4"
+      "bytes": 1105,
+      "sha256": "d15c2b6ddc1b9d58396e9ca55f57e8c82a3f506f55494cd46f300348da114973"
     },
     {
       "path": "Graphics/Items/DN_PAGE_01.png",

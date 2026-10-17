@@ -185,3 +185,10 @@ Lo que aporta cada ROM, y cómo se transforma en contenido original (ver
 3. **Ampliar A y B** a sus 13 y 14 sectores.
 4. **Capa de cinemáticas** sobre los sectores ya instalados (1.000 mapas).
 5. **Música y pulido**: temas por sector y revisión de diálogos.
+
+## Registro de entrega LOTE 5
+
+La evidencia de las fases 022–026 y sus límites está centralizada en
+`docs/CIERRE_2700_FASES.md`, `docs/qa/fase_026_entrega.md` y
+`docs/qa/verificadores_final.md`. Las métricas automáticas no sustituyen el
+playtest humano, Android/Kirin ni la revisión externa.

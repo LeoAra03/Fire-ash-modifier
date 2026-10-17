@@ -8,5 +8,7 @@ rm -f "$OUT"
 zip -r -q "$OUT" pokemon_fire_ash \
   -x "pokemon_fire_ash/PokeModBackups/*" \
   -x "pokemon_fire_ash/Save*" \
-  -x "pokemon_fire_ash/Game.rxdata"
+  -x "pokemon_fire_ash/Game.rxdata" \
+  -x "pokemon_fire_ash/Data/*.BAK" \
+  -x "pokemon_fire_ash/Data/*.bak"
 echo "Listo: $OUT ($(du -h "$OUT" | cut -f1))"
