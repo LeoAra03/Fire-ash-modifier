@@ -1,0 +1,3728 @@
+{
+  "schema": "lote6_fase030_integracion/1.0",
+  "tasks": "2900–2999",
+  "resources": {
+    "graphics": {
+      "files": 16964,
+      "byExtension": {
+        ".bmp": 1,
+        ".png": 16957,
+        ".xcf": 6
+      },
+      "zeroBytes": []
+    },
+    "audio": {
+      "files": 4652,
+      "byExtension": {
+        ".ini": 1,
+        ".mid": 40,
+        ".mp3": 61,
+        ".ogg": 2716,
+        ".wav": 1834
+      },
+      "zeroBytes": []
+    },
+    "battleAssets": [
+      {
+        "dir": "Battlebacks",
+        "files": 211,
+        "byExtension": {
+          ".png": 211
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Animations",
+        "files": 654,
+        "byExtension": {
+          ".png": 654
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Transitions",
+        "files": 48,
+        "byExtension": {
+          ".png": 48
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Pokemon/Front",
+        "files": 1467,
+        "byExtension": {
+          ".png": 1467
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Pokemon/Back",
+        "files": 1442,
+        "byExtension": {
+          ".png": 1442
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Pokemon/Icons",
+        "files": 1351,
+        "byExtension": {
+          ".png": 1351
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Trainers",
+        "files": 816,
+        "byExtension": {
+          ".png": 816
+        },
+        "zeroBytes": []
+      }
+    ],
+    "uiAssets": [
+      {
+        "dir": "Pictures",
+        "files": 488,
+        "byExtension": {
+          ".png": 487,
+          ".xcf": 1
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Windowskins",
+        "files": 106,
+        "byExtension": {
+          ".png": 106
+        },
+        "zeroBytes": []
+      },
+      {
+        "dir": "Titles",
+        "files": 8,
+        "byExtension": {
+          ".png": 8
+        },
+        "zeroBytes": []
+      }
+    ],
+    "audioReferences": {
+      "referencedNames": 848,
+      "references": [
+        {
+          "name": "BGM:002-battle02",
+          "count": 1
+        },
+        {
+          "name": "BGM:018-field01",
+          "count": 2
+        },
+        {
+          "name": "BGM:021-field04",
+          "count": 12
+        },
+        {
+          "name": "BGM:022-field05",
+          "count": 4
+        },
+        {
+          "name": "BGM:035-dungeon01",
+          "count": 1
+        },
+        {
+          "name": "BGM:alola route",
+          "count": 32
+        },
+        {
+          "name": "BGM:alola town",
+          "count": 12
+        },
+        {
+          "name": "BGM:battle gym leader",
+          "count": 3
+        },
+        {
+          "name": "BGM:battle! eternatus - phase 1",
+          "count": 2
+        },
+        {
+          "name": "BGM:battle1",
+          "count": 2
+        },
+        {
+          "name": "BGM:begin",
+          "count": 1
+        },
+        {
+          "name": "BGM:cave",
+          "count": 137
+        },
+        {
+          "name": "BGM:champion-2",
+          "count": 1
+        },
+        {
+          "name": "BGM:cinnabar",
+          "count": 66
+        },
+        {
+          "name": "BGM:contest hall",
+          "count": 28
+        },
+        {
+          "name": "BGM:dkc2cave",
+          "count": 2
+        },
+        {
+          "name": "BGM:dn_ashenguardian",
+          "count": 5
+        },
+        {
+          "name": "BGM:dn_buriedalive",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_hypnos_lullaby",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_kingunown",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_lavenderecho",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_lostsilver",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_pokemonblack",
+          "count": 10
+        },
+        {
+          "name": "BGM:dn_snowsilver",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_strangledred",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_whitehand",
+          "count": 16
+        },
+        {
+          "name": "BGM:dn_witnessatrium",
+          "count": 1
+        },
+        {
+          "name": "BGM:elite",
+          "count": 4
+        },
+        {
+          "name": "BGM:endless path",
+          "count": 1
+        },
+        {
+          "name": "BGM:evolv",
+          "count": 62
+        },
+        {
+          "name": "BGM:fireleafbattle",
+          "count": 4
+        },
+        {
+          "name": "BGM:galar route",
+          "count": 22
+        },
+        {
+          "name": "BGM:galar town",
+          "count": 16
+        },
+        {
+          "name": "BGM:gsc intro",
+          "count": 50
+        },
+        {
+          "name": "BGM:gym",
+          "count": 129
+        },
+        {
+          "name": "BGM:gymleader-1",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymleader-2",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymleader-3",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymleader-4",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymleader-5",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymleader-6",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymleader-8",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymleader-stadium",
+          "count": 1
+        },
+        {
+          "name": "BGM:gymsinnoh",
+          "count": 1
+        },
+        {
+          "name": "BGM:hall of fame",
+          "count": 27
+        },
+        {
+          "name": "BGM:hoenn route",
+          "count": 32
+        },
+        {
+          "name": "BGM:hoenn town",
+          "count": 26
+        },
+        {
+          "name": "BGM:hof room",
+          "count": 3
+        },
+        {
+          "name": "BGM:in my memory",
+          "count": 1
+        },
+        {
+          "name": "BGM:johto route",
+          "count": 471
+        },
+        {
+          "name": "BGM:johto town",
+          "count": 20
+        },
+        {
+          "name": "BGM:kalos route",
+          "count": 35
+        },
+        {
+          "name": "BGM:kalos town",
+          "count": 27
+        },
+        {
+          "name": "BGM:kanto route",
+          "count": 715
+        },
+        {
+          "name": "BGM:kanto town",
+          "count": 24
+        },
+        {
+          "name": "BGM:lab",
+          "count": 309
+        },
+        {
+          "name": "BGM:legend sinnoh",
+          "count": 9
+        },
+        {
+          "name": "BGM:mom theme",
+          "count": 8
+        },
+        {
+          "name": "BGM:piano b4 cynthia",
+          "count": 2
+        },
+        {
+          "name": "BGM:pkmrs-btower",
+          "count": 154
+        },
+        {
+          "name": "BGM:pkmrs-caveforest",
+          "count": 40
+        },
+        {
+          "name": "BGM:pkmrs-evergrande",
+          "count": 2
+        },
+        {
+          "name": "BGM:pkmrs-fallarbor",
+          "count": 2
+        },
+        {
+          "name": "BGM:pkmrs-mtpyre",
+          "count": 26
+        },
+        {
+          "name": "BGM:pkmrs-sootopolis",
+          "count": 4
+        },
+        {
+          "name": "BGM:poke center",
+          "count": 1
+        },
+        {
+          "name": "BGM:pokecenter",
+          "count": 198
+        },
+        {
+          "name": "BGM:pokemart",
+          "count": 104
+        },
+        {
+          "name": "BGM:pokemon master",
+          "count": 1
+        },
+        {
+          "name": "BGM:radio - lullaby",
+          "count": 4
+        },
+        {
+          "name": "BGM:radio - march",
+          "count": 6
+        },
+        {
+          "name": "BGM:radio - oak",
+          "count": 18
+        },
+        {
+          "name": "BGM:route",
+          "count": 36
+        },
+        {
+          "name": "BGM:route_202",
+          "count": 4
+        },
+        {
+          "name": "BGM:safari",
+          "count": 3
+        },
+        {
+          "name": "BGM:secretcliff",
+          "count": 1
+        },
+        {
+          "name": "BGM:secretdespair",
+          "count": 1
+        },
+        {
+          "name": "BGM:secretduet",
+          "count": 2
+        },
+        {
+          "name": "BGM:secretentry",
+          "count": 2
+        },
+        {
+          "name": "BGM:secretgauntlet",
+          "count": 2
+        },
+        {
+          "name": "BGM:secretjohto",
+          "count": 1
+        },
+        {
+          "name": "BGM:secretlounge",
+          "count": 6
+        },
+        {
+          "name": "BGM:secretloungeautumn",
+          "count": 3
+        },
+        {
+          "name": "BGM:secretloungenight",
+          "count": 3
+        },
+        {
+          "name": "BGM:secretloungespring",
+          "count": 3
+        },
+        {
+          "name": "BGM:secretloungesummer",
+          "count": 3
+        },
+        {
+          "name": "BGM:secretloungewinter",
+          "count": 3
+        },
+        {
+          "name": "BGM:secretmayhem",
+          "count": 4
+        },
+        {
+          "name": "BGM:secretred",
+          "count": 1
+        },
+        {
+          "name": "BGM:secretsygna",
+          "count": 2
+        },
+        {
+          "name": "BGM:secrettitan",
+          "count": 2
+        },
+        {
+          "name": "BGM:sinnoh route",
+          "count": 174
+        },
+        {
+          "name": "BGM:sinnoh town",
+          "count": 29
+        },
+        {
+          "name": "BGM:team rocket ow",
+          "count": 1
+        },
+        {
+          "name": "BGM:team rocket ow alola",
+          "count": 4
+        },
+        {
+          "name": "BGM:team rocket ow hoenn",
+          "count": 5
+        },
+        {
+          "name": "BGM:team rocket ow journeys",
+          "count": 6
+        },
+        {
+          "name": "BGM:team rocket ow kalos",
+          "count": 4
+        },
+        {
+          "name": "BGM:team rocket ow kanto",
+          "count": 15
+        },
+        {
+          "name": "BGM:team rocket ow sinnoh",
+          "count": 5
+        },
+        {
+          "name": "BGM:team rocket ow unova",
+          "count": 6
+        },
+        {
+          "name": "BGM:teamgalactic",
+          "count": 1
+        },
+        {
+          "name": "BGM:teamplasma",
+          "count": 1
+        },
+        {
+          "name": "BGM:teamrocket",
+          "count": 1
+        },
+        {
+          "name": "BGM:teamrocket1",
+          "count": 1
+        },
+        {
+          "name": "BGM:title",
+          "count": 2
+        },
+        {
+          "name": "BGM:unova route",
+          "count": 32
+        },
+        {
+          "name": "BGM:unova town",
+          "count": 24
+        },
+        {
+          "name": "BGM:uwater",
+          "count": 19
+        },
+        {
+          "name": "ME:013-gag02",
+          "count": 7
+        },
+        {
+          "name": "ME:alarm",
+          "count": 1
+        },
+        {
+          "name": "ME:cricket-sfx",
+          "count": 1
+        },
+        {
+          "name": "ME:ding dong",
+          "count": 2
+        },
+        {
+          "name": "ME:explosion-sfx",
+          "count": 1
+        },
+        {
+          "name": "ME:item get",
+          "count": 2
+        },
+        {
+          "name": "ME:pokemon healing",
+          "count": 235
+        },
+        {
+          "name": "SE:001cry",
+          "count": 11
+        },
+        {
+          "name": "SE:002cry",
+          "count": 8
+        },
+        {
+          "name": "SE:003cry",
+          "count": 5
+        },
+        {
+          "name": "SE:004cry",
+          "count": 3
+        },
+        {
+          "name": "SE:006cry",
+          "count": 38
+        },
+        {
+          "name": "SE:007cry",
+          "count": 13
+        },
+        {
+          "name": "SE:008cry",
+          "count": 10
+        },
+        {
+          "name": "SE:009cry",
+          "count": 2
+        },
+        {
+          "name": "SE:010cry",
+          "count": 1
+        },
+        {
+          "name": "SE:012cry",
+          "count": 9
+        },
+        {
+          "name": "SE:016cry",
+          "count": 3
+        },
+        {
+          "name": "SE:017cry",
+          "count": 2
+        },
+        {
+          "name": "SE:018cry",
+          "count": 3
+        },
+        {
+          "name": "SE:020cry",
+          "count": 1
+        },
+        {
+          "name": "SE:021cry",
+          "count": 1
+        },
+        {
+          "name": "SE:022cry",
+          "count": 4
+        },
+        {
+          "name": "SE:025cry",
+          "count": 6
+        },
+        {
+          "name": "SE:026cry",
+          "count": 1
+        },
+        {
+          "name": "SE:031cry",
+          "count": 1
+        },
+        {
+          "name": "SE:032cry",
+          "count": 2
+        },
+        {
+          "name": "SE:035cry",
+          "count": 6
+        },
+        {
+          "name": "SE:036cry",
+          "count": 1
+        },
+        {
+          "name": "SE:037cry",
+          "count": 4
+        },
+        {
+          "name": "SE:038cry",
+          "count": 1
+        },
+        {
+          "name": "SE:039cry",
+          "count": 2
+        },
+        {
+          "name": "SE:040cry",
+          "count": 14
+        },
+        {
+          "name": "SE:047cry",
+          "count": 1
+        },
+        {
+          "name": "SE:048cry",
+          "count": 1
+        },
+        {
+          "name": "SE:049cry",
+          "count": 4
+        },
+        {
+          "name": "SE:050cry",
+          "count": 1
+        },
+        {
+          "name": "SE:052cry",
+          "count": 4
+        },
+        {
+          "name": "SE:054cry",
+          "count": 11
+        },
+        {
+          "name": "SE:055cry",
+          "count": 1
+        },
+        {
+          "name": "SE:057cry",
+          "count": 2
+        },
+        {
+          "name": "SE:058cry",
+          "count": 1
+        },
+        {
+          "name": "SE:059cry",
+          "count": 6
+        },
+        {
+          "name": "SE:061cry",
+          "count": 1
+        },
+        {
+          "name": "SE:062cry",
+          "count": 2
+        },
+        {
+          "name": "SE:063cry",
+          "count": 8
+        },
+        {
+          "name": "SE:064cry",
+          "count": 2
+        },
+        {
+          "name": "SE:065cry",
+          "count": 8
+        },
+        {
+          "name": "SE:066cry",
+          "count": 7
+        },
+        {
+          "name": "SE:067cry",
+          "count": 4
+        },
+        {
+          "name": "SE:068cry",
+          "count": 1
+        },
+        {
+          "name": "SE:074cry",
+          "count": 2
+        },
+        {
+          "name": "SE:076cry",
+          "count": 1
+        },
+        {
+          "name": "SE:078cry",
+          "count": 1
+        },
+        {
+          "name": "SE:079cry",
+          "count": 15
+        },
+        {
+          "name": "SE:080cry",
+          "count": 2
+        },
+        {
+          "name": "SE:081cry",
+          "count": 4
+        },
+        {
+          "name": "SE:082cry",
+          "count": 1
+        },
+        {
+          "name": "SE:084cry",
+          "count": 3
+        },
+        {
+          "name": "SE:085cry",
+          "count": 1
+        },
+        {
+          "name": "SE:086cry",
+          "count": 2
+        },
+        {
+          "name": "SE:089cry",
+          "count": 3
+        },
+        {
+          "name": "SE:090cry",
+          "count": 2
+        },
+        {
+          "name": "SE:094cry",
+          "count": 1
+        },
+        {
+          "name": "SE:095cry",
+          "count": 2
+        },
+        {
+          "name": "SE:096cry",
+          "count": 2
+        },
+        {
+          "name": "SE:098cry",
+          "count": 3
+        },
+        {
+          "name": "SE:099cry",
+          "count": 1
+        },
+        {
+          "name": "SE:100cry",
+          "count": 2
+        },
+        {
+          "name": "SE:102cry",
+          "count": 3
+        },
+        {
+          "name": "SE:103cry",
+          "count": 1
+        },
+        {
+          "name": "SE:104cry",
+          "count": 4
+        },
+        {
+          "name": "SE:105cry",
+          "count": 4
+        },
+        {
+          "name": "SE:107cry",
+          "count": 1
+        },
+        {
+          "name": "SE:111cry",
+          "count": 1
+        },
+        {
+          "name": "SE:113cry",
+          "count": 69
+        },
+        {
+          "name": "SE:115cry",
+          "count": 2
+        },
+        {
+          "name": "SE:116cry",
+          "count": 1
+        },
+        {
+          "name": "SE:118cry",
+          "count": 1
+        },
+        {
+          "name": "SE:120cry",
+          "count": 4
+        },
+        {
+          "name": "SE:121cry",
+          "count": 1
+        },
+        {
+          "name": "SE:122cry",
+          "count": 23
+        },
+        {
+          "name": "SE:123cry",
+          "count": 1
+        },
+        {
+          "name": "SE:124cry",
+          "count": 4
+        },
+        {
+          "name": "SE:125cry",
+          "count": 2
+        },
+        {
+          "name": "SE:127cry",
+          "count": 1
+        },
+        {
+          "name": "SE:128cry",
+          "count": 37
+        },
+        {
+          "name": "SE:130cry",
+          "count": 9
+        },
+        {
+          "name": "SE:131cry",
+          "count": 10
+        },
+        {
+          "name": "SE:132cry",
+          "count": 1
+        },
+        {
+          "name": "SE:133cry",
+          "count": 7
+        },
+        {
+          "name": "SE:138cry",
+          "count": 1
+        },
+        {
+          "name": "SE:139cry",
+          "count": 1
+        },
+        {
+          "name": "SE:141cry",
+          "count": 1
+        },
+        {
+          "name": "SE:142cry",
+          "count": 1
+        },
+        {
+          "name": "SE:143cry",
+          "count": 6
+        },
+        {
+          "name": "SE:144cry",
+          "count": 1
+        },
+        {
+          "name": "SE:145cry",
+          "count": 1
+        },
+        {
+          "name": "SE:146cry",
+          "count": 1
+        },
+        {
+          "name": "SE:149cry",
+          "count": 3
+        },
+        {
+          "name": "SE:150cry",
+          "count": 1
+        },
+        {
+          "name": "SE:151cry",
+          "count": 1
+        },
+        {
+          "name": "SE:152cry",
+          "count": 4
+        },
+        {
+          "name": "SE:153cry",
+          "count": 1
+        },
+        {
+          "name": "SE:154cry",
+          "count": 1
+        },
+        {
+          "name": "SE:155cry",
+          "count": 5
+        },
+        {
+          "name": "SE:156cry",
+          "count": 2
+        },
+        {
+          "name": "SE:157cry",
+          "count": 1
+        },
+        {
+          "name": "SE:158cry",
+          "count": 5
+        },
+        {
+          "name": "SE:160cry",
+          "count": 1
+        },
+        {
+          "name": "SE:164cry",
+          "count": 2
+        },
+        {
+          "name": "SE:169cry",
+          "count": 1
+        },
+        {
+          "name": "SE:172cry",
+          "count": 1
+        },
+        {
+          "name": "SE:175cry",
+          "count": 8
+        },
+        {
+          "name": "SE:177cry",
+          "count": 5
+        },
+        {
+          "name": "SE:178cry",
+          "count": 4
+        },
+        {
+          "name": "SE:181cry",
+          "count": 4
+        },
+        {
+          "name": "SE:183cry",
+          "count": 1
+        },
+        {
+          "name": "SE:185cry",
+          "count": 5
+        },
+        {
+          "name": "SE:186cry",
+          "count": 3
+        },
+        {
+          "name": "SE:190cry",
+          "count": 9
+        },
+        {
+          "name": "SE:192cry",
+          "count": 1
+        },
+        {
+          "name": "SE:196cry",
+          "count": 1
+        },
+        {
+          "name": "SE:197cry",
+          "count": 3
+        },
+        {
+          "name": "SE:202cry",
+          "count": 1
+        },
+        {
+          "name": "SE:205cry",
+          "count": 1
+        },
+        {
+          "name": "SE:207cry",
+          "count": 1
+        },
+        {
+          "name": "SE:208cry",
+          "count": 1
+        },
+        {
+          "name": "SE:210cry",
+          "count": 1
+        },
+        {
+          "name": "SE:212cry",
+          "count": 3
+        },
+        {
+          "name": "SE:214cry",
+          "count": 4
+        },
+        {
+          "name": "SE:217cry",
+          "count": 2
+        },
+        {
+          "name": "SE:222cry",
+          "count": 22
+        },
+        {
+          "name": "SE:226cry",
+          "count": 2
+        },
+        {
+          "name": "SE:227cry",
+          "count": 5
+        },
+        {
+          "name": "SE:230cry",
+          "count": 1
+        },
+        {
+          "name": "SE:231cry",
+          "count": 1
+        },
+        {
+          "name": "SE:232cry",
+          "count": 2
+        },
+        {
+          "name": "SE:233cry",
+          "count": 1
+        },
+        {
+          "name": "SE:238cry",
+          "count": 1
+        },
+        {
+          "name": "SE:241cry",
+          "count": 23
+        },
+        {
+          "name": "SE:242cry",
+          "count": 9
+        },
+        {
+          "name": "SE:243cry",
+          "count": 1
+        },
+        {
+          "name": "SE:244cry",
+          "count": 1
+        },
+        {
+          "name": "SE:245cry",
+          "count": 1
+        },
+        {
+          "name": "SE:249cry",
+          "count": 2
+        },
+        {
+          "name": "SE:251cry",
+          "count": 1
+        },
+        {
+          "name": "SE:252cry",
+          "count": 1
+        },
+        {
+          "name": "SE:254cry",
+          "count": 5
+        },
+        {
+          "name": "SE:256cry",
+          "count": 1
+        },
+        {
+          "name": "SE:257cry",
+          "count": 2
+        },
+        {
+          "name": "SE:259cry",
+          "count": 1
+        },
+        {
+          "name": "SE:260cry",
+          "count": 1
+        },
+        {
+          "name": "SE:262cry",
+          "count": 1
+        },
+        {
+          "name": "SE:267cry",
+          "count": 2
+        },
+        {
+          "name": "SE:269cry",
+          "count": 6
+        },
+        {
+          "name": "SE:272cry",
+          "count": 2
+        },
+        {
+          "name": "SE:276cry",
+          "count": 1
+        },
+        {
+          "name": "SE:277cry",
+          "count": 1
+        },
+        {
+          "name": "SE:278cry",
+          "count": 1
+        },
+        {
+          "name": "SE:280cry",
+          "count": 3
+        },
+        {
+          "name": "SE:281cry",
+          "count": 2
+        },
+        {
+          "name": "SE:282cry",
+          "count": 4
+        },
+        {
+          "name": "SE:298cry",
+          "count": 2
+        },
+        {
+          "name": "SE:300cry",
+          "count": 1
+        },
+        {
+          "name": "SE:301cry",
+          "count": 1
+        },
+        {
+          "name": "SE:306cry",
+          "count": 1
+        },
+        {
+          "name": "SE:310cry",
+          "count": 1
+        },
+        {
+          "name": "SE:311cry",
+          "count": 1
+        },
+        {
+          "name": "SE:312cry",
+          "count": 1
+        },
+        {
+          "name": "SE:321cry",
+          "count": 1
+        },
+        {
+          "name": "SE:324cry",
+          "count": 3
+        },
+        {
+          "name": "SE:334cry",
+          "count": 1
+        },
+        {
+          "name": "SE:341cry",
+          "count": 3
+        },
+        {
+          "name": "SE:350cry",
+          "count": 2
+        },
+        {
+          "name": "SE:351cry",
+          "count": 1
+        },
+        {
+          "name": "SE:356cry",
+          "count": 1
+        },
+        {
+          "name": "SE:357cry",
+          "count": 1
+        },
+        {
+          "name": "SE:359cry",
+          "count": 1
+        },
+        {
+          "name": "SE:361cry",
+          "count": 1
+        },
+        {
+          "name": "SE:362cry",
+          "count": 2
+        },
+        {
+          "name": "SE:369cry",
+          "count": 1
+        },
+        {
+          "name": "SE:370cry",
+          "count": 1
+        },
+        {
+          "name": "SE:376cry",
+          "count": 1
+        },
+        {
+          "name": "SE:380cry",
+          "count": 1
+        },
+        {
+          "name": "SE:381cry",
+          "count": 1
+        },
+        {
+          "name": "SE:382cry",
+          "count": 2
+        },
+        {
+          "name": "SE:383cry",
+          "count": 2
+        },
+        {
+          "name": "SE:384cry",
+          "count": 1
+        },
+        {
+          "name": "SE:385cry",
+          "count": 1
+        },
+        {
+          "name": "SE:386cry",
+          "count": 2
+        },
+        {
+          "name": "SE:389cry",
+          "count": 3
+        },
+        {
+          "name": "SE:390cry",
+          "count": 2
+        },
+        {
+          "name": "SE:392cry",
+          "count": 2
+        },
+        {
+          "name": "SE:393cry",
+          "count": 2
+        },
+        {
+          "name": "SE:395cry",
+          "count": 1
+        },
+        {
+          "name": "SE:396cry",
+          "count": 1
+        },
+        {
+          "name": "SE:398cry",
+          "count": 1
+        },
+        {
+          "name": "SE:405cry",
+          "count": 3
+        },
+        {
+          "name": "SE:411cry",
+          "count": 1
+        },
+        {
+          "name": "SE:417cry",
+          "count": 1
+        },
+        {
+          "name": "SE:418cry",
+          "count": 2
+        },
+        {
+          "name": "SE:421cry",
+          "count": 1
+        },
+        {
+          "name": "SE:424cry",
+          "count": 2
+        },
+        {
+          "name": "SE:428cry",
+          "count": 1
+        },
+        {
+          "name": "SE:430cry",
+          "count": 3
+        },
+        {
+          "name": "SE:431cry",
+          "count": 1
+        },
+        {
+          "name": "SE:441cry",
+          "count": 1
+        },
+        {
+          "name": "SE:443cry",
+          "count": 2
+        },
+        {
+          "name": "SE:445cry",
+          "count": 2
+        },
+        {
+          "name": "SE:446cry",
+          "count": 2
+        },
+        {
+          "name": "SE:447cry",
+          "count": 1
+        },
+        {
+          "name": "SE:448cry",
+          "count": 2
+        },
+        {
+          "name": "SE:453cry",
+          "count": 6
+        },
+        {
+          "name": "SE:460cry",
+          "count": 1
+        },
+        {
+          "name": "SE:461cry",
+          "count": 1
+        },
+        {
+          "name": "SE:463cry",
+          "count": 1
+        },
+        {
+          "name": "SE:464cry",
+          "count": 2
+        },
+        {
+          "name": "SE:466cry",
+          "count": 1
+        },
+        {
+          "name": "SE:467cry",
+          "count": 1
+        },
+        {
+          "name": "SE:468cry",
+          "count": 1
+        },
+        {
+          "name": "SE:472cry",
+          "count": 2
+        },
+        {
+          "name": "SE:473cry",
+          "count": 1
+        },
+        {
+          "name": "SE:475cry",
+          "count": 5
+        },
+        {
+          "name": "SE:478cry",
+          "count": 2
+        },
+        {
+          "name": "SE:479cry",
+          "count": 6
+        },
+        {
+          "name": "SE:480cry",
+          "count": 3
+        },
+        {
+          "name": "SE:481cry",
+          "count": 3
+        },
+        {
+          "name": "SE:482cry",
+          "count": 7
+        },
+        {
+          "name": "SE:483cry",
+          "count": 2
+        },
+        {
+          "name": "SE:484cry",
+          "count": 2
+        },
+        {
+          "name": "SE:485cry",
+          "count": 1
+        },
+        {
+          "name": "SE:486cry",
+          "count": 1
+        },
+        {
+          "name": "SE:487cry",
+          "count": 1
+        },
+        {
+          "name": "SE:488cry",
+          "count": 1
+        },
+        {
+          "name": "SE:490cry",
+          "count": 1
+        },
+        {
+          "name": "SE:491cry",
+          "count": 1
+        },
+        {
+          "name": "SE:492cry",
+          "count": 1
+        },
+        {
+          "name": "SE:493cry",
+          "count": 1
+        },
+        {
+          "name": "SE:494cry",
+          "count": 1
+        },
+        {
+          "name": "SE:495cry",
+          "count": 3
+        },
+        {
+          "name": "SE:497cry",
+          "count": 1
+        },
+        {
+          "name": "SE:498cry",
+          "count": 2
+        },
+        {
+          "name": "SE:499cry",
+          "count": 2
+        },
+        {
+          "name": "SE:500cry",
+          "count": 1
+        },
+        {
+          "name": "SE:501cry",
+          "count": 5
+        },
+        {
+          "name": "SE:502cry",
+          "count": 1
+        },
+        {
+          "name": "SE:517cry",
+          "count": 4
+        },
+        {
+          "name": "SE:518cry",
+          "count": 3
+        },
+        {
+          "name": "SE:519cry",
+          "count": 1
+        },
+        {
+          "name": "SE:521cry",
+          "count": 1
+        },
+        {
+          "name": "SE:524cry",
+          "count": 1
+        },
+        {
+          "name": "SE:525cry",
+          "count": 3
+        },
+        {
+          "name": "SE:528cry",
+          "count": 1
+        },
+        {
+          "name": "SE:531cry",
+          "count": 13
+        },
+        {
+          "name": "SE:536cry",
+          "count": 3
+        },
+        {
+          "name": "SE:540cry",
+          "count": 1
+        },
+        {
+          "name": "SE:542cry",
+          "count": 5
+        },
+        {
+          "name": "SE:543cry",
+          "count": 60
+        },
+        {
+          "name": "SE:552cry",
+          "count": 1
+        },
+        {
+          "name": "SE:553cry",
+          "count": 2
+        },
+        {
+          "name": "SE:555cry",
+          "count": 1
+        },
+        {
+          "name": "SE:559cry",
+          "count": 2
+        },
+        {
+          "name": "SE:565cry",
+          "count": 1
+        },
+        {
+          "name": "SE:575cry",
+          "count": 1
+        },
+        {
+          "name": "SE:578cry",
+          "count": 1
+        },
+        {
+          "name": "SE:585cry",
+          "count": 1
+        },
+        {
+          "name": "SE:589cry",
+          "count": 1
+        },
+        {
+          "name": "SE:590cry",
+          "count": 3
+        },
+        {
+          "name": "SE:594cry",
+          "count": 1
+        },
+        {
+          "name": "SE:596cry",
+          "count": 1
+        },
+        {
+          "name": "SE:605cry",
+          "count": 4
+        },
+        {
+          "name": "SE:606cry",
+          "count": 1
+        },
+        {
+          "name": "SE:610cry",
+          "count": 2
+        },
+        {
+          "name": "SE:617cry",
+          "count": 1
+        },
+        {
+          "name": "SE:618cry",
+          "count": 1
+        },
+        {
+          "name": "SE:628cry",
+          "count": 1
+        },
+        {
+          "name": "SE:629cry",
+          "count": 1
+        },
+        {
+          "name": "SE:638cry",
+          "count": 1
+        },
+        {
+          "name": "SE:639cry",
+          "count": 1
+        },
+        {
+          "name": "SE:640cry",
+          "count": 1
+        },
+        {
+          "name": "SE:641cry",
+          "count": 3
+        },
+        {
+          "name": "SE:642cry",
+          "count": 3
+        },
+        {
+          "name": "SE:643cry",
+          "count": 2
+        },
+        {
+          "name": "SE:644cry",
+          "count": 1
+        },
+        {
+          "name": "SE:645cry",
+          "count": 3
+        },
+        {
+          "name": "SE:646cry",
+          "count": 1
+        },
+        {
+          "name": "SE:647cry",
+          "count": 2
+        },
+        {
+          "name": "SE:648cry",
+          "count": 4
+        },
+        {
+          "name": "SE:649cry",
+          "count": 2
+        },
+        {
+          "name": "SE:650cry",
+          "count": 1
+        },
+        {
+          "name": "SE:652cry",
+          "count": 3
+        },
+        {
+          "name": "SE:654cry",
+          "count": 1
+        },
+        {
+          "name": "SE:656cry",
+          "count": 1
+        },
+        {
+          "name": "SE:658cry",
+          "count": 1
+        },
+        {
+          "name": "SE:659cry",
+          "count": 1
+        },
+        {
+          "name": "SE:661cry",
+          "count": 1
+        },
+        {
+          "name": "SE:662cry",
+          "count": 1
+        },
+        {
+          "name": "SE:663cry",
+          "count": 1
+        },
+        {
+          "name": "SE:666cry",
+          "count": 2
+        },
+        {
+          "name": "SE:672cry",
+          "count": 14
+        },
+        {
+          "name": "SE:673cry",
+          "count": 1
+        },
+        {
+          "name": "SE:675cry",
+          "count": 1
+        },
+        {
+          "name": "SE:678cry",
+          "count": 2
+        },
+        {
+          "name": "SE:682cry",
+          "count": 1
+        },
+        {
+          "name": "SE:686cry",
+          "count": 1
+        },
+        {
+          "name": "SE:695cry",
+          "count": 1
+        },
+        {
+          "name": "SE:696cry",
+          "count": 1
+        },
+        {
+          "name": "SE:700cry",
+          "count": 1
+        },
+        {
+          "name": "SE:701cry",
+          "count": 2
+        },
+        {
+          "name": "SE:702cry",
+          "count": 1
+        },
+        {
+          "name": "SE:704cry",
+          "count": 1
+        },
+        {
+          "name": "SE:711cry",
+          "count": 1
+        },
+        {
+          "name": "SE:715cry",
+          "count": 1
+        },
+        {
+          "name": "SE:716cry",
+          "count": 2
+        },
+        {
+          "name": "SE:717cry",
+          "count": 1
+        },
+        {
+          "name": "SE:718cry",
+          "count": 3
+        },
+        {
+          "name": "SE:722cry",
+          "count": 2
+        },
+        {
+          "name": "SE:724cry",
+          "count": 1
+        },
+        {
+          "name": "SE:725cry",
+          "count": 5
+        },
+        {
+          "name": "SE:727cry",
+          "count": 3
+        },
+        {
+          "name": "SE:728cry",
+          "count": 3
+        },
+        {
+          "name": "SE:729cry",
+          "count": 1
+        },
+        {
+          "name": "SE:730cry",
+          "count": 4
+        },
+        {
+          "name": "SE:735cry",
+          "count": 6
+        },
+        {
+          "name": "SE:737cry",
+          "count": 2
+        },
+        {
+          "name": "SE:738cry",
+          "count": 2
+        },
+        {
+          "name": "SE:740cry",
+          "count": 1
+        },
+        {
+          "name": "SE:744cry",
+          "count": 7
+        },
+        {
+          "name": "SE:746cry",
+          "count": 1
+        },
+        {
+          "name": "SE:746scry",
+          "count": 1
+        },
+        {
+          "name": "SE:747cry",
+          "count": 2
+        },
+        {
+          "name": "SE:754cry",
+          "count": 1
+        },
+        {
+          "name": "SE:761cry",
+          "count": 4
+        },
+        {
+          "name": "SE:762cry",
+          "count": 1
+        },
+        {
+          "name": "SE:763cry",
+          "count": 4
+        },
+        {
+          "name": "SE:764cry",
+          "count": 9
+        },
+        {
+          "name": "SE:776cry",
+          "count": 3
+        },
+        {
+          "name": "SE:777cry",
+          "count": 4
+        },
+        {
+          "name": "SE:778cry",
+          "count": 1
+        },
+        {
+          "name": "SE:785cry",
+          "count": 4
+        },
+        {
+          "name": "SE:786cry",
+          "count": 1
+        },
+        {
+          "name": "SE:787cry",
+          "count": 2
+        },
+        {
+          "name": "SE:788cry",
+          "count": 1
+        },
+        {
+          "name": "SE:789cry",
+          "count": 2
+        },
+        {
+          "name": "SE:791cry",
+          "count": 7
+        },
+        {
+          "name": "SE:792cry",
+          "count": 4
+        },
+        {
+          "name": "SE:793cry",
+          "count": 1
+        },
+        {
+          "name": "SE:794cry",
+          "count": 2
+        },
+        {
+          "name": "SE:795cry",
+          "count": 2
+        },
+        {
+          "name": "SE:798cry",
+          "count": 2
+        },
+        {
+          "name": "SE:799cry",
+          "count": 5
+        },
+        {
+          "name": "SE:800cry",
+          "count": 2
+        },
+        {
+          "name": "SE:803cry",
+          "count": 15
+        },
+        {
+          "name": "SE:805cry",
+          "count": 3
+        },
+        {
+          "name": "SE:831cry",
+          "count": 1
+        },
+        {
+          "name": "SE:832cry",
+          "count": 2
+        },
+        {
+          "name": "SE:833cry",
+          "count": 1
+        },
+        {
+          "name": "SE:abomasnow",
+          "count": 1
+        },
+        {
+          "name": "SE:abra",
+          "count": 5
+        },
+        {
+          "name": "SE:absol",
+          "count": 2
+        },
+        {
+          "name": "SE:aerodactyl",
+          "count": 1
+        },
+        {
+          "name": "SE:alcremie",
+          "count": 1
+        },
+        {
+          "name": "SE:altaria",
+          "count": 1
+        },
+        {
+          "name": "SE:amaura",
+          "count": 1
+        },
+        {
+          "name": "SE:ampharos",
+          "count": 2
+        },
+        {
+          "name": "SE:appletun",
+          "count": 2
+        },
+        {
+          "name": "SE:applin",
+          "count": 2
+        },
+        {
+          "name": "SE:arbok",
+          "count": 1
+        },
+        {
+          "name": "SE:arcanine",
+          "count": 2
+        },
+        {
+          "name": "SE:arctozolt",
+          "count": 1
+        },
+        {
+          "name": "SE:ariados",
+          "count": 3
+        },
+        {
+          "name": "SE:arrokuda",
+          "count": 1
+        },
+        {
+          "name": "SE:articuno",
+          "count": 2
+        },
+        {
+          "name": "SE:audino",
+          "count": 2
+        },
+        {
+          "name": "SE:avalugg",
+          "count": 1
+        },
+        {
+          "name": "SE:azelf",
+          "count": 1
+        },
+        {
+          "name": "SE:azumarill",
+          "count": 1
+        },
+        {
+          "name": "SE:azurill",
+          "count": 1
+        },
+        {
+          "name": "SE:bagon",
+          "count": 1
+        },
+        {
+          "name": "SE:balldrop",
+          "count": 1
+        },
+        {
+          "name": "SE:baltoy",
+          "count": 1
+        },
+        {
+          "name": "SE:banette",
+          "count": 3
+        },
+        {
+          "name": "SE:basculin",
+          "count": 1
+        },
+        {
+          "name": "SE:battle ball hit",
+          "count": 1
+        },
+        {
+          "name": "SE:battle flee",
+          "count": 1
+        },
+        {
+          "name": "SE:battle1",
+          "count": 1
+        },
+        {
+          "name": "SE:beartic",
+          "count": 2
+        },
+        {
+          "name": "SE:beedrill",
+          "count": 1
+        },
+        {
+          "name": "SE:bellossom",
+          "count": 2
+        },
+        {
+          "name": "SE:bellsprout",
+          "count": 1
+        },
+        {
+          "name": "SE:bergmite",
+          "count": 1
+        },
+        {
+          "name": "SE:bidoof",
+          "count": 5
+        },
+        {
+          "name": "SE:binacle",
+          "count": 1
+        },
+        {
+          "name": "SE:blissey",
+          "count": 1
+        },
+        {
+          "name": "SE:boldore",
+          "count": 2
+        },
+        {
+          "name": "SE:bonsly",
+          "count": 1
+        },
+        {
+          "name": "SE:bruxish",
+          "count": 1
+        },
+        {
+          "name": "SE:bunnelby",
+          "count": 3
+        },
+        {
+          "name": "SE:butterfree",
+          "count": 1
+        },
+        {
+          "name": "SE:cacnea",
+          "count": 1
+        },
+        {
+          "name": "SE:calyrex",
+          "count": 2
+        },
+        {
+          "name": "SE:camerupt",
+          "count": 2
+        },
+        {
+          "name": "SE:carvanha",
+          "count": 1
+        },
+        {
+          "name": "SE:cascoon",
+          "count": 3
+        },
+        {
+          "name": "SE:caterpie",
+          "count": 1
+        },
+        {
+          "name": "SE:centiskorch",
+          "count": 1
+        },
+        {
+          "name": "SE:chansey",
+          "count": 2
+        },
+        {
+          "name": "SE:charizard",
+          "count": 3
+        },
+        {
+          "name": "SE:charmeleon",
+          "count": 2
+        },
+        {
+          "name": "SE:chatot",
+          "count": 4
+        },
+        {
+          "name": "SE:chimecho",
+          "count": 1
+        },
+        {
+          "name": "SE:chinchou",
+          "count": 1
+        },
+        {
+          "name": "SE:cinderace",
+          "count": 2
+        },
+        {
+          "name": "SE:clauncher",
+          "count": 1
+        },
+        {
+          "name": "SE:claydol",
+          "count": 1
+        },
+        {
+          "name": "SE:clefable",
+          "count": 1
+        },
+        {
+          "name": "SE:clefairy",
+          "count": 1
+        },
+        {
+          "name": "SE:cleffa",
+          "count": 1
+        },
+        {
+          "name": "SE:clobbopus",
+          "count": 1
+        },
+        {
+          "name": "SE:cloyster",
+          "count": 1
+        },
+        {
+          "name": "SE:coalossal",
+          "count": 1
+        },
+        {
+          "name": "SE:combee",
+          "count": 6
+        },
+        {
+          "name": "SE:conkeldurr",
+          "count": 1
+        },
+        {
+          "name": "SE:corsola",
+          "count": 1
+        },
+        {
+          "name": "SE:corviknight",
+          "count": 9
+        },
+        {
+          "name": "SE:cresselia",
+          "count": 1
+        },
+        {
+          "name": "SE:croconaw",
+          "count": 1
+        },
+        {
+          "name": "SE:cubone",
+          "count": 3
+        },
+        {
+          "name": "SE:darkrai",
+          "count": 1
+        },
+        {
+          "name": "SE:darmanitan",
+          "count": 2
+        },
+        {
+          "name": "SE:dedenne",
+          "count": 2
+        },
+        {
+          "name": "SE:delcatty",
+          "count": 1
+        },
+        {
+          "name": "SE:delphox",
+          "count": 1
+        },
+        {
+          "name": "SE:dewgong",
+          "count": 3
+        },
+        {
+          "name": "SE:dhelmise",
+          "count": 1
+        },
+        {
+          "name": "SE:diggersby",
+          "count": 1
+        },
+        {
+          "name": "SE:diglett",
+          "count": 1
+        },
+        {
+          "name": "SE:ditto",
+          "count": 2
+        },
+        {
+          "name": "SE:dodrio",
+          "count": 2
+        },
+        {
+          "name": "SE:donphan",
+          "count": 1
+        },
+        {
+          "name": "SE:door",
+          "count": 1
+        },
+        {
+          "name": "SE:door exit",
+          "count": 4
+        },
+        {
+          "name": "SE:dracovish",
+          "count": 3
+        },
+        {
+          "name": "SE:dragonair",
+          "count": 3
+        },
+        {
+          "name": "SE:dragonite",
+          "count": 5
+        },
+        {
+          "name": "SE:drakloak",
+          "count": 1
+        },
+        {
+          "name": "SE:dratini",
+          "count": 5
+        },
+        {
+          "name": "SE:drednaw",
+          "count": 1
+        },
+        {
+          "name": "SE:dreepy",
+          "count": 2
+        },
+        {
+          "name": "SE:drizzile",
+          "count": 1
+        },
+        {
+          "name": "SE:drowzee",
+          "count": 2
+        },
+        {
+          "name": "SE:duraludon",
+          "count": 1
+        },
+        {
+          "name": "SE:durant",
+          "count": 2
+        },
+        {
+          "name": "SE:duskull",
+          "count": 1
+        },
+        {
+          "name": "SE:dustox",
+          "count": 3
+        },
+        {
+          "name": "SE:eelektrik",
+          "count": 2
+        },
+        {
+          "name": "SE:eevee",
+          "count": 2
+        },
+        {
+          "name": "SE:eiscue",
+          "count": 1
+        },
+        {
+          "name": "SE:ekans",
+          "count": 2
+        },
+        {
+          "name": "SE:electabuzz",
+          "count": 2
+        },
+        {
+          "name": "SE:elekid",
+          "count": 1
+        },
+        {
+          "name": "SE:enamorus",
+          "count": 1
+        },
+        {
+          "name": "SE:entering door",
+          "count": 54
+        },
+        {
+          "name": "SE:espeon",
+          "count": 1
+        },
+        {
+          "name": "SE:espurr",
+          "count": 1
+        },
+        {
+          "name": "SE:exeggcute",
+          "count": 1
+        },
+        {
+          "name": "SE:exeggutor",
+          "count": 2
+        },
+        {
+          "name": "SE:exit door",
+          "count": 1235
+        },
+        {
+          "name": "SE:exploud",
+          "count": 1
+        },
+        {
+          "name": "SE:falinks",
+          "count": 4
+        },
+        {
+          "name": "SE:farfetchd",
+          "count": 7
+        },
+        {
+          "name": "SE:feebas",
+          "count": 1
+        },
+        {
+          "name": "SE:ferrothorn",
+          "count": 1
+        },
+        {
+          "name": "SE:flaaffy",
+          "count": 2
+        },
+        {
+          "name": "SE:flabebe",
+          "count": 6
+        },
+        {
+          "name": "SE:fletchinder",
+          "count": 2
+        },
+        {
+          "name": "SE:fletchling",
+          "count": 3
+        },
+        {
+          "name": "SE:floette",
+          "count": 5
+        },
+        {
+          "name": "SE:florges",
+          "count": 1
+        },
+        {
+          "name": "SE:flygon",
+          "count": 2
+        },
+        {
+          "name": "SE:foongus",
+          "count": 2
+        },
+        {
+          "name": "SE:fraxure",
+          "count": 2
+        },
+        {
+          "name": "SE:frillish",
+          "count": 2
+        },
+        {
+          "name": "SE:froakie",
+          "count": 1
+        },
+        {
+          "name": "SE:frogadier",
+          "count": 1
+        },
+        {
+          "name": "SE:furfrou",
+          "count": 2
+        },
+        {
+          "name": "SE:furret",
+          "count": 1
+        },
+        {
+          "name": "SE:gabite",
+          "count": 1
+        },
+        {
+          "name": "SE:gallade",
+          "count": 1
+        },
+        {
+          "name": "SE:garbodor",
+          "count": 1
+        },
+        {
+          "name": "SE:gastly",
+          "count": 1
+        },
+        {
+          "name": "SE:gengar",
+          "count": 6
+        },
+        {
+          "name": "SE:geodude",
+          "count": 4
+        },
+        {
+          "name": "SE:gible",
+          "count": 2
+        },
+        {
+          "name": "SE:girafarig",
+          "count": 1
+        },
+        {
+          "name": "SE:glastrier",
+          "count": 1
+        },
+        {
+          "name": "SE:gloom",
+          "count": 1
+        },
+        {
+          "name": "SE:gogoat",
+          "count": 1
+        },
+        {
+          "name": "SE:golbat",
+          "count": 1
+        },
+        {
+          "name": "SE:goldeen",
+          "count": 2
+        },
+        {
+          "name": "SE:golurk",
+          "count": 1
+        },
+        {
+          "name": "SE:gossifleur",
+          "count": 1
+        },
+        {
+          "name": "SE:gothitelle",
+          "count": 2
+        },
+        {
+          "name": "SE:graveler",
+          "count": 1
+        },
+        {
+          "name": "SE:greedent",
+          "count": 1
+        },
+        {
+          "name": "SE:grimer",
+          "count": 3
+        },
+        {
+          "name": "SE:grookey",
+          "count": 1
+        },
+        {
+          "name": "SE:grovyle",
+          "count": 1
+        },
+        {
+          "name": "SE:gui naming confirm",
+          "count": 2
+        },
+        {
+          "name": "SE:gulpin",
+          "count": 1
+        },
+        {
+          "name": "SE:gurdurr",
+          "count": 2
+        },
+        {
+          "name": "SE:hatterene",
+          "count": 1
+        },
+        {
+          "name": "SE:hawlucha",
+          "count": 1
+        },
+        {
+          "name": "SE:heracross",
+          "count": 2
+        },
+        {
+          "name": "SE:herdier",
+          "count": 1
+        },
+        {
+          "name": "SE:hitmonchan",
+          "count": 2
+        },
+        {
+          "name": "SE:honchkrow",
+          "count": 6
+        },
+        {
+          "name": "SE:hooh",
+          "count": 2
+        },
+        {
+          "name": "SE:hoothoot",
+          "count": 5
+        },
+        {
+          "name": "SE:hydreigon",
+          "count": 1
+        },
+        {
+          "name": "SE:incineroar",
+          "count": 1
+        },
+        {
+          "name": "SE:indeedee",
+          "count": 1
+        },
+        {
+          "name": "SE:indeedee_1",
+          "count": 6
+        },
+        {
+          "name": "SE:inteleon",
+          "count": 1
+        },
+        {
+          "name": "SE:itemlevel",
+          "count": 1
+        },
+        {
+          "name": "SE:ivysaur",
+          "count": 1
+        },
+        {
+          "name": "SE:jigglypuff",
+          "count": 1
+        },
+        {
+          "name": "SE:jolteon",
+          "count": 1
+        },
+        {
+          "name": "SE:joltik",
+          "count": 1
+        },
+        {
+          "name": "SE:kabuto",
+          "count": 2
+        },
+        {
+          "name": "SE:kakuna",
+          "count": 2
+        },
+        {
+          "name": "SE:kangaskhan",
+          "count": 2
+        },
+        {
+          "name": "SE:kecleon",
+          "count": 2
+        },
+        {
+          "name": "SE:kingdra",
+          "count": 4
+        },
+        {
+          "name": "SE:koffing",
+          "count": 4
+        },
+        {
+          "name": "SE:krabby",
+          "count": 2
+        },
+        {
+          "name": "SE:larvitar",
+          "count": 2
+        },
+        {
+          "name": "SE:latias",
+          "count": 10
+        },
+        {
+          "name": "SE:latios",
+          "count": 1
+        },
+        {
+          "name": "SE:leavanny",
+          "count": 2
+        },
+        {
+          "name": "SE:ledian",
+          "count": 1
+        },
+        {
+          "name": "SE:lilligant",
+          "count": 1
+        },
+        {
+          "name": "SE:lillipup",
+          "count": 1
+        },
+        {
+          "name": "SE:linoone",
+          "count": 1
+        },
+        {
+          "name": "SE:litten",
+          "count": 1
+        },
+        {
+          "name": "SE:lucario",
+          "count": 3
+        },
+        {
+          "name": "SE:lugia",
+          "count": 1
+        },
+        {
+          "name": "SE:machamp",
+          "count": 1
+        },
+        {
+          "name": "SE:magby",
+          "count": 1
+        },
+        {
+          "name": "SE:magcargo",
+          "count": 1
+        },
+        {
+          "name": "SE:magikarp",
+          "count": 4
+        },
+        {
+          "name": "SE:magnemite",
+          "count": 3
+        },
+        {
+          "name": "SE:magneton",
+          "count": 1
+        },
+        {
+          "name": "SE:mandibuzz",
+          "count": 1
+        },
+        {
+          "name": "SE:mankey",
+          "count": 1
+        },
+        {
+          "name": "SE:mantyke",
+          "count": 2
+        },
+        {
+          "name": "SE:maractus",
+          "count": 1
+        },
+        {
+          "name": "SE:mareep",
+          "count": 1
+        },
+        {
+          "name": "SE:marill",
+          "count": 1
+        },
+        {
+          "name": "SE:masquerain",
+          "count": 1
+        },
+        {
+          "name": "SE:menu",
+          "count": 2
+        },
+        {
+          "name": "SE:metapod",
+          "count": 2
+        },
+        {
+          "name": "SE:minccino",
+          "count": 1
+        },
+        {
+          "name": "SE:misdreavus",
+          "count": 2
+        },
+        {
+          "name": "SE:mismagius",
+          "count": 1
+        },
+        {
+          "name": "SE:moltres",
+          "count": 2
+        },
+        {
+          "name": "SE:morelull",
+          "count": 1
+        },
+        {
+          "name": "SE:morgrem",
+          "count": 1
+        },
+        {
+          "name": "SE:mrmime",
+          "count": 1
+        },
+        {
+          "name": "SE:mrrime",
+          "count": 1
+        },
+        {
+          "name": "SE:mudbray",
+          "count": 1
+        },
+        {
+          "name": "SE:munchlax",
+          "count": 2
+        },
+        {
+          "name": "SE:munna",
+          "count": 1
+        },
+        {
+          "name": "SE:murkrow",
+          "count": 6
+        },
+        {
+          "name": "SE:nickit",
+          "count": 3
+        },
+        {
+          "name": "SE:nidoranfe",
+          "count": 3
+        },
+        {
+          "name": "SE:nidoranma",
+          "count": 3
+        },
+        {
+          "name": "SE:nidorino",
+          "count": 1
+        },
+        {
+          "name": "SE:nihilego",
+          "count": 1
+        },
+        {
+          "name": "SE:nincada",
+          "count": 1
+        },
+        {
+          "name": "SE:ninjask",
+          "count": 1
+        },
+        {
+          "name": "SE:noctowl",
+          "count": 2
+        },
+        {
+          "name": "SE:nosepass",
+          "count": 1
+        },
+        {
+          "name": "SE:obstagoon",
+          "count": 1
+        },
+        {
+          "name": "SE:oddish",
+          "count": 2
+        },
+        {
+          "name": "SE:omanyte",
+          "count": 1
+        },
+        {
+          "name": "SE:oranguru",
+          "count": 1
+        },
+        {
+          "name": "SE:orbeetle",
+          "count": 1
+        },
+        {
+          "name": "SE:oricorio_2",
+          "count": 1
+        },
+        {
+          "name": "SE:pachirisu",
+          "count": 2
+        },
+        {
+          "name": "SE:pangoro",
+          "count": 1
+        },
+        {
+          "name": "SE:panpour",
+          "count": 3
+        },
+        {
+          "name": "SE:pansage",
+          "count": 1
+        },
+        {
+          "name": "SE:pansear",
+          "count": 2
+        },
+        {
+          "name": "SE:paras",
+          "count": 1
+        },
+        {
+          "name": "SE:parasect",
+          "count": 1
+        },
+        {
+          "name": "SE:passimian",
+          "count": 1
+        },
+        {
+          "name": "SE:patrat",
+          "count": 1
+        },
+        {
+          "name": "SE:pc access",
+          "count": 7
+        },
+        {
+          "name": "SE:pc close",
+          "count": 2
+        },
+        {
+          "name": "SE:pc open",
+          "count": 2
+        },
+        {
+          "name": "SE:phantump",
+          "count": 1
+        },
+        {
+          "name": "SE:pichu",
+          "count": 1
+        },
+        {
+          "name": "SE:pidgeot",
+          "count": 2
+        },
+        {
+          "name": "SE:pidgeotto",
+          "count": 4
+        },
+        {
+          "name": "SE:pidgey",
+          "count": 5
+        },
+        {
+          "name": "SE:pidove",
+          "count": 2
+        },
+        {
+          "name": "SE:pikipek",
+          "count": 2
+        },
+        {
+          "name": "SE:piloswine",
+          "count": 1
+        },
+        {
+          "name": "SE:pineco",
+          "count": 1
+        },
+        {
+          "name": "SE:pinsir",
+          "count": 1
+        },
+        {
+          "name": "SE:piplup",
+          "count": 2
+        },
+        {
+          "name": "SE:poipole",
+          "count": 1
+        },
+        {
+          "name": "SE:poliwag",
+          "count": 1
+        },
+        {
+          "name": "SE:ponyta",
+          "count": 2
+        },
+        {
+          "name": "SE:porygon",
+          "count": 3
+        },
+        {
+          "name": "SE:primeape",
+          "count": 1
+        },
+        {
+          "name": "SE:pumpkaboo",
+          "count": 1
+        },
+        {
+          "name": "SE:purugly",
+          "count": 1
+        },
+        {
+          "name": "SE:pyukumuku",
+          "count": 1
+        },
+        {
+          "name": "SE:quagsire",
+          "count": 2
+        },
+        {
+          "name": "SE:qwilfish",
+          "count": 1
+        },
+        {
+          "name": "SE:raboot",
+          "count": 1
+        },
+        {
+          "name": "SE:raichu",
+          "count": 4
+        },
+        {
+          "name": "SE:rampardos",
+          "count": 1
+        },
+        {
+          "name": "SE:rapidash",
+          "count": 2
+        },
+        {
+          "name": "SE:raticate",
+          "count": 2
+        },
+        {
+          "name": "SE:rattata",
+          "count": 2
+        },
+        {
+          "name": "SE:regidrago",
+          "count": 1
+        },
+        {
+          "name": "SE:regieleki",
+          "count": 2
+        },
+        {
+          "name": "SE:remoraid",
+          "count": 1
+        },
+        {
+          "name": "SE:rhyhorn",
+          "count": 1
+        },
+        {
+          "name": "SE:rillaboom",
+          "count": 2
+        },
+        {
+          "name": "SE:riolu",
+          "count": 1
+        },
+        {
+          "name": "SE:roggenrola",
+          "count": 1
+        },
+        {
+          "name": "SE:rookidee",
+          "count": 1
+        },
+        {
+          "name": "SE:roselia",
+          "count": 1
+        },
+        {
+          "name": "SE:rufflet",
+          "count": 1
+        },
+        {
+          "name": "SE:sableye",
+          "count": 1
+        },
+        {
+          "name": "SE:sandile",
+          "count": 2
+        },
+        {
+          "name": "SE:sandshrew",
+          "count": 1
+        },
+        {
+          "name": "SE:scatterbug",
+          "count": 1
+        },
+        {
+          "name": "SE:scizor",
+          "count": 3
+        },
+        {
+          "name": "SE:scorbunny",
+          "count": 1
+        },
+        {
+          "name": "SE:scrafty",
+          "count": 2
+        },
+        {
+          "name": "SE:scyther",
+          "count": 2
+        },
+        {
+          "name": "SE:seadra",
+          "count": 3
+        },
+        {
+          "name": "SE:sealeo",
+          "count": 1
+        },
+        {
+          "name": "SE:seismitoad",
+          "count": 1
+        },
+        {
+          "name": "SE:sentret",
+          "count": 1
+        },
+        {
+          "name": "SE:sharpedo",
+          "count": 1
+        },
+        {
+          "name": "SE:shedinja",
+          "count": 1
+        },
+        {
+          "name": "SE:shelgon",
+          "count": 1
+        },
+        {
+          "name": "SE:sing",
+          "count": 1
+        },
+        {
+          "name": "SE:sirfetchd",
+          "count": 4
+        },
+        {
+          "name": "SE:skiddo",
+          "count": 2
+        },
+        {
+          "name": "SE:skitty",
+          "count": 2
+        },
+        {
+          "name": "SE:skwovet",
+          "count": 1
+        },
+        {
+          "name": "SE:slaking",
+          "count": 1
+        },
+        {
+          "name": "SE:slowking",
+          "count": 1
+        },
+        {
+          "name": "SE:slowpoke",
+          "count": 1
+        },
+        {
+          "name": "SE:smeargle",
+          "count": 1
+        },
+        {
+          "name": "SE:snivy",
+          "count": 1
+        },
+        {
+          "name": "SE:snorlax",
+          "count": 1
+        },
+        {
+          "name": "SE:snover",
+          "count": 1
+        },
+        {
+          "name": "SE:snubbull",
+          "count": 1
+        },
+        {
+          "name": "SE:sobble",
+          "count": 1
+        },
+        {
+          "name": "SE:solosis",
+          "count": 1
+        },
+        {
+          "name": "SE:spearow",
+          "count": 1
+        },
+        {
+          "name": "SE:spectrier",
+          "count": 1
+        },
+        {
+          "name": "SE:spheal",
+          "count": 2
+        },
+        {
+          "name": "SE:spinda",
+          "count": 1
+        },
+        {
+          "name": "SE:spoink",
+          "count": 1
+        },
+        {
+          "name": "SE:spritzee",
+          "count": 1
+        },
+        {
+          "name": "SE:stantler",
+          "count": 4
+        },
+        {
+          "name": "SE:staraptor",
+          "count": 3
+        },
+        {
+          "name": "SE:staravia",
+          "count": 2
+        },
+        {
+          "name": "SE:starly",
+          "count": 2
+        },
+        {
+          "name": "SE:steelix",
+          "count": 1
+        },
+        {
+          "name": "SE:stoutland",
+          "count": 1
+        },
+        {
+          "name": "SE:stunfisk",
+          "count": 2
+        },
+        {
+          "name": "SE:suicune",
+          "count": 1
+        },
+        {
+          "name": "SE:swablu",
+          "count": 1
+        },
+        {
+          "name": "SE:swadloon",
+          "count": 1
+        },
+        {
+          "name": "SE:swellow",
+          "count": 2
+        },
+        {
+          "name": "SE:sylveon",
+          "count": 1
+        },
+        {
+          "name": "SE:taillow",
+          "count": 5
+        },
+        {
+          "name": "SE:talonflame",
+          "count": 2
+        },
+        {
+          "name": "SE:tangela",
+          "count": 1
+        },
+        {
+          "name": "SE:teddiursa",
+          "count": 1
+        },
+        {
+          "name": "SE:tentacool",
+          "count": 3
+        },
+        {
+          "name": "SE:tentacruel",
+          "count": 1
+        },
+        {
+          "name": "SE:tepig",
+          "count": 1
+        },
+        {
+          "name": "SE:thievul",
+          "count": 3
+        },
+        {
+          "name": "SE:throw",
+          "count": 6
+        },
+        {
+          "name": "SE:thunder8",
+          "count": 2
+        },
+        {
+          "name": "SE:toucannon",
+          "count": 2
+        },
+        {
+          "name": "SE:toxtricity",
+          "count": 2
+        },
+        {
+          "name": "SE:toxtricity_1",
+          "count": 1
+        },
+        {
+          "name": "SE:tranquill",
+          "count": 2
+        },
+        {
+          "name": "SE:trapinch",
+          "count": 2
+        },
+        {
+          "name": "SE:trevenant",
+          "count": 1
+        },
+        {
+          "name": "SE:tropius",
+          "count": 1
+        },
+        {
+          "name": "SE:trumbeak",
+          "count": 2
+        },
+        {
+          "name": "SE:turtonator",
+          "count": 2
+        },
+        {
+          "name": "SE:tyrogue",
+          "count": 1
+        },
+        {
+          "name": "SE:unfezant",
+          "count": 2
+        },
+        {
+          "name": "SE:ursaring",
+          "count": 1
+        },
+        {
+          "name": "SE:urshifu_1",
+          "count": 1
+        },
+        {
+          "name": "SE:vanillish",
+          "count": 1
+        },
+        {
+          "name": "SE:vanillite",
+          "count": 1
+        },
+        {
+          "name": "SE:venomoth",
+          "count": 2
+        },
+        {
+          "name": "SE:venonat",
+          "count": 1
+        },
+        {
+          "name": "SE:vespiquen",
+          "count": 1
+        },
+        {
+          "name": "SE:vibrava",
+          "count": 1
+        },
+        {
+          "name": "SE:volcarona",
+          "count": 1
+        },
+        {
+          "name": "SE:voltorb",
+          "count": 4
+        },
+        {
+          "name": "SE:voltorb flip explosion",
+          "count": 61
+        },
+        {
+          "name": "SE:wailmer",
+          "count": 3
+        },
+        {
+          "name": "SE:watchog",
+          "count": 1
+        },
+        {
+          "name": "SE:weedle",
+          "count": 2
+        },
+        {
+          "name": "SE:weepinbell",
+          "count": 1
+        },
+        {
+          "name": "SE:weezing",
+          "count": 2
+        },
+        {
+          "name": "SE:wingull",
+          "count": 3
+        },
+        {
+          "name": "SE:woobat",
+          "count": 1
+        },
+        {
+          "name": "SE:wurmple",
+          "count": 4
+        },
+        {
+          "name": "SE:wynaut",
+          "count": 1
+        },
+        {
+          "name": "SE:xatu",
+          "count": 1
+        },
+        {
+          "name": "SE:yamask",
+          "count": 1
+        },
+        {
+          "name": "SE:yamper",
+          "count": 2
+        },
+        {
+          "name": "SE:zacian",
+          "count": 4
+        },
+        {
+          "name": "SE:zamazenta",
+          "count": 2
+        },
+        {
+          "name": "SE:zangoose",
+          "count": 1
+        },
+        {
+          "name": "SE:zapdos",
+          "count": 2
+        },
+        {
+          "name": "SE:zarude",
+          "count": 1
+        },
+        {
+          "name": "SE:zigzagoon",
+          "count": 2
+        },
+        {
+          "name": "SE:zorua",
+          "count": 1
+        },
+        {
+          "name": "SE:zweilous",
+          "count": 1
+        }
+      ],
+      "missing": [
+        {
+          "kind": "BGM",
+          "name": "002-Battle02",
+          "count": 1
+        },
+        {
+          "kind": "BGM",
+          "name": "secrettitan",
+          "count": 2
+        },
+        {
+          "kind": "BGM",
+          "name": "Team Rocket OW",
+          "count": 1
+        },
+        {
+          "kind": "SE",
+          "name": "Thunder8",
+          "count": 2
+        }
+      ]
+    },
+    "failures": [
+      "BGM referenciada sin archivo homónimo: 002-Battle02",
+      "BGM referenciada sin archivo homónimo: secrettitan",
+      "BGM referenciada sin archivo homónimo: Team Rocket OW",
+      "BGM referenciada sin archivo homónimo: Thunder8"
+    ]
+  },
+  "ruby": {
+    "sections": 409,
+    "signals": {
+      "fly": 0,
+      "fieldMoves": 0,
+      "fishing": 0,
+      "dayNight": 0,
+      "weather": 0,
+      "cinematics": 0,
+      "victoryDefeat": 0,
+      "healing": 0,
+      "shops": 0,
+      "progress": 0
+    },
+    "internalIdLeakCandidates": 1
+  },
+  "contracts": {
+    "atlas": {
+      "gyms": 8,
+      "medals": 8,
+      "rivals": 3
+    },
+    "dimensions": {
+      "count": 5,
+      "switches": 6
+    },
+    "regions": {
+      "maps": 19,
+      "routes": 19,
+      "tilesets": 5,
+      "campaigns": 6
+    },
+    "diplomas": {
+      "count": 7,
+      "conditions": [
+        {
+          "key": "ruta",
+          "condition": {
+            "switch": 876
+          }
+        },
+        {
+          "key": "oscura",
+          "condition": {
+            "switch": 948
+          }
+        },
+        {
+          "key": "atlas",
+          "condition": {
+            "variable": [
+              319,
+              8
+            ]
+          }
+        },
+        {
+          "key": "glazed",
+          "condition": {
+            "switch": 990
+          }
+        },
+        {
+          "key": "lp",
+          "condition": {
+            "switch": 991
+          }
+        },
+        {
+          "key": "lc",
+          "condition": {
+            "switch": 992
+          }
+        },
+        {
+          "key": "tfoh",
+          "condition": {
+            "switch": 993
+          }
+        }
+      ]
+    },
+    "outfits": {
+      "count": 11,
+      "dimensions": 7,
+      "variable": 316
+    },
+    "pokegods": {
+      "roster": 19,
+      "forms": 3,
+      "pendingAssets": [],
+      "completeAssets": 19
+    },
+    "expansion": {
+      "rifts": 7,
+      "finalSwitch": null,
+      "purgeGoal": 7
+    },
+    "hub": {
+      "targetStates": 32,
+      "evidence": "Map048 PokeMod Hub events; static count is not a runtime state proof"
+    }
+  },
+  "hub": {
+    "events": 0,
+    "names": [],
+    "states": []
+  },
+  "save": {
+    "saveReferences": [
+      "File.open(infile,\"rb\")\r",
+      "File.open(\"intl.dat\",\"wb\")\r",
+      "File(@filename)\r",
+      "File(@filename)\r",
+      "File.open(outfile,\"wb\") { |f|\r",
+      "saveMessages(filename=nil)\r",
+      "File.open(filename,\"wb\") { |f| Marshal.dump(@messages,f) }\r",
+      "File(filename)\r",
+      "saveMessages(filename=nil)\r",
+      "saveMessages(filename)\r",
+      "File(filename)\r",
+      "File(filename)\r",
+      "File(file)\r",
+      "saved in the file Data/PluginScripts.rxdata.       #\r",
+      "SaveFileName(\"errorlog.txt\") if (Object.const_defined?(:RTP) rescue false)\r",
+      "File.open(errorlog, \"ab\") do |f|\r",
+      "FileLineData.linereport)\r",
+      "File.mtime(\"Data/PluginScripts.rxdata\")\r",
+      "File.mtime(\"#{dir}/#{sc}\") > mtime\r",
+      "File.mtime(\"#{dir}/meta.txt\") > mtime\r",
+      "save name, metadata and scripts array\r",
+      "File.open(\"#{plugins[o][:dir]}/#{file}\", 'rb') do |f|\r",
+      "save to main `PluginScripts.rxdata` file\r",
+      "File.open(\"Data/PluginScripts.rxdata\", 'wb') { |f| Marshal.dump(scripts, f) }\r",
+      "File.open(\"Data/debuglog.txt\", \"a+b\") { |f| f.write(\"#{@@log}\") }\r",
+      "File.open(\"Data/dumplog.txt\", \"a+b\") { |f| f.write(\"#{msg}\\r\\n\") }\r",
+      "File #{filename} not found.\"\r",
+      "SaveFileName(\"errorlog.txt\") if (Object.const_defined?(:RTP) rescue false)\r",
+      "File.open(errorlog, \"ab\") do |f|\r",
+      "FileTest.directory?(dir)\r"
+    ],
+    "packageArtifacts": [],
+    "packageIsolation": true,
+    "realSaveTest": "pending_human_review: corte durante guardado, PC/Android/paquete exportado",
+    "recoveryDoc": true
+  },
+  "gameplayFamilies": {
+    "flight": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "fieldMoves": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "fishing": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "dayNight": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "weather": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "cinematics": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "defeatsVictories": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "economyHealing": {
+      "status": "static_signal_manual_runtime_pending",
+      "signalCount": 0
+    },
+    "save": {
+      "status": "manual_pending",
+      "reason": "los cortes y recuperación necesitan Game.exe/PC/Android"
+    }
+  },
+  "manual": [
+    "cada pista suena y no se corta al transferir",
+    "cada pantalla nueva en resoluciones soportadas, sin apertura durante combate",
+    "vuelo, movimientos de campo, pesca, clima y ciclo temporal dentro/fuera de interiores",
+    "derrota/victoria, finales, diplomas, medallas, atavíos y Pokégods en partida",
+    "dinero/mochila/tiendas/curación y guardado en PC, Android y paquete exportado"
+  ],
+  "status": "static_review_manual_pending"
+}

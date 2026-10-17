@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-17T19:13:26.191Z",
+  "generatedAt": "2026-10-17T19:15:40.942Z",
   "git": {
     "branch": "arena/8e9aeeac-fire-ash-modifier",
-    "commit": "0c90d0e51324f0e5200cb0c67229c2844dba579b"
+    "commit": "4804796839e91c105971ad5d8d21d1dc71f39c22"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5472,
+    "fileCount": 5473,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 257
+      "tools": 258
     },
     "files": [
       {
@@ -27037,6 +27037,11 @@
         "path": "tools/plan2700/lote6_fase029_cobertura.mjs",
         "bytes": 15445,
         "sha256": "664382ea7401917c6abcd34dd8224dab71fe619c036becb2b0516b12196d5b2c"
+      },
+      {
+        "path": "tools/plan2700/lote6_fase030_integracion.mjs",
+        "bytes": 11600,
+        "sha256": "0cd45c64708ebfd19dd497efc869fb95de63ab0796b7513b03b957e143fa346d"
       },
       {
         "path": "tools/plan2700/repair_electramew_character.mjs",
