@@ -78,6 +78,8 @@
     "verify:plan2700:fase063": "node tools/plan2700/lote11_fase063_elecciones_1.mjs --verify",
     "audit:plan2700:fase064": "node tools/plan2700/lote11_fase064_condiciones_1.mjs",
     "verify:plan2700:fase064": "node tools/plan2700/lote11_fase064_condiciones_1.mjs --verify",
+    "audit:plan2700:fase065": "node tools/plan2700/lote12_fase065_condiciones_2.mjs",
+    "verify:plan2700:fase065": "node tools/plan2700/lote12_fase065_condiciones_2.mjs --verify",
     "verify:plan2700:fase018": "node tools/plan2700/audit_fase018.mjs --json",
     "audit:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --write",
     "verify:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --json",
