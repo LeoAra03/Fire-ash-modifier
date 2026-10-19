@@ -64,6 +64,10 @@ function addRow(acc, row) {
   return acc;
 }
 
+function plural(count, singular, pluralForm) {
+  return count === 1 ? singular : pluralForm;
+}
+
 function mdCode(value) {
   return String(value ?? "")
     .replace(/`/g, "'")
@@ -99,7 +103,9 @@ function policyAndLimit(families) {
         "Los mapas de «Fire Ash original» están congelados por política del proyecto: esta fase **muestra y mide** sus diálogos, no reescribe los `.rxdata`. Las métricas de formato, signos, glosario y variables quedan archivadas por tarea en el JSON de la fase; el juicio de sentido y tono permanece marcado como `manual_pending` y la ejecución interactiva en `Game.exe` como `runtime_pending`.",
     };
   }
-  const list = families.map((f) => `«${f}»`).join(", ");
+  const list = families.length === 1
+    ? `«${families[0]}»`
+    : `${families.slice(0, -1).map((f) => `«${f}»`).join(", ")} y «${families[families.length - 1]}»`;
   return {
     policy:
       `Se muestran y miden los diálogos (bloques 101/401 y mensajes de script) de los mapas declarados en cada tarea (familias ${list}) por aspecto: formato de caja, signos, idioma/glosario, variables/cantidades y sentido. Los \`.rxdata\` de «Fire Ash original» están congelados y el resto de familias se auditan sin reescribir sus textos en esta tanda. La lectura humana de sentido y la corrida en Game.exe quedan pendientes.`,
@@ -299,8 +305,8 @@ export function renderMarkdown(report, script) {
     "",
     `- **Tareas procesadas**: ${s.tasks} (${s.humanReadingTasks} con lectura humana de sentido explícita · ${s.tasksWithoutMap} sin mapas localizables).`,
     `- **Mapas únicos cubiertos**: ${s.uniqueMaps} (${mapRange}) · familias declaradas: ${Object.keys(report.byFamily).map((f) => `«${f}»`).join(", ") || "ninguna"}.`,
-    `- **Suma por tarea** (los tramos se solapan): ${s.eventsWithDialogue} eventos con diálogo · ${s.totalBlocks} bloques 101/401 · ${s.scriptMessagesCount} mensajes de script.`,
-    `- **Recuento sin duplicar por mapa** (${report.uniqueMapMetrics.maps} mapas): ${report.uniqueMapMetrics.eventsWithDialogue} eventos con diálogo · ${report.uniqueMapMetrics.totalBlocks} bloques 101/401 · ${report.uniqueMapMetrics.scriptMessagesCount} mensajes de script.`,
+    `- **Suma por tarea** (los tramos se solapan): ${s.eventsWithDialogue} eventos con diálogo · ${s.totalBlocks} bloques 101/401 · ${s.scriptMessagesCount} ${plural(s.scriptMessagesCount, "mensaje", "mensajes")} de script.`,
+    `- **Recuento sin duplicar por mapa** (${report.uniqueMapMetrics.maps} mapas): ${report.uniqueMapMetrics.eventsWithDialogue} eventos con diálogo · ${report.uniqueMapMetrics.totalBlocks} bloques 101/401 · ${report.uniqueMapMetrics.scriptMessagesCount} ${plural(report.uniqueMapMetrics.scriptMessagesCount, "mensaje", "mensajes")} de script.`,
     `- **Formato de caja (sin duplicar)**: ${report.uniqueMapMetrics.overflowLines} líneas superan las 53 columnas · ${report.uniqueMapMetrics.overTwoLines} bloques pasan de 2 líneas.`,
     `- **Signos (sin duplicar)**: ${report.uniqueMapMetrics.missingOpeningQuestion} interrogaciones sin «¿» · ${report.uniqueMapMetrics.missingOpeningExclamation} exclamaciones sin «¡» · ${report.uniqueMapMetrics.unbalancedQuotes} comillas impares.`,
     `- **Idioma y glosario (sin duplicar)**: ${report.uniqueMapMetrics.englishTokens} bloques con marcas de inglés · ${report.uniqueMapMetrics.glossaryHits} aciertos de glosario.`,
