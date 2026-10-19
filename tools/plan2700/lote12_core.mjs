@@ -712,7 +712,7 @@ function mdList(values, limit = 12) {
   return `${shown.join(", ")}${values.length > limit ? ` … (+${values.length - limit})` : ""}`;
 }
 
-export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
+export function runCoveragePhase({ phase, tanda, start, end, slug, script, notes = [] }) {
   const ctx = getAuditContext();
   const { tasks, fileLineSlice } = loadTasksRange(start, end);
   const boundaryTasks = fileLineSlice.filter((t) => t.id < start).map((t) => evaluateCoverageTask(t, ctx));
@@ -965,6 +965,10 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
       .join(" · ")}.`,
     `- **Mapas únicos cubiertos**: ${report.summary.uniqueMaps}${report.summary.mapRange[0] == null ? "" : ` (mapas ${report.summary.mapRange[0]}–${report.summary.mapRange[1]})`} · familias: ${report.summary.families.map((f) => `«${f}»`).join(", ") || "ninguna"}.`,
   ];
+
+  if (notes.length) {
+    lines.push("", "## Observaciones de la tanda", "", ...notes.map((n) => `- ${n}`));
+  }
 
   if (report.summary.invalidSpecTasks.length) {
     lines.push(
