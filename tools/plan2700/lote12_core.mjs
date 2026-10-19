@@ -387,6 +387,7 @@ export function auditTransfersMap(mapId, ctx = getAuditContext()) {
     outOfRange: 0,
     invalidDirection: 0,
     solidDestination: 0,
+    trappedDestination: 0,
     solidOnFullySolidMap: 0,
     passabilityChecked: 0,
     reverseMissing: 0,
@@ -428,7 +429,19 @@ export function auditTransfersMap(mapId, ctx = getAuditContext()) {
               const mapHasWalkable = passabilityFor(target).hasWalkable ?? computeHasWalkable(pass);
               if (mapHasWalkable) {
                 totals.solidDestination++;
-                findings.push({ eventId: ev.id, event: ev.name, page: pageIdx + 1, type: "solid-destination", target, x, y });
+                // Sin ninguna celda vecina transitable no se puede salir del
+                // aterrizaje: sí es un riesgo real de bloqueo.
+                const canStepOff = [[0, 1], [0, -1], [1, 0], [-1, 0]].some(([dx, dy]) => {
+                  const nx = x + dx;
+                  const ny = y + dy;
+                  return [2, 4, 6, 8].some((d) => pass.passable(nx, ny, d));
+                });
+                if (!canStepOff) {
+                  totals.trappedDestination++;
+                  findings.push({ eventId: ev.id, event: ev.name, page: pageIdx + 1, type: "trapped-destination", target, x, y });
+                } else {
+                  findings.push({ eventId: ev.id, event: ev.name, page: pageIdx + 1, type: "solid-destination", target, x, y });
+                }
               } else {
                 totals.solidOnFullySolidMap++;
               }
@@ -462,7 +475,7 @@ export function auditTransfersMap(mapId, ctx = getAuditContext()) {
     status:
       totals.missingMap > 0 || totals.outOfRange > 0 || totals.invalidDirection > 0
         ? "fail"
-        : totals.solidDestination > 0 || totals.reverseMissing > 0
+        : totals.trappedDestination > 0 || totals.solidDestination > 0 || totals.reverseMissing > 0
           ? "static_review_runtime_pending"
           : "static_pass_runtime_pending",
   };
@@ -579,6 +592,7 @@ export function evaluateCoverageTask(task, ctx = getAuditContext()) {
       outOfRange: 0,
       invalidDirection: 0,
       solidDestination: 0,
+      trappedDestination: 0,
       solidOnFullySolidMap: 0,
       passabilityChecked: 0,
       reverseMissing: 0,
@@ -685,7 +699,7 @@ export function evaluateCoverageTask(task, ctx = getAuditContext()) {
 }
 
 function transferFindingWeight(type) {
-  return { "missing-target-map": 5, "out-of-range-destination": 4, "solid-destination": 3, "invalid-direction": 2, "reverse-transfer-missing": 1 }[type] ?? 0;
+  return { "missing-target-map": 6, "out-of-range-destination": 5, "trapped-destination": 4, "solid-destination": 3, "invalid-direction": 2, "reverse-transfer-missing": 1 }[type] ?? 0;
 }
 
 function mdCell(value) {
@@ -862,6 +876,7 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
       outOfRange: 0,
       invalidDirection: 0,
       solidDestination: 0,
+      trappedDestination: 0,
       solidOnFullySolidMap: 0,
       passabilityChecked: 0,
       reverseMissing: 0,
@@ -1040,7 +1055,7 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
       "## Transferencias en ambos sentidos",
       "",
       `- **Tareas**: ${transfers.tasks} · **mapas**: ${transfers.maps} · **transferencias (201)**: ${transfers.transfers} · celdas con passability comprobada: ${transfers.passabilityChecked}.`,
-      `- **Mapa destino ausente**: ${transfers.missingMap} · **coordenada fuera de rango**: ${transfers.outOfRange} · **celda sólida en mapa transitable**: ${transfers.solidDestination} · **celda sólida en mapa íntegramente sólido**: ${transfers.solidOnFullySolidMap} · **dirección inválida**: ${transfers.invalidDirection}.`,
+      `- **Mapa destino ausente**: ${transfers.missingMap} · **coordenada fuera de rango**: ${transfers.outOfRange} · **celda sólida con salida**: ${transfers.solidDestination} · **celda sólida sin salida** (riesgo de bloqueo): ${transfers.trappedDestination} · **celda sólida en mapa íntegramente sólido**: ${transfers.solidOnFullySolidMap} · **dirección inválida**: ${transfers.invalidDirection}.`,
       `- **Vuelta declarada**: ${transfers.reverseDeclared} · **sin vuelta**: ${transfers.reverseMissing} · **transferencias al mismo mapa**: ${transfers.selfTransfers}.`
     );
   }
@@ -1074,7 +1089,7 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
     "",
     "## Límite honesto",
     "",
-    "Todo se mide sobre los `.rxdata` compilados y las tablas de passability del tileset: no se abre `Game.exe` ni se juega ninguna partida. «Dos estados» acredita que el proyecto contiene escrituras de ON y de OFF para ese ID, no que ambos caminos se hayan recorrido en ejecución. La comprobación interactiva (con y sin partida avanzada) permanece como `runtime_pending`.",
+    "Todo se mide sobre los `.rxdata` compilados y las tablas de passability del tileset: no se abre `Game.exe` ni se juega ninguna partida. «Dos estados» acredita que el proyecto contiene escrituras de ON y de OFF para ese ID, no que ambos caminos se hayan recorrido en ejecución. En las transferencias, aterrizar sobre una celda no transitable puede ser deliberado en escenas guionizadas: se marca como revisión, no como defecto. La comprobación interactiva (con y sin partida avanzada) permanece como `runtime_pending`.",
     ""
   );
 
