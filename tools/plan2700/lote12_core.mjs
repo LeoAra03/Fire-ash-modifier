@@ -348,6 +348,21 @@ function parsedMapFor(mapId) {
   }
 }
 
+function computeHasWalkable(pass) {
+  if (pass.hasWalkable != null) return pass.hasWalkable;
+  let found = false;
+  for (let y = 0; y < pass.height && !found; y++) {
+    for (let x = 0; x < pass.width; x++) {
+      if ([2, 4, 6, 8].some((d) => pass.passable(x, y, d))) {
+        found = true;
+        break;
+      }
+    }
+  }
+  pass.hasWalkable = found;
+  return found;
+}
+
 function passabilityFor(mapId) {
   if (passabilityCache.has(mapId)) return passabilityCache.get(mapId);
   let pass = null;
@@ -372,6 +387,7 @@ export function auditTransfersMap(mapId, ctx = getAuditContext()) {
     outOfRange: 0,
     invalidDirection: 0,
     solidDestination: 0,
+    solidOnFullySolidMap: 0,
     passabilityChecked: 0,
     reverseMissing: 0,
     reverseDeclared: 0,
@@ -404,9 +420,18 @@ export function auditTransfersMap(mapId, ctx = getAuditContext()) {
           const pass = passabilityFor(target);
           if (pass) {
             totals.passabilityChecked++;
-            if (!pass.passable(x, y, 8)) {
-              totals.solidDestination++;
-              findings.push({ eventId: ev.id, event: ev.name, page: pageIdx + 1, type: "solid-destination", target, x, y });
+            const walkableAny = [2, 4, 6, 8].some((d) => pass.passable(x, y, d));
+            if (!walkableAny) {
+              // Distinguir un mapa íntegramente sólido por diseño (p. ej. una
+              // pantalla negra de script) de una celda muerta en un mapa que
+              // sí tiene zonas transitables.
+              const mapHasWalkable = passabilityFor(target).hasWalkable ?? computeHasWalkable(pass);
+              if (mapHasWalkable) {
+                totals.solidDestination++;
+                findings.push({ eventId: ev.id, event: ev.name, page: pageIdx + 1, type: "solid-destination", target, x, y });
+              } else {
+                totals.solidOnFullySolidMap++;
+              }
             }
           }
         }
@@ -435,9 +460,9 @@ export function auditTransfersMap(mapId, ctx = getAuditContext()) {
     findings: findings.slice(0, 10),
     samples,
     status:
-      totals.missingMap > 0 || totals.outOfRange > 0 || totals.solidDestination > 0 || totals.invalidDirection > 0
+      totals.missingMap > 0 || totals.outOfRange > 0 || totals.invalidDirection > 0
         ? "fail"
-        : totals.reverseMissing > 0
+        : totals.solidDestination > 0 || totals.reverseMissing > 0
           ? "static_review_runtime_pending"
           : "static_pass_runtime_pending",
   };
@@ -554,6 +579,7 @@ export function evaluateCoverageTask(task, ctx = getAuditContext()) {
       outOfRange: 0,
       invalidDirection: 0,
       solidDestination: 0,
+      solidOnFullySolidMap: 0,
       passabilityChecked: 0,
       reverseMissing: 0,
       reverseDeclared: 0,
@@ -656,6 +682,10 @@ export function evaluateCoverageTask(task, ctx = getAuditContext()) {
 
   const evaluated = evaluateTask(task, ctx);
   return { ...evaluated, kind: spec.kind, aspect: spec.aspect, requiresHumanReading: spec.requiresHumanReading, samples: evaluated.samples ?? [] };
+}
+
+function transferFindingWeight(type) {
+  return { "missing-target-map": 5, "out-of-range-destination": 4, "solid-destination": 3, "invalid-direction": 2, "reverse-transfer-missing": 1 }[type] ?? 0;
 }
 
 function mdCell(value) {
@@ -832,6 +862,7 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
       outOfRange: 0,
       invalidDirection: 0,
       solidDestination: 0,
+      solidOnFullySolidMap: 0,
       passabilityChecked: 0,
       reverseMissing: 0,
       reverseDeclared: 0,
@@ -869,6 +900,13 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
     variables,
     selfswitches,
     transfers,
+    transferFindings: transferRows
+      .flatMap((r) => (r.findings ?? []).map((f) => ({ task: r.id, ...f })))
+      .sort((a, b) => transferFindingWeight(b.type) - transferFindingWeight(a.type) || a.task - b.task)
+      .slice(0, 12),
+    selfSwitchFindings: selfRows
+      .flatMap((r) => (r.findings ?? []).filter((f) => f.type === "self-switch-read-without-writer").map((f) => ({ task: r.id, ...f })))
+      .slice(0, 12),
     findingsByTask: taskMatrix
       .filter((r) => ["fail", "static_review_runtime_pending", "invalid_spec"].includes(r.status))
       .slice(0, 12)
@@ -979,7 +1017,7 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
       `- **Tareas**: ${variables.tasks} · **IDs medidos**: ${variables.ids} · **completos** (lector, escritor y sin reinicio/desborde): ${variables.complete}.`,
       `- **Sin lector**: ${variables.withoutReader.length} → ${mdList(variables.withoutReader)}.`,
       `- **Sin escritor**: ${variables.withoutWriter.length} → ${mdList(variables.withoutWriter)}.`,
-      `- **Escrituras a cero** (posible reinicio): ${variables.zeroWrites.length} → ${mdList(variables.zeroWrites)}.`,
+      `- **Escrituras constantes a cero** (revisar si el reinicio es intencional): ${variables.zeroWrites.length} → ${mdList(variables.zeroWrites)}.`,
       `- **Escrituras fuera de rango seguro** (|valor| > 99 999 999): ${variables.extremeWrites.length} → ${mdList(variables.extremeWrites)}.`
     );
   }
@@ -1002,9 +1040,25 @@ export function runCoveragePhase({ phase, tanda, start, end, slug, script }) {
       "## Transferencias en ambos sentidos",
       "",
       `- **Tareas**: ${transfers.tasks} · **mapas**: ${transfers.maps} · **transferencias (201)**: ${transfers.transfers} · celdas con passability comprobada: ${transfers.passabilityChecked}.`,
-      `- **Mapa destino ausente**: ${transfers.missingMap} · **coordenada fuera de rango**: ${transfers.outOfRange} · **celda sólida**: ${transfers.solidDestination} · **dirección inválida**: ${transfers.invalidDirection}.`,
+      `- **Mapa destino ausente**: ${transfers.missingMap} · **coordenada fuera de rango**: ${transfers.outOfRange} · **celda sólida en mapa transitable**: ${transfers.solidDestination} · **celda sólida en mapa íntegramente sólido**: ${transfers.solidOnFullySolidMap} · **dirección inválida**: ${transfers.invalidDirection}.`,
       `- **Vuelta declarada**: ${transfers.reverseDeclared} · **sin vuelta**: ${transfers.reverseMissing} · **transferencias al mismo mapa**: ${transfers.selfTransfers}.`
     );
+  }
+
+  if (report.transferFindings.length) {
+    lines.push("", "### Transferencias con hallazgo (muestra)", "", "| Tarea | Mapa origen | Ev | Tipo | Destino | Celda |", "|---:|---:|---|---|---|---|");
+    for (const f of report.transferFindings) {
+      lines.push(
+        `| ${f.task} | ${f.mapId} | ${mdCell(f.event ?? "")} | ${mdCell(f.type)} | ${f.target ?? "—"} | ${f.x != null ? `${f.x},${f.y}` : "—"} |`
+      );
+    }
+  }
+
+  if (report.selfSwitchFindings.length) {
+    lines.push("", "### Self-switches leídos sin escritor en el mismo evento (muestra)", "");
+    for (const f of report.selfSwitchFindings) {
+      lines.push(`- **Tarea ${f.task}** · ${f.key} (letra ${f.letter}, ${f.reads} lecturas)`);
+    }
   }
 
   if (report.findingsByTask.length) {
