@@ -64,6 +64,8 @@
     "verify:plan2700:fase056": "node tools/plan2700/lote10_fase056_dialogos_12.mjs --verify",
     "audit:plan2700:fase057": "node tools/plan2700/lote10_fase057_dialogos_13.mjs",
     "verify:plan2700:fase057": "node tools/plan2700/lote10_fase057_dialogos_13.mjs --verify",
+    "audit:plan2700:fase058": "node tools/plan2700/lote10_fase058_dialogos_14.mjs",
+    "verify:plan2700:fase058": "node tools/plan2700/lote10_fase058_dialogos_14.mjs --verify",
     "verify:plan2700:fase018": "node tools/plan2700/audit_fase018.mjs --json",
     "audit:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --write",
     "verify:plan2700:mapas": "node tools/plan2700/checklist_mapa.mjs --json",
