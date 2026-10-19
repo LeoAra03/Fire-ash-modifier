@@ -22,25 +22,25 @@ node tools/plan2700/lote12_fase067_estados_2.mjs --verify
 ## Transferencias en ambos sentidos
 
 - **Tareas**: 45 · **mapas**: 542 · **transferencias (201)**: 4483 · celdas con passability comprobada: 4483.
-- **Mapa destino ausente**: 0 · **coordenada fuera de rango**: 0 · **celda sólida en mapa transitable**: 16 · **celda sólida en mapa íntegramente sólido**: 11 · **dirección inválida**: 0.
+- **Mapa destino ausente**: 0 · **coordenada fuera de rango**: 0 · **celda sólida con salida**: 16 · **celda sólida sin salida** (riesgo de bloqueo): 7 · **celda sólida en mapa íntegramente sólido**: 11 · **dirección inválida**: 0.
 - **Vuelta declarada**: 4156 · **sin vuelta**: 116 · **transferencias al mismo mapa**: 211.
 
 ### Transferencias con hallazgo (muestra)
 
 | Tarea | Mapa origen | Ev | Tipo | Destino | Celda |
 |---:|---:|---|---|---|---|
+| 6657 | 58 | Single battles NPC | trapped-destination | 59 | 2,8 |
+| 6657 | 58 | Single battles NPC | trapped-destination | 59 | 2,8 |
+| 6657 | 58 | Double battles NPC | trapped-destination | 59 | 2,8 |
+| 6657 | 58 | Double battles NPC | trapped-destination | 59 | 2,8 |
+| 6658 | 63 | Guide | trapped-destination | 64 | 2,10 |
+| 6658 | 63 | Guide | trapped-destination | 64 | 2,10 |
+| 6658 | 65 | Guide | trapped-destination | 64 | 2,10 |
 | 6657 | 48 | Door | solid-destination | 786 | 16,16 |
-| 6657 | 58 | Single battles NPC | solid-destination | 59 | 2,8 |
-| 6657 | 58 | Single battles NPC | solid-destination | 59 | 2,8 |
-| 6657 | 58 | Double battles NPC | solid-destination | 59 | 2,8 |
-| 6657 | 58 | Double battles NPC | solid-destination | 59 | 2,8 |
 | 6657 | 62 | Single battles NPC | solid-destination | 63 | 4,9 |
 | 6658 | 62 | Single battles NPC | solid-destination | 63 | 4,9 |
 | 6658 | 62 | Single battles NPC | solid-destination | 63 | 4,9 |
 | 6658 | 62 | Double battles NPC | solid-destination | 63 | 4,9 |
-| 6658 | 62 | Double battles NPC | solid-destination | 63 | 4,9 |
-| 6658 | 63 | Guide | solid-destination | 64 | 2,10 |
-| 6658 | 63 | Guide | solid-destination | 64 | 2,10 |
 
 ## Tareas con hallazgos
 
@@ -61,4 +61,4 @@ node tools/plan2700/lote12_fase067_estados_2.mjs --verify
 
 ## Límite honesto
 
-Todo se mide sobre los `.rxdata` compilados y las tablas de passability del tileset: no se abre `Game.exe` ni se juega ninguna partida. «Dos estados» acredita que el proyecto contiene escrituras de ON y de OFF para ese ID, no que ambos caminos se hayan recorrido en ejecución. La comprobación interactiva (con y sin partida avanzada) permanece como `runtime_pending`.
+Todo se mide sobre los `.rxdata` compilados y las tablas de passability del tileset: no se abre `Game.exe` ni se juega ninguna partida. «Dos estados» acredita que el proyecto contiene escrituras de ON y de OFF para ese ID, no que ambos caminos se hayan recorrido en ejecución. En las transferencias, aterrizar sobre una celda no transitable puede ser deliberado en escenas guionizadas: se marca como revisión, no como defecto. La comprobación interactiva (con y sin partida avanzada) permanece como `runtime_pending`.

@@ -3027,6 +3027,8 @@
     "invalidLetters": 0
   },
   "transfers": null,
+  "transferFindings": [],
+  "selfSwitchFindings": [],
   "findingsByTask": [
     {
       "id": 6524,

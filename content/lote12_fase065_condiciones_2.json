@@ -57,6 +57,8 @@
   "variables": null,
   "selfswitches": null,
   "transfers": null,
+  "transferFindings": [],
+  "selfSwitchFindings": [],
   "findingsByTask": [],
   "boundaryTasks": [
     {
