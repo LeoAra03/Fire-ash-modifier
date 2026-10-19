@@ -89,6 +89,25 @@ function rangesSummary(rows) {
   return { count: ids.length, min: Math.min(...ids), max: Math.max(...ids) };
 }
 
+function policyAndLimit(families) {
+  const onlyFireAsh = families.length === 1 && families[0] === "Fire Ash original";
+  if (onlyFireAsh) {
+    return {
+      policy:
+        "Se muestran y miden los diálogos (bloques 101/401 y mensajes de script) de los mapas declarados en cada tarea por aspecto: formato de caja, signos, idioma/glosario, variables/cantidades y sentido. Los `.rxdata` de «Fire Ash original» están congelados: esta tanda no reescribe textos. La lectura humana de sentido y la corrida en Game.exe quedan pendientes.",
+      limit:
+        "Los mapas de «Fire Ash original» están congelados por política del proyecto: esta fase **muestra y mide** sus diálogos, no reescribe los `.rxdata`. Las métricas de formato, signos, glosario y variables quedan archivadas por tarea en el JSON de la fase; el juicio de sentido y tono permanece marcado como `manual_pending` y la ejecución interactiva en `Game.exe` como `runtime_pending`.",
+    };
+  }
+  const list = families.map((f) => `«${f}»`).join(", ");
+  return {
+    policy:
+      `Se muestran y miden los diálogos (bloques 101/401 y mensajes de script) de los mapas declarados en cada tarea (familias ${list}) por aspecto: formato de caja, signos, idioma/glosario, variables/cantidades y sentido. Los \`.rxdata\` de «Fire Ash original» están congelados y el resto de familias se auditan sin reescribir sus textos en esta tanda. La lectura humana de sentido y la corrida en Game.exe quedan pendientes.`,
+    limit:
+      `Los mapas auditados pertenecen a ${list}. Los de «Fire Ash original» están congelados por política del proyecto y las demás familias se auditan sin reescribir sus textos en esta tanda: la fase **muestra y mide** los diálogos, no modifica los \`.rxdata\`. Las métricas de formato, signos, glosario y variables quedan archivadas por tarea en el JSON de la fase; el juicio de sentido y tono permanece marcado como \`manual_pending\` y la ejecución interactiva en \`Game.exe\` como \`runtime_pending\`.`,
+  };
+}
+
 export function buildBatchReport({ phase, tanda, start, end, slug }) {
   const ctx = getAuditContext();
   const { tasks, fileLineSlice } = loadTasksRange(start, end);
@@ -257,8 +276,7 @@ export function buildBatchReport({ phase, tanda, start, end, slug }) {
     samples,
     boundaryTasks,
     taskMatrix,
-    policy:
-      "Se muestran y miden los diálogos (bloques 101/401 y mensajes de script) de los mapas declarados en cada tarea por aspecto: formato de caja, signos, idioma/glosario, variables/cantidades y sentido. Los `.rxdata` de «Fire Ash original» están congelados: esta tanda no reescribe textos. La lectura humana de sentido y la corrida en Game.exe quedan pendientes.",
+    policy: policyAndLimit(Object.keys(byFamily)).policy,
     status,
   };
 }
@@ -330,13 +348,7 @@ export function renderMarkdown(report, script) {
     lines.push("Sin bloques de diálogo recuperables en los mapas declarados.");
   }
 
-  lines.push(
-    "",
-    "## Límite honesto",
-    "",
-    "Los mapas de «Fire Ash original» están congelados por política del proyecto: esta fase **muestra y mide** sus diálogos, no reescribe los `.rxdata`. Las métricas de formato, signos, glosario y variables quedan archivadas por tarea en el JSON de la fase; el juicio de sentido y tono permanece marcado como `manual_pending` y la ejecución interactiva en `Game.exe` como `runtime_pending`.",
-    ""
-  );
+  lines.push("", "## Límite honesto", "", policyAndLimit(Object.keys(report.byFamily)).limit, "");
   return lines.join("\n");
 }
 
