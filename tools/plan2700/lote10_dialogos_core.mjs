@@ -310,7 +310,7 @@ export function renderMarkdown(report, script) {
     `- **Formato de caja (sin duplicar)**: ${report.uniqueMapMetrics.overflowLines} líneas superan las 53 columnas · ${report.uniqueMapMetrics.overTwoLines} bloques pasan de 2 líneas.`,
     `- **Signos (sin duplicar)**: ${report.uniqueMapMetrics.missingOpeningQuestion} interrogaciones sin «¿» · ${report.uniqueMapMetrics.missingOpeningExclamation} exclamaciones sin «¡» · ${report.uniqueMapMetrics.unbalancedQuotes} comillas impares.`,
     `- **Idioma y glosario (sin duplicar)**: ${report.uniqueMapMetrics.englishTokens} bloques con marcas de inglés · ${report.uniqueMapMetrics.glossaryHits} aciertos de glosario.`,
-    `- **Variables y cantidades (sin duplicar)**: \\PN en ${report.uniqueMapMetrics.playerNameTokens} bloques · \\v[n] en ${report.uniqueMapMetrics.variableTokens} ocasiones · ${report.uniqueMapMetrics.numericTokens} bloques con cifras · **referencias inválidas: ${report.uniqueMapMetrics.invalidVariableRefs}**.`,
+    `- **Variables y cantidades (sin duplicar)**: \\PN en ${report.uniqueMapMetrics.playerNameTokens} ${plural(report.uniqueMapMetrics.playerNameTokens, "bloque", "bloques")} · \\v[n] en ${report.uniqueMapMetrics.variableTokens} ocasiones · ${report.uniqueMapMetrics.numericTokens} bloques con cifras · **referencias inválidas: ${report.uniqueMapMetrics.invalidVariableRefs}**.`,
     `- **Tareas con alguna incidencia de formato/signos**: ${s.tasksWithFindings}/${s.tasks}. Estado: \`${report.status}\`.`,
     "",
     "## Cobertura por aspecto",
