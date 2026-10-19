@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-17T20:34:39.830Z",
+  "generatedAt": "2026-10-18T01:03:20.907Z",
   "git": {
-    "branch": "arena/8e9aeeac-fire-ash-modifier",
-    "commit": "330032b6f5390e8dab8249a9cb4f827a6d3aea3a"
+    "branch": "arena/c7f65ac6-fire-ash-modifier",
+    "commit": "66acc70bc6881e154e57ec81ac0e2cfa5526d242"
   },
   "scope": {
     "hashRoots": [
@@ -21,11 +21,11 @@
   },
   "hashes": {
     "algorithm": "sha256",
-    "fileCount": 5479,
+    "fileCount": 5485,
     "byRoot": {
       "Data": 5215,
       "Scripts": 0,
-      "tools": 264
+      "tools": 270
     },
     "files": [
       {
@@ -27072,6 +27072,36 @@
         "path": "tools/plan2700/lote7_fase036_cierre_final.mjs",
         "bytes": 10826,
         "sha256": "ec15c4caab22c9b628587da1473448e066ea3fdfca87e56f4b1ad5cefb613cf9"
+      },
+      {
+        "path": "tools/plan2700/lote9_audit_core.mjs",
+        "bytes": 28596,
+        "sha256": "87569a79906c5495de21ceb7f5cb2864a09f3df940ce0f93bc557af72b9ae50e"
+      },
+      {
+        "path": "tools/plan2700/lote9_fase042_eventos_final_1.mjs",
+        "bytes": 7657,
+        "sha256": "bc71878b20c19138613ea299812023596629ecd69f416074c11906bdf2177052"
+      },
+      {
+        "path": "tools/plan2700/lote9_fase043_eventos_final_2.mjs",
+        "bytes": 8207,
+        "sha256": "6ee667fd7149c997504586209544760b88794e8811ce90d4eb15ab2e57a7c96a"
+      },
+      {
+        "path": "tools/plan2700/lote9_fase044_ramas_eventos_1.mjs",
+        "bytes": 8662,
+        "sha256": "51023618732dde49a0b7c7b460817829490b88ad07f62777f3f5c896a03434d9"
+      },
+      {
+        "path": "tools/plan2700/lote9_fase045_ramas_eventos_2.mjs",
+        "bytes": 7408,
+        "sha256": "1a78346b955878c7e307a000c747cb922c01a3823cd5f92c35d9e418550da001"
+      },
+      {
+        "path": "tools/plan2700/lote9_fase046_ramas_dialogos.mjs",
+        "bytes": 9004,
+        "sha256": "94099c6dff8c02ac04ee4d62358e052f2a225e10c2bff366ece75662d47cfc1f"
       },
       {
         "path": "tools/plan2700/repair_electramew_character.mjs",
