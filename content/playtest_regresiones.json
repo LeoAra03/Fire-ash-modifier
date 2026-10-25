@@ -1,0 +1,18 @@
+{
+  "schema": "playtest_regresiones/1.0",
+  "fuente": "docs/qa/playtest/*/README.md",
+  "regla": "Todo hallazgo con gravedad «bloqueante» o «grave» en estado «corregido» debe citar en «Regresión añadida:» una prueba .mjs que exista en el repositorio y que la suite ejecute. Un hallazgo «verificado» también exige prueba. Los hallazgos «abiertos» no la exigen todavía y se cuentan igual.",
+  "plantilla": {
+    "ID": "PT-<sesión>-<nn>",
+    "Sesión": "sesion-NN",
+    "Gravedad": "bloqueante | grave | leve | cosmético",
+    "Mapa/evento": "mapa y nombre del evento donde se reproduce",
+    "Pasos para reproducir": "secuencia mínima",
+    "Esperado": "qué debería pasar",
+    "Observado": "qué pasó",
+    "Evidencia": "captura o archivo, sin datos personales",
+    "Regresión añadida": "ruta de la prueba .mjs cuando se corrige",
+    "Estado": "abierto | corregido | verificado"
+  },
+  "hallazgos": []
+}

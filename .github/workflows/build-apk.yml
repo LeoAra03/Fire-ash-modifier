@@ -51,6 +51,16 @@ jobs:
           npm run verify:dialogos:formato
           npm run verify:plan2700:tanda22
 
+      - name: Guion de playtest y regresiones
+        # El guion reparte el 100 % del contenido en cuotas por sesión y la puerta
+        # de regresiones exige prueba para todo hallazgo grave corregido. Ninguna
+        # de las dos inventa una partida: el estado sigue siendo manual_pending.
+        run: |
+          npm run verify:playtest:guion
+          node tools/qa/playtest_regresiones.mjs --selftest
+          npm run verify:playtest:regresiones
+          npm run verify:plan2700:tanda23
+
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas

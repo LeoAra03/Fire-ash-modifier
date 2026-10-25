@@ -1,0 +1,1690 @@
+{
+  "schema": "plan2700_playtest_guion/1.0",
+  "fuente": "tareas.txt (líneas «Sesión N: …») + content/plan2700_dialogos.json",
+  "estado": "manual_pending",
+  "politica": "Una ficha sin fecha, versión, duración y hallazgos no es PASS. Cada hallazgo se clasifica por gravedad (bloqueante, grave, leve, cosmético); este guion fija la cuota y no sustituye la partida.",
+  "camposFicha": [
+    "fecha",
+    "version_commit",
+    "entorno",
+    "duracion_minutos",
+    "mapas_visitados",
+    "eventos_ejecutados",
+    "dialogos_mostrados",
+    "hallazgos",
+    "capturas",
+    "tasa_descubrimiento"
+  ],
+  "dimensiones": [
+    {
+      "perfil": "atlas",
+      "mapas": 583,
+      "eventos": 884,
+      "cajas": 4083
+    },
+    {
+      "perfil": "base/dlc",
+      "mapas": 68,
+      "eventos": 379,
+      "cajas": 787
+    },
+    {
+      "perfil": "glazed",
+      "mapas": 111,
+      "eventos": 1277,
+      "cajas": 1395
+    },
+    {
+      "perfil": "light_platinum",
+      "mapas": 19,
+      "eventos": 175,
+      "cajas": 209
+    },
+    {
+      "perfil": "liquid_crystal",
+      "mapas": 432,
+      "eventos": 4253,
+      "cajas": 5096
+    },
+    {
+      "perfil": "nightmare/multiversal",
+      "mapas": 5,
+      "eventos": 19,
+      "cajas": 63
+    },
+    {
+      "perfil": "tfoh",
+      "mapas": 245,
+      "eventos": 2321,
+      "cajas": 2847
+    },
+    {
+      "perfil": "unbound",
+      "mapas": 420,
+      "eventos": 4388,
+      "cajas": 5321
+    }
+  ],
+  "totales": {
+    "mapas": 1883,
+    "eventos": 13696,
+    "cajas": 19801
+  },
+  "sesiones": [
+    {
+      "id": 1,
+      "titulo": "arranque en frío, menú principal y primera partida.",
+      "lineaTareas": 2199,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.05,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 19,
+            "cajas": 39
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 19,
+        "cajas": 39
+      },
+      "carpeta": "docs/qa/playtest/sesion-01",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 2,
+      "titulo": "partida guardada anterior al duelo de Arceus y su comportamiento.",
+      "lineaTareas": 2200,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.05,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 19,
+            "cajas": 39
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 19,
+        "cajas": 39
+      },
+      "carpeta": "docs/qa/playtest/sesion-02",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 3,
+      "titulo": "duelo de Arceus completo, seis fases, sin guardado intermedio.",
+      "lineaTareas": 2201,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.06,
+          "cuota": {
+            "mapas": 4,
+            "eventos": 23,
+            "cajas": 47
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 4,
+        "eventos": 23,
+        "cajas": 47
+      },
+      "carpeta": "docs/qa/playtest/sesion-03",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 4,
+      "titulo": "captura de Arceus y aparición junto a Oak.",
+      "lineaTareas": 2202,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.05,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 19,
+            "cajas": 39
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 19,
+        "cajas": 39
+      },
+      "carpeta": "docs/qa/playtest/sesion-04",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 5,
+      "titulo": "entrada al postgame y primer contacto con el hub de Oak.",
+      "lineaTareas": 2203,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.05,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 19,
+            "cajas": 39
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 19,
+        "cajas": 39
+      },
+      "carpeta": "docs/qa/playtest/sesion-05",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 6,
+      "titulo": "las siete grietas de creepypasta y su aviso de Entrar o Retirarse.",
+      "lineaTareas": 2204,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc",
+        "nightmare/multiversal"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.1,
+          "cuota": {
+            "mapas": 7,
+            "eventos": 38,
+            "cajas": 79
+          }
+        },
+        {
+          "dimension": "nightmare/multiversal",
+          "fraccion": 0.3,
+          "cuota": {
+            "mapas": 2,
+            "eventos": 6,
+            "cajas": 19
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 9,
+        "eventos": 44,
+        "cajas": 98
+      },
+      "carpeta": "docs/qa/playtest/sesion-06",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 7,
+      "titulo": "las siete emisiones en orden natural y su purga.",
+      "lineaTareas": 2205,
+      "tipo": "contenido",
+      "dimensiones": [
+        "nightmare/multiversal"
+      ],
+      "tramos": [
+        {
+          "dimension": "nightmare/multiversal",
+          "fraccion": 0.35,
+          "cuota": {
+            "mapas": 2,
+            "eventos": 7,
+            "cajas": 22
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 2,
+        "eventos": 7,
+        "cajas": 22
+      },
+      "carpeta": "docs/qa/playtest/sesion-07",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 8,
+      "titulo": "las siete emisiones en orden inverso y su purga.",
+      "lineaTareas": 2206,
+      "tipo": "contenido",
+      "dimensiones": [
+        "nightmare/multiversal"
+      ],
+      "tramos": [
+        {
+          "dimension": "nightmare/multiversal",
+          "fraccion": 0.35,
+          "cuota": {
+            "mapas": 1,
+            "eventos": 6,
+            "cajas": 22
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 1,
+        "eventos": 6,
+        "cajas": 22
+      },
+      "carpeta": "docs/qa/playtest/sesion-08",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 9,
+      "titulo": "punto de colapso y subida a la falda del Monte Silver.",
+      "lineaTareas": 2207,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.08,
+          "cuota": {
+            "mapas": 5,
+            "eventos": 30,
+            "cajas": 63
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 5,
+        "eventos": 30,
+        "cajas": 63
+      },
+      "carpeta": "docs/qa/playtest/sesion-09",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 10,
+      "titulo": "cumbre, Red y su combate.",
+      "lineaTareas": 2208,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.05,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 19,
+            "cajas": 39
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 19,
+        "cajas": 39
+      },
+      "carpeta": "docs/qa/playtest/sesion-10",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 11,
+      "titulo": "Liga Oscura con los siete sellos y su Diploma.",
+      "lineaTareas": 2209,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.06,
+          "cuota": {
+            "mapas": 4,
+            "eventos": 23,
+            "cajas": 47
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 4,
+        "eventos": 23,
+        "cajas": 47
+      },
+      "carpeta": "docs/qa/playtest/sesion-11",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 12,
+      "titulo": "entrada a Atlas y primer lote de franjas.",
+      "lineaTareas": 2210,
+      "tipo": "contenido",
+      "dimensiones": [
+        "atlas"
+      ],
+      "tramos": [
+        {
+          "dimension": "atlas",
+          "fraccion": 0.35,
+          "cuota": {
+            "mapas": 204,
+            "eventos": 309,
+            "cajas": 1429
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 204,
+        "eventos": 309,
+        "cajas": 1429
+      },
+      "carpeta": "docs/qa/playtest/sesion-12",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 13,
+      "titulo": "los ocho gimnasios de Atlas y sus puzles.",
+      "lineaTareas": 2211,
+      "tipo": "contenido",
+      "dimensiones": [
+        "atlas"
+      ],
+      "tramos": [
+        {
+          "dimension": "atlas",
+          "fraccion": 0.2,
+          "cuota": {
+            "mapas": 117,
+            "eventos": 177,
+            "cajas": 817
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 117,
+        "eventos": 177,
+        "cajas": 817
+      },
+      "carpeta": "docs/qa/playtest/sesion-13",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 14,
+      "titulo": "anclas Tier 1 y su narración.",
+      "lineaTareas": 2212,
+      "tipo": "contenido",
+      "dimensiones": [
+        "atlas"
+      ],
+      "tramos": [
+        {
+          "dimension": "atlas",
+          "fraccion": 0.45,
+          "cuota": {
+            "mapas": 262,
+            "eventos": 398,
+            "cajas": 1837
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 262,
+        "eventos": 398,
+        "cajas": 1837
+      },
+      "carpeta": "docs/qa/playtest/sesion-14",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 15,
+      "titulo": "ciudad Teckel y la escena de Maxine.",
+      "lineaTareas": 2213,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.04,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 15,
+            "cajas": 31
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 15,
+        "cajas": 31
+      },
+      "carpeta": "docs/qa/playtest/sesion-15",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 16,
+      "titulo": "Isla Espejo y la captura de un Pokégod por forma.",
+      "lineaTareas": 2214,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.05,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 19,
+            "cajas": 39
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 19,
+        "cajas": 39
+      },
+      "carpeta": "docs/qa/playtest/sesion-16",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 17,
+      "titulo": "barco a Glazed y primera ciudad.",
+      "lineaTareas": 2215,
+      "tipo": "contenido",
+      "dimensiones": [
+        "glazed"
+      ],
+      "tramos": [
+        {
+          "dimension": "glazed",
+          "fraccion": 0.35,
+          "cuota": {
+            "mapas": 39,
+            "eventos": 447,
+            "cajas": 488
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 39,
+        "eventos": 447,
+        "cajas": 488
+      },
+      "carpeta": "docs/qa/playtest/sesion-17",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 18,
+      "titulo": "Glazed de punta a punta y su campeón.",
+      "lineaTareas": 2216,
+      "tipo": "contenido",
+      "dimensiones": [
+        "glazed"
+      ],
+      "tramos": [
+        {
+          "dimension": "glazed",
+          "fraccion": 0.65,
+          "cuota": {
+            "mapas": 72,
+            "eventos": 830,
+            "cajas": 907
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 72,
+        "eventos": 830,
+        "cajas": 907
+      },
+      "carpeta": "docs/qa/playtest/sesion-18",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 19,
+      "titulo": "barco a Light Platinum y su capital.",
+      "lineaTareas": 2217,
+      "tipo": "contenido",
+      "dimensiones": [
+        "light_platinum"
+      ],
+      "tramos": [
+        {
+          "dimension": "light_platinum",
+          "fraccion": 0.4,
+          "cuota": {
+            "mapas": 8,
+            "eventos": 70,
+            "cajas": 84
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 8,
+        "eventos": 70,
+        "cajas": 84
+      },
+      "carpeta": "docs/qa/playtest/sesion-19",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 20,
+      "titulo": "Light Platinum de punta a punta y su campeón.",
+      "lineaTareas": 2218,
+      "tipo": "contenido",
+      "dimensiones": [
+        "light_platinum"
+      ],
+      "tramos": [
+        {
+          "dimension": "light_platinum",
+          "fraccion": 0.6,
+          "cuota": {
+            "mapas": 11,
+            "eventos": 105,
+            "cajas": 125
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 11,
+        "eventos": 105,
+        "cajas": 125
+      },
+      "carpeta": "docs/qa/playtest/sesion-20",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 21,
+      "titulo": "Liquid Crystal de punta a punta y su campeón.",
+      "lineaTareas": 2219,
+      "tipo": "contenido",
+      "dimensiones": [
+        "liquid_crystal"
+      ],
+      "tramos": [
+        {
+          "dimension": "liquid_crystal",
+          "fraccion": 1,
+          "cuota": {
+            "mapas": 432,
+            "eventos": 4253,
+            "cajas": 5096
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 432,
+        "eventos": 4253,
+        "cajas": 5096
+      },
+      "carpeta": "docs/qa/playtest/sesion-21",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 22,
+      "titulo": "TFOH de punta a punta y su cierre narrativo.",
+      "lineaTareas": 2220,
+      "tipo": "contenido",
+      "dimensiones": [
+        "tfoh"
+      ],
+      "tramos": [
+        {
+          "dimension": "tfoh",
+          "fraccion": 1,
+          "cuota": {
+            "mapas": 245,
+            "eventos": 2321,
+            "cajas": 2847
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 245,
+        "eventos": 2321,
+        "cajas": 2847
+      },
+      "carpeta": "docs/qa/playtest/sesion-22",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 23,
+      "titulo": "Unbound de punta a punta y su campeón exigente.",
+      "lineaTareas": 2221,
+      "tipo": "contenido",
+      "dimensiones": [
+        "unbound"
+      ],
+      "tramos": [
+        {
+          "dimension": "unbound",
+          "fraccion": 1,
+          "cuota": {
+            "mapas": 420,
+            "eventos": 4388,
+            "cajas": 5321
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 420,
+        "eventos": 4388,
+        "cajas": 5321
+      },
+      "carpeta": "docs/qa/playtest/sesion-23",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 24,
+      "titulo": "las cinco misiones de Team Rocket en una sola partida.",
+      "lineaTareas": 2222,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.08,
+          "cuota": {
+            "mapas": 5,
+            "eventos": 30,
+            "cajas": 63
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 5,
+        "eventos": 30,
+        "cajas": 63
+      },
+      "carpeta": "docs/qa/playtest/sesion-24",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 25,
+      "titulo": "disfraz puesto y quitado dentro de la base.",
+      "lineaTareas": 2223,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.04,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 15,
+            "cajas": 31
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 15,
+        "cajas": 31
+      },
+      "carpeta": "docs/qa/playtest/sesion-25",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 26,
+      "titulo": "movimientos de campo sin medallas en las siete regiones.",
+      "lineaTareas": 2224,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.04,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 15,
+            "cajas": 31
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 15,
+        "cajas": 31
+      },
+      "carpeta": "docs/qa/playtest/sesion-26",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 27,
+      "titulo": "mochila libre en combate en cada tipo de combate.",
+      "lineaTareas": 2225,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.04,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 15,
+            "cajas": 31
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 15,
+        "cajas": 31
+      },
+      "carpeta": "docs/qa/playtest/sesion-27",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 28,
+      "titulo": "menú Z y menú de estado tras cada desbloqueo.",
+      "lineaTareas": 2226,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.04,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 15,
+            "cajas": 31
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 15,
+        "cajas": 31
+      },
+      "carpeta": "docs/qa/playtest/sesion-28",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 29,
+      "titulo": "guardar y cargar dentro de cada dimensión.",
+      "lineaTareas": 2227,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.04,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 15,
+            "cajas": 31
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 15,
+        "cajas": 31
+      },
+      "carpeta": "docs/qa/playtest/sesion-29",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 30,
+      "titulo": "perder contra cada jefe final y reintentar.",
+      "lineaTareas": 2228,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.03,
+          "cuota": {
+            "mapas": 2,
+            "eventos": 11,
+            "cajas": 24
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 2,
+        "eventos": 11,
+        "cajas": 24
+      },
+      "carpeta": "docs/qa/playtest/sesion-30",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 31,
+      "titulo": "abandonar cada región a mitad y retomar después.",
+      "lineaTareas": 2229,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.03,
+          "cuota": {
+            "mapas": 2,
+            "eventos": 11,
+            "cajas": 24
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 2,
+        "eventos": 11,
+        "cajas": 24
+      },
+      "carpeta": "docs/qa/playtest/sesion-31",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 32,
+      "titulo": "el DLC completo sin usar ninguna guía externa.",
+      "lineaTareas": 2230,
+      "tipo": "contenido",
+      "dimensiones": [
+        "base/dlc"
+      ],
+      "tramos": [
+        {
+          "dimension": "base/dlc",
+          "fraccion": 0.02,
+          "cuota": {
+            "mapas": 3,
+            "eventos": 9,
+            "cajas": 20
+          }
+        }
+      ],
+      "cuota": {
+        "mapas": 3,
+        "eventos": 9,
+        "cajas": 20
+      },
+      "carpeta": "docs/qa/playtest/sesion-32",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 33,
+      "titulo": "prueba en ventana pequeña de escritorio.",
+      "lineaTareas": 2251,
+      "tipo": "soporte",
+      "motivo": "interfaz: ventana pequeña de escritorio",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-33",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 34,
+      "titulo": "prueba a pantalla completa de escritorio.",
+      "lineaTareas": 2252,
+      "tipo": "soporte",
+      "motivo": "interfaz: pantalla completa de escritorio",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-34",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 35,
+      "titulo": "prueba con mando.",
+      "lineaTareas": 2253,
+      "tipo": "soporte",
+      "motivo": "input: mando",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-35",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 36,
+      "titulo": "prueba con teclado.",
+      "lineaTareas": 2254,
+      "tipo": "soporte",
+      "motivo": "input: teclado",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-36",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 37,
+      "titulo": "prueba en Android con Kirin.",
+      "lineaTareas": 2255,
+      "tipo": "soporte",
+      "motivo": "android: Kirin",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-37",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 38,
+      "titulo": "prueba con la APK de PokeMod Studio como editor en paralelo.",
+      "lineaTareas": 2256,
+      "tipo": "soporte",
+      "motivo": "editor: PokeMod Studio en paralelo",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-38",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 39,
+      "titulo": "deshacer y rehacer en el editor sobre un mapa del DLC.",
+      "lineaTareas": 2258,
+      "tipo": "soporte",
+      "motivo": "editor: deshacer y rehacer",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-39",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 40,
+      "titulo": "auditoría del editor sobre el contenido nuevo.",
+      "lineaTareas": 2259,
+      "tipo": "soporte",
+      "motivo": "editor: auditoría del contenido nuevo",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-40",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 41,
+      "titulo": "exportación ZIP desde el editor y su reimportación.",
+      "lineaTareas": 2260,
+      "tipo": "soporte",
+      "motivo": "editor: exportación ZIP y reimportación",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-41",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 42,
+      "titulo": "modo lectura sin permisos de escritura.",
+      "lineaTareas": 2261,
+      "tipo": "soporte",
+      "motivo": "editor: modo lectura",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-42",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 43,
+      "titulo": "partida larga de cuatro horas seguidas sin reiniciar.",
+      "lineaTareas": 2269,
+      "tipo": "soporte",
+      "motivo": "estrés: partida larga de cuatro horas",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-43",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 44,
+      "titulo": "partida con un guardado muy antiguo del juego original.",
+      "lineaTareas": 2274,
+      "tipo": "soporte",
+      "motivo": "compatibilidad: guardado antiguo del juego original",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-44",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 45,
+      "titulo": "partida nueva hasta el postgame sin usar atajos.",
+      "lineaTareas": 2278,
+      "tipo": "soporte",
+      "motivo": "duración: partida nueva hasta el postgame",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-45",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 46,
+      "titulo": "prueba de estrés de apertura y cierre de menús en todas las dimensiones.",
+      "lineaTareas": 2281,
+      "tipo": "soporte",
+      "motivo": "estrés: menús en todas las dimensiones",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-46",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 47,
+      "titulo": "prueba de estrés de surf y buceo en cada cuerpo de agua nuevo.",
+      "lineaTareas": 2283,
+      "tipo": "soporte",
+      "motivo": "campo: surf y buceo",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-47",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 48,
+      "titulo": "prueba de pesca en los mapas nuevos con agua.",
+      "lineaTareas": 2286,
+      "tipo": "soporte",
+      "motivo": "encuentros: pesca",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-48",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 49,
+      "titulo": "prueba de vuelo y teletransporte a los mapas nuevos si el juego lo permite.",
+      "lineaTareas": 2288,
+      "tipo": "soporte",
+      "motivo": "navegación: vuelo y teletransporte",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-49",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 50,
+      "titulo": "prueba del día y noche en las ciudades nuevas.",
+      "lineaTareas": 2291,
+      "tipo": "soporte",
+      "motivo": "tiempo: día y noche",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-50",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 51,
+      "titulo": "prueba de clima extremo y su efecto en el rendimiento.",
+      "lineaTareas": 2294,
+      "tipo": "soporte",
+      "motivo": "rendimiento: clima extremo",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-51",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 52,
+      "titulo": "prueba de la niebla en interiores y exteriores.",
+      "lineaTareas": 2296,
+      "tipo": "soporte",
+      "motivo": "render: niebla",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-52",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 53,
+      "titulo": "prueba de la restauración del tono de pantalla tras cada cinemática.",
+      "lineaTareas": 2298,
+      "tipo": "soporte",
+      "motivo": "render: restauración del tono",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-53",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 54,
+      "titulo": "prueba de las transiciones de batalla nuevas.",
+      "lineaTareas": 2300,
+      "tipo": "soporte",
+      "motivo": "combate: transiciones nuevas",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-54",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 55,
+      "titulo": "prueba de las animaciones de los jefes nuevos.",
+      "lineaTareas": 2302,
+      "tipo": "soporte",
+      "motivo": "combate: animaciones de jefes",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-55",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 56,
+      "titulo": "prueba de las recompensas únicas en una partida ya completada.",
+      "lineaTareas": 2304,
+      "tipo": "soporte",
+      "motivo": "recompensas: únicas tras completar",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-56",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 57,
+      "titulo": "prueba de revancha contra todos los jefes con revancha disponible.",
+      "lineaTareas": 2306,
+      "tipo": "soporte",
+      "motivo": "revancha: jefes con revancha",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-57",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 58,
+      "titulo": "prueba de derrota contra todos los jefes con combate obligatorio.",
+      "lineaTareas": 2308,
+      "tipo": "soporte",
+      "motivo": "combates: derrota contra jefes obligatorios",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-58",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 59,
+      "titulo": "prueba de huida y captura en los combates especiales.",
+      "lineaTareas": 2310,
+      "tipo": "soporte",
+      "motivo": "combates: huida y captura especiales",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-59",
+      "estado": "manual_pending"
+    },
+    {
+      "id": 60,
+      "titulo": "partida de cierre completa desde el arranque hasta el último diploma.",
+      "lineaTareas": 2312,
+      "tipo": "soporte",
+      "motivo": "cierre: partida completa hasta el último diploma",
+      "dimensiones": [],
+      "tramos": [],
+      "cuota": {
+        "mapas": 0,
+        "eventos": 0,
+        "cajas": 0
+      },
+      "repite": [
+        "base/dlc",
+        "atlas",
+        "glazed",
+        "light_platinum",
+        "liquid_crystal",
+        "tfoh",
+        "unbound",
+        "nightmare/multiversal"
+      ],
+      "carpeta": "docs/qa/playtest/sesion-60",
+      "estado": "manual_pending"
+    }
+  ],
+  "control": {
+    "sesionesDeContenido": 32,
+    "sesionesDeSoporte": 28,
+    "sumaDeCuotas": {
+      "mapas": 1883,
+      "eventos": 13696,
+      "cajas": 19801
+    },
+    "coberturaDeclarada": "100 % de mapas, eventos y cajas del DLC repartidos entre las sesiones de contenido",
+    "fichasPresentes": 60,
+    "fichasAusentes": [],
+    "avisos": []
+  }
+}

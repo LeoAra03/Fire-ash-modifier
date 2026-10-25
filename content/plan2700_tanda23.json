@@ -1,0 +1,3273 @@
+{
+  "schema": "plan2700_tanda/1.0",
+  "fase": "002 — tanda 23 (líneas 2200–2299 de tareas.txt)",
+  "fuente": "tareas.txt",
+  "lineas": [
+    2200,
+    2299
+  ],
+  "tareas": {
+    "total": 100,
+    "primera": 2196,
+    "ultima": 2295
+  },
+  "resumen": {
+    "instrumentado": 74,
+    "manual:playtest": 26
+  },
+  "contenido": {
+    "sesiones": 60,
+    "sesionesConCuota": 32,
+    "sesionesDeSoporte": 28,
+    "fichas": 60,
+    "fichasConCampos": 60,
+    "cuotaTotal": {
+      "mapas": 1883,
+      "eventos": 13696,
+      "cajas": 19801
+    },
+    "totalesDeContenido": {
+      "mapas": 1883,
+      "eventos": 13696,
+      "cajas": 19801
+    },
+    "estado": "manual_pending"
+  },
+  "sondas": [
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":2}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 2,
+        "titulo": "partida guardada anterior al duelo de Arceus y su comportamiento.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-02",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":3}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 3,
+        "titulo": "duelo de Arceus completo, seis fases, sin guardado intermedio.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 4,
+          "eventos": 23,
+          "cajas": 47
+        },
+        "ficha": "docs/qa/playtest/sesion-03",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":4}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 4,
+        "titulo": "captura de Arceus y aparición junto a Oak.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-04",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":5}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 5,
+        "titulo": "entrada al postgame y primer contacto con el hub de Oak.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-05",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":6}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 6,
+        "titulo": "las siete grietas de creepypasta y su aviso de Entrar o Retirarse.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 9,
+          "eventos": 44,
+          "cajas": 98
+        },
+        "ficha": "docs/qa/playtest/sesion-06",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":7}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 7,
+        "titulo": "las siete emisiones en orden natural y su purga.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 2,
+          "eventos": 7,
+          "cajas": 22
+        },
+        "ficha": "docs/qa/playtest/sesion-07",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":8}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 8,
+        "titulo": "las siete emisiones en orden inverso y su purga.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 1,
+          "eventos": 6,
+          "cajas": 22
+        },
+        "ficha": "docs/qa/playtest/sesion-08",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":9}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 9,
+        "titulo": "punto de colapso y subida a la falda del Monte Silver.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 5,
+          "eventos": 30,
+          "cajas": 63
+        },
+        "ficha": "docs/qa/playtest/sesion-09",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":10}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 10,
+        "titulo": "cumbre, Red y su combate.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-10",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":11}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 11,
+        "titulo": "Liga Oscura con los siete sellos y su Diploma.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 4,
+          "eventos": 23,
+          "cajas": 47
+        },
+        "ficha": "docs/qa/playtest/sesion-11",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":12}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 12,
+        "titulo": "entrada a Atlas y primer lote de franjas.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 204,
+          "eventos": 309,
+          "cajas": 1429
+        },
+        "ficha": "docs/qa/playtest/sesion-12",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":13}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 13,
+        "titulo": "los ocho gimnasios de Atlas y sus puzles.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 117,
+          "eventos": 177,
+          "cajas": 817
+        },
+        "ficha": "docs/qa/playtest/sesion-13",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":14}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 14,
+        "titulo": "anclas Tier 1 y su narración.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 262,
+          "eventos": 398,
+          "cajas": 1837
+        },
+        "ficha": "docs/qa/playtest/sesion-14",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":15}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 15,
+        "titulo": "ciudad Teckel y la escena de Maxine.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-15",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":16}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 16,
+        "titulo": "Isla Espejo y la captura de un Pokégod por forma.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-16",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":17}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 17,
+        "titulo": "barco a Glazed y primera ciudad.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 39,
+          "eventos": 447,
+          "cajas": 488
+        },
+        "ficha": "docs/qa/playtest/sesion-17",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":18}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 18,
+        "titulo": "Glazed de punta a punta y su campeón.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 72,
+          "eventos": 830,
+          "cajas": 907
+        },
+        "ficha": "docs/qa/playtest/sesion-18",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":19}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 19,
+        "titulo": "barco a Light Platinum y su capital.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 8,
+          "eventos": 70,
+          "cajas": 84
+        },
+        "ficha": "docs/qa/playtest/sesion-19",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":20}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 20,
+        "titulo": "Light Platinum de punta a punta y su campeón.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 11,
+          "eventos": 105,
+          "cajas": 125
+        },
+        "ficha": "docs/qa/playtest/sesion-20",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":21}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 21,
+        "titulo": "Liquid Crystal de punta a punta y su campeón.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 432,
+          "eventos": 4253,
+          "cajas": 5096
+        },
+        "ficha": "docs/qa/playtest/sesion-21",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":22}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 22,
+        "titulo": "TFOH de punta a punta y su cierre narrativo.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 245,
+          "eventos": 2321,
+          "cajas": 2847
+        },
+        "ficha": "docs/qa/playtest/sesion-22",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":23}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 23,
+        "titulo": "Unbound de punta a punta y su campeón exigente.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 420,
+          "eventos": 4388,
+          "cajas": 5321
+        },
+        "ficha": "docs/qa/playtest/sesion-23",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":24}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 24,
+        "titulo": "las cinco misiones de Team Rocket en una sola partida.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 5,
+          "eventos": 30,
+          "cajas": 63
+        },
+        "ficha": "docs/qa/playtest/sesion-24",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":25}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 25,
+        "titulo": "disfraz puesto y quitado dentro de la base.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-25",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":26}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 26,
+        "titulo": "movimientos de campo sin medallas en las siete regiones.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-26",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":27}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 27,
+        "titulo": "mochila libre en combate en cada tipo de combate.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-27",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":28}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 28,
+        "titulo": "menú Z y menú de estado tras cada desbloqueo.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-28",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":29}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 29,
+        "titulo": "guardar y cargar dentro de cada dimensión.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-29",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":30}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 30,
+        "titulo": "perder contra cada jefe final y reintentar.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 2,
+          "eventos": 11,
+          "cajas": 24
+        },
+        "ficha": "docs/qa/playtest/sesion-30",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":31}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 31,
+        "titulo": "abandonar cada región a mitad y retomar después.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 2,
+          "eventos": 11,
+          "cajas": 24
+        },
+        "ficha": "docs/qa/playtest/sesion-31",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":32}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 32,
+        "titulo": "el DLC completo sin usar ninguna guía externa.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 9,
+          "cajas": 20
+        },
+        "ficha": "docs/qa/playtest/sesion-32",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "fichas_presentes|{}",
+      "sonda": "fichas_presentes",
+      "titulo": "Ficha por sesión con sus campos",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 60,
+      "detalle": {
+        "presentes": 60,
+        "conCampos": 60,
+        "total": 60,
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "severidad|{}",
+      "sonda": "severidad",
+      "titulo": "Gravedad declarada en guion, registro y plantilla",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 16,
+      "detalle": {
+        "fuentes": [
+          "registro",
+          "guion",
+          "ficha",
+          "inventario"
+        ],
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "regresiones|{}",
+      "sonda": "regresiones",
+      "titulo": "Puerta de regresión con su regla aplicada",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 0,
+      "detalle": {
+        "hallazgos": 0,
+        "graves": 0,
+        "porGravedad": {},
+        "porEstado": {},
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "scripts_declarados|{}",
+      "sonda": "scripts_declarados",
+      "titulo": "Scripts citados por la tanda declarados en package.json",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 4,
+      "detalle": {
+        "citados": [
+          "verify:all",
+          "verify:mapas",
+          "verify:playtest:regresiones",
+          "verify:playtest:guion"
+        ],
+        "faltan": [],
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "guion_cuotas|{}",
+      "sonda": "guion_cuotas",
+      "titulo": "Guion con cuota por sesión, fracciones que suman 1",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 60,
+      "detalle": {
+        "sesiones": 60,
+        "conCuota": 32,
+        "deSoporte": 28,
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "cuota_100|{}",
+      "sonda": "cuota_100",
+      "titulo": "Las cuotas cubren el 100 % de mapas, eventos y cajas",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 19801,
+      "detalle": {
+        "suma": {
+          "mapas": 1883,
+          "eventos": 13696,
+          "cajas": 19801
+        },
+        "totales": {
+          "mapas": 1883,
+          "eventos": 13696,
+          "cajas": 19801
+        },
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "cobertura_registro|{}",
+      "sonda": "cobertura_registro",
+      "titulo": "Registro de cobertura publicado (indexado ≠ ejercido)",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 8,
+      "detalle": {
+        "dimensiones": 8,
+        "ejercido": 0,
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "cupo_jefes|{}",
+      "sonda": "cupo_jefes",
+      "titulo": "Jefes del DLC repartidos entre sesiones",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 146,
+      "detalle": {
+        "eventosDeJefe": 146,
+        "cajas": 551,
+        "dimensiones": [
+          "atlas",
+          "base/dlc",
+          "glazed",
+          "light_platinum",
+          "liquid_crystal",
+          "nightmare/multiversal",
+          "tfoh"
+        ],
+        "sinSesionAsignada": [],
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "cupo_medallas|{}",
+      "sonda": "cupo_medallas",
+      "titulo": "Medallas del DLC con dueño en el guion",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 40,
+      "detalle": {
+        "medallas": 40,
+        "campana": 32,
+        "atlas": 8,
+        "sesiones": [
+          12,
+          13,
+          14,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "cuota_dimensiones|{}",
+      "sonda": "cuota_dimensiones",
+      "titulo": "Cada dimensión reparte su contenido exacto entre sus sesiones",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 8,
+      "detalle": {
+        "dimensiones": [
+          {
+            "dimension": "atlas",
+            "total": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            },
+            "asignado": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            }
+          },
+          {
+            "dimension": "base/dlc",
+            "total": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            },
+            "asignado": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            }
+          },
+          {
+            "dimension": "glazed",
+            "total": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            },
+            "asignado": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            }
+          },
+          {
+            "dimension": "light_platinum",
+            "total": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            },
+            "asignado": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            }
+          },
+          {
+            "dimension": "liquid_crystal",
+            "total": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            },
+            "asignado": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            }
+          },
+          {
+            "dimension": "nightmare/multiversal",
+            "total": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            },
+            "asignado": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            }
+          },
+          {
+            "dimension": "tfoh",
+            "total": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            },
+            "asignado": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            }
+          },
+          {
+            "dimension": "unbound",
+            "total": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            },
+            "asignado": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            }
+          }
+        ],
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":33}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 33,
+        "titulo": "prueba en ventana pequeña de escritorio.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-33",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":34}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 34,
+        "titulo": "prueba a pantalla completa de escritorio.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-34",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":35}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 35,
+        "titulo": "prueba con mando.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-35",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":36}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 36,
+        "titulo": "prueba con teclado.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-36",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":37}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 37,
+        "titulo": "prueba en Android con Kirin.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-37",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":38}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 38,
+        "titulo": "prueba con la APK de PokeMod Studio como editor en paralelo.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-38",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":39}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 39,
+        "titulo": "deshacer y rehacer en el editor sobre un mapa del DLC.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-39",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":40}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 40,
+        "titulo": "auditoría del editor sobre el contenido nuevo.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-40",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":41}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 41,
+        "titulo": "exportación ZIP desde el editor y su reimportación.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-41",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":42}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 42,
+        "titulo": "modo lectura sin permisos de escritura.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-42",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":43}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 43,
+        "titulo": "partida larga de cuatro horas seguidas sin reiniciar.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-43",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":44}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 44,
+        "titulo": "partida con un guardado muy antiguo del juego original.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-44",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":45}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 45,
+        "titulo": "partida nueva hasta el postgame sin usar atajos.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-45",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":46}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 46,
+        "titulo": "prueba de estrés de apertura y cierre de menús en todas las dimensiones.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-46",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":47}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 47,
+        "titulo": "prueba de estrés de surf y buceo en cada cuerpo de agua nuevo.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-47",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":48}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 48,
+        "titulo": "prueba de pesca en los mapas nuevos con agua.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-48",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":49}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 49,
+        "titulo": "prueba de vuelo y teletransporte a los mapas nuevos si el juego lo permite.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-49",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":50}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 50,
+        "titulo": "prueba del día y noche en las ciudades nuevas.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-50",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":51}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 51,
+        "titulo": "prueba de clima extremo y su efecto en el rendimiento.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-51",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":52}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 52,
+        "titulo": "prueba de la niebla en interiores y exteriores.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-52",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sesion_instrumentada|{\"sesion\":53}",
+      "sonda": "sesion_instrumentada",
+      "titulo": "Sesión instrumentada con ficha y cuota",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 53,
+        "titulo": "prueba de la restauración del tono de pantalla tras cada cinemática.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-53",
+        "estado": "manual_pending",
+        "ejecutado": false
+      },
+      "muestras": []
+    }
+  ],
+  "filas": [
+    {
+      "id": 2196,
+      "tarea": "Sesión 2: partida guardada anterior al duelo de Arceus y su comportamiento.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 2,
+        "titulo": "partida guardada anterior al duelo de Arceus y su comportamiento.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-02",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2197,
+      "tarea": "Sesión 3: duelo de Arceus completo, seis fases, sin guardado intermedio.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 3,
+        "titulo": "duelo de Arceus completo, seis fases, sin guardado intermedio.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 4,
+          "eventos": 23,
+          "cajas": 47
+        },
+        "ficha": "docs/qa/playtest/sesion-03",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2198,
+      "tarea": "Sesión 4: captura de Arceus y aparición junto a Oak.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 4,
+        "titulo": "captura de Arceus y aparición junto a Oak.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-04",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2199,
+      "tarea": "Sesión 5: entrada al postgame y primer contacto con el hub de Oak.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 5,
+        "titulo": "entrada al postgame y primer contacto con el hub de Oak.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-05",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2200,
+      "tarea": "Sesión 6: las siete grietas de creepypasta y su aviso de Entrar o Retirarse.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 6,
+        "titulo": "las siete grietas de creepypasta y su aviso de Entrar o Retirarse.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 9,
+          "eventos": 44,
+          "cajas": 98
+        },
+        "ficha": "docs/qa/playtest/sesion-06",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2201,
+      "tarea": "Sesión 7: las siete emisiones en orden natural y su purga.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 7,
+        "titulo": "las siete emisiones en orden natural y su purga.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 2,
+          "eventos": 7,
+          "cajas": 22
+        },
+        "ficha": "docs/qa/playtest/sesion-07",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2202,
+      "tarea": "Sesión 8: las siete emisiones en orden inverso y su purga.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 8,
+        "titulo": "las siete emisiones en orden inverso y su purga.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 1,
+          "eventos": 6,
+          "cajas": 22
+        },
+        "ficha": "docs/qa/playtest/sesion-08",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2203,
+      "tarea": "Sesión 9: punto de colapso y subida a la falda del Monte Silver.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 9,
+        "titulo": "punto de colapso y subida a la falda del Monte Silver.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 5,
+          "eventos": 30,
+          "cajas": 63
+        },
+        "ficha": "docs/qa/playtest/sesion-09",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2204,
+      "tarea": "Sesión 10: cumbre, Red y su combate.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 10,
+        "titulo": "cumbre, Red y su combate.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-10",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2205,
+      "tarea": "Sesión 11: Liga Oscura con los siete sellos y su Diploma.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 11,
+        "titulo": "Liga Oscura con los siete sellos y su Diploma.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 4,
+          "eventos": 23,
+          "cajas": 47
+        },
+        "ficha": "docs/qa/playtest/sesion-11",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2206,
+      "tarea": "Sesión 12: entrada a Atlas y primer lote de franjas.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 12,
+        "titulo": "entrada a Atlas y primer lote de franjas.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 204,
+          "eventos": 309,
+          "cajas": 1429
+        },
+        "ficha": "docs/qa/playtest/sesion-12",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2207,
+      "tarea": "Sesión 13: los ocho gimnasios de Atlas y sus puzles.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 13,
+        "titulo": "los ocho gimnasios de Atlas y sus puzles.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 117,
+          "eventos": 177,
+          "cajas": 817
+        },
+        "ficha": "docs/qa/playtest/sesion-13",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2208,
+      "tarea": "Sesión 14: anclas Tier 1 y su narración.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 14,
+        "titulo": "anclas Tier 1 y su narración.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 262,
+          "eventos": 398,
+          "cajas": 1837
+        },
+        "ficha": "docs/qa/playtest/sesion-14",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2209,
+      "tarea": "Sesión 15: ciudad Teckel y la escena de Maxine.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 15,
+        "titulo": "ciudad Teckel y la escena de Maxine.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-15",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2210,
+      "tarea": "Sesión 16: Isla Espejo y la captura de un Pokégod por forma.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 16,
+        "titulo": "Isla Espejo y la captura de un Pokégod por forma.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 19,
+          "cajas": 39
+        },
+        "ficha": "docs/qa/playtest/sesion-16",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2211,
+      "tarea": "Sesión 17: barco a Glazed y primera ciudad.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 17,
+        "titulo": "barco a Glazed y primera ciudad.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 39,
+          "eventos": 447,
+          "cajas": 488
+        },
+        "ficha": "docs/qa/playtest/sesion-17",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2212,
+      "tarea": "Sesión 18: Glazed de punta a punta y su campeón.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 18,
+        "titulo": "Glazed de punta a punta y su campeón.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 72,
+          "eventos": 830,
+          "cajas": 907
+        },
+        "ficha": "docs/qa/playtest/sesion-18",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2213,
+      "tarea": "Sesión 19: barco a Light Platinum y su capital.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 19,
+        "titulo": "barco a Light Platinum y su capital.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 8,
+          "eventos": 70,
+          "cajas": 84
+        },
+        "ficha": "docs/qa/playtest/sesion-19",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2214,
+      "tarea": "Sesión 20: Light Platinum de punta a punta y su campeón.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 20,
+        "titulo": "Light Platinum de punta a punta y su campeón.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 11,
+          "eventos": 105,
+          "cajas": 125
+        },
+        "ficha": "docs/qa/playtest/sesion-20",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2215,
+      "tarea": "Sesión 21: Liquid Crystal de punta a punta y su campeón.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 21,
+        "titulo": "Liquid Crystal de punta a punta y su campeón.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 432,
+          "eventos": 4253,
+          "cajas": 5096
+        },
+        "ficha": "docs/qa/playtest/sesion-21",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2216,
+      "tarea": "Sesión 22: TFOH de punta a punta y su cierre narrativo.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 22,
+        "titulo": "TFOH de punta a punta y su cierre narrativo.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 245,
+          "eventos": 2321,
+          "cajas": 2847
+        },
+        "ficha": "docs/qa/playtest/sesion-22",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2217,
+      "tarea": "Sesión 23: Unbound de punta a punta y su campeón exigente.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 23,
+        "titulo": "Unbound de punta a punta y su campeón exigente.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 420,
+          "eventos": 4388,
+          "cajas": 5321
+        },
+        "ficha": "docs/qa/playtest/sesion-23",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2218,
+      "tarea": "Sesión 24: las cinco misiones de Team Rocket en una sola partida.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 24,
+        "titulo": "las cinco misiones de Team Rocket en una sola partida.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 5,
+          "eventos": 30,
+          "cajas": 63
+        },
+        "ficha": "docs/qa/playtest/sesion-24",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2219,
+      "tarea": "Sesión 25: disfraz puesto y quitado dentro de la base.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 25,
+        "titulo": "disfraz puesto y quitado dentro de la base.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-25",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2220,
+      "tarea": "Sesión 26: movimientos de campo sin medallas en las siete regiones.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 26,
+        "titulo": "movimientos de campo sin medallas en las siete regiones.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-26",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2221,
+      "tarea": "Sesión 27: mochila libre en combate en cada tipo de combate.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 27,
+        "titulo": "mochila libre en combate en cada tipo de combate.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-27",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2222,
+      "tarea": "Sesión 28: menú Z y menú de estado tras cada desbloqueo.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 28,
+        "titulo": "menú Z y menú de estado tras cada desbloqueo.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-28",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2223,
+      "tarea": "Sesión 29: guardar y cargar dentro de cada dimensión.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 29,
+        "titulo": "guardar y cargar dentro de cada dimensión.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 15,
+          "cajas": 31
+        },
+        "ficha": "docs/qa/playtest/sesion-29",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2224,
+      "tarea": "Sesión 30: perder contra cada jefe final y reintentar.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 30,
+        "titulo": "perder contra cada jefe final y reintentar.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 2,
+          "eventos": 11,
+          "cajas": 24
+        },
+        "ficha": "docs/qa/playtest/sesion-30",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2225,
+      "tarea": "Sesión 31: abandonar cada región a mitad y retomar después.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 31,
+        "titulo": "abandonar cada región a mitad y retomar después.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 2,
+          "eventos": 11,
+          "cajas": 24
+        },
+        "ficha": "docs/qa/playtest/sesion-31",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2226,
+      "tarea": "Sesión 32: el DLC completo sin usar ninguna guía externa.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 32,
+        "titulo": "el DLC completo sin usar ninguna guía externa.",
+        "tipo": "contenido",
+        "cuota": {
+          "mapas": 3,
+          "eventos": 9,
+          "cajas": 20
+        },
+        "ficha": "docs/qa/playtest/sesion-32",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2227,
+      "tarea": "Registrar cada sesión con su ficha, sus hallazgos numerados y la tasa de descubrimiento (hallazgos por hora), que debe bajar ronda a ronda.",
+      "estado": "instrumentado",
+      "sonda": "fichas_presentes",
+      "detalle": {
+        "presentes": 60,
+        "conCampos": 60,
+        "total": 60,
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2228,
+      "tarea": "Clasificar cada hallazgo por gravedad: bloqueante, grave, leve o cosmético.",
+      "estado": "instrumentado",
+      "sonda": "severidad",
+      "detalle": {
+        "fuentes": [
+          "registro",
+          "guion",
+          "ficha",
+          "inventario"
+        ],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2229,
+      "tarea": "Corregir los hallazgos bloqueantes en el mismo día de la sesión.",
+      "estado": "instrumentado",
+      "sonda": "regresiones",
+      "detalle": {
+        "hallazgos": 0,
+        "graves": 0,
+        "porGravedad": {},
+        "porEstado": {},
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2230,
+      "tarea": "Corregir los graves antes de la sesión siguiente.",
+      "estado": "instrumentado",
+      "sonda": "regresiones",
+      "detalle": {
+        "hallazgos": 0,
+        "graves": 0,
+        "porGravedad": {},
+        "porEstado": {},
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2231,
+      "tarea": "Agrupar los leves y cosméticos por bloque para corregirlos en lote.",
+      "estado": "instrumentado",
+      "sonda": "regresiones",
+      "detalle": {
+        "hallazgos": 0,
+        "graves": 0,
+        "porGravedad": {},
+        "porEstado": {},
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2232,
+      "tarea": "Verificar que ninguna corrección de playtest rompa un verificador existente.",
+      "estado": "instrumentado",
+      "sonda": "regresiones",
+      "detalle": {
+        "hallazgos": 0,
+        "graves": 0,
+        "porGravedad": {},
+        "porEstado": {},
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2233,
+      "tarea": "Reejecutar `npm run verify:all` después de cada tanda de correcciones.",
+      "estado": "instrumentado",
+      "sonda": "scripts_declarados",
+      "detalle": {
+        "citados": [
+          "verify:all",
+          "verify:mapas",
+          "verify:playtest:regresiones",
+          "verify:playtest:guion"
+        ],
+        "faltan": [],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2234,
+      "tarea": "Escribir la prueba de regresión de cada hallazgo grave corregido.",
+      "estado": "instrumentado",
+      "sonda": "regresiones",
+      "detalle": {
+        "hallazgos": 0,
+        "graves": 0,
+        "porGravedad": {},
+        "porEstado": {},
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2235,
+      "tarea": "Añadir esas pruebas de regresión a la suite del proyecto.",
+      "estado": "instrumentado",
+      "sonda": "regresiones",
+      "detalle": {
+        "hallazgos": 0,
+        "graves": 0,
+        "porGravedad": {},
+        "porEstado": {},
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2236,
+      "tarea": "Verificar que la suite siga pasando después de cada añadido.",
+      "estado": "instrumentado",
+      "sonda": "scripts_declarados",
+      "detalle": {
+        "citados": [
+          "verify:all",
+          "verify:mapas",
+          "verify:playtest:regresiones",
+          "verify:playtest:guion"
+        ],
+        "faltan": [],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2237,
+      "tarea": "Medir el tiempo de cada sesión de playtest y su cobertura de contenido.",
+      "estado": "instrumentado",
+      "sonda": "guion_cuotas",
+      "detalle": {
+        "sesiones": 60,
+        "conCuota": 32,
+        "deSoporte": 28,
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2238,
+      "tarea": "Verificar que entre todas las sesiones se cubra el 100 % del contenido del DLC.",
+      "estado": "instrumentado",
+      "sonda": "cuota_100",
+      "detalle": {
+        "suma": {
+          "mapas": 1883,
+          "eventos": 13696,
+          "cajas": 19801
+        },
+        "totales": {
+          "mapas": 1883,
+          "eventos": 13696,
+          "cajas": 19801
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2239,
+      "tarea": "Llevar el registro de cobertura en `docs/qa/playtest_cobertura.md`.",
+      "estado": "instrumentado",
+      "sonda": "cobertura_registro",
+      "detalle": {
+        "dimensiones": 8,
+        "ejercido": 0,
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2240,
+      "tarea": "Marcar cada mapa visitado en el registro de cobertura.",
+      "estado": "instrumentado",
+      "sonda": "cobertura_registro",
+      "detalle": {
+        "dimensiones": 8,
+        "ejercido": 0,
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2241,
+      "tarea": "Verificar que ningún mapa del DLC quede sin visitar en playtest.",
+      "estado": "instrumentado",
+      "sonda": "cuota_100",
+      "detalle": {
+        "suma": {
+          "mapas": 1883,
+          "eventos": 13696,
+          "cajas": 19801
+        },
+        "totales": {
+          "mapas": 1883,
+          "eventos": 13696,
+          "cajas": 19801
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2242,
+      "tarea": "Verificar que ningún jefe del DLC quede sin combatir en playtest.",
+      "estado": "instrumentado",
+      "sonda": "cupo_jefes",
+      "detalle": {
+        "eventosDeJefe": 146,
+        "cajas": 551,
+        "dimensiones": [
+          "atlas",
+          "base/dlc",
+          "glazed",
+          "light_platinum",
+          "liquid_crystal",
+          "nightmare/multiversal",
+          "tfoh"
+        ],
+        "sinSesionAsignada": [],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2243,
+      "tarea": "Verificar que ninguna medalla quede sin obtener en playtest.",
+      "estado": "instrumentado",
+      "sonda": "cupo_medallas",
+      "detalle": {
+        "medallas": 40,
+        "campana": 32,
+        "atlas": 8,
+        "sesiones": [
+          12,
+          13,
+          14,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2244,
+      "tarea": "Verificar que ningún diálogo del DLC quede sin mostrarse en playtest.",
+      "estado": "instrumentado",
+      "sonda": "cuota_dimensiones",
+      "detalle": {
+        "dimensiones": [
+          {
+            "dimension": "atlas",
+            "total": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            },
+            "asignado": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            }
+          },
+          {
+            "dimension": "base/dlc",
+            "total": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            },
+            "asignado": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            }
+          },
+          {
+            "dimension": "glazed",
+            "total": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            },
+            "asignado": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            }
+          },
+          {
+            "dimension": "light_platinum",
+            "total": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            },
+            "asignado": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            }
+          },
+          {
+            "dimension": "liquid_crystal",
+            "total": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            },
+            "asignado": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            }
+          },
+          {
+            "dimension": "nightmare/multiversal",
+            "total": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            },
+            "asignado": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            }
+          },
+          {
+            "dimension": "tfoh",
+            "total": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            },
+            "asignado": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            }
+          },
+          {
+            "dimension": "unbound",
+            "total": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            },
+            "asignado": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            }
+          }
+        ],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2245,
+      "tarea": "Verificar que ninguna ruta quede sin recorrer en playtest.",
+      "estado": "instrumentado",
+      "sonda": "cuota_dimensiones",
+      "detalle": {
+        "dimensiones": [
+          {
+            "dimension": "atlas",
+            "total": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            },
+            "asignado": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            }
+          },
+          {
+            "dimension": "base/dlc",
+            "total": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            },
+            "asignado": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            }
+          },
+          {
+            "dimension": "glazed",
+            "total": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            },
+            "asignado": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            }
+          },
+          {
+            "dimension": "light_platinum",
+            "total": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            },
+            "asignado": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            }
+          },
+          {
+            "dimension": "liquid_crystal",
+            "total": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            },
+            "asignado": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            }
+          },
+          {
+            "dimension": "nightmare/multiversal",
+            "total": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            },
+            "asignado": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            }
+          },
+          {
+            "dimension": "tfoh",
+            "total": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            },
+            "asignado": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            }
+          },
+          {
+            "dimension": "unbound",
+            "total": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            },
+            "asignado": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            }
+          }
+        ],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2246,
+      "tarea": "Revisar la cobertura por dimensión y completar las que falten.",
+      "estado": "instrumentado",
+      "sonda": "cuota_dimensiones",
+      "detalle": {
+        "dimensiones": [
+          {
+            "dimension": "atlas",
+            "total": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            },
+            "asignado": {
+              "mapas": 583,
+              "eventos": 884,
+              "cajas": 4083
+            }
+          },
+          {
+            "dimension": "base/dlc",
+            "total": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            },
+            "asignado": {
+              "mapas": 68,
+              "eventos": 379,
+              "cajas": 787
+            }
+          },
+          {
+            "dimension": "glazed",
+            "total": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            },
+            "asignado": {
+              "mapas": 111,
+              "eventos": 1277,
+              "cajas": 1395
+            }
+          },
+          {
+            "dimension": "light_platinum",
+            "total": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            },
+            "asignado": {
+              "mapas": 19,
+              "eventos": 175,
+              "cajas": 209
+            }
+          },
+          {
+            "dimension": "liquid_crystal",
+            "total": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            },
+            "asignado": {
+              "mapas": 432,
+              "eventos": 4253,
+              "cajas": 5096
+            }
+          },
+          {
+            "dimension": "nightmare/multiversal",
+            "total": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            },
+            "asignado": {
+              "mapas": 5,
+              "eventos": 19,
+              "cajas": 63
+            }
+          },
+          {
+            "dimension": "tfoh",
+            "total": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            },
+            "asignado": {
+              "mapas": 245,
+              "eventos": 2321,
+              "cajas": 2847
+            }
+          },
+          {
+            "dimension": "unbound",
+            "total": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            },
+            "asignado": {
+              "mapas": 420,
+              "eventos": 4388,
+              "cajas": 5321
+            }
+          }
+        ],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2247,
+      "tarea": "Sesión 33: prueba en ventana pequeña de escritorio.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 33,
+        "titulo": "prueba en ventana pequeña de escritorio.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-33",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2248,
+      "tarea": "Sesión 34: prueba a pantalla completa de escritorio.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 34,
+        "titulo": "prueba a pantalla completa de escritorio.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-34",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2249,
+      "tarea": "Sesión 35: prueba con mando.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 35,
+        "titulo": "prueba con mando.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-35",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2250,
+      "tarea": "Sesión 36: prueba con teclado.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 36,
+        "titulo": "prueba con teclado.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-36",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2251,
+      "tarea": "Sesión 37: prueba en Android con Kirin.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 37,
+        "titulo": "prueba en Android con Kirin.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-37",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2252,
+      "tarea": "Sesión 38: prueba con la APK de PokeMod Studio como editor en paralelo.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 38,
+        "titulo": "prueba con la APK de PokeMod Studio como editor en paralelo.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-38",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2253,
+      "tarea": "Verificar que el editor no escriba en las partidas durante toda la sesión.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2254,
+      "tarea": "Sesión 39: deshacer y rehacer en el editor sobre un mapa del DLC.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 39,
+        "titulo": "deshacer y rehacer en el editor sobre un mapa del DLC.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-39",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2255,
+      "tarea": "Sesión 40: auditoría del editor sobre el contenido nuevo.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 40,
+        "titulo": "auditoría del editor sobre el contenido nuevo.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-40",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2256,
+      "tarea": "Sesión 41: exportación ZIP desde el editor y su reimportación.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 41,
+        "titulo": "exportación ZIP desde el editor y su reimportación.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-41",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2257,
+      "tarea": "Sesión 42: modo lectura sin permisos de escritura.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 42,
+        "titulo": "modo lectura sin permisos de escritura.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-42",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2258,
+      "tarea": "Verificar que la exportación ZIP preserve todos los archivos nuevos.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2259,
+      "tarea": "Verificar que la reimportación no duplique archivos ni eventos.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2260,
+      "tarea": "Verificar que el editor abra los mapas nuevos sin errores.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2261,
+      "tarea": "Verificar que el editor muestre los nombres de mapa nuevos correctamente.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2262,
+      "tarea": "Verificar que el editor permita editar eventos del DLC sin romper su formato.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2263,
+      "tarea": "Verificar que los cambios hechos con el editor pasen `npm run verify:mapas`.",
+      "estado": "instrumentado",
+      "sonda": "scripts_declarados",
+      "detalle": {
+        "citados": [
+          "verify:all",
+          "verify:mapas",
+          "verify:playtest:regresiones",
+          "verify:playtest:guion"
+        ],
+        "faltan": [],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2264,
+      "tarea": "Verificar que los cambios hechos con el editor no rompan los verificadores de región.",
+      "estado": "instrumentado",
+      "sonda": "scripts_declarados",
+      "detalle": {
+        "citados": [
+          "verify:all",
+          "verify:mapas",
+          "verify:playtest:regresiones",
+          "verify:playtest:guion"
+        ],
+        "faltan": [],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2265,
+      "tarea": "Sesión 43: partida larga de cuatro horas seguidas sin reiniciar.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 43,
+        "titulo": "partida larga de cuatro horas seguidas sin reiniciar.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-43",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2266,
+      "tarea": "Verificar que ninguna fuga de memoria arruine una partida larga.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2267,
+      "tarea": "Verificar que el guardado siga funcionando tras cuatro horas de juego.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2268,
+      "tarea": "Verificar que la música no se desincronice tras cuatro horas.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2269,
+      "tarea": "Verificar que ningún evento quede en estado raro tras muchas transiciones.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2270,
+      "tarea": "Sesión 44: partida con un guardado muy antiguo del juego original.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 44,
+        "titulo": "partida con un guardado muy antiguo del juego original.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-44",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2271,
+      "tarea": "Verificar que un guardado antiguo cargue sin corromperse.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2272,
+      "tarea": "Verificar que un guardado antiguo pueda acceder al postgame si cumple las condiciones.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2273,
+      "tarea": "Verificar que un guardado antiguo no rompa los contadores nuevos.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2274,
+      "tarea": "Sesión 45: partida nueva hasta el postgame sin usar atajos.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 45,
+        "titulo": "partida nueva hasta el postgame sin usar atajos.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-45",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2275,
+      "tarea": "Medir el tiempo total de esa partida y publicarlo.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2276,
+      "tarea": "Verificar que el tiempo sea razonable para un DLC de esta escala.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2277,
+      "tarea": "Sesión 46: prueba de estrés de apertura y cierre de menús en todas las dimensiones.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 46,
+        "titulo": "prueba de estrés de apertura y cierre de menús en todas las dimensiones.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-46",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2278,
+      "tarea": "Verificar que ningún menú quede colgado en ninguna dimensión.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2279,
+      "tarea": "Sesión 47: prueba de estrés de surf y buceo en cada cuerpo de agua nuevo.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 47,
+        "titulo": "prueba de estrés de surf y buceo en cada cuerpo de agua nuevo.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-47",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2280,
+      "tarea": "Verificar que el surf funcione en todos los mapas con agua nueva.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2281,
+      "tarea": "Verificar que ningún mapa con agua nueva deje al jugador atrapado al desmontar.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2282,
+      "tarea": "Sesión 48: prueba de pesca en los mapas nuevos con agua.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 48,
+        "titulo": "prueba de pesca en los mapas nuevos con agua.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-48",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2283,
+      "tarea": "Verificar que la pesca nueva no rompa ninguna tabla de encuentros.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2284,
+      "tarea": "Sesión 49: prueba de vuelo y teletransporte a los mapas nuevos si el juego lo permite.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 49,
+        "titulo": "prueba de vuelo y teletransporte a los mapas nuevos si el juego lo permite.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-49",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2285,
+      "tarea": "Verificar que ningún mapa nuevo rompa el mapa de vuelo.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2286,
+      "tarea": "Verificar que ningún punto de teletransporte nuevo deje al jugador en celda sólida.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2287,
+      "tarea": "Sesión 50: prueba del día y noche en las ciudades nuevas.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 50,
+        "titulo": "prueba del día y noche en las ciudades nuevas.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-50",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2288,
+      "tarea": "Verificar que el ciclo no rompa escenas que dependan de la hora.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2289,
+      "tarea": "Verificar que ninguna escena nueva sea imposible de ver por la hora.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2290,
+      "tarea": "Sesión 51: prueba de clima extremo y su efecto en el rendimiento.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 51,
+        "titulo": "prueba de clima extremo y su efecto en el rendimiento.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-51",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2291,
+      "tarea": "Verificar que la ventisca no baje la tasa de refresco por debajo del umbral fijado.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2292,
+      "tarea": "Sesión 52: prueba de la niebla en interiores y exteriores.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 52,
+        "titulo": "prueba de la niebla en interiores y exteriores.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-52",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2293,
+      "tarea": "Verificar que la niebla no tape la interfaz de combate.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    },
+    {
+      "id": 2294,
+      "tarea": "Sesión 53: prueba de la restauración del tono de pantalla tras cada cinemática.",
+      "estado": "instrumentado",
+      "sonda": "sesion_instrumentada",
+      "detalle": {
+        "sesion": 53,
+        "titulo": "prueba de la restauración del tono de pantalla tras cada cinemática.",
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-53",
+        "estado": "manual_pending",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2295,
+      "tarea": "Verificar que ninguna cinemática deje la pantalla teñida al salir.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige una partida o una decisión humana"
+    }
+  ]
+}

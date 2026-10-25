@@ -774,8 +774,11 @@ export function evaluarTanda(tanda, reglas, corpus = cargarCorpus(), sondasExtra
       };
     }
     const salida = ejecutar(regla.sonda, regla.ambito);
+    // `instrumentado` es un estado propio: el instrumento existe, está medido y
+    // verificado, pero el hecho que la tarea pide comprobar exige una partida
+    // humana. No es PASS y no se disfraza de PASS.
     const estado = salida.veredicto === "ok"
-      ? "verificado_auto"
+      ? (salida.detalle && salida.detalle.ejecutado === false ? "instrumentado" : "verificado_auto")
       : salida.veredicto === "sin_datos" ? "sin_datos" : "hallazgo";
     return {
       id: tarea.id,
