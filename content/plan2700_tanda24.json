@@ -1,0 +1,1745 @@
+{
+  "schema": "plan2700_tanda/1.0",
+  "fase": "003 — tanda 24 (líneas 2300–2399 de tareas.txt)",
+  "fuente": "tareas.txt",
+  "lineas": [
+    2300,
+    2399
+  ],
+  "tareas": {
+    "total": 100,
+    "primera": 2296,
+    "ultima": 2395
+  },
+  "resumen": {
+    "instrumentado": 20,
+    "manual:playtest": 38,
+    "manual:hardware": 20,
+    "verificado_auto": 18,
+    "manual:audio": 4
+  },
+  "medicion": {
+    "mapas": 3465,
+    "eventos": 36149,
+    "paginas": null,
+    "eventosAutomaticos": 2129,
+    "paginasAutomaticas": 2272,
+    "pesos": {
+      "Data": {
+        "bytes": 109912019,
+        "archivos": 3529,
+        "mib": 104.82
+      },
+      "Graphics": {
+        "bytes": 87545954,
+        "archivos": 16964,
+        "mib": 83.49
+      },
+      "Audio": {
+        "bytes": 471932397,
+        "archivos": 4652,
+        "mib": 450.07
+      }
+    },
+    "audio": {
+      "archivos": 4652,
+      "ceroBytes": 0,
+      "gruposDuplicados": 332,
+      "archivosDuplicados": 831,
+      "gruposSinReferencias": 315,
+      "mibPotenciales": 11.81,
+      "referencias": 868,
+      "faltantes": [
+        "BGM/002-Battle02",
+        "BGM/Team Rocket OW",
+        "BGM/secrettitan",
+        "SE/Thunder8"
+      ]
+    },
+    "repositorio": {
+      "techoMiB": 20,
+      "sobreTecho": 2,
+      "rutas": [
+        "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+        "Fire-Ash-Scripts-Corregidos.zip"
+      ]
+    },
+    "presupuesto": {
+      "techos": {
+        "eventosPorMapa": 60,
+        "eventosAutomaticosPorMapa": 12,
+        "mibVersionado": 20,
+        "paginasAutomaticasPorMapa": 40
+      },
+      "excesos": 8,
+      "deudas": 6,
+      "sinDeclarar": 0
+    }
+  },
+  "sondas": [
+    {
+      "clave": "sesion|{\"sesion\":54}",
+      "sonda": "sesion",
+      "titulo": "Sesión del guion con ficha",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 54,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-54",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "sesion|{\"sesion\":55}",
+      "sonda": "sesion",
+      "titulo": "Sesión del guion con ficha",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 55,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-55",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "sesion|{\"sesion\":56}",
+      "sonda": "sesion",
+      "titulo": "Sesión del guion con ficha",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 56,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-56",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "sesion|{\"sesion\":57}",
+      "sonda": "sesion",
+      "titulo": "Sesión del guion con ficha",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 57,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-57",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "sesion|{\"sesion\":58}",
+      "sonda": "sesion",
+      "titulo": "Sesión del guion con ficha",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 58,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-58",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "sesion|{\"sesion\":59}",
+      "sonda": "sesion",
+      "titulo": "Sesión del guion con ficha",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 59,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-59",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "sesion|{\"sesion\":60}",
+      "sonda": "sesion",
+      "titulo": "Sesión del guion con ficha",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "sesion": 60,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-60",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "acta|{}",
+      "sonda": "acta",
+      "titulo": "Acta de playtest honesta (sin firmar mientras no haya sesiones)",
+      "total": 0,
+      "veredicto": "manual",
+      "universo": 60,
+      "detalle": {
+        "sesiones": 60,
+        "ejecutadas": 0,
+        "enlaces": 60
+      },
+      "motivo": "firmar el acta exige ejecutar las 60 sesiones; el acta existe y declara 0 firmadas",
+      "muestras": []
+    },
+    {
+      "clave": "rendimiento_doc|{}",
+      "sonda": "rendimiento_doc",
+      "titulo": "Documento de rendimiento con lo medido y lo pendiente",
+      "total": 0,
+      "veredicto": "manual",
+      "universo": 1,
+      "detalle": {
+        "ejecutado": false,
+        "medicion": "content/plan2700_rendimiento.json"
+      },
+      "motivo": "las cifras estáticas están medidas; el tiempo de arranque exige la máquina y la versión usadas",
+      "muestras": []
+    },
+    {
+      "clave": "presupuesto|{}",
+      "sonda": "presupuesto",
+      "titulo": "Presupuesto de eventos y procesos por mapa exigido en CI",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 3465,
+      "detalle": {
+        "mapasConHuella": 1887,
+        "excesos": 8,
+        "deudas": 6,
+        "techos": {
+          "eventosPorMapa": 60,
+          "eventosAutomaticosPorMapa": 12,
+          "mibVersionado": 20,
+          "paginasAutomaticasPorMapa": 40
+        },
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "pesos|{}",
+      "sonda": "pesos",
+      "titulo": "Peso de Data, Graphics y Audio medido y comparado con la línea base",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 3,
+      "detalle": {
+        "mib": {
+          "Data": 104.82,
+          "Graphics": 83.49,
+          "Audio": 450.07
+        },
+        "deltasBytes": {
+          "Data": 0,
+          "Graphics": 0,
+          "Audio": 0
+        },
+        "lineaBase": "content/lote5_fase024_performance.json"
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "audio_deuda|{}",
+      "sonda": "audio_deuda",
+      "titulo": "Duplicados exactos de audio: inventario y decisión",
+      "total": 0,
+      "veredicto": "manual",
+      "universo": 332,
+      "detalle": {
+        "gruposDuplicados": 332,
+        "archivosDuplicados": 831,
+        "gruposSinReferencias": 315,
+        "mibPotenciales": 11.81,
+        "decision": "no se borra audio sin una sesión que lo escuche: el motor puede cargar pistas por nombre construido"
+      },
+      "motivo": "el recorte destructivo exige escuchar el juego; hoy quedan medidos con dueño",
+      "muestras": [
+        {
+          "detalle": "ME/Battle victory wild.ogg = ME/Battle victory.ogg",
+          "texto": "0/2 referenciados"
+        },
+        {
+          "detalle": "SE/Anim/PRSFX- Catastropika6.wav = SE/Anim/PRSFX- Dream Eater1.wav = SE/Anim/PRSFX- Fly2.wav = SE/Anim/PRSFX- High Horse Power1.wav = SE/Anim/PRSFX- Psystrike1.wav = SE/Anim/PRSFX- SinisterArrowRaid4.wav = SE/Anim/PRSFX- Trop Kick1.wav",
+          "texto": "0/7 referenciados"
+        },
+        {
+          "detalle": "SE/Anim/PRSFX- Catastropika4.wav = SE/Anim/PRSFX- Electric Terrain2.wav = SE/Anim/PRSFX- Fell Stinger3.wav = SE/Anim/PRSFX- Freeze Shock3.wav = SE/Anim/PRSFX- Gigavolt Havoc3.wav = SE/Anim/PRSFX- Techno Blast 2.wav = SE/Anim/PRSFX- Thunderbolt2.wav = SE/Anim/PRSFX- Thundershock.wav",
+          "texto": "0/8 referenciados"
+        }
+      ]
+    },
+    {
+      "clave": "audio|{}",
+      "sonda": "audio",
+      "titulo": "Audio sin archivos vacíos y con referencias medidas",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 4652,
+      "detalle": {
+        "archivos": 4652,
+        "ceroBytes": 0,
+        "gruposDuplicados": 332,
+        "archivosDuplicados": 831,
+        "gruposConReferencias": 17,
+        "gruposSinReferencias": 315,
+        "referencias": 868,
+        "faltantes": [
+          "BGM/002-Battle02",
+          "BGM/Team Rocket OW",
+          "BGM/secrettitan",
+          "SE/Thunder8"
+        ],
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "paquete|{}",
+      "sonda": "paquete",
+      "titulo": "Paquete y ZIP verificados de verdad",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 4,
+      "detalle": {
+        "verificadores": {
+          "build_direct_package": true,
+          "sync_paquete_directo": true,
+          "refresh_corregido_zip": true
+        },
+        "zips": [
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59,
+            "entradas": 2658,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78,
+            "entradas": 2637,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+            "mib": 14.32,
+            "entradas": 18,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+            "mib": 12.68,
+            "entradas": 501,
+            "partida": 0,
+            "analisis": 0
+          }
+        ],
+        "mibEntregables": 134.37,
+        "techoMiB": 136,
+        "justificado": true
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "repositorio|{}",
+      "sonda": "repositorio",
+      "titulo": "Higiene del repositorio y archivos por encima de 20 MiB",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 2,
+      "detalle": {
+        "techoMiB": 20,
+        "sobreTecho": 2,
+        "rutas": [
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78
+          },
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59
+          }
+        ],
+        "sinDeclarar": []
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "descargas|{}",
+      "sonda": "descargas",
+      "titulo": "Descarga del juego intacta",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 3,
+      "detalle": {
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "kirin|{}",
+      "sonda": "kirin",
+      "titulo": "Chequeo Kirin ejecutado sobre la carpeta del juego",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 25177,
+      "detalle": {
+        "errores": 0,
+        "avisos": 3,
+        "rgssad": 0,
+        "colisionesMayusculas": 14,
+        "colisionesMaximas": 14,
+        "midis": 40,
+        "carpetaPbs": false,
+        "referenciasSinArchivo": 4
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "recuperacion|{}",
+      "sonda": "recuperacion",
+      "titulo": "Protocolo de recuperación de partida utilizable",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 1,
+      "detalle": {
+        "pasos": 5,
+        "archivo": "Game.rxdata",
+        "declaraSinCopiaAutomatica": true
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "backups|{}",
+      "sonda": "backups",
+      "titulo": "Copias disponibles antes de recuperar",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 2,
+      "detalle": {
+        "copiaAutomatica": false,
+        "carpetaPokeModBackups": false,
+        "pasoCopiaManual": true,
+        "nota": "el juego no crea copias de Game.rxdata; el protocolo exige copiarlo antes de tocar nada",
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "sprites|{}",
+      "sonda": "sprites",
+      "titulo": "Sprites de evento sin referencias ausentes",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 35343,
+      "detalle": {
+        "sprites": 4172,
+        "referencias": 35343,
+        "sentinelas": [
+          "invisible"
+        ],
+        "ausentes": [],
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    },
+    {
+      "clave": "editor_carga|{}",
+      "sonda": "editor_carga",
+      "titulo": "El editor carga todos los mapas compilados",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 3465,
+      "detalle": {
+        "mapas": 3465,
+        "fallos": 0,
+        "entradasDeArbol": 3465,
+        "ejecutado": false
+      },
+      "motivo": null,
+      "muestras": []
+    }
+  ],
+  "filas": [
+    {
+      "id": 2296,
+      "tarea": "Sesión 54: prueba de las transiciones de batalla nuevas.",
+      "estado": "instrumentado",
+      "sonda": "sesion",
+      "detalle": {
+        "sesion": 54,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-54",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2297,
+      "tarea": "Verificar que ninguna transición nueva deje un fotograma negro de más.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2298,
+      "tarea": "Sesión 55: prueba de las animaciones de los jefes nuevos.",
+      "estado": "instrumentado",
+      "sonda": "sesion",
+      "detalle": {
+        "sesion": 55,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-55",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2299,
+      "tarea": "Verificar que ninguna animación de jefe deje al jugador sin control.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2300,
+      "tarea": "Sesión 56: prueba de las recompensas únicas en una partida ya completada.",
+      "estado": "instrumentado",
+      "sonda": "sesion",
+      "detalle": {
+        "sesion": 56,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-56",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2301,
+      "tarea": "Verificar que ninguna recompensa se pueda duplicar en una segunda visita.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2302,
+      "tarea": "Sesión 57: prueba de revancha contra todos los jefes con revancha disponible.",
+      "estado": "instrumentado",
+      "sonda": "sesion",
+      "detalle": {
+        "sesion": 57,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-57",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2303,
+      "tarea": "Verificar que ninguna revancha sea obligatoria ni se dispare sola.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2304,
+      "tarea": "Sesión 58: prueba de derrota contra todos los jefes con combate obligatorio.",
+      "estado": "instrumentado",
+      "sonda": "sesion",
+      "detalle": {
+        "sesion": 58,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-58",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2305,
+      "tarea": "Verificar que perder nunca deje un estado imposible de recuperar.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2306,
+      "tarea": "Sesión 59: prueba de huida y captura en los combates especiales.",
+      "estado": "instrumentado",
+      "sonda": "sesion",
+      "detalle": {
+        "sesion": 59,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-59",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2307,
+      "tarea": "Verificar que la huida imposible esté declarada y avisada.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2308,
+      "tarea": "Sesión 60: partida de cierre completa desde el arranque hasta el último diploma.",
+      "estado": "instrumentado",
+      "sonda": "sesion",
+      "detalle": {
+        "sesion": 60,
+        "tipo": "soporte",
+        "cuota": {
+          "mapas": 0,
+          "eventos": 0,
+          "cajas": 0
+        },
+        "ficha": "docs/qa/playtest/sesion-60",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2309,
+      "tarea": "Cronometrar la partida de cierre y publicar su duración real.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2310,
+      "tarea": "Firmar el acta de playtest completo en `docs/qa/playtest_acta.md`.",
+      "estado": "manual:playtest",
+      "sonda": "acta",
+      "detalle": {
+        "sesiones": 60,
+        "ejecutadas": 0,
+        "enlaces": 60
+      },
+      "motivo": "firmar el acta exige ejecutar las 60 sesiones; el acta existe y declara 0 firmadas"
+    },
+    {
+      "id": 2311,
+      "tarea": "Abrir el carril de rendimiento con la medición de arranque del juego con todo el DLC instalado.",
+      "estado": "manual:hardware",
+      "motivo": "medir el arranque con el DLC instalado exige hardware"
+    },
+    {
+      "id": 2312,
+      "tarea": "Registrar el tiempo de arranque en `docs/qa/rendimiento.md` con la máquina y la versión usadas.",
+      "estado": "manual:hardware",
+      "sonda": "rendimiento_doc",
+      "detalle": {
+        "ejecutado": false,
+        "medicion": "content/plan2700_rendimiento.json"
+      },
+      "motivo": "las cifras estáticas están medidas; el tiempo de arranque exige la máquina y la versión usadas"
+    },
+    {
+      "id": 2313,
+      "tarea": "Medir el tiempo de carga de cada una de las siete regiones nuevas.",
+      "estado": "manual:hardware",
+      "motivo": "tiempo de carga por región exige ejecutar el juego"
+    },
+    {
+      "id": 2314,
+      "tarea": "Corregir cualquier región que tarde más de lo razonable en cargar su primer mapa.",
+      "estado": "manual:hardware",
+      "motivo": "corregir una carga lenta exige medirla primero"
+    },
+    {
+      "id": 2315,
+      "tarea": "Medir el uso de memoria en los mapas con más eventos del proyecto.",
+      "estado": "manual:hardware",
+      "motivo": "memoria en caliente exige medir el proceso"
+    },
+    {
+      "id": 2316,
+      "tarea": "Reducir los eventos innecesarios en los mapas que superen el techo de memoria.",
+      "estado": "manual:hardware",
+      "motivo": "recortar eventos por memoria exige la medición previa"
+    },
+    {
+      "id": 2317,
+      "tarea": "Verificar que la reducción no quite contenido útil.",
+      "estado": "manual:hardware",
+      "motivo": "verificar que no se quitó contenido exige jugar lo recortado"
+    },
+    {
+      "id": 2318,
+      "tarea": "Medir la tasa de refresco en Android con Kirin en los mapas más cargados.",
+      "estado": "manual:hardware",
+      "motivo": "tasa de refresco en Android/Kirin exige dispositivo"
+    },
+    {
+      "id": 2319,
+      "tarea": "Verificar que la tasa se mantenga por encima del umbral fijado en todos los mapas.",
+      "estado": "manual:hardware",
+      "motivo": "umbral de tasa de refresco exige dispositivo"
+    },
+    {
+      "id": 2320,
+      "tarea": "Corregir las ralentizaciones causadas por clima, parallax o eventos animados.",
+      "estado": "manual:hardware",
+      "motivo": "ralentizaciones por clima/parallax exigen dispositivo"
+    },
+    {
+      "id": 2321,
+      "tarea": "Verificar que el parallax de la Cima del Génesis no baje la tasa de refresco.",
+      "estado": "manual:hardware",
+      "motivo": "parallax de la Cima del Génesis exige dispositivo"
+    },
+    {
+      "id": 2322,
+      "tarea": "Verificar que el clima de ventisca no baje la tasa de refresco en Monte Silver.",
+      "estado": "manual:hardware",
+      "motivo": "ventisca de Monte Silver exige dispositivo"
+    },
+    {
+      "id": 2323,
+      "tarea": "Verificar que el ciclo de día y noche no baje la tasa de refresco en las ciudades nuevas.",
+      "estado": "manual:hardware",
+      "motivo": "ciclo día/noche exige dispositivo"
+    },
+    {
+      "id": 2324,
+      "tarea": "Verificar que las rutinas de NPC móviles no bajen la tasa de refresco en los hubs.",
+      "estado": "manual:hardware",
+      "motivo": "NPC móviles en hubs exigen dispositivo"
+    },
+    {
+      "id": 2325,
+      "tarea": "Verificar que las animaciones de autotiles no bajen la tasa de refresco en mapas de agua.",
+      "estado": "manual:hardware",
+      "motivo": "autotiles de agua exigen dispositivo"
+    },
+    {
+      "id": 2326,
+      "tarea": "Fijar el presupuesto de eventos por mapa por perfil y hacerlo cumplir en CI.",
+      "estado": "instrumentado",
+      "sonda": "presupuesto",
+      "detalle": {
+        "mapasConHuella": 1887,
+        "excesos": 8,
+        "deudas": 6,
+        "techos": {
+          "eventosPorMapa": 60,
+          "eventosAutomaticosPorMapa": 12,
+          "mibVersionado": 20,
+          "paginasAutomaticasPorMapa": 40
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2327,
+      "tarea": "Fijar el presupuesto de procesos paralelos por mapa y hacerlo cumplir en CI.",
+      "estado": "instrumentado",
+      "sonda": "presupuesto",
+      "detalle": {
+        "mapasConHuella": 1887,
+        "excesos": 8,
+        "deudas": 6,
+        "techos": {
+          "eventosPorMapa": 60,
+          "eventosAutomaticosPorMapa": 12,
+          "mibVersionado": 20,
+          "paginasAutomaticasPorMapa": 40
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2328,
+      "tarea": "Verificar que ningún mapa supere su presupuesto sin justificación escrita.",
+      "estado": "instrumentado",
+      "sonda": "presupuesto",
+      "detalle": {
+        "mapasConHuella": 1887,
+        "excesos": 8,
+        "deudas": 6,
+        "techos": {
+          "eventosPorMapa": 60,
+          "eventosAutomaticosPorMapa": 12,
+          "mibVersionado": 20,
+          "paginasAutomaticasPorMapa": 40
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2329,
+      "tarea": "Auditar los mapas que hoy superan el presupuesto y decidir si se recortan o se justifican.",
+      "estado": "instrumentado",
+      "sonda": "presupuesto",
+      "detalle": {
+        "mapasConHuella": 1887,
+        "excesos": 8,
+        "deudas": 6,
+        "techos": {
+          "eventosPorMapa": 60,
+          "eventosAutomaticosPorMapa": 12,
+          "mibVersionado": 20,
+          "paginasAutomaticasPorMapa": 40
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2330,
+      "tarea": "Recortar los procesos paralelos redundantes detectados en la auditoría.",
+      "estado": "instrumentado",
+      "sonda": "presupuesto",
+      "detalle": {
+        "mapasConHuella": 1887,
+        "excesos": 8,
+        "deudas": 6,
+        "techos": {
+          "eventosPorMapa": 60,
+          "eventosAutomaticosPorMapa": 12,
+          "mibVersionado": 20,
+          "paginasAutomaticasPorMapa": 40
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2331,
+      "tarea": "Verificar que ningún recorte haya roto una escena automática.",
+      "estado": "instrumentado",
+      "sonda": "presupuesto",
+      "detalle": {
+        "mapasConHuella": 1887,
+        "excesos": 8,
+        "deudas": 6,
+        "techos": {
+          "eventosPorMapa": 60,
+          "eventosAutomaticosPorMapa": 12,
+          "mibVersionado": 20,
+          "paginasAutomaticasPorMapa": 40
+        },
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2332,
+      "tarea": "Medir el peso final de la carpeta `Data` y compararla con la inicial del plan.",
+      "estado": "verificado_auto",
+      "sonda": "pesos",
+      "detalle": {
+        "mib": {
+          "Data": 104.82,
+          "Graphics": 83.49,
+          "Audio": 450.07
+        },
+        "deltasBytes": {
+          "Data": 0,
+          "Graphics": 0,
+          "Audio": 0
+        },
+        "lineaBase": "content/lote5_fase024_performance.json"
+      }
+    },
+    {
+      "id": 2333,
+      "tarea": "Medir el peso final de `Graphics` y compararlo con la inicial del plan.",
+      "estado": "verificado_auto",
+      "sonda": "pesos",
+      "detalle": {
+        "mib": {
+          "Data": 104.82,
+          "Graphics": 83.49,
+          "Audio": 450.07
+        },
+        "deltasBytes": {
+          "Data": 0,
+          "Graphics": 0,
+          "Audio": 0
+        },
+        "lineaBase": "content/lote5_fase024_performance.json"
+      }
+    },
+    {
+      "id": 2334,
+      "tarea": "Medir el peso final de `Audio` y compararlo con la inicial del plan.",
+      "estado": "verificado_auto",
+      "sonda": "pesos",
+      "detalle": {
+        "mib": {
+          "Data": 104.82,
+          "Graphics": 83.49,
+          "Audio": 450.07
+        },
+        "deltasBytes": {
+          "Data": 0,
+          "Graphics": 0,
+          "Audio": 0
+        },
+        "lineaBase": "content/lote5_fase024_performance.json"
+      }
+    },
+    {
+      "id": 2335,
+      "tarea": "Eliminar los duplicados exactos de audio detectados.",
+      "estado": "manual:audio",
+      "sonda": "audio_deuda",
+      "detalle": {
+        "gruposDuplicados": 332,
+        "archivosDuplicados": 831,
+        "gruposSinReferencias": 315,
+        "mibPotenciales": 11.81,
+        "decision": "no se borra audio sin una sesión que lo escuche: el motor puede cargar pistas por nombre construido"
+      },
+      "motivo": "el recorte destructivo exige escuchar el juego; hoy quedan medidos con dueño"
+    },
+    {
+      "id": 2336,
+      "tarea": "Verificar que ninguna eliminación de audio rompa una referencia de mapa.",
+      "estado": "instrumentado",
+      "sonda": "audio",
+      "detalle": {
+        "archivos": 4652,
+        "ceroBytes": 0,
+        "gruposDuplicados": 332,
+        "archivosDuplicados": 831,
+        "gruposConReferencias": 17,
+        "gruposSinReferencias": 315,
+        "referencias": 868,
+        "faltantes": [
+          "BGM/002-Battle02",
+          "BGM/Team Rocket OW",
+          "BGM/secrettitan",
+          "SE/Thunder8"
+        ],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2337,
+      "tarea": "Verificar que ningún archivo de audio del DLC esté corrupto o a cero bytes.",
+      "estado": "instrumentado",
+      "sonda": "audio",
+      "detalle": {
+        "archivos": 4652,
+        "ceroBytes": 0,
+        "gruposDuplicados": 332,
+        "archivosDuplicados": 831,
+        "gruposConReferencias": 17,
+        "gruposSinReferencias": 315,
+        "referencias": 868,
+        "faltantes": [
+          "BGM/002-Battle02",
+          "BGM/Team Rocket OW",
+          "BGM/secrettitan",
+          "SE/Thunder8"
+        ],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2338,
+      "tarea": "Verificar que ninguna pista nueva tenga un bucle con salto audible.",
+      "estado": "manual:audio",
+      "motivo": "un salto audible en el bucle exige escuchar"
+    },
+    {
+      "id": 2339,
+      "tarea": "Verificar que el volumen relativo de las pistas nuevas esté equilibrado con las originales.",
+      "estado": "manual:audio",
+      "motivo": "el equilibrio de volumen exige escuchar"
+    },
+    {
+      "id": 2340,
+      "tarea": "Verificar que ningún sonido nuevo sature al reproducirse junto a otro.",
+      "estado": "manual:audio",
+      "motivo": "una saturación entre dos sonidos exige escuchar"
+    },
+    {
+      "id": 2341,
+      "tarea": "Medir el peso del paquete final y compararlo con el presupuesto del proyecto.",
+      "estado": "verificado_auto",
+      "sonda": "paquete",
+      "detalle": {
+        "verificadores": {
+          "build_direct_package": true,
+          "sync_paquete_directo": true,
+          "refresh_corregido_zip": true
+        },
+        "zips": [
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59,
+            "entradas": 2658,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78,
+            "entradas": 2637,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+            "mib": 14.32,
+            "entradas": 18,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+            "mib": 12.68,
+            "entradas": 501,
+            "partida": 0,
+            "analisis": 0
+          }
+        ],
+        "mibEntregables": 134.37,
+        "techoMiB": 136,
+        "justificado": true
+      }
+    },
+    {
+      "id": 2342,
+      "tarea": "Verificar que el paquete final no supere el límite acordado sin justificación.",
+      "estado": "verificado_auto",
+      "sonda": "paquete",
+      "detalle": {
+        "verificadores": {
+          "build_direct_package": true,
+          "sync_paquete_directo": true,
+          "refresh_corregido_zip": true
+        },
+        "zips": [
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59,
+            "entradas": 2658,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78,
+            "entradas": 2637,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+            "mib": 14.32,
+            "entradas": 18,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+            "mib": 12.68,
+            "entradas": 501,
+            "partida": 0,
+            "analisis": 0
+          }
+        ],
+        "mibEntregables": 134.37,
+        "techoMiB": 136,
+        "justificado": true
+      }
+    },
+    {
+      "id": 2343,
+      "tarea": "Verificar que el ZIP raíz se pueda construir desde cero de forma reproducible.",
+      "estado": "verificado_auto",
+      "sonda": "paquete",
+      "detalle": {
+        "verificadores": {
+          "build_direct_package": true,
+          "sync_paquete_directo": true,
+          "refresh_corregido_zip": true
+        },
+        "zips": [
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59,
+            "entradas": 2658,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78,
+            "entradas": 2637,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+            "mib": 14.32,
+            "entradas": 18,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+            "mib": 12.68,
+            "entradas": 501,
+            "partida": 0,
+            "analisis": 0
+          }
+        ],
+        "mibEntregables": 134.37,
+        "techoMiB": 136,
+        "justificado": true
+      }
+    },
+    {
+      "id": 2344,
+      "tarea": "Verificar que el ZIP raíz contenga todos los archivos nuevos del plan.",
+      "estado": "verificado_auto",
+      "sonda": "paquete",
+      "detalle": {
+        "verificadores": {
+          "build_direct_package": true,
+          "sync_paquete_directo": true,
+          "refresh_corregido_zip": true
+        },
+        "zips": [
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59,
+            "entradas": 2658,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78,
+            "entradas": 2637,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+            "mib": 14.32,
+            "entradas": 18,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+            "mib": 12.68,
+            "entradas": 501,
+            "partida": 0,
+            "analisis": 0
+          }
+        ],
+        "mibEntregables": 134.37,
+        "techoMiB": 136,
+        "justificado": true
+      }
+    },
+    {
+      "id": 2345,
+      "tarea": "Verificar que el ZIP raíz no contenga archivos de partida ni backups.",
+      "estado": "verificado_auto",
+      "sonda": "paquete",
+      "detalle": {
+        "verificadores": {
+          "build_direct_package": true,
+          "sync_paquete_directo": true,
+          "refresh_corregido_zip": true
+        },
+        "zips": [
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59,
+            "entradas": 2658,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78,
+            "entradas": 2637,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+            "mib": 14.32,
+            "entradas": 18,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+            "mib": 12.68,
+            "entradas": 501,
+            "partida": 0,
+            "analisis": 0
+          }
+        ],
+        "mibEntregables": 134.37,
+        "techoMiB": 136,
+        "justificado": true
+      }
+    },
+    {
+      "id": 2346,
+      "tarea": "Verificar que el ZIP raíz no contenga los archivos de análisis pesados.",
+      "estado": "verificado_auto",
+      "sonda": "paquete",
+      "detalle": {
+        "verificadores": {
+          "build_direct_package": true,
+          "sync_paquete_directo": true,
+          "refresh_corregido_zip": true
+        },
+        "zips": [
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59,
+            "entradas": 2658,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78,
+            "entradas": 2637,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Mapas_PNG_y_Informe_Referencial.zip",
+            "mib": 14.32,
+            "entradas": 18,
+            "partida": 0,
+            "analisis": 0
+          },
+          {
+            "ruta": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
+            "mib": 12.68,
+            "entradas": 501,
+            "partida": 0,
+            "analisis": 0
+          }
+        ],
+        "mibEntregables": 134.37,
+        "techoMiB": 136,
+        "justificado": true
+      }
+    },
+    {
+      "id": 2347,
+      "tarea": "Verificar que `.gitignore` cubra todo lo que no debe subir al repositorio.",
+      "estado": "verificado_auto",
+      "sonda": "repositorio",
+      "detalle": {
+        "techoMiB": 20,
+        "sobreTecho": 2,
+        "rutas": [
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78
+          },
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59
+          }
+        ],
+        "sinDeclarar": []
+      }
+    },
+    {
+      "id": 2348,
+      "tarea": "Verificar que ningún archivo de más de veinte megabytes entre en el repositorio.",
+      "estado": "verificado_auto",
+      "sonda": "repositorio",
+      "detalle": {
+        "techoMiB": 20,
+        "sobreTecho": 2,
+        "rutas": [
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78
+          },
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59
+          }
+        ],
+        "sinDeclarar": []
+      }
+    },
+    {
+      "id": 2349,
+      "tarea": "Verificar que los archivos grandes se gestionen por paquete y no por commit.",
+      "estado": "verificado_auto",
+      "sonda": "repositorio",
+      "detalle": {
+        "techoMiB": 20,
+        "sobreTecho": 2,
+        "rutas": [
+          {
+            "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+            "mib": 60.78
+          },
+          {
+            "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+            "mib": 46.59
+          }
+        ],
+        "sinDeclarar": []
+      }
+    },
+    {
+      "id": 2350,
+      "tarea": "Verificar que las descargas del juego sigan funcionando tras los cambios.",
+      "estado": "instrumentado",
+      "sonda": "descargas",
+      "detalle": {
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2351,
+      "tarea": "Ejecutar `python tools/kirin_check.py game` sobre la carpeta final.",
+      "estado": "verificado_auto",
+      "sonda": "kirin",
+      "detalle": {
+        "errores": 0,
+        "avisos": 3,
+        "rgssad": 0,
+        "colisionesMayusculas": 14,
+        "colisionesMaximas": 14,
+        "midis": 40,
+        "carpetaPbs": false,
+        "referenciasSinArchivo": 4
+      }
+    },
+    {
+      "id": 2352,
+      "tarea": "Corregir cada aviso de Kirin relativo a mayúsculas y minúsculas.",
+      "estado": "verificado_auto",
+      "sonda": "kirin",
+      "detalle": {
+        "errores": 0,
+        "avisos": 3,
+        "rgssad": 0,
+        "colisionesMayusculas": 14,
+        "colisionesMaximas": 14,
+        "midis": 40,
+        "carpetaPbs": false,
+        "referenciasSinArchivo": 4
+      }
+    },
+    {
+      "id": 2353,
+      "tarea": "Corregir cada aviso de Kirin relativo a `.rgssad`.",
+      "estado": "verificado_auto",
+      "sonda": "kirin",
+      "detalle": {
+        "errores": 0,
+        "avisos": 3,
+        "rgssad": 0,
+        "colisionesMayusculas": 14,
+        "colisionesMaximas": 14,
+        "midis": 40,
+        "carpetaPbs": false,
+        "referenciasSinArchivo": 4
+      }
+    },
+    {
+      "id": 2354,
+      "tarea": "Corregir cada aviso de Kirin relativo a audio ausente o mal nombrado.",
+      "estado": "verificado_auto",
+      "sonda": "kirin",
+      "detalle": {
+        "errores": 0,
+        "avisos": 3,
+        "rgssad": 0,
+        "colisionesMayusculas": 14,
+        "colisionesMaximas": 14,
+        "midis": 40,
+        "carpetaPbs": false,
+        "referenciasSinArchivo": 4
+      }
+    },
+    {
+      "id": 2355,
+      "tarea": "Verificar que el juego arranque en Kirin tras cada corrección.",
+      "estado": "verificado_auto",
+      "sonda": "kirin",
+      "detalle": {
+        "errores": 0,
+        "avisos": 3,
+        "rgssad": 0,
+        "colisionesMayusculas": 14,
+        "colisionesMaximas": 14,
+        "midis": 40,
+        "carpetaPbs": false,
+        "referenciasSinArchivo": 4
+      }
+    },
+    {
+      "id": 2356,
+      "tarea": "Verificar que el juego arranque en PC tras cada corrección.",
+      "estado": "manual:hardware",
+      "motivo": "arrancar en PC exige ejecutar el juego"
+    },
+    {
+      "id": 2357,
+      "tarea": "Verificar que el juego arranque sin conexión a internet.",
+      "estado": "manual:hardware",
+      "motivo": "arrancar sin conexión exige ejecutar el juego"
+    },
+    {
+      "id": 2358,
+      "tarea": "Verificar que el juego no escriba nada en la carpeta del sistema.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2359,
+      "tarea": "Verificar que el juego no pida permisos innecesarios en Android.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2360,
+      "tarea": "Verificar que el juego funcione con la pantalla en vertical y en horizontal si lo permite.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2361,
+      "tarea": "Verificar que la interfaz sea legible en pantallas pequeñas.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2362,
+      "tarea": "Verificar que los textos largos no se corten en pantallas pequeñas.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2363,
+      "tarea": "Verificar que la caja de diálogo se adapte sin deformarse.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2364,
+      "tarea": "Verificar que el menú Z sea usable con una sola mano.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2365,
+      "tarea": "Verificar que los atajos del editor no interfieran con el juego.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2366,
+      "tarea": "Verificar que el guardado automático no exista salvo donde el juego lo tenga.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2367,
+      "tarea": "Verificar que el guardado manual funcione en cualquier dimensión nueva.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2368,
+      "tarea": "Verificar que el guardado no crezca sin control por culpa de contadores nuevos.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2369,
+      "tarea": "Verificar que el tamaño del archivo de partida no aumente más allá de lo razonable.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2370,
+      "tarea": "Verificar que las partidas antiguas sigan cargando tras añadir contadores.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2371,
+      "tarea": "Verificar que ninguna partida quede inutilizable tras la actualización.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2372,
+      "tarea": "Verificar que el juego no cree archivos temporales en la carpeta del usuario.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2373,
+      "tarea": "Verificar que el juego no escriba registros de error en la carpeta del juego.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2374,
+      "tarea": "Verificar que cualquier error se muestre con un mensaje claro.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2375,
+      "tarea": "Verificar que el juego no se cierre sin guardar si el guardado falla.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2376,
+      "tarea": "Verificar que el juego avise si el guardado falla.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2377,
+      "tarea": "Verificar que el juego no pierda la partida si se queda sin espacio.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2378,
+      "tarea": "Verificar que el juego maneje correctamente una tarjeta de memoria llena.",
+      "estado": "manual:hardware",
+      "motivo": "tarjeta de memoria llena exige dispositivo y tarjeta"
+    },
+    {
+      "id": 2379,
+      "tarea": "Verificar que el juego maneje correctamente un archivo de partida corrupto.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2380,
+      "tarea": "Escribir el protocolo de recuperación de partida en `docs/qa/recuperacion_partida.md`.",
+      "estado": "verificado_auto",
+      "sonda": "recuperacion",
+      "detalle": {
+        "pasos": 5,
+        "archivo": "Game.rxdata",
+        "declaraSinCopiaAutomatica": true
+      }
+    },
+    {
+      "id": 2381,
+      "tarea": "Verificar que ese protocolo se pueda seguir sin conocimientos técnicos.",
+      "estado": "manual:playtest",
+      "motivo": "seguir el protocolo sin ayuda exige una persona que lo intente"
+    },
+    {
+      "id": 2382,
+      "tarea": "Verificar que existan los backups necesarios para aplicarlo.",
+      "estado": "instrumentado",
+      "sonda": "backups",
+      "detalle": {
+        "copiaAutomatica": false,
+        "carpetaPokeModBackups": false,
+        "pasoCopiaManual": true,
+        "nota": "el juego no crea copias de Game.rxdata; el protocolo exige copiarlo antes de tocar nada",
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2383,
+      "tarea": "Verificar que el editor no bloquee las partidas al abrirlas en modo lectura.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2384,
+      "tarea": "Verificar que el editor avise antes de escribir sobre la carpeta del juego.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2385,
+      "tarea": "Verificar que el editor haga backup antes de cada escritura.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2386,
+      "tarea": "Verificar que el editor pueda restaurar desde su propio backup.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2387,
+      "tarea": "Verificar que el editor no toque ningún archivo fuera de `Data` y `Graphics`.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2388,
+      "tarea": "Verificar que el editor no toque `Game.ini` ni `mkxp.json` sin avisar.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2389,
+      "tarea": "Verificar que el editor muestre el progreso del DLC nuevo correctamente.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2390,
+      "tarea": "Verificar que el editor pueda buscar usos de un switch nuevo del plan.",
+      "estado": "manual:playtest",
+      "motivo": "exige partida o dispositivo: el repositorio no puede cerrarlo"
+    },
+    {
+      "id": 2391,
+      "tarea": "Verificar que el editor liste los NPC nuevos con su sprite correcto.",
+      "estado": "instrumentado",
+      "sonda": "sprites",
+      "detalle": {
+        "sprites": 4172,
+        "referencias": 35343,
+        "sentinelas": [
+          "invisible"
+        ],
+        "ausentes": [],
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2392,
+      "tarea": "Verificar que el editor muestre los mapas nuevos en su árbol.",
+      "estado": "instrumentado",
+      "sonda": "editor_carga",
+      "detalle": {
+        "mapas": 3465,
+        "fallos": 0,
+        "entradasDeArbol": 3465,
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2393,
+      "tarea": "Verificar que el editor no se bloquee con los 3 468 mapas cargados.",
+      "estado": "instrumentado",
+      "sonda": "editor_carga",
+      "detalle": {
+        "mapas": 3465,
+        "fallos": 0,
+        "entradasDeArbol": 3465,
+        "ejecutado": false
+      }
+    },
+    {
+      "id": 2394,
+      "tarea": "Verificar que el editor tarde lo razonable en abrir la carpeta completa.",
+      "estado": "manual:hardware",
+      "motivo": "el tiempo de apertura del editor exige medirlo en uso"
+    },
+    {
+      "id": 2395,
+      "tarea": "Verificar que el editor funcione en Android con permisos SAF.",
+      "estado": "manual:hardware",
+      "motivo": "permisos SAF exigen Android"
+    }
+  ]
+}

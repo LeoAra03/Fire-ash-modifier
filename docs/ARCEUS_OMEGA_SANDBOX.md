@@ -35,7 +35,7 @@ El `ensure` cubre retorno normal y excepciones Ruby controlables. Un cierre viol
 
 ## Matriz ejecutable de 300.000 casos
 
-`content/arceus_omega_qa_matrix.jsonl` contiene 300.000 casos sustantivos más una cabecera:
+`content/arceus_omega_qa_matrix.jsonl.gz` contiene 300.000 casos sustantivos más una cabecera. Se versiona comprimido (3,88 MiB comprimidos frente a 62,46 MiB en texto) y lo reconstruye `node tools/generate_arceus_omega_qa_matrix.mjs`; `--verify` comprueba que el archivo es exactamente lo que produce el generador. Casos:
 
 - 120.000 transacciones: claves de save, captura canónica, hotkey bloqueada y deriva física;
 - 90.000 estados de batalla: seis etapas, decisiones CPU deterministas, huida bloqueada y cues visibles;

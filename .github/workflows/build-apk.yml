@@ -61,6 +61,18 @@ jobs:
           npm run verify:playtest:regresiones
           npm run verify:plan2700:tanda23
 
+      - name: Presupuesto de rendimiento y peso del repositorio
+        # Mide densidad por mapa (eventos y eventos automáticos), peso de
+        # Data/Graphics/Audio, duplicados de audio y archivos versionados por
+        # encima de 20 MiB. Un mapa por encima del techo sin excepción escrita
+        # tumba el job; también se comprueba que el corpus de QA comprimido sea
+        # exactamente lo que genera su script.
+        run: |
+          node tools/qa/rendimiento_presupuesto.mjs --selftest
+          npm run verify:rendimiento:presupuesto
+          npm run verify:arceus:omega:qa:fuente
+          npm run verify:plan2700:tanda24
+
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas

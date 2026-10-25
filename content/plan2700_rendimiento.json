@@ -1,0 +1,676 @@
+{
+  "schema": "plan2700_rendimiento/1.0",
+  "fuente": "pokemon_fire_ash/Data/Map*.rxdata + pokemon_fire_ash/Audio/* + git ls-files",
+  "presupuesto": {
+    "eventosPorMapa": 60,
+    "eventosAutomaticosPorMapa": 12,
+    "mibVersionado": 20,
+    "paginasAutomaticasPorMapa": 40
+  },
+  "medicion": {
+    "mapas": 3465,
+    "eventos": 36149,
+    "eventosAutomaticos": 2129,
+    "paginasAutomaticas": 2272,
+    "porFamilia": {
+      "base": {
+        "mapas": 1021,
+        "eventos": 15123,
+        "automaticos": 1539,
+        "paginasAutomaticas": 1681,
+        "maxEventos": 165,
+        "maxAutomaticos": 21,
+        "conHuella": 29
+      },
+      "horizontes": {
+        "mapas": 20,
+        "eventos": 594,
+        "automaticos": 0,
+        "paginasAutomaticas": 0,
+        "maxEventos": 100,
+        "maxAutomaticos": 0,
+        "conHuella": 1
+      },
+      "atlas": {
+        "mapas": 1000,
+        "eventos": 6410,
+        "automaticos": 363,
+        "paginasAutomaticas": 364,
+        "maxEventos": 46,
+        "maxAutomaticos": 6,
+        "conHuella": 583
+      },
+      "nightmare": {
+        "mapas": 155,
+        "eventos": 1377,
+        "automaticos": 226,
+        "paginasAutomaticas": 226,
+        "maxEventos": 23,
+        "maxAutomaticos": 3,
+        "conHuella": 5
+      },
+      "dlc_base": {
+        "mapas": 42,
+        "eventos": 231,
+        "automaticos": 1,
+        "paginasAutomaticas": 1,
+        "maxEventos": 21,
+        "maxAutomaticos": 1,
+        "conHuella": 42
+      },
+      "glazed": {
+        "mapas": 111,
+        "eventos": 1277,
+        "automaticos": 0,
+        "paginasAutomaticas": 0,
+        "maxEventos": 105,
+        "maxAutomaticos": 0,
+        "conHuella": 111
+      },
+      "light_platinum": {
+        "mapas": 19,
+        "eventos": 175,
+        "automaticos": 0,
+        "paginasAutomaticas": 0,
+        "maxEventos": 19,
+        "maxAutomaticos": 0,
+        "conHuella": 19
+      },
+      "liquid_crystal": {
+        "mapas": 432,
+        "eventos": 4253,
+        "automaticos": 0,
+        "paginasAutomaticas": 0,
+        "maxEventos": 47,
+        "maxAutomaticos": 0,
+        "conHuella": 432
+      },
+      "tfoh": {
+        "mapas": 245,
+        "eventos": 2321,
+        "automaticos": 0,
+        "paginasAutomaticas": 0,
+        "maxEventos": 26,
+        "maxAutomaticos": 0,
+        "conHuella": 245
+      },
+      "unbound": {
+        "mapas": 420,
+        "eventos": 4388,
+        "automaticos": 0,
+        "paginasAutomaticas": 0,
+        "maxEventos": 61,
+        "maxAutomaticos": 0,
+        "conHuella": 420
+      }
+    },
+    "pesos": {
+      "Data": {
+        "bytes": 109912019,
+        "archivos": 3529,
+        "mib": 104.82
+      },
+      "Graphics": {
+        "bytes": 87545954,
+        "archivos": 16964,
+        "mib": 83.49
+      },
+      "Audio": {
+        "bytes": 471932397,
+        "archivos": 4652,
+        "mib": 450.07
+      }
+    },
+    "audio": {
+      "archivos": 4652,
+      "bytes": 471932397,
+      "ceroBytes": [],
+      "referencias": 868,
+      "faltantes": [
+        "BGM/002-Battle02",
+        "BGM/Team Rocket OW",
+        "BGM/secrettitan",
+        "SE/Thunder8"
+      ],
+      "gruposDuplicados": 332,
+      "archivosDuplicados": 831,
+      "gruposConReferencias": 17,
+      "gruposSinReferencias": 315,
+      "ahorroPotencialBytes": 12382217,
+      "grupos": [
+        {
+          "archivos": [
+            "ME/Battle victory wild.ogg",
+            "ME/Battle victory.ogg"
+          ],
+          "bytes": 638002,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Catastropika6.wav",
+            "SE/Anim/PRSFX- Dream Eater1.wav",
+            "SE/Anim/PRSFX- Fly2.wav",
+            "SE/Anim/PRSFX- High Horse Power1.wav",
+            "SE/Anim/PRSFX- Psystrike1.wav",
+            "SE/Anim/PRSFX- SinisterArrowRaid4.wav",
+            "SE/Anim/PRSFX- Trop Kick1.wav"
+          ],
+          "bytes": 46562,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Catastropika4.wav",
+            "SE/Anim/PRSFX- Electric Terrain2.wav",
+            "SE/Anim/PRSFX- Fell Stinger3.wav",
+            "SE/Anim/PRSFX- Freeze Shock3.wav",
+            "SE/Anim/PRSFX- Gigavolt Havoc3.wav",
+            "SE/Anim/PRSFX- Techno Blast 2.wav",
+            "SE/Anim/PRSFX- Thunderbolt2.wav",
+            "SE/Anim/PRSFX- Thundershock.wav"
+          ],
+          "bytes": 37950,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Double Slap.wav",
+            "SE/Anim/PRSFX- Fake Out1.wav",
+            "SE/Anim/PRSFX- Pay Day1.wav",
+            "SE/Anim/PRSFX- Power Trip5.wav",
+            "SE/Anim/PRSFX- Smellingsalts.wav",
+            "SE/Anim/PRSFX- Wake Up Slap.wav"
+          ],
+          "bytes": 45936,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Bloom Doom2.wav",
+            "SE/Anim/PRSFX- Energy Ball2.wav",
+            "SE/Anim/PRSFX- Thousand Waves1.wav",
+            "SE/Anim/PRSFX- Twinkle Tackle2.wav",
+            "SE/Anim/PRSFX- Weather Ball2.wav"
+          ],
+          "bytes": 54302,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Guard Split.wav",
+            "SE/Anim/PRSFX- Guard Swap.wav",
+            "SE/Anim/PRSFX- Heart Swap.wav",
+            "SE/Anim/PRSFX- Power Split.wav",
+            "SE/Anim/PRSFX- Power Swap.wav",
+            "SE/Anim/PRSFX- Power Trick.wav",
+            "SE/Anim/PRSFX- Skill Swap.wav",
+            "SE/Anim/PRSFX- Speed Swap.wav"
+          ],
+          "bytes": 31436,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Origin Pulse.wav",
+            "SE/Anim/PRSFX- Origin Pulse1.wav"
+          ],
+          "bytes": 121704,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- LTBTS1.wav",
+            "SE/Anim/PRSFX- Roar of Time.wav"
+          ],
+          "bytes": 112672,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Oceanic Operetta3.wav",
+            "SE/Anim/PRSFX- Rainbow Field.wav",
+            "SE/Anim/PRSFX- Stored Power2.wav",
+            "SE/Anim/PRSFX- Twinkle Tackle3.wav",
+            "SE/Anim/PRSFX- ZPower2.wav"
+          ],
+          "bytes": 44872,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Catastropika3.wav",
+            "SE/Anim/PRSFX- Plasma Fist1.wav",
+            "SE/Anim/PRSFX- Thunder Punch1.wav",
+            "SE/Anim/PRSFX- Thunder.wav",
+            "SE/Anim/PRSFX- Thunderbolt1.wav"
+          ],
+          "bytes": 42874,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Blizzard.wav",
+            "SE/Anim/PRSFX- Ice Burn1.wav",
+            "SE/Anim/PRSFX- Subzero Slammer2.wav"
+          ],
+          "bytes": 67342,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Dazzling Gleam.wav",
+            "SE/Anim/PRSFX- Extreme Evoboost2.wav",
+            "SE/Anim/PRSFX- Geomancy.wav"
+          ],
+          "bytes": 66200,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Extreme Evoboost1.wav",
+            "SE/Anim/PRSFX- Poison Gas.wav",
+            "SE/Anim/PRSFX- Smog.wav"
+          ],
+          "bytes": 62982,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Fire Blast.wav",
+            "SE/Anim/PRSFX- Inferno Overdrive1.wav"
+          ],
+          "bytes": 94050,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Magic Room.wav",
+            "SE/Anim/PRSFX- Techno Blast 1.wav",
+            "SE/Anim/PRSFX- Trick Room.wav",
+            "SE/Anim/PRSFX- Wonder Room.wav"
+          ],
+          "bytes": 46302,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Inferno.wav",
+            "SE/Anim/PRSFX- Sacred Fire2.wav"
+          ],
+          "bytes": 91596,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Bounce2.wav",
+            "SE/Anim/PRSFX- Pulverizing Pancake1.wav",
+            "SE/Anim/PRSFX- Seismic Toss1.wav"
+          ],
+          "bytes": 59494,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Blast Burn3.wav",
+            "SE/Anim/PRSFX- Burn Up2.wav",
+            "SE/Anim/PRSFX- Searing Shot2.wav"
+          ],
+          "bytes": 57652,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Extrasensory.wav",
+            "SE/Anim/PRSFX- Featherdance2.wav",
+            "SE/Anim/PRSFX- Psystrike2.wav",
+            "SE/Anim/PRSFX- SinisterArrowRaid3.wav"
+          ],
+          "bytes": 43008,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Poison.wav",
+            "SE/Anim/PRSFX- Toxic Thread3.wav"
+          ],
+          "bytes": 84908,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Hydro Cannon.wav",
+            "SE/Anim/PRSFX- Hydro Cannon2.wav",
+            "SE/Anim/PRSFX- Steam Eruption2.wav"
+          ],
+          "bytes": 55558,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Devastating Drake3.wav",
+            "SE/Anim/PRSFX- Fiery Dance2.wav",
+            "SE/Anim/PRSFX- Fire Pledge.wav",
+            "SE/Anim/PRSFX- Flame Charge1.wav",
+            "SE/Anim/PRSFX- FusionFlare3.wav",
+            "SE/Anim/PRSFX- Inferno Overdrive2.wav",
+            "SE/Anim/PRSFX- LTBTS4.wav",
+            "SE/Anim/PRSFX- Mystical Fire2.wav"
+          ],
+          "bytes": 19828,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Black Hole Eclipse3.wav",
+            "SE/Anim/PRSFX- Moonblast2.wav",
+            "SE/Anim/PRSFX- Photon Guyser3.wav"
+          ],
+          "bytes": 52036,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Electro Ball2.wav",
+            "SE/Anim/PRSFX- Glitch2.wav",
+            "SE/Anim/PRSFX- Parabolic Charge.wav",
+            "SE/Anim/PRSFX- Plasma Fist2.wav"
+          ],
+          "bytes": 37730,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/Gen8- Pyroball.wav",
+            "SE/Anim/RockFall1.wav"
+          ],
+          "bytes": 74632,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Diamond Storm1.wav",
+            "SE/Anim/PRSFX- Psycho Boost2.wav",
+            "SE/Anim/PRSFX- Thousand Waves2.wav"
+          ],
+          "bytes": 48264,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Prismatic Laser1.wav",
+            "SE/Anim/PRSFX- Tailwind.wav"
+          ],
+          "bytes": 72204,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Brutal Swing2.wav",
+            "SE/Anim/PRSFX- Fly1.wav"
+          ],
+          "bytes": 71564,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/Teleport.ogg",
+            "SE/Teleport.ogg"
+          ],
+          "bytes": 71471,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Light Screen.wav",
+            "SE/Anim/PRSFX- Me First3.wav",
+            "SE/Anim/PRSFX- Reflect.wav"
+          ],
+          "bytes": 47474,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "ME/Battle capture success.ogg",
+            "ME/Pkmn get.ogg"
+          ],
+          "bytes": 71017,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Black Hole Eclipse4.wav",
+            "SE/Anim/PRSFX- NeverEndingNightmare5.wav",
+            "SE/Anim/PRSFX- Night Daze1.wav"
+          ],
+          "bytes": 46822,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Anchor Shot2.wav",
+            "SE/Anim/PRSFX- Doom Desire1.wav",
+            "SE/Anim/PRSFX- Earthquake1.wav",
+            "SE/Anim/PRSFX- Egg Bomb2.wav",
+            "SE/Anim/PRSFX- Magnet Bomb2.wav",
+            "SE/Anim/PRSFX- Seed Bomb2.wav"
+          ],
+          "bytes": 23074,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Lucky Chant.wav",
+            "SE/Anim/PRSFX- Play Nice2.wav",
+            "SE/Anim/PRSFX- Protect.wav",
+            "SE/Anim/PRSFX- Safeguard.wav"
+          ],
+          "bytes": 34260,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- All Out Pummeling1.wav",
+            "SE/Anim/PRSFX- Dynamic Punch1.wav",
+            "SE/Anim/PRSFX- Hammer Arm2.wav",
+            "SE/Anim/PRSFX- Hi Jump Kick2.wav",
+            "SE/Anim/PRSFX- Mega Punch1.wav"
+          ],
+          "bytes": 27260,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Encore.wav",
+            "SE/Anim/PRSFX- Flatter.wav"
+          ],
+          "bytes": 68126,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Shattered Psyche2.wav",
+            "SE/Anim/PRSFX- Spacial Rend.wav"
+          ],
+          "bytes": 67112,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/Applause.ogg",
+            "SE/Applause.ogg"
+          ],
+          "bytes": 66946,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/PRSFX- Hyperspace Fury1.wav",
+            "SE/Anim/PRSFX- Hyperspace Hole1.wav"
+          ],
+          "bytes": 65414,
+          "referenciados": 0
+        },
+        {
+          "archivos": [
+            "SE/Anim/GEN8- Exclaim.wav",
+            "SE/Exclaim.wav"
+          ],
+          "bytes": 64428,
+          "referenciados": 0
+        }
+      ]
+    },
+    "referenciasDeAudio": 868,
+    "grandes": {
+      "techoMiB": 20,
+      "grandes": [
+        {
+          "ruta": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
+          "bytes": 63733443,
+          "mib": 60.78
+        },
+        {
+          "ruta": "Fire-Ash-Scripts-Corregidos.zip",
+          "bytes": 48854143,
+          "mib": 46.59
+        }
+      ]
+    }
+  },
+  "excepciones": [
+    {
+      "mapId": 43,
+      "nombre": "Viridian City",
+      "familia": "base",
+      "eventos": 66,
+      "pokemod": 1,
+      "eventosAutomaticos": 9,
+      "motivo": "mapa del juego base con 66 eventos de los que sólo 1 son del mod: la densidad viene de la campaña original; 9 eventos con página automática (9 autorun, 0 paralelas en 9 páginas)",
+      "responsable": "juego base (no se recorta sin partida)",
+      "estado": "heredado"
+    },
+    {
+      "mapId": 108,
+      "nombre": "Vermilion City",
+      "familia": "base",
+      "eventos": 145,
+      "pokemod": 2,
+      "eventosAutomaticos": 12,
+      "motivo": "mapa del juego base con 145 eventos de los que sólo 2 son del mod: la densidad viene de la campaña original; 12 eventos con página automática (12 autorun, 0 paralelas en 12 páginas)",
+      "responsable": "juego base (no se recorta sin partida)",
+      "estado": "heredado"
+    },
+    {
+      "mapId": 1001,
+      "nombre": "Puerto Horizonte",
+      "familia": "horizontes",
+      "eventos": 100,
+      "pokemod": 53,
+      "eventosAutomaticos": 0,
+      "motivo": "mapa horizontes con 100 eventos (53 del mod); ningún evento con página automática: el exceso es sólo de número de eventos, no de procesos",
+      "responsable": "carril de rendimiento del plan 2700",
+      "estado": "en_revision"
+    },
+    {
+      "mapId": 3060,
+      "nombre": "Glazed · Mt. Stratus (Cumbre Helada)",
+      "familia": "glazed",
+      "eventos": 105,
+      "pokemod": 105,
+      "eventosAutomaticos": 0,
+      "motivo": "mapa glazed con 105 eventos (105 del mod); ningún evento con página automática: el exceso es sólo de número de eventos, no de procesos",
+      "responsable": "carril de rendimiento del plan 2700",
+      "estado": "en_revision"
+    },
+    {
+      "mapId": 4059,
+      "nombre": "Pokémon Unbound · Capítulo 05 · bosque 060",
+      "familia": "unbound",
+      "eventos": 61,
+      "pokemod": 61,
+      "eventosAutomaticos": 0,
+      "motivo": "mapa unbound con 61 eventos (61 del mod); ningún evento con página automática: el exceso es sólo de número de eventos, no de procesos",
+      "responsable": "carril de rendimiento del plan 2700",
+      "estado": "en_revision"
+    },
+    {
+      "mapId": 4150,
+      "nombre": "Pokémon Unbound · Capítulo 13 · poblado 151",
+      "familia": "unbound",
+      "eventos": 61,
+      "pokemod": 61,
+      "eventosAutomaticos": 0,
+      "motivo": "mapa unbound con 61 eventos (61 del mod); ningún evento con página automática: el exceso es sólo de número de eventos, no de procesos",
+      "responsable": "carril de rendimiento del plan 2700",
+      "estado": "en_revision"
+    },
+    {
+      "mapId": 4234,
+      "nombre": "Pokémon Unbound · Capítulo 20 · costa 235",
+      "familia": "unbound",
+      "eventos": 61,
+      "pokemod": 61,
+      "eventosAutomaticos": 0,
+      "motivo": "mapa unbound con 61 eventos (61 del mod); ningún evento con página automática: el exceso es sólo de número de eventos, no de procesos",
+      "responsable": "carril de rendimiento del plan 2700",
+      "estado": "en_revision"
+    },
+    {
+      "mapId": 4334,
+      "nombre": "Pokémon Unbound · Capítulo 28 · poblado 335",
+      "familia": "unbound",
+      "eventos": 61,
+      "pokemod": 61,
+      "eventosAutomaticos": 0,
+      "motivo": "mapa unbound con 61 eventos (61 del mod); ningún evento con página automática: el exceso es sólo de número de eventos, no de procesos",
+      "responsable": "carril de rendimiento del plan 2700",
+      "estado": "en_revision"
+    }
+  ],
+  "resultado": {
+    "mapasConHuella": 1887,
+    "bajoPresupuesto": 1879,
+    "excesos": 8,
+    "sinDeclarar": 0,
+    "deudas": [
+      {
+        "mapId": 1001,
+        "nombre": "Puerto Horizonte",
+        "estado": "en_revision",
+        "responsable": "carril de rendimiento del plan 2700"
+      },
+      {
+        "mapId": 3060,
+        "nombre": "Glazed · Mt. Stratus (Cumbre Helada)",
+        "estado": "en_revision",
+        "responsable": "carril de rendimiento del plan 2700"
+      },
+      {
+        "mapId": 4059,
+        "nombre": "Pokémon Unbound · Capítulo 05 · bosque 060",
+        "estado": "en_revision",
+        "responsable": "carril de rendimiento del plan 2700"
+      },
+      {
+        "mapId": 4150,
+        "nombre": "Pokémon Unbound · Capítulo 13 · poblado 151",
+        "estado": "en_revision",
+        "responsable": "carril de rendimiento del plan 2700"
+      },
+      {
+        "mapId": 4234,
+        "nombre": "Pokémon Unbound · Capítulo 20 · costa 235",
+        "estado": "en_revision",
+        "responsable": "carril de rendimiento del plan 2700"
+      },
+      {
+        "mapId": 4334,
+        "nombre": "Pokémon Unbound · Capítulo 28 · poblado 335",
+        "estado": "en_revision",
+        "responsable": "carril de rendimiento del plan 2700"
+      }
+    ]
+  },
+  "verdict": "static_pass_manual_runtime_pending"
+}

@@ -49,7 +49,7 @@
       "repomix-output.xml",
       "**/*.{png,jpg,jpeg,gif,webp,ogg,wav,mp3,mid,rxdata,zip,rar,7z,exe,dll,ttf,bmp,xcf,sf2,apk,aab,pdf}",
       "**/*.dat",
-      "content/arceus_omega_qa_matrix.jsonl",
+      "content/arceus_omega_qa_matrix.jsonl.gz",
       "content/rom_campaigns_complete.json",
       "content/rom_nativo.json",
       "pokemon_fire_ash/Helpful Notes/**"
