@@ -9,6 +9,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { marshalLoad } from "../../web/js/marshal.js";
 import { visibleWidth } from "../../web/js/rmxp.js";
+import { tanda, sha256Text, sha256File } from "./lote2_core.mjs";
+import { control as formatoControl } from "../qa/dialogos_formato_check.mjs";
 
 const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
 const SOURCE = path.join(ROOT, "content/plan900_dialogos.json");
@@ -173,6 +175,37 @@ const report = {
     "revisión de los 759 diálogos importados/adaptados uno por uno",
   ],
   policy: "Los repetidos y posibles anglicismos son candidatos editoriales; no se reemplazan automáticamente porque algunos son nombres propios, menús o mensajes de sistema.",
+  lote2: (() => {
+    // FASE 001 del LOTE 2 (tanda 22): corte por líneas, control de formato y
+    // enlace al informe. Se recalcula en cada corrida para que --verify no
+    // pueda aprobar un artefacto desactualizado.
+    const t22 = tanda(22);
+    const fmt = formatoControl();
+    const informe = "docs/qa/dialogos_informe.md";
+    const informeAbs = path.join(ROOT, informe);
+    return {
+      lote: "LOTE 2",
+      fase: "001",
+      tanda: {
+        n: t22.n,
+        lineas: `${t22.fromLine}–${t22.toLine}`,
+        tareas: `${t22.firstId}–${t22.lastId}`,
+        corteSha256: sha256Text(t22.tasks.map((x) => x.text).join("\n")),
+      },
+      formato: {
+        reglas: fmt.reglas.length,
+        cajas: fmt.cajas,
+        errores: fmt.totalErrores,
+        avisos: fmt.totalAvisos,
+        porRegla: Object.fromEntries(fmt.reglas.map((r) => [r.id, (r.nivel === "error" ? fmt.errores[r.id] : fmt.avisos[r.id]).count])),
+        codigosMotor: fmt.codigosMotor,
+      },
+      reescrituras: 0,
+      informe: { path: informe, sha256: fs.existsSync(informeAbs) ? sha256File(informeAbs) : null },
+      carril: "cerrado_con_control_en_ci",
+      regenerar: "npm run audit:plan2700:dialogos",
+    };
+  })(),
 };
 const serialized = `${JSON.stringify(report, null, 2)}\n`;
 if (VERIFY) {

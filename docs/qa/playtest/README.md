@@ -26,3 +26,15 @@ Evidencia:
 Regresión añadida:
 Estado: abierto | corregido | verificado
 ```
+
+## Ficha de sesión (LOTE 2)
+
+Campos obligatorios de cada ficha (definición de la tarea 2193):
+
+- `fecha`, `version_commit`, `duracion_minutos`, `entorno`;
+- `guardado_inicial`, `mapas_visitados`, `eventos_ejecutados`, `dialogos_mostrados`;
+- `hallazgos` numerados con gravedad, `capturas`, `tasa_descubrimiento`.
+
+El volcado `content/lote5_fase022_playtest.json` declara exactamente estos
+campos para las sesiones 1–5 y `content/lote5_fase023_playtest.json` para las
+sesiones 6–60. Fichas sin ejecutar quedan en `manual_pending`.

@@ -41,6 +41,16 @@ jobs:
         # Fire_Ash_Ciudad_Teckel_Paraiso.zip también es artefacto ignorado por git:
         # verify:teckel lo audita, así que se regenera aquí antes de verify:all.
         run: npm run build:teckel
+      - name: Volcado y formato de diálogos (LOTE 2)
+        # Tanda 22: el volcado debe estar vigente, su control de formato (13 reglas,
+        # con autoprueba) en verde y la cola de cajas por personaje sin solapes
+        # antes de la suite completa. El control corre en memoria (~1 s).
+        run: |
+          node tools/qa/dialogos_formato_check.mjs --selftest
+          npm run verify:plan900:dialogos
+          npm run verify:plan2700:dialogos
+          npm run verify:dialogos:formato
+          npm run verify:dialogos:queue
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas

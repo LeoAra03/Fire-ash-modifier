@@ -565709,5 +565709,76 @@
     "partida para comprobar que una caja no interrumpe una escena",
     "revisión de los 759 diálogos importados/adaptados uno por uno"
   ],
-  "policy": "Los repetidos y posibles anglicismos son candidatos editoriales; no se reemplazan automáticamente porque algunos son nombres propios, menús o mensajes de sistema."
+  "policy": "Los repetidos y posibles anglicismos son candidatos editoriales; no se reemplazan automáticamente porque algunos son nombres propios, menús o mensajes de sistema.",
+  "lote2": {
+    "lote": "LOTE 2",
+    "fase": "001",
+    "tanda": {
+      "n": 22,
+      "lineas": "2100–2199",
+      "tareas": "2096–2195",
+      "corteSha256": "b41f9c5e977d17429ed6665858668aaa3abef660203c7d62290dbbef52f01c1f"
+    },
+    "formato": {
+      "reglas": 13,
+      "cajas": 19801,
+      "errores": 0,
+      "avisos": 4206,
+      "porRegla": {
+        "E1": 0,
+        "E2": 0,
+        "E3": 0,
+        "E4": 0,
+        "E5": 0,
+        "E6": 0,
+        "A1": 100,
+        "A2": 148,
+        "A3": 0,
+        "A4": 5,
+        "A5": 2,
+        "A6": 3709,
+        "A7": 242
+      },
+      "codigosMotor": [
+        ".",
+        "1",
+        "b",
+        "c",
+        "ch",
+        "cl",
+        "cn",
+        "f",
+        "ff",
+        "g",
+        "l",
+        "me",
+        "n",
+        "op",
+        "pg",
+        "pm",
+        "pn",
+        "pog",
+        "pt",
+        "r",
+        "se",
+        "sign",
+        "sp",
+        "ts",
+        "v",
+        "w",
+        "wd",
+        "wm",
+        "wt",
+        "wtnp",
+        "wu"
+      ]
+    },
+    "reescrituras": 0,
+    "informe": {
+      "path": "docs/qa/dialogos_informe.md",
+      "sha256": "030831ab6b98d0fd74a62c74738a28e88943b01e77a9c30c976e0932cbd783e8"
+    },
+    "carril": "cerrado_con_control_en_ci",
+    "regenerar": "npm run audit:plan2700:dialogos"
+  }
 }

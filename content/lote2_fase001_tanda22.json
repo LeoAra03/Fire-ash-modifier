@@ -1,0 +1,2033 @@
+{
+  "schema": "lote2_fase001_tanda22/1.0",
+  "fase": "001",
+  "lote": "LOTE 2",
+  "tanda": {
+    "n": 22,
+    "lineas": "2100–2199",
+    "tareas": "2096–2195"
+  },
+  "corte": {
+    "sha256": "b41f9c5e977d17429ed6665858668aaa3abef660203c7d62290dbbef52f01c1f",
+    "tareas": 100
+  },
+  "conteo": {
+    "cajas": 19801,
+    "eventos": 13736,
+    "paginas": 15556,
+    "mapasConEventos": 1887,
+    "mensajesRuby": 3983,
+    "hablantes": 67,
+    "derrotas": {
+      "batallas": 1702,
+      "eventos": 747,
+      "permanentes": 691,
+      "conEvento": 747
+    },
+    "sesionCarpetas": 60
+  },
+  "formato": {
+    "schema": "dialogos_formato/1.0",
+    "fuente": "content/plan900_dialogos.json",
+    "reglas": [
+      {
+        "id": "E1",
+        "nivel": "error",
+        "nombre": "caja_vacia",
+        "titulo": "caja sin texto visible"
+      },
+      {
+        "id": "E2",
+        "nivel": "error",
+        "nombre": "escape_desconocido",
+        "titulo": "código de escape que el motor no define"
+      },
+      {
+        "id": "E3",
+        "nivel": "error",
+        "nombre": "argumento_invalido",
+        "titulo": "argumento de escape vacío o fuera de rango"
+      },
+      {
+        "id": "E4",
+        "nivel": "error",
+        "nombre": "corchete_desbalanceado",
+        "titulo": "escape con `[` sin `]` de cierre"
+      },
+      {
+        "id": "E5",
+        "nivel": "error",
+        "nombre": "caracter_no_imprimible",
+        "titulo": "carácter de control dentro del texto"
+      },
+      {
+        "id": "E6",
+        "nivel": "error",
+        "nombre": "solo_escape",
+        "titulo": "caja cuya parte visible queda vacía"
+      },
+      {
+        "id": "A1",
+        "nivel": "aviso",
+        "nombre": "signo_pregunta",
+        "titulo": "`?` sin signo de apertura `¿`"
+      },
+      {
+        "id": "A2",
+        "nivel": "aviso",
+        "nombre": "signo_exclamacion",
+        "titulo": "`!` sin signo de apertura `¡`"
+      },
+      {
+        "id": "A3",
+        "nivel": "aviso",
+        "nombre": "comillas_rectas",
+        "titulo": "comillas rectas `\"` en voz narrativa"
+      },
+      {
+        "id": "A4",
+        "nivel": "aviso",
+        "nombre": "guion_dudoso",
+        "titulo": "guion doble `--` o guion medio rodeado de espacios"
+      },
+      {
+        "id": "A5",
+        "nivel": "aviso",
+        "nombre": "jerga_motor",
+        "titulo": "jerga de motor visible para el jugador"
+      },
+      {
+        "id": "A6",
+        "nivel": "aviso",
+        "nombre": "caja_unica_ancha",
+        "titulo": "caja de una sola línea por encima de 53 columnas"
+      },
+      {
+        "id": "A7",
+        "nivel": "aviso",
+        "nombre": "posible_ingles",
+        "titulo": "candidato de texto en inglés"
+      }
+    ],
+    "cajas": 19801,
+    "codigosMotor": [
+      ".",
+      "1",
+      "b",
+      "c",
+      "ch",
+      "cl",
+      "cn",
+      "f",
+      "ff",
+      "g",
+      "l",
+      "me",
+      "n",
+      "op",
+      "pg",
+      "pm",
+      "pn",
+      "pog",
+      "pt",
+      "r",
+      "se",
+      "sign",
+      "sp",
+      "ts",
+      "v",
+      "w",
+      "wd",
+      "wm",
+      "wt",
+      "wtnp",
+      "wu"
+    ],
+    "codigosObservados": [
+      "b",
+      "ch",
+      "sp",
+      "v"
+    ],
+    "errores": {
+      "E1": {
+        "regla": "caja_vacia",
+        "count": 0,
+        "examples": []
+      },
+      "E2": {
+        "regla": "escape_desconocido",
+        "count": 0,
+        "examples": []
+      },
+      "E3": {
+        "regla": "argumento_invalido",
+        "count": 0,
+        "examples": []
+      },
+      "E4": {
+        "regla": "corchete_desbalanceado",
+        "count": 0,
+        "examples": []
+      },
+      "E5": {
+        "regla": "caracter_no_imprimible",
+        "count": 0,
+        "examples": []
+      },
+      "E6": {
+        "regla": "solo_escape",
+        "count": 0,
+        "examples": []
+      }
+    },
+    "avisos": {
+      "A1": {
+        "regla": "signo_pregunta",
+        "count": 100,
+        "examples": [
+          {
+            "mapId": 33,
+            "mapa": "Pallet Town",
+            "evento": "PokeMod: Aide Isla Espejo",
+            "pagina": 1,
+            "texto": "Where would you like to go?\\ch[1,3,Sail to Mirror Island,Teleport to Ash's House,Leave / Step aside]"
+          },
+          {
+            "mapId": 2009,
+            "mapa": "Atlas 0989 - Wyndon Stadium?",
+            "evento": "PokeMod Tier3: Eco 0989",
+            "pagina": 1,
+            "texto": "Eco 0989 del sector Umbral Mil: recuerdo incompleto de Wyndon Stadium?. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Wyndon S"
+          },
+          {
+            "mapId": 3020,
+            "mapa": "Glazed · Almacén del Team Fusion",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_21_1",
+            "pagina": 1,
+            "texto": "SOHEAL: Isnt it amazing? Theyhave STARTER POKéMON here! Anyway,are you ready to go back? Ash: Si hay alguien que necesita ayuda, vamos. Pero primero quiero escu"
+          },
+          {
+            "mapId": 3025,
+            "mapa": "Glazed · Estación del Transbordador",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_26_1",
+            "pagina": 1,
+            "texto": "Really, Im sorry DARKRAI put youthrough that. It must have been ashock, right? Come visit me later,well chat then. Celda abierta. Esta historia trata de las dec"
+          },
+          {
+            "mapId": 3086,
+            "mapa": "Glazed · Caverna de Cuarzo Resonante",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_87_3",
+            "pagina": 1,
+            "texto": "Do you see the Time Board over there?My friends and I are trying to see whocan reach the top in the least time. Ash: Si hay alguien que necesita ayuda, vamos. P"
+          },
+          {
+            "mapId": 3202,
+            "mapa": "Liquid Crystal · Ciudad Cerezo (Cherrygrove City)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_3_1",
+            "pagina": 1,
+            "texto": "he link will be terminated if youleave the room. Is that okay? Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta his"
+          },
+          {
+            "mapId": 3252,
+            "mapa": "Liquid Crystal · Subterráneo de Trigal (Galería 10)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_53_1",
+            "pagina": 1,
+            "texto": "On this island, different eventsoccur depending on connections.What are those connections?They are for you to discover onyour own. Ash: Un lugar puede cambiar m"
+          },
+          {
+            "mapId": 3287,
+            "mapa": "Liquid Crystal · Rutas 38 & 39 (Granja Mu-mu · Tramo 8)",
+            "evento": "PokeMod Campaña ROM: Entrenador — liquid_crystal_88_1",
+            "pagina": 1,
+            "texto": "Im investigating MT.MORTAR, but mypals gone AWOL.Have you seen a TRAINER who has aSLOWPOKE that can use STRENGTH? Ash: Un lugar puede cambiar muchísimo y seguir"
+          },
+          {
+            "mapId": 3298,
+            "mapa": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 3)",
+            "evento": "PokeMod Campaña ROM: Warp 2",
+            "pagina": 1,
+            "texto": "ÀËLANCE: DGAGONITE, HYPER BEAÀËWhat took you, À?Just as I thought, that strange radiosignal is coming from herÀËThe stairs are right herÁÀËLANCE: À, we should s"
+          },
+          {
+            "mapId": 3303,
+            "mapa": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 8)",
+            "evento": "PokeMod Campaña ROM: Tramo siguiente",
+            "pagina": 1,
+            "texto": "ÀËAh! You found me again!What is wrong with me?Your better than me at this.Well. As promised heres aninteresting item for findingme again."
+          },
+          {
+            "mapId": 3356,
+            "mapa": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 17)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_157_1",
+            "pagina": 1,
+            "texto": "Are you going to the BATTLE TOWER?This is a secret but if you win awhole lot, you can win special gifts. Ash: Un lugar puede cambiar muchísimo y seguir siendo h"
+          },
+          {
+            "mapId": 3411,
+            "mapa": "Liquid Crystal · Ruta Helada (Ice Path · Galería 12)",
+            "evento": "PokeMod Campaña ROM: Entrenador — liquid_crystal_212_1",
+            "pagina": 1,
+            "texto": "Im investigating MT.MORTAR, but mypals gone AWOL.Have you seen a TRAINER who has aSLOWPOKE that can use STRENGTH? Ash: Un lugar puede cambiar muchísimo y seguir"
+          },
+          {
+            "mapId": 3422,
+            "mapa": "Liquid Crystal · Gimnasio de Endrino (Clair)",
+            "evento": "PokeMod Campaña ROM: Warp 2",
+            "pagina": 1,
+            "texto": "ÀËLANCE: DGAGONITE, HYPER BEAÀËWhat took you, À?Just as I thought, that strange radiosignal is coming from herÀËThe stairs are right herÁÀËLANCE: À, we should s"
+          },
+          {
+            "mapId": 3440,
+            "mapa": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 18)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_241_1",
+            "pagina": 1,
+            "texto": "On this island, different eventsoccur depending on connections.What are those connections?They are for you to discover onyour own. Ash: Un lugar puede cambiar m"
+          },
+          {
+            "mapId": 3445,
+            "mapa": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 23)",
+            "evento": "PokeMod Campaña ROM: Warp 3",
+            "pagina": 1,
+            "texto": "Sorry, but this floor is strictly offlimits. Would you like an office of yourown?Call our sales team at133713371337."
+          },
+          {
+            "mapId": 3447,
+            "mapa": "Liquid Crystal · Rutas 45 & 46 (Desfiladero · Sector 25)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_248_1",
+            "pagina": 1,
+            "texto": "OFFICER: Please remain calm and stayin your seat kid!What?You want to help?...Are you crazy?The situation is too dangerous.We have no idea what could be outther"
+          },
+          {
+            "mapId": 3511,
+            "mapa": "Liquid Crystal · Meseta Añil & Liga Pokémon (Sala 12)",
+            "evento": "PokeMod Campaña ROM: Entrenador — liquid_crystal_312_4",
+            "pagina": 1,
+            "texto": "Just becuase you beat me, doesntmean you look less annoying, OK?! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta "
+          },
+          {
+            "mapId": 3525,
+            "mapa": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (6)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_326_1",
+            "pagina": 1,
+            "texto": "Have you seen them?Those dreadful machines on Route 58and Route 59.I heard they were placed on SunburstIsland to damage Trainers Pokémon! Ash: Un lugar puede ca"
+          },
+          {
+            "mapId": 3526,
+            "mapa": "Liquid Crystal · Kanto · Puerto Carmín & Muelle S.S. Aqua (7)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_327_1",
+            "pagina": 1,
+            "texto": "When I was a young boy, I traveledto a distant region.I saw this fantastic Pokémon.All Im able to remember is, its aPokémon with a fin, and pretty smalltoo.Ever"
+          },
+          {
+            "mapId": 3627,
+            "mapa": "Liquid Crystal · Monte Plateado (Sendero Nevado · Tramo 3)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_428_1",
+            "pagina": 1,
+            "texto": "Such a peaceful place, this SafariTown.I wonder what the old Safari Zone inKanto used to be like.Do they have the same Pokémon we haveover here? Ash: Un lugar p"
+          }
+        ]
+      },
+      "A2": {
+        "regla": "signo_exclamacion",
+        "count": 148,
+        "examples": [
+          {
+            "mapId": 33,
+            "mapa": "Pallet Town",
+            "evento": "PokeMod: Aide Isla Espejo",
+            "pagina": 1,
+            "texto": "\\bOak's aide: Prof. Oak asked me to give you this Emergency Abra. If you ever get trapped, it will teleport you straight back home!"
+          },
+          {
+            "mapId": 33,
+            "mapa": "Pallet Town",
+            "evento": "PokeMod: Aide Isla Espejo",
+            "pagina": 1,
+            "texto": "\\bOak's aide: You can pass freely at any time. I will keep the route open!"
+          },
+          {
+            "mapId": 3006,
+            "mapa": "Glazed · Gimnasio Sparkfly (Medalla Jolt)",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_7_1",
+            "pagina": 1,
+            "texto": "I left the major port of SLATEPORTCITY when I married my husband here.Life goes by slowly on this littleisland. But being surrounded by thebeautiful sea--thats "
+          },
+          {
+            "mapId": 3007,
+            "mapa": "Glazed · Meseta de la Brisa",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_8_1",
+            "pagina": 1,
+            "texto": "I can see your talent becoming a giantwave to cause a storm of astonishmentamong TRAINERS one day! Ash: Si hay alguien que necesita ayuda, vamos. Pero primero q"
+          },
+          {
+            "mapId": 3020,
+            "mapa": "Glazed · Almacén del Team Fusion",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_21_1",
+            "pagina": 1,
+            "texto": "SOHEAL: Isnt it amazing? Theyhave STARTER POKéMON here! Anyway,are you ready to go back? Ash: Si hay alguien que necesita ayuda, vamos. Pero primero quiero escu"
+          },
+          {
+            "mapId": 3046,
+            "mapa": "Glazed · Jardines Botánicos",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_47_1",
+            "pagina": 1,
+            "texto": "LANETTE: Oh! ÀÈ!Im sorry everything is so cluttered…When I get engrossed in research,things end up this way…This is embarrassing… Please keepthis a secret in ex"
+          },
+          {
+            "mapId": 3086,
+            "mapa": "Glazed · Caverna de Cuarzo Resonante",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_87_1",
+            "pagina": 1,
+            "texto": "I hope you give it your best. Thank you for playing! Esta historia trata de las decisiones que conectan dos historias sin borrar ninguna. Preguntar primero tamb"
+          },
+          {
+            "mapId": 3126,
+            "mapa": "Light Platinum · Gimnasio de Esmeralda (Esmeralda)",
+            "evento": "PokeMod Campaña ROM: NPC — light_platinum_7_1",
+            "pagina": 1,
+            "texto": "Welcome, challenger!Im SIDNEY of the ELITE FOUR.I like that look youre giving me.I guess youll give me a good match.Thats good! Looking real good!All right! You"
+          },
+          {
+            "mapId": 3127,
+            "mapa": "Light Platinum · Puerto Seanport & Faro Marino",
+            "evento": "PokeMod Campaña ROM: NPC — light_platinum_8_1",
+            "pagina": 1,
+            "texto": "Ahahaha!Im PHOEBE of the ELITE FOUR.I did my training on MT. PYRE.While I trained, I gained the abilityto commune with GHOST-type POKéMON.Yes, the bond I develo"
+          },
+          {
+            "mapId": 3211,
+            "mapa": "Liquid Crystal · Ruinas Alfa (Sector 4)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_12_1",
+            "pagina": 1,
+            "texto": "MEOWTH: Meow! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y "
+          },
+          {
+            "mapId": 3211,
+            "mapa": "Liquid Crystal · Ruinas Alfa (Sector 4)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_12_2",
+            "pagina": 1,
+            "texto": "NIDORAN♀: Kya kyaoo! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus l"
+          },
+          {
+            "mapId": 3217,
+            "mapa": "Liquid Crystal · Ruta 32 (Costa Sur · Tramo 2)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_18_4",
+            "pagina": 1,
+            "texto": "Parece que este árbol se puedecortar.¿Usar Corte? Á usó Â! Esta historia trata de los lugares de Johto, sus lazos y sus recuerdos. Preguntar primero también es "
+          },
+          {
+            "mapId": 3220,
+            "mapa": "Liquid Crystal · Pueblo Azalea (Pozo Slowpoke)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_21_1",
+            "pagina": 1,
+            "texto": "He encontrado este fósil en elMonte Moon. Creo que es de un raroy extinto Pokémon. Thanks! Esta historia trata de los lugares de Johto, sus lazos y sus recuerdo"
+          },
+          {
+            "mapId": 3233,
+            "mapa": "Liquid Crystal · Ruta 34 & Guardería (Sector 3)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_34_1",
+            "pagina": 1,
+            "texto": "My daughter likes to mimic people.Its rather vexing.Her mimicry has earned her thenickname COPYCAT around here. CHANSEY: Chaan! Sii! Esta historia trata de los "
+          },
+          {
+            "mapId": 3250,
+            "mapa": "Liquid Crystal · Subterráneo de Trigal (Galería 8)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_51_1",
+            "pagina": 1,
+            "texto": "You must be the Trainer that foundthe Solar Rock!Congratulations on finding it, theTeleport was out of commission foryears.Without your help it would still notb"
+          },
+          {
+            "mapId": 3302,
+            "mapa": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 7)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_103_1",
+            "pagina": 1,
+            "texto": "JIRACHI: Jira! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de Johto, sus lazos y"
+          },
+          {
+            "mapId": 3303,
+            "mapa": "Liquid Crystal · Puerto de Olivo & Canal Marino (Sector 8)",
+            "evento": "PokeMod Campaña ROM: Tramo siguiente",
+            "pagina": 1,
+            "texto": "ÀËAh! You found me again!What is wrong with me?Your better than me at this.Well. As promised heres aninteresting item for findingme again."
+          },
+          {
+            "mapId": 3328,
+            "mapa": "Liquid Crystal · Acantilados & Safari de Johto (Sector 5)",
+            "evento": "PokeMod Campaña ROM: Entrenador — liquid_crystal_129_1",
+            "pagina": 1,
+            "texto": "Mark my words, I will defeat yousomeday! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta batalla forma parte de lo"
+          },
+          {
+            "mapId": 3357,
+            "mapa": "Liquid Crystal · Monte Mortero (Mt. Mortar · Sala 18)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_158_1",
+            "pagina": 1,
+            "texto": "Wow, the BATTLE TOWER is huge!There must be many kinds of POKéMONin there! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a ver"
+          },
+          {
+            "mapId": 3360,
+            "mapa": "Liquid Crystal · Pueblo Caoba (Mahogany Town)",
+            "evento": "PokeMod Campaña ROM: NPC — liquid_crystal_161_1",
+            "pagina": 1,
+            "texto": "Its immovable. Embedded in Ice! Ash: Un lugar puede cambiar muchísimo y seguir siendo hogar para alguien. Vamos a verlo. Esta historia trata de los lugares de J"
+          }
+        ]
+      },
+      "A3": {
+        "regla": "comillas_rectas",
+        "count": 0,
+        "examples": []
+      },
+      "A4": {
+        "regla": "guion_dudoso",
+        "count": 5,
+        "examples": [
+          {
+            "mapId": 2004,
+            "mapa": "Atlas 0984 - Mt. Coronet - Past",
+            "evento": "PokeMod Tier3: Eco 0984",
+            "pagina": 1,
+            "texto": "Eco 0984 del sector Umbral Mil: recuerdo incompleto de Mt. Coronet - Past. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de Mt"
+          },
+          {
+            "mapId": 2011,
+            "mapa": "Atlas 0991 - Mirror Island - Atrium",
+            "evento": "PokeMod Tier3: Eco 0991",
+            "pagina": 1,
+            "texto": "Eco 0991 del sector Umbral Mil: recuerdo incompleto de Mirror Island - Atrium. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Mir"
+          },
+          {
+            "mapId": 2012,
+            "mapa": "Atlas 0992 - Mirror Island - Gallery of Legends",
+            "evento": "PokeMod Tier3: Eco 0992",
+            "pagina": 1,
+            "texto": "Eco 0992 del sector Umbral Mil: recuerdo incompleto de Mirror Island - Gallery of Legends. La baliza de retorno y la navegación del Atlas permanecen abiertas. L"
+          },
+          {
+            "mapId": 2013,
+            "mapa": "Atlas 0993 - Mirror Island - Zero Archive",
+            "evento": "PokeMod Tier3: Eco 0993",
+            "pagina": 1,
+            "texto": "Eco 0993 del sector Umbral Mil: recuerdo incompleto de Mirror Island - Zero Archive. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Mirr"
+          },
+          {
+            "mapId": 3006,
+            "mapa": "Glazed · Gimnasio Sparkfly (Medalla Jolt)",
+            "evento": "PokeMod Campaña ROM: NPC — glazed_7_1",
+            "pagina": 1,
+            "texto": "I left the major port of SLATEPORTCITY when I married my husband here.Life goes by slowly on this littleisland. But being surrounded by thebeautiful sea--thats "
+          }
+        ]
+      },
+      "A5": {
+        "regla": "jerga_motor",
+        "count": 2,
+        "examples": [
+          {
+            "mapId": 2195,
+            "mapa": "Atlas Mil · Vía de las Nueve Eras",
+            "evento": "PokeMod Vía: Cronista — Galar",
+            "pagina": 1,
+            "texto": "Cronista de Galar — 8.ª generación · Nintendo Switch. Galar, 2019. Estadio, acero y niebla: la ciudad se diseña para ser vista desde lejos. Este distrito es un "
+          },
+          {
+            "mapId": 2196,
+            "mapa": "Gimnasio Atlas · Las Nueve Eras",
+            "evento": "PokeMod Vía: Entrenador — Galar",
+            "pagina": 1,
+            "texto": "Entrenador de Galar — 8.ª generación · Nintendo Switch. «Galar, 2019. Estadio, acero y niebla: la ciudad se diseña para ser vista desde lejos.»"
+          }
+        ]
+      },
+      "A6": {
+        "regla": "caja_unica_ancha",
+        "count": 3709,
+        "examples": [
+          {
+            "mapId": 33,
+            "mapa": "Pallet Town",
+            "evento": "PokeMod: Aide Isla Espejo",
+            "pagina": 1,
+            "texto": "\\bOak's aide: You can pass freely at any time. I will keep the route open!"
+          },
+          {
+            "mapId": 643,
+            "mapa": "Sinnoh Pokemon League",
+            "evento": "PokeMod Campaña ROM: Cynthia — Guía de la fragmentación",
+            "pagina": 1,
+            "texto": "Ash: Entonces no vamos a tratar esos lugares como escenarios vacíos. Vamos a conocerlos y ayudar si hace falta."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Atlas Mil: Sector 1",
+            "pagina": 1,
+            "texto": "Arco ámbar: Meridiano Ámbar. Primer destino: Pueblo Campanario."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Glazed",
+            "pagina": 2,
+            "texto": "Capitán Ferrán: ¡Leva anclas! En Glazed hace frío, pero la gente es templada."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Glazed",
+            "pagina": 2,
+            "texto": "Capitán Ferrán: Como quieras. El barco no se mueve sin ti."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Light Platinum",
+            "pagina": 2,
+            "texto": "Capitana Ñuke: ¡Navegamos! Aviso: en Lappet el sol engaña, lleva agua."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Light Platinum",
+            "pagina": 2,
+            "texto": "Capitana Ñuke: Sin prisa. El muelle no se va a ningún sitio."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Liquid Crystal",
+            "pagina": 2,
+            "texto": "Capitana Marina: ¡Rumbo al cristal! Mira, escucha y no des por hecho que ésta es tu historia."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Liquid Crystal",
+            "pagina": 2,
+            "texto": "Capitana Marina: El santuario sabe esperar. Yo también."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — TFOH",
+            "pagina": 2,
+            "texto": "Capitán Orión: ¡A la Primera Huella! Nada de corregir a su gente: primero hay que conocerla."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — TFOH",
+            "pagina": 2,
+            "texto": "Capitán Orión: Ninguna aventura se estropea por empezar mañana."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Factory Adventure",
+            "pagina": 2,
+            "texto": "Ingeniera Ada: Sincronizando compuertas. Mira con cuidado: esta fábrica fabrica mitos."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Barco: Capitán — Factory Adventure",
+            "pagina": 2,
+            "texto": "Ingeniera Ada: Pausa aceptada. Las máquinas también descansan."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Glazed",
+            "pagina": 1,
+            "texto": "La grieta sigue dormida. Cynthia dijo que sólo respondería después de completar La Ruta de Dios."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Light Platinum",
+            "pagina": 1,
+            "texto": "La grieta sigue dormida. Cynthia dijo que sólo respondería después de completar La Ruta de Dios."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Liquid Crystal",
+            "pagina": 1,
+            "texto": "La grieta sigue dormida. Cynthia dijo que sólo respondería después de completar La Ruta de Dios."
+          },
+          {
+            "mapId": 1001,
+            "mapa": "Puerto Horizonte",
+            "evento": "PokeMod Campaña ROM: Portal de Puerto Horizonte — Pokémon Unbound",
+            "pagina": 1,
+            "texto": "La grieta sigue dormida. Cynthia dijo que sólo respondería después de completar La Ruta de Dios."
+          },
+          {
+            "mapId": 2023,
+            "mapa": "La Torre que Escuchaba",
+            "evento": "PokeMod Multiverso: Jefe LA LOCUTORA",
+            "pagina": 1,
+            "texto": "La voz ríe sin hacer ruido. Puedes recuperarte y volver a escuchar."
+          },
+          {
+            "mapId": 2023,
+            "mapa": "La Torre que Escuchaba",
+            "evento": "PokeMod Multiverso: Jefe LA LOCUTORA",
+            "pagina": 2,
+            "texto": "LA LOCUTORA: ¿Quieres oír la canción completa otra vez?"
+          },
+          {
+            "mapId": 2023,
+            "mapa": "La Torre que Escuchaba",
+            "evento": "PokeMod Multiverso: Jefe LA LOCUTORA",
+            "pagina": 2,
+            "texto": "La canción se detiene. La torre, por primera vez, suena a silencio."
+          }
+        ]
+      },
+      "A7": {
+        "regla": "posible_ingles",
+        "count": 242,
+        "examples": [
+          {
+            "mapId": 33,
+            "mapa": "Pallet Town",
+            "evento": "PokeMod: Aide Isla Espejo",
+            "pagina": 1,
+            "texto": "\\bOak's aide: A stable signal has appeared beyond the Orange Archipelago. Professor Oak calls it Mirror Island. It preserves battles from worlds that might have"
+          },
+          {
+            "mapId": 33,
+            "mapa": "Pallet Town",
+            "evento": "PokeMod: Aide Isla Espejo",
+            "pagina": 1,
+            "texto": "\\bOak's aide: You can pass freely at any time. I will keep the route open!"
+          },
+          {
+            "mapId": 1525,
+            "mapa": "Atlas 0505 - Route 201",
+            "evento": "PokeMod Tier3: Eco 0505",
+            "pagina": 1,
+            "texto": "Eco 0505 del sector Territorio Origami: recuerdo incompleto de Route 201. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de Route "
+          },
+          {
+            "mapId": 1530,
+            "mapa": "Atlas 0510 - Jubilife City",
+            "evento": "PokeMod Tier3: Eco 0510",
+            "pagina": 1,
+            "texto": "Eco 0510 del sector Territorio Origami: recuerdo incompleto de Jubilife City. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Jubilife Ci"
+          },
+          {
+            "mapId": 1535,
+            "mapa": "Atlas 0515 - Route 6",
+            "evento": "PokeMod Tier3: Eco 0515",
+            "pagina": 1,
+            "texto": "Eco 0515 del sector Territorio Origami: recuerdo incompleto de Route 6. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las señales de Route"
+          },
+          {
+            "mapId": 1536,
+            "mapa": "Atlas 0516 - Route 203",
+            "evento": "PokeMod Tier3: Eco 0516",
+            "pagina": 1,
+            "texto": "Eco 0516 del sector Territorio Origami: recuerdo incompleto de Route 203. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route"
+          },
+          {
+            "mapId": 1538,
+            "mapa": "Atlas 0518 - Oreburgh City",
+            "evento": "PokeMod Tier3: Eco 0518",
+            "pagina": 1,
+            "texto": "Eco 0518 del sector Territorio Origami: recuerdo incompleto de Oreburgh City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía O"
+          },
+          {
+            "mapId": 1544,
+            "mapa": "Atlas 0524 - Route 204",
+            "evento": "PokeMod Tier3: Eco 0524",
+            "pagina": 1,
+            "texto": "Eco 0524 del sector Territorio Origami: recuerdo incompleto de Route 204. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Route 20"
+          },
+          {
+            "mapId": 1553,
+            "mapa": "Atlas 0533 - Route 205",
+            "evento": "PokeMod Tier3: Eco 0533",
+            "pagina": 1,
+            "texto": "Eco 0533 del sector Delta de Cristal: recuerdo incompleto de Route 205. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los mapas de Route 2"
+          },
+          {
+            "mapId": 1554,
+            "mapa": "Atlas 0534 - Route 205 House",
+            "evento": "PokeMod Tier3: Eco 0534",
+            "pagina": 1,
+            "texto": "Eco 0534 del sector Delta de Cristal: recuerdo incompleto de Route 205 House. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los nombres de"
+          },
+          {
+            "mapId": 1556,
+            "mapa": "Atlas 0536 - Eterna City",
+            "evento": "PokeMod Tier3: Eco 0536",
+            "pagina": 1,
+            "texto": "Eco 0536 del sector Delta de Cristal: recuerdo incompleto de Eterna City. La baliza de retorno y la navegación del Atlas permanecen abiertas. La gravedad de Ete"
+          },
+          {
+            "mapId": 1561,
+            "mapa": "Atlas 0541 - Route 206",
+            "evento": "PokeMod Tier3: Eco 0541",
+            "pagina": 1,
+            "texto": "Eco 0541 del sector Delta de Cristal: recuerdo incompleto de Route 206. La baliza de retorno y la navegación del Atlas permanecen abiertas. La luz de Route 206 "
+          },
+          {
+            "mapId": 1562,
+            "mapa": "Atlas 0542 - Route 206 Gate",
+            "evento": "PokeMod Tier3: Eco 0542",
+            "pagina": 1,
+            "texto": "Eco 0542 del sector Delta de Cristal: recuerdo incompleto de Route 206 Gate. La baliza de retorno y la navegación del Atlas permanecen abiertas. Las coordenadas"
+          },
+          {
+            "mapId": 1563,
+            "mapa": "Atlas 0543 - Route 206",
+            "evento": "PokeMod Tier3: Eco 0543",
+            "pagina": 1,
+            "texto": "Eco 0543 del sector Delta de Cristal: recuerdo incompleto de Route 206. La baliza de retorno y la navegación del Atlas permanecen abiertas. En Route 206 se usan"
+          },
+          {
+            "mapId": 1564,
+            "mapa": "Atlas 0544 - Route 206 Gate",
+            "evento": "PokeMod Tier3: Eco 0544",
+            "pagina": 1,
+            "texto": "Eco 0544 del sector Delta de Cristal: recuerdo incompleto de Route 206 Gate. La baliza de retorno y la navegación del Atlas permanecen abiertas. El silencio de "
+          },
+          {
+            "mapId": 1566,
+            "mapa": "Atlas 0546 - Hearthome City",
+            "evento": "PokeMod Tier3: Eco 0546",
+            "pagina": 1,
+            "texto": "Eco 0546 del sector Delta de Cristal: recuerdo incompleto de Hearthome City. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los materiales "
+          },
+          {
+            "mapId": 1572,
+            "mapa": "Atlas 0552 - Battle Hall",
+            "evento": "PokeMod Tier3: Eco 0552",
+            "pagina": 1,
+            "texto": "Eco 0552 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall. La baliza de retorno y la navegación del Atlas permanecen abiertas. La geografía Battle"
+          },
+          {
+            "mapId": 1573,
+            "mapa": "Atlas 0553 - Battle Hall Stadium",
+            "evento": "PokeMod Tier3: Eco 0553",
+            "pagina": 1,
+            "texto": "Eco 0553 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall Stadium. La baliza de retorno y la navegación del Atlas permanecen abiertas. La gravedad"
+          },
+          {
+            "mapId": 1574,
+            "mapa": "Atlas 0554 - Battle Hall Stadium",
+            "evento": "PokeMod Tier3: Eco 0554",
+            "pagina": 1,
+            "texto": "Eco 0554 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall Stadium. La baliza de retorno y la navegación del Atlas permanecen abiertas. Los pasos e"
+          },
+          {
+            "mapId": 1575,
+            "mapa": "Atlas 0555 - Battle Hall Stadium",
+            "evento": "PokeMod Tier3: Eco 0555",
+            "pagina": 1,
+            "texto": "Eco 0555 del sector Llanura Meteoro: recuerdo incompleto de Battle Hall Stadium. La baliza de retorno y la navegación del Atlas permanecen abiertas. El clima de"
+          }
+        ]
+      }
+    },
+    "totalErrores": 0,
+    "totalAvisos": 4206,
+    "politica": "Los errores bloquean el control; los avisos son candidatos editoriales con mapa/evento/página y no se reescriben por expresión regular."
+  },
+  "selftest": {
+    "total": 17,
+    "reglas": 13,
+    "ok": true,
+    "casos": [
+      {
+        "nombre": "E1 caja vacía",
+        "esperado": [
+          "E1"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "E2 escape desconocido",
+        "esperado": [
+          "E2"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "E3 variable vacía",
+        "esperado": [
+          "E3"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "E3 variable fuera de rango",
+        "esperado": [
+          "E3"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "E4 corchete sin cerrar",
+        "esperado": [
+          "E4"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "E5 carácter de control",
+        "esperado": [
+          "E5"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "E6 sólo escape",
+        "esperado": [
+          "E6"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A1 pregunta sin ¿",
+        "esperado": [
+          "A1"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A2 exclamación sin ¡",
+        "esperado": [
+          "A2"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A3 comillas rectas",
+        "esperado": [
+          "A3"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A4 guion doble",
+        "esperado": [
+          "A4"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A4 guion con espacios",
+        "esperado": [
+          "A4"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A5 jerga de motor",
+        "esperado": [
+          "A5"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A6 caja única por encima de 53 columnas",
+        "esperado": [
+          "A6"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "A7 candidato de inglés",
+        "esperado": [
+          "A7"
+        ],
+        "ok": true
+      },
+      {
+        "nombre": "negativo: códigos conocidos con argumento válido",
+        "esperado": [],
+        "ok": true
+      },
+      {
+        "nombre": "negativo: caja multi-línea en español",
+        "esperado": [],
+        "ok": true
+      }
+    ]
+  },
+  "tono": {
+    "goreParodia": 0,
+    "humillacion": 0,
+    "fuente": "content/lote5_fase022_dialogos.json"
+  },
+  "reescrituras": {
+    "total": 0,
+    "politica": "Sin reescrituras automáticas; los avisos son candidatos editoriales con contexto."
+  },
+  "cola": {
+    "verificador": "npm run verify:dialogos:queue",
+    "resultado": "sin solapes"
+  },
+  "informe": {
+    "path": "docs/qa/dialogos_informe.md",
+    "sha256": "030831ab6b98d0fd74a62c74738a28e88943b01e77a9c30c976e0932cbd783e8"
+  },
+  "ci": {
+    "workflow": ".github/workflows/build-apk.yml",
+    "paso": "Volcado y formato de diálogos (LOTE 2)"
+  },
+  "clasificacion": {
+    "counts": {
+      "verificado": 27,
+      "pendiente_humano": 71,
+      "instrumentado": 1,
+      "pendiente_fase": 1
+    },
+    "lanes": {
+      "tono": 7,
+      "gimnasios": 7,
+      "mundo_vivo": 24,
+      "glosario": 2,
+      "hubs": 10,
+      "jefes": 4,
+      "dimensiones": 20,
+      "canon": 1,
+      "editor": 2,
+      "infraestructura": 18,
+      "playtest_apertura": 5
+    },
+    "commands": [
+      {
+        "command": "node tools/plan2700/lote5_fase022_dialogos.mjs --verify",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "npm run verify:glosario",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "npm run verify:diplomas",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "npm run verify:defeats",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "npm run verify:canon:arceus",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "npm run verify:dialogos:queue",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "node tools/apply_cajas_dialogo.mjs --verify",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "npm run verify:plan2700:dialogos",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "npm run verify:plan900:dialogos",
+        "ok": true,
+        "code": 0
+      },
+      {
+        "command": "node tools/qa/dialogos_formato_check.mjs",
+        "ok": true,
+        "code": 0
+      }
+    ],
+    "rows": [
+      {
+        "id": 2096,
+        "line": 2100,
+        "lane": "tono",
+        "text": "Auditar los textos de derrota de los jefes y verificar que no humillen a nadie.",
+        "estado": "verificado",
+        "sonda": "ejecutar `node tools/plan2700/lote5_fase022_dialogos.mjs --verify`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2097,
+        "line": 2101,
+        "lane": "tono",
+        "text": "Auditar los textos de los heridos de Team Rocket y verificar que tengan dignidad.",
+        "estado": "verificado",
+        "sonda": "ejecutar `node tools/plan2700/lote5_fase022_dialogos.mjs --verify`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2098,
+        "line": 2102,
+        "lane": "tono",
+        "text": "Auditar los textos de los siete mundos y verificar que conserven su esencia con voz propia.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2099,
+        "line": 2103,
+        "lane": "tono",
+        "text": "Verificar que ningún texto de creepypasta copie líneas de su cuento de origen.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2100,
+        "line": 2104,
+        "lane": "tono",
+        "text": "Verificar que ningún texto de creepypasta caiga en gore gratuito o parodia.",
+        "estado": "verificado",
+        "sonda": "ejecutar `node tools/plan2700/lote5_fase022_dialogos.mjs --verify`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2101,
+        "line": 2105,
+        "lane": "gimnasios",
+        "text": "Auditar los textos de la Liga Oscura y verificar su coherencia con las catorce medallas.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2102,
+        "line": 2106,
+        "lane": "gimnasios",
+        "text": "Auditar los textos de los ocho campeones y verificar que ninguno repita discurso.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2103,
+        "line": 2107,
+        "lane": "gimnasios",
+        "text": "Auditar los textos de los cuarenta líderes de gimnasio del DLC.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2104,
+        "line": 2108,
+        "lane": "gimnasios",
+        "text": "Verificar que cada líder presente su especialidad y su carácter en su primera línea.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2105,
+        "line": 2109,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de los NPC de ciudad por capítulo y verificar su actualización.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2106,
+        "line": 2110,
+        "lane": "mundo_vivo",
+        "text": "Verificar que ningún NPC diga algo que ya no es cierto tras avanzar la historia.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2107,
+        "line": 2111,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de los carteles y verificar que coincidan con el destino real.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2108,
+        "line": 2112,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de los objetos examinables y verificar que aporten algo.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2109,
+        "line": 2113,
+        "lane": "mundo_vivo",
+        "text": "Reescribir los objetos examinables que solo digan que no hay nada.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2110,
+        "line": 2114,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de los menús nuevos y verificar su estilo.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2111,
+        "line": 2115,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de los avisos de guardado y verificar que no alarmen sin motivo.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2112,
+        "line": 2116,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de las recompensas y verificar que no se disparen dos veces.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2113,
+        "line": 2117,
+        "lane": "mundo_vivo",
+        "text": "Verificar que ningún texto prometa algo que el juego no cumpla.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2114,
+        "line": 2118,
+        "lane": "mundo_vivo",
+        "text": "Auditar las promesas narrativas abiertas y cerrarlas en el epílogo.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2115,
+        "line": 2119,
+        "lane": "mundo_vivo",
+        "text": "Verificar que el epílogo mencione solo las dimensiones realmente completadas.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2116,
+        "line": 2120,
+        "lane": "glosario",
+        "text": "Auditar el glosario del proyecto y verificar que los términos se usen siempre igual.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:glosario`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2117,
+        "line": 2121,
+        "lane": "glosario",
+        "text": "Reescribir cualquier texto que use un término distinto para el mismo concepto.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2118,
+        "line": 2122,
+        "lane": "gimnasios",
+        "text": "Auditar los nombres de las medallas y diplomas contra los documentos.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:diplomas`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2119,
+        "line": 2123,
+        "lane": "mundo_vivo",
+        "text": "Verificar que los nombres coincidan también en el visor y en el menú.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2120,
+        "line": 2124,
+        "lane": "hubs",
+        "text": "Auditar los textos de los NPC del hub de Oak por estado de progreso.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2121,
+        "line": 2125,
+        "lane": "hubs",
+        "text": "Verificar que el hub de Oak tenga respuesta para cada combinación de estado.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2122,
+        "line": 2126,
+        "lane": "hubs",
+        "text": "Auditar los textos de los asistentes de los hubs de campaña.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2123,
+        "line": 2127,
+        "lane": "hubs",
+        "text": "Verificar que ningún asistente repita el texto de otro hub.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2124,
+        "line": 2128,
+        "lane": "hubs",
+        "text": "Auditar los textos de los guardias y verificadores de acceso.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2125,
+        "line": 2129,
+        "lane": "hubs",
+        "text": "Verificar que ningún guardia bloquee el paso sin explicar el motivo.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2126,
+        "line": 2130,
+        "lane": "hubs",
+        "text": "Auditar los textos de los transportadores y verificar que avisen antes de mover al jugador.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2127,
+        "line": 2131,
+        "lane": "hubs",
+        "text": "Verificar que ningún transportador mueva al jugador sin confirmación.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2128,
+        "line": 2132,
+        "lane": "jefes",
+        "text": "Auditar los textos de los jefes antes del combate en las siete regiones nuevas.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2129,
+        "line": 2133,
+        "lane": "jefes",
+        "text": "Verificar que cada jefe diga algo distinto según si el jugador ya lo venció.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2130,
+        "line": 2134,
+        "lane": "jefes",
+        "text": "Verificar que ningún jefe repita su discurso de entrada en una revancha.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2131,
+        "line": 2135,
+        "lane": "tono",
+        "text": "Verificar que ningún jefe repita su texto de derrota en una revancha.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:defeats`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2132,
+        "line": 2136,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de las siete emisiones y su degradación progresiva.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2133,
+        "line": 2137,
+        "lane": "dimensiones",
+        "text": "Verificar que ningún texto de emisión se muestre fuera de su emisión.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2134,
+        "line": 2138,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de los sellos y verificar que se anuncien una sola vez.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2135,
+        "line": 2139,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de las anclas de Atlas y verificar que ninguno repita estructura.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2136,
+        "line": 2140,
+        "lane": "mundo_vivo",
+        "text": "Reescribir las anclas que compartan plantilla literal con otra.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2137,
+        "line": 2141,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de las 500 aventuras de Horizontes y verificar que ninguna repita plantilla.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2138,
+        "line": 2142,
+        "lane": "mundo_vivo",
+        "text": "Reescribir las aventuras que repitan estructura de forma evidente.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2139,
+        "line": 2143,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de las cinco misiones de Team Rocket y su progresión moral.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2140,
+        "line": 2144,
+        "lane": "mundo_vivo",
+        "text": "Verificar que el arco de las misiones se lea completo en orden.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2141,
+        "line": 2145,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de la infiltración y verificar que el disfraz se note en los diálogos.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2142,
+        "line": 2146,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de los rangos y verificar que el ascenso se celebre en escena.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2143,
+        "line": 2147,
+        "lane": "dimensiones",
+        "text": "Auditar los textos del final del arco de Team Rocket y su efecto en los habitantes.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2144,
+        "line": 2148,
+        "lane": "mundo_vivo",
+        "text": "Verificar que el final del arco se lea sin haber jugado otra dimensión antes.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2145,
+        "line": 2149,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de las cinco campañas y su coherencia con su identidad declarada.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2146,
+        "line": 2150,
+        "lane": "dimensiones",
+        "text": "Verificar que ninguna campaña use el conflicto de otra con otro nombre.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2147,
+        "line": 2151,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de los rivales de cada región y verificar que ninguno sea un clon.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2148,
+        "line": 2152,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de los profesores e investigadores del DLC.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2149,
+        "line": 2153,
+        "lane": "mundo_vivo",
+        "text": "Verificar que ningún investigador explique lo mismo que otro con otras palabras.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2150,
+        "line": 2154,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de los heridos de la base y verificar que cada uno tenga nombre y voz.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2151,
+        "line": 2155,
+        "lane": "mundo_vivo",
+        "text": "Verificar que ningún herido se repita como personaje en dos celdas distintas.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2152,
+        "line": 2156,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de los testigos de la Ruta de Dios y verificar que no repitan.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2153,
+        "line": 2157,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de la gruta de testigos y su función narrativa.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2154,
+        "line": 2158,
+        "lane": "canon",
+        "text": "Verificar que la gruta de testigos no contradiga el canon de Arceus.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:canon:arceus`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2155,
+        "line": 2159,
+        "lane": "dimensiones",
+        "text": "Auditar los textos del Rotom del Tiempo y su explicación del multiverso.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2156,
+        "line": 2160,
+        "lane": "dimensiones",
+        "text": "Verificar que la explicación del multiverso no confunda fragmento con dimensión.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2157,
+        "line": 2161,
+        "lane": "hubs",
+        "text": "Auditar los textos de Oak en su hub y verificar que su información sea correcta.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2158,
+        "line": 2162,
+        "lane": "hubs",
+        "text": "Verificar que Oak no anime a un jugador que ya completó todo.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2159,
+        "line": 2163,
+        "lane": "tono",
+        "text": "Auditar los textos de Maxine en ciudad Teckel y verificar su tono.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2160,
+        "line": 2164,
+        "lane": "dimensiones",
+        "text": "Verificar que ningún texto de Teckel quede como plantilla sin terminar.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2161,
+        "line": 2165,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de la Isla Espejo y de sus dieciséis jefes.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2162,
+        "line": 2166,
+        "lane": "dimensiones",
+        "text": "Verificar que ningún jefe de Isla Espejo repita el texto de otro.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2163,
+        "line": 2167,
+        "lane": "dimensiones",
+        "text": "Auditar los textos de los Pokégods y su presentación en combate.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2164,
+        "line": 2168,
+        "lane": "mundo_vivo",
+        "text": "Verificar que las formas ALFA, BETA y OMEGA se anuncien con texto distinto.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2165,
+        "line": 2169,
+        "lane": "gimnasios",
+        "text": "Auditar los textos de los diplomas y verificar su condiciones.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2166,
+        "line": 2170,
+        "lane": "gimnasios",
+        "text": "Verificar que la entrega del Diploma de la Liga Oscura esté en el texto y en el switch.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:diplomas`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2167,
+        "line": 2171,
+        "lane": "jefes",
+        "text": "Auditar los textos de la batalla final y verificar su peso dramático.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2168,
+        "line": 2172,
+        "lane": "mundo_vivo",
+        "text": "Verificar que el texto final no prometa una secuela inexistente.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2169,
+        "line": 2173,
+        "lane": "mundo_vivo",
+        "text": "Auditar los textos de los créditos y verificar las atribuciones.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2170,
+        "line": 2174,
+        "lane": "mundo_vivo",
+        "text": "Verificar que ninguna atribución falte o esté mal escrita.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2171,
+        "line": 2175,
+        "lane": "editor",
+        "text": "Auditar los textos de las pantallas de error del editor y su tono.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2172,
+        "line": 2176,
+        "lane": "editor",
+        "text": "Verificar que los textos del editor no usen jerga interna del motor.",
+        "estado": "pendiente_humano",
+        "sonda": "revisión editorial / partida",
+        "evidencia": "no verificable de forma estática",
+        "responsable": "Equipo editorial y playtest humano"
+      },
+      {
+        "id": 2173,
+        "line": 2177,
+        "lane": "infraestructura",
+        "text": "Verificar con `npm run verify:dialogos:queue` que no queden cajas mal formadas.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:dialogos:queue`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2174,
+        "line": 2178,
+        "lane": "infraestructura",
+        "text": "Ejecutar `node tools/apply_cajas_dialogo.mjs --verify` y resolver cada aviso.",
+        "estado": "verificado",
+        "sonda": "ejecutar `node tools/apply_cajas_dialogo.mjs --verify`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2175,
+        "line": 2179,
+        "lane": "infraestructura",
+        "text": "Recontar los textos tras las reescrituras y actualizar `content/plan2700_dialogos.json`.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:plan2700:dialogos`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2176,
+        "line": 2180,
+        "lane": "infraestructura",
+        "text": "Verificar que el conteo final de textos sea coherente con el número de eventos.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:plan900:dialogos`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2177,
+        "line": 2181,
+        "lane": "infraestructura",
+        "text": "Publicar el informe de diálogos en `docs/qa/dialogos_informe.md` con conteos y hallazgos.",
+        "estado": "verificado",
+        "sonda": "documento docs/qa/dialogos_informe.md",
+        "evidencia": "existe con sección LOTE 2 (030831ab6b98)"
+      },
+      {
+        "id": 2178,
+        "line": 2182,
+        "lane": "infraestructura",
+        "text": "Verificar que el informe liste cada texto reescrito y su motivo.",
+        "estado": "verificado",
+        "sonda": "documento docs/qa/dialogos_informe.md",
+        "evidencia": "existe con sección LOTE 2 (030831ab6b98)"
+      },
+      {
+        "id": 2179,
+        "line": 2183,
+        "lane": "infraestructura",
+        "text": "Verificar que ninguna reescritura haya cambiado el sentido de una escena clave.",
+        "estado": "verificado",
+        "sonda": "docs/qa/dialogos_informe.md · Reescrituras",
+        "evidencia": "0 reescrituras en la fase; sin cambio de sentido que verificar"
+      },
+      {
+        "id": 2180,
+        "line": 2184,
+        "lane": "infraestructura",
+        "text": "Verificar que las escenas clave hayan sido releídas por completo tras las reescrituras.",
+        "estado": "pendiente_humano",
+        "sonda": "releído completo de escenas clave",
+        "evidencia": "la releída exige contexto de escena y versión jugada",
+        "responsable": "Lectura humana · equipo editorial"
+      },
+      {
+        "id": 2181,
+        "line": 2185,
+        "lane": "infraestructura",
+        "text": "Marcar como cerrado el carril de diálogos con el volcado revisado y sin cajas vacías.",
+        "estado": "verificado",
+        "sonda": "documento docs/qa/dialogos_informe.md",
+        "evidencia": "existe con sección LOTE 2 (030831ab6b98)"
+      },
+      {
+        "id": 2182,
+        "line": 2186,
+        "lane": "infraestructura",
+        "text": "Verificar que ningún texto del DLC quede sin revisar en el volcado.",
+        "estado": "instrumentado",
+        "sonda": "13 reglas sobre todas las cajas",
+        "evidencia": "cada caja pasa por el control; la lectura de voz queda abierta",
+        "responsable": "Equipo editorial"
+      },
+      {
+        "id": 2183,
+        "line": 2187,
+        "lane": "infraestructura",
+        "text": "Verificar que el volcado se pueda regenerar después de cualquier cambio futuro.",
+        "estado": "verificado",
+        "sonda": "ejecutar `npm run verify:plan900:dialogos`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2184,
+        "line": 2188,
+        "lane": "infraestructura",
+        "text": "Añadir el volcado de diálogos al flujo de CI como comprobación de formato.",
+        "estado": "verificado",
+        "sonda": "ejecutar `node tools/qa/dialogos_formato_check.mjs`",
+        "evidencia": "exit 0"
+      },
+      {
+        "id": 2185,
+        "line": 2189,
+        "lane": "infraestructura",
+        "text": "Verificar que ese control no ralentice la suite más de lo aceptable.",
+        "estado": "verificado",
+        "sonda": "node tools/qa/dialogos_formato_check.mjs",
+        "evidencia": "corre en memoria sobre el volcado, sin red ni procesos externos"
+      },
+      {
+        "id": 2186,
+        "line": 2190,
+        "lane": "infraestructura",
+        "text": "Verificar que el control detecte cajas de una sola línea por error de relleno.",
+        "estado": "verificado",
+        "sonda": "autoprueba --selftest",
+        "evidencia": "detecta «A6 caja única por encima de 53 columnas»"
+      },
+      {
+        "id": 2187,
+        "line": 2191,
+        "lane": "infraestructura",
+        "text": "Verificar que el control detecte signos de apertura ausentes.",
+        "estado": "verificado",
+        "sonda": "autoprueba --selftest",
+        "evidencia": "detecta «A1 pregunta sin ¿» y «A2 exclamación sin ¡»"
+      },
+      {
+        "id": 2188,
+        "line": 2192,
+        "lane": "infraestructura",
+        "text": "Verificar que el control detecte comillas y guiones mal usados.",
+        "estado": "verificado",
+        "sonda": "autoprueba --selftest",
+        "evidencia": "detecta «A3 comillas rectas» y «A4 guion doble», «A4 guion con espacios»"
+      },
+      {
+        "id": 2189,
+        "line": 2193,
+        "lane": "infraestructura",
+        "text": "Verificar que el control detecte variables insertadas inexistentes.",
+        "estado": "verificado",
+        "sonda": "autoprueba --selftest",
+        "evidencia": "detecta «E3 variable vacía», «E3 variable fuera de rango»"
+      },
+      {
+        "id": 2190,
+        "line": 2194,
+        "lane": "infraestructura",
+        "text": "Cerrar el carril de diálogos con el control en CI y el informe publicado.",
+        "estado": "verificado",
+        "sonda": "documento docs/qa/dialogos_informe.md",
+        "evidencia": "existe con sección LOTE 2 (030831ab6b98)"
+      },
+      {
+        "id": 2191,
+        "line": 2195,
+        "lane": "playtest_apertura",
+        "text": "Abrir el carril de playtest real: nadie ha jugado el DLC de punta a punta todavía.",
+        "estado": "verificado",
+        "sonda": "docs/qa/playtest/",
+        "evidencia": "README con plantilla y 60 carpetas de sesión abiertas"
+      },
+      {
+        "id": 2192,
+        "line": 2196,
+        "lane": "playtest_apertura",
+        "text": "Escribir el guion de playtest con cuota de cobertura por sesión: celdas visitadas, eventos ejecutados y diálogos mostrados, no solo \"jugar\".",
+        "estado": "pendiente_fase",
+        "sonda": "guion con cuota por sesión",
+        "evidencia": "la cuota de celdas, eventos y diálogos se instala en docs/qa/playtest_cobertura.md",
+        "responsable": "LOTE 2 · fase 002"
+      },
+      {
+        "id": 2193,
+        "line": 2197,
+        "lane": "playtest_apertura",
+        "text": "Definir la ficha de sesión: fecha, versión, duración, hallazgos y capturas.",
+        "estado": "verificado",
+        "sonda": "documento docs/qa/playtest/README.md",
+        "evidencia": "existe con sección LOTE 2 (e67670580e1b)"
+      },
+      {
+        "id": 2194,
+        "line": 2198,
+        "lane": "playtest_apertura",
+        "text": "Crear `docs/qa/playtest/` y una carpeta por sesión.",
+        "estado": "verificado",
+        "sonda": "docs/qa/playtest/sesion-01 … sesion-60",
+        "evidencia": "60 carpetas con ficha mínima"
+      },
+      {
+        "id": 2195,
+        "line": 2199,
+        "lane": "playtest_apertura",
+        "text": "Sesión 1: arranque en frío, menú principal y primera partida.",
+        "estado": "pendiente_humano",
+        "sonda": "ficha de sesión 1",
+        "evidencia": "docs/qa/playtest/sesion-01/README.md sin cuota",
+        "responsable": "Playtest humano · sesión 1"
+      }
+    ]
+  },
+  "regenerar": "node tools/plan2700/fase_001_tanda_22.mjs",
+  "verificar": "node tools/plan2700/fase_001_tanda_22.mjs --verify"
+}
