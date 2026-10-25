@@ -2,10 +2,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
+import zlib from "node:zlib";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const file = path.join(ROOT, "content", "arceus_omega_qa_matrix.jsonl");
+// El corpus vive comprimido: 300 001 líneas son 4 MiB en gzip y 62,5 MiB en texto.
+const file = path.join(ROOT, "content", "arceus_omega_qa_matrix.jsonl.gz");
 if (!fs.existsSync(file)) throw new Error("Missing matrix; run generate_arceus_omega_qa_matrix.mjs");
+const entrada = fs.createReadStream(file).pipe(zlib.createGunzip());
 
 const expectedFamilies = { transaction: 120_000, battle: 90_000, map: 90_000 };
 const counts = { transaction: 0, battle: 0, map: 0 };
@@ -16,7 +19,7 @@ let manifest = null;
 let line = 0;
 let previous = -1;
 
-for await (const text of readline.createInterface({ input: fs.createReadStream(file), crlfDelay: Infinity })) {
+for await (const text of readline.createInterface({ input: entrada, crlfDelay: Infinity })) {
   line++;
   const row = JSON.parse(text);
   if (line === 1) {

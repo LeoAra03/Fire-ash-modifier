@@ -9208,36 +9208,32 @@
   ],
   "largestTracked": [
     {
-      "path": "content/arceus_omega_qa_matrix.jsonl",
-      "bytes": 65493172
-    },
-    {
       "path": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
-      "bytes": 63733034
+      "bytes": 63733443
     },
     {
       "path": "Fire-Ash-Scripts-Corregidos.zip",
-      "bytes": 48853734
+      "bytes": 48854143
     }
   ],
   "packages": [
     {
       "path": "Fire-Ash-Scripts-Corregidos.zip",
-      "bytes": 48853734,
+      "bytes": 48854143,
       "readable": true,
       "entries": 2658,
       "forbidden": []
     },
     {
       "path": "Scripts_corregido/Dimensional_Nightmare_QA.zip",
-      "bytes": 13293412,
+      "bytes": 13294668,
       "readable": true,
       "entries": 501,
       "forbidden": []
     },
     {
       "path": "Scripts_corregido/Fire_Ash_Paquete_Directo.zip",
-      "bytes": 63733034,
+      "bytes": 63733443,
       "readable": true,
       "entries": 2637,
       "forbidden": []

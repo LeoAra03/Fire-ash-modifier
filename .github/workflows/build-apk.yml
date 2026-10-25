@@ -41,6 +41,38 @@ jobs:
         # Fire_Ash_Ciudad_Teckel_Paraiso.zip también es artefacto ignorado por git:
         # verify:teckel lo audita, así que se regenera aquí antes de verify:all.
         run: npm run build:teckel
+      - name: Control de formato de diálogos (volcado + canal de cajas)
+        # El volcado de diálogos ya está en el repo como artefacto verificable:
+        # aquí se comprueba su formato (códigos de escape que el motor trata,
+        # variables existentes, comillas y rayas, cajas vacías), se autoprueba
+        # el detector y se verifica que el artefacto de la tanda 22 siga al día.
+        run: |
+          node tools/qa/dialogos_formato_check.mjs --selftest
+          npm run verify:dialogos:formato
+          npm run verify:plan2700:tanda22
+
+      - name: Guion de playtest y regresiones
+        # El guion reparte el 100 % del contenido en cuotas por sesión y la puerta
+        # de regresiones exige prueba para todo hallazgo grave corregido. Ninguna
+        # de las dos inventa una partida: el estado sigue siendo manual_pending.
+        run: |
+          npm run verify:playtest:guion
+          node tools/qa/playtest_regresiones.mjs --selftest
+          npm run verify:playtest:regresiones
+          npm run verify:plan2700:tanda23
+
+      - name: Presupuesto de rendimiento y peso del repositorio
+        # Mide densidad por mapa (eventos y eventos automáticos), peso de
+        # Data/Graphics/Audio, duplicados de audio y archivos versionados por
+        # encima de 20 MiB. Un mapa por encima del techo sin excepción escrita
+        # tumba el job; también se comprueba que el corpus de QA comprimido sea
+        # exactamente lo que genera su script.
+        run: |
+          node tools/qa/rendimiento_presupuesto.mjs --selftest
+          npm run verify:rendimiento:presupuesto
+          npm run verify:arceus:omega:qa:fuente
+          npm run verify:plan2700:tanda24
+
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas
