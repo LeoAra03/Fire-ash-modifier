@@ -41,6 +41,16 @@ jobs:
         # Fire_Ash_Ciudad_Teckel_Paraiso.zip también es artefacto ignorado por git:
         # verify:teckel lo audita, así que se regenera aquí antes de verify:all.
         run: npm run build:teckel
+      - name: Control de formato de diálogos (volcado + canal de cajas)
+        # El volcado de diálogos ya está en el repo como artefacto verificable:
+        # aquí se comprueba su formato (códigos de escape que el motor trata,
+        # variables existentes, comillas y rayas, cajas vacías), se autoprueba
+        # el detector y se verifica que el artefacto de la tanda 22 siga al día.
+        run: |
+          node tools/qa/dialogos_formato_check.mjs --selftest
+          npm run verify:dialogos:formato
+          npm run verify:plan2700:tanda22
+
       - name: Pruebas y auditoría completa de paquetes y mapas
         run: npm run verify:all
       - name: Pipeline narrativo con compuertas externas

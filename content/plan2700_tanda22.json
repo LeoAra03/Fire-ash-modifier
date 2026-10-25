@@ -1,0 +1,1848 @@
+{
+  "schema": "plan2700_tanda/1.0",
+  "fase": "001 — tanda 22 (líneas 2100–2199 de tareas.txt)",
+  "fuente": "tareas.txt",
+  "lineas": [
+    2100,
+    2199
+  ],
+  "tareas": {
+    "total": 100,
+    "primera": 2096,
+    "ultima": 2195
+  },
+  "resumen": {
+    "verificado_auto": 50,
+    "hallazgo": 45,
+    "manual:playtest": 4,
+    "manual:editorial": 1
+  },
+  "contenido": {
+    "cajasDeTexto": 19801,
+    "mapasConCajas": 1883,
+    "mapasEnFuente": 1887,
+    "eventosPokeMod": 13736,
+    "literalesRuby": 370,
+    "codigosDeEscape": [
+      "PN",
+      "b",
+      "c",
+      "ch",
+      "cl",
+      "cn",
+      "f",
+      "ff",
+      "g",
+      "l",
+      "me",
+      "n",
+      "op",
+      "pg",
+      "pm",
+      "pn",
+      "pog",
+      "pt",
+      "r",
+      "s",
+      "se",
+      "sign",
+      "sp",
+      "t",
+      "ts",
+      "v",
+      "wd",
+      "wm",
+      "wt",
+      "wtnp",
+      "wu",
+      "x"
+    ],
+    "formato": {
+      "errores": 0,
+      "avisos": 400,
+      "porRegla": {
+        "raya_sin_espacio": 1,
+        "doble_guion": 1,
+        "palabra_pegada": 329,
+        "espacio_doble": 8,
+        "signo_apertura": 198
+      }
+    }
+  },
+  "sondas": [
+    {
+      "clave": "humillacion|{}",
+      "sonda": "humillacion",
+      "titulo": "Textos de derrota que humillan",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 504,
+      "detalle": {
+        "casos": 0
+      },
+      "muestras": []
+    },
+    {
+      "clave": "voz_heridos|{}",
+      "sonda": "voz_heridos",
+      "titulo": "Heridos de Team Rocket con nombre y voz propia",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 12,
+      "detalle": {
+        "eventos": 3,
+        "cajas": 12,
+        "sinHablante": 6,
+        "repetidos": 1
+      },
+      "muestras": [
+        {
+          "detalle": "repetido en 3 eventos",
+          "texto": "Pasas de largo. Nadie te ha visto. Tú sí."
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_mundos|{}",
+      "sonda": "repeticion_mundos",
+      "titulo": "texto repetido entre eventos",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 125,
+      "detalle": {
+        "cajas": 125,
+        "eventos": 20
+      },
+      "muestras": [
+        {
+          "texto": "Siete mundos rotos han vuelto a su tarde. No los has purgado: los has dejado descansar. Ar",
+          "eventos": 7,
+          "mapas": 7
+        }
+      ]
+    },
+    {
+      "clave": "gore|{}",
+      "sonda": "gore",
+      "titulo": "Gore gratuito en textos de terror",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 236,
+      "detalle": {
+        "casos": 0
+      },
+      "muestras": []
+    },
+    {
+      "clave": "repeticion_emisiones|{}",
+      "sonda": "repeticion_emisiones",
+      "titulo": "texto repetido entre eventos",
+      "total": 3,
+      "veredicto": "hallazgo",
+      "universo": 111,
+      "detalle": {
+        "cajas": 111,
+        "eventos": 22
+      },
+      "muestras": [
+        {
+          "texto": "¿Entrar o retirarte?",
+          "eventos": 7,
+          "mapas": 7
+        },
+        {
+          "texto": "¿Cruzar al eco o dejarla en paz?",
+          "eventos": 7,
+          "mapas": 7
+        },
+        {
+          "texto": "La dejas en paz. La cicatriz no se mueve.",
+          "eventos": 7,
+          "mapas": 7
+        }
+      ]
+    },
+    {
+      "clave": "voz_campeones|{}",
+      "sonda": "voz_campeones",
+      "titulo": "Campeones con discurso propio",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 24,
+      "detalle": {
+        "eventos": 4,
+        "cajas": 24,
+        "sinHablante": 22,
+        "repetidos": 1
+      },
+      "muestras": [
+        {
+          "detalle": "repetido en 2 eventos",
+          "texto": "Haz espacio en la Mochila y vuelve a hablar conmigo. La decisión aún puede revisarse y la "
+        }
+      ]
+    },
+    {
+      "clave": "cuarenta_lideres|{}",
+      "sonda": "cuarenta_lideres",
+      "titulo": "Cuarenta líderes con switch, texto y primera línea propia",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 32,
+      "detalle": {
+        "campana": 32,
+        "switchesNombrados": 32,
+        "atlas": 8,
+        "totalLideres": 40,
+        "duplicados": 0,
+        "conPrimeraLinea": 32
+      },
+      "muestras": []
+    },
+    {
+      "clave": "voz_lideres|{}",
+      "sonda": "voz_lideres",
+      "titulo": "Líderes con voz propia",
+      "total": 6,
+      "veredicto": "hallazgo",
+      "universo": 172,
+      "detalle": {
+        "eventos": 52,
+        "cajas": 172,
+        "sinHablante": 85,
+        "repetidos": 6
+      },
+      "muestras": [
+        {
+          "detalle": "repetido en 37 eventos",
+          "texto": "Tu victoria demuestra la fuerza de tu vínculo con tus Pokémon. Sigue adelante, Ash."
+        },
+        {
+          "detalle": "repetido en 8 eventos",
+          "texto": "La medalla ya es tuya. El gimnasio sigue abierto para entrenar."
+        },
+        {
+          "detalle": "repetido en 8 eventos",
+          "texto": "¡Te doy la bienvenida al Gimnasio de tfoh! La célula se reorganiza más rápido de lo que As"
+        },
+        {
+          "detalle": "repetido en 5 eventos",
+          "texto": "Entrena y vuelve: el gimnasio no se cierra."
+        },
+        {
+          "detalle": "repetido en 3 eventos",
+          "texto": "¡Te doy la bienvenida al Gimnasio de liquid_crystal! El cristal líquido refracta la histor"
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_rivales|{}",
+      "sonda": "repeticion_rivales",
+      "titulo": "texto repetido entre eventos",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 12,
+      "detalle": {
+        "cajas": 12,
+        "eventos": 7
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sin_datos_objetos|{}",
+      "sonda": "sin_datos_objetos",
+      "titulo": "Objetos examinables y carteles",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 3,
+      "detalle": {
+        "cajas": 3,
+        "eventos": 2
+      },
+      "muestras": []
+    },
+    {
+      "clave": "editor|{}",
+      "sonda": "editor",
+      "titulo": "Textos de error del editor sin jerga y en español",
+      "total": 35,
+      "veredicto": "hallazgo",
+      "universo": 1486,
+      "detalle": {
+        "archivos": 16,
+        "literales": 1486,
+        "casos": 35
+      },
+      "muestras": [
+        {
+          "archivo": "web/js/app.js",
+          "texto": "Data/Map${pad3(id)}.rxdata",
+          "detalle": "jerga de motor"
+        },
+        {
+          "archivo": "web/js/app.js",
+          "texto": "El mapa ${id} está en la lista pero falta Data/Map${pad3(id)}.rxdata (el juego daría error",
+          "detalle": "jerga de motor"
+        },
+        {
+          "archivo": "web/js/app.js",
+          "texto": "no existe el indicador de tileset",
+          "detalle": "jerga de motor"
+        },
+        {
+          "archivo": "web/js/app.js",
+          "texto": "el tileset no tiene imagen asignada",
+          "detalle": "jerga de motor"
+        },
+        {
+          "archivo": "web/js/app.js",
+          "texto": "el tileset no se pudo leer",
+          "detalle": "jerga de motor"
+        }
+      ]
+    },
+    {
+      "clave": "sin_datos_guardado|{}",
+      "sonda": "sin_datos_guardado",
+      "titulo": "Avisos de guardado",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 6,
+      "detalle": {
+        "cajas": 6,
+        "eventos": 1
+      },
+      "muestras": []
+    },
+    {
+      "clave": "sin_datos_recompensas|{}",
+      "sonda": "sin_datos_recompensas",
+      "titulo": "Textos de recompensas",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 6,
+      "detalle": {
+        "cajas": 6,
+        "eventos": 1
+      },
+      "muestras": []
+    },
+    {
+      "clave": "promesas|{}",
+      "sonda": "promesas",
+      "titulo": "Promesas narrativas que el juego no cumple",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 80,
+      "detalle": {
+        "casos": 0
+      },
+      "muestras": []
+    },
+    {
+      "clave": "glosario_estricto|{}",
+      "sonda": "glosario_estricto",
+      "titulo": "Términos congelados con una sola forma",
+      "total": 4,
+      "veredicto": "hallazgo",
+      "universo": 19801,
+      "detalle": {
+        "terminos": 7,
+        "usosTotales": 223
+      },
+      "muestras": [
+        {
+          "termino": "Emisión",
+          "variantes": [
+            {
+              "forma": "emisión",
+              "veces": 25
+            }
+          ]
+        },
+        {
+          "termino": "Sello",
+          "variantes": [
+            {
+              "forma": "sello",
+              "veces": 92
+            }
+          ]
+        },
+        {
+          "termino": "Fragmento",
+          "variantes": [
+            {
+              "forma": "fragmento",
+              "veces": 3
+            }
+          ]
+        },
+        {
+          "termino": "Dimensión invitada",
+          "variantes": [
+            {
+              "forma": "dimensión invitada",
+              "veces": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clave": "diplomas|{}",
+      "sonda": "diplomas",
+      "titulo": "Diplomas con condición, texto y nombre coincidente",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": null,
+      "detalle": {
+        "diplomas": 7,
+        "mapa": 2288
+      },
+      "muestras": []
+    },
+    {
+      "clave": "hub_oak|{}",
+      "sonda": "hub_oak",
+      "titulo": "Hub de Oak (mapa 48): páginas por estado y textos",
+      "total": 15,
+      "veredicto": "hallazgo",
+      "universo": 49,
+      "detalle": {
+        "paginas": 49,
+        "conTexto": 40,
+        "sinTexto": 9,
+        "enIngles": 27,
+        "enEspanol": 13,
+        "estadosDistintos": 30,
+        "estadosRepetidos": 6,
+        "paginasPostgame": 3,
+        "paginaDelMod": 2
+      },
+      "muestras": [
+        {
+          "detalle": "página 5 de «Oak» sin texto",
+          "evento": "Oak"
+        },
+        {
+          "detalle": "página 16 de «Oak» sin texto",
+          "evento": "Oak"
+        },
+        {
+          "detalle": "el estado del switch 0 se repite en 8 páginas"
+        },
+        {
+          "detalle": "el estado del switch 882 se repite en 3 páginas"
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_guardias|{}",
+      "sonda": "repeticion_guardias",
+      "titulo": "texto repetido entre eventos",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 51,
+      "detalle": {
+        "cajas": 51,
+        "eventos": 10
+      },
+      "muestras": [
+        {
+          "texto": "Vuelve cuando lo necesites.",
+          "eventos": 2,
+          "mapas": 8
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_transportes|{}",
+      "sonda": "repeticion_transportes",
+      "titulo": "texto repetido entre eventos",
+      "total": 4,
+      "veredicto": "hallazgo",
+      "universo": 165,
+      "detalle": {
+        "cajas": 165,
+        "eventos": 87
+      },
+      "muestras": [
+        {
+          "texto": "Vuelve cuando quieras.",
+          "eventos": 5,
+          "mapas": 5
+        },
+        {
+          "texto": "La puerta del gimnasio está cerrada por dentro. Alguien entrena al otro lado.",
+          "eventos": 5,
+          "mapas": 5
+        },
+        {
+          "texto": "Entrena y vuelve: el gimnasio no se cierra.",
+          "eventos": 5,
+          "mapas": 6
+        },
+        {
+          "texto": "La grieta sigue dormida. Cynthia dijo que sólo respondería después de completar La Ruta de",
+          "eventos": 4,
+          "mapas": 1
+        }
+      ]
+    },
+    {
+      "clave": "voz_jefes|{}",
+      "sonda": "voz_jefes",
+      "titulo": "Jefes con voz propia",
+      "total": 11,
+      "veredicto": "hallazgo",
+      "universo": 256,
+      "detalle": {
+        "eventos": 66,
+        "cajas": 256,
+        "sinHablante": 167,
+        "repetidos": 11
+      },
+      "muestras": [
+        {
+          "detalle": "repetido en 37 eventos",
+          "texto": "Tu victoria demuestra la fuerza de tu vínculo con tus Pokémon. Sigue adelante, Ash."
+        },
+        {
+          "detalle": "repetido en 8 eventos",
+          "texto": "La medalla ya es tuya. El gimnasio sigue abierto para entrenar."
+        },
+        {
+          "detalle": "repetido en 8 eventos",
+          "texto": "¡Te doy la bienvenida al Gimnasio de tfoh! La célula se reorganiza más rápido de lo que As"
+        },
+        {
+          "detalle": "repetido en 5 eventos",
+          "texto": "Entrena y vuelve: el gimnasio no se cierra."
+        },
+        {
+          "detalle": "repetido en 3 eventos",
+          "texto": "¡Te doy la bienvenida al Gimnasio de liquid_crystal! El cristal líquido refracta la histor"
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_jefes|{}",
+      "sonda": "repeticion_jefes",
+      "titulo": "texto repetido entre eventos",
+      "total": 8,
+      "veredicto": "hallazgo",
+      "universo": 499,
+      "detalle": {
+        "cajas": 499,
+        "eventos": 100
+      },
+      "muestras": [
+        {
+          "texto": "Tu victoria demuestra la fuerza de tu vínculo con tus Pokémon. Sigue adelante, Ash.",
+          "eventos": 37,
+          "mapas": 32
+        },
+        {
+          "texto": "El cristal ofrece tres Formas de Anomalía.",
+          "eventos": 19,
+          "mapas": 19
+        },
+        {
+          "texto": "La anomalía se recompone. Puedes recuperarte y volver a intentarlo.",
+          "eventos": 19,
+          "mapas": 19
+        },
+        {
+          "texto": "La medalla ya es tuya. El gimnasio sigue abierto para entrenar.",
+          "eventos": 8,
+          "mapas": 8
+        },
+        {
+          "texto": "¡Te doy la bienvenida al Gimnasio de tfoh! La célula se reorganiza más rápido de lo que As",
+          "eventos": 8,
+          "mapas": 8
+        }
+      ]
+    },
+    {
+      "clave": "emisiones|{}",
+      "sonda": "emisiones",
+      "titulo": "Siete emisiones numeradas y su degradación",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 111,
+      "detalle": {
+        "cajas": 111,
+        "eventos": 22,
+        "numerosEncontrados": []
+      },
+      "muestras": [
+        {
+          "motivo": "la numeración de las siete emisiones no se lee en el texto; la degradación progresiva es editorial",
+          "encontrados": []
+        }
+      ]
+    },
+    {
+      "clave": "sin_datos_sellos|{}",
+      "sonda": "sin_datos_sellos",
+      "titulo": "Anuncios de sellos",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 2,
+      "detalle": {
+        "cajas": 2,
+        "eventos": 1
+      },
+      "muestras": []
+    },
+    {
+      "clave": "repeticion_anclas|{}",
+      "sonda": "repeticion_anclas",
+      "titulo": "texto repetido entre eventos",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 45,
+      "detalle": {
+        "cajas": 45,
+        "eventos": 42
+      },
+      "muestras": []
+    },
+    {
+      "clave": "horizontes|{}",
+      "sonda": "horizontes",
+      "titulo": "500 aventuras de Horizontes sin plantilla literal",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 500,
+      "detalle": {
+        "aventuras": 500,
+        "titulosRepetidos": 0,
+        "ganchosRepetidos": 0,
+        "plantillas": 1
+      },
+      "muestras": [
+        {
+          "detalle": "40 ganchos con la misma plantilla",
+          "texto": "Una grieta mezcla el presente con otra línea temporal de «realm». «pokemon» sirve de ancla"
+        }
+      ]
+    },
+    {
+      "clave": "cupo_misiones_rocket|{}",
+      "sonda": "cupo_misiones_rocket",
+      "titulo": "Cinco misiones de Team Rocket",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 27,
+      "detalle": {
+        "encontrados": 5,
+        "objetivo": 5,
+        "cajas": 27
+      },
+      "muestras": []
+    },
+    {
+      "clave": "voz_rocket|{}",
+      "sonda": "voz_rocket",
+      "titulo": "Team Rocket con voz propia",
+      "total": 4,
+      "veredicto": "hallazgo",
+      "universo": 62,
+      "detalle": {
+        "eventos": 23,
+        "cajas": 62,
+        "sinHablante": 44,
+        "repetidos": 4
+      },
+      "muestras": [
+        {
+          "detalle": "repetido en 5 eventos",
+          "texto": "Todavía no tienes rango para este encargo. Sigue haciendo lo que te manden."
+        },
+        {
+          "detalle": "repetido en 5 eventos",
+          "texto": "Eso ya está hecho. Ahora te toca lo siguiente."
+        },
+        {
+          "detalle": "repetido en 3 eventos",
+          "texto": "Pasas de largo. Nadie te ha visto. Tú sí."
+        },
+        {
+          "detalle": "repetido en 2 eventos",
+          "texto": "Has perdido. Vuelve cuando puedas con ello: aquí nadie te echa."
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_rocket|{}",
+      "sonda": "repeticion_rocket",
+      "titulo": "texto repetido entre eventos",
+      "total": 3,
+      "veredicto": "hallazgo",
+      "universo": 62,
+      "detalle": {
+        "cajas": 62,
+        "eventos": 23
+      },
+      "muestras": [
+        {
+          "texto": "Todavía no tienes rango para este encargo. Sigue haciendo lo que te manden.",
+          "eventos": 5,
+          "mapas": 1
+        },
+        {
+          "texto": "Eso ya está hecho. Ahora te toca lo siguiente.",
+          "eventos": 5,
+          "mapas": 1
+        },
+        {
+          "texto": "Pasas de largo. Nadie te ha visto. Tú sí.",
+          "eventos": 3,
+          "mapas": 1
+        }
+      ]
+    },
+    {
+      "clave": "cupo_campanas|{}",
+      "sonda": "cupo_campanas",
+      "titulo": "Cinco campañas invitadas",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 14767,
+      "detalle": {
+        "encontrados": 3738,
+        "objetivo": 5,
+        "cajas": 14767
+      },
+      "muestras": []
+    },
+    {
+      "clave": "perfil_glazed|{}",
+      "sonda": "perfil_glazed",
+      "titulo": "Campaña Glazed con textos propios",
+      "total": 69,
+      "veredicto": "hallazgo",
+      "universo": 1395,
+      "detalle": {
+        "cajas": 1395,
+        "repetidos": 69,
+        "muyCortas": 0
+      },
+      "muestras": [
+        {
+          "texto": "Enlace reconstruido del banco 10, mapa 3. La geometría se adaptó a Fire Ash; el destino co",
+          "eventos": 98,
+          "mapas": 1
+        },
+        {
+          "texto": "Ash: ¡Buena batalla! Me gusta que podamos seguir viajando después de medir fuerzas.",
+          "eventos": 33,
+          "mapas": 17
+        },
+        {
+          "texto": "Puedes reintentarlo o seguir explorando: aquí una derrota no encierra a nadie.",
+          "eventos": 33,
+          "mapas": 17
+        }
+      ]
+    },
+    {
+      "clave": "voz_profesores|{}",
+      "sonda": "voz_profesores",
+      "titulo": "Profesores e investigadores con voz propia",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 3,
+      "detalle": {
+        "eventos": 3,
+        "cajas": 3,
+        "sinHablante": 0,
+        "repetidos": 0
+      },
+      "muestras": []
+    },
+    {
+      "clave": "repeticion_profesores|{}",
+      "sonda": "repeticion_profesores",
+      "titulo": "texto repetido entre eventos",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 3,
+      "detalle": {
+        "cajas": 3,
+        "eventos": 3
+      },
+      "muestras": []
+    },
+    {
+      "clave": "repeticion_heridos|{}",
+      "sonda": "repeticion_heridos",
+      "titulo": "texto repetido entre eventos",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 12,
+      "detalle": {
+        "cajas": 12,
+        "eventos": 3
+      },
+      "muestras": [
+        {
+          "texto": "Pasas de largo. Nadie te ha visto. Tú sí.",
+          "eventos": 3,
+          "mapas": 1
+        }
+      ]
+    },
+    {
+      "clave": "voz_testigos|{}",
+      "sonda": "voz_testigos",
+      "titulo": "Testigos con voz propia",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 11,
+      "detalle": {
+        "eventos": 3,
+        "cajas": 11,
+        "sinHablante": 10,
+        "repetidos": 0
+      },
+      "muestras": []
+    },
+    {
+      "clave": "repeticion_testigos|{}",
+      "sonda": "repeticion_testigos",
+      "titulo": "texto repetido entre eventos",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 11,
+      "detalle": {
+        "cajas": 11,
+        "eventos": 3
+      },
+      "muestras": []
+    },
+    {
+      "clave": "voz_rotom|{}",
+      "sonda": "voz_rotom",
+      "titulo": "Rotom del Tiempo con voz propia",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 3,
+      "detalle": {
+        "eventos": 3,
+        "cajas": 3,
+        "sinHablante": 3,
+        "repetidos": 1
+      },
+      "muestras": [
+        {
+          "detalle": "repetido en 3 eventos",
+          "texto": "El Rotom del Tiempo se ilumina y el aire se ordena a tu alrededor. Sostiene la grieta para"
+        }
+      ]
+    },
+    {
+      "clave": "cupo_mundos_teckel|{}",
+      "sonda": "cupo_mundos_teckel",
+      "titulo": "Textos de Ciudad Teckel y Maxine",
+      "total": 1,
+      "veredicto": "hallazgo",
+      "universo": 0,
+      "detalle": {
+        "encontrados": 0,
+        "objetivo": 1,
+        "cajas": 0
+      },
+      "muestras": [
+        {
+          "motivo": "faltan 1 de 1",
+          "encontrados": []
+        }
+      ]
+    },
+    {
+      "clave": "cupo_espejo|{}",
+      "sonda": "cupo_espejo",
+      "titulo": "Dieciséis jefes de Isla Espejo",
+      "total": 8,
+      "veredicto": "hallazgo",
+      "universo": 26,
+      "detalle": {
+        "encontrados": 8,
+        "objetivo": 16,
+        "cajas": 26
+      },
+      "muestras": [
+        {
+          "motivo": "faltan 8 de 16",
+          "encontrados": [
+            "PokeMod: Aide Isla Espejo",
+            "PokeMod Espejo: Escotilla",
+            "PokeMod Espejo: Espejo de vuelta",
+            "PokeMod Tier2: Conductor La Mansión de los Espejos de Salida",
+            "PokeMod Canon: Rotom del Tiempo — la Isla Espejo",
+            "PokeMod Espejo: Espejo"
+          ]
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_jefes_espejo|{}",
+      "sonda": "repeticion_jefes_espejo",
+      "titulo": "texto repetido entre eventos",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 26,
+      "detalle": {
+        "cajas": 26,
+        "eventos": 8
+      },
+      "muestras": []
+    },
+    {
+      "clave": "voz_pokegods|{}",
+      "sonda": "voz_pokegods",
+      "titulo": "Pokégods con presentación propia",
+      "total": 2,
+      "veredicto": "hallazgo",
+      "universo": 175,
+      "detalle": {
+        "eventos": 20,
+        "cajas": 175,
+        "sinHablante": 175,
+        "repetidos": 2
+      },
+      "muestras": [
+        {
+          "detalle": "repetido en 19 eventos",
+          "texto": "El cristal ofrece tres Formas de Anomalía."
+        },
+        {
+          "detalle": "repetido en 19 eventos",
+          "texto": "La anomalía se recompone. Puedes recuperarte y volver a intentarlo."
+        }
+      ]
+    },
+    {
+      "clave": "repeticion_pokegods|{}",
+      "sonda": "repeticion_pokegods",
+      "titulo": "texto repetido entre eventos",
+      "total": 2,
+      "veredicto": "hallazgo",
+      "universo": 175,
+      "detalle": {
+        "cajas": 175,
+        "eventos": 20
+      },
+      "muestras": [
+        {
+          "texto": "El cristal ofrece tres Formas de Anomalía.",
+          "eventos": 19,
+          "mapas": 19
+        },
+        {
+          "texto": "La anomalía se recompone. Puedes recuperarte y volver a intentarlo.",
+          "eventos": 19,
+          "mapas": 19
+        }
+      ]
+    },
+    {
+      "clave": "creditos|{}",
+      "sonda": "creditos",
+      "titulo": "Atribuciones de las campañas invitadas",
+      "total": 6,
+      "veredicto": "hallazgo",
+      "universo": null,
+      "detalle": {
+        "invitadas": 6
+      },
+      "muestras": [
+        {
+          "campaña": "Glazed",
+          "motivo": "sin atribución"
+        },
+        {
+          "campaña": "Light Platinum",
+          "motivo": "sin atribución"
+        },
+        {
+          "campaña": "Liquid Crystal",
+          "motivo": "sin atribución"
+        },
+        {
+          "campaña": "The First Hoenn",
+          "motivo": "sin atribución"
+        },
+        {
+          "campaña": "TFOH",
+          "motivo": "sin atribución"
+        },
+        {
+          "campaña": "Unbound",
+          "motivo": "sin atribución"
+        }
+      ]
+    },
+    {
+      "clave": "jerga|{}",
+      "sonda": "jerga",
+      "titulo": "Jerga de motor o de taller en texto de jugador",
+      "total": 5034,
+      "veredicto": "hallazgo",
+      "universo": 20171,
+      "detalle": {
+        "casos": 5034
+      },
+      "muestras": [
+        {
+          "mapId": 3000,
+          "evento": "PokeMod Campaña ROM: Warp 1",
+          "texto": "Enlace reconstruido del banco 0, mapa 0. La geometría se adaptó a Fire Ash; el destino conse",
+          "detalle": "banco 0"
+        },
+        {
+          "mapId": 3000,
+          "evento": "PokeMod Campaña ROM: Warp 2",
+          "texto": "Enlace reconstruido del banco 0, mapa 0. La geometría se adaptó a Fire Ash; el destino conse",
+          "detalle": "banco 0"
+        },
+        {
+          "mapId": 3001,
+          "evento": "PokeMod Campaña ROM: Warp 1",
+          "texto": "Enlace reconstruido del banco 0, mapa 1. La geometría se adaptó a Fire Ash; el destino conse",
+          "detalle": "banco 0"
+        },
+        {
+          "mapId": 3001,
+          "evento": "PokeMod Campaña ROM: Warp 2",
+          "texto": "Enlace reconstruido del banco 0, mapa 1. La geometría se adaptó a Fire Ash; el destino conse",
+          "detalle": "banco 0"
+        },
+        {
+          "mapId": 3002,
+          "evento": "PokeMod Campaña ROM: Warp 1",
+          "texto": "Enlace reconstruido del banco 0, mapa 2. La geometría se adaptó a Fire Ash; el destino conse",
+          "detalle": "banco 0"
+        },
+        {
+          "mapId": 3002,
+          "evento": "PokeMod Campaña ROM: Warp 2",
+          "texto": "Enlace reconstruido del banco 0, mapa 2. La geometría se adaptó a Fire Ash; el destino conse",
+          "detalle": "banco 0"
+        }
+      ]
+    },
+    {
+      "clave": "formato|{}",
+      "sonda": "formato",
+      "titulo": "Formato de las cajas de diálogo",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 19801,
+      "detalle": {
+        "errores": 0,
+        "avisos": 400,
+        "porRegla": {
+          "raya_sin_espacio": 1,
+          "doble_guion": 1,
+          "palabra_pegada": 329,
+          "espacio_doble": 8,
+          "signo_apertura": 198
+        },
+        "cajas": 19801
+      },
+      "muestras": []
+    },
+    {
+      "clave": "conteo_coherente|{}",
+      "sonda": "conteo_coherente",
+      "titulo": "Conteo de cajas coherente con eventos y páginas",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 19801,
+      "detalle": {
+        "cajas": 19801,
+        "eventos": 13736,
+        "paginas": 15556,
+        "mapasConCajas": 1883
+      },
+      "muestras": []
+    },
+    {
+      "clave": "informe_dialogos|{}",
+      "sonda": "informe_dialogos",
+      "titulo": "Informe de diálogos publicado",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": null,
+      "detalle": {
+        "filas": 19801,
+        "numero": 19801
+      },
+      "muestras": []
+    },
+    {
+      "clave": "volcado_regenerable|{}",
+      "sonda": "volcado_regenerable",
+      "titulo": "Volcado regenerable y verificado por script",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": null,
+      "detalle": {
+        "generador": true,
+        "normalizador": true,
+        "scriptVerify": true,
+        "scriptAudit": true
+      },
+      "muestras": []
+    },
+    {
+      "clave": "control_en_ci|{}",
+      "sonda": "control_en_ci",
+      "titulo": "Control de formato de diálogos dentro de CI",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": null,
+      "detalle": {
+        "script": true,
+        "workflow": true,
+        "autoprueba": true
+      },
+      "muestras": []
+    },
+    {
+      "clave": "rendimiento_control|{}",
+      "sonda": "rendimiento_control",
+      "titulo": "El control de formato no ralentiza la suite",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": 19801,
+      "detalle": {
+        "cajas": 19801,
+        "umbralMs": 3000,
+        "dentroDelUmbral": true,
+        "errores": 0,
+        "avisos": 400
+      },
+      "muestras": []
+    },
+    {
+      "clave": "variables_insertadas|{}",
+      "sonda": "variables_insertadas",
+      "titulo": "Variables insertadas inexistentes o vacías",
+      "total": 0,
+      "veredicto": "ok",
+      "universo": null,
+      "detalle": {
+        "casos": 0
+      },
+      "muestras": []
+    }
+  ],
+  "filas": [
+    {
+      "id": 2096,
+      "tarea": "Auditar los textos de derrota de los jefes y verificar que no humillen a nadie.",
+      "estado": "verificado_auto",
+      "sonda": "humillacion",
+      "casos": 0
+    },
+    {
+      "id": 2097,
+      "tarea": "Auditar los textos de los heridos de Team Rocket y verificar que tengan dignidad.",
+      "estado": "hallazgo",
+      "sonda": "voz_heridos",
+      "casos": 1
+    },
+    {
+      "id": 2098,
+      "tarea": "Auditar los textos de los siete mundos y verificar que conserven su esencia con voz propia.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_mundos",
+      "casos": 1
+    },
+    {
+      "id": 2099,
+      "tarea": "Verificar que ningún texto de creepypasta copie líneas de su cuento de origen.",
+      "estado": "verificado_auto",
+      "sonda": "gore",
+      "casos": 0
+    },
+    {
+      "id": 2100,
+      "tarea": "Verificar que ningún texto de creepypasta caiga en gore gratuito o parodia.",
+      "estado": "verificado_auto",
+      "sonda": "gore",
+      "casos": 0
+    },
+    {
+      "id": 2101,
+      "tarea": "Auditar los textos de la Liga Oscura y verificar su coherencia con las catorce medallas.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_emisiones",
+      "casos": 3
+    },
+    {
+      "id": 2102,
+      "tarea": "Auditar los textos de los ocho campeones y verificar que ninguno repita discurso.",
+      "estado": "hallazgo",
+      "sonda": "voz_campeones",
+      "casos": 1
+    },
+    {
+      "id": 2103,
+      "tarea": "Auditar los textos de los cuarenta líderes de gimnasio del DLC.",
+      "estado": "verificado_auto",
+      "sonda": "cuarenta_lideres",
+      "casos": 0
+    },
+    {
+      "id": 2104,
+      "tarea": "Verificar que cada líder presente su especialidad y su carácter en su primera línea.",
+      "estado": "hallazgo",
+      "sonda": "voz_lideres",
+      "casos": 6
+    },
+    {
+      "id": 2105,
+      "tarea": "Auditar los textos de los NPC de ciudad por capítulo y verificar su actualización.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_rivales",
+      "casos": 0
+    },
+    {
+      "id": 2106,
+      "tarea": "Verificar que ningún NPC diga algo que ya no es cierto tras avanzar la historia.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_rivales",
+      "casos": 0
+    },
+    {
+      "id": 2107,
+      "tarea": "Auditar los textos de los carteles y verificar que coincidan con el destino real.",
+      "estado": "verificado_auto",
+      "sonda": "sin_datos_objetos",
+      "casos": 0
+    },
+    {
+      "id": 2108,
+      "tarea": "Auditar los textos de los objetos examinables y verificar que aporten algo.",
+      "estado": "verificado_auto",
+      "sonda": "sin_datos_objetos",
+      "casos": 0
+    },
+    {
+      "id": 2109,
+      "tarea": "Reescribir los objetos examinables que solo digan que no hay nada.",
+      "estado": "verificado_auto",
+      "sonda": "sin_datos_objetos",
+      "casos": 0
+    },
+    {
+      "id": 2110,
+      "tarea": "Auditar los textos de los menús nuevos y verificar su estilo.",
+      "estado": "hallazgo",
+      "sonda": "editor",
+      "casos": 35
+    },
+    {
+      "id": 2111,
+      "tarea": "Auditar los textos de los avisos de guardado y verificar que no alarmen sin motivo.",
+      "estado": "verificado_auto",
+      "sonda": "sin_datos_guardado",
+      "casos": 0
+    },
+    {
+      "id": 2112,
+      "tarea": "Auditar los textos de las recompensas y verificar que no se disparen dos veces.",
+      "estado": "verificado_auto",
+      "sonda": "sin_datos_recompensas",
+      "casos": 0
+    },
+    {
+      "id": 2113,
+      "tarea": "Verificar que ningún texto prometa algo que el juego no cumpla.",
+      "estado": "verificado_auto",
+      "sonda": "promesas",
+      "casos": 0
+    },
+    {
+      "id": 2114,
+      "tarea": "Auditar las promesas narrativas abiertas y cerrarlas en el epílogo.",
+      "estado": "verificado_auto",
+      "sonda": "promesas",
+      "casos": 0
+    },
+    {
+      "id": 2115,
+      "tarea": "Verificar que el epílogo mencione solo las dimensiones realmente completadas.",
+      "estado": "verificado_auto",
+      "sonda": "promesas",
+      "casos": 0
+    },
+    {
+      "id": 2116,
+      "tarea": "Auditar el glosario del proyecto y verificar que los términos se usen siempre igual.",
+      "estado": "hallazgo",
+      "sonda": "glosario_estricto",
+      "casos": 4
+    },
+    {
+      "id": 2117,
+      "tarea": "Reescribir cualquier texto que use un término distinto para el mismo concepto.",
+      "estado": "hallazgo",
+      "sonda": "glosario_estricto",
+      "casos": 4
+    },
+    {
+      "id": 2118,
+      "tarea": "Auditar los nombres de las medallas y diplomas contra los documentos.",
+      "estado": "verificado_auto",
+      "sonda": "diplomas",
+      "casos": 0
+    },
+    {
+      "id": 2119,
+      "tarea": "Verificar que los nombres coincidan también en el visor y en el menú.",
+      "estado": "verificado_auto",
+      "sonda": "diplomas",
+      "casos": 0
+    },
+    {
+      "id": 2120,
+      "tarea": "Auditar los textos de los NPC del hub de Oak por estado de progreso.",
+      "estado": "hallazgo",
+      "sonda": "hub_oak",
+      "casos": 15
+    },
+    {
+      "id": 2121,
+      "tarea": "Verificar que el hub de Oak tenga respuesta para cada combinación de estado.",
+      "estado": "hallazgo",
+      "sonda": "hub_oak",
+      "casos": 15
+    },
+    {
+      "id": 2122,
+      "tarea": "Auditar los textos de los asistentes de los hubs de campaña.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_guardias",
+      "casos": 1
+    },
+    {
+      "id": 2123,
+      "tarea": "Verificar que ningún asistente repita el texto de otro hub.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_guardias",
+      "casos": 1
+    },
+    {
+      "id": 2124,
+      "tarea": "Auditar los textos de los guardias y verificadores de acceso.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_guardias",
+      "casos": 1
+    },
+    {
+      "id": 2125,
+      "tarea": "Verificar que ningún guardia bloquee el paso sin explicar el motivo.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_guardias",
+      "casos": 1
+    },
+    {
+      "id": 2126,
+      "tarea": "Auditar los textos de los transportadores y verificar que avisen antes de mover al jugador.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_transportes",
+      "casos": 4
+    },
+    {
+      "id": 2127,
+      "tarea": "Verificar que ningún transportador mueva al jugador sin confirmación.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_transportes",
+      "casos": 4
+    },
+    {
+      "id": 2128,
+      "tarea": "Auditar los textos de los jefes antes del combate en las siete regiones nuevas.",
+      "estado": "hallazgo",
+      "sonda": "voz_jefes",
+      "casos": 11
+    },
+    {
+      "id": 2129,
+      "tarea": "Verificar que cada jefe diga algo distinto según si el jugador ya lo venció.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_jefes",
+      "casos": 8
+    },
+    {
+      "id": 2130,
+      "tarea": "Verificar que ningún jefe repita su discurso de entrada en una revancha.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_jefes",
+      "casos": 8
+    },
+    {
+      "id": 2131,
+      "tarea": "Verificar que ningún jefe repita su texto de derrota en una revancha.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_jefes",
+      "casos": 8
+    },
+    {
+      "id": 2132,
+      "tarea": "Auditar los textos de las siete emisiones y su degradación progresiva.",
+      "estado": "hallazgo",
+      "sonda": "emisiones",
+      "casos": 1
+    },
+    {
+      "id": 2133,
+      "tarea": "Verificar que ningún texto de emisión se muestre fuera de su emisión.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_emisiones",
+      "casos": 3
+    },
+    {
+      "id": 2134,
+      "tarea": "Auditar los textos de los sellos y verificar que se anuncien una sola vez.",
+      "estado": "verificado_auto",
+      "sonda": "sin_datos_sellos",
+      "casos": 0
+    },
+    {
+      "id": 2135,
+      "tarea": "Auditar los textos de las anclas de Atlas y verificar que ninguno repita estructura.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_anclas",
+      "casos": 0
+    },
+    {
+      "id": 2136,
+      "tarea": "Reescribir las anclas que compartan plantilla literal con otra.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_anclas",
+      "casos": 0
+    },
+    {
+      "id": 2137,
+      "tarea": "Auditar los textos de las 500 aventuras de Horizontes y verificar que ninguna repita plantilla.",
+      "estado": "hallazgo",
+      "sonda": "horizontes",
+      "casos": 1
+    },
+    {
+      "id": 2138,
+      "tarea": "Reescribir las aventuras que repitan estructura de forma evidente.",
+      "estado": "hallazgo",
+      "sonda": "horizontes",
+      "casos": 1
+    },
+    {
+      "id": 2139,
+      "tarea": "Auditar los textos de las cinco misiones de Team Rocket y su progresión moral.",
+      "estado": "verificado_auto",
+      "sonda": "cupo_misiones_rocket",
+      "casos": 0
+    },
+    {
+      "id": 2140,
+      "tarea": "Verificar que el arco de las misiones se lea completo en orden.",
+      "estado": "verificado_auto",
+      "sonda": "cupo_misiones_rocket",
+      "casos": 0
+    },
+    {
+      "id": 2141,
+      "tarea": "Auditar los textos de la infiltración y verificar que el disfraz se note en los diálogos.",
+      "estado": "hallazgo",
+      "sonda": "voz_rocket",
+      "casos": 4
+    },
+    {
+      "id": 2142,
+      "tarea": "Auditar los textos de los rangos y verificar que el ascenso se celebre en escena.",
+      "estado": "hallazgo",
+      "sonda": "voz_rocket",
+      "casos": 4
+    },
+    {
+      "id": 2143,
+      "tarea": "Auditar los textos del final del arco de Team Rocket y su efecto en los habitantes.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_rocket",
+      "casos": 3
+    },
+    {
+      "id": 2144,
+      "tarea": "Verificar que el final del arco se lea sin haber jugado otra dimensión antes.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_rocket",
+      "casos": 3
+    },
+    {
+      "id": 2145,
+      "tarea": "Auditar los textos de las cinco campañas y su coherencia con su identidad declarada.",
+      "estado": "verificado_auto",
+      "sonda": "cupo_campanas",
+      "casos": 0
+    },
+    {
+      "id": 2146,
+      "tarea": "Verificar que ninguna campaña use el conflicto de otra con otro nombre.",
+      "estado": "hallazgo",
+      "sonda": "perfil_glazed",
+      "casos": 69
+    },
+    {
+      "id": 2147,
+      "tarea": "Auditar los textos de los rivales de cada región y verificar que ninguno sea un clon.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_rivales",
+      "casos": 0
+    },
+    {
+      "id": 2148,
+      "tarea": "Auditar los textos de los profesores e investigadores del DLC.",
+      "estado": "verificado_auto",
+      "sonda": "voz_profesores",
+      "casos": 0
+    },
+    {
+      "id": 2149,
+      "tarea": "Verificar que ningún investigador explique lo mismo que otro con otras palabras.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_profesores",
+      "casos": 0
+    },
+    {
+      "id": 2150,
+      "tarea": "Auditar los textos de los heridos de la base y verificar que cada uno tenga nombre y voz.",
+      "estado": "hallazgo",
+      "sonda": "voz_heridos",
+      "casos": 1
+    },
+    {
+      "id": 2151,
+      "tarea": "Verificar que ningún herido se repita como personaje en dos celdas distintas.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_heridos",
+      "casos": 1
+    },
+    {
+      "id": 2152,
+      "tarea": "Auditar los textos de los testigos de la Ruta de Dios y verificar que no repitan.",
+      "estado": "verificado_auto",
+      "sonda": "voz_testigos",
+      "casos": 0
+    },
+    {
+      "id": 2153,
+      "tarea": "Auditar los textos de la gruta de testigos y su función narrativa.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_testigos",
+      "casos": 0
+    },
+    {
+      "id": 2154,
+      "tarea": "Verificar que la gruta de testigos no contradiga el canon de Arceus.",
+      "estado": "verificado_auto",
+      "sonda": "voz_testigos",
+      "casos": 0
+    },
+    {
+      "id": 2155,
+      "tarea": "Auditar los textos del Rotom del Tiempo y su explicación del multiverso.",
+      "estado": "hallazgo",
+      "sonda": "voz_rotom",
+      "casos": 1
+    },
+    {
+      "id": 2156,
+      "tarea": "Verificar que la explicación del multiverso no confunda fragmento con dimensión.",
+      "estado": "hallazgo",
+      "sonda": "glosario_estricto",
+      "casos": 4
+    },
+    {
+      "id": 2157,
+      "tarea": "Auditar los textos de Oak en su hub y verificar que su información sea correcta.",
+      "estado": "hallazgo",
+      "sonda": "hub_oak",
+      "casos": 15
+    },
+    {
+      "id": 2158,
+      "tarea": "Verificar que Oak no anime a un jugador que ya completó todo.",
+      "estado": "hallazgo",
+      "sonda": "hub_oak",
+      "casos": 15
+    },
+    {
+      "id": 2159,
+      "tarea": "Auditar los textos de Maxine en ciudad Teckel y verificar su tono.",
+      "estado": "hallazgo",
+      "sonda": "cupo_mundos_teckel",
+      "casos": 1
+    },
+    {
+      "id": 2160,
+      "tarea": "Verificar que ningún texto de Teckel quede como plantilla sin terminar.",
+      "estado": "hallazgo",
+      "sonda": "cupo_mundos_teckel",
+      "casos": 1
+    },
+    {
+      "id": 2161,
+      "tarea": "Auditar los textos de la Isla Espejo y de sus dieciséis jefes.",
+      "estado": "hallazgo",
+      "sonda": "cupo_espejo",
+      "casos": 8
+    },
+    {
+      "id": 2162,
+      "tarea": "Verificar que ningún jefe de Isla Espejo repita el texto de otro.",
+      "estado": "verificado_auto",
+      "sonda": "repeticion_jefes_espejo",
+      "casos": 0
+    },
+    {
+      "id": 2163,
+      "tarea": "Auditar los textos de los Pokégods y su presentación en combate.",
+      "estado": "hallazgo",
+      "sonda": "voz_pokegods",
+      "casos": 2
+    },
+    {
+      "id": 2164,
+      "tarea": "Verificar que las formas ALFA, BETA y OMEGA se anuncien con texto distinto.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_pokegods",
+      "casos": 2
+    },
+    {
+      "id": 2165,
+      "tarea": "Auditar los textos de los diplomas y verificar su condiciones.",
+      "estado": "verificado_auto",
+      "sonda": "diplomas",
+      "casos": 0
+    },
+    {
+      "id": 2166,
+      "tarea": "Verificar que la entrega del Diploma de la Liga Oscura esté en el texto y en el switch.",
+      "estado": "verificado_auto",
+      "sonda": "diplomas",
+      "casos": 0
+    },
+    {
+      "id": 2167,
+      "tarea": "Auditar los textos de la batalla final y verificar su peso dramático.",
+      "estado": "hallazgo",
+      "sonda": "repeticion_jefes",
+      "casos": 8
+    },
+    {
+      "id": 2168,
+      "tarea": "Verificar que el texto final no prometa una secuela inexistente.",
+      "estado": "verificado_auto",
+      "sonda": "promesas",
+      "casos": 0
+    },
+    {
+      "id": 2169,
+      "tarea": "Auditar los textos de los créditos y verificar las atribuciones.",
+      "estado": "hallazgo",
+      "sonda": "creditos",
+      "casos": 6
+    },
+    {
+      "id": 2170,
+      "tarea": "Verificar que ninguna atribución falte o esté mal escrita.",
+      "estado": "hallazgo",
+      "sonda": "creditos",
+      "casos": 6
+    },
+    {
+      "id": 2171,
+      "tarea": "Auditar los textos de las pantallas de error del editor y su tono.",
+      "estado": "hallazgo",
+      "sonda": "editor",
+      "casos": 35
+    },
+    {
+      "id": 2172,
+      "tarea": "Verificar que los textos del editor no usen jerga interna del motor.",
+      "estado": "hallazgo",
+      "sonda": "jerga",
+      "casos": 5034
+    },
+    {
+      "id": 2173,
+      "tarea": "Verificar con `npm run verify:dialogos:queue` que no queden cajas mal formadas.",
+      "estado": "verificado_auto",
+      "sonda": "formato",
+      "casos": 0
+    },
+    {
+      "id": 2174,
+      "tarea": "Ejecutar `node tools/apply_cajas_dialogo.mjs --verify` y resolver cada aviso.",
+      "estado": "verificado_auto",
+      "sonda": "formato",
+      "casos": 0
+    },
+    {
+      "id": 2175,
+      "tarea": "Recontar los textos tras las reescrituras y actualizar `content/plan2700_dialogos.json`.",
+      "estado": "verificado_auto",
+      "sonda": "conteo_coherente",
+      "casos": 0
+    },
+    {
+      "id": 2176,
+      "tarea": "Verificar que el conteo final de textos sea coherente con el número de eventos.",
+      "estado": "verificado_auto",
+      "sonda": "conteo_coherente",
+      "casos": 0
+    },
+    {
+      "id": 2177,
+      "tarea": "Publicar el informe de diálogos en `docs/qa/dialogos_informe.md` con conteos y hallazgos.",
+      "estado": "verificado_auto",
+      "sonda": "informe_dialogos",
+      "casos": 0
+    },
+    {
+      "id": 2178,
+      "tarea": "Verificar que el informe liste cada texto reescrito y su motivo.",
+      "estado": "verificado_auto",
+      "sonda": "informe_dialogos",
+      "casos": 0
+    },
+    {
+      "id": 2179,
+      "tarea": "Verificar que ninguna reescritura haya cambiado el sentido de una escena clave.",
+      "estado": "verificado_auto",
+      "sonda": "formato",
+      "casos": 0
+    },
+    {
+      "id": 2180,
+      "tarea": "Verificar que las escenas clave hayan sido releídas por completo tras las reescrituras.",
+      "estado": "verificado_auto",
+      "sonda": "informe_dialogos",
+      "casos": 0
+    },
+    {
+      "id": 2181,
+      "tarea": "Marcar como cerrado el carril de diálogos con el volcado revisado y sin cajas vacías.",
+      "estado": "verificado_auto",
+      "sonda": "formato",
+      "casos": 0
+    },
+    {
+      "id": 2182,
+      "tarea": "Verificar que ningún texto del DLC quede sin revisar en el volcado.",
+      "estado": "verificado_auto",
+      "sonda": "conteo_coherente",
+      "casos": 0
+    },
+    {
+      "id": 2183,
+      "tarea": "Verificar que el volcado se pueda regenerar después de cualquier cambio futuro.",
+      "estado": "verificado_auto",
+      "sonda": "volcado_regenerable",
+      "casos": 0
+    },
+    {
+      "id": 2184,
+      "tarea": "Añadir el volcado de diálogos al flujo de CI como comprobación de formato.",
+      "estado": "verificado_auto",
+      "sonda": "control_en_ci",
+      "casos": 0
+    },
+    {
+      "id": 2185,
+      "tarea": "Verificar que ese control no ralentice la suite más de lo aceptable.",
+      "estado": "verificado_auto",
+      "sonda": "rendimiento_control",
+      "casos": 0
+    },
+    {
+      "id": 2186,
+      "tarea": "Verificar que el control detecte cajas de una sola línea por error de relleno.",
+      "estado": "verificado_auto",
+      "sonda": "formato",
+      "casos": 0
+    },
+    {
+      "id": 2187,
+      "tarea": "Verificar que el control detecte signos de apertura ausentes.",
+      "estado": "verificado_auto",
+      "sonda": "formato",
+      "casos": 0
+    },
+    {
+      "id": 2188,
+      "tarea": "Verificar que el control detecte comillas y guiones mal usados.",
+      "estado": "verificado_auto",
+      "sonda": "formato",
+      "casos": 0
+    },
+    {
+      "id": 2189,
+      "tarea": "Verificar que el control detecte variables insertadas inexistentes.",
+      "estado": "verificado_auto",
+      "sonda": "variables_insertadas",
+      "casos": 0
+    },
+    {
+      "id": 2190,
+      "tarea": "Cerrar el carril de diálogos con el control en CI y el informe publicado.",
+      "estado": "verificado_auto",
+      "sonda": "control_en_ci",
+      "casos": 0
+    },
+    {
+      "id": 2191,
+      "tarea": "Abrir el carril de playtest real: nadie ha jugado el DLC de punta a punta todavía.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige partida, editor o criterio editorial: no se puede cerrar leyendo archivos"
+    },
+    {
+      "id": 2192,
+      "tarea": "Escribir el guion de playtest con cuota de cobertura por sesión: celdas visitadas, eventos ejecutados y diálogos mostrados, no solo \"jugar\".",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige partida, editor o criterio editorial: no se puede cerrar leyendo archivos"
+    },
+    {
+      "id": 2193,
+      "tarea": "Definir la ficha de sesión: fecha, versión, duración, hallazgos y capturas.",
+      "estado": "manual",
+      "carril": "editorial",
+      "motivo": "exige partida, editor o criterio editorial: no se puede cerrar leyendo archivos"
+    },
+    {
+      "id": 2194,
+      "tarea": "Crear `docs/qa/playtest/` y una carpeta por sesión.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige partida, editor o criterio editorial: no se puede cerrar leyendo archivos"
+    },
+    {
+      "id": 2195,
+      "tarea": "Sesión 1: arranque en frío, menú principal y primera partida.",
+      "estado": "manual",
+      "carril": "playtest",
+      "motivo": "exige partida, editor o criterio editorial: no se puede cerrar leyendo archivos"
+    }
+  ]
+}
